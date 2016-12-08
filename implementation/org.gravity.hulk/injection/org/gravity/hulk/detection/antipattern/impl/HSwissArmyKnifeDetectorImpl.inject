@@ -1,0 +1,15 @@
+
+partial class HSwissArmyKnifeDetectorImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		return "Swiss Army Knife [Anti-Pattern]";
+	}
+
+	
+-->
+
+}

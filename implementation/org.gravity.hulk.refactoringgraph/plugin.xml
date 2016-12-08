@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.refactoringgraph.RefactoringgraphPackage" genModel="model/Refactoringgraph.genmodel" uri="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage" genModel="model/Refactoringgraph.genmodel" uri="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings"/>
+  </extension>
+</plugin>

@@ -1,0 +1,13 @@
+
+partial class HDataClassAccessorDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Data Class Accessor Smell";
+	}
+	
+-->
+
+}

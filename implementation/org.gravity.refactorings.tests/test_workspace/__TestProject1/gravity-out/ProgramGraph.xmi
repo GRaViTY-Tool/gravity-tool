@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphBasic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore">
+  <packages containedClasses="//@classes.9 //@classes.10" tName="foo"/>
+  <methods tName="main">
+    <signatures definitions="//@classes.10/@defines.2">
+      <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries>
+          <tClass href="ExternTClasses.xmi#/2"/>
+        </entries>
+      </paramList>
+    </signatures>
+  </methods>
+  <methods tName="getO">
+    <signatures definitions="//@classes.10/@defines.0">
+      <paramList/>
+    </signatures>
+  </methods>
+  <methods tName="setO">
+    <signatures definitions="//@classes.10/@defines.1">
+      <paramList first="//@methods.2/@signatures.0/@paramList/@entries.0">
+        <entries tClass="//@classes.9"/>
+      </paramList>
+    </signatures>
+  </methods>
+  <methods tName="println">
+    <signatures definitions="//@classes.12/@defines.0">
+      <paramList>
+        <entries/>
+      </paramList>
+    </signatures>
+  </methods>
+  <fields tName="o">
+    <signatures definitions="//@classes.10/@defines.3" type="//@classes.9"/>
+  </fields>
+  <fields tName="out">
+    <signatures definitions="//@classes.11/@defines.0"/>
+  </fields>
+  <classes tLib="true" tName="boolean"/>
+  <classes tLib="true" tName="byte"/>
+  <classes tLib="true" tName="char"/>
+  <classes tLib="true" tName="double"/>
+  <classes tLib="true" tName="float"/>
+  <classes tLib="true" tName="int"/>
+  <classes tLib="true" tName="long"/>
+  <classes tLib="true" tName="short"/>
+  <classes tLib="true" tName="void"/>
+  <classes package="//@packages.0" tName="Other"/>
+  <classes package="//@packages.0" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0 //@methods.0/@signatures.0 //@fields.0/@signatures.0" tName="Main">
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.1/@signatures.0" returnType="//@classes.9">
+      <tAccessing tTarget="//@classes.10/@defines.3"/>
+    </defines>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.2/@signatures.0" returnType="//@classes.8">
+      <tAccessing tTarget="//@classes.10/@defines.3"/>
+    </defines>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.0/@signatures.0" returnType="//@classes.8">
+      <tAccessing tTarget="//@classes.11/@defines.0"/>
+      <tAccessing tTarget="//@classes.12/@defines.0"/>
+    </defines>
+    <defines xsi:type="TypeGraphBasic:TFieldDefinition" accessedBy="//@classes.10/@defines.0/@tAccessing.0 //@classes.10/@defines.1/@tAccessing.0" signature="//@fields.0/@signatures.0"/>
+  </classes>
+  <classes tName="java.lang.System">
+    <defines xsi:type="TypeGraphBasic:TFieldDefinition" accessedBy="//@classes.10/@defines.2/@tAccessing.0" signature="//@fields.1/@signatures.0"/>
+  </classes>
+  <classes tName="java.io.PrintStream">
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" accessedBy="//@classes.10/@defines.2/@tAccessing.1" signature="//@methods.3/@signatures.0"/>
+  </classes>
+</TypeGraphBasic:TypeGraph>

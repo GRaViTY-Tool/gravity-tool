@@ -1,0 +1,41 @@
+
+import java.util.ArrayList;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TMember;
+
+partial class HEfferentCouplingCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Efferent Coupling";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		ArrayList<TAbstractType> accessedClasses = new ArrayList<TAbstractType>();
+		for (TMember m : tClass.getDefines()) {
+			for (TAccess t : m.getTAccessing()) {
+				TMember tTarget = t.getTTarget();
+				if(tTarget == null){
+					System.out.println("Member within Class " +tClass.getTName()+" accesses an TAccess without Target");
+					continue;
+				}
+				TAbstractType definingClass = tTarget.getDefinedBy();
+				if(definingClass == null){
+					System.out.println("Member within Class " +tClass.getTName()+" accesses a Target without defining Class");
+					continue;
+				}
+				if (!tTarget.getDefinedBy().equals(tClass) && !accessedClasses.contains(tTarget.getDefinedBy())) {
+					accessedClasses.add(definingClass);
+				}
+			}
+		}
+		return accessedClasses.size();
+-->
+
+}

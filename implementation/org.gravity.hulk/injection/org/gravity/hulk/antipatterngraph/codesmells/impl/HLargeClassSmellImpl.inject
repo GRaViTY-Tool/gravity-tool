@@ -1,0 +1,23 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage;
+import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
+import org.gravity.hulk.antipatterngraph.impl.HCodeSmellImpl;
+import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HLargeClassSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		getHNumberOfMembers().getTreeItem(new TreeItem(item, style), style);
+		return item;
+	}
+	
+-->
+
+}

@@ -1,0 +1,11 @@
+
+partial class HAntiPatternGraphImpl {
+
+
+
+@model getNextID () <--
+
+		return currentID++;
+-->
+
+}

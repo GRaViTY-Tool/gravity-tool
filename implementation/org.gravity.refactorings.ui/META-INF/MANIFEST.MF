@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Refatoring UI
+Bundle-SymbolicName: org.gravity.refactorings.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.gravity.refactorings.ui.RefactoringUiActivator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.ui;bundle-version="3.11.1",
+ org.eclipse.core.resources,
+ org.eclipse.jdt.core,
+ org.eclipse.jface.text;bundle-version="3.10.0",
+ org.gravity.eclipse,
+ org.gravity.typegraph.basic,
+ org.eclipse.ui.workbench.texteditor,
+ org.gravity.refactorings,
+ org.eclipse.emf.ecore;bundle-version="2.11.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

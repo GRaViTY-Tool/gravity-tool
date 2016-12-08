@@ -1,0 +1,27 @@
+
+partial class HLocalFieldsAccessCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of in Class Fieldaccesses";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		int i = 0;
+		for (TMember m : tClass.getDefines()) {
+			for (TAccess t : m.getTAccessing()) {
+				TMember tTarget = t.getTTarget();
+				if (tTarget instanceof TFieldDefinition && tTarget.getDefinedBy().equals(tClass)) {
+					i++;
+				}
+			}
+		}
+		return i;
+-->
+
+}

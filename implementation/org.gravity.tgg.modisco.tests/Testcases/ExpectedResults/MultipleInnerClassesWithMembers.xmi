@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" ID="360" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" tName="MultipleInnerClassesWithMembers">
+  <packages classes="//@ownedTypes.8" ownedTypes="//@ownedTypes.8" typeGraph="/" tName="p">
+    <subpackage ID="372" classes="//@ownedTypes.10" ownedTypes="//@ownedTypes.10" tName="OuterClass$1"/>
+    <subpackage ID="374" classes="//@ownedTypes.11" ownedTypes="//@ownedTypes.11" tName="OuterClass$1"/>
+  </packages>
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" ID="362" tName="OuterClass">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" ID="363">
+      <paramList/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" ID="364" definedBy="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <fields ID="361" tName="field1">
+    <signatures ID="366" type="//@ownedTypes.7">
+      <definitions ID="367" definedBy="//@ownedTypes.10"/>
+    </signatures>
+  </fields>
+  <fields ID="365" tName="field2">
+    <signatures ID="368" type="//@ownedTypes.7">
+      <definitions ID="369" definedBy="//@ownedTypes.11"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="370" package="//@packages.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="OuterClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="371" package="//@packages.0/@subpackage.0" signature="//@fields.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0" tName="InnerClass1"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="373" package="//@packages.0/@subpackage.1" signature="//@fields.1/@signatures.0" defines="//@fields.1/@signatures.0/@definitions.0" tName="InnerClass2"/>
+</org.gravity.typegraph.basic:TypeGraph>

@@ -1,0 +1,18 @@
+
+partial class HNumberOfChildCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of members";
+	}
+	
+-->
+
+@model calculateValue (TClass tParent) <--
+
+		return tParent.getChildClasses().size();
+-->
+
+}

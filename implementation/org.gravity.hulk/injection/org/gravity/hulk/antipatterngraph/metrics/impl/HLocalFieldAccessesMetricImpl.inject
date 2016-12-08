@@ -1,0 +1,17 @@
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+
+partial class HLocalFieldAccessesMetricImpl {
+
+@members <--
+
+
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("LocalFieldAccesses(" + ((TClass) getTAnnotated()).getTName() + ") = " + getValue() + ")");
+		return item;
+	}
+	
+-->
+
+}

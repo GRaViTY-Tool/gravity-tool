@@ -1,0 +1,63 @@
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
+import org.gravity.hulk.help.HSort;
+
+partial class HMetricImpl {
+
+
+
+@model getRelativeAmount () <--
+		EList<HAnnotation> annotations = getHDetector().getHAnnotation();
+
+		SortedSet<Double> keys = new TreeSet<>();
+
+		for (HAnnotation a : annotations) {
+			if (this.getClass().equals(a.getClass())) {
+				double key = ((HMetric) a).getValue();
+				keys.add(key);
+			}
+		}
+
+		double index = keys.headSet(this.getValue()).size();
+
+		if (index == -1) {
+			throw new RuntimeException();
+		}
+
+		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+
+		double q = (index + 1) / keys.size();
+
+		if (q < 0.2) {
+			value.setValue(HRelativeValueConstants.VERY_LOW);
+		} else if (q < 0.4) {
+			value.setValue(HRelativeValueConstants.LOW);
+		} else if (q < 0.6) {
+			value.setValue(HRelativeValueConstants.MEDIUM);
+		} else if (q < 0.8) {
+			value.setValue(HRelativeValueConstants.HIGH);
+		} else {
+			value.setValue(HRelativeValueConstants.VERY_HIGH);
+		}
+
+		return value;
+-->
+
+@model increment () <--
+		return this.value++;
+-->
+
+}

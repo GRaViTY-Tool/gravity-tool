@@ -1,0 +1,19 @@
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+
+partial class HIntenseFieldUsageCodeSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		getHLocalAccessRelationMetric().getTreeItem(item, style);
+		return item;
+	}
+	
+-->
+
+}

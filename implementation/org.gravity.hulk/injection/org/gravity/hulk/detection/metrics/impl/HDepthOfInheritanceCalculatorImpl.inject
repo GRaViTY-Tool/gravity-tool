@@ -1,0 +1,24 @@
+
+partial class HDepthOfInheritanceCustomCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Depth of Inheritance";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		int depth = 0;
+		TClass parent = tClass.getParentClass();
+		while (parent != null && !parent.isTLib()) {
+			depth++;
+			parent = parent.getParentClass();
+		}
+		return depth;
+-->
+
+}

@@ -1,0 +1,24 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage;
+import org.gravity.hulk.antipatterngraph.codesmells.HMuchOverloadingCodeSmell;
+import org.gravity.hulk.antipatterngraph.impl.HCodeSmellImpl;
+import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetric;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HMuchOverloadingCodeSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		TreeItem metric = new TreeItem(item, style);
+		getHAverageOverloadingInClassMetric().createItemContents(metric, style);
+		return item;
+	}
+	
+-->
+
+}

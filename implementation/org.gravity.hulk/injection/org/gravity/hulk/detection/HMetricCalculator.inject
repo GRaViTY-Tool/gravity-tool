@@ -1,0 +1,11 @@
+
+partial class HMetricCalculator {
+
+@members <--
+
+	String getGuiName();
+
+	
+-->
+
+}

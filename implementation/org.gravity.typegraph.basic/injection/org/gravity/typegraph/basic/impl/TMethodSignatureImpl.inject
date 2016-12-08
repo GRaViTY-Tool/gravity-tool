@@ -1,0 +1,28 @@
+
+import org.gravity.typegraph.basic.TParameter;
+
+partial class TMethodSignatureImpl {
+
+
+
+@model getSignatureString () <--
+
+		String s = getMethod().getTName() + "(";
+		TParameter current = getParamList().getFirst();
+		while (current != null) {
+			s += current.getType().getTName();
+			current = current.getNext();
+			if (current != null) {
+				s += ", ";
+			}
+		}
+		TAbstractType ret = getReturnType();
+		if(ret==null){
+			return s+ ")";
+		}
+		else{
+			return s + "):" + ret.getTName();
+		}
+-->
+
+}

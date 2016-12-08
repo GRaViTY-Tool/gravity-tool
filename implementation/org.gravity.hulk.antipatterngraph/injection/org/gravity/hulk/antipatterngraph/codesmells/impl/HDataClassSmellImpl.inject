@@ -1,0 +1,24 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HDataClassSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		if (getHNACCMetric() != null) {
+			TreeItem nacc = getHNACCMetric().getTreeItem(item, style);
+			for (HGetterSetterSmell gs : getGetterSetterSmells()) {
+				gs.getTreeItem(nacc, style);
+			}
+		}
+		return item;
+	}
+	
+-->
+
+}

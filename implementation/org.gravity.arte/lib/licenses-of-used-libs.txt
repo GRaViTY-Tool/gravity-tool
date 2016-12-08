@@ -1,0 +1,16 @@
+Apache License, Version 2.0
+	zip4j (zip4j_1.3.2.jar)	
+		name of copyright owner: Srikanth Reddy Lingala
+		
+	Google Guice (com.google.inject_3.0.0.v201312141243.jar)
+		name of copyright owner: Sam Berlin et al.
+		
+	jansi (jansi-1.11.jar)
+		name of copyright owner: Hiram Chirino
+
+Eclipse Public License (EPL)
+	ecore			:	org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar
+	emf				:	org.eclipse.emf.common_2.10.1.v20150123-0348.jar
+	mwe utils		:	org.eclipse.emf.mwe.utils_1.3.4.v201409021027.jar
+	xtext			:	org.eclipse.xtext_2.7.3.v201411190455.jar
+	

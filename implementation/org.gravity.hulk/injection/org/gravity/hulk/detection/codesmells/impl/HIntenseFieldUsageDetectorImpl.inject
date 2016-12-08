@@ -1,0 +1,15 @@
+
+partial class HIntenseFieldUsageDetectorImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		return "Intense usage of local fields";
+	}
+
+	
+-->
+
+}

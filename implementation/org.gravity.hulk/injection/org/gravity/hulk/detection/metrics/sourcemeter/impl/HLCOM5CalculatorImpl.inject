@@ -1,0 +1,23 @@
+
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
+import org.gravity.hulk.help.HFullyqualifiedName;
+import org.gravity.hulk.sourcemeter.SourcemeterActivator;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
+
+partial class HLCOM5CalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "LCOM5";
+	}
+	
+-->
+
+}

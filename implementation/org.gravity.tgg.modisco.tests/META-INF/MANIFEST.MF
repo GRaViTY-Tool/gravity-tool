@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.gravity.tgg.modisco.test
+Bundle-SymbolicName: org.gravity.tgg.modisco.test;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.gravity.tgg.modisco;bundle-version="1.0.0",
+ org.apache.log4j,
+ org.moflon.tgg.language,
+ org.eclipse.core.resources,
+ org.eclipse.jdt.core,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.junit;bundle-version="4.12.0",
+ org.eclipse.emf.compare;bundle-version="3.2.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.11.1",
+ org.gravity.eclipse,
+ org.eclipse.emf.ecore,
+ org.gravity.modisco;bundle-version="1.0.0",
+ org.eclipse.gmt.modisco.java;bundle-version="0.13.1",
+ org.gravity.typegraph.basic
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: TU Darmstadt
+Bundle-Activator: org.gravity.tgg.modisco.test.activator.MoDiscoTestActivator

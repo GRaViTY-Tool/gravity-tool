@@ -1,0 +1,10 @@
+
+partial class HExtractClass {
+
+@members <--
+
+	public int compare(HExtractClass hExtractClass);
+	
+-->
+
+}

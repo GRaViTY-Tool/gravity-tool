@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.gravity.eclipse.converters">
+    <converter class="org.gravity.tgg.modisco.MoDiscoTGGConverterFactory"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.modisco.Rules.RulesPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore#//Rules"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.modisco.preprocessing.PreprocessingPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore#//preprocessing"/>
+  </extension>
+</plugin>

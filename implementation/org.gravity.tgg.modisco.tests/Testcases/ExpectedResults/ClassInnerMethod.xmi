@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2" tName="Test">
+  <packages classes="//@ownedTypes.1" ownedTypes="//@ownedTypes.1" typeGraph="/" tName="foo">
+    <subpackage classes="//@ownedTypes.2" ownedTypes="//@ownedTypes.2" tName="SimpleClass$1"/>
+  </packages>
+  <methods tName="SimpleMethod">
+    <signatures returnType="//@ownedTypes.0">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.1" returnType="//@ownedTypes.0"/>
+    </signatures>
+  </methods>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="SimpleClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" tName="TestClass"/>
+</org.gravity.typegraph.basic:TypeGraph>

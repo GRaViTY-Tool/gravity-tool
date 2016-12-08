@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:GravityTGG="platform:/plugin/GravityTGG/model/GravityTGG.ecore">
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/0"/>
+    <source href="pathmap:/javaclass/java.lang.Object.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/1"/>
+    <source href="pathmap:/javaclass/java.lang.Void.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/2"/>
+    <source href="pathmap:/javaclass/java.lang.String.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/3"/>
+    <source href="pathmap:/javaclass/java.lang.Integer.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/4"/>
+    <source href="pathmap:/javaclass/java.lang.System.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/5"/>
+    <source href="pathmap:/javaclass/java.io.PrintStream.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/6"/>
+    <source href="pathmap:/javaclass/java.io.FilterOutputStream.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/7"/>
+    <source href="pathmap:/javaclass/java.io.OutputStream.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/8"/>
+    <source href="pathmap:/javaclass/java.lang.Boolean.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/9"/>
+    <source href="pathmap:/javaclass/java.lang.Byte.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/10"/>
+    <source href="pathmap:/javaclass/java.lang.Character.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/11"/>
+    <source href="pathmap:/javaclass/java.lang.Float.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/12"/>
+    <source href="pathmap:/javaclass/java.lang.Double.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/13"/>
+    <source href="pathmap:/javaclass/java.lang.Long.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/14"/>
+    <source href="pathmap:/javaclass/java.lang.Short.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/15"/>
+    <source href="pathmap:/javaclass/java.lang.Number.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+</xmi:XMI>

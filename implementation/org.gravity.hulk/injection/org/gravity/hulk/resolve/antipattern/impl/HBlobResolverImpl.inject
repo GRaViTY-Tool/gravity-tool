@@ -1,0 +1,152 @@
+
+import org.gravity.hulk.annotations.resolve.Hulk_DontTouch;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.BasicFactory;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.TAnnotationType;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TTextAnnotation;
+import org.gravity.typegraph.basic.TypeGraph;
+import org.gravity.typegraph.basic.containers.TMemberContainer;
+import org.gravity.refactorings.Extract_Class;
+import org.gravity.refactorings.Move_Member;
+import org.gravity.refactorings.Move_Method;
+import org.gravity.refactorings.Refactoring;
+import org.gravity.refactorings.configuration.ConfigurationFactory;
+import org.gravity.refactorings.configuration.ExtractClassConfiguration;
+import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+partial class HBlobResolverImpl {
+
+@members <--
+
+	private Move_Member move;
+
+	@Override
+	public String getGuiName() {
+		return "Resolve Blob [Anti-Pattern]";
+	}
+	
+-->
+
+@model isRefactoringPossible (HRefactoring refactoring) <--
+
+		if (refactoring instanceof HMoveMethod) {
+			HMoveMethod r = (HMoveMethod) refactoring;
+			TClass tTargetClass = r.getTargetClass();
+			TClass tSourceClass = r.getSourceClass();
+			TypeGraph pg = tTargetClass.getPg();
+
+			for (TSignature s : r.getTSignature()) {
+				if (!move.isApplicable(s, tTargetClass, tSourceClass)) {
+					return false;
+				}
+			}
+			return true;
+		} else if (refactoring instanceof HExtractClass) {
+			HExtractClass e = (HExtractClass) refactoring;
+			ExtractClassConfiguration config = ConfigurationFactory.eINSTANCE.createExtractClassConfiguration();
+			config.getTMembers().addAll(e.getTMembers());
+			config.setTNewClassName("ExtractedClass" + System.currentTimeMillis());
+			Extract_Class r = org.gravity.refactorings.RefactoringsFactory.eINSTANCE.createExtract_Class();
+			return r.isApplicable(config);
+		} else {
+			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
+		}
+		return false;
+-->
+
+@model createMove (TMemberContainer members, TClass source, TClass target, HBlobResolveAnnotation parent) <--
+
+		Set<HMoveMember> allMoves = new HashSet<>();
+		for (TMember definition : members.getTMembers()) {
+			if (move.isApplicable(definition.getSignature(), target, source)) {
+				HMoveMember hMove;
+				if (definition instanceof TMethodDefinition) {
+					hMove = RefactoringsFactory.eINSTANCE.createHMoveMethod();
+				} else if (definition instanceof TFieldDefinition) {
+					hMove = RefactoringsFactory.eINSTANCE.createHMoveField();
+				} else {
+					System.err.println("HBlobResolver: Unknown Member Tye: " + definition);
+					return null;
+				}
+				hMove.setApg(copy_apg);
+				copy_apg.getHAnnotations().add(hMove);
+
+				hMove.setTAnnotated(definition);
+				definition.getTAnnotation().add(hMove);
+
+				hMove.setSourceClass(source);
+				hMove.setTargetClass(target);
+				hMove.getTSignature().add(definition.getSignature());
+				hMove.setChanged(false);
+
+				for (TAnnotation tAnnotation : definition.getTAnnotation()) {
+					if (tAnnotation instanceof HInBlobAccess) {
+						hMove.setIba((HInBlobAccess) tAnnotation);
+					} else if (tAnnotation instanceof HMethodToDataClassAccess) {
+						hMove.setM2dc((HMethodToDataClassAccess) tAnnotation);
+					}
+				}
+				allMoves.add(hMove);
+
+			} else {
+				return null;
+			}
+		}
+		RefactoringsFactory refactoringFactory = RefactoringsFactory.eINSTANCE;
+		HMoveMembers hMoves = hMoves = refactoringFactory.createHMoveMembers();
+		hMoves.getHMoveMembers().addAll(allMoves);
+		hMoves.setSourceClass(source);
+		hMoves.setTargetClass(target);
+		source.getTAnnotation().add(hMoves);
+		parent.getHRefactorings().add(hMoves);
+		return hMoves;
+-->
+
+@model allowedToTouch (TAnnotatable element) <--
+
+		Set<TAnnotation> annotations = new HashSet<>();
+		annotations.addAll(element.getTAnnotation());
+		if (element instanceof TMember) {
+			TMember member = (TMember) element;
+			annotations.addAll(member.getDefinedBy().getTAnnotation());
+		}
+		for (TAnnotation annotation : annotations) {
+			TAnnotationType type = annotation.getType();
+			if (type != null) {
+				if (type.getTName().equalsIgnoreCase(Hulk_DontTouch.class.getName())) {
+					return false;
+				}
+			}
+		}
+		return true;
+-->
+
+@model init (HAntiPatternGraph pg) <--
+
+		original_apg = pg;
+		copy_apg = EcoreUtil.copy(pg);
+
+		org.gravity.refactorings.RefactoringsFactory factory = org.gravity.refactorings.RefactoringsFactory.eINSTANCE;
+		move = factory.createMove_Member();
+		move.setHelpers(factory.createHelpers());
+		move.setSearch(factory.createSearch());
+
+		return copy_apg;
+-->
+
+}

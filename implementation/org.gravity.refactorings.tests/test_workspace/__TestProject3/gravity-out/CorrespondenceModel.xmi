@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:GravityTGG="platform:/plugin/GravityTGG/model/GravityTGG.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="GravityTGG:ExtendedJamoppJavaContainerToTypeGraph">
+    <target href="../../../../../../Desktop/targetModel#/"/>
+    <source href="ExtendedJaMoPP.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:ExtendedFieldNameToTField">
+    <source href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <target href="../../../../../../Desktop/targetModel#//@fields.0"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:ExtendedFieldTypeToTFieldSignature">
+    <source href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <target href="../../../../../../Desktop/targetModel#//@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:ExtendedJamoppPackageElementToTPackage">
+    <target href="../../../../../../Desktop/targetModel#//@packages.0"/>
+    <source href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:CompilationUnitToTClass">
+    <target href="../../../../../../Desktop/targetModel#//@classes.9"/>
+    <source href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:ClassToTClass">
+    <target href="../../../../../../Desktop/targetModel#//@classes.9"/>
+    <source href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+  </correspondences>
+  <correspondences xsi:type="GravityTGG:FieldToTFieldDefinition">
+    <target href="../../../../../../Desktop/targetModel#//@classes.9/@defines.0"/>
+    <source href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+  </correspondences>
+  <source href="ExtendedJaMoPP.xmi#/"/>
+  <target href="../../../../../../Desktop/targetModel#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

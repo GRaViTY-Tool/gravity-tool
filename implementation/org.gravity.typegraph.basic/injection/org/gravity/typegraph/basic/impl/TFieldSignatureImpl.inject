@@ -1,0 +1,12 @@
+
+partial class TFieldSignatureImpl {
+
+
+
+@model getSignatureString () <--
+
+		String name = getField().getTName();
+		return name + ":" + getType().getTName();
+-->
+
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="org.gravity.hulk.annotations">
+  <ownedElements name="org">
+    <ownedPackages name="gravity">
+      <ownedPackages name="hulk">
+        <ownedPackages name="annotations">
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.0" name="Blob" usagesInTypeAccess="//@orphanTypes.9/@elementType //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.1/@type">
+            <annotations originalCompilationUnit="//@compilationUnits.0">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.0" name="value" member="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:TypeLiteral" originalCompilationUnit="//@compilationUnits.0">
+                  <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+                </value>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.0" name="id" usages="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.0/@values.0 //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.1/@values.0">
+              <modifier/>
+              <type type="//@orphanTypes.0"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.1" name="BlobContainer" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@values.0/@value/@type">
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.1" name="value">
+              <modifier/>
+              <default xsi:type="java:ArrayInitializer" originalCompilationUnit="//@compilationUnits.1"/>
+              <type type="//@orphanTypes.9"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.2" name="GodClass" usagesInTypeAccess="//@orphanTypes.10/@elementType //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.2/@type">
+            <annotations originalCompilationUnit="//@compilationUnits.2">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.2" name="value" member="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:TypeLiteral" originalCompilationUnit="//@compilationUnits.2">
+                  <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+                </value>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.2" name="id" usages="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8/@annotations.2/@values.0">
+              <modifier/>
+              <type type="//@orphanTypes.0"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.3" name="GodClassContainer" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@annotations.0/@values.0/@value/@type">
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.3" name="value">
+              <modifier/>
+              <default xsi:type="java:ArrayInitializer" originalCompilationUnit="//@compilationUnits.3"/>
+              <type type="//@orphanTypes.10"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.4" name="SwissArmyKnife" usagesInTypeAccess="//@orphanTypes.11/@elementType">
+            <annotations originalCompilationUnit="//@compilationUnits.4">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.4" name="value" member="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:TypeLiteral" originalCompilationUnit="//@compilationUnits.4">
+                  <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5"/>
+                </value>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.4" name="id">
+              <modifier/>
+              <type type="//@orphanTypes.0"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.5" name="SwissArmyKnifeContainer" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4/@annotations.0/@values.0/@value/@type">
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.5" name="value">
+              <modifier/>
+              <default xsi:type="java:ArrayInitializer" originalCompilationUnit="//@compilationUnits.5"/>
+              <type type="//@orphanTypes.11"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.6" name="SpaghettiCode" usagesInTypeAccess="//@orphanTypes.12/@elementType">
+            <annotations originalCompilationUnit="//@compilationUnits.6">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.6" name="value" member="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:TypeLiteral" originalCompilationUnit="//@compilationUnits.6">
+                  <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.7"/>
+                </value>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.6" name="id">
+              <modifier/>
+              <type type="//@orphanTypes.0"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.7" name="SpaghettiCodeContainer" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6/@annotations.0/@values.0/@value/@type">
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.7" name="value">
+              <modifier/>
+              <default xsi:type="java:ArrayInitializer" originalCompilationUnit="//@compilationUnits.7"/>
+              <type type="//@orphanTypes.12"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.8" name="TestClass">
+            <annotations originalCompilationUnit="//@compilationUnits.8">
+              <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.8" name="id" member="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:NumberLiteral" originalCompilationUnit="//@compilationUnits.8" tokenValue="0"/>
+              </values>
+            </annotations>
+            <annotations originalCompilationUnit="//@compilationUnits.8">
+              <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+              <values originalCompilationUnit="//@compilationUnits.8" name="id" member="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0">
+                <value xsi:type="java:NumberLiteral" originalCompilationUnit="//@compilationUnits.8" tokenValue="1"/>
+              </values>
+            </annotations>
+            <annotations originalCompilationUnit="//@compilationUnits.8">
+              <type type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+              <values originalCompilationUnit="//@compilationUnits.8" name="id" member="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0">
+                <value xsi:type="java:NumberLiteral" originalCompilationUnit="//@compilationUnits.8" tokenValue="0"/>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+          </ownedElements>
+        </ownedPackages>
+      </ownedPackages>
+    </ownedPackages>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedPackages name="annotation" proxy="true">
+        <ownedElements xsi:type="java:AnnotationTypeDeclaration" name="Repeatable" proxy="true" usagesInImports="//@compilationUnits.0/@imports.0 //@compilationUnits.2/@imports.0 //@compilationUnits.4/@imports.0 //@compilationUnits.6/@imports.0" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@annotations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4/@annotations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6/@annotations.0/@type">
+          <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" name="value" proxy="true" usages="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@values.0 //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@annotations.0/@values.0 //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4/@annotations.0/@values.0 //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6/@annotations.0/@values.0"/>
+        </ownedElements>
+      </ownedPackages>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4/@bodyDeclarations.0/@type //@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6/@bodyDeclarations.0/@type"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <orphanTypes xsi:type="java:ArrayType" name="org.gravity.hulk.annotations.Blob[]" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@type" dimensions="1">
+    <elementType type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ArrayType" name="org.gravity.hulk.annotations.GodClass[]" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0/@type" dimensions="1">
+    <elementType type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ArrayType" name="org.gravity.hulk.annotations.SwissArmyKnife[]" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.0/@type" dimensions="1">
+    <elementType type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ArrayType" name="org.gravity.hulk.annotations.SpaghettiCode[]" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.0/@type" dimensions="1">
+    <elementType type="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6"/>
+  </orphanTypes>
+  <compilationUnits name="Blob.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/Blob.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="BlobContainer.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/BlobContainer.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+  <compilationUnits name="GodClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/GodClass.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2">
+    <imports originalCompilationUnit="//@compilationUnits.2" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="GodClassContainer.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/GodClassContainer.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+  <compilationUnits name="SwissArmyKnife.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/SwissArmyKnife.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4">
+    <imports originalCompilationUnit="//@compilationUnits.4" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="SwissArmyKnifeContainer.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/SwissArmyKnifeContainer.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5"/>
+  <compilationUnits name="SpaghettiCode.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/SpaghettiCode.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.6">
+    <imports originalCompilationUnit="//@compilationUnits.6" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="SpaghettiCodeContainer.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/SpaghettiCodeContainer.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.7"/>
+  <compilationUnits name="TestClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/test/org/gravity/hulk/annotations/TestClass.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.8"/>
+</java:Model>

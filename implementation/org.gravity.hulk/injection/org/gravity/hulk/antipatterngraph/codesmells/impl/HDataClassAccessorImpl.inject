@@ -1,0 +1,39 @@
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage;
+import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
+import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
+import org.gravity.hulk.antipatterngraph.impl.HCodeSmellImpl;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HDataClassAccessorImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("NumberOfAccessedDataClass(" + ((TClass) getTAnnotated()).getTName() + ")=" + getValue());
+		for (HDataClassSmell data : getHDataClassSmells()) {
+			TreeItem item_data = new TreeItem(item, style);
+			data.getTreeItem(item_data, style);
+		}
+		return item;
+	}
+	
+-->
+
+}

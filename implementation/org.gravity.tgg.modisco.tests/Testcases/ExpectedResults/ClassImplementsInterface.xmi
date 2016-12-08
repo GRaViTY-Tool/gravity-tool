@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0" interfaces="//@ownedTypes.1" tName="Test">
+  <packages classes="//@ownedTypes.0" interfaces="//@ownedTypes.1" ownedTypes="//@ownedTypes.0 //@ownedTypes.1" typeGraph="/" tName="(default package)"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="BaseClass" implements="//@ownedTypes.1"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" tName="SuperInterface" implementedBy="//@ownedTypes.0"/>
+</org.gravity.typegraph.basic:TypeGraph>

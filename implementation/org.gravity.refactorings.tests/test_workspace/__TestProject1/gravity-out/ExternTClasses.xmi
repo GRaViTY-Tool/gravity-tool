@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore">
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Object"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Void"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.String"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Integer"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.System"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.io.PrintStream"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.io.FilterOutputStream"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.io.OutputStream"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Boolean"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Byte"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Character"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Float"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Double"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Long"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Short"/>
+  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Number"/>
+</xmi:XMI>

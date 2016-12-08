@@ -1,0 +1,17 @@
+digraph "precedence structure" {
+	label="";
+	     "PackageRoot 1" [shape=box, color=black, style=rounded, href="Patterns/Pattern_843420461.svg"];
+	     "FieldSignature 0" [shape=box, color=black, style=rounded, href="Patterns/Pattern_1694382479.svg"];
+	     "ClassDefault 3" [shape=box, color=black, style=rounded, href="Patterns/Pattern_648278187.svg"];
+	     "FieldName 5" [shape=box, color=black, style=rounded, href="Patterns/Pattern_2120569684.svg"];
+	     "ProgramGraphCreate 2" [shape=box, color=black, style=rounded, href="Patterns/Pattern_751605655.svg"];
+	     "FieldTypeIsKnownClass 4" [shape=box, color=black, style=rounded, href="Patterns/Pattern_92938154.svg"];
+
+	     "FieldName 5" -> "FieldSignature 0" [color=black, label="child", fontsize=11, constraint=true];
+	     "ProgramGraphCreate 2" -> "FieldName 5" [color=black, label="child", fontsize=11, constraint=true];
+	     "ProgramGraphCreate 2" -> "ClassDefault 3" [color=black, label="child", fontsize=11, constraint=true];
+	     "ProgramGraphCreate 2" -> "PackageRoot 1" [color=black, label="child", fontsize=11, constraint=true];
+	     "ClassDefault 3" -> "FieldTypeIsKnownClass 4" [color=black, label="child", fontsize=11, constraint=true];
+	     "FieldSignature 0" -> "FieldTypeIsKnownClass 4" [color=black, label="child", fontsize=11, constraint=true];
+	     "PackageRoot 1" -> "ClassDefault 3" [color=black, label="child", fontsize=11, constraint=true];
+}

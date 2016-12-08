@@ -1,0 +1,29 @@
+
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+
+partial class HMemberNumberCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Members";
+	}
+	
+-->
+
+@model calculateMetric (TClass tClass) <--
+
+		HMetric metric = MetricsFactory.eINSTANCE.createHNumberOfMembersMetric();
+		metric.setValue(calculateValue(tClass));
+		metric.setTAnnotated(tClass);
+		return metric;
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		return tClass.getDefines().size();
+-->
+
+}

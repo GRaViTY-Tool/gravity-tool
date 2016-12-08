@@ -1,0 +1,13 @@
+
+partial class HDataClassDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Data Class Smell";
+	}
+	
+-->
+
+}

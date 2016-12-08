@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>org.gravity.metamodels.refactorings</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.moflon.ide.texteditor.editors.TextEditorBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.moflon.ide.core.runtime.builders.MetamodelBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.moflon.ide.core.runtime.natures.MetamodelNature</nature>
+	</natures>
+</projectDescription>

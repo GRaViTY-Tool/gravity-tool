@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" interfaces="//@ownedTypes.0" tName="Test">
+  <packages interfaces="//@ownedTypes.0" ownedTypes="//@ownedTypes.0" typeGraph="/" tName="foo"/>
+  <fields tName="fieldA">
+    <signatures type="//@ownedTypes.0">
+      <definitions definedBy="//@ownedTypes.0"/>
+    </signatures>
+  </fields>
+  <fields tName="fieldB">
+    <signatures type="//@ownedTypes.0">
+      <definitions definedBy="//@ownedTypes.0"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" signature="//@fields.0/@signatures.0 //@fields.1/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0 //@fields.1/@signatures.0/@definitions.0" tName="SimpleInterface"/>
+</org.gravity.typegraph.basic:TypeGraph>

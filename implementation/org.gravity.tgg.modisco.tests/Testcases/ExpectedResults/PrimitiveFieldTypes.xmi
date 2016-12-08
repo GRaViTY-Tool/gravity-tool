@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8" interfaces="//@ownedTypes.9" tName="Test">
+  <packages classes="//@ownedTypes.4" interfaces="//@ownedTypes.9" ownedTypes="//@ownedTypes.4 //@ownedTypes.9" typeGraph="/" tName="foo"/>
+  <fields ID="655" tName="fieldDouble">
+    <signatures ID="660" type="//@ownedTypes.5">
+      <definitions ID="662" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="656" tName="fieldLong">
+    <signatures ID="658" type="//@ownedTypes.1">
+      <definitions ID="659" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="657" tName="fieldByte">
+    <signatures ID="668" type="//@ownedTypes.8">
+      <definitions ID="669" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="661" tName="fieldFloat">
+    <signatures ID="670" type="//@ownedTypes.7">
+      <definitions ID="671" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="663" tName="fieldShort">
+    <signatures ID="664" type="//@ownedTypes.3">
+      <definitions ID="702" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="665" tName="fieldBoolean">
+    <signatures ID="666" type="//@ownedTypes.2">
+      <definitions ID="667" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="672" tName="fieldInt">
+    <signatures ID="676" type="//@ownedTypes.0">
+      <definitions ID="703" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="673" tName="fieldChar">
+    <signatures ID="674" type="//@ownedTypes.6">
+      <definitions ID="675" definedBy="//@ownedTypes.4"/>
+    </signatures>
+  </fields>
+  <fields ID="678" tName="fieldInt">
+    <signatures ID="683" type="//@ownedTypes.0">
+      <definitions ID="689" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="679" tName="fieldShort">
+    <signatures ID="696" type="//@ownedTypes.3">
+      <definitions ID="697" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="680" tName="fieldDouble">
+    <signatures ID="698" type="//@ownedTypes.5">
+      <definitions ID="699" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="681" tName="fieldFloat">
+    <signatures ID="690" type="//@ownedTypes.7">
+      <definitions ID="691" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="682" tName="fieldBoolean">
+    <signatures ID="700" type="//@ownedTypes.2">
+      <definitions ID="701" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="684" tName="fieldChar">
+    <signatures ID="685" type="//@ownedTypes.6">
+      <definitions ID="686" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="687" tName="fieldByte">
+    <signatures ID="688" type="//@ownedTypes.8">
+      <definitions ID="695" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <fields ID="692" tName="fieldLong">
+    <signatures ID="693" type="//@ownedTypes.1">
+      <definitions ID="694" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="654" package="//@packages.0" signature="//@fields.1/@signatures.0 //@fields.0/@signatures.0 //@fields.4/@signatures.0 //@fields.5/@signatures.0 //@fields.2/@signatures.0 //@fields.3/@signatures.0 //@fields.7/@signatures.0 //@fields.6/@signatures.0" defines="//@fields.1/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0 //@fields.5/@signatures.0/@definitions.0 //@fields.2/@signatures.0/@definitions.0 //@fields.3/@signatures.0/@definitions.0 //@fields.7/@signatures.0/@definitions.0 //@fields.4/@signatures.0/@definitions.0 //@fields.6/@signatures.0/@definitions.0" tName="SimpleClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="677" package="//@packages.0" signature="//@fields.8/@signatures.0 //@fields.13/@signatures.0 //@fields.14/@signatures.0 //@fields.11/@signatures.0 //@fields.15/@signatures.0 //@fields.9/@signatures.0 //@fields.10/@signatures.0 //@fields.12/@signatures.0" defines="//@fields.13/@signatures.0/@definitions.0 //@fields.8/@signatures.0/@definitions.0 //@fields.11/@signatures.0/@definitions.0 //@fields.15/@signatures.0/@definitions.0 //@fields.14/@signatures.0/@definitions.0 //@fields.9/@signatures.0/@definitions.0 //@fields.10/@signatures.0/@definitions.0 //@fields.12/@signatures.0/@definitions.0" tName="SimpleInterface"/>
+</org.gravity.typegraph.basic:TypeGraph>

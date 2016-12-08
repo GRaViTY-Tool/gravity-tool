@@ -1,0 +1,12 @@
+
+partial class HMoveMember {
+
+@members <--
+
+
+	int compare(HMoveMember arg0);
+
+	
+-->
+
+}

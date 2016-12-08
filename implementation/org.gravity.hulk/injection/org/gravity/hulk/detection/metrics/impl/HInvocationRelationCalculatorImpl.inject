@@ -1,0 +1,18 @@
+
+partial class HInvocationRelationCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Relation between Incoming and Outgoing Invocations";
+	}
+	
+-->
+
+@model calculateInvocValue (HIncommingInvocationMetric nii, HOutgoingInvocationMetric noi) <--
+
+		return (noi.getValue()) / (nii.getValue() + 1);
+-->
+
+}

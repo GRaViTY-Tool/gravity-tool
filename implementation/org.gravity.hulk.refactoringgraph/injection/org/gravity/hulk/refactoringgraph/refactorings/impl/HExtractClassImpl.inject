@@ -1,0 +1,40 @@
+
+import org.gravity.typegraph.basic.TAnnotation;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.refactoringgraph.HInBlobAccess;
+
+partial class HExtractClassImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("Extract " + getTMembers().size() + " members to a new class.");
+		for (TMember tMember : getTMembers()) {
+			new TreeItem(item, style).setText(tMember.getSignatureString());
+		}
+		return item;
+	}
+
+	public int compare(HExtractClass hExtractClass) {
+		return (int) (1000 * (getAvgIba() - hExtractClass.getAvgIba()));
+	}
+	
+-->
+
+@model getAvgIba () <--
+
+		double sum = 0.0;
+		int count = 0;
+		for (TMember m : getTMembers()) {
+			for (TAnnotation a : m.getTAnnotation()) {
+				if (a instanceof HInBlobAccess) {
+					sum += ((HInBlobAccess) a).getValue();
+					count++;
+				}
+			}
+		}
+		return sum / count;
+-->
+
+}

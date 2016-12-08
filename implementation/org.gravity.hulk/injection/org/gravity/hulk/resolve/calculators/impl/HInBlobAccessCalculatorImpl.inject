@@ -1,0 +1,13 @@
+
+partial class HInBlobAccessCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Calculate the In-Blob-Method accesses";
+	}
+	
+-->
+
+}

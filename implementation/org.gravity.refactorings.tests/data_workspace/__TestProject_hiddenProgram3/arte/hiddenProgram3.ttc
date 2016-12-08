@@ -1,0 +1,171 @@
+TestFile hiddenProgram3 {
+
+
+	class child1 {
+
+		package "hidden.program.three"
+
+		name	"ChildClass1"
+
+	}
+
+
+
+	class child2 {
+
+		package "hidden.program.three"
+
+		name	"ChildClass2"
+
+	}
+
+
+
+	class new_parent {
+
+		package "hidden.program.three"
+
+		name "NewParent"
+
+	}
+	
+
+
+	classes childs {
+
+		child1,
+
+		child2
+
+	}
+	
+
+
+	method m {
+
+		name "method"
+
+	}
+	
+
+
+	create_superclass executable_exs_1 {
+
+		child childs
+
+		target new_parent
+
+	}
+
+
+
+	pullup_method executable_pum_1 {
+
+		parent new_parent
+
+		method m
+
+	}
+
+
+
+	case hidden_csc3_1a {
+
+		description "Is the PG after a refactoring still consistent?."
+		program "hiddenProgram3"
+
+
+
+		testflow {
+	
+			assertTrue(executable_exs_1)
+
+
+			synchronize
+
+			compile
+
+			child1 extends new_parent
+
+			child2 extends new_parent
+
+
+			child1 contains m
+
+			child2 contains m
+
+			new_parent ~contains m
+
+			
+			assertTrue(executable_pum_1)
+
+
+
+			synchronize
+			compile
+			
+			child1 extends new_parent
+
+			child2 extends new_parent
+
+			
+child1 ~contains m
+
+			child2 ~contains m
+
+			new_parent contains m
+
+
+		}
+
+	}
+
+
+
+	case hidden_csc3_1 {
+
+		description "How good is the propagation of multiple changes?"
+
+		program "hiddenProgram3"
+
+
+		testflow {
+	
+			assertTrue(executable_exs_1)
+
+
+			child1 ~extends new_parent
+
+			child2 ~extends new_parent
+
+
+			child1 contains m
+
+			child2 contains m
+
+
+
+			assertTrue(executable_pum_1)
+
+
+
+			synchronize
+			compile			
+
+			child1 extends new_parent
+
+			child2 extends new_parent
+
+
+			child1 ~contains m
+
+			child2 ~contains m
+
+			new_parent contains m
+
+
+		}
+
+	}
+
+}

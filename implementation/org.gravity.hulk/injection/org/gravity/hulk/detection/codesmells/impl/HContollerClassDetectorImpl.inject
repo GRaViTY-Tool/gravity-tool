@@ -1,0 +1,16 @@
+
+partial class HContollerClassDetectorImpl {
+
+@members <--
+
+	private final String[] controller_names = { "main", "run", "controller", "process", "control", "ctrl", "system",
+			"cmd" };
+
+	@Override
+	public String getGuiName() {
+		return "Controller Class Smell";
+	}
+	
+-->
+
+}

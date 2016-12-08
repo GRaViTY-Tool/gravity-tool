@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.22 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27 //@ownedTypes.28 //@ownedTypes.31 //@ownedTypes.32 //@ownedTypes.33 //@ownedTypes.34 //@ownedTypes.35 //@ownedTypes.40 //@ownedTypes.41 //@ownedTypes.43 //@ownedTypes.45 //@ownedTypes.46 //@ownedTypes.47 //@ownedTypes.48 //@ownedTypes.49 //@ownedTypes.50 //@ownedTypes.53 //@ownedTypes.55 //@ownedTypes.56 //@ownedTypes.57 //@ownedTypes.58 //@ownedTypes.60 //@ownedTypes.61 //@ownedTypes.62 //@ownedTypes.63 //@ownedTypes.64 //@ownedTypes.65 //@ownedTypes.67 //@ownedTypes.68 //@ownedTypes.71 //@ownedTypes.73 //@ownedTypes.74 //@ownedTypes.76 //@ownedTypes.77 //@ownedTypes.78 //@ownedTypes.79 //@ownedTypes.80 //@ownedTypes.82 //@ownedTypes.83 //@ownedTypes.84 //@ownedTypes.86 //@ownedTypes.87 //@ownedTypes.89 //@ownedTypes.92 //@ownedTypes.95 //@ownedTypes.96 //@ownedTypes.97 //@ownedTypes.98 //@ownedTypes.99 //@ownedTypes.100 //@ownedTypes.101 //@ownedTypes.102 //@ownedTypes.103 //@ownedTypes.104 //@ownedTypes.106 //@ownedTypes.108 //@ownedTypes.110 //@ownedTypes.111 //@ownedTypes.112 //@ownedTypes.113 //@ownedTypes.114 //@ownedTypes.115 //@ownedTypes.118 //@ownedTypes.119 //@ownedTypes.120" interfaces="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.21 //@ownedTypes.23 //@ownedTypes.29 //@ownedTypes.30 //@ownedTypes.36 //@ownedTypes.37 //@ownedTypes.38 //@ownedTypes.39 //@ownedTypes.42 //@ownedTypes.44 //@ownedTypes.51 //@ownedTypes.52 //@ownedTypes.54 //@ownedTypes.59 //@ownedTypes.66 //@ownedTypes.69 //@ownedTypes.70 //@ownedTypes.72 //@ownedTypes.75 //@ownedTypes.81 //@ownedTypes.85 //@ownedTypes.88 //@ownedTypes.90 //@ownedTypes.91 //@ownedTypes.93 //@ownedTypes.94 //@ownedTypes.105 //@ownedTypes.107 //@ownedTypes.109 //@ownedTypes.116 //@ownedTypes.117" tName="Java Libs Test">
+  <packages typeGraph="/" tName="javax">
+    <subpackage interfaces="//@ownedTypes.44" ownedTypes="//@ownedTypes.44" typeGraph="/" tName="accessibility"/>
+  </packages>
+  <packages typeGraph="/" tName="java">
+    <subpackage typeGraph="/" tName="net"/>
+    <subpackage classes="//@ownedTypes.7 //@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.28 //@ownedTypes.31 //@ownedTypes.33 //@ownedTypes.35 //@ownedTypes.43" interfaces="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.29 //@ownedTypes.30 //@ownedTypes.36 //@ownedTypes.42" ownedTypes="//@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.28 //@ownedTypes.29 //@ownedTypes.30 //@ownedTypes.31 //@ownedTypes.33 //@ownedTypes.35 //@ownedTypes.36 //@ownedTypes.42 //@ownedTypes.43" typeGraph="/" tName="lang">
+      <subpackage interfaces="//@ownedTypes.37 //@ownedTypes.38 //@ownedTypes.39" ownedTypes="//@ownedTypes.37 //@ownedTypes.38 //@ownedTypes.39" typeGraph="/" tName="reflect"/>
+    </subpackage>
+    <subpackage classes="//@ownedTypes.22 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27 //@ownedTypes.34 //@ownedTypes.40 //@ownedTypes.41 //@ownedTypes.56 //@ownedTypes.57" interfaces="//@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.21 //@ownedTypes.23" ownedTypes="//@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.21 //@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27 //@ownedTypes.34 //@ownedTypes.40 //@ownedTypes.41 //@ownedTypes.56 //@ownedTypes.57" typeGraph="/" tName="util"/>
+    <subpackage classes="//@ownedTypes.87" ownedTypes="//@ownedTypes.87" typeGraph="/" tName="applet"/>
+    <subpackage classes="//@ownedTypes.45 //@ownedTypes.46 //@ownedTypes.47 //@ownedTypes.48 //@ownedTypes.49 //@ownedTypes.50 //@ownedTypes.53 //@ownedTypes.55" interfaces="//@ownedTypes.51 //@ownedTypes.52 //@ownedTypes.54" ownedTypes="//@ownedTypes.45 //@ownedTypes.46 //@ownedTypes.47 //@ownedTypes.48 //@ownedTypes.49 //@ownedTypes.50 //@ownedTypes.51 //@ownedTypes.52 //@ownedTypes.53 //@ownedTypes.54 //@ownedTypes.55" typeGraph="/" tName="io"/>
+    <subpackage classes="//@ownedTypes.61 //@ownedTypes.62 //@ownedTypes.63 //@ownedTypes.65 //@ownedTypes.67 //@ownedTypes.68 //@ownedTypes.71 //@ownedTypes.74 //@ownedTypes.79 //@ownedTypes.80 //@ownedTypes.82 //@ownedTypes.83 //@ownedTypes.84 //@ownedTypes.89 //@ownedTypes.92 //@ownedTypes.96 //@ownedTypes.97 //@ownedTypes.98 //@ownedTypes.99 //@ownedTypes.100 //@ownedTypes.102 //@ownedTypes.103 //@ownedTypes.104 //@ownedTypes.106 //@ownedTypes.108 //@ownedTypes.110 //@ownedTypes.112 //@ownedTypes.114 //@ownedTypes.115 //@ownedTypes.120" interfaces="//@ownedTypes.72 //@ownedTypes.75 //@ownedTypes.81 //@ownedTypes.93 //@ownedTypes.105 //@ownedTypes.107 //@ownedTypes.117" ownedTypes="//@ownedTypes.61 //@ownedTypes.62 //@ownedTypes.63 //@ownedTypes.65 //@ownedTypes.67 //@ownedTypes.68 //@ownedTypes.71 //@ownedTypes.72 //@ownedTypes.74 //@ownedTypes.75 //@ownedTypes.79 //@ownedTypes.80 //@ownedTypes.81 //@ownedTypes.82 //@ownedTypes.83 //@ownedTypes.84 //@ownedTypes.89 //@ownedTypes.92 //@ownedTypes.93 //@ownedTypes.96 //@ownedTypes.97 //@ownedTypes.98 //@ownedTypes.99 //@ownedTypes.100 //@ownedTypes.102 //@ownedTypes.103 //@ownedTypes.104 //@ownedTypes.105 //@ownedTypes.106 //@ownedTypes.107 //@ownedTypes.108 //@ownedTypes.110 //@ownedTypes.112 //@ownedTypes.114 //@ownedTypes.115 //@ownedTypes.117 //@ownedTypes.120" typeGraph="/" tName="awt">
+      <subpackage classes="//@ownedTypes.58 //@ownedTypes.60 //@ownedTypes.64 //@ownedTypes.73 //@ownedTypes.76 //@ownedTypes.86 //@ownedTypes.95 //@ownedTypes.101" interfaces="//@ownedTypes.59 //@ownedTypes.66 //@ownedTypes.69 //@ownedTypes.70 //@ownedTypes.85 //@ownedTypes.91 //@ownedTypes.94 //@ownedTypes.109" ownedTypes="//@ownedTypes.58 //@ownedTypes.59 //@ownedTypes.60 //@ownedTypes.64 //@ownedTypes.66 //@ownedTypes.69 //@ownedTypes.70 //@ownedTypes.73 //@ownedTypes.76 //@ownedTypes.85 //@ownedTypes.86 //@ownedTypes.91 //@ownedTypes.94 //@ownedTypes.95 //@ownedTypes.101 //@ownedTypes.109" typeGraph="/" tName="event"/>
+      <subpackage interfaces="//@ownedTypes.88 //@ownedTypes.90 //@ownedTypes.116" ownedTypes="//@ownedTypes.88 //@ownedTypes.90 //@ownedTypes.116" typeGraph="/" tName="image"/>
+      <subpackage classes="//@ownedTypes.77 //@ownedTypes.78 //@ownedTypes.111 //@ownedTypes.113" ownedTypes="//@ownedTypes.77 //@ownedTypes.78 //@ownedTypes.111 //@ownedTypes.113" typeGraph="/" tName="geom"/>
+    </subpackage>
+    <subpackage classes="//@ownedTypes.118 //@ownedTypes.119" ownedTypes="//@ownedTypes.118 //@ownedTypes.119" typeGraph="/" tName="text"/>
+  </packages>
+  <methods ID="5435" tName="toString">
+    <signatures ID="5433">
+      <paramList ID="5432"/>
+      <definitions ID="5434" definedBy="//@ownedTypes.9"/>
+    </signatures>
+  </methods>
+  <methods ID="5441" tName="getClass">
+    <signatures ID="5439">
+      <paramList ID="5438"/>
+      <definitions ID="5440" definedBy="//@ownedTypes.11"/>
+    </signatures>
+  </methods>
+  <methods ID="5447" tName="toString">
+    <signatures ID="5445">
+      <paramList ID="5444"/>
+      <definitions ID="5446" definedBy="//@ownedTypes.13"/>
+    </signatures>
+  </methods>
+  <methods ID="5452" tName="random">
+    <signatures ID="5450">
+      <paramList ID="5449"/>
+      <definitions ID="5451" definedBy="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <methods ID="5463" tName="hasMoreElements">
+    <signatures ID="5461">
+      <paramList ID="5460"/>
+      <definitions ID="5462" definedBy="//@ownedTypes.19"/>
+    </signatures>
+  </methods>
+  <methods ID="5470" tName="toString">
+    <signatures ID="5468">
+      <paramList ID="5467"/>
+      <definitions ID="5469" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5474" tName="size">
+    <signatures ID="5472">
+      <paramList ID="5471"/>
+      <definitions ID="5473" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5480" tName="toString">
+    <signatures ID="5478">
+      <paramList ID="5477"/>
+      <definitions ID="5479" definedBy="//@ownedTypes.11"/>
+    </signatures>
+  </methods>
+  <methods ID="5484" tName="contains">
+    <signatures ID="5482">
+      <paramList ID="5481">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5483" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5489" tName="exit">
+    <signatures ID="5487">
+      <paramList ID="5486">
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5488" definedBy="//@ownedTypes.28"/>
+    </signatures>
+  </methods>
+  <methods ID="5497" tName="getString">
+    <signatures ID="5495">
+      <paramList ID="5494">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5496" definedBy="//@ownedTypes.22"/>
+    </signatures>
+  </methods>
+  <methods ID="5501" tName="elementAt">
+    <signatures ID="5499">
+      <paramList ID="5498">
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5500" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5506" tName="endsWith">
+    <signatures ID="5504">
+      <paramList ID="5503">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5505" definedBy="//@ownedTypes.12"/>
+    </signatures>
+  </methods>
+  <methods ID="5511" tName="nextElement">
+    <signatures ID="5509">
+      <paramList ID="5508"/>
+      <definitions ID="5510" definedBy="//@ownedTypes.19"/>
+    </signatures>
+  </methods>
+  <methods ID="5515" tName="isEmpty">
+    <signatures ID="5513">
+      <paramList ID="5512"/>
+      <definitions ID="5514" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5519" tName="addElement">
+    <signatures ID="5517">
+      <paramList ID="5516">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5518" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5524" tName="removeElement">
+    <signatures ID="5522">
+      <paramList ID="5521">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5523" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5529" tName="getResourceAsStream">
+    <signatures ID="5527">
+      <paramList ID="5526">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5528" definedBy="//@ownedTypes.31"/>
+    </signatures>
+  </methods>
+  <methods ID="5533" tName="equals">
+    <signatures ID="5531">
+      <paramList ID="5530">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5532" definedBy="//@ownedTypes.12"/>
+    </signatures>
+  </methods>
+  <methods ID="5541" tName="elements">
+    <signatures ID="5539">
+      <paramList ID="5538"/>
+      <definitions ID="5540" definedBy="//@ownedTypes.25"/>
+    </signatures>
+  </methods>
+  <methods ID="5545" tName="getBundle">
+    <signatures ID="5543">
+      <paramList ID="5542">
+        <entries type="//@ownedTypes.12"/>
+        <entries type="//@ownedTypes.41"/>
+      </paramList>
+      <definitions ID="5544" definedBy="//@ownedTypes.22"/>
+    </signatures>
+  </methods>
+  <methods ID="5550" tName="getInstance">
+    <signatures ID="5548">
+      <paramList ID="5547"/>
+      <definitions ID="5549" definedBy="//@ownedTypes.40"/>
+    </signatures>
+  </methods>
+  <methods ID="5554" tName="set">
+    <signatures ID="5552">
+      <paramList ID="5551">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5553" definedBy="//@ownedTypes.40"/>
+    </signatures>
+  </methods>
+  <methods ID="5558" tName="getTime">
+    <signatures ID="5556">
+      <paramList ID="5555"/>
+      <definitions ID="5557" definedBy="//@ownedTypes.40"/>
+    </signatures>
+  </methods>
+  <methods ID="5563" tName="equals">
+    <signatures ID="5561">
+      <paramList ID="5560">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5562" definedBy="//@ownedTypes.41"/>
+    </signatures>
+  </methods>
+  <methods ID="5570" tName="equals">
+    <signatures ID="5568">
+      <paramList ID="5567">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5569" definedBy="//@ownedTypes.11"/>
+    </signatures>
+  </methods>
+  <methods ID="5575" tName="printStackTrace">
+    <signatures ID="5573">
+      <paramList ID="5572"/>
+      <definitions ID="5574" definedBy="//@ownedTypes.43"/>
+    </signatures>
+  </methods>
+  <methods ID="5579" tName="getName">
+    <signatures ID="5577">
+      <paramList ID="5576"/>
+      <definitions ID="5578" definedBy="//@ownedTypes.31"/>
+    </signatures>
+  </methods>
+  <methods ID="5587" tName="write">
+    <signatures ID="5585">
+      <paramList ID="5584">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries/>
+      </paramList>
+      <definitions ID="5586" definedBy="//@ownedTypes.47"/>
+    </signatures>
+  </methods>
+  <methods ID="5597" tName="read">
+    <signatures ID="5595">
+      <paramList ID="5594">
+        <entries/>
+      </paramList>
+      <definitions ID="5596" definedBy="//@ownedTypes.46"/>
+    </signatures>
+  </methods>
+  <methods ID="5602" tName="println">
+    <signatures ID="5600">
+      <paramList ID="5599">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5601" definedBy="//@ownedTypes.53"/>
+    </signatures>
+  </methods>
+  <methods ID="5607" tName="toByteArray">
+    <signatures ID="5605">
+      <paramList ID="5604"/>
+      <definitions ID="5606" definedBy="//@ownedTypes.45"/>
+    </signatures>
+  </methods>
+  <methods ID="5613" tName="put">
+    <signatures ID="5611">
+      <paramList ID="5610">
+        <entries type="//@ownedTypes.11"/>
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5612" definedBy="//@ownedTypes.57"/>
+    </signatures>
+  </methods>
+  <methods ID="5617" tName="get">
+    <signatures ID="5615">
+      <paramList ID="5614">
+        <entries type="//@ownedTypes.11"/>
+      </paramList>
+      <definitions ID="5616" definedBy="//@ownedTypes.57"/>
+    </signatures>
+  </methods>
+  <methods ID="5630" tName="getPoint">
+    <signatures ID="5628">
+      <paramList ID="5627"/>
+      <definitions ID="5629" definedBy="//@ownedTypes.64"/>
+    </signatures>
+  </methods>
+  <methods ID="5636" tName="addItemListener">
+    <signatures ID="5634">
+      <paramList ID="5633">
+        <entries type="//@ownedTypes.109"/>
+      </paramList>
+      <definitions ID="5635" definedBy="//@ownedTypes.67"/>
+    </signatures>
+  </methods>
+  <methods ID="5640" tName="setState">
+    <signatures ID="5638">
+      <paramList ID="5637">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5639" definedBy="//@ownedTypes.67"/>
+    </signatures>
+  </methods>
+  <methods ID="5652" tName="setFont">
+    <signatures ID="5650">
+      <paramList ID="5649">
+        <entries type="//@ownedTypes.63"/>
+      </paramList>
+      <definitions ID="5651" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5656" tName="addMouseMotionListener">
+    <signatures ID="5654">
+      <paramList ID="5653">
+        <entries type="//@ownedTypes.91"/>
+      </paramList>
+      <definitions ID="5655" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5660" tName="setLocation">
+    <signatures ID="5658">
+      <paramList ID="5657">
+        <entries type="//@ownedTypes.115"/>
+      </paramList>
+      <definitions ID="5659" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5664" tName="createImage">
+    <signatures ID="5662">
+      <paramList ID="5661">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5663" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5668" tName="setBackground">
+    <signatures ID="5666">
+      <paramList ID="5665">
+        <entries type="//@ownedTypes.62"/>
+      </paramList>
+      <definitions ID="5667" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5672" tName="getLocation">
+    <signatures ID="5670">
+      <paramList ID="5669"/>
+      <definitions ID="5671" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5678" tName="setForeground">
+    <signatures ID="5676">
+      <paramList ID="5675">
+        <entries type="//@ownedTypes.62"/>
+      </paramList>
+      <definitions ID="5677" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5685" tName="setLabel">
+    <signatures ID="5683">
+      <paramList ID="5682">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5684" definedBy="//@ownedTypes.61"/>
+    </signatures>
+  </methods>
+  <methods ID="5692" tName="repaint">
+    <signatures ID="5690">
+      <paramList ID="5689"/>
+      <definitions ID="5691" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5697" tName="add">
+    <signatures ID="5695">
+      <paramList ID="5694">
+        <entries type="//@ownedTypes.74"/>
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5696" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5701" tName="getComponents">
+    <signatures ID="5699">
+      <paramList ID="5698"/>
+      <definitions ID="5700" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5705" tName="getInsets">
+    <signatures ID="5703">
+      <paramList ID="5702"/>
+      <definitions ID="5704" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5709" tName="getPreferredSize">
+    <signatures ID="5707">
+      <paramList ID="5706"/>
+      <definitions ID="5708" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5713" tName="add">
+    <signatures ID="5711">
+      <paramList ID="5710">
+        <entries type="//@ownedTypes.74"/>
+      </paramList>
+      <definitions ID="5712" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5717" tName="setLayout">
+    <signatures ID="5715">
+      <paramList ID="5714">
+        <entries type="//@ownedTypes.81"/>
+      </paramList>
+      <definitions ID="5716" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5721" tName="add">
+    <signatures ID="5719">
+      <paramList ID="5718">
+        <entries type="//@ownedTypes.11"/>
+        <entries type="//@ownedTypes.74"/>
+      </paramList>
+      <definitions ID="5720" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5725" tName="paint">
+    <signatures ID="5723">
+      <paramList ID="5722">
+        <entries type="//@ownedTypes.108"/>
+      </paramList>
+      <definitions ID="5724" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5730" tName="setEnabled">
+    <signatures ID="5728">
+      <paramList ID="5727">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5729" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5736" tName="setBounds">
+    <signatures ID="5734">
+      <paramList ID="5733">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5735" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5740" tName="setLocale">
+    <signatures ID="5738">
+      <paramList ID="5737">
+        <entries type="//@ownedTypes.41"/>
+      </paramList>
+      <definitions ID="5739" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5745" tName="isShiftDown">
+    <signatures ID="5743">
+      <paramList ID="5742"/>
+      <definitions ID="5744" definedBy="//@ownedTypes.86"/>
+    </signatures>
+  </methods>
+  <methods ID="5749" tName="isMetaDown">
+    <signatures ID="5747">
+      <paramList ID="5746"/>
+      <definitions ID="5748" definedBy="//@ownedTypes.86"/>
+    </signatures>
+  </methods>
+  <methods ID="5753" tName="isControlDown">
+    <signatures ID="5751">
+      <paramList ID="5750"/>
+      <definitions ID="5752" definedBy="//@ownedTypes.86"/>
+    </signatures>
+  </methods>
+  <methods ID="5757" tName="addActionListener">
+    <signatures ID="5755">
+      <paramList ID="5754">
+        <entries type="//@ownedTypes.69"/>
+      </paramList>
+      <definitions ID="5756" definedBy="//@ownedTypes.61"/>
+    </signatures>
+  </methods>
+  <methods ID="5763" tName="append">
+    <signatures ID="5761">
+      <paramList ID="5760">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5762" definedBy="//@ownedTypes.13"/>
+    </signatures>
+  </methods>
+  <methods ID="5770" tName="contains">
+    <signatures ID="5768">
+      <paramList ID="5767">
+        <entries type="//@ownedTypes.115"/>
+      </paramList>
+      <definitions ID="5769" definedBy="//@ownedTypes.89"/>
+    </signatures>
+  </methods>
+  <methods ID="5781" tName="getHeight">
+    <signatures ID="5779">
+      <paramList ID="5778">
+        <entries type="//@ownedTypes.90"/>
+      </paramList>
+      <definitions ID="5780" definedBy="//@ownedTypes.96"/>
+    </signatures>
+  </methods>
+  <methods ID="5785" tName="getWidth">
+    <signatures ID="5783">
+      <paramList ID="5782">
+        <entries type="//@ownedTypes.90"/>
+      </paramList>
+      <definitions ID="5784" definedBy="//@ownedTypes.96"/>
+    </signatures>
+  </methods>
+  <methods ID="5791" tName="getLocale">
+    <signatures ID="5789">
+      <paramList ID="5788"/>
+      <definitions ID="5790" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5795" tName="addWindowListener">
+    <signatures ID="5793">
+      <paramList ID="5792">
+        <entries type="//@ownedTypes.94"/>
+      </paramList>
+      <definitions ID="5794" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5799" tName="getToolkit">
+    <signatures ID="5797">
+      <paramList ID="5796"/>
+      <definitions ID="5798" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5803" tName="setSize">
+    <signatures ID="5801">
+      <paramList ID="5800">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5802" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5807" tName="pack">
+    <signatures ID="5805">
+      <paramList ID="5804"/>
+      <definitions ID="5806" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5811" tName="setVisible">
+    <signatures ID="5809">
+      <paramList ID="5808">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5810" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5816" tName="setResizable">
+    <signatures ID="5814">
+      <paramList ID="5813">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5815" definedBy="//@ownedTypes.99"/>
+    </signatures>
+  </methods>
+  <methods ID="5820" tName="setVisible">
+    <signatures ID="5818">
+      <paramList ID="5817">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5819" definedBy="//@ownedTypes.99"/>
+    </signatures>
+  </methods>
+  <methods ID="5824" tName="dispose">
+    <signatures ID="5822">
+      <paramList ID="5821"/>
+      <definitions ID="5823" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5828" tName="setLocation">
+    <signatures ID="5826">
+      <paramList ID="5825">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5827" definedBy="//@ownedTypes.98"/>
+    </signatures>
+  </methods>
+  <methods ID="5839" tName="setBackground">
+    <signatures ID="5837">
+      <paramList ID="5836">
+        <entries type="//@ownedTypes.62"/>
+      </paramList>
+      <definitions ID="5838" definedBy="//@ownedTypes.103"/>
+    </signatures>
+  </methods>
+  <methods ID="5843" tName="setResizable">
+    <signatures ID="5841">
+      <paramList ID="5840">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5842" definedBy="//@ownedTypes.103"/>
+    </signatures>
+  </methods>
+  <methods ID="5847" tName="setMenuBar">
+    <signatures ID="5845">
+      <paramList ID="5844">
+        <entries type="//@ownedTypes.112"/>
+      </paramList>
+      <definitions ID="5846" definedBy="//@ownedTypes.103"/>
+    </signatures>
+  </methods>
+  <methods ID="5851" tName="waitForID">
+    <signatures ID="5849">
+      <paramList ID="5848">
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5850" definedBy="//@ownedTypes.102"/>
+    </signatures>
+  </methods>
+  <methods ID="5855" tName="getFontMetrics">
+    <signatures ID="5853">
+      <paramList ID="5852">
+        <entries type="//@ownedTypes.63"/>
+      </paramList>
+      <definitions ID="5854" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5859" tName="getSize">
+    <signatures ID="5857">
+      <paramList ID="5856"/>
+      <definitions ID="5858" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5863" tName="setTitle">
+    <signatures ID="5861">
+      <paramList ID="5860">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5862" definedBy="//@ownedTypes.103"/>
+    </signatures>
+  </methods>
+  <methods ID="5868" tName="createImage">
+    <signatures ID="5866">
+      <paramList ID="5865">
+        <entries type="//@ownedTypes.116"/>
+      </paramList>
+      <definitions ID="5867" definedBy="//@ownedTypes.104"/>
+    </signatures>
+  </methods>
+  <methods ID="5872" tName="getDefaultToolkit">
+    <signatures ID="5870">
+      <paramList ID="5869"/>
+      <definitions ID="5871" definedBy="//@ownedTypes.104"/>
+    </signatures>
+  </methods>
+  <methods ID="5880" tName="setText">
+    <signatures ID="5878">
+      <paramList ID="5877">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5879" definedBy="//@ownedTypes.106"/>
+    </signatures>
+  </methods>
+  <methods ID="5884" tName="setFont">
+    <signatures ID="5882">
+      <paramList ID="5881">
+        <entries type="//@ownedTypes.63"/>
+      </paramList>
+      <definitions ID="5883" definedBy="//@ownedTypes.82"/>
+    </signatures>
+  </methods>
+  <methods ID="5890" tName="setAlignment">
+    <signatures ID="5888">
+      <paramList ID="5887">
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5889" definedBy="//@ownedTypes.106"/>
+    </signatures>
+  </methods>
+  <methods ID="5895" tName="drawLine">
+    <signatures ID="5893">
+      <paramList ID="5892">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5894" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5899" tName="setColor">
+    <signatures ID="5897">
+      <paramList ID="5896">
+        <entries type="//@ownedTypes.62"/>
+      </paramList>
+      <definitions ID="5898" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5903" tName="drawImage">
+    <signatures ID="5901">
+      <paramList ID="5900">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.96"/>
+        <entries type="//@ownedTypes.90"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5902" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5907" tName="drawRect">
+    <signatures ID="5905">
+      <paramList ID="5904">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5906" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5911" tName="dispose">
+    <signatures ID="5909">
+      <paramList ID="5908"/>
+      <definitions ID="5910" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5916" tName="addMouseListener">
+    <signatures ID="5914">
+      <paramList ID="5913">
+        <entries type="//@ownedTypes.66"/>
+      </paramList>
+      <definitions ID="5915" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5921" tName="getScreenSize">
+    <signatures ID="5919">
+      <paramList ID="5918"/>
+      <definitions ID="5920" definedBy="//@ownedTypes.104"/>
+    </signatures>
+  </methods>
+  <methods ID="5926" tName="setBackground">
+    <signatures ID="5924">
+      <paramList ID="5923">
+        <entries type="//@ownedTypes.62"/>
+      </paramList>
+      <definitions ID="5925" definedBy="//@ownedTypes.99"/>
+    </signatures>
+  </methods>
+  <methods ID="5930" tName="prepareImage">
+    <signatures ID="5928">
+      <paramList ID="5927">
+        <entries type="//@ownedTypes.96"/>
+        <entries type="//@ownedTypes.90"/>
+      </paramList>
+      <definitions ID="5929" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5935" tName="drawString">
+    <signatures ID="5933">
+      <paramList ID="5932">
+        <entries type="//@ownedTypes.12"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5934" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5940" tName="add">
+    <signatures ID="5938">
+      <paramList ID="5937">
+        <entries type="//@ownedTypes.68"/>
+      </paramList>
+      <definitions ID="5939" definedBy="//@ownedTypes.112"/>
+    </signatures>
+  </methods>
+  <methods ID="5945" tName="add">
+    <signatures ID="5943">
+      <paramList ID="5942">
+        <entries type="//@ownedTypes.61"/>
+      </paramList>
+      <definitions ID="5944" definedBy="//@ownedTypes.68"/>
+    </signatures>
+  </methods>
+  <methods ID="5951" tName="getFont">
+    <signatures ID="5949">
+      <paramList ID="5948"/>
+      <definitions ID="5950" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5955" tName="append">
+    <signatures ID="5953">
+      <paramList ID="5952">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5954" definedBy="//@ownedTypes.83"/>
+    </signatures>
+  </methods>
+  <methods ID="5960" tName="isVisible">
+    <signatures ID="5958">
+      <paramList ID="5957"/>
+      <definitions ID="5959" definedBy="//@ownedTypes.74"/>
+    </signatures>
+  </methods>
+  <methods ID="5967" tName="translate">
+    <signatures ID="5965">
+      <paramList ID="5964">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5966" definedBy="//@ownedTypes.115"/>
+    </signatures>
+  </methods>
+  <methods ID="5973" tName="addImage">
+    <signatures ID="5971">
+      <paramList ID="5970">
+        <entries type="//@ownedTypes.96"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5972" definedBy="//@ownedTypes.102"/>
+    </signatures>
+  </methods>
+  <methods ID="5978" tName="fillRect">
+    <signatures ID="5976">
+      <paramList ID="5975">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.4"/>
+      </paramList>
+      <definitions ID="5977" definedBy="//@ownedTypes.108"/>
+    </signatures>
+  </methods>
+  <methods ID="5982" tName="setText">
+    <signatures ID="5980">
+      <paramList ID="5979">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5981" definedBy="//@ownedTypes.110"/>
+    </signatures>
+  </methods>
+  <methods ID="5986" tName="setTitle">
+    <signatures ID="5984">
+      <paramList ID="5983">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="5985" definedBy="//@ownedTypes.99"/>
+    </signatures>
+  </methods>
+  <methods ID="5990" tName="getGraphics">
+    <signatures ID="5988">
+      <paramList ID="5987"/>
+      <definitions ID="5989" definedBy="//@ownedTypes.96"/>
+    </signatures>
+  </methods>
+  <methods ID="5994" tName="createImage">
+    <signatures ID="5992">
+      <paramList ID="5991">
+        <entries/>
+      </paramList>
+      <definitions ID="5993" definedBy="//@ownedTypes.104"/>
+    </signatures>
+  </methods>
+  <methods ID="5998" tName="setEditable">
+    <signatures ID="5996">
+      <paramList ID="5995">
+        <entries type="//@ownedTypes.5"/>
+      </paramList>
+      <definitions ID="5997" definedBy="//@ownedTypes.110"/>
+    </signatures>
+  </methods>
+  <methods ID="6005" tName="getDateInstance">
+    <signatures ID="6003">
+      <paramList ID="6002">
+        <entries type="//@ownedTypes.4"/>
+        <entries type="//@ownedTypes.41"/>
+      </paramList>
+      <definitions ID="6004" definedBy="//@ownedTypes.119"/>
+    </signatures>
+  </methods>
+  <methods ID="6010" tName="format">
+    <signatures ID="6008">
+      <paramList ID="6007">
+        <entries type="//@ownedTypes.56"/>
+      </paramList>
+      <definitions ID="6009" definedBy="//@ownedTypes.119"/>
+    </signatures>
+  </methods>
+  <methods ID="6015" tName="getHeight">
+    <signatures ID="6013">
+      <paramList ID="6012"/>
+      <definitions ID="6014" definedBy="//@ownedTypes.120"/>
+    </signatures>
+  </methods>
+  <methods ID="6019" tName="stringWidth">
+    <signatures ID="6017">
+      <paramList ID="6016">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="6018" definedBy="//@ownedTypes.120"/>
+    </signatures>
+  </methods>
+  <methods ID="6023" tName="addNotify">
+    <signatures ID="6021">
+      <paramList ID="6020"/>
+      <definitions ID="6022" definedBy="//@ownedTypes.103"/>
+    </signatures>
+  </methods>
+  <fields ID="5492" tName="err"/>
+  <fields ID="5507" tName="out"/>
+  <fields ID="5564" tName="FRENCH"/>
+  <fields ID="5565" tName="ENGLISH"/>
+  <fields ID="5623" tName="blue"/>
+  <fields ID="5647" tName="width"/>
+  <fields ID="5688" tName="white"/>
+  <fields ID="5764" tName="SCROLLBARS_VERTICAL_ONLY"/>
+  <fields ID="5765" tName="CENTER"/>
+  <fields ID="5830" tName="right"/>
+  <fields ID="5831" tName="bottom"/>
+  <fields ID="5832" tName="top"/>
+  <fields ID="5873" tName="SOUTH"/>
+  <fields ID="5876" tName="RIGHT"/>
+  <fields ID="5885" tName="CENTER"/>
+  <fields ID="5922" tName="height"/>
+  <fields ID="5941" tName="red"/>
+  <fields ID="5947" tName="darkGray"/>
+  <fields ID="5961" tName="black"/>
+  <fields ID="5963" tName="y"/>
+  <fields ID="5968" tName="x"/>
+  <fields ID="5999" tName="left"/>
+  <fields ID="6006" tName="LONG"/>
+  <fields ID="6024" tName="PLAIN"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5429" package="//@packages.1/@subpackage.1" tLib="true" tName="Exception" parentClass="//@ownedTypes.43" childClasses="//@ownedTypes.35 //@ownedTypes.48"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5430" package="//@packages.1/@subpackage.1" tLib="true" tName="Iterable" childInterfaces="//@ownedTypes.20"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5431" package="//@packages.1/@subpackage.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tLib="true" tName="Integer" parentClass="//@ownedTypes.15" implements="//@ownedTypes.36"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5436" package="//@packages.1/@subpackage.1" tLib="true" tName="Appendable" implementedBy="//@ownedTypes.33 //@ownedTypes.53"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5437" package="//@packages.1/@subpackage.1" signature="//@methods.1/@signatures.0 //@methods.7/@signatures.0 //@methods.25/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.7/@signatures.0/@definitions.0 //@methods.25/@signatures.0/@definitions.0" tLib="true" tName="Object"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5442" package="//@packages.1/@subpackage.1" signature="//@methods.12/@signatures.0 //@methods.18/@signatures.0" defines="//@methods.12/@signatures.0/@definitions.0 //@methods.18/@signatures.0/@definitions.0" tLib="true" tName="String" implements="//@ownedTypes.30 //@ownedTypes.36 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5443" package="//@packages.1/@subpackage.1" signature="//@methods.2/@signatures.0 //@methods.61/@signatures.0" defines="//@methods.2/@signatures.0/@definitions.0 //@methods.61/@signatures.0/@definitions.0" tLib="true" tName="StringBuffer" parentClass="//@ownedTypes.33" implements="//@ownedTypes.30 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5448" package="//@packages.1/@subpackage.1" signature="//@methods.3/@signatures.0" defines="//@methods.3/@signatures.0/@definitions.0" tLib="true" tName="Math"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5453" package="//@packages.1/@subpackage.1" tLib="true" tName="Number" childClasses="//@ownedTypes.9" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5454" package="//@packages.1/@subpackage.2" tLib="true" tName="Map" implementedBy="//@ownedTypes.57"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5455" package="//@packages.1/@subpackage.2" tLib="true" tName="EventListener" childInterfaces="//@ownedTypes.69 //@ownedTypes.70 //@ownedTypes.66 //@ownedTypes.91 //@ownedTypes.94 //@ownedTypes.85 //@ownedTypes.109 //@ownedTypes.59"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5456" package="//@packages.1/@subpackage.2" signature="//@methods.4/@signatures.0 //@methods.13/@signatures.0" defines="//@methods.4/@signatures.0/@definitions.0 //@methods.13/@signatures.0/@definitions.0" tLib="true" tName="Enumeration"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5457" package="//@packages.1/@subpackage.2" tLib="true" tName="Collection" implementedBy="//@ownedTypes.27" parentInterfaces="//@ownedTypes.8" childInterfaces="//@ownedTypes.21"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5458" package="//@packages.1/@subpackage.2" tLib="true" tName="List" implementedBy="//@ownedTypes.26 //@ownedTypes.25" parentInterfaces="//@ownedTypes.20"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5459" package="//@packages.1/@subpackage.2" signature="//@methods.10/@signatures.0 //@methods.20/@signatures.0" defines="//@methods.10/@signatures.0/@definitions.0 //@methods.20/@signatures.0/@definitions.0" tLib="true" tName="ResourceBundle"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5464" package="//@packages.1/@subpackage.2" tLib="true" tName="RandomAccess" implementedBy="//@ownedTypes.25"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5465" package="//@packages.1/@subpackage.2" tLib="true" tName="Dictionary" childClasses="//@ownedTypes.57"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5466" package="//@packages.1/@subpackage.2" signature="//@methods.5/@signatures.0 //@methods.6/@signatures.0 //@methods.8/@signatures.0 //@methods.11/@signatures.0 //@methods.14/@signatures.0 //@methods.15/@signatures.0 //@methods.16/@signatures.0 //@methods.19/@signatures.0" defines="//@methods.5/@signatures.0/@definitions.0 //@methods.6/@signatures.0/@definitions.0 //@methods.8/@signatures.0/@definitions.0 //@methods.11/@signatures.0/@definitions.0 //@methods.14/@signatures.0/@definitions.0 //@methods.15/@signatures.0/@definitions.0 //@methods.16/@signatures.0/@definitions.0 //@methods.19/@signatures.0/@definitions.0" tLib="true" tName="Vector" parentClass="//@ownedTypes.26" implements="//@ownedTypes.23 //@ownedTypes.42 //@ownedTypes.51 //@ownedTypes.21"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5475" package="//@packages.1/@subpackage.2" tLib="true" tName="AbstractList" parentClass="//@ownedTypes.27" childClasses="//@ownedTypes.25" implements="//@ownedTypes.21"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5476" package="//@packages.1/@subpackage.2" tLib="true" tName="AbstractCollection" childClasses="//@ownedTypes.26" implements="//@ownedTypes.20"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5485" package="//@packages.1/@subpackage.1" signature="//@methods.9/@signatures.0" defines="//@methods.9/@signatures.0/@definitions.0" tLib="true" tName="System"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5490" package="//@packages.1/@subpackage.1" tLib="true" tName="AutoCloseable" childInterfaces="//@ownedTypes.52"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5491" package="//@packages.1/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.33"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5493" package="//@packages.1/@subpackage.1" signature="//@methods.17/@signatures.0 //@methods.27/@signatures.0" defines="//@methods.17/@signatures.0/@definitions.0 //@methods.27/@signatures.0/@definitions.0" tLib="true" tName="Class" implements="//@ownedTypes.37 //@ownedTypes.38 //@ownedTypes.39 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5502" package="//@packages.1/@subpackage.1" tLib="true" tName="AbstractStringBuilder" childClasses="//@ownedTypes.13" implements="//@ownedTypes.30 //@ownedTypes.10"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5520" package="//@packages.1/@subpackage.2" tLib="true" tName="EventObject" childClasses="//@ownedTypes.97" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5525" package="//@packages.1/@subpackage.1" tLib="true" tName="InterruptedException" parentClass="//@ownedTypes.7"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5534" package="//@packages.1/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.12 //@ownedTypes.9 //@ownedTypes.40 //@ownedTypes.56"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5535" package="//@packages.1/@subpackage.1/@subpackage.0" tLib="true" tName="GenericDeclaration" implementedBy="//@ownedTypes.31" parentInterfaces="//@ownedTypes.38"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5536" package="//@packages.1/@subpackage.1/@subpackage.0" tLib="true" tName="AnnotatedElement" implementedBy="//@ownedTypes.31" childInterfaces="//@ownedTypes.37"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5537" package="//@packages.1/@subpackage.1/@subpackage.0" tLib="true" tName="Type" implementedBy="//@ownedTypes.31"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5546" package="//@packages.1/@subpackage.2" signature="//@methods.21/@signatures.0 //@methods.22/@signatures.0 //@methods.23/@signatures.0" defines="//@methods.21/@signatures.0/@definitions.0 //@methods.22/@signatures.0/@definitions.0 //@methods.23/@signatures.0/@definitions.0" tLib="true" tName="Calendar" implements="//@ownedTypes.36 //@ownedTypes.42 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5559" package="//@packages.1/@subpackage.2" signature="//@methods.24/@signatures.0" defines="//@methods.24/@signatures.0/@definitions.0" tLib="true" tName="Locale" implements="//@ownedTypes.42 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5566" package="//@packages.1/@subpackage.1" tLib="true" tName="Cloneable" implementedBy="//@ownedTypes.40 //@ownedTypes.41 //@ownedTypes.25 //@ownedTypes.56 //@ownedTypes.57 //@ownedTypes.78 //@ownedTypes.100 //@ownedTypes.111 //@ownedTypes.113 //@ownedTypes.118"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5571" package="//@packages.1/@subpackage.1" signature="//@methods.26/@signatures.0" defines="//@methods.26/@signatures.0/@definitions.0" tLib="true" tName="Throwable" childClasses="//@ownedTypes.7" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5580" package="//@packages.0/@subpackage.0" tLib="true" tName="Accessible" implementedBy="//@ownedTypes.65 //@ownedTypes.67 //@ownedTypes.84 //@ownedTypes.106 //@ownedTypes.61 //@ownedTypes.110 //@ownedTypes.68 //@ownedTypes.112 //@ownedTypes.114 //@ownedTypes.98"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5581" package="//@packages.1/@subpackage.4" signature="//@methods.31/@signatures.0" defines="//@methods.31/@signatures.0/@definitions.0" tLib="true" tName="ByteArrayOutputStream" parentClass="//@ownedTypes.47"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5582" package="//@packages.1/@subpackage.4" signature="//@methods.29/@signatures.0" defines="//@methods.29/@signatures.0/@definitions.0" tLib="true" tName="InputStream" childClasses="//@ownedTypes.55" implements="//@ownedTypes.52"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5583" package="//@packages.1/@subpackage.4" signature="//@methods.28/@signatures.0" defines="//@methods.28/@signatures.0/@definitions.0" tLib="true" tName="OutputStream" childClasses="//@ownedTypes.45 //@ownedTypes.50" implements="//@ownedTypes.52 //@ownedTypes.54"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5588" package="//@packages.1/@subpackage.4" tLib="true" tName="IOException" parentClass="//@ownedTypes.7"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5589" package="//@packages.1/@subpackage.4" tLib="true" tName="BufferedInputStream" parentClass="//@ownedTypes.55"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5590" package="//@packages.1/@subpackage.4" tLib="true" tName="FilterOutputStream" parentClass="//@ownedTypes.47" childClasses="//@ownedTypes.53"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5591" package="//@packages.1/@subpackage.4" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.15 //@ownedTypes.25 //@ownedTypes.34 //@ownedTypes.12 //@ownedTypes.40 //@ownedTypes.13 //@ownedTypes.41 //@ownedTypes.56 //@ownedTypes.57 //@ownedTypes.62 //@ownedTypes.71 //@ownedTypes.74 //@ownedTypes.63 //@ownedTypes.80 //@ownedTypes.79 //@ownedTypes.43 //@ownedTypes.92 //@ownedTypes.102 //@ownedTypes.100 //@ownedTypes.115 //@ownedTypes.89 //@ownedTypes.118 //@ownedTypes.120 //@ownedTypes.31"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5592" package="//@packages.1/@subpackage.4" tLib="true" tName="Closeable" implementedBy="//@ownedTypes.46 //@ownedTypes.47 //@ownedTypes.53" parentInterfaces="//@ownedTypes.29"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5593" package="//@packages.1/@subpackage.4" signature="//@methods.30/@signatures.0" defines="//@methods.30/@signatures.0/@definitions.0" tLib="true" tName="PrintStream" parentClass="//@ownedTypes.50" implements="//@ownedTypes.10 //@ownedTypes.52"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5598" package="//@packages.1/@subpackage.4" tLib="true" tName="Flushable" implementedBy="//@ownedTypes.47"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5603" package="//@packages.1/@subpackage.4" tLib="true" tName="FilterInputStream" parentClass="//@ownedTypes.46" childClasses="//@ownedTypes.49"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5608" package="//@packages.1/@subpackage.2" tLib="true" tName="Date" implements="//@ownedTypes.51 //@ownedTypes.42 //@ownedTypes.36"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5609" package="//@packages.1/@subpackage.2" signature="//@methods.32/@signatures.0 //@methods.33/@signatures.0" defines="//@methods.32/@signatures.0/@definitions.0 //@methods.33/@signatures.0/@definitions.0" tLib="true" tName="Hashtable" parentClass="//@ownedTypes.24" implements="//@ownedTypes.51 //@ownedTypes.42 //@ownedTypes.17"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5618" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="WindowEvent" parentClass="//@ownedTypes.60"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5619" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="WindowFocusListener" implementedBy="//@ownedTypes.95" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5620" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="ComponentEvent" parentClass="//@ownedTypes.97" childClasses="//@ownedTypes.58 //@ownedTypes.86"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5621" package="//@packages.1/@subpackage.5" signature="//@methods.44/@signatures.0 //@methods.60/@signatures.0" defines="//@methods.44/@signatures.0/@definitions.0 //@methods.60/@signatures.0/@definitions.0" tLib="true" tName="MenuItem" parentClass="//@ownedTypes.92" childClasses="//@ownedTypes.68 //@ownedTypes.67" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5622" package="//@packages.1/@subpackage.5" tLib="true" tName="Color" implements="//@ownedTypes.51 //@ownedTypes.72"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5624" package="//@packages.1/@subpackage.5" tLib="true" tName="Font" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5625" package="//@packages.1/@subpackage.5/@subpackage.0" signature="//@methods.34/@signatures.0" defines="//@methods.34/@signatures.0/@definitions.0" tLib="true" tName="MouseEvent" parentClass="//@ownedTypes.86"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5626" package="//@packages.1/@subpackage.5" tLib="true" tName="Button" parentClass="//@ownedTypes.74" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5631" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="MouseListener" implementedBy="//@ownedTypes.73" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5632" package="//@packages.1/@subpackage.5" signature="//@methods.35/@signatures.0 //@methods.36/@signatures.0" defines="//@methods.35/@signatures.0/@definitions.0 //@methods.36/@signatures.0/@definitions.0" tLib="true" tName="CheckboxMenuItem" parentClass="//@ownedTypes.61" implements="//@ownedTypes.44 //@ownedTypes.75"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5641" package="//@packages.1/@subpackage.5" signature="//@methods.98/@signatures.0" defines="//@methods.98/@signatures.0/@definitions.0" tLib="true" tName="Menu" parentClass="//@ownedTypes.61" implements="//@ownedTypes.107 //@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5642" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="ActionListener" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5643" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="MouseWheelListener" implementedBy="//@ownedTypes.73" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5644" package="//@packages.1/@subpackage.5" tLib="true" tName="Dimension" parentClass="//@ownedTypes.111" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5645" package="//@packages.1/@subpackage.5" tLib="true" tName="Paint" implementedBy="//@ownedTypes.62" parentInterfaces="//@ownedTypes.105"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5646" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="MouseAdapter" implements="//@ownedTypes.91 //@ownedTypes.70 //@ownedTypes.66"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5648" package="//@packages.1/@subpackage.5" signature="//@methods.37/@signatures.0 //@methods.38/@signatures.0 //@methods.39/@signatures.0 //@methods.40/@signatures.0 //@methods.41/@signatures.0 //@methods.42/@signatures.0 //@methods.43/@signatures.0 //@methods.45/@signatures.0 //@methods.54/@signatures.0 //@methods.55/@signatures.0 //@methods.56/@signatures.0 //@methods.79/@signatures.0 //@methods.80/@signatures.0 //@methods.92/@signatures.0 //@methods.95/@signatures.0 //@methods.99/@signatures.0 //@methods.101/@signatures.0" defines="//@methods.37/@signatures.0/@definitions.0 //@methods.38/@signatures.0/@definitions.0 //@methods.39/@signatures.0/@definitions.0 //@methods.40/@signatures.0/@definitions.0 //@methods.41/@signatures.0/@definitions.0 //@methods.42/@signatures.0/@definitions.0 //@methods.43/@signatures.0/@definitions.0 //@methods.45/@signatures.0/@definitions.0 //@methods.54/@signatures.0/@definitions.0 //@methods.55/@signatures.0/@definitions.0 //@methods.56/@signatures.0/@definitions.0 //@methods.79/@signatures.0/@definitions.0 //@methods.80/@signatures.0/@definitions.0 //@methods.92/@signatures.0/@definitions.0 //@methods.95/@signatures.0/@definitions.0 //@methods.99/@signatures.0/@definitions.0 //@methods.101/@signatures.0/@definitions.0" tLib="true" tName="Component" childClasses="//@ownedTypes.84 //@ownedTypes.82 //@ownedTypes.106 //@ownedTypes.110 //@ownedTypes.65" implements="//@ownedTypes.51 //@ownedTypes.90 //@ownedTypes.107"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5673" package="//@packages.1/@subpackage.5" tLib="true" tName="ItemSelectable" implementedBy="//@ownedTypes.67"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5674" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="ActionEvent" parentClass="//@ownedTypes.97"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5679" package="//@packages.1/@subpackage.5/@subpackage.2" tLib="true" tName="Rectangle2D" parentClass="//@ownedTypes.78" childClasses="//@ownedTypes.89"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5680" package="//@packages.1/@subpackage.5/@subpackage.2" tLib="true" tName="RectangularShape" childClasses="//@ownedTypes.77" implements="//@ownedTypes.42 //@ownedTypes.93"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5681" package="//@packages.1/@subpackage.5" tLib="true" tName="BorderLayout" implements="//@ownedTypes.51 //@ownedTypes.117"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5686" package="//@packages.1/@subpackage.5" tLib="true" tName="GridLayout" implements="//@ownedTypes.51 //@ownedTypes.81"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5687" package="//@packages.1/@subpackage.5" tLib="true" tName="LayoutManager" implementedBy="//@ownedTypes.80" childInterfaces="//@ownedTypes.117"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5693" package="//@packages.1/@subpackage.5" signature="//@methods.46/@signatures.0 //@methods.47/@signatures.0 //@methods.48/@signatures.0 //@methods.49/@signatures.0 //@methods.50/@signatures.0 //@methods.51/@signatures.0 //@methods.52/@signatures.0 //@methods.53/@signatures.0 //@methods.85/@signatures.0" defines="//@methods.46/@signatures.0/@definitions.0 //@methods.47/@signatures.0/@definitions.0 //@methods.48/@signatures.0/@definitions.0 //@methods.49/@signatures.0/@definitions.0 //@methods.50/@signatures.0/@definitions.0 //@methods.51/@signatures.0/@definitions.0 //@methods.52/@signatures.0/@definitions.0 //@methods.53/@signatures.0/@definitions.0 //@methods.85/@signatures.0/@definitions.0" tLib="true" tName="Container" parentClass="//@ownedTypes.74" childClasses="//@ownedTypes.98 //@ownedTypes.114"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5726" package="//@packages.1/@subpackage.5" signature="//@methods.100/@signatures.0" defines="//@methods.100/@signatures.0/@definitions.0" tLib="true" tName="TextArea" parentClass="//@ownedTypes.110"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5731" package="//@packages.1/@subpackage.5" tLib="true" tName="Canvas" parentClass="//@ownedTypes.74" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5732" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="WindowStateListener" implementedBy="//@ownedTypes.95" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5741" package="//@packages.1/@subpackage.5/@subpackage.0" signature="//@methods.57/@signatures.0 //@methods.58/@signatures.0 //@methods.59/@signatures.0" defines="//@methods.57/@signatures.0/@definitions.0 //@methods.58/@signatures.0/@definitions.0 //@methods.59/@signatures.0/@definitions.0" tLib="true" tName="InputEvent" parentClass="//@ownedTypes.60" childClasses="//@ownedTypes.64"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5758" package="//@packages.1/@subpackage.3" tLib="true" tName="Applet" parentClass="//@ownedTypes.114"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5759" package="//@packages.1/@subpackage.5/@subpackage.1" tLib="true" tName="ImageConsumer"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5766" package="//@packages.1/@subpackage.5" signature="//@methods.62/@signatures.0" defines="//@methods.62/@signatures.0/@definitions.0" tLib="true" tName="Rectangle" parentClass="//@ownedTypes.77" implements="//@ownedTypes.93 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5771" package="//@packages.1/@subpackage.5/@subpackage.1" tLib="true" tName="ImageObserver" implementedBy="//@ownedTypes.74"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5772" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="MouseMotionListener" implementedBy="//@ownedTypes.73" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5773" package="//@packages.1/@subpackage.5" tLib="true" tName="MenuComponent" childClasses="//@ownedTypes.61 //@ownedTypes.112" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5774" package="//@packages.1/@subpackage.5" tLib="true" tName="Shape" implementedBy="//@ownedTypes.78 //@ownedTypes.89"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5775" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="WindowListener" implementedBy="//@ownedTypes.95" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5776" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="WindowAdapter" implements="//@ownedTypes.94 //@ownedTypes.85 //@ownedTypes.59"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5777" package="//@packages.1/@subpackage.5" signature="//@methods.63/@signatures.0 //@methods.64/@signatures.0 //@methods.107/@signatures.0" defines="//@methods.63/@signatures.0/@definitions.0 //@methods.64/@signatures.0/@definitions.0 //@methods.107/@signatures.0/@definitions.0" tLib="true" tName="Image"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5786" package="//@packages.1/@subpackage.5" tLib="true" tName="AWTEvent" parentClass="//@ownedTypes.34" childClasses="//@ownedTypes.60 //@ownedTypes.76 //@ownedTypes.101"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5787" package="//@packages.1/@subpackage.5" signature="//@methods.65/@signatures.0 //@methods.66/@signatures.0 //@methods.67/@signatures.0 //@methods.68/@signatures.0 //@methods.69/@signatures.0 //@methods.70/@signatures.0 //@methods.73/@signatures.0 //@methods.74/@signatures.0" defines="//@methods.65/@signatures.0/@definitions.0 //@methods.66/@signatures.0/@definitions.0 //@methods.67/@signatures.0/@definitions.0 //@methods.68/@signatures.0/@definitions.0 //@methods.69/@signatures.0/@definitions.0 //@methods.70/@signatures.0/@definitions.0 //@methods.73/@signatures.0/@definitions.0 //@methods.74/@signatures.0/@definitions.0" tLib="true" tName="Window" parentClass="//@ownedTypes.82" childClasses="//@ownedTypes.103 //@ownedTypes.99" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5812" package="//@packages.1/@subpackage.5" signature="//@methods.71/@signatures.0 //@methods.72/@signatures.0 //@methods.94/@signatures.0 //@methods.106/@signatures.0" defines="//@methods.71/@signatures.0/@definitions.0 //@methods.72/@signatures.0/@definitions.0 //@methods.94/@signatures.0/@definitions.0 //@methods.106/@signatures.0/@definitions.0" tLib="true" tName="Dialog" parentClass="//@ownedTypes.98"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5829" package="//@packages.1/@subpackage.5" tLib="true" tName="Insets" implements="//@ownedTypes.42 //@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5833" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="ItemEvent" parentClass="//@ownedTypes.97"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5834" package="//@packages.1/@subpackage.5" signature="//@methods.78/@signatures.0 //@methods.103/@signatures.0" defines="//@methods.78/@signatures.0/@definitions.0 //@methods.103/@signatures.0/@definitions.0" tLib="true" tName="MediaTracker" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5835" package="//@packages.1/@subpackage.5" signature="//@methods.75/@signatures.0 //@methods.76/@signatures.0 //@methods.77/@signatures.0 //@methods.81/@signatures.0 //@methods.114/@signatures.0" defines="//@methods.75/@signatures.0/@definitions.0 //@methods.76/@signatures.0/@definitions.0 //@methods.77/@signatures.0/@definitions.0 //@methods.81/@signatures.0/@definitions.0 //@methods.114/@signatures.0/@definitions.0" tLib="true" tName="Frame" parentClass="//@ownedTypes.98" implements="//@ownedTypes.107"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5864" package="//@packages.1/@subpackage.5" signature="//@methods.82/@signatures.0 //@methods.83/@signatures.0 //@methods.93/@signatures.0 //@methods.108/@signatures.0" defines="//@methods.82/@signatures.0/@definitions.0 //@methods.83/@signatures.0/@definitions.0 //@methods.93/@signatures.0/@definitions.0 //@methods.108/@signatures.0/@definitions.0" tLib="true" tName="Toolkit"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5874" package="//@packages.1/@subpackage.5" tLib="true" tName="Transparency" childInterfaces="//@ownedTypes.72"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5875" package="//@packages.1/@subpackage.5" signature="//@methods.84/@signatures.0 //@methods.86/@signatures.0" defines="//@methods.84/@signatures.0/@definitions.0 //@methods.86/@signatures.0/@definitions.0" tLib="true" tName="Label" parentClass="//@ownedTypes.74" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5886" package="//@packages.1/@subpackage.5" tLib="true" tName="MenuContainer" implementedBy="//@ownedTypes.103 //@ownedTypes.68 //@ownedTypes.74 //@ownedTypes.112"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5891" package="//@packages.1/@subpackage.5" signature="//@methods.87/@signatures.0 //@methods.88/@signatures.0 //@methods.89/@signatures.0 //@methods.90/@signatures.0 //@methods.91/@signatures.0 //@methods.96/@signatures.0 //@methods.104/@signatures.0" defines="//@methods.87/@signatures.0/@definitions.0 //@methods.88/@signatures.0/@definitions.0 //@methods.89/@signatures.0/@definitions.0 //@methods.90/@signatures.0/@definitions.0 //@methods.91/@signatures.0/@definitions.0 //@methods.96/@signatures.0/@definitions.0 //@methods.104/@signatures.0/@definitions.0" tLib="true" tName="Graphics"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5912" package="//@packages.1/@subpackage.5/@subpackage.0" tLib="true" tName="ItemListener" parentInterfaces="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5917" package="//@packages.1/@subpackage.5" signature="//@methods.105/@signatures.0 //@methods.109/@signatures.0" defines="//@methods.105/@signatures.0/@definitions.0 //@methods.109/@signatures.0/@definitions.0" tLib="true" tName="TextComponent" parentClass="//@ownedTypes.74" childClasses="//@ownedTypes.83" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5931" package="//@packages.1/@subpackage.5/@subpackage.2" tLib="true" tName="Dimension2D" childClasses="//@ownedTypes.71" implements="//@ownedTypes.42"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5936" package="//@packages.1/@subpackage.5" signature="//@methods.97/@signatures.0" defines="//@methods.97/@signatures.0/@definitions.0" tLib="true" tName="MenuBar" parentClass="//@ownedTypes.92" implements="//@ownedTypes.107 //@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5946" package="//@packages.1/@subpackage.5/@subpackage.2" tLib="true" tName="Point2D" childClasses="//@ownedTypes.115" implements="//@ownedTypes.42"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5956" package="//@packages.1/@subpackage.5" tLib="true" tName="Panel" parentClass="//@ownedTypes.82" childClasses="//@ownedTypes.87" implements="//@ownedTypes.44"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="5962" package="//@packages.1/@subpackage.5" signature="//@methods.102/@signatures.0" defines="//@methods.102/@signatures.0/@definitions.0" tLib="true" tName="Point" parentClass="//@ownedTypes.113" implements="//@ownedTypes.51"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5969" package="//@packages.1/@subpackage.5/@subpackage.1" tLib="true" tName="ImageProducer"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5974" package="//@packages.1/@subpackage.5" tLib="true" tName="LayoutManager2" implementedBy="//@ownedTypes.79" parentInterfaces="//@ownedTypes.81"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="6000" package="//@packages.1/@subpackage.6" tLib="true" tName="Format" childClasses="//@ownedTypes.119" implements="//@ownedTypes.51 //@ownedTypes.42"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="6001" package="//@packages.1/@subpackage.6" signature="//@methods.110/@signatures.0 //@methods.111/@signatures.0" defines="//@methods.110/@signatures.0/@definitions.0 //@methods.111/@signatures.0/@definitions.0" tLib="true" tName="DateFormat" parentClass="//@ownedTypes.118"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="6011" package="//@packages.1/@subpackage.5" signature="//@methods.112/@signatures.0 //@methods.113/@signatures.0" defines="//@methods.112/@signatures.0/@definitions.0 //@methods.113/@signatures.0/@definitions.0" tLib="true" tName="FontMetrics" implements="//@ownedTypes.51"/>
+</org.gravity.typegraph.basic:TypeGraph>

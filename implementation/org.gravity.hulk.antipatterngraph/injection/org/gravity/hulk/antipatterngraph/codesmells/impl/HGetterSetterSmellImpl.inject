@@ -1,0 +1,56 @@
+
+import java.util.List;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TParameter;
+import org.gravity.typegraph.basic.TParameterList;
+
+partial class HGetterSetterSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+
+		TMethodDefinition definition = (TMethodDefinition) getTAnnotated();
+		TMethodSignature signature = definition.getSignature();
+		TMethod method = signature.getMethod();
+
+		StringBuilder builder = new StringBuilder(method.getTName());
+		builder.append('(');
+		TParameterList paramlist = signature.getParamList();
+		if (paramlist != null) {
+			List<TParameter> paramlist_entries = paramlist.getEntries();
+			if (paramlist_entries != null && paramlist_entries.size() > 0) {
+				for (TParameter p : paramlist_entries) {
+					TAbstractType tClass = p.getType();
+					if (tClass != null) {
+						builder.append(tClass.getTName());
+						builder.append(", ");
+					}
+				}
+				builder.replace(builder.length() - 2, builder.length(), "):");
+			} else {
+				builder.append("):");
+			}
+		} else {
+			builder.append("):");
+		}
+		TAbstractType return_type = definition.getReturnType();
+		if (return_type != null) {
+			builder.append(return_type.getTName());
+		} else {
+			builder.append("void");
+		}
+		item.setText(builder.toString());
+		return item;
+	}
+	
+-->
+
+}

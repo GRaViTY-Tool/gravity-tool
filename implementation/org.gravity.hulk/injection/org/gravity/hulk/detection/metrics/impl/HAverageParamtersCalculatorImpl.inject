@@ -1,0 +1,29 @@
+
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
+
+partial class HAverageParamtersCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Average amount of parameters in classes";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+		double sum = 0;
+		int amount = 0;
+		for (TSignature sig : tClass.getSignature()) {
+			if (sig instanceof TMethodSignature) {
+				TMethodSignature method_sig = (TMethodSignature) sig;
+				sum += method_sig.getParamList().getEntries().size();
+				amount++;
+			}
+		}
+		return sum / amount;
+-->
+
+}

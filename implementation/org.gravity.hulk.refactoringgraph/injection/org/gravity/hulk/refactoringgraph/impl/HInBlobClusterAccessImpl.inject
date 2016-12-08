@@ -1,0 +1,81 @@
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.typegraph.basic.TAnnotation;
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HInBlobClusterAccessImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		String string = "There ";
+		switch (getRelativeAmount().getValue()) {
+		case HIGH:
+			string += "are many";
+			break;
+		case LOW:
+			string += "are few";
+			break;
+		case MEDIUM:
+			string += "is an average amount of";
+			break;
+		case VERY_HIGH:
+			string += "are very many";
+			break;
+		case VERY_LOW:
+			string += "are very many";
+			break;
+		default:
+			break;
+
+		}
+		string += " accesses to other member clusters of this class.";
+		item.setText(string);
+		new TreeItem(item, style).setText("value =" + value);
+		return item;
+	}
+	
+-->
+
+@model getRelativeAmount () <--
+
+		EList<TAnnotation> annotations = getTAnnotated().getTAnnotation();
+
+		SortedSet<Double> keys = new TreeSet<>();
+
+		for (TAnnotation a : annotations) {
+			if (this.getClass().equals(a.getClass())) {
+				double key = ((HMetric) a).getValue();
+				keys.add(key);
+			}
+		}
+
+		double index = keys.headSet(this.getValue()).size();
+
+		if (index == -1) {
+			throw new RuntimeException();
+		}
+		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+
+		double q = (index + 1) / keys.size();
+
+		if (q < 0.2) {
+			value.setValue(HRelativeValueConstants.VERY_LOW);
+		} else if (q < 0.4) {
+			value.setValue(HRelativeValueConstants.LOW);
+		} else if (q < 0.6) {
+			value.setValue(HRelativeValueConstants.MEDIUM);
+		} else if (q < 0.8) {
+			value.setValue(HRelativeValueConstants.HIGH);
+		} else {
+			value.setValue(HRelativeValueConstants.VERY_HIGH);
+		}
+		return value;
+-->
+
+}

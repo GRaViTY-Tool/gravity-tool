@@ -1,0 +1,18 @@
+
+partial class HDetectorImpl {
+
+
+
+@model detect (HAntiPatternGraph apg) <--
+
+		// TODO: implement this method here but do not remove the injection
+		// marker
+		throw new UnsupportedOperationException();
+-->
+
+@model getNextID () <--
+
+		return hAntiPatternHandling.getApg().getNextID();
+-->
+
+}

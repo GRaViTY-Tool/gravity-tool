@@ -1,0 +1,19 @@
+
+import org.gravity.typegraph.basic.TClass;
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HAverageOverloadingInClassMetricImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("AverageOverloading(" + ((TClass) getTAnnotated()).getTName() + ")=" + getValue());
+		return item;
+	}
+
+	
+-->
+
+}

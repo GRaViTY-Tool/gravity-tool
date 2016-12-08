@@ -1,0 +1,22 @@
+
+partial class HGetterSetterMethodRelationCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Relation between Methods and Getters/Setters";
+	}
+	
+-->
+
+@model calculateValue (HSetterMetric setter, HGetterMetric getter, HNumberOfMethodsMetric methods) <--
+
+		double methods_value = methods.getValue();
+		if (methods_value == 0) {
+			return 0;
+		}
+		return (setter.getValue() + getter.getValue()) / methods_value;
+-->
+
+}

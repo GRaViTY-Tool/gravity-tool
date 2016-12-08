@@ -1,0 +1,13 @@
+
+partial class HSettersCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Setters";
+	}
+	
+-->
+
+}

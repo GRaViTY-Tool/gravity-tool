@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.sdm.constraints.operationspecification:AttributeConstraintLibrary
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:org.moflon.sdm.constraints.operationspecification="platform:/plugin/org.moflon.sdm.constraints.operationspecification/model/Operationspecification.ecore"
+    prefix="org.gravity.hulkAttributeConstraintsLib">
+  <operationSpecifications
+      constraintSpecifications="//@constraintSpecifications.0"
+      operationIdentifier="beginsNotWith">
+    <operationSpecifications
+        specification="!$a$.startsWith($b$)"
+        adornmentString="BB"
+        alwaysSuccessful="false"/>
+    <parameterIDs
+        identifier="a"/>
+    <parameterIDs
+        identifier="b"/>
+  </operationSpecifications>
+  <constraintSpecifications
+      operationSpecificationGroup="//@operationSpecifications.0"
+      symbol="beginsNotWith">
+    <parameterTypes>
+      <type
+          xsi:type="ecore:EDataType"
+          href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameterTypes>
+    <parameterTypes>
+      <type
+          xsi:type="ecore:EDataType"
+          href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameterTypes>
+  </constraintSpecifications>
+</org.moflon.sdm.constraints.operationspecification:AttributeConstraintLibrary>

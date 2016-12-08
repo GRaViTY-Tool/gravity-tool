@@ -1,0 +1,20 @@
+
+partial class TFieldDefinitionImpl {
+
+@members <--
+
+	@Override
+	public String toString() {
+		String string = super.toString();
+		String name = getSignature().getField().getTName();
+		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+	}
+	
+-->
+
+@model getSignatureString () <--
+
+		return getSignature().getSignatureString();
+-->
+
+}

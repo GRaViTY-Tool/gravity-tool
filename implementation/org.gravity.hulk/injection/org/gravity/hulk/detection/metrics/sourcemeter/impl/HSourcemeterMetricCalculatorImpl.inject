@@ -1,0 +1,19 @@
+
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.help.HFullyqualifiedName;
+import org.gravity.hulk.sourcemeter.SourcemeterActivator;
+
+partial class HSourcemeterMetricCalculatorImpl {
+
+
+
+@model calculateMetric (TClass tClass) <--
+
+		double value = calculateValue(tClass);
+		HMetric metric = createMetric(value);
+		metric.setValue(value);
+		metric.setTAnnotated(tClass);
+		return metric;
+-->
+
+}

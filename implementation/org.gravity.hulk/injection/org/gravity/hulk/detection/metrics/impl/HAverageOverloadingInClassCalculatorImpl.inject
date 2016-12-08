@@ -1,0 +1,44 @@
+
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
+import java.util.Hashtable;
+
+partial class HAverageOverloadingInClassCalculatorImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		return "Average Overloading";
+	}
+
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+		Hashtable<TMethod, Integer> methods = new Hashtable<TMethod, Integer>();
+		EList<TSignature> signatures = tClass.getSignature();
+		for (TSignature sig : signatures) {
+			if (sig instanceof TMethodSignature) {
+				TMethodSignature new_name = (TMethodSignature) sig;
+				TMethod method = ((TMethodSignature) sig).getMethod();
+				if (methods.containsKey(method)) {
+					methods.put(method, methods.get(method) + 1);
+				} else {
+					methods.put(method, 1);
+				}
+			}
+		}
+		if (methods.size() == 0) {
+			return 0;
+		}
+		double sum = 0;
+		for (double value : methods.values()) {
+			sum += value;
+		}
+		return sum / methods.size();
+-->
+
+}

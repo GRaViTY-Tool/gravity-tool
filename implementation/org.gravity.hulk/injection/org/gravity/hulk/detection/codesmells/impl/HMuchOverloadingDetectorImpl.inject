@@ -1,0 +1,15 @@
+
+partial class HMuchOverloadingDetectorImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		return "Much Overloading Code Smell";
+	}
+
+	
+-->
+
+}

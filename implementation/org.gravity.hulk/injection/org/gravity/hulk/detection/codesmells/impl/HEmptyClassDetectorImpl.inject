@@ -1,0 +1,13 @@
+
+partial class HEmptyClassDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Empty Class Smell";
+	}
+	
+-->
+
+}

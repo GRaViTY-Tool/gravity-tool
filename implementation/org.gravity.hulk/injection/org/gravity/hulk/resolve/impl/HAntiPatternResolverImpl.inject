@@ -1,0 +1,16 @@
+
+partial class HAntiPatternResolverImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+-->
+
+}

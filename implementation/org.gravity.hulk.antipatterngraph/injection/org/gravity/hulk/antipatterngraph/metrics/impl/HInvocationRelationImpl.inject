@@ -1,0 +1,18 @@
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HInvocationRelationImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("InvocationRelation(" + ((TClass) getTAnnotated()).getTName() + ")=" + getValue());
+		return item;
+	}
+
+	
+-->
+
+}

@@ -1,0 +1,22 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HClusterImpl {
+
+@members <--
+
+	// <-- [user code injected with eMoflon]
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("Cluster of connected Members");
+		for (TMember m : getTMembers()) {
+			TreeItem i = new TreeItem(item, style);
+			i.setText(m.toString());
+		}
+		return item;
+	}
+	
+-->
+
+}

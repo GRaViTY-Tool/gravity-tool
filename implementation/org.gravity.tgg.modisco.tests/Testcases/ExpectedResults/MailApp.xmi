@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.14 //@ownedTypes.16 //@ownedTypes.18 //@ownedTypes.20 //@ownedTypes.21 //@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27" interfaces="//@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.17 //@ownedTypes.19" tName="MailApp">
+  <packages typeGraph="/" tName="java">
+    <subpackage interfaces="//@ownedTypes.3" ownedTypes="//@ownedTypes.3" typeGraph="/" tName="io"/>
+    <subpackage classes="//@ownedTypes.2 //@ownedTypes.8" interfaces="//@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.17" ownedTypes="//@ownedTypes.2 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.8 //@ownedTypes.17" typeGraph="/" tName="lang"/>
+    <subpackage classes="//@ownedTypes.12 //@ownedTypes.14 //@ownedTypes.16" interfaces="//@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.19" ownedTypes="//@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.19" typeGraph="/" tName="util"/>
+  </packages>
+  <packages typeGraph="/" tName="org">
+    <subpackage typeGraph="/" tName="gravity">
+      <subpackage typeGraph="/" tName="hulk">
+        <subpackage classes="//@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27" ownedTypes="//@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.24 //@ownedTypes.25 //@ownedTypes.26 //@ownedTypes.27" typeGraph="/" tName="testproject"/>
+      </subpackage>
+    </subpackage>
+  </packages>
+  <methods ID="24494" tName="split">
+    <signatures ID="24492" returnType="//@ownedTypes.21">
+      <paramList ID="24491">
+        <entries/>
+      </paramList>
+      <definitions ID="24493" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24502" tName="add">
+    <signatures ID="24500" returnType="//@ownedTypes.21">
+      <paramList ID="24499">
+        <entries type="//@ownedTypes.2"/>
+      </paramList>
+      <definitions ID="24501" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24506" tName="clear">
+    <signatures ID="24504" returnType="//@ownedTypes.21">
+      <paramList ID="24503"/>
+      <definitions ID="24505" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24515" tName="setEmail">
+    <signatures ID="24513" returnType="//@ownedTypes.21">
+      <paramList ID="24512">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24514" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24519" tName="setSurname">
+    <signatures ID="24517" returnType="//@ownedTypes.21">
+      <paramList ID="24516">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24518" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24528" tName="getEmail">
+    <signatures ID="24526" returnType="//@ownedTypes.8">
+      <paramList ID="24525"/>
+      <definitions ID="24527" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24534" tName="getName">
+    <signatures ID="24532" returnType="//@ownedTypes.8">
+      <paramList ID="24531"/>
+      <definitions ID="24533" definedBy="//@ownedTypes.25" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24538" tName="setName">
+    <signatures ID="24536" returnType="//@ownedTypes.21">
+      <paramList ID="24535">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24537" definedBy="//@ownedTypes.25" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24542" tName="setName">
+    <signatures ID="24540" returnType="//@ownedTypes.21">
+      <paramList ID="24539">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24541" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24548" tName="getTitle">
+    <signatures ID="24546" returnType="//@ownedTypes.8">
+      <paramList ID="24545"/>
+      <definitions ID="24547" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24552" tName="getDate">
+    <signatures ID="24550" returnType="//@ownedTypes.0">
+      <paramList ID="24549"/>
+      <definitions ID="24551" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.0"/>
+    </signatures>
+  </methods>
+  <methods ID="24556" tName="setParticipants">
+    <signatures ID="24554" returnType="//@ownedTypes.21">
+      <paramList ID="24553">
+        <entries type="//@ownedTypes.15"/>
+      </paramList>
+      <definitions ID="24555" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24560" tName="setLocation">
+    <signatures ID="24558" returnType="//@ownedTypes.21">
+      <paramList ID="24557">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24559" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24567" tName="setText">
+    <signatures ID="24565" returnType="//@ownedTypes.21">
+      <paramList ID="24564">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24566" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24571" tName="setDate">
+    <signatures ID="24569" returnType="//@ownedTypes.21">
+      <paramList ID="24568">
+        <entries type="//@ownedTypes.0"/>
+      </paramList>
+      <definitions ID="24570" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24575" tName="getReceivers">
+    <signatures ID="24573" returnType="//@ownedTypes.8">
+      <paramList ID="24572"/>
+      <definitions ID="24574" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24579" tName="getText">
+    <signatures ID="24577" returnType="//@ownedTypes.8">
+      <paramList ID="24576"/>
+      <definitions ID="24578" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24586" tName="setTitle">
+    <signatures ID="24584" returnType="//@ownedTypes.21">
+      <paramList ID="24583">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24585" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24591" tName="setTitle">
+    <signatures ID="24589" returnType="//@ownedTypes.21">
+      <paramList ID="24588">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24590" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24596" tName="getLocation">
+    <signatures ID="24594" returnType="//@ownedTypes.8">
+      <paramList ID="24593"/>
+      <definitions ID="24595" definedBy="//@ownedTypes.22" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24602" tName="getTitle">
+    <signatures ID="24600" returnType="//@ownedTypes.8">
+      <paramList ID="24599"/>
+      <definitions ID="24601" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24606" tName="getParticipants">
+    <signatures ID="24604" returnType="//@ownedTypes.15">
+      <paramList ID="24603"/>
+      <definitions ID="24605" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.15"/>
+    </signatures>
+  </methods>
+  <methods ID="24611" tName="setLocation">
+    <signatures ID="24609" returnType="//@ownedTypes.21">
+      <paramList ID="24608">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24610" definedBy="//@ownedTypes.22" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24615" tName="getName">
+    <signatures ID="24613" returnType="//@ownedTypes.8">
+      <paramList ID="24612"/>
+      <definitions ID="24614" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24624" tName="setReceivers">
+    <signatures ID="24622" returnType="//@ownedTypes.21">
+      <paramList ID="24621">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24623" definedBy="//@ownedTypes.24" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24628" tName="getLocation">
+    <signatures ID="24626" returnType="//@ownedTypes.8">
+      <paramList ID="24625"/>
+      <definitions ID="24627" definedBy="//@ownedTypes.26" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <methods ID="24633" tName="createAppointment">
+    <signatures ID="24631" returnType="//@ownedTypes.21">
+      <paramList ID="24630">
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.15"/>
+        <entries type="//@ownedTypes.0"/>
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24632" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24638" tName="run">
+    <signatures ID="24636" returnType="//@ownedTypes.21">
+      <paramList ID="24635"/>
+      <definitions ID="24637" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24642" tName="send">
+    <signatures ID="24640" returnType="//@ownedTypes.21">
+      <paramList ID="24639"/>
+      <definitions ID="24641" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24646" tName="main">
+    <signatures ID="24644" returnType="//@ownedTypes.21">
+      <paramList ID="24643">
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24645" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24655" tName="createContact">
+    <signatures ID="24653" returnType="//@ownedTypes.21">
+      <paramList ID="24652">
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24654" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24661" tName="writeMessage">
+    <signatures ID="24659" returnType="//@ownedTypes.21">
+      <paramList ID="24658">
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24660" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24669" tName="createContact">
+    <signatures ID="24667" returnType="//@ownedTypes.21">
+      <paramList ID="24666">
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+        <entries type="//@ownedTypes.8"/>
+      </paramList>
+      <definitions ID="24668" definedBy="//@ownedTypes.27" returnType="//@ownedTypes.21"/>
+    </signatures>
+  </methods>
+  <methods ID="24673" tName="getSurname">
+    <signatures ID="24671" returnType="//@ownedTypes.8">
+      <paramList ID="24670"/>
+      <definitions ID="24672" definedBy="//@ownedTypes.23" returnType="//@ownedTypes.8"/>
+    </signatures>
+  </methods>
+  <fields ID="24521" tName="text">
+    <signatures ID="24522" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24523" tName="receivers">
+    <signatures ID="24581" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24524" tName="name">
+    <signatures ID="24543" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24529" tName="location">
+    <signatures ID="24618" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24561" tName="participants">
+    <signatures ID="24562" type="//@ownedTypes.15"/>
+  </fields>
+  <fields ID="24563" tName="email">
+    <signatures ID="24587" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24580" tName="title">
+    <signatures ID="24607" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24582" tName="date">
+    <signatures ID="24592" type="//@ownedTypes.0"/>
+  </fields>
+  <fields ID="24597" tName="surname">
+    <signatures ID="24598" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24616" tName="name">
+    <signatures ID="24617" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24619" tName="location">
+    <signatures ID="24620" type="//@ownedTypes.8"/>
+  </fields>
+  <fields ID="24634" tName="contacts">
+    <signatures ID="24650" type="//@ownedTypes.15">
+      <definitions ID="24651" definedBy="//@ownedTypes.27"/>
+    </signatures>
+  </fields>
+  <fields ID="24647" tName="outbox">
+    <signatures ID="24648" type="//@ownedTypes.15">
+      <definitions ID="24649" definedBy="//@ownedTypes.27"/>
+    </signatures>
+  </fields>
+  <fields ID="24656" tName="inbox">
+    <signatures ID="24657" type="//@ownedTypes.15">
+      <definitions ID="24665" definedBy="//@ownedTypes.27"/>
+    </signatures>
+  </fields>
+  <fields ID="24662" tName="appointments">
+    <signatures ID="24663" type="//@ownedTypes.15">
+      <definitions ID="24664" definedBy="//@ownedTypes.27"/>
+    </signatures>
+  </fields>
+  <fields ID="24674" tName="title">
+    <signatures ID="24675" type="//@ownedTypes.8"/>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24485" package="//@packages.0/@subpackage.1" tLib="true" tName="Object"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24486" package="//@packages.0/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.8 //@ownedTypes.14"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24487" package="//@packages.0/@subpackage.1" tLib="true" tName="Cloneable" implementedBy="//@ownedTypes.14"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24488" package="//@packages.0/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.8"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24489" package="//@packages.0/@subpackage.1" tLib="true" tName="Iterable" childInterfaces="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24490" package="//@packages.0/@subpackage.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tLib="true" tName="String" implements="//@ownedTypes.5 //@ownedTypes.3 //@ownedTypes.17"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24495" package="//@packages.0/@subpackage.2" tLib="true" tName="AbstractCollection" childClasses="//@ownedTypes.16" implements="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24496" package="//@packages.0/@subpackage.2" tLib="true" tName="RandomAccess" implementedBy="//@ownedTypes.14"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24497" package="//@packages.0/@subpackage.2" tLib="true" tName="ArrayList" parentClass="//@ownedTypes.16" implements="//@ownedTypes.15 //@ownedTypes.4 //@ownedTypes.3 //@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24498" package="//@packages.0/@subpackage.2" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.2/@signatures.0/@definitions.0" tLib="true" tName="List" implementedBy="//@ownedTypes.14 //@ownedTypes.16" parentInterfaces="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24507" package="//@packages.0/@subpackage.2" tLib="true" tName="AbstractList" parentClass="//@ownedTypes.12" childClasses="//@ownedTypes.14" implements="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24508" package="//@packages.0/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.8"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24509" package="//@packages.0/@subpackage.2" tLib="true" tName="Collection" implementedBy="//@ownedTypes.12" parentInterfaces="//@ownedTypes.6" childInterfaces="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24510" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@methods.19/@signatures.0 //@methods.22/@signatures.0 //@fields.3/@signatures.0" defines="//@methods.19/@signatures.0/@definitions.0 //@methods.22/@signatures.0/@definitions.0" tName="ContactWithPicture" parentClass="//@ownedTypes.23"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24511" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@methods.3/@signatures.0 //@methods.4/@signatures.0 //@methods.5/@signatures.0 //@methods.8/@signatures.0 //@fields.2/@signatures.0 //@fields.5/@signatures.0 //@fields.8/@signatures.0 //@methods.23/@signatures.0 //@methods.33/@signatures.0" defines="//@methods.3/@signatures.0/@definitions.0 //@methods.4/@signatures.0/@definitions.0 //@methods.5/@signatures.0/@definitions.0 //@methods.8/@signatures.0/@definitions.0 //@methods.23/@signatures.0/@definitions.0 //@methods.33/@signatures.0/@definitions.0" tName="Contact" childClasses="//@ownedTypes.25 //@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24520" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@fields.0/@signatures.0 //@methods.13/@signatures.0 //@methods.15/@signatures.0 //@methods.16/@signatures.0 //@fields.1/@signatures.0 //@methods.18/@signatures.0 //@methods.20/@signatures.0 //@fields.6/@signatures.0 //@methods.24/@signatures.0" defines="//@methods.13/@signatures.0/@definitions.0 //@methods.15/@signatures.0/@definitions.0 //@methods.16/@signatures.0/@definitions.0 //@methods.18/@signatures.0/@definitions.0 //@methods.20/@signatures.0/@definitions.0 //@methods.24/@signatures.0/@definitions.0" tName="Message"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24530" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@methods.6/@signatures.0 //@methods.7/@signatures.0 //@fields.9/@signatures.0" defines="//@methods.6/@signatures.0/@definitions.0 //@methods.7/@signatures.0/@definitions.0" tName="ComplexContact" parentClass="//@ownedTypes.23"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24544" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@methods.9/@signatures.0 //@methods.10/@signatures.0 //@methods.11/@signatures.0 //@methods.12/@signatures.0 //@fields.4/@signatures.0 //@methods.14/@signatures.0 //@methods.17/@signatures.0 //@fields.7/@signatures.0 //@methods.21/@signatures.0 //@fields.10/@signatures.0 //@methods.25/@signatures.0 //@fields.15/@signatures.0" defines="//@methods.9/@signatures.0/@definitions.0 //@methods.10/@signatures.0/@definitions.0 //@methods.11/@signatures.0/@definitions.0 //@methods.12/@signatures.0/@definitions.0 //@methods.14/@signatures.0/@definitions.0 //@methods.17/@signatures.0/@definitions.0 //@methods.21/@signatures.0/@definitions.0 //@methods.25/@signatures.0/@definitions.0" tName="Appointment"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24629" package="//@packages.1/@subpackage.0/@subpackage.0/@subpackage.0" signature="//@methods.26/@signatures.0 //@methods.27/@signatures.0 //@methods.28/@signatures.0 //@methods.29/@signatures.0 //@fields.12/@signatures.0 //@fields.11/@signatures.0 //@methods.30/@signatures.0 //@fields.13/@signatures.0 //@methods.31/@signatures.0 //@fields.14/@signatures.0 //@methods.32/@signatures.0" defines="//@methods.26/@signatures.0/@definitions.0 //@methods.27/@signatures.0/@definitions.0 //@methods.28/@signatures.0/@definitions.0 //@methods.29/@signatures.0/@definitions.0 //@fields.12/@signatures.0/@definitions.0 //@fields.11/@signatures.0/@definitions.0 //@methods.30/@signatures.0/@definitions.0 //@methods.31/@signatures.0/@definitions.0 //@fields.14/@signatures.0/@definitions.0 //@fields.13/@signatures.0/@definitions.0 //@methods.32/@signatures.0/@definitions.0" tName="MailApp"/>
+</org.gravity.typegraph.basic:TypeGraph>

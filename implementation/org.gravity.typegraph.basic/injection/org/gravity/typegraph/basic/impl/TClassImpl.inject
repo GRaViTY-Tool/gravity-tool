@@ -1,0 +1,44 @@
+
+import java.util.HashSet;
+import java.util.Set;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.containers.ContainersFactory;
+
+partial class TClassImpl {
+
+
+
+@model getAllTMembers () <--
+
+		Set<TMember> allMembers = new HashSet<>();
+		TClass current = this;
+		while (current != null) {
+			for (TMember member : current.getDefines()) {
+				EList<?> redefinedBy;
+				if (member instanceof TMethodDefinition) {
+					TMethodDefinition method = (TMethodDefinition) member;
+					redefinedBy = method.getOverriddenBy();
+				} else if (member instanceof TFieldDefinition) {
+					TFieldDefinition field = (TFieldDefinition) member;
+					redefinedBy = field.getHiddenBy();
+				} else {
+					throw new RuntimeException("Unknown TMember subtype.");
+				}
+				boolean contained = false;
+				for (Object o : redefinedBy) {
+					contained |= allMembers.contains(o);
+				}
+				if (!contained) {
+					allMembers.add(member);
+				}
+			}
+			current = current.getParentClass();
+		}
+		TMemberContainer container = ContainersFactory.eINSTANCE.createTMemberContainer();
+		container.getTMembers().addAll(allMembers);
+		return container;
+-->
+
+}

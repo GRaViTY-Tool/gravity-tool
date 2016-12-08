@@ -1,0 +1,49 @@
+
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
+import java.util.ArrayList;
+
+partial class HOutgoingInvocationCustomCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of outgoing invocations";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		int invoc = 0;
+		ArrayList<TMember> invocedMethods = new ArrayList<TMember>();
+		for (TMember m : tClass.getDefines()) {
+			for (TAccess t : m.getTAccessing()) {
+				TMember tTarget = t.getTTarget();
+				if (tTarget instanceof TMethodDefinitionImpl) {
+					TMethodDefinitionImpl targetMethod = (TMethodDefinitionImpl) tTarget;
+					TAbstractType definingClass = targetMethod.getDefinedBy();
+					
+					if(definingClass == null){
+						System.out.println("Method in Class " + tClass.getTName()+ " accesses a Method without defining Class");
+						continue;
+					}
+					
+					if (!definingClass.equals(tClass) && !definingClass.isTLib()
+							&& !invocedMethods.contains(targetMethod)) {
+
+						invocedMethods.add(targetMethod);
+						invoc++;
+
+					}
+				}
+			}
+		}
+
+		return invoc;
+-->
+
+}

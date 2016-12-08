@@ -1,0 +1,13 @@
+
+partial class HIncommingInvocationsCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Incomming Invocations";
+	}
+	
+-->
+
+}

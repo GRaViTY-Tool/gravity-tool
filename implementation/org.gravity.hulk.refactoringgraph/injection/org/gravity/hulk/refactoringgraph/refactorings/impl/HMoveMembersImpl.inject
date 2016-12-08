@@ -1,0 +1,19 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HMoveMembersImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("Move " + hMoveMembers.size() + " members to the class "+targetClass.getFullyQualifiedName());
+		for (HMoveMember member : hMoveMembers) {
+			member.createItemContents(new TreeItem(item, style), style);
+		}
+		return null;
+	}
+	
+-->
+
+}

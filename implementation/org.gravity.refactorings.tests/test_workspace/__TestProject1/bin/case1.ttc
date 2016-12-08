@@ -1,0 +1,37 @@
+TestFile case1 { 
+	class m {
+		package "foo"
+		name "Main"
+	}
+	
+	class o {
+		package "foo"
+		name "Other"
+	}
+	
+	class n1 {
+		package "foo"
+		name "New"
+	}
+	
+	classes mo {
+		m,o
+	}
+	
+	create_superclass csc {
+		child mo
+		target n1
+	}
+	
+	case c1 {
+		description "Create new parent in same package"
+		program ""
+		testflow {
+			assertTrue(csc)
+			synchronize
+			compile
+			m extends n1
+			o extends n1
+		}
+	}
+}

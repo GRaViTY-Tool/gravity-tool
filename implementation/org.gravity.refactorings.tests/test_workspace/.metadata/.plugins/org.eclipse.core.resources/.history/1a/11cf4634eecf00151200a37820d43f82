@@ -1,0 +1,562 @@
+TestFile final_2 {
+
+	class a {
+		package "program.two"
+		name	"A"
+	}
+	
+	class b {
+		package "program.two"
+		name	"B"
+	}
+	
+	class c {
+		package "program.two"
+		name	"C"
+	}
+	
+	class d {
+		package "program.two"
+		name	"D"
+	}
+	
+	class e {
+		package "program.two"
+		name	"E"
+	}
+	
+	class f {
+		package "program.two"
+		name	"F"
+	}
+	
+	class g {
+		package "program.two"
+		name	"G"
+	}
+	
+	class h {
+		package "program.two"
+		name	"H"
+	}
+	
+	class i {
+		package "program.two"
+		name	"I"
+	}
+	
+	class j {
+		package "program.two"
+		name	"J"
+	}
+	
+	class k {
+		package "program.two"
+		name	"K"
+	}
+	
+	class l {
+		package "program.two"
+		name	"L"
+	}
+	
+	class m {
+		package "program.two"
+		name	"M"
+	}
+	
+	class n {
+		package "program.two"
+		name	"N"
+	}
+	
+	class o {
+		package "program.two"
+		name	"O"
+	}
+	
+	class p {
+		package "program.two"
+		name	"P"
+	}
+	
+	class q {
+		package "program.two"
+		name	"Q"
+	}
+	
+	class r {
+		package "program.two"
+		name	"R"
+	}
+	
+	class s {
+		package "program.two"
+		name	"S"
+	}
+	
+	class t {
+		package "program.two"
+		name	"T"
+	}
+	
+	class u {
+		package "program.two"
+		name	"U"
+	}
+	
+	class v {
+		package "program.two"
+		name	"V"
+	}
+	
+	class w {
+		package "program.two"
+		name	"W"
+	}
+	
+	class x {
+		package "program.two"
+		name	"X"
+	}
+	
+	class y {
+		package "program.two"
+		name	"Y"
+	}
+	
+	class z {
+		package "program.two"
+		name	"Z"
+	}
+	
+	
+	class t1 {
+		package "program.two.tmp"
+		name	"Tmp1"
+	}
+	
+	class t2 {
+		package "program.two.tmp"
+		name	"Tmp2"
+	}
+	
+	class t3 {
+		package "program.two.tmp"
+		name	"Tmp3"
+	}
+	
+	class t4 {
+		package "program.two.tmp"
+		name	"Tmp4"
+	}
+	
+	class t5 {
+		package "program.two.tmp"
+		name	"Tmp5"
+	}
+	
+	class t6 {
+		package "program.two.tmp"
+		name	"Tmp6"
+	}
+	
+	class t7 {
+		package "program.two.tmp"
+		name	"Tmp7"
+	}
+	
+	class t8 {
+		package "program.two.tmp"
+		name	"Tmp8"
+	}
+	
+	class t9 {
+		package "program.two.tmp"
+		name	"Tmp9"
+	}
+	
+	class t10 {
+		package "program.two.tmp"
+		name	"Tmp10"
+	}
+	
+	class t11 {
+		package "program.two.tmp"
+		name	"Tmp11"
+	}
+	
+	class t12 {
+		package "program.two.tmp"
+		name	"Tmp12"
+	}
+	
+	class t13 {
+		package "program.two.tmp"
+		name	"Tmp13"
+	}
+	
+	class t14 {
+		package "program.two.tmp"
+		name	"Tmp14"
+	}
+	
+	class t15 {
+		package "program.two.tmp"
+		name	"Tmp15"
+	}
+	
+	class t16 {
+		package "program.two.tmp"
+		name	"Tmp16"
+	}
+	
+	class t17 {
+		package "program.two.tmp"
+		name	"Tmp17"
+	}
+	
+	class t18 {
+		package "program.two.tmp"
+		name	"Tmp18"
+	}
+	
+	class t19 {
+		package "program.two.tmp"
+		name	"Tmp19"
+	}
+	
+	class t20 {
+		package "program.two.tmp"
+		name	"Tmp20"
+	}
+	
+	class t21 {
+		package "program.two.tmp"
+		name	"Tmp21"
+	}
+	
+	class t22 {
+		package "program.two.tmp"
+		name	"Tmp22"
+	}
+	
+	classes bc {b,c}
+	classes de {d,e}
+	classes fg {f,g}
+	classes hi {h,i}
+	classes jk{j,k}
+	classes lm {l,m}
+	classes no {n,o}
+	classes pq {p,q}
+	classes rs {r,s}
+	classes tu {t,u}
+	classes vw {v,w}
+	classes xyz {x,y,z}
+	
+	classes t1t2 {t1,t2}
+	classes t3t4 {t3,t4}
+	classes t5t6 {t5,t6}
+	classes t7t8 {t7,t8}
+	classes t9t10 {t9,t10}
+	classes t11t12 {t11,t12}
+	
+	classes t13t14 {t13,t14}
+	classes t15t16 {t15,t16}
+	classes t17t18 {t17,t18}
+	
+	classes t19t20 {t19,t20}
+	classes t22t21 {t22,t21}
+	
+	create_superclass c1 {
+		child bc
+		target t1
+	}
+	
+	create_superclass c2 {
+		child de
+		target t2
+	}
+	
+	create_superclass c3 {
+		child fg
+		target t3
+	}
+	
+	create_superclass c4 {
+		child hi
+		target t4
+	}
+	
+	create_superclass c5 {
+		child jk
+		target t5
+	}
+	
+	create_superclass c6 {
+		child lm
+		target t6
+	}
+	
+	create_superclass c7 {
+		child no
+		target t7
+	}
+	
+	create_superclass c8 {
+		child pq
+		target t8
+	}
+	
+	create_superclass c9 {
+		child rs
+		target t9
+	}
+	
+	create_superclass c10 {
+		child tu
+		target t10
+	}
+	
+	create_superclass c11 {
+		child vw
+		target t11
+	}
+	
+	create_superclass c12 {
+		child xyz
+		target t12
+	}
+	
+	create_superclass c13 {
+		child t1t2
+		target t13
+	}
+	
+	create_superclass c14 {
+		child t3t4
+		target t14
+	}
+	
+	create_superclass c15 {
+		child t5t6
+		target t15
+	}
+	
+	create_superclass c16 {
+		child t7t8
+		target t16
+	}
+	
+	create_superclass c17 {
+		child t9t10
+		target t17
+	}
+	
+	create_superclass c18 {
+		child t11t12
+		target t18
+	}
+	
+	create_superclass c19 {
+		child t13t14
+		target t19
+	}
+	
+	create_superclass c20 {
+		child t15t16
+		target t20
+	}
+	
+	create_superclass c21 {
+		child t17t18
+		target t21
+	}
+	
+	create_superclass c22 {
+		child t19t20
+		target t22
+	}
+	
+	method m {
+		name "method"
+	}
+	
+	pullup_method p1 {
+		parent t1
+		method m
+	}
+	
+	pullup_method p2 {
+		parent t2
+		method m
+	}
+	
+	pullup_method p3 {
+		parent t3
+		method m
+	}
+	
+	pullup_method p4 {
+		parent t4
+		method m
+	}
+	
+	pullup_method p5 {
+		parent t5
+		method m
+	}
+	
+	pullup_method p6 {
+		parent t6
+		method m
+	}
+	
+	pullup_method p7 {
+		parent t7
+		method m
+	}
+	
+	pullup_method p8 {
+		parent t8
+		method m
+	}
+	
+	pullup_method p9 {
+		parent t9
+		method m
+	}
+	
+	pullup_method p10 {
+		parent t10
+		method m
+	}
+	
+	pullup_method p11 {
+		parent t11
+		method m
+	}
+	
+	pullup_method p12 {
+		parent t12
+		method m
+	}
+	
+	pullup_method p13 {
+		parent t13
+		method m
+	}
+	
+	pullup_method p14 {
+		parent t14
+		method m
+	}
+	
+	pullup_method p15 {
+		parent t15
+		method m
+	}
+	
+	pullup_method p16 {
+		parent t16
+		method m
+	}
+	
+	pullup_method p17 {
+		parent t17
+		method m
+	}
+	
+	pullup_method p18 {
+		parent t18
+		method m
+	}
+	
+	pullup_method p19 {
+		parent t19
+		method m
+	}
+	
+	pullup_method p20 {
+		parent t20
+		method m
+	}
+	
+	pullup_method p21 {
+		parent t21
+		method m
+	}
+	
+	pullup_method p22 {
+		parent t22
+		method m
+	}
+	
+	pullup_method p23 {
+		parent a
+		method m
+	}
+	
+	case final_2_1 {
+		description "Very many refactoring operations, synchronize after every refactoring"
+		program "FinalProgram2"
+		testflow {
+			assertTrue(c1)
+			assertTrue(p1)
+			assertTrue(c2)
+			assertTrue(p2)
+			assertTrue(c3)
+			assertTrue(p3)
+			assertTrue(c4)
+			assertTrue(p4)
+			assertTrue(c5)
+			assertTrue(p5)
+			assertTrue(c6)
+			assertTrue(p6)
+			assertTrue(c7)
+			assertTrue(p7)
+			assertTrue(c8)
+			assertTrue(p8)
+			assertTrue(c9)
+			assertTrue(p9)
+			assertTrue(c10)
+			assertTrue(p10)
+			assertTrue(c11)
+			assertTrue(p11)
+			assertTrue(c12)
+			assertTrue(p12)
+			assertTrue(c13)
+			assertTrue(p13)
+			assertTrue(c14)
+			assertTrue(p14)
+			assertTrue(c15)
+			assertTrue(p15)
+			assertTrue(c16)
+			assertTrue(p16)
+			assertTrue(c17)
+			assertTrue(p17)
+			assertTrue(c18)
+			assertTrue(p18)
+			assertTrue(c19)
+			assertTrue(p19)
+			assertTrue(c20)
+			assertTrue(p20)
+			assertTrue(c21)
+			assertTrue(p21)
+			assertTrue(c22)
+			assertTrue(p22)
+			assertTrue(p23)
+			synchronize
+			compile
+
+			a contains m
+			b ~contains m			
+
+			b extends t1
+			t22 extends a	
+
+			t1 ~contains m
+			t22 ~contains m	
+		}
+	}
+}

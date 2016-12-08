@@ -1,0 +1,27 @@
+
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMember;
+
+partial class HFieldNumberCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of fields";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		int i = 0;
+		for (TMember m : tClass.getDefines()) {
+			if (m instanceof TFieldDefinition) {
+				i++;
+			}
+		}
+		return i;
+-->
+
+}

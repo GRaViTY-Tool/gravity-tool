@@ -1,0 +1,34 @@
+
+import org.gravity.typegraph.basic.TClass;
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HLargeClassLowCohesionSmellImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+		
+		HLargeClassSmell large_class = getHLargeClassSmell();
+		if(large_class != null){
+			TreeItem treeItem = new TreeItem(item, style);
+			treeItem.setText("LargeClass Smell");
+			large_class.getTreeItem(treeItem, style);
+		}
+		
+		HLowCohesionSmell low_cohesion = getHLowCohesionSmell();
+		if(low_cohesion != null){
+			TreeItem treeItem = new TreeItem(item, style);
+			treeItem.setText("LowCohesion Smell");
+			low_cohesion.getTreeItem(treeItem, style);
+		}
+		
+		return item;
+	}
+
+	
+-->
+
+}

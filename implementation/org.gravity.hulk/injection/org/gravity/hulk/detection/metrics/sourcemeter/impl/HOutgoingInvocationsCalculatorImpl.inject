@@ -1,0 +1,13 @@
+
+partial class HOutgoingInvocationsCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Outgoing Invocations";
+	}
+	
+-->
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:GravityTGG="platform:/plugin/GravityTGG/model/GravityTGG.ecore">
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/0"/>
+    <source href="pathmap:/javaclass/java.lang.Object.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+  <GravityTGG:ClassToTClass>
+    <target href="ExternTClasses.xmi#/1"/>
+    <source href="pathmap:/javaclass/java.lang.Void.java#//@classifiers.0"/>
+  </GravityTGG:ClassToTClass>
+</xmi:XMI>

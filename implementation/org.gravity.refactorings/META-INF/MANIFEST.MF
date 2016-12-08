@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.gravity.refactorings;singleton:=true
+Export-Package: org.gravity.refactorings,
+ org.gravity.refactorings.containers,
+ org.gravity.refactorings.containers.impl,
+ org.gravity.refactorings.containers.util,
+ org.gravity.refactorings.application,
+ org.gravity.refactorings.impl,
+ org.gravity.refactorings.util,
+ org.gravity.refactorings.configuration,
+ org.gravity.refactorings.configuration.util,
+ org.gravity.refactorings.configuration.impl
+Bundle-Name: Refactorings
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.gravity.typegraph.basic,
+ org.gravity.arte.testdsl,
+ org.eclipse.emf.ecore.xmi,
+ org.gravity.arte.testdsl,
+ org.eclipse.emf.ecore.xmi,
+ MocaTree,
+ org.eclipse.emf.ecore,
+ org.moflon.core.utilities
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: TU Darmstadt

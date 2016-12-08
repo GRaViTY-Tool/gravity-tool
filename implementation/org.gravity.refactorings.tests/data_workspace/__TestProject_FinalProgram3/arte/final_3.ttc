@@ -1,0 +1,41 @@
+TestFile final_3 {
+
+	class child1 {
+		package "program.three"
+		name	"ChildClass1"
+	}
+	
+	class child2 {
+		package "program.three"
+		name	"ChildClass2"
+	}
+	
+	class parent_class {
+		package "java.lang"
+		name "SecurityManager "
+	}
+	
+	method m {
+		name "method"
+	}
+	
+	pullup_method p {
+		parent parent_class
+		method m
+		
+	}
+	
+	case final_3_1 {
+		description "EXS-NEG: Pull-up to java library."
+		program "FinalProgram3"
+		
+		testflow {
+			assertFalse(p)
+			
+			synchronize
+			compile
+			child1 contains m
+			child2 contains m
+		}
+	}
+}

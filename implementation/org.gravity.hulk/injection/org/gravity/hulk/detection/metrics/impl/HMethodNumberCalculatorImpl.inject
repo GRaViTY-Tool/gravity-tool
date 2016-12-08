@@ -1,0 +1,27 @@
+
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
+
+partial class HMethodNumberCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Methods";
+	}
+	
+-->
+
+@model calculateValue (TClass tClass) <--
+
+		int i = 0;
+		for (TMember m : tClass.getDefines()) {
+			if (m instanceof TMethodDefinition) {
+				i++;
+			}
+		}
+		return i;
+-->
+
+}

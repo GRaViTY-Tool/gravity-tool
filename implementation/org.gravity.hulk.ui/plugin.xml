@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.gravity.mainmenu">
+      <menu
+            id="org.gravity.hulk.menu"
+            label="Hulk">
+        <command commandId="hulk.command.scan" label="Scan for Anti-Pattern" style="push"/>
+        <command
+              commandId="hulk.command.resolve"
+              label="Resolve Anti-Pattern"
+              style="push">
+        </command>
+      </menu>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="org.gravity.hulk.ui.handlers.scan.HulkScanHandler" id="hulk.command.scan" name="Scan for Anti-Pattern">
+      <defaultHandler class="org.gravity.hulk.ui.handlers.scan.HulkScanHandler">
+        <parameter name="Hulk.parameter1" value="Hulk.parameter1"/>
+      </defaultHandler>
+    </command>
+    <command
+          defaultHandler="org.gravity.hulk.ui.handlers.scan.HulkResolveHandler"
+          id="hulk.command.resolve"
+          name="Resolve Anti-Pattern">
+    </command>
+  </extension>
+</plugin>

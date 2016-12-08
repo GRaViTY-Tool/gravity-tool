@@ -1,0 +1,15 @@
+
+partial class HDepthOfInheritanceCalculatorImpl {
+
+@members <--
+
+
+	@Override
+	public String getGuiName() {
+		return "Depth of Inheritance Tree";
+	}
+
+	
+-->
+
+}

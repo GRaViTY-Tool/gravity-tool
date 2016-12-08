@@ -1,0 +1,57 @@
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.ArrayList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.hulk.antipatterngraph.impl.HAnnotationImpl;
+import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
+import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
+import org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod;
+import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
+import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
+
+partial class HBlobResolveAnnotationImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+
+		new TreeItem(item, style)
+				.setText("blob-class: " + ((TAbstractType) hBlobAntiPattern.getTAnnotated()).getFullyQualifiedName());
+
+		TreeItem antipattern = new TreeItem(item, style);
+		antipattern.setText("anti-pattern");
+		hBlobAntiPattern.createItemContents(new TreeItem(antipattern, style), style);
+
+		if (hRefactorings == null || hRefactorings.size() == 0) {
+			item.setText("Unable to resolve the The Blob [Anti-Pattern].");
+		} else {
+			item.setText("Solved The Blob [Anti-Pattern] by refactoring.");
+
+			TreeItem refactorings = new TreeItem(item, style);
+			refactorings.setText("refactorings");
+
+			List<HRefactoring> moves = new ArrayList<>(hRefactorings);
+			moves.sort(new Comparator<HRefactoring>() {
+
+				@Override
+				public int compare(HRefactoring arg0, HRefactoring arg1) {
+					return (int) (1000* (arg0.getValue() - arg1.getValue()));
+				}
+					
+			});
+
+			for (HRefactoring m : moves) {
+				m.createItemContents(new TreeItem(refactorings, style), style);
+			}
+		}
+
+		return item;
+	}
+	
+-->
+
+}

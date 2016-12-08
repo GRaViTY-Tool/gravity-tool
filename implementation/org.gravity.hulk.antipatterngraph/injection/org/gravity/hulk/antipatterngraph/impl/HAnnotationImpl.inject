@@ -1,0 +1,19 @@
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HAnnotationImpl {
+
+@members <--
+
+	public TreeItem getTreeItem(Tree tree, int style) {
+		return createItemContents(new TreeItem(tree, style), style);
+	}
+
+	@Override
+	public TreeItem getTreeItem(TreeItem item, int style) {
+		return createItemContents(new TreeItem(item, style), style);
+	}
+	
+-->
+
+}

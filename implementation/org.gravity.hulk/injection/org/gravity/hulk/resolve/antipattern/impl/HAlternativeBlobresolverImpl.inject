@@ -1,0 +1,135 @@
+
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Hashtable;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.refactoringgraph.HCluster;
+import org.gravity.hulk.refactoringgraph.HInBlobAccess;
+import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
+import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
+import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import org.gravity.refactorings.Extract_Class;
+import org.gravity.refactorings.configuration.ConfigurationFactory;
+import org.gravity.refactorings.configuration.ExtractClassConfiguration;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.containers.ContainersFactory;
+import org.gravity.typegraph.basic.containers.TMemberContainer;
+import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
+import org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
+import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
+import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsFactory;
+
+partial class HAlternativeBlobresolverImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Alternative " + super.getGuiName();
+	}
+	
+-->
+
+@model process (HInBlobClusterAccess hCluster, TClass tClass, HBlobResolveAnnotation hParent) <--
+
+//		HRelativeValue relativeAmount = hCluster.getRelativeAmount();
+//		HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
+//		boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
+//				|| hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue == HRelativeValueConstants.MEDIUM;
+
+		EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
+		for (TMember member : tMembers) {
+			if (!allowedToTouch(member)) {
+				return false;
+			}
+			if (member instanceof TConstructorDefinition) {
+				return false;
+			}
+		}
+
+		// Keep the biggest cluster in the class
+		int size = hCluster.getHCluster().getTMembers().size();
+		SortedSet<Integer> sizes = new TreeSet<>();
+		for (TAnnotation tAnnotation : tClass.getTAnnotation()) {
+			if (tAnnotation instanceof HCluster) {
+				HCluster otherCluster = (HCluster) tAnnotation;
+				sizes.add(otherCluster.getTMembers().size());
+			}
+		}
+		if (sizes.headSet(size).size() > 0.7*sizes.size()) {
+			return false;
+		}
+
+		int dataClassCoupling = 0;
+		int internalCoupling = (int) hCluster.getValue();
+
+		Hashtable<TClass, Integer> coupling = new Hashtable<>();
+		for (TMember member : tMembers) {
+
+			// Search DataClass with max coupling
+			for (TAnnotation tAnnotations : member.getTAnnotation()) {
+				if (tAnnotations instanceof HMethodToDataClassAccess) {
+					HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tAnnotations;
+					int value = (int) m2dc.getValue();
+					TClass key = m2dc.getHDataClass();
+					if (coupling.containsKey(key)) {
+						value += coupling.get(key);
+					}
+					coupling.put(key, value);
+				}
+			}
+		}
+		if (coupling.size() == 0) {
+//			if (!lowCohesion || tMembers.size() <= 2) {
+//				return false;
+//			}
+//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+//			extract.getTMembers().addAll(tMembers);
+//			if (!isRefactoringPossible(extract)) {
+//				return false;
+//			}
+//
+//			hParent.getHRefactorings().add(extract);
+//			tClass.getTAnnotation().add(extract);
+//			extract.setTAnnotated(tClass);
+//			extract.setValue(internalCoupling + 1);
+			return true;
+		}
+
+		TMemberContainer tContainer = ContainersFactory.eINSTANCE.createTMemberContainer();
+		tContainer.getTMembers().addAll(tMembers);
+
+		Set<HMoveMembers> possibleMoves = new HashSet<>();
+		for (TClass tDataClass : coupling.keySet()) {
+			HMoveMembers hMoveMembers = createMove(tContainer, tClass, tDataClass, hParent);
+			if (hMoveMembers != null) {
+				for (HMoveMember hMove : hMoveMembers.getHMoveMembers()) {
+					TMember member = (TMember) hMove.getTAnnotated();
+
+				}
+				hMoveMembers.setValue(internalCoupling - coupling.get(tDataClass));
+				possibleMoves.add(hMoveMembers);
+			}
+		}
+		if (possibleMoves.size() == 0) {
+//			if (!lowCohesion || tMembers.size() <= 2) {
+//				return false;
+//			}
+//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+//			extract.getTMembers().addAll(tMembers);
+//			if (isRefactoringPossible(extract)) {
+//				hParent.getHRefactorings().add(extract);
+//				extract.getPartOf().add(hParent);
+//				extract.setValue(internalCoupling + 1);
+//				return true;
+//			}
+		}
+		return true;
+-->
+
+}

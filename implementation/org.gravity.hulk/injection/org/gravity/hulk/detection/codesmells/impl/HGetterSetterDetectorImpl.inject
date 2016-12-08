@@ -1,0 +1,18 @@
+
+partial class HGetterSetterDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Getter/Setter Smell";
+	}
+	
+-->
+
+@model isGetterSetter (TMethodDefinition method) <--
+		String tName = method.getSignature().getMethod().getTName();
+		return tName.startsWith("get") || tName.startsWith("get");
+-->
+
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ExtendedJamopp:ExtendedJamoppJavaContainer
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ExtendedJamopp="platform:/plugin/ExtendedJamopp/model/ExtendedJamopp.ecore"
+	xmlns:classifiers="http://www.emftext.org/java/classifiers" 
+	xmlns:modifiers="http://www.emftext.org/java/modifiers" 
+	xmlns:types="http://www.emftext.org/java/types">
+  <compilationUnit name="de.tu.darmstadt.es.example.SampleClass.java">
+    <namespaces>de</namespaces>
+    <namespaces>tu</namespaces>
+    <namespaces>darmstadt</namespaces>
+    <namespaces>es</namespaces>
+    <namespaces>example</namespaces>
+    <classifiers xsi:type="classifiers:Class" name="SampleClass">
+      <members xsi:type="classifiers:Class" name="InlineClass">
+        <defaultExtends xsi:type="types:ClassifierReference">
+          <target xsi:type="classifiers:Class" href="pathmap:/javaclass/java.lang.Object.java#//@classifiers[name='Object']"/>
+        </defaultExtends>
+      </members>
+      <annotationsAndModifiers xsi:type="modifiers:Public"/>
+      <defaultExtends xsi:type="types:ClassifierReference">
+        <target xsi:type="classifiers:Class" href="pathmap:/javaclass/java.lang.Object.java#//@classifiers[name='Object']"/>
+      </defaultExtends>
+    </classifiers>
+  </compilationUnit>
+  <compilationUnit name="de.tu.darmstadt.es.example.SampleChildClass.java">
+    <namespaces>de</namespaces>
+    <namespaces>tu</namespaces>
+    <namespaces>darmstadt</namespaces>
+    <namespaces>es</namespaces>
+    <namespaces>example</namespaces>
+    <classifiers xsi:type="classifiers:Class" name="SampleChildClass">
+      <annotationsAndModifiers xsi:type="modifiers:Public"/>
+      <extends xsi:type="types:NamespaceClassifierReference">
+        <classifierReferences target="//@compilationUnit.0/@classifiers.0"/>
+      </extends>
+    </classifiers>
+  </compilationUnit>
+  <compilationUnit name="de.tu.darmstadt.es.example.secondsubpackage.SecondSubPackageSampleClass.java">
+    <namespaces>de</namespaces>
+    <namespaces>tu</namespaces>
+    <namespaces>darmstadt</namespaces>
+    <namespaces>es</namespaces>
+    <namespaces>example</namespaces>
+    <namespaces>secondsubpackage</namespaces>
+    <classifiers xsi:type="classifiers:Class" name="SecondSubPackageSampleClass">
+      <annotationsAndModifiers xsi:type="modifiers:Public"/>
+      <defaultExtends xsi:type="types:ClassifierReference">
+        <target xsi:type="classifiers:Class" href="pathmap:/javaclass/java.lang.Object.java#//@classifiers[name='Object']"/>
+      </defaultExtends>
+    </classifiers>
+  </compilationUnit>
+  <compilationUnit name="de.tu.darmstadt.es.example.subpackage.SampleClassInSubpackage.java">
+    <namespaces>de</namespaces>
+    <namespaces>tu</namespaces>
+    <namespaces>darmstadt</namespaces>
+    <namespaces>es</namespaces>
+    <namespaces>example</namespaces>
+    <namespaces>subpackage</namespaces>
+    <classifiers xsi:type="classifiers:Class" name="SampleClassInSubpackage">
+      <annotationsAndModifiers xsi:type="modifiers:Public"/>
+      <defaultExtends xsi:type="types:ClassifierReference">
+        <target xsi:type="classifiers:Class" href="pathmap:/javaclass/java.lang.Object.java#//@classifiers[name='Object']"/>
+      </defaultExtends>
+    </classifiers>
+  </compilationUnit>
+  <extendedJamoppPackageElement name="de">
+    <successor name="tu">
+      <successor name="darmstadt">
+        <successor name="es">
+          <successor compilationUnit="//@compilationUnit.0 //@compilationUnit.1" name="example">
+            <successor compilationUnit="//@compilationUnit.2" name="secondsubpackage"/>
+            <successor compilationUnit="//@compilationUnit.3" name="subpackage"/>
+          </successor>
+        </successor>
+      </successor>
+    </successor>
+  </extendedJamoppPackageElement>
+</ExtendedJamopp:ExtendedJamoppJavaContainer>

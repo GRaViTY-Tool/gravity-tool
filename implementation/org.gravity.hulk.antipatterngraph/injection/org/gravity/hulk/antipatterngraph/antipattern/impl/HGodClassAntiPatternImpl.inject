@@ -1,0 +1,34 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HGodClassAntiPatternImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		HControllerClassSmell controller = getHControllerClassSmell();
+		if (controller != null) {
+			TreeItem treeItem = new TreeItem(item, style);
+			treeItem.setText("ControllerClass Smell");
+			controller.getTreeItem(treeItem, style);
+		}
+
+		HLargeClassLowCohesionSmell low_cohesion = getHLargeClassLowCohesionSmell();
+		if (controller != null) {
+			TreeItem treeItem = new TreeItem(item, style);
+			treeItem.setText("LargeClassLowCohesion Smell");
+			low_cohesion.getTreeItem(treeItem, style);
+		}
+
+		return item;
+	}
+
+	
+-->
+
+}

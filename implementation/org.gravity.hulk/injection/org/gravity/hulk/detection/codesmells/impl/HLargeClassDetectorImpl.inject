@@ -1,0 +1,13 @@
+
+partial class HLargeClassDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Large Class Smell";
+	}
+	
+-->
+
+}

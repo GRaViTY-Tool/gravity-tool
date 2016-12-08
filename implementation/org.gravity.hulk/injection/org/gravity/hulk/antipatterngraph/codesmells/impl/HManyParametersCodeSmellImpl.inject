@@ -1,0 +1,22 @@
+import org.gravity.typegraph.basic.TClass;
+import org.eclipse.swt.widgets.TreeItem;
+
+
+partial class HManyParametersCodeSmellImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		TreeItem item_parameter = new TreeItem(item, style);
+		getHAverageParametersMetric().getTreeItem(item_parameter, style);
+		return item;
+	}
+
+	
+-->
+
+}

@@ -1,0 +1,36 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage;
+import org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern;
+import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
+import org.gravity.hulk.antipatterngraph.codesmells.HMuchOverloadingCodeSmell;
+import org.gravity.hulk.antipatterngraph.impl.HAntiPatternImpl;
+import org.gravity.hulk.antipatterngraph.metrics.HNumberOfIncommingInvocationsMetric;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HSwissArmyKnifeAntiPatternImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		TreeItem item_large = new TreeItem(item, style);
+		item_large.setText("Large Class Code Smell");
+		getHLargeClassSmell().createItemContents(item_large, style);
+
+		TreeItem item_over = new TreeItem(item, style);
+		item_over.setText("Much Overloading Code Smell");
+		getHMuchOverloadingCodeSmell().createItemContents(item_over, style);
+
+		TreeItem item_invoc = new TreeItem(item, style);
+		item_invoc.setText("Many Incoming Invocations");
+		getHNumberOfIncommingInvocationsMetric().createItemContents(item_invoc, style);
+
+		return item;
+	}
+	
+-->
+
+}

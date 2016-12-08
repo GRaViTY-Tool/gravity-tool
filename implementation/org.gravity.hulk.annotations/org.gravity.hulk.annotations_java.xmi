@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="org.gravity.hulk.annotations">
+  <ownedElements name="org">
+    <ownedPackages name="gravity">
+      <ownedPackages name="hulk">
+        <ownedPackages name="annotations">
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.0" name="Blob">
+            <annotations originalCompilationUnit="//@compilationUnits.0">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+              <values>
+                <value xsi:type="java:SingleVariableAccess" variable="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@enumConstants.0">
+                  <qualifier xsi:type="java:TypeAccess" type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+                </value>
+              </values>
+            </annotations>
+            <modifier visibility="public"/>
+            <bodyDeclarations xsi:type="java:AnnotationTypeMemberDeclaration" originalCompilationUnit="//@compilationUnits.0" name="data">
+              <modifier/>
+              <type type="//@orphanTypes.11"/>
+            </bodyDeclarations>
+          </ownedElements>
+          <ownedElements xsi:type="java:AnnotationTypeDeclaration" originalCompilationUnit="//@compilationUnits.1" name="DataClass">
+            <modifier visibility="public"/>
+          </ownedElements>
+        </ownedPackages>
+      </ownedPackages>
+    </ownedPackages>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:ClassDeclaration" name="Class" proxy="true" usagesInTypeAccess="//@orphanTypes.10/@type">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.2"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.1"/>
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedPackages name="annotation" proxy="true">
+        <ownedElements xsi:type="java:EnumDeclaration" name="ElementType" proxy="true" usagesInImports="//@compilationUnits.0/@imports.0" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@values.0/@value/@qualifier">
+          <enumConstants name="TYPE" proxy="true" usageInVariableAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@values.0/@value"/>
+        </ownedElements>
+        <ownedElements xsi:type="java:AnnotationTypeDeclaration" name="Target" proxy="true" usagesInImports="//@compilationUnits.0/@imports.1" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@annotations.0/@type"/>
+      </ownedPackages>
+      <ownedPackages name="reflect" proxy="true">
+        <ownedElements xsi:type="java:InterfaceDeclaration" name="GenericDeclaration" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1">
+          <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.1"/>
+        </ownedElements>
+        <ownedElements xsi:type="java:InterfaceDeclaration" name="AnnotatedElement" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedPackages.1/@ownedElements.0/@superInterfaces.0 //@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.3"/>
+        <ownedElements xsi:type="java:InterfaceDeclaration" name="Type" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+      </ownedPackages>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <orphanTypes xsi:type="java:WildCardType" name="?" usagesInTypeAccess="//@orphanTypes.10/@typeArguments.0" upperBound="true"/>
+  <orphanTypes xsi:type="java:ParameterizedType" name="java.lang.Class&lt;?>" usagesInTypeAccess="//@orphanTypes.11/@elementType">
+    <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <typeArguments type="//@orphanTypes.9"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ArrayType" name="java.lang.Class&lt;?>[]" usagesInTypeAccess="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@type" dimensions="1">
+    <elementType type="//@orphanTypes.10"/>
+  </orphanTypes>
+  <compilationUnits name="Blob.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/Blob.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+  </compilationUnits>
+  <compilationUnits name="DataClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-linux/org.gravity.hulk.annotations/src/org/gravity/hulk/annotations/DataClass.java" package="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0" types="//@ownedElements.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+</java:Model>

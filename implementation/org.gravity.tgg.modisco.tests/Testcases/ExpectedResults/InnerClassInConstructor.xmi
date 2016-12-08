@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" ID="262" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="InnerClassInConstructor">
+  <packages classes="//@ownedTypes.8" ownedTypes="//@ownedTypes.8" typeGraph="/" tName="p">
+    <subpackage ID="269" classes="//@ownedTypes.9" ownedTypes="//@ownedTypes.9" tName="OuterClass$1"/>
+  </packages>
+  <methods ID="263" tName="m">
+    <signatures ID="265" returnType="//@ownedTypes.2">
+      <paramList ID="264" first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.7"/>
+      </paramList>
+      <definitions ID="266" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="267" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="OuterClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="268" package="//@packages.0/@subpackage.0" tName="InnerClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+</org.gravity.typegraph.basic:TypeGraph>

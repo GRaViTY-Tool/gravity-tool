@@ -1,0 +1,44 @@
+
+import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.refactorings.RefactoringsFactory;
+import org.gravity.refactorings.Move_Field;
+import org.gravity.refactorings.Move_Method;
+
+partial class Move_MemberImpl {
+
+
+
+@model isApplicable (TSignature signature, TClass tTargetClass, TClass tSourceClass) <--
+
+		if (signature instanceof TMethodSignature) {
+			TMethodSignature method = (TMethodSignature) signature;
+			Move_Method move = RefactoringsFactory.eINSTANCE.createMove_Method();
+			return move.isApplicable(method, tTargetClass, tSourceClass);
+		} else if (signature instanceof TFieldSignature) {
+			TFieldSignature field = (TFieldSignature) signature;
+			Move_Field move = RefactoringsFactory.eINSTANCE.createMove_Field();
+			return move.isApplicable(field, tTargetClass, tSourceClass);
+		} else {
+			System.err.println("Move_MemberImpl: Unknown TSignature: " + signature);
+			return false;
+		}
+-->
+
+@model Perform (TSignature signature, TClass tTargetClass, TClass tSourceClass) <--
+
+		if (signature instanceof TMethodSignature) {
+			TMethodSignature method = (TMethodSignature) signature;
+			Move_Method move = RefactoringsFactory.eINSTANCE.createMove_Method();
+			return move.Perform(method, tTargetClass, tSourceClass);
+		} else if (signature instanceof TFieldSignature) {
+			TFieldSignature field = (TFieldSignature) signature;
+			Move_Field move = RefactoringsFactory.eINSTANCE.createMove_Field();
+			return move.Perform(field, tTargetClass, tSourceClass);
+		} else {
+			System.err.println("Move_MemberImpl: Unknown TSignature: " + signature);
+			return null;
+		}
+-->
+
+}

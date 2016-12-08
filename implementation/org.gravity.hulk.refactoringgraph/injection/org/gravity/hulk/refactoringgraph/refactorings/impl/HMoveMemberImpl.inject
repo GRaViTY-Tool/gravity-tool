@@ -1,0 +1,40 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+
+partial class HMoveMemberImpl {
+
+@members <--
+
+	public int compare(HMoveMember hMoveMethod) {
+		int i = (int) (1000 * (getIba().getValue() - hMoveMethod.getIba().getValue()));
+		if (i == 0) {
+			return (int) (1000 * (hMoveMethod.getM2dc().getValue() - getM2dc().getValue()));
+		}
+		return i;
+	}
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		String text = "Move ";
+		int i;
+		for (i = 0; i < tSignature.size() - 1; i++) {
+			text += tSignature.get(i).getSignatureString();
+			text += ", ";
+		}
+		text += tSignature.get(i).getSignatureString();
+		text += " from " + sourceClass.getFullyQualifiedName() + " to " + targetClass.getFullyQualifiedName();
+		item.setText(text);
+		TreeItem details = new TreeItem(item, style);
+		details.setText("details");
+		if(getIba()!=null){
+			getIba().createItemContents(new TreeItem(details, style), style);
+		}
+		if(getM2dc()!=null){
+			getM2dc().createItemContents(new TreeItem(details, style), style);
+		}
+		return item;
+	}
+	
+-->
+
+}

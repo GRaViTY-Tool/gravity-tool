@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphBasic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore" ID="12">
+  <packages containedClasses="//@classes.9" tName="p"/>
+  <fields tName="s">
+    <signatures definitions="//@classes.9/@defines.0" type="//@classes.9"/>
+  </fields>
+  <classes ID="13" tLib="true" tName="boolean"/>
+  <classes ID="14" tLib="true" tName="byte"/>
+  <classes ID="15" tLib="true" tName="char"/>
+  <classes ID="16" tLib="true" tName="double"/>
+  <classes ID="17" tLib="true" tName="float"/>
+  <classes ID="18" tLib="true" tName="int"/>
+  <classes ID="19" tLib="true" tName="long"/>
+  <classes ID="20" tLib="true" tName="short"/>
+  <classes ID="21" tLib="true" tName="void"/>
+  <classes package="//@packages.0" signature="//@fields.0/@signatures.0" tName="MainData">
+    <defines xsi:type="TypeGraphBasic:TFieldDefinition" signature="//@fields.0/@signatures.0"/>
+  </classes>
+</TypeGraphBasic:TypeGraph>

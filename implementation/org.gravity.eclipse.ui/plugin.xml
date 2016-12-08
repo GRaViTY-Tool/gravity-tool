@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <menu
+               icon="icons/icon16.png"
+               id="org.gravity.mainmenu"
+               label="GRaViTY">
+            <command
+                  commandId="org.gravity.eclipse.ui.command.trafo"
+                  label="Generate  Program Graph"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.gravity.eclipse.ui.command.sync.fwd"
+                  label="Syncronize Forward"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.gravity.eclipse.ui.command.sync.bwd"
+                  label="Synchronize Backward"
+                  style="push">
+            </command>
+            <menu
+                  id="org.gravity.settingsmenu"
+                  label="Settings">
+               <menu
+                     label="Select converter">
+                  <dynamic
+                        class="org.gravity.eclipse.ui.dynamic.ConverterSelection"
+                        id="org.gravity.eclipse.converter.menu.dynamic">
+                  </dynamic>
+               </menu>
+               <command
+                     commandId="org.gravity.eclipse.ui.command.verbose"
+                     label="Enable verbose"
+                     style="push">
+               </command>
+            </menu>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.gravity.eclipse.ui.handler.JavaParseHandler"
+            id="org.gravity.eclipse.ui.command.trafo"
+            name="Generate Program Graph">
+         <defaultHandler
+               class="org.gravity.eclipse.ui.handler.JavaParseHandler">
+            <parameter
+                  name="Gravity.parameter1"
+                  value="Gravity.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            defaultHandler="org.gravity.eclipse.ui.handler.JavaSyncFwdHandler"
+            id="org.gravity.eclipse.ui.command.sync.fwd"
+            name="Synchronize Forward">
+         <defaultHandler
+               class="org.gravity.eclipse.ui.handler.JavaSyncFwdHandler">
+            <parameter
+                  name="org.gravity.eclipse.ui.parameter2"
+                  value="org.gravity.eclipse.ui.parameter2">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            defaultHandler="org.gravity.eclipse.ui.handler.JavaSyncBwdHandler"
+            id="org.gravity.eclipse.ui.command.sync.bwd"
+            name="Synchronize Backward">
+         <defaultHandler
+               class="org.gravity.eclipse.ui.handler.JavaSyncBwdHandler">
+            <parameter
+                  name="org.gravity.eclipse.ui.parameter1"
+                  value="org.gravity.eclipse.ui.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            defaultHandler="org.gravity.eclipse.ui.handler.VerboseHandler"
+            id="org.gravity.eclipse.ui.command.verbose"
+            name="Verbose Command">
+         <defaultHandler
+               class="org.gravity.eclipse.ui.handler.VerboseHandler">
+            <parameter
+                  name="org.gravity.eclipse.ui.parameter1"
+                  value="org.gravity.eclipse.ui.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+   </extension>
+
+</plugin>

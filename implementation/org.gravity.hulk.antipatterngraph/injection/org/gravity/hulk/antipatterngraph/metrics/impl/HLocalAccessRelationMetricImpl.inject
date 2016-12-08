@@ -1,0 +1,18 @@
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+
+partial class HLocalAccessRelationMetricImpl {
+
+@members <--
+
+
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("LocalFieldAccess/LocalMethodAccess(" + ((TClass) getTAnnotated()).getTName() + ") = " + getValue()
+				+ ")");
+		return item;
+	}
+	
+-->
+
+}

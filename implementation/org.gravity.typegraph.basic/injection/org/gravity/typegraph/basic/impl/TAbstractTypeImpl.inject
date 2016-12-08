@@ -1,0 +1,28 @@
+
+import java.util.LinkedList;
+import java.util.List;
+
+partial class TAbstractTypeImpl {
+
+
+
+@model getFullyQualifiedName () <--
+
+		StringBuilder builder = new StringBuilder();
+		List<String> packages = new LinkedList<>();
+		TPackage tPackage = getPackage();
+		while (tPackage != null) {
+			packages.add(0, tPackage.getTName());
+			tPackage = tPackage.getParent();
+		}
+		for (String name : packages) {
+			builder.append(name);
+			if (name.length() > 0 && !name.endsWith("$") && !name.endsWith("$1")) { //$NON-NLS-1$ //$NON-NLS-2$
+				builder.append('.');
+			}
+		}
+		builder.append(getTName());
+		return builder.toString();
+-->
+
+}

@@ -1,0 +1,27 @@
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HBlobAntiPatternImpl {
+
+@members <--
+
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		TreeItem item_main = new TreeItem(item, style);
+		item_main.setText("God Class Anti-Pattern");
+
+		TreeItem subitem_main = getHGodClassAntiPattern().getTreeItem(item_main, style);
+
+		TreeItem item_data = new TreeItem(item, style);
+		item_data.setText("DataClass Smells");
+
+		for (HDataClassSmell data : getHDataClassSmells()) {
+			TreeItem subitem_data = data.getTreeItem(item_data, style);
+		}
+		return item;
+	}
+	
+-->
+
+}

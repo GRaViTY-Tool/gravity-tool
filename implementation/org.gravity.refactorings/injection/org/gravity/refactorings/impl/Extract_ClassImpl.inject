@@ -1,0 +1,60 @@
+
+import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMethodDefinition;
+
+partial class Extract_ClassImpl {
+
+
+
+@model isApplicable (RefactoringConfiguration tRefactoringConfiguration) <--
+
+		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
+			ExtractClassConfiguration configuration = (ExtractClassConfiguration) tRefactoringConfiguration;
+
+			EList<TMember> tMembers = configuration.getTMembers();
+			if (tMembers.size() == 0) {
+				return false;
+			}
+			TPackage tPackage = tMembers.get(0).getDefinedBy().getPackage();
+			for (TAbstractType type : tPackage.getOwnedTypes()) {
+				if (type.getTName().equals(configuration.getTNewClassName())) {
+					return false;
+				}
+			}
+
+			for (TMember tMember : tMembers) {
+				if (tMember instanceof TMethodDefinition) {
+					TMethodDefinition mDef = (TMethodDefinition) tMember;
+					if (mDef instanceof TConstructorDefinition) {
+						return false;
+					}
+					if (mDef.getOverriding() != null || mDef.getOverriddenBy().size() > 0) {
+						return false;
+					}
+				} else if (tMember instanceof TFieldDefinition) {
+					TFieldDefinition fDef = (TFieldDefinition) tMember;
+					if (fDef.getHiding() != null || fDef.getHiddenBy().size() > 0) {
+						return false;
+					}
+				} else {
+					System.err.println("Extract_Class: Unknown member type: " + tMember);
+					return false;
+				}
+			}
+			return true;
+
+		}
+		return false;
+-->
+
+@model getConfiguration (RefactoringConfiguration tRefactoringConfiguration) <--
+
+		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
+			return (ExtractClassConfiguration) tRefactoringConfiguration;
+
+		}
+		return null;
+-->
+
+}

@@ -1,0 +1,52 @@
+TestFile public_pum_3 {
+
+	class child1 {
+		package "example03"
+		name	"ChildClass1"
+	}
+	
+	class child2 {
+		package "example03"
+		name	"ChildClass2"
+	}
+	
+	class child3 {
+		package "example03"
+		name	"ChildClass3"
+	}
+	
+	class existing_parent {
+		package "example03"
+		name	"ParentClass"
+	}
+	
+	classes has_method {
+		child1,
+		child2
+	}
+	
+	method method_to_pull_up {
+		name "method"
+	}
+	
+	pullup_method executable_pum_1 {
+		parent existing_parent
+		method method_to_pull_up
+	}
+	
+	case pub_pum3_1 {
+		description "PUM-NEG: (paper3) Pull-up of a method from two child classes into a parent class, a third sibling does not have the method."
+		program "paper-example03"
+		
+		testflow {
+			assertFalse(executable_pum_1)
+			
+			synchronize
+			compile
+			existing_parent ~contains method_to_pull_up
+			child1 contains method_to_pull_up
+			child2 contains method_to_pull_up
+			child3 ~contains method_to_pull_up
+		}
+	}
+}

@@ -1,0 +1,43 @@
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HSpaghettiCodeAntiPatternImpl {
+
+@members <--
+
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+
+		HAverageOverloadingInClassMetric overloading = getHAverageOverloadingInClassMetric();
+		if(overloading!=null){
+			overloading.getTreeItem(item, style);
+		}
+		HAverageParametersMetric parameter = getHAverageParametersMetric();
+		if(parameter!=null){
+			parameter.getTreeItem(item, style);
+		}
+		HDepthOfInheritanceMetric inheritance = getHDepthOfInheritance();
+		if(inheritance!=null){
+			inheritance.getTreeItem(item, style);
+		}
+		HNumberOfChildMetric child = getHNumberOfChild();
+		if(child!=null){
+			child.getTreeItem(item, style);
+		}
+		HIntenseFieldUsageCodeSmell field = getHIntenseFieldUsageCodeSmell();
+		if(field!=null){
+			TreeItem new_item = new TreeItem(item, style);
+			new_item.setText("Intense Field Usage");
+			field.getTreeItem(new_item, style);
+		}
+		return item;
+	}
+
+	
+-->
+
+}

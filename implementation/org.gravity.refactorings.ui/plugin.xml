@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.gravity.refactorings.ui.handler.PUMHandler"
+            id="org.gravity.refactorings.ui.commands.PUM"
+            name="PUM Command">
+         <defaultHandler
+               class="org.gravity.refactorings.ui.handler.PUMHandler">
+            <parameter
+                  name="org.gravity.refactorings.ui.parameter1"
+                  value="org.gravity.refactorings.ui.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            id="org.gravity.refactorings.ui.commands.MOM"
+            name="MOM Command">
+         <defaultHandler
+               class="org.gravity.refactorings.ui.handler.MOMHandler">
+            <parameter
+                  name="org.gravity.refactorings.ui.parameter1"
+                  value="org.gravity.refactorings.ui.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               label="Refactoring">
+            <command
+                  commandId="org.gravity.refactorings.ui.commands.PUM"
+                  label="Pull Up Method Refactoring"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.gravity.refactorings.ui.commands.MOM"
+                  label="Move Method Refactoring"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

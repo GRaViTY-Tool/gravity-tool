@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.gravity.settingsmenu">
+         <menu
+               label="MoDisco Patcher">
+            <dynamic
+                  class="org.gravity.tgg.modisco.ui.selection.PatcherSelection"
+                  id="org.gravity.tgg.modisco.ui.patcher">
+            </dynamic>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

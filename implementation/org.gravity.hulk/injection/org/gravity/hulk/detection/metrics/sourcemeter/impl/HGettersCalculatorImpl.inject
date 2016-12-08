@@ -1,0 +1,13 @@
+
+partial class HGettersCalculatorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Number of Getters";
+	}
+	
+-->
+
+}

@@ -1,0 +1,220 @@
+
+import java.util.Stack;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.gmt.modisco.java.Block;
+import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.gmt.modisco.java.ClassDeclaration;
+import org.eclipse.gmt.modisco.java.CompilationUnit;
+import org.eclipse.gmt.modisco.java.Expression;
+import org.eclipse.gmt.modisco.java.ExpressionStatement;
+import org.eclipse.gmt.modisco.java.FieldDeclaration;
+import org.eclipse.gmt.modisco.java.InheritanceKind;
+import org.eclipse.gmt.modisco.java.MethodDeclaration;
+import org.eclipse.gmt.modisco.java.MethodInvocation;
+import org.eclipse.gmt.modisco.java.Modifier;
+import org.eclipse.gmt.modisco.java.ParameterizedType;
+import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
+import org.eclipse.gmt.modisco.java.SingleVariableAccess;
+import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.gmt.modisco.java.Statement;
+import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.TypeParameter;
+import org.eclipse.gmt.modisco.java.VariableDeclaration;
+import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.VisibilityKind;
+import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MDefinition;
+import org.gravity.modisco.MEntry;
+import org.gravity.modisco.MFieldDefinition;
+import org.gravity.modisco.MFieldName;
+import org.gravity.modisco.MFieldSignature;
+import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MMethodDefinition;
+import org.gravity.modisco.MMethodName;
+import org.gravity.modisco.MMethodSignature;
+import org.gravity.modisco.MName;
+import org.gravity.modisco.MSignature;
+import org.gravity.modisco.ModiscoFactory;
+import org.gravity.tgg.modisco.preprocessing.MiscHandler;
+import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
+import org.gravity.tgg.modisco.preprocessing.PreprocessingPackage;
+import org.gravity.tgg.modisco.preprocessing.StatementHandler;
+
+partial class MoDiscoTGGPreprocessingImpl {
+
+@members <--
+
+	private boolean isParamListEqual(EList<SingleVariableDeclaration> parameters1,
+			EList<SingleVariableDeclaration> parameters2) {
+		if (parameters1.size() == parameters2.size()) {
+			for (int i = 0; i < parameters1.size(); i++) {
+				if (!parameters1.get(i).getType().equals(parameters2.get(i).getType())) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+	
+-->
+
+@model createParamList (MMethodDefinition mDef, MMethodSignature mSig) <--
+
+		MEntry prev = null;
+		EList<MEntry> mEntrys = mSig.getMEntrys();
+		for (SingleVariableDeclaration param : mDef.getParameters()) {
+			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			mEntrys.add(entry);
+			Type type = param.getType().getType();
+			if(!(type instanceof TypeParameter)){
+				entry.setType(type);
+			}
+			if (prev == null) {
+				mSig.setMFirstEntry(entry);
+			} else {
+				entry.setMPrevious(prev);
+				prev.setMNext(entry);
+			}
+			prev = entry;
+		}
+		return true;
+-->
+
+@model getMostGenericReturnType (MMethodDefinition method) <--
+
+		TypeAccess returnType = method.getReturnType();
+		if (returnType == null) {
+			// Dirty Hack: assume void
+			TypeAccess a = JavaFactory.eINSTANCE.createTypeAccess();
+			method.setReturnType(a);
+			for (Type t : method.getModel().getOrphanTypes()) {
+				if (t instanceof PrimitiveTypeVoid) {
+					a.setType(t);
+					return t;
+				}
+			}
+		}
+		Type ret = returnType.getType();
+
+		Stack<Type> stack = new Stack();
+		AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+		if (abstractTypeDeclaration != null) {
+			stack.add(abstractTypeDeclaration);
+		}
+		while (!stack.isEmpty()) {
+			Type type = stack.pop();
+			if (type instanceof ClassDeclaration) {
+				ClassDeclaration clazz = (ClassDeclaration) type;
+				TypeAccess superClass = clazz.getSuperClass();
+				if (superClass != null) {
+					stack.add(superClass.getType());
+				}
+			}
+			else if(type instanceof ParameterizedType){
+				stack.add(((ParameterizedType) type).getType().getType());
+			}
+			else{
+			AbstractTypeDeclaration abst = (AbstractTypeDeclaration) type;
+			for (TypeAccess interf : abst.getSuperInterfaces()) {
+				Type typeInterf = interf.getType();
+				if (typeInterf == null) {
+					System.err.println("Skipped type of: " + interf);
+					continue;
+				}
+				stack.add(typeInterf);
+			}
+
+			for (BodyDeclaration body : abst.getBodyDeclarations()) {
+				if (body instanceof MethodDeclaration) {
+					MethodDeclaration decl = (MethodDeclaration) body;
+					if (method.getName().equals(decl.getName())) {
+						if (isParamListEqual(method.getParameters(), decl.getParameters())) {
+							TypeAccess returnTypeDecl = decl.getReturnType();
+							if (returnTypeDecl == null) {
+								System.err.println("Skipped return type of: " + decl);
+								continue;
+							}
+							if (isSuperType(ret, returnTypeDecl.getType())) {
+								ret = returnTypeDecl.getType();
+							}
+						}
+					}
+				}
+			}
+			}
+		}
+		return ret;
+-->
+
+@model isParamListEqual (MMethodDefinition mDef, MMethodSignature mSig) <--
+
+		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
+		EList<MEntry> parameters2 = mSig.getMEntrys();
+		if (parameters1.size() == parameters2.size()) {
+			for (int i = 0; i < parameters1.size(); i++) {
+				if (!parameters1.get(i).getType().getType().equals(parameters2.get(i).getType())) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+-->
+
+@model isSuperType (Type type, Type supertype) <--
+
+		if (type instanceof AbstractTypeDeclaration) {
+			if (type instanceof ClassDeclaration) {
+				ClassDeclaration clazz = (ClassDeclaration) type;
+				TypeAccess superClass = clazz.getSuperClass();
+				if (superClass != null) {
+					Type parent = superClass.getType();
+					if (supertype.equals(parent) || isSuperType(parent, supertype)) {
+						return true;
+					}
+				}
+			}
+			for (TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
+				if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
+					return true;
+				}
+			}
+		}
+		return false;
+-->
+
+@model updateName (MName mName, MDefinition mDef) <--
+
+		// TODO: implement this method here but do not remove the injection
+		// marker
+		throw new UnsupportedOperationException();
+-->
+
+@model preprocessAccesses (MGravityModel model) <--
+
+		for (MAbstractMethodDefinition def : model.getMAbstractMethodDefinitions()) {
+			Block block = def.getBody();
+			if (!StatementHandler.handle(block, def)) {
+				return false;
+			}
+		}
+		for (MFieldDefinition def : model.getMFieldDefinitions()) {
+			for (VariableDeclarationFragment fragment : def.getFragments()) {
+				if (!MiscHandler.handle(fragment, def)) {
+					return false;
+				}
+			}
+		}
+		return true;
+-->
+
+}

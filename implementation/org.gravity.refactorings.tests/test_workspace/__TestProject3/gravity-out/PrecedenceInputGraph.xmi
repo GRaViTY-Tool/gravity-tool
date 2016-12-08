@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches ruleName="FieldDefinition">
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <nodeMappings nodeName="jFieldSig">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="extendedFieldName">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jClass">
+      <node href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jField">
+      <node href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedFieldName">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedFieldType">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fields">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="members">
+      <src href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fields">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0/@members.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="FieldTypeIsClass" number="1">
+    <sourceElements href="pathmap:/javaclass/java.lang.String.java#//@classifiers.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0/@extendedTypes"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <contextElements href="pathmap:/javaclass/java.lang.String.java#//@classifiers.0"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <nodeMappings nodeName="jFieldSig">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0/@extendedTypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jClass">
+      <node href="pathmap:/javaclass/java.lang.String.java#//@classifiers.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedTypes">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0/@extendedTypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0/@extendedTypes"/>
+      <trg href="pathmap:/javaclass/java.lang.String.java#//@classifiers.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0/@extendedTypes"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.3 //@tripleMatches.4 //@tripleMatches.6" ruleName="ProgramGraphCreate" number="2">
+    <sourceElements href="ExtendedJaMoPP.xmi#/"/>
+    <nodeMappings nodeName="extendedJamoppJavaContainer">
+      <node href="ExtendedJaMoPP.xmi#/"/>
+    </nodeMappings>
+    <createdElements href="ExtendedJaMoPP.xmi#/"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.0" ruleName="ClassDefault" number="3">
+    <sourceElements href="ExtendedJaMoPP.xmi#/"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <contextElements href="ExtendedJaMoPP.xmi#/"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jPackage">
+      <node href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jClass">
+      <node href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jContainer">
+      <node href="ExtendedJaMoPP.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedJamoppPackageElement">
+      <src href="ExtendedJaMoPP.xmi#/"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classifiers">
+      <src href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnit">
+      <src href="ExtendedJaMoPP.xmi#/"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnit">
+      <src href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0"/>
+    <createdElements href="ExtendedJaMoPP.xmi#//@compilationUnit.0/@classifiers.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.0 //@tripleMatches.5" ruleName="FieldName" number="4">
+    <sourceElements href="ExtendedJaMoPP.xmi#/"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <contextElements href="ExtendedJaMoPP.xmi#/"/>
+    <nodeMappings nodeName="ejjc">
+      <node href="ExtendedJaMoPP.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jFieldName">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedFieldName">
+      <src href="ExtendedJaMoPP.xmi#/"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.0 //@tripleMatches.1" ruleName="FieldSignature" number="5">
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <contextElements href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    <nodeMappings nodeName="jFieldSig">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jFieldName">
+      <node href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedFieldName">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedFieldType">
+      <src href="ExtendedJaMoPP.xmi#//@extendedFieldName.0"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@extendedFieldTypes.0"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.3" ruleName="PackageRoot" number="6">
+    <sourceElements href="ExtendedJaMoPP.xmi#/"/>
+    <sourceElements href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <contextElements href="ExtendedJaMoPP.xmi#/"/>
+    <nodeMappings nodeName="extendedJamoppJavaContainer">
+      <node href="ExtendedJaMoPP.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="extendedJamoppPackageElement">
+      <node href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="extendedJamoppPackageElement">
+      <src href="ExtendedJaMoPP.xmi#/"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="roots">
+      <src href="ExtendedJaMoPP.xmi#/"/>
+      <trg href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    </containedEdges>
+    <createdElements href="ExtendedJaMoPP.xmi#//@extendedJamoppPackageElement.0"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.1"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>

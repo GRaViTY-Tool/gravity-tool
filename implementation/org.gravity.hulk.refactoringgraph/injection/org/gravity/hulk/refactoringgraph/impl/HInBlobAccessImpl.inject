@@ -1,0 +1,31 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
+
+partial class HInBlobAccessImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		TMember methodDef = ((TMember) getTAnnotated());
+		String methodName = methodDef.getSignatureString();
+		
+		TAbstractType definingClass = methodDef.getDefinedBy();
+		String definingClassName = "DefaultClassName";
+		if (definingClass != null) {
+			definingClassName = definingClass.getFullyQualifiedName();
+		}
+
+		item.setText("InBlobAccess(" + definingClassName + "->" + methodName + ")=" + getValue());
+		return item;
+	}
+	
+-->
+
+}

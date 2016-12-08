@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.antipatterngraph.AntipatterngraphPackage" genModel="model/Antipatterngraph.genmodel" uri="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage" genModel="model/Antipatterngraph.genmodel" uri="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage" genModel="model/Antipatterngraph.genmodel" uri="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.antipatterngraph.metrics.MetricsPackage" genModel="model/Antipatterngraph.genmodel" uri="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.hulk.antipatterngraph.values.ValuesPackage" genModel="model/Antipatterngraph.genmodel" uri="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values"/>
+  </extension>
+</plugin>

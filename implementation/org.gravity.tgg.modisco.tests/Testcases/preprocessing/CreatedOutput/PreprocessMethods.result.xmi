@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.modisco:MGravityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" name="PreprocessMethods" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.0/@bodyDeclarations.1 //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.1/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2" mNames="//@mMethodNames.0 //@mMethodNames.1 //@mMethodNames.2 //@mMethodNames.3 //@mMethodNames.4">
+  <ownedElements name="hirachy">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="FirstChild1" usagesInImports="//@compilationUnits.4/@imports.0 //@compilationUnits.5/@imports.0 //@compilationUnits.6/@imports.0 //@compilationUnits.10/@imports.0" usagesInTypeAccess="//@ownedElements.0/@ownedElements.1/@superClass //@ownedElements.1/@ownedElements.0/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.1/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.2/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1/@returnType">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.0" name="overloading" mMethodName="//@mMethodNames.0" mMethodSignature="//@mMethodSignatures.3" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.0"/>
+        <parameters originalCompilationUnit="//@compilationUnits.0" name="s">
+          <modifier/>
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.0" name="parameters" mMethodName="//@mMethodNames.1" mMethodSignature="//@mMethodSignatures.4" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.0"/>
+        <parameters originalCompilationUnit="//@compilationUnits.0" name="d">
+          <modifier/>
+          <type type="//@orphanTypes.3"/>
+        </parameters>
+        <parameters originalCompilationUnit="//@compilationUnits.0" name="i">
+          <modifier/>
+          <type type="//@orphanTypes.0"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <superClass type="//@ownedElements.0/@ownedElements.2"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.1" name="SecondChild" usagesInImports="//@compilationUnits.9/@imports.1" usagesInTypeAccess="//@ownedElements.1/@ownedElements.5/@bodyDeclarations.2/@returnType">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.1" name="parameters" mMethodName="//@mMethodNames.1" mMethodSignature="//@mMethodSignatures.5" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.1"/>
+        <parameters originalCompilationUnit="//@compilationUnits.1" name="i">
+          <modifier/>
+          <type type="//@orphanTypes.0"/>
+        </parameters>
+        <parameters originalCompilationUnit="//@compilationUnits.1" name="d">
+          <modifier/>
+          <type type="//@orphanTypes.3"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <superClass type="//@ownedElements.0/@ownedElements.0"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.2" name="Parent" usagesInImports="//@compilationUnits.6/@imports.1 //@compilationUnits.7/@imports.0 //@compilationUnits.8/@imports.0 //@compilationUnits.9/@imports.0 //@compilationUnits.10/@imports.1" usagesInTypeAccess="//@ownedElements.0/@ownedElements.3/@superClass //@ownedElements.1/@ownedElements.2/@bodyDeclarations.1/@returnType //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2/@returnType //@ownedElements.1/@ownedElements.3/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.3/@bodyDeclarations.1/@returnType //@ownedElements.1/@ownedElements.3/@bodyDeclarations.2/@returnType //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1/@returnType //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2/@returnType //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1/@returnType //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0/@returnType //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2/@returnType //@ownedElements.0/@ownedElements.0/@superClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.2" name="overloading" mMethodName="//@mMethodNames.0" mMethodSignature="//@mMethodSignatures.1" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.2"/>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.2" name="overloading" mMethodName="//@mMethodNames.0" mMethodSignature="//@mMethodSignatures.2" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.2"/>
+        <parameters originalCompilationUnit="//@compilationUnits.2" name="i">
+          <modifier/>
+          <type type="//@orphanTypes.0"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.3" name="FirstChild2">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.3" name="overloading" mMethodName="//@mMethodNames.0" mMethodSignature="//@mMethodSignatures.3" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.3"/>
+        <parameters originalCompilationUnit="//@compilationUnits.3" name="s">
+          <modifier/>
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <superClass type="//@ownedElements.0/@ownedElements.2"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="methods">
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.4" name="ChildInterface">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.4" name="multipleInterfaceMethod" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <modifier/>
+        <returnType type="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <superInterfaces type="//@ownedElements.1/@ownedElements.3"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.5" name="SecondParentInterface" usagesInTypeAccess="//@ownedElements.1/@ownedElements.5/@superInterfaces.1">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.5" name="multipleInterfaceMethod" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.7" model="/">
+        <modifier/>
+        <returnType type="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.6" name="ChildClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.6" name="singeInterfaceMethod" redefinedMethodDeclaration="//@ownedElements.1/@ownedElements.4/@bodyDeclarations.0" mMethodName="//@mMethodNames.3" mMethodSignature="//@mMethodSignatures.8" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.6">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.6">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.6">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.6" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.6"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.6" name="interfaceMethod" redefinedMethodDeclaration="//@ownedElements.1/@ownedElements.4/@bodyDeclarations.1" mMethodName="//@mMethodNames.4" mMethodSignature="//@mMethodSignatures.9" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.6">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.6">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.6">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.6" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.6"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.6" name="multipleInterfaceMethod" redefinedMethodDeclaration="//@ownedElements.1/@ownedElements.4/@bodyDeclarations.2" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.6">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.6">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.6">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.6" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.6"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <superClass type="//@ownedElements.1/@ownedElements.4"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.7" name="FirstParentInterface" usagesInTypeAccess="//@ownedElements.1/@ownedElements.4/@superInterfaces.0 //@ownedElements.1/@ownedElements.5/@superInterfaces.0 //@ownedElements.1/@ownedElements.6/@superInterfaces.0 //@ownedElements.1/@ownedElements.0/@superInterfaces.0">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.7" name="singeInterfaceMethod" mMethodName="//@mMethodNames.3" mMethodSignature="//@mMethodSignatures.8" model="/">
+        <modifier/>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.7" name="interfaceMethod" mMethodName="//@mMethodNames.4" mMethodSignature="//@mMethodSignatures.9" model="/">
+        <modifier/>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.7" name="multipleInterfaceMethod" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <modifier/>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.8" name="SimpleClass" usagesInTypeAccess="//@ownedElements.1/@ownedElements.2/@superClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.8" name="singeInterfaceMethod" redefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0" mMethodName="//@mMethodNames.3" mMethodSignature="//@mMethodSignatures.8" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.8">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.8">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.8">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.8" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.8"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.8" name="interfaceMethod" redefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.1" mMethodName="//@mMethodNames.4" mMethodSignature="//@mMethodSignatures.9" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.8">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.8">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.8">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.8" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.8"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.8" name="multipleInterfaceMethod" redefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.2" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.8">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.8">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.8">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.8" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.8"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <superInterfaces type="//@ownedElements.1/@ownedElements.3"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.9" name="MulipleInterfaces">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.9" name="singeInterfaceMethod" mMethodName="//@mMethodNames.3" mMethodSignature="//@mMethodSignatures.8" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.9">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.9">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.9">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.9" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.9"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.9" name="interfaceMethod" mMethodName="//@mMethodNames.4" mMethodSignature="//@mMethodSignatures.9" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.9">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.9">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.9">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.9" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.9"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.9" name="multipleInterfaceMethod" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.9">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.9">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.9">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.9" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.9"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.1"/>
+      </bodyDeclarations>
+      <superInterfaces type="//@ownedElements.1/@ownedElements.3"/>
+      <superInterfaces type="//@ownedElements.1/@ownedElements.1"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.10" name="RestrictingClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.10" name="singeInterfaceMethod" mMethodName="//@mMethodNames.3" mMethodSignature="//@mMethodSignatures.8" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.10">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.10">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.10">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.10" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.10"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.10" name="interfaceMethod" mMethodName="//@mMethodNames.4" mMethodSignature="//@mMethodSignatures.9" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.10">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.10">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.10">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.10" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.10"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.0"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.10" name="multipleInterfaceMethod" mMethodName="//@mMethodNames.2" mMethodSignature="//@mMethodSignatures.6" model="/">
+        <annotations originalCompilationUnit="//@compilationUnits.10">
+          <type type="//@ownedElements.2/@ownedPackages.0/@ownedElements.3"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.10">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.10">
+            <comments xsi:type="java:LineComment" originalCompilationUnit="//@compilationUnits.10" content="// TODO Auto-generated method stub" prefixOfParent="true"/>
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.10"/>
+          </statements>
+        </body>
+        <returnType type="//@ownedElements.0/@ownedElements.2"/>
+      </bodyDeclarations>
+      <superInterfaces type="//@ownedElements.1/@ownedElements.3"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:ClassDeclaration" name="String" proxy="true" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0/@parameters.0/@type">
+        <superInterfaces type="//@ownedElements.2/@ownedPackages.1/@ownedElements.0"/>
+        <superInterfaces type="//@ownedElements.2/@ownedPackages.0/@ownedElements.1"/>
+        <superInterfaces type="//@ownedElements.2/@ownedPackages.0/@ownedElements.2"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Comparable" proxy="true" usagesInTypeAccess="//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@superInterfaces.1">
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="CharSequence" proxy="true" usagesInTypeAccess="//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+      <ownedElements xsi:type="java:AnnotationTypeDeclaration" name="Override" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0/@annotations.0/@type //@ownedElements.1/@ownedElements.2/@bodyDeclarations.1/@annotations.0/@type //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2/@annotations.0/@type //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0/@annotations.0/@type //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1/@annotations.0/@type //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2/@annotations.0/@type //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0/@annotations.0/@type //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1/@annotations.0/@type //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2/@annotations.0/@type //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0/@annotations.0/@type //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1/@annotations.0/@type //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2/@annotations.0/@type"/>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInTypeAccess="//@ownedElements.2/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@parameters.1/@type //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@parameters.0/@type //@ownedElements.0/@ownedElements.2/@bodyDeclarations.1/@parameters.0/@type"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@parameters.0/@type //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@parameters.1/@type"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@returnType //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@returnType //@ownedElements.0/@ownedElements.2/@bodyDeclarations.0/@returnType //@ownedElements.0/@ownedElements.2/@bodyDeclarations.1/@returnType //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0/@returnType"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="FirstChild1.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/hirachy/FirstChild1.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="SecondChild.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/hirachy/SecondChild.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.1"/>
+  <compilationUnits name="Parent.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/hirachy/Parent.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.2"/>
+  <compilationUnits name="FirstChild2.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/hirachy/FirstChild2.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.3"/>
+  <compilationUnits name="ChildInterface.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/ChildInterface.java" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.4" importedElement="//@ownedElements.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="SecondParentInterface.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/SecondParentInterface.java" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.1">
+    <imports originalCompilationUnit="//@compilationUnits.5" importedElement="//@ownedElements.0/@ownedElements.0"/>
+  </compilationUnits>
+  <compilationUnits name="ChildClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/ChildClass.java" commentList="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.1/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2/@body/@statements.0/@comments.0" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.2">
+    <imports originalCompilationUnit="//@compilationUnits.6" importedElement="//@ownedElements.0/@ownedElements.0"/>
+    <imports originalCompilationUnit="//@compilationUnits.6" importedElement="//@ownedElements.0/@ownedElements.2"/>
+  </compilationUnits>
+  <compilationUnits name="FirstParentInterface.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/FirstParentInterface.java" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.3">
+    <imports originalCompilationUnit="//@compilationUnits.7" importedElement="//@ownedElements.0/@ownedElements.2"/>
+  </compilationUnits>
+  <compilationUnits name="SimpleClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/SimpleClass.java" commentList="//@ownedElements.1/@ownedElements.4/@bodyDeclarations.0/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2/@body/@statements.0/@comments.0" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.4">
+    <imports originalCompilationUnit="//@compilationUnits.8" importedElement="//@ownedElements.0/@ownedElements.2"/>
+  </compilationUnits>
+  <compilationUnits name="MulipleInterfaces.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/MulipleInterfaces.java" commentList="//@ownedElements.1/@ownedElements.5/@bodyDeclarations.0/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2/@body/@statements.0/@comments.0" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.5">
+    <imports originalCompilationUnit="//@compilationUnits.9" importedElement="//@ownedElements.0/@ownedElements.2"/>
+    <imports originalCompilationUnit="//@compilationUnits.9" importedElement="//@ownedElements.0/@ownedElements.1"/>
+  </compilationUnits>
+  <compilationUnits name="RestrictingClass.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMethods/src/methods/RestrictingClass.java" commentList="//@ownedElements.1/@ownedElements.6/@bodyDeclarations.0/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1/@body/@statements.0/@comments.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2/@body/@statements.0/@comments.0" package="//@ownedElements.1" types="//@ownedElements.1/@ownedElements.6">
+    <imports originalCompilationUnit="//@compilationUnits.10" importedElement="//@ownedElements.0/@ownedElements.0"/>
+    <imports originalCompilationUnit="//@compilationUnits.10" importedElement="//@ownedElements.0/@ownedElements.2"/>
+  </compilationUnits>
+  <mMethodNames mSignatures="//@mMethodSignatures.0 //@mMethodSignatures.1 //@mMethodSignatures.2 //@mMethodSignatures.3" mName="overloading" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0" mMethodSignatures="//@mMethodSignatures.0 //@mMethodSignatures.1 //@mMethodSignatures.2 //@mMethodSignatures.3"/>
+  <mMethodNames mSignatures="//@mMethodSignatures.4 //@mMethodSignatures.5" mName="parameters" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1 //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0" mMethodSignatures="//@mMethodSignatures.4 //@mMethodSignatures.5"/>
+  <mMethodNames mSignatures="//@mMethodSignatures.6 //@mMethodSignatures.7" mName="multipleInterfaceMethod" mMethodDefinitions="//@ownedElements.1/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.1/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2" mMethodSignatures="//@mMethodSignatures.6 //@mMethodSignatures.7"/>
+  <mMethodNames mSignatures="//@mMethodSignatures.8" mName="singeInterfaceMethod" mMethodDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0" mMethodSignatures="//@mMethodSignatures.8"/>
+  <mMethodNames mSignatures="//@mMethodSignatures.9" mName="interfaceMethod" mMethodDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1" mMethodSignatures="//@mMethodSignatures.9"/>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0" implementedBy="//@ownedElements.0/@ownedElements.0 //@ownedElements.0/@ownedElements.3" mMethodName="//@mMethodNames.0" returnType="//@orphanTypes.5" mFirstEntry="//@mMethodSignatures.0/@mEntrys.0">
+    <mEntrys type="//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+  </mMethodSignatures>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.0" implementedBy="//@ownedElements.0/@ownedElements.2" mMethodName="//@mMethodNames.0" returnType="//@orphanTypes.5" mMethodDefinitions="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.0"/>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1" implementedBy="//@ownedElements.0/@ownedElements.2" mMethodName="//@mMethodNames.0" returnType="//@orphanTypes.5" mMethodDefinitions="//@ownedElements.0/@ownedElements.2/@bodyDeclarations.1" mFirstEntry="//@mMethodSignatures.2/@mEntrys.0">
+    <mEntrys type="//@orphanTypes.0"/>
+  </mMethodSignatures>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.0/@bodyDeclarations.0" implementedBy="//@ownedElements.0/@ownedElements.3 //@ownedElements.0/@ownedElements.0" mMethodName="//@mMethodNames.0" returnType="//@orphanTypes.5" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0" mFirstEntry="//@mMethodSignatures.3/@mEntrys.0">
+    <mEntrys type="//@ownedElements.2/@ownedPackages.0/@ownedElements.0"/>
+  </mMethodSignatures>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1" implementedBy="//@ownedElements.0/@ownedElements.0" mMethodName="//@mMethodNames.1" returnType="//@orphanTypes.5" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1" mFirstEntry="//@mMethodSignatures.4/@mEntrys.0">
+    <mEntrys mNext="//@mMethodSignatures.4/@mEntrys.1" type="//@orphanTypes.3"/>
+    <mEntrys mPrevious="//@mMethodSignatures.4/@mEntrys.0" type="//@orphanTypes.0"/>
+  </mMethodSignatures>
+  <mMethodSignatures mDefinitions="//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0" implementedBy="//@ownedElements.0/@ownedElements.1" mMethodName="//@mMethodNames.1" returnType="//@orphanTypes.5" mMethodDefinitions="//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0" mFirstEntry="//@mMethodSignatures.5/@mEntrys.0">
+    <mEntrys mNext="//@mMethodSignatures.5/@mEntrys.1" type="//@orphanTypes.0"/>
+    <mEntrys mPrevious="//@mMethodSignatures.5/@mEntrys.0" type="//@orphanTypes.3"/>
+  </mMethodSignatures>
+  <mMethodSignatures mDefinitions="//@ownedElements.1/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2" implementedBy="//@ownedElements.1/@ownedElements.0 //@ownedElements.1/@ownedElements.2 //@ownedElements.1/@ownedElements.3 //@ownedElements.1/@ownedElements.4 //@ownedElements.1/@ownedElements.5 //@ownedElements.1/@ownedElements.6" mMethodName="//@mMethodNames.2" returnType="//@ownedElements.0/@ownedElements.2" mMethodDefinitions="//@ownedElements.1/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.2/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.2 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.2"/>
+  <mMethodSignatures mDefinitions="//@ownedElements.1/@ownedElements.1/@bodyDeclarations.0" implementedBy="//@ownedElements.1/@ownedElements.1" mMethodName="//@mMethodNames.2" returnType="//@ownedElements.0/@ownedElements.0" mMethodDefinitions="//@ownedElements.1/@ownedElements.1/@bodyDeclarations.0"/>
+  <mMethodSignatures mDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0" implementedBy="//@ownedElements.1/@ownedElements.2 //@ownedElements.1/@ownedElements.3 //@ownedElements.1/@ownedElements.4 //@ownedElements.1/@ownedElements.5 //@ownedElements.1/@ownedElements.6" mMethodName="//@mMethodNames.3" returnType="//@ownedElements.0/@ownedElements.2" mMethodDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.0 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.0"/>
+  <mMethodSignatures mDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1" implementedBy="//@ownedElements.1/@ownedElements.2 //@ownedElements.1/@ownedElements.3 //@ownedElements.1/@ownedElements.4 //@ownedElements.1/@ownedElements.5 //@ownedElements.1/@ownedElements.6" mMethodName="//@mMethodNames.4" returnType="//@ownedElements.0/@ownedElements.2" mMethodDefinitions="//@ownedElements.1/@ownedElements.2/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.3/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.4/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.5/@bodyDeclarations.1 //@ownedElements.1/@ownedElements.6/@bodyDeclarations.1"/>
+</org.gravity.modisco:MGravityModel>

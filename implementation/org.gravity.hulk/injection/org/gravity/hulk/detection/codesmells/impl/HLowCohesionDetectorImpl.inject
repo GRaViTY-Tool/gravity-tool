@@ -1,0 +1,13 @@
+
+partial class HLowCohesionDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "Low Cohesion Smell";
+	}
+	
+-->
+
+}

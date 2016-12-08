@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" interfaces="//@ownedTypes.0" tName="Test">
+  <packages interfaces="//@ownedTypes.0" ownedTypes="//@ownedTypes.0" typeGraph="/" tName="foo"/>
+  <methods ID="146" tName="MethodA">
+    <signatures ID="144" returnType="//@ownedTypes.0">
+      <paramList ID="143">
+        <entries type="//@ownedTypes.0"/>
+        <entries type="//@ownedTypes.0"/>
+      </paramList>
+      <definitions ID="145" definedBy="//@ownedTypes.0" returnType="//@ownedTypes.0"/>
+    </signatures>
+  </methods>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="142" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="SimpleInterface"/>
+</org.gravity.typegraph.basic:TypeGraph>

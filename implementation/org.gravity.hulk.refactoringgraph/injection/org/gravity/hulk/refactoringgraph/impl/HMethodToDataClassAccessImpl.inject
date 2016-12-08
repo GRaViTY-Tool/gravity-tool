@@ -1,0 +1,86 @@
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
+
+partial class HMethodToDataClassAccessImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		String methodName = "DefaultMethodName";
+		TMethodDefinitionImpl methodDef = ((TMethodDefinitionImpl) getTAnnotated());
+		TMethodSignature methodSig = methodDef.getSignature();
+		if (methodSig == null) {
+			System.out.println("Method Definition without Signature");
+		} else {
+			TMethod method = methodSig.getMethod();
+			if (method == null) {
+				System.out.println("Message Signature without method");
+			} else {
+				methodName = method.getTName();
+			}
+		}
+		TAbstractType definingClass = methodDef.getDefinedBy();
+		String definingClassName = "DefaultClassName";
+		if (definingClass != null) {
+			definingClassName = definingClass.getTName();
+		}
+
+		item.setText("MethodToDataClassAccess(" + definingClassName + "->" + methodName + ")=" + getValue());
+		return item;
+	}
+	
+-->
+
+@model getRelativeAmount () <--
+
+		EList<TAnnotation> annotations = getTAnnotated().getTAnnotation();
+
+		SortedSet<Double> keys = new TreeSet<>();
+
+		for (TAnnotation a : annotations) {
+			if (this.getClass().equals(a.getClass())) {
+				double key = ((HMetric) a).getValue();
+				keys.add(key);
+			}
+		}
+
+		double index = keys.headSet(this.getValue()).size();
+
+		if (index == -1) {
+			throw new RuntimeException();
+		}
+
+		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+
+		double q = (index + 1) / keys.size();
+
+		if (q < 0.2) {
+			value.setValue(HRelativeValueConstants.VERY_LOW);
+		} else if (q < 0.4) {
+			value.setValue(HRelativeValueConstants.LOW);
+		} else if (q < 0.6) {
+			value.setValue(HRelativeValueConstants.MEDIUM);
+		} else if (q < 0.8) {
+			value.setValue(HRelativeValueConstants.HIGH);
+		} else {
+			value.setValue(HRelativeValueConstants.VERY_HIGH);
+		}
+
+		return value;
+-->
+
+}

@@ -1,0 +1,13 @@
+
+partial class HGodClassDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "God Class [Anti-Pattern]";
+	}
+	
+-->
+
+}

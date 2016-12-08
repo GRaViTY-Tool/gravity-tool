@@ -1,0 +1,22 @@
+
+import org.eclipse.swt.widgets.TreeItem;
+import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage;
+import org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell;
+import org.gravity.hulk.antipatterngraph.impl.HCodeSmellImpl;
+import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
+import org.gravity.typegraph.basic.TClass;
+
+partial class HControllerClassSmellImpl {
+
+@members <--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText(((TClass) getTAnnotated()).getTName());
+		getHInvocationRelation().createItemContents(item, style);
+		return item;
+	}
+	
+-->
+
+}

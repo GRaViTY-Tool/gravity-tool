@@ -1,0 +1,13 @@
+
+partial class HBlobDetectorImpl {
+
+@members <--
+
+	@Override
+	public String getGuiName() {
+		return "The Blob [Anti-Pattern]";
+	}
+	
+-->
+
+}

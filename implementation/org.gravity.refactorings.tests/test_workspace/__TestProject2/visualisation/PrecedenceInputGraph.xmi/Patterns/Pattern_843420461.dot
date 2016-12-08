@@ -1,0 +1,8 @@
+digraph "" {
+	label="";
+	     "extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer" [shape=record, color=black, label="{extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer | }"];
+	     "extendedJamoppPackageElement ==> p : ExtendedJamoppPackageElement" [shape=record, color=green, label="{extendedJamoppPackageElement ==> p : ExtendedJamoppPackageElement | }"];
+
+	     "extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer" -> "extendedJamoppPackageElement ==> p : ExtendedJamoppPackageElement" [color=green, label="extendedJamoppPackageElement", fontsize=11, constraint=true];
+	     "extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer" -> "extendedJamoppPackageElement ==> p : ExtendedJamoppPackageElement" [color=green, label="roots", fontsize=11, constraint=true];
+}

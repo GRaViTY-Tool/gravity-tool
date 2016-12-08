@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.21" interfaces="//@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.7 //@ownedTypes.16 //@ownedTypes.22 //@ownedTypes.23" tName="PreprocessMethods">
+  <packages classes="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.13 //@ownedTypes.15" interfaces="//@ownedTypes.2 //@ownedTypes.16 //@ownedTypes.22" ownedTypes="//@ownedTypes.2 //@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.22" typeGraph="/" tName="methods"/>
+  <packages typeGraph="/" tName="java">
+    <subpackage interfaces="//@ownedTypes.3" ownedTypes="//@ownedTypes.3" typeGraph="/" tName="io"/>
+    <subpackage classes="//@ownedTypes.19" interfaces="//@ownedTypes.7 //@ownedTypes.23" ownedTypes="//@ownedTypes.7 //@ownedTypes.19 //@ownedTypes.23" typeGraph="/" tName="lang"/>
+  </packages>
+  <packages classes="//@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.14 //@ownedTypes.20" ownedTypes="//@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.14 //@ownedTypes.20" typeGraph="/" tName="hirachy"/>
+  <methods ID="24709" tName="multipleInterfaceMethod">
+    <signatures ID="24707" returnType="//@ownedTypes.14">
+      <paramList ID="24706"/>
+      <definitions ID="24708" definedBy="//@ownedTypes.2" returnType="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <methods ID="24715" tName="interfaceMethod">
+    <signatures ID="24713" returnType="//@ownedTypes.20">
+      <paramList ID="24712"/>
+      <definitions ID="24714" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24719" tName="multipleInterfaceMethod">
+    <signatures ID="24717" returnType="//@ownedTypes.20">
+      <paramList ID="24716"/>
+      <definitions ID="24718" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24723" tName="singeInterfaceMethod">
+    <signatures ID="24721" returnType="//@ownedTypes.20">
+      <paramList ID="24720"/>
+      <definitions ID="24722" definedBy="//@ownedTypes.8" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24728" tName="overloading">
+    <signatures ID="24726" returnType="//@ownedTypes.5">
+      <paramList ID="24725">
+        <entries type="//@ownedTypes.19"/>
+      </paramList>
+      <definitions ID="24727" definedBy="//@ownedTypes.9" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24734" tName="parameters">
+    <signatures ID="24732" returnType="//@ownedTypes.5">
+      <paramList ID="24731">
+        <entries type="//@ownedTypes.21"/>
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="24733" definedBy="//@ownedTypes.11" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24739" tName="singeInterfaceMethod">
+    <signatures ID="24737" returnType="//@ownedTypes.14">
+      <paramList ID="24736"/>
+      <definitions ID="24738" definedBy="//@ownedTypes.13" returnType="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <methods ID="24743" tName="multipleInterfaceMethod">
+    <signatures ID="24741" returnType="//@ownedTypes.20">
+      <paramList ID="24740"/>
+      <definitions ID="24742" definedBy="//@ownedTypes.13" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24748" tName="parameters">
+    <signatures ID="24746" returnType="//@ownedTypes.5">
+      <paramList ID="24745">
+        <entries type="//@ownedTypes.21"/>
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="24747" definedBy="//@ownedTypes.14" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24752" tName="overloading">
+    <signatures ID="24750" returnType="//@ownedTypes.5">
+      <paramList ID="24749">
+        <entries type="//@ownedTypes.19"/>
+      </paramList>
+      <definitions ID="24751" definedBy="//@ownedTypes.14" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24757" tName="singeInterfaceMethod">
+    <signatures ID="24755" returnType="//@ownedTypes.20">
+      <paramList ID="24754"/>
+      <definitions ID="24756" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24761" tName="interfaceMethod">
+    <signatures ID="24759" returnType="//@ownedTypes.14">
+      <paramList ID="24758"/>
+      <definitions ID="24760" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <methods ID="24766" tName="multipleInterfaceMethod">
+    <signatures ID="24764" returnType="//@ownedTypes.14">
+      <paramList ID="24763"/>
+      <definitions ID="24765" definedBy="//@ownedTypes.16" returnType="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <methods ID="24770" tName="interfaceMethod">
+    <signatures ID="24768" returnType="//@ownedTypes.20">
+      <paramList ID="24767"/>
+      <definitions ID="24769" definedBy="//@ownedTypes.13" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24775" tName="singeInterfaceMethod">
+    <signatures ID="24773" returnType="//@ownedTypes.20">
+      <paramList ID="24772"/>
+      <definitions ID="24774" definedBy="//@ownedTypes.10" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24780" tName="overloading">
+    <signatures ID="24778" returnType="//@ownedTypes.5">
+      <paramList ID="24777">
+        <entries type="//@ownedTypes.12"/>
+      </paramList>
+      <definitions ID="24779" definedBy="//@ownedTypes.20" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24784" tName="overloading">
+    <signatures ID="24782" returnType="//@ownedTypes.5">
+      <paramList ID="24781"/>
+      <definitions ID="24783" definedBy="//@ownedTypes.20" returnType="//@ownedTypes.5"/>
+    </signatures>
+  </methods>
+  <methods ID="24788" tName="multipleInterfaceMethod">
+    <signatures ID="24786" returnType="//@ownedTypes.11">
+      <paramList ID="24785"/>
+      <definitions ID="24787" definedBy="//@ownedTypes.10" returnType="//@ownedTypes.11"/>
+    </signatures>
+  </methods>
+  <methods ID="24792" tName="interfaceMethod">
+    <signatures ID="24790" returnType="//@ownedTypes.20">
+      <paramList ID="24789"/>
+      <definitions ID="24791" definedBy="//@ownedTypes.10" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24796" tName="multipleInterfaceMethod">
+    <signatures ID="24794" returnType="//@ownedTypes.20">
+      <paramList ID="24793"/>
+      <definitions ID="24795" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24801" tName="interfaceMethod">
+    <signatures ID="24799" returnType="//@ownedTypes.20">
+      <paramList ID="24798"/>
+      <definitions ID="24800" definedBy="//@ownedTypes.22" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24805" tName="multipleInterfaceMethod">
+    <signatures ID="24803" returnType="//@ownedTypes.20">
+      <paramList ID="24802"/>
+      <definitions ID="24804" definedBy="//@ownedTypes.22" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <methods ID="24809" tName="singeInterfaceMethod">
+    <signatures ID="24807" returnType="//@ownedTypes.20">
+      <paramList ID="24806"/>
+      <definitions ID="24808" definedBy="//@ownedTypes.22" returnType="//@ownedTypes.20"/>
+    </signatures>
+  </methods>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24704" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="SecondParentInterface" implementedBy="//@ownedTypes.10"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24705" package="//@packages.1/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24710" package="//@packages.1/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24711" package="//@packages.0" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0 //@methods.3/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.2/@signatures.0/@definitions.0 //@methods.3/@signatures.0/@definitions.0" tName="SimpleClass" childClasses="//@ownedTypes.13" implements="//@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24724" package="//@packages.2" signature="//@methods.4/@signatures.0" defines="//@methods.4/@signatures.0/@definitions.0" tName="FirstChild2" parentClass="//@ownedTypes.20"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24729" package="//@packages.0" signature="//@methods.14/@signatures.0 //@methods.17/@signatures.0 //@methods.18/@signatures.0" defines="//@methods.14/@signatures.0/@definitions.0 //@methods.17/@signatures.0/@definitions.0 //@methods.18/@signatures.0/@definitions.0" tName="MulipleInterfaces" implements="//@ownedTypes.2 //@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24730" package="//@packages.2" signature="//@methods.5/@signatures.0" defines="//@methods.5/@signatures.0/@definitions.0" tName="SecondChild" parentClass="//@ownedTypes.14"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24735" package="//@packages.0" signature="//@methods.6/@signatures.0 //@methods.7/@signatures.0 //@methods.13/@signatures.0" defines="//@methods.6/@signatures.0/@definitions.0 //@methods.7/@signatures.0/@definitions.0 //@methods.13/@signatures.0/@definitions.0" tName="ChildClass" parentClass="//@ownedTypes.8"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24744" package="//@packages.2" signature="//@methods.8/@signatures.0 //@methods.9/@signatures.0" defines="//@methods.8/@signatures.0/@definitions.0 //@methods.9/@signatures.0/@definitions.0" tName="FirstChild1" parentClass="//@ownedTypes.20" childClasses="//@ownedTypes.11"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24753" package="//@packages.0" signature="//@methods.10/@signatures.0 //@methods.11/@signatures.0 //@methods.19/@signatures.0" defines="//@methods.10/@signatures.0/@definitions.0 //@methods.11/@signatures.0/@definitions.0 //@methods.19/@signatures.0/@definitions.0" tName="RestrictingClass" implements="//@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24762" package="//@packages.0" signature="//@methods.12/@signatures.0" defines="//@methods.12/@signatures.0/@definitions.0" tName="ChildInterface" parentInterfaces="//@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24771" package="//@packages.1/@subpackage.1" tLib="true" tName="String" implements="//@ownedTypes.3 //@ownedTypes.7 //@ownedTypes.23"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24776" package="//@packages.2" signature="//@methods.15/@signatures.0 //@methods.16/@signatures.0" defines="//@methods.15/@signatures.0/@definitions.0 //@methods.16/@signatures.0/@definitions.0" tName="Parent" childClasses="//@ownedTypes.9 //@ownedTypes.14"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24797" package="//@packages.0" signature="//@methods.20/@signatures.0 //@methods.21/@signatures.0 //@methods.22/@signatures.0" defines="//@methods.20/@signatures.0/@definitions.0 //@methods.21/@signatures.0/@definitions.0 //@methods.22/@signatures.0/@definitions.0" tName="FirstParentInterface" implementedBy="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.15" childInterfaces="//@ownedTypes.16"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="24810" package="//@packages.1/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.19"/>
+</org.gravity.typegraph.basic:TypeGraph>
