@@ -8,9 +8,6 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.hulk.antipatterngraph.impl.HAnnotationImpl;
 import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
-import org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod;
-import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
-import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
 
 partial class HBlobResolveAnnotationImpl {
 
@@ -39,9 +36,9 @@ partial class HBlobResolveAnnotationImpl {
 
 				@Override
 				public int compare(HRefactoring arg0, HRefactoring arg1) {
-					return (int) (1000* (arg0.getValue() - arg1.getValue()));
+					return (int) (1000 * (arg0.getValue() - arg1.getValue()));
 				}
-					
+
 			});
 
 			for (HRefactoring m : moves) {
