@@ -1,0 +1,83 @@
+package momot.^search
+
+
+
+import at.ac.tuwien.big.momot.^search.^fitness.dimension.TransformationLengthDimension
+import at.ac.tuwien.big.moea.^experiment.executor.listener.SeedRuntimePrintListener
+
+import momotFiles.FitnessCalculator
+
+import org.gravity.hulk.HulkPackage
+import org.gravity.hulk.HulkPackage
+import org.gravity.typegraph.basic.BasicPackage
+import org.gravity.typegraph.basic.TypeGraph
+
+initialization = {
+	BasicPackage.eINSTANCE.eClass // register Package
+	//ContainersPackage.eINSTANCE.eClass;
+	//HulkPackage.eINSTANCE.eClass
+	
+
+
+	System.out.println("Search started.");
+}
+
+search = {
+	model          = {
+		file       = "input/TypeGraphExampleSimple.xmi"
+	}
+	solutionLength  = 10
+
+	transformations = {
+		modules = [ "transformations/Basic.henshin" ]
+	}
+
+	fitness         = {
+		objectives = {
+			Coupling : minimize { FitnessCalculator.calculateCoupling(root as TypeGraph) }
+			SolutionLength : minimize new TransformationLengthDimension
+		}
+	}
+
+	algorithms      = {
+		Random  : moea.createRandomSearch()
+		NSGAII  : moea.createNSGAII()
+		NSGAIII : moea.createNSGAIII()
+	}
+}
+
+experiment = {
+	populationSize    = 100
+	maxEvaluations    = 10000
+	nrRuns            = 5
+	progressListeners = [ new SeedRuntimePrintListener ]
+}
+
+analysis = {
+	indicators       = [ hypervolume invertedGenerationalDistance ]
+	significance     = 0.01
+	show             = [ aggregateValues statisticalSignificance individualValues ]
+	outputFile       = "output/analysis/analysis.txt"
+	boxplotDirectory = "output/analysis/"
+	printOutput
+}
+
+results = {
+	objectives = {
+		outputFile      = "output/objectives/objective_values.txt"
+		printOutput
+	}
+
+	solutions  = {
+		outputFile      = "output/solutions/objective_values.txt"
+		outputDirectory = "output/solutions/"
+	}
+
+	models     = {
+		outputDirectory = "output/models/"
+	}
+}
+
+finalization = {
+	System.out.println("Search finished.");
+}

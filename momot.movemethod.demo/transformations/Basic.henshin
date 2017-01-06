@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_CoJW0NNPEeaHf6sOLGU38Q">
+  <imports href="../metamodel/Basic.ecore#/"/>
+</henshin:Module>

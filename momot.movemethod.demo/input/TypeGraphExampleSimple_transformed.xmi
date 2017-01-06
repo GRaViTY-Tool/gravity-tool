@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:containers="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" xsi:schemaLocation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers ../metamodel/Basic.ecore#//containers platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore ../metamodel/Basic.ecore">
+  <org.gravity.typegraph.basic:TypeGraph classes="/0/@ownedTypes.0 /0/@ownedTypes.1 /0/@ownedTypes.2 /0/@ownedTypes.3 /0/@ownedTypes.4 /0/@ownedTypes.5 /0/@ownedTypes.6 /0/@ownedTypes.7 /0/@ownedTypes.8 /0/@ownedTypes.9 /0/@ownedTypes.10" tName="TypeGraphExampleSimple">
+    <packages classes="/0/@ownedTypes.6 /0/@ownedTypes.10" ownedTypes="/0/@ownedTypes.6 /0/@ownedTypes.10" typeGraph="/0" tName="(default package)"/>
+    <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" ID="2" tName="ClassB">
+      <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" ID="3">
+        <paramList/>
+        <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" ID="4" definedBy="/0/@ownedTypes.10"/>
+      </signatures>
+    </methods>
+    <methods ID="8" tName="returnOne">
+      <signatures ID="10" returnType="/0/@ownedTypes.2">
+        <paramList ID="9"/>
+        <definitions ID="11" definedBy="/0/@ownedTypes.10" returnType="/0/@ownedTypes.2">
+          <tAccessing tTarget="/0/@fields.0/@signatures.0/@definitions.0"/>
+        </definitions>
+      </signatures>
+    </methods>
+    <fields ID="5" tName="one">
+      <signatures ID="6" type="/0/@ownedTypes.2">
+        <definitions ID="7" definedBy="/0/@ownedTypes.10" accessedBy="/0/@methods.1/@signatures.0/@definitions.0/@tAccessing.0"/>
+      </signatures>
+    </fields>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="1" package="/0/@packages.0" tName="ClassA"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+    <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="12" package="/0/@packages.0" signature="/0/@fields.0/@signatures.0 /0/@methods.1/@signatures.0" defines="/0/@fields.0/@signatures.0/@definitions.0 /0/@methods.0/@signatures.0/@definitions.0 /0/@methods.1/@signatures.0/@definitions.0" tName="ClassB"/>
+  </org.gravity.typegraph.basic:TypeGraph>
+  <containers:TClassContainer tClass="/0/@ownedTypes.6 /0/@ownedTypes.10"/>
+</xmi:XMI>

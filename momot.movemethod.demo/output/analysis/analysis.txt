@@ -1,0 +1,117 @@
+NSGAII:
+    Hypervolume: 
+        Aggregate: 0.0
+        Min: 0.0
+        Median: 0.0
+        Max: 0.0
+        Mean: 0.0
+        StandardDeviation: 0.0
+        Variance: 0.0
+        Count: 5
+        Indifferent: [Random, NSGAIII]
+        EffectSize: [
+            - { measure: CohensD, algorithm: Random, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: Random, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: Random, effectSize: 0.5 }
+            - { measure: CohensD, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAIII, effectSize: 0.5 }
+        ]
+        Values: [0.0, 0.0, 0.0, 0.0, 0.0]
+    InvertedGenerationalDistance: 
+        Aggregate: 0.0
+        Min: 0.0
+        Median: 0.0
+        Max: 0.5
+        Mean: 0.1
+        StandardDeviation: 0.22360679774997902
+        Variance: 0.05000000000000002
+        Count: 5
+        Indifferent: [NSGAIII]
+        EffectSize: [
+            - { measure: CohensD, algorithm: Random, effectSize: 59.60854057362313, magnitude: large }
+            - { measure: CliffsDelta, algorithm: Random, effectSize: 1.0, magnitude: large }
+            - { measure: VarghaDelaneyA, algorithm: Random, effectSize: 0.0 }
+            - { measure: CohensD, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAIII, effectSize: 0.5 }
+        ]
+        Values: [0.0, 0.0, 0.5, 0.0, 0.0]
+Random:
+    Hypervolume: 
+        Aggregate: 0.0
+        Min: 0.0
+        Median: 0.0
+        Max: 0.0
+        Mean: 0.0
+        StandardDeviation: 0.0
+        Variance: 0.0
+        Count: 5
+        Indifferent: [NSGAII, NSGAIII]
+        EffectSize: [
+            - { measure: CohensD, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAII, effectSize: 0.5 }
+            - { measure: CohensD, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAIII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAIII, effectSize: 0.5 }
+        ]
+        Values: [0.0, 0.0, 0.0, 0.0, 0.0]
+    InvertedGenerationalDistance: 
+        Aggregate: 9.524937810560445
+        Min: 9.524937810560445
+        Median: 9.524937810560445
+        Max: 9.524937810560445
+        Mean: 9.524937810560445
+        StandardDeviation: 0.0
+        Variance: 0.0
+        Count: 5
+        Indifferent: []
+        EffectSize: [
+            - { measure: CohensD, algorithm: NSGAII, effectSize: 59.60854057362313, magnitude: large }
+            - { measure: CliffsDelta, algorithm: NSGAII, effectSize: 1.0, magnitude: large }
+            - { measure: VarghaDelaneyA, algorithm: NSGAII, effectSize: 1.0 }
+            - { measure: CohensD, algorithm: NSGAIII, effectSize: 59.60854057362313, magnitude: large }
+            - { measure: CliffsDelta, algorithm: NSGAIII, effectSize: 1.0, magnitude: large }
+            - { measure: VarghaDelaneyA, algorithm: NSGAIII, effectSize: 1.0 }
+        ]
+        Values: [9.524937810560445, 9.524937810560445, 9.524937810560445, 9.524937810560445, 9.524937810560445]
+NSGAIII:
+    Hypervolume: 
+        Aggregate: 0.0
+        Min: 0.0
+        Median: 0.0
+        Max: 0.0
+        Mean: 0.0
+        StandardDeviation: 0.0
+        Variance: 0.0
+        Count: 5
+        Indifferent: [NSGAII, Random]
+        EffectSize: [
+            - { measure: CohensD, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAII, effectSize: 0.5 }
+            - { measure: CohensD, algorithm: Random, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: Random, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: Random, effectSize: 0.5 }
+        ]
+        Values: [0.0, 0.0, 0.0, 0.0, 0.0]
+    InvertedGenerationalDistance: 
+        Aggregate: 0.0
+        Min: 0.0
+        Median: 0.0
+        Max: 0.5
+        Mean: 0.1
+        StandardDeviation: 0.22360679774997902
+        Variance: 0.05000000000000002
+        Count: 5
+        Indifferent: [NSGAII]
+        EffectSize: [
+            - { measure: CohensD, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: CliffsDelta, algorithm: NSGAII, effectSize: 0.0, magnitude: negligible }
+            - { measure: VarghaDelaneyA, algorithm: NSGAII, effectSize: 0.5 }
+            - { measure: CohensD, algorithm: Random, effectSize: 59.60854057362313, magnitude: large }
+            - { measure: CliffsDelta, algorithm: Random, effectSize: 1.0, magnitude: large }
+            - { measure: VarghaDelaneyA, algorithm: Random, effectSize: 0.0 }
+        ]
+        Values: [0.0, 0.5, 0.0, 0.0, 0.0]
