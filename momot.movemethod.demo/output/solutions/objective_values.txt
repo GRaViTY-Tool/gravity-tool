@@ -9,7 +9,7 @@ Number of variables: 10
   Variable[1]: -Placeholder-
 
   Variable[2]: Match for rule 'MoveMethod':
-- parameter 'methodName' => 'returnOne'
+- parameter 'methodName' => 'multiply'
 - parameter 'sourceClassName' => 'ClassA'
 - parameter 'targetClassName' => 'ClassB'
 
@@ -28,11 +28,11 @@ Number of variables: 10
   Variable[9]: -Placeholder-
 
 Number of attributes: 3
-  AggregatedFitness: 1.0
+  AggregatedFitness: 3.0
   rank: 0
   crowdingDistance: Infinity
 Number of objectives: 2
-  Coupling: 0.0
+  Coupling: 2.0
   SolutionLength: 1.0
 Number of constraints: 0
 
@@ -61,10 +61,10 @@ Number of variables: 10
   Variable[9]: -Placeholder-
 
 Number of attributes: 3
-  AggregatedFitness: 1.0
+  AggregatedFitness: 3.0
   rank: 0
   crowdingDistance: Infinity
 Number of objectives: 2
-  Coupling: 1.0
+  Coupling: 3.0
   SolutionLength: 0.0
 Number of constraints: 0

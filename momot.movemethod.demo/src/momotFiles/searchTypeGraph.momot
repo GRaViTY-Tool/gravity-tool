@@ -14,17 +14,12 @@ import org.gravity.typegraph.basic.TypeGraph
 
 initialization = {
 	BasicPackage.eINSTANCE.eClass // register Package
-	//ContainersPackage.eINSTANCE.eClass;
-	//HulkPackage.eINSTANCE.eClass
-	
-
-
 	System.out.println("Search started.");
 }
 
 search = {
 	model          = {
-		file       = "input/TypeGraphExampleSimple.xmi"
+		file       = "input/TypeGraphExample.xmi"
 	}
 	solutionLength  = 10
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="basic" nsURI="http://org.gravity.typegraph.basic/model/Basic.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="basic" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"
     nsPrefix="org.gravity.typegraph.basic">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.typegraph"/>

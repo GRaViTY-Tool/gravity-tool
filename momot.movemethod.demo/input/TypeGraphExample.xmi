@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.16" interfaces="//@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" tName="TypeGraphExample">
+  <packages typeGraph="/" tName="java">
+    <subpackage ID="9" classes="//@ownedTypes.7" interfaces="//@ownedTypes.9 //@ownedTypes.10" ownedTypes="//@ownedTypes.7 //@ownedTypes.9 //@ownedTypes.10" typeGraph="/" tName="lang"/>
+    <subpackage ID="25" interfaces="//@ownedTypes.11" ownedTypes="//@ownedTypes.11" typeGraph="/" tName="io"/>
+  </packages>
+  <packages classes="//@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15" ownedTypes="//@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15" typeGraph="/" tName="(default package)"/>
+  <methods ID="1" tName="multiplybByInternalMuliplier">
+    <signatures ID="23" returnType="//@ownedTypes.3">
+      <paramList ID="22" first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.6"/>
+      </paramList>
+      <definitions ID="26" definedBy="//@ownedTypes.14" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.2" returnType="//@ownedTypes.3">
+        <tAccessing tTarget="//@fields.2/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods ID="4" tName="main">
+    <signatures ID="6" returnType="//@ownedTypes.2">
+      <paramList ID="5" first="//@methods.1/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.7"/>
+      </paramList>
+      <definitions ID="28" definedBy="//@ownedTypes.15" returnType="//@ownedTypes.2">
+        <tAccessing tTarget="//@methods.3/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.0/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.0/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods ID="14" tName="multiply">
+    <signatures ID="16" returnType="//@ownedTypes.3">
+      <paramList ID="15" first="//@methods.2/@signatures.0/@paramList/@entries.0">
+        <entries next="//@methods.2/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.6"/>
+        <entries previous="//@methods.2/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.6"/>
+      </paramList>
+      <definitions ID="17" definedBy="//@ownedTypes.14" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.3"/>
+    </signatures>
+  </methods>
+  <methods ID="19" tName="calcStuff">
+    <signatures ID="21" returnType="//@ownedTypes.2">
+      <paramList ID="20" first="//@methods.3/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.14"/>
+      </paramList>
+      <definitions ID="24" definedBy="//@ownedTypes.13" accessedBy="//@methods.1/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.2">
+        <tAccessing tTarget="//@methods.2/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.1/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@methods.0/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.3/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.3/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" ID="32" tName="ClassB">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" ID="33">
+      <paramList/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" ID="34" definedBy="//@ownedTypes.13"/>
+    </signatures>
+  </methods>
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" ID="35" tName="ClassA">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" ID="36">
+      <paramList/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" ID="37" definedBy="//@ownedTypes.14"/>
+    </signatures>
+  </methods>
+  <fields ID="2" tName="a">
+    <signatures ID="41" type="//@ownedTypes.14">
+      <definitions ID="44" definedBy="//@ownedTypes.15" accessedBy="//@methods.1/@signatures.0/@definitions.0/@tAccessing.1 //@methods.1/@signatures.0/@definitions.0/@tAccessing.2"/>
+    </signatures>
+  </fields>
+  <fields ID="3" tName="second">
+    <signatures ID="7" type="//@ownedTypes.6">
+      <definitions ID="8" definedBy="//@ownedTypes.13" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.1"/>
+    </signatures>
+  </fields>
+  <fields ID="11" tName="multiplier">
+    <signatures ID="12" type="//@ownedTypes.6">
+      <definitions ID="13" definedBy="//@ownedTypes.14" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
+    </signatures>
+  </fields>
+  <fields ID="27" tName="first">
+    <signatures ID="29" type="//@ownedTypes.6">
+      <definitions ID="42" definedBy="//@ownedTypes.13" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.3 //@methods.3/@signatures.0/@definitions.0/@tAccessing.4"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="10" package="//@packages.0/@subpackage.0" tLib="true" tName="String" implements="//@ownedTypes.11 //@ownedTypes.10 //@ownedTypes.9"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="18" package="//@packages.0/@subpackage.0" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.7"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="30" package="//@packages.0/@subpackage.0" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.7"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="31" package="//@packages.0/@subpackage.1" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.7"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="38" package="//@packages.1" signature="//@fields.1/@signatures.0 //@fields.3/@signatures.0 //@methods.3/@signatures.0" defines="//@methods.4/@signatures.0/@definitions.0 //@methods.3/@signatures.0/@definitions.0 //@fields.1/@signatures.0/@definitions.0 //@fields.3/@signatures.0/@definitions.0" tName="ClassB"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="39" package="//@packages.1" signature="//@methods.0/@signatures.0 //@methods.2/@signatures.0 //@fields.2/@signatures.0" defines="//@methods.2/@signatures.0/@definitions.0 //@fields.2/@signatures.0/@definitions.0 //@methods.5/@signatures.0/@definitions.0 //@methods.0/@signatures.0/@definitions.0" tName="ClassA"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="40" package="//@packages.1" signature="//@methods.1/@signatures.0 //@fields.0/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0" tName="ClassC"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="43" tName="T"/>
+</org.gravity.typegraph.basic:TypeGraph>
