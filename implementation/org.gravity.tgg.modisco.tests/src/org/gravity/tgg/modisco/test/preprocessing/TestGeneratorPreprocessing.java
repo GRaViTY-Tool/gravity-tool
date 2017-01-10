@@ -27,7 +27,6 @@ import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
 import org.gravity.tgg.modisco.preprocessing.PreprocessingFactory;
 import org.gravity.tgg.modisco.test.util.CustomFeatureFilter;
 import org.gravity.tgg.modisco.test.util.TestBody;
-import org.gravity.typegraph.basic.TElementWithId;
 import org.junit.Assert;
 
 public class TestGeneratorPreprocessing {
@@ -73,7 +72,7 @@ public class TestGeneratorPreprocessing {
 											.toString());
 
 		final ResourceSet resourceSet = new ResourceSetImpl();
-		this.removeIDs(resourceSet.getResource(uri, true));
+		resourceSet.getResource(uri, true);
 
 		return resourceSet;
 	}
@@ -100,16 +99,6 @@ public class TestGeneratorPreprocessing {
 												.compare(scope);
 
 		return comparison;
-	}
-
-	private void removeIDs(final Resource r) {
-		final TreeIterator<EObject> iterator = r.getAllContents();
-		while (iterator.hasNext()) {
-			final EObject next = iterator.next();
-			if (next instanceof TElementWithId) {
-				((TElementWithId) next).setID(0);
-			}
-		}
 	}
 
 	private void performPreprocessing() {

@@ -16,25 +16,27 @@ partial class HelpersImpl {
 
 			TMember tMemberOfClass = srch.getDefinition(tClass, signature);
 
-			TAccessContainer internalAccessedTMembers = this.esc_Helper_Heuristic_getInternalAccessedTMembers(tMemberOfClass, tClass);
+			TAccessContainer internalAccessedTMembers = this
+					.esc_Helper_Heuristic_getInternalAccessedTMembers(tMemberOfClass, tClass);
 			i = internalAccessedTMembers.getTMember().size();
-			
-			TAccessContainer externAccessedTMembers = this.esc_Helper_Heuristic_getExternAccessedTMembers(tMemberOfClass, tClass);
+
+			TAccessContainer externAccessedTMembers = this
+					.esc_Helper_Heuristic_getExternAccessedTMembers(tMemberOfClass, tClass);
 			e = externAccessedTMembers.getTMember().size();
-			
+
 			int tWeightMember = i - e;
-			
-			System.out.println("GetBestTMember: class="+tClass.getTName()+" i="+i+"; e="+e+"; tWeight="+tWeightMember);
-			
-			if(tWeightMember > bestTMemberWeight){
+
+			System.out.println("GetBestTMember: class=" + tClass.getTName() + " i=" + i + "; e=" + e + "; tWeight="
+					+ tWeightMember);
+
+			if (tWeightMember > bestTMemberWeight) {
 				bestTMemberWeight = tWeightMember;
 				returnMember = tMemberOfClass;
 			}
 		}
 
+		System.out.println("Best-GetBestTMember: tWeight=" + bestTMemberWeight + "; tMember=" + returnMember.getSignatureString());
 
-		System.out.println("Best-GetBestTMember: tWeight="+bestTMemberWeight+"; tMemberID="+returnMember.getID());
-		
 		return returnMember;
 -->
 

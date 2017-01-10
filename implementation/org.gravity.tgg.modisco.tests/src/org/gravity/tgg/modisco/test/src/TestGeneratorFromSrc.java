@@ -30,7 +30,6 @@ import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
 import org.gravity.tgg.modisco.test.activator.MoDiscoTestActivator;
 import org.gravity.tgg.modisco.test.util.TimeStampUtil;
-import org.gravity.typegraph.basic.TElementWithId;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 public class TestGeneratorFromSrc {
@@ -109,18 +108,8 @@ public class TestGeneratorFromSrc {
 
 	public final ResourceSet loadResourceSet(final URI uri) {
 		final ResourceSet resourceSet = new ResourceSetImpl();
-		removeIDs(resourceSet.getResource(uri, true));
+		resourceSet.getResource(uri, true);
 		return resourceSet;
-	}
-
-	private void removeIDs(final Resource r) {
-		final TreeIterator<EObject> iterator = r.getAllContents();
-		while (iterator.hasNext()) {
-			final EObject next = iterator.next();
-			if (next instanceof TElementWithId) {
-				((TElementWithId) next).setID(0);
-			}
-		}
 	}
 
 	private void performForward() {

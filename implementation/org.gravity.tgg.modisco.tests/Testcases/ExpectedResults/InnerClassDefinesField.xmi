@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" ID="228" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" interfaces="//@ownedTypes.5" tName="InnerClassDefinesField">
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" interfaces="//@ownedTypes.5" tName="InnerClassDefinesField">
   <packages classes="//@ownedTypes.7" interfaces="//@ownedTypes.5" ownedTypes="//@ownedTypes.5 //@ownedTypes.7" typeGraph="/" tName="p">
-    <subpackage ID="242" classes="//@ownedTypes.11" ownedTypes="//@ownedTypes.11" tName="OuterClass$1"/>
+    <subpackage classes="//@ownedTypes.11" ownedTypes="//@ownedTypes.11" tName="OuterClass$1"/>
   </packages>
-  <methods ID="233" tName="m">
-    <signatures ID="235" returnType="//@ownedTypes.0">
-      <paramList ID="234"/>
-      <definitions ID="236" definedBy="//@ownedTypes.11" returnType="//@ownedTypes.0"/>
+  <methods tName="m">
+    <signatures returnType="//@ownedTypes.0">
+      <paramList />
+      <definitions definedBy="//@ownedTypes.11" returnType="//@ownedTypes.0"/>
     </signatures>
-    <signatures ID="239" returnType="//@ownedTypes.0">
-      <paramList ID="238" first="//@methods.0/@signatures.1/@paramList/@entries.0">
+    <signatures returnType="//@ownedTypes.0">
+      <paramList first="//@methods.0/@signatures.1/@paramList/@entries.0">
         <entries type="//@ownedTypes.1"/>
       </paramList>
-      <definitions ID="240" definedBy="//@ownedTypes.7" returnType="//@ownedTypes.0"/>
+      <definitions definedBy="//@ownedTypes.7" returnType="//@ownedTypes.0"/>
     </signatures>
   </methods>
-  <fields ID="230" tName="outer">
-    <signatures ID="232" type="//@ownedTypes.7">
-      <definitions ID="237" definedBy="//@ownedTypes.11"/>
+  <fields tName="outer">
+    <signatures type="//@ownedTypes.7">
+      <definitions definedBy="//@ownedTypes.11"/>
     </signatures>
   </fields>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
@@ -25,11 +25,11 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="229" package="//@packages.0" tName="Interface" implementedBy="//@ownedTypes.11"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" tName="Interface" implementedBy="//@ownedTypes.11"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="231" package="//@packages.0" signature="//@methods.0/@signatures.1" defines="//@methods.0/@signatures.1/@definitions.0" tName="OuterClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.1" defines="//@methods.0/@signatures.1/@definitions.0" tName="OuterClass"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="241" package="//@packages.0/@subpackage.0" signature="//@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0 //@methods.0/@signatures.0/@definitions.0" tName="InnerClass" implements="//@ownedTypes.5"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" signature="//@methods.0/@signatures.0 //@fields.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0 //@methods.0/@signatures.0/@definitions.0" tName="InnerClass" implements="//@ownedTypes.5"/>
 </org.gravity.typegraph.basic:TypeGraph>

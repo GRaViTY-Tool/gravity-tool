@@ -8,17 +8,17 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="1" package="//@packages.0" tName="TestClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="TestClass"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="2" package="//@packages.0" tName="AbsClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="AbsClass"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="Anonymous"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="3" package="//@packages.1/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.1/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.15"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="4" package="//@packages.1/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.15"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="5" package="//@packages.1/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.15"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="6" package="//@packages.1/@subpackage.1" tLib="true" tName="String" implements="//@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.11"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.1/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.1/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1/@subpackage.1" tLib="true" tName="String" implements="//@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.11"/>
 </org.gravity.typegraph.basic:TypeGraph>

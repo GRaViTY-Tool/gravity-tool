@@ -49,7 +49,6 @@ public class JavaSyncBwdHandler extends AbstractHandler {
 							TypeGraph pg = converter.getPG();
 							TPackage createTPackage = BasicFactory.eINSTANCE.createTPackage();
 							createTPackage.setTName("NEW");
-							createTPackage.setID(100);
 							createTPackage.setPg(pg);
 							pg.getPackages().add(createTPackage);
 						};
