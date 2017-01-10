@@ -1,0 +1,18 @@
+
+partial class TypeGraph {
+
+@members <--
+
+
+	public TPackage getPackage(String string);
+
+	public TClass getClass(String string);
+	
+	public TInterface getInterface(String fullyQualifiedName);
+	
+	public TAbstractType getType(String fullyQualifiedName);
+
+	
+-->
+
+}

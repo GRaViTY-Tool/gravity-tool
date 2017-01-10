@@ -1,0 +1,92 @@
+
+partial class TypeGraphImpl {
+
+@members <--
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tName: ");
+		result.append(tName);
+		result.append(')');
+		return result.toString();
+	}
+
+	public TPackage getPackage(String string){
+		String[] names = string.split("\\.");
+		EList<TPackage> next = getPackages();
+		for(int i = 0; i < names.length; ){
+			String name = names[i++];
+			boolean contains = false;
+			for(TPackage tPackage: next){
+				if(name.equals(tPackage.getTName())){
+					if(i == names.length){
+						return tPackage;
+					}
+					next = tPackage.getSubpackage();
+					contains = true;
+					break;
+				}
+			}
+			if(!contains){
+				return null;
+			}
+		}
+		return null;
+	}
+
+	public TClass getClass(String string){
+		int index = string.lastIndexOf('.');
+		TPackage tPackage = getPackage(string.substring(0, index));
+		if(tPackage != null){
+			String name = string.substring(index+1);
+			for(TClass tClass : tPackage.getClasses()){
+				if(name.equals(tClass.getTName())){
+					return tClass;
+				}
+			}
+		}
+		return null;
+	}
+	
+	public TInterface getInterface(String fullyQualifiedName){
+		int index = fullyQualifiedName.lastIndexOf('.');
+		TPackage tPackage = getPackage(fullyQualifiedName.substring(0, index));
+		if(tPackage != null){
+			String name = fullyQualifiedName.substring(index+1);
+			for(TInterface tType : tPackage.getInterfaces()){
+				if(name.equals(tType.getTName())){
+					return tType;
+				}
+			}
+		}
+		return null;
+	}
+	
+	public TAbstractType getType(String fullyQualifiedName){
+		int index = fullyQualifiedName.lastIndexOf('.');
+		TPackage tPackage = getPackage(fullyQualifiedName.substring(0, index));
+		if(tPackage != null){
+			String name = fullyQualifiedName.substring(index+1);
+			for(TAbstractType tType : tPackage.getOwnedTypes()){
+				if(name.equals(tType.getTName())){
+					return tType;
+				}
+			}
+		}
+		return null;
+	}
+
+	
+-->
+
+}

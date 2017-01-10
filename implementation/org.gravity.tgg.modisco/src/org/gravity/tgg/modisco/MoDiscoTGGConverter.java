@@ -346,13 +346,20 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 						.computeDiscoverableElements(java_project);
 				ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
 				for (Object o : discoverable) {
+					IPath path = null;
 					if (o instanceof JarPackageFragmentRoot) {
 						JarPackageFragmentRoot jar = (JarPackageFragmentRoot) o;
-						IPath path = jar.getPath();
-
+						path = jar.getPath();
+					}
+					else if (o instanceof IJavaProject) {
+						IJavaProject proj = (IJavaProject) o;
+						path = proj.getProject().getLocation();
+					}
+					
+					if(path != null){
 						for (IPath l : libs) {
 							if (l.isPrefixOf(path)) {
-								analyze.addElementToDiscover(jar);
+								analyze.addElementToDiscover(o);
 							}
 						}
 					}

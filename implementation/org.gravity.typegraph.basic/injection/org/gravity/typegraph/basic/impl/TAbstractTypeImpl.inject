@@ -11,14 +11,16 @@ partial class TAbstractTypeImpl {
 		StringBuilder builder = new StringBuilder();
 		List<String> packages = new LinkedList<>();
 		TPackage tPackage = getPackage();
-		while (tPackage != null) {
-			packages.add(0, tPackage.getTName());
-			tPackage = tPackage.getParent();
-		}
-		for (String name : packages) {
-			builder.append(name);
-			if (name.length() > 0 && !name.endsWith("$") && !name.endsWith("$1")) { //$NON-NLS-1$ //$NON-NLS-2$
-				builder.append('.');
+		if(!"(default package)".equals(tPackage.getTName())){
+			while (tPackage != null) {
+				packages.add(0, tPackage.getTName());
+				tPackage = tPackage.getParent();
+			}
+			for (String name : packages) {
+				builder.append(name);
+				if (name.length() > 0 && !name.endsWith("$") && !name.endsWith("$1")) { //$NON-NLS-1$ //$NON-NLS-2$
+					builder.append('.');
+				}
 			}
 		}
 		builder.append(getTName());
