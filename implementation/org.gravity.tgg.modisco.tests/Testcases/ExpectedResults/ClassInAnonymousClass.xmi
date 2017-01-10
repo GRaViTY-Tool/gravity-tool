@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" ID="91" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12" tName="ClassInAnonymousClass">
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12" tName="ClassInAnonymousClass">
   <packages typeGraph="/" tName="java">
-    <subpackage ID="95" classes="//@ownedTypes.4" ownedTypes="//@ownedTypes.4" typeGraph="/" tName="lang"/>
+    <subpackage classes="//@ownedTypes.4" ownedTypes="//@ownedTypes.4" typeGraph="/" tName="lang"/>
   </packages>
   <packages classes="//@ownedTypes.10" ownedTypes="//@ownedTypes.10" typeGraph="/" tName="(default package)"/>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" ID="92" tName="">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" ID="93">
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" >
       <paramList/>
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" ID="94" definedBy="//@ownedTypes.7"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.7"/>
     </signatures>
   </methods>
-  <methods ID="100" tName="m">
-    <signatures ID="102" returnType="//@ownedTypes.12">
-      <paramList ID="101"/>
-      <definitions ID="103" definedBy="//@ownedTypes.10" returnType="//@ownedTypes.12"/>
+  <methods tName="m">
+    <signatures returnType="//@ownedTypes.12">
+      <paramList />
+      <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.12"/>
     </signatures>
   </methods>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="96" package="//@packages.0/@subpackage.0" tLib="true" tName="Object"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" tLib="true" tName="Object"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="97" defines="//@methods.0/@signatures.0/@definitions.0" tName="Anonymous"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" defines="//@methods.0/@signatures.0/@definitions.0" tName="Anonymous"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="98" tName="InnerClass"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="99" package="//@packages.1" signature="//@methods.1/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0" tName="OuterClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="InnerClass"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1" signature="//@methods.1/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0" tName="OuterClass"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
 </org.gravity.typegraph.basic:TypeGraph>

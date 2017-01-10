@@ -1,108 +1,108 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AntiPattern="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//AntiPatternGraph/AntiPattern" xmlns:CodeSmells="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//AntiPatternGraph/CodeSmells" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" ID="10" tName="__TestProject4">
-  <packages ID="51" containedClasses="//@classes.9 //@classes.10 //@classes.11" tName="p"/>
-  <methods ID="20" tName="setValues">
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AntiPattern="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//AntiPatternGraph/AntiPattern" xmlns:CodeSmells="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//AntiPatternGraph/CodeSmells" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" tName="__TestProject4">
+  <packages containedClasses="//@classes.9 //@classes.10 //@classes.11" tName="p"/>
+  <methods tName="setValues">
     <signatures definitions="//@classes.10/@defines.3">
-      <paramList ID="1"/>
+      <paramList />
     </signatures>
   </methods>
-  <methods ID="21" tName="main">
-    <signatures ID="36" definitions="//@classes.10/@defines.2">
-      <paramList ID="37" first="//@methods.1/@signatures.0/@paramList/@entries.0">
-        <entries ID="61">
+  <methods tName="main">
+    <signatures definitions="//@classes.10/@defines.2">
+      <paramList first="//@methods.1/@signatures.0/@paramList/@entries.0">
+        <entries >
           <tClass href="../gravity-out/ExternTClasses.xmi#/2"/>
         </entries>
       </paramList>
     </signatures>
   </methods>
-  <methods ID="24" tName="setS">
-    <signatures ID="47" definitions="//@classes.11/@defines.0">
-      <paramList ID="48" first="//@methods.2/@signatures.0/@paramList/@entries.0">
-        <entries ID="50">
+  <methods tName="setS">
+    <signatures definitions="//@classes.11/@defines.0">
+      <paramList first="//@methods.2/@signatures.0/@paramList/@entries.0">
+        <entries >
           <tClass href="../gravity-out/ExternTClasses.xmi#/2"/>
         </entries>
       </paramList>
     </signatures>
   </methods>
-  <methods ID="25" tName="size">
-    <signatures ID="2" definitions="//@classes.9/@defines.0">
-      <paramList ID="3"/>
+  <methods tName="size">
+    <signatures  definitions="//@classes.9/@defines.0">
+      <paramList />
     </signatures>
   </methods>
-  <methods ID="26" tName="add">
-    <signatures ID="42" definitions="//@classes.9/@defines.2">
-      <paramList ID="43" first="//@methods.4/@signatures.0/@paramList/@entries.0">
-        <entries ID="44" tClass="//@classes.11"/>
+  <methods tName="add">
+    <signatures definitions="//@classes.9/@defines.2">
+      <paramList first="//@methods.4/@signatures.0/@paramList/@entries.0">
+        <entries tClass="//@classes.11"/>
       </paramList>
     </signatures>
   </methods>
-  <methods ID="33" tName="getS">
-    <signatures ID="4" definitions="//@classes.11/@defines.1">
-      <paramList ID="5"/>
+  <methods tName="getS">
+    <signatures definitions="//@classes.11/@defines.1">
+      <paramList />
     </signatures>
   </methods>
-  <methods ID="34" tName="get">
-    <signatures ID="39" definitions="//@classes.9/@defines.1">
-      <paramList ID="40" first="//@methods.6/@signatures.0/@paramList/@entries.0">
-        <entries ID="60" tClass="//@classes.5"/>
+  <methods tName="get">
+    <signatures definitions="//@classes.9/@defines.1">
+      <paramList first="//@methods.6/@signatures.0/@paramList/@entries.0">
+        <entries tClass="//@classes.5"/>
       </paramList>
     </signatures>
   </methods>
-  <methods ID="35" tName="createDatas">
-    <signatures ID="6" definitions="//@classes.10/@defines.0">
-      <paramList ID="7"/>
+  <methods tName="createDatas">
+    <signatures definitions="//@classes.10/@defines.0">
+      <paramList />
     </signatures>
   </methods>
-  <fields ID="22" tName="list">
-    <signatures ID="58" definitions="//@classes.10/@defines.4" type="//@classes.9"/>
+  <fields tName="list">
+    <signatures definitions="//@classes.10/@defines.4" type="//@classes.9"/>
   </fields>
-  <fields ID="23" tName="names">
-    <signatures ID="32" definitions="//@classes.10/@defines.1">
+  <fields tName="names">
+    <signatures definitions="//@classes.10/@defines.1">
       <type href="../gravity-out/ExternTClasses.xmi#/2"/>
     </signatures>
   </fields>
-  <fields ID="28" tName="datas">
-    <signatures ID="29" definitions="//@classes.9/@defines.3" type="//@classes.11"/>
+  <fields tName="datas">
+    <signatures definitions="//@classes.9/@defines.3" type="//@classes.11"/>
   </fields>
-  <fields ID="30" tName="s">
-    <signatures ID="31" definitions="//@classes.11/@defines.2">
+  <fields tName="s">
+    <signatures definitions="//@classes.11/@defines.2">
       <type href="../gravity-out/ExternTClasses.xmi#/2"/>
     </signatures>
   </fields>
-  <classes ID="11" tLib="true" tName="boolean"/>
-  <classes ID="12" tLib="true" tName="byte"/>
-  <classes ID="13" tLib="true" tName="char"/>
-  <classes ID="14" tLib="true" tName="double"/>
-  <classes ID="15" tLib="true" tName="float"/>
-  <classes ID="16" tLib="true" tName="int"/>
-  <classes ID="17" tLib="true" tName="long"/>
-  <classes ID="18" tLib="true" tName="short"/>
-  <classes ID="19" tLib="true" tName="void"/>
-  <classes ID="52" package="//@packages.0" signature="//@methods.3/@signatures.0 //@methods.6/@signatures.0 //@methods.4/@signatures.0 //@fields.2/@signatures.0" tName="DataContainer">
+  <classes tLib="true" tName="boolean"/>
+  <classes tLib="true" tName="byte"/>
+  <classes tLib="true" tName="char"/>
+  <classes tLib="true" tName="double"/>
+  <classes tLib="true" tName="float"/>
+  <classes tLib="true" tName="int"/>
+  <classes tLib="true" tName="long"/>
+  <classes tLib="true" tName="short"/>
+  <classes tLib="true" tName="void"/>
+  <classes package="//@packages.0" signature="//@methods.3/@signatures.0 //@methods.6/@signatures.0 //@methods.4/@signatures.0 //@fields.2/@signatures.0" tName="DataContainer">
     <tAnnotation xsi:type="CodeSmells:LargeClassSmell" methods_amount="3" fields_amount="1" methods_average="2.6666666666666665" fields_average="1.3333333333333333"/>
     <tAnnotation xsi:type="AntiPattern:TheBlobAntiPattern"/>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="27" accessedBy="//@classes.10/@defines.3/@tAccessing.6 //@classes.10/@defines.2/@tAccessing.6" signature="//@methods.3/@signatures.0" returnType="//@classes.5">
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.3/@tAccessing.6 //@classes.10/@defines.2/@tAccessing.6" signature="//@methods.3/@signatures.0" returnType="//@classes.5">
       <tAccessing tTarget="//@classes.9/@defines.3"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="41" accessedBy="//@classes.10/@defines.3/@tAccessing.1 //@classes.10/@defines.2/@tAccessing.3" signature="//@methods.6/@signatures.0" returnType="//@classes.11">
-      <tAccessing tTarget="//@classes.9/@defines.3"/>
-      <tAccessing tTarget="//@classes.9/@defines.3"/>
-    </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="46" accessedBy="//@classes.10/@defines.0/@tAccessing.1" signature="//@methods.4/@signatures.0" returnType="//@classes.8">
-      <tAccessing tTarget="//@classes.9/@defines.3"/>
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.3/@tAccessing.1 //@classes.10/@defines.2/@tAccessing.3" signature="//@methods.6/@signatures.0" returnType="//@classes.11">
       <tAccessing tTarget="//@classes.9/@defines.3"/>
       <tAccessing tTarget="//@classes.9/@defines.3"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" ID="57" accessedBy="//@classes.9/@defines.0/@tAccessing.0 //@classes.9/@defines.1/@tAccessing.0 //@classes.9/@defines.1/@tAccessing.1 //@classes.9/@defines.2/@tAccessing.0 //@classes.9/@defines.2/@tAccessing.1 //@classes.9/@defines.2/@tAccessing.2" signature="//@fields.2/@signatures.0"/>
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.0/@tAccessing.1" signature="//@methods.4/@signatures.0" returnType="//@classes.8">
+      <tAccessing tTarget="//@classes.9/@defines.3"/>
+      <tAccessing tTarget="//@classes.9/@defines.3"/>
+      <tAccessing tTarget="//@classes.9/@defines.3"/>
+    </defines>
+    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" accessedBy="//@classes.9/@defines.0/@tAccessing.0 //@classes.9/@defines.1/@tAccessing.0 //@classes.9/@defines.1/@tAccessing.1 //@classes.9/@defines.2/@tAccessing.0 //@classes.9/@defines.2/@tAccessing.1 //@classes.9/@defines.2/@tAccessing.2" signature="//@fields.2/@signatures.0"/>
   </classes>
-  <classes ID="53" package="//@packages.0" signature="//@methods.7/@signatures.0 //@fields.1/@signatures.0 //@methods.1/@signatures.0 //@methods.0/@signatures.0 //@fields.0/@signatures.0" tName="Main">
+  <classes package="//@packages.0" signature="//@methods.7/@signatures.0 //@fields.1/@signatures.0 //@methods.1/@signatures.0 //@methods.0/@signatures.0 //@fields.0/@signatures.0" tName="Main">
     <tAnnotation xsi:type="CodeSmells:LargeClassSmell" methods_amount="3" fields_amount="2" methods_average="2.6666666666666665" fields_average="1.3333333333333333"/>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="8" accessedBy="//@classes.10/@defines.2/@tAccessing.0" signature="//@methods.7/@signatures.0" returnType="//@classes.8">
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.2/@tAccessing.0" signature="//@methods.7/@signatures.0" returnType="//@classes.8">
       <tAccessing tTarget="//@classes.10/@defines.4"/>
       <tAccessing tTarget="//@classes.9/@defines.2"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" ID="54" accessedBy="//@classes.10/@defines.3/@tAccessing.3 //@classes.10/@defines.3/@tAccessing.4" signature="//@fields.1/@signatures.0"/>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="38" signature="//@methods.1/@signatures.0" returnType="//@classes.8">
+    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" accessedBy="//@classes.10/@defines.3/@tAccessing.3 //@classes.10/@defines.3/@tAccessing.4" signature="//@fields.1/@signatures.0"/>
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" signature="//@methods.1/@signatures.0" returnType="//@classes.8">
       <tAccessing tTarget="//@classes.10/@defines.0"/>
       <tAccessing tTarget="//@classes.10/@defines.3"/>
       <tAccessing tTarget="//@classes.10/@defines.4"/>
@@ -111,7 +111,7 @@
       <tAccessing tTarget="//@classes.10/@defines.4"/>
       <tAccessing tTarget="//@classes.9/@defines.0"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="9" accessedBy="//@classes.10/@defines.2/@tAccessing.1" signature="//@methods.0/@signatures.0" returnType="//@classes.8">
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.2/@tAccessing.1" signature="//@methods.0/@signatures.0" returnType="//@classes.8">
       <tAccessing tTarget="//@classes.10/@defines.4"/>
       <tAccessing tTarget="//@classes.9/@defines.1"/>
       <tAccessing tTarget="//@classes.11/@defines.0"/>
@@ -120,19 +120,19 @@
       <tAccessing tTarget="//@classes.10/@defines.4"/>
       <tAccessing tTarget="//@classes.9/@defines.0"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" ID="59" accessedBy="//@classes.10/@defines.0/@tAccessing.0 //@classes.10/@defines.3/@tAccessing.0 //@classes.10/@defines.3/@tAccessing.5 //@classes.10/@defines.2/@tAccessing.2 //@classes.10/@defines.2/@tAccessing.5" signature="//@fields.0/@signatures.0"/>
+    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" accessedBy="//@classes.10/@defines.0/@tAccessing.0 //@classes.10/@defines.3/@tAccessing.0 //@classes.10/@defines.3/@tAccessing.5 //@classes.10/@defines.2/@tAccessing.2 //@classes.10/@defines.2/@tAccessing.5" signature="//@fields.0/@signatures.0"/>
   </classes>
-  <classes ID="55" package="//@packages.0" signature="//@methods.2/@signatures.0 //@methods.5/@signatures.0 //@fields.3/@signatures.0" tName="Data">
+  <classes package="//@packages.0" signature="//@methods.2/@signatures.0 //@methods.5/@signatures.0 //@fields.3/@signatures.0" tName="Data">
     <tAnnotation xsi:type="CodeSmells:DataClassSmell" getterSetterSmells="//@classes.11/@defines.0/@tAnnotation.0 //@classes.11/@defines.1/@tAnnotation.0"/>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="49" accessedBy="//@classes.10/@defines.3/@tAccessing.2" signature="//@methods.2/@signatures.0" returnType="//@classes.8">
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.3/@tAccessing.2" signature="//@methods.2/@signatures.0" returnType="//@classes.8">
       <tAnnotation xsi:type="CodeSmells:GetterSetterSmell" tFieldDefinition="//@classes.11/@defines.2"/>
       <tAccessing tTarget="//@classes.11/@defines.2"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" ID="45" accessedBy="//@classes.10/@defines.2/@tAccessing.4" signature="//@methods.5/@signatures.0">
+    <defines xsi:type="org.gravity.typegraph.basic:TMethodDefinition" accessedBy="//@classes.10/@defines.2/@tAccessing.4" signature="//@methods.5/@signatures.0">
       <tAnnotation xsi:type="CodeSmells:GetterSetterSmell" tFieldDefinition="//@classes.11/@defines.2"/>
       <tAccessing tTarget="//@classes.11/@defines.2"/>
       <returnType href="../gravity-out/ExternTClasses.xmi#/2"/>
     </defines>
-    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" ID="56" accessedBy="//@classes.11/@defines.1/@tAccessing.0 //@classes.11/@defines.0/@tAccessing.0" signature="//@fields.3/@signatures.0"/>
+    <defines xsi:type="org.gravity.typegraph.basic:TFieldDefinition" accessedBy="//@classes.11/@defines.1/@tAccessing.0 //@classes.11/@defines.0/@tAccessing.0" signature="//@fields.3/@signatures.0"/>
   </classes>
 </org.gravity.typegraph.basic:TypeGraph>

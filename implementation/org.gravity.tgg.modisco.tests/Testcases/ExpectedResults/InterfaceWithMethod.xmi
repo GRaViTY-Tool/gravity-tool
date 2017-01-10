@@ -5,13 +5,13 @@
     <subpackage classes="//@ownedTypes.13" interfaces="//@ownedTypes.8 //@ownedTypes.10" ownedTypes="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.13" typeGraph="/" tName="lang"/>
   </packages>
   <packages interfaces="//@ownedTypes.9" ownedTypes="//@ownedTypes.9" typeGraph="/" tName="foo"/>
-  <methods ID="5" tName="aMethod">
-    <signatures ID="3" returnType="//@ownedTypes.13">
-      <paramList ID="2">
+  <methods tName="aMethod">
+    <signatures returnType="//@ownedTypes.13">
+      <paramList >
         <entries type="//@ownedTypes.1"/>
         <entries type="//@ownedTypes.1"/>
       </paramList>
-      <definitions ID="4" definedBy="//@ownedTypes.9" returnType="//@ownedTypes.13"/>
+      <definitions definedBy="//@ownedTypes.9" returnType="//@ownedTypes.13"/>
     </signatures>
   </methods>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
@@ -23,9 +23,9 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.13"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="1" package="//@packages.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="Bar"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="6" package="//@packages.0/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.13"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" ID="7" package="//@packages.0/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="Bar"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.13"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="8" package="//@packages.0/@subpackage.1" tLib="true" tName="String" implements="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.11"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.1" tLib="true" tName="String" implements="//@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.11"/>
 </org.gravity.typegraph.basic:TypeGraph>

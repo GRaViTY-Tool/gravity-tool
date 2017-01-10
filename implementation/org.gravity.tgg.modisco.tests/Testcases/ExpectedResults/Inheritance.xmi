@@ -10,6 +10,6 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="43" package="//@packages.0" tName="A" childClasses="//@ownedTypes.10"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="44" package="//@packages.0" tName="B" parentClass="//@ownedTypes.9"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="A" childClasses="//@ownedTypes.10"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="B" parentClass="//@ownedTypes.9"/>
 </org.gravity.typegraph.basic:TypeGraph>

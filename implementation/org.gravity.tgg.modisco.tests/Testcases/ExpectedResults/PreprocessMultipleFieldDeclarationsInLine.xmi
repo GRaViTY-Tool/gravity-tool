@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9" tName="PreprocessMultipleFieldDeclarationsInLine">
   <packages classes="//@ownedTypes.9" ownedTypes="//@ownedTypes.9" typeGraph="/" tName="(default package)"/>
-  <fields ID="24812" tName="c">
-    <signatures ID="24814" type="//@ownedTypes.6">
-      <definitions ID="24818" definedBy="//@ownedTypes.9"/>
+  <fields tName="c">
+    <signatures type="//@ownedTypes.6">
+      <definitions definedBy="//@ownedTypes.9"/>
     </signatures>
   </fields>
-  <fields ID="24813" tName="a">
-    <signatures ID="24815" type="//@ownedTypes.6"/>
+  <fields tName="a">
+    <signatures type="//@ownedTypes.6"/>
   </fields>
-  <fields ID="24816" tName="b">
-    <signatures ID="24817" type="//@ownedTypes.6"/>
+  <fields tName="b">
+    <signatures type="//@ownedTypes.6"/>
   </fields>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
@@ -21,5 +21,5 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="24811" package="//@packages.0" signature="//@fields.0/@signatures.0 //@fields.1/@signatures.0 //@fields.2/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0" tName="Clazz"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@fields.0/@signatures.0 //@fields.1/@signatures.0 //@fields.2/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0" tName="Clazz"/>
 </org.gravity.typegraph.basic:TypeGraph>

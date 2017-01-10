@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="EnumInMethod">
   <packages classes="//@ownedTypes.6 //@ownedTypes.7" ownedTypes="//@ownedTypes.6 //@ownedTypes.7" typeGraph="/" tName="foo"/>
-  <methods ID="81" tName="aMethod">
-    <signatures ID="79" returnType="//@ownedTypes.7">
-      <paramList ID="78">
+  <methods tName="aMethod">
+    <signatures returnType="//@ownedTypes.7">
+      <paramList >
         <entries type="//@ownedTypes.7"/>
       </paramList>
-      <definitions ID="80" definedBy="//@ownedTypes.6" returnType="//@ownedTypes.7"/>
+      <definitions definedBy="//@ownedTypes.6" returnType="//@ownedTypes.7"/>
     </signatures>
   </methods>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
@@ -15,8 +15,8 @@
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="77" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="Bar"/>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" ID="82" package="//@packages.0" tName="EBar"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="Bar"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="EBar"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
   <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
