@@ -9,7 +9,7 @@
    <feature url="features/org.gravity.features.arte.testdsl_1.0.1.201608161445.jar" id="org.gravity.features.arte.testdsl" version="1.0.1.201608161445">
       <category name="org.gravity.arte"/>
    </feature>
-   <feature url="features/org.gravity.features.modisco_1.0.1.201608161445.jar" id="org.gravity.features.modisco" version="1.0.1.201608161445">
+   <feature url="features/org.gravity.features.modisco_1.0.1.201701121041.jar" id="org.gravity.features.modisco" version="1.0.1.201701121041">
       <category name="org.gravity.basics"/>
    </feature>
    <feature url="features/org.gravity.features.typegraph.basic_1.0.1.201608161445.jar" id="org.gravity.features.typegraph.basic" version="1.0.1.201608161445">
