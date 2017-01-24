@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.sidiff.difference.ui.category.silift"
+            defaultHandler="org.sidiff.difference.symmetric.execute.handler.DifferenceExecutorHandler"
+            description="Aligns model A to model B"
+            id="org.sidiff.difference.symmetric.execute.command.alignmodels"
+            name="Align Models">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <separator
+               name="org.sidiff.difference.symmetric.execute.Top"
+               visible="true">
+         </separator>
+         <menu
+               id="org.sidiff.research"
+               label="SiLift-Research">
+            <command
+                  commandId="org.sidiff.difference.symmetric.execute.command.alignmodels"
+                  style="push">
+            </command>
+         </menu>
+         <separator
+               name="org.sidiff.difference.symmetric.execute.separatorBottom"
+               visible="true">
+         </separator>
+      </menuContribution>
+   </extension>
+
+</plugin>

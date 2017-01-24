@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Silift Gravity Patcher
+Bundle-SymbolicName: org.gravity.modisco.patcher.silift;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Vendor: University of Siegen
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.11.2",
+ org.eclipse.gmt.modisco.java;bundle-version="0.13.2",
+ org.gravity.modisco;bundle-version="1.0.0",
+ org.sidiff.difference.symmetric.execute;bundle-version="1.0.0",
+ org.junit
+Export-Package: org.gravity.modisco.patcher.silift
