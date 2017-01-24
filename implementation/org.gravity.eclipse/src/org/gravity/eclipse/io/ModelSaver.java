@@ -5,7 +5,9 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.util.Collections;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -40,6 +42,11 @@ public class ModelSaver {
 						file.setContents(in, true, false, monitor);
 					}
 					else{
+						IContainer parent = file.getParent();
+						if(!parent.exists()){
+							IFolder folder = parent.getProject().getFolder(parent.getProjectRelativePath());
+							folder.create(true, true, monitor);
+						}
 						file.create(in, true, monitor);
 					}
 					in.close();
