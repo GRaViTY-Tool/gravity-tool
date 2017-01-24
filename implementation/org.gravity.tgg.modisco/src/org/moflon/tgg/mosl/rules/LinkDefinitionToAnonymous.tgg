@@ -1,0 +1,35 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule LinkDefinitionToAnonymous
+#with org.gravity.tgg.modisco
+
+#source {
+mDefinition : MDefinition {
+}
+mType : AnonymousClassDeclaration {
+	++  -bodyDeclarations -> mDefinition
+}
+}
+
+#target {
+tDefinition : TMember {
+	++  -definedBy -> tType
+}
+tType : TClass {
+}
+}
+
+#correspondence {
+mTypeToTType : AnonymousClassDeclarationToTClass {
+	#src->mType
+	#trg->tType
+}
+mDefinitionToTMember : MDefinitionToTMember {
+	#src->mDefinition
+	#trg->tDefinition
+}
+}
+
+#attributeConditions {
+}

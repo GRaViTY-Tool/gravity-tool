@@ -1,6 +1,6 @@
 package org.gravity.eclipse.converter;
 
-import java.util.Set;
+import java.util.Collection;
 import java.util.function.Consumer;
 
 import org.eclipse.core.resources.IFile;
@@ -29,7 +29,7 @@ public interface IPGConverter {
 	 */
 	boolean convertProject(IJavaProject project, IProgressMonitor monitor);
 
-	boolean convertProject(IJavaProject project, Set<IPath> libs, IProgressMonitor monitor);
+	boolean convertProject(IJavaProject project, Collection<IPath> libs, IProgressMonitor monitor);
 
 	/**
 	 * Synchronizes changes made on the PG and described in the consumer into

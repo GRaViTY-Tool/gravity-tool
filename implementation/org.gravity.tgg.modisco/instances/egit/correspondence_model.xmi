@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" xmlns:org.gravity.tgg.modisco="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="org.gravity.tgg.modisco:ModelToTypeGraph">
+    <source href="HackEGit.xmi#/0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.250"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.250"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.589"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.720"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.720"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.720"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.327"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedElements.17/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.194"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.256"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.131"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.220"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.354"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.302"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.74"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.648"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.45"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.142"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.150"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.150"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.626"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.763"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.8/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.763"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.8/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.763"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.8/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.292"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.363"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.363"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.9/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.363"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.15/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.10/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.15/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.15/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.15/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.10/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.15/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.153"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.161"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.161"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.66"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.66"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.66"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.556"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.11"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.323"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.349"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.349"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.8/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.8/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.8/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.380"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.529"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.640"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.777"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.13/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.777"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.13/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.777"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.13/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.446"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.487"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.487"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.46/@bodyDeclarations.3"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.46/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.46/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.356"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.14"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.4/@bodyDeclarations.7"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.15/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.4/@bodyDeclarations.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.15/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.4/@bodyDeclarations.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.15/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.4/@bodyDeclarations.7"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.15/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedElements.4/@bodyDeclarations.7"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.40"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.45"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.45"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.7/@ownedElements.2/@bodyDeclarations.2"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.7/@ownedElements.2/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.7/@ownedElements.2/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.1"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.10/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.102"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.143"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.143"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.16/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.143"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.412"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.162"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.628"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.765"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.765"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.765"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.22"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.22"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.22"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.169"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.17/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.21/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.17/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.21/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.17/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.21/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.17/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.21/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.17/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.101"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.549"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.23"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.675"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.23/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.675"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.23/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.675"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.23/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.0/@bodyDeclarations.2"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.24/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.0/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.24/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.0/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.24/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.0/@bodyDeclarations.2"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.24/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.0/@bodyDeclarations.2"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.24"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.423"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.25"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.530"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.25/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.530"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.25/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.530"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.25/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.599"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.26"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.96"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.27"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.3/@bodyDeclarations.42/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.28/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.3/@bodyDeclarations.42/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.28/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.3/@bodyDeclarations.42/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.28/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.3/@bodyDeclarations.42/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.28/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.3/@bodyDeclarations.42/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.28"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedElements.19/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.198"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.206"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.206"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.111"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.111"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.111"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.111/@fragments.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.402"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.161"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.29"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.516"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.29/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.30/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.29/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.30/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.29/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.30/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.29/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.30/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.29/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.30"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.101"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.14"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.109"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.14/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.109"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.14/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.180"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.31"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.163"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.214"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.214"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.214"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.32/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.466"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.597"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.33"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.729"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.33/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.729"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.33/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.729"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.33/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.18/@bodyDeclarations.4"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.34/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.18/@bodyDeclarations.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.34/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.18/@bodyDeclarations.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.34/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.18/@bodyDeclarations.4"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.34/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.18/@bodyDeclarations.4"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.34"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.454"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.35"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.569"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.35/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.569"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.35/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.569"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.35/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.554"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.36"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.179"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.37"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.38/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.38/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.38/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.38/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.504"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.39"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.624"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.39/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.624"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.39/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.624"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.39/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.2/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.2/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.40/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.2/@bodyDeclarations.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.40/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.2/@bodyDeclarations.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.40/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.2/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.40/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.2/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.40"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.52"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.58"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.58"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.40/@bodyDeclarations.1"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.40/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.40/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.16/@bodyDeclarations.40/@bodyDeclarations.1/@fragments.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.242"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.302"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.302"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.302"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.301"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.301"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.301"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.2/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.41/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.395"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.434"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.17/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.434"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.17/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.649"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.42"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.333"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.43"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.44/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.44/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.44/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.44/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.44"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.228"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.228"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.133"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.133"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.133"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.176"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.230"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.230"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.230"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.26"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.26"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.1/@bodyDeclarations.26"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.45/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.616"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.46"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.249"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.312"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.312"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.312"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.6/@bodyDeclarations.7"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.6/@bodyDeclarations.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.6/@bodyDeclarations.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.3/@bodyDeclarations.1"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.3/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.3/@ownedElements.3/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.47/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ModelToTypeGraph">
+    <source href="HackEGit.xmi#/0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.405"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.34"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.231"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.239"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.239"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.525"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.50"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.48"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.76"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.48/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.76"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.48/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.76"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.48/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedElements.5/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.324"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.145"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.6/@ownedElements.0/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.49/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.6/@ownedElements.0/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.49/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.6/@ownedElements.0/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.49/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.6/@ownedElements.0/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.49/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.6/@ownedElements.0/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.49"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.490"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedElements.4/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.10"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0/@fragments.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.88"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/1/@ownedElements.2/@ownedPackages.2/@ownedElements.9/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.334"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.312"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.50"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4/@ownedElements.0/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.51/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4/@ownedElements.0/@bodyDeclarations.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.51/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4/@ownedElements.0/@bodyDeclarations.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.51/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4/@ownedElements.0/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.51/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.4/@ownedElements.0/@bodyDeclarations.11"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.51"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.486"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.5/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.5/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.5/@bodyDeclarations.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.5/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.5/@bodyDeclarations.8"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.0"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.1"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.471"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.374"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.52"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.322"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.36"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.41"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.41"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.12/@bodyDeclarations.5"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.12/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="HackEGit.xmi#/0/@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.12/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.132"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.98"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="HackEGit.xmi#/0/@mFieldNames.295"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="HackEGit.xmi#/0/@mFieldSignatures.317"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="HackEGit.xmi#/0/@mFieldSignatures.317"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@fields.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.280"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.53"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.350"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.53/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.350"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.53/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.350"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.53/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="HackEGit.xmi#/0/@ownedElements.2/@ownedPackages.1/@ownedElements.14/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.92"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.54"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="HackEGit.xmi#/0/@mMethodNames.549"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.55"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.676"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.55/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="HackEGit.xmi#/0/@mMethodSignatures.676"/>
+    <target href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.55/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="HackEGit.xmi#/0/@mMethodSignatures.676"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../../eclipse_gravity/null/tempOutputContainer.xmi#//@potentialRoots.0/@methods.55/@signatures.0"/>
+  </correspondences>
+  <source href="HackEGit.xmi#/0"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

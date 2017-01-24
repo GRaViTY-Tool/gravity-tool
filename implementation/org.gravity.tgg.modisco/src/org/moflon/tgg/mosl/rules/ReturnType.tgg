@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ReturnType
+#with org.gravity.tgg.modisco
+
+#source {
+mDefinition : MMethodDefinition {
+	++  -returnType -> eTypeAccess
+}
+++ eTypeAccess : TypeAccess {
+	++  -type -> eReturnType
+}
+eReturnType : Type {
+}
+}
+
+#target {
+tAbstractType : TAbstractType {
+}
+tMethodDefinition : TMethodDefinition {
+	++  -returnType -> tAbstractType
+}
+}
+
+#correspondence {
+eReturnTypeToTAbstractType : TypeToTAbstractType {
+	#src->eReturnType
+	#trg->tAbstractType
+}
+mMethodDefinitionToTMethodDefinition : MMethodDefinitionToTMethodDefinition {
+	#src->mDefinition
+	#trg->tMethodDefinition
+}
+}
+
+#attributeConditions {
+}

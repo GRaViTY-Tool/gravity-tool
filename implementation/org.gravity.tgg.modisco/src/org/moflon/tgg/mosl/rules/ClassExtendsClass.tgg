@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ClassExtendsClass
+#with org.gravity.tgg.modisco
+
+#source {
+eClassDeclaration : ClassDeclaration {
+	++  -superClass -> eTypeAccess
+}
+eExtendedClass : ClassDeclaration {
+}
+++ eTypeAccess : TypeAccess {
+	++  -type -> eExtendedClass
+}
+}
+
+#target {
+tClass : TClass {
+	++  -parentClass -> tExtendedClass
+}
+tExtendedClass : TClass {
+}
+}
+
+#correspondence {
+eClassDeclarationToTClass : ClassDeclarationToTClass {
+	#src->eClassDeclaration
+	#trg->tClass
+}
+eExtendedClassToTExtendedClass : ClassDeclarationToTClass {
+	#src->eExtendedClass
+	#trg->tExtendedClass
+}
+}
+
+#attributeConditions {
+}

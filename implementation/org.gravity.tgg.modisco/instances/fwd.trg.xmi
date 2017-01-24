@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.17 //@ownedTypes.20 //@ownedTypes.21 //@ownedTypes.24 //@ownedTypes.26 //@ownedTypes.27 //@ownedTypes.28 //@ownedTypes.29 //@ownedTypes.30 //@ownedTypes.33 //@ownedTypes.34 //@ownedTypes.36 //@ownedTypes.37 //@ownedTypes.39 //@ownedTypes.43 //@ownedTypes.44 //@ownedTypes.45 //@ownedTypes.46 //@ownedTypes.48 //@ownedTypes.49 //@ownedTypes.51 //@ownedTypes.53 //@ownedTypes.54 //@ownedTypes.57 //@ownedTypes.58 //@ownedTypes.59 //@ownedTypes.61 //@ownedTypes.64 //@ownedTypes.65 //@ownedTypes.67" interfaces="//@ownedTypes.10 //@ownedTypes.13 //@ownedTypes.18 //@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.25 //@ownedTypes.31 //@ownedTypes.32 //@ownedTypes.35 //@ownedTypes.38 //@ownedTypes.40 //@ownedTypes.41 //@ownedTypes.42 //@ownedTypes.47 //@ownedTypes.50 //@ownedTypes.52 //@ownedTypes.55 //@ownedTypes.56 //@ownedTypes.60 //@ownedTypes.62 //@ownedTypes.63 //@ownedTypes.66" tAnnotationTypes="//@ownedTypes.19" tName="HackEGit">
+  <packages typeGraph="/" tName="org">
+    <subpackage typeGraph="/" tName="eclipse">
+      <subpackage typeGraph="/" tName="core">
+        <subpackage classes="//@ownedTypes.12" ownedTypes="//@ownedTypes.12" typeGraph="/" tName="runtime"/>
+        <subpackage classes="//@ownedTypes.15 //@ownedTypes.21 //@ownedTypes.54" interfaces="//@ownedTypes.10 //@ownedTypes.13" ownedTypes="//@ownedTypes.10 //@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.21 //@ownedTypes.54" typeGraph="/" tName="commands">
+          <subpackage classes="//@ownedTypes.29 //@ownedTypes.65" ownedTypes="//@ownedTypes.29 //@ownedTypes.65" typeGraph="/" tName="common"/>
+        </subpackage>
+      </subpackage>
+      <subpackage typeGraph="/" tName="jface">
+        <subpackage classes="//@ownedTypes.45 //@ownedTypes.46" ownedTypes="//@ownedTypes.45 //@ownedTypes.46" typeGraph="/" tName="resource"/>
+      </subpackage>
+      <subpackage typeGraph="/" tName="osgi">
+        <subpackage typeGraph="/" tName="service">
+          <subpackage interfaces="//@ownedTypes.25" ownedTypes="//@ownedTypes.25" typeGraph="/" tName="debug"/>
+        </subpackage>
+      </subpackage>
+      <subpackage typeGraph="/" tName="jgit">
+        <subpackage classes="//@ownedTypes.27" ownedTypes="//@ownedTypes.27" typeGraph="/" tName="transport"/>
+      </subpackage>
+      <subpackage typeGraph="/" tName="ui">
+        <subpackage classes="//@ownedTypes.28" ownedTypes="//@ownedTypes.28" typeGraph="/" tName="plugin"/>
+        <subpackage classes="//@ownedTypes.30 //@ownedTypes.34 //@ownedTypes.36 //@ownedTypes.37 //@ownedTypes.39 //@ownedTypes.48 //@ownedTypes.61" interfaces="//@ownedTypes.35 //@ownedTypes.38" ownedTypes="//@ownedTypes.30 //@ownedTypes.34 //@ownedTypes.35 //@ownedTypes.36 //@ownedTypes.37 //@ownedTypes.38 //@ownedTypes.39 //@ownedTypes.48 //@ownedTypes.61" typeGraph="/" tName="console"/>
+      </subpackage>
+      <subpackage typeGraph="/" tName="egit">
+        <subpackage classes="//@ownedTypes.67" ownedTypes="//@ownedTypes.67" typeGraph="/" tName="core">
+          <subpackage classes="//@ownedTypes.53" ownedTypes="//@ownedTypes.53" typeGraph="/" tName="securestorage"/>
+        </subpackage>
+      </subpackage>
+      <subpackage typeGraph="/" tName="equinox">
+        <subpackage typeGraph="/" tName="internal">
+          <subpackage typeGraph="/" tName="security">
+            <subpackage classes="//@ownedTypes.51 //@ownedTypes.58" ownedTypes="//@ownedTypes.51 //@ownedTypes.58" typeGraph="/" tName="storage">
+              <subpackage interfaces="//@ownedTypes.55" ownedTypes="//@ownedTypes.55" typeGraph="/" tName="friends"/>
+            </subpackage>
+          </subpackage>
+        </subpackage>
+        <subpackage typeGraph="/" tName="security">
+          <subpackage classes="//@ownedTypes.57" interfaces="//@ownedTypes.56" ownedTypes="//@ownedTypes.56 //@ownedTypes.57" typeGraph="/" tName="storage"/>
+        </subpackage>
+      </subpackage>
+    </subpackage>
+    <subpackage typeGraph="/" tName="osgi">
+      <subpackage interfaces="//@ownedTypes.41 //@ownedTypes.42 //@ownedTypes.50" ownedTypes="//@ownedTypes.41 //@ownedTypes.42 //@ownedTypes.50" typeGraph="/" tName="framework"/>
+    </subpackage>
+  </packages>
+  <packages typeGraph="/" tName="hack">
+    <subpackage classes="//@ownedTypes.24 //@ownedTypes.43" ownedTypes="//@ownedTypes.24 //@ownedTypes.43" typeGraph="/" tName="egit"/>
+  </packages>
+  <packages typeGraph="/" tName="java">
+    <subpackage interfaces="//@ownedTypes.40 //@ownedTypes.66" ownedTypes="//@ownedTypes.40 //@ownedTypes.66" typeGraph="/" tName="util"/>
+    <subpackage classes="//@ownedTypes.16 //@ownedTypes.17 //@ownedTypes.20 //@ownedTypes.26 //@ownedTypes.49" interfaces="//@ownedTypes.18 //@ownedTypes.22 //@ownedTypes.23" ownedTypes="//@ownedTypes.16 //@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.22 //@ownedTypes.23 //@ownedTypes.26 //@ownedTypes.49" typeGraph="/" tName="lang">
+      <subpackage classes="//@ownedTypes.33 //@ownedTypes.44" interfaces="//@ownedTypes.31 //@ownedTypes.32 //@ownedTypes.47 //@ownedTypes.52" ownedTypes="//@ownedTypes.31 //@ownedTypes.32 //@ownedTypes.33 //@ownedTypes.44 //@ownedTypes.47 //@ownedTypes.52" typeGraph="/" tName="reflect"/>
+    </subpackage>
+    <subpackage classes="//@ownedTypes.59" interfaces="//@ownedTypes.60 //@ownedTypes.62 //@ownedTypes.63" ownedTypes="//@ownedTypes.59 //@ownedTypes.60 //@ownedTypes.62 //@ownedTypes.63" typeGraph="/" tName="io"/>
+  </packages>
+  <methods tName="newMessageStream">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.37" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.4" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getDefault">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.57" accessedBy="//@methods.8/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.2"/>
+      <definitions definedBy="//@ownedTypes.34" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.4" returnType="//@ownedTypes.2"/>
+      <definitions definedBy="//@ownedTypes.67" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.16" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getName">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.38" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.5" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="findConsole">
+    <signatures returnType="//@ownedTypes.37">
+      <paramList first="//@methods.3/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.26"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.24" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.5" returnType="//@ownedTypes.37">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.5/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.20/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.21/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.6/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.1/@signatures.0/@definitions.1"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.2/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="MessageConsole">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+      <paramList/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.37"/>
+    </signatures>
+  </methods>
+  <methods tName="getConsoles">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.35" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="equals">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.6/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.20"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.26" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.3" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getInstance">
+    <signatures returnType="//@ownedTypes.43">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.43" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.23" returnType="//@ownedTypes.43">
+        <tAccessing tTarget="//@fields.0/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="start">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.8/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.42"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.43" returnType="//@ownedTypes.2">
+        <tAnnotation type="//@ownedTypes.19"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.1/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.0/@signatures.0/@definitions.0"/>
+        <tAccessing tTarget="//@fields.1/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="keySet">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.40" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.24" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="stop">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.10/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.42"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.43" returnType="//@ownedTypes.2">
+        <tAnnotation type="//@ownedTypes.19"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="setPreferences">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.11/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.56"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.43" returnType="//@ownedTypes.2">
+        <tAccessing tTarget="//@fields.1/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="setAccessible">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.12/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.3"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.44" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.0 //@methods.16/@signatures.0/@definitions.0/@tAccessing.1 //@methods.16/@signatures.0/@definitions.0/@tAccessing.7 //@methods.16/@signatures.0/@definitions.0/@tAccessing.8 //@methods.16/@signatures.0/@definitions.0/@tAccessing.21" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="node">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.13/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.26"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.56" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.15" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getClass">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.20" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.9 //@methods.16/@signatures.0/@definitions.0/@tAccessing.13 //@methods.16/@signatures.0/@definitions.0/@tAccessing.26 //@methods.16/@signatures.0/@definitions.0/@tAccessing.28 //@methods.16/@signatures.0/@definitions.0/@tAccessing.29" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="get">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.15/@signatures.0/@paramList/@entries.0">
+        <entries next="//@methods.15/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.26"/>
+        <entries previous="//@methods.15/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.26"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.56" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.11 //@methods.16/@signatures.0/@definitions.0/@tAccessing.22" returnType="//@ownedTypes.2"/>
+    </signatures>
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.15/@signatures.1/@paramList/@entries.0">
+        <entries type="//@ownedTypes.20"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.33" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.3 //@methods.16/@signatures.0/@definitions.0/@tAccessing.6 //@methods.16/@signatures.0/@definitions.0/@tAccessing.10 //@methods.16/@signatures.0/@definitions.0/@tAccessing.12 //@methods.16/@signatures.0/@definitions.0/@tAccessing.14" returnType="//@ownedTypes.2"/>
+      <definitions definedBy="//@ownedTypes.40" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.20" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="execute">
+    <signatures returnType="//@ownedTypes.20">
+      <paramList first="//@methods.16/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.54"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.24" returnType="//@ownedTypes.20">
+        <tAnnotation type="//@ownedTypes.19"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.12/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.12/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.18/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.0/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.3/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.12/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.12/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.14/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.14/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.13/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.1/@signatures.0/@definitions.2"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.19/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.19/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.19/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.1/@definitions.1"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.12/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.15/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.7/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.9/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.19/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.14/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.19/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.14/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.14/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.17/@signatures.0/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.1/@definitions.0"/>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" tTarget="//@methods.22/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="getSuperclass">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.49" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.37" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getPreferences">
+    <signatures returnType="//@ownedTypes.56">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.43" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.2" returnType="//@ownedTypes.56">
+        <tAccessing tTarget="//@fields.1/@signatures.0/@definitions.0"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="getDeclaredField">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.19/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.26"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.49" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.17 //@methods.16/@signatures.0/@definitions.0/@tAccessing.18 //@methods.16/@signatures.0/@definitions.0/@tAccessing.19 //@methods.16/@signatures.0/@definitions.0/@tAccessing.25 //@methods.16/@signatures.0/@definitions.0/@tAccessing.27" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="addConsoles">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.20/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.38"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.35" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.1" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="getConsoleManager">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.34" accessedBy="//@methods.3/@signatures.0/@definitions.0/@tAccessing.2" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <methods tName="println">
+    <signatures returnType="//@ownedTypes.2">
+      <paramList first="//@methods.22/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.26"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.48" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.30 //@methods.16/@signatures.0/@definitions.0/@tAccessing.31 //@methods.16/@signatures.0/@definitions.0/@tAccessing.32 //@methods.16/@signatures.0/@definitions.0/@tAccessing.33 //@methods.16/@signatures.0/@definitions.0/@tAccessing.34 //@methods.16/@signatures.0/@definitions.0/@tAccessing.36 //@methods.16/@signatures.0/@definitions.0/@tAccessing.39" returnType="//@ownedTypes.2"/>
+    </signatures>
+    <signatures returnType="//@ownedTypes.2">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.48" accessedBy="//@methods.16/@signatures.0/@definitions.0/@tAccessing.35 //@methods.16/@signatures.0/@definitions.0/@tAccessing.38" returnType="//@ownedTypes.2"/>
+    </signatures>
+  </methods>
+  <fields tName="INSTANCE">
+    <signatures type="//@ownedTypes.43">
+      <definitions definedBy="//@ownedTypes.43" accessedBy="//@methods.7/@signatures.0/@definitions.0/@tAccessing.0 //@methods.8/@signatures.0/@definitions.0/@tAccessing.1"/>
+    </signatures>
+  </fields>
+  <fields tName="preferences">
+    <signatures type="//@ownedTypes.56">
+      <definitions definedBy="//@ownedTypes.43" accessedBy="//@methods.18/@signatures.0/@definitions.0/@tAccessing.0 //@methods.8/@signatures.0/@definitions.0/@tAccessing.2 //@methods.11/@signatures.0/@definitions.0/@tAccessing.0"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="T"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="T"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1" tLib="true" tName="IHandler" childInterfaces="//@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="T"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.0" tLib="true" tName="Plugin" childClasses="//@ownedTypes.28 //@ownedTypes.67" implements="//@ownedTypes.41"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1" tLib="true" tName="IHandler2" implementedBy="//@ownedTypes.15" parentInterfaces="//@ownedTypes.10"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="T"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1" tLib="true" tName="AbstractHandler" parentClass="//@ownedTypes.65" childClasses="//@ownedTypes.24" implements="//@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1" tLib="true" tName="Exception" parentClass="//@ownedTypes.17" childClasses="//@ownedTypes.29"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1" tLib="true" tName="Throwable" childClasses="//@ownedTypes.16" implements="//@ownedTypes.63"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.26"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TAnnotationType" package="//@packages.2/@subpackage.1" tLib="true" tName="Override" annotations="//@methods.10/@signatures.0/@definitions.0/@tAnnotation.0 //@methods.8/@signatures.0/@definitions.0/@tAnnotation.0 //@methods.16/@signatures.0/@definitions.0/@tAnnotation.0"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1" signature="//@methods.14/@signatures.0" defines="//@methods.14/@signatures.0/@definitions.0" tLib="true" tName="Object"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1" tLib="true" tName="ExecutionException" parentClass="//@ownedTypes.29"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1" tLib="true" tName="AutoCloseable" childInterfaces="//@ownedTypes.60"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.26"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1/@subpackage.0" signature="//@methods.3/@signatures.0 //@methods.16/@signatures.0" defines="//@methods.3/@signatures.0/@definitions.0 //@methods.16/@signatures.0/@definitions.0" tName="Handler" parentClass="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.2/@subpackage.0/@subpackage.0" tLib="true" tName="DebugOptionsListener" implementedBy="//@ownedTypes.67" parentInterfaces="//@ownedTypes.66"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1" signature="//@methods.6/@signatures.0" defines="//@methods.6/@signatures.0/@definitions.0" tLib="true" tName="String" implements="//@ownedTypes.18 //@ownedTypes.23 //@ownedTypes.63"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.3/@subpackage.0" tLib="true" tName="URIish" implements="//@ownedTypes.63"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.0" tLib="true" tName="AbstractUIPlugin" parentClass="//@ownedTypes.12" childClasses="//@ownedTypes.34"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1/@subpackage.0" tLib="true" tName="CommandException" parentClass="//@ownedTypes.16" childClasses="//@ownedTypes.21"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" tLib="true" tName="TextConsole" parentClass="//@ownedTypes.36" childClasses="//@ownedTypes.61"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1/@subpackage.0" tLib="true" tName="Type" implementedBy="//@ownedTypes.49"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1/@subpackage.0" tLib="true" tName="GenericDeclaration" implementedBy="//@ownedTypes.49" parentInterfaces="//@ownedTypes.47"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1/@subpackage.0" signature="//@methods.15/@signatures.1" defines="//@methods.15/@signatures.1/@definitions.0" tLib="true" tName="Field" parentClass="//@ownedTypes.44" implements="//@ownedTypes.52"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" signature="//@methods.21/@signatures.0 //@methods.1/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.1 //@methods.21/@signatures.0/@definitions.0" tLib="true" tName="ConsolePlugin" parentClass="//@ownedTypes.28"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" signature="//@methods.5/@signatures.0 //@methods.20/@signatures.0" defines="//@methods.5/@signatures.0/@definitions.0 //@methods.20/@signatures.0/@definitions.0" tLib="true" tName="IConsoleManager"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" tLib="true" tName="AbstractConsole" childClasses="//@ownedTypes.30" implements="//@ownedTypes.38"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0 //@methods.4/@signatures.0/@definitions.0" tLib="true" tName="MessageConsole" parentClass="//@ownedTypes.61"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" signature="//@methods.2/@signatures.0" defines="//@methods.2/@signatures.0/@definitions.0" tLib="true" tName="IConsole" implementedBy="//@ownedTypes.36"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" tLib="true" tName="IOConsoleOutputStream" parentClass="//@ownedTypes.59" childClasses="//@ownedTypes.48"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.0" signature="//@methods.15/@signatures.1 //@methods.9/@signatures.0" defines="//@methods.15/@signatures.1/@definitions.1 //@methods.9/@signatures.0/@definitions.0" tLib="true" tName="Map"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1/@subpackage.0" tLib="true" tName="BundleActivator" implementedBy="//@ownedTypes.43 //@ownedTypes.12"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1/@subpackage.0" tLib="true" tName="BundleContext" parentInterfaces="//@ownedTypes.50"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1/@subpackage.0" signature="//@fields.1/@signatures.0 //@methods.18/@signatures.0 //@methods.8/@signatures.0 //@fields.0/@signatures.0 //@methods.11/@signatures.0 //@methods.10/@signatures.0 //@methods.7/@signatures.0" defines="//@methods.8/@signatures.0/@definitions.0 //@methods.10/@signatures.0/@definitions.0 //@methods.11/@signatures.0/@definitions.0 //@methods.7/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.0 //@fields.1/@signatures.0/@definitions.0 //@methods.18/@signatures.0/@definitions.0" tName="Activator" implements="//@ownedTypes.41"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1/@subpackage.0" signature="//@methods.12/@signatures.0" defines="//@methods.12/@signatures.0/@definitions.0" tLib="true" tName="AccessibleObject" childClasses="//@ownedTypes.33" implements="//@ownedTypes.47"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.1/@subpackage.0" tLib="true" tName="DeviceResourceDescriptor" childClasses="//@ownedTypes.46"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.1/@subpackage.0" tLib="true" tName="ImageDescriptor" parentClass="//@ownedTypes.45"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1/@subpackage.0" tLib="true" tName="AnnotatedElement" implementedBy="//@ownedTypes.44 //@ownedTypes.49" childInterfaces="//@ownedTypes.32"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" signature="//@methods.22/@signatures.1 //@methods.22/@signatures.0" defines="//@methods.22/@signatures.0/@definitions.0 //@methods.22/@signatures.1/@definitions.0" tLib="true" tName="MessageConsoleStream" parentClass="//@ownedTypes.39"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.1" signature="//@methods.19/@signatures.0 //@methods.17/@signatures.0" defines="//@methods.19/@signatures.0/@definitions.0 //@methods.17/@signatures.0/@definitions.0" tLib="true" tName="Class" implements="//@ownedTypes.32 //@ownedTypes.47 //@ownedTypes.63 //@ownedTypes.31"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1/@subpackage.0" tLib="true" tName="BundleReference" childInterfaces="//@ownedTypes.42"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0/@subpackage.0" tLib="true" tName="SecurePreferences" childClasses="//@ownedTypes.58"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.1/@subpackage.0" tLib="true" tName="Member" implementedBy="//@ownedTypes.33"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.5/@subpackage.0/@subpackage.0" tLib="true" tName="EGitSecureStore"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1" tLib="true" tName="ExecutionEvent"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0/@subpackage.0/@subpackage.0" tLib="true" tName="IStorageConstants" implementedBy="//@ownedTypes.58"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0/@subpackage.6/@subpackage.1/@subpackage.0" signature="//@methods.13/@signatures.0 //@methods.15/@signatures.0" defines="//@methods.15/@signatures.0/@definitions.0 //@methods.13/@signatures.0/@definitions.0" tLib="true" tName="ISecurePreferences"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.6/@subpackage.1/@subpackage.0" signature="//@methods.1/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0" tLib="true" tName="SecurePreferencesFactory"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0/@subpackage.0" tLib="true" tName="SecurePreferencesRoot" parentClass="//@ownedTypes.51" implements="//@ownedTypes.55"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.2/@subpackage.2" tLib="true" tName="OutputStream" childClasses="//@ownedTypes.39" implements="//@ownedTypes.60 //@ownedTypes.62"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.2" tLib="true" tName="Closeable" implementedBy="//@ownedTypes.59" parentInterfaces="//@ownedTypes.22"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1" tLib="true" tName="IOConsole" parentClass="//@ownedTypes.30" childClasses="//@ownedTypes.37"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.2" tLib="true" tName="Flushable" implementedBy="//@ownedTypes.59"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.2" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.49 //@ownedTypes.17 //@ownedTypes.26 //@ownedTypes.27"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1/@subpackage.0" tLib="true" tName="EventManager" childClasses="//@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.2/@subpackage.0" tLib="true" tName="EventListener" childInterfaces="//@ownedTypes.25"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0/@subpackage.5/@subpackage.0" signature="//@methods.1/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.2" tLib="true" tName="Activator" parentClass="//@ownedTypes.12" implements="//@ownedTypes.25"/>
+</org.gravity.typegraph.basic:TypeGraph>

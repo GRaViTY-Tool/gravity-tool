@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule TypeParameter
+#with org.gravity.tgg.modisco
+
+#source {
+eModel : MGravityModel {
+	++  -typeParameters -> eAnonymousClassDeclaration
+}
+++ eAnonymousClassDeclaration : TypeParameter {
+}
+}
+
+#target {
+pg : TypeGraph {
+	++  -classes -> tClass
+	++  -ownedTypes -> tClass
+}
+++ tClass : TClass {
+	tLib := false
+	tName := "T"
+}
+}
+
+#correspondence {
+eModelToPg : ModelToTypeGraph {
+	#src->eModel
+	#trg->pg
+}
+++ eAnonymousClassDeclarationToTClass : TypeToTAbstractType {
+	#src->eAnonymousClassDeclaration
+	#trg->tClass
+}
+}
+
+#attributeConditions {
+}

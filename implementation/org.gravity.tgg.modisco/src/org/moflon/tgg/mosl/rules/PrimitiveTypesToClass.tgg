@@ -1,0 +1,41 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+++ ePrimitiveType : PrimitiveType {
+}
+eModel : Model {
+	++  -orphanTypes -> ePrimitiveType
+}
+}
+
+#target {
+++ tPrimitiveClass : TClass {
+	tLib := true
+}
+typeGraph : TypeGraph {
+	++  -ownedTypes -> tPrimitiveClass
+	++  -classes -> tPrimitiveClass
+}
+}
+
+#correspondence {
+++ typeToTAbstractType : TypeToTAbstractType {
+	#src->ePrimitiveType
+	#trg->tPrimitiveClass
+}
+++ ePrimitiveTypeToTPrimitiveClass : PrimitiveTypeToTClass {
+	#src->ePrimitiveType
+	#trg->tPrimitiveClass
+}
+eModelToTypeGraph : ModelToTypeGraph {
+	#src->eModel
+	#trg->typeGraph
+}
+}
+
+#attributeConditions {
+}

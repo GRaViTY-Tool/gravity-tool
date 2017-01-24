@@ -1,0 +1,25 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeInAnonymous
+#extends NestedTypesinAnonymous
+#with org.gravity.tgg.modisco
+
+#source {
+++ mNestedType : AnnotationTypeDeclaration {
+}
+}
+
+#target {
+++ tNestedType : TAnnotationType {
+}
+pg : TypeGraph {
+	++  -ownedTypes -> tNestedType
+}
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}

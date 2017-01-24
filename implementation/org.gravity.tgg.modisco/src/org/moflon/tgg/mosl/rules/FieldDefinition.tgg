@@ -1,0 +1,54 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDefinition
+#with org.gravity.tgg.modisco
+
+#source {
+mSignature : MFieldSignature {
+	++  -mFieldDefinitions -> mDefinition
+	++  -mDefinitions -> mDefinition
+	 -mFieldName -> mName
+}
+mName : MFieldName {
+}
+++ mDefinition : MFieldDefinition {
+}
+}
+
+#target {
+++ tDefinition : TFieldDefinition {
+}
+tField : TField {
+}
+tFieldSignature : TFieldSignature {
+	++  -definitions -> tDefinition
+	 -field -> tField
+}
+}
+
+#correspondence {
+++ eFieldDeclarationToTFieldDefinition : MFieldDefinitionToTFieldDefinition {
+	#src->mDefinition
+	#trg->tDefinition
+}
+++ mDefinitionToTMember : MDefinitionToTMember {
+	#src->mDefinition
+	#trg->tDefinition
+}
+mSignatureToTFieldSignature : MSignatureToTSignature {
+	#src->mSignature
+	#trg->tFieldSignature
+}
+++ mBodyToTAnnotation : BodyDeclarationToTAnnotatable {
+	#src->mDefinition
+	#trg->tDefinition
+}
+mNameToTField : MFieldNameToTField {
+	#src->mName
+	#trg->tField
+}
+}
+
+#attributeConditions {
+}

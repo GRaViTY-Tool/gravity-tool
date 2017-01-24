@@ -1,0 +1,27 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule PrimitiveTypesIsVoid
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+++ ePrimitiveType : PrimitiveTypeVoid {
+}
+}
+
+#target {
+++ tPrimitiveClass : TClass {
+	tName := "void"
+}
+}
+
+#correspondence {
+++ ePrimitiveTypeToTPrimitiveClass : PrimitiveTypeToTClass {
+	#src->ePrimitiveType
+	#trg->tPrimitiveClass
+}
+}
+
+#attributeConditions {
+}

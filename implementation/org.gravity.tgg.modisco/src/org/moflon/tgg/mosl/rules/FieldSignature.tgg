@@ -1,0 +1,40 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule FieldSignature
+#with org.gravity.tgg.modisco
+
+#source {
+mFieldName : MFieldName {
+	++  -mSignatures -> mSignature
+}
+++ mSignature : MFieldSignature {
+	++  -mFieldName -> mFieldName
+}
+}
+
+#target {
+tField : TField {
+}
+++ tSignature : TFieldSignature {
+	++  -field -> tField
+}
+}
+
+#correspondence {
+++ mSignatureToTSignature : MSignatureToTSignature {
+	#src->mSignature
+	#trg->tSignature
+}
+eFieldDeclarationToTField : MFieldNameToTField {
+	#src->mFieldName
+	#trg->tField
+}
+++ mFieldSignatureToTFieldSignature : MFieldSignatureToTFieldSignature {
+	#src->mSignature
+	#trg->tSignature
+}
+}
+
+#attributeConditions {
+}

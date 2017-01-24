@@ -1,0 +1,35 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule NestedEnum
+#extends NestedTypes
+#with org.gravity.tgg.modisco
+
+#source {
+++ eNestedType : EnumDeclaration {
+}
+}
+
+#target {
+typeGraph : TypeGraph {
+	++  -ownedTypes -> tNestedType
+	++  -classes -> tNestedType
+}
+++ tNestedType : TClass {
+}
+++ tNestedPackage : TPackage {
+	++  -ownedTypes -> tNestedType
+	++  -classes -> tNestedType
+}
+}
+
+#correspondence {
+++ eNestedTypeToTNestedType : TypeToTAbstractType {
+	#src->eNestedType
+	#trg->tNestedType
+}
+}
+
+#attributeConditions {
+	addPrefix("%ENUM%", eNestedType.name, tNestedType.tName)
+}

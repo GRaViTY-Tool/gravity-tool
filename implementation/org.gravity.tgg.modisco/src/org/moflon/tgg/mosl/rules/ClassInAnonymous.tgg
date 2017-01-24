@@ -1,0 +1,29 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ClassInAnonymous
+#extends NestedTypesinAnonymous
+#with org.gravity.tgg.modisco
+
+#source {
+++ mNestedType : ClassDeclaration {
+}
+}
+
+#target {
+pg : TypeGraph {
+	++  -classes -> tNestedType
+}
+++ tNestedType : TClass {
+}
+}
+
+#correspondence {
+++ mClassDeclarationToTClass : ClassDeclarationToTClass {
+	#src->mNestedType
+	#trg->tNestedType
+}
+}
+
+#attributeConditions {
+}

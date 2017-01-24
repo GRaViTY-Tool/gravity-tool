@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule SuperMethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+++ invocation : SuperMethodInvocation {
+}
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}

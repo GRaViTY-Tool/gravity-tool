@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Security Annotations
+Bundle-SymbolicName: org.gravity.security.annotations;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0"

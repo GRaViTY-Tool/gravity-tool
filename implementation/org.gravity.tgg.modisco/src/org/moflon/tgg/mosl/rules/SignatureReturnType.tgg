@@ -1,0 +1,35 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule SignatureReturnType
+#with org.gravity.tgg.modisco
+
+#source {
+mSignature : MMethodSignature {
+	++  -returnType -> mType
+}
+mType : Type {
+}
+}
+
+#target {
+tSignature : TMethodSignature {
+	++  -returnType -> tType
+}
+tType : TAbstractType {
+}
+}
+
+#correspondence {
+mSignatureToTSignature : MMethodSignatureToTMethodSignature {
+	#src->mSignature
+	#trg->tSignature
+}
+mTypeToTType : TypeToTAbstractType {
+	#src->mType
+	#trg->tType
+}
+}
+
+#attributeConditions {
+}

@@ -1,0 +1,1985 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" xmlns:org.gravity.tgg.modisco="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="org.gravity.tgg.modisco:ModelToTypeGraph">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.7"/>
+    <target href="fwd.trg.xmi#//@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="fwd.src.xmi#//@mFieldNames.0"/>
+    <target href="fwd.trg.xmi#//@fields.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.14"/>
+    <target href="fwd.trg.xmi#//@methods.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.16"/>
+    <target href="fwd.trg.xmi#//@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.16"/>
+    <target href="fwd.trg.xmi#//@methods.1/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.16"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.20"/>
+    <target href="fwd.trg.xmi#//@methods.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.1"/>
+    <target href="fwd.trg.xmi#//@methods.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MConstructorDefinitionToTParameterList">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.4/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="fwd.trg.xmi#//@methods.4/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MConstructorDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" href="fwd.trg.xmi#//@methods.4/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethodSignature">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.4/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ConstructorDeclarationToTMethod">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.8"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeByte" href="fwd.src.xmi#//@orphanTypes.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.18"/>
+    <target href="fwd.trg.xmi#//@methods.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.20"/>
+    <target href="fwd.trg.xmi#//@methods.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.20"/>
+    <target href="fwd.trg.xmi#//@methods.5/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.20"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.5/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.5/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.5/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.5/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.7"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeShort" href="fwd.src.xmi#//@orphanTypes.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.5"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeVoid" href="fwd.src.xmi#//@orphanTypes.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.4"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeBoolean" href="fwd.src.xmi#//@orphanTypes.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.19"/>
+    <target href="fwd.trg.xmi#//@methods.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.4"/>
+    <target href="fwd.trg.xmi#//@methods.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.4"/>
+    <target href="fwd.trg.xmi#//@methods.7/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.4"/>
+    <target href="fwd.trg.xmi#//@methods.7/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.7/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.4"/>
+    <target href="fwd.trg.xmi#//@methods.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.4/@body"/>
+    <target href="fwd.trg.xmi#//@methods.7/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.2"/>
+    <target href="fwd.trg.xmi#//@methods.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="fwd.src.xmi#//@mFieldSignatures.0"/>
+    <target href="fwd.trg.xmi#//@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="fwd.src.xmi#//@mFieldSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="fwd.trg.xmi#//@fields.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="fwd.trg.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="fwd.trg.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0/@fragments.0"/>
+    <target href="fwd.trg.xmi#//@fields.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:SingleVariableAccessToTAccess">
+    <target href="fwd.trg.xmi#//@methods.7/@signatures.0/@definitions.0/@tAccessing.0"/>
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.4/@body/@statements.0/@expression"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.6"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeChar" href="fwd.src.xmi#//@orphanTypes.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.15"/>
+    <target href="fwd.trg.xmi#//@methods.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeInt" href="fwd.src.xmi#//@orphanTypes.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.3"/>
+    <target href="fwd.trg.xmi#//@methods.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.3"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.3"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.10/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.3"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.6"/>
+    <target href="fwd.trg.xmi#//@methods.11"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.2"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.2"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.8/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.11"/>
+    <target href="fwd.trg.xmi#//@methods.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.12"/>
+    <target href="fwd.trg.xmi#//@methods.12/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.12"/>
+    <target href="fwd.trg.xmi#//@methods.12/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.12"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.12/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.12/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.12/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.12/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.16"/>
+    <target href="fwd.trg.xmi#//@methods.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.18"/>
+    <target href="fwd.trg.xmi#//@methods.13/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.18"/>
+    <target href="fwd.trg.xmi#//@methods.13/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.18"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.13/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.7"/>
+    <target href="fwd.trg.xmi#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.7"/>
+    <target href="fwd.trg.xmi#//@methods.0/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.9"/>
+    <target href="fwd.trg.xmi#//@methods.14"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:CompilationUnitToTypeGraph">
+    <source href="fwd.src.xmi#//@compilationUnits.0"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.12"/>
+    <target href="fwd.trg.xmi#//@methods.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.1"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.1"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.14"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.14"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.14"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.15/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeLong" href="fwd.src.xmi#//@orphanTypes.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.1/@expression/@rightHandSide"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0/@tAccessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@typeParameters.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@packages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@packages.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.0"/>
+    <target href="fwd.trg.xmi#//@methods.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeFloat" href="fwd.src.xmi#//@orphanTypes.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.13"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.13"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.1/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.13"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.15/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.13"/>
+    <target href="fwd.trg.xmi#//@methods.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.15"/>
+    <target href="fwd.trg.xmi#//@methods.17/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.15"/>
+    <target href="fwd.trg.xmi#//@methods.17/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.15"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.17/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.1/@signatures.0/@definitions.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.11"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:CompilationUnitToTypeGraph">
+    <source href="fwd.src.xmi#//@compilationUnits.1"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.5"/>
+    <target href="fwd.trg.xmi#//@methods.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.5"/>
+    <target href="fwd.trg.xmi#//@methods.18/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.5"/>
+    <target href="fwd.trg.xmi#//@methods.18/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.18/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.17"/>
+    <target href="fwd.trg.xmi#//@methods.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.17"/>
+    <target href="fwd.trg.xmi#//@methods.9/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.17"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.9/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.9/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.2/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.2/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:TypeParameter" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.6/@typeParameters.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.14"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.3/@body"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldNameToTField">
+    <source href="fwd.src.xmi#//@mFieldNames.1"/>
+    <target href="fwd.trg.xmi#//@fields.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldSignatureToTFieldSignature">
+    <source href="fwd.src.xmi#//@mFieldSignatures.1"/>
+    <target href="fwd.trg.xmi#//@fields.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MFieldSignature" href="fwd.src.xmi#//@mFieldSignatures.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldSignature" href="fwd.trg.xmi#//@fields.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MFieldDefinitionToTFieldDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@fields.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="fwd.trg.xmi#//@fields.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MFieldDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TFieldDefinition" href="fwd.trg.xmi#//@fields.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.2/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:VariableDeclarationFragmentToTFieldDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.1/@fragments.0"/>
+    <target href="fwd.trg.xmi#//@fields.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@packages.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.2/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target href="fwd.trg.xmi#//@methods.18/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.18/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.18/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5/@body"/>
+    <target href="fwd.trg.xmi#//@methods.18/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.2/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.7"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.6"/>
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.6"/>
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.11/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:AnnotationTypeDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TAnnotationType" href="fwd.trg.xmi#//@ownedTypes.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:AnnotationTypeDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TAnnotationType" href="fwd.trg.xmi#//@ownedTypes.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AnnotationToTAnnotation">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.3/@annotations.0"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0/@definitions.0/@tAnnotation.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:SingleVariableAccessToTAccess">
+    <target href="fwd.trg.xmi#//@methods.18/@signatures.0/@definitions.0/@tAccessing.0"/>
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.5/@body/@statements.0/@expression"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.3"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.0/@subpackage.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.23"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.23"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.6"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.23"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.24"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.24"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.24"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.10"/>
+    <target href="fwd.trg.xmi#//@methods.14/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.10"/>
+    <target href="fwd.trg.xmi#//@methods.14/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.10"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.14/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.25"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.25"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.5/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.25"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.26"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.26"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.26"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.1/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.3/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.3/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.14/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.14/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.14/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AnnotationToTAnnotation">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@annotations.0"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0/@tAnnotation.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.14/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.3/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.27"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.3/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.27"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.3/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.27"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.14/@mEntrys.1"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.0/@paramList/@entries.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6/@body"/>
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.4/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.1/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.28"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.28"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.28"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.4/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.10"/>
+    <target href="fwd.trg.xmi#//@methods.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.29"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.29"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.29"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.12/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.12/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.5"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.30"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.30"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.30"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.15/@signatures.1/@definitions.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.17/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.17/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.17/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.21"/>
+    <target href="fwd.trg.xmi#//@methods.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.2/@subpackage.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.31"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.31"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.5"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.31"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.32"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.32"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.4"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.32"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.33"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.33"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.33"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.34"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.34"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.34"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.21"/>
+    <target href="fwd.trg.xmi#//@methods.6/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.21"/>
+    <target href="fwd.trg.xmi#//@methods.6/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.21"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.6/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.17"/>
+    <target href="fwd.trg.xmi#//@methods.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.35"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.35"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.35"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.6"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.36"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.36"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.36"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.37"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.37"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.37"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.21/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.6/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:SingleVariableAccessToTAccess">
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0/@tAccessing.1"/>
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.0/@expression/@leftHandSide/@field"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.19"/>
+    <target href="fwd.trg.xmi#//@methods.21/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.19"/>
+    <target href="fwd.trg.xmi#//@methods.21/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.19"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.21/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.21/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.21/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.21/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ArrayType" href="fwd.src.xmi#//@orphanTypes.9"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.8"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.39"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.39"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.39"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.11"/>
+    <target href="fwd.trg.xmi#//@methods.19/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.11"/>
+    <target href="fwd.trg.xmi#//@methods.19/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.11"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.19/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:SingleVariableAccessToTAccess">
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@definitions.0/@tAccessing.2"/>
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.2/@body/@statements.1/@expression/@leftHandSide/@field"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.40"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.40"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.40"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.23"/>
+    <target href="fwd.trg.xmi#//@methods.20/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.23"/>
+    <target href="fwd.trg.xmi#//@methods.20/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.23"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.20/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.13/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.15/@signatures.1/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.41"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.41"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.41"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.42"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.42"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.42"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.23/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.20/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.43"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.43"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.43"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.13/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.13/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.13/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.44"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.44"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.44"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.45"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.45"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.45"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.46"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.46"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.6/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.46"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.5/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.6/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.47"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.47"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.47"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.2/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.20/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.48"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.48"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.48"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.0"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.0"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.16/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.2/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.2/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.0/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.7/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.49"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.49"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.49"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.1/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.50"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.50"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.50"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.14/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.6/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.2/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.8/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.13/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AnnotationToTAnnotation">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@annotations.0"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAnnotation.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.9/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.0/@subpackage.0/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.51"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.51"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.51"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.3/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.10/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.3/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.5/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.52"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.52"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.52"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.15/@body/@statements.3/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.11"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:SingleVariableAccessToTAccess">
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0/@definitions.0/@tAccessing.0"/>
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.6/@body/@statements.0/@expression/@leftHandSide/@field"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.1/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.5/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.5/@subpackage.0/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.53"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.53"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.53"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.3/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.12"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.54"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.54"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.54"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.12/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.13"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.11/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.14"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.15/@body/@statements.1/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.15"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.55"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.55"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.55"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.8/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.16"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0"/>
+    <target href="fwd.trg.xmi#//@packages.0/@subpackage.0/@subpackage.6/@subpackage.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.56"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.56"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.56"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.57"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.57"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.1/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.57"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.8/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.19/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.1/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.17"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.12/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.18"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.5/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.19"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.4/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.20"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.3/@body/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.10/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.21"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.15/@body/@statements.2/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.58"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.58"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.58"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.6/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.23"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.15/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.24"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.0/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.18/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.13/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.1/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.25"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.6/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.11/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.22"/>
+    <target href="fwd.trg.xmi#//@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.22"/>
+    <target href="fwd.trg.xmi#//@methods.2/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.22"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2"/>
+    <target href="fwd.trg.xmi#//@packages.2/@subpackage.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.59"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.59"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.59"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.60"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.60"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.2"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.60"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.4"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.61"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.61"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.61"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.0/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.62"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.62"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.3"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.62"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.63"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.63"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.63"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.5/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.26"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.9/@fragments.0/@initializer"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.27"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.11/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.19/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.1/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.28"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.1/@fragments.0/@initializer/@expression/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.29"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="fwd.src.xmi#//@mMethodNames.8"/>
+    <target href="fwd.trg.xmi#//@methods.22"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="fwd.src.xmi#//@orphanTypes.3"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.64"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeDouble" href="fwd.src.xmi#//@orphanTypes.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.64"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.8"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.8"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.22/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.0"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.22/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.22/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.15/@body/@statements.4/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.30"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@catchClauses.0/@body/@statements.0/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.31"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="fwd.src.xmi#//@mMethodSignatures.9"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="fwd.src.xmi#//@mMethodSignatures.9"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.1/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="fwd.src.xmi#//@mMethodSignatures.9"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="fwd.trg.xmi#//@methods.22/@signatures.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.3/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.32"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.17/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.33"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.1/@body/@statements.3/@body/@expression/@arguments.0"/>
+    <target href="fwd.trg.xmi#//@methods.3/@signatures.0/@definitions.0/@tAccessing.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.2/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.34"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.65"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.65"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.65"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.66"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:InterfaceDeclaration" href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TInterface" href="fwd.trg.xmi#//@ownedTypes.66"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:InterfaceDeclarationToTInterface">
+    <source href="fwd.src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.66"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.1"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.22/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.4/@ownedPackages.0/@ownedElements.7/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="fwd.trg.xmi#//@methods.22/@signatures.1/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MEntryToTParameter">
+    <source href="fwd.src.xmi#//@mMethodSignatures.8/@mEntrys.0"/>
+    <target href="fwd.trg.xmi#//@methods.22/@signatures.0/@paramList/@entries.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.5/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.35"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.4/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.36"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.1/@fragments.0/@initializer/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.37"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@body/@statements.4/@thenStatement/@statements.16/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.38"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target href="fwd.trg.xmi#//@ownedTypes.67"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.67"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BodyDeclarationToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="fwd.src.xmi#//@ownedElements.2/@ownedPackages.0/@ownedPackages.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="fwd.trg.xmi#//@ownedTypes.67"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:AbstractMethodInvocationToTAccess">
+    <source xsi:type="java:MethodInvocation" href="fwd.src.xmi#//@ownedElements.0/@ownedPackages.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.7/@catchClauses.0/@body/@statements.1/@expression"/>
+    <target href="fwd.trg.xmi#//@methods.16/@signatures.0/@definitions.0/@tAccessing.39"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

@@ -1,0 +1,32 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AbstractMethodDefinitionBloc
+#with org.gravity.tgg.modisco
+
+#source {
+++ mBlock : Block {
+}
+mDefinition : MAbstractMethodDefinition {
+	++  -body -> mBlock
+}
+}
+
+#target {
+tDefinition : TMethodDefinition {
+}
+}
+
+#correspondence {
+mDefinitionToTDefinition : MDefinitionToTMember {
+	#src->mDefinition
+	#trg->tDefinition
+}
+++ mBlockToTDefinition : BlockToTMethodDefinition {
+	#src->mBlock
+	#trg->tDefinition
+}
+}
+
+#attributeConditions {
+}

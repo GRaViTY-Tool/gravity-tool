@@ -1,11 +1,11 @@
 package org.gravity.tgg.modisco;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +17,8 @@ import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -40,7 +42,13 @@ import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
+import org.eclipse.jdt.core.IClasspathContainer;
+import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.JarPackageFragmentRoot;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
@@ -63,7 +71,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	private IJavaProject java_project = null;
 
-	private Set<IPath> libs;
+	private Collection<IPath> libs;
 
 	private boolean debug;
 
@@ -116,21 +124,21 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public boolean convertProject(IJavaProject project, IProgressMonitor monitor) {
-		libs = new HashSet<IPath>();
+		libs = new HashSet<>();
 		return convertProject(project, libs, monitor);
 	}
 
 	@Override
-	public boolean convertProject(IJavaProject java_project, Set<IPath> libs, IProgressMonitor monitor) {
+	public boolean convertProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
 		long start = System.currentTimeMillis();
 		System.out.println(start+" GRaViTY convert project: "+java_project.getProject().getName());
 		this.java_project = java_project;
 		this.libs = libs;
 		
-		if(!createOutFiles(java_project, monitor)){
-			System.err.println("Creating output folders failed.");
-			return false;
-		}
+//		if(!createOutFiles(java_project, monitor)){
+//			System.err.println("Creating output folders failed.");
+//			return false;
+//		}
 
 		long t0 = System.currentTimeMillis();
 		System.out.println(t0 + " MoDisco discover project: "+java_project.getProject().getName());
@@ -337,23 +345,51 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		return discoverProject(java_project, new HashSet<IPath>(), monitor);
 	}
 
-	public Model discoverProject(IJavaProject java_project, Set<IPath> libs, IProgressMonitor monitor) {
+	public Model discoverProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
 		Model model = null;
 
 		if (this.discoverer.isApplicableTo(java_project)) {
 			try {
+
+				try {
+					Set<IPackageFragmentRoot> roots = new HashSet<>(libs.size());
+					IClasspathEntry[] oldClasspath = java_project.getRawClasspath();
+					for(IPath lib : libs){
+						File file = lib.toFile();
+						if(file.exists()){
+							boolean contained = false;
+							for(IClasspathEntry e : oldClasspath){
+								contained |= e.getPath().makeAbsolute().equals(lib);
+							}
+							if(!contained){
+								IPackageFragmentRoot root = java_project.getPackageFragmentRoot(file.getAbsolutePath());
+								roots.add(root);
+							}
+						}
+					}
+					IClasspathEntry[] newClasspath = new IClasspathEntry[oldClasspath.length + roots.size()];
+					System.arraycopy(oldClasspath, 0, newClasspath, 0, oldClasspath.length);
+					int i = oldClasspath.length;
+					for(IPackageFragmentRoot root : roots){
+						newClasspath[i++] = root.getResolvedClasspathEntry();
+					}
+					java_project.setRawClasspath(newClasspath, monitor);
+				} catch (JavaModelException e) {
+					e.printStackTrace();
+				}
+				
+				ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
 				List<Object> discoverable = AbstractDiscoverJavaModelFromProject
 						.computeDiscoverableElements(java_project);
-				ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
 				for (Object o : discoverable) {
 					IPath path = null;
-					if (o instanceof JarPackageFragmentRoot) {
-						JarPackageFragmentRoot jar = (JarPackageFragmentRoot) o;
-						path = jar.getPath();
-					}
-					else if (o instanceof IJavaProject) {
+					if (o instanceof IJavaProject) {
 						IJavaProject proj = (IJavaProject) o;
 						path = proj.getProject().getLocation();
+					}
+					else if(o instanceof IPackageFragmentRoot){
+						IPackageFragmentRoot root = (IPackageFragmentRoot) o;
+						path = root.getPath();
 					}
 					
 					if(path != null){
@@ -364,7 +400,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 						}
 					}
 				}
+				
 				this.discoverer.setElementsToAnalyze(analyze);
+				
 				this.discoverer.discoverElement(java_project, monitor);
 				Resource java_resource = this.discoverer.getTargetModel();
 				if (java_resource != null) {
@@ -432,7 +470,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+++ invocation : ConstructorInvocation {
+}
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}
