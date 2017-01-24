@@ -75,7 +75,7 @@ partial class MoDiscoTGGPreprocessingImpl {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
 			mEntrys.add(entry);
 			Type type = param.getType().getType();
-			if(!(type instanceof TypeParameter)){
+			if (!(type instanceof TypeParameter)) {
 				entry.setType(type);
 			}
 			if (prev == null) {
@@ -118,38 +118,36 @@ partial class MoDiscoTGGPreprocessingImpl {
 				if (superClass != null) {
 					stack.add(superClass.getType());
 				}
-			}
-			else if(type instanceof ParameterizedType){
+			} else if (type instanceof ParameterizedType) {
 				stack.add(((ParameterizedType) type).getType().getType());
-			}
-			else{
-			AbstractTypeDeclaration abst = (AbstractTypeDeclaration) type;
-			for (TypeAccess interf : abst.getSuperInterfaces()) {
-				Type typeInterf = interf.getType();
-				if (typeInterf == null) {
-					System.err.println("Skipped type of: " + interf);
-					continue;
+			} else {
+				AbstractTypeDeclaration abst = (AbstractTypeDeclaration) type;
+				for (TypeAccess interf : abst.getSuperInterfaces()) {
+					Type typeInterf = interf.getType();
+					if (typeInterf == null) {
+						System.err.println("Skipped type of: " + interf);
+						continue;
+					}
+					stack.add(typeInterf);
 				}
-				stack.add(typeInterf);
-			}
 
-			for (BodyDeclaration body : abst.getBodyDeclarations()) {
-				if (body instanceof MethodDeclaration) {
-					MethodDeclaration decl = (MethodDeclaration) body;
-					if (method.getName().equals(decl.getName())) {
-						if (isParamListEqual(method.getParameters(), decl.getParameters())) {
-							TypeAccess returnTypeDecl = decl.getReturnType();
-							if (returnTypeDecl == null) {
-								System.err.println("Skipped return type of: " + decl);
-								continue;
-							}
-							if (isSuperType(ret, returnTypeDecl.getType())) {
-								ret = returnTypeDecl.getType();
+				for (BodyDeclaration body : abst.getBodyDeclarations()) {
+					if (body instanceof MethodDeclaration) {
+						MethodDeclaration decl = (MethodDeclaration) body;
+						if (method.getName().equals(decl.getName())) {
+							if (isParamListEqual(method.getParameters(), decl.getParameters())) {
+								TypeAccess returnTypeDecl = decl.getReturnType();
+								if (returnTypeDecl == null) {
+									System.err.println("Skipped return type of: " + decl);
+									continue;
+								}
+								if (isSuperType(ret, returnTypeDecl.getType())) {
+									ret = returnTypeDecl.getType();
+								}
 							}
 						}
 					}
 				}
-			}
 			}
 		}
 		return ret;
@@ -214,6 +212,11 @@ partial class MoDiscoTGGPreprocessingImpl {
 				}
 			}
 		}
+		return true;
+-->
+
+@model preprocessOrphanTypes (MGravityModel model) <--
+
 		return true;
 -->
 

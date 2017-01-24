@@ -3,24 +3,6 @@ partial class TypeGraphImpl {
 
 @members <--
 
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (tName: ");
-		result.append(tName);
-		result.append(')');
-		return result.toString();
-	}
-
 	public TPackage getPackage(String string){
 		String[] names = string.split("\\.");
 		EList<TPackage> next = getPackages();
@@ -85,6 +67,18 @@ partial class TypeGraphImpl {
 		}
 		return null;
 	}
+	
+-->
+
+@model  toString()  <--
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tName: ");
+		result.append(tName);
+		result.append(')');
+		return result.toString();
 	
 -->
 
