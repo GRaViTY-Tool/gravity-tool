@@ -5,8 +5,6 @@ Bundle-SymbolicName: org.gravity.hulk.ui.visualization;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.gravity.hulk.ui.visualization.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.zest.core;bundle-version="1.5.201",
- org.eclipse.zest.layouts;bundle-version="1.1.200",
  org.eclipse.swt,
  org.eclipse.ui.ide;bundle-version="3.11.0",
  org.eclipse.ui.workbench,
@@ -29,3 +27,7 @@ Export-Package: org.gravity.hulk.ui.visualization.detection,
  org.gravity.hulk.ui.visualization.markerManager,
  org.gravity.hulk.ui.visualization.util,
  org.gravity.hulk.ui.visualization.views
+Bundle-ClassPath: lib/org.eclipse.draw2d_3.10.1.201508170204.jar,
+ lib/org.eclipse.zest.core_1.5.201.201508170204.jar,
+ lib/org.eclipse.zest.layouts_1.1.200.201508170204.jar,
+ .
