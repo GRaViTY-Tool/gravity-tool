@@ -204,6 +204,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="TDeclaredEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/tDeclaredEntities"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" lowerBound="1"
+        eType="#//TVisibility"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClassEntity" eSuperTypes="#//TDeclaredEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" lowerBound="1"
@@ -216,6 +218,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="TMethodEntity" eSuperTypes="#//TDeclaredEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition" lowerBound="1"
         eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/tMethodEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TVisibility">
+    <eLiterals name="TPrivate"/>
+    <eLiterals name="TPackage" value="1"/>
+    <eLiterals name="TProtected" value="2"/>
+    <eLiterals name="TPublic" value="3"/>
   </eClassifiers>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">
