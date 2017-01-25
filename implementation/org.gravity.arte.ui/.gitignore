@@ -9,3 +9,4 @@
 /model/*.xmi
 
 !/**/.keep*
+/bin/

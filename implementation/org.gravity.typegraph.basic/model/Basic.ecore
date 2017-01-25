@@ -162,7 +162,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tDeclaredEntities" upperBound="-1"
-        eType="#//TDeclaredEntity" eOpposite="#//TDeclaredEntity/pg"/>
+        eType="#//TDeclaredEntity" containment="true" eOpposite="#//TDeclaredEntity/pg"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TInterface" eSuperTypes="#//TAbstractType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
