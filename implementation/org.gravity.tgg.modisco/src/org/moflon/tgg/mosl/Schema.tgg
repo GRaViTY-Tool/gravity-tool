@@ -187,12 +187,12 @@ ModifierToTClassEntity{
 
 ModifierToTFieldEntity{
 		#src->Modifier
-		#trg->TClassEntity
+		#trg->TFieldEntity
 	}
 	
 ModifierToTMethodEntity{
 		#src->Modifier
-		#trg->TClassEntity
+		#trg->TMethodEntity
 	}
 }
 
