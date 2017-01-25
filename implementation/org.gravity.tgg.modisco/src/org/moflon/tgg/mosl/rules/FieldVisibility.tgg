@@ -1,0 +1,73 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule FieldVisibility #with org.gravity.tgg.modisco
+
+#source { 
+	mModel:MGravityModel{}
+	mFieldName:MFieldName{
+		-model->mModel
+	}
+	mFieldSignature:MFieldSignature{
+		-mFieldName->mFieldName
+	}
+	mFieldDefinition:MFieldDefinition{
+		-mFieldSignature->mFieldSignature
+		++ -modifier->modifier
+	}
+	
+	++modifier:Modifier{	
+	}
+}
+
+#target {
+	
+	pg:TypeGraph{
+		++ -tDeclaredEntities->tFieldEntity
+	}
+	tField:TField{
+		-pg->pg
+	}
+	tFieldSignature:TFieldSignature{
+		-field->tField
+	}
+	tFieldDefinition:TFieldDefinition{
+		-signature->tFieldSignature
+		++ -tFieldEntity->tFieldEntity
+	}
+	
+	++tFieldEntity:TFieldEntity{
+		
+	}
+	
+}
+
+#correspondence {
+	mModelToTypeGraph:ModelToTypeGraph{
+		#src->mModel
+		#trg->pg
+	}
+	mFieldToTField:MFieldNameToTField{
+		#src->mFieldName
+		#trg->tField
+	}
+	mFieldSignatureToTFieldSignature:MFieldSignatureToTFieldSignature{
+		#src->mFieldSignature
+		#trg->tFieldSignature
+	}
+	mFieldDefinitionToTFieldDefinition:MFieldDefinitionToTFieldDefinition{
+		#src->mFieldDefinition
+		#trg->tFieldDefinition
+	}
+	
+	++ modifierToTFieldEntity:ModifierToTFieldEntity{
+		#src->modifier
+		#trg->tFieldEntity
+	}
+	
+	
+}
+
+#attributeConditions {
+	vKindToTVis(modifier.visibility, tFieldEntity.tVisibility)
+}
