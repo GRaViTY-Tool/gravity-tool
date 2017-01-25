@@ -1,0 +1,75 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodVisibility #with org.gravity.tgg.modisco
+
+#source { 
+	mModel:MGravityModel{
+		
+	}
+	mMethodName:MMethodName{
+		-model->mModel
+	}
+	mMethodSignature:MMethodSignature{
+		-mMethodName->mMethodName
+	}
+	mMethodDefinition:MMethodDefinition{
+		-mMethodSignature->mMethodSignature
+		++ -modifier->modifier
+	}
+	
+	++modifier:Modifier{
+	}
+	
+}
+
+#target {
+	pg:TypeGraph{
+		++ -tDeclaredEntities->tMethodEntity
+	}
+	
+	tMethod:TMethod{
+		-pg->pg
+	}
+	
+	tMethodSignature:TMethodSignature{
+		-method->tMethod
+	}
+	tMethodDefinition:TMethodDefinition{
+		-signature->tMethodSignature
+		++ -tMethodEntity->tMethodEntity
+	}
+	
+	++tMethodEntity:TMethodEntity{
+		
+	}
+	
+}
+
+#correspondence {
+	mModelToTypeGraph:ModelToTypeGraph{
+		#src->mModel
+		#trg->pg
+	}
+	mMethodToTMethod:MMethodNameToTMethod{
+		#src->mMethodName
+		#trg->tMethod
+	}
+	mSigToSig:MMethodSignatureToTMethodSignature{
+		#src->mMethodSignature
+		#trg->tMethodSignature
+	}
+	mMethodToTMethodDefinition:MMethodDefinitionToTMethodDefinition{
+		#src->mMethodDefinition
+		#trg->tMethodDefinition
+	}
+	
+	++modifierToTMethodEntity:ModifierToTMethodEntity{
+		#src->modifier
+		#trg->tMethodEntity
+	}
+}
+
+#attributeConditions {
+	vKindToTVis(modifier.visibility, tMethodEntity.tVisibility)
+}
