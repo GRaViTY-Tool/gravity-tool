@@ -180,8 +180,26 @@ UnresolvedTypeDeclarationToTClass {
 #trg-> TClass
 }
 
+ModifierToTClassEntity{
+		#src->Modifier
+		#trg->TClassEntity
+	}
+
+ModifierToTFieldEntity{
+		#src->Modifier
+		#trg->TClassEntity
+	}
+	
+ModifierToTMethodEntity{
+		#src->Modifier
+		#trg->TClassEntity
+	}
 }
 
 #attributeConditions {
-
+#userDefined
+VisibilityKindToTVisibility(0:VisibilityKind, 1:TVisibility){
+	#sync: BB,BF,FB
+	#gen:
+}
 }
