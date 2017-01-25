@@ -1,0 +1,44 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ClassVisibility #with org.gravity.tgg.modisco
+
+#source { 
+	 mType:ClassDeclaration{
+	 	++ -modifier -> mModifier
+	 }
+	 ++mModifier:Modifier{
+	 	}
+}
+
+#target {
+	typeGraph: TypeGraph{
+		++ -tDeclaredEntities -> tClassEntity
+		-classes -> tClass
+	}
+	
+	tClass: TClass{
+		++ -tClassEntity -> tClassEntity
+		-pg -> typeGraph
+	}
+	
+	++ tClassEntity:TClassEntity{
+	}
+	
+}
+
+#correspondence {
+	classDeclToTClass:ClassDeclarationToTClass{
+		#src->mType
+		#trg->tClass
+	}
+	
+	++modifierToTClassEntity:ModifierToTClassEntity{
+		#src->mModifier
+		#trg->tClassEntity
+	}
+	
+}
+#attributeConditions {
+	
+}
