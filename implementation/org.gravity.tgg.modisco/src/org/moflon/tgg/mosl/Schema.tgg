@@ -197,9 +197,9 @@ ModifierToTMethodEntity{
 }
 
 #attributeConditions {
-#userDefined
-VisibilityKindToTVisibility(0:VisibilityKind, 1:TVisibility){
-	#sync: BB,BF,FB
-	#gen:
-}
+	#userDefined
+	vKindToTVis(0:VisibilityKind, 1:TVisibility){
+		#sync: BB, BF, FB, FF
+		#gen:
+	}
 }

@@ -1,7 +1,8 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule ClassVisibility #with org.gravity.tgg.modisco
+#rule ClassVisibility 
+#with org.gravity.tgg.modisco
 
 #source { 
 	 mType:ClassDeclaration{
@@ -40,5 +41,5 @@
 	
 }
 #attributeConditions {
-	
+vKindToTVis(mModifier.visibility, tClassEntity.tVisibility)
 }
