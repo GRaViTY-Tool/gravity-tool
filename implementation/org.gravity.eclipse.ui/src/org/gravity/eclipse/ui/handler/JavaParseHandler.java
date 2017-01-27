@@ -1,6 +1,8 @@
 package org.gravity.eclipse.ui.handler;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -8,8 +10,12 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -25,6 +31,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.typegraph.basic.TypeGraph;
 
 public class JavaParseHandler extends AbstractHandler {
@@ -67,19 +74,23 @@ public class JavaParseHandler extends AbstractHandler {
 				boolean success = converter.convertProject(iJavaProject, monitor);
 				gravityActivator.discardConverter(iProject);
 				if (!success) {
-					System.out.println("No PG has been created for "+iProject.getName());
+					System.err.println("No PG has been created for "+iProject.getName());
 					return false;
 				}
 				TypeGraph pg = converter.getPG();
-				URI out = URI.createFileURI(iProject.getLocation().append("gravity").append(iProject.getName()+".xmi").toString());
+				IFolder folder = iProject.getFolder("gravity");
+				if(!folder.exists()){
+					try {
+						folder.create(true, true, monitor);
+					} catch (CoreException e) {
+						System.err.println("Couldn't create output location: "+folder.getLocation().toString());
+					}
+				}
+				IFile file = folder.getFile(iProject.getName()+".xmi");
+				URI out = URI.createFileURI(file.getLocation().toString());
 				Resource original = pg.eResource();
 				original.setURI(out);
-				try {
-					original.save(Collections.EMPTY_MAP);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				ModelSaver.saveModel(pg, file, monitor);
 				return true;
 			}
 		};

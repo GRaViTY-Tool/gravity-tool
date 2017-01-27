@@ -265,9 +265,9 @@ public class GravityActivator extends Plugin {
 	}
 	
 	public boolean discardConverter(IProject project){
-		if(this.converters.containsKey(project)){
-			this.converters.remove(project);
-			return true;
+		if(this.converters.containsKey(project.getName())){
+			IPGConverter converter = this.converters.remove(project.getName());
+			return converter!=null;
 		}
 		return false;
 	}
