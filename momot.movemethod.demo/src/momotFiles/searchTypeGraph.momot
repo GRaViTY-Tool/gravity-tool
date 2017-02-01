@@ -19,7 +19,11 @@ initialization = {
 
 search = {
 	model          = {
-		file       = "input/TypeGraphExample.xmi"
+		
+		//file       = "input/TypeGraphExample.xmi"
+		//file       = "input/MailApp.xmi"
+		file       = "input/03_JUnit3.8.2.xmi"
+		//file       = "input/04_Gantt1.10.2.xmi"
 	}
 	solutionLength  = 10
 
@@ -35,8 +39,8 @@ search = {
 	}
 
 	algorithms      = {
-		Random  : moea.createRandomSearch()
-		NSGAII  : moea.createNSGAII()
+		//Random  : moea.createRandomSearch()
+		//NSGAII  : moea.createNSGAII()
 		NSGAIII : moea.createNSGAIII()
 	}
 }
@@ -44,7 +48,7 @@ search = {
 experiment = {
 	populationSize    = 100
 	maxEvaluations    = 10000
-	nrRuns            = 5
+	nrRuns            = 1
 	progressListeners = [ new SeedRuntimePrintListener ]
 }
 

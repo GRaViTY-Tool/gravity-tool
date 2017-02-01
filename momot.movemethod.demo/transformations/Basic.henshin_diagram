@@ -14,6 +14,10 @@
             <element xmi:type="henshin:Attribute" href="Basic.henshin#_yqjfMNPyEeaEU5JkN7eTNw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_yscVkNPyEeaEU5JkN7eTNw"/>
           </children>
+          <children xmi:type="notation:Node" xmi:id="_OeZKYuMZEeap6OOWzjFItQ" type="3002">
+            <element xmi:type="henshin:Attribute" href="Basic.henshin#_OeZKYOMZEeap6OOWzjFItQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_OeZKY-MZEeap6OOWzjFItQ"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_ur-w0dPyEeaEU5JkN7eTNw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_ur-w0tPyEeaEU5JkN7eTNw"/>
         </children>
@@ -27,6 +31,10 @@
           <children xmi:type="notation:Node" xmi:id="_Axqj0NPzEeaEU5JkN7eTNw" type="3002">
             <element xmi:type="henshin:Attribute" href="Basic.henshin#_AxkdMNPzEeaEU5JkN7eTNw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_Axqj0dPzEeaEU5JkN7eTNw"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_b95cceMZEeap6OOWzjFItQ" type="3002">
+            <element xmi:type="henshin:Attribute" href="Basic.henshin#_b9w5kOMZEeap6OOWzjFItQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_b95ccuMZEeap6OOWzjFItQ"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_u8pqE9PyEeaEU5JkN7eTNw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_u8pqFNPyEeaEU5JkN7eTNw"/>

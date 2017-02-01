@@ -11,11 +11,17 @@
         <attributes xmi:id="_yqjfMNPyEeaEU5JkN7eTNw" value="sourceClassName">
           <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
         </attributes>
+        <attributes xmi:id="_OeZKYOMZEeap6OOWzjFItQ" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
       </nodes>
       <nodes xmi:id="_u8kKgNPyEeaEU5JkN7eTNw" name="targetClass">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
         <attributes xmi:id="_AxkdMNPzEeaEU5JkN7eTNw" value="targetClassName">
           <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+        <attributes xmi:id="_b9w5kOMZEeap6OOWzjFItQ" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_wcCZMNPyEeaEU5JkN7eTNw" name="method" incoming="_F9OpwNPzEeaEU5JkN7eTNw">
@@ -49,11 +55,17 @@
         <attributes xmi:id="_yqkGQNPyEeaEU5JkN7eTNw" value="sourceClassName">
           <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
         </attributes>
+        <attributes xmi:id="_OeZKYeMZEeap6OOWzjFItQ" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
       </nodes>
       <nodes xmi:id="_u8kKgdPyEeaEU5JkN7eTNw" name="targetClass" incoming="_Yb0E8NPzEeaEU5JkN7eTNw" outgoing="_Tu4bwNPzEeaEU5JkN7eTNw _VT0ZQNPzEeaEU5JkN7eTNw">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
         <attributes xmi:id="_AxkdMdPzEeaEU5JkN7eTNw" value="targetClassName">
           <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+        <attributes xmi:id="_b95ccOMZEeap6OOWzjFItQ" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_wcCZMdPyEeaEU5JkN7eTNw" name="method" incoming="_F9OpwdPzEeaEU5JkN7eTNw">

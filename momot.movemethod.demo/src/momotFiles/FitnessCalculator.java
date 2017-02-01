@@ -28,6 +28,7 @@ public class FitnessCalculator {
 	public static double calculateCoupling(TypeGraph graph){
 		int invoc = 0;
 		for(TClass tClass: graph.getClasses()){
+			
 			if(tClass.isTLib()){
 				for (TMember m : tClass.getDefines()) {
 					invoc += 100;
