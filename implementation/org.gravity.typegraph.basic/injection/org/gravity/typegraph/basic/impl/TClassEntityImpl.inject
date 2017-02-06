@@ -1,0 +1,28 @@
+
+import org.gravity.typegraph.basic.TDeclaredEntity;
+import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TVisibility;
+
+partial class TClassEntityImpl {
+
+@members <--
+
+	public TDeclaredEntity getParent() {
+		TClass superClass = this.tClass.getParentClass();
+		if (superClass == null) {
+			return null;
+		}
+		return superClass.getTClassEntity();
+	}
+
+	public TPackage getPackage() {
+		return this.getPackage();
+	}
+
+	public TVisibility getMinTVisibility(TDeclaredEntity entity) {
+		return TVisibility.TPRIVATE;
+	}
+	
+-->
+
+}

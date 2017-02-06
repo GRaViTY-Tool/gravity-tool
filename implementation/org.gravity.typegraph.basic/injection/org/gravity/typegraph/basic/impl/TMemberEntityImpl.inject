@@ -1,0 +1,43 @@
+
+import org.gravity.typegraph.basic.TVisibility;
+import org.gravity.typegraph.basic.TDeclaredEntity;
+
+partial class TMemberEntityImpl {
+
+@members <--
+
+	private boolean sameClass(TDeclaredEntity entity) {
+		if (entity instanceof TMemberEntityImpl) {
+			TDeclaredEntity tClass = ((TMemberEntityImpl) entity).getParent();
+			return this.getParent().equals(tClass);
+		}
+		return this.getParent().equals(entity);
+
+	}
+
+	private boolean samePackage(TDeclaredEntity entity) {
+		return this.getPackage().equals(entity.getPackage());
+	}
+
+	private boolean sameSuperClass(TDeclaredEntity entity) {
+		return !Collections.disjoint(this.getParents(), entity.getParents());
+	}
+
+	public TVisibility getMinTVisibility(TDeclaredEntity entity) {
+
+		if (sameClass(entity)) {
+			return TVisibility.TPRIVATE;
+		}
+		if (samePackage(entity)) {
+			return TVisibility.TPACKAGE;
+		}
+		if (sameSuperClass(entity)) {
+			return TVisibility.TPROTECTED;
+		}
+		return TVisibility.TPUBLIC;
+
+	}
+	
+-->
+
+}
