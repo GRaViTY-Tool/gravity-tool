@@ -201,7 +201,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorDefinition" eSuperTypes="#//TMethodDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="TRead" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TWrite" eSuperTypes="#//TAccess"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TDeclaredEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="TDeclaredEntity" abstract="true">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getParent" eType="#//TDeclaredEntity"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getParents" upperBound="-1"
+        eType="#//TDeclaredEntity"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getPackage" eType="#//TPackage"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getMinimumRequiredVisibility"
+        eType="#//TDeclaredEntity">
+      <eParameters name="tDeclaredEntity" eType="#//TDeclaredEntity"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/tDeclaredEntities"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" lowerBound="1"
@@ -211,11 +219,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" lowerBound="1"
         eType="#//TClass" eOpposite="#//TClass/tClassEntity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TFieldEntity" eSuperTypes="#//TDeclaredEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="TFieldEntity" eSuperTypes="#//TMemberEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldDefinition" lowerBound="1"
         eType="#//TFieldDefinition" eOpposite="#//TFieldDefinition/tFieldEntity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TMethodEntity" eSuperTypes="#//TDeclaredEntity">
+  <eClassifiers xsi:type="ecore:EClass" name="TMethodEntity" eSuperTypes="#//TMemberEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition" lowerBound="1"
         eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/tMethodEntity"/>
   </eClassifiers>
@@ -225,6 +233,7 @@
     <eLiterals name="TProtected" value="2"/>
     <eLiterals name="TPublic" value="3"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TMemberEntity" abstract="true" eSuperTypes="#//TDeclaredEntity"/>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
