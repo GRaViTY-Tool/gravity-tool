@@ -7,6 +7,7 @@ partial class TClassEntityImpl {
 
 @members <--
 
+	@Override
 	public TDeclaredEntity getParent() {
 		TClass superClass = this.tClass.getParentClass();
 		if (superClass == null) {
@@ -14,12 +15,12 @@ partial class TClassEntityImpl {
 		}
 		return superClass.getTClassEntity();
 	}
-
+	@Override
 	public TPackage getPackage() {
 		return this.getPackage();
 	}
-
-	public TVisibility getMinTVisibility(TDeclaredEntity entity) {
+	@Override
+	public TVisibility getMinimumRequiredVisibility(TDeclaredEntity tDeclaredEntity) {
 		return TVisibility.TPRIVATE;
 	}
 	

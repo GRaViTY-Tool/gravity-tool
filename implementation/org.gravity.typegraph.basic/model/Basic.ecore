@@ -207,7 +207,7 @@
         eType="#//TDeclaredEntity"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getPackage" eType="#//TPackage"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getMinimumRequiredVisibility"
-        eType="#//TDeclaredEntity">
+        eType="#//TVisibility">
       <eParameters name="tDeclaredEntity" eType="#//TDeclaredEntity"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
