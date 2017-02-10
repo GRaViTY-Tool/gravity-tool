@@ -17,7 +17,7 @@ partial class TMethodEntityImpl {
 		}
 		return null;
 	}
-
+	@Override
 	public TDeclaredEntity getParent() {
 		TClass tClass = getTClass();
 		if (tClass != null) {
@@ -25,7 +25,7 @@ partial class TMethodEntityImpl {
 		}
 		return null;
 	}
-
+	@Override
 	public TPackage getPackage() {
 		TClass tClass = getTClass();
 		if (tClass != null) {

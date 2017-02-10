@@ -17,7 +17,7 @@ partial class TFieldEntityImpl {
 		}
 		return null;
 	}
-
+	@Override
 	public TDeclaredEntity getParent() {
 		TClass tClass = getTClass();
 		if (tClass != null) {
@@ -25,7 +25,7 @@ partial class TFieldEntityImpl {
 		}
 		return null;
 	}
-
+	@Override
 	public TPackage getPackage() {
 		TClass tClass = getTClass();
 		if (tClass != null) {
@@ -33,10 +33,7 @@ partial class TFieldEntityImpl {
 		}
 		return null;
 	}
-	
-	public TVisibility getMinTVisibility(TDeclaredEntity entity) {
-		return tVisibility.TPRIVATE;
-	}
+
 	
 -->
 

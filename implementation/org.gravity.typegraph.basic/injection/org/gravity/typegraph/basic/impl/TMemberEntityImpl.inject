@@ -1,6 +1,8 @@
 
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TDeclaredEntity;
+import java.util.Collections;
+import org.gravity.typegraph.basic.TPackage;
 
 partial class TMemberEntityImpl {
 
@@ -8,22 +10,30 @@ partial class TMemberEntityImpl {
 
 	private boolean sameClass(TDeclaredEntity entity) {
 		if (entity instanceof TMemberEntityImpl) {
-			TDeclaredEntity tClass = ((TMemberEntityImpl) entity).getParent();
-			return this.getParent().equals(tClass);
+			TDeclaredEntity otherParent = ((TMemberEntityImpl) entity).getParent();
+			TDeclaredEntity thisParent = this.getParent();
+			if(otherParent != null && thisParent != null){
+				return this.getParent().equals(otherParent);
+			}
 		}
-		return this.getParent().equals(entity);
-
+		return false;
 	}
 
 	private boolean samePackage(TDeclaredEntity entity) {
-		return this.getPackage().equals(entity.getPackage());
+		TPackage otherPackage = entity.getPackage();
+		TPackage thisPackage = this.getPackage();
+		if(otherPackage != null && thisPackage != null){
+			return thisPackage.equals(otherPackage);
+		}
+		return false;
 	}
 
 	private boolean sameSuperClass(TDeclaredEntity entity) {
 		return !Collections.disjoint(this.getParents(), entity.getParents());
 	}
 
-	public TVisibility getMinTVisibility(TDeclaredEntity entity) {
+	@Override
+	public TVisibility getMinimumRequiredVisibility(TDeclaredEntity entity) {
 
 		if (sameClass(entity)) {
 			return TVisibility.TPRIVATE;
