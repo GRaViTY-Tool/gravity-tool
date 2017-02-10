@@ -8,7 +8,16 @@ import org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class TClassImpl {
 
+@members <--
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String string = super.toString();
+		return string.substring(0, string.length() - 1).concat(", name: ").concat(tName).concat(")");
+	}
+	
+-->
 
 @model getAllTMembers () <--
 

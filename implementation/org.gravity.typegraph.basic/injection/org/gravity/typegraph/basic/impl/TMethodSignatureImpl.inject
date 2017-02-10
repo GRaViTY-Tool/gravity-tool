@@ -3,7 +3,17 @@ import org.gravity.typegraph.basic.TParameter;
 
 partial class TMethodSignatureImpl {
 
+@members <--
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String string = super.toString();
+		String name = getMethod().getTName();
+		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+	}
+	
+-->
 
 @model getSignatureString () <--
 
@@ -17,10 +27,9 @@ partial class TMethodSignatureImpl {
 			}
 		}
 		TAbstractType ret = getReturnType();
-		if(ret==null){
-			return s+ ")";
-		}
-		else{
+		if (ret == null) {
+			return s + ")";
+		} else {
 			return s + "):" + ret.getTName();
 		}
 -->
