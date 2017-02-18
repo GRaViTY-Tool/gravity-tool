@@ -1,168 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/momot.movemethod.demo/src" modelPluginID="momot.movemethod.demo"
-    modelName="Basic" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.typegraph.basic/gen" modelPluginID="org.gravity.typegraph.basic"
+    modelName="Basic" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true">
   <foreignModel>Basic.ecore</foreignModel>
   <genPackages prefix="Basic" basePackage="org.gravity.typegraph" disposableProviderFactory="true"
-      ecorePackage="Basic.ecore#/">
-    <genClasses ecoreClass="Basic.ecore#//TAccess">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAccess/tTarget"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TAccess/tSource"/>
+      ecorePackage="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility/TPrivate"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility/TPackage"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility/TProtected"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility/TPublic"/>
+    </genEnums>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/tTarget"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess/tSource"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Basic.ecore#//TAnnotatable">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TAnnotatable/tAnnotation"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotatable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotatable/tAnnotation"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TAnnotation">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TAnnotation/tAnnotated"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAnnotation/type"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotation">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotation/tAnnotated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotation/type"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TClass">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TClass/parentClass"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TClass/childClasses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TClass/implements"/>
-      <genOperations ecoreOperation="Basic.ecore#//TClass/getAllTMembers"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/childClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/implements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/tClassEntity"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembers"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Basic.ecore#//TElementWithId">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TElementWithId/ID"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/signatures"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/pg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/tName"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TField">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TField/signatures"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TField/pg"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TField/tName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/hiding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/hiddenBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/tFieldEntity"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/getSignatureString"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TFieldDefinition">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/signature"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/hiding"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/hiddenBy"/>
-      <genOperations ecoreOperation="Basic.ecore#//TFieldDefinition/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/definitions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/field"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/type"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/getSignatureString"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TFieldSignature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/definitions"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/field"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/type"/>
-      <genOperations ecoreOperation="Basic.ecore#//TFieldSignature/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TCall"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/definedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/accessedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tAccessing"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getSignature"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getSignatureString"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Basic.ecore#//TMember">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/definedBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/accessedBy"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/tAccessing"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMember/getSignature"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMember/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/signatures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/tName"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TMethod">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/pg"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/signatures"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TMethod/tName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriddenBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overloading"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overloadedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/returnType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/tMethodEntity"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/getSignatureString"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TMethodDefinition">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/signature"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriding"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriddenBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overloading"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overloadedBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/returnType"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMethodDefinition/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/paramList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/returnType"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/getSignatureString"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TMethodSignature">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/method"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/paramList"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/definitions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/returnType"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/subpackage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/interfaces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/ownedTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/typeGraph"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/tName"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TPackage">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/pg"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/subpackage"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/parent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/classes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/interfaces"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/ownedTypes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/typeGraph"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TPackage/tName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/next"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/previous"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/type"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/next"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/previous"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/type"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList/entries"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList/first"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameterList/entries"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameterList/first"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature/getSignatureString"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Basic.ecore#//TSignature">
-      <genOperations ecoreOperation="Basic.ecore#//TSignature/getSignatureString"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/tAnnotationTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/tName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/tDeclaredEntities"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TypeGraph">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/packages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/methods"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/fields"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/classes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/interfaces"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/ownedTypes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TypeGraph/tAnnotationTypes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TypeGraph/tName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/implementedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/parentInterfaces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/childInterfaces"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TInterface">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TInterface/implementedBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TInterface/parentInterfaces"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TInterface/childInterfaces"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/package"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getFullyQualifiedName"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Basic.ecore#//TAbstractType">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractType/pg"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractType/package"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractType/signature"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractType/defines"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractType/tLib"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractType/tName"/>
-      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getFullyQualifiedName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotationType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotationType/annotations"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TAnnotationType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAnnotationType/annotations"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TTextAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TTextAnnotation/text"/>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TTextAnnotation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TTextAnnotation/text"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TConstructorName"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TConstructorSignature"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TConstructorDefinition"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TRead"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TWrite"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/pg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/tVisibility"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/getParent"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/getParents"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/getPackage"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/getMinimumRequiredVisibility">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TDeclaredEntity/getMinimumRequiredVisibility/tDeclaredEntity"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorName"/>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorSignature"/>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorDefinition"/>
-    <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="Basic.ecore#//containers">
-      <genClasses ecoreClass="Basic.ecore#//containers/TTypeContainer">
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClassEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClassEntity/tClass"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldEntity/tFieldDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodEntity/tMethodDefinition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMemberEntity"/>
+    <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TTypeContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TTypeContainer/tAbstractTypes"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TTypeContainer/tAbstractTypes"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TAccessContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TAccessContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TAccessContainer/tAccessEdges"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TAccessContainer/tAccessEdges"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TMemberContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMemberContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TMemberContainer/tMembers"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMemberContainer/tMembers"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TClassContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TClassContainer/tClass"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TFieldContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TFieldContainer/tFields"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldContainer/tFields"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TFieldDefinitionContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldDefinitionContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TFieldDefinitionContainer/tFieldDefinitions"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldDefinitionContainer/tFieldDefinitions"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TFieldSignatureContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldSignatureContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TFieldSignatureContainer/tFieldSignatures"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TFieldSignatureContainer/tFieldSignatures"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TSignatureContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TSignatureContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TSignatureContainer/tSignatures"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TSignatureContainer/tSignatures"/>
       </genClasses>
-      <genClasses ecoreClass="Basic.ecore#//containers/TMethodDefinitionContainer">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMethodDefinitionContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Basic.ecore#//containers/TMethodDefinitionContainer/tMethodDefinitions"/>
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMethodDefinitionContainer/tMethodDefinitions"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

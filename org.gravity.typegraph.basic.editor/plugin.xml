@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Basic -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gravity.typegraph.basic.presentation.BasicModelWizardID"
+            name="%_UI_BasicModelWizard_label"
+            class="org.gravity.typegraph.basic.presentation.BasicModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BasicModelFile.gif">
+         <description>%_UI_BasicModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Basic -->
+      <editor
+            id="org.gravity.typegraph.basic.presentation.BasicEditorID"
+            name="%_UI_BasicEditor_label"
+            icon="icons/full/obj16/BasicModelFile.gif"
+            extensions="basic"
+            class="org.gravity.typegraph.basic.presentation.BasicEditor"
+            contributorClass="org.gravity.typegraph.basic.presentation.BasicActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Basic -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gravity.typegraph.basic.containers.presentation.ContainersModelWizardID"
+            name="%_UI_ContainersModelWizard_label"
+            class="org.gravity.typegraph.basic.containers.presentation.ContainersModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ContainersModelFile.gif">
+         <description>%_UI_ContainersModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Basic -->
+      <editor
+            id="org.gravity.typegraph.basic.containers.presentation.ContainersEditorID"
+            name="%_UI_ContainersEditor_label"
+            icon="icons/full/obj16/ContainersModelFile.gif"
+            extensions="containers"
+            class="org.gravity.typegraph.basic.containers.presentation.ContainersEditor"
+            contributorClass="org.gravity.typegraph.basic.containers.presentation.ContainersActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

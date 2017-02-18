@@ -7,10 +7,12 @@ import at.ac.tuwien.big.moea.^experiment.executor.listener.SeedRuntimePrintListe
 
 import momotFiles.FitnessCalculator
 
-import org.gravity.hulk.HulkPackage
-import org.gravity.hulk.HulkPackage
+
 import org.gravity.typegraph.basic.BasicPackage
 import org.gravity.typegraph.basic.TypeGraph
+import org.moeaframework.core.operator.TournamentSelection
+import org.moeaframework.core.operator.OnePointCrossover
+import at.ac.tuwien.big.momot.^search.algorithm.operator.mutation.TransformationPlaceholderMutation
 
 initialization = {
 	BasicPackage.eINSTANCE.eClass // register Package
@@ -20,15 +22,27 @@ initialization = {
 search = {
 	model          = {
 		
+		//file       = "input/VisibilityRestrictionTest.xmi"
 		//file       = "input/TypeGraphExample.xmi"
-		//file       = "input/MailApp.xmi"
-		file       = "input/03_JUnit3.8.2.xmi"
+		file       = "input/MailApp.xmi"
+		//file       = "input/03_JUnit3.8.2.xmi"
 		//file       = "input/04_Gantt1.10.2.xmi"
 	}
 	solutionLength  = 10
 
 	transformations = {
-		modules = [ "transformations/Basic.henshin" ]
+		//modules = [ "transformations/Basic.henshin" ]
+		modules = [ "transformations/MoveMethod.henshin" ]
+		//modules = [ "transformations/MoveMethod2.henshin" ]
+		ignoreUnits = [
+		"MoveMethod::rules::libCheck",
+		"MoveMethod::rules::packageCheck",
+		//"MoveMethod::rules::MoveMethod",	
+		"MoveMethod::rules::checkPreconditions",	
+		"MoveMethod::rules::empty",
+		"MoveMethod::rules::fullLibCheck",
+		"MoveMethod::rules::main"
+		]
 	}
 
 	fitness         = {
@@ -36,12 +50,16 @@ search = {
 			Coupling : minimize { FitnessCalculator.calculateCoupling(root as TypeGraph) }
 			SolutionLength : minimize new TransformationLengthDimension
 		}
+		/*constraints = {
+			visibility: minimize { FitnessCalculator.visiblility(root as TypeGraph) }
+		}*/
 	}
 
 	algorithms      = {
-		//Random  : moea.createRandomSearch()
+		//Random  : moea.createRandomSearch()*
 		//NSGAII  : moea.createNSGAII()
 		NSGAIII : moea.createNSGAIII()
+		//NSGAIII : moea.createNSGAIII(new TournamentSelection(2), new OnePointCrossover(1.0), new TransformationPlaceholderMutation(0.05))
 	}
 }
 
