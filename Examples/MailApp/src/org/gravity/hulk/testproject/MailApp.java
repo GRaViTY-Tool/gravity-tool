@@ -49,20 +49,12 @@ public class MailApp {
 		    
 	  }
 	  
-	  private void setupClientKeyStore() throws GeneralSecurityException, IOException {
-		  	KeyStore clientKeyStore = KeyStore.getInstance( "JKS" );
-		    clientKeyStore.load( new FileInputStream( "client.private" ),
-		    		SecureConnection.getPassphrase().toCharArray() );
-		    connection.setClientKeyStore(clientKeyStore);
-	  }
-	  
 	  private void setupSSLContext() throws GeneralSecurityException, IOException {
 		    TrustManagerFactory tmf = TrustManagerFactory.getInstance( "SunX509" );
 		    tmf.init( connection.getServerKeyStore());
 
-		    KeyManagerFactory kmf = KeyManagerFactory.getInstance( "SunX509" );
-		    kmf.init( connection.getClientKeyStore(), SecureConnection.getPassphrase().toCharArray() );
-
+		    
+		    KeyManagerFactory kmf = connection.createKeyManagerFactory();
 		    SSLContext sslContext = SSLContext.getInstance( "TLS" );
 		    sslContext.init( kmf.getKeyManagers(),
 		                     tmf.getTrustManagers(),
@@ -75,7 +67,7 @@ public class MailApp {
 	private void connect(String host, int port){
 	    try {
 	        setupServerKeystore();
-	        setupClientKeyStore();
+	        connection.setupClientKeyStore();
 	        setupSSLContext();
 
 	        SSLSocketFactory sf = connection.getSslContext().getSocketFactory();

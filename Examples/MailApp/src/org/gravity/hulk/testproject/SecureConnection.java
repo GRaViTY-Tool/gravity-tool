@@ -2,12 +2,20 @@ package org.gravity.hulk.testproject;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 
 public class SecureConnection implements Runnable{
@@ -20,9 +28,6 @@ public class SecureConnection implements Runnable{
 	}
 	public static SecureRandom getSecureRandom(){
 		 return secureRandom;
-	}
-	public static String getPassphrase(){
-		return passphrase;
 	}
 	
 	
@@ -39,6 +44,12 @@ public class SecureConnection implements Runnable{
 	public SecureConnection(String host, int port){
 		host = host;
 		port = port;
+	}
+	
+	public void setupClientKeyStore() throws GeneralSecurityException, IOException{
+		clientKeyStore = KeyStore.getInstance( "JKS" );
+	    clientKeyStore.load( new FileInputStream( "client.private" ),
+	    		SecureConnection.passphrase.toCharArray() );
 	}
 	
 	public DataInputStream getDin() {
@@ -82,6 +93,11 @@ public class SecureConnection implements Runnable{
 		        //read din
 		      }
 		  }
+	public KeyManagerFactory createKeyManagerFactory() throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException {
+		KeyManagerFactory kmf = KeyManagerFactory.getInstance( "SunX509" );
+	    kmf.init( getClientKeyStore(), passphrase.toCharArray() );
+	    return kmf;
+	}
 
 
 	  

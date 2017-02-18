@@ -1,7 +1,6 @@
 package org.gravity.hulk.testproject;
 
 public class Contact {
-	protected class Asd{}
 	private String email, name, surname;
 	
 
