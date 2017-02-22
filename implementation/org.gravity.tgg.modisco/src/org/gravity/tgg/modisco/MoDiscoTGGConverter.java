@@ -133,6 +133,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long start = System.currentTimeMillis();
 		System.out.println(start+" GRaViTY convert project: "+java_project.getProject().getName());
 		this.java_project = java_project;
+		this.modisco_folder = java_project.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
 		
 //		if(!createOutFiles(java_project, monitor)){
