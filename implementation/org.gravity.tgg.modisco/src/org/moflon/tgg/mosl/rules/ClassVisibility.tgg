@@ -2,6 +2,7 @@
 #using AttrCondDefLibrary.*
 
 #rule ClassVisibility 
+#extends Class
 #with org.gravity.tgg.modisco
 
 #source { 
@@ -13,33 +14,18 @@
 }
 
 #target {
-	typeGraph: TypeGraph{
-		++ -tDeclaredEntities -> tClassEntity
-		-classes -> tClass
-	}
-	
-	tClass: TClass{
-		++ -tClassEntity -> tClassEntity
-		-pg -> typeGraph
-	}
-	
-	++ tClassEntity:TClassEntity{
-	}
+
 	
 }
 
 #correspondence {
-	classDeclToTClass:ClassDeclarationToTClass{
-		#src->mType
-		#trg->tClass
-	}
-	
+
 	++modifierToTClassEntity:ModifierToTClassEntity{
 		#src->mModifier
-		#trg->tClassEntity
+		#trg->tClass
 	}
 	
 }
 #attributeConditions {
-vKindToTVis(mModifier.visibility, tClassEntity.tVisibility)
+vKindToTVis(mModifier.visibility, tClass.tVisibility)
 }

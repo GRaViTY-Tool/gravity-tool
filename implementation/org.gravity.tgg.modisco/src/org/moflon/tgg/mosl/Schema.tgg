@@ -182,17 +182,17 @@ UnresolvedTypeDeclarationToTClass {
 
 ModifierToTClassEntity{
 		#src->Modifier
-		#trg->TClassEntity
+		#trg->TClass
 	}
 
 ModifierToTFieldEntity{
 		#src->Modifier
-		#trg->TFieldEntity
+		#trg->TFieldDefinition
 	}
 	
 ModifierToTMethodEntity{
 		#src->Modifier
-		#trg->TMethodEntity
+		#trg->TMethodDefinition
 	}
 }
 

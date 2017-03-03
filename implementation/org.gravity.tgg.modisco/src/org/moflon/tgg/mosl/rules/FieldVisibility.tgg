@@ -23,7 +23,6 @@
 #target {
 	
 	pg:TypeGraph{
-		++ -tDeclaredEntities->tFieldEntity
 	}
 	tField:TField{
 		-pg->pg
@@ -33,13 +32,7 @@
 	}
 	tFieldDefinition:TFieldDefinition{
 		-signature->tFieldSignature
-		++ -tFieldEntity->tFieldEntity
-	}
-	
-	++tFieldEntity:TFieldEntity{
-		
-	}
-	
+	}	
 }
 
 #correspondence {
@@ -62,12 +55,12 @@
 	
 	++ modifierToTFieldEntity:ModifierToTFieldEntity{
 		#src->modifier
-		#trg->tFieldEntity
+		#trg->tFieldDefinition
 	}
 	
 	
 }
 
 #attributeConditions {
-	vKindToTVis(modifier.visibility, tFieldEntity.tVisibility)
+	vKindToTVis(modifier.visibility, tFieldDefinition.tVisibility)
 }
