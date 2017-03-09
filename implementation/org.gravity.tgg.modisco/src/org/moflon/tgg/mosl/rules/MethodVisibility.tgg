@@ -4,65 +4,39 @@
 #rule MethodVisibility #with org.gravity.tgg.modisco
 
 #source { 
-	mModel:MGravityModel{
-		
-	}
-	mMethodName:MMethodName{
-		-model->mModel
-	}
-	mMethodSignature:MMethodSignature{
-		-mMethodName->mMethodName
-	}
+
 	mMethodDefinition:MMethodDefinition{
-		-mMethodSignature->mMethodSignature
-		++ -modifier->modifier
+		++ -modifier->mModifier
 	}
 	
-	++modifier:Modifier{
+	++mModifier:Modifier{
 	}
 	
 }
 
 #target {
-	pg:TypeGraph{
-	}
-	
-	tMethod:TMethod{
-		-pg->pg
-	}
-	
-	tMethodSignature:TMethodSignature{
-		-method->tMethod
-	}
+
 	tMethodDefinition:TMethodDefinition{
-		-signature->tMethodSignature
+		++ -tModifier->tModifier
+	}
+	++ tModifier:TModifier{
+		
 	}
 }
 
 #correspondence {
-	mModelToTypeGraph:ModelToTypeGraph{
-		#src->mModel
-		#trg->pg
-	}
-	mMethodToTMethod:MMethodNameToTMethod{
-		#src->mMethodName
-		#trg->tMethod
-	}
-	mSigToSig:MMethodSignatureToTMethodSignature{
-		#src->mMethodSignature
-		#trg->tMethodSignature
-	}
+
 	mMethodToTMethodDefinition:MMethodDefinitionToTMethodDefinition{
 		#src->mMethodDefinition
 		#trg->tMethodDefinition
 	}
 	
-	++modifierToTMethodEntity:ModifierToTMethodEntity{
-		#src->modifier
-		#trg->tMethodDefinition
+	++modifierToTMethodEntity:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
 	}
 }
 
 #attributeConditions {
-	vKindToTVis(modifier.visibility, tMethodDefinition.tVisibility)
+	vKindToTVis(mModifier.visibility, tModifier.tVisibility)
 }

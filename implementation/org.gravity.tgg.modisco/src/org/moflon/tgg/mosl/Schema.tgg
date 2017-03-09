@@ -194,6 +194,21 @@ ModifierToTMethodEntity{
 		#src->Modifier
 		#trg->TMethodDefinition
 	}
+	
+ModifierToAbstractType{
+	#src->Modifier
+	#trg->TAbstractType
+}
+
+ModifierToConstructorVisibility{
+	#src->Modifier
+	#trg->TConstructorDefinition
+}
+
+MModifierToTModifier{
+	#src->Modifier
+	#trg->TModifier
+}
 }
 
 #attributeConditions {

@@ -73,8 +73,8 @@
         eType="#//TAccess" eOpposite="#//TAccess/tTarget"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tAccessing" upperBound="-1"
         eType="#//TAccess" containment="true" eOpposite="#//TAccess/tSource"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" lowerBound="1"
-        eType="#//TVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethod">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
@@ -189,8 +189,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" lowerBound="1"
-        eType="#//TVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
@@ -210,6 +210,9 @@
     <eLiterals name="TPackage" value="1"/>
     <eLiterals name="TProtected" value="2"/>
     <eLiterals name="TPublic" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TModifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
   </eClassifiers>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">

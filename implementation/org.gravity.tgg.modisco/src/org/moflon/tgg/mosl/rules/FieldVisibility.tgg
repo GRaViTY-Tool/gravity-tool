@@ -4,63 +4,37 @@
 #rule FieldVisibility #with org.gravity.tgg.modisco
 
 #source { 
-	mModel:MGravityModel{}
-	mFieldName:MFieldName{
-		-model->mModel
-	}
-	mFieldSignature:MFieldSignature{
-		-mFieldName->mFieldName
-	}
 	mFieldDefinition:MFieldDefinition{
-		-mFieldSignature->mFieldSignature
-		++ -modifier->modifier
+		++ -modifier->mModifier
 	}
 	
-	++modifier:Modifier{	
+	++mModifier:Modifier{	
 	}
 }
 
 #target {
-	
-	pg:TypeGraph{
-	}
-	tField:TField{
-		-pg->pg
-	}
-	tFieldSignature:TFieldSignature{
-		-field->tField
-	}
+
 	tFieldDefinition:TFieldDefinition{
-		-signature->tFieldSignature
+		++ -tModifier->tModifier
 	}	
+	++ tModifier:TModifier{
+		
+	}
 }
 
 #correspondence {
-	mModelToTypeGraph:ModelToTypeGraph{
-		#src->mModel
-		#trg->pg
-	}
-	mFieldToTField:MFieldNameToTField{
-		#src->mFieldName
-		#trg->tField
-	}
-	mFieldSignatureToTFieldSignature:MFieldSignatureToTFieldSignature{
-		#src->mFieldSignature
-		#trg->tFieldSignature
-	}
+
 	mFieldDefinitionToTFieldDefinition:MFieldDefinitionToTFieldDefinition{
 		#src->mFieldDefinition
 		#trg->tFieldDefinition
 	}
-	
-	++ modifierToTFieldEntity:ModifierToTFieldEntity{
-		#src->modifier
-		#trg->tFieldDefinition
+
+	++ mModifierToTModifier:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
 	}
-	
-	
 }
 
 #attributeConditions {
-	vKindToTVis(modifier.visibility, tFieldDefinition.tVisibility)
+	vKindToTVis(mModifier.visibility, tModifier.tVisibility)
 }

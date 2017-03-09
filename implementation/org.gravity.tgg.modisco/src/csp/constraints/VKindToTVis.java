@@ -51,19 +51,30 @@ public class VKindToTVis extends TGGConstraintImpl {
     		TVisibility tVisibility = (TVisibility) var_1.getValue();
     		var_0.bindToValue(TVisibilityToVKind(tVisibility));
     		setSatisfied(true);
-    		
+    		break;
     	case "BF":
     		VisibilityKind vKind = (VisibilityKind) var_0.getValue();
     		var_1.bindToValue(VKindToTVisibility(vKind));
     		setSatisfied(true);
+    		break;
     	case "BB":
+
     		TVisibility tVis = (TVisibility) var_1.getValue();
     		VisibilityKind visKind = (VisibilityKind) var_0.getValue();
     		setSatisfied(visKind.equals(TVisibilityToVKind(tVis)));
+    		break;
+    		
     	case "FF":
     		setSatisfied(true);
+    		break;
     	default: 
     		setSatisfied(true);
+    		break;
+    	}
+    	
+    	if(!satisfied){
+    		int i = 0;
+    		i++;
     	}
     	
     	
