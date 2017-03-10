@@ -1,0 +1,16 @@
+
+partial class TMemberImpl {
+
+
+
+@model getMinimumRequiredVisibility (TMember tMember) <--
+
+		
+		if(this.getDefinedBy() == tMember.getDefinedBy()){
+			return TVisibility.TPRIVATE;
+		}
+		
+		return this.getDefinedBy().getMinimumRequiredVisibility(tMember.getDefinedBy());
+-->
+
+}

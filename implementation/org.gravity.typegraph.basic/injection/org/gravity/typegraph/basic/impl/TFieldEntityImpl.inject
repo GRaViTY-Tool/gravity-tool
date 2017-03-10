@@ -1,0 +1,40 @@
+
+import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TVisibility;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TDeclaredEntity;
+
+partial class TFieldEntityImpl {
+
+@members <--
+
+	private TClass getTClass() {
+		TAbstractType type = this.tFieldDefinition.getDefinedBy();
+		if (type instanceof TClass) {
+			TClass definingClass = (TClass) type;
+			return definingClass;
+		}
+		return null;
+	}
+	@Override
+	public TDeclaredEntity getParent() {
+		TClass tClass = getTClass();
+		if (tClass != null) {
+			return tClass.getTClassEntity();
+		}
+		return null;
+	}
+	@Override
+	public TPackage getPackage() {
+		TClass tClass = getTClass();
+		if (tClass != null) {
+			return tClass.getPackage();
+		}
+		return null;
+	}
+
+	
+-->
+
+}

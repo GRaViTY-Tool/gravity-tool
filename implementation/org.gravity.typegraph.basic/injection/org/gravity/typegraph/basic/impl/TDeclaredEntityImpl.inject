@@ -1,0 +1,19 @@
+
+import org.eclipse.emf.common.util.BasicEList;
+
+partial class TDeclaredEntityImpl {
+
+
+
+@model getParents () <--
+
+		EList<TDeclaredEntity> parents = new BasicEList<TDeclaredEntity>();
+		TDeclaredEntity parent = this.getParent();
+		while (parent != null) {
+			parents.add(parent);
+			parent = parent.getParent();
+		}
+		return parents;
+-->
+
+}
