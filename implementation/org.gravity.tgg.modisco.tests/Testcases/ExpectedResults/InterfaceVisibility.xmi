@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.11" interfaces="//@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15" tName="InterfaceVisibility">
+  <packages classes="//@ownedTypes.11" interfaces="//@ownedTypes.9 //@ownedTypes.10" ownedTypes="//@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" typeGraph="/" tName="(default package)">
+    <subpackage interfaces="//@ownedTypes.12" ownedTypes="//@ownedTypes.12" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.13" ownedTypes="//@ownedTypes.13" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.14" ownedTypes="//@ownedTypes.14" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.15" ownedTypes="//@ownedTypes.15" typeGraph="/" tName="InterfaceContainer$"/>
+  </packages>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" tName="PackageInterface">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" tName="PublicInterface">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="InterfaceContainer">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tName="PackageInnerInterface">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tName="PublicInnerInterface">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.2" tName="PrivateInterface">
+    <tModifier/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.3" tName="protectedInterface">
+    <tModifier tVisibility="TProtected"/>
+  </ownedTypes>
+</org.gravity.typegraph.basic:TypeGraph>

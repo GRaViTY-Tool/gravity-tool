@@ -23,10 +23,6 @@
 }
 
 #correspondence {
-	mBodyToTAnnotation : BodyDeclarationToTAnnotatable {
-	#src->mType
-	#trg->tType
-}
 mTypeToTType : TypeToTAbstractType {
 	#src->mType
 	#trg->tType
