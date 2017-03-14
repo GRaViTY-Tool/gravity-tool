@@ -22,77 +22,14 @@ public class MailApp {
 
 	private List<Message> inbox= new ArrayList<Message>();
 	private List<Message> outbox= new ArrayList<Message>();
-	private List<Contact> contacts= new ArrayList<Contact>();
+	protected List<Contact> contacts= new ArrayList<Contact>();
 	private List<Appointment> appointments= new ArrayList<Appointment>();
-	
-	private SecureConnection connection;
-	
-	//---------------------------- Secure Connection-----
-	
-	private void createSecureConnection(String host, int port){
-		connection = new SecureConnection(host, port);
-		connect(host, port);
-		new Thread( connection ).start();
-	}
-	
-	private void CreateSecureRandom(){
-		SecureRandom secureRandom = new SecureRandom();
-	    secureRandom.nextInt();
-	    SecureConnection.setSecureRandom(secureRandom);
-	}
-	
-	  private void setupServerKeystore() throws GeneralSecurityException, IOException {
-		    KeyStore serverKeyStore = KeyStore.getInstance( "JKS" );
-		    serverKeyStore.load( new FileInputStream( "server.public" ), 
-		                        "public".toCharArray() );
-		    connection.setServerKeyStore(serverKeyStore);
-		    
-	  }
-	  
-	  private void setupSSLContext() throws GeneralSecurityException, IOException {
-		    TrustManagerFactory tmf = TrustManagerFactory.getInstance( "SunX509" );
-		    tmf.init( connection.getServerKeyStore());
-
-		    
-		    KeyManagerFactory kmf = connection.createKeyManagerFactory();
-		    SSLContext sslContext = SSLContext.getInstance( "TLS" );
-		    sslContext.init( kmf.getKeyManagers(),
-		                     tmf.getTrustManagers(),
-		                     connection.getSecureRandom() );
-		    
-		    connection.setSslContext(sslContext);
-		  }
-	
-	
-	private void connect(String host, int port){
-	    try {
-	        setupServerKeystore();
-	        connection.setupClientKeyStore();
-	        setupSSLContext();
-
-	        SSLSocketFactory sf = connection.getSslContext().getSocketFactory();
-	        SSLSocket socket = (SSLSocket)sf.createSocket( host, port );
-
-	        InputStream in = socket.getInputStream();
-	        OutputStream out = socket.getOutputStream();
-
-	        connection.setDin(new DataInputStream( in ));
-	        connection.setDout(new DataOutputStream( out ));
-	      } catch( GeneralSecurityException gse ) {
-	        gse.printStackTrace();
-	      } catch( IOException ie ) {
-	        ie.printStackTrace();
-	      }
-	}
-	
-	
-	
-	//----------------------------------------------------
-	
-	
 	
 	public static void main(String[] args) {
 		MailApp app = new MailApp();
+		
+		app.addContact("Hans@yahoo.de", "Hans" , "Müller");
+		
 		while(true){
 			app.run();
 		}
@@ -102,21 +39,29 @@ public class MailApp {
 		send();
 	}
 
-	public void createContact(String email, String name, String surname){
+	public Contact createContact(String email, String name, String surname){
 		Contact contact = new Contact();
 				contact.setEmail(email);
 				contact.setName(name);
 				contact.setSurname(surname);
-		contacts.add(contact);
+				return contact;
 	}
 	
-	public void createContact(String email, String name, String surname, String location){
+	public void addContact(String email, String name, String surname){
+		contacts.add(createContact(email, name, surname));
+	}
+	
+	public ContactWithPicture createContact(String email, String name, String surname, String location){
 		ContactWithPicture contact = new ContactWithPicture();
-				contact.setEmail(email);
-				contact.setName(name);
-				contact.setSurname(surname);
-				contact.setLocation(location);
-		contacts.add(contact);
+		contact.setEmail(email);
+		contact.setName(name);
+		contact.setSurname(surname);
+		contact.setLocation(location);
+		return contact;
+	}
+	
+	public void addContact(String email, String name, String surname, String location){
+		contacts.add(createContact(email, name, surname));
 	}
 	
 	public void writeMessage(String[] email, String title, String text){
