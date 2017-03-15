@@ -51,14 +51,6 @@ public class MailApp {
 		contacts.add(createContact(email, name, surname));
 	}
 	
-	public ContactWithPicture createContact(String email, String name, String surname, String location){
-		ContactWithPicture contact = new ContactWithPicture();
-		contact.setEmail(email);
-		contact.setName(name);
-		contact.setSurname(surname);
-		contact.setLocation(location);
-		return contact;
-	}
 	
 	public void addContact(String email, String name, String surname, String location){
 		contacts.add(createContact(email, name, surname));
@@ -77,13 +69,16 @@ public class MailApp {
 		outbox.clear();
 	}
 	
-	public void createAppointment(String title, String location, long date,List<Contact> participants){
+	public void addAppointment(String title, String location, long date,List<Contact> participants){
+		appointments.add(createAppointment(title, location, date, participants));
+	}
+	public Appointment createAppointment(String title, String location, long date,List<Contact> participants){
 		Appointment appointment = new Appointment();
 		appointment.setDate(date);
 		appointment.setLocation(location);
 		appointment.setTitle(title);
 		appointment.setParticipants(participants);
-		appointments.add(appointment);
+		return  appointment;
 	}
 
 }

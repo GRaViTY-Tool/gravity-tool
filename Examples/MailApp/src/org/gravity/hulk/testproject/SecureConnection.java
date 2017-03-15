@@ -20,14 +20,9 @@ import javax.net.ssl.SSLContext;
 
 public class SecureConnection implements Runnable{
 
-	static private final String passphrase = "clientpw";
-	static private SecureRandom secureRandom;
-	
-	public static void setSecureRandom(SecureRandom secureRandom){
-		 secureRandom = secureRandom;
-	}
+
 	public static SecureRandom getSecureRandom(){
-		 return secureRandom;
+		 return SecureRandomGenerator.getSecureRandom();
 	}
 	
 	
@@ -37,19 +32,18 @@ public class SecureConnection implements Runnable{
 	private KeyStore serverKeyStore;
 	private SSLContext sslContext;
 	private Set postings = new HashSet();
-	
 	private String host;
 	private int port;
 	
 	public SecureConnection(String host, int port){
-		host = host;
-		port = port;
+		this.host = host;
+		this.port = port;
 	}
 	
-	public void setupClientKeyStore() throws GeneralSecurityException, IOException{
+	public void setupClientKeyStore(String passphrase) throws GeneralSecurityException, IOException{
 		clientKeyStore = KeyStore.getInstance( "JKS" );
 	    clientKeyStore.load( new FileInputStream( "client.private" ),
-	    		SecureConnection.passphrase.toCharArray() );
+	    		passphrase.toCharArray() );
 	}
 	
 	public DataInputStream getDin() {
@@ -93,8 +87,8 @@ public class SecureConnection implements Runnable{
 		        //read din
 		      }
 		  }
-	public KeyManagerFactory createKeyManagerFactory() throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException {
-		KeyManagerFactory kmf = KeyManagerFactory.getInstance( "SunX509" );
+	public KeyManagerFactory createKeyManagerFactory(String passphrase) throws NoSuchAlgorithmException, UnrecoverableKeyException, KeyStoreException {
+		KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
 	    kmf.init( getClientKeyStore(), passphrase.toCharArray() );
 	    return kmf;
 	}

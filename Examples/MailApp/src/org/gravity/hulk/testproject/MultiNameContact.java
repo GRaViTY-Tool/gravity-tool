@@ -1,6 +1,6 @@
 package org.gravity.hulk.testproject;
 
-public class ComplexContact extends Contact {
+public class MultiNameContact extends Contact {
 
 	private String[] name;
 
@@ -16,11 +16,11 @@ public class ComplexContact extends Contact {
 		this.name = name.split(" ");
 	}
 	
-	public ComplexContact createContact(String email, String name, String surname){
-		ComplexContact contact = new ComplexContact();
+	public MultiNameContact createContact(String email, String name, String surname){
+		MultiNameContact contact = new MultiNameContact();
 		contact.setEmail(email);
 		contact.setName(name);
 		contact.setSurname(surname);
-		return new ComplexContact();
+		return new MultiNameContact();
 	}
 }
