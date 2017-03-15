@@ -23,6 +23,8 @@ partial class TInterfaceImpl {
 		HashSet<TInterface> parents = new HashSet<TInterface>();
 		HashSet<TInterface> otherParents = new HashSet<TInterface>();
 
+		parents.add(this);
+		otherParents.add(tInterface);
 		this.fillParents(parents);
 		tInterface.fillParents(otherParents);
 

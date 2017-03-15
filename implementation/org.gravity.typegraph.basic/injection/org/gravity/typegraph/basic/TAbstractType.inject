@@ -1,0 +1,12 @@
+
+partial class TAbstractType {
+
+@members <--
+
+	
+	TMethodSignature getMethodSignature(String methodSignatureName);
+
+	
+-->
+
+}

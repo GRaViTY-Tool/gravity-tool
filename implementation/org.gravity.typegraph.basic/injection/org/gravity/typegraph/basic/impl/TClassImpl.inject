@@ -34,7 +34,9 @@ partial class TClassImpl {
 
 	private boolean hasCommonSuperClass(TClassImpl tClass) {
 		List<TClass> parents = this.getParents();
+		parents.add(this);
 		List<TClass> otherParents = tClass.getParents();
+		otherParents.add(tClass);
 
 		return (!Collections.disjoint(parents, otherParents));
 	}

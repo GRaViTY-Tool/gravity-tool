@@ -3,7 +3,7 @@ partial class TypeGraphImpl {
 
 @members <--
 
-	public TPackage getPackage(String string){
+	public TPackage getPackage(String string) {
 		String[] names = string.split("\\.");
 		EList<TPackage> next = getPackages();
 		for (int i = 0; i < names.length;) {
@@ -28,7 +28,11 @@ partial class TypeGraphImpl {
 
 	public TClass getClass(String fullyQualifiedName) {
 		int index = fullyQualifiedName.lastIndexOf('.');
-		TPackage tPackage = getPackage(fullyQualifiedName.substring(0, index));
+		String defaultPackage = "default";
+		if (index > 0) {
+			defaultPackage = fullyQualifiedName.substring(0, index);
+		}
+		TPackage tPackage = getPackage(defaultPackage);
 		if (tPackage != null) {
 			String name = fullyQualifiedName.substring(index + 1);
 			for (TClass tType : tPackage.getClasses()) {
@@ -36,13 +40,24 @@ partial class TypeGraphImpl {
 					return tType;
 				}
 			}
+		}else{
+			String name = fullyQualifiedName.substring(index + 1);
+			for (TClass tType : getClasses()) {
+				if (tType.getTName().equals(name) || tType.getTName().contentEquals(fullyQualifiedName)) {
+					return tType;
+				}
+		}
 		}
 		return null;
 	}
 
 	public TInterface getInterface(String fullyQualifiedName) {
 		int index = fullyQualifiedName.lastIndexOf('.');
-		TPackage tPackage = getPackage(fullyQualifiedName.substring(0, index));
+		String defaultPackage = "default";
+		if (index > 0) {
+			defaultPackage = fullyQualifiedName.substring(0, index);
+		}
+		TPackage tPackage = getPackage(defaultPackage);
 		if (tPackage != null) {
 			String name = fullyQualifiedName.substring(index + 1);
 			for (TInterface tType : tPackage.getInterfaces()) {
@@ -56,7 +71,11 @@ partial class TypeGraphImpl {
 
 	public TAbstractType getType(String fullyQualifiedName) {
 		int index = fullyQualifiedName.lastIndexOf('.');
-		TPackage tPackage = getPackage(fullyQualifiedName.substring(0, index));
+		String defaultPackage = "default";
+		if (index > 0) {
+			defaultPackage = fullyQualifiedName.substring(0, index);
+		}
+		TPackage tPackage = getPackage(defaultPackage);
 		if (tPackage != null) {
 			String name = fullyQualifiedName.substring(index + 1);
 			for (TAbstractType tType : tPackage.getOwnedTypes()) {
@@ -67,18 +86,6 @@ partial class TypeGraphImpl {
 		}
 		return null;
 	}
-	
--->
-
-@model  toString()  <--
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (tName: ");
-		result.append(tName);
-		result.append(')');
-		return result.toString();
 	
 -->
 
