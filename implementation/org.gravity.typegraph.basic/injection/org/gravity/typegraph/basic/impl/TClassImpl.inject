@@ -32,7 +32,12 @@ partial class TClassImpl {
 		return parents;
 	}
 
-	private boolean hasCommonSuperClass(TClassImpl tClass) {
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		if(!(tAbstractType instanceof TClassImpl)){
+			return false;
+		}
+		TClassImpl tClass = (TClassImpl) tAbstractType;
+		
 		List<TClass> parents = this.getParents();
 		parents.add(this);
 		List<TClass> otherParents = tClass.getParents();
@@ -41,23 +46,6 @@ partial class TClassImpl {
 		return (!Collections.disjoint(parents, otherParents));
 	}
 
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
-		}
-
-		if (tAbstractType instanceof TClassImpl && hasCommonSuperClass((TClassImpl) tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
-
-	}
 	
 -->
 

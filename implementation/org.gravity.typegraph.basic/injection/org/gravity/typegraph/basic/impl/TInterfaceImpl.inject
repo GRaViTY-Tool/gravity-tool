@@ -19,7 +19,11 @@ partial class TInterfaceImpl {
 		return parents;
 	}
 
-	private boolean hasCommonSuperInterface(TInterfaceImpl tInterface) {
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		if (!(tAbstractType instanceof TInterfaceImpl)) {
+			return false;
+		}
+		TInterfaceImpl tInterface = (TInterfaceImpl) tAbstractType;
 		HashSet<TInterface> parents = new HashSet<TInterface>();
 		HashSet<TInterface> otherParents = new HashSet<TInterface>();
 
@@ -29,24 +33,6 @@ partial class TInterfaceImpl {
 		tInterface.fillParents(otherParents);
 
 		return (!Collections.disjoint(parents, otherParents));
-	}
-
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
-		}
-
-		if (tAbstractType instanceof TInterfaceImpl && hasCommonSuperInterface((TInterfaceImpl) tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
-
 	}
 	
 -->

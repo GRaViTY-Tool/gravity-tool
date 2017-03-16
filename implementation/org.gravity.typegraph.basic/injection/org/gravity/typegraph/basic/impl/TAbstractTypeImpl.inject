@@ -27,6 +27,41 @@ partial class TAbstractTypeImpl {
 		}
 		return null;
 	}
+
+	protected abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
+
+	private boolean isInnerType(TAbstractType tAbstractType) {
+		String suffix = "$";
+		String otherPackage = tAbstractType.getPackage().getTName();
+		String thisPackage = this.getPackage().getTName();
+		if (otherPackage.endsWith(suffix)) {
+			otherPackage = otherPackage.substring(0, otherPackage.length() - 1);
+			if (otherPackage.equals(this.getTName())) {
+				return true;
+			}
+		}
+
+		if (thisPackage.endsWith(suffix)) {
+			thisPackage = thisPackage.substring(0, thisPackage.length() - 1);
+			if (thisPackage.equals(tAbstractType.getTName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private TPackage getRealPackage(TAbstractType tType){
+		String suffix = "$";
+		String packageString = tType.getPackage().getTName();
+		
+		if (packageString.endsWith(suffix)) {
+			packageString = packageString.substring(0, packageString.length() - 1);
+			return getRealPackage(getPg().getClass(packageString));
+		}else{
+			return tType.getPackage();
+		}
+	}
+		
 	
 -->
 
@@ -49,6 +84,27 @@ partial class TAbstractTypeImpl {
 		}
 		builder.append(getTName());
 		return builder.toString();
+-->
+
+@model getMinimumRequiredVisibility (TAbstractType tAbstractType) <--
+
+		if (this == tAbstractType) {
+			return TVisibility.TPRIVATE;
+		}
+
+		if (isInnerType(tAbstractType)) {
+			return TVisibility.TPRIVATE;
+		}
+
+		if (getRealPackage(this) == getRealPackage(tAbstractType)) {
+			return TVisibility.TPACKAGE;
+		}
+
+		if (hasCommonSuperType(tAbstractType)) {
+			return TVisibility.TPROTECTED;
+		}
+
+		return TVisibility.TPUBLIC;
 -->
 
 }
