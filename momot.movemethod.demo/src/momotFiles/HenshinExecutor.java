@@ -48,13 +48,13 @@ import org.osgi.framework.Bundle;
 public class HenshinExecutor {
 
 
-	static HenshinResourceSet resourceSet;
-	static Module module;
-	static EGraph graph;
-	static String modulePath = "transformations/MoveMethod.henshin";
+	HenshinResourceSet resourceSet;
+	Module module;
+	EGraph graph;
+	String modulePath = "transformations/MoveMethod.henshin";
 	
 
-	public static HashMap<String, Object> getMoveMethodParameter(TypeGraph pg, String methodName, String sourceClassName, String targetClassName){
+	public HashMap<String, Object> getMoveMethodParameter(TypeGraph pg, String methodName, String sourceClassName, String targetClassName){
 		HashMap<String, Object> parameters = new HashMap<String, Object>();
 		
 		
@@ -70,7 +70,7 @@ public class HenshinExecutor {
 		return parameters;
 	}
 	
-	public static void initialize(EGraph egraph){
+	public void initialize(EGraph egraph){
 		// Create a resource set with a base directory:
 		graph = egraph;
 		resourceSet = new HenshinResourceSet("");
@@ -88,33 +88,59 @@ public class HenshinExecutor {
 		module = (Module) r.getContents().get(0);
 	}
 	
-	public static void main(String[] args) {
-		
+	
+	public void run(){
 		//register
 		BasicPackage.eINSTANCE.eClass();
 		
 		
 		boolean saveResult = true;
 		
-		String graphPath  = "input/dyn1_Test";
-		//String graphPath  = "input/14_Xerces2.7.0";
+		//String graphPath  = "input/dyn1_Test";
+		//String graphPath  = "input/03_JUnit3.8.2";
 		
-
+		//String graphPath       = "input/00_JavaSolitaire1.3";
+		//String graphPath       = "input/01_QuickUML2001";
+		String graphPath = "input/02_JsciCalc2.1.0";
+		//String graphPath       = "input/03_JUnit3.8.2";
+		//String graphPath       = "input/04_Gantt1.10.2";	
+		//String graphPath       = "input/05_Nutch0.9";
+		//String graphPath       = "input/06_Lucene1.4.3";
+		//String graphPath       = "input/07_log4j1.2.17";
+		//String graphPath       = "input/08_JHotDraw7.6";
+		//String graphPath       = "input/09_JEdit4.0";
+		//String graphPath       = "input/10_PMD3.9";
+		//String graphPath       = "input/11_JTransform3.1";
+		//String graphPath       = "input/12_iTrust21.0";
+			
+		
 		resourceSet = new HenshinResourceSet("");
 		module = resourceSet.getModule(modulePath);
 		graph = new EGraphImpl(resourceSet.getResource(graphPath+".xmi"));
 		// Load the module:
 		//module = resourceSet.getModule(modulePath+".henshin", false);
 		
+		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
+		double violations = FitnessCalculator.visiblility(pg);
+		
 		String sourceClass= "dyn1_Test.B";
 		String targetClass = "package1.C";
 		String method= "n()";
 
 		
+				
 		
 		
-		HashMap<String, Object> parameters = getMoveMethodParameter((TypeGraph)graph.getRoots().get(0), method, sourceClass, targetClass);
-		boolean success = executeCheckPreconditions(parameters);
+		//HashMap<String, Object> parameters = new HashMap<String, Object>();
+	
+		//parameters.put("firstClass", pg.getClass(sourceClass));
+		//parameters.put("secondClass", pg.getClass(targetClass));
+		
+		//boolean success = executeUnit("libCheck", parameters);
+		
+
+		HashMap<String, Object> parameters = getMoveMethodParameter(pg, method, sourceClass, targetClass);
+		boolean success = executeMain(parameters);
 		//HashMap<String, Object> parameters = getDynParameter("n()", "dyn1_Test.B", (TypeGraph)graph.getRoots().get(0));
 		//boolean success = executeDyn(parameters);
 		
@@ -125,7 +151,15 @@ public class HenshinExecutor {
 		
 	}
 	
-	public static HashMap<String, Object> getDynParameter(String methodName, String sourceClassName, TypeGraph graph){
+	public static void main(String[] args) {
+		
+
+		new HenshinExecutor().run();
+
+		
+	}
+	
+	public HashMap<String, Object> getDynParameter(String methodName, String sourceClassName, TypeGraph graph){
 		HashMap<String, Object> parameters = new HashMap<String, Object>();
 		TClass sourceClass= graph.getClass(sourceClassName);
 		TMethodSignature methodSig = sourceClass.getMethodSignature(methodName);
@@ -134,29 +168,29 @@ public class HenshinExecutor {
 		return parameters;
 	}
 
-	public static boolean executeDyn(HashMap<String, Object> parameters){
+	public boolean executeDyn(HashMap<String, Object> parameters){
 		return executeUnit("dynMoveMethod", parameters);
 	}
 
 	
-	public static boolean executeMain(HashMap<String, Object> parameters){
+	public boolean executeMain(HashMap<String, Object> parameters){
 		return executeUnit("main", parameters);
 	}
 	
-	public static boolean executeMoveMethod(HashMap<String, Object> parameters){
+	public boolean executeMoveMethod(HashMap<String, Object> parameters){
 		return executeUnit("MoveMethod", parameters);
 	}
 	
 	
-	public static boolean executeCheckPreconditions(HashMap<String, Object> parameters){
+	public boolean executeCheckPreconditions(HashMap<String, Object> parameters){
 		return executeUnit("checkPreconditions", parameters);
 	}
 	
-	public static boolean executepreconditions(HashMap<String, Object> parameters){
+	public boolean executepreconditions(HashMap<String, Object> parameters){
 		return executeUnit("preconditions", parameters);
 	}
 	
-	public static boolean executeUnit(String unitName, Map<String, Object> parameters ){
+	public boolean executeUnit(String unitName, Map<String, Object> parameters ){
 		// Create an engine and a rule application:
 		Engine engine = new EngineImpl();
 		UnitApplication unit = new UnitApplicationImpl(engine);

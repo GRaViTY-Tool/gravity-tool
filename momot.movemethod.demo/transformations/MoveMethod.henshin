@@ -44,11 +44,17 @@
       <nodes xmi:id="_m1jhAelEEeajyLi0pWzMmQ" name="methodSig" incoming="_zUj_YOlEEeajyLi0pWzMmQ" outgoing="_Q0Do0fqUEeae5NW9ACbbhw">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
       </nodes>
-      <nodes xmi:id="_oYf6celEEeajyLi0pWzMmQ" name="methodDef" incoming="_04P_sOlEEeajyLi0pWzMmQ _Q0Do0fqUEeae5NW9ACbbhw">
+      <nodes xmi:id="_oYf6celEEeajyLi0pWzMmQ" name="methodDef" incoming="_04P_sOlEEeajyLi0pWzMmQ _Q0Do0fqUEeae5NW9ACbbhw" outgoing="_jBQ_UAlqEeeZ5sWlzg-sQQ">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_svKYsOlEEeajyLi0pWzMmQ" name="container" outgoing="_u8RJcOlEEeajyLi0pWzMmQ _w00mgOlEEeajyLi0pWzMmQ">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer"/>
+      </nodes>
+      <nodes xmi:id="_fvTfUAlqEeeZ5sWlzg-sQQ" incoming="_jBQ_UAlqEeeZ5sWlzg-sQQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TTextAnnotation"/>
+        <attributes xmi:id="_gCruUAlqEeeZ5sWlzg-sQQ" value="sourceClass.getTName()+&quot;.&quot;+methodSig.getMethod().getTName()+&quot;->&quot;+targetClass.getTName()">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TTextAnnotation/text"/>
+        </attributes>
       </nodes>
       <edges xmi:id="_u8RJcOlEEeajyLi0pWzMmQ" source="_svKYsOlEEeajyLi0pWzMmQ" target="_j21GEelEEeajyLi0pWzMmQ">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
@@ -64,6 +70,9 @@
       </edges>
       <edges xmi:id="_Q0Do0fqUEeae5NW9ACbbhw" source="_m1jhAelEEeajyLi0pWzMmQ" target="_oYf6celEEeajyLi0pWzMmQ">
         <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_jBQ_UAlqEeeZ5sWlzg-sQQ" source="_oYf6celEEeajyLi0pWzMmQ" target="_fvTfUAlqEeeZ5sWlzg-sQQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotatable/tAnnotation"/>
       </edges>
     </rhs>
     <mappings xmi:id="_j21GEulEEeajyLi0pWzMmQ" origin="_j21GEOlEEeajyLi0pWzMmQ" image="_j21GEelEEeajyLi0pWzMmQ"/>
@@ -169,16 +178,16 @@
     <parameters xmi:id="_tEM_IelFEeajyLi0pWzMmQ" name="targetClass">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
     </parameters>
-    <parameterMappings xmi:id="_KKvREAiuEeeu0bGbdiaZxA" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_I8JMcAitEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_KKvREQiuEeeu0bGbdiaZxA" source="_I8JMcAitEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_KKvREgiuEeeu0bGbdiaZxA" source="_tEM_IelFEeajyLi0pWzMmQ" target="_I8JMcQitEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_KKvREwiuEeeu0bGbdiaZxA" source="_I8JMcQitEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_KKvRFAiuEeeu0bGbdiaZxA" source="_FG2sQAgFEeePUNNlehhslg" target="_m-BGEP5kEea2eYVWH8dvOg"/>
-    <parameterMappings xmi:id="_KKvRFQiuEeeu0bGbdiaZxA" source="_m-BGEP5kEea2eYVWH8dvOg" target="_FG2sQAgFEeePUNNlehhslg"/>
-    <parameterMappings xmi:id="_j-j0cAiuEeeu0bGbdiaZxA" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_RTQe0AihEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_j-j0cQiuEeeu0bGbdiaZxA" source="_RTQe0AihEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_j-j0cgiuEeeu0bGbdiaZxA" source="_tEM_IelFEeajyLi0pWzMmQ" target="_RTQe0QihEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_j-j0cwiuEeeu0bGbdiaZxA" source="_RTQe0QihEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_WgvSYAo4Eee5u8AKTxKgpw" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_I8JMcAitEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_WgvSYQo4Eee5u8AKTxKgpw" source="_I8JMcAitEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_Wg4cUAo4Eee5u8AKTxKgpw" source="_tEM_IelFEeajyLi0pWzMmQ" target="_I8JMcQitEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_Wg4cUQo4Eee5u8AKTxKgpw" source="_I8JMcQitEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_Wg4cUgo4Eee5u8AKTxKgpw" source="_FG2sQAgFEeePUNNlehhslg" target="_m-BGEP5kEea2eYVWH8dvOg"/>
+    <parameterMappings xmi:id="_Wg4cUwo4Eee5u8AKTxKgpw" source="_m-BGEP5kEea2eYVWH8dvOg" target="_FG2sQAgFEeePUNNlehhslg"/>
+    <parameterMappings xmi:id="_XDKC8Ao4Eee5u8AKTxKgpw" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_RTQe0AihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_XDKC8Qo4Eee5u8AKTxKgpw" source="_RTQe0AihEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_XDKC8go4Eee5u8AKTxKgpw" source="_tEM_IelFEeajyLi0pWzMmQ" target="_RTQe0QihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_XDKC8wo4Eee5u8AKTxKgpw" source="_RTQe0QihEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_IUiWkP38EeavM8FOu87CAg" name="dynMoveMethod">
     <parameters xmi:id="_I8JMcAitEeeu0bGbdiaZxA" name="sourceClass">
@@ -409,27 +418,27 @@
     <mappings xmi:id="_eGJOkgi5Eeeu0bGbdiaZxA" origin="_eGJOkAi5Eeeu0bGbdiaZxA" image="_eGJOkQi5Eeeu0bGbdiaZxA"/>
     <mappings xmi:id="_fdwhwgi5Eeeu0bGbdiaZxA" origin="_fdwhwAi5Eeeu0bGbdiaZxA" image="_fdwhwQi5Eeeu0bGbdiaZxA"/>
   </units>
-  <units xsi:type="henshin:ConditionalUnit" xmi:id="_ByWzYAi6Eeeu0bGbdiaZxA" name="main" if="_q5eM8OlFEeajyLi0pWzMmQ" then="_er3dEOlEEeajyLi0pWzMmQ">
-    <parameters xmi:id="_EcrEkAi6Eeeu0bGbdiaZxA" name="methodSig">
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_etw8YAzkEee39JSi5LhZog" name="main" subUnits="_q5eM8OlFEeajyLi0pWzMmQ _er3dEOlEEeajyLi0pWzMmQ">
+    <parameters xmi:id="_hgoFkAzkEee39JSi5LhZog" name="methodSig">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
     </parameters>
-    <parameters xmi:id="_Ec0OgAi6Eeeu0bGbdiaZxA" name="sourceClass">
+    <parameters xmi:id="_hgoFkQzkEee39JSi5LhZog" name="sourceClass">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
     </parameters>
-    <parameters xmi:id="_Ec0OgQi6Eeeu0bGbdiaZxA" name="targetClass">
+    <parameters xmi:id="_hgoFkgzkEee39JSi5LhZog" name="targetClass">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
     </parameters>
-    <parameterMappings xmi:id="_J3knAAi6Eeeu0bGbdiaZxA" source="_EcrEkAi6Eeeu0bGbdiaZxA" target="_FG2sQAgFEeePUNNlehhslg"/>
-    <parameterMappings xmi:id="_J3knAQi6Eeeu0bGbdiaZxA" source="_FG2sQAgFEeePUNNlehhslg" target="_EcrEkAi6Eeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_J3knAgi6Eeeu0bGbdiaZxA" source="_Ec0OgAi6Eeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_J3knAwi6Eeeu0bGbdiaZxA" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_Ec0OgAi6Eeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_J3knBAi6Eeeu0bGbdiaZxA" source="_Ec0OgQi6Eeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_J3knBQi6Eeeu0bGbdiaZxA" source="_tEM_IelFEeajyLi0pWzMmQ" target="_Ec0OgQi6Eeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_LhTk8Ai6Eeeu0bGbdiaZxA" source="_EcrEkAi6Eeeu0bGbdiaZxA" target="_ioJscOlEEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_LhTk8Qi6Eeeu0bGbdiaZxA" source="_ioJscOlEEeajyLi0pWzMmQ" target="_EcrEkAi6Eeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_LhTk8gi6Eeeu0bGbdiaZxA" source="_Ec0OgAi6Eeeu0bGbdiaZxA" target="_ioJscelEEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_LhTk8wi6Eeeu0bGbdiaZxA" source="_ioJscelEEeajyLi0pWzMmQ" target="_Ec0OgAi6Eeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_LhTk9Ai6Eeeu0bGbdiaZxA" source="_Ec0OgQi6Eeeu0bGbdiaZxA" target="_ioJsculEEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_LhTk9Qi6Eeeu0bGbdiaZxA" source="_ioJsculEEeajyLi0pWzMmQ" target="_Ec0OgQi6Eeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_prGMoAzkEee39JSi5LhZog" source="_hgoFkAzkEee39JSi5LhZog" target="_FG2sQAgFEeePUNNlehhslg"/>
+    <parameterMappings xmi:id="_prGMoQzkEee39JSi5LhZog" source="_FG2sQAgFEeePUNNlehhslg" target="_hgoFkAzkEee39JSi5LhZog"/>
+    <parameterMappings xmi:id="_prGMogzkEee39JSi5LhZog" source="_hgoFkQzkEee39JSi5LhZog" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_prGMowzkEee39JSi5LhZog" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_hgoFkQzkEee39JSi5LhZog"/>
+    <parameterMappings xmi:id="_prGMpAzkEee39JSi5LhZog" source="_hgoFkgzkEee39JSi5LhZog" target="_tEM_IelFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_prGMpQzkEee39JSi5LhZog" source="_tEM_IelFEeajyLi0pWzMmQ" target="_hgoFkgzkEee39JSi5LhZog"/>
+    <parameterMappings xmi:id="_sFz7kAzkEee39JSi5LhZog" source="_hgoFkAzkEee39JSi5LhZog" target="_ioJscOlEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_sFz7kQzkEee39JSi5LhZog" source="_ioJscOlEEeajyLi0pWzMmQ" target="_hgoFkAzkEee39JSi5LhZog"/>
+    <parameterMappings xmi:id="_sFz7kgzkEee39JSi5LhZog" source="_hgoFkQzkEee39JSi5LhZog" target="_ioJscelEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_sFz7kwzkEee39JSi5LhZog" source="_ioJscelEEeajyLi0pWzMmQ" target="_hgoFkQzkEee39JSi5LhZog"/>
+    <parameterMappings xmi:id="_sFz7lAzkEee39JSi5LhZog" source="_hgoFkgzkEee39JSi5LhZog" target="_ioJsculEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_sFz7lQzkEee39JSi5LhZog" source="_ioJsculEEeajyLi0pWzMmQ" target="_hgoFkgzkEee39JSi5LhZog"/>
   </units>
 </henshin:Module>

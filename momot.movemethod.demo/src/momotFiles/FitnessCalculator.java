@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -131,30 +132,57 @@ public class FitnessCalculator {
 		return violations;
 	}
 	
+	public static boolean isLibOrT(TAbstractType tClass){
+		if(tClass.getTName().equals("T") || tClass.isTLib() || tClass.getTName().equals("Anonymous")){
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	private static double methodVisibility(TMethodDefinition method){
+		double violations = 0;
+		for(TAccess access : method.getTAccessing()){
+			
+			TMember targetMember = access.getTTarget();
+			
+			if(targetMember != null && !isLibOrT(targetMember.getDefinedBy())){
+				TModifier targetModifier = targetMember.getTModifier();
+				if(targetModifier != null){
+					TVisibility actualVisibility = targetModifier.getTVisibility();
+					TVisibility requiredVisibility = method.getMinimumRequiredVisibility(targetMember);
+					if(!visibilityDominates(actualVisibility, requiredVisibility)){
+						violations++;
+					}
+				}
+				
+				
+			}
+		}
+		return violations;
+	}
+	
+	private static double classVisibility(TClass tClass){
+		double violations = 0;
+		for(TMember member : tClass.getDefines()){
+			if(member instanceof TMethodDefinition){
+				violations += methodVisibility((TMethodDefinition) member);
+				
+			}
+	}
+		return violations;
+	}
+	
 	public static double visiblility(TypeGraph graph){
+		
 		int violations = 0;
 		EList<TClass> classes = graph.getClasses();
 		for(TClass tClass: classes){
-			if(tClass.getTName() == "T" || tClass.isTLib()){
-				continue;
+			if(!isLibOrT(tClass)){
+				violations += classVisibility(tClass);
 			}
-			for(TMember member : tClass.getDefines()){
-					if(member instanceof TMethodDefinition){
-						TMethodDefinition method = (TMethodDefinition) member;
-						for(TAccess access : method.getTAccessing()){
-							
-							TMember targetMember = access.getTTarget();
-							
-							if(targetMember != null){
-								TVisibility actualVisibility = targetMember.getTModifier().getTVisibility();
-								TVisibility requiredVisibility = method.getMinimumRequiredVisibility(targetMember);
-								if(!visibilityDominates(actualVisibility, requiredVisibility)){
-									violations++;
-								}
-							}
-						}
-					}
-			}
+			
 		}
 		
 		return violations;
