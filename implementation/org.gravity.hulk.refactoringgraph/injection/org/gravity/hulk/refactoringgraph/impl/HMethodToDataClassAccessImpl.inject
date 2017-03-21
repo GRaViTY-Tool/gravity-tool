@@ -4,7 +4,7 @@ import java.util.TreeSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.swt.widgets.TreeItem;
 import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;

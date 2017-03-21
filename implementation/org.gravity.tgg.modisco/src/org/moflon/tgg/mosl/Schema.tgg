@@ -15,6 +15,25 @@
 }
 
 #correspondence {
+BooleanLiteralToTBoolNode {
+	#src->BooleanLiteral
+	#trg->TBoolNode
+}	
+NumberLiteralToTNumberNode {
+	#src->NumberLiteral
+	#trg->TNumberNode
+}	
+
+StringLiteralToTTextNode {
+	#src->StringLiteral
+	#trg->TTextNode
+}	
+	
+MStringLitteralToTTextNode {
+	#src-> StringLiteral
+	#trg-> TTextNode
+}	
+
 MFieldDefinitionToTFieldDefinition {
 #src-> MFieldDefinition
 #trg-> TFieldDefinition
@@ -208,6 +227,11 @@ ModifierToConstructorVisibility{
 MModifierToTModifier{
 	#src->Modifier
 	#trg->TModifier
+}
+
+AnnotationMemberValuePairToTAnnotationValue {
+	#src->AnnotationMemberValuePair
+	#trg->TAnnotationValue
 }
 }
 

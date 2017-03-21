@@ -26,7 +26,7 @@ import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.information.providers.TheBlobInformationStringProvider;
 import org.gravity.hulk.ui.visualization.util.GlobalStrings;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
 
 public class TheBlobPreprocessor extends DetectionPreprocessor {

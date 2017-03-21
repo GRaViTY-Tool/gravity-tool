@@ -1,0 +1,48 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule Annotation
+#with org.gravity.tgg.modisco
+
+#source {
+++ mAnnotation : Annotation {
+	++  -type -> mAccess
+}
+mAnnotationType : AnnotationTypeDeclaration {
+	++  -usagesInTypeAccess -> mAccess
+}
+mBody : BodyDeclaration {
+	++  -annotations -> mAnnotation
+}
+++ mAccess : TypeAccess {
+}
+}
+
+#target {
+++ tAnnotation : TAnnotation {
+	++  -tAnnotated -> tAnnotable
+}
+tAnnotable : TAnnotatable {
+}
+tAnnotationType : TAnnotationType {
+	++  -annotations -> tAnnotation
+}
+}
+
+#correspondence {
+mAnnotationTypeToTAnnotationType : TypeToTAbstractType {
+	#src->mAnnotationType
+	#trg->tAnnotationType
+}
+mBodyToTAnnotable : BodyDeclarationToTAnnotatable {
+	#src->mBody
+	#trg->tAnnotable
+}
+++ mAnnotationToTAnnotation : AnnotationToTAnnotation {
+	#src->mAnnotation
+	#trg->tAnnotation
+}
+}
+
+#attributeConditions {
+}
