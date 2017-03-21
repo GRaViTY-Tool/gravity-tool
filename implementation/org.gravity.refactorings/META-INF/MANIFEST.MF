@@ -17,9 +17,7 @@ Require-Bundle: org.gravity.typegraph.basic,
  org.eclipse.emf.ecore.xmi,
  org.gravity.arte.testdsl,
  org.eclipse.emf.ecore.xmi,
- MocaTree,
- org.eclipse.emf.ecore,
- org.moflon.core.utilities
+ MocaTree
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
