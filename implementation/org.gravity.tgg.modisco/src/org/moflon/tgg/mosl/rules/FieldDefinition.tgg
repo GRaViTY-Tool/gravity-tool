@@ -48,6 +48,10 @@ mNameToTField : MFieldNameToTField {
 	#src->mName
 	#trg->tField
 }
+++bodyToMember:BodyDeclarationToMember{
+#src->mDefinition
+#trg->tDefinition
+}
 }
 
 #attributeConditions {

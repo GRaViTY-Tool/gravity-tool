@@ -1,0 +1,51 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule InterfaceMember #with org.gravity.tgg.modisco
+
+#source { 
+		mInterface : InterfaceDeclaration {
+		-bodyDeclarations->mBody
+	}
+	
+	mBody:BodyDeclaration{
+		++ -modifier->mModifier
+	}
+	
+	++mModifier:Modifier{	
+	}
+}
+
+#target {
+	tInterface : TInterface {
+		-defines->tMember
+	}
+
+	tMember:TMember{
+		++ -tModifier->tModifier
+	}	
+	++ tModifier:TModifier{
+		
+	}
+}
+
+#correspondence {
+mTypeToTType : TypeToTAbstractType {
+	#src->mInterface
+	#trg->tInterface
+}
+
+bodyToMember:BodyDeclarationToMember{
+	#src->mBody
+	#trg->tMember
+}
+
+++ mModifierToTModifier:MModifierToTModifier{
+	#src->mModifier
+	#trg->tModifier
+}
+}
+
+#attributeConditions {
+	InterfaceVisibility(mModifier.visibility, tModifier.tVisibility)
+}

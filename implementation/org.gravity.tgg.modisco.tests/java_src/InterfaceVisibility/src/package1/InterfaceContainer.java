@@ -1,3 +1,4 @@
+package package1;
 
 public class InterfaceContainer {
 	private interface PrivateInterface{}

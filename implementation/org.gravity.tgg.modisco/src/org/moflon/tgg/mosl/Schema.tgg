@@ -15,7 +15,11 @@
 }
 
 #correspondence {
-MFieldDefinitionToTFieldDefinition {
+	BodyDeclarationToMember{
+	#src->BodyDeclaration
+	#trg->TMember
+}
+MFieldDefinitionToTFieldDefinition{
 #src-> MFieldDefinition
 #trg-> TFieldDefinition
 }
@@ -209,12 +213,20 @@ MModifierToTModifier{
 	#src->Modifier
 	#trg->TModifier
 }
+
+
 }
 
 #attributeConditions {
 	#userDefined
-	vKindToTVis(0:VisibilityKind, 1:TVisibility){
+	DefaultVisibility(0:VisibilityKind, 1:TVisibility){
 		#sync: BB, BF, FB, FF
 		#gen:
 	}
+	#userDefined
+	InterfaceVisibility(0:VisibilityKind, 1:TVisibility){
+		#sync: BB, BF, FB, FF
+		#gen:
+	}
+	
 }

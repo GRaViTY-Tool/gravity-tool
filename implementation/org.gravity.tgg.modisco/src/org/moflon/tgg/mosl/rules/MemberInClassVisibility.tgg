@@ -1,31 +1,42 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule TypesVisibility #with org.gravity.tgg.modisco
-
+#rule ClassMemberVisibility #with org.gravity.tgg.modisco
 #source { 
-	mType : AbstractTypeDeclaration {
-		++ -modifier->mModifier
-}
-++mModifier:Modifier{
+		mClass : ClassDeclaration {
+		-bodyDeclarations->mBody
+	}
 	
-}
+	mBody:BodyDeclaration{
+		++ -modifier->mModifier
+	}
+	
+	++mModifier:Modifier{	
+	}
 }
 
 #target {
-	tType : TAbstractType {
+	tClass : TClass {
+		-defines->tMember
+	}
+
+	tMember:TMember{
 		++ -tModifier->tModifier
-}
-++ tModifier:TModifier{
-	
-}
-	
+	}	
+	++ tModifier:TModifier{
+		
+	}
 }
 
 #correspondence {
 mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
+	#src->mClass
+	#trg->tClass
+}
+
+bodyToMember:BodyDeclarationToMember{
+	#src->mBody
+	#trg->tMember
 }
 
 ++ mModifierToTModifier:MModifierToTModifier{
