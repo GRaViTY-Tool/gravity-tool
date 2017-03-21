@@ -192,7 +192,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="innerTypes" upperBound="-1"
-        eType="#//TAbstractType"/>
+        eType="#//TAbstractType" eOpposite="#//TAbstractType/outerType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outerType" eType="#//TAbstractType"
+        eOpposite="#//TAbstractType/innerTypes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"

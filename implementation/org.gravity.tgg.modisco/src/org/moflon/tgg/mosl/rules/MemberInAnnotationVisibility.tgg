@@ -5,10 +5,10 @@
 
 #source { 
 		mAnnotation : AnnotationTypeDeclaration {
-		-bodyDeclarations->mBody
+		-bodyDeclarations->mDefinition
 	}
 	
-	mBody:BodyDeclaration{
+	mDefinition:MDefinition{
 		++ -modifier->mModifier
 	}
 	
@@ -35,8 +35,8 @@ mTypeToTType : TypeToTAbstractType {
 	#trg->tAnnotation
 }
 
-bodyToMember:BodyDeclarationToMember{
-	#src->mBody
+defToMember:MDefinitionToTMember{
+	#src->mDefinition
 	#trg->tMember
 }
 

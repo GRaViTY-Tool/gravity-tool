@@ -1,13 +1,13 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule ClassMemberVisibility #with org.gravity.tgg.modisco
+#rule MemberInClassVisibility #with org.gravity.tgg.modisco
 #source { 
 		mClass : ClassDeclaration {
-		-bodyDeclarations->mBody
+		-bodyDeclarations->mDefinition
 	}
 	
-	mBody:BodyDeclaration{
+	mDefinition:MDefinition{
 		++ -modifier->mModifier
 	}
 	
@@ -34,8 +34,8 @@ mTypeToTType : TypeToTAbstractType {
 	#trg->tClass
 }
 
-bodyToMember:BodyDeclarationToMember{
-	#src->mBody
+defToMember:MDefinitionToTMember{
+	#src->mDefinition
 	#trg->tMember
 }
 

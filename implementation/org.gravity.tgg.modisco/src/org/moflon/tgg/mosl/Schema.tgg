@@ -15,10 +15,6 @@
 }
 
 #correspondence {
-	BodyDeclarationToMember{
-	#src->BodyDeclaration
-	#trg->TMember
-}
 MFieldDefinitionToTFieldDefinition{
 #src-> MFieldDefinition
 #trg-> TFieldDefinition

@@ -38,10 +38,6 @@ mSignatureToTMethodSignature : MMethodSignatureToTMethodSignature {
 	#src->mDefinition
 	#trg->tDefinition
 }
-++bodyToMember:BodyDeclarationToMember{
-#src->mDefinition
-#trg->tDefinition
-}
 }
 
 #attributeConditions {

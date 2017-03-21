@@ -2,6 +2,8 @@
 import java.util.LinkedList;
 import java.util.List;
 import org.gravity.typegraph.basic.TMethodSignature;
+import java.util.ArrayList;
+import java.util.Collections;
 
 partial class TAbstractTypeImpl {
 
@@ -30,48 +32,80 @@ partial class TAbstractTypeImpl {
 
 	protected abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
+	private void fillSameType(ArrayList<TAbstractType> list) {
+		boolean changed = false;
+		ArrayList<TAbstractType> copy = new ArrayList<TAbstractType>(list);
+
+		for (TAbstractType type : copy) {
+			for (TAbstractType innerType : type.getInnerTypes()) {
+				if (!list.contains(innerType)) {
+					list.add(innerType);
+					changed = true;
+				}
+			}
+			if (type.getOuterType() != null && !list.contains(type.getOuterType())) {
+				list.add(type.getOuterType());
+				changed = true;
+			}
+		}
+		if (changed) {
+			fillSameType(list);
+		}
+	}
+
 	private boolean isInnerType(TAbstractType tAbstractType) {
-		if(tAbstractType.getInnerTypes().contains(this)) {
+
+		ArrayList<TAbstractType> list = new ArrayList<>();
+		list.add(this);
+		fillSameType(list);
+
+		ArrayList<TAbstractType> listOther = new ArrayList<>();
+		listOther.add(tAbstractType);
+		fillSameType(listOther);
+
+		return !Collections.disjoint(list, listOther);
+		/*
+		if (tAbstractType.getInnerTypes().contains(this)) {
 			return true;
 		}
-		if(this.getInnerTypes().contains(tAbstractType)){
-			
+		if (this.getInnerTypes().contains(tAbstractType)) {
+		
 			return true;
 		}
 		
 		return false;/*
-		
-		String suffix = "$";
-		TPackage otherPackage = tAbstractType.getPackage();
-		TPackage thisPackage = this.getPackage();
-		if (thisPackage == null || otherPackage == null) {
-			return false;
-		}
-
-		String otherPackageString = otherPackage.getTName();
-		String thisPackageString = thisPackage.getTName();
-		if (otherPackageString.endsWith(suffix)) {
-			otherPackageString = otherPackageString.substring(0, otherPackageString.length() - 1);
-			if (otherPackageString.equals(this.getTName())) {
-				return true;
-			}
-		}
-
-		if (thisPackageString.endsWith(suffix)) {
-			thisPackageString = thisPackageString.substring(0, thisPackageString.length() - 1);
-			if (thisPackageString.equals(tAbstractType.getTName())) {
-				return true;
-			}
-		}
-		return false;*/
+						
+						String suffix = "$";
+						TPackage otherPackage = tAbstractType.getPackage();
+						TPackage thisPackage = this.getPackage();
+						if (thisPackage == null || otherPackage == null) {
+						return false;
+						}
+						
+						String otherPackageString = otherPackage.getTName();
+						String thisPackageString = thisPackage.getTName();
+						if (otherPackageString.endsWith(suffix)) {
+						otherPackageString = otherPackageString.substring(0, otherPackageString.length() - 1);
+						if (otherPackageString.equals(this.getTName())) {
+						return true;
+						}
+						}
+						
+						if (thisPackageString.endsWith(suffix)) {
+						thisPackageString = thisPackageString.substring(0, thisPackageString.length() - 1);
+						if (thisPackageString.equals(tAbstractType.getTName())) {
+						return true;
+						}
+						}
+						return false;*/
 	}
 
-	private TPackage getRealPackage(TPackage tPackage) {
-		String suffix = "$";
-		if (tPackage != null && tPackage.getTName().endsWith(suffix)) {
-			return getRealPackage(tPackage.getParent());
+	private TPackage getRealPackage(TAbstractType type) {
+
+		if (type.getOuterType() != null) {
+			return getRealPackage(type.getOuterType());
 		} else {
-			return tPackage;
+			return type.getPackage();
 		}
 	}
 	
@@ -108,8 +142,7 @@ partial class TAbstractTypeImpl {
 			return TVisibility.TPRIVATE;
 		}
 
-		if (getRealPackage(getPackage()) != null && getRealPackage(tAbstractType.getPackage()) != null
-				&& getRealPackage(this.getPackage()) == getRealPackage(tAbstractType.getPackage())) {
+		if (getRealPackage(this) != null && getRealPackage(this) == getRealPackage(tAbstractType)) {
 			return TVisibility.TPACKAGE;
 		}
 

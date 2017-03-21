@@ -54,10 +54,6 @@ mModelToTypeGraph : ModelToTypeGraph {
 	#src->eConstructorDeclaration
 	#trg->tName
 }
-++bodyToMember:BodyDeclarationToMember{
-#src->eConstructorDeclaration
-#trg->tConstructorDef
-}
 }
 
 #attributeConditions {
