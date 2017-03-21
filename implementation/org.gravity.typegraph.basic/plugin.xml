@@ -6,4 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.typegraph.basic.containers.ContainersPackage" genModel="model/Basic.genmodel" uri="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"/>
   </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.typegraph.basic.annotations.AnnotationsPackage" genModel="model/Basic.genmodel" uri="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations"/>
+  </extension>
 </plugin>
