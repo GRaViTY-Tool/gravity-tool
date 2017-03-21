@@ -31,37 +31,49 @@ partial class TAbstractTypeImpl {
 	protected abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
 	private boolean isInnerType(TAbstractType tAbstractType) {
+		if(tAbstractType.getInnerTypes().contains(this)) {
+			return true;
+		}
+		if(this.getInnerTypes().contains(tAbstractType)){
+			
+			return true;
+		}
+		
+		return false;/*
+		
 		String suffix = "$";
-		String otherPackage = tAbstractType.getPackage().getTName();
-		String thisPackage = this.getPackage().getTName();
-		if (otherPackage.endsWith(suffix)) {
-			otherPackage = otherPackage.substring(0, otherPackage.length() - 1);
-			if (otherPackage.equals(this.getTName())) {
+		TPackage otherPackage = tAbstractType.getPackage();
+		TPackage thisPackage = this.getPackage();
+		if (thisPackage == null || otherPackage == null) {
+			return false;
+		}
+
+		String otherPackageString = otherPackage.getTName();
+		String thisPackageString = thisPackage.getTName();
+		if (otherPackageString.endsWith(suffix)) {
+			otherPackageString = otherPackageString.substring(0, otherPackageString.length() - 1);
+			if (otherPackageString.equals(this.getTName())) {
 				return true;
 			}
 		}
 
-		if (thisPackage.endsWith(suffix)) {
-			thisPackage = thisPackage.substring(0, thisPackage.length() - 1);
-			if (thisPackage.equals(tAbstractType.getTName())) {
+		if (thisPackageString.endsWith(suffix)) {
+			thisPackageString = thisPackageString.substring(0, thisPackageString.length() - 1);
+			if (thisPackageString.equals(tAbstractType.getTName())) {
 				return true;
 			}
 		}
-		return false;
+		return false;*/
 	}
-	
-	private TPackage getRealPackage(TAbstractType tType){
+
+	private TPackage getRealPackage(TPackage tPackage) {
 		String suffix = "$";
-		String packageString = tType.getPackage().getTName();
-		
-		if (packageString.endsWith(suffix)) {
-			packageString = packageString.substring(0, packageString.length() - 1);
-			return getRealPackage(getPg().getClass(packageString));
-		}else{
-			return tType.getPackage();
+		if (tPackage != null && tPackage.getTName().endsWith(suffix)) {
+			return getRealPackage(tPackage.getParent());
+		} else {
+			return tPackage;
 		}
 	}
-		
 	
 -->
 
@@ -96,7 +108,8 @@ partial class TAbstractTypeImpl {
 			return TVisibility.TPRIVATE;
 		}
 
-		if (getRealPackage(this) == getRealPackage(tAbstractType)) {
+		if (getRealPackage(getPackage()) != null && getRealPackage(tAbstractType.getPackage()) != null
+				&& getRealPackage(this.getPackage()) == getRealPackage(tAbstractType.getPackage())) {
 			return TVisibility.TPACKAGE;
 		}
 
