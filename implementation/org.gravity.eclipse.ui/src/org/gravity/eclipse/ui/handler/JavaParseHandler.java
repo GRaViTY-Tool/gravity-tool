@@ -1,10 +1,7 @@
 package org.gravity.eclipse.ui.handler;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -15,7 +12,6 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -47,6 +43,7 @@ public class JavaParseHandler extends AbstractHandler {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
+				ArrayList<String> fails = new ArrayList<>();
 				for (Object entry : selection) {
 					if(monitor.isCanceled()){
 						return Status.CANCEL_STATUS;
@@ -55,14 +52,16 @@ public class JavaParseHandler extends AbstractHandler {
 						throw new RuntimeException(Messages.JavaParseHandler_0 + entry);
 					} else if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
-						process(iJavaProject, monitor);
+						if(!process(iJavaProject, monitor)){
+							fails.add(iJavaProject.getProject().getName());
+						}
 					} else if (entry instanceof IPackageFragment) {
 						throw new RuntimeException(Messages.JavaParseHandler_1 + entry);
 					} else {
 						throw new RuntimeException(Messages.JavaParseHandler_2 + entry);
 					}
 				}
-				return Status.OK_STATUS;
+				return fails.size()==0 ? Status.OK_STATUS : new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Creating PG failed on the follwoing Java projects: "+fails.toString());
 			}
 
 			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {

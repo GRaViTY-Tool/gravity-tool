@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -334,6 +335,7 @@ public abstract class HulkHandler extends AbstractHandler {
 				monitor.beginTask(Messages.HulkScanHandler_9, 3);
 
 				Set<IJavaProject> projects = SelectionHelper.getJavaProjects(workspace_selection);
+				ArrayList<String> fails = new ArrayList<>();
 				for (IJavaProject javaProject : projects) {
 					project = javaProject;
 					long t0 = System.currentTimeMillis();
@@ -352,6 +354,7 @@ public abstract class HulkHandler extends AbstractHandler {
 					boolean success = converter.convertProject(project, libs, monitor);
 					if (!success || converter.getPG() == null) {
 						System.err.println("Creating PG from project failed: " + project.getProject().getName());
+						fails.add(javaProject.getProject().getName());
 						continue;
 					}
 
@@ -380,7 +383,7 @@ public abstract class HulkHandler extends AbstractHandler {
 					monitor.worked(1);
 				}
 
-				return Status.OK_STATUS;
+				return fails.size()==0 ? Status.OK_STATUS : new Status(IStatus.ERROR, HulkActivator.PLUGIN_ID, "Anti-pattern detection failed for the following projects: "+fails.toString());
 			}
 
 			
