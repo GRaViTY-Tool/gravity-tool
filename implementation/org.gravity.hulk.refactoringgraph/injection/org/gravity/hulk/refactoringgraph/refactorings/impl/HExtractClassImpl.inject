@@ -1,5 +1,5 @@
 
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.eclipse.swt.widgets.TreeItem;
 import org.gravity.hulk.refactoringgraph.HInBlobAccess;
 

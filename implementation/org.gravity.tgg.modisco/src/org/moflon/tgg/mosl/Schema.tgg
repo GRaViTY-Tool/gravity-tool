@@ -15,6 +15,25 @@
 }
 
 #correspondence {
+BooleanLiteralToTBoolNode {
+	#src->BooleanLiteral
+	#trg->TBoolNode
+}	
+NumberLiteralToTNumberNode {
+	#src->NumberLiteral
+	#trg->TNumberNode
+}	
+
+StringLiteralToTTextNode {
+	#src->StringLiteral
+	#trg->TTextNode
+}	
+	
+MStringLitteralToTTextNode {
+	#src-> StringLiteral
+	#trg-> TTextNode
+}	
+
 MFieldDefinitionToTFieldDefinition {
 #src-> MFieldDefinition
 #trg-> TFieldDefinition
@@ -180,8 +199,46 @@ UnresolvedTypeDeclarationToTClass {
 #trg-> TClass
 }
 
+ModifierToTClassEntity{
+		#src->Modifier
+		#trg->TClass
+	}
+
+ModifierToTFieldEntity{
+		#src->Modifier
+		#trg->TFieldDefinition
+	}
+	
+ModifierToTMethodEntity{
+		#src->Modifier
+		#trg->TMethodDefinition
+	}
+	
+ModifierToAbstractType{
+	#src->Modifier
+	#trg->TAbstractType
+}
+
+ModifierToConstructorVisibility{
+	#src->Modifier
+	#trg->TConstructorDefinition
+}
+
+MModifierToTModifier{
+	#src->Modifier
+	#trg->TModifier
+}
+
+AnnotationMemberValuePairToTAnnotationValue {
+	#src->AnnotationMemberValuePair
+	#trg->TAnnotationValue
+}
 }
 
 #attributeConditions {
-
+	#userDefined
+	vKindToTVis(0:VisibilityKind, 1:TVisibility){
+		#sync: BB, BF, FB, FF
+		#gen:
+	}
 }

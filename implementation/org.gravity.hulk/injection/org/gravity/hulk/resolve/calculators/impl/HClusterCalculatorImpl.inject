@@ -12,7 +12,7 @@ import java.util.Stack;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;

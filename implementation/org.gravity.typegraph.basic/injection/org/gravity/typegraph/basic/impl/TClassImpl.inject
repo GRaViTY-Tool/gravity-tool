@@ -1,14 +1,63 @@
 
+import java.util.ArrayList;
+import java.util.Collections;
+import org.gravity.typegraph.basic.TAbstractType;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class TClassImpl {
 
+@members <--
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		String string = super.toString();
+		return string.substring(0, string.length() - 1).concat(", name: ").concat(tName).concat(")");
+	}
+
+	private List<TClass> getParents() {
+		List<TClass> parents = new ArrayList<TClass>();
+		TClass parent = this.getParentClass();
+		while (parent != null) {
+			parents.add(parent);
+			parent = parent.getParentClass();
+		}
+		return parents;
+	}
+
+	private boolean hasCommonSuperClass(TClassImpl tClass) {
+		List<TClass> parents = this.getParents();
+		List<TClass> otherParents = tClass.getParents();
+
+		return (!Collections.disjoint(parents, otherParents));
+	}
+
+	@Override
+	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
+		if (this == tAbstractType) {
+			return TVisibility.TPRIVATE;
+		}
+
+		if (this.getPackage() == tAbstractType.getPackage()) {
+			return TVisibility.TPACKAGE;
+		}
+
+		if (tAbstractType instanceof TClassImpl && hasCommonSuperClass((TClassImpl) tAbstractType)) {
+			return TVisibility.TPROTECTED;
+		}
+
+		return TVisibility.TPUBLIC;
+
+	}
+	
+-->
 
 @model getAllTMembers () <--
 

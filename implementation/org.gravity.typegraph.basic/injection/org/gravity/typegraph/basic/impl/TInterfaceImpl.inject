@@ -1,0 +1,52 @@
+
+import org.gravity.typegraph.basic.TVisibility;
+import org.gravity.typegraph.basic.TAbstractType;
+import java.util.Collections;
+import java.util.HashSet;
+
+partial class TInterfaceImpl {
+
+@members <--
+
+	private HashSet<TInterface> fillParents(HashSet<TInterface> parents) {
+
+		int size = parents.size();
+		parents.addAll(this.getParentInterfaces());
+		if (size < parents.size()) {
+			fillParents(parents);
+		}
+
+		return parents;
+	}
+
+	private boolean hasCommonSuperInterface(TInterfaceImpl tInterface) {
+		HashSet<TInterface> parents = new HashSet<TInterface>();
+		HashSet<TInterface> otherParents = new HashSet<TInterface>();
+
+		this.fillParents(parents);
+		tInterface.fillParents(otherParents);
+
+		return (!Collections.disjoint(parents, otherParents));
+	}
+
+	@Override
+	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
+		if (this == tAbstractType) {
+			return TVisibility.TPRIVATE;
+		}
+
+		if (this.getPackage() == tAbstractType.getPackage()) {
+			return TVisibility.TPACKAGE;
+		}
+
+		if (tAbstractType instanceof TInterfaceImpl && hasCommonSuperInterface((TInterfaceImpl) tAbstractType)) {
+			return TVisibility.TPROTECTED;
+		}
+
+		return TVisibility.TPUBLIC;
+
+	}
+	
+-->
+
+}

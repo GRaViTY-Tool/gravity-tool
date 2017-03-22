@@ -6,7 +6,7 @@ import org.gravity.hulk.refactoringgraph.HCluster;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 
