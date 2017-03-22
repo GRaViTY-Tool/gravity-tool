@@ -14,7 +14,6 @@ import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.EObject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
-import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.osgi.framework.BundleContext;
 
 // TODO: Auto-generated Javadoc
@@ -33,14 +32,9 @@ public class GravityActivator extends Plugin {
 	/** All known source models with project name as key. */
 	private Hashtable<String, EObject> sources;
 
-	/** All correspondence models with project name as key. */
-	private Hashtable<String, EObject> cors;
-
 	/** All target models (PGs) with project name as key. */
 	private Hashtable<String, EObject> targets;
 
-	/** All synchronization protocols with project name as key. */
-	private Hashtable<String, SynchronizationProtocol> syncs;
 
 	/** The verbose state (not only for this plugin). */
 	private boolean verbose = false;
@@ -50,10 +44,6 @@ public class GravityActivator extends Plugin {
 	 * are loaded.
 	 */
 	public GravityActivator() {
-		this.sources = new Hashtable<>();
-		this.cors = new Hashtable<>();
-		this.targets = new Hashtable<>();
-		this.syncs = new Hashtable<>();
 	}
 
 	/**
@@ -94,12 +84,6 @@ public class GravityActivator extends Plugin {
 		
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
-	 * BundleContext)
-	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
@@ -116,29 +100,6 @@ public class GravityActivator extends Plugin {
 	 */
 	public static GravityActivator getDefault() {
 		return plugin;
-	}
-
-	/**
-	 * Adds the correspondence model of a project to the table.
-	 *
-	 * @param projectName
-	 *            the project name of the translated java project
-	 * @param corModel
-	 *            the correspondence model
-	 */
-	public void addCorr(String projectName, EObject corModel) {
-		this.cors.put(projectName, corModel);
-	}
-
-	/**
-	 * Gets the correspondence model for an project.
-	 *
-	 * @param projectName
-	 *            the projects name
-	 * @return the correspondence model
-	 */
-	public EObject getCorr(String projectName) {
-		return this.cors.get(projectName);
 	}
 
 	/**
@@ -185,29 +146,6 @@ public class GravityActivator extends Plugin {
 	 */
 	public EObject getTrg(String projectName) {
 		return this.targets.get(projectName);
-	}
-
-	/**
-	 * Adds the synchronization protocol of an java project to the table.
-	 *
-	 * @param projectName
-	 *            the projects name
-	 * @param protocol
-	 *            the synchronization protocol
-	 */
-	public void addSync(String projectName, SynchronizationProtocol protocol) {
-		this.syncs.put(projectName, protocol);
-	}
-
-	/**
-	 * Gets the synchronization protocol of an stored java project.
-	 *
-	 * @param projectName
-	 *            the projects name
-	 * @return the synchronization protocol
-	 */
-	public SynchronizationProtocol getSync(String projectName) {
-		return this.syncs.get(projectName);
 	}
 
 	/**
