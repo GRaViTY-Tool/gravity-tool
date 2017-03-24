@@ -16,9 +16,8 @@ import org.moflon.core.dfs.Node;
 
 public class HulkDetector {
 	
-	private static void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processed_detectors, HAntiPatternHandling hulk){
-		
-
+	
+	private static List<HDetector> getSorted(HDetector detector, HAntiPatternHandling hulk){
 		initDFS().processNode(detector);
 
 		Comparator<Node> comp = new Comparator<Node>() {
@@ -37,14 +36,21 @@ public class HulkDetector {
 			}
 		}
 		sorted.sort(comp);
-
+		return sorted;
+	}
+	
+	private static void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processed_detectors, HAntiPatternHandling hulk, boolean verbose){
+		List<HDetector> sorted = getSorted(detector, hulk);
 		for (HDetector n : sorted) {
+			long t2 = 0;
 			if (!processed_detectors.contains(n)) {
 				if (worklist.contains(n)) {
 					worklist.remove(n);
 				}
-				long t2 = System.currentTimeMillis();
-				System.out.println(t2 + " Hulk " + n.getGuiName());
+				if(verbose){
+					t2 = System.currentTimeMillis();
+					System.out.println(t2 + " Hulk " + n.getGuiName());
+				}
 				if (n.detect(hulk.getApg())) {
 					n.setPostTraversal(0);
 					n.setPreTraversal(0);
@@ -52,24 +58,33 @@ public class HulkDetector {
 				} else {
 					System.err.println(Messages.getString("detector.failed") + n); //$NON-NLS-1$
 				}
-				long t3 = System.currentTimeMillis();
-				System.out.println(t3 + " Hulk " + n.getGuiName() + " - done " + (t3 - t2) + "ms");
-
+				if(verbose){
+					long t3 = System.currentTimeMillis();
+					System.out.println(t3 + " Hulk " + n.getGuiName() + " - done " + (t3 - t2) + "ms");
+				}
 			}
 		}
 	}
 	
 	
 	public static boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors, HAntiPatternHandling hulk){
-		
-		long h0 = System.currentTimeMillis();
-		System.out.println(h0 + " Hulk Anti-Pattern Detection");
+		return detectSelectedAntiPattern(worklist, processed_detectors, hulk, true);
+	}
+	
+	public static boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors, HAntiPatternHandling hulk, boolean verbose){
+		long h0 = 0;
+		if(verbose){
+			h0 = System.currentTimeMillis();
+			System.out.println(h0 + " Hulk Anti-Pattern Detection");
+		}
 		while (!worklist.isEmpty()) {
 			HDetector detector = worklist.pop();
-			handleDetector(detector, worklist, processed_detectors, hulk);
+			handleDetector(detector, worklist, processed_detectors, hulk, verbose);
 		}
-		long h1 = System.currentTimeMillis();
-		System.out.println(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
+		if(verbose){
+			long h1 = System.currentTimeMillis();
+			System.out.println(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
+		}
 
 		return true;
 	}
