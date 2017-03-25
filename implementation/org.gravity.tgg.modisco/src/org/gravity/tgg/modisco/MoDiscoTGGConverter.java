@@ -61,8 +61,7 @@ import static org.gravity.eclipse.io.ModelSaver.*;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
-import org.gravity.tgg.modisco.preprocessing.PreprocessingFactory;
+import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessingImpl;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
@@ -177,7 +176,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			if (model.getMConstructorDefinitions().size() == 0) {
 				model.getMConstructorDefinitions().addAll(factory.getCdefs());
 			}
-			MoDiscoTGGPreprocessing preprocessing = PreprocessingFactory.eINSTANCE.createMoDiscoTGGPreprocessing();
+			MoDiscoTGGPreprocessingImpl preprocessing = new MoDiscoTGGPreprocessingImpl();
 			preprocessing.fixStaticMethodCallOnField(model);
 			if (!preprocessing.preprocess(model)) {
 				System.out.println("ERROR: Preprocessing failed");
