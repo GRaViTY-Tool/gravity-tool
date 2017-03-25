@@ -1,0 +1,16 @@
+
+import org.gravity.typegraph.basic.TAbstractType;
+
+partial class TAnnotationTypeImpl {
+
+@members <--
+
+	@Override
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+-->
+
+}
