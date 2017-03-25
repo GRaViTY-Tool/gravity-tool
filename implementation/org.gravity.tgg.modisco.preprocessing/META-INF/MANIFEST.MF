@@ -6,11 +6,9 @@ Export-Package: org.gravity.tgg.modisco.preprocessing,
  org.gravity.tgg.modisco.preprocessing.impl
 Bundle-Name: org.gravity.tgg.modisco.preprocessing
 Bundle-Version: 1.0
-Require-Bundle: org.eclipse.emf.ecore,
- org.eclipse.emf.ecore.xmi,
- org.moflon.core.utilities,
+Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.modisco,
- org.eclipse.gmt.modisco.java;bundle-version="1.0.0"
+ org.eclipse.gmt.modisco.java
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

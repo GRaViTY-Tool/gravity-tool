@@ -7,24 +7,9 @@ import java.net.MalformedURLException;
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.compare.Comparison;
-import org.eclipse.emf.compare.EMFCompare;
-import org.eclipse.emf.compare.diff.DefaultDiffEngine;
-import org.eclipse.emf.compare.diff.DiffBuilder;
-import org.eclipse.emf.compare.diff.FeatureFilter;
-import org.eclipse.emf.compare.diff.IDiffEngine;
-import org.eclipse.emf.compare.diff.IDiffProcessor;
-import org.eclipse.emf.compare.scope.DefaultComparisonScope;
-import org.eclipse.emf.compare.scope.IComparisonScope;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
@@ -47,7 +32,7 @@ public class TestGeneratorFromSrc {
 						.substring("platform:/base/".length());
 	}
 
-	public static Comparison runTest_ForwardTransformationFromJavaSrc(final IJavaProject src) {
+	public static boolean runTest_ForwardTransformationFromJavaSrc(final IJavaProject src) {
 
 		// Set up logging
 		BasicConfigurator.configure();
@@ -56,54 +41,7 @@ public class TestGeneratorFromSrc {
 		final TestGeneratorFromSrc helper = new TestGeneratorFromSrc(src);
 
 		helper.performForward();
-		return helper.compare();
-	}
-
-	public final Comparison compare() {
-
-		System.out.println("Prepare comparison - " + TimeStampUtil.getCurrentTimeStamp());
-
-		final URI uri1 = URI.createFileURI(createTrgName(name));
-		final URI uri2 = URI.createFileURI(createExpectedName(name));
-
-		Resource.Factory.Registry.INSTANCE	.getExtensionToFactoryMap()
-											.put("xmi", new XMIResourceFactoryImpl());
-
-		final ResourceSet resourceSet1 = loadResourceSet(uri1);
-		final ResourceSet resourceSet2 = loadResourceSet(uri2);
-
-		final IDiffProcessor diffProcessor = new DiffBuilder();
-		final IDiffEngine diffEngine = new DefaultDiffEngine(diffProcessor) {
-			@Override
-			protected FeatureFilter createFeatureFilter() {
-				return new FeatureFilter() {
-
-					@Override
-					protected boolean isIgnoredAttribute(final EAttribute attribute) {
-						final boolean ignore = super.isIgnoredAttribute(attribute) || "ID".equals(attribute.getName());
-						return ignore;
-					}
-
-					@Override
-					public boolean checkForOrderingChanges(final EStructuralFeature feature) {
-						return false;
-					}
-
-				};
-			}
-		};
-
-		System.out.println("Start comparison - " + TimeStampUtil.getCurrentTimeStamp());
-
-		final IComparisonScope scope = new DefaultComparisonScope(resourceSet1, resourceSet2, null);
-		final Comparison comparison = EMFCompare.builder()
-												.setDiffEngine(diffEngine)
-												.build()
-												.compare(scope);
-
-		System.out.println("Finished comparison - " + TimeStampUtil.getCurrentTimeStamp());
-
-		return comparison;
+		return true;
 	}
 
 	public final ResourceSet loadResourceSet(final URI uri) {

@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -30,6 +31,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Annotation;
@@ -130,27 +132,33 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public boolean convertProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
+		IProgressMonitor progressMonitor;
+		if (monitor == null) {
+			progressMonitor = new NullProgressMonitor();
+		} else {
+			progressMonitor = monitor;
+		}
 		long start = System.currentTimeMillis();
-		System.out.println(start+" GRaViTY convert project: "+java_project.getProject().getName());
+		System.out.println(start + " GRaViTY convert project: " + java_project.getProject().getName());
 		this.java_project = java_project;
 		this.modisco_folder = java_project.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
-		
-//		if(!createOutFiles(java_project, monitor)){
-//			System.err.println("Creating output folders failed.");
-//			return false;
-//		}
+
+		// if(!createOutFiles(java_project, monitor)){
+		// System.err.println("Creating output folders failed.");
+		// return false;
+		// }
 
 		long t0 = System.currentTimeMillis();
-		System.out.println(t0 + " MoDisco discover project: "+java_project.getProject().getName());
-		Model eobject = discoverProject(java_project, libs, monitor);
+		System.out.println(t0 + " MoDisco discover project: " + java_project.getProject().getName());
+		Model eobject = discoverProject(java_project, libs, progressMonitor);
 		long t1 = System.currentTimeMillis();
 		System.out.println(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
 
 		if (this.debug) {
-			saveModel(eobject, this.modisco_folder.getFile("modisco.xmi"), monitor); //$NON-NLS-1$ );
+			saveModel(eobject, this.modisco_folder.getFile("modisco.xmi"), progressMonitor); //$NON-NLS-1$ );
 		}
-		if(monitor.isCanceled()){
+		if (progressMonitor.isCanceled()) {
 			return false;
 		}
 
@@ -158,7 +166,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		System.out.println(t2 + " MoDisco preprocessing");
 		if (eobject instanceof MGravityModel) {
 			MGravityModel model = (MGravityModel) eobject;
-			
+
 			GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
 			if (model.getMFieldDefinitions().size() == 0) {
 				model.getMFieldDefinitions().addAll(factory.getFdefs());
@@ -180,12 +188,11 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 				EObject next = iterator.next();
 				if (next instanceof AnonymousClassDeclaration) {
 					model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
-				}
-				else if(next instanceof TypeParameter){
+				} else if (next instanceof TypeParameter) {
 					model.getTypeParameters().add((TypeParameter) next);
 				}
-				
-				if(monitor.isCanceled()){
+
+				if (progressMonitor.isCanceled()) {
 					return false;
 				}
 			}
@@ -193,7 +200,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long t3 = System.currentTimeMillis();
 		System.out.println(t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
 		if (this.debug) {
-			saveModel(eobject, this.modisco_folder.getFile("modisco_preprocessed.xmi"), monitor); //$NON-NLS-1$
+			saveModel(eobject, this.modisco_folder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
 
 		setSrc(eobject);
@@ -203,69 +210,89 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		this.changeTrg = (root -> {
 		});
 		setSynchronizationProtocol(null);
-		
-		if(debug){
-			setConfigurator(new PGSavingConfigurator(this, this.modisco_folder.getFile("emoflon_pg.xmi").getLocation().toString()));
+
+		if (debug) {
+			setConfigurator(new PGSavingConfigurator(this,
+					this.modisco_folder.getFile("emoflon_pg.xmi").getLocation().toString()));
 		}
 
 		long t4 = System.currentTimeMillis();
 		System.out.println(t4 + " eMoflon TGG fwd trafo");
 		integrateForward();
-		
+
 		long t5 = System.currentTimeMillis();
 		System.out.println(t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
 		if (this.debug) {
-			savePG(this.modisco_folder.getFile("pg.xmi"), monitor); //$NON-NLS-1$
+			savePG(this.modisco_folder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
 			saveCorr(this.modisco_folder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
 			saveSynchronizationProtocol(this.modisco_folder.getFile("sync_protocol.xmi").getLocation().toString()); //$NON-NLS-1$
 		}
 
-		boolean success = getTrg() != null && getTrg() instanceof TypeGraph;
-		
+		boolean trgNotNull = getTrg() != null;
+		boolean success = trgNotNull && getTrg() instanceof TypeGraph;
+
+		if (!success) {
+			if (src != null) {
+				src.eResource().unload();
+				src = null;
+			}
+			if (trgNotNull) {
+				trg.eResource().unload();
+				trg = null;
+			}
+			if (corr != null) {
+				corr.eResource().unload();
+				corr = null;
+			}
+			if (protocol != null) {
+				protocol = null;
+			}
+			set = new ResourceSetImpl();
+		}
+
 		long stop = System.currentTimeMillis();
-		System.out.println(stop+" GRaViTY convert project - done "+(stop-start)+"ms");
-		
+		System.out.println(stop + " GRaViTY convert project - done " + (stop - start) + "ms");
+
 		return success;
 	}
 
 	@Override
 	public boolean syncProjectFwd(IProgressMonitor monitor) {
 		long start = System.currentTimeMillis();
-		System.out.println(start+" MoDisco sync project: "+java_project.getProject().getName());
+		System.out.println(start + " MoDisco sync project: " + java_project.getProject().getName());
 		if (this.discoverer == null || this.java_project == null) {
 			return false;
 		}
-		
+
 		Resource targetModel = this.discoverer.getTargetModel();
-		if(targetModel == null || targetModel.getContents().size() == 0){
+		if (targetModel == null || targetModel.getContents().size() == 0) {
 			return convertProject(java_project, monitor);
 		}
 		MGravityModel oldProject = (MGravityModel) targetModel.getContents().get(0);
-		System.out.println(System.currentTimeMillis()+" Discover Project");
+		System.out.println(System.currentTimeMillis() + " Discover Project");
 		MGravityModel newProject = (MGravityModel) discoverProject(java_project, monitor);
-		System.out.println(System.currentTimeMillis()+" Discover Project - Done");
-		
+		System.out.println(System.currentTimeMillis() + " Discover Project - Done");
+
 		GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
-			
 
-		System.out.println(System.currentTimeMillis()+" Integrate FWD");
-		setChangeSrc(SynchronizationHelper->{
+		System.out.println(System.currentTimeMillis() + " Integrate FWD");
+		setChangeSrc(SynchronizationHelper -> {
 
-			System.out.println(System.currentTimeMillis()+" Calculate Patch");
+			System.out.println(System.currentTimeMillis() + " Calculate Patch");
 			patcher.update(oldProject, newProject);
-			System.out.println(System.currentTimeMillis()+" Calculate Patch - Done");
-			
-			});
-		
+			System.out.println(System.currentTimeMillis() + " Calculate Patch - Done");
+
+		});
+
 		integrateForward();
-		System.out.println(System.currentTimeMillis()+" Integrate FWD - Done");
-		
+		System.out.println(System.currentTimeMillis() + " Integrate FWD - Done");
+
 		if (this.debug) {
 			saveMoDiscoModel(this.modisco_folder.getFile("modisco.xmi"), monitor); //$NON-NLS-1$
 			savePG(this.modisco_folder.getFile("pg.xmi"), monitor); //$NON-NLS-1$
 		}
 		long stop = System.currentTimeMillis();
-		System.out.println(stop+ "MoDisco sync project -done: "+(stop-start)+"ms");
+		System.out.println(stop + "MoDisco sync project -done: " + (stop - start) + "ms");
 		return getTrg() != null;
 	}
 
@@ -282,7 +309,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			savePG(this.modisco_folder.getFile("sync_bwd_pg.xmi"), monitor); //$NON-NLS-1$
 			saveMoDiscoModel(this.modisco_folder.getFile("sync_bwd_modisco.xmi"), monitor); //$NON-NLS-1$
 			saveCorr(this.modisco_folder.getFile("sync_bwd_correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
-			saveSynchronizationProtocol(this.modisco_folder.getFile("sync_bwd_sync_protocol.xmi").getLocation().toString()); //$NON-NLS-1$
+			saveSynchronizationProtocol(
+					this.modisco_folder.getFile("sync_bwd_sync_protocol.xmi").getLocation().toString()); //$NON-NLS-1$
 
 		}
 
@@ -347,68 +375,42 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	}
 
 	public Model discoverProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
+
 		Model model = null;
 
 		if (this.discoverer.isApplicableTo(java_project)) {
 			try {
 
-				try {
-					Set<IPackageFragmentRoot> roots = new HashSet<>(libs.size());
-					IClasspathEntry[] oldClasspath = java_project.getRawClasspath();
-					for(IPath lib : libs){
-						File file = lib.toFile();
-						if(file.exists()){
-							boolean contained = false;
-							for(IClasspathEntry e : oldClasspath){
-								contained |= e.getPath().makeAbsolute().equals(lib);
-							}
-							if(!contained){
-								IPackageFragmentRoot root = java_project.getPackageFragmentRoot(file.getAbsolutePath());
-								roots.add(root);
-							}
-						}
-					}
-					IClasspathEntry[] newClasspath = new IClasspathEntry[oldClasspath.length + roots.size()];
-					System.arraycopy(oldClasspath, 0, newClasspath, 0, oldClasspath.length);
-					int i = oldClasspath.length;
-					for(IPackageFragmentRoot root : roots){
-						newClasspath[i++] = root.getResolvedClasspathEntry();
-					}
-					java_project.setRawClasspath(newClasspath, monitor);
-				} catch (JavaModelException e) {
-					e.printStackTrace();
-				}
-				
 				ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
-				List<Object> discoverable = AbstractDiscoverJavaModelFromProject
+				List<Object> discoverableElements = AbstractDiscoverJavaModelFromProject
 						.computeDiscoverableElements(java_project);
-				for (Object o : discoverable) {
+
+				for (Object discoverableObject : discoverableElements) {
 					IPath path = null;
-					if (o instanceof IJavaProject) {
-						IJavaProject proj = (IJavaProject) o;
+					if (discoverableObject instanceof IJavaProject) {
+						IJavaProject proj = (IJavaProject) discoverableObject;
 						path = proj.getProject().getLocation();
-					}
-					else if(o instanceof IPackageFragmentRoot){
-						IPackageFragmentRoot root = (IPackageFragmentRoot) o;
+					} else if (discoverableObject instanceof IPackageFragmentRoot) {
+						IPackageFragmentRoot root = (IPackageFragmentRoot) discoverableObject;
 						path = root.getPath();
 					}
-					
-					if(path != null){
-						for (IPath l : libs) {
-							if (l.isPrefixOf(path)) {
-								analyze.addElementToDiscover(o);
+
+					if (path != null) {
+						for (IPath libPath : libs) {
+							if (libPath.isPrefixOf(path)) {
+								analyze.addElementToDiscover(discoverableObject);
 							}
 						}
 					}
 				}
-				
+
 				this.discoverer.setElementsToAnalyze(analyze);
-				
+
 				this.discoverer.discoverElement(java_project, monitor);
 				Resource java_resource = this.discoverer.getTargetModel();
 				if (java_resource != null) {
-					if(java_resource.getURI()==null){
-						java_resource.setURI(URI.createURI(java_project.getProject().getName()+".xmi"));
+					if (java_resource.getURI() == null) {
+						java_resource.setURI(URI.createURI(java_project.getProject().getName() + ".xmi"));
 					}
 					EList<EObject> contents = java_resource.getContents();
 
@@ -421,7 +423,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 						}
 					}
 				}
-				
+
 			} catch (DiscoveryException e) {
 				e.printStackTrace();
 			}
@@ -430,10 +432,45 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		return model;
 	}
 
+	private void addLibToProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
+		try {
+			Set<IPackageFragmentRoot> roots = new HashSet<>(libs.size());
+			IClasspathEntry[] oldClasspath = java_project.getRawClasspath();
+			for (IPath lib : libs) {
+				File file;
+				if (lib.isRoot()) {
+					file = lib.toFile();
+				} else {
+					IPath ws = ResourcesPlugin.getWorkspace().getRoot().getLocation();
+					file = ws.append(lib).toFile();
+				}
+				if (file.exists()) {
+					boolean contained = false;
+					for (IClasspathEntry e : oldClasspath) {
+						contained |= e.getPath().makeAbsolute().equals(lib);
+					}
+					if (!contained) {
+						IPackageFragmentRoot root = java_project.getPackageFragmentRoot(file.getAbsolutePath());
+						roots.add(root);
+					}
+				}
+			}
+			IClasspathEntry[] newClasspath = new IClasspathEntry[oldClasspath.length + roots.size()];
+			System.arraycopy(oldClasspath, 0, newClasspath, 0, oldClasspath.length);
+			int i = oldClasspath.length;
+			for (IPackageFragmentRoot root : roots) {
+				newClasspath[i++] = root.getResolvedClasspathEntry();
+			}
+			java_project.setRawClasspath(newClasspath, monitor);
+		} catch (JavaModelException e) {
+			e.printStackTrace();
+		}
+	}
+
 	private boolean createOutFiles(IJavaProject java_project, IProgressMonitor monitor) {
 		IProject project = java_project.getProject();
 		this.modisco_folder = project.getFolder("modisco"); //$NON-NLS-1$
-		if(!this.modisco_folder.exists()){
+		if (!this.modisco_folder.exists()) {
 			try {
 				this.modisco_folder.create(true, true, monitor);
 			} catch (CoreException e) {

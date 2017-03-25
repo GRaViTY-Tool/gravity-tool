@@ -12,16 +12,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tSource" lowerBound="1"
         eType="#//TMember" eOpposite="#//TMember/tAccessing"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TAnnotatable" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotation" upperBound="-1"
-        eType="#//TAnnotation" containment="true" eOpposite="#//TAnnotation/tAnnotated"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TAnnotation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotated" lowerBound="1"
-        eType="#//TAnnotatable" eOpposite="#//TAnnotatable/tAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//TAnnotationType"
-        eOpposite="#//TAnnotationType/annotations"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" eType="#//containers/TMemberContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentClass" eType="#//TClass"
@@ -59,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCall" eSuperTypes="#//TAccess"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TMember" abstract="true" eSuperTypes="#//TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TMember" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignature" eType="#//TSignature"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -110,7 +100,7 @@
         eType="#//TMethodDefinition" containment="true" eOpposite="#//TMethodDefinition/signature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TPackage" eSuperTypes="#//TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TPackage" eSuperTypes="#//annotations/TAnnotatable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/packages"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subpackage" upperBound="-1"
@@ -140,7 +130,7 @@
         eType="#//TParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//TParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -158,7 +148,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTypes" upperBound="-1"
         eType="#//TAbstractType" containment="true" eOpposite="#//TAbstractType/pg"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotationTypes" upperBound="-1"
-        eType="#//TAnnotationType"/>
+        eType="#//annotations/TAnnotationType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -170,12 +160,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="childInterfaces" upperBound="-1"
         eType="#//TInterface" eOpposite="#//TInterface/parentInterfaces"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TAbstractType" abstract="true" eSuperTypes="#//TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TAbstractType" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations xsi:type="activities:MoflonEOperation" name="getFullyQualifiedName"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getMinimumRequiredVisibility"
         eType="#//TVisibility">
       <eParameters name="tAbstractType" eType="#//TAbstractType"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getMethodSignature"
+        eType="#//TMethodSignature">
+      <eParameters name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/ownedTypes"/>
@@ -195,14 +189,6 @@
         eType="#//TAbstractType" eOpposite="#//TAbstractType/outerType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outerType" eType="#//TAbstractType"
         eOpposite="#//TAbstractType/innerTypes"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
-        eType="#//TAnnotation" eOpposite="#//TAnnotation/type"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TTextAnnotation" eSuperTypes="#//TAnnotation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorName" eSuperTypes="#//TMethod"/>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorSignature" eSuperTypes="#//TMethodSignature"/>
@@ -255,6 +241,48 @@
     <eClassifiers xsi:type="ecore:EClass" name="TMethodDefinitionContainer">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinitions" upperBound="-1"
           eType="#//TMethodDefinition"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="annotations" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations"
+      nsPrefix="annotations">
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotationValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tKey" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tValue" upperBound="-1"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TTextAnnotation" eSuperTypes="#//annotations/TAnnotation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotated" lowerBound="1"
+          eType="#//annotations/TAnnotatable" eOpposite="#//annotations/TAnnotatable/tAnnotation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//annotations/TAnnotationType" eOpposite="#//annotations/TAnnotationType/annotations"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tValues" upperBound="-1"
+          eType="#//annotations/TAnnotationValue" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+          eType="#//annotations/TAnnotation" eOpposite="#//annotations/TAnnotation/type"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotatable" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotation" upperBound="-1"
+          eType="#//annotations/TAnnotation" containment="true" eOpposite="#//annotations/TAnnotation/tAnnotated"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TTextNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tText" ordered="false"
+          unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TNumberNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TBoolNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TClassNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" eType="#//TAbstractType"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

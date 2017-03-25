@@ -9,8 +9,6 @@ import java.util.List;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.compare.Diff;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.tgg.modisco.test.util.ToFileLogger;
@@ -53,30 +51,7 @@ public class ForwardFromSrcTests {
 
 	@Test
 	public void testForward() {
-		final EList<Diff> diffs = compare();
-
-		if (!diffs.isEmpty()) {
-			StringBuilder error = new StringBuilder(
-					"Expected: Generated model and expected model are equal. But: detected some differences:\n");
-			boolean more = false;
-			for (Diff diff : diffs) {
-				if (more) {
-					error.append('\n');
-				} else {
-					more = true;
-				}
-
-				error.append(diff);
-			}
-
-			System.err.println(error);
-			// TODO: Enable AssertionError as soon as reliable compare is available
-			// throw new AssertionError(error);
-		}
-	}
-
-	private EList<Diff> compare() {
-		return TestGeneratorFromSrc.runTest_ForwardTransformationFromJavaSrc(project).getDifferences();
+		TestGeneratorFromSrc.runTest_ForwardTransformationFromJavaSrc(project);
 	}
 
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" interfaces="//@ownedTypes.0" tName="Test">
-  <packages typeGraph="/" tName="java">
-    <subpackage interfaces="//@ownedTypes.0" ownedTypes="//@ownedTypes.0" typeGraph="/" tName="io"/>
-  </packages>
-  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="Serializable"/>
-</org.gravity.typegraph.basic:TypeGraph>

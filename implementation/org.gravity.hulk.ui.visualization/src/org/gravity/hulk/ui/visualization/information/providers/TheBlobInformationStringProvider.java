@@ -18,7 +18,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
-import org.gravity.typegraph.basic.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodDefinition;
 
