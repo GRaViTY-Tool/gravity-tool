@@ -118,7 +118,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TParameter">
+  <eClassifiers xsi:type="ecore:EClass" name="TParameter" eSuperTypes="#//annotations/TAnnotatable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//TParameter"
         eOpposite="#//TParameter/previous"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//TParameter"
