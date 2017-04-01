@@ -5,7 +5,7 @@ package org.gravity.tgg.modisco.preprocessing;
 import java.lang.Iterable;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 // <-- [user defined imports]
 import java.util.Stack;
@@ -27,6 +27,7 @@ import org.eclipse.gmt.modisco.java.InheritanceKind;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Modifier;
+import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
@@ -51,7 +52,10 @@ import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MName;
 import org.gravity.modisco.MSignature;
+import org.gravity.modisco.MSyntheticMethodDefinition;
 import org.gravity.modisco.ModiscoFactory;
+import org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl;
+import org.gravity.modisco.util.ModiscoAdapterFactory;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Mo Disco TGG Preprocessing</b></em>'.
@@ -91,6 +95,143 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 			prev = entry;
 		}
 		return true;
+	}
+	
+	
+	
+	public void addSyntethicMembers(MMethodDefinition mDef){
+		AbstractTypeDeclaration abstractTypeDeclaration = mDef.getAbstractTypeDeclaration();
+		if(abstractTypeDeclaration != null && abstractTypeDeclaration instanceof ClassDeclaration){
+			ClassDeclaration mClass = (ClassDeclaration) abstractTypeDeclaration;
+			
+			TypeAccess superClassAccess = mClass.getSuperClass();
+			if(superClassAccess != null){
+			Type superClassType = superClassAccess.getType();
+			if(superClassType != null && superClassType instanceof ClassDeclaration){
+				ClassDeclaration superClass = (ClassDeclaration) superClassType;
+				if(!superClass.eIsProxy()){
+					boolean needsSynt = true;
+					for(BodyDeclaration body: superClass.getBodyDeclarations()){
+						if(body instanceof MMethodDefinition){
+							
+							MMethodDefinition superMDef = (MMethodDefinition) body;
+							if(superMDef.getMMethodSignature() == mDef.getMMethodSignature()){
+								needsSynt = false;
+							}
+						}
+					}
+					
+					if(needsSynt){
+						
+					}
+					
+				}
+			}
+		}
+		}
+	}
+	
+	public ClassDeclaration getSuperClass(ClassDeclaration mClass){
+		TypeAccess superAccess = mClass.getSuperClass();
+		if(superAccess != null){
+			Type superType = superAccess.getType();
+			if(superType != null && superType instanceof ClassDeclaration){
+				return (ClassDeclaration) superType;
+			}
+		}
+		return null;
+	}
+	
+	public boolean definesWithEqualSignatureMethod(ClassDeclaration mClass, MMethodDefinition methodDef){
+		for(BodyDeclaration declaration: mClass.getBodyDeclarations()){
+			if(declaration instanceof MMethodDefinition){
+				if(((MMethodDefinition)declaration).getMMethodSignature() == methodDef.getMMethodSignature()){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public void addSyntethicMethodsForClass(ClassDeclaration mClass, ClassDeclaration superClass){
+		for(BodyDeclaration declaration: superClass.getBodyDeclarations()){
+			MMethodDefinition superMethod = null;
+			if(declaration instanceof MMethodDefinition){
+				superMethod = (MMethodDefinition) declaration;
+			}
+			if(declaration instanceof MSyntheticMethodDefinition){
+				superMethod = ((MSyntheticMethodDefinition)declaration).getOriginalMethodDefinition();
+			}
+			
+			if(superMethod != null && !definesWithEqualSignatureMethod(mClass, superMethod)){
+				MSyntheticMethodDefinition synt = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
+				synt.setOriginalMethodDefinition(superMethod);
+				synt.setName(superMethod.getName());
+				mClass.getBodyDeclarations().add(synt);
+				superMethod.getSyntheticMethodDefinitions().add(synt);
+			}
+		}
+	}
+	
+	public void addSyntethicMethods(ClassDeclaration mClass, ArrayList<ClassDeclaration> remainingClasses){
+		ClassDeclaration superClass = getSuperClass(mClass);
+		if(superClass != null  && !superClass.isProxy()){
+			if(remainingClasses.contains(superClass)){
+				//has no syntethic methods added till now
+				remainingClasses.remove(superClass);
+				addSyntethicMethods(superClass, remainingClasses);
+			}
+			
+			addSyntethicMethodsForClass(mClass, superClass);
+		}
+		
+		if(!remainingClasses.isEmpty()){
+			ClassDeclaration nextMClass = remainingClasses.get(0);
+			remainingClasses.remove(nextMClass);
+			addSyntethicMethods(nextMClass, remainingClasses);
+		}
+	}
+	
+	public ArrayList<Package> getAllPackages(ArrayList<Package> packages){
+		ArrayList<Package> newPackages = new ArrayList<Package>();
+		for(Package mPackage: packages){
+			for( Package ownedPackage : mPackage.getOwnedPackages()){
+				if(!packages.contains(ownedPackage)){
+					newPackages.add(ownedPackage);
+				}
+			}
+		}
+		if(newPackages.size() > 0){
+			
+			newPackages.addAll(getAllPackages(newPackages));
+			return newPackages;
+		}
+		return newPackages;
+	}
+	
+	public ArrayList<ClassDeclaration> getAllClasses(MGravityModel model){
+		ArrayList<ClassDeclaration> classes = new ArrayList<ClassDeclaration>();
+		ArrayList<Package> packages = new ArrayList<Package>();
+		packages.addAll(model.getOwnedElements());
+		packages.addAll(getAllPackages(packages));
+		for( Package mPackage : packages){
+			for( AbstractTypeDeclaration element : mPackage.getOwnedElements()){
+				if(element instanceof ClassDeclaration){
+					ClassDeclaration mClass = (ClassDeclaration) element;
+					if(!mClass.isProxy()){
+						classes.add(mClass);
+					}
+				}
+			}
+		}
+		return classes;
+	}
+	
+	public void addSyntethicMethods(MGravityModel model){
+		ArrayList<ClassDeclaration> classes = getAllClasses(model);
+		ClassDeclaration mClass = classes.get(0);
+		classes.remove(mClass);
+		addSyntethicMethods(mClass, classes);
 	}
 
 	/**
@@ -279,6 +420,10 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 						}
 
 					}
+					
+					addSyntethicMethods(model);
+					
+					
 					// ActivityNode42
 					if (MoDiscoTGGPreprocessingImpl
 							.pattern_MoDiscoTGGPreprocessing_5_7_ActivityNode42_expressionFBB(this, model)) {
@@ -298,7 +443,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		} else {
 			return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_12_expressionF();
 		}
-
+		
 	}
 
 	/**

@@ -1,0 +1,52 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule SyntethicMethod #with org.gravity.tgg.modisco
+
+#source { 
+	mClass:ClassDeclaration{
+		++-bodyDeclarations->mSyntethic
+	}
+	mDef: MMethodDefinition{
+		++-syntheticMethodDefinitions->mSyntethic
+	}
+	
+	++mSyntethic: MSyntheticMethodDefinition{
+		
+	}
+	
+}
+
+#target {
+	tClass:TClass{
+		++-defines->tSyntethic
+	}
+	tDef: TMethodDefinition{
+		++-syntethicMethods->tSyntethic
+		
+	}
+	
+	++tSyntethic:TSyntethicMethod{
+	}
+}
+
+#correspondence {
+	mClassDeclarationToTClass : ClassDeclarationToTClass {
+	#src->mClass
+	#trg->tClass
+}
+mDefinitionToTMember : MDefinitionToTMember {
+	#src->mDef
+	#trg->tDef
+}
+++mSyntToTSynt: MSyntethicMethodToTSyntethicMethod{
+	#src->mSyntethic
+	#trg->tSyntethic
+}
+	
+	
+}
+
+#attributeConditions {
+	
+}

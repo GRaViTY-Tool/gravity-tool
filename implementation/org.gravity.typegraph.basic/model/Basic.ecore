@@ -88,6 +88,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="overloadedBy" upperBound="-1"
         eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloading"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntethicMethods" upperBound="-1"
+        eType="#//TSyntethicMethod" containment="true" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodSignature" eSuperTypes="#//TSignature">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
@@ -203,6 +205,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TModifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TSyntethicMethod" eSuperTypes="#//TMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
+        lowerBound="1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/syntethicMethods"/>
   </eClassifiers>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">

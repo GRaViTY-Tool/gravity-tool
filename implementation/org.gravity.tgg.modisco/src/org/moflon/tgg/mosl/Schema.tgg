@@ -229,6 +229,11 @@ MModifierToTModifier{
 	#trg->TModifier
 }
 
+MSyntethicMethodToTSyntethicMethod{
+	#src->MSyntheticMethodDefinition
+	#trg->TSyntethicMethod
+}
+
 
 
 AnnotationMemberValuePairToTAnnotationValue {
