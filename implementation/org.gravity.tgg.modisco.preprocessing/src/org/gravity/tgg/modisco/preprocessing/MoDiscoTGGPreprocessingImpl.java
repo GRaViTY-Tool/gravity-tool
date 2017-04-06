@@ -6,22 +6,38 @@ import java.lang.Iterable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 // <-- [user defined imports]
 import java.util.Stack;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
+import org.eclipse.gmt.modisco.java.ClassFile;
+import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
+import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.ExpressionStatement;
+import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InheritanceKind;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
@@ -30,17 +46,24 @@ import org.eclipse.gmt.modisco.java.Modifier;
 import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
+import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Statement;
+import org.eclipse.gmt.modisco.java.SuperConstructorInvocation;
+import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
+import org.eclipse.gmt.modisco.java.ThisExpression;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.gravity.modisco.FieldAccessStaticType;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
@@ -53,6 +76,7 @@ import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MName;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.MSyntheticMethodDefinition;
+import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl;
 import org.gravity.modisco.util.ModiscoAdapterFactory;
@@ -98,141 +122,9 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 	}
 	
 	
+
 	
-	public void addSyntethicMembers(MMethodDefinition mDef){
-		AbstractTypeDeclaration abstractTypeDeclaration = mDef.getAbstractTypeDeclaration();
-		if(abstractTypeDeclaration != null && abstractTypeDeclaration instanceof ClassDeclaration){
-			ClassDeclaration mClass = (ClassDeclaration) abstractTypeDeclaration;
-			
-			TypeAccess superClassAccess = mClass.getSuperClass();
-			if(superClassAccess != null){
-			Type superClassType = superClassAccess.getType();
-			if(superClassType != null && superClassType instanceof ClassDeclaration){
-				ClassDeclaration superClass = (ClassDeclaration) superClassType;
-				if(!superClass.eIsProxy()){
-					boolean needsSynt = true;
-					for(BodyDeclaration body: superClass.getBodyDeclarations()){
-						if(body instanceof MMethodDefinition){
-							
-							MMethodDefinition superMDef = (MMethodDefinition) body;
-							if(superMDef.getMMethodSignature() == mDef.getMMethodSignature()){
-								needsSynt = false;
-							}
-						}
-					}
-					
-					if(needsSynt){
-						
-					}
-					
-				}
-			}
-		}
-		}
-	}
-	
-	public ClassDeclaration getSuperClass(ClassDeclaration mClass){
-		TypeAccess superAccess = mClass.getSuperClass();
-		if(superAccess != null){
-			Type superType = superAccess.getType();
-			if(superType != null && superType instanceof ClassDeclaration){
-				return (ClassDeclaration) superType;
-			}
-		}
-		return null;
-	}
-	
-	public boolean definesWithEqualSignatureMethod(ClassDeclaration mClass, MMethodDefinition methodDef){
-		for(BodyDeclaration declaration: mClass.getBodyDeclarations()){
-			if(declaration instanceof MMethodDefinition){
-				if(((MMethodDefinition)declaration).getMMethodSignature() == methodDef.getMMethodSignature()){
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	public void addSyntethicMethodsForClass(ClassDeclaration mClass, ClassDeclaration superClass){
-		for(BodyDeclaration declaration: superClass.getBodyDeclarations()){
-			MMethodDefinition superMethod = null;
-			if(declaration instanceof MMethodDefinition){
-				superMethod = (MMethodDefinition) declaration;
-			}
-			if(declaration instanceof MSyntheticMethodDefinition){
-				superMethod = ((MSyntheticMethodDefinition)declaration).getOriginalMethodDefinition();
-			}
-			
-			if(superMethod != null && !definesWithEqualSignatureMethod(mClass, superMethod)){
-				MSyntheticMethodDefinition synt = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
-				synt.setOriginalMethodDefinition(superMethod);
-				synt.setName(superMethod.getName());
-				mClass.getBodyDeclarations().add(synt);
-				superMethod.getSyntheticMethodDefinitions().add(synt);
-			}
-		}
-	}
-	
-	public void addSyntethicMethods(ClassDeclaration mClass, ArrayList<ClassDeclaration> remainingClasses){
-		ClassDeclaration superClass = getSuperClass(mClass);
-		if(superClass != null  && !superClass.isProxy()){
-			if(remainingClasses.contains(superClass)){
-				//has no syntethic methods added till now
-				remainingClasses.remove(superClass);
-				addSyntethicMethods(superClass, remainingClasses);
-			}
-			
-			addSyntethicMethodsForClass(mClass, superClass);
-		}
-		
-		if(!remainingClasses.isEmpty()){
-			ClassDeclaration nextMClass = remainingClasses.get(0);
-			remainingClasses.remove(nextMClass);
-			addSyntethicMethods(nextMClass, remainingClasses);
-		}
-	}
-	
-	public ArrayList<Package> getAllPackages(ArrayList<Package> packages){
-		ArrayList<Package> newPackages = new ArrayList<Package>();
-		for(Package mPackage: packages){
-			for( Package ownedPackage : mPackage.getOwnedPackages()){
-				if(!packages.contains(ownedPackage)){
-					newPackages.add(ownedPackage);
-				}
-			}
-		}
-		if(newPackages.size() > 0){
-			
-			newPackages.addAll(getAllPackages(newPackages));
-			return newPackages;
-		}
-		return newPackages;
-	}
-	
-	public ArrayList<ClassDeclaration> getAllClasses(MGravityModel model){
-		ArrayList<ClassDeclaration> classes = new ArrayList<ClassDeclaration>();
-		ArrayList<Package> packages = new ArrayList<Package>();
-		packages.addAll(model.getOwnedElements());
-		packages.addAll(getAllPackages(packages));
-		for( Package mPackage : packages){
-			for( AbstractTypeDeclaration element : mPackage.getOwnedElements()){
-				if(element instanceof ClassDeclaration){
-					ClassDeclaration mClass = (ClassDeclaration) element;
-					if(!mClass.isProxy()){
-						classes.add(mClass);
-					}
-				}
-			}
-		}
-		return classes;
-	}
-	
-	public void addSyntethicMethods(MGravityModel model){
-		ArrayList<ClassDeclaration> classes = getAllClasses(model);
-		ClassDeclaration mClass = classes.get(0);
-		classes.remove(mClass);
-		addSyntethicMethods(mClass, classes);
-	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -421,7 +313,9 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
 					}
 					
-					addSyntethicMethods(model);
+					new SyntethicMethodsPreprocessor().addSyntethicMethods(model);
+					new StaticTypePreprocessor().addStaticTypeAccesses(model);
+					
 					
 					
 					// ActivityNode42

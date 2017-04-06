@@ -11,6 +11,7 @@
         eType="#//TMember" eOpposite="#//TMember/accessedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tSource" lowerBound="1"
         eType="#//TMember" eOpposite="#//TMember/tAccessing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staticType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" eType="#//containers/TMemberContainer"/>
