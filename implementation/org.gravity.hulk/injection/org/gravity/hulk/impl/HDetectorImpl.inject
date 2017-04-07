@@ -10,9 +10,4 @@ partial class HDetectorImpl {
 		throw new UnsupportedOperationException();
 -->
 
-@model getNextID () <--
-
-		return hAntiPatternHandling.getApg().getNextID();
--->
-
 }
