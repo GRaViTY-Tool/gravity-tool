@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.Collections;
 
 import org.apache.log4j.BasicConfigurator;
-import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.EMFCompare;
@@ -17,7 +17,6 @@ import org.eclipse.emf.compare.diff.IDiffEngine;
 import org.eclipse.emf.compare.diff.IDiffProcessor;
 import org.eclipse.emf.compare.scope.DefaultComparisonScope;
 import org.eclipse.emf.compare.scope.IComparisonScope;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -107,10 +106,9 @@ public class TestGeneratorPreprocessing {
 			Resource res = set.createResource(URI.createFileURI(this.testcase.getSrcXMI().toString()));
 			res.load(Collections.EMPTY_MAP);
 			
-			MoDiscoTGGPreprocessingImpl preprocessing = new MoDiscoTGGPreprocessingImpl();
 			MGravityModel model = (MGravityModel)res.getContents().get(0);
 			
-			Assert.assertTrue(preprocessing.preprocess(model));
+			Assert.assertTrue(MoDiscoTGGPreprocessingImpl.preprocess(new NullProgressMonitor(), model));
 			
 			res.setURI(URI.createFileURI(resultXMI.toString()));
 			res.save(Collections.EMPTY_MAP);

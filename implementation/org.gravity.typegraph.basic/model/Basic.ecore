@@ -135,6 +135,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeGraph">
+    <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"

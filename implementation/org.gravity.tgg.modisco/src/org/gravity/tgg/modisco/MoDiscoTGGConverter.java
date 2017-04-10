@@ -26,7 +26,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -35,13 +34,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
 import org.eclipse.gmt.modisco.java.ImportDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.Package;
-import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
 import org.eclipse.jdt.core.IClasspathContainer;
@@ -58,7 +55,7 @@ import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
 import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
 import org.gravity.eclipse.converter.IPGConverter;
 import static org.gravity.eclipse.io.ModelSaver.*;
-import org.gravity.modisco.GravityMoDiscoFactoryImpl;
+
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessingImpl;
@@ -149,6 +146,11 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		// }
 
 		long t0 = System.currentTimeMillis();
+		try {
+			java_project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 		System.out.println(t0 + " MoDisco discover project: " + java_project.getProject().getName());
 		Model eobject = discoverProject(java_project, libs, progressMonitor);
 		long t1 = System.currentTimeMillis();
@@ -166,34 +168,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		if (eobject instanceof MGravityModel) {
 			MGravityModel model = (MGravityModel) eobject;
 
-			GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
-			if (model.getMFieldDefinitions().size() == 0) {
-				model.getMFieldDefinitions().addAll(factory.getFdefs());
-			}
-			if (model.getMMethodDefinitions().size() == 0) {
-				model.getMMethodDefinitions().addAll(factory.getMdefs());
-			}
-			if (model.getMConstructorDefinitions().size() == 0) {
-				model.getMConstructorDefinitions().addAll(factory.getCdefs());
-			}
-			MoDiscoTGGPreprocessingImpl preprocessing = new MoDiscoTGGPreprocessingImpl();
-			preprocessing.fixStaticMethodCallOnField(model);
-			if (!preprocessing.preprocess(model)) {
+			if(!MoDiscoTGGPreprocessingImpl.preprocess(progressMonitor, model)){
 				System.out.println("ERROR: Preprocessing failed");
 				return false;
-			}
-			TreeIterator<EObject> iterator = model.eResource().getAllContents();
-			while (iterator.hasNext()) {
-				EObject next = iterator.next();
-				if (next instanceof AnonymousClassDeclaration) {
-					model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
-				} else if (next instanceof TypeParameter) {
-					model.getTypeParameters().add((TypeParameter) next);
-				}
-
-				if (progressMonitor.isCanceled()) {
-					return false;
-				}
 			}
 		}
 		long t3 = System.currentTimeMillis();

@@ -1,0 +1,52 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationBooleanArrayValue
+#with org.gravity.tgg.modisco
+
+#source {
+	mAnnotation : MAnnotation{
+		-values->mAnnotationValue
+	}
+	mAnnotationValue : AnnotationMemberValuePair {
+		-value-> mArray
+	}
+	mArray : ArrayInitializer {
+		++ -expressions-> mBool
+	}
+	++ mBool : BooleanLiteral {
+		
+	}
+}
+
+#target {
+	tAnnotation : TAnnotation {
+		-tValues->tAnnotationValue
+	}
+	tAnnotationValue : TAnnotationValue {
+		++ -tValue-> tBool
+	}
+	++ tBool : TBoolNode {
+		
+	}
+}
+
+#correspondence {
+	mAnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->mAnnotation
+		#trg->tAnnotation
+	}
+	annotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
+		#src->mAnnotationValue
+		#trg->tAnnotationValue
+	}
+	++ mBoolToTBool : BooleanLiteralToTBoolNode {
+		#src->mBool
+		#trg->tBool
+	}
+}
+
+#attributeConditions {
+	eq(mAnnotation.mRelevant, true)
+	eq(mBool.value, tBool.value)
+}
