@@ -1,58 +1,35 @@
-/**
- */
 package org.gravity.tgg.modisco.preprocessing;
 
 import java.lang.Iterable;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
-// <-- [user defined imports]
 import java.util.Stack;
 
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
+import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.ClassFile;
-import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
-import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.ExpressionStatement;
-import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InheritanceKind;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Modifier;
-import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
-import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Statement;
-import org.eclipse.gmt.modisco.java.SuperConstructorInvocation;
-import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
-import org.eclipse.gmt.modisco.java.ThisExpression;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeParameter;
@@ -61,9 +38,9 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
-import org.gravity.modisco.FieldAccessStaticType;
+import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
-import org.gravity.modisco.MConstructorDefinition;
+import org.gravity.modisco.MAnnotation;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
@@ -75,36 +52,16 @@ import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MName;
 import org.gravity.modisco.MSignature;
-import org.gravity.modisco.MSyntheticMethodDefinition;
-import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
-import org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl;
-import org.gravity.modisco.util.ModiscoAdapterFactory;
-/**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mo Disco TGG Preprocessing</b></em>'.
- * <!-- end-user-doc -->
- * <p>
- * </p>
- *
- * @generated
- */
-public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
+public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean createParamList(MMethodDefinition mDef, MMethodSignature mSig) {
-		// [user code injected with eMoflon]
+	private boolean createParamList(MMethodDefinition mDef, MMethodSignature mSig) {
 		MEntry prev = null;
 		EList<MEntry> mEntrys = mSig.getMEntrys();
 		for (SingleVariableDeclaration param : mDef.getParameters()) {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			entry.setSingleVariableDeclaration(param);
 			mEntrys.add(entry);
 			Type type = param.getType().getType();
 			if (!(type instanceof TypeParameter)) {
@@ -120,55 +77,26 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		}
 		return true;
 	}
-	
-	
 
-	
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean fixStaticMethodCallOnField(MGravityModel model) {// ForEach ActivityNode28
+	public boolean fixStaticMethodCallOnField(MGravityModel model) {
 		for (Object[] result1_black : MoDiscoTGGPreprocessingImpl
 				.pattern_MoDiscoTGGPreprocessing_1_1_ActivityNode28_blackFFFFBFFFFFFF(model)) {
 			AbstractTypeDeclaration type = (AbstractTypeDeclaration) result1_black[0];
-			// Block block = (Block) result1_black[1];
-			// SingleVariableAccess access = (SingleVariableAccess) result1_black[2];
-			// CompilationUnit cu = (CompilationUnit) result1_black[3];
-			// ExpressionStatement expression = (ExpressionStatement) result1_black[5];
-			// MethodDeclaration method = (MethodDeclaration) result1_black[6];
-			// MethodInvocation invoc = (MethodInvocation) result1_black[7];
-			// ClassDeclaration clazz = (ClassDeclaration) result1_black[8];
-			// VariableDeclarationFragment var = (VariableDeclarationFragment) result1_black[9];
 			FieldDeclaration varDecl = (FieldDeclaration) result1_black[10];
-			// MethodDeclaration called = (MethodDeclaration) result1_black[11];
-			// ActivityNode29
 			Object[] result2_black = MoDiscoTGGPreprocessingImpl
 					.pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_blackBB(type, varDecl);
 			if (result2_black != null) {
 				MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_greenBFB(type, varDecl);
-				// TypeAccess create = (TypeAccess) result2_green[1];
-
-			} else {
 			}
 
 		}
-		return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_1_3_expressionF();
+		return true;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Type getMostGenericReturnType(MMethodDefinition method) {
-		// [user code injected with eMoflon]
+	private Type getMostGenericReturnType(MMethodDefinition method) {
 		TypeAccess returnType = method.getReturnType();
 		if (returnType == null) {
-			// Dirty Hack: assume void
+			// TODO: Currently a dirty hack: assuming void
 			TypeAccess a = JavaFactory.eINSTANCE.createTypeAccess();
 			method.setReturnType(a);
 			for (Type t : method.getModel().getOrphanTypes()) {
@@ -180,7 +108,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		}
 		Type ret = returnType.getType();
 
-		Stack<Type> stack = new Stack();
+		Stack<Type> stack = new Stack<>();
 		AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (abstractTypeDeclaration != null) {
 			stack.add(abstractTypeDeclaration);
@@ -228,13 +156,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return ret;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
-		// [user code injected with eMoflon]
+	private boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
 		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
 		EList<MEntry> parameters2 = mSig.getMEntrys();
 		if (parameters1.size() == parameters2.size()) {
@@ -248,13 +170,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return false;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSuperType(Type type, Type supertype) {
-		// [user code injected with eMoflon]
+	private boolean isSuperType(Type type, Type supertype) {
 		if (type instanceof AbstractTypeDeclaration) {
 			if (type instanceof ClassDeclaration) {
 				ClassDeclaration clazz = (ClassDeclaration) type;
@@ -275,77 +191,32 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return false;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean preprocess(MGravityModel model) {
-		// ActivityNode1
-		Object[] result1_black = MoDiscoTGGPreprocessingImpl
-				.pattern_MoDiscoTGGPreprocessing_5_1_ActivityNode1_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException(
-					"Pattern matching in node [ActivityNode1] failed." + " Variables: " + "[this] = " + this + ".");
-		}
-		// ActivityNode2
-		if (MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_2_ActivityNode2_expressionFBB(this, model)) {
-			// ActivityNode3
-			if (MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_3_ActivityNode3_expressionFBB(this,
-					model)) {
-				// ActivityNode39
-				if (MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_4_ActivityNode39_expressionFBB(this,
-						model)) {
-					// ForEach ActivityNode40
-					for (Object[] result5_black : MoDiscoTGGPreprocessingImpl
-							.pattern_MoDiscoTGGPreprocessing_5_5_ActivityNode40_blackBFF(model)) {
-						// MName mName = (MName) result5_black[1];
-						MSignature mSignature = (MSignature) result5_black[2];
-						// ForEach ActivityNode41
-						for (Object[] result6_black : MoDiscoTGGPreprocessingImpl
-								.pattern_MoDiscoTGGPreprocessing_5_6_ActivityNode41_blackFBF(mSignature)) {
-							// MDefinition mDefinition = (MDefinition) result6_black[0];
-							AbstractTypeDeclaration mType = (AbstractTypeDeclaration) result6_black[2];
-							MoDiscoTGGPreprocessingImpl
-									.pattern_MoDiscoTGGPreprocessing_5_6_ActivityNode41_greenBB(mSignature, mType);
-
+	private boolean preprocess(MGravityModel model) {
+		if (preprocessFields(model) && preprocessMethods(model) && preprocessAccesses(model)) {
+			for (MName mName : model.getMNames()) {
+				for (MSignature mSignature : mName.getMSignatures()) {
+					for (MDefinition mDefinition : mSignature.getMDefinitions()) {
+						AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
+						if (mType != null) {
+							mSignature.getImplementedBy().add(mType);
 						}
-
 					}
-					
-					new SyntethicMethodsPreprocessor().addSyntethicMethods(model);
-					new StaticTypePreprocessor().addStaticTypeAccesses(model);
-					
-					
-					
-					// ActivityNode42
-					if (MoDiscoTGGPreprocessingImpl
-							.pattern_MoDiscoTGGPreprocessing_5_7_ActivityNode42_expressionFBB(this, model)) {
-						return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_8_expressionF();
-					} else {
-						return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_9_expressionF();
-					}
-
-				} else {
-					return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_10_expressionF();
 				}
-
-			} else {
-				return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_11_expressionF();
 			}
+			return preprocessOrphanTypes(model);
 
 		} else {
-			return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_5_12_expressionF();
+			return false;
 		}
-		
+
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean preprocessFields(MGravityModel model) {
+	private boolean preprocessFields(MGravityModel model) {
 		// ActivityNode4
 		Object[] result1_black = MoDiscoTGGPreprocessingImpl
 				.pattern_MoDiscoTGGPreprocessing_6_1_ActivityNode4_blackB(this);
@@ -397,10 +268,12 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 							.pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_blackBFBF(newDef, mDefinition);
 					if (result7_black != null) {
 						Type type = (Type) result7_black[1];
-						// TypeAccess oldTypeAccess = (TypeAccess) result7_black[3];
+						// TypeAccess oldTypeAccess = (TypeAccess)
+						// result7_black[3];
 						MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_greenBFB(newDef,
 								type);
-						// TypeAccess newTypeAccess = (TypeAccess) result7_green[1];
+						// TypeAccess newTypeAccess = (TypeAccess)
+						// result7_green[1];
 
 					} else {
 					}
@@ -411,7 +284,8 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 						Modifier modifier = (Modifier) result8_black[2];
 						MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_6_8_ActivityNode34_greenBFB(newDef,
 								modifier);
-						// Modifier clonedModifier = (Modifier) result8_green[1];
+						// Modifier clonedModifier = (Modifier)
+						// result8_green[1];
 
 					} else {
 					}
@@ -506,45 +380,15 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 			}
 
 		}
-		return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_6_18_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean preprocessInv(MGravityModel model) {
-		// ActivityNode25
-		Object[] result1_black = MoDiscoTGGPreprocessingImpl
-				.pattern_MoDiscoTGGPreprocessing_7_1_ActivityNode25_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException(
-					"Pattern matching in node [ActivityNode25] failed." + " Variables: " + "[this] = " + this + ".");
-		}
-		// ForEach ActivityNode26
-		for (Object[] result2_black : MoDiscoTGGPreprocessingImpl
-				.pattern_MoDiscoTGGPreprocessing_7_2_ActivityNode26_blackFFBF(model)) {
-			MDefinition mDef = (MDefinition) result2_black[0];
-			MName mName = (MName) result2_black[1];
-			// MSignature mSig = (MSignature) result2_black[3];
-			// ActivityNode27
-			if (MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_7_3_ActivityNode27_expressionFBBB(this,
-					mName, mDef)) {
-			} else {
-				return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_7_4_expressionF();
-			}
-
-		}
-		return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_7_5_expressionF();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean preprocessMethods(MGravityModel model) {
+	private boolean preprocessMethods(MGravityModel model) {
 		// ActivityNode12
 		Object[] result1_black = MoDiscoTGGPreprocessingImpl
 				.pattern_MoDiscoTGGPreprocessing_8_1_ActivityNode12_blackB(this);
@@ -617,7 +461,8 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 			Object[] result10_black = MoDiscoTGGPreprocessingImpl
 					.pattern_MoDiscoTGGPreprocessing_8_10_ActivityNode24_blackFB(mDef);
 			if (result10_black != null) {
-				// MMethodSignature mOldSig = (MMethodSignature) result10_black[0];
+				// MMethodSignature mOldSig = (MMethodSignature)
+				// result10_black[0];
 			} else {
 				// ActivityNode18
 				Object[] result11_black = MoDiscoTGGPreprocessingImpl
@@ -638,28 +483,17 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 			}
 
 		}
-		return MoDiscoTGGPreprocessingImpl.pattern_MoDiscoTGGPreprocessing_8_13_expressionF();
+		return true;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean updateName(MName mName, MDefinition mDef) {
+	private boolean updateName(MName mName, MDefinition mDef) {
 		// [user code injected with eMoflon]
 		// TODO: implement this method here but do not remove the injection
 		// marker
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean preprocessAccesses(MGravityModel model) {
-		// [user code injected with eMoflon]
+	private boolean preprocessAccesses(MGravityModel model) {
 		for (MAbstractMethodDefinition def : model.getMAbstractMethodDefinitions()) {
 			Block block = def.getBody();
 			if (!StatementHandler.handle(block, def)) {
@@ -676,17 +510,12 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return true;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean preprocessOrphanTypes(MGravityModel model) {
+	private boolean preprocessOrphanTypes(MGravityModel model) {
 		// [user code injected with eMoflon]
 		return true;
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_1_1_ActivityNode28_blackFFFFBFFFFFFF(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_1_1_ActivityNode28_blackFFFFBFFFFFFF(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (CompilationUnit cu : model.getCompilationUnits()) {
@@ -751,7 +580,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_black_nac_0B(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_black_nac_0B(
 			FieldDeclaration varDecl) {
 		TypeAccess old = varDecl.getType();
 		if (old != null) {
@@ -761,7 +590,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_blackBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_blackBB(
 			AbstractTypeDeclaration type, FieldDeclaration varDecl) {
 		if (pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_black_nac_0B(varDecl) == null) {
 			return new Object[] { type, varDecl };
@@ -769,7 +598,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_greenBFB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_1_2_ActivityNode29_greenBFB(
 			AbstractTypeDeclaration type, FieldDeclaration varDecl) {
 		TypeAccess create = JavaFactory.eINSTANCE.createTypeAccess();
 		type.getUsagesInTypeAccess().add(create);
@@ -777,105 +606,12 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return new Object[] { type, create, varDecl };
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_1_3_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_5_1_ActivityNode1_blackB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_1_ActivityNode4_blackB(
 			MoDiscoTGGPreprocessingImpl _this) {
 		return new Object[] { _this };
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_2_ActivityNode2_expressionFBB(
-			MoDiscoTGGPreprocessingImpl _this, MGravityModel model) {
-		boolean _localVariable_0 = _this.preprocessFields(model);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_3_ActivityNode3_expressionFBB(
-			MoDiscoTGGPreprocessingImpl _this, MGravityModel model) {
-		boolean _localVariable_0 = _this.preprocessMethods(model);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_4_ActivityNode39_expressionFBB(
-			MoDiscoTGGPreprocessingImpl _this, MGravityModel model) {
-		boolean _localVariable_0 = _this.preprocessAccesses(model);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_5_5_ActivityNode40_blackBFF(
-			MGravityModel model) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MName mName : model.getMNames()) {
-			for (MSignature mSignature : mName.getMSignatures()) {
-				_result.add(new Object[] { model, mName, mSignature });
-			}
-		}
-		return _result;
-	}
-
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_5_6_ActivityNode41_blackFBF(
-			MSignature mSignature) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MDefinition mDefinition : mSignature.getMDefinitions()) {
-			AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
-			if (mType != null) {
-				_result.add(new Object[] { mDefinition, mSignature, mType });
-			}
-
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_5_6_ActivityNode41_greenBB(MSignature mSignature,
-			AbstractTypeDeclaration mType) {
-		mSignature.getImplementedBy().add(mType);
-		return new Object[] { mSignature, mType };
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_7_ActivityNode42_expressionFBB(
-			MoDiscoTGGPreprocessingImpl _this, MGravityModel model) {
-		boolean _localVariable_0 = _this.preprocessOrphanTypes(model);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_8_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_9_expressionF() {
-		boolean _result = Boolean.valueOf(false);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_10_expressionF() {
-		boolean _result = Boolean.valueOf(false);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_11_expressionF() {
-		boolean _result = Boolean.valueOf(false);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_5_12_expressionF() {
-		boolean _result = Boolean.valueOf(false);
-		return _result;
-	}
-
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_1_ActivityNode4_blackB(
-			MoDiscoTGGPreprocessingImpl _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_2_ActivityNode31_blackBF(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_2_ActivityNode31_blackBF(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MFieldDefinition mDefinition : model.getMFieldDefinitions()) {
@@ -884,7 +620,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_3_ActivityNode37_blackFB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_3_ActivityNode37_blackFB(
 			MFieldDefinition mDefinition) {
 		for (VariableDeclarationFragment fstDeclFragment : mDefinition.getFragments()) {
 			return new Object[] { fstDeclFragment, mDefinition };
@@ -892,7 +628,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_4_ActivityNode36_blackFBB(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_4_ActivityNode36_blackFBB(
 			MFieldDefinition mDefinition, VariableDeclarationFragment fstDeclFragment) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (mDefinition.getFragments().contains(fstDeclFragment)) {
@@ -905,18 +641,18 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_4_ActivityNode36_redBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_4_ActivityNode36_redBB(
 			VariableDeclarationFragment scndDeclFragment, MFieldDefinition mDefinition) {
 		scndDeclFragment.setVariablesContainer(null);
 		return new Object[] { scndDeclFragment, mDefinition };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_5_ActivityNode32_blackBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_5_ActivityNode32_blackBB(
 			VariableDeclarationFragment scndDeclFragment, MGravityModel model) {
 		return new Object[] { scndDeclFragment, model };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_5_ActivityNode32_greenBFBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_5_ActivityNode32_greenBFBB(
 			VariableDeclarationFragment scndDeclFragment, MGravityModel model, MFieldDefinition mDefinition) {
 		MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
 		newDef.getFragments().add(scndDeclFragment);
@@ -931,7 +667,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_6_ActivityNode38_blackFBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_6_ActivityNode38_blackFBB(
 			MFieldDefinition mDefinition, MFieldDefinition newDef) {
 		if (!mDefinition.equals(newDef)) {
 			AbstractTypeDeclaration abstrType = mDefinition.getAbstractTypeDeclaration();
@@ -943,13 +679,13 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_6_ActivityNode38_greenBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_6_ActivityNode38_greenBB(
 			AbstractTypeDeclaration abstrType, MFieldDefinition newDef) {
 		newDef.setAbstractTypeDeclaration(abstrType);
 		return new Object[] { abstrType, newDef };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_blackBFBF(MFieldDefinition newDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_blackBFBF(MFieldDefinition newDef,
 			MFieldDefinition mDefinition) {
 		if (!mDefinition.equals(newDef)) {
 			TypeAccess oldTypeAccess = mDefinition.getType();
@@ -965,7 +701,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_greenBFB(MFieldDefinition newDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_7_ActivityNode33_greenBFB(MFieldDefinition newDef,
 			Type type) {
 		TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 		newDef.setType(newTypeAccess);
@@ -973,7 +709,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return new Object[] { newDef, newTypeAccess, type };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_8_ActivityNode34_blackBBF(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_8_ActivityNode34_blackBBF(
 			MFieldDefinition mDefinition, MFieldDefinition newDef) {
 		if (!mDefinition.equals(newDef)) {
 			Modifier modifier = mDefinition.getModifier();
@@ -985,7 +721,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_8_ActivityNode34_greenBFB(MFieldDefinition newDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_8_ActivityNode34_greenBFB(MFieldDefinition newDef,
 			Modifier modifier) {
 		Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
 		newDef.setModifier(clonedModifier);
@@ -999,7 +735,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_9_ActivityNode35_blackBBF(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_9_ActivityNode35_blackBBF(
 			MFieldDefinition mDefinition, MFieldDefinition newDef) {
 		if (!mDefinition.equals(newDef)) {
 			AnonymousClassDeclaration anno = mDefinition.getAnonymousClassDeclarationOwner();
@@ -1011,18 +747,18 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_9_ActivityNode35_greenBB(MFieldDefinition newDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_9_ActivityNode35_greenBB(MFieldDefinition newDef,
 			AnonymousClassDeclaration anno) {
 		anno.getBodyDeclarations().add(newDef);
 		return new Object[] { newDef, anno };
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_6_10_expressionF() {
+	private static final boolean pattern_MoDiscoTGGPreprocessing_6_10_expressionF() {
 		boolean _result = Boolean.valueOf(false);
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_11_ActivityNode5_blackFBF(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_11_ActivityNode5_blackFBF(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MFieldDefinition mfDefinition : model.getMFieldDefinitions()) {
@@ -1033,7 +769,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_12_ActivityNode7_blackFBBB(MGravityModel model,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_12_ActivityNode7_blackFBBB(MGravityModel model,
 			MFieldDefinition mfDefinition, VariableDeclarationFragment declFragment) {
 		String declFragment_name = declFragment.getName();
 		for (MFieldName mName : model.getMFieldNames()) {
@@ -1047,18 +783,18 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_12_ActivityNode7_greenBBB(MFieldName mName,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_12_ActivityNode7_greenBBB(MFieldName mName,
 			MFieldDefinition mfDefinition, VariableDeclarationFragment declFragment) {
 		mName.getMFieldDefinitions().add(mfDefinition);
 		return new Object[] { mName, mfDefinition, declFragment };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_13_ActivityNode9_blackBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_13_ActivityNode9_blackBB(
 			MFieldDefinition mfDefinition, MGravityModel model) {
 		return new Object[] { mfDefinition, model };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_13_ActivityNode9_greenBBFB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_13_ActivityNode9_greenBBFB(
 			MFieldDefinition mfDefinition, MGravityModel model, VariableDeclarationFragment declFragment) {
 		MFieldName mName = ModiscoFactory.eINSTANCE.createMFieldName();
 		mName.getMFieldDefinitions().add(mfDefinition);
@@ -1071,7 +807,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_14_ActivityNode6_blackFFB(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_6_14_ActivityNode6_blackFFB(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MFieldName mName : model.getMFieldNames()) {
@@ -1082,7 +818,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_15_ActivityNode10_blackFBFFB(MFieldName mName,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_15_ActivityNode10_blackFBFFB(MFieldName mName,
 			MFieldDefinition mfDefinition2) {
 		TypeAccess mAccess = mfDefinition2.getType();
 		if (mAccess != null) {
@@ -1100,19 +836,19 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_15_ActivityNode10_greenBB(MFieldSignature mSig,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_15_ActivityNode10_greenBB(MFieldSignature mSig,
 			MFieldDefinition mfDefinition2) {
 		mSig.getMDefinitions().add(mfDefinition2);
 		mSig.getMFieldDefinitions().add(mfDefinition2);
 		return new Object[] { mSig, mfDefinition2 };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_16_ActivityNode11_blackBBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_16_ActivityNode11_blackBBB(
 			MFieldDefinition mfDefinition2, MFieldName mName, MGravityModel model) {
 		return new Object[] { mfDefinition2, mName, model };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_16_ActivityNode11_greenFBBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_16_ActivityNode11_greenFBBB(
 			MFieldDefinition mfDefinition2, MFieldName mName, MGravityModel model) {
 		MFieldSignature mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
 		mSig.getMDefinitions().add(mfDefinition2);
@@ -1123,7 +859,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return new Object[] { mSig, mfDefinition2, mName, model };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_17_ActivityNode30_blackBFBF(MFieldSignature mSig,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_17_ActivityNode30_blackBFBF(MFieldSignature mSig,
 			MFieldDefinition mfDefinition2) {
 		if (mSig.getMDefinitions().contains(mfDefinition2)) {
 			if (mSig.getMFieldDefinitions().contains(mfDefinition2)) {
@@ -1141,58 +877,18 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_6_17_ActivityNode30_greenBB(MFieldSignature mSig,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_6_17_ActivityNode30_greenBB(MFieldSignature mSig,
 			Type mType) {
 		mSig.setType(mType);
 		return new Object[] { mSig, mType };
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_6_18_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_7_1_ActivityNode25_blackB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_1_ActivityNode12_blackB(
 			MoDiscoTGGPreprocessingImpl _this) {
 		return new Object[] { _this };
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_7_2_ActivityNode26_blackFFBF(
-			MGravityModel model) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (MName mName : model.getMNames()) {
-			for (MSignature mSig : mName.getMSignatures()) {
-				for (MDefinition mDef : mSig.getMDefinitions()) {
-					_result.add(new Object[] { mDef, mName, model, mSig });
-				}
-			}
-		}
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_7_3_ActivityNode27_expressionFBBB(
-			MoDiscoTGGPreprocessingImpl _this, MName mName, MDefinition mDef) {
-		boolean _localVariable_0 = _this.updateName(mName, mDef);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_7_4_expressionF() {
-		boolean _result = Boolean.valueOf(false);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_7_5_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_1_ActivityNode12_blackB(
-			MoDiscoTGGPreprocessingImpl _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_2_ActivityNode13_blackBF(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_2_ActivityNode13_blackBF(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MMethodDefinition mDef : model.getMMethodDefinitions()) {
@@ -1201,7 +897,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_3_ActivityNode15_blackBFB(MMethodDefinition mDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_3_ActivityNode15_blackBFB(MMethodDefinition mDef,
 			MGravityModel model) {
 		String mDef_name = mDef.getName();
 		for (MMethodName mName : model.getMMethodNames()) {
@@ -1215,18 +911,18 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_3_ActivityNode15_greenBB(MMethodDefinition mDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_3_ActivityNode15_greenBB(MMethodDefinition mDef,
 			MMethodName mName) {
 		mName.getMMethodDefinitions().add(mDef);
 		return new Object[] { mDef, mName };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_4_ActivityNode16_blackBB(MGravityModel model,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_4_ActivityNode16_blackBB(MGravityModel model,
 			MMethodDefinition mDef) {
 		return new Object[] { model, mDef };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_4_ActivityNode16_greenFBB(MGravityModel model,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_4_ActivityNode16_greenFBB(MGravityModel model,
 			MMethodDefinition mDef) {
 		MMethodName mName = ModiscoFactory.eINSTANCE.createMMethodName();
 		mName.setModel(model);
@@ -1239,7 +935,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_5_ActivityNode14_blackFFB(
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_5_ActivityNode14_blackFFB(
 			MGravityModel model) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MMethodName mName : model.getMMethodNames()) {
@@ -1250,7 +946,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_bindingFBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_bindingFBB(
 			MoDiscoTGGPreprocessingImpl _this, MMethodDefinition mDef) {
 		Type _localVariable_0 = _this.getMostGenericReturnType(mDef);
 		Type mSigType = _localVariable_0;
@@ -1260,11 +956,11 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_blackB(Type mSigType) {
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_blackB(Type mSigType) {
 		return new Object[] { mSigType };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_bindingAndBlackFBB(
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_bindingAndBlackFBB(
 			MoDiscoTGGPreprocessingImpl _this, MMethodDefinition mDef) {
 		Object[] result_pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_binding = pattern_MoDiscoTGGPreprocessing_8_6_ActivityNode23_bindingFBB(
 				_this, mDef);
@@ -1281,7 +977,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_7_ActivityNode17_blackFBB(Type mSigType,
+	private static final Iterable<Object[]> pattern_MoDiscoTGGPreprocessing_8_7_ActivityNode17_blackFBB(Type mSigType,
 			MMethodName mName) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MMethodSignature mSig : mName.getMMethodSignatures()) {
@@ -1292,26 +988,26 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return _result;
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_8_8_ActivityNode19_expressionFBBB(
+	private static final boolean pattern_MoDiscoTGGPreprocessing_8_8_ActivityNode19_expressionFBBB(
 			MoDiscoTGGPreprocessingImpl _this, MMethodDefinition mDef, MMethodSignature mSig) {
 		boolean _localVariable_0 = _this.isParamListEqual(mDef, mSig);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_9_ActivityNode20_blackBB(MMethodDefinition mDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_9_ActivityNode20_blackBB(MMethodDefinition mDef,
 			MMethodSignature mSig) {
 		return new Object[] { mDef, mSig };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_9_ActivityNode20_greenBB(MMethodDefinition mDef,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_9_ActivityNode20_greenBB(MMethodDefinition mDef,
 			MMethodSignature mSig) {
 		mSig.getMMethodDefinitions().add(mDef);
 		mSig.getMDefinitions().add(mDef);
 		return new Object[] { mDef, mSig };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_10_ActivityNode24_blackFB(MMethodDefinition mDef) {
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_10_ActivityNode24_blackFB(MMethodDefinition mDef) {
 		MMethodSignature mOldSig = mDef.getMMethodSignature();
 		if (mOldSig != null) {
 			return new Object[] { mOldSig, mDef };
@@ -1320,12 +1016,12 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return null;
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_11_ActivityNode18_blackBBBB(MMethodName mName,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_11_ActivityNode18_blackBBBB(MMethodName mName,
 			MMethodDefinition mDef, Type mSigType, MGravityModel model) {
 		return new Object[] { mName, mDef, mSigType, model };
 	}
 
-	public static final Object[] pattern_MoDiscoTGGPreprocessing_8_11_ActivityNode18_greenBBBFB(MMethodName mName,
+	private static final Object[] pattern_MoDiscoTGGPreprocessing_8_11_ActivityNode18_greenBBBFB(MMethodName mName,
 			MMethodDefinition mDef, Type mSigType, MGravityModel model) {
 		MMethodSignature mNewSig = ModiscoFactory.eINSTANCE.createMMethodSignature();
 		mName.getMSignatures().add(mNewSig);
@@ -1337,15 +1033,10 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		return new Object[] { mName, mDef, mSigType, mNewSig, model };
 	}
 
-	public static final boolean pattern_MoDiscoTGGPreprocessing_8_12_ActivityNode21_expressionFBBB(
+	private static final boolean pattern_MoDiscoTGGPreprocessing_8_12_ActivityNode21_expressionFBBB(
 			MoDiscoTGGPreprocessingImpl _this, MMethodDefinition mDef, MMethodSignature mNewSig) {
 		boolean _localVariable_0 = _this.createParamList(mDef, mNewSig);
 		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_MoDiscoTGGPreprocessing_8_13_expressionF() {
-		boolean _result = Boolean.valueOf(true);
 		return _result;
 	}
 
@@ -1362,5 +1053,43 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl{
 		}
 		return false;
 	}
-	// [user code injected with eMoflon] -->
-} //MoDiscoTGGPreprocessingImpl
+
+	public static boolean preprocess(IProgressMonitor progressMonitor, MGravityModel model) {
+		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
+		if (model.getMFieldDefinitions().size() == 0) {
+			model.getMFieldDefinitions().addAll(factory.getFdefs());
+		}
+		if (model.getMMethodDefinitions().size() == 0) {
+			model.getMMethodDefinitions().addAll(factory.getMdefs());
+		}
+		if (model.getMConstructorDefinitions().size() == 0) {
+			model.getMConstructorDefinitions().addAll(factory.getCdefs());
+		}
+		MoDiscoTGGPreprocessingImpl preprocessing = new MoDiscoTGGPreprocessingImpl();
+		preprocessing.fixStaticMethodCallOnField(model);
+		if (!preprocessing.preprocess(model)) {
+			return false;
+		}
+		TreeIterator<EObject> iterator = model.eResource().getAllContents();
+		while (iterator.hasNext()) {
+			EObject next = iterator.next();
+			if (next instanceof AnonymousClassDeclaration) {
+				model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
+			} else if (next instanceof TypeParameter) {
+				model.getTypeParameters().add((TypeParameter) next);
+			} else if (next instanceof Annotation) {
+				EObject eObject = next.eContainer();
+				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
+						|| eObject instanceof SingleVariableDeclaration));
+			}
+			if (progressMonitor.isCanceled()) {
+				return false;
+			}
+		}
+		
+		new SyntethicMethodsPreprocessor().addSyntethicMethods(model);
+		new StaticTypePreprocessor().addStaticTypeAccesses(model);
+		
+		return true;
+	}
+}

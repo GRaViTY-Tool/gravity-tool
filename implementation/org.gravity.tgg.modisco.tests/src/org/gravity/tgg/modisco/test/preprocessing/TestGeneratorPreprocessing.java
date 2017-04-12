@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.Collections;
 
 import org.apache.log4j.BasicConfigurator;
-import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.EMFCompare;

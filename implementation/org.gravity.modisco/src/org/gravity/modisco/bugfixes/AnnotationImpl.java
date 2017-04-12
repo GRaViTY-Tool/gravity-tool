@@ -1,10 +1,9 @@
 package org.gravity.modisco.bugfixes;
 
-import java.lang.reflect.Method;
-
 import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
+import org.gravity.modisco.impl.MAnnotationImpl;
 
-public class AnnotationImpl extends org.eclipse.gmt.modisco.java.emf.impl.AnnotationImpl {
+public class AnnotationImpl extends MAnnotationImpl {
 
 	@Override
 	public String toString() {

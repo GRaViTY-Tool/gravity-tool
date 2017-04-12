@@ -1,0 +1,43 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorVisibilty #with org.gravity.tgg.modisco
+
+#source { 
+	eConstructorDeclaration : MConstructorDefinition {
+		++ -modifier->mModifier
+}
+++ mModifier:Modifier{
+	
+}
+}
+
+#target {
+	tConstructorDef : TConstructorDefinition {
+		++ - tModifier->tModifier
+}
+++ tModifier:TModifier{
+	
+}
+}
+
+#correspondence {
+	 mBodyToTAnnotation : ASTNodeToTAnnotatable {
+	#src->eConstructorDeclaration
+	#trg->tConstructorDef
+}
+eConstructorDeclarationToTConstructorDef : MDefinitionToTMember {
+	#src->eConstructorDeclaration
+	#trg->tConstructorDef
+}
+
+++ mModifierToTModifier:MModifierToTModifier{
+	#src->mModifier
+	#trg->tModifier
+}
+
+}
+
+#attributeConditions {
+	vKindToTVis(mModifier.visibility, tModifier.tVisibility)
+}
