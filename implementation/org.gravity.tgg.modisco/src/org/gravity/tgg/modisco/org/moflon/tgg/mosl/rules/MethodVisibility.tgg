@@ -38,5 +38,5 @@
 }
 
 #attributeConditions {
-	vKindToTVis(mModifier.visibility, tModifier.tVisibility)
+	DefaultVisibility(mModifier.visibility, tModifier.tVisibility)
 }
