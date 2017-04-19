@@ -18,12 +18,10 @@ import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunct
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 import at.ac.tuwien.big.momot.util.MomotUtil;
-import momot.search.searchTypeGraph;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import momotFiles.FitnessCalculator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.henshin.interpreter.EGraph;
@@ -32,6 +30,9 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.moeaframework.algorithm.NSGAII;
 import org.moeaframework.core.Population;
 import org.moeaframework.util.progress.ProgressListener;
+
+import ConstraintCalculators.VisibilityConstraintCalculator;
+import FitnessCalculators.CouplingCalculator;
 
 
 public class MOMotExecutor {
@@ -63,7 +64,7 @@ public class MOMotExecutor {
 	       protected double internalEvaluate(TransformationSolution solution) {
 	          EGraph graph = solution.execute();
 	          EObject root = MomotUtil.getRoot(graph);
-	          return FitnessCalculator.calculateCoupling(((TypeGraph) root));
+	          return CouplingCalculator.calculateCoupling(((TypeGraph) root));
 	       }
 	    };
 	  }
@@ -85,7 +86,7 @@ public class MOMotExecutor {
 	       protected double internalEvaluate(TransformationSolution solution) {
 	          EGraph graph = solution.execute();
 	          EObject root = MomotUtil.getRoot(graph);
-	          return FitnessCalculator.visiblility(((TypeGraph) root));
+	          return VisibilityConstraintCalculator.visiblility(((TypeGraph) root));
 	       }
 	    };
 	  }
