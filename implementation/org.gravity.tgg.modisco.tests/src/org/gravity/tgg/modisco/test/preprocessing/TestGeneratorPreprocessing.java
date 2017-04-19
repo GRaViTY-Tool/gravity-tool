@@ -110,7 +110,7 @@ public class TestGeneratorPreprocessing {
 			MoDiscoTGGPreprocessingImpl preprocessing = new MoDiscoTGGPreprocessingImpl();
 			MGravityModel model = (MGravityModel)res.getContents().get(0);
 			
-			Assert.assertTrue(preprocessing.preprocess(model));
+			Assert.assertTrue(preprocessing.preprocess(new NullProgressMonitor(),model));
 			
 			res.setURI(URI.createFileURI(resultXMI.toString()));
 			res.save(Collections.EMPTY_MAP);
