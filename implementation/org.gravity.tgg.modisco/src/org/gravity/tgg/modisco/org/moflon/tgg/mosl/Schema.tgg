@@ -245,10 +245,6 @@ StaticTypeInvocationToAccessStaticType{
 	#src->MethodInvocationStaticType
 	#trg->TCall
 }
-StaticTypeFieldAccessToAccessStaticType{
-	#src->FieldAccessStaticType
-	#trg->TAccess
-}
 }
 
 #attributeConditions {

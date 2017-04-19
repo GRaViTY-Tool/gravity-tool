@@ -57,7 +57,6 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.emf.impl.FieldAccessImpl;
 import org.eclipse.gmt.modisco.java.emf.impl.MethodInvocationImpl;
 import org.eclipse.gmt.modisco.java.emf.impl.SingleVariableAccessImpl;
-import org.gravity.modisco.FieldAccessStaticType;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;

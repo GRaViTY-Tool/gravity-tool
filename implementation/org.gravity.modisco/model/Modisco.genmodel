@@ -8,7 +8,6 @@
       ecorePackage="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#/">
     <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition/invocationStaticType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition/accessStaticType"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MConstructorDefinition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MConstructorDefinition/model"/>
@@ -88,10 +87,6 @@
     <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MethodInvocationStaticType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MethodInvocationStaticType/methodInvoc"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MethodInvocationStaticType/type"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//FieldAccessStaticType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//FieldAccessStaticType/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//FieldAccessStaticType/fieldAccess"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

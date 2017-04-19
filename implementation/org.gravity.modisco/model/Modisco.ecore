@@ -9,8 +9,6 @@
       eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticType" upperBound="-1"
         eType="#//MethodInvocationStaticType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="accessStaticType" upperBound="-1"
-        eType="#//FieldAccessStaticType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
@@ -133,9 +131,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="methodInvoc" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessStaticType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fieldAccess" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
   </eClassifiers>
 </ecore:EPackage>
