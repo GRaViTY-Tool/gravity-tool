@@ -5,8 +5,6 @@ package momot.^search
 import at.ac.tuwien.big.momot.^search.^fitness.dimension.TransformationLengthDimension
 import at.ac.tuwien.big.moea.^experiment.executor.listener.SeedRuntimePrintListener
 
-import momotFiles.FitnessCalculator
-
 
 import org.gravity.typegraph.basic.BasicPackage
 import org.gravity.typegraph.basic.TypeGraph
@@ -17,6 +15,9 @@ import momotFiles.CustomTransformationPlaceHolderMutation
 import lpg.runtime.DiagnoseParser.RepairCandidate
 import momotFiles.CustomTournamentSelection
 import at.ac.tuwien.big.momot.^search.algorithm.operator.mutation.TransformationPlaceholderMutation
+import javax.swing.tree.FixedHeightLayoutCache.VisibleFHTreeStateNodeEnumeration
+import FitnessCalculators.CouplingCalculator
+import ConstraintCalculators.VisibilityConstraintCalculator
 
 initialization = {
 	BasicPackage.eINSTANCE.eClass // register Package
@@ -62,11 +63,11 @@ search = {
 
 	fitness         = {
 		objectives = {
-			Coupling : minimize { FitnessCalculator.calculateCoupling(root as TypeGraph) }
+			Coupling : minimize { CouplingCalculator.calculateCoupling(root as TypeGraph) }
 			SolutionLength : minimize new TransformationLengthDimension
 		}
 		constraints = {
-			visibility: minimize { FitnessCalculator.visiblility(root as TypeGraph) }
+			visibility: minimize { VisibilityConstraintCalculator.visiblility(root as TypeGraph) }
 		}
 	}
 

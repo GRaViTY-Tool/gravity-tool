@@ -45,6 +45,9 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import org.osgi.framework.Bundle;
 
+import ConstraintCalculators.VisibilityConstraintCalculator;
+import FitnessCalculators.CouplingCalculator;
+
 public class HenshinExecutor {
 
 
@@ -101,9 +104,9 @@ public class HenshinExecutor {
 		
 		//String graphPath       = "input/00_JavaSolitaire1.3";
 		//String graphPath       = "input/01_QuickUML2001";
-		String graphPath = "input/02_JsciCalc2.1.0";
+		//String graphPath = "input/02_JsciCalc2.1.0";
 		//String graphPath       = "input/03_JUnit3.8.2";
-		//String graphPath       = "input/04_Gantt1.10.2";	
+		String graphPath       = "input/04_Gantt1.10.2";	
 		//String graphPath       = "input/05_Nutch0.9";
 		//String graphPath       = "input/06_Lucene1.4.3";
 		//String graphPath       = "input/07_log4j1.2.17";
@@ -121,7 +124,8 @@ public class HenshinExecutor {
 		//module = resourceSet.getModule(modulePath+".henshin", false);
 		
 		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
-		double violations = FitnessCalculator.visiblility(pg);
+		double fitness = new CouplingCalculator().calculate(graph);
+		double violations = VisibilityConstraintCalculator.visiblility(pg);
 		
 		String sourceClass= "dyn1_Test.B";
 		String targetClass = "package1.C";

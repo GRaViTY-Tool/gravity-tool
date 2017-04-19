@@ -11,6 +11,8 @@ import org.moeaframework.core.Population;
 import org.moeaframework.core.Solution;
 import org.moeaframework.core.Variable;
 import org.moeaframework.core.operator.TournamentSelection;
+
+import FitnessCalculators.CouplingCalculator;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.problem.solution.variable.ITransformationVariable;
 
@@ -59,7 +61,7 @@ public class CustomTournamentSelection extends TournamentSelection{
 			}
 			WriteLine("----------------");
 		}
-		WriteLine("Fitness: "+FitnessCalculator.calculateCoupling((TypeGraph)((TransformationSolution)solution).execute().getRoots().get(0)));
+		WriteLine("Fitness: "+CouplingCalculator.calculateCoupling((TypeGraph)((TransformationSolution)solution).execute().getRoots().get(0)));
 	}
 	
 	@Override

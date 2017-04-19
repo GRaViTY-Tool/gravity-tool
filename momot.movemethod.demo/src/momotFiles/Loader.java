@@ -14,7 +14,7 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
-import momotFiles.FitnessCalculator;
+import ConstraintCalculators.SubTypesConstraintCalculator;
 
 public class Loader {
 
@@ -41,7 +41,7 @@ public class Loader {
 		TypeGraph pg = load("sub1_Test_withoutViolation");
 		
 		
-		double violations = FitnessCalculator.sub1(pg);
+		double violations = SubTypesConstraintCalculator.sub1(pg);
 		
 		TMethodDefinition method = pg.getMethods().get(0).getSignatures().get(0).getDefinitions().get(0);
 		TFieldDefinition field = pg.getFields().get(0).getSignatures().get(0).getDefinitions().get(0);
