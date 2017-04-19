@@ -1,12 +1,11 @@
-package csp.constraints;
+package org.gravity.tgg.modisco.csp.constraints;
 
 import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.gravity.typegraph.basic.TVisibility;
 import org.moflon.tgg.language.csp.Variable;
 import org.moflon.tgg.language.csp.impl.TGGConstraintImpl;
 
-public class InterfaceVisibility extends TGGConstraintImpl {
-	
+public class DefaultVisibility extends TGGConstraintImpl {
 	private VisibilityKind TVisibilityToVKind(TVisibility tVisibility){		
 		if(tVisibility == TVisibility.TPUBLIC){
 			return VisibilityKind.PUBLIC;
@@ -15,7 +14,7 @@ public class InterfaceVisibility extends TGGConstraintImpl {
 			return VisibilityKind.PROTECTED;
 		}
 		if(tVisibility == TVisibility.TPACKAGE){
-			throw new UnsupportedOperationException("Interface should not have a member with package visibility");
+			return VisibilityKind.NONE;
 		}
 		if(tVisibility == TVisibility.TPRIVATE){
 			return VisibilityKind.PRIVATE;
@@ -33,7 +32,7 @@ public class InterfaceVisibility extends TGGConstraintImpl {
 			return TVisibility.TPROTECTED;
 		}
 		if(vKind == VisibilityKind.NONE){
-			return TVisibility.TPUBLIC;
+			return TVisibility.TPACKAGE;
 		}
 		if(vKind == VisibilityKind.PRIVATE){
 			return TVisibility.TPRIVATE;
@@ -41,6 +40,7 @@ public class InterfaceVisibility extends TGGConstraintImpl {
 		// default Value
 		return TVisibility.TPACKAGE;
 	}
+	
 	
 	public void solve(Variable var_0, Variable var_1){
     	String bindingStates = getBindingStates(var_0, var_1);
@@ -70,6 +70,5 @@ public class InterfaceVisibility extends TGGConstraintImpl {
     		setSatisfied(true);
     		break;
     	}  
-    	
-  	}	  
+	}
 }

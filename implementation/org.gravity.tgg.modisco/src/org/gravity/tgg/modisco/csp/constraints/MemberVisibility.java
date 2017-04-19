@@ -1,24 +1,24 @@
-package csp.constraints;
+package org.gravity.tgg.modisco.csp.constraints;
 
 import org.moflon.tgg.language.csp.Variable;
 import org.moflon.tgg.language.csp.impl.TGGConstraintImpl;
 
-public class TypeVisibility extends TGGConstraintImpl {
-	public void solve(Variable var_0, Variable var_1){
-    	String bindingStates = getBindingStates(var_0, var_1);
+public class MemberVisibility extends TGGConstraintImpl {
+	public void solve(Variable var_0, Variable var_1, Variable var_2){
+    	String bindingStates = getBindingStates(var_0, var_1, var_2);
     	
     	switch(bindingStates){
-    	case "FB":
-    		// TODO Implement FB-operation
+    	case "BFB":
+    		// TODO Implement BFB-operation
     		throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
-    	case "BF":
-    		// TODO Implement BF-operation
+    	case "BBB":
+    		// TODO Implement BBB-operation
     		throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
-    	case "FF":
-    		// TODO Implement FF-operation
+    	case "FFB":
+    		// TODO Implement FFB-operation
     		throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
-    	case "BB":
-    		// TODO Implement BB-operation
+    	case "FBB":
+    		// TODO Implement FBB-operation
     		throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
     	default: 
     		throw new UnsupportedOperationException("This case in the constraint has not been implemented yet: " + bindingStates);
