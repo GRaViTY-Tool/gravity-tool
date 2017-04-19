@@ -420,8 +420,8 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 				// MMethodName mName = (MMethodName) result4_green[0];
 
 			}
-
 		}
+
 		// ForEach ActivityNode14
 		for (Object[] result5_black : MoDiscoTGGPreprocessingImpl
 				.pattern_MoDiscoTGGPreprocessing_8_5_ActivityNode14_blackFFB(model)) {
@@ -1088,7 +1088,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 		}
 		
 		new SyntethicMethodsPreprocessor().addSyntethicMethods(model);
-		new StaticTypePreprocessor().addStaticTypeAccesses(model);
+		new StaticTypePreprocessor(model).addStaticTypeAccesses();
 		
 		return true;
 	}

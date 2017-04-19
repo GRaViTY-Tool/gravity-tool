@@ -73,7 +73,7 @@ public class SyntethicMethodsPreprocessor {
 	
 	private boolean hasVisibility(ClassDeclaration mClass, ClassDeclaration superClass, MMethodDefinition mDef){
 		VisibilityKind vis = mDef.getModifier().getVisibility();
-		if(vis == VisibilityKind.PUBLIC && vis == VisibilityKind.PROTECTED){
+		if(vis == VisibilityKind.PUBLIC || vis == VisibilityKind.PROTECTED){
 			return true;
 		}
 		if(vis == VisibilityKind.NONE && superClass.getPackage() == mClass.getPackage()){

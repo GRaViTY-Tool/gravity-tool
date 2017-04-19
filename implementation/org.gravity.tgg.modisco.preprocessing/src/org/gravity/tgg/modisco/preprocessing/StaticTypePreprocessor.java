@@ -1,7 +1,16 @@
 package org.gravity.tgg.modisco.preprocessing;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashSet;
 
+import org.apache.commons.lang3.reflect.FieldUtils;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
@@ -13,9 +22,11 @@ import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.BooleanLiteral;
 import org.eclipse.gmt.modisco.java.CastExpression;
 import org.eclipse.gmt.modisco.java.CharacterLiteral;
+import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.ConditionalExpression;
 import org.eclipse.gmt.modisco.java.ConstructorInvocation;
+import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.InfixExpression;
@@ -23,9 +34,11 @@ import org.eclipse.gmt.modisco.java.InstanceofExpression;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NullLiteral;
 import org.eclipse.gmt.modisco.java.NumberLiteral;
+import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
 import org.eclipse.gmt.modisco.java.PostfixExpression;
 import org.eclipse.gmt.modisco.java.PrefixExpression;
+import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.StringLiteral;
@@ -43,6 +56,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.emf.impl.FieldAccessImpl;
 import org.eclipse.gmt.modisco.java.emf.impl.MethodInvocationImpl;
+import org.eclipse.gmt.modisco.java.emf.impl.SingleVariableAccessImpl;
 import org.gravity.modisco.FieldAccessStaticType;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MConstructorDefinition;
@@ -53,85 +67,79 @@ import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
 public class StaticTypePreprocessor {
+	MGravityModel model;
 	
 	
-	public Type getStaticType(MGravityModel model, AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method, StaticTypePreprocessor eval){
+	public StaticTypePreprocessor(MGravityModel model) {
+		this.model = model;
+	}
+	
+	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method){
 		Expression exp = null;
 		Type type = null;
 		if(methodInvoc instanceof MethodInvocation){
 			exp = ((MethodInvocation)methodInvoc).getExpression();
-		}else if(methodInvoc instanceof SuperMethodInvocation){
-			//super method invoc cannot happen with a qualifier => static type is always the type that defines this method
+		}else if(methodInvoc instanceof SuperMethodInvocation){	
+			//super method invoc cannot happen with a qualifier other than "this"
+			//=> static type is always the type that defines this method
 			exp = null;
 			
 		}else if(methodInvoc instanceof ClassInstanceCreation){
 			exp = ((ClassInstanceCreation)methodInvoc).getExpression();
 		}else if(methodInvoc instanceof ConstructorInvocation){
-			//seems to never happen?..
-			throw new RuntimeException("Method invocates Constructor, this is not handled by StaticTypePreprocessing!");
+			//ConstructorInvocation : this()
+			//=> does not have a qualifier
+			//=> static type is always type that defines this method
+			exp = null;
 		}else if(methodInvoc instanceof SuperConstructorInvocation){
 			//seems to never happen?..
 			throw new RuntimeException("Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
 		}
-		if(exp == null || exp instanceof ThisExpression
-				|| (exp instanceof MethodInvocation 
-				&& ((MethodInvocation)exp).getExpression() instanceof ThisExpression)){
+		if(exp == null){
 			type = method.getAbstractTypeDeclaration();
-			int i = 0;
-			i++;
 		}else{
-			type = eval.getStaticType(exp, method);
+			type = getStaticType(exp, method);
 		}
 		
 		if(type == null){
+			
 			throw new RuntimeException("Could not calculate the Type of methodinvocation, this is not supposed to happen!");
 		}
 		return type;
 	}
 	
-	public Type getStaticType(MGravityModel model, SingleVariableAccess access, MAbstractMethodDefinition method, StaticTypePreprocessor eval){
+	private Type getStaticType(SingleVariableAccess access, MAbstractMethodDefinition method){
 		Type type = null;
 		Expression qualifier = access.getQualifier();
 		if(qualifier == null){
 			type = method.getAbstractTypeDeclaration();
 		}else{
-			type = eval.getStaticType(qualifier, method);
+			type = getStaticType(qualifier, method);
 		}
 		
 		if(type == null){
-			int i =0;
-			i++;
+			throw new RuntimeException("Could not calculate the Type of SingleVariableAccess, this is not supposed to happen!");
 		}
 		return type;
 	}
 	
-	public void addStaticTypeAccesses(MGravityModel model, MAbstractMethodDefinition method ,StaticTypePreprocessor eval){
+	private void addStaticTypeAccesses(MAbstractMethodDefinition method ){
 		for(AbstractMethodInvocation methodInvoc : method.getAbstractMethodInvocations()){
-			Type type = getStaticType(model, methodInvoc, method, eval);
+			Type type = getStaticType(methodInvoc, method);
 			MethodInvocationStaticType invocStatic = ModiscoFactory.eINSTANCE.createMethodInvocationStaticType();
 			invocStatic.setType(type);
 			invocStatic.setMethodInvoc(methodInvoc);
 			method.getInvocationStaticType().add(invocStatic);
 		}
-		
-		for(SingleVariableAccess fieldAccess : method.getMAbstractFieldAccess()){
-			Type type = getStaticType(model, fieldAccess, method, eval);
-			FieldAccessStaticType invocStatic = ModiscoFactory.eINSTANCE.createFieldAccessStaticType();
-			invocStatic.setType(type);
-			invocStatic.setFieldAccess(fieldAccess);
-			method.getAccessStaticType().add(invocStatic);
-		}
 	}
 	
-	public void addStaticTypeAccesses(MGravityModel model ){
-		HashSet<Class> expressionTypes = new HashSet<Class>();
-		StaticTypePreprocessor eval = new StaticTypePreprocessor();
+	public void addStaticTypeAccesses(){
 		for(MMethodDefinition method: model.getMMethodDefinitions()){
-			addStaticTypeAccesses(model, method, eval);
+			addStaticTypeAccesses(method);
 		}
 		
 		for (MConstructorDefinition ctor:model.getMConstructorDefinitions()){
-			addStaticTypeAccesses(model, ctor, eval);
+			addStaticTypeAccesses(ctor);
 		}
 	}
 	
@@ -186,9 +194,32 @@ public class StaticTypePreprocessor {
 		
 		if(var instanceof VariableDeclarationFragment){
 			AbstractVariablesContainer container = ((VariableDeclarationFragment)var).getVariablesContainer();
-			return container.getType().getType();
+			TypeAccess access = container.getType();
+			if(access != null){
+				return access.getType();
+			}
+		}
+		
+		if(var instanceof EnumConstantDeclaration){
+			return getStaticType(expression.getQualifier(), method);
 		}
 
+		return null;
+	}
+	
+	public Type getTypeOfStringClass(){
+		ArrayList<ClassDeclaration> classes = Util.getAllClasses(model,true);
+		for(ClassDeclaration classDecl: classes){
+			if(classDecl.getName().equals( "String")){
+				Package langPackage = classDecl.getPackage();
+				if(langPackage != null && langPackage.getName().equals("lang")){
+					Package javaPackage = langPackage.getPackage();
+					if(javaPackage != null && javaPackage.getName().equals("java")){
+						return classDecl;
+					}
+				}	
+			}
+		}
 		return null;
 	}
 	
@@ -222,7 +253,7 @@ public class StaticTypePreprocessor {
 		}
 
 		if(expression instanceof StringLiteral){
-			return null;
+			return getTypeOfStringClass();
 		}
 		if(expression instanceof Assignment){
 			return getStaticType(((Assignment)expression).getLeftHandSide(), method);
@@ -243,6 +274,9 @@ public class StaticTypePreprocessor {
 
 		if(expression instanceof SuperFieldAccess){
 			return ((SuperFieldAccess)expression).getQualifier().getType();
+		}
+		if(expression instanceof ArrayAccess){
+			return getStaticType(((ArrayAccess)expression).getArray(),method);
 		}
 					
 		return null;
