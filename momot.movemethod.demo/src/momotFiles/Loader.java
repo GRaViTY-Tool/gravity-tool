@@ -41,7 +41,7 @@ public class Loader {
 		TypeGraph pg = load("sub1_Test_withoutViolation");
 		
 		
-		double violations = SubTypesConstraintCalculator.sub1(pg);
+		double violations = SubTypesConstraintCalculator.sub1(pg).size();
 		
 		TMethodDefinition method = pg.getMethods().get(0).getSignatures().get(0).getDefinitions().get(0);
 		TFieldDefinition field = pg.getFields().get(0).getSignatures().get(0).getDefinitions().get(0);

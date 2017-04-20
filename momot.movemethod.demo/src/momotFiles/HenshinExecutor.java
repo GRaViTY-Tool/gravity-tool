@@ -125,7 +125,7 @@ public class HenshinExecutor {
 		
 		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
 		double fitness = new CouplingCalculator().calculate(graph);
-		double violations = VisibilityConstraintCalculator.visiblility(pg);
+		double violations = new VisibilityConstraintCalculator().calculate(pg);
 		
 		String sourceClass= "dyn1_Test.B";
 		String targetClass = "package1.C";

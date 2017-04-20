@@ -86,7 +86,7 @@ public class MOMotExecutor {
 	       protected double internalEvaluate(TransformationSolution solution) {
 	          EGraph graph = solution.execute();
 	          EObject root = MomotUtil.getRoot(graph);
-	          return VisibilityConstraintCalculator.visiblility(((TypeGraph) root));
+	          return new VisibilityConstraintCalculator().calculate(((TypeGraph) root));
 	       }
 	    };
 	  }

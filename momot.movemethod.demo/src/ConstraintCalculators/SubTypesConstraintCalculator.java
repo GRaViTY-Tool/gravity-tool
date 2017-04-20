@@ -1,13 +1,17 @@
 package ConstraintCalculators;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import FitnessCalculators.IFitnessCalculator;
@@ -18,7 +22,15 @@ public class SubTypesConstraintCalculator extends ConstraintCalculator{
 	@Override
 	public double calculate(TypeGraph graph) {
 		// TODO Auto-generated method stub
-		return sub1(graph) + sub2(graph);
+		return violations(graph).size();
+	}
+	
+	@Override
+	public Map<TMember, TVisibility> violations(TypeGraph graph) {
+		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
+		violations.putAll(sub1(graph));
+		violations.putAll(sub2(graph));
+		return violations;
 	}
 	
 	private static List<TMethodDefinition> getMethods(TClass tClass){
@@ -39,15 +51,15 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 		}
 	}
 	
-	private static double compareMethods(List<TMethodDefinition> parentMethods, TClass tClass){
-		double violations = 0;
+	private static Map<TMember, TVisibility> compareMethods(List<TMethodDefinition> parentMethods, TClass tClass){
+		HashMap<TMember, TVisibility> violations = new HashMap<>();
 		for(TMember member: tClass.getDefines()){
 			if(member instanceof TMethodDefinition){
 				TMethodDefinition method = (TMethodDefinition) member;
 				for(TMethodDefinition parentMethod: parentMethods){
 					if(parentMethod.getSignature() == method.getSignature()){
 						if(!Utility.visibilityDominates(method.getTModifier().getTVisibility(), parentMethod.getTModifier().getTVisibility())){
-							violations++;
+							violations.put(method,  parentMethod.getTModifier().getTVisibility());
 						}
 					}
 				}
@@ -62,12 +74,12 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 	 * sichtbarkeit von a >= sichtbarkeit von b
 	 * 
 	 */
-	public static double sub1(TypeGraph graph){
-		int violations = 0;
+	public static Map<TMember, TVisibility> sub1(TypeGraph graph){
+		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
 		for(TClass tClass: graph.getClasses()){
 			List<TMethodDefinition> parentMethods = new ArrayList<TMethodDefinition>();
 			fillParentMethods(parentMethods, tClass);
-				violations += compareMethods(parentMethods, tClass);
+				violations.putAll(compareMethods(parentMethods, tClass));
 		}
 		return violations;
 	}
@@ -92,16 +104,18 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 	 * Methoden müssen die gleiche Sichtbarkeit haben wie die Interface Methoden, von denen sie abgeleitet werden
 	 * kann mit sub1 kombiniert werden indem check auf interfaces und auf superklassen
 	 */
-	public static double sub2(TypeGraph graph){
-		int violations = 0;
+	public static Map<TMember, TVisibility> sub2(TypeGraph graph){
+		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
 		for(TClass tClass: graph.getClasses()){
 			List<TMethodDefinition> methods = new ArrayList<TMethodDefinition>();
 			for(TInterface tInterface: tClass.getImplements()){
 				fillAllMethods(methods, tInterface);
 			}
-			violations += compareMethods(methods, tClass);
+			violations.putAll(compareMethods(methods, tClass));
 		}
 		return violations;
 	}
+
+
 
 }

@@ -1,5 +1,10 @@
 package ConstraintCalculators;
 
+import java.io.ObjectOutputStream.PutField;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.eclipse.emf.common.util.EList;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TAbstractType;
@@ -19,10 +24,10 @@ public class VisibilityConstraintCalculator extends ConstraintCalculator{
 	
 	@Override
 	public double calculate(TypeGraph graph) {
-		return visiblility(graph);
+		return violations(graph).size();
 	}
 	
-	public static boolean isLibOrT(TAbstractType tClass){
+	public boolean isLibOrT(TAbstractType tClass){
 		if(tClass.getTName().equals("T") || tClass.isTLib() || tClass.getTName().equals("Anonymous")){
 			return true;
 		}
@@ -31,8 +36,8 @@ public class VisibilityConstraintCalculator extends ConstraintCalculator{
 	
 	
 	
-	private static double methodVisibility(TMethodDefinition method){
-		double violations = 0;
+	private Map<TMember, TVisibility> methodVisibility(TMethodDefinition method){
+		HashMap<TMember, TVisibility> map = new HashMap<TMember, TVisibility>();
 		for(TAccess access : method.getTAccessing()){
 			
 			TMember targetMember = access.getTTarget();
@@ -43,40 +48,41 @@ public class VisibilityConstraintCalculator extends ConstraintCalculator{
 					TVisibility actualVisibility = targetModifier.getTVisibility();
 					TVisibility requiredVisibility = method.getMinimumRequiredVisibility(targetMember);
 					if(!Utility.visibilityDominates(actualVisibility, requiredVisibility)){
-						violations++;
+						map.put(access.getTTarget(), requiredVisibility);
 					}
 				}
 				
 				
 			}
 		}
-		return violations;
+		return map;
 	}
 	
-	private static double classVisibility(TClass tClass){
-		double violations = 0;
+	private Map<TMember, TVisibility> classVisibility(TClass tClass){
+		HashMap<TMember, TVisibility> map = new HashMap<TMember, TVisibility>();
 		for(TMember member : tClass.getDefines()){
 			if(member instanceof TMethodDefinition){
-				violations += methodVisibility((TMethodDefinition) member);
+				map.putAll(methodVisibility((TMethodDefinition) member));
 				
 			}
 	}
-		return violations;
+		return map;
 	}
 	
-	public static double visiblility(TypeGraph graph){
-		
-		int violations = 0;
+	@Override
+	public Map<TMember, TVisibility> violations(TypeGraph graph){
+		HashMap<TMember, TVisibility> map = new HashMap<TMember, TVisibility>();
 		EList<TClass> classes = graph.getClasses();
 		for(TClass tClass: classes){
 			if(!isLibOrT(tClass)){
-				violations += classVisibility(tClass);
+				map.putAll(classVisibility(tClass));
 			}
 			
 		}
 		
-		return violations;
+		return map;
 	}
+
 
 
 

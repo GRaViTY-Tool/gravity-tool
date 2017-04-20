@@ -69,7 +69,8 @@ import FitnessCalculators.IFitnessCalculator;
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-  protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+  //protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+  protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
@@ -78,8 +79,8 @@ public class searchTypeGraph {
   
   protected String baseName;
   protected List<FitnessFunction> fitnessFunctions;
-  protected List<FitnessFunction> constraints;
-	  
+  public static List<FitnessFunction> constraints;
+  protected static boolean useConstraints = true;
   
   protected final String[] modules = new String[] { "transformations/MoveMethod.henshin" };
   protected final String[] unitsToRemove = new String[] { 
@@ -102,7 +103,7 @@ public class searchTypeGraph {
   protected static double OnePointCrossoverProbability = 1;
 
   
-  private class FitnessFunction{
+  public class FitnessFunction{
 	  public String Name;
 	  public FunctionType type;
 	  public IFitnessCalculator calculator;
@@ -123,7 +124,9 @@ public class searchTypeGraph {
   
   private void initializeConstraints(){
 	  constraints = new ArrayList<FitnessFunction>();
-	  //constraints.add(new FitnessFunction("visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));  
+	  if(useConstraints){
+		  constraints.add(new FitnessFunction("visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));  
+	  }
   }
   
   private void initializeAlgorithms(TransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
@@ -355,10 +358,20 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
   
   public static void main(final String... args) {
 	  if(args.length > 0){
+		  if(args[0].equalsIgnoreCase("help")){
+			  System.out.println("Useage:");
+			  System.out.println("Argument 1: Model Name");
+			  System.out.println("(optinal) Argument 2: Number of runs (default 1)");
+			  System.out.println("(optinal) Argument 3: boolean useContraints (default true)");
+		  }
+		  
 		  INITIAL_MODEL =  args[0];
 	  }
 	  if(args.length>1){
 		  nrRuns = Integer.parseInt(args[1]);
+	  }
+	  if(args.length > 2){
+		  useConstraints = Boolean.parseBoolean(args[2]);
 	  }
 	  
     initialization();
