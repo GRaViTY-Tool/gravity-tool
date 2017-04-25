@@ -1,2 +1,5 @@
 /bin/
 /output/
+/input/
+/log.txt
+/searchTypeGraph.launch

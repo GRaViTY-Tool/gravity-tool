@@ -18,7 +18,15 @@ Require-Bundle: org.eclipse.core.runtime,
  org.moflon.core.dfs;bundle-version="2.0.0",
  org.gravity.typegraph.basic;bundle-version="1.0.0",
  org.gravity.hulk;bundle-version="1.0.0",
+ org.gravity.hulk.antipatterngraph;bundle-version="1.0.0",
+ org.gravity.refactorings;bundle-version="1.0.0",
  org.gravity.hulk.refactoringgraph;bundle-version="1.0.0",
- org.gravity.hulk.antipatterngraph;bundle-version="1.0.0"
+ org.gravity.tgg.modisco,
+ org.gravity.eclipse,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources,
+ org.gravity.hulk.annotations;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
+Export-Package: ConstraintCalculators,
+ momotFiles

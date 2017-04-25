@@ -60,6 +60,7 @@ import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.moeaframework.util.progress.ProgressListener;
 
+import ConstraintCalculators.ConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
 import FitnessCalculators.AntiPatternCalculator;
 import FitnessCalculators.CohesionCalculator;
@@ -69,8 +70,8 @@ import FitnessCalculators.IFitnessCalculator;
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-  //protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
-  protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
+  protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+  //protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
@@ -81,6 +82,7 @@ public class searchTypeGraph {
   protected List<FitnessFunction> fitnessFunctions;
   public static List<FitnessFunction> constraints;
   protected static boolean useConstraints = true;
+  protected static boolean useRepair = false;
   
   protected final String[] modules = new String[] { "transformations/MoveMethod.henshin" };
   protected final String[] unitsToRemove = new String[] { 
@@ -99,9 +101,12 @@ public class searchTypeGraph {
   protected static int nrRuns = 1;
   
   protected static double TransformationParameterMutationProbability = 0.1;
-  protected static double TransformationPlaceholderMutationProbability = 0.05;
+  protected static double TransformationPlaceholderMutationProbability = 0.10;
   protected static double OnePointCrossoverProbability = 1;
 
+  public class AbstractFitnessFunction{
+	  
+  }
   
   public class FitnessFunction{
 	  public String Name;
@@ -145,7 +150,7 @@ public class searchTypeGraph {
   
   
   //-----------------------------non configurable stuff-------------------------------------------
-  protected IFitnessDimension<TransformationSolution> createFitnessDimension(final TransformationSearchOrchestration orchestration, FitnessFunction function) {
+  protected IFitnessDimension<TransformationSolution> createFitnessDimension(FitnessFunction function) {
 	    return new AbstractEGraphFitnessDimension(function.Name, function.type) {
 	        @Override
 	        protected double internalEvaluate(TransformationSolution solution) {
@@ -155,9 +160,7 @@ public class searchTypeGraph {
 	     };
 	   }
 
-  
-
-  protected IFitnessDimension<TransformationSolution> createSolutionLengthFitness(final TransformationSearchOrchestration orchestration) {
+  protected IFitnessDimension<TransformationSolution> createSolutionLengthFitness() {
     IFitnessDimension<TransformationSolution> dimension = new TransformationLengthDimension("SolutionLength");
     dimension.setFunctionType(FunctionType.Minimum);
     return dimension;
@@ -172,26 +175,21 @@ public class searchTypeGraph {
     return manager;
   }
   
-  protected IEGraphMultiDimensionalFitnessFunction createFitnessFunction(final TransformationSearchOrchestration orchestration) {
-    IEGraphMultiDimensionalFitnessFunction function = new EGraphMultiDimensionalFitnessFunction();
-    function.addObjective(createSolutionLengthFitness(orchestration));
+  protected IEGraphMultiDimensionalFitnessFunction createFitnessFunction() {
+    IEGraphMultiDimensionalFitnessFunction function = new PostProcessRepairMultiDimensionalFitnessFunction();
+    function.addObjective(createSolutionLengthFitness());
 
     for(FitnessFunction fitness : fitnessFunctions){
-    	function.addObjective(createFitnessDimension(orchestration, fitness));
-    }
-    
+    	function.addObjective(createFitnessDimension(fitness));
+    } 
     for(FitnessFunction constraint : constraints){
-    	function.addConstraint(createFitnessDimension(orchestration, constraint));
+    	function.addConstraint(createFitnessDimension(constraint));
     }
-    
+    if(useRepair){
+    	function.setSolutionRepairer(new VisibilityRepairer());
+    }
     
     return function;
-  }
-  
-
-  protected ProgressListener _createListener_0() {
-    SeedRuntimePrintListener _seedRuntimePrintListener = new SeedRuntimePrintListener();
-    return _seedRuntimePrintListener;
   }
   
   protected TransformationSearchOrchestration createOrchestration(final String initialGraph, final int solutionLength) {
@@ -201,15 +199,12 @@ public class searchTypeGraph {
     orchestration.setModuleManager(moduleManager);
     orchestration.setProblemGraph(graph);
     orchestration.setSolutionLength(solutionLength);
-    orchestration.setFitnessFunction(createFitnessFunction(orchestration));
+    orchestration.setFitnessFunction(createFitnessFunction());
     
     EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration.createEvolutionaryAlgorithmFactory(populationSize);
     LocalSearchAlgorithmFactory<TransformationSolution> local = orchestration.createLocalSearchAlgorithmFactory();
-
-    
+   
     initializeAlgorithms(orchestration, moea);
-    
-    
     return orchestration;
   }
   
@@ -218,147 +213,26 @@ public class searchTypeGraph {
 protected SearchExperiment<TransformationSolution> createExperiment(final TransformationSearchOrchestration orchestration) {
     SearchExperiment<TransformationSolution> experiment = new SearchExperiment<TransformationSolution>(orchestration, maxEvaluations);
     experiment.setNumberOfRuns(nrRuns);
-    experiment.addProgressListener(_createListener_0());
+    experiment.addProgressListener(new SeedRuntimePrintListener());
     return experiment;
-  }
-  
-  protected void deriveBaseName(final TransformationSearchOrchestration orchestration) {
-    EObject root = MomotUtil.getRoot(orchestration.getProblemGraph());
-    if(root == null || root.eResource() == null || root.eResource().getURI() == null)
-    	baseName = getClass().getSimpleName();
-    else
-    	baseName = root.eResource().getURI().trimFileExtension().lastSegment();
-  }
-  
-  protected double significanceLevel = 0.01;
-  
-  protected SearchAnalyzer performAnalysis(final SearchExperiment<TransformationSolution> experiment) {
-    SearchAnalysis analysis = new SearchAnalysis(experiment);
-    analysis.setHypervolume(true);
-    analysis.setInvertedGenerationalDistance(true);
-    analysis.setShowAggregate(true);
-    analysis.setShowIndividualValues(true);
-    analysis.setShowStatisticalSignificance(true);
-    analysis.setSignificanceLevel(significanceLevel);
-    SearchAnalyzer searchAnalyzer = analysis.analyze();
-    System.out.println("---------------------------");
-    System.out.println("Analysis Results");
-    System.out.println("---------------------------");
-    searchAnalyzer.printAnalysis();
-    System.out.println("---------------------------");
-    try {
-    	System.out.println("- Save Analysis to 'output/analysis/analysis.txt'");
-    	searchAnalyzer.saveAnalysis(new File("output/analysis/analysis.txt"));
-    } catch(IOException e) {
-    	e.printStackTrace();
-    }
-    System.out.println("- Save Indicator BoxPlots to 'output/analysis/'");
-    searchAnalyzer.saveIndicatorBoxPlots(
-    	"output/analysis/",
-    	baseName
-    );
-    return searchAnalyzer;
-  }
-  
-  protected TransformationResultManager handleResults(final SearchExperiment<TransformationSolution> experiment) {
-    ISolutionWriter<TransformationSolution> solutionWriter = experiment.getSearchOrchestration().createSolutionWriter();
-    IPopulationWriter<TransformationSolution> populationWriter = experiment.getSearchOrchestration().createPopulationWriter();
-    TransformationResultManager resultManager = new TransformationResultManager(experiment);
-    Population population;
-    population = 
-    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-    System.out.println("- Save objectives of all algorithms to 'output/objectives/objective_values.txt'");
-    TransformationResultManager.saveObjectives(
-    	"output/objectives/objective_values.txt",
-    	population
-    );
-    System.out.println("---------------------------");
-    System.out.println("Objectives of all algorithms");
-    System.out.println("---------------------------");
-    System.out.println(TransformationResultManager.printObjectives(
-    	population
-    ));
-    
-    population = 
-    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-    System.out.println("- Save solutions of all algorithms to 'output/solutions/objective_values.txt'");
-    TransformationResultManager.savePopulation(
-    	"output/solutions/objective_values.txt",
-    	population,
-    	populationWriter
-    );
-    System.out.println("- Save solutions of all algorithms to 'output/solutions/objective_values.txt'");
-    TransformationResultManager.saveSolutions(
-    	"output/solutions/",
-    	baseName,
-    	MomotUtil.asIterables(
-    		population,
-    		TransformationSolution.class),
-    	solutionWriter
-    );
-    
-    population = 
-    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-    System.out.println("- Save models of all algorithms to 'output/models/'");
-    TransformationResultManager.saveModels(
-    	"output/models/",
-    	baseName,
-    	population
-    );
-    
-    return resultManager;
-  }
-  
-  public void printSearchInfo(final TransformationSearchOrchestration orchestration) {
-    System.out.println("-------------------------------------------------------");
-    System.out.println("Search");
-    System.out.println("-------------------------------------------------------");
-    System.out.println("InputModel:      " + INITIAL_MODEL);
-    System.out.println("Objectives:      " + orchestration.getFitnessFunction().getObjectiveNames());
-    System.out.println("NrObjectives:    " + orchestration.getNumberOfObjectives());
-    System.out.println("Constraints:     " + orchestration.getFitnessFunction().getConstraintNames());
-    System.out.println("NrConstraints:   " + orchestration.getNumberOfConstraints());
-    System.out.println("Transformations: " + Arrays.toString(modules));
-    System.out.println("Units:           " + orchestration.getModuleManager().getUnits());
-    System.out.println("SolutionLength:  " + orchestration.getSolutionLength());
-    System.out.println("PopulationSize:  " + populationSize);
-    System.out.println("Iterations:      " + maxEvaluations / populationSize);
-    System.out.println("MaxEvaluations:  " + maxEvaluations);
-    System.out.println("AlgorithmRuns:   " + nrRuns);
-    System.out.println("---------------------------");
   }
   
   public void performSearch(final String initialGraph, final int solutionLength) {
     TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
-    deriveBaseName(orchestration);
-    printSearchInfo(orchestration);
+    SearchPrinter printer = new SearchPrinter(orchestration);
+    printer.printSearchInfo(INITIAL_MODEL, modules, populationSize, maxEvaluations, nrRuns);
     SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
     experiment.run();
-    System.out.println("-------------------------------------------------------");
-    System.out.println("Analysis");
-    System.out.println("-------------------------------------------------------");
-    performAnalysis(experiment);
-    System.out.println("-------------------------------------------------------");
-    System.out.println("Results");
-    System.out.println("-------------------------------------------------------");
-    handleResults(experiment);
+    new SearchPrinter(orchestration).printResults(experiment);
   }
-  
-  public static void initialization() {
-    BasicPackage.eINSTANCE.eClass();
-    System.out.println("Search started.");
-  }
-  
-  public static void finalization() {
-    System.out.println("Search finished.");
-  }
-  
   
 
   
+  
+  
   public static void main(final String... args) {
 	  if(args.length > 0){
-		  if(args[0].equalsIgnoreCase("help")){
+		  if(args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("?")){
 			  System.out.println("Useage:");
 			  System.out.println("Argument 1: Model Name");
 			  System.out.println("(optinal) Argument 2: Number of runs (default 1)");
@@ -374,12 +248,13 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
 		  useConstraints = Boolean.parseBoolean(args[2]);
 	  }
 	  
-    initialization();
+	  BasicPackage.eINSTANCE.eClass();
+	  System.out.println("Search started.");
     
     searchTypeGraph search = new searchTypeGraph();
     search.initializeFitnessFunctions();
     search.initializeConstraints();
     search.performSearch(INITIAL_MODEL, SOLUTION_LENGTH);
-    finalization();
+    System.out.println("Search finished.");
   }
 }
