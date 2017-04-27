@@ -99,11 +99,6 @@ public class StaticTypePreprocessor {
 		}else{
 			type = getStaticType(exp, method);
 		}
-		
-		if(type == null){
-			
-			throw new RuntimeException("Could not calculate the Type of methodinvocation, this is not supposed to happen!");
-		}
 		return type;
 	}
 	
@@ -144,9 +139,9 @@ public class StaticTypePreprocessor {
 	
 	
 	public Type getFieldAccessType(FieldAccess access, MAbstractMethodDefinition method){
-		if(((FieldAccess)access).getField() != null){
+		/*if(((FieldAccess)access).getField() != null){
 			return getStaticType(((FieldAccess)access).getField(), method);
-		}
+		}*/
 		return getStaticType(((FieldAccess)access).getExpression(), method);
 	}
 	

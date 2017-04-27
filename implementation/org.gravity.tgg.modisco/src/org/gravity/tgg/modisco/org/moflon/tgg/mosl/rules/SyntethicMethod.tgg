@@ -23,10 +23,12 @@
 	}
 	tDef: TMethodDefinition{
 		++-syntethicMethods->tSyntethic
-		
+		-signature->tSig
 	}
+	tSig:TMethodSignature{}
 	
 	++tSyntethic:TSyntethicMethod{
+		++-signature->tSig
 	}
 }
 
