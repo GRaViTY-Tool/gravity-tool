@@ -168,7 +168,7 @@
     <mappings xmi:id="_FIN8Qux8Eeaor8tAmLFMNg" origin="_VP-fcOx7EeatT920JA7HHA" image="_FIN8QOx8Eeaor8tAmLFMNg"/>
     <mappings xmi:id="_q8dmUu92EeadjM1H2hmH-Q" origin="_q8dmUO92EeadjM1H2hmH-Q" image="_q8dmUe92EeadjM1H2hmH-Q"/>
   </units>
-  <units xsi:type="henshin:SequentialUnit" xmi:id="_q5eM8OlFEeajyLi0pWzMmQ" name="checkPreconditions" subUnits="_IUiWkP38EeavM8FOu87CAg _Mx25IOlFEeajyLi0pWzMmQ _4nUgoBJQEeeQnbn5-JYXJQ">
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_q5eM8OlFEeajyLi0pWzMmQ" name="checkPreconditions" subUnits="_IUiWkP38EeavM8FOu87CAg _4nUgoBJQEeeQnbn5-JYXJQ _Mx25IOlFEeajyLi0pWzMmQ">
     <parameters xmi:id="_FG2sQAgFEeePUNNlehhslg" name="methodSig">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
     </parameters>
@@ -180,16 +180,16 @@
     </parameters>
     <parameterMappings xmi:id="_Wg4cUgo4Eee5u8AKTxKgpw" source="_FG2sQAgFEeePUNNlehhslg" target="_m-BGEP5kEea2eYVWH8dvOg"/>
     <parameterMappings xmi:id="_Wg4cUwo4Eee5u8AKTxKgpw" source="_m-BGEP5kEea2eYVWH8dvOg" target="_FG2sQAgFEeePUNNlehhslg"/>
-    <parameterMappings xmi:id="_XDKC8Ao4Eee5u8AKTxKgpw" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_RTQe0AihEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_XDKC8Qo4Eee5u8AKTxKgpw" source="_RTQe0AihEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="_XDKC8go4Eee5u8AKTxKgpw" source="_tEM_IelFEeajyLi0pWzMmQ" target="_RTQe0QihEeeu0bGbdiaZxA"/>
-    <parameterMappings xmi:id="_XDKC8wo4Eee5u8AKTxKgpw" source="_RTQe0QihEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="__RocgBJQEeeQnbn5-JYXJQ" source="_tEM_IelFEeajyLi0pWzMmQ" target="_66utsBJQEeeQnbn5-JYXJQ"/>
-    <parameterMappings xmi:id="__RocgRJQEeeQnbn5-JYXJQ" source="_66utsBJQEeeQnbn5-JYXJQ" target="_tEM_IelFEeajyLi0pWzMmQ"/>
-    <parameterMappings xmi:id="__RocghJQEeeQnbn5-JYXJQ" source="_FG2sQAgFEeePUNNlehhslg" target="_66utsRJQEeeQnbn5-JYXJQ"/>
-    <parameterMappings xmi:id="__RocgxJQEeeQnbn5-JYXJQ" source="_66utsRJQEeeQnbn5-JYXJQ" target="_FG2sQAgFEeePUNNlehhslg"/>
     <parameterMappings xmi:id="_StvJIBRwEeeZaN-2-wgGxQ" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_I8JMcAitEeeu0bGbdiaZxA"/>
     <parameterMappings xmi:id="_StvJIRRwEeeZaN-2-wgGxQ" source="_I8JMcAitEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_s5YOMCs7EeeHf_pX1dTYbg" source="_tEM_IOlFEeajyLi0pWzMmQ" target="_RTQe0AihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_s5YOMSs7EeeHf_pX1dTYbg" source="_RTQe0AihEeeu0bGbdiaZxA" target="_tEM_IOlFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_s5YOMis7EeeHf_pX1dTYbg" source="_tEM_IelFEeajyLi0pWzMmQ" target="_RTQe0QihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_s5YOMys7EeeHf_pX1dTYbg" source="_RTQe0QihEeeu0bGbdiaZxA" target="_tEM_IelFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_zfZtsitAEeesqLwpxgfazw" source="_tEM_IelFEeajyLi0pWzMmQ" target="_66utsBJQEeeQnbn5-JYXJQ"/>
+    <parameterMappings xmi:id="_zfZtsytAEeesqLwpxgfazw" source="_66utsBJQEeeQnbn5-JYXJQ" target="_tEM_IelFEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_zfZttCtAEeesqLwpxgfazw" source="_FG2sQAgFEeePUNNlehhslg" target="_66utsRJQEeeQnbn5-JYXJQ"/>
+    <parameterMappings xmi:id="_zfZttStAEeesqLwpxgfazw" source="_66utsRJQEeeQnbn5-JYXJQ" target="_FG2sQAgFEeePUNNlehhslg"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_IUiWkP38EeavM8FOu87CAg" name="dyn1MoveMethod">
     <parameters xmi:id="_I8JMcAitEeeu0bGbdiaZxA" name="sourceClass">
@@ -386,8 +386,47 @@
     <parameters xmi:id="_66utsRJQEeeQnbn5-JYXJQ" name="methodSig">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
     </parameters>
-    <lhs xmi:id="_4ndqkhJQEeeQnbn5-JYXJQ" name="Lhs"/>
-    <rhs xmi:id="_4ndqkxJQEeeQnbn5-JYXJQ" name="Rhs"/>
+    <lhs xmi:id="_4ndqkhJQEeeQnbn5-JYXJQ" name="Lhs">
+      <nodes xmi:id="_Yc6b8Cs5EeeSCO2kBIPQJg" name="targetClass">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_bVytkCs5EeeSCO2kBIPQJg" name="methodSig">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      </nodes>
+      <formula xsi:type="henshin:Not" xmi:id="_LklMsCs7EeeHf_pX1dTYbg">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_LklMsSs7EeeHf_pX1dTYbg">
+          <conclusion xmi:id="_LklMsis7EeeHf_pX1dTYbg">
+            <nodes xmi:id="_LklMsys7EeeHf_pX1dTYbg" name="targetClass" outgoing="_Y47XoCs7EeeHf_pX1dTYbg">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+            </nodes>
+            <nodes xmi:id="_lbTlACs5EeeSCO2kBIPQJg" incoming="_Y47XoCs7EeeHf_pX1dTYbg" outgoing="_XrZzkCtGEeeZYdKz7fZWXQ">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod"/>
+            </nodes>
+            <nodes xmi:id="_Lku9sys7EeeHf_pX1dTYbg" name="methodSig" incoming="_XrZzkCtGEeeZYdKz7fZWXQ">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+            </nodes>
+            <edges xmi:id="_Y47XoCs7EeeHf_pX1dTYbg" source="_LklMsys7EeeHf_pX1dTYbg" target="_lbTlACs5EeeSCO2kBIPQJg">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+            </edges>
+            <edges xmi:id="_XrZzkCtGEeeZYdKz7fZWXQ" source="_lbTlACs5EeeSCO2kBIPQJg" target="_Lku9sys7EeeHf_pX1dTYbg">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod/signature"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_LklMtCs7EeeHf_pX1dTYbg" origin="_Yc6b8Cs5EeeSCO2kBIPQJg" image="_LklMsys7EeeHf_pX1dTYbg"/>
+          <mappings xmi:id="_Lku9tCs7EeeHf_pX1dTYbg" origin="_bVytkCs5EeeSCO2kBIPQJg" image="_Lku9sys7EeeHf_pX1dTYbg"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_4ndqkxJQEeeQnbn5-JYXJQ" name="Rhs">
+      <nodes xmi:id="_Yc6b8Ss5EeeSCO2kBIPQJg" name="targetClass">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_bVzUoCs5EeeSCO2kBIPQJg" name="methodSig">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_Yc6b8is5EeeSCO2kBIPQJg" origin="_Yc6b8Cs5EeeSCO2kBIPQJg" image="_Yc6b8Ss5EeeSCO2kBIPQJg"/>
+    <mappings xmi:id="_bVzUoSs5EeeSCO2kBIPQJg" origin="_bVytkCs5EeeSCO2kBIPQJg" image="_bVzUoCs5EeeSCO2kBIPQJg"/>
   </units>
   <units xsi:type="henshin:SequentialUnit" xmi:id="_u_3IsBR1EeeRUOPnBSrxDA" name="main" subUnits="_q5eM8OlFEeajyLi0pWzMmQ _er3dEOlEEeajyLi0pWzMmQ">
     <parameters xmi:id="_yYyzYBR1EeeRUOPnBSrxDA" name="methodSig">
