@@ -3,7 +3,14 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
 
 import ConstraintCalculators.ConstraintCalculator;
@@ -30,13 +37,62 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 			}
 			
 		}
-		// TODO Auto-generated method stub
 		return solution;
 	}
 
-	private boolean checkPreconditions(Entry<TMember, TVisibility> violation) {
-		// TODO Auto-generated method stub
+	
+	//if a childClass implements an interface with the same field as the field in the violation do not change the visibility as this may introduce ambiguity
+	private boolean checkINH2Preconditions(TClass sourceClass,Entry<TMember, TVisibility> violation){
+		if(!(violation.getKey() instanceof TFieldDefinition)){
+			return true;
+		}
+		if(!violation.getKey().getTModifier().isIsStatic()){
+			return true;
+		}
+		
+		for(TClass child : sourceClass.getChildClasses()){
+			for(TInterface tInterface: child.getImplements()){
+				
+				for(TMember member: tInterface.getDefines()){
+					if(member.getTModifier() == null){
+						return false;
+					}					
+					if(member.getTModifier().isIsStatic() 
+						&& member.getSignature() == violation.getKey().getSignature()){
+						return false;
+					}
+				}
+			}			
+		}
 		return true;
+	}
+	
+	//if a parentclass defines a method with the same signature do not change the visibility as this may introduce a new dynamic binding
+	private boolean checkDynPreconditions(TClass sourceClass, Entry<TMember, TVisibility> violation){
+				
+		TClass parent = sourceClass.getParentClass();
+		
+		for(TMember member: parent.getDefines()){
+			if(member.getSignature() == violation.getKey().getSignature()){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+
+	private boolean checkPreconditions(Entry<TMember, TVisibility> violation) {
+		TAbstractType definedBy = violation.getKey().getDefinedBy();
+		// do not change method visibility that is not defined by a class
+		if(!(definedBy instanceof TClass)){
+			return false;
+		}
+		TClass sourceClass = ((TClass)definedBy);
+		boolean result = checkDynPreconditions(sourceClass, violation) ;
+		result &= checkINH2Preconditions(sourceClass, violation);
+		
+		return result;
 	}
 
 	

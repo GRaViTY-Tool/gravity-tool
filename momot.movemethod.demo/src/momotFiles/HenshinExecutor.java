@@ -48,6 +48,7 @@ import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import org.osgi.framework.Bundle;
 
 import ConstraintCalculators.AccessConstraintCalculator;
+import ConstraintCalculators.InheritanceConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
 import FitnessCalculators.CouplingCalculator;
 
@@ -129,7 +130,7 @@ public class HenshinExecutor {
 		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
 	//	double fitness = new CouplingCalculator().calculate(graph);
 		double violations = new VisibilityConstraintCalculator().calculate(pg);
-		violations += new AccessConstraintCalculator().calculate(pg);
+		violations += new InheritanceConstraintCalculator().calculate(pg);
 		
 		
 		
