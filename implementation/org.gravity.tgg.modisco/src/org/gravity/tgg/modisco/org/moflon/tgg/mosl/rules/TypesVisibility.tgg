@@ -36,4 +36,5 @@ mTypeToTType : TypeToTAbstractType {
 
 #attributeConditions {
 	DefaultVisibility(mModifier.visibility, tModifier.tVisibility)
+	eq(mModifier.static, tModifier.isStatic)
 }

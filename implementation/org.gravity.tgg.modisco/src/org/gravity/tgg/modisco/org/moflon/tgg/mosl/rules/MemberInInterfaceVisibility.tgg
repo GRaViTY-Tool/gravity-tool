@@ -48,4 +48,5 @@ defToMember:MDefinitionToTMember{
 
 #attributeConditions {
 	InterfaceVisibility(mModifier.visibility, tModifier.tVisibility)
+	eq(mModifier.static, tModifier.isStatic)
 }
