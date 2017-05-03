@@ -428,7 +428,7 @@
     <mappings xmi:id="_Yc6b8is5EeeSCO2kBIPQJg" origin="_Yc6b8Cs5EeeSCO2kBIPQJg" image="_Yc6b8Ss5EeeSCO2kBIPQJg"/>
     <mappings xmi:id="_bVzUoSs5EeeSCO2kBIPQJg" origin="_bVytkCs5EeeSCO2kBIPQJg" image="_bVzUoCs5EeeSCO2kBIPQJg"/>
   </units>
-  <units xsi:type="henshin:SequentialUnit" xmi:id="_u_3IsBR1EeeRUOPnBSrxDA" name="main" subUnits="_q5eM8OlFEeajyLi0pWzMmQ _er3dEOlEEeajyLi0pWzMmQ">
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_u_3IsBR1EeeRUOPnBSrxDA" name="MoveMethodMain" subUnits="_q5eM8OlFEeajyLi0pWzMmQ _er3dEOlEEeajyLi0pWzMmQ">
     <parameters xmi:id="_yYyzYBR1EeeRUOPnBSrxDA" name="methodSig">
       <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
     </parameters>
@@ -450,5 +450,26 @@
     <parameterMappings xmi:id="_25y5YxR1EeeRUOPnBSrxDA" source="_ioJscelEEeajyLi0pWzMmQ" target="_yYyzYRR1EeeRUOPnBSrxDA"/>
     <parameterMappings xmi:id="_25y5ZBR1EeeRUOPnBSrxDA" source="_yYyzYhR1EeeRUOPnBSrxDA" target="_ioJsculEEeajyLi0pWzMmQ"/>
     <parameterMappings xmi:id="_25y5ZRR1EeeRUOPnBSrxDA" source="_ioJsculEEeajyLi0pWzMmQ" target="_yYyzYhR1EeeRUOPnBSrxDA"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_nz3moCzgEee-wqgUpmCtRA" name="MoveMethodWithoutPreconstraints" subUnits="_Mx25IOlFEeajyLi0pWzMmQ _er3dEOlEEeajyLi0pWzMmQ">
+    <parameters xmi:id="_rfY2IizgEee-wqgUpmCtRA" name="methodSig">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </parameters>
+    <parameters xmi:id="_rfY2ICzgEee-wqgUpmCtRA" name="sourceClass">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
+    <parameters xmi:id="_zUWnQCzgEee-wqgUpmCtRA" name="targetClass">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
+    <parameterMappings xmi:id="_0hIjcCzgEee-wqgUpmCtRA" source="_rfY2ICzgEee-wqgUpmCtRA" target="_RTQe0AihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_0hIjcSzgEee-wqgUpmCtRA" source="_RTQe0AihEeeu0bGbdiaZxA" target="_rfY2ICzgEee-wqgUpmCtRA"/>
+    <parameterMappings xmi:id="_0hIjcizgEee-wqgUpmCtRA" source="_zUWnQCzgEee-wqgUpmCtRA" target="_RTQe0QihEeeu0bGbdiaZxA"/>
+    <parameterMappings xmi:id="_0hIjcyzgEee-wqgUpmCtRA" source="_RTQe0QihEeeu0bGbdiaZxA" target="_zUWnQCzgEee-wqgUpmCtRA"/>
+    <parameterMappings xmi:id="_3OorgCzgEee-wqgUpmCtRA" source="_rfY2IizgEee-wqgUpmCtRA" target="_ioJscOlEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_3OorgSzgEee-wqgUpmCtRA" source="_ioJscOlEEeajyLi0pWzMmQ" target="_rfY2IizgEee-wqgUpmCtRA"/>
+    <parameterMappings xmi:id="_3OorgizgEee-wqgUpmCtRA" source="_rfY2ICzgEee-wqgUpmCtRA" target="_ioJscelEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_3OorgyzgEee-wqgUpmCtRA" source="_ioJscelEEeajyLi0pWzMmQ" target="_rfY2ICzgEee-wqgUpmCtRA"/>
+    <parameterMappings xmi:id="_3OorhCzgEee-wqgUpmCtRA" source="_zUWnQCzgEee-wqgUpmCtRA" target="_ioJsculEEeajyLi0pWzMmQ"/>
+    <parameterMappings xmi:id="_3OorhSzgEee-wqgUpmCtRA" source="_ioJsculEEeajyLi0pWzMmQ" target="_zUWnQCzgEee-wqgUpmCtRA"/>
   </units>
 </henshin:Module>

@@ -12,8 +12,6 @@ import at.ac.tuwien.big.moea.search.algorithm.provider.IRegisteredAlgorithm;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension.FunctionType;
 import at.ac.tuwien.big.momot.ModuleManager;
-import at.ac.tuwien.big.momot.TransformationResultManager;
-import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationParameterMutation;
 import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationPlaceholderMutation;
@@ -70,7 +68,9 @@ import FitnessCalculators.IFitnessCalculator;
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-  protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+	//protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
+	protected static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
+  //protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
   //protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
@@ -90,19 +90,20 @@ public class searchTypeGraph {
 		  "MoveMethod::rules::MoveMethod", 
 		  "MoveMethod::rules::checkPreconditions", 
 		  "MoveMethod::rules::dyn1MoveMethod", 
+		  "MoveMethod::rules::MoveMethodWithoutPreconstraints" ,
 		  "MoveMethod::rules::changeVisibility",
 		  "MoveMethod::rules::dyn2MoveMethod"
-		  //,"MoveMethod::rules::main" 
+		 /// ,"MoveMethod::rules::main" 
 		  };
   
-  protected final static int SOLUTION_LENGTH = 10;
+  protected final static int SOLUTION_LENGTH = 5;
   protected final int populationSize = 100;
   protected final int maxEvaluations = 10000;
   protected static int nrRuns = 1;
   
   protected static double TransformationParameterMutationProbability = 0.1;
-  protected static double TransformationPlaceholderMutationProbability = 0.10;
-  protected static double OnePointCrossoverProbability = 1;
+  protected static double TransformationPlaceholderMutationProbability = 0.2;
+  protected static double OnePointCrossoverProbability = 0.5;
 
   public class AbstractFitnessFunction{
 	  
@@ -134,7 +135,7 @@ public class searchTypeGraph {
 	  }
   }
   
-  private void initializeAlgorithms(TransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
+  private void initializeAlgorithms(MoveMethodTransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
 	  orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII( new TournamentSelection(2),  
 	    		new OnePointCrossover(OnePointCrossoverProbability), 
 	    		new TransformationParameterMutation(TransformationParameterMutationProbability, orchestration.getModuleManager()), 
@@ -192,8 +193,8 @@ public class searchTypeGraph {
     return function;
   }
   
-  protected TransformationSearchOrchestration createOrchestration(final String initialGraph, final int solutionLength) {
-    TransformationSearchOrchestration orchestration = new TransformationSearchOrchestration();
+  protected MoveMethodTransformationSearchOrchestration createOrchestration(final String initialGraph, final int solutionLength) {
+    MoveMethodTransformationSearchOrchestration orchestration = new MoveMethodTransformationSearchOrchestration();
     ModuleManager moduleManager = createModuleManager();
     EGraph graph = moduleManager.loadGraph(initialGraph);
     orchestration.setModuleManager(moduleManager);
@@ -210,7 +211,7 @@ public class searchTypeGraph {
   
 
 
-protected SearchExperiment<TransformationSolution> createExperiment(final TransformationSearchOrchestration orchestration) {
+protected SearchExperiment<TransformationSolution> createExperiment(final MoveMethodTransformationSearchOrchestration orchestration) {
     SearchExperiment<TransformationSolution> experiment = new SearchExperiment<TransformationSolution>(orchestration, maxEvaluations);
     experiment.setNumberOfRuns(nrRuns);
     experiment.addProgressListener(new SeedRuntimePrintListener());
@@ -218,12 +219,12 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
   }
   
   public void performSearch(final String initialGraph, final int solutionLength) {
-    TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
+    MoveMethodTransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
     SearchPrinter printer = new SearchPrinter(orchestration);
     printer.printSearchInfo(INITIAL_MODEL, modules, populationSize, maxEvaluations, nrRuns);
     SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
     experiment.run();
-    new SearchPrinter(orchestration).printResults(experiment);
+    printer.printResults(experiment);
   }
   
 

@@ -9,6 +9,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HEfferentCouplingMetric;
 import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
 import org.gravity.hulk.detection.metrics.HEfferentCouplingCalculator;
+import org.gravity.hulk.detection.metrics.HTotalCouplingCalculator;
 import org.gravity.hulk.detection.metrics.MetricsFactory;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
@@ -21,8 +22,11 @@ public class CouplingCalculator extends MetricCalculator{
 		
 	@Override
 	public double calculate(EGraph graph) {
+		//total
+		return calculate(HTotalCouplingCalculator.class, graph);
+		
 		//efferent
-		return calculate(HEfferentCouplingCalculator.class, graph);
+		//return calculate(HEfferentCouplingCalculator.class, graph);
 		
 		//afferent
 		//return calculate(HAfferentCouplingCalculator.class, graph);

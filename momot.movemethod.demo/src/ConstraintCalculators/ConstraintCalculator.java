@@ -16,37 +16,25 @@ import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import FitnessCalculators.IFitnessCalculator;
+import momotFiles.Utility;
 
 public abstract class ConstraintCalculator implements IFitnessCalculator{
 
-	private TypeGraph getPG(EGraph graph){
-		TypeGraph pg = null;
-		EObject root = graph.getRoots().get(0);
-		if( root instanceof TypeGraph){
-			pg = (TypeGraph) root;
-		}
-		
-		if( root instanceof HAntiPatternGraph){
-			pg = ((HAntiPatternGraph) root).getPg();
-		}
-		
-		if( root instanceof HAntiPatternHandling){
-			pg = ((HAntiPatternDetection) root).getApg().getPg();
-		}
-		return pg;
-	}
+
 	
 	@Override
 	public double calculate(EGraph graph) {
-		return calculate(getPG(graph));
+		return calculate(Utility.getPG(graph));
 	}
 	
 	
-	public abstract double calculate(TypeGraph graph);
+	public double calculate(TypeGraph graph){
+		return violations(graph).size();
+	}
 	
 	
 	public Map<TMember, TVisibility>  violations(EGraph graph) {
-		return violations(getPG(graph));
+		return violations(Utility.getPG(graph));
 	}
 	public abstract Map<TMember, TVisibility> violations(TypeGraph graph);
 	

@@ -31,6 +31,8 @@ import org.eclipse.emf.henshin.model.impl.ModuleImpl;
 import org.eclipse.emf.henshin.model.impl.RuleImpl;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -45,6 +47,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import org.osgi.framework.Bundle;
 
+import ConstraintCalculators.AccessConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
 import FitnessCalculators.CouplingCalculator;
 
@@ -101,12 +104,12 @@ public class HenshinExecutor {
 		
 		//String graphPath  = "input/dyn1_Test";
 		//String graphPath  = "input/03_JUnit3.8.2";
-		
-		String graphPath       = "input/00_JavaSolitaire1.3";
+		//String graphPath       = "input/SecureMailApp";
+		//String graphPath       = "input/00_JavaSolitaire1.3";
 		//String graphPath       = "input/01_QuickUML2001";
 		//String graphPath = "input/02_JsciCalc2.1.0";
 		//String graphPath       = "input/03_JUnit3.8.2";
-		//String graphPath       = "input/04_Gantt1.10.2";	
+		String graphPath       = "input/04_Gantt1.10.2";	
 		//String graphPath       = "input/05_Nutch0.9";
 		//String graphPath       = "input/06_Lucene1.4.3";
 		//String graphPath       = "input/07_log4j1.2.17";
@@ -124,12 +127,16 @@ public class HenshinExecutor {
 		//module = resourceSet.getModule(modulePath+".henshin", false);
 		
 		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
-		double fitness = new CouplingCalculator().calculate(graph);
+	//	double fitness = new CouplingCalculator().calculate(graph);
 		double violations = new VisibilityConstraintCalculator().calculate(pg);
+		violations += new AccessConstraintCalculator().calculate(pg);
 		
-		String sourceClass= "dyn1_Test.B";
-		String targetClass = "package1.C";
-		String method= "n()";
+		
+		
+		
+		String sourceClass= "example.mailapp.SecureMailApp";
+		String targetClass = "example.mailapp.Contact";
+		String method= "encryptMessage(String, Contact):String";
 
 		
 				
@@ -144,11 +151,13 @@ public class HenshinExecutor {
 		
 
 		HashMap<String, Object> parameters = getMoveMethodParameter(pg, method, sourceClass, targetClass);
-		boolean success = executeMain(parameters);
+		//boolean success = executeMain(parameters);
+		boolean success = executeMoveMethod(parameters);
 		//HashMap<String, Object> parameters = getDynParameter("n()", "dyn1_Test.B", (TypeGraph)graph.getRoots().get(0));
 		//boolean success = executeDyn(parameters);
 		
 		// Saving the result:
+		double fitness = new CouplingCalculator().calculate(graph);
 		if (saveResult) {
 			resourceSet.saveEObject(graph.getRoots().get(0), graphPath+"_result.xmi");
 		}
@@ -178,7 +187,7 @@ public class HenshinExecutor {
 
 	
 	public boolean executeMain(HashMap<String, Object> parameters){
-		return executeUnit("main", parameters);
+		return executeUnit("MoveMethodMain", parameters);
 	}
 	
 	public boolean executeMoveMethod(HashMap<String, Object> parameters){

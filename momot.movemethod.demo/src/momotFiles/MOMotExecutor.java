@@ -64,7 +64,7 @@ public class MOMotExecutor {
 	       protected double internalEvaluate(TransformationSolution solution) {
 	          EGraph graph = solution.execute();
 	          EObject root = MomotUtil.getRoot(graph);
-	          return CouplingCalculator.calculateCoupling(((TypeGraph) root));
+	          return new CouplingCalculator().calculate(graph);
 	       }
 	    };
 	  }

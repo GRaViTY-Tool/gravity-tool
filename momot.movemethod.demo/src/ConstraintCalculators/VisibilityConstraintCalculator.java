@@ -22,11 +22,6 @@ import momotFiles.Utility;
 public class VisibilityConstraintCalculator extends ConstraintCalculator{
 	
 	
-	@Override
-	public double calculate(TypeGraph graph) {
-		return violations(graph).size();
-	}
-	
 	public boolean isLibOrT(TAbstractType tClass){
 		if(tClass.getTName().equals("T") || tClass.isTLib() || tClass.getTName().equals("Anonymous")){
 			return true;

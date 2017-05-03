@@ -19,11 +19,6 @@ import momotFiles.Utility;
 
 public class SubTypesConstraintCalculator extends ConstraintCalculator{
 
-	@Override
-	public double calculate(TypeGraph graph) {
-		// TODO Auto-generated method stub
-		return violations(graph).size();
-	}
 	
 	@Override
 	public Map<TMember, TVisibility> violations(TypeGraph graph) {
