@@ -1,4 +1,4 @@
-package momotFiles;
+package Repair;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -16,6 +16,7 @@ import org.gravity.typegraph.basic.TVisibility;
 import ConstraintCalculators.ConstraintCalculator;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolutionRepairer;
+import momotFiles.searchTypeGraph;
 import momotFiles.searchTypeGraph.FitnessFunction;
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
@@ -30,6 +31,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 				Map<TMember, TVisibility> violations = calc.violations(solution.getResultGraph());
 				for(Entry<TMember, TVisibility> violation : calc.violations(solution.getResultGraph()).entrySet()){
 					if(checkPreconditions(violation)){
+						violation.getKey().getTAnnotation().add(new RepairAnnotation(violation.getKey().getTModifier().getTVisibility(), violation.getValue()));
 						violation.getKey().getTModifier().setTVisibility(violation.getValue());
 					}
 				}
@@ -71,7 +73,9 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 	private boolean checkDynPreconditions(TClass sourceClass, Entry<TMember, TVisibility> violation){
 				
 		TClass parent = sourceClass.getParentClass();
-		
+		if(parent == null){
+			return true;
+		}
 		for(TMember member: parent.getDefines()){
 			if(member.getSignature() == violation.getKey().getSignature()){
 				return false;

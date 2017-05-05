@@ -9,9 +9,11 @@ import at.ac.tuwien.big.moea.print.ISolutionWriter;
 import at.ac.tuwien.big.moea.search.algorithm.EvolutionaryAlgorithmFactory;
 import at.ac.tuwien.big.moea.search.algorithm.LocalSearchAlgorithmFactory;
 import at.ac.tuwien.big.moea.search.algorithm.provider.IRegisteredAlgorithm;
+import at.ac.tuwien.big.moea.search.fitness.MultiDimensionalFitnessFunction;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension.FunctionType;
 import at.ac.tuwien.big.momot.ModuleManager;
+import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationParameterMutation;
 import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationPlaceholderMutation;
@@ -64,12 +66,15 @@ import FitnessCalculators.AntiPatternCalculator;
 import FitnessCalculators.CohesionCalculator;
 import FitnessCalculators.CouplingCalculator;
 import FitnessCalculators.IFitnessCalculator;
+import FitnessCalculators.RepairMetricCalculator;
+import Repair.PostProcessRepairMultiDimensionalFitnessFunction;
+import Repair.VisibilityRepairer;
 
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-	//protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
-	protected static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
+	protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
+	//protected static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
   //protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
   //protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
@@ -82,9 +87,10 @@ public class searchTypeGraph {
   protected List<FitnessFunction> fitnessFunctions;
   public static List<FitnessFunction> constraints;
   protected static boolean useConstraints = true;
-  protected static boolean useRepair = false;
+  protected static boolean useRepair = true;
   
   protected final String[] modules = new String[] { "transformations/MoveMethod.henshin" };
+  //protected final String[] modules = new String[] { "transformations/allInOne.henshin" };
   protected final String[] unitsToRemove = new String[] { 
 		  "MoveMethod::rules::libCheck", 
 		  "MoveMethod::rules::MoveMethod", 
@@ -93,17 +99,17 @@ public class searchTypeGraph {
 		  "MoveMethod::rules::MoveMethodWithoutPreconstraints" ,
 		  "MoveMethod::rules::changeVisibility",
 		  "MoveMethod::rules::dyn2MoveMethod"
-		 /// ,"MoveMethod::rules::main" 
+		 // ,"MoveMethod::rules::MoveMethodMain" 
 		  };
   
-  protected final static int SOLUTION_LENGTH = 5;
+  protected final static int SOLUTION_LENGTH = 10;
   protected final int populationSize = 100;
   protected final int maxEvaluations = 10000;
   protected static int nrRuns = 1;
   
   protected static double TransformationParameterMutationProbability = 0.1;
-  protected static double TransformationPlaceholderMutationProbability = 0.2;
-  protected static double OnePointCrossoverProbability = 0.5;
+  protected static double TransformationPlaceholderMutationProbability = 0.1;
+  protected static double OnePointCrossoverProbability = 1;
 
   public class AbstractFitnessFunction{
 	  
@@ -124,7 +130,10 @@ public class searchTypeGraph {
 	  fitnessFunctions = new ArrayList<FitnessFunction>();
 	  fitnessFunctions.add(new FitnessFunction("Coupling", FunctionType.Minimum, new CouplingCalculator()));  
 	  fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));  
-	  fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));  
+	  fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator())); 
+	  if(useRepair){
+		  fitnessFunctions.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
+	  }
 	  
   }
   
@@ -135,7 +144,7 @@ public class searchTypeGraph {
 	  }
   }
   
-  private void initializeAlgorithms(MoveMethodTransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
+  private void initializeAlgorithms(TransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
 	  orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII( new TournamentSelection(2),  
 	    		new OnePointCrossover(OnePointCrossoverProbability), 
 	    		new TransformationParameterMutation(TransformationParameterMutationProbability, orchestration.getModuleManager()), 
@@ -178,6 +187,7 @@ public class searchTypeGraph {
   
   protected IEGraphMultiDimensionalFitnessFunction createFitnessFunction() {
     IEGraphMultiDimensionalFitnessFunction function = new PostProcessRepairMultiDimensionalFitnessFunction();
+    //IEGraphMultiDimensionalFitnessFunction function = new EGraphMultiDimensionalFitnessFunction();
     function.addObjective(createSolutionLengthFitness());
 
     for(FitnessFunction fitness : fitnessFunctions){
@@ -193,8 +203,9 @@ public class searchTypeGraph {
     return function;
   }
   
-  protected MoveMethodTransformationSearchOrchestration createOrchestration(final String initialGraph, final int solutionLength) {
+  protected TransformationSearchOrchestration createOrchestration(final String initialGraph, final int solutionLength) {
     MoveMethodTransformationSearchOrchestration orchestration = new MoveMethodTransformationSearchOrchestration();
+	//TransformationSearchOrchestration orchestration = new TransformationSearchOrchestration();
     ModuleManager moduleManager = createModuleManager();
     EGraph graph = moduleManager.loadGraph(initialGraph);
     orchestration.setModuleManager(moduleManager);
@@ -211,7 +222,7 @@ public class searchTypeGraph {
   
 
 
-protected SearchExperiment<TransformationSolution> createExperiment(final MoveMethodTransformationSearchOrchestration orchestration) {
+protected SearchExperiment<TransformationSolution> createExperiment(final TransformationSearchOrchestration orchestration) {
     SearchExperiment<TransformationSolution> experiment = new SearchExperiment<TransformationSolution>(orchestration, maxEvaluations);
     experiment.setNumberOfRuns(nrRuns);
     experiment.addProgressListener(new SeedRuntimePrintListener());
@@ -219,7 +230,7 @@ protected SearchExperiment<TransformationSolution> createExperiment(final MoveMe
   }
   
   public void performSearch(final String initialGraph, final int solutionLength) {
-    MoveMethodTransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
+	TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
     SearchPrinter printer = new SearchPrinter(orchestration);
     printer.printSearchInfo(INITIAL_MODEL, modules, populationSize, maxEvaluations, nrRuns);
     SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);

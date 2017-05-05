@@ -1,4 +1,4 @@
-package momotFiles;
+package Repair;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -36,7 +36,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction implements IEGraph
 		            solution.setConstraint(i++, constraintEvaluation);
 		            failedConstraint = IFitnessDimension.CONSTRAINT_OK != constraintEvaluation;
 		         } else {
-		            solution.setConstraint(i++, IFitnessDimension.CONSTRAINT_VIOLATED);
+		            solution.setConstraint(i++, Double.MAX_VALUE);
 		         }
 		      }
 
@@ -45,7 +45,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction implements IEGraph
 		         if(!failedConstraint) {
 		            solution.setObjective(i++, evaluate(dimension, solution));
 		         } else {
-		            solution.setObjective(i++, IFitnessDimension.CONSTRAINT_VIOLATED);
+		            solution.setObjective(i++, Double.MAX_VALUE);
 		         }
 		      }
 

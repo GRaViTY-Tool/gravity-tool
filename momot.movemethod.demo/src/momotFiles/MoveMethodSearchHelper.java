@@ -73,6 +73,12 @@ public class MoveMethodSearchHelper extends SearchHelper{
 		List<TMethodSignature> methodSigs = new ArrayList<TMethodSignature>();
 		for(TSignature sig: sourceClass.getSignature()){
 			if(sig instanceof TMethodSignature){
+				if(sig.getSignatureString().toLowerCase().startsWith("set")){
+					continue;
+				}
+				if(sig.getSignatureString().toLowerCase().startsWith("get")){
+					continue;
+				}
 				methodSigs.add((TMethodSignature)sig);
 			}
 		}
@@ -114,9 +120,12 @@ public class MoveMethodSearchHelper extends SearchHelper{
 			
 			UnitApplicationVariable application = createApplication(graph, assignment);
 			
-			  if(application.execute(getMonitor())) {
-				  return application;
-			  }
+			 if(application.execute(getMonitor())) {
+				 	application.setAssignment(application.getResultAssignment());
+	               return clean(application);
+	            } else {
+	               application.undo(getMonitor());
+	            }
 		}
 		
 		return null;

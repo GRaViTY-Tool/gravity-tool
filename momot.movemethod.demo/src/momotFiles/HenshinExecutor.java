@@ -13,9 +13,11 @@ import javax.xml.crypto.dsig.keyinfo.KeyValue;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.ApplicationMonitor;
+import org.eclipse.emf.henshin.interpreter.Assignment;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.UnitApplication;
@@ -25,6 +27,7 @@ import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
 import org.eclipse.emf.henshin.interpreter.impl.RuleApplicationImpl;
 import org.eclipse.emf.henshin.interpreter.impl.UnitApplicationImpl;
 import org.eclipse.emf.henshin.model.Module;
+import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
 import org.eclipse.emf.henshin.model.impl.ModuleImpl;
@@ -51,6 +54,16 @@ import ConstraintCalculators.AccessConstraintCalculator;
 import ConstraintCalculators.InheritanceConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
 import FitnessCalculators.CouplingCalculator;
+import at.ac.tuwien.big.moea.problem.solution.variable.IPlaceholderVariable;
+import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
+import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
+import at.ac.tuwien.big.momot.problem.solution.variable.ITransformationVariable;
+import at.ac.tuwien.big.momot.problem.solution.variable.RuleApplicationVariable;
+import at.ac.tuwien.big.momot.problem.solution.variable.UnitApplicationVariable;
+import at.ac.tuwien.big.momot.problem.unit.parameter.comparator.DefaultEObjectEqualityHelper;
+import at.ac.tuwien.big.momot.problem.unit.parameter.comparator.IEObjectEqualityHelper;
+import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
+import at.ac.tuwien.big.momot.util.MomotUtil;
 
 public class HenshinExecutor {
 
@@ -96,6 +109,25 @@ public class HenshinExecutor {
 	}
 	
 	
+	private class  unitapp extends UnitApplicationVariable{
+
+		public unitapp(Engine engine, EGraph graph, Unit unit, Assignment assignment) {
+			super(engine, graph, unit, assignment);
+			// TODO Auto-generated constructor stub
+		}
+		
+		@Override
+		public boolean execute(ApplicationMonitor mon) {
+			// TODO Auto-generated method stub
+			return super.doExecute(mon);
+		}
+		
+	}
+	
+	
+	
+
+	
 	public void run(){
 		//register
 		BasicPackage.eINSTANCE.eClass();
@@ -105,12 +137,12 @@ public class HenshinExecutor {
 		
 		//String graphPath  = "input/dyn1_Test";
 		//String graphPath  = "input/03_JUnit3.8.2";
-		//String graphPath       = "input/SecureMailApp";
+		String graphPath       = "input/SecureMailApp";
 		//String graphPath       = "input/00_JavaSolitaire1.3";
 		//String graphPath       = "input/01_QuickUML2001";
 		//String graphPath = "input/02_JsciCalc2.1.0";
 		//String graphPath       = "input/03_JUnit3.8.2";
-		String graphPath       = "input/04_Gantt1.10.2";	
+		//String graphPath       = "input/04_Gantt1.10.2";	
 		//String graphPath       = "input/05_Nutch0.9";
 		//String graphPath       = "input/06_Lucene1.4.3";
 		//String graphPath       = "input/07_log4j1.2.17";
@@ -127,10 +159,11 @@ public class HenshinExecutor {
 		// Load the module:
 		//module = resourceSet.getModule(modulePath+".henshin", false);
 		
+	
 		TypeGraph pg = (TypeGraph)graph.getRoots().get(0);
-	//	double fitness = new CouplingCalculator().calculate(graph);
+		double fitness = new CouplingCalculator().calculate(graph);
 		double violations = new VisibilityConstraintCalculator().calculate(pg);
-		violations += new InheritanceConstraintCalculator().calculate(pg);
+		//violations += new InheritanceConstraintCalculator().calculate(pg);
 		
 		
 		
@@ -158,18 +191,47 @@ public class HenshinExecutor {
 		//boolean success = executeDyn(parameters);
 		
 		// Saving the result:
-		double fitness = new CouplingCalculator().calculate(graph);
+		fitness = new CouplingCalculator().calculate(graph);
 		if (saveResult) {
 			resourceSet.saveEObject(graph.getRoots().get(0), graphPath+"_result.xmi");
 		}
 		
 	}
 	
+
+	   protected boolean equals(final EObject left, final EObject right, TransformationSearchOrchestration orchestration) {
+	      IEObjectEqualityHelper helper = orchestration.getEqualityHelper();
+	      if(helper == null) {
+	         helper = new DefaultEObjectEqualityHelper();
+	      }
+	      return helper.equals(left, right);
+	   }
+	
+	   protected void adapt(final ITransformationVariable variable, final EGraph newGraph, TransformationSearchOrchestration orchestration) {
+		      if(variable instanceof IPlaceholderVariable) {
+		         return;
+		      }
+
+		      for(final Parameter param : variable.getUnit().getParameters()) {
+		         final Object paramValue = variable.getParameterValue(param);
+		         if(paramValue instanceof EObject) {
+		            final EObject valueInOldGraph = (EObject) paramValue;
+		            for(final EObject valueInNewGraph : newGraph.getDomain(valueInOldGraph.eClass(), true)) {
+		               if(equals(valueInNewGraph, valueInOldGraph, orchestration)) {
+		                  variable.setParameterValue(param, valueInNewGraph);
+		                  break;
+		               }
+		            }
+		         }
+		      }
+		      variable.setEGraph(newGraph);
+		   }
+	
 	public static void main(String[] args) {
 		
-
+		double result = Double.POSITIVE_INFINITY - Double.POSITIVE_INFINITY;
+		
 		new HenshinExecutor().run();
-
 		
 	}
 	
