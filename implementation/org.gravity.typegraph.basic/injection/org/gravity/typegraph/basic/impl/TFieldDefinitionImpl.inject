@@ -1,4 +1,6 @@
 
+import java.util.Objects;
+
 partial class TFieldDefinitionImpl {
 
 @members <--
@@ -8,6 +10,20 @@ partial class TFieldDefinitionImpl {
 		String string = super.toString();
 		String name = getSignature().getField().getTName();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+	}
+
+	public boolean equals(Object other) {
+		if (!(other instanceof TFieldDefinition)) {
+			return false;
+		}
+		TFieldDefinition otherSig = (TFieldDefinition) other;
+		if (!(Objects.equals(this.getSignature(),otherSig.getSignature()))) {
+			return false;
+		}
+		if (!(Objects.equals(this.getDefinedBy(),otherSig.getDefinedBy()))) {
+			return false;
+		}
+		return true;
 	}
 	
 -->

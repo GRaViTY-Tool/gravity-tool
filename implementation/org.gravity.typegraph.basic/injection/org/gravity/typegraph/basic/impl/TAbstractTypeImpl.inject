@@ -1,6 +1,8 @@
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
+
 import org.gravity.typegraph.basic.TMethodSignature;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -86,6 +88,23 @@ partial class TAbstractTypeImpl {
 		} else {
 			return type.getPackage();
 		}
+	}
+	
+	public boolean equals(Object other){
+		if(!(other instanceof TAbstractType)){
+			return false;
+		}
+		TAbstractType otherType = (TAbstractType) other;
+		
+		if(!(Objects.equals(this.getTName(),otherType.getTName()))){
+			return false;
+		}
+		
+		if(!(Objects.equals(this.getPackage(),otherType.getPackage()))){
+			return false;
+		}
+		
+		return true;
 	}
 	
 -->
