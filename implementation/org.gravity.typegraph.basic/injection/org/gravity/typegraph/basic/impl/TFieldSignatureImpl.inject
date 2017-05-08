@@ -1,35 +1,12 @@
 
-import java.util.Objects;
-
 partial class TFieldSignatureImpl {
 
-@members <--
 
-	public boolean equals(Object other) {
-		if (!(other instanceof TFieldSignature)) {
-			return false;
-		}
-		TFieldSignature otherSig = (TFieldSignature) other;
-		if (!(Objects.equals(this.getField(), otherSig.getField()))) {
-			return false;
-		}
-		if (!(Objects.equals(this.getSignatureString(), otherSig.getSignatureString()))) {
-			return false;
-		}
-		return true;
-	}
-	
--->
 
 @model getSignatureString () <--
-		String name = "";
-		if (getField() != null) {
-			name += getField().getTName();
-		}
-		if(getType() != null){
-			name += ":" + getType().getTName();
-		}
-		return name;
+
+		String name = getField().getTName();
+		return name + ":" + getType().getTName();
 -->
 
 }

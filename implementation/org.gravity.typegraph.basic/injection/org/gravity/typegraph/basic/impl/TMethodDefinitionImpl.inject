@@ -1,6 +1,5 @@
 
 import org.gravity.typegraph.basic.TParameter;
-import java.util.Objects;
 
 partial class TMethodDefinitionImpl {
 
@@ -12,20 +11,6 @@ partial class TMethodDefinitionImpl {
 		String string = super.toString();
 		String name = getSignature().getMethod().getTName();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
-	}
-
-	public boolean equals(Object other) {
-		if (!(other instanceof TMethodDefinition)) {
-			return false;
-		}
-		TMethodDefinition otherMethod = (TMethodDefinition) other;
-		if (!(Objects.equals(this.getSignature(),otherMethod.getSignature()))) {
-			return false;
-		}
-		if (!(Objects.equals(this.getDefinedBy(),otherMethod.getDefinedBy()))) {
-			return false;
-		}
-		return true;
 	}
 	
 -->
