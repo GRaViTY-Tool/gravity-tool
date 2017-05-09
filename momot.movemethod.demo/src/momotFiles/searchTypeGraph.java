@@ -60,22 +60,26 @@ import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.moeaframework.util.progress.ProgressListener;
 
+import ConstraintCalculators.AccessConstraintCalculator;
 import ConstraintCalculators.ConstraintCalculator;
+import ConstraintCalculators.InheritanceConstraintCalculator;
+import ConstraintCalculators.SubTypesConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
 import FitnessCalculators.AntiPatternCalculator;
 import FitnessCalculators.CohesionCalculator;
 import FitnessCalculators.CouplingCalculator;
 import FitnessCalculators.IFitnessCalculator;
 import FitnessCalculators.RepairMetricCalculator;
+import Orchestration.MoveMethodTransformationSearchOrchestration;
 import Repair.PostProcessRepairMultiDimensionalFitnessFunction;
 import Repair.VisibilityRepairer;
 
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-	protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
+	//protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
 	//protected static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
-  //protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+  protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
   //protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
   //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
@@ -140,7 +144,10 @@ public class searchTypeGraph {
   private void initializeConstraints(){
 	  constraints = new ArrayList<FitnessFunction>();
 	  if(useConstraints){
-		  constraints.add(new FitnessFunction("visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));  
+		  constraints.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));  
+		  constraints.add(new FitnessFunction("Accessibility", FunctionType.Minimum, new AccessConstraintCalculator()));  
+		  constraints.add(new FitnessFunction("Inheritance", FunctionType.Minimum, new InheritanceConstraintCalculator()));  
+		  constraints.add(new FitnessFunction("SubTypes", FunctionType.Minimum, new SubTypesConstraintCalculator()));  
 	  }
   }
   
@@ -212,6 +219,7 @@ public class searchTypeGraph {
     orchestration.setProblemGraph(graph);
     orchestration.setSolutionLength(solutionLength);
     orchestration.setFitnessFunction(createFitnessFunction());
+    orchestration.setEqualityHelper(new EqualityHelper());
     
     EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration.createEvolutionaryAlgorithmFactory(populationSize);
     LocalSearchAlgorithmFactory<TransformationSolution> local = orchestration.createLocalSearchAlgorithmFactory();

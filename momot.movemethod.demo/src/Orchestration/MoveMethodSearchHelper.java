@@ -1,4 +1,4 @@
-package momotFiles;
+package Orchestration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +29,7 @@ import at.ac.tuwien.big.momot.problem.solution.variable.RuleApplicationVariable;
 import at.ac.tuwien.big.momot.problem.solution.variable.UnitApplicationVariable;
 import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
 import at.ac.tuwien.big.momot.util.MomotUtil;
+import momotFiles.Utility;
 
 public class MoveMethodSearchHelper extends SearchHelper{
 	Random random;

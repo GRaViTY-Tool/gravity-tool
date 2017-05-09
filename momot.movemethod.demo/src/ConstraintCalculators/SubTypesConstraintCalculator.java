@@ -53,6 +53,10 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 				TMethodDefinition method = (TMethodDefinition) member;
 				for(TMethodDefinition parentMethod: parentMethods){
 					if(parentMethod.getSignature() == method.getSignature()){
+						if(parentMethod.getTModifier() == null){
+							continue;
+						}
+						
 						if(!Utility.visibilityDominates(method.getTModifier().getTVisibility(), parentMethod.getTModifier().getTVisibility())){
 							violations.put(method,  parentMethod.getTModifier().getTVisibility());
 						}
@@ -71,7 +75,7 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 	 */
 	public static Map<TMember, TVisibility> sub1(TypeGraph graph){
 		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
-		for(TClass tClass: graph.getClasses()){
+		for(TClass tClass: Utility.getDefinedClasses(graph)){
 			List<TMethodDefinition> parentMethods = new ArrayList<TMethodDefinition>();
 			fillParentMethods(parentMethods, tClass);
 				violations.putAll(compareMethods(parentMethods, tClass));

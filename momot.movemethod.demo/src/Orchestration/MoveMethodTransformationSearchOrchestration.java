@@ -1,4 +1,4 @@
-package momotFiles;
+package Orchestration;
 
 import at.ac.tuwien.big.moea.AbstractSearchOrchestration;
 import at.ac.tuwien.big.moea.search.fitness.IMultiDimensionalFitnessFunction;

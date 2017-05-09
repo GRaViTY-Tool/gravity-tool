@@ -12,6 +12,7 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import ConstraintCalculators.ConstraintCalculator;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
@@ -84,7 +85,32 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 		return true;
 	}
 	
+	private boolean isSecurityAnnotation(TAnnotation annotation){
+		if(annotation.getType().getTName().equals("High")){
+			return true;
+		}
+		if(annotation.getType().getTName().equals("Critical")){
+			return true;
+		}		
+		if(annotation.getType().getTName().equals("Secrecy")){
+			return true;
+		}
+		if(annotation.getType().getTName().equals("Integrity")){
+			return true;
+		}
+		
+		return false;
+		
+	}
 	
+	private boolean checkSecurityPreconditions(TClass sourceClass, Entry<TMember, TVisibility> violation){
+		for(TAnnotation annotation: violation.getKey().getTAnnotation()){
+			if(isSecurityAnnotation(annotation)){
+				return false;
+			}
+		}
+		return true;
+	}
 
 	private boolean checkPreconditions(Entry<TMember, TVisibility> violation) {
 		TAbstractType definedBy = violation.getKey().getDefinedBy();
@@ -95,6 +121,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 		TClass sourceClass = ((TClass)definedBy);
 		boolean result = checkDynPreconditions(sourceClass, violation) ;
 		result &= checkINH2Preconditions(sourceClass, violation);
+		result &= checkSecurityPreconditions(sourceClass, violation);
 		
 		return result;
 	}
