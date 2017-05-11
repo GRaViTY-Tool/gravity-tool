@@ -43,7 +43,6 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 		return solution;
 	}
 
-	
 	//if a childClass implements an interface with the same field as the field in the violation do not change the visibility as this may introduce ambiguity
 	private boolean checkINH2Preconditions(TClass sourceClass,Entry<TMember, TVisibility> violation){
 		if(!(violation.getKey() instanceof TFieldDefinition)){
