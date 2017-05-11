@@ -19,6 +19,8 @@ public class AllConstraintsCalculator extends ConstraintCalculator {
 		ArrayList<ConstraintCalculator> list = new ArrayList<>();
 		list.add(new VisibilityConstraintCalculator());
 		list.add(new SubTypesConstraintCalculator());
+		list.add(new AccessConstraintCalculator());
+		list.add(new InheritanceConstraintCalculator());
 		return list;
 	}
 	
