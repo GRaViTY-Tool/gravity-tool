@@ -2,13 +2,19 @@ package momotFiles;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
+
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.ParameterException;
 
 import ConstraintCalculators.AccessConstraintCalculator;
 import ConstraintCalculators.InheritanceConstraintCalculator;
@@ -40,25 +46,12 @@ import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimen
 @SuppressWarnings("all")
 public class searchTypeGraph {
   
-	//protected static String INITIAL_MODEL = "input/SecureMailApp.xmi";
-	//protected static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
-  protected static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
-  //protected static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
-  //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
-  //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
-  //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
-  //protected static String INITIAL_MODEL = "input/04_Gantt1.10.2.xmi";
-  
-  
-  protected String baseName;
   protected List<FitnessFunction> fitnessFunctions;
   public static List<FitnessFunction> constraints;
-  protected static boolean useConstraints = true;
-  protected static boolean useRepair = true;
   
-  protected final String[] modules = new String[] { "transformations/MoveMethod.henshin" };
+  
   //protected final String[] modules = new String[] { "transformations/allInOne.henshin" };
-  protected final String[] unitsToRemove = new String[] { 
+  /*protected final String[] unitsToRemove = new String[] { 
 		  "MoveMethod::rules::libCheck", 
 		  "MoveMethod::rules::MoveMethod", 
 		  "MoveMethod::rules::checkPreconditions", 
@@ -67,21 +60,8 @@ public class searchTypeGraph {
 		  "MoveMethod::rules::changeVisibility",
 		  "MoveMethod::rules::dyn2MoveMethod"
 		 // ,"MoveMethod::rules::MoveMethodMain" 
-		  };
-  
-  protected final static int SOLUTION_LENGTH = 10;
-  protected final int populationSize = 100;
-  protected final int maxEvaluations = 10000;
-  protected static int nrRuns = 1;
-  
-  protected static double TransformationParameterMutationProbability = 0.1;
-  protected static double TransformationPlaceholderMutationProbability = 0.1;
-  protected static double OnePointCrossoverProbability = 1;
-
-  public class AbstractFitnessFunction{
-	  
-  }
-  
+		  };*/
+   
   public class FitnessFunction{
 	  public String Name;
 	  public FunctionType type;
@@ -98,7 +78,7 @@ public class searchTypeGraph {
 	  fitnessFunctions.add(new FitnessFunction("Coupling", FunctionType.Minimum, new CouplingCalculator()));  
 	  fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));  
 	  fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator())); 
-	  if(useRepair){
+	  if(SearchParameters.useRepair){
 		  fitnessFunctions.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
 	  }
 	  
@@ -106,7 +86,7 @@ public class searchTypeGraph {
   
   private void initializeConstraints(){
 	  constraints = new ArrayList<FitnessFunction>();
-	  if(useConstraints){
+	  if(SearchParameters.useConstraints){
 		  constraints.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityConstraintCalculator()));  
 		  constraints.add(new FitnessFunction("Accessibility", FunctionType.Minimum, new AccessConstraintCalculator()));  
 		  constraints.add(new FitnessFunction("Inheritance", FunctionType.Minimum, new InheritanceConstraintCalculator()));  
@@ -116,10 +96,9 @@ public class searchTypeGraph {
   
   private void initializeAlgorithms(TransformationSearchOrchestration orchestration, EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
 	  orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII( new TournamentSelection(2),  
-	    		new OnePointCrossover(OnePointCrossoverProbability), 
-	    		new TransformationParameterMutation(TransformationParameterMutationProbability, orchestration.getModuleManager()), 
-	    		new TransformationPlaceholderMutation(TransformationPlaceholderMutationProbability)));
-	
+	    		new OnePointCrossover(SearchParameters.OnePointCrossoverProbability), 
+	    		new TransformationParameterMutation(SearchParameters.TransformationParameterMutationProbability, orchestration.getModuleManager()), 
+	    		new TransformationPlaceholderMutation(SearchParameters.TransformationPlaceholderMutationProbability)));
 }
   
   
@@ -148,10 +127,17 @@ public class searchTypeGraph {
     
   protected ModuleManager createModuleManager() {
     ModuleManager manager = new ModuleManager();
-    for(String module : modules) {
+    for(String module : SearchParameters.modules) {
        manager.addModule(URI.createFileURI(new File(module).getPath().toString()).toString());
     }
-    manager.removeUnits(unitsToRemove);
+    
+    List<String> units = new ArrayList<String>();
+    for(Unit unit: manager.getUnits()){
+    	units.add(manager.getQualifiedName(unit));
+    }
+    units.removeAll((Arrays.asList(SearchParameters.units)));
+    manager.removeUnits(units);
+    
     return manager;
   }
   
@@ -166,7 +152,7 @@ public class searchTypeGraph {
     for(FitnessFunction constraint : constraints){
     	function.addConstraint(createFitnessDimension(constraint));
     }
-    if(useRepair){
+    if(SearchParameters.useRepair){
     	function.setSolutionRepairer(new VisibilityRepairer());
     }
     
@@ -184,7 +170,7 @@ public class searchTypeGraph {
     orchestration.setFitnessFunction(createFitnessFunction());
     orchestration.setEqualityHelper(new EqualityHelper());
     
-    EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration.createEvolutionaryAlgorithmFactory(populationSize);
+    EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration.createEvolutionaryAlgorithmFactory(SearchParameters.populationSize);
     LocalSearchAlgorithmFactory<TransformationSolution> local = orchestration.createLocalSearchAlgorithmFactory();
    
     initializeAlgorithms(orchestration, moea);
@@ -194,8 +180,8 @@ public class searchTypeGraph {
 
 
 protected SearchExperiment<TransformationSolution> createExperiment(final TransformationSearchOrchestration orchestration) {
-    SearchExperiment<TransformationSolution> experiment = new SearchExperiment<TransformationSolution>(orchestration, maxEvaluations);
-    experiment.setNumberOfRuns(nrRuns);
+    SearchExperiment<TransformationSolution> experiment = new SearchExperiment<TransformationSolution>(orchestration, SearchParameters.maxEvaluations);
+    experiment.setNumberOfRuns(SearchParameters.nrRuns);
     experiment.addProgressListener(new SeedRuntimePrintListener());
     return experiment;
   }
@@ -203,7 +189,7 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
   public void performSearch(final String initialGraph, final int solutionLength) {
 	TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
     SearchPrinter printer = new SearchPrinter(orchestration);
-    printer.printSearchInfo(INITIAL_MODEL, modules, populationSize, maxEvaluations, nrRuns);
+    printer.printSearchInfo(SearchParameters.INITIAL_MODEL, SearchParameters.modules, SearchParameters.populationSize, SearchParameters.maxEvaluations, SearchParameters.nrRuns);
     SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
     experiment.run();
     printer.printResults(experiment);
@@ -211,9 +197,7 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
   
 
   
-  
-  
-  public static void main(final String... args) {
+  public static void parseArgs(final String... args){
 	  if(args.length > 0){
 		  if(args[0].equalsIgnoreCase("help") || args[0].equalsIgnoreCase("?")){
 			  System.out.println("Useage:");
@@ -222,22 +206,46 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
 			  System.out.println("(optinal) Argument 3: boolean useContraints (default true)");
 		  }
 		  
-		  INITIAL_MODEL =  args[0];
+		  SearchParameters.INITIAL_MODEL =  args[0];
 	  }
 	  if(args.length>1){
-		  nrRuns = Integer.parseInt(args[1]);
+		  SearchParameters.nrRuns = Integer.parseInt(args[1]);
 	  }
 	  if(args.length > 2){
-		  useConstraints = Boolean.parseBoolean(args[2]);
+		  SearchParameters.useConstraints = Boolean.parseBoolean(args[2]);
+	  }
+  }
+  
+  public void handleInput(String[] args){
+	  JCommander jCommander = new JCommander(new SearchParameters());
+	  jCommander.setProgramName("Search Type Graph");
+	  
+	  try{
+		  jCommander.parse(args);
+	  }catch(ParameterException ex){
+		  System.out.println(ex.getMessage());
+		  jCommander.usage();
+		  System.exit(0);
 	  }
 	  
+	  if(SearchParameters.help){
+		  jCommander.usage();
+		  System.exit(0);
+	  }
+	  
+  }
+  
+  public static void main(final String... args) {
+	  searchTypeGraph search = new searchTypeGraph();
+	//parseArgs(args);
+	  search.handleInput(args);
 	  BasicPackage.eINSTANCE.eClass();
 	  System.out.println("Search started.");
     
-    searchTypeGraph search = new searchTypeGraph();
+    
     search.initializeFitnessFunctions();
     search.initializeConstraints();
-    search.performSearch(INITIAL_MODEL, SOLUTION_LENGTH);
+    search.performSearch(SearchParameters.INITIAL_MODEL, SearchParameters.SOLUTION_LENGTH);
     System.out.println("Search finished.");
   }
 }
