@@ -1,67 +1,16 @@
 package momotFiles;
 
-import at.ac.tuwien.big.moea.SearchAnalysis;
-import at.ac.tuwien.big.moea.SearchExperiment;
-import at.ac.tuwien.big.moea.experiment.analyzer.SearchAnalyzer;
-import at.ac.tuwien.big.moea.experiment.executor.listener.SeedRuntimePrintListener;
-import at.ac.tuwien.big.moea.print.IPopulationWriter;
-import at.ac.tuwien.big.moea.print.ISolutionWriter;
-import at.ac.tuwien.big.moea.search.algorithm.EvolutionaryAlgorithmFactory;
-import at.ac.tuwien.big.moea.search.algorithm.LocalSearchAlgorithmFactory;
-import at.ac.tuwien.big.moea.search.algorithm.provider.IRegisteredAlgorithm;
-import at.ac.tuwien.big.moea.search.fitness.MultiDimensionalFitnessFunction;
-import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension;
-import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension.FunctionType;
-import at.ac.tuwien.big.momot.ModuleManager;
-import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
-import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
-import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationParameterMutation;
-import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationPlaceholderMutation;
-import at.ac.tuwien.big.momot.search.fitness.EGraphMultiDimensionalFitnessFunction;
-import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunction;
-import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
-import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
-import at.ac.tuwien.big.momot.util.MomotUtil;
-
-
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.core.internal.resources.ProjectInfo;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.internal.core.JavaProject;
-import org.gravity.eclipse.converter.IPGConverter;
-import org.gravity.eclipse.io.ModelSaver;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.tgg.modisco.MoDiscoTGGConverterFactory;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TypeGraph;
-import org.moeaframework.algorithm.NSGAII;
-import org.moeaframework.core.Population;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
-import org.moeaframework.util.progress.ProgressListener;
 
 import ConstraintCalculators.AccessConstraintCalculator;
-import ConstraintCalculators.ConstraintCalculator;
 import ConstraintCalculators.InheritanceConstraintCalculator;
 import ConstraintCalculators.SubTypesConstraintCalculator;
 import ConstraintCalculators.VisibilityConstraintCalculator;
@@ -73,6 +22,20 @@ import FitnessCalculators.RepairMetricCalculator;
 import Orchestration.MoveMethodTransformationSearchOrchestration;
 import Repair.PostProcessRepairMultiDimensionalFitnessFunction;
 import Repair.VisibilityRepairer;
+import at.ac.tuwien.big.moea.SearchExperiment;
+import at.ac.tuwien.big.moea.experiment.executor.listener.SeedRuntimePrintListener;
+import at.ac.tuwien.big.moea.search.algorithm.EvolutionaryAlgorithmFactory;
+import at.ac.tuwien.big.moea.search.algorithm.LocalSearchAlgorithmFactory;
+import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension;
+import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension.FunctionType;
+import at.ac.tuwien.big.momot.ModuleManager;
+import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
+import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
+import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationParameterMutation;
+import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationPlaceholderMutation;
+import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunction;
+import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
+import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 
 @SuppressWarnings("all")
 public class searchTypeGraph {

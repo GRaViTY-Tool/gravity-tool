@@ -10,8 +10,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TPackage;
 
-import com.google.common.base.Objects;
-
 import at.ac.tuwien.big.momot.problem.unit.parameter.comparator.IEObjectEqualityHelper;
 
 public class EqualityHelper implements IEObjectEqualityHelper{

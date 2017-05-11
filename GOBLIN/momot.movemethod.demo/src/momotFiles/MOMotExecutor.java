@@ -1,4 +1,19 @@
 package momotFiles;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.henshin.interpreter.EGraph;
+import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TypeGraph;
+import org.moeaframework.algorithm.NSGAII;
+import org.moeaframework.core.Population;
+import org.moeaframework.util.progress.ProgressListener;
+
+import ConstraintCalculators.VisibilityConstraintCalculator;
+import FitnessCalculators.CouplingCalculator;
 import at.ac.tuwien.big.moea.SearchAnalysis;
 import at.ac.tuwien.big.moea.SearchExperiment;
 import at.ac.tuwien.big.moea.experiment.analyzer.SearchAnalyzer;
@@ -18,21 +33,6 @@ import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunct
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 import at.ac.tuwien.big.momot.util.MomotUtil;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TypeGraph;
-import org.moeaframework.algorithm.NSGAII;
-import org.moeaframework.core.Population;
-import org.moeaframework.util.progress.ProgressListener;
-
-import ConstraintCalculators.VisibilityConstraintCalculator;
-import FitnessCalculators.CouplingCalculator;
 
 
 public class MOMotExecutor {

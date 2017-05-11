@@ -2,17 +2,13 @@ package momotFiles;
 
 import java.util.HashSet;
 
-import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 
 public class TCallTest {
 
