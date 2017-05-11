@@ -1,0 +1,9 @@
+{"unit":"changeVisibility",
+"postresult":1,
+"preresult":true,
+"Parameters":{
+"methodSig":"A.n():TMethodSignature",
+"sourceClass":"sub2_Test.A:TClass",
+"tVis":"TProtected:TVisibility"
+}
+}
