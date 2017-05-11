@@ -1,0 +1,8 @@
+{"unit":"libCheck",
+"postresult":0,
+"preresult":false,
+"Parameters":{
+"firstClass":"int:TClass",
+"secondClass":"libCheck.A:TClass",
+}
+}

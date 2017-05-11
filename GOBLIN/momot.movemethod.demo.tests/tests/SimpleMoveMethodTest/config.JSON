@@ -1,0 +1,9 @@
+{"unit":"MoveMethodMain",
+"postresult":0,
+"preresult":true,
+"Parameters":{
+"methodSig":"A.m():TMethodSignature",
+"sourceClass":"A:TClass",
+"targetClass":"B:TClass"}
+
+}
