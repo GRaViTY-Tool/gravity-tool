@@ -44,7 +44,7 @@ import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDime
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 
 @SuppressWarnings("all")
-public class searchTypeGraph {
+public class SearchTypeGraph {
   
   protected List<FitnessFunction> fitnessFunctions;
   public static List<FitnessFunction> constraints;
@@ -236,7 +236,7 @@ protected SearchExperiment<TransformationSolution> createExperiment(final Transf
   }
   
   public static void main(final String... args) {
-	  searchTypeGraph search = new searchTypeGraph();
+	  SearchTypeGraph search = new SearchTypeGraph();
 	//parseArgs(args);
 	  search.handleInput(args);
 	  BasicPackage.eINSTANCE.eClass();

@@ -17,15 +17,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import ConstraintCalculators.ConstraintCalculator;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolutionRepairer;
-import momotFiles.searchTypeGraph;
-import momotFiles.searchTypeGraph.FitnessFunction;
+import momotFiles.SearchTypeGraph;
+import momotFiles.SearchTypeGraph.FitnessFunction;
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 
 	@Override
 	public TransformationSolution repair(TransformationSolution solution) {
 		EGraph graph = solution.getResultGraph();
-		for(FitnessFunction constraint: searchTypeGraph.constraints){
+		for(FitnessFunction constraint: SearchTypeGraph.constraints){
 			if(constraint.calculator instanceof ConstraintCalculator){
 				ConstraintCalculator calc = (ConstraintCalculator) constraint.calculator;
 				
