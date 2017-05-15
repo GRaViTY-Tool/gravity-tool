@@ -23,6 +23,7 @@ import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
+import PreConditions.MoveMethodPreConditions;
 import at.ac.tuwien.big.moea.util.CollectionUtil;
 import at.ac.tuwien.big.moea.util.MathUtil;
 import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
@@ -76,72 +77,15 @@ public class MoveMethodSearchHelper extends SearchHelper{
 	
 	
 	
-	private boolean getterSetterPrecondition(TMethodSignature methodSig, TClass sourceClass){
-			if(methodSig.getSignatureString().toLowerCase().startsWith("set")){
-				return false;
-			}
-			if(methodSig.getSignatureString().toLowerCase().startsWith("get")){
-				return false;
-			}
-			return true;
-	}
-	
-	private boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass){
-		List<TAnnotation> annotations = new ArrayList<TAnnotation>();
-		annotations.addAll(methodSig.getTAnnotation());
-		for(TMethodDefinition methodDef: methodSig.getDefinitions()){
-			if(methodDef.getDefinedBy() == sourceClass){
-				annotations.addAll(methodDef.getTAnnotation());
-			}
-		}	
-		for(TAnnotation annot:annotations){
-			if(Utility.isSecurityAnnotation(annot)){
-				return false;
-			}
-		}
-		return true;
-	}
-	
-	private boolean interfacePrecondition(TMethodSignature methodSig, TClass sourceClass){
-		List<TInterface> interfaces = new ArrayList<TInterface>();
-		TClass parent = sourceClass;
-		while(parent != null){
-			interfaces.addAll(parent.getImplements());
-			parent = parent.getParentClass();
-		}
-		
-		for(TInterface tInterface: interfaces){
-			for(TSignature interfaceSig: tInterface.getSignature()){
-				if(interfaceSig == methodSig){
-					return false;
-				}
-			}
-		}
-		
-		return true;
-	}
-	
-	private boolean methodPreconditions(TSignature sig, TClass sourceClass){
-		if(!(sig instanceof TMethodSignature)){
-			return true;
-		}
-		TMethodSignature methodSig = (TMethodSignature) sig;
-		boolean success = getterSetterPrecondition(methodSig, sourceClass);
-		success &= interfacePrecondition(methodSig, sourceClass);
-		if(SearchParameters.useSecurity){
-			success &= securityPrecondition(methodSig, sourceClass);
-		}
-		return success;
-	}
+
 	
 	private TMethodSignature getRandomMethodSig(TClass sourceClass){
 		List<TMethodSignature> methodSigs = new ArrayList<TMethodSignature>();
 		for(TSignature sig: sourceClass.getSignature()){
-			if(methodPreconditions(sig, sourceClass)){
+			if(MoveMethodPreConditions.methodPreconditions(sig, sourceClass)){
 				methodSigs.add((TMethodSignature)sig);
 			}
 		}
-		
 		if(methodSigs.size() == 0){
 			return null;
 		}
