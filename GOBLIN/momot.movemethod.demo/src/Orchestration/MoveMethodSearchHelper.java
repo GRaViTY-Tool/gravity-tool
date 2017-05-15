@@ -16,9 +16,12 @@ import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import at.ac.tuwien.big.moea.util.CollectionUtil;
 import at.ac.tuwien.big.moea.util.MathUtil;
@@ -29,6 +32,7 @@ import at.ac.tuwien.big.momot.problem.solution.variable.RuleApplicationVariable;
 import at.ac.tuwien.big.momot.problem.solution.variable.UnitApplicationVariable;
 import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
 import at.ac.tuwien.big.momot.util.MomotUtil;
+import momotFiles.SearchParameters;
 import momotFiles.Utility;
 
 public class MoveMethodSearchHelper extends SearchHelper{
@@ -70,16 +74,70 @@ public class MoveMethodSearchHelper extends SearchHelper{
 		return classes.get(index);
 	}
 	
+	
+	
+	private boolean getterSetterPrecondition(TMethodSignature methodSig, TClass sourceClass){
+			if(methodSig.getSignatureString().toLowerCase().startsWith("set")){
+				return false;
+			}
+			if(methodSig.getSignatureString().toLowerCase().startsWith("get")){
+				return false;
+			}
+			return true;
+	}
+	
+	private boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass){
+		List<TAnnotation> annotations = new ArrayList<TAnnotation>();
+		annotations.addAll(methodSig.getTAnnotation());
+		for(TMethodDefinition methodDef: methodSig.getDefinitions()){
+			if(methodDef.getDefinedBy() == sourceClass){
+				annotations.addAll(methodDef.getTAnnotation());
+			}
+		}	
+		for(TAnnotation annot:annotations){
+			if(Utility.isSecurityAnnotation(annot)){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private boolean interfacePrecondition(TMethodSignature methodSig, TClass sourceClass){
+		List<TInterface> interfaces = new ArrayList<TInterface>();
+		TClass parent = sourceClass;
+		while(parent != null){
+			interfaces.addAll(parent.getImplements());
+			parent = parent.getParentClass();
+		}
+		
+		for(TInterface tInterface: interfaces){
+			for(TSignature interfaceSig: tInterface.getSignature()){
+				if(interfaceSig == methodSig){
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	private boolean methodPreconditions(TSignature sig, TClass sourceClass){
+		if(!(sig instanceof TMethodSignature)){
+			return true;
+		}
+		TMethodSignature methodSig = (TMethodSignature) sig;
+		boolean success = getterSetterPrecondition(methodSig, sourceClass);
+		success &= interfacePrecondition(methodSig, sourceClass);
+		if(SearchParameters.useSecurity){
+			success &= securityPrecondition(methodSig, sourceClass);
+		}
+		return success;
+	}
+	
 	private TMethodSignature getRandomMethodSig(TClass sourceClass){
 		List<TMethodSignature> methodSigs = new ArrayList<TMethodSignature>();
 		for(TSignature sig: sourceClass.getSignature()){
-			if(sig instanceof TMethodSignature){
-				if(sig.getSignatureString().toLowerCase().startsWith("set")){
-					continue;
-				}
-				if(sig.getSignatureString().toLowerCase().startsWith("get")){
-					continue;
-				}
+			if(methodPreconditions(sig, sourceClass)){
 				methodSigs.add((TMethodSignature)sig);
 			}
 		}
@@ -97,27 +155,19 @@ public class MoveMethodSearchHelper extends SearchHelper{
 	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries, List<? extends Unit> units, Unit chosenUnit){
 		
 		Assignment assignment = new AssignmentImpl(chosenUnit);
-			
-		
 		Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
 		Parameter targetClassParam = chosenUnit.getParameter("targetClass");
 		Parameter methodSigParam = chosenUnit.getParameter("methodSig");
 		
 		for(int i = 0; i < maxTries; i++){
 			TClass sourceClass = getDifferentRandomClass(graph, null);
-			//TClass sourceClass = Utility.getPG(graph).getClass("SecureMailApp");
 			assignment.setParameterValue(sourceClassParam, sourceClass);
 			
-			
 			TClass targetClass = getDifferentRandomClass(graph, sourceClass);	
-			//TClass targetClass = Utility.getPG(graph).getClass("Contact");
 			assignment.setParameterValue(targetClassParam, targetClass);
-			
-			
+					
 			TMethodSignature methodSig = getRandomMethodSig(sourceClass);
-			//TMethodSignature methodSig = sourceClass.getMethodSignature("encryptMessage(String,Contact):String");
-			assignment.setParameterValue(methodSigParam, methodSig);
-		
+			assignment.setParameterValue(methodSigParam, methodSig);		
 			
 			UnitApplicationVariable application = createApplication(graph, assignment);
 			
@@ -128,9 +178,7 @@ public class MoveMethodSearchHelper extends SearchHelper{
 	               application.undo(getMonitor());
 	            }
 		}
-		
 		return null;
-		
 	}
 	
 	   @Override
@@ -184,13 +232,6 @@ public class MoveMethodSearchHelper extends SearchHelper{
 		            }
 		         }
 
-		         if(partialMatch.isEmpty()) {
-		            // no match found and no user-defined parameter values
-		            // -> further tries of this unit will yield same result
-		            // nrUnitTries = 0; // skip further tries for this unit
-		            final int i = 0;
-		         }
-
 		         if(--nrUnitTries <= 0) {
 		            // try other rule
 		            units.remove(chosenUnit); // don't try this rule again
@@ -204,12 +245,9 @@ public class MoveMethodSearchHelper extends SearchHelper{
 
 	   @Override
 	   public List<ITransformationVariable> findUnitApplications(final EGraph graph) {
-	      return findUnitApplications(graph, getMaxTriesPerUnit());
-	   }
-
-	   private List<ITransformationVariable> findUnitApplications(final EGraph graph, final int maxTries) {
 		   throw new RuntimeException();
 	   }
+
 	   private ITransformationVariable clean(final ITransformationVariable variable) {
 		      getModuleManager().clearNonSolutionParameters(variable);
 		      return variable;

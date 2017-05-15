@@ -19,6 +19,7 @@ import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolutionRepairer;
 import momotFiles.SearchTypeGraph;
 import momotFiles.SearchTypeGraph.FitnessFunction;
+import momotFiles.Utility;
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 
@@ -84,27 +85,11 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 		return true;
 	}
 	
-	private boolean isSecurityAnnotation(TAnnotation annotation){
-		if(annotation.getType().getTName().equals("High")){
-			return true;
-		}
-		if(annotation.getType().getTName().equals("Critical")){
-			return true;
-		}		
-		if(annotation.getType().getTName().equals("Secrecy")){
-			return true;
-		}
-		if(annotation.getType().getTName().equals("Integrity")){
-			return true;
-		}
-		
-		return false;
-		
-	}
+	
 	
 	private boolean checkSecurityPreconditions(TClass sourceClass, Entry<TMember, TVisibility> violation){
 		for(TAnnotation annotation: violation.getKey().getTAnnotation()){
-			if(isSecurityAnnotation(annotation)){
+			if(Utility.isSecurityAnnotation(annotation)){
 				return false;
 			}
 		}

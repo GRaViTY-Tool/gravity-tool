@@ -13,6 +13,7 @@ import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 
 
@@ -82,7 +83,23 @@ public abstract class Utility {
 		return pg;
 	}
 	
-	
+	public static boolean isSecurityAnnotation(TAnnotation annotation){
+		if(annotation.getType().getTName().equals("High")){
+			return true;
+		}
+		if(annotation.getType().getTName().equals("Critical")){
+			return true;
+		}		
+		if(annotation.getType().getTName().equals("Secrecy")){
+			return true;
+		}
+		if(annotation.getType().getTName().equals("Integrity")){
+			return true;
+		}
+		
+		return false;
+		
+	}
 	
 
 }
