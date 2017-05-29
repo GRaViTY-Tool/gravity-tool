@@ -84,6 +84,10 @@ public abstract class Utility {
 	}
 	
 	public static boolean isSecurityAnnotation(TAnnotation annotation){
+		type = annotation.getType();
+		if(type == null){
+			return false;
+		}
 		if(annotation.getType().getTName().equals("High")){
 			return true;
 		}

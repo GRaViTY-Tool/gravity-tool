@@ -56,8 +56,16 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 						if(parentMethod.getTModifier() == null){
 							continue;
 						}
+						TVisibility methodVisibility = TVisibility.TPUBLIC;
+						if(method.getTModifier() != null){
+							methodVisibility = method.getTModifier().getTVisibility();
+						}
+						TVisibility parentMethodVisibility = TVisibility.TPUBLIC;
+						if(parentMethod.getTModifier() != null){
+							parentMethodVisibility = parentMethod.getTModifier().getTVisibility();
+						}
 						
-						if(!Utility.visibilityDominates(method.getTModifier().getTVisibility(), parentMethod.getTModifier().getTVisibility())){
+						if(!Utility.visibilityDominates(methodVisibility, parentMethodVisibility)){
 							violations.put(method,  parentMethod.getTModifier().getTVisibility());
 						}
 					}

@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
@@ -60,6 +62,19 @@ private static boolean interfacePrecondition(TMethodSignature methodSig, TClass 
 	return true;
 }
 
+private static boolean overridePrecondition(TMethodSignature methodSig, TClass sourceClass){
+	for(TMember member: sourceClass.getDefines()){
+		if(member.getSignature() == methodSig){
+			for(TAnnotation annotation: member.getTAnnotation()){
+				if(annotation.getType() != null && annotation.getType().getTName().equalsIgnoreCase("override")){
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+
 public static boolean methodPreconditions(TSignature sig, TClass sourceClass){
 	if(!(sig instanceof TMethodSignature)){
 		return true;
@@ -67,10 +82,25 @@ public static boolean methodPreconditions(TSignature sig, TClass sourceClass){
 	TMethodSignature methodSig = (TMethodSignature) sig;
 	boolean success = getterSetterPrecondition(methodSig, sourceClass);
 	success &= interfacePrecondition(methodSig, sourceClass);
+	success &= overridePrecondition(methodSig, sourceClass);
 	if(SearchParameters.useSecurity){
 		success &= securityPrecondition(methodSig, sourceClass);
 	}
 	return success;
+}
+
+
+public static boolean moveMethodPreconditions(TMethodSignature sig, TClass sourceClass, TClass targetClass){
+	if(sig.getReturnType() == targetClass){
+		return true;
+	}
+	
+	for(TParameter param: sig.getParamList().getEntries()){
+		if(param.getType() == targetClass){
+			return true;
+		}
+	}
+	return false;
 }
 
 }

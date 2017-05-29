@@ -112,6 +112,9 @@ public class MoveMethodSearchHelper extends SearchHelper{
 					
 			TMethodSignature methodSig = getRandomMethodSig(sourceClass);
 			assignment.setParameterValue(methodSigParam, methodSig);		
+			if(!MoveMethodPreConditions.moveMethodPreconditions(methodSig, sourceClass, targetClass)){
+				continue;
+			}
 			
 			UnitApplicationVariable application = createApplication(graph, assignment);
 			

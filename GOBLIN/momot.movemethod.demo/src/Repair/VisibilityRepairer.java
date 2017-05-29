@@ -32,10 +32,13 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 				ConstraintCalculator calc = (ConstraintCalculator) constraint.calculator;
 				
 				Map<TMember, TVisibility> violations = calc.violations(solution.getResultGraph());
-				for(Entry<TMember, TVisibility> violation : calc.violations(solution.getResultGraph()).entrySet()){
+				for(Entry<TMember, TVisibility> violation : violations.entrySet()){
 					if(ChangeVisibilityPreConditions.checkPreconditions(violation)){
-						violation.getKey().getTAnnotation().add(new RepairAnnotation(violation.getKey().getTModifier().getTVisibility(), violation.getValue()));
-						violation.getKey().getTModifier().setTVisibility(violation.getValue());
+						TAnnotation repairAnnot = new RepairAnnotation(violation.getKey().getTModifier().getTVisibility(), violation.getValue());
+						TMember member = violation.getKey();
+						repairAnnot.setTAnnotated(member);
+						member.getTAnnotation().add(repairAnnot);
+						member.getTModifier().setTVisibility(violation.getValue());
 					}
 				}
 				
