@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: MoDiscoTGG;singleton:=true
+Export-Package: MoDiscoTGG.util,
+ MoDiscoTGG.impl,
+ MoDiscoTGG,
+ MoDiscoTGG.Rules,
+ MoDiscoTGG.Rules.impl,
+ MoDiscoTGG.Rules.util
+Bundle-Name: MoDiscoTGG
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.moflon.core.utilities,
+ org.apache.log4j,
+ MocaTree,
+ org.eclipse.core.runtime,
+ SDMLanguage,
+ org.moflon.tgg.language,
+ org.moflon.tgg.runtime,
+ org.eclipse.uml2.uml,
+ org.eclipse.gmt.modisco.java,
+ org.eclipse.uml2.types.source,
+ org.eclipse.jdt.core;bundle-version="3.12.0"
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: TU Darmstadt

@@ -1,0 +1,50 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2Generalization #with MoDiscoTGG
+
+
+#source { 
+	classDec : ClassDeclaration {
+		++ -superClass->typeAcc
+	}
+	
+	++ typeAcc : TypeAccess {
+		++ -type->superClassDec
+	}
+	
+	superClassDec : ClassDeclaration
+}
+
+#target {
+	umlClassifier : Classifier {
+		++ -generalization->generalization
+	}
+	
+	++ generalization : Generalization {
+		++ -general->superClass
+	}
+	
+	superClass : Class
+}
+
+#correspondence {
+	cd2c : JavaType2UMLType {
+		#src->classDec
+		#trg->umlClassifier
+	}
+	
+	++ ta2g : TypeAccess2Generalization {
+		#src->typeAcc
+		#trg->generalization
+	}
+	
+	cd2c2 : JavaType2UMLType {
+		#src->superClassDec
+		#trg->superClass
+	}
+}
+
+#attributeConditions {
+	
+}

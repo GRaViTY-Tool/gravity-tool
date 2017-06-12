@@ -1,0 +1,38 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDec2Operation4Interface #extends MethodDec2Operation_Abstract #with MoDiscoTGG
+
+
+
+#source { 
+
+	classDec : AbstractTypeDeclaration {
+
+	}
+
+}
+
+#target {
+	umlClass : Interface {
+		++ -ownedOperation->operation
+	}
+	
+
+	++ operation : Operation{
+
+	}
+	
+
+}
+
+#correspondence {
+	cd2c : JavaType2UMLType {
+		#src->classDec
+		#trg->umlClass
+	}
+
+}
+
+	
+

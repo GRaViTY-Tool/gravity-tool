@@ -1,0 +1,35 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ClassDec2Class #with MoDiscoTGG
+
+#source { 
+	jPackage : Package {
+		++ -ownedElements->classDec
+	}
+	
+	++ classDec : ClassDeclaration
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->umlClass
+	}
+	
+	++ umlClass : Class
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	++ cd2c : JavaType2UMLType {
+		#src->classDec
+		#trg->umlClass
+	}
+}
+
+#attributeConditions {
+	eq(classDec.name, umlClass.name)
+}

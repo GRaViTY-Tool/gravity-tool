@@ -1,0 +1,55 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule VariableDec2Parameter #with MoDiscoTGG
+
+#source { 
+	method : MethodDeclaration {
+		++ -parameters->variableDec
+	}
+	
+	++ variableDec : SingleVariableDeclaration{
+		++ -type->typeAccess
+	}
+	
+	++ typeAccess : TypeAccess{
+		++ -type->jtype
+	}
+	
+	jtype : Type
+	
+}
+
+#target {
+	operation : Operation {
+		++ -ownedParameter->param
+	}
+	++ param : Parameter{
+		++ -type->uType
+	}
+	
+	uType : Type
+}
+
+#correspondence {	
+	md2o : MethodDec2Operation {
+		#src->method
+		#trg->operation
+	}
+	
+	jt2ut : JavaType2UMLType{
+		#src->jtype
+		#trg->uType
+	}
+	
+	++ vd2p : VariableDec2Parameter {
+		#src->variableDec
+		#trg->param
+	}
+	
+	
+}
+
+#attributeConditions {
+	eq(variableDec.name, param.name)
+}

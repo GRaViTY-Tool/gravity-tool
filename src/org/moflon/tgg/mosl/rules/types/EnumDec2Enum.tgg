@@ -1,0 +1,35 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule EnumDec2Enum #with MoDiscoTGG
+
+#source { 
+	jPackage : Package {
+		++ -ownedElements->enumDec
+	}
+	
+	++ enumDec : EnumDeclaration
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->umlEnum
+	}
+	
+	++ umlEnum : Enumeration
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	++ cd2c : JavaType2UMLType {
+		#src->enumDec
+		#trg->umlEnum
+	}
+}
+
+#attributeConditions {
+	eq(enumDec.name, umlEnum.name)
+}

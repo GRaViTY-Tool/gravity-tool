@@ -1,0 +1,51 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldDec2Property_Abstract #with MoDiscoTGG
+
+#source { 
+	jOwnerType : AbstractTypeDeclaration{
+		++-bodyDeclarations->jField
+	}
+	
+	++jField : FieldDeclaration{
+		++-type->typeAccess
+		++-fragments->vdf
+	}
+	
+	++typeAccess : TypeAccess{
+
+	}
+	
+	++vdf : VariableDeclarationFragment{
+		
+	}
+
+}
+
+#target {
+	uOwnerType : Class{
+		++-ownedAttribute->property
+	}
+	
+	++property : Property{
+
+	}
+	
+}
+
+#correspondence {
+	jo2uo : JavaType2UMLType{
+		#src->jOwnerType
+		#trg->uOwnerType
+	}
+		
+	++f2p : FieldDec2Property{
+		#src->jField
+		#trg->property
+	}
+}
+
+#attributeConditions {
+	eq(vdf.name,property.name)
+}

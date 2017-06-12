@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InnerClassDec2InnerClass #with MoDiscoTGG
+
+#source { 
+	jClass : ClassDeclaration {
+		++ -bodyDeclarations->innerjClass
+	}
+	
+	++ innerjClass : ClassDeclaration
+}
+
+#target {
+	umlClass : Class {
+		++ -nestedClassifier->innerUmlClass
+	}
+	
+	++ innerUmlClass : Class
+}
+
+#correspondence {
+	cd2c : JavaType2UMLType {
+		#src->jClass
+		#trg->umlClass
+	}
+	
+	++ cd2c2 : JavaType2UMLType {
+		#src->innerjClass
+		#trg->innerUmlClass
+	}
+}
+
+#attributeConditions {
+	eq(innerjClass.name, innerUmlClass.name)
+}

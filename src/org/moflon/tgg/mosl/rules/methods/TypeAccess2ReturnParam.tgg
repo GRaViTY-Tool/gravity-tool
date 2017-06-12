@@ -1,0 +1,44 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2ReturnParam #with MoDiscoTGG
+
+#source {
+	jType:Type
+
+	++typeAccess:TypeAccess{
+		++-type -> jType
+	}
+
+	method:MethodDeclaration{
+		++-returnType -> typeAccess
+	}
+}
+
+#target {
+	uType:uml.Type
+
+	operation:Operation{
+		++-ownedParameter -> returnParam
+	}
+
+	++returnParam:Parameter{
+		++ -type -> uType
+	}
+}
+
+#correspondence {
+	jrt2urt :JavaType2UMLType{
+		#src->jType
+		#trg->uType
+	}
+
+	m2o :MethodDec2Operation{
+		#src->method
+		#trg->operation
+	}
+}
+
+#attributeConditions {
+	isReturn(returnParam.direction)
+}

@@ -1,0 +1,64 @@
+// Add imports here
+#import "platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"
+#import "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
+#import "platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"
+
+#schema MoDiscoTGG
+	
+#source {
+	java
+}
+
+#target { 
+	uml
+} 
+
+#correspondence {
+
+	JavaPackage2UmlPackage {
+		#src->java.Package
+		#trg->uml.Package
+	}
+	
+	JavaModel2UMLPackage {
+		#src->java.Model
+		#trg->uml.Package
+	}
+	
+	JavaType2UMLType {
+		#src->Type
+		#trg->Type
+	}
+	
+	MethodDec2Operation {
+		#src->MethodDeclaration
+		#trg->Operation
+	}
+	
+	VariableDec2Parameter {
+		#src->VariableDeclaration
+		#trg->Parameter
+	}
+	
+	TypeAccess2Generalization {
+		#src->TypeAccess
+		#trg->Generalization
+	}
+	
+	TypeAccess2InterfaceRealization{
+		#src->TypeAccess
+		#trg->InterfaceRealization
+	}
+	
+	FieldDec2Property{
+		#src->FieldDeclaration
+		#trg->Property
+	}
+}
+
+#attributeConditions {
+	#userDefined isReturn(0:ParameterDirectionKind){
+		#sync:F,B
+	}
+	
+}

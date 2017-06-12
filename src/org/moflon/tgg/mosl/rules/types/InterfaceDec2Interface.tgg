@@ -1,0 +1,35 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InterfaceDec2Interface #with MoDiscoTGG
+
+#source { 
+	jPackage : Package {
+		++ -ownedElements->interfaceDec
+	}
+	
+	++ interfaceDec : InterfaceDeclaration
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->umlInterface
+	}
+	
+	++ umlInterface : Interface
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	++ cd2c : JavaType2UMLType {
+		#src->interfaceDec
+		#trg->umlInterface
+	}
+}
+
+#attributeConditions {
+	eq(interfaceDec.name, umlInterface.name)
+}

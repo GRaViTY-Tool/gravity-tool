@@ -1,0 +1,100 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+	jm : Model{
+		++-orphanTypes->jpt
+	}
+	
+	++jpt : PrimitiveType
+}
+
+#target {
+	up : Package{
+		name == "Common Java datatypes"
+		++-packagedElement->umpt
+	}
+	
+	++ umpt : PrimitiveType
+}
+
+#correspondence {
+	jm2up:JavaModel2UMLPackage{
+		#src->jm
+		#trg->up
+	}
+	++jpt2upt2:JavaType2UMLType{
+		#src->jpt
+		#trg->umpt
+	}
+}
+
+#attributeConditions {
+	eq(jpt.name, umpt.name)
+}
+
+
+#rule PrimitiveTypeBoolean #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeBoolean
+}
+
+#rule PrimitiveTypeByte #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeByte
+}
+
+#rule PrimitiveTypeChar #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeChar
+}
+
+#rule PrimitiveTypeDouble #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeDouble
+}
+
+#rule PrimitiveTypeShort #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeShort
+}
+
+#rule PrimitiveTypeFloat #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeFloat
+}
+
+#rule PrimitiveTypeInt #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeInt
+}
+
+#rule PrimitiveTypeLong #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeLong
+}
+
+#rule PrimitiveTypeVoid #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+
+#source { 
+
+	++jpt : PrimitiveTypeVoid
+}

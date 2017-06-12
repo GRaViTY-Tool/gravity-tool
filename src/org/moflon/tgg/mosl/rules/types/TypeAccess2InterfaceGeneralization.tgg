@@ -1,0 +1,49 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2InterfaceGeneralization #with MoDiscoTGG
+
+#source { 
+	classDec : InterfaceDeclaration {
+		++ -superInterfaces->typeAcc
+	}
+	
+	++ typeAcc : TypeAccess {
+		++ -type->superInterfaceDec
+	}
+	
+	superInterfaceDec : InterfaceDeclaration
+}
+
+#target {
+	umlClass : Interface {
+		++ -generalization->interfaceGeneralization
+	}
+	
+	++ interfaceGeneralization : Generalization {
+		++ -general->superInterface
+	}
+	
+	superInterface : Interface
+}
+
+#correspondence {
+	cd2c : JavaType2UMLType {
+		#src->classDec
+		#trg->umlClass
+	}
+	
+	++ ta2g : TypeAccess2Generalization {
+		#src->typeAcc
+		#trg->interfaceGeneralization
+	}
+	
+	cd2c2 : JavaType2UMLType {
+		#src->superInterfaceDec
+		#trg->superInterface
+	}
+}
+
+#attributeConditions {
+	
+}

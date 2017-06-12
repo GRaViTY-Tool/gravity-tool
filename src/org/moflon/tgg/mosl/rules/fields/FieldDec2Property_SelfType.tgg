@@ -1,0 +1,28 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property_SelfType #extends FieldDec2Property_Abstract #with MoDiscoTGG
+
+#source { 
+	jOwnerType : AbstractTypeDeclaration{
+
+	}
+	
+
+	
+	++typeAccess : TypeAccess{
+		++-type->jOwnerType
+	}
+
+}
+
+#target {
+	uOwnerType : Class{
+		++-ownedAttribute->property
+	}
+	
+	++property : Property{
+		++-type->uOwnerType
+	}
+}
+
