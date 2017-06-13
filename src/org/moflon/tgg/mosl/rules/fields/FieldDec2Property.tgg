@@ -15,7 +15,7 @@
 
 #target {
 
-	++property : Property{
+	++feature : Property{
 		++-type->uType
 	}
 	
