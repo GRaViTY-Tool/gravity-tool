@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule MethodDec2Operation_Abstract /*#extends Modifier2Feature_Abstract */#with MoDiscoTGG
+#abstract #rule MethodDec2Operation_Abstract #extends Modifier2Feature_Abstract #with MoDiscoTGG
 
 #source { 
 

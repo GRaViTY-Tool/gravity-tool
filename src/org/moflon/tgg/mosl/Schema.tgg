@@ -69,10 +69,11 @@
 #attributeConditions {
 	#userDefined isReturn(0:ParameterDirectionKind){
 		#sync:F,B
+		#gen:F,B
 	}
 	#userDefined jVisibility2umlVisibility(0:java.VisibilityKind, 1:uml.VisibilityKind){
 		#sync:BB,BF,FB
-		#gen:
+		#gen:BB,BF,FB,FF
 	}
 	
 }
