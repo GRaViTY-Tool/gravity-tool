@@ -16,6 +16,11 @@ public class JVisibility2umlVisibility extends TGGConstraintImpl {
 		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.PROTECTED, org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL);
 		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.NONE, org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL);
 		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.PUBLIC, org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL);
+		
+		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PRIVATE_LITERAL, org.eclipse.gmt.modisco.java.VisibilityKind.PRIVATE);
+		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL, org.eclipse.gmt.modisco.java.VisibilityKind.PROTECTED);
+		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL, org.eclipse.gmt.modisco.java.VisibilityKind.NONE);
+		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL, org.eclipse.gmt.modisco.java.VisibilityKind.PUBLIC);
 	}
 	
 	public void solve(Variable var_0, Variable var_1){
