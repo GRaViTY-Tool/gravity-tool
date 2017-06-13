@@ -15,11 +15,11 @@
 
 #target {
 	umlClass : Interface {
-		++ -ownedOperation->operation
+		++ -ownedOperation->feature
 	}
 	
 
-	++ operation : Operation{
+	++ feature : Operation{
 
 	}
 	

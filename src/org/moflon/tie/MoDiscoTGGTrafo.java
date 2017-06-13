@@ -24,13 +24,13 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper{
 		// Set up logging
         BasicConfigurator.configure();
 
-		// Forward Transformation
+        // Backward Transformation
         MoDiscoTGGTrafo helper = new MoDiscoTGGTrafo();
-//		helper.performForward("instances/simple/fwd.src.xmi");
-		
-		// Backward Transformation
-		helper = new MoDiscoTGGTrafo();
 		helper.performBackward("instances/simple/simple.uml");
+
+		// Forward Transformation
+		helper = new MoDiscoTGGTrafo();
+		helper.performForward("instances/simple/bwd.trg.xmi");
 	}
 
 	public void performForward() {

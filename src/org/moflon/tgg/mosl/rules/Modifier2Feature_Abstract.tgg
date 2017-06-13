@@ -1,0 +1,33 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Modifier2Feature_Abstract #with MoDiscoTGG
+
+#source { 
+	++bodyDeclaration:BodyDeclaration {
+		++-modifier->modifier
+	}
+	
+	++modifier:Modifier
+}
+
+#target {
+	++feature:Feature
+}
+
+#correspondence {
+	++bd2f:BodyDeclaration2Feature {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+	
+	++m2f:Modifier2Feature {
+		#src->modifier
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(modifier.static, feature.isStatic)
+	jVisibility2umlVisibility(modifier.visibility, feature.visibility)
+}

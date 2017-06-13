@@ -8,15 +8,14 @@
 	classDec : AbstractTypeDeclaration {
 	}
 	
-
 }
 
 #target {
 	umlClass : Class {
-		++ -ownedOperation->operation
+		++ -ownedOperation->feature
 	}
 	
-	++ operation : Operation{
+	++ feature : Operation{
 
 	}
 
