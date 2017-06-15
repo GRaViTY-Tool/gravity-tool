@@ -24,10 +24,6 @@
 		#src->jPackage
 		#trg->umlPackage
 	}
-	++ cd2c : JavaType2UMLType {
-		#src->bodyDeclaration
-		#trg->feature
-	}
 }
 
 #attributeConditions {
