@@ -1,22 +1,22 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule EnumDec2Enum #with MoDiscoTGG
+#rule EnumDec2Enum #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
 
 #source { 
 	jPackage : Package {
-		++ -ownedElements->enumDec
+		++ -ownedElements->bodyDeclaration
 	}
 	
-	++ enumDec : EnumDeclaration
+	++ bodyDeclaration : EnumDeclaration
 }
 
 #target {
 	umlPackage : Package {
-		++ -packagedElement->umlEnum
+		++ -packagedElement->feature
 	}
 	
-	++ umlEnum : Enumeration
+	++ feature : Enumeration
 }
 
 #correspondence {
@@ -25,11 +25,11 @@
 		#trg->umlPackage
 	}
 	++ cd2c : JavaType2UMLType {
-		#src->enumDec
-		#trg->umlEnum
+		#src->bodyDeclaration
+		#trg->feature
 	}
 }
 
 #attributeConditions {
-	eq(enumDec.name, umlEnum.name)
+	eq(bodyDeclaration.name, feature.name)
 }

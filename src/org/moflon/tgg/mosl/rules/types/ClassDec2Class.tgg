@@ -1,22 +1,22 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule ClassDec2Class #with MoDiscoTGG
+#rule ClassDec2Class #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
 
 #source { 
 	jPackage : Package {
-		++ -ownedElements->classDec
+		++ -ownedElements->bodyDeclaration
 	}
 	
-	++ classDec : ClassDeclaration
+	++ bodyDeclaration : ClassDeclaration
 }
 
 #target {
 	umlPackage : Package {
-		++ -packagedElement->umlClass
+		++ -packagedElement->feature
 	}
 	
-	++ umlClass : Class
+	++ feature : Class
 }
 
 #correspondence {
@@ -25,11 +25,11 @@
 		#trg->umlPackage
 	}
 	++ cd2c : JavaType2UMLType {
-		#src->classDec
-		#trg->umlClass
+		#src->bodyDeclaration
+		#trg->feature
 	}
 }
 
 #attributeConditions {
-	eq(classDec.name, umlClass.name)
+	eq(bodyDeclaration.name, feature.name)
 }
