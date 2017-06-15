@@ -18,10 +18,10 @@
 
 #target {
 	uOwnerType : Class{
-		++-ownedAttribute->property
+		++-ownedAttribute->feature
 	}
 	
-	++property : Property{
+	++feature : Property{
 		++-type->uOwnerType
 	}
 }

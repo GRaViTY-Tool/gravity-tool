@@ -1,22 +1,22 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule InterfaceDec2Interface #with MoDiscoTGG
+#rule InterfaceDec2Interface #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
 
 #source { 
 	jPackage : Package {
-		++ -ownedElements->interfaceDec
+		++ -ownedElements->bodyDeclaration
 	}
 	
-	++ interfaceDec : InterfaceDeclaration
+	++ bodyDeclaration : InterfaceDeclaration
 }
 
 #target {
 	umlPackage : Package {
-		++ -packagedElement->umlInterface
+		++ -packagedElement->feature
 	}
 	
-	++ umlInterface : Interface
+	++ feature : Interface
 }
 
 #correspondence {
@@ -24,12 +24,8 @@
 		#src->jPackage
 		#trg->umlPackage
 	}
-	++ cd2c : JavaType2UMLType {
-		#src->interfaceDec
-		#trg->umlInterface
-	}
 }
 
 #attributeConditions {
-	eq(interfaceDec.name, umlInterface.name)
+	eq(bodyDeclaration.name, feature.name)
 }

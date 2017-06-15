@@ -1,14 +1,14 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule FieldDec2Property_Abstract #with MoDiscoTGG
+#abstract #rule FieldDec2Property_Abstract #extends Modifier2Feature_Abstract #with MoDiscoTGG
 
 #source { 
 	jOwnerType : AbstractTypeDeclaration{
-		++-bodyDeclarations->jField
+		++-bodyDeclarations->bodyDeclaration
 	}
 	
-	++jField : FieldDeclaration{
+	++bodyDeclaration : FieldDeclaration{
 		++-type->typeAccess
 		++-fragments->vdf
 	}
@@ -25,10 +25,10 @@
 
 #target {
 	uOwnerType : Class{
-		++-ownedAttribute->property
+		++-ownedAttribute->feature
 	}
 	
-	++property : Property{
+	++feature : Property{
 
 	}
 	
@@ -40,12 +40,8 @@
 		#trg->uOwnerType
 	}
 		
-	++f2p : FieldDec2Property{
-		#src->jField
-		#trg->property
-	}
 }
 
 #attributeConditions {
-	eq(vdf.name,property.name)
+	eq(vdf.name,feature.name)
 }

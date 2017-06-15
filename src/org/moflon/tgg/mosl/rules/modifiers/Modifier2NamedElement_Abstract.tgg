@@ -1,0 +1,32 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Modifier2NamedElement_Abstract #with MoDiscoTGG
+
+#source { 
+	++bodyDeclaration:BodyDeclaration {
+		++-modifier->modifier
+	}
+	
+	++modifier:Modifier
+}
+
+#target {
+	++feature:NamedElement
+}
+
+#correspondence {
+	++bd2f:BodyDeclaration2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+	
+	++m2f:Modifier2NamedElement {
+		#src->modifier
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	jVisibility2umlVisibility(modifier.visibility, feature.visibility)
+}

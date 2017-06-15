@@ -1,34 +1,29 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule MethodDec2Operation_Abstract #with MoDiscoTGG
+#abstract #rule MethodDec2Operation_Abstract #extends Modifier2Feature_Abstract #with MoDiscoTGG
 
 #source { 
 
 	classDec : AbstractTypeDeclaration {
-		++ -bodyDeclarations->method
+		++ -bodyDeclarations->bodyDeclaration
 	}
 	
-	++ method : MethodDeclaration{
+	++ bodyDeclaration : MethodDeclaration{
 		
 	}
 }
 
 #target {
 
-	++ operation : Operation{
+	++ feature : Operation{
 	}
 
 }
 
 #correspondence {
-	
-	++ md2o : MethodDec2Operation {
-		#src->method
-		#trg->operation
-	}
 }
 
 #attributeConditions {
-	eq(method.name, operation.name)
+	eq(bodyDeclaration.name, feature.name)
 }

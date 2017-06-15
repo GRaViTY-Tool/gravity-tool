@@ -14,7 +14,16 @@
 } 
 
 #correspondence {
-
+	Modifier2NamedElement {
+		#src->Modifier
+		#trg->NamedElement
+	}
+	
+	BodyDeclaration2NamedElement {
+		#src->BodyDeclaration
+		#trg->NamedElement
+	}
+	
 	JavaPackage2UmlPackage {
 		#src->java.Package
 		#trg->uml.Package
@@ -59,6 +68,11 @@
 #attributeConditions {
 	#userDefined isReturn(0:ParameterDirectionKind){
 		#sync:F,B
+		#gen:F,B
+	}
+	#userDefined jVisibility2umlVisibility(0:java.VisibilityKind, 1:uml.VisibilityKind){
+		#sync:BB,BF,FB
+		#gen:BB,BF,FB,FF
 	}
 	
 }

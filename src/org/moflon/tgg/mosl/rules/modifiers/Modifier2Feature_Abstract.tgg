@@ -1,0 +1,19 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Modifier2Feature_Abstract #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
+
+#source { 
+	++modifier:Modifier
+}
+
+#target {
+	++feature:Feature
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+	eq(modifier.static, feature.isStatic)
+}

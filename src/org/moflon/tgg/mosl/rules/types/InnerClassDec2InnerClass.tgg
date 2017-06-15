@@ -1,22 +1,22 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule InnerClassDec2InnerClass #with MoDiscoTGG
+#rule InnerClassDec2InnerClass #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
 
 #source { 
 	jClass : ClassDeclaration {
-		++ -bodyDeclarations->innerjClass
+		++ -bodyDeclarations->bodyDeclaration
 	}
 	
-	++ innerjClass : ClassDeclaration
+	++ bodyDeclaration : ClassDeclaration
 }
 
 #target {
 	umlClass : Class {
-		++ -nestedClassifier->innerUmlClass
+		++ -nestedClassifier->feature
 	}
 	
-	++ innerUmlClass : Class
+	++ feature : Class
 }
 
 #correspondence {
@@ -24,13 +24,8 @@
 		#src->jClass
 		#trg->umlClass
 	}
-	
-	++ cd2c2 : JavaType2UMLType {
-		#src->innerjClass
-		#trg->innerUmlClass
-	}
 }
 
 #attributeConditions {
-	eq(innerjClass.name, innerUmlClass.name)
+	eq(bodyDeclaration.name, feature.name)
 }
