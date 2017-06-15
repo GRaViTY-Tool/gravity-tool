@@ -14,15 +14,14 @@
 } 
 
 #correspondence {
-	
-	Modifier2Feature {
+	Modifier2NamedElement {
 		#src->Modifier
-		#trg->Feature
+		#trg->NamedElement
 	}
 	
-	BodyDeclaration2Feature {
+	BodyDeclaration2NamedElement {
 		#src->BodyDeclaration
-		#trg->Feature
+		#trg->NamedElement
 	}
 	
 	JavaPackage2UmlPackage {

@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule Modifier2Feature_Abstract #with MoDiscoTGG
+#abstract #rule Modifier2NamedElement_Abstract #with MoDiscoTGG
 
 #source { 
 	++bodyDeclaration:BodyDeclaration {
@@ -12,22 +12,21 @@
 }
 
 #target {
-	++feature:Feature
+	++feature:NamedElement
 }
 
 #correspondence {
-	++bd2f:BodyDeclaration2Feature {
+	++bd2f:BodyDeclaration2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}
 	
-	++m2f:Modifier2Feature {
+	++m2f:Modifier2NamedElement {
 		#src->modifier
 		#trg->feature
 	}
 }
 
 #attributeConditions {
-	eq(modifier.static, feature.isStatic)
 	jVisibility2umlVisibility(modifier.visibility, feature.visibility)
 }
