@@ -52,4 +52,5 @@
 
 #attributeConditions {
 	eq(variableDec.name, param.name)
+	isInParameter(param.direction)
 }
