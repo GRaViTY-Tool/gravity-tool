@@ -40,6 +40,10 @@
 		#trg->uOwnerType
 	}
 		
+	++f2p : FieldDec2Property{
+		#src->bodyDeclaration
+		#trg->feature
+	}
 }
 
 #attributeConditions {

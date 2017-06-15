@@ -22,6 +22,11 @@
 }
 
 #correspondence {
+	
+	++ md2o : MethodDec2Operation {
+		#src->bodyDeclaration
+		#trg->feature
+	}
 }
 
 #attributeConditions {
