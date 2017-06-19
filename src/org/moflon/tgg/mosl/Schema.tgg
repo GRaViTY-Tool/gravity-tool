@@ -19,8 +19,8 @@
 		#trg->NamedElement
 	}
 	
-	BodyDeclaration2NamedElement {
-		#src->BodyDeclaration
+	NamedElement2NamedElement {
+		#src->NamedElement
 		#trg->NamedElement
 	}
 	
@@ -32,16 +32,6 @@
 	JavaModel2UMLPackage {
 		#src->java.Model
 		#trg->uml.Package
-	}
-	
-	JavaType2UMLType {
-		#src->Type
-		#trg->Type
-	}
-	
-	MethodDec2Operation {
-		#src->MethodDeclaration
-		#trg->Operation
 	}
 	
 	VariableDec2Parameter {
@@ -57,11 +47,6 @@
 	TypeAccess2InterfaceRealization{
 		#src->TypeAccess
 		#trg->InterfaceRealization
-	}
-	
-	FieldDec2Property{
-		#src->FieldDeclaration
-		#trg->Property
 	}
 	
 	CompilationUnit2Artifact{

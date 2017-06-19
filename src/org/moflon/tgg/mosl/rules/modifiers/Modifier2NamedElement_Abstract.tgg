@@ -16,7 +16,7 @@
 }
 
 #correspondence {
-	++bd2f:BodyDeclaration2NamedElement {
+	++bd2ne:NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}

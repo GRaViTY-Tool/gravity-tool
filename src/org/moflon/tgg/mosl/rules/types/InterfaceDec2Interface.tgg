@@ -24,7 +24,7 @@
 		#src->jPackage
 		#trg->umlPackage
 	}
-	++ cd2c : JavaType2UMLType {
+	++ cd2c : NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}

@@ -29,7 +29,7 @@
 }
 
 #correspondence {
-	cd2c : JavaType2UMLType {
+	cd2c : NamedElement2NamedElement {
 		#src->classDec
 		#trg->umlClassifier
 	}
@@ -39,7 +39,7 @@
 		#trg->generalization
 	}
 	
-	cd2c2 : JavaType2UMLType {
+	cd2c2 : NamedElement2NamedElement {
 		#src->superClassDec
 		#trg->superClass
 	}

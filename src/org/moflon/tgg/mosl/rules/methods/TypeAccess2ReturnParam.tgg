@@ -28,12 +28,12 @@
 }
 
 #correspondence {
-	jrt2urt :JavaType2UMLType{
+	jrt2urt :NamedElement2NamedElement{
 		#src->jType
 		#trg->uType
 	}
 
-	m2o :MethodDec2Operation{
+	m2o :NamedElement2NamedElement{
 		#src->method
 		#trg->operation
 	}

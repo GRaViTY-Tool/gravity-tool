@@ -23,7 +23,7 @@
 
 #correspondence {
 	
-	++ md2o : MethodDec2Operation {
+	++ md2o : NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}

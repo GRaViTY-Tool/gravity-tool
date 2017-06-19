@@ -25,7 +25,7 @@
 #correspondence {
 
 	
-	jt2ut : JavaType2UMLType{
+	jt2ut : NamedElement2NamedElement{
 		#src->jType
 		#trg->uType
 	}

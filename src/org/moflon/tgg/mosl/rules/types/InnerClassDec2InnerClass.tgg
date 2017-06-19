@@ -20,14 +20,9 @@
 }
 
 #correspondence {
-	cd2c : JavaType2UMLType {
+	cd2c : NamedElement2NamedElement {
 		#src->jClass
 		#trg->umlClass
-	}
-	
-	++ cd2c2 : JavaType2UMLType {
-		#src->bodyDeclaration
-		#trg->feature
 	}
 }
 

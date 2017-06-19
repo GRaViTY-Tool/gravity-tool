@@ -35,14 +35,9 @@
 }
 
 #correspondence {
-	jo2uo : JavaType2UMLType{
+	jo2uo : NamedElement2NamedElement{
 		#src->jOwnerType
 		#trg->uOwnerType
-	}
-		
-	++f2p : FieldDec2Property{
-		#src->bodyDeclaration
-		#trg->feature
 	}
 }
 

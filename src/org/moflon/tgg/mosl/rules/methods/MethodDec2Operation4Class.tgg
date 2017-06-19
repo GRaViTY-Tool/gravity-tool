@@ -22,7 +22,7 @@
 }
 
 #correspondence {
-	cd2c : JavaType2UMLType {
+	cd2c : NamedElement2NamedElement {
 		#src->classDec
 		#trg->umlClass
 	}
