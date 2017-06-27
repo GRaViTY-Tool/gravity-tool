@@ -14,6 +14,7 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 
 
@@ -84,7 +85,7 @@ public abstract class Utility {
 	}
 	
 	public static boolean isSecurityAnnotation(TAnnotation annotation){
-		type = annotation.getType();
+		TAnnotationType type = annotation.getType();
 		if(type == null){
 			return false;
 		}
