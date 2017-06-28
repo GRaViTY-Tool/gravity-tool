@@ -5,8 +5,11 @@
 
 
 #source { 
+	!nacTypeAccess:TypeAccess
+	
 	classDec : ClassDeclaration {
 		++ -superClass->typeAcc
+		-superClass->nacTypeAccess
 	}
 	
 	++ typeAcc : TypeAccess {
