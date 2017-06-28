@@ -2,6 +2,8 @@ package MoDiscoTGG.csp.constraints;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.moflon.tgg.csp.constraints.*;
 import org.moflon.tgg.language.csp.Variable;
@@ -36,6 +38,13 @@ public class JVisibility2umlVisibility extends TGGConstraintImpl {
     		break;
     	case "FB":
     		var_0.bindToValue(uToJ.get(var_1.getValue()));
+    		setSatisfied(true);
+    		break;
+    	case "FF":
+    		@SuppressWarnings("unchecked") Entry<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind>[] entries = jToU.entrySet().toArray(new Map.Entry[jToU.size()]);
+    		int selection = ThreadLocalRandom.current().nextInt(entries.length);
+    		var_0.bindToValue(entries[selection].getKey());
+    		var_1.bindToValue(entries[selection].getValue());
     		setSatisfied(true);
     		break;
     	default: 
