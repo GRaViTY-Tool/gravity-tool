@@ -10,8 +10,11 @@
 		++-type -> jType
 	}
 
+	!NacTypeAccess:TypeAccess
+
 	method:MethodDeclaration{
 		++-returnType -> typeAccess
+		-returnType -> NacTypeAccess
 	}
 }
 
@@ -42,3 +45,5 @@
 #attributeConditions {
 	isReturn(returnParam.direction)
 }
+
+
