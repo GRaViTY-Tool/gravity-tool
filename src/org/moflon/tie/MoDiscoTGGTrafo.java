@@ -1,6 +1,7 @@
 package org.moflon.tie;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.Collection;
 
 import org.apache.log4j.BasicConfigurator;
@@ -12,33 +13,46 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.eclipse.emf.ecore.EObject;
 import MoDiscoTGG.MoDiscoTGGPackage;
 
+public class MoDiscoTGGTrafo extends SynchronizationHelper {
+	private static final NumberFormat numberFormat;
+	static {
+		numberFormat = NumberFormat.getInstance();
+		numberFormat.setMaximumFractionDigits(3);
+		numberFormat.setMinimumFractionDigits(3);
+	}
 
-public class MoDiscoTGGTrafo extends SynchronizationHelper{
-
-   public MoDiscoTGGTrafo()
-   {
-      super(MoDiscoTGGPackage.eINSTANCE, ".");
-   }
+	public MoDiscoTGGTrafo() {
+		super(MoDiscoTGGPackage.eINSTANCE, ".");
+	}
 
 	public static void main(String[] args) throws IOException {
 		// Set up logging
-        BasicConfigurator.configure();
+		BasicConfigurator.configure();
 
-        // Backward Transformation
-        MoDiscoTGGTrafo helper = new MoDiscoTGGTrafo();
-		helper.performBackward("instances/simple/simple.uml");
+		MoDiscoTGGTrafo helper;
 
 		// Forward Transformation
 		helper = new MoDiscoTGGTrafo();
-		helper.performForward("instances/simple/bwd.trg.xmi");
+//		helper.setVerbose(true);
+		long start = System.nanoTime();
+		helper.performForward("instances/src.xmi");
+		long end = System.nanoTime();
+		System.out.println("fwd took " + numberFormat.format((end - start) / 1000000000.0));
+
+		// Backward Transformation
+		helper = new MoDiscoTGGTrafo();
+		start = System.nanoTime();
+		helper.performBackward("instances/trg.xmi");
+		end = System.nanoTime();
+		System.out.println("bwd took " + numberFormat.format((end - start) / 1000000000.0));
 	}
 
 	public void performForward() {
 		integrateForward();
 
-		saveTrg("instances/simple/fwd.trg.xmi");
-		saveCorr("instances/simple/fwd.corr.xmi");
-		saveSynchronizationProtocol("instances/simple/fwd.protocol.xmi");
+		saveTrg("instances/fwd.trg.xmi");
+		saveCorr("instances/fwd.corr.xmi");
+		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
 
 		System.out.println("Completed forward transformation!");
 	}
@@ -53,8 +67,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper{
 			loadSrc(source);
 			performForward();
 		} catch (IllegalArgumentException iae) {
-			System.err.println("Unable to load " + source + ", "
-					+ iae.getMessage());
+			System.err.println("Unable to load " + source + ", " + iae.getMessage());
 			return;
 		}
 	}
@@ -62,9 +75,9 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper{
 	public void performBackward() {
 		integrateBackward();
 
-		saveSrc("instances/simple/bwd.trg.xmi");
-		saveCorr("instances/simple/bwd.corr.xmi");
-		saveSynchronizationProtocol("instances/simple/bwd.protocol.xmi");
+		saveSrc("instances/bwd.trg.xmi");
+		saveCorr("instances/bwd.corr.xmi");
+		saveSynchronizationProtocol("instances/bwd.protocol.xmi");
 
 		System.out.println("Completed backward transformation!");
 	}
@@ -79,8 +92,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper{
 			loadTrg(target);
 			performBackward();
 		} catch (IllegalArgumentException iae) {
-			System.err.println("Unable to load " + target + ", "
-					+ iae.getMessage());
+			System.err.println("Unable to load " + target + ", " + iae.getMessage());
 			return;
 		}
 	}

@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule ClassDec2Class #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
+#rule ClassDec2Class #with MoDiscoTGG
 
 #source { 
 	jPackage : Package {
@@ -23,6 +23,11 @@
 	jp2up : JavaPackage2UmlPackage {
 		#src->jPackage
 		#trg->umlPackage
+	}
+	
+	++ md2o : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
 	}
 }
 

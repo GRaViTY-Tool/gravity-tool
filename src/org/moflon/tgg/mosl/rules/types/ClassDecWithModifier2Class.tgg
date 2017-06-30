@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ClassDecWithModifier2Class #extends ClassDec2Class, Modifier2NamedElement_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

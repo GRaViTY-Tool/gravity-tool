@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule InterfaceDec2Interface #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
+#rule InterfaceDec2Interface #with MoDiscoTGG
 
 #source { 
 	jPackage : Package {

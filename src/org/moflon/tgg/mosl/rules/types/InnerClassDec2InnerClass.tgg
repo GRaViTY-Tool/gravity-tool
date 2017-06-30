@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule InnerClassDec2InnerClass #extends Modifier2NamedElement_Abstract #with MoDiscoTGG
+#rule InnerClassDec2InnerClass #with MoDiscoTGG
 
 #source { 
 	jClass : ClassDeclaration {
@@ -23,6 +23,11 @@
 	cd2c : NamedElement2NamedElement {
 		#src->jClass
 		#trg->umlClass
+	}
+	
+	++ md2o : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
 	}
 }
 
