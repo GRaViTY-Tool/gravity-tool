@@ -24,7 +24,11 @@ hs_err_pid*
 # modeling/emoflon
 gen/
 model/
-instances/
+instances/**/**
+!instances/**/
+!src.xmi
+!trg.xmi
+!.gitignore
 eval/
 
 .metadata

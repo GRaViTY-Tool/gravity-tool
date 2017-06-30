@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
+  <packagedElement xsi:type="uml:Model" name="SimpleNoParameters">
+    <packagedElement xsi:type="uml:Package" name="(default package)" visibility="public">
+      <packagedElement xsi:type="uml:Class" name="NoParameterizedClass" visibility="public">
+        <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0"/>
+        <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+        <ownedOperation name="getString" visibility="public">
+          <ownedParameter visibility="public" type="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.2" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+          <ownedParameter name="s" visibility="public" type="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.2">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Dependency" client="//@packagedElement.0/@packagedElement.0/@packagedElement.0" supplier="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0"/>
+      <packagedElement xsi:type="uml:Dependency" client="//@packagedElement.0/@packagedElement.0/@packagedElement.0" supplier="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="Common Java datatypes" visibility="public">
+      <packagedElement xsi:type="uml:PrimitiveType" name="int" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="long" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="float" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="double" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="boolean" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="void" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="char" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="short" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="byte" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="externals">
+    <packagedElement xsi:type="uml:Package" name="java" visibility="public">
+      <packagedElement xsi:type="uml:Package" name="io" visibility="public">
+        <packagedElement xsi:type="uml:Class" name="IOException" visibility="public">
+          <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.0"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Serializable" visibility="public"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Package" name="lang" visibility="public">
+        <packagedElement xsi:type="uml:Class" name="Exception" visibility="public">
+          <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Class" name="Throwable" visibility="public">
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Class" name="String" visibility="public">
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.3"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.4"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Comparable">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="source references">
+    <packagedElement xsi:type="uml:Artifact" name="NoParameterizedClass.java" visibility="public" fileName="D:\uni\Hiwi\altes eMoflon\workspace\SimpleNoParameters\src\NoParameterizedClass.java"/>
+  </packagedElement>
+</uml:Model>
