@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="SimpleInterfaces">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.0" name="PublicInterface">
+      <modifier visibility="public"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PublicInterfaceWithInnerInterfaces">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PublicInnerInterface">
+        <modifier visibility="public"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PackageInnerInterface">
+        <modifier/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PublicStaticInnerInterface">
+        <modifier visibility="public" static="true"/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.2" name="PackageInterface">
+      <modifier/>
+    </ownedElements>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="PublicInterface.java" originalFilePath="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PublicInterface.java" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="PublicInterfaceWithInnerInterfaces.java" originalFilePath="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PublicInterfaceWithInnerInterfaces.java" types="//@ownedElements.0/@ownedElements.1"/>
+  <compilationUnits name="PackageInterface.java" originalFilePath="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PackageInterface.java" types="//@ownedElements.0/@ownedElements.2"/>
+</java:Model>
