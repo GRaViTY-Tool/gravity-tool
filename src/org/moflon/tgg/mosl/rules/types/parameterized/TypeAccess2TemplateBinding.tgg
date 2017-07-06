@@ -1,0 +1,98 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2TemplateBinding #with MoDiscoTGG
+
+#source { 
+	parameterizedType:ParameterizedType {
+		++-typeArguments->typeAccess
+	}
+	
+	++typeAccess:TypeAccess {
+		++-type->type
+	}
+	
+	type:Type {
+		
+	}
+	
+	nonParamType:TypeDeclaration {
+		++-typeParameters->typeParameter
+	}
+	
+	++typeParameter:TypeParameter {
+		
+	}
+}
+
+#target {
+	nonParamElement:Classifier
+	
+	parameterizedInterface:Interface {
+		++-templateBinding->templateBinding
+	}
+	
+	redefinableTemplateSignature:RedefinableTemplateSignature {
+		++-ownedElement->templateParameter
+	}
+	
+	parameterableElement:PackageableElement {
+		
+	}
+	
+	++templateBinding:TemplateBinding {
+		++-signature->redefinableTemplateSignature
+		++-parameterSubstitution->templateParameterSibstitution
+	}
+	
+	++templateParameterSibstitution:TemplateParameterSubstitution {
+		++-actual->parameterableElement
+		++-formal->templateParameter
+	}
+	
+	++templateParameter:ClassifierTemplateParameter {
+		allowSubstitutable:=true
+		++-ownedParameteredElement->ownedParameteredElement
+	}
+	
+	++ownedParameteredElement:Class {
+		
+	}
+	
+}
+
+#correspondence {
+	ne2neNonParam: NamedElement2NamedElement {
+		#src->nonParamType
+		#trg->nonParamElement
+	}
+	
+	ne2neBase: NamedElement2NamedElement {
+		#src->parameterizedType
+		#trg->parameterizedInterface
+	}
+	
+	pt2rts: ParameterizedType2RedefinableTemplateSignature {
+		#src->parameterizedType
+		#trg->redefinableTemplateSignature
+	}
+	
+	ne2neType: NamedElement2NamedElement {
+		#src->type
+		#trg->parameterableElement
+	}
+	
+	++ta2tb:TypeAccess2TemplateBinding {
+		#src->typeAccess
+		#trg->templateBinding
+	}
+	
+	++ne2neTypeParameter:NamedElement2NamedElement {
+		#src->typeParameter
+		#trg->ownedParameteredElement
+	}
+}
+
+#attributeConditions {
+	eq(typeParameter.name, ownedParameteredElement.name)
+}

@@ -53,6 +53,15 @@
 		#src->CompilationUnit
 		#trg->Artifact
 	}
+	
+	ParameterizedType2RedefinableTemplateSignature {
+		#src->ParameterizedType
+		#trg->RedefinableTemplateSignature
+	}
+	TypeAccess2TemplateBinding {
+		#src->TypeAccess
+		#trg->TemplateBinding
+	}
 }
 
 #attributeConditions {
