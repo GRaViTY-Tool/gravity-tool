@@ -2,9 +2,9 @@
 <java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="SimpleNoParameters">
   <ownedElements name="(default package)">
     <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="NoParameterizedClass">
-      <modifier visibility="public"/>
+      <modifier/>
       <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="getString">
-        <modifier visibility="public"/>
+        <modifier visibility="private"/>
         <body originalCompilationUnit="//@compilationUnits.0">
           <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.0">
             <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.0"/>

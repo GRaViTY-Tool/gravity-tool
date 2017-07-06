@@ -68,5 +68,9 @@
 		#sync:BB,BF,FB
 		#gen:BB,BF,FB,FF
 	}
-	
+	// 0: parameterizedSourceName, 1: parameterizedTargetName, 2: freeSource, 3: freeTarget
+	#userDefined parameterizedNamesAreMatching(0:EString, 1:EString, 2:java.NamedElement, 3:uml.NamedElement) {
+		#sync:BBBB,BFBB,FBBB
+		#gen:BBBB,BFBB,FBBB,FFBB
+	}
 }
