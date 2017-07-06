@@ -43,6 +43,8 @@ public class ModelsizeCalculator {
 		//debug start
 		List<EObject> collect = tripleMatch.getCreatedElements().stream().filter(e -> ModelsizeCalculatorcontains(sourceElements, e)).collect(Collectors.toList());
 		long edges =collect.stream().filter(e->e instanceof EMoflonEdge).count();
+		collect.stream().filter(e->e instanceof EMoflonEdge).forEach(e->System.out.println(((EMoflonEdge)e).getName()));
+		System.out.println(tripleMatch.getRuleName()+": "+edges+" edges and "+(collect.size()-edges)+" nodes");
 		n+=collect.size()-edges;
 		e+=edges;
 		//debug end
