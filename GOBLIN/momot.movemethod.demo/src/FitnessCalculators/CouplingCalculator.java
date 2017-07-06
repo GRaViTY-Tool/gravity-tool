@@ -1,16 +1,7 @@
 package FitnessCalculators;
 
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.impl.AntipatterngraphFactoryImpl;
-import org.gravity.hulk.antipatterngraph.metrics.HAfferentCouplingMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HEfferentCouplingMetric;
-import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
-import org.gravity.hulk.detection.metrics.HEfferentCouplingCalculator;
 import org.gravity.hulk.detection.metrics.HTotalCouplingCalculator;
-import org.gravity.hulk.detection.metrics.MetricsFactory;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
