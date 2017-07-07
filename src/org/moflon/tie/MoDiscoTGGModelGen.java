@@ -23,7 +23,7 @@ public class MoDiscoTGGModelGen extends SynchronizationHelper{
 		BasicConfigurator.configure();
 
 		AbstractModelGenerationController controller = new DefaultModelGenController();
-		controller.addContinuationController(new MaxRulePerformCounterController(10000));
+		controller.addContinuationController(new MaxRulePerformCounterController(10));
       	controller.addContinuationController(new TimeoutController(5000));
       	controller.setRuleSelector(new LimitedRandomRuleSelector().addRuleLimit("JavaModel2UmlModelRule", 1));
 

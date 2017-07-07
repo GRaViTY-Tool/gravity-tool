@@ -29,6 +29,8 @@ instances/**/**
 !src.xmi
 !trg.xmi
 !.gitignore
+instances/src.xmi
+instances/trg.xmi
 eval/
 
 .metadata

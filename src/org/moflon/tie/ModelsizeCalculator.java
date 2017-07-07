@@ -18,8 +18,8 @@ import MoDiscoTGG.MoDiscoTGGPackage;
 
 public class ModelsizeCalculator {
 
-	private static long n=0,e=0;
-	
+	private static long n = 0, e = 0;
+
 	public static void main(String[] args) {
 		init();
 
@@ -31,43 +31,13 @@ public class ModelsizeCalculator {
 		long size = protocol.getTripleMatches().stream().mapToLong(ModelsizeCalculator::countSourceElements).sum();
 		System.out.println("Counting completed in " + (System.currentTimeMillis() - start) / 1000d + "s");
 		System.out.println("size of model: " + size);
-		//debug start
-		System.out.println("edges: "+e+" nodes: "+n);
-		//debug end
 	}
 
 	private static long countSourceElements(TripleMatch tripleMatch) {
 		Set<EObject> sourceElements = new HashSet<>(tripleMatch.getSourceElements());
-		long c = tripleMatch.getCreatedElements().stream().filter(e -> ModelsizeCalculatorcontains(sourceElements, e))
-				.count();
-		//debug start
-		List<EObject> collect = tripleMatch.getCreatedElements().stream().filter(e -> ModelsizeCalculatorcontains(sourceElements, e)).collect(Collectors.toList());
-		long edges =collect.stream().filter(e->e instanceof EMoflonEdge).count();
-		collect.stream().filter(e->e instanceof EMoflonEdge).forEach(e->System.out.println(((EMoflonEdge)e).getName()));
-		System.out.println(tripleMatch.getRuleName()+": "+edges+" edges and "+(collect.size()-edges)+" nodes");
-		n+=collect.size()-edges;
-		e+=edges;
-		//debug end
-		return c;
-	}
-
-	private static boolean ModelsizeCalculatorcontains(Set<EObject> sourceElements, EObject e) {
-		if (sourceElements.contains(e))
-			return true;
-		if (!(e instanceof EMoflonEdge)) {
-			return false;
-		}
-		EMoflonEdge toCheck = (EMoflonEdge) e;
-		for (EObject sourceEntry : sourceElements) {
-			if (!(sourceEntry instanceof EMoflonEdge)) {
-				continue;
-			}
-			EMoflonEdge sourceEdge = (EMoflonEdge) sourceEntry;
-			return sourceEdge.getName().equals(toCheck.getName()) && sourceEdge.getSrc().equals(toCheck.getSrc())
-					&& sourceEdge.getTrg().equals(toCheck.getTrg());
-		}
-
-		return false;
+		return tripleMatch.getCreatedElements().stream()
+				.map(element -> element instanceof EMoflonEdge ? ((EMoflonEdge) element).getSrc() : element)
+				.filter(sourceElements::contains).count();
 	}
 
 	private static void init() {
@@ -75,7 +45,4 @@ public class ModelsizeCalculator {
 		corrPackage.getName();
 		corrPackage.eResource();
 	}
-	// 18692/24636 nodes/edges created for source
-	// 6788/12732 nodes/edges created for target
-	// 13236/26472 nodes/edges created for correspondence
 }
