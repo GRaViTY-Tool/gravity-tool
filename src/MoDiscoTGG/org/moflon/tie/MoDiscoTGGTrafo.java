@@ -1,8 +1,9 @@
-package org.moflon.tie;
+package MoDiscoTGG.org.moflon.tie;
 
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Collection;
+import java.util.Optional;
 
 import org.apache.log4j.BasicConfigurator;
 import org.moflon.tgg.algorithm.configuration.Configurator;
@@ -41,6 +42,16 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Backward Transformation
 		helper = new MoDiscoTGGTrafo();
+		helper.setConfigurator(new Configurator() {
+			@Override
+			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
+				Optional<RuleResult> modifierRule = alternatives.stream().filter(rr->rr.getRule().contains("Modifier")).findAny();
+				if (modifierRule.isPresent()){
+					return modifierRule.get();
+				}
+				return Configurator.super.chooseOne(alternatives);
+			}
+		});
 		start = System.nanoTime();
 		helper.performBackward("instances/trg.xmi");
 		end = System.nanoTime();
