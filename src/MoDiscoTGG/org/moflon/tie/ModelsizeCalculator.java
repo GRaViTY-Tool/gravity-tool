@@ -1,4 +1,4 @@
-package org.moflon.tie;
+package MoDiscoTGG.org.moflon.tie;
 
 import java.util.HashSet;
 import java.util.List;
