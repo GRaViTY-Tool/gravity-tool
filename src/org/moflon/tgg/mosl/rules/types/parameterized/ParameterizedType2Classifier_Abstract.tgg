@@ -1,0 +1,70 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ParameterizedType2Classifier_Abstract #with MoDiscoTGG
+
+#source { 
+	model:Model {
+		name=="root model"
+		++-orphanTypes->parameterizedType
+	}
+	
+	nonParamType:TypeDeclaration
+	
+	nonParamPackage:Package {
+		-ownedElements->nonParamType
+	}
+	
+	++parameterizedType:ParameterizedType {
+		++-type->typeTypeAccess
+	}
+	
+	++typeTypeAccess:TypeAccess {
+		++-type->nonParamType
+	}
+}
+
+#target {
+	umlPackage:Package {
+		++-packagedElement->parameterizedClassifier
+		-packagedElement->nonParamElement
+	}
+	
+	nonParamElement:Classifier {
+		++-ownedTemplateSignature->redefinableTemplateSignature
+	}
+	
+	++parameterizedClassifier:Classifier {
+		
+	}
+	
+	++redefinableTemplateSignature:RedefinableTemplateSignature {
+		
+	}
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->nonParamPackage
+		#trg->umlPackage
+	}
+	
+	ne2neNonParam: NamedElement2NamedElement {
+		#src->nonParamType
+		#trg->nonParamElement
+	}
+	
+	++ne2ne: NamedElement2NamedElement {
+		#src->parameterizedType
+		#trg->parameterizedClassifier
+	}
+	
+	++pt2rts: ParameterizedType2RedefinableTemplateSignature {
+		#src->parameterizedType
+		#trg->redefinableTemplateSignature
+	}
+}
+
+#attributeConditions {
+	eq(parameterizedType.name, parameterizedClassifier.name)
+}

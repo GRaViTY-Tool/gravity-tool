@@ -1,70 +1,21 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule ParameterizedType2Interface #with MoDiscoTGG
+#rule ParameterizedType2Interface #extends ParameterizedType2Classifier_Abstract #with MoDiscoTGG
 
 #source { 
-	model:Model {
-		++-orphanTypes->parameterizedType
-	}
-	
-	++parameterizedType:ParameterizedType {
-		++-type->typeTypeAccess
-	}
-	
-	++typeTypeAccess:TypeAccess {
-		++-type->nonParamType
-	}
-	
-	nonParamType:TypeDeclaration
-	
-	nonParamPackage:Package {
-		-ownedElements->nonParamType
-	}
+	nonParamType:InterfaceDeclaration
 }
 
 #target {
-	package:Package {
-		++-packagedElement->parameterizedInterface
-		-packagedElement->nonParamElement
-	}
-	
-	++parameterizedInterface:Interface {
-		
-	}
-	
-	++redefinableTemplateSignature:RedefinableTemplateSignature {
-		
-	}
-	
-	nonParamElement:Classifier {
-		++-ownedTemplateSignature->redefinableTemplateSignature
-	}
+	nonParamElement:Interface
+	++parameterizedClassifier:Interface
 }
 
 #correspondence {
-	jp2up : JavaPackage2UmlPackage {
-		#src->nonParamPackage
-		#trg->package
-	}
 	
-	ne2neNonParam: NamedElement2NamedElement {
-		#src->nonParamType
-		#trg->nonParamElement
-	}
-	
-	++ne2ne: NamedElement2NamedElement {
-		#src->parameterizedType
-		#trg->parameterizedInterface
-	}
-	
-	++pt2rts: ParameterizedType2RedefinableTemplateSignature {
-		#src->parameterizedType
-		#trg->redefinableTemplateSignature
-	}
 }
 
 #attributeConditions {
-	eq(model.name, "root model")
-	parameterizedNamesAreMatching(parameterizedType.name, parameterizedInterface.name, nonParamType, nonParamElement)
+	
 }
