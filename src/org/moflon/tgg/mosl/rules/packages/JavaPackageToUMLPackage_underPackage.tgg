@@ -4,6 +4,8 @@
 #rule JavaPackageToUMLPackage_underPackage #with MoDiscoTGG
 
 #source { 
+	jModel : Model
+	
 	jParent : Package{
 		++-ownedPackages->jp
 	}
@@ -26,8 +28,18 @@
 		#trg->uParent
 	}
 	
+	m2p : JavaModel2UMLPackage{
+		#src->jModel
+		#trg->uParent
+	}
+	
 	++ jp2up : JavaPackage2UmlPackage{
 		#src->jp
+		#trg->up
+	}
+	
+	++jm2up : JavaModel2UMLPackage{
+		#src->jModel
 		#trg->up
 	}
 }

@@ -30,6 +30,11 @@
 		#src->jp
 		#trg->up
 	}
+	
+	++ jsm2up : JavaModel2UMLPackage{
+		#src->jm
+		#trg->up
+	}
 }
 
 #attributeConditions {
