@@ -3,68 +3,63 @@
 
 #abstract #rule ParameterizedType2Classifier_Abstract #with MoDiscoTGG
 
-#source {
+#source { 
 	model:Model {
 		name=="root model"
-		++-orphanTypes -> parameterizedType
+		++-orphanTypes->parameterizedType
 	}
-
+	
 	nonParamType:TypeDeclaration
-
+	
 	nonParamPackage:Package {
-		-ownedElements -> nonParamType
+		-ownedElements->nonParamType
 	}
-
+	
 	++parameterizedType:ParameterizedType {
-		++-type -> typeTypeAccess
+		++-type->typeTypeAccess
 	}
-
+	
 	++typeTypeAccess:TypeAccess {
-		++-type -> nonParamType
+		++-type->nonParamType
 	}
 }
 
 #target {
 	umlPackage:Package {
-		++-packagedElement -> parameterizedClassifier
-		-packagedElement -> nonParamElement
+		++-packagedElement->parameterizedClassifier
+		-packagedElement->nonParamElement
 	}
-
+	
 	nonParamElement:Classifier {
-		++-ownedTemplateSignature -> redefinableTemplateSignature
+		++-ownedTemplateSignature->redefinableTemplateSignature
 	}
-
+	
 	++parameterizedClassifier:Classifier {
 		
 	}
-
+	
 	++redefinableTemplateSignature:RedefinableTemplateSignature {
 		
 	}
 }
 
 #correspondence {
-	jp2up :JavaPackage2UmlPackage {
+	jp2up : JavaPackage2UmlPackage {
 		#src->nonParamPackage
 		#trg->umlPackage
 	}
-
-	ne2neNonParam:NamedElement2NamedElement {
+	
+	ne2neNonParam: NamedElement2NamedElement {
 		#src->nonParamType
 		#trg->nonParamElement
 	}
-
-	jm2up :JavaModel2UMLPackage {
-		#src->model
-		#trg->umlPackage
-	}
-
-	++ne2ne:NamedElement2NamedElement {
+	
+	++ne2ne: NamedElement2NamedElement {
 		#src->parameterizedType
 		#trg->parameterizedClassifier
 	}
-
-	++pt2rts:ParameterizedType2RedefinableTemplateSignature {
+	
+	++pt2rts: ParameterizedType2RedefinableTemplateSignature {
 		#src->parameterizedType
 		#trg->redefinableTemplateSignature
 	}
@@ -73,5 +68,3 @@
 #attributeConditions {
 	eq(parameterizedType.name, parameterizedClassifier.name)
 }
-
-
