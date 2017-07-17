@@ -9,10 +9,7 @@
 	}
 	
 	++ typeAcc : TypeAccess {
-		++ -type->superInterfaceDec
 	}
-	
-	superInterfaceDec : Type
 }
 
 #target {
@@ -21,10 +18,7 @@
 	}
 	
 	++ interfaceGeneralization : Generalization {
-		++ -general->superInterface
 	}
-	
-	superInterface : Interface
 }
 
 #correspondence {
@@ -36,11 +30,6 @@
 	++ ta2g : TypeAccess2Generalization {
 		#src->typeAcc
 		#trg->interfaceGeneralization
-	}
-	
-	cd2c2 : NamedElement2NamedElement {
-		#src->superInterfaceDec
-		#trg->superInterface
 	}
 }
 

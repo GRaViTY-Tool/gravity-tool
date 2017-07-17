@@ -1,0 +1,37 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccessType2GeneralizationGeneral #with MoDiscoTGG
+
+#source { 
+	typeAccess:TypeAccess {
+		++-type->jType
+	}
+	
+	jType:Type
+}
+
+#target {
+	generalization:Generalization {
+		++-general->uType
+	}
+	
+	uType:Classifier
+	
+}
+
+#correspondence {
+	ta2ge:TypeAccess2Generalization {
+		#src->typeAccess
+		#trg->generalization
+	}
+	
+	cd2c2 : NamedElement2NamedElement {
+		#src->jType
+		#trg->uType
+	}
+}
+
+#attributeConditions {
+	
+}

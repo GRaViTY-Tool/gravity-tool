@@ -10,10 +10,7 @@
 	}
 	
 	++ typeAcc : TypeAccess {
-		++ -type->superClassDec
 	}
-	
-	superClassDec : Type
 }
 
 #target {
@@ -22,10 +19,7 @@
 	}
 	
 	++ generalization : Generalization {
-		++ -general->superClass
 	}
-	
-	superClass : Class
 }
 
 #correspondence {
@@ -39,10 +33,6 @@
 		#trg->generalization
 	}
 	
-	cd2c2 : NamedElement2NamedElement {
-		#src->superClassDec
-		#trg->superClass
-	}
 }
 
 #attributeConditions {

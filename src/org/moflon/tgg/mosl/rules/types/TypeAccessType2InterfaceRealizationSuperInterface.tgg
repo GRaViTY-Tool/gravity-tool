@@ -1,0 +1,38 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccessType2InterfaceRealizationSuperInterface #with MoDiscoTGG
+
+#source {
+	typeAccess:TypeAccess {
+		++-type->jType
+	}
+
+	jType:Type
+}
+
+#target {
+	interfaceRealization:InterfaceRealization {
+		++-contract->uType
+	}
+	
+	uType:Interface
+}
+
+#correspondence {
+	ta2ir:TypeAccess2InterfaceRealization {
+		#src->typeAccess
+		#trg->interfaceRealization
+	}
+	
+	ne2ne:NamedElement2NamedElement {
+		#src->jType
+		#trg->uType
+	}
+}
+
+#attributeConditions {
+	
+}
+
+
