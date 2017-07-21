@@ -33,4 +33,5 @@
 
 #attributeConditions {
 	eq(bodyDeclaration.name, feature.name)
+	nonParameterizedName(feature.name)
 }

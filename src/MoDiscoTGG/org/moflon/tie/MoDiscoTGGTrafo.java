@@ -10,8 +10,12 @@ import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.RuleResult;
 import org.moflon.tgg.algorithm.datastructures.PrecedenceInputGraph;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
-
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.gmt.modisco.java.ParameterizedType;
+
 import MoDiscoTGG.MoDiscoTGGPackage;
 
 public class MoDiscoTGGTrafo extends SynchronizationHelper {
@@ -34,7 +38,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Forward Transformation
 		helper = new MoDiscoTGGTrafo();
-//		helper.setVerbose(true);
+		helper.setVerbose(true);
 		long start = System.nanoTime();
 		helper.performForward("instances/src.xmi");
 		long end = System.nanoTime();
@@ -42,6 +46,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Backward Transformation
 		helper = new MoDiscoTGGTrafo();
+		helper.setVerbose(true);
 		helper.setConfigurator(new Configurator() {
 			@Override
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
@@ -86,11 +91,25 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	public void performBackward() {
 		integrateBackward();
 
+		performBackwardPost();
+		
 		saveSrc("instances/bwd.trg.xmi");
 		saveCorr("instances/bwd.corr.xmi");
 		saveSynchronizationProtocol("instances/bwd.protocol.xmi");
 
 		System.out.println("Completed backward transformation!");
+	}
+
+	private void performBackwardPost() {
+		if (src==null)
+			return;
+		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
+		while(allProperContents.hasNext()) {
+			Object next = allProperContents.next();
+			if (next instanceof ParameterizedType) {
+				((Model)src).getOrphanTypes().add((ParameterizedType)next);
+			}
+		}
 	}
 
 	public void performBackward(EObject targetModel) {

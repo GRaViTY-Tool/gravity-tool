@@ -77,4 +77,12 @@
 		#sync:BB,BF,FB
 		#gen:BB,BF,FB,FF
 	}
+	#userDefined parameterizedNameFitsNonParameterizedName(0:EString, 1:EString) {
+		#sync:BB
+		#gen:BB
+	}
+	#userDefined nonParameterizedName(0:EString) {
+		#sync:B
+		#gen:B
+	}
 }

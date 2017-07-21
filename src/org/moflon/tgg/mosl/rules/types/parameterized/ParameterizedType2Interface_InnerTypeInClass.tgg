@@ -1,0 +1,21 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ParameterizedType2Interface_InnerTypeInClass #extends ParameterizedType2Classifier_InnerTypeInClass_Abstract #with MoDiscoTGG
+
+#source { 
+	nonParamType:InterfaceDeclaration
+}
+
+#target {
+	nonParamElement:Interface
+	++parameterizedClassifier:Interface
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

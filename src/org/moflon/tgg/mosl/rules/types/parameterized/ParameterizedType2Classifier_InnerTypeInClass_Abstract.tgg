@@ -1,13 +1,17 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule ParameterizedType2Classifier_Abstract #with MoDiscoTGG
+#abstract #rule ParameterizedType2Classifier_InnerTypeInClass_Abstract #with MoDiscoTGG
 
-#source {
+#source { 
 	nonParamType:TypeDeclaration
 	
 	nonParamPackage:Package {
-		-ownedElements->nonParamType
+		-ownedElements->jContainer
+	}
+	
+	jContainer:TypeDeclaration {
+		++-bodyDeclarations->nonParamType
 	}
 	
 	++parameterizedType:ParameterizedType {
@@ -22,7 +26,11 @@
 #target {
 	umlPackage:Package {
 		++-packagedElement->parameterizedClassifier
-		-packagedElement->nonParamElement
+		-packagedElement->uContainer
+	}
+	
+	uContainer:Class {
+		-nestedClassifier->nonParamElement
 	}
 	
 	nonParamElement:Classifier {
@@ -42,6 +50,11 @@
 	ne2neNonParam: NamedElement2NamedElement {
 		#src->nonParamType
 		#trg->nonParamElement
+	}
+	
+	c2c: NamedElement2NamedElement {
+		#src->jContainer
+		#trg->uContainer
 	}
 	
 	++ne2ne: NamedElement2NamedElement {
