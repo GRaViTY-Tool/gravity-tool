@@ -4,19 +4,16 @@
 #rule TypeAccess2Generalization #with MoDiscoTGG
 
 
-#source { 
-	!nacTypeAccess:TypeAccess
-	
+#source {
 	classDec : ClassDeclaration {
 		++ -superClass->typeAcc
-		-superClass->nacTypeAccess
 	}
 	
 	++ typeAcc : TypeAccess {
 		++ -type->superClassDec
 	}
 	
-	superClassDec : ClassDeclaration
+	superClassDec : Type
 }
 
 #target {

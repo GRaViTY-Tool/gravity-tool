@@ -12,7 +12,7 @@
 		++ -type->superInterfaceDec
 	}
 	
-	superInterfaceDec : InterfaceDeclaration
+	superInterfaceDec : Type
 }
 
 #target {
