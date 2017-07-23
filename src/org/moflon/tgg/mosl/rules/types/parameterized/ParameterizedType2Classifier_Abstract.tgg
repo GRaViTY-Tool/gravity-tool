@@ -51,6 +51,5 @@
 }
 
 #attributeConditions {
-	eq(parameterizedType.name, parameterizedClassifier.name)
-	parameterizedNameFitsNonParameterizedName(parameterizedClassifier.name, nonParamElement.name)
+	parameterizedNameFitsNonParameterizedName(parameterizedType.name, parameterizedClassifier.name, nonParamType.name, nonParamElement.name)
 }

@@ -38,7 +38,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Forward Transformation
 		helper = new MoDiscoTGGTrafo();
-		helper.setVerbose(true);
+//		helper.setVerbose(true);
 		long start = System.nanoTime();
 		helper.performForward("instances/src.xmi");
 		long end = System.nanoTime();
@@ -46,7 +46,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Backward Transformation
 		helper = new MoDiscoTGGTrafo();
-		helper.setVerbose(true);
+//		helper.setVerbose(true);
 		helper.setConfigurator(new Configurator() {
 			@Override
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
