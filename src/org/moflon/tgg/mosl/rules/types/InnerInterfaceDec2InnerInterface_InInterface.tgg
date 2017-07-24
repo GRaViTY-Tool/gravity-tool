@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule InnerInterfaceDec2InnerInterface #with MoDiscoTGG
+#rule InnerInterfaceDec2InnerInterface_InInterface #with MoDiscoTGG
 
 #source { 
 	jInterface : InterfaceDeclaration {

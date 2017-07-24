@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InnerInterfaceDec2InnerInterface_InClass #with MoDiscoTGG
+
+#source { 
+	jClass : ClassDeclaration {
+		++ -bodyDeclarations->bodyDeclaration
+	}
+	
+	++ bodyDeclaration : InterfaceDeclaration
+}
+
+#target {
+	umlClass : Class {
+		++ -nestedClassifier->feature
+	}
+	
+	++ feature : Interface
+}
+
+#correspondence {
+	cd2c : NamedElement2NamedElement {
+		#src->jClass
+		#trg->umlClass
+	}
+	
+	++ md2o : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+}
