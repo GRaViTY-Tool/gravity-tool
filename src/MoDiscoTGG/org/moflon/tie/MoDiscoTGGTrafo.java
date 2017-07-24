@@ -143,6 +143,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		performBackwardPost();
 		
+		saveTrg("instances/bwd_processed.xmi");
 		saveSrc("instances/bwd.trg.xmi");
 		saveCorr("instances/bwd.corr.xmi");
 		saveSynchronizationProtocol("instances/bwd.protocol.xmi");
