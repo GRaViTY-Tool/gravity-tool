@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InnerInterfaceWithModifier2InnerInterface #extends InnerClassDec2InnerClass, Modifier2NamedElement_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

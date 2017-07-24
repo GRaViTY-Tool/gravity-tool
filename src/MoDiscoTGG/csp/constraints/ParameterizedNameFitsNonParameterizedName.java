@@ -23,7 +23,7 @@ public class ParameterizedNameFitsNonParameterizedName extends TGGConstraintImpl
 		case "BB":
 			String parameterizedName = (String) var_0.getValue();
 			String nonParameterizedName = (String) var_1.getValue();
-			setSatisfied(parameterizedName.matches("(.*\\.)?" + nonParameterizedName + "<.*"));
+			setSatisfied(parameterizedName.matches("([^<]*\\.)?" + nonParameterizedName + "<.*"));
 			return;
 		default:
 			throw new UnsupportedOperationException(

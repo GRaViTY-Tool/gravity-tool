@@ -85,6 +85,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		
 		integrateForward();
 
+		saveSrc("instances/fwd_processed.xmi");
 		saveTrg("instances/fwd.trg.xmi");
 		saveCorr("instances/fwd.corr.xmi");
 		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
@@ -196,14 +197,25 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		if (src==null)
 			return;
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
+		Model m = null;
+		if (src instanceof Model) {
+			m = (Model) src;
+		} else if (src instanceof TempOutputContainer) {
+			m = ((Model)((TempOutputContainer)src).getPotentialRoots().stream().filter(e->e instanceof Model).findAny().get());
+		}
+		if (m==null)
+			return;
+		List<Type> parameterizedTypes = new ArrayList<>();
 		while(allProperContents.hasNext()) {
 			Object next = allProperContents.next();
 			if (next instanceof ParameterizedType) {
-				if (src instanceof Model) {
-					((Model)src).getOrphanTypes().add((ParameterizedType)next);
-				} else if (src instanceof TempOutputContainer) {
-					((Model)((TempOutputContainer)src).getPotentialRoots().stream().filter(e->e instanceof Model).findAny().get()).getOrphanTypes().add((ParameterizedType)next);
-				}
+				parameterizedTypes.add((Type) next);
+			}
+		}
+		m.getOrphanTypes().addAll(parameterizedTypes);
+		if (src instanceof TempOutputContainer) {
+			if (((TempOutputContainer) src).getPotentialRoots().size()==1) {
+				src = ((TempOutputContainer) src).getPotentialRoots().get(0);
 			}
 		}
 	}
