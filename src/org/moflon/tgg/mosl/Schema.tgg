@@ -77,13 +77,10 @@
 		#sync:BB,BF,FB
 		#gen:BB,BF,FB,FF
 	}
-	// parameterized, parameterized, unparameterized, unparameterized
-	#userDefined parameterizedNameFitsNonParameterizedName(0:EString, 1:EString, 2:EString, 3:EString) {
-		#sync:BBBB, FBBB, BFBB
-		#gen:BBBB, FBBB, BFBB, FFBB,
-			 BBBF, FBBF, BFBF, FFBF,
-			 BBFB, FBFB, BFFB, FFFB,
-			 BBFF, FBFF, BFFF, FFFF
+	// parameterized, unparameterized
+	#userDefined parameterizedNameFitsNonParameterizedName(0:EString, 1:EString) {
+		#sync:BB
+		#gen:BB
 	}
 	#userDefined nonParameterizedName(0:EString) {
 		#sync:B
