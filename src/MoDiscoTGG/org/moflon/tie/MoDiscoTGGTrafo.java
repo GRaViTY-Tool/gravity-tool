@@ -22,6 +22,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
@@ -81,28 +83,45 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	}
 
 	public void performForward() {
+		System.out.println("performing forward preprocessing...");
 		performForwardPre();
-		
+		System.out.println("performing forward transformation...");
 		integrateForward();
 
+		System.out.println("saving results...");
 		saveSrc("instances/fwd_processed.xmi");
 		saveTrg("instances/fwd.trg.xmi");
 		saveCorr("instances/fwd.corr.xmi");
 		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
-
+		Resource r  = set.createResource(URI.createFileURI(new File("instances/fwdTempOutput.xmi").getAbsolutePath()));
+		r.getContents().add(tempOutputContainer);
+		try {
+			r.save(null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		System.out.println("Completed forward transformation!");
 	}
 	
 	private void performForwardPre() {
 		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
+		List<ArrayType> arrayTypes = new ArrayList<>();
+		List<AnonymousClassDeclaration> anonymousClassDeclarations = new ArrayList<>();
 		
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
 		while(allProperContents.hasNext()) {
 			Object next = allProperContents.next();
 			if (next instanceof org.eclipse.gmt.modisco.java.Package) {
 				packages.add((org.eclipse.gmt.modisco.java.Package) next);
+			} else if (next instanceof ArrayType) {
+				arrayTypes.add((ArrayType) next);
+			} else if (next instanceof AnonymousClassDeclaration) {
+				anonymousClassDeclarations.add((AnonymousClassDeclaration) next);
 			}
 		}
+		anonymousClassDeclarations.forEach(e->EcoreUtil.delete(e, true));
+		arrayTypes.forEach(e->EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedTypes);
 	}
 
@@ -138,12 +157,14 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	}
 	
 	public void performBackward() {
+		System.out.println("performing backward preprocessing...");
 		performBackwardPre();
-		
+		System.out.println("performing backward transformation...");
 		integrateBackward();
-
+		System.out.println("performing backward postprocessing...");
 		performBackwardPost();
 		
+		System.out.println("saving results");
 		saveTrg("instances/bwd_processed.xmi");
 		saveSrc("instances/bwd.trg.xmi");
 		saveCorr("instances/bwd.corr.xmi");
@@ -162,14 +183,21 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 	private void performBackwardPre() {
 		List<Package> packages = new ArrayList<>();
+		List<Class> anonymousClasses = new ArrayList<>();
 		
+		System.out.println("searching...");
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(trg, true);
 		while(allProperContents.hasNext()) {
 			Object next = allProperContents.next();
 			if (next instanceof Package) {
 				packages.add((Package) next);
+			} else if (next instanceof Class && "Anonymous type".equals(((Class) next).getName())) {
+				anonymousClasses.add((Class) next);
 			}
 		}
+		System.out.println("deleting");
+		System.out.println(anonymousClasses.size());
+		anonymousClasses.forEach(e->EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedElements);
 	}
 
