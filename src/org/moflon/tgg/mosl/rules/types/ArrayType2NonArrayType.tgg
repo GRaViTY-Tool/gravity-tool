@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ArrayType2NonArrayType #with MoDiscoTGG
+
+#source {
+	jType:Type
+	
+	++arrayType:ArrayType {
+		++-elementType->typeAccess
+	}
+	
+	++typeAccess:TypeAccess {
+		++-type->jType
+	}
+}
+
+#target {
+	uType:Type
+}
+
+#correspondence {
+	ne2ne1:NamedElement2NamedElement {
+		#src->jType
+		#trg->uType
+	}
+	
+	++ne2ne2:NamedElement2NamedElement{
+		#src->arrayType
+		#trg->uType
+	}
+}
+
+#attributeConditions {
+	
+}

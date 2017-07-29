@@ -106,7 +106,6 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	
 	private void performForwardPre() {
 		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
-		List<ArrayType> arrayTypes = new ArrayList<>();
 		List<AnonymousClassDeclaration> anonymousClassDeclarations = new ArrayList<>();
 		
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
@@ -114,14 +113,11 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 			Object next = allProperContents.next();
 			if (next instanceof org.eclipse.gmt.modisco.java.Package) {
 				packages.add((org.eclipse.gmt.modisco.java.Package) next);
-			} else if (next instanceof ArrayType) {
-				arrayTypes.add((ArrayType) next);
 			} else if (next instanceof AnonymousClassDeclaration) {
 				anonymousClassDeclarations.add((AnonymousClassDeclaration) next);
 			}
 		}
 		anonymousClassDeclarations.forEach(e->EcoreUtil.delete(e, true));
-		arrayTypes.forEach(e->EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedTypes);
 	}
 
@@ -197,7 +193,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		}
 		System.out.println("deleting");
 		System.out.println(anonymousClasses.size());
-		anonymousClasses.forEach(e->EcoreUtil.delete(e, true));
+		anonymousClasses.forEach(e-> EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedElements);
 	}
 
