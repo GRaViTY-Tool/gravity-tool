@@ -1,0 +1,24 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldDec2Property4Class_Abstract #extends FieldDec2Property4_Abstract #with MoDiscoTGG
+
+#source { 
+	jOwnerType: ClassDeclaration
+}
+
+#target {
+	uOwnerType : Class{
+		++-ownedAttribute->feature
+	}
+	
+	++feature:Property
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

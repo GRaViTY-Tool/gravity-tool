@@ -1,0 +1,25 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldDec2Property4Interface_Abstract #extends FieldDec2Property4_Abstract #with MoDiscoTGG
+
+#source { 
+	jOwnerType:InterfaceDeclaration
+}
+
+#target {
+	
+	uOwnerType : Interface{
+		++-ownedAttribute->feature
+	}
+	
+	++feature:Property
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

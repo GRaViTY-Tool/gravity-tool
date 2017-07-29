@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule FieldDec2Property_Abstract #with MoDiscoTGG
+#abstract #rule FieldDec2Property4_Abstract #with MoDiscoTGG
 
 #source { 
 	jOwnerType : AbstractTypeDeclaration{
@@ -24,8 +24,7 @@
 }
 
 #target {
-	uOwnerType : Class{
-		++-ownedAttribute->feature
+	uOwnerType : NamedElement{
 	}
 	
 	++feature : Property{
@@ -39,7 +38,8 @@
 		#src->jOwnerType
 		#trg->uOwnerType
 	}
-	++ md2o : NamedElement2NamedElement {
+	
+	++bd2ne : NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}

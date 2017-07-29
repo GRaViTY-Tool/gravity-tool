@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule FieldDec2Property #extends FieldDec2Property_Abstract #with MoDiscoTGG
+#rule FieldDec2Property4Interface_OtherType #extends FieldDec2Property4Interface_Abstract #with MoDiscoTGG
 
 #source { 
 
