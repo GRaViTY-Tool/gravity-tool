@@ -12,11 +12,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.gmt.modisco.java.Javadoc;
+import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.Type;
@@ -90,7 +91,7 @@ public class ModelProcessor {
 							System.out.println("preforming preprocessing for source model...");
 							long start = System.nanoTime();
 							Resource r = rs.getResource(URI.createFileURI(srcFiles[0].getAbsolutePath()), true);
-							mp.performForwardPre(r.getContents().get(0), true);
+							mp.performForwardPre(r.getContents().get(0), deletebody);
 							System.out.println("saving processed source model...");
 							r.setURI(URI.createFileURI(modelFolder.getAbsolutePath() + "/src_processed.xmi"));
 							r.save(null);
@@ -141,7 +142,7 @@ public class ModelProcessor {
 	public void performForwardPre(EObject src, boolean deleteBody) {
 		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
 		List<AnonymousClassDeclaration> anonymousClassDeclarations = new ArrayList<>();
-		List<Block> blocks = new ArrayList<>();
+		List<EObject> optionalDeletes = new ArrayList<>();
 
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
 		while (allProperContents.hasNext()) {
@@ -151,13 +152,16 @@ public class ModelProcessor {
 			} else if (next instanceof AnonymousClassDeclaration) {
 				anonymousClassDeclarations.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
-				blocks.add((Block) next);
+				if (((Block) next).eContainer() instanceof MethodDeclaration)
+					optionalDeletes.add((Block) next);
+			} else if (next instanceof Javadoc) {
+				optionalDeletes.add((Javadoc) next);
 			}
 		}
 		anonymousClassDeclarations.forEach(e -> EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedTypes);
 		if (deleteBody) {
-			blocks.forEach(e -> EcoreUtil.delete(e, true));
+			optionalDeletes.forEach(e -> EcoreUtil.delete(e, true));
 		}
 	}
 
