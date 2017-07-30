@@ -59,7 +59,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		helper = new MoDiscoTGGTrafo();
 //		helper.setVerbose(true);
 		long start = System.nanoTime();
-		helper.performForward("instances/src.xmi");
+		helper.performForward("instances/src_processed.xmi");
 		long end = System.nanoTime();
 		System.out.println("fwd took " + numberFormat.format((end - start) / 1000000000.0));
 
@@ -77,19 +77,16 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 			}
 		});
 		start = System.nanoTime();
-		helper.performBackward("instances/trg.xmi");
+		helper.performBackward("instances/trg_processed.xmi");
 		end = System.nanoTime();
 		System.out.println("bwd took " + numberFormat.format((end - start) / 1000000000.0));
 	}
 
 	public void performForward() {
-		System.out.println("performing forward preprocessing...");
-		performForwardPre();
 		System.out.println("performing forward transformation...");
 		integrateForward();
 
 		System.out.println("saving results...");
-		saveSrc("instances/fwd_processed.xmi");
 		saveTrg("instances/fwd.trg.xmi");
 		saveCorr("instances/fwd.corr.xmi");
 		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
@@ -104,39 +101,6 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		System.out.println("Completed forward transformation!");
 	}
 	
-	private void performForwardPre() {
-		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
-		List<AnonymousClassDeclaration> anonymousClassDeclarations = new ArrayList<>();
-		
-		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
-		while(allProperContents.hasNext()) {
-			Object next = allProperContents.next();
-			if (next instanceof org.eclipse.gmt.modisco.java.Package) {
-				packages.add((org.eclipse.gmt.modisco.java.Package) next);
-			} else if (next instanceof AnonymousClassDeclaration) {
-				anonymousClassDeclarations.add((AnonymousClassDeclaration) next);
-			}
-		}
-		anonymousClassDeclarations.forEach(e->EcoreUtil.delete(e, true));
-		packages.forEach(this::removeNestedParameterizedTypes);
-	}
-
-	private void removeNestedParameterizedTypes(org.eclipse.gmt.modisco.java.Package p) {
-		p.getOwnedElements().stream().flatMap(e->findNestedParameterizedTypes(e,2)).forEach(c->EcoreUtil.delete(c, true));
-	}
-	
-
-	private Stream<BodyDeclaration> findNestedParameterizedTypes(BodyDeclaration t, int i) {
-		if (i<=0 && t instanceof ParameterizedType) {
-			return Stream.of(t);
-		}
-		
-		if (t instanceof TypeDeclaration) {
-			return ((TypeDeclaration)t).getBodyDeclarations().stream().flatMap(c->findNestedParameterizedTypes(c, i-1));
-		}
-		return null;
-	}
-
 	public void performForward(EObject srcModel) {
 		setSrc(srcModel);
 		performForward();
@@ -153,15 +117,13 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	}
 	
 	public void performBackward() {
-		System.out.println("performing backward preprocessing...");
-		performBackwardPre();
+		ModelProcessor m = new ModelProcessor();
 		System.out.println("performing backward transformation...");
 		integrateBackward();
 		System.out.println("performing backward postprocessing...");
-		performBackwardPost();
+		m.performBackwardPost(src);
 		
 		System.out.println("saving results");
-		saveTrg("instances/bwd_processed.xmi");
 		saveSrc("instances/bwd.trg.xmi");
 		saveCorr("instances/bwd.corr.xmi");
 		saveSynchronizationProtocol("instances/bwd.protocol.xmi");
@@ -175,73 +137,6 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		}
 		
 		System.out.println("Completed backward transformation!");
-	}
-
-	private void performBackwardPre() {
-		List<Package> packages = new ArrayList<>();
-		List<Class> anonymousClasses = new ArrayList<>();
-		
-		System.out.println("searching...");
-		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(trg, true);
-		while(allProperContents.hasNext()) {
-			Object next = allProperContents.next();
-			if (next instanceof Package) {
-				packages.add((Package) next);
-			} else if (next instanceof Class && "Anonymous type".equals(((Class) next).getName())) {
-				anonymousClasses.add((Class) next);
-			}
-		}
-		System.out.println("deleting");
-		System.out.println(anonymousClasses.size());
-		anonymousClasses.forEach(e-> EcoreUtil.delete(e, true));
-		packages.forEach(this::removeNestedParameterizedElements);
-	}
-
-	private void removeNestedParameterizedElements(Package p) {
-		p.allOwnedElements().stream().flatMap(e->findNestedParameterizedElements(e,2)).forEach(c->EcoreUtil.delete(c, true));
-	}
-	
-
-	private Stream<Element> findNestedParameterizedElements(Element e, int i) {
-		if (i<=0) {
-			if (e instanceof Classifier && ((Classifier)e).getOwnedTemplateSignature()!=null) {
-				return Stream.of(e);
-			}
-		}
-		if (e instanceof Class) {
-			return ((Class)e).getNestedClassifiers().stream().flatMap(c->findNestedParameterizedElements(c, i-1));
-		}
-		if (e instanceof Interface) {
-			return ((Interface)e).getNestedClassifiers().stream().flatMap(c->findNestedParameterizedElements(c, i-1));
-		}
-		return null;
-	}
-
-	private void performBackwardPost() {
-		if (src==null)
-			return;
-		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
-		Model m = null;
-		if (src instanceof Model) {
-			m = (Model) src;
-		} else if (src instanceof TempOutputContainer) {
-			m = ((Model)((TempOutputContainer)src).getPotentialRoots().stream().filter(e->e instanceof Model).findAny().get());
-		}
-		if (m==null)
-			return;
-		List<Type> parameterizedTypes = new ArrayList<>();
-		while(allProperContents.hasNext()) {
-			Object next = allProperContents.next();
-			if (next instanceof ParameterizedType) {
-				parameterizedTypes.add((Type) next);
-			}
-		}
-		m.getOrphanTypes().addAll(parameterizedTypes);
-		if (src instanceof TempOutputContainer) {
-			if (((TempOutputContainer) src).getPotentialRoots().size()==1) {
-				src = ((TempOutputContainer) src).getPotentialRoots().get(0);
-			}
-		}
 	}
 
 	public void performBackward(EObject targetModel) {
