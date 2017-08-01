@@ -27,10 +27,12 @@ public class ChangeVisibilityPreConditions {
 				
 				for(TMember member: tInterface.getDefines()){
 					if(member.getTModifier() == null){
+						System.err.println("Can't move "+member.getDefinedBy().getFullyQualifiedName()+"."+member.getSignatureString()+", REASON INH2-1");
 						return false;
 					}					
 					if(member.getTModifier().isIsStatic() 
 						&& member.getSignature() == violation.getKey().getSignature()){
+						System.err.println("Can't move "+member.getDefinedBy().getFullyQualifiedName()+"."+member.getSignatureString()+", REASON INH2-2");
 						return false;
 					}
 				}
@@ -48,6 +50,7 @@ public class ChangeVisibilityPreConditions {
 		}
 		for(TMember member: parent.getDefines()){
 			if(member.getSignature() == violation.getKey().getSignature()){
+				System.err.println("Can't move "+member.getDefinedBy().getFullyQualifiedName()+"."+member.getSignatureString()+", REASON Dyn");
 				return false;
 			}
 		}
@@ -59,6 +62,7 @@ public class ChangeVisibilityPreConditions {
 	private static boolean checkSecurityPreconditions(TClass sourceClass, Entry<TMember, TVisibility> violation){
 		for(TAnnotation annotation: violation.getKey().getTAnnotation()){
 			if(Utility.isSecurityAnnotation(annotation)){
+				System.err.println("Can't move "+violation.getKey().getDefinedBy().getFullyQualifiedName()+"."+violation.getKey().getSignatureString()+", REASON Security");
 				return false;
 			}
 		}

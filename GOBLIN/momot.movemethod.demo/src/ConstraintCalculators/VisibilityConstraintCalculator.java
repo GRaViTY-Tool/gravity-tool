@@ -74,7 +74,7 @@ public class VisibilityConstraintCalculator extends ConstraintCalculator{
 			}
 			
 		}
-		
+//		if(map.size()>0)System.err.println(map);
 		return map;
 	}
 

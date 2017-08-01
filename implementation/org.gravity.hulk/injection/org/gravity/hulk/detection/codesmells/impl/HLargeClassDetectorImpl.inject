@@ -10,4 +10,9 @@ partial class HLargeClassDetectorImpl {
 	
 -->
 
+@model calculateRelativeThreshold (HRelativeValueConstants level) <--
+
+		return calculateRelativeThreshold(HRelativeValueConstants.HIGH, HNumberOfMembersMetric.class);
+-->
+
 }

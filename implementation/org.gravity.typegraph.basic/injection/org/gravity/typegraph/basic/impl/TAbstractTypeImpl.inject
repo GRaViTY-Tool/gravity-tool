@@ -95,6 +95,9 @@ partial class TAbstractTypeImpl {
 		StringBuilder builder = new StringBuilder();
 		List<String> packages = new LinkedList<>();
 		TPackage tPackage = getPackage();
+		if(tPackage == null) {
+			return getTName();
+		}
 		if (!"(default package)".equals(tPackage.getTName())) {
 			while (tPackage != null) {
 				packages.add(0, tPackage.getTName());
@@ -108,7 +111,7 @@ partial class TAbstractTypeImpl {
 			}
 		}
 		builder.append(getTName());
-		return builder.toString();
+		return builder.toString().replaceAll("%.*%", "");
 -->
 
 @model getMinimumRequiredVisibility (TAbstractType tAbstractType) <--

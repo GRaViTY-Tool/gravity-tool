@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
@@ -76,6 +77,7 @@ public abstract class HulkHandler extends AbstractHandler {
 	protected Job job;
 	protected List<Object> workspace_selection;
 	protected Object firstSelectionElement;
+	protected HulkDetector detector;
 	
 	protected abstract void setJobName();
 	protected abstract void setSelectionDialogInput();
@@ -130,11 +132,15 @@ public abstract class HulkHandler extends AbstractHandler {
 	
 	
 	public void SyncBWD(){
+		Hashtable<String, String> configuration = new Hashtable<String, String>();
+		
+		detector = new HulkDetector(hulk, configuration);
+		
 		if(javaAnnotationsEnabled){
 			converter.syncProjectBwd(IPGConverter -> {
 
 				System.out.println(System.currentTimeMillis() + " Hulk Detect AP");
-				HulkDetector.detectSelectedAntiPattern(selection, hulk, selected_detectors,
+				detector.detectSelectedAntiPattern(selection, selected_detectors,
 						executed_detectors);
 				System.out.println(System.currentTimeMillis() + " Hulk Detect AP - done");
 
@@ -151,7 +157,7 @@ public abstract class HulkHandler extends AbstractHandler {
 		}
 		else{
 			System.out.println(System.currentTimeMillis() + " Hulk Detect AP");
-			HulkDetector.detectSelectedAntiPattern(selection, hulk, selected_detectors,
+			detector.detectSelectedAntiPattern(selection, selected_detectors,
 					executed_detectors);
 			System.out.println(System.currentTimeMillis() + " Hulk Detect AP - done");
 		}

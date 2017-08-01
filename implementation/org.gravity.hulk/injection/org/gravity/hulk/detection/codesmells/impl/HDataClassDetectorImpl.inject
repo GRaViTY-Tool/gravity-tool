@@ -10,4 +10,9 @@ partial class HDataClassDetectorImpl {
 	
 -->
 
+@model calculateRelativeThreshold (HRelativeValueConstants level) <--
+
+		return calculateRelativeThreshold(level, HNACCMetric.class);
+-->
+
 }

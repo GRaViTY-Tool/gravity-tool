@@ -1,9 +1,8 @@
-
-import org.gravity.typegraph.basic.TParameter;
+import  org.gravity.typegraph.basic.TParameter;
 
 partial class TMethodSignatureImpl {
 
-@members <--
+@members<--
 
 	@Override
 	public String toString() {
@@ -12,15 +11,20 @@ partial class TMethodSignatureImpl {
 		String name = getMethod().getTName();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
 	}
-	
--->
 
-@model getSignatureString () <--
+	-->
 
+@model getSignatureString ()<--
 		String s = getMethod().getTName() + "(";
 		TParameter current = getParamList().getFirst();
 		while (current != null) {
-			s += current.getType().getTName();
+			TAbstractType type = current.getType();
+			if(type != null){
+				s += type.getTName();
+			}
+			else {
+				s += "";
+			}
 			current = current.getNext();
 			if (current != null) {
 				s += ", ";
@@ -31,7 +35,6 @@ partial class TMethodSignatureImpl {
 			return s + ")";
 		} else {
 			return s + "):" + ret.getTName();
-		}
--->
+		}-->
 
 }

@@ -36,7 +36,7 @@ public class SearchPrinter {
 		    	baseName = root.eResource().getURI().trimFileExtension().lastSegment();
 		  }
 	
-	protected SearchAnalyzer performAnalysis(final SearchExperiment<TransformationSolution> experiment) {
+	protected SearchAnalyzer performAnalysis(final SearchExperiment<TransformationSolution> experiment, File folder) {
 	    SearchAnalysis analysis = new SearchAnalysis(experiment);
 	    analysis.setHypervolume(true);
 	    analysis.setInvertedGenerationalDistance(true);
@@ -50,30 +50,39 @@ public class SearchPrinter {
 	    System.out.println("---------------------------");
 	    searchAnalyzer.printAnalysis();
 	    System.out.println("---------------------------");
+
+    	File analysisFolder = new File(folder, "analysis");
+    	File analysisFolderTxt = new File(analysisFolder, "analysis.txt");
 	    try {
-	    	System.out.println("- Save Analysis to 'output/analysis/analysis.txt'");
-	    	searchAnalyzer.saveAnalysis(new File("output/analysis/analysis.txt"));
+			System.out.println("- Save Analysis to '"+analysisFolderTxt
+	    			+ "'");
+	    	searchAnalyzer.saveAnalysis(analysisFolderTxt);
 	    } catch(IOException e) {
 	    	e.printStackTrace();
 	    }
-	    System.out.println("- Save Indicator BoxPlots to 'output/analysis/'");
+	    System.out.println("- Save Indicator BoxPlots to '"
+	    		+ analysisFolder
+	    		+ "'");
 	    searchAnalyzer.saveIndicatorBoxPlots(
-	    	"output/analysis/",
+	    	analysisFolder.getAbsolutePath(),
 	    	baseName
 	    );
 	    return searchAnalyzer;
 	  }
 	  
-	  protected TransformationResultManager handleResults(final SearchExperiment<TransformationSolution> experiment) {
+	  protected TransformationResultManager handleResults(final SearchExperiment<TransformationSolution> experiment, File folder) {
 	    ISolutionWriter<TransformationSolution> solutionWriter = experiment.getSearchOrchestration().createSolutionWriter();
 	    IPopulationWriter<TransformationSolution> populationWriter = experiment.getSearchOrchestration().createPopulationWriter();
 	    TransformationResultManager resultManager = new TransformationResultManager(experiment);
 	    Population population;
 	    population = 
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-	    System.out.println("- Save objectives of all algorithms to 'output/objectives/objective_values.txt'");
+	    File objectivesTxt = new File(folder, "objectives/objective_values.txt");
+		System.out.println("- Save objectives of all algorithms to '"
+	    		+ objectivesTxt.getPath()
+	    		+ "'");
 	    TransformationResultManager.saveObjectives(
-	    	"output/objectives/objective_values.txt",
+	    	objectivesTxt,
 	    	population
 	    );
 	    System.out.println("---------------------------");
@@ -85,15 +94,21 @@ public class SearchPrinter {
 	    
 	    population = 
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-	    System.out.println("- Save solutions of all algorithms to 'output/solutions/objective_values.txt'");
+	    File solutionsFolder = new File(folder, "solutions");
+		File solutionsTxt = new File(solutionsFolder ,"objective_values.txt");
+		System.out.println("- Save solutions of all algorithms to '"
+	    		+ solutionsTxt
+	    		+ "'");
 	    TransformationResultManager.savePopulation(
-	    	"output/solutions/objective_values.txt",
+	    	solutionsTxt,
 	    	population,
 	    	populationWriter
 	    );
-	    System.out.println("- Save solutions of all algorithms to 'output/solutions/objective_values.txt'");
+	    System.out.println("- Save solutions of all algorithms to '"
+	    		+ solutionsFolder
+	    		+ "'");
 	    TransformationResultManager.saveSolutions(
-	    	"output/solutions/",
+	    	solutionsFolder,
 	    	baseName,
 	    	MomotUtil.asIterables(
 	    		population,
@@ -103,9 +118,12 @@ public class SearchPrinter {
 	    
 	    population = 
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
-	    System.out.println("- Save models of all algorithms to 'output/models/'");
+	    File modelsFolder = new File(folder, "models");
+		System.out.println("- Save models of all algorithms to '"
+	    		+ modelsFolder
+	    		+ "'");
 	    TransformationResultManager.saveModels(
-	    	"output/models/",
+	    	modelsFolder,
 	    	baseName,
 	    	population
 	    );
@@ -115,15 +133,15 @@ public class SearchPrinter {
 	  
 
 	  
-	  public void printResults( SearchExperiment<TransformationSolution> experiment){
+	  public TransformationResultManager printResults( SearchExperiment<TransformationSolution> experiment, File folder){
 		  System.out.println("-------------------------------------------------------");
 		    System.out.println("Analysis");
 		    System.out.println("-------------------------------------------------------");
-		    performAnalysis(experiment);
+		    performAnalysis(experiment, folder);
 		    System.out.println("-------------------------------------------------------");
 		    System.out.println("Results");
 		    System.out.println("-------------------------------------------------------");
-		    handleResults(experiment);
+		    return handleResults(experiment, folder);
 	  }
 
 	public void printSearchInfo(String initalModel, String[] modules, int populationSize, int maxEvaluations,

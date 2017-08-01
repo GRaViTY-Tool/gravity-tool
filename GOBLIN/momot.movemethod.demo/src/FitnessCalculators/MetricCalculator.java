@@ -1,9 +1,13 @@
 package FitnessCalculators;
 
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Stack;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HAntiPatternHandling;
@@ -40,7 +44,8 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 		Stack<HDetector> stack = new Stack<HDetector>();
 		stack.add(detector);
 		//det.setHAntiPatternHandling(hulk);
-		HulkDetector.detectSelectedAntiPattern(stack, new HashSet<HDetector>(),hulk,false);
+		HulkDetector hulkDetector = new HulkDetector(hulk, new Hashtable<String, String>());
+		hulkDetector.detectSelectedAntiPattern(stack, new HashSet<HDetector>(), false);
 	}
 	
 	public HDetector getDetector(Class clazz, HAntiPatternHandling hulk){
@@ -75,6 +80,9 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 			hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 			hulk.setApg(antipatternGraph);
 			DFSGraph dfs = hulk.getDependencyGraph();
+
+			Resource res = new ResourceSetImpl().createResource(URI.createURI("SemllDependencyGraph.xmi")); //$NON-NLS-1$
+			res.getContents().add(dfs);
 		}
 		return hulk;
 	}

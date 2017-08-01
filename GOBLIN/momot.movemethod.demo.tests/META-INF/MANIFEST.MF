@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tests
-Bundle-SymbolicName: momot.movemethod.demo.tests;singleton:=true
+Bundle-SymbolicName: org.goblin.movemethod.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.junit,
  org.eclipse.core.runtime;bundle-version="3.12.0",
  org.eclipse.core.resources;bundle-version="3.11.1",
  org.eclipse.jdt.core;bundle-version="3.12.2",
- momot.movemethod.demo;bundle-version="1.0.0",
+ org.goblin.movemethod;bundle-version="1.0.0",
  org.gravity.tgg.modisco;bundle-version="1.0.0",
  org.gravity.eclipse;bundle-version="1.0.0",
  org.gravity.typegraph.basic;bundle-version="1.0.0",
