@@ -7,3 +7,7 @@
 [submodule "evaluation-data"]
 	path = evaluation-data
 	url = https://github.com/GRaViTY-Tool/gravity-evaluation-data.git
+[submodule "evaluation"]
+	path = evaluation
+	url = https://github.com/GRaViTY-Tool/gravity-evaluation.git
+	branch = master
