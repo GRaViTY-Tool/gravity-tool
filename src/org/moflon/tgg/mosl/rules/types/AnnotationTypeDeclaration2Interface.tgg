@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeDeclaration2Interface #with MoDiscoTGG
+
+#source { 
+	jPackage:Package {
+		++-ownedElements->bodyDeclaration
+	}
+	++bodyDeclaration:AnnotationTypeDeclaration
+}
+
+#target {
+	uPackage:Package {
+		++-packagedElement->feature
+	}
+	++feature:Interface
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->uPackage
+	}
+	
+	++ md2o : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+	nonParameterizedName(feature.name)
+	//TODO make sure the uml Interface really is an Annotation(impossible?)...
+}
