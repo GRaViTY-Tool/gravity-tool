@@ -22,6 +22,7 @@ import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeDeclaration;
+import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
@@ -141,7 +142,7 @@ public class ModelProcessor {
 
 	public void performForwardPre(EObject src, boolean deleteBody) {
 		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
-		List<AnonymousClassDeclaration> anonymousClassDeclarations = new ArrayList<>();
+		List<EObject> deletes = new ArrayList<>();
 		List<EObject> optionalDeletes = new ArrayList<>();
 
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
@@ -150,15 +151,17 @@ public class ModelProcessor {
 			if (next instanceof org.eclipse.gmt.modisco.java.Package) {
 				packages.add((org.eclipse.gmt.modisco.java.Package) next);
 			} else if (next instanceof AnonymousClassDeclaration) {
-				anonymousClassDeclarations.add((AnonymousClassDeclaration) next);
+				deletes.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
 				if (((Block) next).eContainer() instanceof MethodDeclaration)
 					optionalDeletes.add((Block) next);
 			} else if (next instanceof Javadoc) {
 				optionalDeletes.add((Javadoc) next);
+			} else if (next instanceof TypeParameter) {
+				deletes.add((TypeParameter) next);
 			}
 		}
-		anonymousClassDeclarations.forEach(e -> EcoreUtil.delete(e, true));
+		deletes.forEach(e -> EcoreUtil.delete(e, true));
 		packages.forEach(this::removeNestedParameterizedTypes);
 		if (deleteBody) {
 			optionalDeletes.forEach(e -> EcoreUtil.delete(e, true));
