@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule InnerEnumDeclaration2InnerEnumeration_InInterface #extends InnerEnumDeclaration2InnerEnumeration_Abstract, InnerDeclaration2InnerClassifier_InInterface_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

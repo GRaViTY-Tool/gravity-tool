@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule InnerInterfaceDeclaration2InnerInterface_Abstract #extends InnerDeclaration2InnerClassifier_Abstract #with MoDiscoTGG
+
+#source {
+	++bodyDeclaration:InterfaceDeclaration
+}
+
+#target {
+	++feature:Interface
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}
