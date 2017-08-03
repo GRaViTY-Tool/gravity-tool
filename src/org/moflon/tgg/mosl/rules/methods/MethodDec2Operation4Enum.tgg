@@ -1,0 +1,30 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDec2Operation4Enum #extends MethodDec2Operation_Abstract #with MoDiscoTGG
+
+#source { 
+
+	classDec : AbstractTypeDeclaration {
+	}
+	
+}
+
+#target {
+	umlClass : Enumeration {
+		++ -ownedOperation->feature
+	}
+	
+	++ feature : Operation{
+
+	}
+
+}
+
+#correspondence {
+	cd2c : NamedElement2NamedElement {
+		#src->classDec
+		#trg->umlClass
+	}
+
+}
