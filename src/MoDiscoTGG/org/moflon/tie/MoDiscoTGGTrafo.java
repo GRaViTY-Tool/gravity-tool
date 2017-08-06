@@ -90,6 +90,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		integrateForward();
 
 		System.out.println("saving results...");
+		saveSrc("instances/src_processed.xmi");
 		saveTrg("instances/fwd.trg.xmi");
 		saveCorr("instances/fwd.corr.xmi");
 		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
