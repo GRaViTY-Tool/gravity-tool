@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldDeclarationTypeAccessType2PropertyType #with MoDiscoTGG
+
+#source {
+	typeAccess:TypeAccess {
+		++-type->jType
+	}
+	
+	jType:Type
+}
+
+#target {
+	property:Property {
+		++-type->uType
+	}
+	
+	uType:Type
+}
+
+#correspondence {
+	ta2p:TypeAccess2Property {
+		#src->typeAccess
+		#trg->property
+	}
+	
+	jt2ut : NamedElement2NamedElement{
+		#src->jType
+		#trg->uType
+	}
+}
+
+#attributeConditions {
+	
+}

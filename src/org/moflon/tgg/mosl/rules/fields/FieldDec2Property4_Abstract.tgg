@@ -43,6 +43,11 @@
 		#src->bodyDeclaration
 		#trg->feature
 	}
+	
+	++ta2p:TypeAccess2Property {
+		#src->typeAccess
+		#trg->feature
+	}
 }
 
 #attributeConditions {

@@ -62,6 +62,10 @@
 		#src->TypeAccess
 		#trg->TemplateBinding
 	}
+	TypeAccess2Property {
+		#src->TypeAccess
+		#trg->Property
+	}
 }
 
 #attributeConditions {

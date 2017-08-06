@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property4Interface_WithModifier #extends FieldDec2Property4Interface,Modifier2Feature_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}
