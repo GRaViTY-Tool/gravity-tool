@@ -16,7 +16,7 @@
 }
 
 #target {
-	umlClass : Interface {
+	umlClass : Classifier {
 		++ -generalization->interfaceGeneralization
 	}
 	
