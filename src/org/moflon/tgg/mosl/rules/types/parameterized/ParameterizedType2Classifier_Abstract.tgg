@@ -4,7 +4,7 @@
 #abstract #rule ParameterizedType2Classifier_Abstract #with MoDiscoTGG
 
 #source {
-	nonParamType:TypeDeclaration
+	nonParamType:AbstractTypeDeclaration
 	
 	nonParamPackage:Package {
 		-ownedElements->nonParamType

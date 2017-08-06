@@ -4,7 +4,7 @@
 #abstract #rule FieldDec2Property4Class_Abstract #extends FieldDec2Property4_Abstract #with MoDiscoTGG
 
 #source { 
-	jOwnerType: ClassDeclaration
+	jOwnerType: AbstractTypeDeclaration
 }
 
 #target {

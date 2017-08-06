@@ -4,7 +4,7 @@
 #rule ParameterizedType2Class_InnerTypeInInterface #extends ParameterizedType2Classifier_InnerTypeInInterface_Abstract #with MoDiscoTGG
 
 #source { 
-	nonParamType:ClassDeclaration
+	nonParamType:AbstractTypeDeclaration
 }
 
 #target {

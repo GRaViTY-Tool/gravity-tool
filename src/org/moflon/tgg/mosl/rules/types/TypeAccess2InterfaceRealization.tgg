@@ -4,7 +4,7 @@
 #rule TypeAccess2InterfaceRealization #with MoDiscoTGG
 
 #source { 
-	classDec : ClassDeclaration {
+	classDec : AbstractTypeDeclaration {
 		++ -superInterfaces->typeAcc
 	}
 	
