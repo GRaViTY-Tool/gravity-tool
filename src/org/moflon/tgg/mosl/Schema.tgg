@@ -66,6 +66,10 @@
 		#src->TypeAccess
 		#trg->Property
 	}
+	TypeAccess2Parameter {
+		#src->TypeAccess
+		#trg->Parameter
+	}
 }
 
 #attributeConditions {

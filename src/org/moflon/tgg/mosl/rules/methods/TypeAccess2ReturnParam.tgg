@@ -4,41 +4,32 @@
 #rule TypeAccess2ReturnParam #with MoDiscoTGG
 
 #source {
-	jType:Type
-
 	++typeAccess:TypeAccess{
-		++-type -> jType
 	}
-
-	!NacTypeAccess:TypeAccess
 
 	method:MethodDeclaration{
 		++-returnType -> typeAccess
-		-returnType -> NacTypeAccess
 	}
 }
 
 #target {
-	uType:uml.Type
-
 	operation:Operation{
 		++-ownedParameter -> returnParam
 	}
 
 	++returnParam:Parameter{
-		++ -type -> uType
 	}
 }
 
 #correspondence {
-	jrt2urt :NamedElement2NamedElement{
-		#src->jType
-		#trg->uType
-	}
-
 	m2o :NamedElement2NamedElement{
 		#src->method
 		#trg->operation
+	}
+	
+	++ta2p:TypeAccess2Parameter {
+		#src->typeAccess
+		#trg->returnParam
 	}
 }
 
