@@ -9,7 +9,10 @@
 	}
 	
 	++ typeAcc : TypeAccess {
+		++ -type->superInterfaceDec
 	}
+	
+	superInterfaceDec : Type
 }
 
 #target {
@@ -18,7 +21,10 @@
 	}
 	
 	++ interfaceRealization : InterfaceRealization {
+		++ -contract->superInterface
 	}
+	
+	superInterface : Interface
 }
 
 #correspondence {
@@ -30,6 +36,11 @@
 	++ ta2g : TypeAccess2InterfaceRealization {
 		#src->typeAcc
 		#trg->interfaceRealization
+	}
+	
+	cd2c2 : NamedElement2NamedElement {
+		#src->superInterfaceDec
+		#trg->superInterface
 	}
 }
 
