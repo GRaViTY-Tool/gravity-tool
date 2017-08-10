@@ -1,0 +1,35 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ConstructorDec2Operation_Abstract #with MoDiscoTGG
+
+#source { 
+
+	classDec : AbstractTypeDeclaration {
+		++ -bodyDeclarations->bodyDeclaration
+	}
+	
+	++ bodyDeclaration : ConstructorDeclaration{
+		
+	}
+}
+
+#target {
+
+	++ feature : Operation{
+	}
+
+}
+
+#correspondence {
+	
+	++ bd2ne : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+	eq(classDec.name, bodyDeclaration.name)
+}

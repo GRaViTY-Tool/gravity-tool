@@ -1,0 +1,30 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorDec2Operation4Class #extends ConstructorDec2Operation_Abstract #with MoDiscoTGG
+
+#source { 
+
+	classDec : AbstractTypeDeclaration {
+	}
+	
+}
+
+#target {
+	umlClass : Class {
+		++ -ownedOperation->feature
+	}
+	
+	++ feature : Operation{
+
+	}
+
+}
+
+#correspondence {
+	cd2c : NamedElement2NamedElement {
+		#src->classDec
+		#trg->umlClass
+	}
+
+}

@@ -84,7 +84,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 	public void performForward() {
 		ModelProcessor mp = new ModelProcessor();
-		mp.performForwardPre(src);
+		mp.performForwardPre(src, true);
 		
 		System.out.println("performing forward transformation...");
 		integrateForward();
@@ -122,6 +122,7 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	
 	public void performBackward() {
 		ModelProcessor m = new ModelProcessor();
+		m.performBackwardPre(trg);
 		System.out.println("performing backward transformation...");
 		integrateBackward();
 		System.out.println("performing backward postprocessing...");

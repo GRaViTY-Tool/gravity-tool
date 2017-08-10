@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorDec2Operation4EnumWithModifier #extends ConstructorDec2Operation4Enum,Modifier2Feature_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

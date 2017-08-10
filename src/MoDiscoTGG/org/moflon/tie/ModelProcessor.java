@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
@@ -153,7 +154,7 @@ public class ModelProcessor {
 			} else if (next instanceof AnonymousClassDeclaration) {
 				deletes.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
-				if (((Block) next).eContainer() instanceof MethodDeclaration)
+				if (((Block) next).eContainer() instanceof AbstractMethodDeclaration)
 					optionalDeletes.add((Block) next);
 			} else if (next instanceof Javadoc) {
 				optionalDeletes.add((Javadoc) next);

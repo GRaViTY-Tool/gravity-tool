@@ -4,7 +4,7 @@
 #rule VariableDec2Parameter #with MoDiscoTGG
 
 #source { 
-	method : MethodDeclaration {
+	method : AbstractMethodDeclaration {
 		++ -parameters->variableDec
 	}
 	

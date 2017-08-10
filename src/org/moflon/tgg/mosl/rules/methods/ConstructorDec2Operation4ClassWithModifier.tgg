@@ -1,0 +1,24 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule ConstructorDec2Operation4ClassWithModifier #extends ConstructorDec2Operation4Class,Modifier2Feature_Abstract #with MoDiscoTGG
+
+#source { 
+	++bodyDeclaration:BodyDeclaration
+}
+
+#target {
+	++feature:Feature
+}
+
+#correspondence {
+	
+	++bd2ne:NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	
+}
