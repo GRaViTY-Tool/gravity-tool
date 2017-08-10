@@ -12,7 +12,7 @@
 }
 
 #target {
-	umlPackage : Package {
+	umlPackage : Model {
 		++ -packagedElement->feature
 	}
 	
