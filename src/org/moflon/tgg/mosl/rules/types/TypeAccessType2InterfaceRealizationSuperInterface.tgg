@@ -4,6 +4,10 @@
 #rule TypeAccessType2InterfaceRealizationSuperInterface #with MoDiscoTGG
 
 #source {
+	classDec : ClassDeclaration {
+		-superInterfaces->typeAccess
+	}
+	
 	typeAccess:TypeAccess {
 		++-type->jType
 	}
@@ -12,6 +16,10 @@
 }
 
 #target {
+	umlClass : Class {
+		-interfaceRealization->interfaceRealization
+	}
+	
 	interfaceRealization:InterfaceRealization {
 		++-contract->uType
 	}

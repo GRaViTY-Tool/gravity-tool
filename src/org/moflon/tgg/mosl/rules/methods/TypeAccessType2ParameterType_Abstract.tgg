@@ -1,7 +1,7 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule TypeAccessType2ReturnType #with MoDiscoTGG
+#abstract #rule TypeAccessType2ParameterType_Abstract #with MoDiscoTGG
 
 #source { 
 	typeAccess:TypeAccess {
@@ -12,6 +12,10 @@
 }
 
 #target {
+	operation:Operation{
+		-ownedParameter -> param
+	}
+	
 	param : Parameter{
 		++-type->uType
 	}

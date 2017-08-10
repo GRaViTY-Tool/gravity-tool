@@ -1,0 +1,27 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule TypeAccessType2GeneralizationGeneral_Interface #extends TypeAccessType2GeneralizationGeneral_Abstract #with MoDiscoTGG
+
+#source {
+	interfaceDeclaration:InterfaceDeclaration {
+		-superInterfaces->typeAccess
+	}
+	
+	typeAccess:TypeAccess
+}
+
+#target {
+	classifier:Classifier
+}
+
+#correspondence {
+	ne2ne:NamedElement2NamedElement {
+		#src->interfaceDeclaration
+		#trg->classifier
+	}
+}
+
+#attributeConditions {
+	
+}

@@ -4,6 +4,10 @@
 #abstract #rule FieldDeclarationTypeAccessType2PropertyType #with MoDiscoTGG
 
 #source {
+	fieldDeclaration:FieldDeclaration {
+		-type->typeAccess
+	}
+	
 	typeAccess:TypeAccess {
 		++-type->jType
 	}
@@ -20,6 +24,11 @@
 }
 
 #correspondence {
+	ne2ne:NamedElement2NamedElement {
+		#src->fieldDeclaration
+		#trg->property
+	}
+	
 	ta2p:TypeAccess2Property {
 		#src->typeAccess
 		#trg->property

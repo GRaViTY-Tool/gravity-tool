@@ -1,9 +1,9 @@
 #using MoDiscoTGG.*
 #using AttrCondDefLibrary.*
 
-#rule TypeAccessType2GeneralizationGeneral #with MoDiscoTGG
+#abstract #rule TypeAccessType2GeneralizationGeneral_Abstract #with MoDiscoTGG
 
-#source { 
+#source {
 	typeAccess:TypeAccess {
 		++-type->jType
 	}
@@ -12,6 +12,10 @@
 }
 
 #target {
+	classifier:Classifier {
+		-generalization->generalization
+	}
+	
 	generalization:Generalization {
 		++-general->uType
 	}
