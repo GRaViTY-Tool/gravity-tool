@@ -1,0 +1,36 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule OrphanedClassDec2OrphanedClass #with MoDiscoTGG
+
+#source { 
+	jPackage : Model {
+		++ -orphanTypes->bodyDeclaration
+	}
+	
+	++ bodyDeclaration : ClassDeclaration
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->feature
+	}
+	
+	++ feature : Class
+}
+
+#correspondence {
+	jp2up : JavaModel2UMLPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	
+	++ md2o : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+}

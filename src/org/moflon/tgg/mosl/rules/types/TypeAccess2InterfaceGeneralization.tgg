@@ -4,7 +4,7 @@
 #rule TypeAccess2InterfaceGeneralization #with MoDiscoTGG
 
 #source { 
-	classDec : InterfaceDeclaration {
+	classDec : AbstractTypeDeclaration {
 		++ -superInterfaces->typeAcc
 	}
 	
@@ -13,7 +13,7 @@
 }
 
 #target {
-	umlClass : Interface {
+	umlClass : Classifier {
 		++ -generalization->interfaceGeneralization
 	}
 	

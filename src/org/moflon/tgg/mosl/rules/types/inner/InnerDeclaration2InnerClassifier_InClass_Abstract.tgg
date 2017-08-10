@@ -4,7 +4,7 @@
 #abstract #rule InnerDeclaration2InnerClassifier_InClass_Abstract #extends InnerDeclaration2InnerClassifier_Abstract #with MoDiscoTGG
 
 #source { 
-	jContainer:ClassDeclaration
+	jContainer:AbstractTypeDeclaration
 }
 
 #target {

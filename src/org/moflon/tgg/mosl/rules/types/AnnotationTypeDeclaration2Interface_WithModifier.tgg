@@ -1,0 +1,20 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeDeclaration2Interface_WithModifier #extends AnnotationTypeDeclaration2Interface,Modifier2NamedElement_Abstract #with MoDiscoTGG
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}
