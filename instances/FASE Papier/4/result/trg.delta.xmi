@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <targetModel href="trg.uml#/"/>
+  <addedEdges name="class">
+    <src href="trg.uml#//List/(default%20package)/List/inner"/>
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges name="class">
+    <src href="trg.uml#//List/(default%20package)/List/bool"/>
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.40" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/foo"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.1"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.29" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/inner"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.9" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.10" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.37" trg="//@addedNodes.23" name="owningAssociation"/>
+  <addedEdges trg="//@addedNodes.36" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/bool"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.4" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.11" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.26" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.30" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.22" name="template">
+    <trg href="trg.uml#//externals/java/lang/Comparable"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.21" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.33" trg="//@addedNodes.18" name="owningTemplateParameter"/>
+  <addedEdges trg="//@addedNodes.6" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.18" trg="//@addedNodes.22" name="signature"/>
+  <addedEdges trg="//@addedNodes.23" name="association">
+    <src href="trg.uml#//List/(default%20package)/List/comp"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.37" trg="//@addedNodes.23" name="association"/>
+  <addedEdges src="//@addedNodes.22" name="classifier">
+    <trg href="trg.uml#//externals/java/lang/Comparable"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.20" name="association">
+    <src href="trg.uml#//List/(default%20package)/List/inner"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.13" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+  </addedEdges>
+  <addedEdges name="class">
+    <src href="trg.uml#//List/(default%20package)/List/comp"/>
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.23" trg="//@addedNodes.37" name="memberEnd"/>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.20" trg="//@addedNodes.32" name="memberEnd"/>
+  <addedEdges trg="//@addedNodes.22" name="ownedTemplateSignature">
+    <src href="trg.uml#//externals/java/lang/Comparable"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.20" trg="//@addedNodes.32" name="ownedEnd"/>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.1"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.19" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/foo"/>
+  </addedEdges>
+  <addedEdges name="supplier">
+    <src href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+    <trg href="trg.uml#//externals/java/lang/Comparable"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.15" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.5" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.23" trg="//@addedNodes.37" name="ownedEnd"/>
+  <addedEdges src="//@addedNodes.37" name="type">
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.32" trg="//@addedNodes.20" name="owningAssociation"/>
+  <addedEdges trg="//@addedNodes.8" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/inner"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.2"/>
+  </addedEdges>
+  <addedEdges name="class">
+    <src href="trg.uml#//List/(default%20package)/List/foo"/>
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.32" trg="//@addedNodes.20" name="association"/>
+  <addedEdges trg="//@addedNodes.38" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.3"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.31" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.14" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.32" name="type">
+    <trg href="trg.uml#//List/(default%20package)/List"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.24" name="packagedElement">
+    <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.22" trg="//@addedNodes.18" name="ownedParameter"/>
+  <addedEdges trg="//@addedNodes.34" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/comp"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.2"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.35" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.25" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.3" name="packagedElement">
+    <src href="trg.uml#//source%20references"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.39" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/comp"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.23" name="memberEnd">
+    <trg href="trg.uml#//List/(default%20package)/List/comp"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.27" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.20" name="packagedElement">
+    <src href="trg.uml#//List/(default%20package)"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.18" trg="//@addedNodes.33" name="ownedParameteredElement"/>
+  <addedEdges trg="//@addedNodes.1" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.23" name="packagedElement">
+    <src href="trg.uml#//List/(default%20package)"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.2" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.16" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/bool"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.17" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.3"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.20" name="memberEnd">
+    <trg href="trg.uml#//List/(default%20package)/List/inner"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.7" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.12" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.28" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+  </addedEdges>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:Artifact" name="List.java" visibility="public" fileName="C:\Dropbox\ES\eMoflon\CC_Test\List\src\List.java"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:ClassifierTemplateParameter"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:Association"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>"/>
+  <addedNodes xsi:type="uml:Association"/>
+  <addedNodes xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:Property"/>
+  <addedNodes xsi:type="uml:Class" name="T"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:Property"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+</org.moflon.tgg.runtime:DeltaSpecification>

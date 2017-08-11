@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
+  <packagedElement xsi:type="uml:Model" name="List">
+    <packagedElement xsi:type="uml:Package" name="(default package)" visibility="public">
+      <packagedElement xsi:type="uml:Class" name="List" visibility="public">
+        <ownedAttribute name="inner" visibility="public" type="//List/(default%20package)/List"/>
+        <ownedAttribute name="foo" visibility="public" type="//externals/java/lang/String"/>
+        <ownedAttribute name="bool" visibility="public" type="//externals/java/lang/Boolean"/>
+        <ownedAttribute name="comp" visibility="public" type="//externals/java/lang/Comparable"/>
+        <ownedOperation name="remove" visibility="public">
+          <ownedParameter visibility="public" type="//List/Common%20Java%20datatypes/void" direction="return"/>
+        </ownedOperation>
+        <ownedOperation name="remove" visibility="public">
+          <ownedParameter visibility="public" type="//List/(default%20package)/List" direction="return"/>
+          <ownedParameter name="index" visibility="public" type="//List/Common%20Java%20datatypes/int"/>
+        </ownedOperation>
+        <ownedOperation name="remove" visibility="public">
+          <ownedParameter visibility="public" type="//List/(default%20package)/List" direction="return"/>
+          <ownedParameter name="obj" visibility="public" type="//externals/java/lang/Object"/>
+        </ownedOperation>
+        <ownedOperation name="remove" visibility="public">
+          <ownedParameter visibility="public" type="//externals/java/lang/Boolean" direction="return"/>
+          <ownedParameter name="id" visibility="public" type="//externals/java/lang/String"/>
+        </ownedOperation>
+        <ownedOperation name="remove" visibility="public">
+          <ownedParameter visibility="public" type="//List/(default%20package)/List" direction="return"/>
+          <ownedParameter name="id" visibility="public" type="//externals/java/lang/String"/>
+          <ownedParameter name="doubleIndex" visibility="public" type="//List/Common%20Java%20datatypes/double"/>
+          <ownedParameter name="obj" visibility="public" type="//externals/java/lang/Object"/>
+          <ownedParameter name="index" visibility="public" type="//List/Common%20Java%20datatypes/int"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="Common Java datatypes" visibility="public">
+      <packagedElement xsi:type="uml:PrimitiveType" name="int" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="long" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="float" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="double" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="boolean" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="void" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="char" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="short" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="byte" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="externals">
+    <packagedElement xsi:type="uml:Package" name="java" visibility="public">
+      <packagedElement xsi:type="uml:Package" name="lang" visibility="public">
+        <packagedElement xsi:type="uml:Class" name="String" visibility="public">
+          <interfaceRealization contract="//externals/java/io/Serializable"/>
+          <interfaceRealization contract="//externals/java/lang/Comparable"/>
+          <interfaceRealization contract="//externals/java/lang/CharSequence"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Comparable"/>
+        <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>
+        <packagedElement xsi:type="uml:Class" name="Boolean" visibility="public">
+          <interfaceRealization contract="//externals/java/io/Serializable"/>
+          <interfaceRealization/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Class" name="Object" visibility="public"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Package" name="io" visibility="public">
+        <packagedElement xsi:type="uml:Interface" name="Serializable" visibility="public"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="source references"/>
+</uml:Model>

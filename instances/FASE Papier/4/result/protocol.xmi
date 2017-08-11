@@ -1,0 +1,2834 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches children="//@tripleMatches.9 //@tripleMatches.27" ruleName="JavaPackageToUMLPackage_underModel">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="src.xmi#//@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.3"/>
+    <contextElements href="trg.uml#//externals"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="src.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="um">
+      <node href="trg.uml#//externals"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//externals/java"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals"/>
+      <trg href="trg.uml#//externals/java"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="src.xmi#//@ownedElements.1"/>
+      <trg href="src.xmi#/"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <targetElements href="trg.uml#//externals/java"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.4"/>
+    <createdElements href="src.xmi#//@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.4"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <createdElements href="trg.uml#//externals/java"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="src.xmi#//@orphanTypes.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.5"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.6"/>
+    <contextElements href="corr.xmi#//@correspondences.17"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    <contextElements href="corr.xmi#//@correspondences.21"/>
+    <contextElements href="src.xmi#//@orphanTypes.3"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+      <trg href="src.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@orphanTypes.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.17"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.38"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1/@type"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <createdElements href="corr.xmi#//@correspondences.38"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.6"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4/doubleIndex"/>
+  </tripleMatches>
+  <tripleMatches ruleName="FieldDec2Property">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.8"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="vdf">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jOwnerType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jField">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="property">
+      <node href="trg.uml#//List/(default%20package)/List/foo"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uOwnerType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedAttribute">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/foo"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/foo"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.5"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/foo"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.32"/>
+    <createdElements href="corr.xmi#//@correspondences.32"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/foo"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.5"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@fragments.0"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.8"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.32 //@tripleMatches.29 //@tripleMatches.34 //@tripleMatches.24 //@tripleMatches.31 //@tripleMatches.41 //@tripleMatches.19 //@tripleMatches.17 //@tripleMatches.20 //@tripleMatches.6 //@tripleMatches.0" ruleName="JavaModel2UmlModelRule">
+    <sourceElements href="src.xmi#/"/>
+    <nodeMappings nodeName="javaModel">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="commonTypes">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <nodeMappings nodeName="sourceRefModel">
+      <node href="trg.uml#//source%20references"/>
+    </nodeMappings>
+    <nodeMappings nodeName="rootModel">
+      <node href="trg.uml#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlModel">
+      <node href="trg.uml#//List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="externalModel">
+      <node href="trg.uml#//externals"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#/"/>
+      <trg href="trg.uml#//externals"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#/"/>
+      <trg href="trg.uml#//source%20references"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#/"/>
+      <trg href="trg.uml#//List"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <targetElements href="trg.uml#/"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <targetElements href="trg.uml#//externals"/>
+    <targetElements href="trg.uml#//List"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//source%20references"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.3"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <createdElements href="src.xmi#/"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <createdElements href="trg.uml#//externals"/>
+    <createdElements href="trg.uml#//source%20references"/>
+    <createdElements href="trg.uml#/"/>
+    <createdElements href="corr.xmi#//@correspondences.0"/>
+    <createdElements href="corr.xmi#//@correspondences.3"/>
+    <createdElements href="trg.uml#//List"/>
+    <createdElements href="corr.xmi#//@correspondences.1"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <createdElements href="corr.xmi#//@correspondences.2"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.11 //@tripleMatches.15" ruleName="MethodDec2Operation4Class">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="trg.uml#//List/(default%20package)/List/remove.1"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.27"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <createdElements href="corr.xmi#//@correspondences.27"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2InterfaceRealization">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.5"/>
+    <contextElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <contextElements href="corr.xmi#//@correspondences.22"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <contextElements href="corr.xmi#//@correspondences.28"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <nodeMappings nodeName="typeAcc">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceRealization">
+      <node href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/Boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterface">
+      <node href="trg.uml#//externals/java/lang/Comparable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementingClassifier">
+      <src href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="interfaceRealization">
+      <src href="trg.uml#//externals/java/lang/Boolean"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="contract">
+      <src href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+      <trg href="trg.uml#//externals/java/lang/Comparable"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.28"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.22"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.41"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <createdElements href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.1"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.1"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.4"/>
+    <createdElements href="corr.xmi#//@correspondences.41"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.36" ruleName="JavaPackageToUMLPackage_underModel">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.0"/>
+    <contextElements href="trg.uml#//List"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="src.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="um">
+      <node href="trg.uml#//List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/(default%20package)"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="src.xmi#//@ownedElements.0"/>
+      <trg href="src.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List"/>
+      <trg href="trg.uml#//List/(default%20package)"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List"/>
+    <targetElements href="trg.uml#//List/(default%20package)"/>
+    <targetElements href="#//@tripleMatches.6/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.5"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0"/>
+    <createdElements href="trg.uml#//List/(default%20package)"/>
+    <createdElements href="corr.xmi#//@correspondences.5"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@orphanTypes.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.5"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <contextElements href="src.xmi#//@orphanTypes.0"/>
+    <contextElements href="corr.xmi#//@correspondences.12"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <contextElements href="corr.xmi#//@correspondences.21"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+      <trg href="src.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@orphanTypes.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+    <targetElements href="#//@tripleMatches.7/@containedEdges.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.12"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.39"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4/index"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.5"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.3/@type"/>
+    <createdElements href="corr.xmi#//@correspondences.39"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="FieldDec2Property_SelfType">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.5"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.8"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="vdf">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jOwnerType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jField">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="property">
+      <node href="trg.uml#//List/(default%20package)/List/inner"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uOwnerType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/inner"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedAttribute">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/inner"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.8/@containedEdges.4"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/inner"/>
+    <targetElements href="#//@tripleMatches.8/@containedEdges.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.18"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/inner"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@type"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.6"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@fragments.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="corr.xmi#//@correspondences.18"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.8"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.26" ruleName="JavaPackageToUMLPackage_underPackage">
+    <sourceElements href="src.xmi#//@ownedElements.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <contextElements href="src.xmi#//@ownedElements.1"/>
+    <contextElements href="corr.xmi#//@correspondences.4"/>
+    <contextElements href="trg.uml#//externals/java"/>
+    <nodeMappings nodeName="jParent">
+      <node href="src.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uParent">
+      <node href="trg.uml#//externals/java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//externals/java/io"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+      <trg href="src.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java"/>
+      <trg href="trg.uml#//externals/java/io"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedPackages">
+      <src href="src.xmi#//@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.1"/>
+    <targetElements href="trg.uml#//externals/java/io"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.9"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.1"/>
+    <createdElements href="trg.uml#//externals/java/io"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <createdElements href="corr.xmi#//@correspondences.9"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.5 //@tripleMatches.43 //@tripleMatches.44 //@tripleMatches.13" ruleName="ClassDec2Class">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <contextElements href="trg.uml#//externals/java/lang"/>
+    <contextElements href="corr.xmi#//@correspondences.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/Boolean"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/lang"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.22"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <createdElements href="corr.xmi#//@correspondences.22"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <createdElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <sourceElements href="src.xmi#//@orphanTypes.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.5"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <contextElements href="src.xmi#//@orphanTypes.0"/>
+    <contextElements href="corr.xmi#//@correspondences.27"/>
+    <contextElements href="corr.xmi#//@correspondences.12"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@orphanTypes.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.1"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+      <trg href="src.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <targetElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+    <targetElements href="#//@tripleMatches.11/@containedEdges.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.12"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.27"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.35"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0/@type"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <createdElements href="corr.xmi#//@correspondences.35"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.1/index"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@parameters.0"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16" ruleName="InterfaceDec2Interface">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.2"/>
+    <contextElements href="trg.uml#//externals/java/lang"/>
+    <contextElements href="corr.xmi#//@correspondences.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlInterface">
+      <node href="trg.uml#//externals/java/lang/CharSequence"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/lang"/>
+      <trg href="trg.uml#//externals/java/lang/CharSequence"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="trg.uml#//externals/java/lang/CharSequence"/>
+    <targetElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.23"/>
+    <createdElements href="trg.uml#//externals/java/lang/CharSequence"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <createdElements href="corr.xmi#//@correspondences.23"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2ReturnParam">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.22"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <contextElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <contextElements href="corr.xmi#//@correspondences.26"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="returnParam">
+      <node href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/Boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.3"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+    <targetElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.13/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.26"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.22"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.3/@ownedParameter.0"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.5"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.6"/>
+    <contextElements href="corr.xmi#//@correspondences.29"/>
+    <contextElements href="trg.uml#//externals/java/lang/Object"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <contextElements href="corr.xmi#//@correspondences.24"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/Object"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.2"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+      <trg href="trg.uml#//externals/java/lang/Object"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Object"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <targetElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+    <targetElements href="#//@tripleMatches.14/@containedEdges.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.24"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.29"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.40"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0"/>
+    <createdElements href="corr.xmi#//@correspondences.40"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.2/obj"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.5"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@parameters.0/@type"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2ReturnParam">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.3"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <contextElements href="corr.xmi#//@correspondences.27"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="returnParam">
+      <node href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.1"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    <targetElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.15/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.27"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@returnType"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2InterfaceRealization">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.5"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//externals/java/lang/CharSequence"/>
+    <contextElements href="corr.xmi#//@correspondences.23"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <nodeMappings nodeName="typeAcc">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceRealization">
+      <node href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterface">
+      <node href="trg.uml#//externals/java/lang/CharSequence"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="interfaceRealization">
+      <src href="trg.uml#//externals/java/lang/String"/>
+      <trg href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementingClassifier">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="contract">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+      <trg href="trg.uml#//externals/java/lang/CharSequence"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/CharSequence"/>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <targetElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.23"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.34"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <createdElements href="corr.xmi#//@correspondences.34"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <createdElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.2"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeFloat">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.2"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/float"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/float"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/float"/>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.10"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/float"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.10"/>
+    <createdElements href="src.xmi#//@orphanTypes.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2ReturnParam">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    <sourceElements href="src.xmi#//@orphanTypes.5"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    <contextElements href="src.xmi#//@orphanTypes.5"/>
+    <contextElements href="corr.xmi#//@correspondences.11"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove"/>
+    <contextElements href="corr.xmi#//@correspondences.19"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="returnParam">
+      <node href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+      <trg href="src.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@orphanTypes.5"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.19"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.11"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@returnType"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18" ruleName="PrimitiveTypeVoid">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.5"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.11"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@orphanTypes.5"/>
+    <createdElements href="corr.xmi#//@correspondences.11"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeChar">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="src.xmi#//@orphanTypes.6"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/char"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/char"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/char"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.7"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@orphanTypes.6"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.7"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/char"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.23 //@tripleMatches.14" ruleName="MethodDec2Operation4Class">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.21/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <sourceElements href="#//@tripleMatches.21/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="trg.uml#//List/(default%20package)/List/remove.2"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <targetElements href="#//@tripleMatches.21/@containedEdges.1"/>
+    <targetElements href="#//@tripleMatches.21/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.29"/>
+    <createdElements href="corr.xmi#//@correspondences.29"/>
+    <createdElements href="#//@tripleMatches.21/@containedEdges.0"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <createdElements href="#//@tripleMatches.21/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.21/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <createdElements href="#//@tripleMatches.21/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2ReturnParam">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.3"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <contextElements href="corr.xmi#//@correspondences.21"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="returnParam">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+    <targetElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <targetElements href="#//@tripleMatches.22/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4/@ownedParameter.0"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2ReturnParam">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.23/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+    <sourceElements href="#//@tripleMatches.23/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.23/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.29"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="returnParam">
+      <node href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.2"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.2"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.23/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+    <targetElements href="#//@tripleMatches.23/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.29"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.3"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.2/@ownedParameter.0"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeBoolean">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="src.xmi#//@orphanTypes.4"/>
+    <sourceElements href="#//@tripleMatches.24/@containedEdges.1"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/boolean"/>
+    <targetElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.14"/>
+    <createdElements href="src.xmi#//@orphanTypes.4"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/boolean"/>
+    <createdElements href="corr.xmi#//@correspondences.14"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2InterfaceRealization">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.4"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <contextElements href="trg.uml#//externals/java/io/Serializable"/>
+    <contextElements href="corr.xmi#//@correspondences.25"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <nodeMappings nodeName="typeAcc">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceRealization">
+      <node href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterface">
+      <node href="trg.uml#//externals/java/io/Serializable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="interfaceRealization">
+      <src href="trg.uml#//externals/java/lang/String"/>
+      <trg href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementingClassifier">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="contract">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+      <trg href="trg.uml#//externals/java/io/Serializable"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/io/Serializable"/>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="#//@tripleMatches.25/@containedEdges.1"/>
+    <targetElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+    <targetElements href="#//@tripleMatches.25/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.25/@containedEdges.5"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.25"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.31"/>
+    <createdElements href="corr.xmi#//@correspondences.31"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.1"/>
+    <createdElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.0"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.43 //@tripleMatches.25" ruleName="InterfaceDec2Interface">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <sourceElements href="#//@tripleMatches.26/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.26/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <contextElements href="trg.uml#//externals/java/io"/>
+    <contextElements href="corr.xmi#//@correspondences.9"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/io"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlInterface">
+      <node href="trg.uml#//externals/java/io/Serializable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/io"/>
+      <trg href="trg.uml#//externals/java/io/Serializable"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/io"/>
+    <targetElements href="trg.uml#//externals/java/io/Serializable"/>
+    <targetElements href="#//@tripleMatches.26/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.9"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.25"/>
+    <createdElements href="#//@tripleMatches.26/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.26/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <createdElements href="trg.uml#//externals/java/io/Serializable"/>
+    <createdElements href="#//@tripleMatches.26/@containedEdges.2"/>
+    <createdElements href="corr.xmi#//@correspondences.25"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.42 //@tripleMatches.28 //@tripleMatches.40 //@tripleMatches.12 //@tripleMatches.10" ruleName="JavaPackageToUMLPackage_underPackage">
+    <sourceElements href="src.xmi#//@ownedElements.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.27/@containedEdges.1"/>
+    <contextElements href="src.xmi#//@ownedElements.1"/>
+    <contextElements href="corr.xmi#//@correspondences.4"/>
+    <contextElements href="trg.uml#//externals/java"/>
+    <nodeMappings nodeName="jParent">
+      <node href="src.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uParent">
+      <node href="trg.uml#//externals/java"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedPackages">
+      <src href="src.xmi#//@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java"/>
+      <trg href="trg.uml#//externals/java/lang"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java"/>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="#//@tripleMatches.27/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <createdElements href="trg.uml#//externals/java/lang"/>
+    <createdElements href="corr.xmi#//@correspondences.6"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <createdElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.27/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.27/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.37 //@tripleMatches.33 //@tripleMatches.5" ruleName="InterfaceDec2Interface">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.2"/>
+    <contextElements href="trg.uml#//externals/java/lang"/>
+    <contextElements href="corr.xmi#//@correspondences.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlInterface">
+      <node href="trg.uml#//externals/java/lang/Comparable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/lang"/>
+      <trg href="trg.uml#//externals/java/lang/Comparable"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <targetElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.28"/>
+    <createdElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.28"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeLong">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.29/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.1"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/long"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/long"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.29/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/long"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.16"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.16"/>
+    <createdElements href="src.xmi#//@orphanTypes.1"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/long"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.5"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <contextElements href="corr.xmi#//@correspondences.21"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="#//@tripleMatches.30/@containedEdges.3"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+    <targetElements href="#//@tripleMatches.30/@containedEdges.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.30"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.3"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4/id"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.5"/>
+    <createdElements href="corr.xmi#//@correspondences.30"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeShort">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.7"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/short"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/short"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/short"/>
+    <targetElements href="#//@tripleMatches.31/@containedEdges.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.13"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/short"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@orphanTypes.7"/>
+    <createdElements href="corr.xmi#//@correspondences.13"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.1" ruleName="PrimitiveTypeDouble">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.32/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@orphanTypes.3"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="#//@tripleMatches.32/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.17"/>
+    <createdElements href="corr.xmi#//@correspondences.17"/>
+    <createdElements href="#//@tripleMatches.32/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.32/@containedEdges.1"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+    <createdElements href="src.xmi#//@orphanTypes.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="FieldDec2Property">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.5"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.6"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.8"/>
+    <contextElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="corr.xmi#//@correspondences.28"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="vdf">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jOwnerType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jField">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/Comparable"/>
+    </nodeMappings>
+    <nodeMappings nodeName="property">
+      <node href="trg.uml#//List/(default%20package)/List/comp"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uOwnerType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedAttribute">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/comp"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/comp"/>
+      <trg href="trg.uml#//externals/java/lang/Comparable"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/comp"/>
+    <targetElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.28"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.33"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@fragments.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type"/>
+    <createdElements href="corr.xmi#//@correspondences.33"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.4"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/comp"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.8"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeByte">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.34/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.8"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/byte"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/byte"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/byte"/>
+    <targetElements href="#//@tripleMatches.34/@containedEdges.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.15"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.0"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/byte"/>
+    <createdElements href="corr.xmi#//@correspondences.15"/>
+    <createdElements href="src.xmi#//@orphanTypes.8"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.39 //@tripleMatches.13" ruleName="MethodDec2Operation4Class">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.35/@containedEdges.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <sourceElements href="#//@tripleMatches.35/@containedEdges.2"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="trg.uml#//List/(default%20package)/List/remove.3"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <targetElements href="#//@tripleMatches.35/@containedEdges.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.26"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.1"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <createdElements href="corr.xmi#//@correspondences.26"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.15 //@tripleMatches.38 //@tripleMatches.22 //@tripleMatches.33 //@tripleMatches.2 //@tripleMatches.45 //@tripleMatches.8 //@tripleMatches.44 //@tripleMatches.21 //@tripleMatches.4 //@tripleMatches.35 //@tripleMatches.23" ruleName="ClassDec2Class">
+    <sourceElements href="src.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.2"/>
+    <contextElements href="src.xmi#//@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)"/>
+    <contextElements href="corr.xmi#//@correspondences.5"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//List/(default%20package)"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/(default%20package)"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)"/>
+    <targetElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.5"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <createdElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.2"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2InterfaceRealization">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+    <sourceElements href="#//@tripleMatches.37/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.37/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.37/@containedEdges.5"/>
+    <contextElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="corr.xmi#//@correspondences.28"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <nodeMappings nodeName="typeAcc">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceRealization">
+      <node href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterface">
+      <node href="trg.uml#//externals/java/lang/Comparable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementingClassifier">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="interfaceRealization">
+      <src href="trg.uml#//externals/java/lang/String"/>
+      <trg href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="contract">
+      <src href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+      <trg href="trg.uml#//externals/java/lang/Comparable"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Comparable"/>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="#//@tripleMatches.37/@containedEdges.0"/>
+    <targetElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+    <targetElements href="#//@tripleMatches.37/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.37/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.28"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.36"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.1"/>
+    <createdElements href="trg.uml#//externals/java/lang/String/@interfaceRealization.1"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.5"/>
+    <createdElements href="corr.xmi#//@correspondences.36"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.30 //@tripleMatches.7 //@tripleMatches.1 //@tripleMatches.46 //@tripleMatches.22" ruleName="MethodDec2Operation4Class">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="#//@tripleMatches.38/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.38/@containedEdges.2"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.38/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="#//@tripleMatches.38/@containedEdges.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <createdElements href="#//@tripleMatches.38/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <createdElements href="corr.xmi#//@correspondences.21"/>
+    <createdElements href="#//@tripleMatches.38/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.38/@containedEdges.2"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <createdElements href="#//@tripleMatches.38/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.5"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <contextElements href="corr.xmi#//@correspondences.26"/>
+    <contextElements href="corr.xmi#//@correspondences.20"/>
+    <contextElements href="trg.uml#//externals/java/lang/String"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.3"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.3"/>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+    <targetElements href="#//@tripleMatches.39/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.39/@containedEdges.4"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.26"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.37"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0/@type"/>
+    <createdElements href="corr.xmi#//@correspondences.37"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.3/id"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.4"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@parameters.0"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.46 //@tripleMatches.14" ruleName="ClassDec2Class">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="#//@tripleMatches.40/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.40/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <contextElements href="trg.uml#//externals/java/lang"/>
+    <contextElements href="corr.xmi#//@correspondences.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/Object"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/lang"/>
+      <trg href="trg.uml#//externals/java/lang/Object"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="#//@tripleMatches.40/@containedEdges.0"/>
+    <targetElements href="trg.uml#//externals/java/lang/Object"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.24"/>
+    <createdElements href="#//@tripleMatches.40/@containedEdges.0"/>
+    <createdElements href="trg.uml#//externals/java/lang/Object"/>
+    <createdElements href="#//@tripleMatches.40/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.24"/>
+    <createdElements href="#//@tripleMatches.40/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.11 //@tripleMatches.7" ruleName="PrimitiveTypeInt">
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.41/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@orphanTypes.0"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="corr.xmi#//@correspondences.1"/>
+    <contextElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <nodeMappings nodeName="jm">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="src.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umpt">
+      <node href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </nodeMappings>
+    <nodeMappings nodeName="up">
+      <node href="trg.uml#//List/Common%20Java%20datatypes"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="src.xmi#/"/>
+      <trg href="src.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+      <trg href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes"/>
+    <targetElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <targetElements href="#//@tripleMatches.41/@containedEdges.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.12"/>
+    <createdElements href="#//@tripleMatches.41/@containedEdges.0"/>
+    <createdElements href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+    <createdElements href="src.xmi#//@orphanTypes.0"/>
+    <createdElements href="corr.xmi#//@correspondences.12"/>
+    <createdElements href="#//@tripleMatches.41/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.39 //@tripleMatches.37 //@tripleMatches.16 //@tripleMatches.2 //@tripleMatches.25 //@tripleMatches.30" ruleName="ClassDec2Class">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.42/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.42/@containedEdges.2"/>
+    <contextElements href="trg.uml#//externals/java/lang"/>
+    <contextElements href="corr.xmi#//@correspondences.6"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlPackage">
+      <node href="trg.uml#//externals/java/lang"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/String"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packagedElement">
+      <src href="trg.uml#//externals/java/lang"/>
+      <trg href="trg.uml#//externals/java/lang/String"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang"/>
+    <targetElements href="#//@tripleMatches.42/@containedEdges.0"/>
+    <targetElements href="trg.uml#//externals/java/lang/String"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.20"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.42/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.42/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.20"/>
+    <createdElements href="trg.uml#//externals/java/lang/String"/>
+    <createdElements href="#//@tripleMatches.42/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypeAccess2InterfaceRealization">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+    <sourceElements href="#//@tripleMatches.43/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.43/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.43/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.22"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <contextElements href="trg.uml#//externals/java/io/Serializable"/>
+    <contextElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <contextElements href="corr.xmi#//@correspondences.25"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <nodeMappings nodeName="typeAcc">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterfaceDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="interfaceRealization">
+      <node href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//externals/java/lang/Boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="superInterface">
+      <node href="trg.uml#//externals/java/io/Serializable"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="contract">
+      <src href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+      <trg href="trg.uml#//externals/java/io/Serializable"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="interfaceRealization">
+      <src href="trg.uml#//externals/java/lang/Boolean"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementingClassifier">
+      <src href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/io/Serializable"/>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+    <targetElements href="#//@tripleMatches.43/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.43/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.43/@containedEdges.5"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.25"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.22"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.44"/>
+    <createdElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.0"/>
+    <createdElements href="trg.uml#//externals/java/lang/Boolean/@interfaceRealization.0"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.1"/>
+    <createdElements href="corr.xmi#//@correspondences.44"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.43/@containedEdges.5"/>
+  </tripleMatches>
+  <tripleMatches ruleName="FieldDec2Property">
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.5"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.6"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.8"/>
+    <sourceElements href="#//@tripleMatches.44/@containedEdges.4"/>
+    <contextElements href="corr.xmi#//@correspondences.22"/>
+    <contextElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="jType">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="vdf">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jOwnerType">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jField">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/Boolean"/>
+    </nodeMappings>
+    <nodeMappings nodeName="property">
+      <node href="trg.uml#//List/(default%20package)/List/bool"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uOwnerType">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/bool"/>
+      <trg href="trg.uml#//externals/java/lang/Boolean"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="variablesContainer">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedAttribute">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/bool"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="fragments">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Boolean"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="#//@tripleMatches.44/@containedEdges.0"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/bool"/>
+    <targetElements href="#//@tripleMatches.44/@containedEdges.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.22"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.42"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.1"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/bool"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.2"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@type"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.4"/>
+    <createdElements href="corr.xmi#//@correspondences.42"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.6"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@fragments.0"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.44/@containedEdges.8"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18" ruleName="MethodDec2Operation4Class">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.45/@containedEdges.0"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    <sourceElements href="#//@tripleMatches.45/@containedEdges.3"/>
+    <contextElements href="corr.xmi#//@correspondences.8"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="umlClass">
+      <node href="trg.uml#//List/(default%20package)/List"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedOperation">
+      <src href="trg.uml#//List/(default%20package)/List"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="class">
+      <src href="trg.uml#//List/(default%20package)/List/remove"/>
+      <trg href="trg.uml#//List/(default%20package)/List"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//List/(default%20package)/List"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove"/>
+    <targetElements href="#//@tripleMatches.45/@containedEdges.1"/>
+    <targetElements href="#//@tripleMatches.45/@containedEdges.2"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.19"/>
+    <createdElements href="#//@tripleMatches.45/@containedEdges.0"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.4"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove"/>
+    <createdElements href="corr.xmi#//@correspondences.19"/>
+    <createdElements href="#//@tripleMatches.45/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.45/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.45/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="VariableDec2Parameter">
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <sourceElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <sourceElements href="#//@tripleMatches.46/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.46/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.46/@containedEdges.2"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+    <sourceElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+    <sourceElements href="#//@tripleMatches.46/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.46/@containedEdges.5"/>
+    <contextElements href="trg.uml#//externals/java/lang/Object"/>
+    <contextElements href="corr.xmi#//@correspondences.24"/>
+    <contextElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    <contextElements href="corr.xmi#//@correspondences.21"/>
+    <contextElements href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    <contextElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <nodeMappings nodeName="method">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jtype">
+      <node href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="param">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+    </nodeMappings>
+    <nodeMappings nodeName="uType">
+      <node href="trg.uml#//externals/java/lang/Object"/>
+    </nodeMappings>
+    <nodeMappings nodeName="operation">
+      <node href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+      <trg href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+      <trg href="trg.uml#//externals/java/lang/Object"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.4"/>
+      <trg href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedParameter">
+      <src href="trg.uml#//List/(default%20package)/List/remove.4"/>
+      <trg href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+    </containedEdges>
+    <targetElements href="trg.uml#//externals/java/lang/Object"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4"/>
+    <targetElements href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+    <targetElements href="#//@tripleMatches.46/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.46/@containedEdges.6"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.24"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.21"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.43"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.2"/>
+    <createdElements href="trg.uml#//List/(default%20package)/List/remove.4/obj"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2/@type"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.3"/>
+    <createdElements href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.2"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.4"/>
+    <createdElements href="corr.xmi#//@correspondences.43"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.46/@containedEdges.6"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>

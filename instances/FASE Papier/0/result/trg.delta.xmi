@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <targetModel href="trg.uml#/"/>
+  <addedEdges trg="//@addedNodes.7" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/index"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.4" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/obj"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.5" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.1" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/obj"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.6" name="packagedElement">
+    <src href="trg.uml#//List/Common%20Java%20datatypes"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.1"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/obj"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove.1"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.2" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove.1/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.8" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.3" name="lowerValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/index"/>
+  </addedEdges>
+  <addedEdges name="operation">
+    <src href="trg.uml#//List/(default%20package)/List/remove/index"/>
+    <trg href="trg.uml#//List/(default%20package)/List/remove"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.9" name="packagedElement">
+    <src href="trg.uml#//source%20references"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="upperValue">
+    <src href="trg.uml#//List/(default%20package)/List/remove/@ownedParameter.0"/>
+  </addedEdges>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+  <addedNodes xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  <addedNodes xsi:type="uml:LiteralInteger"/>
+  <addedNodes xsi:type="uml:Artifact" name="List.java" visibility="public" fileName="C:\Dropbox\ES\Student Folders\Lars Schulte\Modisco\List\src\List.java"/>
+</org.moflon.tgg.runtime:DeltaSpecification>

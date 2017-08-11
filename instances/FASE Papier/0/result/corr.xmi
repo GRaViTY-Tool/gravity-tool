@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MoDiscoTGG="platform:/plugin/MoDiscoTGG/model/MoDiscoTGG.ecore" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <correspondences xsi:type="MoDiscoTGG:JavaModel2UMLPackage">
+    <source href="src.xmi#/"/>
+    <target href="trg.uml#//List"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaModel2UMLPackage">
+    <source href="src.xmi#/"/>
+    <target href="trg.uml#//externals"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaModel2UMLPackage">
+    <source href="src.xmi#/"/>
+    <target href="trg.uml#//List/Common%20Java%20datatypes"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaModel2UMLPackage">
+    <source href="src.xmi#/"/>
+    <target href="trg.uml#//source%20references"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaPackage2UmlPackage">
+    <source href="src.xmi#//@ownedElements.1"/>
+    <target href="trg.uml#//externals/java"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaPackage2UmlPackage">
+    <source href="src.xmi#//@ownedElements.0"/>
+    <target href="trg.uml#//List/(default%20package)"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeInt" href="src.xmi#//@orphanTypes.0"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/int"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeShort" href="src.xmi#//@orphanTypes.7"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/short"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeVoid" href="src.xmi#//@orphanTypes.5"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/void"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeDouble" href="src.xmi#//@orphanTypes.3"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/double"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeFloat" href="src.xmi#//@orphanTypes.2"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/float"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaPackage2UmlPackage">
+    <source href="src.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <target href="trg.uml#//externals/java/lang"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeLong" href="src.xmi#//@orphanTypes.1"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/long"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:ClassDeclaration" href="src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="uml:Class" href="trg.uml#//List/(default%20package)/List"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeByte" href="src.xmi#//@orphanTypes.8"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/byte"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeBoolean" href="src.xmi#//@orphanTypes.4"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/boolean"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:PrimitiveTypeChar" href="src.xmi#//@orphanTypes.6"/>
+    <target xsi:type="uml:PrimitiveType" href="trg.uml#//List/Common%20Java%20datatypes/char"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:MethodDec2Operation">
+    <source href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="trg.uml#//List/(default%20package)/List/remove"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:JavaType2UMLType">
+    <source xsi:type="java:ClassDeclaration" href="src.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="uml:Class" href="trg.uml#//externals/java/lang/Object"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:MethodDec2Operation">
+    <source href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="trg.uml#//List/(default%20package)/List/remove.1"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:VariableDec2Parameter">
+    <source xsi:type="java:SingleVariableDeclaration" href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@parameters.0"/>
+    <target href="trg.uml#//List/(default%20package)/List/remove.1/obj"/>
+  </correspondences>
+  <correspondences xsi:type="MoDiscoTGG:VariableDec2Parameter">
+    <source xsi:type="java:SingleVariableDeclaration" href="src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <target href="trg.uml#//List/(default%20package)/List/remove/index"/>
+  </correspondences>
+  <source href="src.xmi#/"/>
+  <target href="trg.uml#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>
