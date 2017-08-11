@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
+  <packagedElement xsi:type="uml:Model" name="SimpleInterfaces">
+    <packagedElement xsi:type="uml:Package" name="(default package)" visibility="public">
+      <packagedElement xsi:type="uml:Interface" name="PublicInterface" visibility="public"/>
+      <packagedElement xsi:type="uml:Interface" name="PublicInterfaceWithInnerInterfaces" visibility="public">
+        <nestedClassifier xsi:type="uml:Interface" name="PublicInnerInterface" visibility="public"/>
+        <nestedClassifier xsi:type="uml:Interface" name="PackageInnerInterface" visibility="public"/>
+        <nestedClassifier xsi:type="uml:Interface" name="PublicStaticInnerInterface" visibility="public"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Interface" name="PackageInterface" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="Common Java datatypes" visibility="public">
+      <packagedElement xsi:type="uml:PrimitiveType" name="int" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="long" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="float" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="double" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="boolean" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="void" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="char" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="short" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="byte" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="externals"/>
+  <packagedElement xsi:type="uml:Model" name="source references">
+    <packagedElement xsi:type="uml:Artifact" name="PublicInterface.java" visibility="public" fileName="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PublicInterface.java"/>
+    <packagedElement xsi:type="uml:Artifact" name="PublicInterfaceWithInnerInterfaces.java" visibility="public" fileName="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PublicInterfaceWithInnerInterfaces.java"/>
+    <packagedElement xsi:type="uml:Artifact" name="PackageInterface.java" visibility="public" fileName="/home/fabian/Documents/uni/7. Semester/Hiwi/workspaces/workspace-old/SimpleInterfaces/src/PackageInterface.java"/>
+  </packagedElement>
+</uml:Model>

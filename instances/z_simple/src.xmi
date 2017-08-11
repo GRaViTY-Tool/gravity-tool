@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="Simple">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="SimpleA" usagesInTypeAccess="//@orphanTypes.11/@type">
+      <modifier visibility="public" inheritance="final"/>
+      <bodyDeclarations xsi:type="java:EnumDeclaration" originalCompilationUnit="//@compilationUnits.0" name="innerEnum">
+        <modifier visibility="private" static="true"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" originalCompilationUnit="//@compilationUnits.0">
+        <modifier visibility="public" inheritance="final" static="true"/>
+        <type type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+        <fragments originalCompilationUnit="//@compilationUnits.0" name="CONSTANT_VARIABLE">
+          <initializer xsi:type="java:StringLiteral" originalCompilationUnit="//@compilationUnits.0" escapedValue="&quot;hello&quot;"/>
+        </fragments>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="doNothingOnNewMap">
+        <modifier visibility="public" static="true"/>
+        <body originalCompilationUnit="//@compilationUnits.0">
+          <statements xsi:type="java:ExpressionStatement" originalCompilationUnit="//@compilationUnits.0">
+            <expression xsi:type="java:MethodInvocation" originalCompilationUnit="//@compilationUnits.0" method="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.7">
+              <expression xsi:type="java:ClassInstanceCreation" originalCompilationUnit="//@compilationUnits.0" method="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.12">
+                <type type="//@orphanTypes.11"/>
+              </expression>
+            </expression>
+          </statements>
+        </body>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" originalCompilationUnit="//@compilationUnits.0">
+        <modifier visibility="public"/>
+        <type type="//@orphanTypes.0"/>
+        <fragments originalCompilationUnit="//@compilationUnits.0" name="a"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" originalCompilationUnit="//@compilationUnits.0">
+        <modifier visibility="public" inheritance="final"/>
+        <type type="//@orphanTypes.0"/>
+        <fragments originalCompilationUnit="//@compilationUnits.0" name="b">
+          <initializer xsi:type="java:NumberLiteral" originalCompilationUnit="//@compilationUnits.0" tokenValue="29"/>
+        </fragments>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:FieldDeclaration" originalCompilationUnit="//@compilationUnits.0">
+        <modifier visibility="protected" static="true" transient="true" volatile="true"/>
+        <type type="//@orphanTypes.4"/>
+        <fragments originalCompilationUnit="//@compilationUnits.0" name="y"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="nothing">
+        <modifier visibility="protected" inheritance="final" static="true" strictfp="true" synchronized="true"/>
+        <body originalCompilationUnit="//@compilationUnits.0">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.0">
+            <expression xsi:type="java:BooleanLiteral" originalCompilationUnit="//@compilationUnits.0"/>
+          </statements>
+        </body>
+        <returnType type="//@orphanTypes.4"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="doNothing" usages="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@expression">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.0"/>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="getParameter">
+        <modifier visibility="private"/>
+        <body originalCompilationUnit="//@compilationUnits.0"/>
+        <parameters originalCompilationUnit="//@compilationUnits.0" name="parameter">
+          <modifier/>
+          <type type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+        </parameters>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="entrySet">
+        <annotations originalCompilationUnit="//@compilationUnits.0">
+          <type type="//@ownedElements.1/@ownedPackages.1/@ownedElements.4"/>
+        </annotations>
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.0">
+          <statements xsi:type="java:ReturnStatement" originalCompilationUnit="//@compilationUnits.0">
+            <expression xsi:type="java:NullLiteral" originalCompilationUnit="//@compilationUnits.0"/>
+          </statements>
+        </body>
+        <returnType type="//@orphanTypes.13"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="innerClass">
+        <modifier visibility="private" inheritance="abstract" static="true"/>
+        <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="innerDoNothing">
+          <modifier visibility="public"/>
+          <body originalCompilationUnit="//@compilationUnits.0"/>
+          <returnType type="//@orphanTypes.5"/>
+        </bodyDeclarations>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="innerClass2">
+        <modifier visibility="private" inheritance="final" static="true"/>
+        <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="innerDoNothing2">
+          <modifier visibility="public"/>
+          <body originalCompilationUnit="//@compilationUnits.0"/>
+          <returnType type="//@orphanTypes.5"/>
+        </bodyDeclarations>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:ConstructorDeclaration" name="SimpleA" proxy="true" usages="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@expression/@expression"/>
+      <superInterfaces type="//@orphanTypes.10"/>
+      <typeParameters originalCompilationUnit="//@compilationUnits.0" name="T" usagesInTypeAccess="//@orphanTypes.9/@typeArguments.1 //@orphanTypes.10/@typeArguments.1 //@orphanTypes.12/@typeArguments.1"/>
+      <superClass type="//@orphanTypes.9"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true" usagesInPackageAccess="//@orphanTypes.12/@type/@qualifier/@qualifier/@qualifier">
+    <ownedPackages name="util" proxy="true" usagesInPackageAccess="//@orphanTypes.12/@type/@qualifier/@qualifier">
+      <ownedElements xsi:type="java:ClassDeclaration" name="AbstractMap" proxy="true" usagesInImports="//@compilationUnits.0/@imports.0" usagesInTypeAccess="//@orphanTypes.9/@type">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+        <typeParameters name="K" proxy="true"/>
+        <typeParameters name="V" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Map" proxy="true" usagesInImports="//@compilationUnits.0/@imports.1" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0 //@orphanTypes.10/@type //@orphanTypes.12/@type/@qualifier">
+        <bodyDeclarations xsi:type="java:InterfaceDeclaration" name="Entry" proxy="true" usagesInTypeAccess="//@orphanTypes.12/@type">
+          <typeParameters name="K" proxy="true"/>
+          <typeParameters name="V" proxy="true"/>
+        </bodyDeclarations>
+        <typeParameters name="K" proxy="true"/>
+        <typeParameters name="V" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Set" proxy="true" usagesInImports="//@compilationUnits.0/@imports.2" usagesInTypeAccess="//@orphanTypes.13/@type">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.3"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Collection" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.2/@superInterfaces.0">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+        <typeParameters name="E" proxy="true"/>
+      </ownedElements>
+    </ownedPackages>
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Iterable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.3/@superInterfaces.0">
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:ClassDeclaration" name="String" proxy="true" usagesInTypeAccess="//@orphanTypes.9/@typeArguments.0 //@orphanTypes.10/@typeArguments.0 //@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@type //@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@parameters.0/@type //@orphanTypes.12/@typeArguments.0">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.2/@ownedElements.0"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.2"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.3"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Comparable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.1/@superInterfaces.1">
+        <typeParameters name="T" proxy="true"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="CharSequence" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.1/@superInterfaces.2"/>
+      <ownedElements xsi:type="java:AnnotationTypeDeclaration" name="Override" proxy="true" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.9/@annotations.0/@type"/>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.1/@superInterfaces.0"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@type //@ownedElements.0/@ownedElements.0/@bodyDeclarations.4/@type"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.5/@type //@ownedElements.0/@ownedElements.0/@bodyDeclarations.6/@returnType"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.7/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.8/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.10/@bodyDeclarations.0/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.11/@bodyDeclarations.0/@returnType"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <orphanTypes xsi:type="java:ParameterizedType" name="java.util.AbstractMap&lt;java.lang.String,T>" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@superClass">
+    <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <typeArguments type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <typeArguments type="//@ownedElements.0/@ownedElements.0/@typeParameters.0"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ParameterizedType" name="java.util.Map&lt;java.lang.String,T>" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@superInterfaces.0">
+    <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <typeArguments type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <typeArguments type="//@ownedElements.0/@ownedElements.0/@typeParameters.0"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ParameterizedType" name="SimpleA&lt;java.lang.Object>" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@body/@statements.0/@expression/@expression/@type">
+    <type type="//@ownedElements.0/@ownedElements.0"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ParameterizedType" name="java.util.Map.Entry&lt;java.lang.String,T>" usagesInTypeAccess="//@orphanTypes.13/@typeArguments.0">
+    <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@bodyDeclarations.0">
+      <qualifier xsi:type="java:TypeAccess" type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1">
+        <qualifier xsi:type="java:PackageAccess" package="//@ownedElements.1/@ownedPackages.0">
+          <qualifier package="//@ownedElements.1"/>
+        </qualifier>
+      </qualifier>
+    </type>
+    <typeArguments type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+    <typeArguments type="//@ownedElements.0/@ownedElements.0/@typeParameters.0"/>
+  </orphanTypes>
+  <orphanTypes xsi:type="java:ParameterizedType" name="java.util.Set&lt;java.util.Map.Entry&lt;java.lang.String,T>>" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.9/@returnType">
+    <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+    <typeArguments type="//@orphanTypes.12"/>
+  </orphanTypes>
+  <compilationUnits name="SimpleA.java" originalFilePath="/home/fabian/uni/hiwi/workspace_old/Simple/src/SimpleA.java" types="//@ownedElements.0/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+  </compilationUnits>
+</java:Model>

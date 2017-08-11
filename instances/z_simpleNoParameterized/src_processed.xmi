@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="SimpleNoParameters">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="NoParameterizedClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:MethodDeclaration" originalCompilationUnit="//@compilationUnits.0" name="getString">
+        <modifier visibility="public"/>
+        <parameters originalCompilationUnit="//@compilationUnits.0" name="s">
+          <modifier/>
+          <type type="//@ownedElements.1/@ownedPackages.1/@ownedElements.2"/>
+        </parameters>
+        <returnType type="//@ownedElements.1/@ownedPackages.1/@ownedElements.2"/>
+      </bodyDeclarations>
+      <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <superClass type="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:ClassDeclaration" name="IOException" proxy="true" usagesInImports="//@compilationUnits.0/@imports.0" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@superClass">
+        <superClass type="//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInImports="//@compilationUnits.0/@imports.1" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.1/@superInterfaces.0 //@ownedElements.0/@ownedElements.0/@superInterfaces.0 //@ownedElements.1/@ownedPackages.1/@ownedElements.2/@superInterfaces.0"/>
+    </ownedPackages>
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:ClassDeclaration" name="Exception" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superClass">
+        <superClass type="//@ownedElements.1/@ownedPackages.1/@ownedElements.1"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:ClassDeclaration" name="Throwable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.0/@superClass">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:ClassDeclaration" name="String" proxy="true" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType //@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.3"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.4"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Comparable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.2/@superInterfaces.1"/>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="CharSequence" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.1/@ownedElements.2/@superInterfaces.2"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="NoParameterizedClass.java" originalFilePath="D:\uni\Hiwi\altes eMoflon\workspace\SimpleNoParameters\src\NoParameterizedClass.java" types="//@ownedElements.0/@ownedElements.0">
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <imports originalCompilationUnit="//@compilationUnits.0" importedElement="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+  </compilationUnits>
+</java:Model>

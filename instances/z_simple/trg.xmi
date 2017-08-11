@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
+  <packagedElement xsi:type="uml:Model" name="Simple">
+    <packagedElement xsi:type="uml:Package" name="(default package)" visibility="public">
+      <packagedElement xsi:type="uml:Class" name="SimpleA">
+        <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="SimpleA&lt;T>">
+          <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+            <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+          </ownedParameter>
+        </ownedTemplateSignature>
+        <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.7"/>
+        <ownedAttribute name="CONSTANT_VARIABLE" visibility="public" isStatic="true" type="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute name="a" visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.0">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute name="b" visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.0">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute name="y" visibility="public" isStatic="true" type="//@packagedElement.0/@packagedElement.1/@packagedElement.4">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedAttribute>
+        <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.4"/>
+        <ownedOperation name="doNothingOnNewMap" visibility="public">
+          <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.5" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="nothing" visibility="protected">
+          <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.4" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="doNothing" visibility="public">
+          <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.5" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="getParameter" visibility="private">
+          <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.5" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+          <ownedParameter name="parameter" visibility="public" type="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="entrySet" visibility="public">
+          <ownedParameter visibility="public" type="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.5" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="-1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation name="SimpleA" visibility="public"/>
+        <nestedClassifier xsi:type="uml:Enumeration" name="innerEnum" visibility="public"/>
+        <nestedClassifier xsi:type="uml:Class" name="innerClass" visibility="public">
+          <ownedOperation name="innerDoNothing" visibility="public">
+            <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.5" direction="return">
+              <lowerValue xsi:type="uml:LiteralInteger"/>
+              <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+        </nestedClassifier>
+        <nestedClassifier xsi:type="uml:Class" name="innerClass2" visibility="public">
+          <ownedOperation name="innerDoNothing2" visibility="public">
+            <ownedParameter visibility="public" type="//@packagedElement.0/@packagedElement.1/@packagedElement.5" direction="return">
+              <lowerValue xsi:type="uml:LiteralInteger"/>
+              <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+        </nestedClassifier>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Dependency" client="//@packagedElement.0/@packagedElement.0/@packagedElement.0" supplier="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0"/>
+      <packagedElement xsi:type="uml:Dependency" client="//@packagedElement.0/@packagedElement.0/@packagedElement.0" supplier="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+      <packagedElement xsi:type="uml:Dependency" client="//@packagedElement.0/@packagedElement.0/@packagedElement.0" supplier="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.2"/>
+      <packagedElement xsi:type="uml:Class" name="SimpleA&lt;java.lang.Object>"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="Common Java datatypes" visibility="public">
+      <packagedElement xsi:type="uml:PrimitiveType" name="int" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="long" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="float" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="double" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="boolean" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="void" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="char" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="short" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="byte" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="externals">
+    <packagedElement xsi:type="uml:Package" name="java" visibility="public">
+      <packagedElement xsi:type="uml:Package" name="util" visibility="public">
+        <packagedElement xsi:type="uml:Class" name="AbstractMap">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractMap&lt;K, V>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="K"/>
+            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="V"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Map">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Map&lt;K, V>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="K"/>
+            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="V"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+          <nestedClassifier xsi:type="uml:Interface" name="Entry">
+            <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Entry&lt;K, V>">
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
+              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
+              </ownedParameter>
+            </ownedTemplateSignature>
+          </nestedClassifier>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Set">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Set&lt;E>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="E"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+          <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.3"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Collection">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Collection&lt;E>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="E"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+          <generalization general="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.0"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="java.util.Map&lt;java.lang.String,T>">
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@ownedTemplateSignature">
+            <parameterSubstitution actual="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1" formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@ownedTemplateSignature/@ownedParameter.0"/>
+          </templateBinding>
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@ownedTemplateSignature">
+            <parameterSubstitution formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@ownedTemplateSignature/@ownedParameter.1"/>
+          </templateBinding>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="java.util.Map.Entry&lt;java.lang.String,T>">
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@nestedClassifier.0/@ownedTemplateSignature">
+            <parameterSubstitution actual="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1" formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@nestedClassifier.0/@ownedTemplateSignature/@ownedParameter.0"/>
+          </templateBinding>
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@nestedClassifier.0/@ownedTemplateSignature">
+            <parameterSubstitution formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1/@nestedClassifier.0/@ownedTemplateSignature/@ownedParameter.1"/>
+          </templateBinding>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="java.util.Set&lt;java.util.Map.Entry&lt;java.lang.String,T>>">
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.2/@ownedTemplateSignature">
+            <parameterSubstitution actual="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.5" formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.2/@ownedTemplateSignature/@ownedParameter.0"/>
+          </templateBinding>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Class" name="java.util.AbstractMap&lt;java.lang.String,T>">
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature">
+            <parameterSubstitution actual="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.1" formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature/@ownedParameter.0"/>
+          </templateBinding>
+          <templateBinding signature="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature">
+            <parameterSubstitution formal="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature/@ownedParameter.1"/>
+          </templateBinding>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Package" name="lang" visibility="public">
+        <packagedElement xsi:type="uml:Interface" name="Iterable">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Iterable&lt;T>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Class" name="String" visibility="public">
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.2/@packagedElement.0"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.2"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.3"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Comparable">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>
+        <packagedElement xsi:type="uml:Interface" name="Override" visibility="public"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Package" name="io" visibility="public">
+        <packagedElement xsi:type="uml:Interface" name="Serializable" visibility="public"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="source references">
+    <packagedElement xsi:type="uml:Artifact" name="SimpleA.java" visibility="public" fileName="/home/fabian/uni/hiwi/workspace_old/Simple/src/SimpleA.java"/>
+  </packagedElement>
+</uml:Model>

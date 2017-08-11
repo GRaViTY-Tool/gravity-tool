@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="SimpleGenericInterface">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.0" name="InterfaceA" usagesInTypeAccess="//@orphanTypes.9/@type">
+      <modifier visibility="public"/>
+    </ownedElements>
+    <ownedElements xsi:type="java:InterfaceDeclaration" originalCompilationUnit="//@compilationUnits.1" name="InterfaceB">
+      <modifier visibility="public"/>
+      <superInterfaces type="//@orphanTypes.9"/>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:ClassDeclaration" name="String" proxy="true" usagesInTypeAccess="//@orphanTypes.9/@typeArguments.0">
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+        <superInterfaces type="//@ownedElements.1/@ownedPackages.0/@ownedElements.2"/>
+      </ownedElements>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Comparable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.1"/>
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="CharSequence" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.2"/>
+    </ownedPackages>
+    <ownedPackages name="io" proxy="true">
+      <ownedElements xsi:type="java:InterfaceDeclaration" name="Serializable" proxy="true" usagesInTypeAccess="//@ownedElements.1/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <orphanTypes xsi:type="java:ParameterizedType" name="InterfaceA&lt;java.lang.String>" usagesInTypeAccess="//@ownedElements.0/@ownedElements.1/@superInterfaces.0">
+    <type type="//@ownedElements.0/@ownedElements.0"/>
+    <typeArguments type="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+  </orphanTypes>
+  <compilationUnits name="InterfaceA.java" originalFilePath="D:\uni\Hiwi\altes eMoflon\workspace\SimpleGenericInterface\src\InterfaceA.java" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="InterfaceB.java" originalFilePath="D:\uni\Hiwi\altes eMoflon\workspace\SimpleGenericInterface\src\InterfaceB.java" types="//@ownedElements.0/@ownedElements.1"/>
+</java:Model>

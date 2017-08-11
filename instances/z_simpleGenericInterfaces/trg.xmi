@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="root model">
+  <packagedElement xsi:type="uml:Model" name="SimpleGenericInterface">
+    <packagedElement xsi:type="uml:Package" name="(default package)" visibility="public">
+      <packagedElement xsi:type="uml:Interface" name="InterfaceA">
+        <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="InterfaceA&lt;T>">
+          <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+            <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+          </ownedParameter>
+        </ownedTemplateSignature>
+        <ownedOperation name="doNothing" visibility="public">
+          <ownedParameter visibility="public" direction="return">
+            <lowerValue xsi:type="uml:LiteralInteger"/>
+            <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Interface" name="InterfaceB" visibility="public">
+        <generalization general="//@packagedElement.0/@packagedElement.0/@packagedElement.2"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Interface" name="InterfaceA&lt;java.lang.String>">
+        <templateBinding signature="//@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature">
+          <parameterSubstitution actual="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.0" formal="//@packagedElement.0/@packagedElement.0/@packagedElement.0/@ownedTemplateSignature/@ownedParameter.0"/>
+        </templateBinding>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Package" name="Common Java datatypes" visibility="public">
+      <packagedElement xsi:type="uml:PrimitiveType" name="int" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="long" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="float" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="double" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="boolean" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="void" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="char" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="short" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="byte" visibility="public"/>
+      <packagedElement xsi:type="uml:PrimitiveType" name="string" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="externals">
+    <packagedElement xsi:type="uml:Package" name="java" visibility="public">
+      <packagedElement xsi:type="uml:Package" name="lang" visibility="public">
+        <packagedElement xsi:type="uml:Class" name="String" visibility="public">
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.1/@packagedElement.0"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.1"/>
+          <interfaceRealization contract="//@packagedElement.1/@packagedElement.0/@packagedElement.0/@packagedElement.2"/>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="Comparable">
+          <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>">
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
+              <ownedParameteredElement xsi:type="uml:Class" name="T"/>
+            </ownedParameter>
+          </ownedTemplateSignature>
+        </packagedElement>
+        <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Package" name="io" visibility="public">
+        <packagedElement xsi:type="uml:Interface" name="Serializable" visibility="public"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="source references">
+    <packagedElement xsi:type="uml:Artifact" name="InterfaceA.java" visibility="public" fileName="D:\uni\Hiwi\altes eMoflon\workspace\SimpleGenericInterface\src\InterfaceA.java"/>
+    <packagedElement xsi:type="uml:Artifact" name="InterfaceB.java" visibility="public" fileName="D:\uni\Hiwi\altes eMoflon\workspace\SimpleGenericInterface\src\InterfaceB.java"/>
+  </packagedElement>
+</uml:Model>
