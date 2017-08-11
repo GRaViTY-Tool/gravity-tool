@@ -11,7 +11,7 @@
 	}
 	
 	jContainer:TypeDeclaration {
-		++-bodyDeclarations->nonParamType
+		-bodyDeclarations->nonParamType
 	}
 	
 	++parameterizedType:ParameterizedType {
