@@ -1,0 +1,23 @@
+#using MoDiscoTGG.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property4Enum #extends FieldDec2Property4_Abstract #with MoDiscoTGG
+
+#source {
+}
+
+#target {
+	uOwnerType : Enumeration{
+		++-ownedAttribute->feature
+	}
+	
+	++feature:Property
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

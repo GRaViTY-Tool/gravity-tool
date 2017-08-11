@@ -154,7 +154,7 @@ public class ModelProcessor {
 			} else if (next instanceof AnonymousClassDeclaration) {
 				deletes.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
-				if (((Block) next).eContainer() instanceof AbstractMethodDeclaration)
+//				if (((Block) next).eContainer() instanceof AbstractMethodDeclaration)
 					optionalDeletes.add((Block) next);
 			} else if (next instanceof Javadoc) {
 				optionalDeletes.add((Javadoc) next);
