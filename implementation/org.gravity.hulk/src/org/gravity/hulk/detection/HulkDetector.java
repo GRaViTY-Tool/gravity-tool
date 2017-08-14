@@ -25,18 +25,18 @@ import org.moflon.core.dfs.DfsFactory;
 import org.moflon.core.dfs.Node;
 
 public class HulkDetector {
-	
+
 	private Hashtable<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
-	
+
 	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
 		initialized = new HashSet<>();
 	}
-	
-	private List<HDetector> getSorted(HDetector detector){
+
+	private List<HDetector> getSorted(HDetector detector) {
 		initDFS().processNode(detector);
 
 		Comparator<Node> comp = new Comparator<Node>() {
@@ -57,8 +57,9 @@ public class HulkDetector {
 		sorted.sort(comp);
 		return sorted;
 	}
-	
-	private void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processed_detectors, boolean verbose){
+
+	private void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processed_detectors,
+			boolean verbose) {
 		List<HDetector> sorted = getSorted(detector);
 		for (HDetector n : sorted) {
 			long t2 = 0;
@@ -66,9 +67,30 @@ public class HulkDetector {
 				if (worklist.contains(n)) {
 					worklist.remove(n);
 				}
-				if(verbose){
+				if (verbose) {
 					t2 = System.currentTimeMillis();
 					System.out.println(t2 + " Hulk " + n.getGuiName());
+				}
+				if (n instanceof HRelativeDetector) {
+					HRelativeDetector relativeDetector = (HRelativeDetector) n;
+					String key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");
+					if (thresholds.containsKey(key)) {
+						if (!initialized.contains(detector)) {
+							relativeDetector.setRelative(false);
+							String value = thresholds.get(key);
+							HRelativeValueConstants constant = HRelativeValueConstants.getByName(value);
+							if (constant != null) {
+								relativeDetector.setThreshold(relativeDetector.calculateRelativeThreshold(constant));
+							} else {
+								Double number = Double.valueOf(value);
+								if (number != null) {
+									relativeDetector.setThreshold(number.doubleValue());
+								} else {
+									throw new RuntimeException();
+								}
+							}
+						}
+					}
 				}
 				if (n.detect(hulk.getApg())) {
 					n.setPostTraversal(0);
@@ -77,50 +99,31 @@ public class HulkDetector {
 				} else {
 					System.err.println(Messages.getString("detector.failed") + n); //$NON-NLS-1$
 				}
-				if(verbose){
+				if (verbose) {
 					long t3 = System.currentTimeMillis();
 					System.out.println(t3 + " Hulk " + n.getGuiName() + " - done " + (t3 - t2) + "ms");
 				}
 			}
 		}
 	}
-	
-	
-	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors){
+
+	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors) {
 		return detectSelectedAntiPattern(worklist, processed_detectors, true);
 	}
-	
-	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors, boolean verbose){
+
+	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors,
+			boolean verbose) {
 		long h0 = 0;
-		if(verbose){
+		if (verbose) {
 			h0 = System.currentTimeMillis();
 			System.out.println(h0 + " Hulk Anti-Pattern Detection");
 		}
 		while (!worklist.isEmpty()) {
 			HDetector detector = worklist.pop();
-			if (detector instanceof HRelativeDetector) {
-				HRelativeDetector relativeDetector = (HRelativeDetector) detector;
-				if(thresholds.containsKey(relativeDetector.getClass().getName())){
-					relativeDetector.setRelative(true);
-					if(!initialized.contains(detector)){
-						String value = thresholds.get(relativeDetector.getClass().getName());
-						HRelativeValueConstants constant = HRelativeValueConstants.getByName(value);
-						if(constant!=null){
-							relativeDetector.setThreshold(relativeDetector.calculateRelativeThreshold(constant));
-						}
-						Double number = Double.valueOf(value); 
-						if(number!=null){
-							relativeDetector.setThreshold(number.doubleValue());
-						}
-						else {
-							throw new RuntimeException();
-						}
-					}
-				}
-			}
+
 			handleDetector(detector, worklist, processed_detectors, verbose);
 		}
-		if(verbose){
+		if (verbose) {
 			long h1 = System.currentTimeMillis();
 			System.out.println(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
 		}
@@ -128,8 +131,8 @@ public class HulkDetector {
 		return true;
 	}
 
-	public boolean detectSelectedAntiPattern(Set<EClass> selection,
-			Set<HDetector> selected_detectors, Set<HDetector> processed_detectors) {
+	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selected_detectors,
+			Set<HDetector> processed_detectors) {
 		Stack<HDetector> worklist = new Stack<>();
 
 		// Fill worklist
@@ -139,13 +142,13 @@ public class HulkDetector {
 				worklist.add(detector);
 			}
 		}
-		
-		if(selected_detectors.size()!=selection.size()){
+
+		if (selected_detectors.size() != selection.size()) {
 			System.err.println("Not all detecors found.");
 			return false;
 		}
-		
-		return detectSelectedAntiPattern(worklist, processed_detectors);		
+
+		return detectSelectedAntiPattern(worklist, processed_detectors);
 	}
 
 	public static Hashtable<String, String> getDefaultThresholds() {
