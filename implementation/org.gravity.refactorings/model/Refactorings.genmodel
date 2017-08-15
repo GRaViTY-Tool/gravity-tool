@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.refactorings/gen" modelPluginID="org.gravity.refactorings"
+    modelName="Refactorings" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel#//basic platform:/plugin/MocaTree/model/MocaTree.genmodel#//MocaTree"
+    operationReflection="true">
+  <foreignModel>Refactorings.ecore</foreignModel>
+  <genPackages prefix="Refactorings" basePackage="org.gravity" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Refactoring">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Refactoring/pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Refactoring/search"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Refactoring/helpers"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/isApplicable/signature"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/isApplicable/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/isApplicable/tSourceClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/Perform/signature"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/Perform/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Member/Perform/tSourceClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/helper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/pg"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/equivalent">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/equivalent/package2"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/equivalent/package1"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getBasePackage">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getBasePackage/tClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getBasePackage.1">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getBasePackage.1/tPackage"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/isChild">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/isChild/child"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/isChild/parent"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/linkClass">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/linkClass/tClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasField">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasField/tclass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasField/field"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getTClass">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getTClass/classTName"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getTClass/pg"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getAllOutgoingAccesses">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getAllOutgoingAccesses/tSignature"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getAllOutgoingAccesses/tClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/countAccessingTMembers">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/countAccessingTMembers/tMember"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getDefinition">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getDefinition/tClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/getDefinition/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasTMember">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasTMember/tClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasTMember/tMember"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasParentTMember">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasParentTMember/tClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Search/hasParentTMember/tMember"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/typeGraph"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/search"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_MountAccesses">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_MountAccesses/child"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_MountAccesses/parent"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_MountAccesses/tSignature"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_GetBestTMember">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_GetBestTMember/tMemberPool"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_GetBestTMember/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getInternalAccessedTMembers">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getInternalAccessedTMembers/tMember"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getInternalAccessedTMembers/tClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getExternAccessedTMembers">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getExternAccessedTMembers/tMember"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Helpers/esc_Helper_Heuristic_getExternAccessedTMembers/tClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/Perform/child"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/Perform/new_parent"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/isApplicable/child"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Create_Superclass/isApplicable/new_parent"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/create_Superclass"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform/children"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform/new_parent"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform/signatures"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/isApplicable/children"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/isApplicable/new_parent"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/isApplicable/signatures"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform2">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform2/children"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform2/new_parent"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/Perform2/signatureList"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Superclass/getCSC"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Abstract_Move_Member">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Abstract_Move_Member/noCallToAnyChildMember">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Abstract_Move_Member/noCallToAnyChildMember/member"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Abstract_Move_Member/noCallToAnyChildMember/clazz"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/Perform/field"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/Perform/parent"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/isApplicable/field"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Field/isApplicable/parent"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/Perform/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/Perform/parent"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/isApplicable/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Pull_Up_Method/isApplicable/parent"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/isApplicable/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/isApplicable/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/isApplicable/tSourceClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/Perform/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/Perform/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Field/Perform/tSourceClass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/isApplicable/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/isApplicable/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/isApplicable/tSourceClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/Perform/method"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/Perform/tTargetClass"/>
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/Perform/tSourceClass"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/notDefinedInImplementedInterface">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Move_Method/notDefinedInImplementedInterface/tMethod"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/isApplicable">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/isApplicable/tRefactoringConfiguration"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/Perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/Perform/tRefactoringConfiguration"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/getConfiguration">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//Extract_Class/getConfiguration/tRefactoringConfiguration"/>
+      </genOperations>
+    </genClasses>
+    <nestedGenPackages prefix="Configuration" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/TRefactoringConfigurationIDs">
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/TRefactoringConfigurationIDs/tExtractClass"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/RefactoringConfiguration">
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/RefactoringConfiguration/getID"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/ExtractClassConfiguration">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/ExtractClassConfiguration/tMembers"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/ExtractClassConfiguration/tNewClassName"/>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/ExtractClassConfiguration/getID"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//configuration/TRefactoringID"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/CSCContainer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/CSCContainer/new_parent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/CSCContainer/child"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/PUMContainer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/PUMContainer/parent"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/PUMContainer/method"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/RefactoringContainer"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/TAccessContainer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.refactorings/model/Refactorings.ecore#//containers/TAccessContainer/tMember"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
