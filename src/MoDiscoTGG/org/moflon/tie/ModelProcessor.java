@@ -30,6 +30,8 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.TemplateBinding;
+import org.eclipse.uml2.uml.TemplateableElement;
 import org.moflon.core.utilities.eMoflonEMFUtil;
 import org.moflon.tgg.language.algorithm.TempOutputContainer;
 
@@ -183,16 +185,13 @@ public class ModelProcessor {
 	}
 
 	public void performForwardPre(EObject src, boolean deleteBody) {
-		List<org.eclipse.gmt.modisco.java.Package> packages = new ArrayList<>();
 		List<EObject> deletes = new ArrayList<>();
 		List<EObject> optionalDeletes = new ArrayList<>();
 
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(src, true);
 		while (allProperContents.hasNext()) {
 			Object next = allProperContents.next();
-			if (next instanceof org.eclipse.gmt.modisco.java.Package) {
-				packages.add((org.eclipse.gmt.modisco.java.Package) next);
-			} else if (next instanceof AnonymousClassDeclaration) {
+			if (next instanceof AnonymousClassDeclaration) {
 				deletes.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
 				// if (((Block) next).eContainer() instanceof
@@ -203,39 +202,49 @@ public class ModelProcessor {
 			} else if (next instanceof TypeParameter) {
 				deletes.add((TypeParameter) next);
 			} else if (next instanceof ParameterizedType) {
-				if (((ParameterizedType) next).getType().getType() == null) {
+				Type type = ((ParameterizedType) next).getType().getType();
+				if (type == null) {
 					deletes.add((ParameterizedType) next);
+				} else {
+					if (!(type.eContainer() instanceof org.eclipse.gmt.modisco.java.Package
+							|| type.eContainer().eContainer() instanceof org.eclipse.gmt.modisco.java.Package)) {
+						deletes.add((ParameterizedType) next);
+					}
 				}
 			} else if (next instanceof ArrayType && ((ArrayType) next).getElementType().getType() == null) {
 				deletes.add((ArrayType) next);
 			} else if (next instanceof AbstractTypeDeclaration) {
-				if (((AbstractTypeDeclaration)next).eContainer() instanceof EnumDeclaration) {
+				if (((AbstractTypeDeclaration) next).eContainer() instanceof EnumDeclaration) {
 					deletes.add((AbstractTypeDeclaration) next);
 				}
 			}
 		}
 		deletes.forEach(e -> EcoreUtil.delete(e, true));
-		packages.forEach(this::removeNestedParameterizedTypes);
 		if (deleteBody) {
 			optionalDeletes.forEach(e -> EcoreUtil.delete(e, true));
 		}
 	}
 
 	public void performBackwardPre(EObject trg) {
-		List<Package> packages = new ArrayList<>();
-		List<Class> anonymousClasses = new ArrayList<>();
+		List<EObject> toRemove = new ArrayList<>();
 
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(trg, true);
 		while (allProperContents.hasNext()) {
 			Object next = allProperContents.next();
-			if (next instanceof Package) {
-				packages.add((Package) next);
-			} else if (next instanceof Class && "Anonymous type".equals(((Class) next).getName())) {
-				anonymousClasses.add((Class) next);
+			if (next instanceof Class && "Anonymous type".equals(((Class) next).getName())) {
+				toRemove.add((Class) next);
+			} else if (next instanceof TemplateableElement) {
+				if (!((TemplateableElement) next).getTemplateBindings().isEmpty()) {
+					EObject nonParameterized = ((TemplateableElement) next).getTemplateBindings().get(0).getSignature()
+							.eContainer();
+					if (!(nonParameterized.eContainer() instanceof Package)
+							&& !(nonParameterized.eContainer().eContainer() instanceof Package)) {
+						toRemove.add((TemplateableElement) next);
+					}
+				}
 			}
 		}
-		anonymousClasses.forEach(e -> EcoreUtil.delete(e, true));
-		packages.forEach(this::removeNestedParameterizedElements);
+		toRemove.forEach(e -> EcoreUtil.delete(e, true));
 	}
 
 	public void performBackwardPost(EObject src) {
@@ -264,43 +273,5 @@ public class ModelProcessor {
 				src = ((TempOutputContainer) src).getPotentialRoots().get(0);
 			}
 		}
-	}
-
-	private void removeNestedParameterizedTypes(org.eclipse.gmt.modisco.java.Package p) {
-		p.getOwnedElements().stream().flatMap(e -> findNestedParameterizedTypes(e, 2))
-				.forEach(c -> EcoreUtil.delete(c, true));
-	}
-
-	private Stream<BodyDeclaration> findNestedParameterizedTypes(BodyDeclaration t, int i) {
-		if (i <= 0 && t instanceof ParameterizedType) {
-			return Stream.of(t);
-		}
-
-		if (t instanceof TypeDeclaration) {
-			return ((TypeDeclaration) t).getBodyDeclarations().stream()
-					.flatMap(c -> findNestedParameterizedTypes(c, i - 1));
-		}
-		return null;
-	}
-
-	private void removeNestedParameterizedElements(Package p) {
-		p.allOwnedElements().stream().flatMap(e -> findNestedParameterizedElements(e, 2))
-				.forEach(c -> EcoreUtil.delete(c, true));
-	}
-
-	private Stream<Element> findNestedParameterizedElements(Element e, int i) {
-		if (i <= 0) {
-			if (e instanceof Classifier && ((Classifier) e).getOwnedTemplateSignature() != null) {
-				return Stream.of(e);
-			}
-		}
-		if (e instanceof Class) {
-			return ((Class) e).getNestedClassifiers().stream().flatMap(c -> findNestedParameterizedElements(c, i - 1));
-		}
-		if (e instanceof Interface) {
-			return ((Interface) e).getNestedClassifiers().stream()
-					.flatMap(c -> findNestedParameterizedElements(c, i - 1));
-		}
-		return null;
 	}
 }
