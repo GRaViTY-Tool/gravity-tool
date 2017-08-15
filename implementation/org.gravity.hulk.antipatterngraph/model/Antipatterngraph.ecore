@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="antipatterngraph" nsURI="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore" nsPrefix="org.gravity.hulk.antipatterngraph">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="org.gravity.hulk"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="HAnnotation" abstract="true">
+    <eSuperTypes href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apg" lowerBound="1" eType="//HAntiPatternGraph" eOpposite="//HAntiPatternGraph/hAnnotations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" upperBound="-1" eType="//HAnnotation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changed" ordered="false" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HAntiPattern" abstract="true" eSuperTypes="//HAnnotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HCodeSmell" abstract="true" eSuperTypes="//HAnnotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HMetric" abstract="true" eSuperTypes="//HAnnotation">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getRelativeAmount" eType="//values/HRelativeValue"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="increment">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HAntiPatternGraph">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getNextID">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" containment="true">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hAnnotations" upperBound="-1" eType="//HAnnotation" eOpposite="//HAnnotation/apg"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentID" ordered="false" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eSubpackages name="antipattern" nsURI="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern" nsPrefix="antipattern">
+    <eClassifiers xsi:type="ecore:EClass" name="HBlobAntiPattern" eSuperTypes="//HAntiPattern">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClassSmells" upperBound="-1" eType="//codesmells/HDataClassSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hGodClassAntiPattern" eType="//antipattern/HGodClassAntiPattern"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HGodClassAntiPattern" eSuperTypes="//HAntiPattern">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassLowCohesionSmell" eType="//codesmells/HLargeClassLowCohesionSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hControllerClassSmell" eType="//codesmells/HControllerClassSmell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HSwissArmyKnifeAntiPattern" eSuperTypes="//HAntiPattern">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hIncommingInvocationCustomMetric" eType="//metrics/HIncommingInvocationMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassSmell" eType="//codesmells/HLargeClassSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hMuchOverloadingCodeSmell" eType="//codesmells/HMuchOverloadingCodeSmell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HSpaghettiCodeAntiPattern" eSuperTypes="//HAntiPattern">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hDepthOfInheritanceMetric" eType="//metrics/HDepthOfInheritanceMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hIntenseFieldUsageCodeSmell" eType="//codesmells/HIntenseFieldUsageCodeSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hAverageOverloadingInClassMetric" eType="//metrics/HAverageOverloadingInClassMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hAverageParametersMetric" eType="//metrics/HAverageParametersMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfChild" eType="//metrics/HNumberOfChildMetric"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="codesmells" nsURI="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells" nsPrefix="codesmells">
+    <eClassifiers xsi:type="ecore:EClass" name="HControllerClassSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hInvocationRelation" eType="//metrics/HInvocationRelation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HDataClassSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getterSetterSmells" upperBound="-1" eType="//codesmells/HGetterSetterSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNACCMetric" eType="//metrics/HNACCMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HEmptyClassSmell" eSuperTypes="//HCodeSmell"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HGetterSetterSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldDefinition">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HLargeClassLowCohesionSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLowCohesionSmell" eType="//codesmells/HLowCohesionSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLargeClassSmell" eType="//codesmells/HLargeClassSmell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HLargeClassSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfMembers" eType="//metrics/HNumberOfMembersMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HLowCohesionSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLCOM5CustomMetric" eType="//metrics/HLCOM5Metric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HDataClassAccessor" eSuperTypes="//HCodeSmell //HMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClassSmells" upperBound="-1" eType="//codesmells/HDataClassSmell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HMuchOverloadingCodeSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hAverageOverloadingInClassMetric" eType="//metrics/HAverageOverloadingInClassMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HManyParametersCodeSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hAverageParametersMetric" eType="//metrics/HAverageParametersMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HIntenseFieldUsageCodeSmell" eSuperTypes="//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLocalAccessRelationMetric" eType="//metrics/HLocalAccessRelationMetric"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="metrics" nsURI="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics" nsPrefix="metrics">
+    <eClassifiers xsi:type="ecore:EClass" name="HNACCMetric" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hGetterSetterSmells" upperBound="-1" eType="//codesmells/HGetterSetterSmell"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hGetterCustomMetric" eType="//metrics/HGetterMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hSetterCustomMetric" eType="//metrics/HSetterMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfMethodsMetric" eType="//metrics/HNumberOfMethodsMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HNumberOfMembersMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HLocalAccessRelationMetric" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLocalFieldAccesses" eType="//metrics/HLocalFieldAccessesMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLocalMethodAccesses" eType="//metrics/HLocalMethodAccessesMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HInvocationRelation" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hOutgoingInvocationCustomMetric" eType="//metrics/HOutgoingInvocationMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hIncommingInvocationCustomMetric" eType="//metrics/HIncommingInvocationMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HNumberOfChildMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HNumberOfMethodsMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HAverageOverloadingInClassMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HAverageParametersMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HLocalMethodAccessesMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HLocalFieldAccessesMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HTotalCouplingMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HNumberOfFieldsMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HLCOM5Metric" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfMethodsMetric" eType="//metrics/HNumberOfMethodsMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfFieldsMetric" eType="//metrics/HNumberOfFieldsMetric"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hLocalFieldUniqueAccessMetric" eType="//metrics/HLocalFieldUniqueAccessMetric"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HEfferentCouplingMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HAfferentCouplingMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HLocalFieldUniqueAccessMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HIncommingInvocationMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HOutgoingInvocationMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HDepthOfInheritanceMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HGetterMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HSetterMetric" eSuperTypes="//HMetric"/>
+  </eSubpackages>
+  <eSubpackages name="values" nsURI="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values" nsPrefix="values">
+    <eClassifiers xsi:type="ecore:EClass" name="HRelativeValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false" lowerBound="1" eType="//values/HRelativeValueConstants"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="HRelativeValueConstants">
+      <eLiterals name="VERY_HIGH" value="4" literal="VERY_HIGH"/>
+      <eLiterals name="HIGH" value="3" literal="HIGH"/>
+      <eLiterals name="MEDIUM" value="2" literal="MEDIUM"/>
+      <eLiterals name="LOW" value="1" literal="LOW"/>
+      <eLiterals name="VERY_LOW" literal="VERY_LOW"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
