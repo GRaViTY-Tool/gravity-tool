@@ -3,37 +3,16 @@ package MoDiscoTGG.org.moflon.tie;
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Stream;
 
 import org.apache.log4j.BasicConfigurator;
-import org.moflon.core.utilities.eMoflonEMFUtil;
-import org.moflon.tgg.algorithm.configuration.Configurator;
-import org.moflon.tgg.algorithm.configuration.RuleResult;
-import org.moflon.tgg.algorithm.datastructures.PrecedenceInputGraph;
-import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
-import org.moflon.tgg.language.algorithm.TempOutputContainer;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.ArrayType;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.Model;
-import org.eclipse.gmt.modisco.java.ParameterizedType;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeDeclaration;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.Package;
+import org.moflon.tgg.algorithm.configuration.Configurator;
+import org.moflon.tgg.algorithm.configuration.RuleResult;
+import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import MoDiscoTGG.MoDiscoTGGPackage;
 
@@ -57,59 +36,57 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 
 		// Forward Transformation
 		helper = new MoDiscoTGGTrafo();
-//		helper.setVerbose(true);
-		long start = System.nanoTime();
+		// helper.setVerbose(true);
 		helper.performForward("instances/src_processed.xmi");
-		long end = System.nanoTime();
-		System.out.println("fwd took " + numberFormat.format((end - start) / 1000000000.0));
 
 		// Backward Transformation
 		helper = new MoDiscoTGGTrafo();
-//		helper.setVerbose(true);
+		// helper.setVerbose(true);
 		helper.setConfigurator(new Configurator() {
 			@Override
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
-				Optional<RuleResult> modifierRule = alternatives.stream().filter(rr->rr.getRule().contains("Modifier")).findAny();
-				if (modifierRule.isPresent()){
+				Optional<RuleResult> modifierRule = alternatives.stream()
+						.filter(rr -> rr.getRule().contains("Modifier")).findAny();
+				if (modifierRule.isPresent()) {
 					return modifierRule.get();
 				}
 				return Configurator.super.chooseOne(alternatives);
 			}
 		});
-		start = System.nanoTime();
 		helper.performBackward("instances/trg_processed.xmi");
-		end = System.nanoTime();
-		System.out.println("bwd took " + numberFormat.format((end - start) / 1000000000.0));
 	}
 
 	public void performForward() {
 		ModelProcessor mp = new ModelProcessor();
 		mp.performForwardPre(src, true);
-		
+
 		System.out.println("performing forward transformation...");
+		long start = System.nanoTime();
 		integrateForward();
+		long end = System.nanoTime();
+		System.out.println("result\t\teMoflonOld\ttfwd\t " + numberFormat.format((end - start) / 1000000000.0));
 
 		System.out.println("saving results...");
 		saveSrc("instances/src_processed.xmi");
 		saveTrg("instances/fwd.trg.xmi");
 		saveCorr("instances/fwd.corr.xmi");
 		saveSynchronizationProtocol("instances/fwd.protocol.xmi");
-		Resource r  = set.createResource(URI.createFileURI(new File("instances/fwdTempOutput.xmi").getAbsolutePath()));
+		Resource r = set.createResource(URI.createFileURI(new File("instances/fwdTempOutput.xmi").getAbsolutePath()));
 		r.getContents().add(tempOutputContainer);
 		try {
 			r.save(null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("Completed forward transformation!");
 	}
-	
+
 	public void performForward(EObject srcModel) {
 		setSrc(srcModel);
 		performForward();
 	}
-	
+
 	public void performForward(String source) {
 		try {
 			loadSrc(source);
@@ -119,28 +96,31 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 			return;
 		}
 	}
-	
+
 	public void performBackward() {
 		ModelProcessor m = new ModelProcessor();
 		m.performBackwardPre(trg);
 		System.out.println("performing backward transformation...");
+		long start = System.nanoTime();
 		integrateBackward();
+		long end = System.nanoTime();
+		System.out.println("result\t\teMoflonOld\ttbwd\t " + numberFormat.format((end - start) / 1000000000.0));
 		System.out.println("performing backward postprocessing...");
 		m.performBackwardPost(src);
-		
+
 		System.out.println("saving results");
 		saveSrc("instances/bwd.trg.xmi");
 		saveCorr("instances/bwd.corr.xmi");
 		saveSynchronizationProtocol("instances/bwd.protocol.xmi");
-		
-		Resource r  = set.createResource(URI.createFileURI(new File("instances/bwdTempOutput.xmi").getAbsolutePath()));
+
+		Resource r = set.createResource(URI.createFileURI(new File("instances/bwdTempOutput.xmi").getAbsolutePath()));
 		r.getContents().add(tempOutputContainer);
 		try {
 			r.save(null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("Completed backward transformation!");
 	}
 
