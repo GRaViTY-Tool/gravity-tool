@@ -52,6 +52,8 @@ public class ModelProcessor {
 		boolean ignoreSrc = false;
 		boolean ignoreTrg = false;
 		boolean deletebody = true;
+		boolean incremental = false;
+
 		for (String arg : args) {
 			switch (arg.toLowerCase()) {
 			case "ignoresrc":
@@ -73,6 +75,8 @@ public class ModelProcessor {
 			case "keepbody":
 				deletebody = false;
 				break;
+			case "incremental":
+				incremental = true;
 			}
 		}
 		init();
@@ -83,15 +87,15 @@ public class ModelProcessor {
 		for (File modelFolder : instanceDirectory.listFiles()) {
 			if (modelFolder.isDirectory()) {
 				ResourceSet rs = eMoflonEMFUtil.createDefaultResourceSet();
-				System.out.println("processing " + modelFolder.getName());
-				if (!ignoreSrc
-						&& (forceSrc || modelFolder.listFiles((f, n) -> n.equals("src_processed.xmi")).length < 1)) {
-					File[] srcFiles = modelFolder.listFiles((f, n) -> n.equals("src.xmi"));
-					if (srcFiles.length == 1) {
+				System.out.println(modelFolder.getName());
+				if (!ignoreSrc) {
+					File[] src_processedFiles = modelFolder.listFiles((f, n) -> n.equals("src_processed.xmi"));
+					if (incremental && src_processedFiles.length == 1) {
 						try {
-							System.out.println("preforming preprocessing for source model...");
+							System.out.println("preforming incremental preprocessing for source model...");
 							long start = System.nanoTime();
-							Resource r = rs.getResource(URI.createFileURI(srcFiles[0].getAbsolutePath()), true);
+							Resource r = rs.getResource(URI.createFileURI(src_processedFiles[0].getAbsolutePath()),
+									true);
 							mp.performForwardPre(r.getContents().get(0), deletebody);
 							System.out.println("saving processed source model...");
 							r.setURI(URI.createFileURI(modelFolder.getAbsolutePath() + "/src_processed.xmi"));
@@ -99,22 +103,39 @@ public class ModelProcessor {
 							long end = System.nanoTime();
 							System.out.println("source model processing completed in "
 									+ numberFormat.format((end - start) / 1_000_000_000d));
-
 						} catch (Exception e) {
-							System.out.println("proprocessing for source model failed:");
+							System.out.println("preprocessing for source model failed:");
 							e.printStackTrace();
+						}
+					} else if (forceSrc || src_processedFiles.length < 1) {
+						File[] srcFiles = modelFolder.listFiles((f, n) -> n.equals("src.xmi"));
+						if (srcFiles.length == 1) {
+							try {
+								System.out.println("preforming preprocessing for source model...");
+								long start = System.nanoTime();
+								Resource r = rs.getResource(URI.createFileURI(srcFiles[0].getAbsolutePath()), true);
+								mp.performForwardPre(r.getContents().get(0), deletebody);
+								System.out.println("saving processed source model...");
+								r.setURI(URI.createFileURI(modelFolder.getAbsolutePath() + "/src_processed.xmi"));
+								r.save(null);
+								long end = System.nanoTime();
+								System.out.println("source model processing completed in "
+										+ numberFormat.format((end - start) / 1_000_000_000d));
+							} catch (Exception e) {
+								System.out.println("proprocessing for source model failed:");
+								e.printStackTrace();
+							}
 						}
 					}
 				}
-
-				if (!ignoreTrg
-						&& (forceTrg || modelFolder.listFiles((f, n) -> n.equals("trg_processed.xmi")).length < 1)) {
-					File[] srcFiles = modelFolder.listFiles((f, n) -> n.equals("trg.xmi"));
-					if (srcFiles.length == 1) {
+				if (!ignoreTrg) {
+					File[] trg_processedFiles = modelFolder.listFiles((f, n) -> n.equals("trg_processed.xmi"));
+					if (incremental && trg_processedFiles.length == 1) {
 						try {
-							System.out.println("preforming preprocessingfor target model...");
+							System.out.println("preforming incremental preprocessing for target model...");
 							long start = System.nanoTime();
-							Resource r = rs.getResource(URI.createFileURI(srcFiles[0].getAbsolutePath()), true);
+							Resource r = rs.getResource(URI.createFileURI(trg_processedFiles[0].getAbsolutePath()),
+									true);
 							mp.performBackwardPre(r.getContents().get(0));
 							System.out.println("saving processed target model...");
 							r.setURI(URI.createFileURI(modelFolder.getAbsolutePath() + "/trg_processed.xmi"));
@@ -123,8 +144,27 @@ public class ModelProcessor {
 							System.out.println("target model processing completed in "
 									+ numberFormat.format((end - start) / 1_000_000_000d));
 						} catch (Exception e) {
-							System.out.println("proprocessing for target model failed:");
+							System.out.println("preprocessing for target model failed:");
 							e.printStackTrace();
+						}
+					} else if (forceTrg || trg_processedFiles.length < 1) {
+						File[] trgFiles = modelFolder.listFiles((f, n) -> n.equals("trg.xmi"));
+						if (trgFiles.length == 1) {
+							try {
+								System.out.println("preforming preprocessing for target model...");
+								long start = System.nanoTime();
+								Resource r = rs.getResource(URI.createFileURI(trgFiles[0].getAbsolutePath()), true);
+								mp.performBackwardPre(r.getContents().get(0));
+								System.out.println("saving processed target model...");
+								r.setURI(URI.createFileURI(modelFolder.getAbsolutePath() + "/trg_processed.xmi"));
+								r.save(null);
+								long end = System.nanoTime();
+								System.out.println("target model processing completed in "
+										+ numberFormat.format((end - start) / 1_000_000_000d));
+							} catch (Exception e) {
+								System.out.println("proprocessing for target model failed:");
+								e.printStackTrace();
+							}
 						}
 					}
 				}
@@ -153,8 +193,9 @@ public class ModelProcessor {
 			} else if (next instanceof AnonymousClassDeclaration) {
 				deletes.add((AnonymousClassDeclaration) next);
 			} else if (next instanceof Block) {
-//				if (((Block) next).eContainer() instanceof AbstractMethodDeclaration)
-					optionalDeletes.add((Block) next);
+				// if (((Block) next).eContainer() instanceof
+				// AbstractMethodDeclaration)
+				optionalDeletes.add((Block) next);
 			} else if (next instanceof Javadoc) {
 				optionalDeletes.add((Javadoc) next);
 			} else if (next instanceof TypeParameter) {
@@ -163,8 +204,8 @@ public class ModelProcessor {
 				if (((ParameterizedType) next).getType().getType() == null) {
 					deletes.add((ParameterizedType) next);
 				}
-			} else if (next instanceof ArrayType && ((ArrayType) next).getElementType().getType()==null) {
-				deletes.add((ArrayType)next);
+			} else if (next instanceof ArrayType && ((ArrayType) next).getElementType().getType() == null) {
+				deletes.add((ArrayType) next);
 			}
 		}
 		deletes.forEach(e -> EcoreUtil.delete(e, true));
