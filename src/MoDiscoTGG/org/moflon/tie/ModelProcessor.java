@@ -13,12 +13,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.Javadoc;
-import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.Type;
@@ -160,6 +159,12 @@ public class ModelProcessor {
 				optionalDeletes.add((Javadoc) next);
 			} else if (next instanceof TypeParameter) {
 				deletes.add((TypeParameter) next);
+			} else if (next instanceof ParameterizedType) {
+				if (((ParameterizedType) next).getType().getType() == null) {
+					deletes.add((ParameterizedType) next);
+				}
+			} else if (next instanceof ArrayType && ((ArrayType) next).getElementType().getType()==null) {
+				deletes.add((ArrayType)next);
 			}
 		}
 		deletes.forEach(e -> EcoreUtil.delete(e, true));
