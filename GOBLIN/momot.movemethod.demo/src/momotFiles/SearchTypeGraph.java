@@ -218,7 +218,15 @@ public class SearchTypeGraph {
 		printer.printSearchInfo(SearchParameters.INITIAL_MODEL, SearchParameters.modules,
 				SearchParameters.populationSize, SearchParameters.maxEvaluations, SearchParameters.nrRuns);
 		SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
+		long start = System.currentTimeMillis();
 		experiment.run();
+		long duration = System.currentTimeMillis() -start;
+		try {
+			Files.write(new File(folder, "durationGoblinInMs.txt").toPath(), Long.toString(duration).getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return printer.printResults(experiment, folder);
 	}
 
