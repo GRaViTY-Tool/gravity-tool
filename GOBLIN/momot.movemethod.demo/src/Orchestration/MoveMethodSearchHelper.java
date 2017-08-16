@@ -1,9 +1,11 @@
 package Orchestration;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import org.eclipse.emf.henshin.interpreter.Assignment;
 import org.eclipse.emf.henshin.interpreter.EGraph;
@@ -12,8 +14,11 @@ import org.eclipse.emf.henshin.interpreter.impl.AssignmentImpl;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
 import PreConditions.MoveMethodPreConditions;
 import at.ac.tuwien.big.moea.util.CollectionUtil;
@@ -94,7 +99,59 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		Parameter targetClassParam = chosenUnit.getParameter("targetClass");
 		Parameter methodSigParam = chosenUnit.getParameter("methodSig");
 
-		for (int i = 0; i < maxTries; i++) {
+		return getMove(graph, maxTries, assignment, sourceClassParam, targetClassParam, methodSigParam);
+	}
+
+	private ITransformationVariable getMove(EGraph graph, int maxTries, Assignment assignment,
+			Parameter sourceClassParam, Parameter targetClassParam, Parameter methodSigParam) {
+		for (int i = 0; i < 10*maxTries; i++) {
+			TClass sourceClass = getDifferentRandomClass(graph, null);
+			assignment.setParameterValue(sourceClassParam, sourceClass);
+
+			TMethodSignature methodSig = getRandomMethodSig(sourceClass);
+			if (methodSig == null) {
+				continue;
+			}
+			assignment.setParameterValue(methodSigParam, methodSig);
+			
+			Set<TClass> possibleTargets = new HashSet<TClass>();
+			for(TParameter tParam : methodSig.getParamList().getEntries()){
+				TAbstractType tType = tParam.getType();
+				if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
+					possibleTargets.add((TClass) tType);
+				}
+			}
+			for(TSignature tSig : sourceClass.getSignature()){
+				if (tSig instanceof TFieldSignature) {
+					TAbstractType tType = ((TFieldSignature) tSig).getType();
+					if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
+						possibleTargets.add(((TClass) tType));
+						
+					}					
+				}
+			}
+			if(possibleTargets.size()==0){
+				continue;
+			}
+			
+			TClass targetClass = (TClass) possibleTargets.toArray()[random.nextInt(possibleTargets.size())];
+			assignment.setParameterValue(targetClassParam, targetClass);
+			
+			UnitApplicationVariable application = createApplication(graph, assignment);
+
+			if (application.execute(getMonitor())) {
+				application.setAssignment(application.getResultAssignment());
+				return clean(application);
+			} else {
+				application.undo(getMonitor());
+			}
+		}
+		return null;
+	}
+
+	private ITransformationVariable getRandomMove(EGraph graph, int maxTries, Assignment assignment,
+			Parameter sourceClassParam, Parameter targetClassParam, Parameter methodSigParam) {
+		for (int i = 0; i < 10*maxTries; i++) { // changed to 10*
 			TClass sourceClass = getDifferentRandomClass(graph, null);
 			assignment.setParameterValue(sourceClassParam, sourceClass);
 
@@ -106,6 +163,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 				continue;
 			}
 			assignment.setParameterValue(methodSigParam, methodSig);
+			
 			if (!MoveMethodPreConditions.moveMethodPreconditions(methodSig, sourceClass, targetClass)) {
 				continue;
 			}

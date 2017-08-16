@@ -37,7 +37,7 @@ public class MoveMethodPreConditions {
 		}
 		for (TAnnotation annot : annotations) {
 			if (Utility.isSecurityAnnotation(annot)) {
-				System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON security");
+//				System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON security");
 				return false;
 			}
 		}
@@ -55,7 +55,7 @@ public class MoveMethodPreConditions {
 		for (TInterface tInterface : interfaces) {
 			for (TSignature interfaceSig : tInterface.getSignature()) {
 				if (interfaceSig == methodSig) {
-					System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON interface");
+//					System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON interface");
 					return false;
 				}
 			}
@@ -69,7 +69,7 @@ public class MoveMethodPreConditions {
 			if (member.getSignature() == methodSig) {
 				for (TAnnotation annotation : member.getTAnnotation()) {
 					if (annotation.getType() != null && annotation.getType().getTName().equalsIgnoreCase("override")) {
-						System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON override");
+//						System.err.println("Can't move "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+", REASON override");
 						return false;
 					}
 				}
