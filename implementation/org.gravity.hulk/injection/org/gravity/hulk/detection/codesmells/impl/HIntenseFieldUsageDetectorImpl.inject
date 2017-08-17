@@ -1,15 +1,23 @@
 
+import org.gravity.hulk.antipatterngraph.HMetric;
+import java.util.Collections;
+import java.util.List;
+import java.util.LinkedList;
+
 partial class HIntenseFieldUsageDetectorImpl {
 
 @members <--
-
 
 	@Override
 	public String getGuiName() {
 		return "Intense usage of local fields";
 	}
-
 	
+-->
+
+@model calculateRelativeThreshold (HRelativeValueConstants level) <--
+
+		return calculateRelativeThreshold(level, HLocalAccessRelationMetric.class);
 -->
 
 }

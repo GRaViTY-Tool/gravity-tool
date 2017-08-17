@@ -8,6 +8,7 @@ import java.util.Set;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TSyntethicMethod;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.containers.ContainersFactory;
 
@@ -32,29 +33,18 @@ partial class TClassImpl {
 		return parents;
 	}
 
-	private boolean hasCommonSuperClass(TClassImpl tClass) {
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		if (!(tAbstractType instanceof TClassImpl)) {
+			return false;
+		}
+		TClassImpl tClass = (TClassImpl) tAbstractType;
+
 		List<TClass> parents = this.getParents();
+		parents.add(this);
 		List<TClass> otherParents = tClass.getParents();
+		otherParents.add(tClass);
 
 		return (!Collections.disjoint(parents, otherParents));
-	}
-
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
-		}
-
-		if (tAbstractType instanceof TClassImpl && hasCommonSuperClass((TClassImpl) tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
-
 	}
 	
 -->
@@ -72,6 +62,9 @@ partial class TClassImpl {
 				} else if (member instanceof TFieldDefinition) {
 					TFieldDefinition field = (TFieldDefinition) member;
 					redefinedBy = field.getHiddenBy();
+				} else if (member instanceof TSyntethicMethod){
+					// Ignore synthetic methods
+					continue;
 				} else {
 					throw new RuntimeException("Unknown TMember subtype.");
 				}

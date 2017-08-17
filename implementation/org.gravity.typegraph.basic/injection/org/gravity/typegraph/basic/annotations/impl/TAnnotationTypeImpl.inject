@@ -5,6 +5,11 @@ import org.gravity.typegraph.basic.TAbstractType;
 partial class TAnnotationTypeImpl {
 
 @members <--
+	@Override
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		return false;
+	}
+
 
 	@Override
 	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {

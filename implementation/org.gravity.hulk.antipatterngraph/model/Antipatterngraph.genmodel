@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.hulk.antipatterngraph/gen" modelPluginID="org.gravity.hulk.antipatterngraph"
+    modelName="Antipatterngraph" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel#//basic"
+    operationReflection="true">
+  <foreignModel>Antipatterngraph.ecore</foreignModel>
+  <genPackages prefix="Antipatterngraph" basePackage="org.gravity.hulk" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation/apg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation/partOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation/changed"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPattern"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HCodeSmell"/>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric/value"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric/getRelativeAmount"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric/increment"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph/pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph/hAnnotations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph/currentID"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph/getNextID"/>
+    </genClasses>
+    <nestedGenPackages prefix="Antipattern" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HBlobAntiPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HBlobAntiPattern/hDataClassSmells"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HBlobAntiPattern/hGodClassAntiPattern"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern/hLargeClassLowCohesionSmell"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern/hControllerClassSmell"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSwissArmyKnifeAntiPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSwissArmyKnifeAntiPattern/hIncommingInvocationCustomMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSwissArmyKnifeAntiPattern/hLargeClassSmell"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSwissArmyKnifeAntiPattern/hMuchOverloadingCodeSmell"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern/hDepthOfInheritanceMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern/hIntenseFieldUsageCodeSmell"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern/hAverageOverloadingInClassMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern/hAverageParametersMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HSpaghettiCodeAntiPattern/hNumberOfChild"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Codesmells" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HControllerClassSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HControllerClassSmell/hInvocationRelation"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell/getterSetterSmells"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell/hNACCMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HEmptyClassSmell"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HGetterSetterSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HGetterSetterSmell/tFieldDefinition"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell/hLowCohesionSmell"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassLowCohesionSmell/hLargeClassSmell"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLargeClassSmell/hNumberOfMembers"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLowCohesionSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HLowCohesionSmell/hLCOM5CustomMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassAccessor">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassAccessor/hDataClassSmells"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HMuchOverloadingCodeSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HMuchOverloadingCodeSmell/hAverageOverloadingInClassMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HManyParametersCodeSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HManyParametersCodeSmell/hAverageParametersMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HIntenseFieldUsageCodeSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HIntenseFieldUsageCodeSmell/hLocalAccessRelationMetric"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Metrics" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric/hGetterSetterSmells"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric/hGetterCustomMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric/hSetterCustomMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric/hNumberOfMethodsMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfMembersMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalAccessRelationMetric">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalAccessRelationMetric/hLocalFieldAccesses"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalAccessRelationMetric/hLocalMethodAccesses"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInvocationRelation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInvocationRelation/hOutgoingInvocationCustomMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInvocationRelation/hIncommingInvocationCustomMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfChildMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfMethodsMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageOverloadingInClassMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageParametersMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalMethodAccessesMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalFieldAccessesMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HTotalCouplingMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfFieldsMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLCOM5Metric">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLCOM5Metric/hNumberOfMethodsMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLCOM5Metric/hNumberOfFieldsMetric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLCOM5Metric/hLocalFieldUniqueAccessMetric"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HEfferentCouplingMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAfferentCouplingMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalFieldUniqueAccessMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HIncommingInvocationMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HOutgoingInvocationMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HDepthOfInheritanceMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HGetterMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HSetterMetric"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Values" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants">
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants/VERY_HIGH"/>
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants/HIGH"/>
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants/MEDIUM"/>
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants/LOW"/>
+        <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValueConstants/VERY_LOW"/>
+      </genEnums>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue/value"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

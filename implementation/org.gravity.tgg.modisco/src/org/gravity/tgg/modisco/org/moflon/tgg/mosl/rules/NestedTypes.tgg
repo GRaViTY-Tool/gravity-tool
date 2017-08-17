@@ -18,6 +18,7 @@ typeGraph : TypeGraph {
 	 -ownedTypes -> tOuterType
 }
 tOuterType : TAbstractType {
+	++ -innerTypes -> tNestedType
 }
 ++ tNestedType : TAbstractType {
 }

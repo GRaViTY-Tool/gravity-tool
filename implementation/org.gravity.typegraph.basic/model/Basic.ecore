@@ -11,6 +11,7 @@
         eType="#//TMember" eOpposite="#//TMember/accessedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tSource" lowerBound="1"
         eType="#//TMember" eOpposite="#//TMember/tAccessing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staticType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" eType="#//containers/TMemberContainer"/>
@@ -88,6 +89,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="overloadedBy" upperBound="-1"
         eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloading"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntethicMethods" upperBound="-1"
+        eType="#//TSyntethicMethod" containment="true" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodSignature" eSuperTypes="#//TSignature">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
@@ -186,6 +189,10 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerTypes" upperBound="-1"
+        eType="#//TAbstractType" eOpposite="#//TAbstractType/outerType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outerType" eType="#//TAbstractType"
+        eOpposite="#//TAbstractType/innerTypes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorName" eSuperTypes="#//TMethod"/>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorSignature" eSuperTypes="#//TMethodSignature"/>
@@ -200,6 +207,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TModifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TSyntethicMethod" eSuperTypes="#//TMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
+        lowerBound="1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/syntethicMethods"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+        eType="#//TMethodSignature"/>
   </eClassifiers>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">

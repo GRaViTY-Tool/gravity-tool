@@ -33,6 +33,7 @@ typeGraph : TypeGraph {
 	 -ownedTypes -> tOuterClass
 }
 tOuterClass : TClass {
+	++ -innerTypes -> tInnerClass
 }
 ++ tInnerClass : TClass {
 }

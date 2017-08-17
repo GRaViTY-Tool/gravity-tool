@@ -72,7 +72,7 @@ public class HulkAPI {
 				break;
 			}
 		}
-		if (!HulkDetector.detectSelectedAntiPattern(detectors, new HashSet<>(), hulk)) {
+		if (!new HulkDetector(hulk, HulkDetector.getDefaultThresholds()).detectSelectedAntiPattern(detectors, new HashSet<>())) {
 			throw new RuntimeException("Anti-pattern detection failed.");
 		}
 

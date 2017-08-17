@@ -84,7 +84,7 @@ public class HulkResolveHandler extends HulkHandler{
 		
 		
 		// re-calculate metrics
-		HulkDetector.detectSelectedAntiPattern(selection, hulk, selected_detectors,
+		detector.detectSelectedAntiPattern(selection, selected_detectors,
 				executed_detectors);
 		
 		
