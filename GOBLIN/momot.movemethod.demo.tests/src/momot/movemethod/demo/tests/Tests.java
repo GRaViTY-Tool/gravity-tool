@@ -1,6 +1,5 @@
 package momot.movemethod.demo.tests;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -16,13 +15,11 @@ import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.tgg.modisco.MoDiscoTGGConverterFactory;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.json.simple.JSONObject;
@@ -34,7 +31,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import ConstraintCalculators.AllConstraintsCalculator;
-import momotFiles.HenshinExecutor;
 
 import static momot.movemethod.demo.tests.TestDescription.*;
 import static org.junit.Assert.*;
