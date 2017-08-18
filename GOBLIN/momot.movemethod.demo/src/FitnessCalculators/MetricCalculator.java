@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
@@ -17,9 +16,7 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.impl.AntipatterngraphFactoryImpl;
-import org.gravity.hulk.detection.HClassBasedMetricCalculator;
 import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.impl.HAntiPatternHandlingImpl;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moflon.core.dfs.DFSGraph;
 
@@ -45,7 +42,7 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 		stack.add(detector);
 		//det.setHAntiPatternHandling(hulk);
 		HulkDetector hulkDetector = new HulkDetector(hulk, new Hashtable<String, String>());
-		hulkDetector.detectSelectedAntiPattern(stack, new HashSet<HDetector>(), false);
+		hulkDetector.detectSelectedAntiPattern(stack, new HashSet<HDetector>());
 	}
 	
 	public HDetector getDetector(Class clazz, HAntiPatternHandling hulk){

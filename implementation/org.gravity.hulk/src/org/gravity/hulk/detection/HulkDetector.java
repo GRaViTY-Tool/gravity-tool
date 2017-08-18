@@ -29,10 +29,17 @@ public class HulkDetector {
 	private Hashtable<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
+	
+	private boolean verbose;
 
-	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds) {
+	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds){
+		this(hulk, thresholds, false);
+	}
+	
+	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds, boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
+		this.verbose = verbose;
 		initialized = new HashSet<>();
 	}
 
@@ -108,11 +115,6 @@ public class HulkDetector {
 	}
 
 	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors) {
-		return detectSelectedAntiPattern(worklist, processed_detectors, true);
-	}
-
-	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors,
-			boolean verbose) {
 		long h0 = 0;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
