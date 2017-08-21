@@ -20,6 +20,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 
 public class JavaSyncFwdHandler extends AbstractHandler {
 
@@ -39,7 +40,12 @@ public class JavaSyncFwdHandler extends AbstractHandler {
 						throw new RuntimeException(Messages.JavaParseHandler_0 + entry);
 					} else if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
-						IPGConverter converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
+						IPGConverter converter;
+						try {
+							converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
+						} catch (NoConverterRegisteredException e) {
+							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
+						}
 						if (!converter.syncProjectFwd(monitor)) {
 							throw new RuntimeException("No PG has been created");
 						}
@@ -61,12 +67,20 @@ public class JavaSyncFwdHandler extends AbstractHandler {
 
 	@Override
 	public boolean isEnabled() {
-		return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException e) {
+			return false;
+		}
 	}
 
 	@Override
 	public boolean isHandled() {
-		return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException e) {
+			return false;
+		}
 	}
 
 }

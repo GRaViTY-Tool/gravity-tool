@@ -11,8 +11,12 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
@@ -38,7 +42,13 @@ public class HulkAPI {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
-		IPGConverter converter = GravityActivator.getDefault().getNewConverter(project.getProject());
+		IPGConverter converter;
+		try {
+			converter = GravityActivator.getDefault().getNewConverter(project.getProject());
+		} catch (NoConverterRegisteredException e) {
+			MessageDialog.openError(getShell(), "No Converter installed", "Please install a converter from the GRaViTY updatesite.");
+			return Collections.emptyList();
+		}
 		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
 			throw new RuntimeException("Creating PG from project failed: " + project.getProject().getName());
@@ -88,6 +98,14 @@ public class HulkAPI {
 		}
 
 		return results;
+	}
+
+	public static Shell getShell() {
+		Display display = Display.getCurrent();
+		// may be null if outside the UI thread
+		if (display == null)
+			display = Display.getDefault();
+		return display.getActiveShell();
 	}
 
 	public static enum AntiPatternNames {

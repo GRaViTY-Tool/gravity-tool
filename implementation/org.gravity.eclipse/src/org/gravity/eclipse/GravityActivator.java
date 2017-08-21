@@ -7,6 +7,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
@@ -14,6 +15,7 @@ import org.eclipse.core.runtime.Plugin;
 import org.eclipse.emf.ecore.EObject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.osgi.framework.BundleContext;
 
 // TODO: Auto-generated Javadoc
@@ -56,14 +58,6 @@ public class GravityActivator extends Plugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] configuration_elements = extension_registry
-				.getConfigurationElementsFor("org.gravity.eclipse.converters"); //$NON-NLS-1$
-		if (configuration_elements.length <= 0) {
-			throw new RuntimeException("At least one converter has to be registered.");
-		}
-		setSelectedConverterFactory((IPGConverterFactory) configuration_elements[0].createExecutableExtension("class")); //$NON-NLS-1$
 	
 		listener = new IResourceChangeListener() {
 			
@@ -82,6 +76,20 @@ public class GravityActivator extends Plugin {
 		
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(listener);
 		
+	}
+
+	private void initializeSelectedConverter() throws NoConverterRegisteredException {
+		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
+		IConfigurationElement[] configuration_elements = extension_registry
+				.getConfigurationElementsFor("org.gravity.eclipse.converters"); //$NON-NLS-1$
+		if (configuration_elements.length <= 0) {
+			throw new NoConverterRegisteredException();
+		}
+		try {
+			setSelectedConverterFactory((IPGConverterFactory) configuration_elements[0].createExecutableExtension("class")); //$NON-NLS-1$
+		} catch (CoreException e) {
+			throw new RuntimeException(e);
+		} 
 	}
 
 	@Override
@@ -188,8 +196,9 @@ public class GravityActivator extends Plugin {
 	 * @param project
 	 *            the project
 	 * @return the converter
+	 * @throws CoreException 
 	 */
-	public IPGConverter getConverter(IProject project) {
+	public IPGConverter getConverter(IProject project) throws NoConverterRegisteredException {
 		String name = project.getName();
 		if (this.converters.containsKey(name)) {
 			IPGConverter converter = this.converters.get(name);
@@ -216,9 +225,10 @@ public class GravityActivator extends Plugin {
 	 * @param project
 	 *            the project
 	 * @return the converter
+	 * @throws CoreException 
 	 */
-	public IPGConverter getNewConverter(IProject project) {
-		IPGConverter converter = this.selected_factory.createConverter(project);
+	public IPGConverter getNewConverter(IProject project) throws NoConverterRegisteredException {
+		IPGConverter converter = getSelectedConverterFactory().createConverter(project);
 		this.converters.put(project.getName(), converter);
 		return converter;
 	}
@@ -237,8 +247,12 @@ public class GravityActivator extends Plugin {
 	 * Gets the selected converter factory.
 	 *
 	 * @return the selected converter factory
+	 * @throws CoreException 
 	 */
-	public IPGConverterFactory getSelectedConverterFactory() {
+	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException {
+		if(this.selected_factory == null){
+			initializeSelectedConverter();
+		}
 		return this.selected_factory;
 	}
 

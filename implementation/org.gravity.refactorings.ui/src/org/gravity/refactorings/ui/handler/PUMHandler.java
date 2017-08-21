@@ -24,6 +24,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.refactorings.Pull_Up_Method;
 import org.gravity.refactorings.RefactoringsFactory;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
@@ -56,8 +57,13 @@ public class PUMHandler extends RefactoringHandler {
 
 					@Override
 					public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
-						IPGConverter converter = GravityActivator.getDefault()
-								.getConverter(icu.getJavaProject().getProject());
+						IPGConverter converter;
+						try {
+							converter = GravityActivator.getDefault()
+									.getConverter(icu.getJavaProject().getProject());
+						} catch (NoConverterRegisteredException e) {
+							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
+						}
 						if (!converter.convertProject(icu.getJavaProject(), monitor)) {
 							asyncPrintError(shell, "Refactoring Error", "Creating an PG from the sourcecode failed");
 
