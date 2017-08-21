@@ -17,6 +17,10 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/updatesite/"/>
+   </url>
+
    <includes
          id="org.gravity.features.typegraph.basic"
          version="0.0.0"
@@ -32,20 +36,24 @@
          version="0.0.0"
          search-location="both"/>
 
+   <includes
+         id="org.gravity.features.refactorings"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.moflon.core.dfs" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.moflon.core.utilities"/>
-      <import plugin="org.eclipse.swt"/>
-      <import plugin="org.eclipse.equinox.registry"/>
-      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.gravity.refactorings" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.12.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.hulk.refactoringgraph" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jdt.core"/>
-      <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
-      <import feature="org.gravity.features.eclipse" version="1.0.0.qualifier"/>
+      <import plugin="org.gravity.eclipse"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.moflon.core.utilities"/>
       <import plugin="org.eclipse.core.runtime" version="3.11.1" match="greaterOrEqual"/>
    </requires>
 
@@ -58,6 +66,20 @@
 
    <plugin
          id="org.gravity.hulk.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.hulk.antipatterngraph"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gravity.hulk.annotations"
          download-size="0"
          install-size="0"
          version="0.0.0"

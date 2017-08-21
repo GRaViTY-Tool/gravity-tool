@@ -2,7 +2,7 @@
 <feature
       id="org.gravity.features.modisco"
       label="Modisco Feature"
-      version="1.0.1.qualifier">
+      version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -17,7 +17,7 @@
    </license>
 
    <url>
-      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/update-site2"/>
+      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/modeling/gmt/modisco/updates/release/"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
    </url>
@@ -26,46 +26,25 @@
          id="org.gravity.features.eclipse"
          version="0.0.0"/>
 
-   <includes
-         id="org.moflon.ide.feature"
-         version="0.0.0"
-         search-location="self"/>
-
-   <includes
-         id="org.eclipse.modisco.java.feature"
-         version="0.0.0"
-         search-location="self"/>
-
-   <includes
-         id="org.eclipse.emf.ecore"
-         version="0.0.0"
-         search-location="self"/>
-
-   <includes
-         id="org.moflon.tgg.mosl.feature"
-         version="0.0.0"
-         search-location="self"/>
-
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.gmt.modisco.java" version="0.13.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.moflon.core.utilities"/>
       <import plugin="SDMLanguage"/>
       <import plugin="org.moflon.tgg.language"/>
       <import plugin="org.moflon.tgg.runtime"/>
-      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
-      <import plugin="MocaTree"/>
+      <import plugin="org.eclipse.gmt.modisco.java" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.modisco" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.gmt.modisco.java.generation" version="0.13.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.modisco.infra.discovery.core" version="0.13.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.modisco.java.discoverer" version="0.13.1" match="greaterOrEqual"/>
       <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.eclipse.gmt.modisco.java" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.gravity.modisco" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="MocaTree" version="2.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

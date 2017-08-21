@@ -17,6 +17,10 @@
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/updatesite/"/>
+   </url>
+
    <includes
          id="org.gravity.features.refactorings"
          version="0.0.0"
@@ -50,6 +54,7 @@
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import feature="org.moflon.ide.feature" version="2.4.0.201510261417"/>
+      <import plugin="org.eclipse.xtext"/>
    </requires>
 
    <plugin

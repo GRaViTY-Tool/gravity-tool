@@ -28,8 +28,6 @@
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.moflon.tgg.runtime"/>
-      <import plugin="org.moflon.tgg.language"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
    </requires>
 
