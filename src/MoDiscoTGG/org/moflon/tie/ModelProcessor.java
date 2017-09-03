@@ -27,6 +27,7 @@ import org.eclipse.gmt.modisco.java.TypeDeclaration;
 import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.ClassifierTemplateParameter;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Package;
@@ -231,9 +232,17 @@ public class ModelProcessor {
 		TreeIterator<Object> allProperContents = EcoreUtil.getAllProperContents(trg, true);
 		while (allProperContents.hasNext()) {
 			Object next = allProperContents.next();
-			if (next instanceof Class && "Anonymous type".equals(((Class) next).getName())) {
-				toRemove.add((Class) next);
-			} else if (next instanceof TemplateableElement) {
+			if (next instanceof Class) {
+				if ("Anonymous type".equals(((Class) next).getName())) {
+					toRemove.add((Class) next);
+					continue;
+				}
+				if (((Class) next).eContainer() instanceof ClassifierTemplateParameter) {
+					toRemove.add((EObject) next);
+					continue;
+				}
+			}
+			if (next instanceof TemplateableElement) {
 				if (!((TemplateableElement) next).getTemplateBindings().isEmpty()) {
 					EObject nonParameterized = ((TemplateableElement) next).getTemplateBindings().get(0).getSignature()
 							.eContainer();
@@ -269,6 +278,7 @@ public class ModelProcessor {
 		}
 		m.getOrphanTypes().addAll(parameterizedTypes);
 		if (src instanceof TempOutputContainer) {
+			System.out.println(((TempOutputContainer) src).getPotentialRoots().size());
 			if (((TempOutputContainer) src).getPotentialRoots().size() == 1) {
 				src = ((TempOutputContainer) src).getPotentialRoots().get(0);
 			}
