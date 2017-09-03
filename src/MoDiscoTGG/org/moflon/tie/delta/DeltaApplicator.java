@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import MoDiscoTGG.org.moflon.tie.delta.rules.ClassDec2ClassDeltaGenerator;
 import MoDiscoTGG.org.moflon.tie.delta.rules.CompilationUnit2ArtifactDeltaGenerator;
 import MoDiscoTGG.org.moflon.tie.delta.rules.FieldDec2Property4ClassDeltaGenerator;
 import MoDiscoTGG.org.moflon.tie.delta.rules.JavaPackageToUMLPackageDeltaGenerator;
@@ -20,6 +21,7 @@ public class DeltaApplicator implements DeltaGenerator {
 			new CompilationUnit2ArtifactDeltaGenerator(),
 			new FieldDec2Property4ClassDeltaGenerator(),
 			new JavaPackageToUMLPackageDeltaGenerator(),
+			new ClassDec2ClassDeltaGenerator(),
 			
 	};
 	// @formatter:on

@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.uml2.uml.Package;
 import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.RuleResult;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
@@ -59,7 +60,10 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 			helper = new MoDiscoTGGTrafo();
 			// helper.setVerbose(true);
 			helper.performForward("instances/src_processed.xmi");
-			helper.performForwardSync(10);
+			int i = 100;
+			// for (int i=10; i<=1000; i*=10) {
+			helper.performForwardSync(i);
+			// }
 		}
 
 		if (backward) {
@@ -78,33 +82,41 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 				}
 			});
 			helper.performBackward("instances/trg_processed.xmi");
-			helper.performBackwardSync(10);
+			int i = 100;
+			// for (int i=10; i<=1000; i*=10) {
+			helper.performBackwardSync(i);
+			// }
 		}
 	}
 
 	DeltaResult lastDeltaResult;
+
 	private void performBackwardSync(int size) {
 		DeltaApplicator deltaApplicator = new DeltaApplicator(size);
 		Set<Class<?>> backwardInterests = deltaApplicator.getBackwardInterests();
 		setChangeTrg(e -> {
-			lastDeltaResult = deltaApplicator.applyBackward(
-					new IndexedModel<org.eclipse.uml2.uml.Model>((org.eclipse.uml2.uml.Model) e, backwardInterests.toArray(new Class[backwardInterests.size()])),
-					new Random(0));
+			lastDeltaResult = deltaApplicator
+					.applyBackward(new IndexedModel<org.eclipse.uml2.uml.Model>((org.eclipse.uml2.uml.Model) e,
+							(entry) -> (!(entry instanceof Package)
+									|| !"Common Java datatypes".contentEquals(((Package) entry).getName())),
+							backwardInterests.toArray(new Class[backwardInterests.size()])), new Random(0));
 		});
 		System.gc();
 		long start = System.currentTimeMillis();
 		integrateBackward();
 		long end = System.currentTimeMillis();
-		System.out.println("result\t\teMoflonOld\tsabwd\t " + numberFormat.format((end - start) / 1000000000.0)+"\t"+size);
+		System.out.println(
+				"result\t\teMoflonOld\tsabwd\t " + numberFormat.format((end - start) / 1000000000.0) + "\t" + size);
 		saveSrc("instances/srcAfterRAdd.xmi");
 		saveTrg("instances/trgAfterRAdd.xmi");
-		
-		setChangeTrg(e->deltaApplicator.revert(lastDeltaResult));
+
+		setChangeTrg(e -> deltaApplicator.revert(lastDeltaResult));
 		System.gc();
 		start = System.currentTimeMillis();
 		integrateBackward();
 		end = System.currentTimeMillis();
-		System.out.println("result\t\teMoflonOld\tsrfwd\t " + numberFormat.format((end - start) / 1000000000.0)+"\t"+size);
+		System.out.println(
+				"result\t\teMoflonOld\tsrfwd\t " + numberFormat.format((end - start) / 1000000000.0) + "\t" + size);
 		saveSrc("instances/srcAfterRRemove.xmi");
 		saveTrg("instances/trgAfterRRemove.xmi");
 	}
@@ -113,24 +125,25 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		DeltaApplicator deltaApplicator = new DeltaApplicator(size);
 		Set<Class<?>> forwardInterests = deltaApplicator.getForwardInterests();
 		setChangeSrc(e -> {
-			lastDeltaResult = deltaApplicator.applyForward(
-					new IndexedModel<Model>((Model) e, forwardInterests.toArray(new Class[forwardInterests.size()])),
-					new Random(0));
+			lastDeltaResult = deltaApplicator.applyForward(new IndexedModel<Model>((Model) e, entry->true,
+					forwardInterests.toArray(new Class[forwardInterests.size()])), new Random(0));
 		});
 		System.gc();
 		long start = System.currentTimeMillis();
 		integrateForward();
 		long end = System.currentTimeMillis();
-		System.out.println("result\t\teMoflonOld\tsafwd\t " + numberFormat.format((end - start) / 1000000000.0)+"\t"+size);
+		System.out.println(
+				"result\t\teMoflonOld\tsafwd\t " + numberFormat.format((end - start) / 1000000000.0) + "\t" + size);
 		saveSrc("instances/srcAfterAdd.xmi");
 		saveTrg("instances/trgAfterAdd.xmi");
-		
-		setChangeSrc(e->deltaApplicator.revert(lastDeltaResult));
+
+		setChangeSrc(e -> deltaApplicator.revert(lastDeltaResult));
 		System.gc();
 		start = System.currentTimeMillis();
 		integrateForward();
 		end = System.currentTimeMillis();
-		System.out.println("result\t\teMoflonOld\tsrfwd\t " + numberFormat.format((end - start) / 1000000000.0)+"\t"+size);
+		System.out.println(
+				"result\t\teMoflonOld\tsrfwd\t " + numberFormat.format((end - start) / 1000000000.0) + "\t" + size);
 		saveSrc("instances/srcAfterRemove.xmi");
 		saveTrg("instances/trgAfterRemove.xmi");
 	}

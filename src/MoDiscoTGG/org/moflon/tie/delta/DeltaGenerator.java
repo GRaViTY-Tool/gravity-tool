@@ -3,7 +3,16 @@ package MoDiscoTGG.org.moflon.tie.delta;
 import java.util.Random;
 import java.util.Set;
 
+import org.eclipse.gmt.modisco.java.Package;
+import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+
 public interface DeltaGenerator {
+	// find
+	// create objects
+	// create primitives
+	// create edges
+	// set primitives
+
 	/**
 	 * applies a new Delta to the source model
 	 * 
