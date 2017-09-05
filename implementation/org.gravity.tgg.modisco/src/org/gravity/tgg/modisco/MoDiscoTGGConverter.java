@@ -150,6 +150,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		Model eobject = discoverProject(java_project, libs, progressMonitor);
 		long t1 = System.currentTimeMillis();
 		System.out.println(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
+		
+		if(eobject == null){
+			return false;
+		}
 
 		if (this.debug) {
 			saveModel(eobject, this.modisco_folder.getFile("modisco.xmi"), progressMonitor); //$NON-NLS-1$ );
