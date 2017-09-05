@@ -25127,17 +25127,13 @@
               <packagedElement xsi:type="uml:Package" name="util" visibility="public">
                 <packagedElement xsi:type="uml:Interface" name="EList">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="EList&lt;E>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                      <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
                   </ownedTemplateSignature>
                   <generalization general="/0/externals/java/util/List"/>
                 </packagedElement>
                 <packagedElement xsi:type="uml:Class" name="BasicEList">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="BasicEList&lt;E>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                      <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
                   </ownedTemplateSignature>
                   <generalization general="/0/org.eclipse.graphiti/org/eclipse/emf/common/util/AbstractEList"/>
                   <interfaceRealization contract="/0/externals/java/util/RandomAccess"/>
@@ -25147,9 +25143,7 @@
                 </packagedElement>
                 <packagedElement xsi:type="uml:Class" name="AbstractEList">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractEList&lt;E>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                      <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
                   </ownedTemplateSignature>
                   <generalization general="/0/externals/java/util/AbstractList"/>
                   <interfaceRealization supplier="/0/org.eclipse.graphiti/org/eclipse/emf/common/util/EList" contract="/0/org.eclipse.graphiti/org/eclipse/emf/common/util/EList"/>
@@ -25157,9 +25151,7 @@
                 <packagedElement xsi:type="uml:Interface" name="Enumerator" visibility="public"/>
                 <packagedElement xsi:type="uml:Interface" name="TreeIterator">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="TreeIterator&lt;E>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                      <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
                   </ownedTemplateSignature>
                   <generalization general="/0/externals/java/util/Iterator"/>
                 </packagedElement>
@@ -25503,9 +25495,7 @@
           <packagedElement xsi:type="uml:Package" name="ref" visibility="public">
             <packagedElement xsi:type="uml:Class" name="WeakReference">
               <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="WeakReference&lt;T>">
-                <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                  <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-                </ownedParameter>
+                <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
               </ownedTemplateSignature>
               <generalization general="/0/externals/java/lang/ref/Reference"/>
               <ownedOperation name="WeakReference" visibility="public">
@@ -25517,9 +25507,7 @@
             </packagedElement>
             <packagedElement xsi:type="uml:Class" name="Reference">
               <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Reference&lt;T>">
-                <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                  <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-                </ownedParameter>
+                <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
               </ownedTemplateSignature>
               <ownedOperation name="get" visibility="public"/>
             </packagedElement>
@@ -25581,17 +25569,13 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Comparable">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>
           <packagedElement xsi:type="uml:Interface" name="Iterable">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Iterable&lt;T>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Cloneable" visibility="public"/>
@@ -25695,9 +25679,7 @@
           <packagedElement xsi:type="uml:Interface" name="Appendable" visibility="public"/>
           <packagedElement xsi:type="uml:Class" name="Class">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Class&lt;T>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <interfaceRealization contract="/0/externals/java/io/Serializable"/>
             <interfaceRealization supplier="/0/externals/java/lang/reflect/GenericDeclaration" contract="/0/externals/java/lang/reflect/GenericDeclaration"/>
@@ -25911,9 +25893,7 @@
         <packagedElement xsi:type="uml:Package" name="util" visibility="public">
           <packagedElement xsi:type="uml:Class" name="ArrayList">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="ArrayList&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractList"/>
             <interfaceRealization contract="/0/externals/java/util/List"/>
@@ -25960,26 +25940,20 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="AbstractList">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractList&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractCollection"/>
             <interfaceRealization contract="/0/externals/java/util/List"/>
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="AbstractCollection">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractCollection&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <interfaceRealization contract="/0/externals/java/util/Collection"/>
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Collection">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Collection&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/lang/Iterable"/>
             <ownedOperation name="iterator" visibility="public"/>
@@ -26006,9 +25980,7 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="List">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="List&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/Collection"/>
             <ownedOperation name="add" visibility="public">
@@ -26081,12 +26053,8 @@
           <packagedElement xsi:type="uml:Interface" name="RandomAccess" visibility="public"/>
           <packagedElement xsi:type="uml:Class" name="HashMap">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="HashMap&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractMap"/>
             <interfaceRealization contract="/0/externals/java/util/Map"/>
@@ -26113,32 +26081,20 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="AbstractMap">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractMap&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <interfaceRealization contract="/0/externals/java/util/Map"/>
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Map">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Map&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <nestedClassifier xsi:type="uml:Interface" name="Entry">
               <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Entry&lt;K, V>">
-                <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                  <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-                </ownedParameter>
-                <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                  <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-                </ownedParameter>
+                <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+                <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
               </ownedTemplateSignature>
               <ownedOperation name="getKey" visibility="public"/>
               <ownedOperation name="getValue" visibility="public"/>
@@ -26170,18 +26126,14 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Iterator">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Iterator&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <ownedOperation name="hasNext" visibility="public"/>
             <ownedOperation name="next" visibility="public"/>
           </packagedElement>
           <packagedElement xsi:type="uml:Interface" name="Set">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Set&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/Collection"/>
             <ownedOperation name="iterator" visibility="public"/>
@@ -26233,12 +26185,8 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="WeakHashMap">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="WeakHashMap&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractMap"/>
             <interfaceRealization supplier="/0/externals/java/util/Map" contract="/0/externals/java/util/Map"/>
@@ -26262,9 +26210,7 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="HashSet">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="HashSet&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractSet"/>
             <interfaceRealization supplier="/0/externals/java/util/Set" contract="/0/externals/java/util/Set"/>
@@ -26286,18 +26232,14 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="AbstractSet">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="AbstractSet&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/AbstractCollection"/>
             <interfaceRealization supplier="/0/externals/java/util/Set" contract="/0/externals/java/util/Set"/>
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="LinkedHashSet">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="LinkedHashSet&lt;E>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="E"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/HashSet"/>
             <interfaceRealization supplier="/0/externals/java/util/Set" contract="/0/externals/java/util/Set"/>
@@ -26307,12 +26249,8 @@
           </packagedElement>
           <packagedElement xsi:type="uml:Class" name="LinkedHashMap">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="LinkedHashMap&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-                <ownedParameteredElement xsi:type="uml:Class" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
             </ownedTemplateSignature>
             <generalization general="/0/externals/java/util/HashMap"/>
             <interfaceRealization supplier="/0/externals/java/util/Map" contract="/0/externals/java/util/Map"/>

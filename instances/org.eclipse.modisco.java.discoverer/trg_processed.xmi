@@ -1257,12 +1257,8 @@
                       </packagedElement>
                       <packagedElement xsi:type="uml:Class" xmi:id="_tIPauWVeEeaMFO-HY38vDg" name="BijectiveMap">
                         <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIPaumVeEeaMFO-HY38vDg" name="BijectiveMap&lt;Key, Value>">
-                          <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIPau2VeEeaMFO-HY38vDg">
-                            <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIPavGVeEeaMFO-HY38vDg" name="Key"/>
-                          </ownedParameter>
-                          <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIPavWVeEeaMFO-HY38vDg">
-                            <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIQBYGVeEeaMFO-HY38vDg" name="Value"/>
-                          </ownedParameter>
+                          <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIPau2VeEeaMFO-HY38vDg"/>
+                          <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIPavWVeEeaMFO-HY38vDg"/>
                         </ownedTemplateSignature>
                         <ownedAttribute xmi:id="_tIQBYWVeEeaMFO-HY38vDg" name="keyValue" visibility="public" association="_tIR23mVeEeaMFO-HY38vDg">
                           <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_tIQBYmVeEeaMFO-HY38vDg"/>
@@ -6701,9 +6697,7 @@
               </packagedElement>
               <packagedElement xsi:type="uml:Class" xmi:id="_tIob9GVeEeaMFO-HY38vDg" name="AbstractDiscoverJavaModelFromProject">
                 <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIob9WVeEeaMFO-HY38vDg" name="AbstractDiscoverJavaModelFromProject&lt;T>">
-                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIob9mVeEeaMFO-HY38vDg">
-                    <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIob92VeEeaMFO-HY38vDg" name="T"/>
-                  </ownedParameter>
+                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIob9mVeEeaMFO-HY38vDg"/>
                 </ownedTemplateSignature>
                 <generalization xmi:id="_tIob-GVeEeaMFO-HY38vDg" general="_tIrfi2VeEeaMFO-HY38vDg"/>
                 <ownedAttribute xmi:id="_tIob-WVeEeaMFO-HY38vDg" name="fElementsToAnalyze" visibility="public" type="_tIqRLmVeEeaMFO-HY38vDg" association="_tIq4amVeEeaMFO-HY38vDg">
@@ -7476,9 +7470,7 @@
                 </packagedElement>
                 <packagedElement xsi:type="uml:Class" xmi:id="_tIrfNGVeEeaMFO-HY38vDg" name="AbstractModelDiscoverer">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIrfNWVeEeaMFO-HY38vDg" name="AbstractModelDiscoverer&lt;T>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfNmVeEeaMFO-HY38vDg">
-                      <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIrfN2VeEeaMFO-HY38vDg" name="T"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfNmVeEeaMFO-HY38vDg"/>
                   </ownedTemplateSignature>
                   <generalization xmi:id="_tIrfOGVeEeaMFO-HY38vDg" general="_tIrfTGVeEeaMFO-HY38vDg"/>
                   <ownedOperation xmi:id="_tIrfOWVeEeaMFO-HY38vDg" name="setDefaultTargetURI" visibility="public">
@@ -7510,17 +7502,13 @@
                 </packagedElement>
                 <packagedElement xsi:type="uml:Class" xmi:id="_tIrfTGVeEeaMFO-HY38vDg" name="AbstractDiscoverer">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIrfTWVeEeaMFO-HY38vDg" name="AbstractDiscoverer&lt;T>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfTmVeEeaMFO-HY38vDg">
-                      <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIrfT2VeEeaMFO-HY38vDg" name="T"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfTmVeEeaMFO-HY38vDg"/>
                   </ownedTemplateSignature>
                   <interfaceRealization xmi:id="_tIrfUGVeEeaMFO-HY38vDg" contract="_tIrfUWVeEeaMFO-HY38vDg"/>
                 </packagedElement>
                 <packagedElement xsi:type="uml:Interface" xmi:id="_tIrfUWVeEeaMFO-HY38vDg" name="IDiscoverer">
                   <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIrfUmVeEeaMFO-HY38vDg" name="IDiscoverer&lt;T>">
-                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfU2VeEeaMFO-HY38vDg">
-                      <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIrfVGVeEeaMFO-HY38vDg" name="T"/>
-                    </ownedParameter>
+                    <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfU2VeEeaMFO-HY38vDg"/>
                   </ownedTemplateSignature>
                 </packagedElement>
                 <packagedElement xsi:type="uml:Class" xmi:id="_tIrfVWVeEeaMFO-HY38vDg" name="org.eclipse.modisco.infra.discovery.core.AbstractModelDiscoverer&lt;org.eclipse.jdt.core.IClassFile>">
@@ -7562,18 +7550,14 @@
                 <packagedElement xsi:type="uml:Package" xmi:id="_tIrfamVeEeaMFO-HY38vDg" name="discovery" visibility="public">
                   <packagedElement xsi:type="uml:Class" xmi:id="_tIrfa2VeEeaMFO-HY38vDg" name="AbstractRegionDiscoverer2">
                     <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIrfbGVeEeaMFO-HY38vDg" name="AbstractRegionDiscoverer2&lt;T>">
-                      <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfbWVeEeaMFO-HY38vDg">
-                        <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIrfbmVeEeaMFO-HY38vDg" name="T"/>
-                      </ownedParameter>
+                      <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfbWVeEeaMFO-HY38vDg"/>
                     </ownedTemplateSignature>
                     <generalization xmi:id="_tIrfb2VeEeaMFO-HY38vDg" general="_tIrfNGVeEeaMFO-HY38vDg"/>
                     <interfaceRealization xmi:id="_tIrfcGVeEeaMFO-HY38vDg" contract="_tIrfcWVeEeaMFO-HY38vDg"/>
                   </packagedElement>
                   <packagedElement xsi:type="uml:Interface" xmi:id="_tIrfcWVeEeaMFO-HY38vDg" name="ISourceRegionNotifier">
                     <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tIrfcmVeEeaMFO-HY38vDg" name="ISourceRegionNotifier&lt;T>">
-                      <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfc2VeEeaMFO-HY38vDg">
-                        <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tIrfdGVeEeaMFO-HY38vDg" name="T"/>
-                      </ownedParameter>
+                      <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tIrfc2VeEeaMFO-HY38vDg"/>
                     </ownedTemplateSignature>
                     <ownedOperation xmi:id="_tIrfdWVeEeaMFO-HY38vDg" name="notifySourceRegionVisited" visibility="public">
                       <ownedParameter xmi:id="_tIrfdmVeEeaMFO-HY38vDg" name="arg0" visibility="public" type="_tI_BemVeEeaMFO-HY38vDg">
@@ -10663,17 +10647,13 @@
               <packagedElement xsi:type="uml:Interface" xmi:id="_tI-aJGVeEeaMFO-HY38vDg" name="Enumerator" visibility="public"/>
               <packagedElement xsi:type="uml:Interface" xmi:id="_tI-aJWVeEeaMFO-HY38vDg" name="EList">
                 <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tI-aJmVeEeaMFO-HY38vDg" name="EList&lt;E>">
-                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-aJ2VeEeaMFO-HY38vDg">
-                    <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tI-aKGVeEeaMFO-HY38vDg" name="E"/>
-                  </ownedParameter>
+                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-aJ2VeEeaMFO-HY38vDg"/>
                 </ownedTemplateSignature>
                 <generalization xmi:id="_tI-aKWVeEeaMFO-HY38vDg" general="_tJBddWVeEeaMFO-HY38vDg"/>
               </packagedElement>
               <packagedElement xsi:type="uml:Interface" xmi:id="_tI-aKmVeEeaMFO-HY38vDg" name="TreeIterator">
                 <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tI-aK2VeEeaMFO-HY38vDg" name="TreeIterator&lt;E>">
-                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-aLGVeEeaMFO-HY38vDg">
-                    <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tI-aLWVeEeaMFO-HY38vDg" name="E"/>
-                  </ownedParameter>
+                  <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-aLGVeEeaMFO-HY38vDg"/>
                 </ownedTemplateSignature>
                 <generalization xmi:id="_tI-aLmVeEeaMFO-HY38vDg" general="_tJDSp2VeEeaMFO-HY38vDg"/>
               </packagedElement>
@@ -10823,9 +10803,7 @@
                   <packagedElement xsi:type="uml:Package" xmi:id="_tI-akGVeEeaMFO-HY38vDg" name="serialization" visibility="public">
                     <packagedElement xsi:type="uml:Interface" xmi:id="_tI-akWVeEeaMFO-HY38vDg" name="ISerializer">
                       <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tI-akmVeEeaMFO-HY38vDg" name="ISerializer&lt;T>">
-                        <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-ak2VeEeaMFO-HY38vDg">
-                          <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tI_BMGVeEeaMFO-HY38vDg" name="T"/>
-                        </ownedParameter>
+                        <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI-ak2VeEeaMFO-HY38vDg"/>
                       </ownedTemplateSignature>
                     </packagedElement>
                     <packagedElement xsi:type="uml:Interface" xmi:id="_tI_BMWVeEeaMFO-HY38vDg" name="ISerializationRegistry" visibility="public">
@@ -11061,9 +11039,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tI_oa2VeEeaMFO-HY38vDg" name="Comparable">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tI_obGVeEeaMFO-HY38vDg" name="Comparable&lt;T>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI_obWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tI_obmVeEeaMFO-HY38vDg" name="T"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI_obWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tI_ob2VeEeaMFO-HY38vDg" name="CharSequence" visibility="public"/>
@@ -11083,9 +11059,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tI_oe2VeEeaMFO-HY38vDg" name="Iterable">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tI_ofGVeEeaMFO-HY38vDg" name="Iterable&lt;T>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI_ofWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tI_ofmVeEeaMFO-HY38vDg" name="T"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tI_ofWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tI_of2VeEeaMFO-HY38vDg" name="SuppressWarnings" visibility="public"/>
@@ -11168,9 +11142,7 @@
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJAPUWVeEeaMFO-HY38vDg" name="Appendable" visibility="public"/>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJAPUmVeEeaMFO-HY38vDg" name="Class">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJAPU2VeEeaMFO-HY38vDg" name="Class&lt;T>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJAPVGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJAPVWVeEeaMFO-HY38vDg" name="T"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJAPVGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <interfaceRealization xmi:id="_tJAPVmVeEeaMFO-HY38vDg" contract="_tJA2bGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJAPV2VeEeaMFO-HY38vDg" supplier="_tI_BbWVeEeaMFO-HY38vDg" contract="_tI_BbWVeEeaMFO-HY38vDg"/>
@@ -11242,9 +11214,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJAPiGVeEeaMFO-HY38vDg" name="Enum">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJAPiWVeEeaMFO-HY38vDg" name="Enum&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJA2YGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJA2YWVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJA2YGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <interfaceRealization xmi:id="_tJA2YmVeEeaMFO-HY38vDg" supplier="_tI_oa2VeEeaMFO-HY38vDg" contract="_tI_oa2VeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJA2Y2VeEeaMFO-HY38vDg" contract="_tJA2bGVeEeaMFO-HY38vDg"/>
@@ -11358,9 +11328,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJBddWVeEeaMFO-HY38vDg" name="List">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJBddmVeEeaMFO-HY38vDg" name="List&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdd2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJBdeGVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdd2VeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJBdeWVeEeaMFO-HY38vDg" general="_tJBdnWVeEeaMFO-HY38vDg"/>
           <ownedOperation xmi:id="_tJBdemVeEeaMFO-HY38vDg" name="add" visibility="public">
@@ -11416,17 +11384,13 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJBdnWVeEeaMFO-HY38vDg" name="Collection">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJBdnmVeEeaMFO-HY38vDg" name="Collection&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdn2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJBdoGVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdn2VeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJBdoWVeEeaMFO-HY38vDg" general="_tI_oe2VeEeaMFO-HY38vDg"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJBdomVeEeaMFO-HY38vDg" name="ArrayList">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJBdo2VeEeaMFO-HY38vDg" name="ArrayList&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdpGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJBdpWVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJBdpGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJBdpmVeEeaMFO-HY38vDg" general="_tJBdtGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJBdp2VeEeaMFO-HY38vDg" supplier="_tJBddWVeEeaMFO-HY38vDg" contract="_tJBddWVeEeaMFO-HY38vDg"/>
@@ -11449,30 +11413,22 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJBdtGVeEeaMFO-HY38vDg" name="AbstractList">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJBdtWVeEeaMFO-HY38vDg" name="AbstractList&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEgGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEgWVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEgGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCEgmVeEeaMFO-HY38vDg" general="_tJCEhGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJCEg2VeEeaMFO-HY38vDg" supplier="_tJBddWVeEeaMFO-HY38vDg" contract="_tJBddWVeEeaMFO-HY38vDg"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCEhGVeEeaMFO-HY38vDg" name="AbstractCollection">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCEhWVeEeaMFO-HY38vDg" name="AbstractCollection&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEhmVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEh2VeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEhmVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <interfaceRealization xmi:id="_tJCEiGVeEeaMFO-HY38vDg" supplier="_tJBdnWVeEeaMFO-HY38vDg" contract="_tJBdnWVeEeaMFO-HY38vDg"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJCEiWVeEeaMFO-HY38vDg" name="RandomAccess" visibility="public"/>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCEimVeEeaMFO-HY38vDg" name="HashMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCEi2VeEeaMFO-HY38vDg" name="HashMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEjGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEjWVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEjmVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEj2VeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEjGVeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEjmVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCEkGVeEeaMFO-HY38vDg" general="_tJCEmWVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJCEkWVeEeaMFO-HY38vDg" contract="_tJCEoGVeEeaMFO-HY38vDg"/>
@@ -11488,32 +11444,20 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCEmWVeEeaMFO-HY38vDg" name="AbstractMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCEmmVeEeaMFO-HY38vDg" name="AbstractMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEm2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEnGVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEnWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEnmVeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEm2VeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEnWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <interfaceRealization xmi:id="_tJCEn2VeEeaMFO-HY38vDg" contract="_tJCEoGVeEeaMFO-HY38vDg"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJCEoGVeEeaMFO-HY38vDg" name="Map">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCEoWVeEeaMFO-HY38vDg" name="Map&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEomVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEo2VeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEpGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEpWVeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEomVeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEpGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <nestedClassifier xsi:type="uml:Interface" xmi:id="_tJCEpmVeEeaMFO-HY38vDg" name="Entry">
             <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCEp2VeEeaMFO-HY38vDg" name="Entry&lt;K, V>">
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEqGVeEeaMFO-HY38vDg">
-                <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEqWVeEeaMFO-HY38vDg" name="K"/>
-              </ownedParameter>
-              <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEqmVeEeaMFO-HY38vDg">
-                <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCEq2VeEeaMFO-HY38vDg" name="V"/>
-              </ownedParameter>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEqGVeEeaMFO-HY38vDg"/>
+              <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCEqmVeEeaMFO-HY38vDg"/>
             </ownedTemplateSignature>
             <ownedOperation xmi:id="_tJCErGVeEeaMFO-HY38vDg" name="getKey" visibility="public"/>
             <ownedOperation xmi:id="_tJCErWVeEeaMFO-HY38vDg" name="getValue" visibility="public"/>
@@ -11558,9 +11502,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCro2VeEeaMFO-HY38vDg" name="LinkedHashSet">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCrpGVeEeaMFO-HY38vDg" name="LinkedHashSet&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrpWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCrpmVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrpWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCrp2VeEeaMFO-HY38vDg" general="_tJCrrGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJCrqGVeEeaMFO-HY38vDg" contract="_tJCrumVeEeaMFO-HY38vDg"/>
@@ -11570,9 +11512,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCrrGVeEeaMFO-HY38vDg" name="HashSet">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCrrWVeEeaMFO-HY38vDg" name="HashSet&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrrmVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCrr2VeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrrmVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCrsGVeEeaMFO-HY38vDg" general="_tJCrtGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJCrsWVeEeaMFO-HY38vDg" contract="_tJCrumVeEeaMFO-HY38vDg"/>
@@ -11581,18 +11521,14 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCrtGVeEeaMFO-HY38vDg" name="AbstractSet">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCrtWVeEeaMFO-HY38vDg" name="AbstractSet&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrtmVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCrt2VeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrtmVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCruGVeEeaMFO-HY38vDg" general="_tJCEhGVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJCruWVeEeaMFO-HY38vDg" contract="_tJCrumVeEeaMFO-HY38vDg"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJCrumVeEeaMFO-HY38vDg" name="Set">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCru2VeEeaMFO-HY38vDg" name="Set&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrvGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJCrvWVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJCrvGVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJCrvmVeEeaMFO-HY38vDg" general="_tJBdnWVeEeaMFO-HY38vDg"/>
           <ownedOperation xmi:id="_tJCrv2VeEeaMFO-HY38vDg" name="add" visibility="public">
@@ -11618,12 +11554,8 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJCrzGVeEeaMFO-HY38vDg" name="LinkedHashMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJCrzWVeEeaMFO-HY38vDg" name="LinkedHashMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSoGVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSoWVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSomVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSo2VeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSoGVeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSomVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJDSpGVeEeaMFO-HY38vDg" general="_tJCEimVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJDSpWVeEeaMFO-HY38vDg" supplier="_tJCEoGVeEeaMFO-HY38vDg" contract="_tJCEoGVeEeaMFO-HY38vDg"/>
@@ -11631,25 +11563,19 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJDSp2VeEeaMFO-HY38vDg" name="Iterator">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDSqGVeEeaMFO-HY38vDg" name="Iterator&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSqWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSqmVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSqWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <ownedOperation xmi:id="_tJDSq2VeEeaMFO-HY38vDg" name="hasNext" visibility="public"/>
           <ownedOperation xmi:id="_tJDSrGVeEeaMFO-HY38vDg" name="next" visibility="public"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJDSrWVeEeaMFO-HY38vDg" name="Comparator">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDSrmVeEeaMFO-HY38vDg" name="Comparator&lt;T>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSr2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSsGVeEeaMFO-HY38vDg" name="T"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSr2VeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJDSsWVeEeaMFO-HY38vDg" name="ListIterator">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDSsmVeEeaMFO-HY38vDg" name="ListIterator&lt;E>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSs2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDStGVeEeaMFO-HY38vDg" name="E"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSs2VeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJDStWVeEeaMFO-HY38vDg" general="_tJDSp2VeEeaMFO-HY38vDg"/>
           <ownedOperation xmi:id="_tJDStmVeEeaMFO-HY38vDg" name="hasNext" visibility="public"/>
@@ -11658,24 +11584,16 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJDSuWVeEeaMFO-HY38vDg" name="SortedMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDSumVeEeaMFO-HY38vDg" name="SortedMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSu2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSvGVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSvWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSvmVeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSu2VeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSvWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJDSv2VeEeaMFO-HY38vDg" general="_tJCEoGVeEeaMFO-HY38vDg"/>
           <ownedOperation xmi:id="_tJDSwGVeEeaMFO-HY38vDg" name="keySet" visibility="public"/>
         </packagedElement>
         <packagedElement xsi:type="uml:Class" xmi:id="_tJDSwWVeEeaMFO-HY38vDg" name="TreeMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDSwmVeEeaMFO-HY38vDg" name="TreeMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSw2VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSxGVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSxWVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDSxmVeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSw2VeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDSxWVeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJDSx2VeEeaMFO-HY38vDg" general="_tJCEmWVeEeaMFO-HY38vDg"/>
           <interfaceRealization xmi:id="_tJDSyGVeEeaMFO-HY38vDg" contract="_tJDSz2VeEeaMFO-HY38vDg"/>
@@ -11690,12 +11608,8 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" xmi:id="_tJDSz2VeEeaMFO-HY38vDg" name="NavigableMap">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" xmi:id="_tJDS0GVeEeaMFO-HY38vDg" name="NavigableMap&lt;K, V>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDS0WVeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDS0mVeEeaMFO-HY38vDg" name="K"/>
-            </ownedParameter>
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDS02VeEeaMFO-HY38vDg">
-              <ownedParameteredElement xsi:type="uml:Class" xmi:id="_tJDS1GVeEeaMFO-HY38vDg" name="V"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDS0WVeEeaMFO-HY38vDg"/>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter" xmi:id="_tJDS02VeEeaMFO-HY38vDg"/>
           </ownedTemplateSignature>
           <generalization xmi:id="_tJDS1WVeEeaMFO-HY38vDg" general="_tJDSuWVeEeaMFO-HY38vDg"/>
         </packagedElement>

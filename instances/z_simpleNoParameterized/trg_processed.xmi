@@ -54,9 +54,7 @@
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" name="Comparable">
           <ownedTemplateSignature xsi:type="uml:RedefinableTemplateSignature" name="Comparable&lt;T>">
-            <ownedParameter xsi:type="uml:ClassifierTemplateParameter">
-              <ownedParameteredElement xsi:type="uml:Class" name="T"/>
-            </ownedParameter>
+            <ownedParameter xsi:type="uml:ClassifierTemplateParameter"/>
           </ownedTemplateSignature>
         </packagedElement>
         <packagedElement xsi:type="uml:Interface" name="CharSequence" visibility="public"/>

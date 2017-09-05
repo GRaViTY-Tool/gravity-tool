@@ -158,9 +158,9 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		long end = System.nanoTime();
 		System.out.println("result\t\teMoflonOld\ttfwd\t " + numberFormat.format((end - start) / 1000000000.0));
 
-		// System.out.println("saving results...");
+		 System.out.println("saving results...");
 		// saveSrc("instances/src_processed.xmi");
-		// saveTrg("instances/fwd.trg.xmi");
+		 saveTrg("instances/fwd.trg.xmi");
 		// saveCorr("instances/fwd.corr.xmi");
 		// saveSynchronizationProtocol("instances/fwd.protocol.xmi");
 		// Resource r = set.createResource(URI.createFileURI(new
@@ -201,8 +201,8 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		System.out.println("performing backward postprocessing...");
 		m.performBackwardPost(src);
 
-		// System.out.println("saving results");
-		// saveSrc("instances/bwd.trg.xmi");
+		 System.out.println("saving results");
+		 saveSrc("instances/bwd.trg.xmi");
 		// saveCorr("instances/bwd.corr.xmi");
 		// saveSynchronizationProtocol("instances/bwd.protocol.xmi");
 		//
