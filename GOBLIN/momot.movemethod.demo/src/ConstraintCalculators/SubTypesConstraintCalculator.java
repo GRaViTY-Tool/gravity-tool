@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
@@ -14,7 +12,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
-import FitnessCalculators.IFitnessCalculator;
 import momotFiles.Utility;
 
 public class SubTypesConstraintCalculator extends ConstraintCalculator{
@@ -76,8 +73,8 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 	}
 	
 	/*
-	 * Für jede Methode a gilt:
-	 * wenn von a eine andere Methode b überschrieben oder versteckt wird:
+	 * Fï¿½r jede Methode a gilt:
+	 * wenn von a eine andere Methode b ï¿½berschrieben oder versteckt wird:
 	 * sichtbarkeit von a >= sichtbarkeit von b
 	 * 
 	 */
@@ -107,8 +104,8 @@ private static void fillParentMethods(List<TMethodDefinition> parentMethods, TCl
 	
 
 	/*
-	 * Für jede Methode a gilt:
-	 * Methoden müssen die gleiche Sichtbarkeit haben wie die Interface Methoden, von denen sie abgeleitet werden
+	 * Fï¿½r jede Methode a gilt:
+	 * Methoden mï¿½ssen die gleiche Sichtbarkeit haben wie die Interface Methoden, von denen sie abgeleitet werden
 	 * kann mit sub1 kombiniert werden indem check auf interfaces und auf superklassen
 	 */
 	public static Map<TMember, TVisibility> sub2(TypeGraph graph){

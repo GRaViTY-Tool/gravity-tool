@@ -1,14 +1,11 @@
 package FitnessCalculators;
 
-import java.beans.Visibility;
-
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import Repair.RepairAnnotation;
-import Repair.VisibilityRepairer;
 import momotFiles.Utility;
 
 public class RepairMetricCalculator extends MetricCalculator{

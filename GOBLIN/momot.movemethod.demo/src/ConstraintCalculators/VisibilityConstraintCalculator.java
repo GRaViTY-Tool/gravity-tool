@@ -1,12 +1,8 @@
 package ConstraintCalculators;
 
-import java.io.ObjectOutputStream.PutField;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-
 import org.eclipse.emf.common.util.EList;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
@@ -16,7 +12,6 @@ import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
-import FitnessCalculators.IFitnessCalculator;
 import momotFiles.Utility;
 
 public class VisibilityConstraintCalculator extends ConstraintCalculator{

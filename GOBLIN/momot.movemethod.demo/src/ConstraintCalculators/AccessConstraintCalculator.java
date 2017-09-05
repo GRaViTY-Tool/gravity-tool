@@ -3,8 +3,6 @@ package ConstraintCalculators;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.gravity.tgg.modisco.Rules.TypesVisibility;
-import org.gravity.tgg.modisco.Rules.impl.TypesVisibilityImpl;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
@@ -12,8 +10,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
-
 import momotFiles.Utility;
 
 public class AccessConstraintCalculator extends ConstraintCalculator{

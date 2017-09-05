@@ -14,5 +14,6 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.converter,
+ org.gravity.eclipse.exceptions,
  org.gravity.eclipse.io,
  org.gravity.eclipse.selection

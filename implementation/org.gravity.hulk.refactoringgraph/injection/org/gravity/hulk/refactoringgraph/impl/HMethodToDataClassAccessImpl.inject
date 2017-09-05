@@ -3,12 +3,7 @@ import  java.util.TreeSet;
 import  org.eclipse.emf.common.util.EList;
 import  org.eclipse.swt.widgets.TreeItem;
 import  org.gravity.typegraph.basic.TAbstractType;
-import  org.gravity.typegraph.basic.annotations.TAnnotatable;
 import  org.gravity.typegraph.basic.annotations.TAnnotation;
-import  org.gravity.typegraph.basic.TMethod;
-import  org.gravity.typegraph.basic.TMethodDefinition;
-import  org.gravity.typegraph.basic.TMethodSignature;
-import  org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import  org.gravity.hulk.antipatterngraph.HMetric;
 import  org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import  org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
@@ -17,13 +12,16 @@ import  org.gravity.hulk.antipatterngraph.values.ValuesFactory;
 partial class HMethodToDataClassAccessImpl {
 
 @members<--
+
 	@Override
 	public TreeItem createItemContents(TreeItem item, int style) {
 		TMember tMember = (TMember) getTAnnotated();
 		TAbstractType definingClass = tMember.getDefinedBy();
-		item.setText("MemberToDataClassAccess(" + definingClass.getFullyQualifiedName() + "." + tMember.getSignatureString() + ")=" + getValue());
+		item.setText("MemberToDataClassAccess(" + definingClass.getFullyQualifiedName() + "."
+				+ tMember.getSignatureString() + ")=" + getValue());
 		return item;
 	}
+
 	-->
 
 @model getRelativeAmount ()<--		EList<TAnnotation> annotations = getTAnnotated().getTAnnotation();

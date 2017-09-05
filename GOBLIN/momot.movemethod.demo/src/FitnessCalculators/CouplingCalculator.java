@@ -1,7 +1,7 @@
 package FitnessCalculators;
 
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.hulk.detection.metrics.HTotalCouplingCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
@@ -14,7 +14,7 @@ public class CouplingCalculator extends MetricCalculator{
 	@Override
 	public double calculate(EGraph graph) {
 		//total
-		return calculate(HTotalCouplingCalculator.class, graph);
+		return calculate(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator(), graph);
 		
 		//efferent
 		//return calculate(HEfferentCouplingCalculator.class, graph);

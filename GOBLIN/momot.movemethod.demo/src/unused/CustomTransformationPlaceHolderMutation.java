@@ -4,22 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.henshin.interpreter.Assignment;
-import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 import org.gravity.typegraph.basic.impl.TMethodSignatureImpl;
 import org.moeaframework.core.PRNG;
-
-import com.google.common.reflect.Parameter;
 
 import at.ac.tuwien.big.moea.util.MathUtil;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.problem.solution.variable.ITransformationVariable;
-import at.ac.tuwien.big.momot.problem.solution.variable.TransformationPlaceholderVariable;
 import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationPlaceholderMutation;
 
 public class CustomTransformationPlaceHolderMutation extends TransformationPlaceholderMutation{

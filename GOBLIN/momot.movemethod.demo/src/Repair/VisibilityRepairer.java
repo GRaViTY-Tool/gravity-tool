@@ -3,14 +3,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TFieldDefinition;
-import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
@@ -20,7 +13,6 @@ import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolutionRepairer;
 import momotFiles.SearchTypeGraph;
 import momotFiles.SearchTypeGraph.FitnessFunction;
-import momotFiles.Utility;
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 

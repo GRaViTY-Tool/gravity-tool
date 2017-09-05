@@ -4,7 +4,8 @@ Bundle-Name: Hulk UI
 Bundle-SymbolicName: org.gravity.hulk.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.gravity.hulk.ui.HulkUiActivator
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: org.gravity.eclipse,
+ org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.core.resources,
@@ -13,8 +14,7 @@ Require-Bundle: org.eclipse.ui,
  org.gravity.typegraph.basic,
  org.moflon.core.dfs,
  org.gravity.hulk.antipatterngraph,
- org.gravity.hulk.annotations,
- org.gravity.eclipse
+ org.gravity.hulk.annotations
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui

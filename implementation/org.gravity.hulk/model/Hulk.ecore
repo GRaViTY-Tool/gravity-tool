@@ -1058,13 +1058,15 @@
         <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.1" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.0"/>
         <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.2" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.5"/>
         <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.1"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.4" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.4" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3" guard="FAILURE"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.7" guard="SUCCESS"/>
         <ownedActivityNode xsi:type="activities:StatementNode" name="Call extracted method" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.0" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.1">
           <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//HAntiPatternDetection/createCodeSmellDependencies">
             <ownedParameterBindings parameter="//HAntiPatternDetection/createCodeSmellDependencies/graph">
               <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
             </ownedParameterBindings>
-            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0"/>
           </statementExpression>
         </ownedActivityNode>
         <ownedActivityNode xsi:type="activities:StatementNode" name="Call extracted method" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.1" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.3">
@@ -1072,7 +1074,7 @@
             <ownedParameterBindings parameter="//HAntiPatternDetection/createMetricDependencies/graph">
               <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
             </ownedParameterBindings>
-            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0"/>
           </statementExpression>
         </ownedActivityNode>
         <ownedActivityNode xsi:type="activities:StatementNode" name="Call extracted method" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.2" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.0">
@@ -1080,10 +1082,10 @@
             <ownedParameterBindings parameter="//HAntiPatternDetection/createAntiPatternDependencies/graph">
               <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
             </ownedParameterBindings>
-            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0"/>
           </statementExpression>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="Create Dependency Graph" comment="Create_Dependency_Graph" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.3" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.4">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="Create Dependency Graph" comment="Create_Dependency_Graph" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.3" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.5">
           <storyPattern comment="Create_Dependency_Graph">
             <objectVariable name="graph" bindingOperator="CREATE">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
@@ -1094,6 +1096,22 @@
         <ownedActivityNode xsi:type="activities:StartNode" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.4"/>
         <ownedActivityNode xsi:type="activities:StopNode" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.2">
           <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="Is there already a DFS Graph?" comment="Is_there_already_a_DFS_Graph_" outgoing="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.5 //HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.6" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.4">
+          <storyPattern comment="Is_there_already_a_DFS_Graph_">
+            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
+            </objectVariable>
+            <objectVariable type="//HDetector" name="hDetector" outgoingLink="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0"/>
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityEdge.6">
+          <returnValue xsi:type="patternExpressions:ObjectVariableExpression" object="//HAntiPatternDetection/getDependencyGraph/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1"/>
         </ownedActivityNode>
       </activity>
     </eOperations>

@@ -41,6 +41,7 @@ public class HulkDetector {
 		this.thresholds = thresholds;
 		this.verbose = verbose;
 		initialized = new HashSet<>();
+		hulk.getDependencyGraph();
 	}
 
 	private List<HDetector> getSorted(HDetector detector) {
@@ -114,7 +115,8 @@ public class HulkDetector {
 		}
 	}
 
-	public boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors) {
+	private boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors,
+			boolean verbose) {
 		long h0 = 0;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
@@ -150,7 +152,7 @@ public class HulkDetector {
 			return false;
 		}
 
-		return detectSelectedAntiPattern(worklist, processed_detectors);
+		return detectSelectedAntiPattern(worklist, processed_detectors, this.verbose);
 	}
 
 	public static Hashtable<String, String> getDefaultThresholds() {

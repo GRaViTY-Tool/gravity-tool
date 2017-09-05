@@ -3,7 +3,6 @@ package ConstraintCalculators;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;

@@ -1,10 +1,10 @@
 package FitnessCalculators;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Stack;
-
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -23,36 +23,18 @@ import org.moflon.core.dfs.DFSGraph;
 public abstract class MetricCalculator implements IFitnessCalculator{
 	
 	
-	private double calculate(Class detectorClass, HAntiPatternHandling hulk){
+	private double calculate(EClass detectorClass, HAntiPatternHandling hulk){
 		double fitness = 0;
-		HDetector detector= getDetector(detectorClass, hulk);
-		startDetector(detector, hulk);
+		HulkDetector hulkDetector = new HulkDetector(hulk, new Hashtable<String, String>());
+		HashSet<HDetector> selected = new HashSet<HDetector>();
+		hulkDetector.detectSelectedAntiPattern(Collections.singleton(detectorClass), selected, new HashSet<HDetector>());
 		
-		for(HAnnotation metric: detector.getHAnnotation()){
+		for(HAnnotation metric: selected.iterator().next().getHAnnotation()){
 			if(metric instanceof HMetric){
 				fitness += ((HMetric)metric).getValue();
 			}
 		}
 		return fitness;
-	}
-	
-	public void startDetector(HDetector detector, HAntiPatternHandling hulk){		
-		
-		Stack<HDetector> stack = new Stack<HDetector>();
-		stack.add(detector);
-		//det.setHAntiPatternHandling(hulk);
-		HulkDetector hulkDetector = new HulkDetector(hulk, new Hashtable<String, String>());
-		hulkDetector.detectSelectedAntiPattern(stack, new HashSet<HDetector>());
-	}
-	
-	public HDetector getDetector(Class clazz, HAntiPatternHandling hulk){
-		HDetector det= null;
-		for(HDetector detector :hulk.getHDetector()){
-			if(clazz.isInstance(detector)){
-				det = detector;
-			}
-		}
-		return det;
 	}
 	
 	public HAntiPatternHandling getHulk(EGraph graph){
@@ -84,7 +66,7 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 		return hulk;
 	}
 		
-	public double calculate(Class detectorClass, EGraph graph){
+	public double calculate(EClass detectorClass, EGraph graph){
 		return calculate(detectorClass, getHulk(graph));
 	}
 }

@@ -63,6 +63,7 @@ import org.gravity.arte.testdsl.arteLanguage.Test_Step;
 import org.gravity.arte.testdsl.arteLanguage.Test_Step_Element;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.refactorings.Changes;
 import org.gravity.refactorings.application.RefactoringTool;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -229,6 +230,8 @@ public class TestExecution {
 					return false;
 				} catch (SecurityException e) {
 					e.printStackTrace();
+				} catch (NoConverterRegisteredException e1) {
+					e1.printStackTrace();
 				}
 			} catch (CoreException e) {
 				test_record.put(test_case.getName(),

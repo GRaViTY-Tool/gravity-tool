@@ -10,10 +10,8 @@ import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.resolve.ResolvePackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
-import org.gravity.hulk.resolve.antipattern.impl.HBlobResolverImpl;
 import org.gravity.hulk.ui.dialogs.ResolveResultDialog;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -101,8 +99,6 @@ public class HulkResolveHandler extends HulkHandler{
 		// that provides access to getBestMoves().
 		for (HDetector reslv : executed_detectors) {
 			if (reslv instanceof HBlobResolver) {
-
-				HBlobResolverImpl res = (HBlobResolverImpl) reslv;
 
 				Runnable runnable = new Runnable() {
 
