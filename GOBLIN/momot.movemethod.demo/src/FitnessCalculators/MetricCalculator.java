@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
@@ -59,8 +60,13 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 			hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 			hulk.setApg(antipatternGraph);
 			DFSGraph dfs = hulk.getDependencyGraph();
+			ResourceSetImpl resourceSet = new ResourceSetImpl();
+			if(!resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().containsKey("xmi")) {
+			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", 
+					new XMIResourceFactoryImpl());
+			}
 
-			Resource res = new ResourceSetImpl().createResource(URI.createURI("SemllDependencyGraph.xmi")); //$NON-NLS-1$
+			Resource res = resourceSet.createResource(URI.createURI("SemllDependencyGraph.xmi")); //$NON-NLS-1$
 			res.getContents().add(dfs);
 		}
 		return hulk;

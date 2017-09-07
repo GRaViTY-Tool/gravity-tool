@@ -8,7 +8,7 @@ public class SearchParameters {
 	// public static String INITIAL_MODEL = "input/02_JsciCalc2.1.0.xmi";
 	@Parameter(	names = { "-im", "--initial_model" },
 				description = "Initial Model that will be optimized")
-	public static String INITIAL_MODEL = "input/00_JavaSolitaire1.3.xmi";
+	public static String INITIAL_MODEL = "input/01_QuickUML2001.xmi";
 
 	@Parameter(	names = { "-h", "--help" }, 
 				help = true, 

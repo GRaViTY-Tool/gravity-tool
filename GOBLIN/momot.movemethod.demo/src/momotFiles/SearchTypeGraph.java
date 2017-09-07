@@ -137,15 +137,19 @@ public class SearchTypeGraph {
 		Bundle bundle = Platform.getBundle("org.goblin.movemethod");
 		ModuleManager manager = new ModuleManager();
 		for (String module : SearchParameters.modules) {
-			URL entry = bundle.getEntry(module);
-			try {
-				String substring = entry.getFile().substring(entry.getFile().lastIndexOf('/') + 1);
-				Path temp = Files.createTempDirectory("goblin");
-				File file = new File(temp.toFile(), substring);
-				Files.copy(entry.openStream(), file.toPath());
-				manager.addModule(file.getAbsolutePath());
-			} catch (IOException e) {
-				e.printStackTrace();
+			if(bundle == null) {
+				manager.addModule(module);
+			}else {
+				URL entry = bundle.getEntry(module);
+				try {
+					String substring = entry.getFile().substring(entry.getFile().lastIndexOf('/') + 1);
+					Path temp = Files.createTempDirectory("goblin");
+					File file = new File(temp.toFile(), substring);
+					Files.copy(entry.openStream(), file.toPath());
+					manager.addModule(file.getAbsolutePath());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 
