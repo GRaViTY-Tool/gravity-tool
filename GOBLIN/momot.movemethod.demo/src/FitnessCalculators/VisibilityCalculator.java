@@ -14,8 +14,7 @@ public class VisibilityCalculator extends MetricCalculator {
 
 	@Override
 	public double calculate(EGraph graph) {
-		int value = 0;
-
+		
 		TypeGraph pg = null;
 		EObject root = graph.getRoots().get(0);
 		if (root instanceof TypeGraph) {
@@ -27,10 +26,15 @@ public class VisibilityCalculator extends MetricCalculator {
 
 		}
 
+		return calculate(pg);
+	}
+
+	public double calculate(TypeGraph pg) {
 		if (pg == null) {
 			throw new RuntimeException("PG not found!");
 		}
 
+		int value = 0;
 		for (TClass tClass : pg.getClasses()) {
 			if (!tClass.isTLib()) {
 				for (TMember tMember : tClass.getDefines()) {
