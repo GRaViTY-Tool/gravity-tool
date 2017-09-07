@@ -87,7 +87,7 @@ public class SearchTypeGraph {
 		fitnessFunctions.add(new FitnessFunction("Coupling", FunctionType.Minimum, new CouplingCalculator()));
 		fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));
 		fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
-//		fitnessFunctions.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
+		fitnessFunctions.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
 		if (SearchParameters.useRepair) {
 			fitnessFunctions
 					.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
