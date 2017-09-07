@@ -25,7 +25,7 @@
 		#trg->umlPackage
 	}
 	
-	++ md2o : NamedElement2NamedElement {
+	++ bd2ne : NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}

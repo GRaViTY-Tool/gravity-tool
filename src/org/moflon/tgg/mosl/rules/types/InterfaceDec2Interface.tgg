@@ -24,7 +24,7 @@
 		#src->jPackage
 		#trg->umlPackage
 	}
-	++ cd2c : NamedElement2NamedElement {
+	++ bd2ne : NamedElement2NamedElement {
 		#src->bodyDeclaration
 		#trg->feature
 	}
