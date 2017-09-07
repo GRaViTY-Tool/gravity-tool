@@ -4,19 +4,12 @@
 #rule MethodDec2Operation4InterfaceWithModifier #extends MethodDec2Operation4Interface,Modifier2Feature_Abstract #with MoDiscoTGG
 
 #source { 
-	++bodyDeclaration:BodyDeclaration
 }
 
 #target {
-	++feature:Feature
 }
 
 #correspondence {
-	
-	++bd2ne:NamedElement2NamedElement {
-		#src->bodyDeclaration
-		#trg->feature
-	}
 }
 
 #attributeConditions {

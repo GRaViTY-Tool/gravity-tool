@@ -3,20 +3,13 @@
 
 #rule MethodDec2Operation4ClassWithModifier #extends MethodDec2Operation4Class,Modifier2Feature_Abstract #with MoDiscoTGG
 
-#source { 
-	++bodyDeclaration:BodyDeclaration
+#source {
 }
 
 #target {
-	++feature:Feature
 }
 
 #correspondence {
-	
-	++bd2ne:NamedElement2NamedElement {
-		#src->bodyDeclaration
-		#trg->feature
-	}
 }
 
 #attributeConditions {
