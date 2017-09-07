@@ -8,6 +8,7 @@ import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import ConstraintCalculators.ConstraintCalculator;
+import ConstraintCalculators.ViolationsMap;
 import PreConditions.ChangeVisibilityPreConditions;
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolutionRepairer;
@@ -23,7 +24,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer{
 			if(constraint.calculator instanceof ConstraintCalculator){
 				ConstraintCalculator calc = (ConstraintCalculator) constraint.calculator;
 				
-				Map<TMember, TVisibility> violations = calc.violations(solution.getResultGraph());
+				ViolationsMap violations = calc.violations(solution.getResultGraph());
 				for(Entry<TMember, TVisibility> violation : violations.entrySet()){
 					if(ChangeVisibilityPreConditions.checkPreconditions(violation)){
 						TAnnotation repairAnnot = new RepairAnnotation(violation.getKey().getTModifier().getTVisibility(), violation.getValue());
