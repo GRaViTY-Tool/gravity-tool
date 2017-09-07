@@ -3,6 +3,7 @@ package ConstraintCalculators;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
@@ -17,36 +18,41 @@ public class InheritanceConstraintCalculator extends ConstraintCalculator{
 
 	
 	//-------------------------INH1---------------------------------
-	private Map<TMember, TVisibility> methodINH1(TMethodDefinition methodDef, TClass tClass, TypeGraph graph){ 
-		Map<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
-		for(TAccess access: methodDef.getTAccessing()){
-			if(access.getStaticType() != null 
-					&& access.getStaticType() != graph.getClass("Void") 
-					&& access.getStaticType() != tClass){	
-				TVisibility minVis = access.getStaticType().getMinimumRequiredVisibility(access.getTTarget().getDefinedBy());
-				TModifier targetMod = access.getTTarget().getTModifier();
-				if(targetMod != null){
-					TVisibility acutalVis = access.getTTarget().getTModifier().getTVisibility();
-					if(!Utility.visibilityDominates(acutalVis, minVis)){
-						violations.put(access.getTTarget(), minVis);
-					}
+	private ViolationsMap accessINH1(TAccess access, TMethodDefinition methodDef, TClass tClass, TypeGraph graph){
+		ViolationsMap violations = new ViolationsMap();
+		if(access.getStaticType() != null 
+				&& access.getStaticType() != graph.getClass("Void") 
+				&& access.getStaticType() != tClass){	
+			TVisibility minVis = access.getStaticType().getMinimumRequiredVisibility(access.getTTarget().getDefinedBy());
+			TModifier targetMod = access.getTTarget().getTModifier();
+			if(targetMod != null){
+				TVisibility acutalVis = access.getTTarget().getTModifier().getTVisibility();
+				if(!Utility.visibilityDominates(acutalVis, minVis)){
+					violations.put(access.getTTarget(), minVis);
 				}
-				
-			}
+			}	
 		}
 		return violations;
 	}
 	
-	private Map<TMember, TVisibility> classINH1(TClass tClass, TypeGraph graph){ 
-		Map<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
+	private ViolationsMap methodINH1(TMethodDefinition methodDef, TClass tClass, TypeGraph graph){ 
+		ViolationsMap violations = new ViolationsMap();
+		for(TAccess access: methodDef.getTAccessing()){
+			violations.putAll(accessINH1(access, methodDef, tClass, graph));
+		}
+		return violations;
+	}
+	
+	private ViolationsMap classINH1(TClass tClass, TypeGraph graph){ 
+		ViolationsMap violations = new ViolationsMap();
 		for(TMethodDefinition methodDef: Utility.getMethodDefinitions(tClass)){
 			violations.putAll(methodINH1(methodDef, tClass, graph));
 		}
 		return violations;
 	}
 	
-	public Map<TMember, TVisibility> INH1(TypeGraph graph){
-		Map<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
+	public ViolationsMap INH1(TypeGraph graph){
+		ViolationsMap violations = new ViolationsMap();
 		for(TClass tClass: Utility.getDefinedClasses(graph)){
 			violations.putAll(classINH1(tClass, graph));
 		}
@@ -62,10 +68,23 @@ public class InheritanceConstraintCalculator extends ConstraintCalculator{
 	//--------------------------------------------------------------
 	
 	@Override
-	public Map<TMember, TVisibility> violations(TypeGraph graph) {
-		Map<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
+	public ViolationsMap violations(TypeGraph graph) {
+		ViolationsMap violations = new ViolationsMap();
 		violations.putAll(INH1(graph));
 		//violations.putAll(INH2(graph));
+		return violations;
+	}
+	
+	@Override
+	public ViolationsMap memberLeadsToViolations(TMember member) {
+		ViolationsMap violations = new ViolationsMap();
+		for(TAccess access: member.getAccessedBy()){
+			if(access.getTSource() instanceof TMethodDefinition && access.getTSource().getDefinedBy() instanceof TClass){
+				TClass tClass = (TClass) access.getTSource().getDefinedBy();
+				TMethodDefinition method = (TMethodDefinition) access.getTSource();
+				violations.putAll(accessINH1(access, method, tClass, tClass.getPg() ));
+			}
+		}
 		return violations;
 	}
 

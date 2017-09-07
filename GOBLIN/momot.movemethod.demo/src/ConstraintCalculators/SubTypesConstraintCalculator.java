@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
@@ -12,114 +14,106 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
+import FitnessCalculators.IFitnessCalculator;
 import momotFiles.Utility;
 
 public class SubTypesConstraintCalculator extends ConstraintCalculator{
 
 	
-	@Override
-	public Map<TMember, TVisibility> violations(TypeGraph graph) {
-		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
-		violations.putAll(sub1(graph));
-		violations.putAll(sub2(graph));
-		return violations;
-	}
+
 	
-	private static List<TMethodDefinition> getMethods(TClass tClass){
-		List<TMethodDefinition> methods = new ArrayList<TMethodDefinition>();
-		for(TMember member: tClass.getDefines()){
-			if(member instanceof TMethodDefinition){
-				methods.add((TMethodDefinition)member);
+private static ViolationsMap compareMethod(List<TMethodDefinition> parentMethods, TMethodDefinition method){
+	ViolationsMap violations = new ViolationsMap();
+	for(TMethodDefinition parentMethod: parentMethods){
+		if(parentMethod.getSignature() == method.getSignature()){
+			if(parentMethod.getTModifier() == null){
+				continue;
+			}
+			TVisibility methodVisibility = TVisibility.TPUBLIC;
+			if(method.getTModifier() != null){
+				methodVisibility = method.getTModifier().getTVisibility();
+			}
+			TVisibility parentMethodVisibility = TVisibility.TPUBLIC;
+			if(parentMethod.getTModifier() != null){
+				parentMethodVisibility = parentMethod.getTModifier().getTVisibility();
+			}
+			
+			if(!Utility.visibilityDominates(methodVisibility, parentMethodVisibility)){
+				violations.put(method,  parentMethod.getTModifier().getTVisibility());
 			}
 		}
-		return methods;
 	}
+	return violations;
+}
 	
-private static void fillParentMethods(List<TMethodDefinition> parentMethods, TClass tClass){
-		
-		if(tClass.getParentClass() != null){
-			parentMethods.addAll(getMethods(tClass.getParentClass()));
-			fillParentMethods(parentMethods, tClass.getParentClass());
-		}
-	}
+
 	
-	private static Map<TMember, TVisibility> compareMethods(List<TMethodDefinition> parentMethods, TClass tClass){
-		HashMap<TMember, TVisibility> violations = new HashMap<>();
+	private static ViolationsMap compareMethods(List<TMethodDefinition> parentMethods, TClass tClass){
+		ViolationsMap violations = new ViolationsMap();
 		for(TMember member: tClass.getDefines()){
 			if(member instanceof TMethodDefinition){
 				TMethodDefinition method = (TMethodDefinition) member;
-				for(TMethodDefinition parentMethod: parentMethods){
-					if(parentMethod.getSignature() == method.getSignature()){
-						if(parentMethod.getTModifier() == null){
-							continue;
-						}
-						TVisibility methodVisibility = TVisibility.TPUBLIC;
-						if(method.getTModifier() != null){
-							methodVisibility = method.getTModifier().getTVisibility();
-						}
-						TVisibility parentMethodVisibility = TVisibility.TPUBLIC;
-						if(parentMethod.getTModifier() != null){
-							parentMethodVisibility = parentMethod.getTModifier().getTVisibility();
-						}
-						
-						if(!Utility.visibilityDominates(methodVisibility, parentMethodVisibility)){
-							violations.put(method,  parentMethod.getTModifier().getTVisibility());
-						}
-					}
-				}
+				violations.putAll(compareMethod(parentMethods, method));
 			}
 		}
 		return violations;
 	}
-	
-	/*
-	 * Fï¿½r jede Methode a gilt:
-	 * wenn von a eine andere Methode b ï¿½berschrieben oder versteckt wird:
-	 * sichtbarkeit von a >= sichtbarkeit von b
-	 * 
-	 */
-	public static Map<TMember, TVisibility> sub1(TypeGraph graph){
-		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
-		for(TClass tClass: Utility.getDefinedClasses(graph)){
-			List<TMethodDefinition> parentMethods = new ArrayList<TMethodDefinition>();
-			fillParentMethods(parentMethods, tClass);
-				violations.putAll(compareMethods(parentMethods, tClass));
-		}
-		return violations;
-	}
-	
-	
-	
-	private static void fillAllMethods(List<TMethodDefinition> methods, TInterface tInterface){
-		for(TMember sig: tInterface.getDefines()){
-			if(sig instanceof TMethodDefinition){
-				methods.add((TMethodDefinition)sig);
-			}
-		}
-		for(TInterface parentInterface: tInterface.getParentInterfaces()){
-			fillAllMethods(methods, parentInterface);
-		}
-	}
-	
 	
 
 	/*
-	 * Fï¿½r jede Methode a gilt:
-	 * Methoden mï¿½ssen die gleiche Sichtbarkeit haben wie die Interface Methoden, von denen sie abgeleitet werden
+	 * Für jede Methode a gilt:
+	 * Methoden müssen die gleiche Sichtbarkeit haben wie die Interface Methoden, von denen sie abgeleitet werden
 	 * kann mit sub1 kombiniert werden indem check auf interfaces und auf superklassen
 	 */
-	public static Map<TMember, TVisibility> sub2(TypeGraph graph){
-		HashMap<TMember, TVisibility> violations = new HashMap<TMember, TVisibility>();
+	public static ViolationsMap sub2(TypeGraph graph){
+		ViolationsMap violations = new ViolationsMap();
 		for(TClass tClass: graph.getClasses()){
-			List<TMethodDefinition> methods = new ArrayList<TMethodDefinition>();
-			for(TInterface tInterface: tClass.getImplements()){
-				fillAllMethods(methods, tInterface);
-			}
+			List<TMethodDefinition> methods =  Utility.getImplementedInterfaceMethods(tClass);
 			violations.putAll(compareMethods(methods, tClass));
 		}
 		return violations;
 	}
 
+	/*
+	 * Für jede Methode a gilt:
+	 * wenn von a eine andere Methode b überschrieben oder versteckt wird:
+	 * sichtbarkeit von a >= sichtbarkeit von b
+	 * 
+	 */
+	public static ViolationsMap sub1(TypeGraph graph){
+		ViolationsMap violations = new ViolationsMap();
+		for(TClass tClass: Utility.getDefinedClasses(graph)){
+			List<TMethodDefinition> parentMethods = Utility.getAllParentsMethods(tClass);
+			violations.putAll(compareMethods(parentMethods, tClass));
+		}
+		return violations;
+	}
+	
+	@Override
+	public ViolationsMap memberLeadsToViolations(TMember member) {
+		ViolationsMap violations = new ViolationsMap();
+		
+		
+		if(member.getDefinedBy() instanceof TClass && member instanceof TMethodDefinition){
+			//Parents check
+			TClass tClass = (TClass) member.getDefinedBy();
+			TMethodDefinition method = (TMethodDefinition) member;
+			violations.putAll(compareMethod(Utility.getAllParentsMethods(tClass), method));
+			
+			//Interfaces Check
+			violations.putAll(compareMethod(Utility.getImplementedInterfaceMethods(tClass), method));
+		}
+		
+		return violations;
+	}
+	
+	@Override
+	public ViolationsMap violations(TypeGraph graph) {
+		ViolationsMap violations = new ViolationsMap();
+		violations.putAll(sub1(graph));
+		violations.putAll(sub2(graph));
+		return violations;
+	}
 
 
 }

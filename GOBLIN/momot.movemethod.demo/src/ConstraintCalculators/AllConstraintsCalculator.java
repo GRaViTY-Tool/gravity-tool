@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
+
+import FitnessCalculators.IFitnessCalculator;
 
 public class AllConstraintsCalculator extends ConstraintCalculator {
 
@@ -30,10 +34,19 @@ public class AllConstraintsCalculator extends ConstraintCalculator {
 	}
 
 	@Override
-	public Map<TMember, TVisibility> violations(TypeGraph graph) {
-		HashMap<TMember, TVisibility> violations =  new HashMap<TMember, TVisibility>();
+	public ViolationsMap violations(TypeGraph graph) {
+		ViolationsMap violations =  new ViolationsMap();
 		for(ConstraintCalculator calc: getCalcs()){
 			violations.putAll(calc.violations(graph));
+		}	
+		return violations;
+	}
+
+	@Override
+	public ViolationsMap memberLeadsToViolations(TMember member) {
+		ViolationsMap violations = new ViolationsMap();
+		for(ConstraintCalculator calc: getCalcs()){
+			violations.putAll(calc.memberLeadsToViolations(member));
 		}	
 		return violations;
 	}

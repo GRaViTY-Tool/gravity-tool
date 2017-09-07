@@ -3,12 +3,16 @@ package momotFiles;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TVisibility;
@@ -21,19 +25,25 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 public abstract class Utility {
 	
 	
+	public static boolean isDefinedClass(TAbstractType tClass){
+		if(tClass.getTName().equalsIgnoreCase("T")){
+			return false;
+		}
+		if(tClass.getTName().equalsIgnoreCase("Anonymous")){
+			return false;
+		}
+		if(tClass.isTLib()){
+			return false;
+		}	
+		return true;
+	}
+	
 	public static List<TClass> getDefinedClasses(TypeGraph pg){
 		ArrayList<TClass> classes = new ArrayList<TClass>();
 		for(TClass tClass: pg.getClasses()){
-			if(tClass.getTName().equalsIgnoreCase("T")){
-				continue;
-			}
-			if(tClass.getTName().equalsIgnoreCase("Anonymous")){
-				continue;
-			}
-			if(tClass.isTLib()){
-				continue;
-			}		
-			classes.add(tClass);
+			if(isDefinedClass(tClass)){
+				classes.add(tClass);
+			}			
 		}
 		return classes;
 	}
@@ -106,5 +116,55 @@ public abstract class Utility {
 		
 	}
 	
+	
+	public static EList<TClass> getAllChildren(TClass sourceClass) {
+		
+		EList<TClass> childList = new BasicEList<TClass>();
+		
+		for (TClass child : sourceClass.getChildClasses()) {
+			childList.add(child);
+			childList.addAll(getAllChildren(child));
+		}
+		
+		return childList;
+		
+	}
+	
+	 static void fillParentMethods(List<TMethodDefinition> parentMethods, TClass tClass){
+			
+		if(tClass.getParentClass() != null){
+			for(TMember member: tClass.getParentClass().getDefines()){
+				if(member instanceof TMethodDefinition){
+					parentMethods.add((TMethodDefinition)member);
+				}
+			}
+			fillParentMethods(parentMethods, tClass.getParentClass());
+		}
+	}
+	
+	public static List<TMethodDefinition> getAllParentsMethods(TClass childClass){
+		List<TMethodDefinition> parentMethods = new ArrayList<TMethodDefinition>();
+		fillParentMethods(parentMethods, childClass);
+		return parentMethods;
+	}
+	
+	private static void fillAllMethods(List<TMethodDefinition> methods, TInterface tInterface){
+		for(TMember sig: tInterface.getDefines()){
+			if(sig instanceof TMethodDefinition){
+				methods.add((TMethodDefinition)sig);
+			}
+		}
+		for(TInterface parentInterface: tInterface.getParentInterfaces()){
+			fillAllMethods(methods, parentInterface);
+		}
+	}
+	
+	public static List<TMethodDefinition> getImplementedInterfaceMethods(TClass tClass){
+		List<TMethodDefinition> methods = new ArrayList<TMethodDefinition>();
+		for(TInterface tInterface: tClass.getImplements()){
+			fillAllMethods(methods, tInterface);
+		}
+		return methods;
+	}
 
 }
