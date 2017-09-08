@@ -220,15 +220,22 @@ public class MoveMethodSearchHelper extends SearchHelper {
 			return null;
 		}
 		
+		TVisibility oldVis = member.getTModifier().getTVisibility();
 		
-		assignment.setParameterValue(oldVisParam, member.getTModifier().getTVisibility());
+		assignment.setParameterValue(oldVisParam, oldVis);
 		
-		TVisibility newVis =  member.getTModifier().getTVisibility();
+		TVisibility newVis =  TVisibility.TPRIVATE;
 		
-		member.getTModifier().setTVisibility(TVisibility.TPRIVATE);
+		member.getTModifier().setTVisibility(newVis);
 		ViolationsMap violations = new AllConstraintsCalculator().memberLeadsToViolations(member);
 		if(violations.size() > 0){
 			newVis = violations.getHashmap().get(member);
+		}
+		
+		member.getTModifier().setTVisibility(oldVis);
+		if(newVis.equals(oldVis)) {
+			//no need for a transformation if the visibility stays the same
+			return null;
 		}
 		
 		assignment.setParameterValue(newVisParam, newVis);
