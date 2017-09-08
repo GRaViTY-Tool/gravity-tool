@@ -64,6 +64,6 @@ public class SearchParameters {
 
 	@Parameter(	names = { "-u", "--units" },
 			description = "units that will be used as transformation rules")
-	public static String[] units = new String[] { "MoveMethod::rules::MoveMethodMain"};
+	public static String[] units = new String[] { "MoveMethod::rules::MoveMethodMain", "MoveMethod::rules::changeMethodVisibility","MoveMethod::rules::changeFieldVisibility"};
 	
 }

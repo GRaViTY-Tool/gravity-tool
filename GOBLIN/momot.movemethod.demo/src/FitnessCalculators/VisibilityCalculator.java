@@ -40,8 +40,8 @@ public class VisibilityCalculator extends MetricCalculator {
 				for (TMember tMember : tClass.getDefines()) {
 					TModifier tModifier = tMember.getTModifier();
 					if (tModifier == null) {
-						System.err.println("The member \"" + tMember.getSignatureString() + "\" in the  class \""
-								+ tClass.getFullyQualifiedName() + "\" has no modifier.");
+						//System.err.println("The member \"" + tMember.getSignatureString() + "\" in the  class \""
+						//		+ tClass.getFullyQualifiedName() + "\" has no modifier.");
 					} else {
 						TVisibility tVisibility = tModifier.getTVisibility();
 						if (tVisibility != null) {

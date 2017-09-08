@@ -17,9 +17,15 @@ import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TVisibility;
+
+import ConstraintCalculators.AllConstraintsCalculator;
+import ConstraintCalculators.ViolationsMap;
+import PreConditions.ChangeVisibilityPreConditions;
 import PreConditions.MoveMethodPreConditions;
 import at.ac.tuwien.big.moea.util.CollectionUtil;
 import at.ac.tuwien.big.momot.TransformationSearchOrchestration;
@@ -89,6 +95,25 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		}
 		int index = getRandom().nextInt(methodSigs.size());
 		return methodSigs.get(index);
+	}
+	
+	private TFieldSignature getRandomFieldSig(TClass sourceClass) {
+		List<TFieldSignature> fieldSigs = new ArrayList<TFieldSignature>();
+		for (TSignature sig : sourceClass.getSignature()) {
+			if (sig instanceof TFieldSignature) {
+				TFieldSignature tfieldSignature = (TFieldSignature) sig;
+				fieldSigs.add(tfieldSignature);
+
+			}
+		}
+		if (fieldSigs.size() == 0) {
+			return null;
+		}
+		if (fieldSigs.size() == 1) {
+			return fieldSigs.get(0);
+		}
+		int index = getRandom().nextInt(fieldSigs.size());
+		return fieldSigs.get(index);
 	}
 
 	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries,
@@ -179,6 +204,99 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		}
 		return null;
 	}
+	
+	
+	
+	private ITransformationVariable getVisTransformationVariable(EGraph graph, TClass sourceClass, TSignature memberSignature, Assignment assignment, Parameter oldVisParam, Parameter newVisParam) {
+		TMember member = null;
+		
+		for (TMember methodDef : sourceClass.getDefines()) {
+			if(methodDef.getSignature().equals(memberSignature)){
+				member = methodDef;
+			}
+		}
+		
+		if (!ChangeVisibilityPreConditions.checkPreconditions(member, sourceClass)) {
+			return null;
+		}
+		
+		
+		assignment.setParameterValue(oldVisParam, member.getTModifier().getTVisibility());
+		
+		TVisibility newVis =  member.getTModifier().getTVisibility();
+		
+		member.getTModifier().setTVisibility(TVisibility.TPRIVATE);
+		ViolationsMap violations = new AllConstraintsCalculator().memberLeadsToViolations(member);
+		if(violations.size() > 0){
+			newVis = violations.getHashmap().get(member);
+		}
+		
+		assignment.setParameterValue(newVisParam, newVis);
+		
+		UnitApplicationVariable application = createApplication(graph, assignment);
+
+		if (application.execute(getMonitor())) {
+			application.setAssignment(application.getResultAssignment());
+			return clean(application);
+		} else {
+			application.undo(getMonitor());
+			return null;
+		}
+	}
+	
+	private ITransformationVariable changeMethodVisTransformationVariable(EGraph graph, int maxTries,
+			List<? extends Unit> units, Unit chosenUnit) {
+
+		Assignment assignment = new AssignmentImpl(chosenUnit);
+		Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
+		Parameter oldVisParam = chosenUnit.getParameter("oldVis");
+		Parameter newVisParam = chosenUnit.getParameter("newVis");
+		Parameter methodSigParam = chosenUnit.getParameter("methodSig");
+
+		for (int i = 0; i < maxTries; i++) {
+			TClass sourceClass = getDifferentRandomClass(graph, null);
+			assignment.setParameterValue(sourceClassParam, sourceClass);
+
+			TMethodSignature methodSig = getRandomMethodSig(sourceClass);
+			if (methodSig == null) {
+				continue;
+			}
+			assignment.setParameterValue(methodSigParam, methodSig);
+			ITransformationVariable visTransformation = getVisTransformationVariable(graph, sourceClass, methodSig, assignment, oldVisParam, newVisParam);
+			if(visTransformation != null) {
+				return visTransformation;
+			}
+		}
+		return null;
+	}
+	
+	private ITransformationVariable changeFieldVisTransformationVariable(EGraph graph, int maxTries,
+			List<? extends Unit> units, Unit chosenUnit) {
+
+		Assignment assignment = new AssignmentImpl(chosenUnit);
+		Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
+		Parameter oldVisParam = chosenUnit.getParameter("oldVis");
+		Parameter newVisParam = chosenUnit.getParameter("newVis");
+		Parameter fieldSigParam = chosenUnit.getParameter("fieldSig");
+
+		for (int i = 0; i < maxTries; i++) {
+			TClass sourceClass = getDifferentRandomClass(graph, null);
+			assignment.setParameterValue(sourceClassParam, sourceClass);
+
+			TFieldSignature fieldSig = getRandomFieldSig(sourceClass);
+			if (fieldSig == null) {
+				continue;
+			}
+			assignment.setParameterValue(fieldSigParam, fieldSig);
+			
+			
+			ITransformationVariable visTransformation = getVisTransformationVariable(graph, sourceClass, fieldSig, assignment, oldVisParam, newVisParam);
+			if(visTransformation != null) {
+				return visTransformation;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public ITransformationVariable findUnitApplication(final EGraph graph, final int maxTries) {
@@ -188,6 +306,10 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 		if (chosenUnit.getName().equals("MoveMethodMain")) {
 			return moveMethodTransformationVariable(graph, maxTries, units, chosenUnit);
+		} else if(chosenUnit.getName().equals("changeMethodVisibility")) {
+			return changeMethodVisTransformationVariable(graph, maxTries, units, chosenUnit);
+		} else if(chosenUnit.getName().equals("changeFieldVisibility")) {
+			return changeFieldVisTransformationVariable(graph, maxTries, units, chosenUnit);
 		} else {
 			return findUnitApplication(graph, maxTries, units, chosenUnit);
 		}
