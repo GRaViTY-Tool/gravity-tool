@@ -1,0 +1,26 @@
+import  org.eclipse.emf.common.util.BasicEList;
+
+partial class TPackageImpl {
+
+
+
+@model getAllOwnedTypes ()<--		EList<TAbstractType> tAllOwnedTypes = new BasicEList<>();
+		tAllOwnedTypes.addAll(getOwnedTypes());
+		for (TPackage tSubPackage : getSubpackage()) {
+			tAllOwnedTypes.addAll(tSubPackage.getAllOwnedTypes());
+		}
+		return tAllOwnedTypes;-->
+
+@model getAllOwnedClasses ()<--		EList<TClass> tAllOwnedTypes = new BasicEList<>();
+		for (TAbstractType tType : getOwnedTypes()) {
+			if (tType instanceof TClass) {
+				tAllOwnedTypes.add((TClass) tType);
+
+			}
+		}
+		for (TPackage tSubPackage : getSubpackage()) {
+			tAllOwnedTypes.addAll(tSubPackage.getAllOwnedClasses());
+		}
+		return tAllOwnedTypes;-->
+
+}

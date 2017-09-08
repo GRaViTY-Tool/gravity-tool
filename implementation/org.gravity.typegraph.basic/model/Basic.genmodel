@@ -83,6 +83,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/ownedTypes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/typeGraph"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/tName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/getAllOwnedTypes"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/getAllOwnedClasses"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/next"/>
