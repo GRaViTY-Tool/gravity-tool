@@ -10,7 +10,7 @@
 		-ownedElements->jContainer
 	}
 	
-	jContainer:TypeDeclaration {
+	jContainer:AbstractTypeDeclaration {
 		-bodyDeclarations->nonParamType
 	}
 	
