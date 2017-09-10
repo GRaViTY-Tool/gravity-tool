@@ -1,3 +1,6 @@
 [submodule "instances"]
 	path = instances
 	url = https://github.com/FabianMarcoBauer/eMoflon-MoDiscoTGG-instances.git
+[submodule "src\\common"]
+	path = src\\common
+	url = https://github.com/FabianMarcoBauer/eMoflon-MoDiscoTGG-common.git

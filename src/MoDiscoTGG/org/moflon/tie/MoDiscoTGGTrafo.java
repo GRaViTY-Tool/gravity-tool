@@ -19,9 +19,10 @@ import org.moflon.tgg.algorithm.configuration.RuleResult;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import MoDiscoTGG.MoDiscoTGGPackage;
-import MoDiscoTGG.org.moflon.tie.delta.DeltaApplicator;
-import MoDiscoTGG.org.moflon.tie.delta.DeltaResult;
-import MoDiscoTGG.org.moflon.tie.delta.IndexedModel;
+import common.ModelProcessor;
+import common.delta.DeltaApplicator;
+import common.delta.DeltaResult;
+import common.delta.IndexedModel;
 
 public class MoDiscoTGGTrafo extends SynchronizationHelper {
 	private static final NumberFormat numberFormat;
@@ -97,8 +98,13 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		setChangeTrg(e -> {
 			lastDeltaResult = deltaApplicator
 					.applyBackward(new IndexedModel<org.eclipse.uml2.uml.Model>((org.eclipse.uml2.uml.Model) e,
-							(entry) -> (!(entry instanceof Package)
-									|| !"Common Java datatypes".contentEquals(((Package) entry).getName())),
+							(entry) -> {
+								if (entry instanceof Package && "Common Java datatypes".contentEquals(((Package) entry).getName()))
+									return false;
+								if (entry instanceof org.eclipse.uml2.uml.Classifier && ((org.eclipse.uml2.uml.Classifier)entry).getName()!=null && ((org.eclipse.uml2.uml.Classifier)entry).getName().contains("<"))
+									return false;
+								return true;
+							}, 
 							backwardInterests.toArray(new Class[backwardInterests.size()])), new Random(0));
 		});
 		System.gc();
