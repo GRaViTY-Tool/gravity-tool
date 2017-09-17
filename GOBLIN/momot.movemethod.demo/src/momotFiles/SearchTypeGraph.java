@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.typegraph.basic.BasicPackage;
+import org.moeaframework.core.comparator.DominanceComparator;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.osgi.framework.Bundle;
@@ -88,10 +89,10 @@ public class SearchTypeGraph {
 		fitnessFunctions.add(new FitnessFunction("LCOM", FunctionType.Minimum, new CohesionCalculator()));
 		fitnessFunctions.add(new FitnessFunction("Number of Blobs", FunctionType.Minimum, new AntiPatternCalculator()));
 		fitnessFunctions.add(new FitnessFunction("Visibility", FunctionType.Minimum, new VisibilityCalculator()));
-		if (SearchParameters.useRepair) {
-			fitnessFunctions
-					.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
-		}
+		//exclude repairs, not needed anymore because of visibility
+		/*if (SearchParameters.useRepair) {
+			fitnessFunctions.add(new FitnessFunction("Number Repairs", FunctionType.Minimum, new RepairMetricCalculator()));
+		}*/
 
 	}
 
@@ -110,7 +111,15 @@ public class SearchTypeGraph {
 
 	private void initializeAlgorithms(TransformationSearchOrchestration orchestration,
 			EvolutionaryAlgorithmFactory<TransformationSolution> moea) {
-		orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII(new TournamentSelection(2),
+		
+		TournamentSelection ts = null;
+		if(SearchParameters.useCustomDominanceComperator) {
+			ts = new TournamentSelection(2, new CustomDominanceComperator(fitnessFunctions));
+		}else {
+			ts = new TournamentSelection(2);
+		}
+		
+		orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII(ts,
 				new OnePointCrossover(SearchParameters.OnePointCrossoverProbability),
 				new TransformationParameterMutation(SearchParameters.TransformationParameterMutationProbability,
 						orchestration.getModuleManager()),

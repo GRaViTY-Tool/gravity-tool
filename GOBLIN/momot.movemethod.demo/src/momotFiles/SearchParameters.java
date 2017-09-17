@@ -66,4 +66,9 @@ public class SearchParameters {
 			description = "units that will be used as transformation rules")
 	public static String[] units = new String[] { "MoveMethod::rules::MoveMethodMain", "MoveMethod::rules::changeMethodVisibility","MoveMethod::rules::changeFieldVisibility"};
 	
+	@Parameter(	names = { "-cdc", "--use_customDominanceComperator" }, 
+			arity = 1, 
+			description = "flag to toggle usage of custom DominanceComperator")
+	public static boolean useCustomDominanceComperator = true;
+	
 }
