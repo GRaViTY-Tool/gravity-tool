@@ -11,6 +11,7 @@ import momotFiles.SearchTypeGraph.FitnessFunction;
 
 public class CustomDominanceComperator implements DominanceComparator{
 
+	private static final double[] weight = {1,1,1,1,1};
 	ParetoObjectiveComparator paretoCompare;
 	
 	private ParetoObjectiveComparator getParetoCompare() {
@@ -51,39 +52,32 @@ public class CustomDominanceComperator implements DominanceComparator{
 			calculateInititialObjectives((TransformationSolution) solution1);
 		}
 		
-			
-		double[] solution1NormalizedObjectives = new double[solution1.getNumberOfObjectives()];
-		double[] solution2NormalizedObjectives = new double[solution1.getNumberOfObjectives()];
+		double solution1SingleObjective = 0;
+		//double[] solution1NormalizedObjectives = new double[solution1.getNumberOfObjectives()];
 		
 		for (int i = 0; i < solution1.getNumberOfObjectives(); i++) {
-			solution1NormalizedObjectives[i] = solution1.getObjective(i) / initialObjectives[i];
-			solution2NormalizedObjectives[i] = solution2.getObjective(i) / initialObjectives[i];
+			if(solution1.getObjective(i) < solution2.getObjective(i)) {
+				solution1SingleObjective += weight[i];		
+			}
+			else if(solution1.getObjective(i) == solution2.getObjective(i)) {
+				solution1SingleObjective += 0;
+			}
+			else {
+				solution1SingleObjective += - weight[i];
+			}
 		}
 		
-		double solution1SingleObjective = 0;
-		double solution2SingleObjective = 0;
 		
-		//skip #of Refactorings
-		for (int i = 1; i < solution1.getNumberOfObjectives(); i++) {
-			solution1SingleObjective += solution1NormalizedObjectives[i];
-			solution2SingleObjective += solution2NormalizedObjectives[i];
-		}
 		
-		if(solution1SingleObjective < solution2SingleObjective) {
+		
+		if(solution1SingleObjective < 0) {
 			return -1;
 		} 
 		
-		if(solution2SingleObjective < solution1SingleObjective) {
+		if(solution1SingleObjective > 0) {
 			return 1;
-		}
+		} 
 		
-		if(solution1.getObjective(0) < solution2.getObjective(0)) {
-			return -1;
-		}
-		
-		if(solution2.getObjective(0) < solution1.getObjective(0)) {
-			return 1;
-		}
 		
 		
 		
