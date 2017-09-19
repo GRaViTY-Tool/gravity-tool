@@ -110,6 +110,8 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="hIncommingInvocationCustomMetric" eType="//metrics/HIncommingInvocationMetric"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfChildMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HInappropriateGenerosityWithAccessibilityOfMethodMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HInappropriateGenerosityWithAccessibilityOfTypesMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfMethodsMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HAverageOverloadingInClassMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HAverageParametersMetric" eSuperTypes="//HMetric"/>

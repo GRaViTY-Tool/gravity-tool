@@ -1,0 +1,82 @@
+import  java.util.LinkedList;
+import  java.util.List;
+import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  org.gravity.typegraph.basic.TAccess;
+import  org.gravity.typegraph.basic.TClass;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TMethodDefinition;
+import  org.gravity.typegraph.basic.TPackage;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TypeGraph;
+import  org.gravity.typegraph.basic.annotations.TAnnotatable;
+
+partial class HIGATCalculatorImpl {
+
+@members<--
+
+	private void process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
+		int start = methods.size();
+		for (TPackage tSubPackage : tPackage.getSubpackage()) {
+			process(apg, tSubPackage, methods);
+		}
+		for (TAbstractType tType : tPackage.getOwnedTypes()) {
+			if (!tType.isTLib()) {
+				process(apg, tType, methods);
+			}
+		}
+		createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
+	}
+
+	private void process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
+		TVisibility tMinVis = tType.getMinimumRequiredVisibility(tType);
+		TVisibility tCurVis = tType.getTModifier().getTVisibility();
+
+		double igat = ((double) (tCurVis.getValue() - tMinVis.getValue())) / 3;
+
+		createMetric(apg, tType, igat);
+
+		methods.add(igat);
+	}
+
+	private double getAverage(List<Double> values, int start, int end) {
+		double avg = 0;
+		for (int i = start; i < end; i++) {
+			avg += values.get(i);
+		}
+		return avg / (end - start);
+	}
+
+	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam) {
+		HInappropriateGenerosityWithAccessibilityOfMethodMetric metric = MetricsFactory.eINSTANCE
+				.createHInappropriateGenerosityWithAccessibilityOfMethodMetric();
+		metric.setValue(igam);
+		metric.setApg(apg);
+		metric.setTAnnotated(annotatable);
+
+		getHAnnotation().add(metric);
+		annotatable.getTAnnotation().add(metric);
+	}
+
+	@Override
+	public String getGuiName() {
+		return "Inappropriate Generosity with Accessibility of Methods";
+	}
+
+	-->
+
+@model detect (HAntiPatternGraph apg)<--
+		TypeGraph pg = apg.getPg();
+
+		List<Double> methods = new LinkedList<>();
+		for (TPackage tPackage : pg.getPackages()) {
+			if (tPackage.getParent() == null) {
+				process(apg, tPackage, methods);
+			}
+		}
+		createMetric(apg, pg, getAverage(methods, 0, methods.size()));
+
+		return true;-->
+
+}

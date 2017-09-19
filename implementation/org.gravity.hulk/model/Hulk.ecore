@@ -3996,6 +3996,14 @@
           </activity>
         </eOperations>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HIGAMCalculator" eSuperTypes="//detection/HMetricCalculator">
+        <eOperations xsi:type="activities:MoflonEOperation" name="detect">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eParameters name="apg">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HNumberOfChildCalculator" eSuperTypes="//detection/HClassBasedMetricCalculator">
         <eOperations xsi:type="activities:MoflonEOperation" name="calculateMetric">
           <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric"/>
@@ -4039,6 +4047,14 @@
           <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
           <eParameters name="tParent">
             <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HIGATCalculator" eSuperTypes="//detection/HMetricCalculator">
+        <eOperations xsi:type="activities:MoflonEOperation" name="detect">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eParameters name="apg">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph"/>
           </eParameters>
         </eOperations>
       </eClassifiers>

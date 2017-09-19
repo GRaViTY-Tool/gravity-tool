@@ -131,6 +131,8 @@
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInvocationRelation/hIncommingInvocationCustomMetric"/>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfChildMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInappropriateGenerosityWithAccessibilityOfMethodMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInappropriateGenerosityWithAccessibilityOfTypesMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfMethodsMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageOverloadingInClassMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageParametersMetric"/>
