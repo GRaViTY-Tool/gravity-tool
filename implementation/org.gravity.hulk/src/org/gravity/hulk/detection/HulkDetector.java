@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.Messages;
@@ -41,7 +44,12 @@ public class HulkDetector {
 		this.thresholds = thresholds;
 		this.verbose = verbose;
 		initialized = new HashSet<>();
-		hulk.getDependencyGraph();
+		Resource eResource = hulk.eResource();
+		if(eResource == null) {
+			eResource = new ResourceSetImpl().createResource(URI.createURI("Hulk"));
+			eResource.getContents().add(hulk);
+		}
+		eResource.getContents().add(hulk.getDependencyGraph());
 	}
 
 	private List<HDetector> getSorted(HDetector detector) {
