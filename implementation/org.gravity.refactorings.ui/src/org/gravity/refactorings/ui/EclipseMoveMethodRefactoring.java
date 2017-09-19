@@ -6,11 +6,9 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.ILocalVariable;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.core.dom.IVariableBinding;
 import org.eclipse.jdt.core.refactoring.IJavaRefactorings;
 import org.eclipse.jdt.core.refactoring.descriptors.MoveMethodDescriptor;
@@ -24,8 +22,6 @@ import org.eclipse.ltk.core.refactoring.participants.MoveRefactoring;
 import org.gravity.eclipse.JavaHelper;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TParameterList;
 
 public class EclipseMoveMethodRefactoring {
 	
@@ -50,31 +46,10 @@ public class EclipseMoveMethodRefactoring {
 
 		IType src = types.get(tSourceClass.getFullyQualifiedName());
 		IType trg = types.get(tTargetClass.getFullyQualifiedName());
-
-		TParameterList tParamList = tMethod.getParamList();
-		String tName = tMethod.getMethod().getTName();
-		for (IMethod m : src.getMethods()) {
-			if (m.getElementName().equals(tName)) {
-				if (m.getNumberOfParameters() == tParamList.getEntries().size()) {
-					boolean equal = true;
-					TParameter tParam = tParamList.getFirst();
-					for (ILocalVariable param : m.getParameters()) {
-						if (!(equal = tParam.getType().getFullyQualifiedName()
-								.endsWith(Signature.toString(param.getTypeSignature())))) {
-							break;
-						}
-						tParam = tParam.getNext();
-					}
-					if (equal) {
-						System.out.println(m);
-						return move2(project, monitor, trg, m);
-					} else {
-						return false;
-					}
-				}
-			}
-		}
-		return false;
+		IMethod iMethod = JavaHelper.getIMethod(tMethod, src);
+		
+		System.out.println(iMethod);
+		return move2(project, monitor, trg,iMethod);
 	}
 
 	@SuppressWarnings("restriction")
