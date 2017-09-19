@@ -148,7 +148,18 @@ public class MetricCalculator {
 		String[] values = this.results.get(resolved_name);
 
 		if (values == null) {
-			values = this.results.get(this.unqualified.get(resolved_name));
+			if(this.unqualified.containsKey(resolved_name)){
+				String string = this.unqualified.get(resolved_name);
+				if(this.results.containsKey(string)){
+					values = this.results.get(string);
+				}
+				else{
+					throw new RuntimeException("Unknown class: \""+resolved_name+"\" with qualified name \""+string+"\"");
+				}
+			}
+			else{
+				throw new RuntimeException("Unknown class: \""+resolved_name+"\"");
+			}
 		}
 		return Double.parseDouble(values[id]);
 	}
