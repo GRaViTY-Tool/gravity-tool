@@ -32,6 +32,7 @@ Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
 Export-Package: ConstraintCalculators;uses:="FitnessCalculators,org.gravity.typegraph.basic,org.eclipse.emf.henshin.interpreter",
  FitnessCalculators,
+ Repair.visibility,
  com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.converters,
  com.beust.jcommander.defaultprovider,
