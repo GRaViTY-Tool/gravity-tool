@@ -19,17 +19,16 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 public class TestGeneratorFromSrc {
 
+	private final static boolean DEBUG = true;
+
 	private final IJavaProject source;
 	private final String name;
 	private final String out;
 
 	public TestGeneratorFromSrc(final IJavaProject src) {
 		source = src;
-		name = source	.getProject()
-						.getName();
-		out = Platform	.getBundle(MoDiscoTestActivator.PLUGIN_ID)
-						.getLocation()
-						.substring("platform:/base/".length());
+		name = source.getProject().getName();
+		out = Platform.getBundle(MoDiscoTestActivator.PLUGIN_ID).getLocation().substring("platform:/base/".length());
 	}
 
 	public static boolean runTest_ForwardTransformationFromJavaSrc(final IJavaProject src) {
@@ -60,7 +59,7 @@ public class TestGeneratorFromSrc {
 			try {
 				final IPGConverter conv = new MoDiscoTGGConverter();
 
-				//conv.setDebug(true);
+				conv.setDebug(DEBUG);
 
 				System.out.println("Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 				if (!conv.convertProject(source, new NullProgressMonitor())) {
@@ -68,26 +67,28 @@ public class TestGeneratorFromSrc {
 				}
 				System.out.println("Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 
-				System.out.println("Save MoDisco Src - " + TimeStampUtil.getCurrentTimeStamp());
-				((SynchronizationHelper) conv).saveSrc(createSrcName(name));
+				if (DEBUG) {
+					System.out.println("Save MoDisco Src - " + TimeStampUtil.getCurrentTimeStamp());
+					((SynchronizationHelper) conv).saveSrc(createSrcName(name));
 
-				System.out.println("Save Output Model - " + TimeStampUtil.getCurrentTimeStamp());
-				((SynchronizationHelper) conv).saveTrg(createTrgName(name));
+					System.out.println("Save Output Model - " + TimeStampUtil.getCurrentTimeStamp());
+					((SynchronizationHelper) conv).saveTrg(createTrgName(name));
 
-				try {
-					System.out.println("Save correspondence model - " + TimeStampUtil.getCurrentTimeStamp());
-					((SynchronizationHelper) conv).saveCorr(createCorrName(name));
-				} catch (final Throwable t) {
-					System.err.println("Failed to save correspondence model: " + t + "\nMessage: " + t.getMessage());
+					try {
+						System.out.println("Save correspondence model - " + TimeStampUtil.getCurrentTimeStamp());
+						((SynchronizationHelper) conv).saveCorr(createCorrName(name));
+					} catch (final Throwable t) {
+						System.err
+								.println("Failed to save correspondence model: " + t + "\nMessage: " + t.getMessage());
+					}
+
+					try {
+						System.out.println("Save protocol xmi - " + TimeStampUtil.getCurrentTimeStamp());
+						((SynchronizationHelper) conv).saveSynchronizationProtocol(createProtocolName(name));
+					} catch (final Throwable t) {
+						System.err.println("Failed to save protocol xmi: " + t + "\nMessage: " + t.getMessage());
+					}
 				}
-
-				try {
-					System.out.println("Save protocol xmi - " + TimeStampUtil.getCurrentTimeStamp());
-					((SynchronizationHelper) conv).saveSynchronizationProtocol(createProtocolName(name));
-				} catch (final Throwable t) {
-					System.err.println("Failed to save protocol xmi: " + t + "\nMessage: " + t.getMessage());
-				}
-
 			} catch (final MalformedURLException e) {
 				throw new AssertionError(String.format("Unable to load '%s': %s", source, e.getMessage()));
 			} catch (final IOException e) {
