@@ -92,4 +92,6 @@ partial class TypeGraphImpl {
 
 	-->
 
+@model toString ()<--		return super.toString();-->
+
 }
