@@ -7,6 +7,7 @@ import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TConstructorDefinition;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
@@ -19,7 +20,11 @@ public class VisibilityReducer {
 			if(!tClass.isTLib())
 			for (TMember tMember : tClass.getDefines()) {
 				if (!(tMember instanceof TConstructorDefinition)) {
-					TVisibility tCurVis = tMember.getTModifier().getTVisibility();
+					TModifier tModifier = tMember.getTModifier();
+					if(tModifier == null) {
+						throw new RuntimeException("Member has no modifier: "+tMember.getDefinedBy().getFullyQualifiedName()+" -> "+tMember.getSignatureString());
+					}
+					TVisibility tCurVis = tModifier.getTVisibility();
 					int tMinVis = 0;
 					for (TAccess tAccess : tMember.getAccessedBy()) {
 						TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
@@ -32,7 +37,7 @@ public class VisibilityReducer {
 					}
 
 					if (tCurVis.getValue() != tMinVis) {
-						tMember.getTModifier().setTVisibility(TVisibility.get(tMinVis));
+						tModifier.setTVisibility(TVisibility.get(tMinVis));
 						changed.add(tMember);
 					}
 				}
