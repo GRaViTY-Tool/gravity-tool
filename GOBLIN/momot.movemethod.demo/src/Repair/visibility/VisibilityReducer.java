@@ -17,31 +17,33 @@ public class VisibilityReducer {
 		Collection<TMember> changed = new LinkedList<>();
 
 		for (TClass tClass : pg.getClasses()) {
-			if(!tClass.isTLib())
-			for (TMember tMember : tClass.getDefines()) {
-				if (!(tMember instanceof TConstructorDefinition)) {
-					TModifier tModifier = tMember.getTModifier();
-					if(tModifier == null) {
-						throw new RuntimeException("Member has no modifier: "+tMember.getDefinedBy().getFullyQualifiedName()+" -> "+tMember.getSignatureString());
-					}
-					TVisibility tCurVis = tModifier.getTVisibility();
-					int tMinVis = 0;
-					for (TAccess tAccess : tMember.getAccessedBy()) {
-						TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
-						if (tVis.getValue() > tMinVis) {
-							tMinVis = tVis.getValue();
+			if (!tClass.isTLib() && !"Anonymous".equals(tClass.getTName()) && !"T".equals(tClass.getTName()))
+				for (TMember tMember : tClass.getDefines()) {
+					if (!(tMember instanceof TConstructorDefinition)) {
+						TModifier tModifier = tMember.getTModifier();
+						if (tModifier == null) {
+							throw new RuntimeException(
+									"Member has no modifier: " + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
+											+ tMember.getSignatureString());
 						}
-						if (tMinVis == 3) {
-							break;
+						TVisibility tCurVis = tModifier.getTVisibility();
+						int tMinVis = 0;
+						for (TAccess tAccess : tMember.getAccessedBy()) {
+							TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
+							if (tVis.getValue() > tMinVis) {
+								tMinVis = tVis.getValue();
+							}
+							if (tMinVis == 3) {
+								break;
+							}
 						}
-					}
 
-					if (tCurVis.getValue() != tMinVis) {
-						tModifier.setTVisibility(TVisibility.get(tMinVis));
-						changed.add(tMember);
+						if (tCurVis.getValue() != tMinVis) {
+							tModifier.setTVisibility(TVisibility.get(tMinVis));
+							changed.add(tMember);
+						}
 					}
 				}
-			}
 		}
 
 		return changed;
