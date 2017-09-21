@@ -1,8 +1,17 @@
+import  java.util.LinkedList;
 import  org.eclipse.emf.common.util.BasicEList;
 
 partial class TPackageImpl {
 
 
+
+@model getFullyQualifiedName ()<--		LinkedList<String> names = new LinkedList<>();
+		TPackage current = this;
+		while(current != null) {
+			names.add(current.getTName());
+			current = getParent();
+		}
+		return String.join(".", names);-->
 
 @model getAllOwnedTypes ()<--		EList<TAbstractType> tAllOwnedTypes = new BasicEList<>();
 		tAllOwnedTypes.addAll(getOwnedTypes());

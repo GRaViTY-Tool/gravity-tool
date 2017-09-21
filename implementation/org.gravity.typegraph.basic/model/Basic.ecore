@@ -104,6 +104,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TPackage" eSuperTypes="#//annotations/TAnnotatable">
+ 	<eOperations xsi:type="activities:MoflonEOperation" name="getFullyQualifiedName"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllOwnedTypes" upperBound="-1"
         eType="#//TAbstractType"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllOwnedClasses"
