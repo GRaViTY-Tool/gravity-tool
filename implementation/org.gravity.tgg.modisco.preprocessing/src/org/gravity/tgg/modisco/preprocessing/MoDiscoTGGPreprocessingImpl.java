@@ -39,6 +39,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
+import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
@@ -49,14 +50,15 @@ import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MName;
+import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoFactory;
 
 public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 
-	private static boolean createParamList(MMethodDefinition mDef, MMethodSignature mSig) {
+	private static boolean createParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		MEntry prev = null;
-		EList<MEntry> mEntrys = mSig.getMEntrys();
+		EList<MEntry> mEntrys = mParams.getMEntrys();
 		for (SingleVariableDeclaration param : mDef.getParameters()) {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
 			entry.setSingleVariableDeclaration(param);
@@ -66,7 +68,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 				entry.setType(type);
 			}
 			if (prev == null) {
-				mSig.setMFirstEntry(entry);
+				mParams.setMFirstEntry(entry);
 			} else {
 				entry.setMPrevious(prev);
 				prev.setMNext(entry);
@@ -141,7 +143,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 
 	private static boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
 		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
-		EList<MEntry> parameters2 = mSig.getMEntrys();
+		EList<MEntry> parameters2 = mSig.getMParameterList().getMEntrys();
 		if (parameters1.size() == parameters2.size()) {
 			for (int i = 0; i < parameters1.size(); i++) {
 				if (!parameters1.get(i).getType().getType().equals(parameters2.get(i).getType())) {
@@ -175,6 +177,12 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 	}
 
 	private static boolean preprocess(MGravityModel model) {
+		for(MConstructorDefinition mConst : model.getMConstructorDefinitions()) {
+			MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
+			mConst.setMParameterList(mParameterList);
+			createParamList(mConst, mParameterList);
+		}
+		
 		if (preprocessFields(model) && preprocessMethods(model) && preprocessAccesses(model)) {
 			for (MName mName : model.getMNames()) {
 				for (MSignature mSignature : mName.getMSignatures()) {
@@ -357,6 +365,7 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 				}}
 				MMethodSignature mOldSig = mDef.getMMethodSignature();
 				if (mOldSig == null) {
+					MParameterList mParams = ModiscoFactory.eINSTANCE.createMParameterList();
 					MMethodSignature mNewSig = ModiscoFactory.eINSTANCE.createMMethodSignature();
 					mName.getMSignatures().add(mNewSig);
 					mNewSig.setMMethodName(mName);
@@ -364,8 +373,9 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 					mNewSig.setModel(model);
 					mNewSig.setReturnType(mSigReturnType);
 					mNewSig.getMDefinitions().add(mDef);
-
-					createParamList(mDef, mNewSig);
+					mNewSig.setMParameterList(mParams);
+					
+					createParamList(mDef, mParams);
 
 				}
 

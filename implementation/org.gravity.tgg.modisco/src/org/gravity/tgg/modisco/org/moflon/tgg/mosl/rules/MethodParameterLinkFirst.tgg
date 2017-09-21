@@ -5,30 +5,30 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mmethodSignature : MMethodSignature {
-	++  -mFirstEntry -> mEntry
-}
-mEntry : MEntry {
-}
+	mmethodSignature : MParameterList {
+		++  -mFirstEntry -> mEntry
+	}
+	mEntry : MEntry {
+	}
 }
 
 #target {
-tParameterList : TParameterList {
-	++  -first -> tParameter
-}
-tParameter : TParameter {
-}
+	tParameterList : TParameterList {
+		++  -first -> tParameter
+	}
+	tParameter : TParameter {
+	}
 }
 
 #correspondence {
-eSingleVariableDeclarationToTParameter : MEntryToTParameter {
-	#src->mEntry
-	#trg->tParameter
-}
-mmethodSignatureToTMethodSignature : MMethodSignatureToTParameterList {
-	#src->mmethodSignature
-	#trg->tParameterList
-}
+	eSingleVariableDeclarationToTParameter : MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+	mmethodSignatureToTMethodSignature : MParameterListToTParameterList {
+		#src->mmethodSignature
+		#trg->tParameterList
+	}
 }
 
 #attributeConditions {
