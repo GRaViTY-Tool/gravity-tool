@@ -11,6 +11,10 @@ import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
+import ConstraintCalculators.AllConstraintsCalculator;
+import ConstraintCalculators.ViolationsMap;
+import PreConditions.ChangeVisibilityPreConditions;
+
 public class VisibilityReducer {
 
 	public static Collection<TMember> reduce(TypeGraph pg) {
@@ -20,27 +24,38 @@ public class VisibilityReducer {
 			if (!tClass.isTLib() && !"Anonymous".equals(tClass.getTName()) && !"T".equals(tClass.getTName()))
 				for (TMember tMember : tClass.getDefines()) {
 					if (!(tMember instanceof TConstructorDefinition)) {
-						TModifier tModifier = tMember.getTModifier();
-						if (tModifier == null) {
-							throw new RuntimeException(
-									"Member has no modifier: " + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
-											+ tMember.getSignatureString());
-						}
-						TVisibility tCurVis = tModifier.getTVisibility();
-						int tMinVis = 0;
-						for (TAccess tAccess : tMember.getAccessedBy()) {
-							TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
-							if (tVis.getValue() > tMinVis) {
-								tMinVis = tVis.getValue();
+						if(ChangeVisibilityPreConditions.checkPreconditions(tMember, tClass)){
+							TModifier tModifier = tMember.getTModifier();
+							if (tModifier == null) {
+								throw new RuntimeException(
+										"Member has no modifier: " + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
+												+ tMember.getSignatureString());
 							}
-							if (tMinVis == 3) {
-								break;
+							TVisibility tCurVis = tModifier.getTVisibility();
+							int tMinVis = TVisibility.TPRIVATE_VALUE;
+							for (TAccess tAccess : tMember.getAccessedBy()) {
+								TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
+								if (tVis.getValue() > tMinVis) {
+									tMinVis = tVis.getValue();
+								}
+								if (tMinVis == TVisibility.TPUBLIC_VALUE) {
+									break;
+								}
 							}
-						}
-
-						if (tCurVis.getValue() != tMinVis) {
-							tModifier.setTVisibility(TVisibility.get(tMinVis));
-							changed.add(tMember);
+	
+							if (tCurVis.getValue() != tMinVis) {
+								tModifier.setTVisibility(TVisibility.get(tMinVis));
+								ViolationsMap map = new AllConstraintsCalculator().memberLeadsToViolations(tMember);
+								if(map.size() > 0){
+									TVisibility visibility = map.getHashmap().get(tMember);
+									tModifier.setTVisibility(visibility);
+									if(tCurVis.getValue() != visibility.getValue()){
+										changed.add(tMember);
+									}
+								}else{
+									changed.add(tMember);
+								}
+							}
 						}
 					}
 				}
