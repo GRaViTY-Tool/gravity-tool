@@ -27,13 +27,19 @@ public class VisibilityReducer implements ITransformationRepairer {
 			if (!tClass.isTLib() && !"Anonymous".equals(tClass.getTName()) && !"T".equals(tClass.getTName()))
 				for (TMember tMember : tClass.getDefines()) {
 					if (!(tMember instanceof TConstructorDefinition)) {
-						if(ChangeVisibilityPreConditions.checkPreconditions(tMember, tClass)){
-							TModifier tModifier = tMember.getTModifier();
-							if (tModifier == null) {
-								throw new RuntimeException(
-										"Member has no modifier: " + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
-												+ tMember.getSignatureString());
+						TModifier tModifier = tMember.getTModifier();
+						if (tModifier == null) {
+							if(tClass.getTName().startsWith("%ENUM%")) {
+								System.err.println("WARNING: Skipped member \""+tMember.getSignatureString()
+										+ "\" of enum \""+tClass.getFullyQualifiedName()
+										+ "\" without modifier, it is probably and enum default operation.");
+								continue;
 							}
+							throw new RuntimeException(
+									"Member has no modifier: " + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
+											+ tMember.getSignatureString());
+						}
+						if(ChangeVisibilityPreConditions.checkPreconditions(tMember, tClass)){
 							TVisibility tCurVis = tModifier.getTVisibility();
 							int tMinVis = TVisibility.TPRIVATE_VALUE;
 							for (TAccess tAccess : tMember.getAccessedBy()) {
