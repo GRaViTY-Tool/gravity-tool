@@ -16,11 +16,19 @@ import at.ac.tuwien.big.momot.search.solution.repair.ITransformationRepairer;
 
 public class PostProcessRepairMultiDimensionalFitnessFunction implements IEGraphMultiDimensionalFitnessFunction, IMultiDimensionalFitnessFunction<TransformationSolution>{
 
+	ITransformationRepairer optimizationRepairer;
 	@Override
 	public IEGraphMultiDimensionalFitnessFunction setSolutionRepairer(ITransformationRepairer repairer) {
 		this.repairer = repairer;
 		return this;
 	}
+	
+	public IEGraphMultiDimensionalFitnessFunction setOptimizationRepairer(ITransformationRepairer repairer) {
+		this.optimizationRepairer = repairer;
+		return this;
+	}
+	
+	
 	
 	   private double delegateEvaluation(final Solution solution) {
 		   if(solution == null){
@@ -70,6 +78,9 @@ public class PostProcessRepairMultiDimensionalFitnessFunction implements IEGraph
 			      }
 				 // re-evaluate
 				 result = delegateEvaluation(solution);
+			 }
+			 if(optimizationRepairer != null){
+				 solution = optimizationRepairer.repair(clazz.cast(solution));
 			 }
 	         return result;
 	      }else{

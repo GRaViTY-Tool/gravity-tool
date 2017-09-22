@@ -36,6 +36,7 @@ import FitnessCalculators.VisibilityCalculator;
 import Orchestration.MoveMethodTransformationSearchOrchestration;
 import Repair.PostProcessRepairMultiDimensionalFitnessFunction;
 import Repair.VisibilityRepairer;
+import Repair.visibility.VisibilityReducer;
 import at.ac.tuwien.big.moea.SearchExperiment;
 import at.ac.tuwien.big.moea.experiment.executor.listener.SeedRuntimePrintListener;
 import at.ac.tuwien.big.moea.search.algorithm.EvolutionaryAlgorithmFactory;
@@ -51,6 +52,7 @@ import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationP
 import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunction;
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
+import at.ac.tuwien.big.momot.search.solution.repair.ITransformationRepairer;
 
 @SuppressWarnings("all")
 public class SearchTypeGraph {
@@ -175,7 +177,7 @@ public class SearchTypeGraph {
 	}
 
 	protected IEGraphMultiDimensionalFitnessFunction createFitnessFunction() {
-		IEGraphMultiDimensionalFitnessFunction function = new PostProcessRepairMultiDimensionalFitnessFunction();
+		PostProcessRepairMultiDimensionalFitnessFunction function = new PostProcessRepairMultiDimensionalFitnessFunction();
 		// IEGraphMultiDimensionalFitnessFunction function = new
 		// EGraphMultiDimensionalFitnessFunction();
 		function.addObjective(createSolutionLengthFitness());
@@ -188,6 +190,9 @@ public class SearchTypeGraph {
 		}
 		if (SearchParameters.useRepair) {
 			function.setSolutionRepairer(new VisibilityRepairer());
+		}
+		if(SearchParameters.useOptimizationRepair){
+			function.setOptimizationRepairer(new VisibilityReducer());
 		}
 
 		return function;

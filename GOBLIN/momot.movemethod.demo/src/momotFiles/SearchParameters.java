@@ -70,5 +70,10 @@ public class SearchParameters {
 			arity = 1, 
 			description = "flag to toggle usage of custom DominanceComperator")
 	public static boolean useCustomDominanceComperator = true;
+
+	@Parameter(	names = { "-rv", "--reduce_visibilities" }, 
+			arity = 1, 
+			description = "flag to toggle to reduce visibilities in every step.")
+	public static boolean useOptimizationRepair = false;
 	
 }

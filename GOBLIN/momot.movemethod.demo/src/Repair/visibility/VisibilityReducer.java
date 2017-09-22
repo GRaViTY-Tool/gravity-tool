@@ -14,8 +14,11 @@ import org.gravity.typegraph.basic.TypeGraph;
 import ConstraintCalculators.AllConstraintsCalculator;
 import ConstraintCalculators.ViolationsMap;
 import PreConditions.ChangeVisibilityPreConditions;
+import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
+import at.ac.tuwien.big.momot.search.solution.repair.ITransformationRepairer;
+import momotFiles.Utility;
 
-public class VisibilityReducer {
+public class VisibilityReducer implements ITransformationRepairer {
 
 	public static Collection<TMember> reduce(TypeGraph pg) {
 		Collection<TMember> changed = new LinkedList<>();
@@ -62,5 +65,11 @@ public class VisibilityReducer {
 		}
 
 		return changed;
+	}
+
+	@Override
+	public TransformationSolution repair(TransformationSolution arg0) {
+		reduce(Utility.getPG(arg0.getResultGraph()));
+		return arg0;
 	}
 }
