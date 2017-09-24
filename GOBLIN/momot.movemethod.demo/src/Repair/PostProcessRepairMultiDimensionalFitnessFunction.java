@@ -81,6 +81,8 @@ public class PostProcessRepairMultiDimensionalFitnessFunction implements IEGraph
 			 }
 			 if(optimizationRepairer != null){
 				 solution = optimizationRepairer.repair(clazz.cast(solution));
+				 //re-evaluate
+				 result = delegateEvaluation(solution);
 			 }
 	         return result;
 	      }else{
