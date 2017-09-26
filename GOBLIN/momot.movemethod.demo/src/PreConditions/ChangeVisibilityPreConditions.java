@@ -7,7 +7,6 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -57,7 +56,7 @@ public class ChangeVisibilityPreConditions {
 			parent = parent.getParentClass();
 		}
 		
-		for (TClass child : Utility.getAllChildren(sourceClass)) {
+		for (TClass child : sourceClass.getAllChildren()) {
 			if (child.getSignature().contains(sig)){
 				System.err.println("Can't move "+member.getDefinedBy().getFullyQualifiedName()+"."+member.getSignatureString()+", REASON Dyn");
 				return false;

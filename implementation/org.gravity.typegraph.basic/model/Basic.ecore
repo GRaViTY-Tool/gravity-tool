@@ -15,6 +15,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" eType="#//containers/TMemberContainer"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getAllChildren" upperBound="-1"
+        eType="#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentClass" eType="#//TClass"
         eOpposite="#//TClass/childClasses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childClasses" upperBound="-1"
@@ -104,7 +106,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TPackage" eSuperTypes="#//annotations/TAnnotatable">
- 	<eOperations xsi:type="activities:MoflonEOperation" name="getFullyQualifiedName"
+    <eOperations xsi:type="activities:MoflonEOperation" name="getFullyQualifiedName"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllOwnedTypes" upperBound="-1"
         eType="#//TAbstractType"/>

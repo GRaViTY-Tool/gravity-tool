@@ -22,6 +22,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/childClasses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/implements"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembers"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllChildren"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/signatures"/>

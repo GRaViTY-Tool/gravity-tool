@@ -1,20 +1,20 @@
-
-import java.util.ArrayList;
-import java.util.Collections;
-import org.gravity.typegraph.basic.TAbstractType;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import org.gravity.typegraph.basic.TFieldDefinition;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TSyntethicMethod;
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
+import  java.util.ArrayList;
+import  java.util.Collections;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  java.util.HashSet;
+import  java.util.List;
+import  java.util.Set;
+import  org.eclipse.emf.common.util.BasicEList;
+import  org.gravity.typegraph.basic.TFieldDefinition;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TMethodDefinition;
+import  org.gravity.typegraph.basic.TSyntethicMethod;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class TClassImpl {
 
-@members <--
+@members<--
 
 	@Override
 	public String toString() {
@@ -46,11 +46,10 @@ partial class TClassImpl {
 
 		return (!Collections.disjoint(parents, otherParents));
 	}
-	
--->
 
-@model getAllTMembers () <--
+	-->
 
+@model getAllTMembers ()<--
 		Set<TMember> allMembers = new HashSet<>();
 		TClass current = this;
 		while (current != null) {
@@ -62,7 +61,7 @@ partial class TClassImpl {
 				} else if (member instanceof TFieldDefinition) {
 					TFieldDefinition field = (TFieldDefinition) member;
 					redefinedBy = field.getHiddenBy();
-				} else if (member instanceof TSyntethicMethod){
+				} else if (member instanceof TSyntethicMethod) {
 					// Ignore synthetic methods
 					continue;
 				} else {
@@ -80,7 +79,13 @@ partial class TClassImpl {
 		}
 		TMemberContainer container = ContainersFactory.eINSTANCE.createTMemberContainer();
 		container.getTMembers().addAll(allMembers);
-		return container;
--->
+		return container;-->
+
+@model getAllChildren ()<--		EList<TClass> children = new BasicEList<>();
+		for(TClass child : getChildClasses()) {
+			children.add(child);
+			children.addAll(child.getChildClasses());
+		}
+		return children;-->
 
 }

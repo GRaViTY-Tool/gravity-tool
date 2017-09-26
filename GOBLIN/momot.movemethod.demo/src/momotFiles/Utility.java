@@ -117,20 +117,7 @@ public abstract class Utility {
 	}
 	
 	
-	public static EList<TClass> getAllChildren(TClass sourceClass) {
-		
-		EList<TClass> childList = new BasicEList<TClass>();
-		
-		for (TClass child : sourceClass.getChildClasses()) {
-			childList.add(child);
-			childList.addAll(getAllChildren(child));
-		}
-		
-		return childList;
-		
-	}
-	
-	 static void fillParentMethods(List<TMethodDefinition> parentMethods, TClass tClass){
+	static void fillParentMethods(List<TMethodDefinition> parentMethods, TClass tClass){
 			
 		if(tClass.getParentClass() != null){
 			for(TMember member: tClass.getParentClass().getDefines()){
