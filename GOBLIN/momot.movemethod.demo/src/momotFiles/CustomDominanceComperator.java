@@ -11,7 +11,7 @@ import momotFiles.SearchTypeGraph.FitnessFunction;
 
 public class CustomDominanceComperator implements DominanceComparator{
 
-	private static final double[] weight = {1,1,1,1,1};
+	
 	ParetoObjectiveComparator paretoCompare;
 	
 	private ParetoObjectiveComparator getParetoCompare() {
@@ -57,13 +57,13 @@ public class CustomDominanceComperator implements DominanceComparator{
 		
 		for (int i = 0; i < solution1.getNumberOfObjectives(); i++) {
 			if(solution1.getObjective(i) < solution2.getObjective(i)) {
-				solution1SingleObjective += weight[i];		
+				solution1SingleObjective += SearchParameters.weight[i];		
 			}
 			else if(solution1.getObjective(i) == solution2.getObjective(i)) {
 				solution1SingleObjective += 0;
 			}
 			else {
-				solution1SingleObjective += - weight[i];
+				solution1SingleObjective += - SearchParameters.weight[i];
 			}
 		}
 		

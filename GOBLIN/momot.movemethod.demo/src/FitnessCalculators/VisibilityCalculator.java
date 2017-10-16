@@ -10,6 +10,8 @@ import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 
+import momotFiles.SearchParameters;
+
 public class VisibilityCalculator extends MetricCalculator {
 
 	@Override
@@ -47,15 +49,16 @@ public class VisibilityCalculator extends MetricCalculator {
 						if (tVisibility != null) {
 							switch (tVisibility) {
 							case TPUBLIC:
-								value += 3;
+								value += SearchParameters.publicValue;
 								break;
 							case TPROTECTED:
-								value += 2;
+								value += SearchParameters.protectedValue;
 								break;
 							case TPACKAGE:
-								value += 1;
+								value += SearchParameters.packageValue;
 								break;
 							case TPRIVATE:
+								value += SearchParameters.privateValue;
 								break;
 							}
 						}
