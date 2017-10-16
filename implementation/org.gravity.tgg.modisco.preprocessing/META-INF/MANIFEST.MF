@@ -3,7 +3,7 @@ Bundle-SymbolicName: org.gravity.tgg.modisco.preprocessing;singleton:=
  true
 Export-Package: org.gravity.tgg.modisco.preprocessing
 Bundle-Name: org.gravity.tgg.modisco.preprocessing
-Bundle-Version: 1.0
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.modisco,
  org.eclipse.gmt.modisco.java,
