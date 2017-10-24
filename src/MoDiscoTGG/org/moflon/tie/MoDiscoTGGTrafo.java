@@ -7,11 +7,16 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.BasicConfigurator;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.uml2.uml.Package;
 import org.moflon.tgg.algorithm.configuration.Configurator;
@@ -20,6 +25,7 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import MoDiscoTGG.MoDiscoTGGPackage;
 import common.ModelProcessor;
+import common.delta.ComaratorDelta;
 import common.delta.DeltaApplicator;
 import common.delta.DeltaResult;
 import common.delta.IndexedModel;
@@ -54,22 +60,39 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper {
 		}
 		// Set up logging
 		BasicConfigurator.configure();
-
-		MoDiscoTGGTrafo helper;
+		AtomicInteger size = new AtomicInteger();
 		if (forward) {
 			// Forward Transformation
-			helper = new MoDiscoTGGTrafo();
+			MoDiscoTGGTrafo helper = new MoDiscoTGGTrafo();
 			// helper.setVerbose(true);
 			helper.performForward("instances/src_processed.xmi");
-			int i = 100;
+			helper.saveSynchronizationProtocol("instances/fwd.protocol2.xmi");
+			helper.setChangeSrc(e-> {
+				Resource srcResource = helper.getResourceFor(e, URI.createFileURI("instances/tmp.xmi"));
+				e.eAdapters().add(new EContentAdapter() {
+					public void notifyChanged(Notification notification) {
+						System.out.println(notification.getEventType()+" "+notification.getNotifier());
+					}
+					
+				});
+				size.set(new ComaratorDelta().loadFromFile(srcResource, "instances/src_processed_d.xmi"));
+			});
+			System.out.println("b");
+			long start = System.currentTimeMillis();
+			helper.integrateForward();
+			long end = System.currentTimeMillis();
+			System.out.println(
+					"result\t\teMoflonOld\tsabwd\t " + numberFormat.format((end - start) / 1000000000.0) + "\t" + size);
+			helper.saveTrg("instances/fwd.trg.delta.xmi");
+//			int i = 100;
 			// for (int i=10; i<=1000; i*=10) {
-			helper.performForwardSync(i);
+//			helper.performForwardSync(i);
 			// }
 		}
 
 		if (backward) {
 			// Backward Transformation
-			helper = new MoDiscoTGGTrafo();
+			MoDiscoTGGTrafo helper = new MoDiscoTGGTrafo();
 			// helper.setVerbose(true);
 			helper.setConfigurator(new Configurator() {
 				@Override

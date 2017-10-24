@@ -16,28 +16,27 @@ public class MoDiscoTGGConsistencyCheck extends SynchronizationHelper {
 	}
 
 	public static void main(String[] args) throws IOException {
+		String path = System.getProperty("java.library.path");
+		System.out.println(System.getProperty("PATH"));
+		System.out.println("Java path: " + path);
+		System.out.println(System.getenv());
+
 		// Set up logging
 		BasicConfigurator.configure();
 
-		String caseStudy = args[0];
-
 		// Consistency Check
 		MoDiscoTGGConsistencyCheck helper = new MoDiscoTGGConsistencyCheck();
-		helper.loadSrc("instances/" + caseStudy + "/src.xmi");
-		helper.loadTrg("instances/" + caseStudy + "/trg.uml");
+		helper.loadSrc("instances/src_processed.xmi");
+		helper.loadTrg("instances/trg_processed.xmi");
 
 		helper.createCorrespondences(true);
 
-		 helper.saveSrc("instances/" + caseStudy + "/result/src.xmi");
-		 helper.saveTrg("instances/" + caseStudy + "/result/trg.uml");
-		 helper.saveCorr("instances/" + caseStudy + "/result/corr.xmi");
-		 helper.saveConsistencyCheckProtocol("instances/" + caseStudy +
-		 "/result/protocol.xmi");
-		 helper.saveInconsistentSourceDelta("instances/" + caseStudy +
-		 "/result/src.delta.xmi");
-		 helper.saveInconsistentTargetDelta("instances/" + caseStudy +
-		 "/result/trg.delta.xmi");
-		
+		helper.saveSrc("instances/cc.src.xmi");
+		helper.saveTrg("instances/cc.trg.uml");
+		helper.saveCorr("instances/cc.corr.xmi");
+		helper.saveConsistencyCheckProtocol("instances/cc.protocol.xmi");
+		helper.saveInconsistentSourceDelta("instances/src.delta.xmi");
+		helper.saveInconsistentTargetDelta("instances/result/trg.delta.xmi");
 
 	}
 }
