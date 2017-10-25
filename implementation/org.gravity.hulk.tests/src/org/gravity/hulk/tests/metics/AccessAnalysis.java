@@ -1,13 +1,10 @@
 package org.gravity.hulk.tests.metics;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.Stack;
 
 import org.eclipse.core.resources.IProject;
@@ -17,49 +14,32 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.ILocalVariable;
-import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.Signature;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.JavaHelper;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.hulk.HAntiPatternDetection;
-import org.gravity.hulk.HDetector;
-import org.gravity.hulk.HulkAPI;
 import org.gravity.hulk.HulkFactory;
-import org.gravity.hulk.HulkAPI.AntiPatternNames;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPattern;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfTypesMetric;
-import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.detection.antipattern.impl.AntipatternPackageImpl;
 import org.gravity.hulk.detection.metrics.HIGAMCalculator;
 import org.gravity.hulk.detection.metrics.HIGATCalculator;
 import org.gravity.hulk.detection.metrics.MetricsFactory;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TPackage;
-import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -71,7 +51,6 @@ import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisException;
 import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory;
 import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory.AnalysisMode;
 import de.uni_hamburg.informatik.swt.accessanalysis.results.Result;
-import de.uni_hamburg.informatik.swt.accessanalysis.results.ResultFormatter;
 
 @RunWith(Parameterized.class)
 public class AccessAnalysis {
@@ -100,7 +79,7 @@ public class AccessAnalysis {
 	}
 
 	@Test
-	public void detectBlobs() throws NoConverterRegisteredException, AnalysisException {
+	public void test() throws NoConverterRegisteredException, AnalysisException {
 		IProject iproject = javaProject.getProject();
 		IPGConverter converter = GravityActivator.getDefault().getNewConverter(iproject);
 
@@ -124,7 +103,7 @@ public class AccessAnalysis {
 
 		HIGATCalculator igat = MetricsFactory.eINSTANCE.createHIGATCalculator();
 		igat.setHAntiPatternHandling(hulk);
-		igam.detect(apg);
+		igat.detect(apg);
 
 		Analysis accessAnalysis = AnalysisFactory.analyzer(Arrays.asList(javaProject), AnalysisMode.ACCESS_QUIET);
 		accessAnalysis.run(monitor);
@@ -184,8 +163,24 @@ public class AccessAnalysis {
 				}
 
 				if (hValue != aValue) {
-					System.err.println(kind + " not equal for " + javaElement.getElementName() + ":"
-							+ javaElement.getElementType() + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
+					String element = null;
+					TAnnotatable tAnnotated = tAnnotation.getTAnnotated();
+					if (tAnnotated instanceof TMember) {
+						TMember tMember = (TMember) tAnnotated;
+						element = "Member \""+tMember.getDefinedBy().getFullyQualifiedName()+" -> "+tMember.getSignatureString()+ '\"';
+					}
+					else if (tAnnotated instanceof TAbstractType) {
+						element = "Type \""+((TAbstractType) tAnnotated).getFullyQualifiedName()+ '\"';		
+					}
+					else if (tAnnotated instanceof TPackage) {
+						element = "Package \""+((TPackage) tAnnotated).getFullyQualifiedName();
+						
+					}
+					else if (tAnnotated instanceof TypeGraph) {
+						element = "Java Project \""+((TypeGraph) tAnnotated).getTName()+"\"";
+					}
+					
+					System.err.println(kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
 				}
 			}
 		}

@@ -5,8 +5,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.Stack;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -25,9 +23,8 @@ import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPattern;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.detection.antipattern.AntipatternFactory;
-import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.antipattern.impl.AntipatternPackageImpl;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
 
 public class HulkAPI {
 
@@ -78,6 +75,12 @@ public class HulkAPI {
 			case SpaghettiCode:
 				detectors.add(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector());
 				break;
+			case IGAM:
+				detectors.add(MetricsPackage.eINSTANCE.getHIGAMCalculator());
+				break;
+			case IGAT:
+				detectors.add(MetricsPackage.eINSTANCE.getHIGATCalculator());
+				break;
 			}
 		}
 		HashSet<HDetector> detectorResults = new HashSet<>();
@@ -100,6 +103,6 @@ public class HulkAPI {
 	}
 
 	public static enum AntiPatternNames {
-		Blob, GodClass, SpaghettiCode, SwissArmyKnife
+		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT
 	}
 }
