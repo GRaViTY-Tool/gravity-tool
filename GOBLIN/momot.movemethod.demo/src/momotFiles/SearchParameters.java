@@ -76,4 +76,24 @@ public class SearchParameters {
 			description = "flag to toggle to reduce visibilities in every step.")
 	public static boolean useOptimizationRepair = false;
 	
+	@Parameter(	names = { "-w", "--weight" },
+			description = "Weights used for dominance comparation")
+	public static double[] weight = {1,1,1,1,1};
+	
+	@Parameter(	names = { "-puv", "--public_value" },
+			description = "Value for public access modifier used in metric calculation")
+	public static int publicValue = 3;
+	
+	@Parameter(	names = { "-prv", "--protected_value" },
+			description = "Value for protected access modifier used in metric calculation")
+	public static int protectedValue = 2;
+	
+	@Parameter(	names = { "-pav", "--package_value" },
+			description = "Value for public access modifier used in metric calculation")
+	public static int packageValue = 1;
+	
+	@Parameter(	names = { "-priv", "--private_value" },
+			description = "Value for private access modifier used in metric calculation")
+	public static int privateValue = 0;
+	
 }
