@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.modisco:MGravityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" name="ConstructorVisibility" mConstructorDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0" mAbstractMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.1/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.2/@bodyDeclarations.0 //@ownedElements.0/@ownedElements.3/@bodyDeclarations.0">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="ProtectedConstructor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MConstructorDefinition" originalCompilationUnit="//@compilationUnits.0" name="ProtectedConstructor" model="/">
+        <modifier visibility="protected"/>
+        <body originalCompilationUnit="//@compilationUnits.0"/>
+        <mParameterList/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PrivateConstructor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MConstructorDefinition" originalCompilationUnit="//@compilationUnits.1" name="PrivateConstructor" model="/">
+        <modifier visibility="private"/>
+        <body originalCompilationUnit="//@compilationUnits.1"/>
+        <mParameterList/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.2" name="PackageConstructor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MConstructorDefinition" originalCompilationUnit="//@compilationUnits.2" name="PackageConstructor" model="/">
+        <modifier/>
+        <body originalCompilationUnit="//@compilationUnits.2"/>
+        <mParameterList/>
+      </bodyDeclarations>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.3" name="PublicConstructor">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MConstructorDefinition" originalCompilationUnit="//@compilationUnits.3" name="PublicConstructor" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.3"/>
+        <mParameterList/>
+      </bodyDeclarations>
+    </ownedElements>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="ProtectedConstructor.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ConstructorVisibility/src/ProtectedConstructor.java" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="PrivateConstructor.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ConstructorVisibility/src/PrivateConstructor.java" types="//@ownedElements.0/@ownedElements.1"/>
+  <compilationUnits name="PackageConstructor.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ConstructorVisibility/src/PackageConstructor.java" types="//@ownedElements.0/@ownedElements.2"/>
+  <compilationUnits name="PublicConstructor.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ConstructorVisibility/src/PublicConstructor.java" types="//@ownedElements.0/@ownedElements.3"/>
+</org.gravity.modisco:MGravityModel>

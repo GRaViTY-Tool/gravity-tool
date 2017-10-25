@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" xmlns:org.gravity.tgg.modisco="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="org.gravity.tgg.modisco:ModelToTypeGraph">
+    <source href="MethodVisibility.xmi#/"/>
+    <target href="../../../targetModel#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.5"/>
+    <target href="../../../targetModel#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeVoid" href="MethodVisibility.xmi#//@orphanTypes.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="MethodVisibility.xmi#//@mMethodNames.3"/>
+    <target href="../../../targetModel#//@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.1"/>
+    <target href="../../../targetModel#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeLong" href="MethodVisibility.xmi#//@orphanTypes.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:CompilationUnitToTypeGraph">
+    <source href="MethodVisibility.xmi#//@compilationUnits.0"/>
+    <target href="../../../targetModel#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.0"/>
+    <target href="../../../targetModel#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeInt" href="MethodVisibility.xmi#//@orphanTypes.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="MethodVisibility.xmi#//@mMethodNames.0"/>
+    <target href="../../../targetModel#//@methods.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="MethodVisibility.xmi#//@ownedElements.0"/>
+    <target href="../../../targetModel#//@packages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.8"/>
+    <target href="../../../targetModel#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeByte" href="MethodVisibility.xmi#//@orphanTypes.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="MethodVisibility.xmi#//@mMethodNames.2"/>
+    <target href="../../../targetModel#//@methods.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.2"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="MethodVisibility.xmi#//@mMethodSignatures.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../targetModel#//@methods.2/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MParameterListToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.2/@mParameterList"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.2"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.0"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="MethodVisibility.xmi#//@mMethodSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../targetModel#//@methods.1/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MParameterListToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.0"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@body"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.3"/>
+    <target href="../../../targetModel#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeDouble" href="MethodVisibility.xmi#//@orphanTypes.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.2"/>
+    <target href="../../../targetModel#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeFloat" href="MethodVisibility.xmi#//@orphanTypes.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.4"/>
+    <target href="../../../targetModel#//@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeBoolean" href="MethodVisibility.xmi#//@orphanTypes.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <target href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.7"/>
+    <target href="../../../targetModel#//@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeShort" href="MethodVisibility.xmi#//@orphanTypes.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="MethodVisibility.xmi#//@mMethodNames.1"/>
+    <target href="../../../targetModel#//@methods.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2/@modifier"/>
+    <target href="../../../targetModel#//@methods.2/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    <target href="../../../targetModel#//@methods.1/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.1"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="MethodVisibility.xmi#//@mMethodSignatures.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../targetModel#//@methods.3/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MParameterListToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.1/@mParameterList"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.1"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@body"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.3"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="MethodVisibility.xmi#//@mMethodSignatures.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../targetModel#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MParameterListToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.3/@mParameterList"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="MethodVisibility.xmi#//@mMethodSignatures.3"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@body"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.3/@modifier"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="MethodVisibility.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1/@modifier"/>
+    <target href="../../../targetModel#//@methods.3/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="MethodVisibility.xmi#//@orphanTypes.6"/>
+    <target href="../../../targetModel#//@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeChar" href="MethodVisibility.xmi#//@orphanTypes.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.9"/>
+  </correspondences>
+  <source href="MethodVisibility.xmi#/"/>
+  <target href="../../../targetModel#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

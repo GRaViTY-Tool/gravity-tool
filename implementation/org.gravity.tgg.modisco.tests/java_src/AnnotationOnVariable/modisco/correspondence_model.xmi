@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotations="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" xmlns:org.gravity.tgg.modisco="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="org.gravity.tgg.modisco:ModelToTypeGraph">
+    <source href="AnnotationOnVariable.xmi#/"/>
+    <target href="../../../targetModel#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.2"/>
+    <target href="../../../targetModel#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeFloat" href="AnnotationOnVariable.xmi#//@orphanTypes.2"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodNameToTMethod">
+    <source href="AnnotationOnVariable.xmi#//@mMethodNames.0"/>
+    <target href="../../../targetModel#//@methods.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.8"/>
+    <target href="../../../targetModel#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeByte" href="AnnotationOnVariable.xmi#//@orphanTypes.8"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0"/>
+    <target href="../../../targetModel#//@packages.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.4"/>
+    <target href="../../../targetModel#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeBoolean" href="AnnotationOnVariable.xmi#//@orphanTypes.4"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.2"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.3"/>
+    <target href="../../../targetModel#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeDouble" href="AnnotationOnVariable.xmi#//@orphanTypes.3"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.3"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.7"/>
+    <target href="../../../targetModel#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeShort" href="AnnotationOnVariable.xmi#//@orphanTypes.7"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.4"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:CompilationUnitToTypeGraph">
+    <source href="AnnotationOnVariable.xmi#//@compilationUnits.0"/>
+    <target href="../../../targetModel#/"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.1"/>
+    <target href="../../../targetModel#//@packages.1"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PackageToTPackage">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <target href="../../../targetModel#//@packages.1/@subpackage.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:AnnotationTypeDeclaration" href="AnnotationOnVariable.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="annotations:TAnnotationType" href="../../../targetModel#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="java:AnnotationTypeDeclaration" href="AnnotationOnVariable.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <target xsi:type="annotations:TAnnotationType" href="../../../targetModel#//@ownedTypes.5"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.5"/>
+    <target href="../../../targetModel#//@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeVoid" href="AnnotationOnVariable.xmi#//@orphanTypes.5"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.6"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ClassDeclarationToTClass">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:ClassDeclaration" href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="java:ClassDeclaration" href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.7"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <target href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.1"/>
+    <target href="../../../targetModel#//@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeLong" href="AnnotationOnVariable.xmi#//@orphanTypes.1"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.8"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.0"/>
+    <target href="../../../targetModel#//@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeInt" href="AnnotationOnVariable.xmi#//@orphanTypes.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.9"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTMethodSignature">
+    <source href="AnnotationOnVariable.xmi#//@mMethodSignatures.0"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MSignatureToTSignature">
+    <source xsi:type="org.gravity.modisco:MMethodSignature" href="AnnotationOnVariable.xmi#//@mMethodSignatures.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodSignature" href="../../../targetModel#//@methods.0/@signatures.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MParameterListToTParameterList">
+    <source href="AnnotationOnVariable.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodSignatureToTParameterList">
+    <source href="AnnotationOnVariable.xmi#//@mMethodSignatures.0"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@paramList"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:PrimitiveTypeToTClass">
+    <source href="AnnotationOnVariable.xmi#//@orphanTypes.6"/>
+    <target href="../../../targetModel#//@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:TypeToTAbstractType">
+    <source xsi:type="java:PrimitiveTypeChar" href="AnnotationOnVariable.xmi#//@orphanTypes.6"/>
+    <target xsi:type="org.gravity.typegraph.basic:TClass" href="../../../targetModel#//@ownedTypes.10"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MDefinitionToTMember">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:ASTNodeToTAnnotatable">
+    <source xsi:type="org.gravity.modisco:MMethodDefinition" href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target xsi:type="org.gravity.typegraph.basic:TMethodDefinition" href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MMethodDefinitionToTMethodDefinition">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:BlockToTMethodDefinition">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0"/>
+  </correspondences>
+  <correspondences xsi:type="org.gravity.tgg.modisco:MModifierToTModifier">
+    <source href="AnnotationOnVariable.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <target href="../../../targetModel#//@methods.0/@signatures.0/@definitions.0/@tModifier"/>
+  </correspondences>
+  <source href="AnnotationOnVariable.xmi#/"/>
+  <target href="../../../targetModel#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>

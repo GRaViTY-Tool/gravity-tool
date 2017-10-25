@@ -1,0 +1,2241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches children="//@tripleMatches.20 //@tripleMatches.18 //@tripleMatches.17 //@tripleMatches.15 //@tripleMatches.13 //@tripleMatches.12 //@tripleMatches.10 //@tripleMatches.9 //@tripleMatches.8 //@tripleMatches.7 //@tripleMatches.6 //@tripleMatches.5 //@tripleMatches.4 //@tripleMatches.3 //@tripleMatches.2 //@tripleMatches.1" ruleName="ModelToPg" number="387">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <nodeMappings nodeName="mModelToTPG">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPG">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <createdElements href="ClassVisibility.xmi#/"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <createdElements href="../../../targetModel#/"/>
+  </tripleMatches>
+  <tripleMatches ruleName="CompilationUnit" number="388">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.5"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnitToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.1"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.1"/>
+    <correspondenceElements href="#//@tripleMatches.1/@containedEdges.3"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <createdElements href="ClassVisibility.xmi#//@compilationUnits.1"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.1"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsDouble" number="389">
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.10"/>
+    <contextElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="../../../targetModel#//@ownedTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.2"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.2"/>
+      <trg href="../../../targetModel#//@ownedTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.3"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.2/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.0"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.3"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.2"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.8"/>
+    <correspondenceElements href="#//@tripleMatches.2/@containedEdges.9"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.4"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.3"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.7"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.2"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.0"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsShort" number="390">
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="../../../targetModel#//@ownedTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.4"/>
+      <trg href="../../../targetModel#//@ownedTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.5"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.1"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.4"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.1"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.3/@containedEdges.8"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.5"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.5"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.7"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.4"/>
+    <correspondenceElements href="#//@tripleMatches.3/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.4"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.1"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.5"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.5"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.8"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.7"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.4"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18 //@tripleMatches.10 //@tripleMatches.9 //@tripleMatches.5" ruleName="PackageToPGPackage" number="391">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.9"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="mPackageToTPackage">
+      <node href="correspondence_model.xmi#//@correspondences.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPackage">
+      <node href="../../../targetModel#//@packages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="packages">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.4/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.4/@containedEdges.5"/>
+    <targetElements href="../../../targetModel#//@packages.0"/>
+    <targetElements href="#//@tripleMatches.4/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.6"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <correspondenceElements href="#//@tripleMatches.4/@containedEdges.8"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.5"/>
+    <createdElements href="../../../targetModel#//@packages.0"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.7"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.8"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16 //@tripleMatches.10 //@tripleMatches.9" ruleName="Class" number="392">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.17"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.18"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <contextElements href="../../../targetModel#//@packages.0"/>
+    <contextElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <contextElements href="../../../targetModel#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <contextElements href="#//@tripleMatches.5/@containedEdges.2"/>
+    <nodeMappings nodeName="mClassDeclarationToTClass">
+      <node href="correspondence_model.xmi#//@correspondences.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackageToTPackage">
+      <node href="correspondence_model.xmi#//@correspondences.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPackage">
+      <node href="../../../targetModel#//@packages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="pg">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mBodyToTAnnotation">
+      <node href="correspondence_model.xmi#//@correspondences.9"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.7"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.9"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.12"/>
+    <targetElements href="../../../targetModel#//@packages.0"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.13"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.14"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.2"/>
+    <targetElements href="../../../targetModel#/"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.8"/>
+    <targetElements href="#//@tripleMatches.5/@containedEdges.9"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.3"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.10"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.11"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.6"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.7"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.15"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.9"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.16"/>
+    <correspondenceElements href="#//@tripleMatches.5/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.4"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.6"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.7"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.9"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.12"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.13"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.14"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.15"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.2"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.9"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.16"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypesIsVoid" number="393">
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.10"/>
+    <contextElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.10"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="../../../targetModel#//@ownedTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.11"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.3"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.10"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.11"/>
+      <trg href="../../../targetModel#//@ownedTypes.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.3"/>
+    <targetElements href="#//@tripleMatches.6/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.6/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.6/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.10"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.11"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.8"/>
+    <correspondenceElements href="#//@tripleMatches.6/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.3"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.5"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.10"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.3"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.11"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsByte" number="394">
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    <contextElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="../../../targetModel#//@ownedTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.12"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.13"/>
+      <trg href="../../../targetModel#//@ownedTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.4"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.13"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.4"/>
+    <targetElements href="#//@tripleMatches.7/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.7/@containedEdges.7"/>
+    <targetElements href="#//@tripleMatches.7/@containedEdges.8"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.12"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.13"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.5"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.7/@containedEdges.9"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.12"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.3"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.13"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.4"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.4"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.6"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.8"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsInt" number="395">
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.10"/>
+    <contextElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.14"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.15"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.5"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.15"/>
+      <trg href="../../../targetModel#//@ownedTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.14"/>
+      <trg href="../../../targetModel#//@ownedTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.8/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.8/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.8/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.5"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.6"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.15"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.14"/>
+    <correspondenceElements href="#//@tripleMatches.8/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.2"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.0"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.7"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.15"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.5"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.14"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.14" ruleName="NestedClassInType" number="396">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.26"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.27"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.3"/>
+    <contextElements href="../../../targetModel#//@packages.0"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.5"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.2"/>
+    <contextElements href="../../../targetModel#/"/>
+    <contextElements href="#//@tripleMatches.9/@containedEdges.6"/>
+    <nodeMappings nodeName="eNestedType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tNestedPackage">
+      <node href="../../../targetModel#//@packages.0/@subpackage.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eNestedTypeToTNestedType">
+      <node href="correspondence_model.xmi#//@correspondences.16"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mNestedClassDeclarationToTNestedClass">
+      <node href="correspondence_model.xmi#//@correspondences.17"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tNestedType">
+      <node href="../../../targetModel#//@ownedTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tOuterType">
+      <node href="../../../targetModel#//@ownedTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eOuterTypeToTOuterInterface">
+      <node href="correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mBodyToTAnnotation">
+      <node href="correspondence_model.xmi#//@correspondences.18"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eOuterType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tOuterPackage">
+      <node href="../../../targetModel#//@packages.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="innerTypes">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.18"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0/@subpackage.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#//@packages.0/@subpackage.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0/@subpackage.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parent">
+      <src href="../../../targetModel#//@packages.0/@subpackage.0"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="outerType">
+      <src href="../../../targetModel#//@ownedTypes.6"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.6"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.18"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="subpackage">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@packages.0/@subpackage.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.6"/>
+      <trg href="../../../targetModel#//@packages.0/@subpackage.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.17"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.6"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.15"/>
+    <targetElements href="../../../targetModel#//@packages.0"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.9"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.5"/>
+    <targetElements href="../../../targetModel#//@packages.0/@subpackage.0"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.17"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.18"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.19"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.20"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.11"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.12"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.22"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.24"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.2"/>
+    <targetElements href="#//@tripleMatches.9/@containedEdges.13"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.10"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.17"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.7"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.14"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.18"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.21"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.23"/>
+    <correspondenceElements href="#//@tripleMatches.9/@containedEdges.25"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.16"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.12"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.13"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.17"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.14"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.6"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.15"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.18"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.16"/>
+    <createdElements href="../../../targetModel#//@packages.0/@subpackage.0"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.17"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.18"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.19"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.20"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.21"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.22"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.23"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.24"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.25"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.16"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.11" ruleName="NestedClassInType" number="397">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.26"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.27"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.3"/>
+    <contextElements href="../../../targetModel#//@packages.0"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.5"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.2"/>
+    <contextElements href="../../../targetModel#/"/>
+    <contextElements href="#//@tripleMatches.10/@containedEdges.6"/>
+    <nodeMappings nodeName="eNestedType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tNestedPackage">
+      <node href="../../../targetModel#//@packages.0/@subpackage.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eNestedTypeToTNestedType">
+      <node href="correspondence_model.xmi#//@correspondences.19"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mNestedClassDeclarationToTNestedClass">
+      <node href="correspondence_model.xmi#//@correspondences.20"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tNestedType">
+      <node href="../../../targetModel#//@ownedTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tOuterType">
+      <node href="../../../targetModel#//@ownedTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eOuterTypeToTOuterInterface">
+      <node href="correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mBodyToTAnnotation">
+      <node href="correspondence_model.xmi#//@correspondences.21"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eOuterType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tOuterPackage">
+      <node href="../../../targetModel#//@packages.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.20"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.20"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parent">
+      <src href="../../../targetModel#//@packages.0/@subpackage.1"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0/@subpackage.1"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="innerTypes">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="outerType">
+      <src href="../../../targetModel#//@ownedTypes.7"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="subpackage">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@packages.0/@subpackage.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0/@subpackage.1"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#//@packages.0/@subpackage.1"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.21"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.7"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.7"/>
+      <trg href="../../../targetModel#//@packages.0/@subpackage.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.18"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <targetElements href="../../../targetModel#//@packages.0/@subpackage.1"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.19"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.7"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.20"/>
+    <targetElements href="../../../targetModel#//@packages.0"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.11"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.23"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.12"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.13"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.25"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.14"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.15"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.2"/>
+    <targetElements href="../../../targetModel#/"/>
+    <targetElements href="#//@tripleMatches.10/@containedEdges.16"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.7"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.8"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.21"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.20"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.19"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.9"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.10"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.21"/>
+    <correspondenceElements href="#//@tripleMatches.10/@containedEdges.22"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.8"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.7"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.20"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.10"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.12"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.21"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.13"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.14"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.15"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.16"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.17"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.18"/>
+    <createdElements href="../../../targetModel#//@packages.0/@subpackage.1"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.19"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.20"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.21"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.22"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.23"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.24"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.19"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.25"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypesVisibility" number="398">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.8"/>
+    <contextElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.7"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.19"/>
+    <contextElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.19"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifierToTModifier">
+      <node href="correspondence_model.xmi#//@correspondences.22"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tModifier">
+      <node href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifier">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.19"/>
+      <trg href="../../../targetModel#//@ownedTypes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="tModifier">
+      <src href="../../../targetModel#//@ownedTypes.7"/>
+      <trg href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.22"/>
+      <trg href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.7"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+    <targetElements href="#//@tripleMatches.11/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.22"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.19"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.1/@modifier"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.2"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.7/@tModifier"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.22"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="CompilationUnit" number="399">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.5"/>
+    <sourceElements href="ClassVisibility.xmi#//@compilationUnits.0"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="ClassVisibility.xmi#//@compilationUnits.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="compilationUnitToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.23"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.23"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.23"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.12/@containedEdges.4"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.23"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.4"/>
+    <createdElements href="ClassVisibility.xmi#//@compilationUnits.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsChar" number="400">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.24"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.25"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.24"/>
+      <trg href="../../../targetModel#//@ownedTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.25"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.25"/>
+      <trg href="../../../targetModel#//@ownedTypes.8"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.8"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.8"/>
+    <targetElements href="#//@tripleMatches.13/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.13/@containedEdges.9"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.25"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.4"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.13/@containedEdges.7"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.24"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.25"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.4"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.8"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.9"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.6"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.24"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypesVisibility" number="401">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.8"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    <contextElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.6"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.16"/>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.16"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifierToTModifier">
+      <node href="correspondence_model.xmi#//@correspondences.26"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tModifier">
+      <node href="../../../targetModel#//@ownedTypes.6/@tModifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifier">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.16"/>
+      <trg href="../../../targetModel#//@ownedTypes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="../../../targetModel#//@ownedTypes.6/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="tModifier">
+      <src href="../../../targetModel#//@ownedTypes.6"/>
+      <trg href="../../../targetModel#//@ownedTypes.6/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.26"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.14/@containedEdges.3"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.6/@tModifier"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.6"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.26"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.14/@containedEdges.6"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.16"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.3"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.6/@tModifier"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.26"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.6"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@bodyDeclarations.0/@modifier"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsBoolean" number="402">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    <contextElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.27"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.28"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.9"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="../../../targetModel#//@ownedTypes.9"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.9"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.9"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.28"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.9"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.27"/>
+      <trg href="../../../targetModel#//@ownedTypes.9"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.9"/>
+    <targetElements href="#//@tripleMatches.15/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.15/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.15/@containedEdges.7"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.27"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.3"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.28"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.15/@containedEdges.8"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.27"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.3"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.9"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.28"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.9"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypesVisibility" number="403">
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.8"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.2"/>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifierToTModifier">
+      <node href="correspondence_model.xmi#//@correspondences.29"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tModifier">
+      <node href="../../../targetModel#//@ownedTypes.2/@tModifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifier">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.8"/>
+      <trg href="../../../targetModel#//@ownedTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="tModifier">
+      <src href="../../../targetModel#//@ownedTypes.2"/>
+      <trg href="../../../targetModel#//@ownedTypes.2/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.29"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.29"/>
+      <trg href="../../../targetModel#//@ownedTypes.2/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.2/@tModifier"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.29"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.8"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.5"/>
+    <correspondenceElements href="#//@tripleMatches.16/@containedEdges.6"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.29"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.2/@tModifier"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.5"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.1/@modifier"/>
+    <createdElements href="#//@tripleMatches.16/@containedEdges.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsLong" number="404">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.10"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.30"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.31"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.10"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.30"/>
+      <trg href="../../../targetModel#//@ownedTypes.10"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.10"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.31"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.10"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.10"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.31"/>
+      <trg href="../../../targetModel#//@ownedTypes.10"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.30"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.10"/>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.5"/>
+    <targetElements href="#//@tripleMatches.17/@containedEdges.6"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.30"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.31"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.2"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.4"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.7"/>
+    <correspondenceElements href="#//@tripleMatches.17/@containedEdges.8"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.30"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.10"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.31"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.6"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.1"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.9"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.19" ruleName="Class" number="405">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.17"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.18"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <contextElements href="../../../targetModel#//@packages.0"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <contextElements href="../../../targetModel#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <nodeMappings nodeName="mClassDeclarationToTClass">
+      <node href="correspondence_model.xmi#//@correspondences.32"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackageToTPackage">
+      <node href="correspondence_model.xmi#//@correspondences.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPackage">
+      <node href="../../../targetModel#//@packages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.33"/>
+    </nodeMappings>
+    <nodeMappings nodeName="pg">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mBodyToTAnnotation">
+      <node href="correspondence_model.xmi#//@correspondences.34"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeGraph">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.6"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.11"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.34"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.32"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.32"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="../../../targetModel#//@ownedTypes.11"/>
+      <trg href="../../../targetModel#//@packages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.34"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#//@packages.0"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.33"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.33"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="ClassVisibility.xmi#//@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.11"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.13"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.14"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <targetElements href="../../../targetModel#//@packages.0"/>
+    <targetElements href="#//@tripleMatches.18/@containedEdges.5"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.11"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.34"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.12"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.33"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.32"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.15"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.8"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.10"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.16"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.6"/>
+    <correspondenceElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.33"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.9"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.10"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.34"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.11"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.12"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.13"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.14"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.32"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.15"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.11"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.16"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypesVisibility" number="406">
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.7"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.8"/>
+    <sourceElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.33"/>
+    <contextElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <contextElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="../../../targetModel#//@ownedTypes.11"/>
+    <contextElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <nodeMappings nodeName="mTypeToTType">
+      <node href="correspondence_model.xmi#//@correspondences.33"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tType">
+      <node href="../../../targetModel#//@ownedTypes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifierToTModifier">
+      <node href="correspondence_model.xmi#//@correspondences.35"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tModifier">
+      <node href="../../../targetModel#//@ownedTypes.11/@tModifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModifier">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.33"/>
+      <trg href="../../../targetModel#//@ownedTypes.11"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.33"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="tModifier">
+      <src href="../../../targetModel#//@ownedTypes.11"/>
+      <trg href="../../../targetModel#//@ownedTypes.11/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.35"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.35"/>
+      <trg href="../../../targetModel#//@ownedTypes.11/@tModifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.11/@tModifier"/>
+    <targetElements href="../../../targetModel#//@ownedTypes.11"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.5"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.33"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.6"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.35"/>
+    <createdElements href="ClassVisibility.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.5"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.11/@tModifier"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.6"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.35"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsFloat" number="407">
+    <sourceElements href="ClassVisibility.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.10"/>
+    <sourceElements href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    <contextElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <contextElements href="ClassVisibility.xmi#/"/>
+    <contextElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <contextElements href="../../../targetModel#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModelToTypeGraph">
+      <node href="correspondence_model.xmi#//@correspondences.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeGraph">
+      <node href="../../../targetModel#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="ePrimitiveTypeToTPrimitiveClass">
+      <node href="correspondence_model.xmi#//@correspondences.36"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeToTAbstractType">
+      <node href="correspondence_model.xmi#//@correspondences.37"/>
+    </nodeMappings>
+    <nodeMappings nodeName="tPrimitiveClass">
+      <node href="../../../targetModel#//@ownedTypes.12"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="ClassVisibility.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.0"/>
+      <trg href="ClassVisibility.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="pg">
+      <src href="../../../targetModel#//@ownedTypes.12"/>
+      <trg href="../../../targetModel#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.36"/>
+      <trg href="../../../targetModel#//@ownedTypes.12"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="classes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.12"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.36"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedTypes">
+      <src href="../../../targetModel#/"/>
+      <trg href="../../../targetModel#//@ownedTypes.12"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="correspondence_model.xmi#//@correspondences.37"/>
+      <trg href="../../../targetModel#//@ownedTypes.12"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="correspondence_model.xmi#//@correspondences.37"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="ClassVisibility.xmi#/"/>
+      <trg href="ClassVisibility.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <targetElements href="../../../targetModel#//@ownedTypes.12"/>
+    <targetElements href="#//@tripleMatches.20/@containedEdges.2"/>
+    <targetElements href="#//@tripleMatches.20/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.20/@containedEdges.6"/>
+    <targetElements href="../../../targetModel#/"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.37"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.0"/>
+    <correspondenceElements href="correspondence_model.xmi#//@correspondences.36"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.3"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.5"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.7"/>
+    <correspondenceElements href="#//@tripleMatches.20/@containedEdges.8"/>
+    <createdElements href="../../../targetModel#//@ownedTypes.12"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.37"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.2"/>
+    <createdElements href="correspondence_model.xmi#//@correspondences.36"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.4"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.5"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.6"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.7"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.8"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.9"/>
+    <createdElements href="ClassVisibility.xmi#//@orphanTypes.2"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>

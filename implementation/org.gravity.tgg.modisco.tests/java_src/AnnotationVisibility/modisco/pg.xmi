@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotations="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.2 //@ownedTypes.4 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.9 //@ownedTypes.12 //@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15" tAnnotationTypes="//@ownedTypes.1 //@ownedTypes.3 //@ownedTypes.5 //@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.11" tName="AnnotationVisibility">
+  <packages classes="//@ownedTypes.2" ownedTypes="//@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.10" typeGraph="/" tName="(default package)">
+    <subpackage ownedTypes="//@ownedTypes.3" typeGraph="/" tName="AnnotationContainer$"/>
+    <subpackage ownedTypes="//@ownedTypes.5" typeGraph="/" tName="AnnotationContainer$"/>
+    <subpackage ownedTypes="//@ownedTypes.8" typeGraph="/" tName="AnnotationContainer$"/>
+    <subpackage ownedTypes="//@ownedTypes.11" typeGraph="/" tName="AnnotationContainer$"/>
+  </packages>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0" tName="PackageAnnotation">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="AnnotationContainer" innerTypes="//@ownedTypes.3 //@ownedTypes.5 //@ownedTypes.8 //@ownedTypes.11">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0/@subpackage.0" tName="ProtectedAnnotation" outerType="//@ownedTypes.2">
+    <tModifier tVisibility="TProtected"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0/@subpackage.1" tName="PackageInnerAnnotation" outerType="//@ownedTypes.2">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0/@subpackage.2" tName="PublicInnerAnnotation" outerType="//@ownedTypes.2">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0" tName="PublicAnnotation">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="annotations:TAnnotationType" package="//@packages.0/@subpackage.3" tName="PrivateAnnotation" outerType="//@ownedTypes.2">
+    <tModifier/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+</org.gravity.typegraph.basic:TypeGraph>

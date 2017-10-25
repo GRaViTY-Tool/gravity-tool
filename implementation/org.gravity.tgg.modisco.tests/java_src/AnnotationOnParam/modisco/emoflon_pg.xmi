@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches ruleName="TypeParameter">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@typeParameters.0"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eAnonymousClassDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@typeParameters.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeParameters">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@typeParameters.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@typeParameters.0"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.6" ruleName="Interface" number="1">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsFloat" number="2">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.2"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.17" ruleName="Interface" number="3">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.4/@containedEdges.0 //@tripleMatches.4/@containedEdges.1" children="//@tripleMatches.13" ruleName="LinkDefinitionToType" number="4">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="mDefinition">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.7 //@tripleMatches.25" ruleName="PackageToPGPackage" number="5">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ClassImplementsInterface" number="6">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    <nodeMappings nodeName="eClassDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eSuperInterface">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.2"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.2"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.3" ruleName="SubPackageToPGPackage" number="7">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.7/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <nodeMappings nodeName="mParentPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedPackages">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.7/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsByte" number="8">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.8"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.8"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsChar" number="9">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.6"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.6"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="AbstractMethodDefinitionBloc" number="10">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <nodeMappings nodeName="mBlock">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mDefinition">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="body">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="AnnotationType" number="11">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.12/@containedEdges.0" ruleName="SignatureReturnType" number="12">
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <nodeMappings nodeName="mSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches ruleName="MemberInClassVisibility" number="13">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <nodeMappings nodeName="mModifier">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mClass">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mDefinition">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.20 //@tripleMatches.36" ruleName="Interface" number="14">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="TypesVisibility" number="15">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="mModifier">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.16/@containedEdges.0" ruleName="MethodParameterLinkFirst" number="16">
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <nodeMappings nodeName="mmethodSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mEntry">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mFirstEntry">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches ruleName="ClassImplementsInterface" number="17">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    <nodeMappings nodeName="eClassDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eSuperInterface">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.1/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.0"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.28" ruleName="MethodName" number="18">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="mName">
+      <node href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mNames">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+      <trg href="AnnotationOnParam.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mMethodNames">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.18/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16" ruleName="MethodParameterType" number="19">
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <nodeMappings nodeName="mMethodSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mEntry">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mVar">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mEntrys">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="singleVariableDeclaration">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList/@mEntrys.0"/>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="InterfaceExtendsInterface" number="20">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eInterfaceDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eSuperInterface">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0/@superInterfaces.0"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsDouble" number="21">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.3"/>
+    <sourceElements href="#//@tripleMatches.21/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.3"/>
+    <createdElements href="#//@tripleMatches.21/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ReturnType" number="22">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.22/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mDefinition">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eReturnType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.22/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="CompilationUnit" number="23">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@compilationUnits.0"/>
+    <sourceElements href="#//@tripleMatches.23/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="AnnotationOnParam.xmi#//@compilationUnits.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@compilationUnits.0"/>
+    <createdElements href="#//@tripleMatches.23/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.22 //@tripleMatches.13 //@tripleMatches.10 //@tripleMatches.4" ruleName="MethodDefinition" number="24">
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.24/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.24/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <nodeMappings nodeName="mDefinition">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mDefinitions">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mMethodDefinitions">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mMethodSignature">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.24/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.35 //@tripleMatches.11 //@tripleMatches.31" ruleName="SubPackageToPGPackage" number="25">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.25/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    <nodeMappings nodeName="mParentPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedPackages">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.25/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.26/@containedEdges.0" ruleName="LinkSignatureToType" number="26">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <sourceElements href="#//@tripleMatches.26/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="implementedBy">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.39" ruleName="PackageToPGPackage" number="27">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.27/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#/"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.27/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.27/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.19 //@tripleMatches.16 //@tripleMatches.12 //@tripleMatches.26 //@tripleMatches.24" ruleName="MethodSignature" number="28">
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.28/@containedEdges.3"/>
+    <contextElements href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    <nodeMappings nodeName="mParameterList">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mName">
+      <node href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mSignature">
+      <node href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mMethodName">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mMethodSignatures">
+      <src href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mSignatures">
+      <src href="AnnotationOnParam.xmi#//@mMethodNames.0"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="mParameterList">
+      <src href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+      <trg href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0"/>
+    <createdElements href="AnnotationOnParam.xmi#//@mMethodSignatures.0/@mParameterList"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.28/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsLong" number="29">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.1"/>
+    <sourceElements href="#//@tripleMatches.29/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.1"/>
+    <createdElements href="#//@tripleMatches.29/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.20 //@tripleMatches.33" ruleName="Interface" number="30">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.30/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.30/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.14 //@tripleMatches.30 //@tripleMatches.1" ruleName="SubPackageToPGPackage" number="31">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.31/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="mParentPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedPackages">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.31/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsInt" number="32">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.0"/>
+    <sourceElements href="#//@tripleMatches.32/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.0"/>
+    <createdElements href="#//@tripleMatches.32/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ClassImplementsInterface" number="33">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.33/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    <nodeMappings nodeName="eClassDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eSuperInterface">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.3"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.33/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsBoolean" number="34">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.4"/>
+    <sourceElements href="#//@tripleMatches.34/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.4"/>
+    <createdElements href="#//@tripleMatches.34/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.19 //@tripleMatches.17 //@tripleMatches.36 //@tripleMatches.33 //@tripleMatches.6" ruleName="Class" number="35">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.35/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.35/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ClassImplementsInterface" number="36">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.36/@containedEdges.2"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    <nodeMappings nodeName="eClassDeclaration">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eTypeAccess">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eSuperInterface">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="superInterfaces">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedPackages.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.1/@ownedPackages.0/@ownedElements.1/@superInterfaces.1"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.36/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeIsShort" number="37">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.7"/>
+    <sourceElements href="#//@tripleMatches.37/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.7"/>
+    <createdElements href="#//@tripleMatches.37/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.22 //@tripleMatches.12" ruleName="PrimitiveTypesIsVoid" number="38">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <sourceElements href="#//@tripleMatches.38/@containedEdges.0"/>
+    <contextElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="ePrimitiveType">
+      <node href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="eModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="AnnotationOnParam.xmi#/"/>
+      <trg href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@orphanTypes.5"/>
+    <createdElements href="#//@tripleMatches.38/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.15 //@tripleMatches.13 //@tripleMatches.4 //@tripleMatches.26" ruleName="Class" number="39">
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    <sourceElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.39/@containedEdges.1"/>
+    <contextElements href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    <nodeMappings nodeName="mPackage">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mType">
+      <node href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="AnnotationOnParam.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="AnnotationOnParam.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.39/@containedEdges.1"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.37 //@tripleMatches.38 //@tripleMatches.34 //@tripleMatches.32 //@tripleMatches.29 //@tripleMatches.27 //@tripleMatches.23 //@tripleMatches.21 //@tripleMatches.18 //@tripleMatches.9 //@tripleMatches.8 //@tripleMatches.5 //@tripleMatches.2 //@tripleMatches.0" ruleName="ModelToPg" number="40">
+    <sourceElements href="AnnotationOnParam.xmi#/"/>
+    <nodeMappings nodeName="mModel">
+      <node href="AnnotationOnParam.xmi#/"/>
+    </nodeMappings>
+    <createdElements href="AnnotationOnParam.xmi#/"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>
