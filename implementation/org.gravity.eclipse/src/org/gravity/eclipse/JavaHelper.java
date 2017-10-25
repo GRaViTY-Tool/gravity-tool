@@ -2,6 +2,7 @@ package org.gravity.eclipse;
 
 import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.Stack;
 
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -15,7 +16,11 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructorName;
+import org.gravity.typegraph.basic.TConstructorSignature;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
@@ -26,7 +31,7 @@ public class JavaHelper {
 
 	public static Hashtable<String, IType> getTypesForProject(IJavaProject project) throws JavaModelException {
 		Hashtable<String, IType> types = new Hashtable<>();
-	
+
 		for (IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
 			Stack<IJavaElement> children = new Stack<IJavaElement>();
 			children.addAll(Arrays.asList(element.getChildren()));
@@ -67,33 +72,36 @@ public class JavaHelper {
 		}
 		return null;
 	}
-	 
-	public static TMethodDefinition getTMethodDefinition(IMethod iMethod, TypeGraph pg){
+
+	public static TMethodDefinition getTMethodDefinition(IMethod iMethod, TypeGraph pg) {
 		IType iType = iMethod.getDeclaringType();
 		TAbstractType tType = pg.getType(iType.getFullyQualifiedName());
 		for (TMember tMember : tType.getDefines()) {
 			if (tMember instanceof TMethodDefinition) {
-				TMethodDefinition tMethodDef = (TMethodDefinition) tMember;
-				TMethodSignature tMethodSignature = tMethodDef.getSignature();
-				TParameterList tParamList = tMethodSignature.getParamList();
-				String tName = tMethodSignature.getMethod().getTName();
+				TMethodDefinition tMethodDefinition = (TMethodDefinition) tMember;
+				TMethodSignature tMethodSignature = tMethodDefinition.getSignature();
+				TMethod tMethodName = tMethodSignature.getMethod();
+
+				String tName = tMethodName.getTName();
 				if (iMethod.getElementName().equals(tName)) {
+
+					TParameterList tParamList = tMethodSignature.getParamList();
 					if (iMethod.getNumberOfParameters() == tParamList.getEntries().size()) {
 						boolean equal = true;
 						TParameter tParam = tParamList.getFirst();
 						try {
 							for (ILocalVariable param : iMethod.getParameters()) {
 								String iParamSignature = Signature.toString(param.getTypeSignature());
-								iParamSignature = iParamSignature.replaceAll("<.*>", "");
-								if (!(equal = tParam.getType().getFullyQualifiedName()
-										.endsWith(iParamSignature))) {
+								iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
+								if (!(equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature))) {
 									break;
 								}
 								tParam = tParam.getNext();
 							}
-						} catch (JavaModelException | IllegalArgumentException e) {}
+						} catch (JavaModelException | IllegalArgumentException e) {
+						}
 						if (equal) {
-							return tMethodDef;
+							return tMethodDefinition;
 						}
 					}
 				}
