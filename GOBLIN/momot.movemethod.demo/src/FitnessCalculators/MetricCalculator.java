@@ -67,6 +67,8 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 			}
 
 			Resource res = resourceSet.createResource(URI.createURI("SemllDependencyGraph.xmi")); //$NON-NLS-1$
+			Resource resHulk = resourceSet.createResource(URI.createURI("Hulk.xmi"));
+			resHulk.getContents().add(hulk);
 			res.getContents().add(dfs);
 		}
 		return hulk;
