@@ -46,6 +46,18 @@ public abstract class MetricCalculator implements IFitnessCalculator{
 		
 		if(root instanceof HAntiPatternHandling){
 			hulk = (HAntiPatternHandling) root;
+			Resource eResource = hulk.eResource();
+			if(eResource == null) {
+				ResourceSetImpl resourceSet = new ResourceSetImpl();//.createResource(URI.createURI("Hulk.xmi"));
+				if(!resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().containsKey("xmi")) {
+					resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", 
+							new XMIResourceFactoryImpl());
+					}
+
+				eResource = resourceSet.createResource(URI.createURI("Hulk.xmi"));
+				eResource.getContents().add(hulk);
+			}
+			
 		}else{
 			HAntiPatternGraph antipatternGraph = null;
 			if(root instanceof TypeGraph){
