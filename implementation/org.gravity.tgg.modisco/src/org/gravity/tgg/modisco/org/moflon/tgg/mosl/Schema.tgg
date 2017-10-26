@@ -15,6 +15,10 @@
 }
 
 #correspondence {
+	MParameterListToTParameterList {
+		#src->MParameterList
+		#trg->TParameterList
+	}
 BooleanLiteralToTBoolNode {
 	#src->BooleanLiteral
 	#trg->TBoolNode

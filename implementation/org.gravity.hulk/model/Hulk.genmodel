@@ -201,12 +201,22 @@
             <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateValue/tClass"/>
           </genOperations>
         </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGAMCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGAMCalculator/detect">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGAMCalculator/detect/apg"/>
+          </genOperations>
+        </genClasses>
         <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator">
           <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateMetric">
             <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateMetric/tClass"/>
           </genOperations>
           <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateValue">
             <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateValue/tParent"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGATCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGATCalculator/detect">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HIGATCalculator/detect/apg"/>
           </genOperations>
         </genClasses>
         <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator">

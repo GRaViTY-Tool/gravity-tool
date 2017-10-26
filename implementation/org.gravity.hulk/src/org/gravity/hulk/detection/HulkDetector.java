@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.Messages;
@@ -29,14 +32,24 @@ public class HulkDetector {
 	private Hashtable<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
+	
+	private boolean verbose;
 
-	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds) {
+	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds){
+		this(hulk, thresholds, false);
+	}
+	
+	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds, boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
-		
-		// Initialize
+		this.verbose = verbose;
 		initialized = new HashSet<>();
-		hulk.getDependencyGraph();
+		Resource eResource = hulk.eResource();
+		if(eResource == null) {
+			eResource = new ResourceSetImpl().createResource(URI.createURI("Hulk"));
+			eResource.getContents().add(hulk);
+		}
+		eResource.getContents().add(hulk.getDependencyGraph());
 	}
 
 	private List<HDetector> getSorted(HDetector detector) {
@@ -147,7 +160,7 @@ public class HulkDetector {
 			return false;
 		}
 
-		return detectSelectedAntiPattern(worklist, processed_detectors, true);
+		return detectSelectedAntiPattern(worklist, processed_detectors, this.verbose);
 	}
 
 	public static Hashtable<String, String> getDefaultThresholds() {

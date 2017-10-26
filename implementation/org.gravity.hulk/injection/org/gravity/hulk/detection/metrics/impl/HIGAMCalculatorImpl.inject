@@ -1,0 +1,143 @@
+import  java.util.LinkedList;
+import  java.util.List;
+import  java.util.Map.Entry;
+import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  org.gravity.typegraph.basic.TAccess;
+import  org.gravity.typegraph.basic.TClass;
+import  org.gravity.typegraph.basic.TConstructorDefinition;
+import  org.gravity.typegraph.basic.TFieldDefinition;
+import  org.gravity.typegraph.basic.TInterface;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TMethodDefinition;
+import  org.gravity.typegraph.basic.TMethodSignature;
+import  org.gravity.typegraph.basic.TModifier;
+import  org.gravity.typegraph.basic.TPackage;
+import  org.gravity.typegraph.basic.TParameter;
+import  org.gravity.typegraph.basic.TSignature;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TypeGraph;
+import  org.gravity.typegraph.basic.annotations.TAnnotatable;
+
+partial class HIGAMCalculatorImpl {
+
+@members<--
+
+	private void process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
+		int start = methods.size();
+		for (TPackage tSubPackage : tPackage.getSubpackage()) {
+			process(apg, tSubPackage, methods);
+		}
+		for (TClass tType : tPackage.getClasses()) {
+			if (!tType.isTLib()) {
+				process(apg, tType, methods);
+			}
+		}
+		createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
+	}
+
+	private void process(HAntiPatternGraph apg, TClass tType, List<Double> methods) {
+		int start = methods.size();
+		for (TMember tMember : tType.getDefines()) {
+			if (tMember instanceof TMethodDefinition) {
+				process(apg, tMember, methods);
+			}
+		}
+		createMetric(apg, tType, getAverage(methods, start, methods.size()));
+	}
+
+	private void process(HAntiPatternGraph apg, TMember tMember, List<Double> methods) {
+		TModifier tModifier = tMember.getTModifier();
+		if (tModifier == null) {
+			if (tModifier instanceof TConstructorDefinition) {
+				System.err.println("WARNING: Skipped constructor \"" + tMember.getSignatureString()
+						+ "\" it is probably a default constructor and has no modifer.");
+			} else {
+				throw new RuntimeException("The member \"" + tMember.getSignatureString() + "\" has no modifer.");
+			}
+		} else {
+			TVisibility tCurVis = tModifier.getTVisibility();
+			double tMinVis = 0;
+			if (isMainMethod(tMember)) {
+				tMinVis = TVisibility.TPUBLIC_VALUE;
+			} else {
+				for (TAccess tAccess : tMember.getAccessedBy()) {
+					TVisibility tVis = tMember.getMinimumRequiredVisibility(tAccess.getTSource());
+					if (tVis.getValue() > tMinVis) {
+						tMinVis = tVis.getValue();
+					}
+					if (tMinVis == 3) {
+						break;
+					}
+				}
+			}
+			double igam = tCurVis.getValue() == tMinVis ? 0 : 1;//((double) (tCurVis.getValue() - tMinVis)) / 3;
+
+			createMetric(apg, tMember, igam);
+
+			methods.add(igam);
+		}
+	}
+
+	private boolean isMainMethod(TMember tMember) {
+		if (tMember instanceof TMethodDefinition) {
+			TMethodDefinition tMethod = (TMethodDefinition) tMember;
+			TMethodSignature tSignature = tMethod.getSignature();
+			if ("main".equals(tSignature.getMethod().getTName())) {
+				TModifier tModifier = tMethod.getTModifier();
+				if (tModifier.isIsStatic() && tModifier.getTVisibility() == TVisibility.TPUBLIC) {
+					EList<TParameter> tParams = tSignature.getParamList().getEntries();
+					if (tParams.size() == 0) {
+						TParameter tParam = tParams.get(0);
+						if ("java.lang.String".equals(tParam.getType().getFullyQualifiedName())) {
+							return true;
+						}
+					}
+				}
+			}
+
+		}
+		return false;
+	}
+
+	private double getAverage(List<Double> values, int start, int end) {
+		double avg = 0;
+		for (int i = start; i < end; i++) {
+			avg += values.get(i);
+		}
+		return avg / (end - start);
+	}
+
+	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam) {
+		HInappropriateGenerosityWithAccessibilityOfMethodMetric metric = MetricsFactory.eINSTANCE
+				.createHInappropriateGenerosityWithAccessibilityOfMethodMetric();
+		metric.setValue(igam);
+		metric.setApg(apg);
+		metric.setTAnnotated(annotatable);
+
+		getHAnnotation().add(metric);
+		annotatable.getTAnnotation().add(metric);
+	}
+
+	@Override
+	public String getGuiName() {
+		return "Inappropriate Generosity with Accessibility of Methods";
+	}
+
+	-->
+
+@model detect (HAntiPatternGraph apg)<--
+		TypeGraph pg = apg.getPg();
+
+		List<Double> methods = new LinkedList<>();
+		for (TPackage tPackage : pg.getPackages()) {
+			if (tPackage.getParent() == null) {
+				process(apg, tPackage, methods);
+			}
+		}
+		createMetric(apg, pg, getAverage(methods, 0, methods.size()));
+
+		return true;-->
+
+}

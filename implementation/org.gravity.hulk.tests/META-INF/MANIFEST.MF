@@ -10,4 +10,8 @@ Require-Bundle: org.junit,
  org.eclipse.equinox.registry,
  org.gravity.hulk,
  org.gravity.hulk.antipatterngraph,
- org.gravity.eclipse
+ org.gravity.eclipse,
+ org.gravity.typegraph.basic,
+ org.eclipse.emf.ecore,
+ org.moflon.core.dfs,
+ de.uni_hamburg.informatik.swt.accessanalysis

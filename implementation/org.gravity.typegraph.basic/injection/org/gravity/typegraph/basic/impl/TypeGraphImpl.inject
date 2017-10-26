@@ -1,17 +1,20 @@
 
 partial class TypeGraphImpl {
 
-@members <--
+@members<--
 
-	public TPackage getPackage(String string) {
-		String[] names = string.split("\\.");
+	public TPackage getPackage(String namespace) {
+		return getPackage(namespace.split("\\."));
+	}
+
+	public TPackage getPackage(String[] namespace) {
 		EList<TPackage> next = getPackages();
-		for (int i = 0; i < names.length;) {
-			String name = names[i++];
+		for (int i = 0; i < namespace.length;) {
+			String name = namespace[i++];
 			boolean contains = false;
 			for (TPackage tPackage : next) {
 				if (name.equals(tPackage.getTName())) {
-					if (i == names.length) {
+					if (i == namespace.length) {
 						return tPackage;
 					}
 					next = tPackage.getSubpackage();
@@ -40,13 +43,13 @@ partial class TypeGraphImpl {
 					return tType;
 				}
 			}
-		}else{
+		} else {
 			String name = fullyQualifiedName.substring(index + 1);
 			for (TClass tType : getClasses()) {
 				if (tType.getTName().equals(name) || tType.getTName().contentEquals(fullyQualifiedName)) {
 					return tType;
 				}
-		}
+			}
 		}
 		return null;
 	}
@@ -86,7 +89,9 @@ partial class TypeGraphImpl {
 		}
 		return null;
 	}
-	
--->
+
+	-->
+
+@model toString ()<--		return super.toString();-->
 
 }

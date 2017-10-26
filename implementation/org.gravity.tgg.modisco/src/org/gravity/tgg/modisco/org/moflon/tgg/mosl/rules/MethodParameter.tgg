@@ -5,7 +5,7 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mMethodSignature : MMethodSignature {
+	mMethodSignature : MParameterList {
 		++  -mEntrys -> mEntry
 	}
 	++ mEntry : MEntry {
@@ -33,7 +33,7 @@
 		#src->mEntry
 		#trg->tParameter
 	}
-	mMethodSignatureToTParameterList : MMethodSignatureToTParameterList {
+	mParameterListToTParameterList : MParameterListToTParameterList {
 		#src->mMethodSignature
 		#trg->tParameterList
 	}

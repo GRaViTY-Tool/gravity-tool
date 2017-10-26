@@ -13,6 +13,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mConstructorDefinitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="abstractMethodInvocations"
@@ -28,6 +30,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
         eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFirstEntry" eType="#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntrys" upperBound="-1"
         eType="#//MEntry" containment="true"/>
