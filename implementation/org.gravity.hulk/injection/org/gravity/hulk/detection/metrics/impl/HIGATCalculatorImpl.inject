@@ -1,10 +1,14 @@
 import  java.util.LinkedList;
 import  java.util.List;
+import  java.util.Set;
+import  java.util.HashSet;
 import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfTypesMetric;
 import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import  org.gravity.typegraph.basic.TAbstractType;
 import  org.gravity.typegraph.basic.TAccess;
 import  org.gravity.typegraph.basic.TClass;
+import  org.gravity.typegraph.basic.TInterface;
 import  org.gravity.typegraph.basic.TMember;
 import  org.gravity.typegraph.basic.TMethodDefinition;
 import  org.gravity.typegraph.basic.TPackage;
@@ -30,10 +34,45 @@ partial class HIGATCalculatorImpl {
 	}
 
 	private void process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
-		TVisibility tMinVis = tType.getMinimumRequiredVisibility(tType);
-		TVisibility tCurVis = tType.getTModifier().getTVisibility();
+		Set<TAbstractType> accessedBy = new HashSet<>();
+		for (TMember tMember : tType.getDefines()) {
+			for (TAccess tAccess : tMember.getAccessedBy()) {
+				accessedBy.add(tAccess.getTSource().getDefinedBy());
+			}
+		}
 
-		double igat = ((double) (tCurVis.getValue() - tMinVis.getValue())) / 3;
+		TVisibility tCurVis = tType.getTModifier().getTVisibility();
+		TVisibility tMinVis;
+		if (accessedBy.size() == 0 || tType.getInnerTypes().containsAll(accessedBy)) {
+			tMinVis = TVisibility.TPRIVATE;
+		} else {
+			boolean onlySubClasses = true;
+			TPackage tPackage = tType.getPackage();
+			Set<TPackage> otherPackages = new HashSet<>();
+			for (TAbstractType tAccessingType : accessedBy) {
+				TPackage tOtherPackage = tAccessingType.getPackage();
+				if (!tPackage.equals(tOtherPackage)) {
+					otherPackages.add(tOtherPackage);
+				}
+				if (tAccessingType instanceof TClass) {
+					TClass tClass = (TClass) tAccessingType;
+					onlySubClasses &= tType.equals(tClass.getParentClass()) || tClass.getImplements().contains(tType);
+				} else if (tAccessingType instanceof TInterface) {
+					onlySubClasses &= ((TInterface) tAccessingType).getParentInterfaces().contains(tType);
+				}
+			}
+			if (otherPackages.size() == 0) {
+				tMinVis = TVisibility.TPACKAGE;
+			} else {
+				if (onlySubClasses) {
+					tMinVis = TVisibility.TPROTECTED;
+				} else {
+					tMinVis = TVisibility.TPUBLIC;
+				}
+			}
+		}
+
+		double igat = tCurVis.equals(tMinVis) ? 0 : 1;
 
 		createMetric(apg, tType, igat);
 
@@ -49,8 +88,8 @@ partial class HIGATCalculatorImpl {
 	}
 
 	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam) {
-		HInappropriateGenerosityWithAccessibilityOfMethodMetric metric = MetricsFactory.eINSTANCE
-				.createHInappropriateGenerosityWithAccessibilityOfMethodMetric();
+		HInappropriateGenerosityWithAccessibilityOfTypesMetric metric = MetricsFactory.eINSTANCE
+				.createHInappropriateGenerosityWithAccessibilityOfTypesMetric();
 		metric.setValue(igam);
 		metric.setApg(apg);
 		metric.setTAnnotated(annotatable);

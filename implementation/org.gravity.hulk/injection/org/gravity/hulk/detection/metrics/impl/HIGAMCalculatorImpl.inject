@@ -50,7 +50,7 @@ partial class HIGAMCalculatorImpl {
 	private void process(HAntiPatternGraph apg, TMember tMember, List<Double> methods) {
 		TModifier tModifier = tMember.getTModifier();
 		if (tModifier == null) {
-			if (tModifier instanceof TConstructorDefinition) {
+			if (tMember instanceof TConstructorDefinition) {
 				System.err.println("WARNING: Skipped constructor \"" + tMember.getSignatureString()
 						+ "\" it is probably a default constructor and has no modifer.");
 			} else {
