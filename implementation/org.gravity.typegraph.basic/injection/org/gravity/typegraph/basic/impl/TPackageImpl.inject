@@ -7,9 +7,13 @@ partial class TPackageImpl {
 
 @model getFullyQualifiedName ()<--		LinkedList<String> names = new LinkedList<>();
 		TPackage current = this;
-		while(current != null) {
+		while (current != null) {
 			names.add(current.getTName());
-			current = getParent();
+			TPackage parent = getParent();
+			if(parent == current) {
+				break;
+			}
+			current = parent;
 		}
 		return String.join(".", names);-->
 
