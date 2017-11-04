@@ -5,20 +5,20 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mModel : MGravityModel {
-}
-}
-
-#target {
-++ tPG : TypeGraph {
-}
+	++ mModel : MGravityModel {
+	}
+	}
+	
+	#target {
+	++ tPG : TypeGraph {
+	}
 }
 
 #correspondence {
-++ mModelToTPG : ModelToTypeGraph {
-	#src->mModel
-	#trg->tPG
-}
+	++ mModelToTPG : ModelToTypeGraph {
+		#src->mModel
+		#trg->tPG
+	}
 }
 
 #attributeConditions {

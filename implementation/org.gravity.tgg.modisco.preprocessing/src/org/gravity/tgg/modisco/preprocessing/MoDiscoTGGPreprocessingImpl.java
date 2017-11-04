@@ -39,6 +39,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
+import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
@@ -538,8 +539,14 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 		TreeIterator<EObject> iterator = model.eResource().getAllContents();
 		while (iterator.hasNext()) {
 			EObject next = iterator.next();
-			if (next instanceof AnonymousClassDeclaration) {
-				model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
+			if (next instanceof MAnonymous) {
+				MAnonymous mAnonymous = (MAnonymous) next;
+				EObject owner = mAnonymous.eContainer();
+				while(!(owner instanceof AbstractTypeDeclaration)) {
+					owner = owner.eContainer();
+				}
+				mAnonymous.setMSourroundingType((AbstractTypeDeclaration) owner);
+				model.getAnonymousClassDeclarations().add(mAnonymous);
 			} else if (next instanceof TypeParameter) {
 				model.getTypeParameters().add((TypeParameter) next);
 			} else if (next instanceof Annotation) {
