@@ -5,30 +5,40 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mDefinition : MDefinition {
+	mDefinition : MDefinition {
+	}
+	mType : AnonymousClassDeclaration {
+		++  -bodyDeclarations -> mDefinition
+	}
+	mModel : MGravityModel {
+		-anonymousClassDeclarations-> mType
+	}
 }
-mType : AnonymousClassDeclaration {
-	++  -bodyDeclarations -> mDefinition
-}
-}
-
+	
 #target {
-tDefinition : TMember {
-	++  -definedBy -> tType
-}
-tType : TClass {
-}
+	tDefinition : TMember {
+		++  -definedBy -> tType
+	}
+	tType : TClass {
+	}
+	pg : TypeGraph {
+		-classes-> tType
+	}
 }
 
 #correspondence {
-mTypeToTType : AnonymousClassDeclarationToTClass {
-	#src->mType
-	#trg->tType
-}
-mDefinitionToTMember : MDefinitionToTMember {
-	#src->mDefinition
-	#trg->tDefinition
-}
+	mTypeToTType : AnonymousClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
+	mDefinitionToTMember : MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+	mModelToPG : ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
 }
 
 #attributeConditions {

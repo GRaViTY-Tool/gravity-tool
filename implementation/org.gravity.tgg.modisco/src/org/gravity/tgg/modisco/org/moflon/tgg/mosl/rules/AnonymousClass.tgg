@@ -5,10 +5,10 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++ eAnonymousClassDeclaration : AnonymousClassDeclaration {
+	++ mAnonymous : MAnonymous {
 	}
-	eModel : MGravityModel {
-		++  -anonymousClassDeclarations -> eAnonymousClassDeclaration
+	mModel : MGravityModel {
+		++  -anonymousClassDeclarations -> mAnonymous
 	}
 }
 
@@ -25,11 +25,11 @@
 
 #correspondence {
 	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
-		#src->eAnonymousClassDeclaration
+		#src->mAnonymous
 		#trg->tClass
 	}
 	eModelToPg : ModelToTypeGraph {
-		#src->eModel
+		#src->mModel
 		#trg->pg
 	}
 }

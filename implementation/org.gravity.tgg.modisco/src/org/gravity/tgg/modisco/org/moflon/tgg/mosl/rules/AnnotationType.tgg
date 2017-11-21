@@ -6,23 +6,23 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mType : AnnotationTypeDeclaration {
-}
+	++ mType : AnnotationTypeDeclaration {
+	}
 }
 
 #target {
-++ tType : TAnnotationType {
-}
-pg : TypeGraph {
-	++  -tAnnotationTypes -> tType
-}
+	++ tType : TAnnotationType {
+	}
+	pg : TypeGraph {
+		++  -tAnnotationTypes -> tType
+	}
 }
 
 #correspondence {
-++ mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
-}
+	++ mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
 }
 
 #attributeConditions {
