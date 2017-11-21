@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.modisco:MGravityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" name="AnnotationOnVariable" mMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0" mAbstractMethodDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0">
+  <ownedElements name="p">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="Clazz">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="org.gravity.modisco:MMethodDefinition" originalCompilationUnit="//@compilationUnits.0" name="m" model="/">
+        <modifier visibility="public"/>
+        <body originalCompilationUnit="//@compilationUnits.0">
+          <statements xsi:type="java:VariableDeclarationStatement" originalCompilationUnit="//@compilationUnits.0">
+            <type type="//@orphanTypes.0"/>
+            <fragments originalCompilationUnit="//@compilationUnits.0" name="i"/>
+            <modifier/>
+            <annotations xsi:type="org.gravity.modisco:MAnnotation" originalCompilationUnit="//@compilationUnits.0">
+              <type type="//@ownedElements.1/@ownedPackages.0/@ownedElements.0"/>
+              <values>
+                <value xsi:type="java:StringLiteral" originalCompilationUnit="//@compilationUnits.0" escapedValue="&quot;rawtypes&quot;"/>
+              </values>
+            </annotations>
+          </statements>
+        </body>
+        <returnType type="//@orphanTypes.5"/>
+      </bodyDeclarations>
+    </ownedElements>
+  </ownedElements>
+  <ownedElements name="java" proxy="true">
+    <ownedPackages name="lang" proxy="true">
+      <ownedElements xsi:type="java:AnnotationTypeDeclaration" name="SuppressWarnings" proxy="true" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@annotations.0/@type"/>
+    </ownedPackages>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@body/@statements.0/@type"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void" usagesInTypeAccess="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="Clazz.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/AnnotationOnVariable/src/p/Clazz.java" package="//@ownedElements.0" types="//@ownedElements.0/@ownedElements.0"/>
+</org.gravity.modisco:MGravityModel>

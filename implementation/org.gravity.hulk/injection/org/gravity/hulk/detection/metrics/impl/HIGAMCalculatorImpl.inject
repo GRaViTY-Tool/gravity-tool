@@ -34,7 +34,8 @@ partial class HIGAMCalculatorImpl {
 				process(apg, tType, methods);
 			}
 		}
-		createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
+		if (methods.size() > 0 && methods.size() > start)
+			createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
 	}
 
 	private void process(HAntiPatternGraph apg, TClass tType, List<Double> methods) {
@@ -44,16 +45,21 @@ partial class HIGAMCalculatorImpl {
 				process(apg, tMember, methods);
 			}
 		}
-		createMetric(apg, tType, getAverage(methods, start, methods.size()));
+		if (methods.size() > 0 && methods.size() > start)
+			createMetric(apg, tType, getAverage(methods, start, methods.size()));
 	}
 
 	private void process(HAntiPatternGraph apg, TMember tMember, List<Double> methods) {
 		TModifier tModifier = tMember.getTModifier();
 		if (tModifier == null) {
-			if (tModifier instanceof TConstructorDefinition) {
+			if (tMember instanceof TConstructorDefinition) {
 				System.err.println("WARNING: Skipped constructor \"" + tMember.getSignatureString()
 						+ "\" it is probably a default constructor and has no modifer.");
-			} else {
+			} else if(tMember.getDefinedBy().getTName().startsWith("%ENUM%")){
+				System.err.println("WARNING: Skipped member in enum \"" + tMember.getSignatureString()
+				+ "\".");
+			}
+			else{
 				throw new RuntimeException("The member \"" + tMember.getSignatureString() + "\" has no modifer.");
 			}
 		} else {
@@ -72,7 +78,7 @@ partial class HIGAMCalculatorImpl {
 					}
 				}
 			}
-			double igam = tCurVis.getValue() == tMinVis ? 0 : 1;//((double) (tCurVis.getValue() - tMinVis)) / 3;
+			double igam = tCurVis.getValue() == tMinVis ? 0 : 1;// ((double) (tCurVis.getValue() - tMinVis)) / 3;
 
 			createMetric(apg, tMember, igam);
 
@@ -136,7 +142,8 @@ partial class HIGAMCalculatorImpl {
 				process(apg, tPackage, methods);
 			}
 		}
-		createMetric(apg, pg, getAverage(methods, 0, methods.size()));
+		if (methods.size() > 0)
+			createMetric(apg, pg, getAverage(methods, 0, methods.size()));
 
 		return true;-->
 

@@ -4,9 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.gmt.modisco.java.Annotation;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.AnnotationImpl;
+import org.gravity.modisco.impl.MAnonymousImpl;
 
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
@@ -15,6 +17,11 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	private Set<MFieldDefinition> fdefs;
 	private Set<MConstructorDefinition> cdefs;
 
+	
+	@Override
+	public AnonymousClassDeclaration createAnonymousClassDeclaration() {
+		return ModiscoFactory.eINSTANCE.createMAnonymous();
+	}
 	@Override
 	public Annotation createAnnotation() {
 		return new AnnotationImpl();

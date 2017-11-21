@@ -138,4 +138,7 @@
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+  </eClassifiers>
 </ecore:EPackage>

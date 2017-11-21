@@ -13,6 +13,7 @@ import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.Annotation;
+import org.eclipse.gmt.modisco.java.AnnotationTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
@@ -24,6 +25,7 @@ import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Modifier;
+import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
@@ -39,6 +41,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
+import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
@@ -538,8 +541,14 @@ public class MoDiscoTGGPreprocessingImpl extends EObjectImpl {
 		TreeIterator<EObject> iterator = model.eResource().getAllContents();
 		while (iterator.hasNext()) {
 			EObject next = iterator.next();
-			if (next instanceof AnonymousClassDeclaration) {
-				model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
+			if (next instanceof MAnonymous) {
+				MAnonymous mAnonymous = (MAnonymous) next;
+				EObject owner = mAnonymous.eContainer();
+				while(!(owner instanceof AbstractTypeDeclaration)) {
+					owner = owner.eContainer();
+				}
+				mAnonymous.setMSourroundingType((AbstractTypeDeclaration) owner);
+				model.getAnonymousClassDeclarations().add(mAnonymous);
 			} else if (next instanceof TypeParameter) {
 				model.getTypeParameters().add((TypeParameter) next);
 			} else if (next instanceof Annotation) {

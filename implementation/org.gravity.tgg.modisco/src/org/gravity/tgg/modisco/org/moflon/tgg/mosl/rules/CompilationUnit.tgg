@@ -5,11 +5,11 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ compilationUnit : CompilationUnit {
-}
-eModel : Model {
-	++  -compilationUnits -> compilationUnit
-}
+	++ compilationUnit : CompilationUnit {
+	}
+	mModel : Model {
+		++  -compilationUnits -> compilationUnit
+	}
 }
 
 #target {
@@ -23,7 +23,7 @@ typeGraph : TypeGraph {
 	#trg->typeGraph
 }
 eModelToTypeGraph : ModelToTypeGraph {
-	#src->eModel
+	#src->mModel
 	#trg->typeGraph
 }
 }

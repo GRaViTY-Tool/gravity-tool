@@ -5,31 +5,31 @@
 #with org.gravity.tgg.modisco
 
 #source {
-eModel : MGravityModel {
-	++  -unresolvedItems -> eAnonymousClassDeclaration
-}
-++ eAnonymousClassDeclaration : UnresolvedTypeDeclaration {
-}
+	eModel : MGravityModel {
+		++  -unresolvedItems -> eAnonymousClassDeclaration
+	}
+	++ eAnonymousClassDeclaration : UnresolvedTypeDeclaration {
+	}
 }
 
 #target {
-++ tClass : TClass {
-}
-pg : TypeGraph {
-	++  -classes -> tClass
-	++  -ownedTypes -> tClass
-}
+	++ tClass : TClass {
+	}
+	pg : TypeGraph {
+		++  -classes -> tClass
+		++  -ownedTypes -> tClass
+	}
 }
 
 #correspondence {
-eModelToPg : ModelToTypeGraph {
-	#src->eModel
-	#trg->pg
-}
-++ eAnonymousClassDeclarationToTClass : TypeToTAbstractType {
-	#src->eAnonymousClassDeclaration
-	#trg->tClass
-}
+	eModelToPg : ModelToTypeGraph {
+		#src->eModel
+		#trg->pg
+	}
+	++ eAnonymousClassDeclarationToTClass : TypeToTAbstractType {
+		#src->eAnonymousClassDeclaration
+		#trg->tClass
+	}
 }
 
 #attributeConditions {

@@ -38,7 +38,7 @@ public class HulkAPI {
 	 * @return a lost of all detected anti-pattern instances
 	 * @throws NoConverterRegisteredException if no converter from java sourcecode to the program model has been registered
 	 */
-	public static List<HAntiPattern> detect(IJavaProject project, IProgressMonitor monitor, AntiPatternNames... aps) throws NoConverterRegisteredException {
+	public static List<HAnnotation> detect(IJavaProject project, IProgressMonitor monitor, AntiPatternNames... aps) throws NoConverterRegisteredException {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -88,14 +88,10 @@ public class HulkAPI {
 			throw new RuntimeException("Anti-pattern detection failed.");
 		}
 
-		List<HAntiPattern> results = new ArrayList<>();
+		List<HAnnotation> results = new ArrayList<>();
 		for (HDetector detector : detectorResults) {
 			for (HAnnotation annotation : detector.getHAnnotation()) {
-				if (annotation instanceof HAntiPattern) {
-					results.add((HAntiPattern) annotation);
-				} else {
-					throw new RuntimeException("Element in results is no anti-pattern: " + annotation);
-				}
+				results.add(annotation);
 			}
 		}
 

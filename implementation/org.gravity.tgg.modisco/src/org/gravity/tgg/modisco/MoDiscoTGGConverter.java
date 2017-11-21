@@ -205,7 +205,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 		boolean trgNotNull = getTrg() != null;
 		boolean success = trgNotNull && getTrg() instanceof TypeGraph;
-
+		
 		if (!success) {
 			if (src != null) {
 				src.eResource().unload();

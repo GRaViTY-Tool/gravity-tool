@@ -5,33 +5,33 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ eAnonymousClassDeclaration : AnonymousClassDeclaration {
-}
-eModel : MGravityModel {
-	++  -anonymousClassDeclarations -> eAnonymousClassDeclaration
-}
+	++ mAnonymous : MAnonymous {
+	}
+	mModel : MGravityModel {
+		++  -anonymousClassDeclarations -> mAnonymous
+	}
 }
 
 #target {
-++ tClass : TClass {
-	tLib := false
-	tName := "Anonymous"
-}
-pg : TypeGraph {
-	++  -classes -> tClass
-	++  -ownedTypes -> tClass
-}
+	++ tClass : TClass {
+		tLib := false
+		tName := "Anonymous"
+	}
+	pg : TypeGraph {
+		++  -classes -> tClass
+		++  -ownedTypes -> tClass
+	}
 }
 
 #correspondence {
-++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
-	#src->eAnonymousClassDeclaration
-	#trg->tClass
-}
-eModelToPg : ModelToTypeGraph {
-	#src->eModel
-	#trg->pg
-}
+	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tClass
+	}
+	eModelToPg : ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
 }
 
 #attributeConditions {

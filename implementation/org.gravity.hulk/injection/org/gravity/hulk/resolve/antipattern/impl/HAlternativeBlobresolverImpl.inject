@@ -1,46 +1,41 @@
-
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.HashSet;
-import java.util.Hashtable;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.refactoringgraph.HCluster;
-import org.gravity.hulk.refactoringgraph.HInBlobAccess;
-import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
-import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
-import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
-import org.gravity.refactorings.Extract_Class;
-import org.gravity.refactorings.configuration.ConfigurationFactory;
-import org.gravity.refactorings.configuration.ExtractClassConfiguration;
-import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TConstructorDefinition;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
-import org.gravity.typegraph.basic.containers.TMemberContainer;
-import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
-import org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
-import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
-import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsFactory;
+import  java.util.Set;
+import  java.util.SortedSet;
+import  java.util.TreeSet;
+import  java.util.HashSet;
+import  java.util.Hashtable;
+import  org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import  org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import  org.gravity.hulk.refactoringgraph.HCluster;
+import  org.gravity.hulk.refactoringgraph.HInBlobAccess;
+import  org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
+import  org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
+import  org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import  org.gravity.typegraph.basic.TAccess;
+import  org.gravity.typegraph.basic.TConstructorDefinition;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.containers.ContainersFactory;
+import  org.gravity.typegraph.basic.containers.TMemberContainer;
+import  org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
+import  org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
+import  org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
+import  org.gravity.hulk.refactoringgraph.refactorings.RefactoringsFactory;
 
 partial class HAlternativeBlobresolverImpl {
 
-@members <--
+@members<--
 
 	@Override
 	public String getGuiName() {
 		return "Alternative " + super.getGuiName();
 	}
-	
--->
 
-@model process (HInBlobClusterAccess hCluster, TClass tClass, HBlobResolveAnnotation hParent) <--
+	-->
 
-//		HRelativeValue relativeAmount = hCluster.getRelativeAmount();
-//		HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
-//		boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
-//				|| hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue == HRelativeValueConstants.MEDIUM;
+@model process (HInBlobClusterAccess hCluster, TClass tClass, HBlobResolveAnnotation hParent)<--
+		//		HRelativeValue relativeAmount = hCluster.getRelativeAmount();
+		//		HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
+		//		boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
+		//				|| hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue == HRelativeValueConstants.MEDIUM;
 
 		EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
 		for (TMember member : tMembers) {
@@ -61,7 +56,7 @@ partial class HAlternativeBlobresolverImpl {
 				sizes.add(otherCluster.getTMembers().size());
 			}
 		}
-		if (sizes.headSet(size).size() > 0.7*sizes.size()) {
+		if (sizes.headSet(size).size() > 0.7 * sizes.size()) {
 			return false;
 		}
 
@@ -85,19 +80,19 @@ partial class HAlternativeBlobresolverImpl {
 			}
 		}
 		if (coupling.size() == 0) {
-//			if (!lowCohesion || tMembers.size() <= 2) {
-//				return false;
-//			}
-//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
-//			extract.getTMembers().addAll(tMembers);
-//			if (!isRefactoringPossible(extract)) {
-//				return false;
-//			}
-//
-//			hParent.getHRefactorings().add(extract);
-//			tClass.getTAnnotation().add(extract);
-//			extract.setTAnnotated(tClass);
-//			extract.setValue(internalCoupling + 1);
+			//			if (!lowCohesion || tMembers.size() <= 2) {
+			//				return false;
+			//			}
+			//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+			//			extract.getTMembers().addAll(tMembers);
+			//			if (!isRefactoringPossible(extract)) {
+			//				return false;
+			//			}
+			//
+			//			hParent.getHRefactorings().add(extract);
+			//			tClass.getTAnnotation().add(extract);
+			//			extract.setTAnnotated(tClass);
+			//			extract.setValue(internalCoupling + 1);
 			return true;
 		}
 
@@ -117,19 +112,18 @@ partial class HAlternativeBlobresolverImpl {
 			}
 		}
 		if (possibleMoves.size() == 0) {
-//			if (!lowCohesion || tMembers.size() <= 2) {
-//				return false;
-//			}
-//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
-//			extract.getTMembers().addAll(tMembers);
-//			if (isRefactoringPossible(extract)) {
-//				hParent.getHRefactorings().add(extract);
-//				extract.getPartOf().add(hParent);
-//				extract.setValue(internalCoupling + 1);
-//				return true;
-//			}
+			//			if (!lowCohesion || tMembers.size() <= 2) {
+			//				return false;
+			//			}
+			//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+			//			extract.getTMembers().addAll(tMembers);
+			//			if (isRefactoringPossible(extract)) {
+			//				hParent.getHRefactorings().add(extract);
+			//				extract.getPartOf().add(hParent);
+			//				extract.setValue(internalCoupling + 1);
+			//				return true;
+			//			}
 		}
-		return true;
--->
+		return true;-->
 
 }

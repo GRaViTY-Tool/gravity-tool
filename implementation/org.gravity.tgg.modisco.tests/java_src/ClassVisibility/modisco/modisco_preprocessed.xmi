@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.modisco:MGravityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" xmlns:org.gravity.modisco="platform:/plugin/org.gravity.modisco/model/Modisco.ecore" name="ClassVisibility">
+  <ownedElements name="(default package)">
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.0" name="PackageClass">
+      <modifier/>
+    </ownedElements>
+    <ownedElements xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PublicClass">
+      <modifier visibility="public"/>
+      <bodyDeclarations xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.1" name="ProtectedClass">
+        <modifier visibility="protected"/>
+      </bodyDeclarations>
+      <bodyDeclarations xsi:type="java:ClassDeclaration" originalCompilationUnit="//@compilationUnits.1" name="PrivateClass">
+        <modifier visibility="private"/>
+      </bodyDeclarations>
+    </ownedElements>
+  </ownedElements>
+  <orphanTypes xsi:type="java:PrimitiveTypeInt" name="int"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeLong" name="long"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeFloat" name="float"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeDouble" name="double"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeBoolean" name="boolean"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeVoid" name="void"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
+  <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
+  <compilationUnits name="PackageClass.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ClassVisibility/src/PackageClass.java" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="PublicClass.java" originalFilePath="/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco.tests/java_src/ClassVisibility/src/PublicClass.java" types="//@ownedElements.0/@ownedElements.1"/>
+</org.gravity.modisco:MGravityModel>
