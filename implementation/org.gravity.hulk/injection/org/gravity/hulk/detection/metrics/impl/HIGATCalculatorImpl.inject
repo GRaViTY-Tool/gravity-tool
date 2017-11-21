@@ -30,7 +30,8 @@ partial class HIGATCalculatorImpl {
 				process(apg, tType, methods);
 			}
 		}
-		createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
+		if (methods.size() > 0 && methods.size() > start)
+			createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
 	}
 
 	private void process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
@@ -114,7 +115,8 @@ partial class HIGATCalculatorImpl {
 				process(apg, tPackage, methods);
 			}
 		}
-		createMetric(apg, pg, getAverage(methods, 0, methods.size()));
+		if (methods.size() > 0)
+			createMetric(apg, pg, getAverage(methods, 0, methods.size()));
 
 		return true;-->
 
