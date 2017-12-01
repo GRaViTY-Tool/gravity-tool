@@ -70,13 +70,7 @@ public class VKindToTVis extends TGGConstraintImpl {
     	default: 
     		setSatisfied(true);
     		break;
-    	}
-    	
-    	if(!satisfied){
-    		int i = 0;
-    		i++;
-    	}
-    	
+    	}    	
     	
   	}	  
 }

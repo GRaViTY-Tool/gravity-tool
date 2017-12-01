@@ -110,13 +110,22 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="hIncommingInvocationCustomMetric" eType="//metrics/HIncommingInvocationMetric"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfChildMetric" eSuperTypes="//HMetric"/>
-    <eClassifiers xsi:type="ecore:EClass" name="HInappropriateGenerosityWithAccessibilityOfMethodMetric" eSuperTypes="//HMetric"/>
-    <eClassifiers xsi:type="ecore:EClass" name="HInappropriateGenerosityWithAccessibilityOfTypesMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HIGAMMetric" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hMinVis" ordered="false" lowerBound="1">
+        <eType xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HIGATMetric" eSuperTypes="//HMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hMinVis" ordered="false" lowerBound="1">
+        <eType xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      </eStructuralFeatures>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfMethodsMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HAverageOverloadingInClassMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HAverageParametersMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HLocalMethodAccessesMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HLocalFieldAccessesMetric" eSuperTypes="//HMetric"/>
+    <eClassifiers xsi:type="ecore:EClass" name="HTotalVisibilityMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HTotalCouplingMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfFieldsMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HLCOM5Metric" eSuperTypes="//HMetric">

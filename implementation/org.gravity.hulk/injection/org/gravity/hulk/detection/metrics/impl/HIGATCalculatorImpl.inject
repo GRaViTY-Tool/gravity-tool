@@ -2,8 +2,7 @@ import  java.util.LinkedList;
 import  java.util.List;
 import  java.util.Set;
 import  java.util.HashSet;
-import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
-import  org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfTypesMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 import  org.gravity.typegraph.basic.TAbstractType;
 import  org.gravity.typegraph.basic.TAccess;
@@ -20,64 +19,84 @@ partial class HIGATCalculatorImpl {
 
 @members<--
 
-	private void process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
+	private TVisibility process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
 		int start = methods.size();
+		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
 		for (TPackage tSubPackage : tPackage.getSubpackage()) {
-			process(apg, tSubPackage, methods);
+			TVisibility tVisibility = process(apg, tSubPackage, methods);
+			if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
+				requiredTVisibility = tVisibility;
+			}
 		}
 		for (TAbstractType tType : tPackage.getOwnedTypes()) {
 			if (!tType.isTLib()) {
-				process(apg, tType, methods);
+				TVisibility tVisibility = process(apg, tType, methods);
+				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
+					requiredTVisibility = tVisibility;
+				}
 			}
 		}
-		if (methods.size() > 0 && methods.size() > start)
-			createMetric(apg, tPackage, getAverage(methods, start, methods.size()));
+		if (methods.size() > 0 && methods.size() > start) {
+			createMetric(apg, tPackage, getAverage(methods, start, methods.size()), requiredTVisibility);
+		}
+		return requiredTVisibility;
 	}
 
-	private void process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
-		Set<TAbstractType> accessedBy = new HashSet<>();
-		for (TMember tMember : tType.getDefines()) {
-			for (TAccess tAccess : tMember.getAccessedBy()) {
-				accessedBy.add(tAccess.getTSource().getDefinedBy());
-			}
-		}
+	private TVisibility process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
 
 		TVisibility tCurVis = tType.getTModifier().getTVisibility();
-		TVisibility tMinVis;
-		if (accessedBy.size() == 0 || tType.getInnerTypes().containsAll(accessedBy)) {
-			tMinVis = TVisibility.TPRIVATE;
-		} else {
-			boolean onlySubClasses = true;
-			TPackage tPackage = tType.getPackage();
-			Set<TPackage> otherPackages = new HashSet<>();
-			for (TAbstractType tAccessingType : accessedBy) {
-				TPackage tOtherPackage = tAccessingType.getPackage();
-				if (!tPackage.equals(tOtherPackage)) {
-					otherPackages.add(tOtherPackage);
-				}
-				if (tAccessingType instanceof TClass) {
-					TClass tClass = (TClass) tAccessingType;
-					onlySubClasses &= tType.equals(tClass.getParentClass()) || tClass.getImplements().contains(tType);
-				} else if (tAccessingType instanceof TInterface) {
-					onlySubClasses &= ((TInterface) tAccessingType).getParentInterfaces().contains(tType);
+		TVisibility tMinVis = TVisibility.TPUBLIC;
+
+		if (!(tType instanceof TInterface) || tType.getOuterType() != null) {
+
+			Set<TAbstractType> accessedBy = new HashSet<>();
+			for (TMember tMember : tType.getDefines()) {
+				for (TAccess tAccess : tMember.getAccessedBy()) {
+					TAbstractType definedBy = tAccess.getTSource().getDefinedBy();
+					if (!tType.equals(definedBy) && !tType.getInnerTypes().contains(definedBy)
+							&& !definedBy.equals(tType.getOuterType())) {
+						accessedBy.add(definedBy);
+					}
 				}
 			}
-			if (otherPackages.size() == 0) {
-				tMinVis = TVisibility.TPACKAGE;
-			} else {
-				if (onlySubClasses) {
-					tMinVis = TVisibility.TPROTECTED;
+			tMinVis = TVisibility.TPRIVATE;
+
+			if (accessedBy.size() > 0) {
+				boolean onlySubClasses = true;
+				TPackage tPackage = tType.getPackage();
+				Set<TPackage> otherPackages = new HashSet<>();
+				for (TAbstractType tAccessingType : accessedBy) {
+					TPackage tOtherPackage = tAccessingType.getPackage();
+					if (!tPackage.equals(tOtherPackage)) {
+						otherPackages.add(tOtherPackage);
+					}
+					if (tAccessingType instanceof TClass) {
+						TClass tClass = (TClass) tAccessingType;
+						onlySubClasses &= tType.equals(tClass.getParentClass())
+								|| tClass.getImplements().contains(tType);
+					} else if (tAccessingType instanceof TInterface) {
+						onlySubClasses &= ((TInterface) tAccessingType).getParentInterfaces().contains(tType);
+					}
+				}
+				if (otherPackages.size() == 0) {
+					tMinVis = TVisibility.TPACKAGE;
 				} else {
-					tMinVis = TVisibility.TPUBLIC;
+					if (onlySubClasses) {
+						tMinVis = TVisibility.TPROTECTED;
+					} else {
+						tMinVis = TVisibility.TPUBLIC;
+					}
 				}
 			}
 		}
 
 		double igat = tCurVis.equals(tMinVis) ? 0 : 1;
 
-		createMetric(apg, tType, igat);
+		createMetric(apg, tType, igat, tMinVis);
 
 		methods.add(igat);
+
+		return tMinVis;
 	}
 
 	private double getAverage(List<Double> values, int start, int end) {
@@ -88,12 +107,12 @@ partial class HIGATCalculatorImpl {
 		return avg / (end - start);
 	}
 
-	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam) {
-		HInappropriateGenerosityWithAccessibilityOfTypesMetric metric = MetricsFactory.eINSTANCE
-				.createHInappropriateGenerosityWithAccessibilityOfTypesMetric();
+	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
+		HIGATMetric metric = MetricsFactory.eINSTANCE.createHIGATMetric();
 		metric.setValue(igam);
 		metric.setApg(apg);
 		metric.setTAnnotated(annotatable);
+		metric.setHMinVis(minVis);
 
 		getHAnnotation().add(metric);
 		annotatable.getTAnnotation().add(metric);
@@ -108,15 +127,19 @@ partial class HIGATCalculatorImpl {
 
 @model detect (HAntiPatternGraph apg)<--
 		TypeGraph pg = apg.getPg();
-
+		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
 		List<Double> methods = new LinkedList<>();
 		for (TPackage tPackage : pg.getPackages()) {
 			if (tPackage.getParent() == null) {
-				process(apg, tPackage, methods);
+				TVisibility tVisibility = process(apg, tPackage, methods);
+				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
+					requiredTVisibility = tVisibility;
+				}
 			}
 		}
-		if (methods.size() > 0)
-			createMetric(apg, pg, getAverage(methods, 0, methods.size()));
+		if (methods.size() > 0) {
+			createMetric(apg, pg, getAverage(methods, 0, methods.size()), requiredTVisibility);
+		}
 
 		return true;-->
 

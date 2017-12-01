@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.goblin.movemethod;singleton:=true
+Bundle-SymbolicName: org.gravity.goblin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .,
  libs/annotations.jar,
@@ -30,15 +30,14 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.henshin.interpreter.ui;bundle-version="1.2.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.xmi.impl
-Export-Package: ConstraintCalculators;uses:="FitnessCalculators,org.gravity.typegraph.basic,org.eclipse.emf.henshin.interpreter",
- FitnessCalculators,
- Repair.visibility,
- com.beust.jcommander;uses:="com.beust.jcommander.internal",
+Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.converters,
  com.beust.jcommander.defaultprovider,
  com.beust.jcommander.internal,
  com.beust.jcommander.validators,
- momotFiles;
+ org.gravity.goblin.constraints,
+ org.gravity.goblin.fitness,
+ org.gravity.goblin.momot;
   uses:="org.eclipse.emf.ecore,
    FitnessCalculators,
    at.ac.tuwien.big.momot.problem.solution.variable,
@@ -56,4 +55,4 @@ Export-Package: ConstraintCalculators;uses:="FitnessCalculators,org.gravity.type
    at.ac.tuwien.big.moea.search.algorithm.provider,
    at.ac.tuwien.big.momot.search.fitness,
    org.eclipse.emf.henshin.interpreter"
-Bundle-Activator: org.goblin.movemethod.GoblinActivator
+Bundle-Activator: org.gravity.goblin.GoblinActivator

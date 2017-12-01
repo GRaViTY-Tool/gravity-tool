@@ -1,14 +1,12 @@
-
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import  java.util.Collections;
+import  java.util.LinkedList;
+import  java.util.List;
+import  org.gravity.hulk.antipatterngraph.HMetric;
+import  org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 
 partial class HDetectorImpl {
 
-@members <--
+@members<--
 
 	protected double calculateRelativeThreshold(HRelativeValueConstants level, Class<? extends HMetric> clazz) {
 		EList<HAnnotation> annotations = getHAntiPatternHandling().getApg().getHAnnotations();
@@ -41,14 +39,7 @@ partial class HDetectorImpl {
 		}
 		throw new RuntimeException();
 	}
-	
--->
 
-@model detect (HAntiPatternGraph apg) <--
-
-		// TODO: implement this method here but do not remove the injection
-		// marker
-		throw new UnsupportedOperationException();
--->
+	-->
 
 }

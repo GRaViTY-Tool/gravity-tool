@@ -72,11 +72,6 @@ public class VKindToTVis extends TGGConstraintImpl {
     		break;
     	}
     	
-    	if(!satisfied){
-    		int i = 0;
-    		i++;
-    	}
-    	
     	
   	}	  
 }

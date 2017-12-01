@@ -76,7 +76,6 @@ public class TestCase {
 						project.create(description, null);
 						project.open(null);
 					} catch (CoreException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -130,13 +129,11 @@ public class TestCase {
 		try {
 			workspace.delete(root.members(), true, null);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			root.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

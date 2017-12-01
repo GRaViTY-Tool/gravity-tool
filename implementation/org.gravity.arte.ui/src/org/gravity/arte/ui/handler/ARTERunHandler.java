@@ -110,7 +110,6 @@ public class ARTERunHandler extends AbstractHandler {
 						}
 					}
 				} catch (CoreException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else {
@@ -183,7 +182,6 @@ public class ARTERunHandler extends AbstractHandler {
 								return true;
 							}
 						} catch (CoreException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
@@ -199,7 +197,7 @@ public class ARTERunHandler extends AbstractHandler {
 								}
 							}
 						} catch (CoreException e) {
-							// TODO Auto-generated catch block
+							
 							e.printStackTrace();
 						}
 					}
@@ -215,7 +213,7 @@ public class ARTERunHandler extends AbstractHandler {
 								}
 							}
 						} catch (CoreException e) {
-							// TODO Auto-generated catch block
+							
 							e.printStackTrace();
 						}
 					}
@@ -380,7 +378,7 @@ public class ARTERunHandler extends AbstractHandler {
 			// }
 			// }
 			// } catch (CoreException e) {
-			// // TODO Auto-generated catch block
+			// 
 			// e.printStackTrace();
 			// }
 			// } else if (selected instanceof IFolder) {
@@ -394,7 +392,7 @@ public class ARTERunHandler extends AbstractHandler {
 			// }
 			// }
 			// } catch (CoreException e) {
-			// // TODO Auto-generated catch block
+			// 
 			// e.printStackTrace();
 			// }
 			// } else
@@ -426,7 +424,7 @@ public class ARTERunHandler extends AbstractHandler {
 							}
 						}
 					} catch (IOException | CoreException e) {
-						// TODO Auto-generated catch block
+						
 						e.printStackTrace();
 					}
 				}

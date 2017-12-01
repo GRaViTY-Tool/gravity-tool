@@ -14,9 +14,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="staticType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
-    <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" eType="#//containers/TMemberContainer"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTMethodDefinitions"
+        eType="#//containers/TMethodDefinitionContainer"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getDeclaredTMethodDefinitions"
+        upperBound="-1" eType="#//TMethodDefinition"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembers" upperBound="-1"
+        eType="#//TMember"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getAllTMembersInContainer"
+        eType="#//containers/TMemberContainer"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllChildren" upperBound="-1"
         eType="#//TClass"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentClass" eType="#//TClass"
         eOpposite="#//TClass/childClasses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childClasses" upperBound="-1"
@@ -56,10 +69,6 @@
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignature" eType="#//TSignature"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations xsi:type="activities:MoflonEOperation" name="getMinimumRequiredVisibility"
-        eType="#//TVisibility">
-      <eParameters name="tMember" eType="#//TMember"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" lowerBound="1"
         eType="#//TAbstractType" eOpposite="#//TAbstractType/defines"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessedBy" upperBound="-1"
@@ -146,6 +155,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeGraph" eSuperTypes="#//annotations/TAnnotatable">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getDeclaredTClasses"
+        upperBound="-1" eType="#//TClass"/>
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
@@ -165,6 +176,12 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TInterface" eSuperTypes="#//TAbstractType">
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
         eType="#//TClass" eOpposite="#//TClass/implements"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentInterfaces" upperBound="-1"
@@ -173,14 +190,21 @@
         eType="#//TInterface" eOpposite="#//TInterface/parentInterfaces"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TAbstractType" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="tType" eType="#//TAbstractType"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="isDeclared" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getFullyQualifiedName"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eOperations xsi:type="activities:MoflonEOperation" name="getMinimumRequiredVisibility"
-        eType="#//TVisibility">
-      <eParameters name="tAbstractType" eType="#//TAbstractType"/>
-    </eOperations>
-    <eOperations xsi:type="activities:MoflonEOperation" name="getMethodSignature"
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTMethodSignature"
         eType="#//TMethodSignature">
+      <eParameters name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTMethodDefinition"
+        eType="#//TMethodDefinition">
       <eParameters name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
@@ -284,10 +308,20 @@
           eType="#//annotations/TAnnotationValue" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
+      <eOperations xsi:type="activities:MoflonEOperation" name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="tType" eType="#//TAbstractType"/>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="tType" eType="#//TAbstractType"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
           eType="#//annotations/TAnnotation" eOpposite="#//annotations/TAnnotation/type"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotatable" abstract="true">
+      <eOperations xsi:type="activities:MoflonEOperation" name="getTAnnotation" upperBound="-1"
+          eType="#//annotations/TAnnotation">
+        <eParameters name="tType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotation" upperBound="-1"
           eType="#//annotations/TAnnotation" containment="true" eOpposite="#//annotations/TAnnotation/tAnnotated"/>
     </eClassifiers>

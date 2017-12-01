@@ -20,11 +20,11 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPattern;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.detection.antipattern.impl.AntipatternPackageImpl;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
+import org.gravity.typegraph.basic.TypeGraph;
 
 public class HulkAPI {
 
@@ -45,17 +45,25 @@ public class HulkAPI {
 		IProject iproject = project.getProject();
 		IPGConverter converter = GravityActivator.getDefault().getNewConverter(iproject);
 		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
-		if (!success || converter.getPG() == null) {
+		TypeGraph pg = converter.getPG();
+		if (!success || pg == null) {
 			throw new RuntimeException("Creating PG from project failed: " + project.getProject().getName());
 		}
+		String programLocation = project.getProject().getLocation().toString();
+		
+		return detect(pg, programLocation, aps);
+	}
+
+	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps) {
+		ResourceSet rs = pg.eResource().getResourceSet();
+		//TODO: keep PG in old resource set
 		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
-		apg.setPg(converter.getPG());
+		apg.setPg(pg);
 
 		HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 		hulk.setApg(apg);
-		hulk.setProgramlocation(project.getProject().getLocation().toString());
+		hulk.setProgramlocation(programLocation);
 
-		ResourceSet rs = converter.getResourceSet();
 		rs.createResource(URI.createURI("Hulk.xmi")).getContents().add(hulk); //$NON-NLS-1$
 
 		rs.createResource(URI.createURI("SmellDependencyGraph.xmi")).getContents().add(hulk.getDependencyGraph()); //$NON-NLS-1$
@@ -81,6 +89,15 @@ public class HulkAPI {
 			case IGAT:
 				detectors.add(MetricsPackage.eINSTANCE.getHIGATCalculator());
 				break;
+			case LCOM5:
+				detectors.add(MetricsPackage.eINSTANCE.getHLcom5Calculator());
+				break;
+			case TotalCoupling:
+				detectors.add(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator());
+				break;
+			case TotalMethodVisibility:
+				detectors.add(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator());
+				break;
 			}
 		}
 		HashSet<HDetector> detectorResults = new HashSet<>();
@@ -99,6 +116,6 @@ public class HulkAPI {
 	}
 
 	public static enum AntiPatternNames {
-		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT
+		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT, LCOM5, TotalCoupling, TotalMethodVisibility
 	}
 }

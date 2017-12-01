@@ -103,7 +103,6 @@ public class MetricCalculator {
 			e.printStackTrace();
 			return SourceMeterStatus.ERROR;
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return SourceMeterStatus.OK;

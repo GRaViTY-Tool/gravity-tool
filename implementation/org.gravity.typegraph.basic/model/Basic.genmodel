@@ -21,8 +21,17 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/childClasses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/implements"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getTMethodDefinitions"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getDeclaredTMethodDefinitions"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembers"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembersInContainer"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllChildren"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/isSubTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/isSubTypeOf/tType"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/isSuperTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/isSuperTypeOf/tType"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/signatures"/>
@@ -49,9 +58,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tModifier"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getSignature"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getSignatureString"/>
-      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getMinimumRequiredVisibility">
-        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getMinimumRequiredVisibility/tMember"/>
-      </genOperations>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/pg"/>
@@ -109,12 +115,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/tAnnotationTypes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/tName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/getDeclaredTClasses"/>
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/toString"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/implementedBy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/parentInterfaces"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/childInterfaces"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/isSubTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/isSubTypeOf/tType"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/isSuperTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface/isSuperTypeOf/tType"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/pg"/>
@@ -126,12 +139,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tModifier"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/innerTypes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/outerType"/>
-      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getFullyQualifiedName"/>
-      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getMinimumRequiredVisibility">
-        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getMinimumRequiredVisibility/tAbstractType"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/isSuperTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/isSuperTypeOf/tType"/>
       </genOperations>
-      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getMethodSignature">
-        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getMethodSignature/signature"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/isSubTypeOf">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/isSubTypeOf/tType"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/isDeclared"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getFullyQualifiedName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getTMethodSignature">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getTMethodSignature/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getTMethodDefinition">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/getTMethodDefinition/signature"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TConstructorName"/>
@@ -202,9 +222,18 @@
       <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType/annotations"/>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType/isSubTypeOf">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType/isSubTypeOf/tType"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType/isSuperTypeOf">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotationType/isSuperTypeOf/tType"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/getTAnnotation">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/getTAnnotation/tType"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextNode">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextNode/tText"/>

@@ -131,13 +131,18 @@
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInvocationRelation/hIncommingInvocationCustomMetric"/>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfChildMetric"/>
-      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInappropriateGenerosityWithAccessibilityOfMethodMetric"/>
-      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HInappropriateGenerosityWithAccessibilityOfTypesMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HIGAMMetric">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HIGAMMetric/hMinVis"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HIGATMetric">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HIGATMetric/hMinVis"/>
+      </genClasses>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfMethodsMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageOverloadingInClassMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HAverageParametersMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalMethodAccessesMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLocalFieldAccessesMetric"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HTotalVisibilityMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HTotalCouplingMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNumberOfFieldsMetric"/>
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HLCOM5Metric">

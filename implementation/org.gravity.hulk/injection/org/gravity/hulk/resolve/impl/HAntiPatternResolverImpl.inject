@@ -1,16 +1,13 @@
 
 partial class HAntiPatternResolverImpl {
 
-@members <--
-
+@members<--
 
 	@Override
 	public String getGuiName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Resolve Anti-patterns";
 	}
 
-	
--->
+	-->
 
 }

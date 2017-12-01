@@ -17,8 +17,8 @@ import org.gravity.hulk.HulkAPI.AntiPatternNames;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfTypesMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -87,10 +87,10 @@ public class HulkApiTest {
 				blobs++;		
 			}
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				if (hAnnotation instanceof HInappropriateGenerosityWithAccessibilityOfMethodMetric) {
+				if (hAnnotation instanceof HIGAMMetric) {
 					System.out.println("IGAM = "+((HMetric) hAnnotation).getValue());
 				}
-				else if (hAnnotation instanceof HInappropriateGenerosityWithAccessibilityOfTypesMetric) {
+				else if (hAnnotation instanceof HIGATMetric) {
 					System.out.println("IGAT = "+((HMetric) hAnnotation).getValue());
 				}
 			}

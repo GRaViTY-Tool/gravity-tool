@@ -19,14 +19,12 @@ import org.gravity.arte.testdsl.arteLanguage.Pull_Up_Field_Refactoring;
 import org.gravity.arte.testdsl.arteLanguage.Pull_Up_Method_Refactoring;
 import org.gravity.arte.testdsl.arteLanguage.Signature;
 import org.gravity.refactorings.Changes;
-import org.gravity.refactorings.Create_Superclass;
-import org.gravity.refactorings.Extract_Superclass;
-import org.gravity.refactorings.Move_Method;
-import org.gravity.refactorings.Pull_Up_Field;
-import org.gravity.refactorings.Pull_Up_Method;
-import org.gravity.refactorings.RefactoringsFactory;
 import org.gravity.refactorings.Support;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
+import org.gravity.refactorings.impl.Create_SuperclassImpl;
+import org.gravity.refactorings.impl.Extract_SuperclassImpl;
+import org.gravity.refactorings.impl.Move_MethodImpl;
+import org.gravity.refactorings.impl.Pull_Up_FieldImpl;
+import org.gravity.refactorings.impl.Pull_Up_MethodImpl;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
@@ -37,18 +35,16 @@ import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.gravity.typegraph.basic.containers.TClassContainer;
-import org.gravity.typegraph.basic.containers.TSignatureContainer;
 
 public class RefactoringTool {
 
 	private TypeGraph tool_pg;
 	
-	Pull_Up_Method pumRefactoring;
-	Pull_Up_Field pufRefactoring;
-	Move_Method momRefactoring;
-	Create_Superclass cscRefactoring;
-	Extract_Superclass escRefactoring;
+	Pull_Up_MethodImpl pumRefactoring;
+	Pull_Up_FieldImpl pufRefactoring;
+	Move_MethodImpl momRefactoring;
+	Create_SuperclassImpl cscRefactoring;
+	Extract_SuperclassImpl escRefactoring;
 	
 
 	private List<org.gravity.arte.testdsl.arteLanguage.Refactoring> bookkeeping;
@@ -56,19 +52,19 @@ public class RefactoringTool {
 
 	
 	private void initRefactorings(){
-		this.pumRefactoring = RefactoringsFactory.eINSTANCE.createPull_Up_Method();
+		this.pumRefactoring = new Pull_Up_MethodImpl();
 		this.pumRefactoring.setPg(this.tool_pg);
 		
-		this.pufRefactoring = RefactoringsFactory.eINSTANCE.createPull_Up_Field();
+		this.pufRefactoring = new Pull_Up_FieldImpl();
 		this.pufRefactoring.setPg(this.tool_pg);
 		
-		this.momRefactoring = RefactoringsFactory.eINSTANCE.createMove_Method();
+		this.momRefactoring = new Move_MethodImpl();
 		this.momRefactoring.setPg(this.tool_pg);
 		
-		this.cscRefactoring = RefactoringsFactory.eINSTANCE.createCreate_Superclass();
+		this.cscRefactoring = new Create_SuperclassImpl();
 		this.cscRefactoring.setPg(this.tool_pg);
 		
-		this.escRefactoring = RefactoringsFactory.eINSTANCE.createExtract_Superclass();
+		this.escRefactoring = new Extract_SuperclassImpl();
 		this.escRefactoring.setPg(this.tool_pg);	
 	}
 	
@@ -112,7 +108,7 @@ public class RefactoringTool {
 		boolean pum_isApplicable = this.pumRefactoring.isApplicable(sig, parent);
 		if (pum_isApplicable) {
 			this.bookkeeping.add(refactoring);
-			for (TClass tClass : this.pumRefactoring.Perform(sig, parent).getTClass()) {
+			for (TClass tClass : this.pumRefactoring.perform(sig, parent)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
@@ -143,7 +139,7 @@ public class RefactoringTool {
 			this.bookkeeping.add(refactoring);
 
 			// Perform refactoring and record changed classes
-			for (TClass tClass : this.pufRefactoring.Perform(sig, parent).getTClass()) {
+			for (TClass tClass : this.pufRefactoring.perform(sig, parent)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
@@ -159,13 +155,13 @@ public class RefactoringTool {
 	}
 
 	public boolean applyCreateSuperclass(Create_Superclass_Refactoring refactoring) {
-		TClassContainer tClasses = ContainersFactory.eINSTANCE.createTClassContainer();
+		List<TClass> tClasses = new LinkedList<TClass>();
 		for (Java_Class c : refactoring.getChild().getClasses()) {
 			TClass tClass = getTClass(c);
 			if (tClass == null) {
 				return false;
 			}
-			tClasses.getTClass().add(tClass);
+			tClasses.add(tClass);
 		}
 
 		TClass new_parent = BasicFactory.eINSTANCE.createTClass();
@@ -188,7 +184,7 @@ public class RefactoringTool {
 		boolean csc_isApplicable = this.cscRefactoring.isApplicable(tClasses, new_parent);
 		if (csc_isApplicable) {
 			this.bookkeeping.add(refactoring);
-			for (TClass tClass : this.cscRefactoring.Perform(tClasses, new_parent).getTClass()) {
+			for (TClass tClass : this.cscRefactoring.perform(tClasses, new_parent)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
@@ -205,13 +201,13 @@ public class RefactoringTool {
 	}
 
 	public boolean applyExtractSuperclassRefactoring(Extract_Superclass_Refactoring refactoring) {
-		TClassContainer tClasses = ContainersFactory.eINSTANCE.createTClassContainer();
+		List<TClass> tClasses = new LinkedList<TClass>();
 		for (Java_Class c : refactoring.getChild().getClasses()) {
 			TClass tClass = getTClass(c);
 			if (tClass == null) {
 				return false;
 			}
-			tClasses.getTClass().add(tClass);
+			tClasses.add(tClass);
 		}
 
 		TClass new_parent = BasicFactory.eINSTANCE.createTClass();
@@ -232,20 +228,20 @@ public class RefactoringTool {
 			leaf.getClasses().add(new_parent);
 		}
 
-		TSignatureContainer tSignatures = ContainersFactory.eINSTANCE.createTSignatureContainer();
+		List<TSignature> tSignatures = new LinkedList<TSignature>();
 		for (Signature sig : refactoring.getSignatures().getSignatures()) {
 			TSignature tSig = getTSignature(sig);
 			if (tSig == null) {
 				return false;
 			}
-			tSignatures.getTSignatures().add(tSig);
+			tSignatures.add(tSig);
 		}
 
 		// check if Refactoring is applicable and perform it
 		boolean esc_isApplicable = this.escRefactoring.isApplicable(tClasses, new_parent, tSignatures);
 		if (esc_isApplicable) {
 			this.bookkeeping.add(refactoring);
-			for (TClass tClass : this.escRefactoring.Perform(tClasses, new_parent, tSignatures).getTClass()) {
+			for (TClass tClass : this.escRefactoring.perform(tClasses, new_parent, tSignatures)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {

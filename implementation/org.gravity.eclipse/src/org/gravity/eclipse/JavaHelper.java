@@ -2,7 +2,6 @@ package org.gravity.eclipse;
 
 import java.util.Arrays;
 import java.util.Hashtable;
-import java.util.LinkedList;
 import java.util.Stack;
 
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -16,9 +15,6 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TConstructorDefinition;
-import org.gravity.typegraph.basic.TConstructorName;
-import org.gravity.typegraph.basic.TConstructorSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;

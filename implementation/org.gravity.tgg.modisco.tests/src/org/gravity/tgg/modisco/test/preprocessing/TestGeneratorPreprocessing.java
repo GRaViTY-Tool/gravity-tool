@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessingImpl;
+import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
 import org.gravity.tgg.modisco.test.util.CustomFeatureFilter;
 import org.gravity.tgg.modisco.test.util.TestBody;
 import org.junit.Assert;
@@ -108,7 +108,7 @@ public class TestGeneratorPreprocessing {
 			
 			MGravityModel model = (MGravityModel)res.getContents().get(0);
 			
-			Assert.assertTrue(MoDiscoTGGPreprocessingImpl.preprocess(new NullProgressMonitor(),model));
+			Assert.assertTrue(MoDiscoTGGPreprocessing.preprocess(new NullProgressMonitor(),model));
 			
 			res.setURI(URI.createFileURI(resultXMI.toString()));
 			res.save(Collections.EMPTY_MAP);

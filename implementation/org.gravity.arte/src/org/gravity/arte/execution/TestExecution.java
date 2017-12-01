@@ -441,7 +441,6 @@ public class TestExecution {
 			} catch (CoreException e) {
 				e.printStackTrace();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			if (!compileJavaprogram(out_project)) {

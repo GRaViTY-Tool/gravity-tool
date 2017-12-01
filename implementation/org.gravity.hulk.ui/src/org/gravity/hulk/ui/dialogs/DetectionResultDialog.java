@@ -199,7 +199,6 @@ public class DetectionResultDialog extends Dialog {
 			out.flush();
 			out.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

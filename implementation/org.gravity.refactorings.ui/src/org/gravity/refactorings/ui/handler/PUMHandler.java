@@ -25,8 +25,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.refactorings.Pull_Up_Method;
-import org.gravity.refactorings.RefactoringsFactory;
+import org.gravity.refactorings.impl.Pull_Up_MethodImpl;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -75,7 +74,7 @@ public class PUMHandler extends RefactoringHandler {
 							TClass tParent = tChild.getParentClass();
 							TMethodSignature tSignature = getMethodSignature(pg, method);
 
-							Pull_Up_Method refactoring = RefactoringsFactory.eINSTANCE.createPull_Up_Method();
+							Pull_Up_MethodImpl refactoring = new Pull_Up_MethodImpl();
 							refactoring.setPg(pg);
 
 							if (refactoring.isApplicable(tSignature, tParent)) {
@@ -89,7 +88,7 @@ public class PUMHandler extends RefactoringHandler {
 
 										if (status == 0) {
 											converter.syncProjectBwd(SynchronizationHelper -> {
-												refactoring.Perform(tSignature, tParent);
+												refactoring.perform(tSignature, tParent);
 											}, monitor);
 										}
 									}

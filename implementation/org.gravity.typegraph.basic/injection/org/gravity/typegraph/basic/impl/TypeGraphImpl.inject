@@ -1,3 +1,5 @@
+import  org.eclipse.emf.common.util.BasicEList;
+import  org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class TypeGraphImpl {
 
@@ -91,6 +93,14 @@ partial class TypeGraphImpl {
 	}
 
 	-->
+
+@model getDeclaredTClasses ()<--		EList<TClass> classes = new BasicEList<TClass>();
+		for (TClass tClass : getClasses()) {
+			if (tClass.isDeclared()) {
+				classes.add(tClass);
+			}
+		}
+		return classes;-->
 
 @model toString ()<--		return super.toString();-->
 

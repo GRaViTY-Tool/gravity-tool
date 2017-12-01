@@ -8,7 +8,6 @@ import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.AnnotationImpl;
-import org.gravity.modisco.impl.MAnonymousImpl;
 
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 

@@ -1,6 +1,5 @@
 package org.gravity.hulk.ui.handlers.scan;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -148,7 +147,6 @@ public abstract class HulkHandler extends AbstractHandler {
 				try {
 					folder.delete(true, hHmonitor);
 				} catch (CoreException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -172,23 +170,12 @@ public abstract class HulkHandler extends AbstractHandler {
 		return hulk;
 	}
 
-	public void TryCloseStream(Closeable stream) {
-		if (stream != null) {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
 	public IFile getAnnotations_out(IProgressMonitor monitor) {
 		IFolder folder = getHulkFolder();
 		IFile annotations_out = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
 		if (!annotations_out.exists()) {
-			InputStream in = null;
-			try {
-				in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection().getInputStream();
+			try (InputStream in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection()
+					.getInputStream()) {
 				if (annotations_out.exists()) {
 					annotations_out.setContents(in, true, true, monitor);
 				} else {
@@ -199,10 +186,7 @@ public abstract class HulkHandler extends AbstractHandler {
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} finally {
-				TryCloseStream(in);
 			}
 
 			try {
@@ -242,7 +226,6 @@ public abstract class HulkHandler extends AbstractHandler {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				// TODO Auto-generated method stub
 			}
 		});
 		return dialog;
@@ -276,10 +259,10 @@ public abstract class HulkHandler extends AbstractHandler {
 	/**
 	 * Initializes a scan.
 	 * 
-	 * First calls a selection dialog for selecting the anti-patterns to scan
-	 * for Then runs the scan and calls the abstract setHulk method implemented
-	 * by subclasses, such as HulkResolveHandler and HulkScanHandler. If this
-	 * returns true, then runJOb() is executed next
+	 * First calls a selection dialog for selecting the anti-patterns to scan for
+	 * Then runs the scan and calls the abstract setHulk method implemented by
+	 * subclasses, such as HulkResolveHandler and HulkScanHandler. If this returns
+	 * true, then runJOb() is executed next
 	 * 
 	 * @param event
 	 * @return

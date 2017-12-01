@@ -1,12 +1,11 @@
-
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TAbstractType;
-import java.util.Collections;
-import java.util.HashSet;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  java.util.Collections;
+import  java.util.HashSet;
 
 partial class TInterfaceImpl {
 
-@members <--
+@members<--
 
 	private HashSet<TInterface> fillParents(HashSet<TInterface> parents) {
 
@@ -34,7 +33,21 @@ partial class TInterfaceImpl {
 
 		return (!Collections.disjoint(parents, otherParents));
 	}
-	
--->
+
+	-->
+
+@model isSuperTypeOf (TAbstractType tType)<--		if (tType instanceof TInterface) {
+			EList<TInterface> tInterfaces = getParentInterfaces();
+			if (tInterfaces.contains(tType)) {
+				return true;
+			} else {
+				for (TInterface tInterface : tInterfaces) {
+					if (tInterface.isSuperTypeOf(tType)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;-->
 
 }

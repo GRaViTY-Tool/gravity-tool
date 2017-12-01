@@ -1,32 +1,17 @@
-
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TAbstractType;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TAbstractType;
 
 partial class TAnnotationTypeImpl {
 
-@members <--
+@members<--
+
 	@Override
 	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
 		return false;
 	}
 
+	-->
 
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
-		}
-
-		// cannot have same superclass or Interface since Java Annotations cannot implements or extends
-
-		return TVisibility.TPUBLIC;
-
-	}
-	
--->
+@model isSuperType (TAbstractType tType)<--		return false;-->
 
 }

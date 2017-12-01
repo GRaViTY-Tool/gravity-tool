@@ -29,8 +29,8 @@ import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfMethodMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HInappropriateGenerosityWithAccessibilityOfTypesMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.hulk.detection.metrics.HIGAMCalculator;
 import org.gravity.hulk.detection.metrics.HIGATCalculator;
 import org.gravity.hulk.detection.metrics.MetricsFactory;
@@ -152,12 +152,12 @@ public class AccessAnalysis {
 				double hValue = -1;
 				double aValue = -1;
 				String kind = null;
-				if (tAnnotation instanceof HInappropriateGenerosityWithAccessibilityOfTypesMetric) {
-					hValue = ((HInappropriateGenerosityWithAccessibilityOfTypesMetric) tAnnotation).getValue();
+				if (tAnnotation instanceof HIGATMetric) {
+					hValue = ((HIGATMetric) tAnnotation).getValue();
 					aValue = Double.valueOf(r.getFormatter().igat());
 					kind = "IGAT";
-				} else if (tAnnotation instanceof HInappropriateGenerosityWithAccessibilityOfMethodMetric) {
-					hValue = ((HInappropriateGenerosityWithAccessibilityOfMethodMetric) tAnnotation).getValue();
+				} else if (tAnnotation instanceof HIGAMMetric) {
+					hValue = ((HIGAMMetric) tAnnotation).getValue();
 					aValue = Double.valueOf(r.getFormatter().igam());
 					kind = "IGAM";
 				}

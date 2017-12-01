@@ -40,7 +40,6 @@ public class ARTENewHandler extends AbstractHandler {
 						System.err.println("No Java Project: " + project); //$NON-NLS-1$
 					}
 				} catch (CoreException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else {

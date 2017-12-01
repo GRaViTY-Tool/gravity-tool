@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk;singleton:=true
-Export-Package: org.gravity.hulk.detection,
+Export-Package: org.gravity.hulk,
+ org.gravity.hulk.detection,
  org.gravity.hulk.detection.antipattern,
  org.gravity.hulk.detection.antipattern.impl,
  org.gravity.hulk.detection.antipattern.util,
@@ -22,8 +23,7 @@ Export-Package: org.gravity.hulk.detection,
  org.gravity.hulk.resolve.calculators.util,
  org.gravity.hulk.resolve.impl,
  org.gravity.hulk.resolve.util,
- org.gravity.hulk.util,
- org.gravity.hulk
+ org.gravity.hulk.util
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: lib/hierarchical-clustering.jar,.

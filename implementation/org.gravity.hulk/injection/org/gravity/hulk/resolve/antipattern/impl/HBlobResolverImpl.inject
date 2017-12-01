@@ -19,24 +19,24 @@ import  org.gravity.typegraph.basic.TSignature;
 import  org.gravity.typegraph.basic.annotations.TTextAnnotation;
 import  org.gravity.typegraph.basic.TypeGraph;
 import  org.gravity.typegraph.basic.containers.TMemberContainer;
-import  org.gravity.refactorings.Extract_Class;
-import  org.gravity.refactorings.Move_Member;
-import  org.gravity.refactorings.Move_Method;
-import  org.gravity.refactorings.Refactoring;
-import  org.gravity.refactorings.configuration.ConfigurationFactory;
-import  org.gravity.refactorings.configuration.ExtractClassConfiguration;
+import  org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
+import  org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
+import  org.gravity.refactorings.impl.Extract_ClassImpl;
+import  org.gravity.refactorings.impl.Move_MemberImpl;
 import  org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import  org.eclipse.emf.ecore.util.EcoreUtil;
 
 partial class HBlobResolverImpl {
 
 @members<--
-	private Move_Member move;
+
+	private Move_MemberImpl move;
 
 	@Override
 	public String getGuiName() {
 		return "Resolve Blob [Anti-Pattern]";
 	}
+
 	-->
 
 @model isRefactoringPossible (HRefactoring refactoring)<--		if (refactoring instanceof HMoveMethod) {
@@ -56,10 +56,8 @@ partial class HBlobResolverImpl {
 			return true;
 		} else if (refactoring instanceof HExtractClass) {
 			HExtractClass e = (HExtractClass) refactoring;
-			ExtractClassConfiguration config = ConfigurationFactory.eINSTANCE.createExtractClassConfiguration();
-			config.getTMembers().addAll(e.getTMembers());
-			config.setTNewClassName("ExtractedClass" + System.currentTimeMillis());
-			Extract_Class r = org.gravity.refactorings.RefactoringsFactory.eINSTANCE.createExtract_Class();
+			ExtractClassConfiguration config = new ExtractClassConfiguration(e.getTMembers(), "ExtractedClass" + System.currentTimeMillis());
+			Extract_ClassImpl r = new Extract_ClassImpl();
 			return r.isApplicable(config);
 		} else {
 			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
@@ -135,10 +133,7 @@ partial class HBlobResolverImpl {
 @model init (HAntiPatternGraph pg)<--		original_apg = pg;
 		copy_apg = EcoreUtil.copy(pg);
 
-		org.gravity.refactorings.RefactoringsFactory factory = org.gravity.refactorings.RefactoringsFactory.eINSTANCE;
-		move = factory.createMove_Member();
-		move.setHelpers(factory.createHelpers());
-		move.setSearch(factory.createSearch());
+		move = new Move_MemberImpl();
 
 		return copy_apg;-->
 

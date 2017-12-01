@@ -300,6 +300,11 @@
             <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HFieldNumberCalculator/calculateValue/tClass"/>
           </genOperations>
         </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalVisibilityCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalVisibilityCalculator/detect">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalVisibilityCalculator/detect/apg"/>
+          </genOperations>
+        </genClasses>
         <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalCouplingCalculator">
           <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalCouplingCalculator/calculateMetric">
             <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HTotalCouplingCalculator/calculateMetric/tClass"/>

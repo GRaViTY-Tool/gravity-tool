@@ -53,7 +53,8 @@ import static org.gravity.eclipse.io.ModelSaver.*;
 
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessingImpl;
+import org.gravity.tgg.modisco.postprocessing.MoDiscoTGGPostprocessing;
+import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
@@ -167,7 +168,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		if (eobject instanceof MGravityModel) {
 			MGravityModel model = (MGravityModel) eobject;
 
-			if(!MoDiscoTGGPreprocessingImpl.preprocess(progressMonitor, model)){
+			if(!MoDiscoTGGPreprocessing.preprocess(progressMonitor, model)){
 				System.out.println("ERROR: Preprocessing failed");
 				return false;
 			}
@@ -194,6 +195,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long t4 = System.currentTimeMillis();
 		System.out.println(t4 + " eMoflon TGG fwd trafo");
 		integrateForward();
+		
+		MoDiscoTGGPostprocessing.postprocess(getPG(), monitor);
 
 		long t5 = System.currentTimeMillis();
 		System.out.println(t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");

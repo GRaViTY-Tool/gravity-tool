@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.tgg.modisco;singleton:=true
-Export-Package: org.gravity.tgg.modisco.Rules.util,
- org.gravity.tgg.modisco,
- org.gravity.tgg.modisco.util,
+Export-Package: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.Rules,
+ org.gravity.tgg.modisco.Rules.impl,
+ org.gravity.tgg.modisco.Rules.util,
  org.gravity.tgg.modisco.impl,
- org.gravity.tgg.modisco.Rules.impl
+ org.gravity.tgg.modisco.preprocessing,
+ org.gravity.tgg.modisco.util
 Bundle-Name: org.gravity.tgg.modisco
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore.xmi,
@@ -22,7 +23,6 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.jdt.core,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.modisco.java.discoverer,
- org.gravity.tgg.modisco.preprocessing,
  org.gravity.eclipse,
  MocaTree;bundle-version="2.0.0"
 Bundle-ManifestVersion: 2

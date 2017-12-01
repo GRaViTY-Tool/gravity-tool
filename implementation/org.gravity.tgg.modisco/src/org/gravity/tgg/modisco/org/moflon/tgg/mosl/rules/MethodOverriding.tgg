@@ -5,31 +5,36 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mMethod : MMethodDefinition {
-	++  -redefinitions -> mOverriding
-}
-mOverriding : MMethodDefinition {
+	mMethod:MMethodDefinition {
+		++  -redefinitions -> mOverriding
+	}
+
+	mOverriding:MMethodDefinition {
 }
 }
 
 #target {
-tOverriding : TMethodDefinition {
+	tOverriding:TMethodDefinition {
 }
-tMethod : TMethodDefinition {
-	++  -overriddenBy -> tOverriding
-}
+
+	tMethod:TMethodDefinition {
+		++  -overriddenBy -> tOverriding
+	}
 }
 
 #correspondence {
-mOverridingToTOverriding : MDefinitionToTMember {
-	#src->mOverriding
-	#trg->tOverriding
-}
-mMethodToTMethod : MDefinitionToTMember {
-	#src->mMethod
-	#trg->tMethod
-}
+	mOverridingToTOverriding :MDefinitionToTMember {
+		#src->mOverriding
+		#trg->tOverriding
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mMethod
+		#trg->tMethod
+	}
 }
 
 #attributeConditions {
 }
+
+

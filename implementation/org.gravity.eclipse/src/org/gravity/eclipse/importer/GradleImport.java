@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -47,20 +47,17 @@ public class GradleImport {
 	private String gradle;
 	private String android;
 
-	private final static String gradleCache = "caches/modules-2/files-2.1";
-	private final static String androidSdkPlatforms = "Sdk/platforms";
-	
+	private final static String gradleCache = "caches" + File.separator + "modules-2" + File.separator
+			+ "files-2.1";
+	private final static String androidSdkPlatforms = "platforms";
+	private static final boolean LINKONPROJECT = false;
+
 	public GradleImport(String gradleHome, String androidHome) {
 		this.gradle = gradleHome;
 		this.android = androidHome;
 	}
 
 	public IJavaProject importGradleProject(File folder, String name, IProgressMonitor monitor) throws Exception {
-		File gradleFolder = new File(gradle);
-		if (!gradleFolder.exists()) {
-			return null;
-		}
-
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -68,21 +65,20 @@ public class GradleImport {
 		// Find all java and gradle build files and output folders
 		List<Path> java = new LinkedList<>();
 		List<Path> gradle = new LinkedList<>();
-		List<Path> ignore = new LinkedList<>();
-		scanDirctory(folder, java, gradle, ignore);
+		scanDirctory(folder, java, gradle);
 
-		IJavaProject project = createJavaProject(name, monitor, java, ignore, gradle);
+		IJavaProject project = createJavaProject(name, monitor, java, gradle);
 
 		// build gradle project
-		buildGradleProject(folder);
+		if(!buildGradleProject(folder)) {
+			return null;
+		}
 
 		IFolder libFolder = project.getProject().getFolder("lib");
 		libFolder.create(true, true, monitor);
+		
+		List<IClasspathEntry> entries = new LinkedList<>();
 		List<Path> libs = getLibs(gradle);
-		IClasspathEntry[] oldEntries = project.getRawClasspath();
-		int i = oldEntries.length;
-		IClasspathEntry[] newEntries = new IClasspathEntry[libs.size() + i];
-		System.arraycopy(oldEntries, 0, newEntries, 0, i);
 		for (Path libPath : libs) {
 			IFile jarFile = null;
 			String libName = libPath.toFile().getName();
@@ -95,25 +91,44 @@ public class GradleImport {
 					ZipEntry entry;
 					while ((entry = zipStream.getNextEntry()) != null) {
 						if (entry.getName().endsWith(".jar")) {
-							jarFile = libFolder
+								jarFile = libFolder
 									.getFile(libName.substring(0, libName.length() - "aar".length()) + "jar");
-							jarFile.create(zipStream, true, monitor);
-//							zipStream.closeEntry();
-							break;
+							if(!jarFile.exists()) {
+								jarFile.create(zipStream, true, monitor);
+								// zipStream.closeEntry();
+								break;
+							}
+							else {
+								jarFile = null;
+							}
 						}
 						zipStream.closeEntry();
 					}
 				}
 			}
+			if(jarFile == null) {
+				continue;
+			}
 			IClasspathEntry entry = new ClasspathEntry(IPackageFragmentRoot.K_BINARY, IClasspathEntry.CPE_LIBRARY,
-					jarFile.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion patterns
+					jarFile.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion
+																		// patterns
 					ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
 					null, null, null, // specific output folder
 					false, // exported
-					ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
+					ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to
+															// combine
 					ClasspathEntry.NO_EXTRA_ATTRIBUTES);
+			entries.add(entry);
+		}
+		
+		IClasspathEntry[] oldEntries = project.getRawClasspath();
+		int i = oldEntries.length;
+		IClasspathEntry[] newEntries = new IClasspathEntry[entries.size() + i];
+		System.arraycopy(oldEntries, 0, newEntries, 0, i);
+		for(IClasspathEntry entry : entries) {
 			newEntries[i++] = entry;
 		}
+		
 		project.setRawClasspath(newEntries, monitor);
 
 		return project;
@@ -125,40 +140,78 @@ public class GradleImport {
 			return false;
 		}
 		gradlew.setExecutable(true);
-		Process p = Runtime.getRuntime().exec(gradlew.getAbsolutePath());
-		try (InputStream in = p.getInputStream()) {
-			byte[] buffer = new byte[1024];
-			while (in.read(buffer, 0, buffer.length) > 0) {
-				System.out.write(buffer);
+		Process p = null;
+		if(System.getProperty("os.name").toLowerCase().indexOf("windows") >= 0) {
+			p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assembleDebug",null, folder);
+		}
+		else if(System.getProperty("os.name").toLowerCase().indexOf("linux") >= 0) {
+			p = Runtime.getRuntime().exec("./gradlew assembleDebug", null, folder);
+		}
+		else {
+			System.err.println("Unsupported OS");
+			return false;
+		}
+		
+//		try(BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))){
+//			String line;
+//			while((line = stream.readLine()) != null) {
+//				System.out.println("GRADLE: " + line);
+//			}
+//		}
+		try(BufferedReader stream = new BufferedReader(new InputStreamReader(p.getErrorStream()))){
+			String line;
+			while((line = stream.readLine()) != null) {
+				System.err.println("GRADLE: " + line);
 			}
 		}
+		
 		p.waitFor();
 		return p.exitValue() == 0;
 	}
 
-	private void scanDirctory(File folder, List<Path> java, List<Path> gradle, List<Path> ignore) throws IOException {
-		Files.walkFileTree(folder.toPath(), new SimpleFileVisitor<Path>() {
-			@Override
-			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-				if (attrs.isRegularFile()) {
-					if (file.getFileName().toString().equals("build.gradle")) {
-						gradle.add(file);
-						for (File silbing : file.getParent().toFile().listFiles()) {
-							if (silbing.isDirectory() && "build".equals(silbing.getName())) {
-								ignore.add(silbing.getAbsoluteFile().toPath());
-							}
+	private void scanDirctory(File folder, List<Path> java, List<Path> gradle) throws IOException {
+		File buildFile = new File(folder, "build.gradle");
+		if (!buildFile.exists()) {
+			return;
+		}
+		gradle.add(buildFile.toPath());
+
+		File settingsFile = new File(folder, "settings.gradle");
+		if (settingsFile.exists()) {
+			Pattern includePattern = Pattern.compile("(include)(\\s+)(((':)(\\w+)('))(\\s*,\\s+)?)+");
+			Pattern entryPattern = Pattern.compile("(':)(\\w+)(')");
+			try (BufferedReader reader = new BufferedReader(new FileReader(settingsFile))) {
+				String line;
+				while ((line = reader.readLine()) != null) {
+					Matcher m = includePattern.matcher(line);
+					while (m.find()) {
+						String match = m.group().substring("include".length() + 1);
+						Matcher mEntry = entryPattern.matcher(match);
+						while (mEntry.find()) {
+							scanDirctory(new File(folder, mEntry.group(2)), java, gradle);
 						}
-					} else if (file.getFileName().toString().endsWith("java")) {
-						java.add(file);
 					}
 				}
-				return super.visitFile(file, attrs);
 			}
-		});
+		}
+
+		File srcFolder = new File(folder, "src");
+		if (srcFolder.exists()) {
+			Files.walkFileTree(srcFolder.toPath(), new SimpleFileVisitor<Path>() {
+
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+					if (attrs.isRegularFile() && file.getFileName().toString().endsWith("java")) {
+						java.add(file);
+					}
+					return super.visitFile(file, attrs);
+				}
+			});
+		}
 	}
 
-	private IJavaProject createJavaProject(String name, IProgressMonitor monitor, List<Path> java, List<Path> ignore,
-			List<Path> gradle) throws Exception {
+	private IJavaProject createJavaProject(String name, IProgressMonitor monitor, List<Path> java, List<Path> gradle)
+			throws Exception {
 		// Create new project with given name
 		IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = workspaceRoot.getProject(name);
@@ -178,7 +231,9 @@ public class GradleImport {
 
 		// Add binary output folder
 		IFolder binFolder = project.getFolder("bin");
-		binFolder.create(false, true, null);
+		if (!binFolder.exists()) {
+			binFolder.create(false, true, null);
+		}
 		javaProject.setOutputLocation(binFolder.getFullPath(), null);
 
 		// Add libs
@@ -207,17 +262,6 @@ public class GradleImport {
 		Pattern packagePattern = Pattern.compile("((package)\\s+)((\\w|(\\.\\s*))+)((\\s*);)");
 
 		for (Path path : java) {
-			boolean ignoreFile = false;
-			for (Path i : ignore) {
-				if (path.startsWith(i)) {
-					ignoreFile = true;
-					break;
-				}
-			}
-			if (ignoreFile) {
-				continue;
-			}
-
 			try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) {
 				String line;
 				String packageName = null;
@@ -243,18 +287,25 @@ public class GradleImport {
 			IPackageFragment pack = packageFragmentRoot.createPackageFragment(packageName, false, null);
 			for (Path javaFile : entry.getValue()) {
 				String fileName = javaFile.getFileName().toFile().getName();
-				String className = fileName.substring(0, fileName.length() - ".java".length());
 				IPath location = new org.eclipse.core.runtime.Path(javaFile.toFile().getAbsolutePath());
 				IFile iFile = ((IFolder) pack.getResource()).getFile(fileName);
 				if (iFile.exists()) {
 					if (iFile.getLocation().toFile().getAbsolutePath().equals(location.toFile().getAbsolutePath())) {
 						continue;
 					} else {
-						throw new RuntimeException("Duplicate");
+
+						throw new RuntimeException(
+								"Duplicate: \n\t" + iFile.getLocation().toString() + "\n\t" + location.toString());
+
 					}
 				}
-				iFile.createLink(location, IResource.NONE, monitor);
-				// ICompilationUnit cu = JavaCore.createCompilationUnitFrom(iFile);
+				if(LINKONPROJECT) {
+					iFile.createLink(location, IResource.NONE, monitor);
+				}
+				else {
+					Files.createSymbolicLink(iFile.getLocation().toFile().toPath(), location.toFile().toPath());
+				}
+				
 			}
 		}
 		return javaProject;
@@ -266,7 +317,8 @@ public class GradleImport {
 		int minSdk = Integer.MAX_VALUE;
 		int targetSdk = -1;
 
-		Pattern patternDepenenceies = Pattern.compile("(\\s*)(dependencies)(\\s+)(\\{)");
+		// Pattern patternDepenencies =
+		// Pattern.compile("(\\s*)(dependencies)(\\s+)(\\{)");
 		Pattern patternSingleDependency = Pattern.compile("(compile)(\\s+)(')(.+)(')");
 		Pattern patternSdk = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
 		for (Path path : gradle) {
@@ -290,27 +342,16 @@ public class GradleImport {
 						}
 					}
 
-					Matcher mDeps = patternDepenenceies.matcher(line);
-					if (mDeps.find()) {
-						line = line.substring(mDeps.end(), line.length());
-						break;
-					}
-				}
-				if (line == null) {
-					continue;
-				}
-
-				do {
 					Matcher m = patternSingleDependency.matcher(line);
 					while (m.find()) {
 						libs.add(m.group(4));
 					}
-				} while ((line = in.readLine()) != null && line.indexOf('}') == -1);
+				}
 			}
 		}
 
 		List<Path> libsAsJar = new LinkedList<>();
-		File cacheFile = new File(new File(this.gradle), this.gradleCache);
+		File cacheFile = new File(new File(this.gradle), gradleCache);
 		for (String lib : libs) {
 			String[] segments = lib.split(":");
 			File libFile = cacheFile;
@@ -350,8 +391,16 @@ public class GradleImport {
 				break;
 			}
 		}
+		System.out.println(platforms.listFiles());
 		if (!compAndroidSdk) {
-			throw new RuntimeException("Install android SDK " + targetSdk);
+			System.err.println("WARNING: Install android SDK " + targetSdk);
+			for (File sdk : platforms.listFiles()) {
+				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
+				if (i > targetSdk) {
+					libsAsJar.add(new File(sdk, "android.jar").toPath());
+					break;
+				}
+			}
 		}
 
 		return libsAsJar;

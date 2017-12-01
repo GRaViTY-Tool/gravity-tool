@@ -4714,6 +4714,14 @@
           </eParameters>
         </eOperations>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HTotalVisibilityCalculator" eSuperTypes="//detection/HMetricCalculator">
+        <eOperations xsi:type="activities:MoflonEOperation" name="detect">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <eParameters name="apg">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAntiPatternGraph"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HTotalCouplingCalculator" eSuperTypes="//detection/HClassBasedMetricCalculator">
         <eOperations xsi:type="activities:MoflonEOperation" name="calculateMetric">
           <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric"/>
@@ -5322,7 +5330,7 @@
                 <objectVariable name="tAllMembers" bindingState="BOUND">
                   <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMemberContainer"/>
                   <bindingExpression xsi:type="callExpressions:MethodCallExpression">
-                    <callee href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembers"/>
+                    <callee href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembersInContainer"/>
                     <target xsi:type="patternExpressions:ObjectVariableExpression" object="//resolve/calculators/HMethodToDataClassAccessCalculator/detect/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.4"/>
                   </bindingExpression>
                 </objectVariable>
@@ -5557,7 +5565,7 @@
                 <objectVariable name="tAllMembers" bindingState="BOUND">
                   <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TMemberContainer"/>
                   <bindingExpression xsi:type="callExpressions:MethodCallExpression">
-                    <callee href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembers"/>
+                    <callee href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/getAllTMembersInContainer"/>
                     <target xsi:type="patternExpressions:ObjectVariableExpression" object="//resolve/calculators/HInBlobAccessCalculator/detect/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
                   </bindingExpression>
                 </objectVariable>

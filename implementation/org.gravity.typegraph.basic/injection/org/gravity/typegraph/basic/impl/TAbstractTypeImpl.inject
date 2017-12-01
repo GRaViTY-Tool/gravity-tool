@@ -1,13 +1,12 @@
-
-import java.util.LinkedList;
-import java.util.List;
-import org.gravity.typegraph.basic.TMethodSignature;
-import java.util.ArrayList;
-import java.util.Collections;
+import  java.util.LinkedList;
+import  java.util.List;
+import  org.gravity.typegraph.basic.TMethodSignature;
+import  java.util.ArrayList;
+import  java.util.Collections;
 
 partial class TAbstractTypeImpl {
 
-@members <--
+@members<--
 
 	protected abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
@@ -87,15 +86,24 @@ partial class TAbstractTypeImpl {
 			return type.getPackage();
 		}
 	}
-	
--->
 
-@model getFullyQualifiedName () <--
+	-->
 
+@model isSubTypeOf (TAbstractType tType)<--		return tType.isSuperTypeOf(this);-->
+
+@model isDeclared ()<--		if (getTName().equals("T")) {
+			return false;
+		}
+		if (getTName().equals("Anonymous")) {
+			return false;
+		}
+		return !isTLib();-->
+
+@model getFullyQualifiedName ()<--
 		StringBuilder builder = new StringBuilder();
 		List<String> packages = new LinkedList<>();
 		TPackage tPackage = getPackage();
-		if(tPackage == null) {
+		if (tPackage == null) {
 			return getTName();
 		}
 		if (!"(default package)".equals(tPackage.getTName())) {
@@ -111,32 +119,9 @@ partial class TAbstractTypeImpl {
 			}
 		}
 		builder.append(getTName());
-		return builder.toString().replaceAll("%.*%", "");
--->
+		return builder.toString().replaceAll("%.*%", "");-->
 
-@model getMinimumRequiredVisibility (TAbstractType tAbstractType) <--
-
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (isInnerType(tAbstractType)) {
-			return TVisibility.TPRIVATE;
-		}
-
-		if (getRealPackage(this) != null && getRealPackage(this) == getRealPackage(tAbstractType)) {
-			return TVisibility.TPACKAGE;
-		}
-
-		if (hasCommonSuperType(tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
--->
-
-@model getMethodSignature (String signature) <--
-
+@model getTMethodSignature (String signature)<--
 		String voidString = ":void";
 		for (TSignature sig : getSignature()) {
 			if (sig instanceof TMethodSignature) {
@@ -154,7 +139,25 @@ partial class TAbstractTypeImpl {
 				}
 			}
 		}
-		return null;
--->
+		return null;-->
+
+@model getTMethodDefinition (String signature)<--		String voidString = ":void";
+		for (TMember def : getDefines()) {
+			if (def instanceof TMethodDefinition) {
+				String sigString = def.getSignatureString().replaceAll(" ", "");
+
+				if (sigString.endsWith(voidString)) {
+					sigString = sigString.substring(0, sigString.length() - voidString.length());
+				}
+				String methodSigString = signature.replaceAll(" ", "");
+				if (methodSigString.endsWith(voidString)) {
+					methodSigString = methodSigString.substring(0, methodSigString.length() - voidString.length());
+				}
+				if (sigString.equals(methodSigString)) {
+					return (TMethodDefinition) def;
+				}
+			}
+		}
+		return null;-->
 
 }
