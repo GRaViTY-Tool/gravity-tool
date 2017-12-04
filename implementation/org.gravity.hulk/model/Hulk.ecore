@@ -619,7 +619,7 @@
         <eType xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
       </eParameters>
       <activity owningOperation="//HAntiPatternDetection/createMetricDependencies">
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.0" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.0" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.1" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.0"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.2" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.1"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12"/>
@@ -629,19 +629,20 @@
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.7" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.8"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.8" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.11"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.9" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.6"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.10" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.10" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.11" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.9"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21"/>
         <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.7"/>
-        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.7"/>
+        <ownedActivityEdge source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3"/>
         <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode2" comment="ActivityNode2" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.0" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.1">
           <storyPattern comment="ActivityNode2">
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.1" bindingState="BOUND">
@@ -669,7 +670,7 @@
           </storyPattern>
         </ownedActivityNode>
         <ownedActivityNode xsi:type="activities:StartNode" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.2"/>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode40" comment="ActivityNode40" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.3" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.22">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode40" comment="ActivityNode40" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.3" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.23">
           <storyPattern comment="ActivityNode40">
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
@@ -803,7 +804,7 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode10" comment="ActivityNode10" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.7" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.21">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode10" comment="ActivityNode10" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.7" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.22">
           <storyPattern comment="ActivityNode10">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.1" bindingState="BOUND"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.0" bindingState="BOUND">
@@ -894,24 +895,24 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StopNode" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.3"/>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode16" comment="ActivityNode16" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.12" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.0">
-          <storyPattern comment="ActivityNode16">
-            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HFieldNumberCalculator" name="fnc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
-            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.1" bindingState="BOUND">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode41" comment="ActivityNode41" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.12" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.3">
+          <storyPattern comment="ActivityNode41">
+            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.1" bindingState="BOUND"/>
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.0" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+            <objectVariable type="//detection/metrics/HTotalVisibilityCalculator" name="hTotalMethodVisibility" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.0" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
             </linkVariable>
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode18" comment="ActivityNode18" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.13" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.12">
-          <storyPattern comment="ActivityNode18">
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.12"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode16" comment="ActivityNode16" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.13" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode16">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HLocalFieldUniqueAccessCalculator" name="lfuac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable type="//detection/metrics/HFieldNumberCalculator" name="fnc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
@@ -921,101 +922,101 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode17" comment="ActivityNode17" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.14" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.10">
-          <storyPattern comment="ActivityNode17">
-            <objectVariable type="//detection/metrics/HLocalFieldUniqueAccessCalculator" name="lfuac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.3" bindingState="BOUND"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode18" comment="ActivityNode18" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.14" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.13">
+          <storyPattern comment="ActivityNode18">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.4 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.6 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.8" bindingState="BOUND">
+            <objectVariable type="//detection/metrics/HLocalFieldUniqueAccessCalculator" name="lfuac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <objectVariable type="//detection/metrics/HLcom5Calculator" name="lcom5Custom" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.2 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.5 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.7" bindingOperator="CREATE"/>
-            <objectVariable name="edge7" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.2 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.3" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.4" bindingOperator="CREATE">
-              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
-            </objectVariable>
-            <objectVariable name="edge8" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.10 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.5" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.6" bindingOperator="CREATE">
-              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
-            </objectVariable>
-            <objectVariable name="edge9" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.7 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.9" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.8" bindingOperator="CREATE">
-              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
-            </objectVariable>
-            <objectVariable type="//detection/metrics/HMethodNumberCalculator" name="methods" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.10" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HFieldNumberCalculator" name="fnc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@linkVariable.9" bindingState="BOUND"/>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.3" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
-            </linkVariable>
-            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.4" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
-            </linkVariable>
-            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.4" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
-            </linkVariable>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.4" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
-            </linkVariable>
-            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.5" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
-            </linkVariable>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.5" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
-            </linkVariable>
-            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.6" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
-            </linkVariable>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.6" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
-            </linkVariable>
-            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.6" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.8" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
-            </linkVariable>
-            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.5" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.15/@storyPattern/@objectVariable.7" bindingOperator="CREATE">
-              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode19" comment="ActivityNode19" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.15" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.13">
-          <storyPattern comment="ActivityNode19">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode17" comment="ActivityNode17" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.15" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.10">
+          <storyPattern comment="ActivityNode17">
+            <objectVariable type="//detection/metrics/HLocalFieldUniqueAccessCalculator" name="lfuac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.3" bindingState="BOUND"/>
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HAfferentCouplingCalculator" name="ac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
-            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1" bindingState="BOUND">
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.4 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.6 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.8" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+            <objectVariable type="//detection/metrics/HLcom5Calculator" name="lcom5Custom" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.2 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.5 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.7" bindingOperator="CREATE"/>
+            <objectVariable name="edge7" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.2 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.3" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.4" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
+            </objectVariable>
+            <objectVariable name="edge8" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.10 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.5" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.6" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
+            </objectVariable>
+            <objectVariable name="edge9" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.7 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.9" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.8" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge"/>
+            </objectVariable>
+            <objectVariable type="//detection/metrics/HMethodNumberCalculator" name="methods" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.10" bindingState="BOUND"/>
+            <objectVariable type="//detection/metrics/HFieldNumberCalculator" name="fnc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.9" bindingState="BOUND"/>
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.3" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
+            </linkVariable>
+            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.4" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
+            </linkVariable>
+            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.4" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
+            </linkVariable>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.4" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
+            </linkVariable>
+            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.5" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
+            </linkVariable>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.5" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
+            </linkVariable>
+            <linkVariable name="outgoing" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.6" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/outgoing"/>
+            </linkVariable>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.6" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Edge/graph"/>
+            </linkVariable>
+            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.6" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.8" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
+            </linkVariable>
+            <linkVariable name="incoming" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.5" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.7" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/incoming"/>
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode20" comment="ActivityNode20" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.16" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.15">
-          <storyPattern comment="ActivityNode20">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode19" comment="ActivityNode19" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.16" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.14">
+          <storyPattern comment="ActivityNode19">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
+            <objectVariable type="//detection/metrics/HAfferentCouplingCalculator" name="ac" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <objectVariable type="//detection/metrics/HEfferentCouplingCalculator" name="ec" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.0" bindingOperator="CREATE"/>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode21" comment="ActivityNode21" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.17" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.16">
-          <storyPattern comment="ActivityNode21">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode20" comment="ActivityNode20" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.17" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.16">
+          <storyPattern comment="ActivityNode20">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HIncommingInvocationCalculator" name="nii" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+            <objectVariable type="//detection/metrics/HEfferentCouplingCalculator" name="ec" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.0" bindingOperator="CREATE"/>
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode22" comment="ActivityNode22" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.18" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.17">
-          <storyPattern comment="ActivityNode22">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode21" comment="ActivityNode21" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.18" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.17">
+          <storyPattern comment="ActivityNode21">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HOutgoingInvocationCalculator" name="noi" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable type="//detection/metrics/HIncommingInvocationCalculator" name="nii" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.19/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
@@ -1025,10 +1026,10 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode23" comment="ActivityNode23" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.19" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.18">
-          <storyPattern comment="ActivityNode23">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode22" comment="ActivityNode22" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.19" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.18">
+          <storyPattern comment="ActivityNode22">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HDepthOfInheritanceCalculator" name="doicc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable type="//detection/metrics/HOutgoingInvocationCalculator" name="noi" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.20/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
@@ -1038,10 +1039,10 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode24" comment="ActivityNode24" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.20" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.19">
-          <storyPattern comment="ActivityNode24">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode23" comment="ActivityNode23" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.20" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.19">
+          <storyPattern comment="ActivityNode23">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HGetterCalculator" name="ng" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable type="//detection/metrics/HDepthOfInheritanceCalculator" name="doicc" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.21/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
@@ -1051,10 +1052,10 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode25" comment="ActivityNode25" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.21" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.20">
-          <storyPattern comment="ActivityNode25">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode24" comment="ActivityNode24" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.21" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.20">
+          <storyPattern comment="ActivityNode24">
             <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
-            <objectVariable type="//detection/metrics/HSetterCalculator" name="ns" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable type="//detection/metrics/HGetterCalculator" name="ng" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
             <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.22/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
@@ -1064,17 +1065,30 @@
             </linkVariable>
           </storyPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode39" comment="ActivityNode39" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.22" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.14">
-          <storyPattern comment="ActivityNode39">
-            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.1" bindingState="BOUND"/>
-            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.0" bindingState="BOUND">
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode25" comment="ActivityNode25" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.22" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.21">
+          <storyPattern comment="ActivityNode25">
+            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.0" bindingState="BOUND"/>
+            <objectVariable type="//detection/metrics/HSetterCalculator" name="ns" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.0 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.1" bindingOperator="CREATE"/>
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.1" bindingState="BOUND">
               <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
             </objectVariable>
-            <objectVariable type="//detection/metrics/HTotalCouplingCalculator" name="tcoupling" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@linkVariable.0" bindingOperator="CREATE"/>
-            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.1" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.2" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
               <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
             </linkVariable>
-            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.23/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode39" comment="ActivityNode39" outgoing="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.23" incoming="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityEdge.15">
+          <storyPattern comment="ActivityNode39">
+            <objectVariable type="//HAntiPatternDetection" name="this" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@linkVariable.1" bindingState="BOUND"/>
+            <objectVariable name="graph" incomingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//DFSGraph"/>
+            </objectVariable>
+            <objectVariable type="//detection/metrics/HTotalCouplingCalculator" name="tcoupling" outgoingLink="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@linkVariable.1 //HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@linkVariable.0" bindingOperator="CREATE"/>
+            <linkVariable name="graph" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@objectVariable.1" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore#//Node/graph"/>
+            </linkVariable>
+            <linkVariable name="hAntiPatternHandling" target="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@objectVariable.0" source="//HAntiPatternDetection/createMetricDependencies/@activity/@ownedActivityNode.24/@storyPattern/@objectVariable.2" type="//HDetector/hAntiPatternHandling" bindingOperator="CREATE"/>
           </storyPattern>
         </ownedActivityNode>
       </activity>
