@@ -6,26 +6,26 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mType : InterfaceDeclaration {
-}
+	++ mType : InterfaceDeclaration {
+	}
 }
 
 #target {
-++ tType : TInterface {
-}
-pg : TypeGraph {
-	++  -interfaces -> tType
-}
-tPackage : TPackage {
-	++  -interfaces -> tType
-}
+	++ tType : TInterface {
+	}
+	pg : TypeGraph {
+		++  -interfaces -> tType
+	}
+	tPackage : TPackage {
+		++  -interfaces -> tType
+	}
 }
 
 #correspondence {
-++ mInterfaceDeclarationtoTInterface : InterfaceDeclarationToTInterface {
-	#src->mType
-	#trg->tType
-}
+	++ mInterfaceDeclarationtoTInterface : InterfaceDeclarationToTInterface {
+		#src->mType
+		#trg->tType
+	}
 }
 
 #attributeConditions {

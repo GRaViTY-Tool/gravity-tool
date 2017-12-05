@@ -6,32 +6,31 @@
 #source { 
 	mType : AbstractTypeDeclaration {
 		++ -modifier->mModifier
-}
-++mModifier:Modifier{
-	
-}
+	}
+	++mModifier:Modifier{
+		
+	}
 }
 
 #target {
 	tType : TAbstractType {
-		++ -tModifier->tModifier
-}
-++ tModifier:TModifier{
-	
-}
-	
+			++ -tModifier->tModifier
+	}
+	++ tModifier:TModifier{
+		
+	}	
 }
 
 #correspondence {
-mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
-}
-
-++ mModifierToTModifier:MModifierToTModifier{
-	#src->mModifier
-	#trg->tModifier
-}
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+	
+	++ mModifierToTModifier:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
+	}
 }
 
 #attributeConditions {
