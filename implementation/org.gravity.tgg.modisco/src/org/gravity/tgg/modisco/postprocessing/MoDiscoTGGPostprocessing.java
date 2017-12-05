@@ -2,6 +2,7 @@ package org.gravity.tgg.modisco.postprocessing;
 
 import java.security.InvalidParameterException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
@@ -15,6 +16,7 @@ import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class MoDiscoTGGPostprocessing {
@@ -24,6 +26,11 @@ public class MoDiscoTGGPostprocessing {
 			"toString():String", "wait():void", "wait(long):void", "wait(long,int):void");
 
 	public static boolean postprocess(TypeGraph pg, IProgressMonitor monitor) {
+		createMissingOverrideEdges(pg);
+		return true;
+	}
+
+	private static void createMissingOverrideEdges(TypeGraph pg) {
 		for (TClass tClass : pg.getDeclaredTClasses()) {
 			Hashtable<String, TMethodDefinition> signatures = new Hashtable<String, TMethodDefinition>();
 			for (TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
@@ -35,6 +42,13 @@ public class MoDiscoTGGPostprocessing {
 			Stack<TAbstractType> parents = new Stack<>();
 			addParentsToStack(tClass, parents);
 
+			TClass tObject = pg.getClass("java.lang.Object");
+			int stackInitialSize = parents.size();
+			if (parents.contains(tObject)) {
+				stackInitialSize--;
+			}
+
+			// Search if a parent defines a method which has been overridden
 			while (!parents.isEmpty()) {
 				TAbstractType tParent = parents.pop();
 				addParentsToStack(tParent, parents);
@@ -48,7 +62,7 @@ public class MoDiscoTGGPostprocessing {
 				}
 			}
 
-			TClass tObject = pg.getClass("java.lang.Object");
+			// Check if a operation defined by java.lang.Object has been overriden
 			Enumeration<String> keys = signatures.keys();
 			while (keys.hasMoreElements()) {
 				String tMethodSignatureString = keys.nextElement();
@@ -56,22 +70,48 @@ public class MoDiscoTGGPostprocessing {
 					TMethodDefinition tMethodDefinition = signatures.remove(tMethodSignatureString);
 					TMethodDefinition tObjectMethodDefinition = tObject.getTMethodDefinition(tMethodSignatureString);
 					if (tObjectMethodDefinition == null) {
-						TModifier tModifier = tMethodDefinition.getTModifier();
-						TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
-						tObjectModifier.setTVisibility(tModifier.getTVisibility());
-						tObjectModifier.setIsStatic(tModifier.isIsStatic());
-						
-						tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
-						tObjectMethodDefinition.setSignature(tMethodDefinition.getSignature());
-						tObjectMethodDefinition.setDefinedBy(tObject);
-						tObjectMethodDefinition.setReturnType(tMethodDefinition.getReturnType());
-						tObjectMethodDefinition.setTModifier(tObjectModifier);
+						tObjectMethodDefinition = cloneAndAddDefintion(tObject, tMethodDefinition);
 					}
 					tMethodDefinition.setOverriding(tObjectMethodDefinition);
 				}
 			}
+
+			// If a method has an @Override annotation and only one parent in the
+			// inheritance tree we can add an according method definition and overriding
+			// edge to this parent
+			if (stackInitialSize == 1) {
+				Collection<TMethodDefinition> values = signatures.values();
+				for (TMethodDefinition tMethodDefinition : values) {
+					for (TAnnotation tAnnotation : tMethodDefinition.getTAnnotation()) {
+						TAnnotationType tAnnotatiopnType = tAnnotation.getType();
+						if (tAnnotatiopnType != null && "Override".equals(tAnnotatiopnType.getTName())) {
+							TAbstractType parent = tClass.getParentClass();
+							if (parent == null || parent.equals(tObject)) {
+								parent = tClass.getImplements().get(0);
+							}
+							TMethodDefinition tObjectMethodDefinition = cloneAndAddDefintion(tObject,
+									tMethodDefinition);
+							tMethodDefinition.setOverriding(tObjectMethodDefinition);
+						}
+					}
+				}
+			}
 		}
-		return true;
+	}
+
+	private static TMethodDefinition cloneAndAddDefintion(TAbstractType tType, TMethodDefinition tMethodDefinition) {
+		TMethodDefinition tObjectMethodDefinition;
+		TModifier tModifier = tMethodDefinition.getTModifier();
+		TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
+		tObjectModifier.setTVisibility(tModifier.getTVisibility());
+		tObjectModifier.setIsStatic(tModifier.isIsStatic());
+
+		tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
+		tObjectMethodDefinition.setSignature(tMethodDefinition.getSignature());
+		tObjectMethodDefinition.setDefinedBy(tType);
+		tObjectMethodDefinition.setReturnType(tMethodDefinition.getReturnType());
+		tObjectMethodDefinition.setTModifier(tObjectModifier);
+		return tObjectMethodDefinition;
 	}
 
 	private static void addParentsToStack(TAbstractType child, Stack<TAbstractType> stack) {
