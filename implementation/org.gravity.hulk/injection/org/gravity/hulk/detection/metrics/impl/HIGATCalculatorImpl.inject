@@ -120,7 +120,7 @@ partial class HIGATCalculatorImpl {
 
 	@Override
 	public String getGuiName() {
-		return "Inappropriate Generosity with Accessibility of Methods";
+		return "Inappropriate Generosity with Accessibility of Types";
 	}
 
 	-->

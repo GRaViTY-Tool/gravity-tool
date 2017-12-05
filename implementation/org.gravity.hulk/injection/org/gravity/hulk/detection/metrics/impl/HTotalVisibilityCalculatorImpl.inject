@@ -1,3 +1,10 @@
+import  org.gravity.typegraph.basic.TClass;
+import  org.gravity.hulk.antipatterngraph.metrics.HTotalVisibilityMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TModifier;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TypeGraph;
 
 partial class HTotalVisibilityCalculatorImpl {
 
@@ -8,7 +15,7 @@ partial class HTotalVisibilityCalculatorImpl {
 	private int packageValue = 1; //SearchParameters.packageValue;
 	private int protectedValue = 2; //SearchParameters.protectedValue;
 	private int publicValue = 3; //SearchParameters.publicValue;
-	
+
 	@Override
 	public String getGuiName() {
 		return "TotalMethodVisibility";
@@ -57,7 +64,7 @@ partial class HTotalVisibilityCalculatorImpl {
 		metric.setValue(totalValue);
 		metric.setTAnnotated(pg);
 		getHAnnotation().add(metric);
-		
+
 		return true;-->
 
 }
