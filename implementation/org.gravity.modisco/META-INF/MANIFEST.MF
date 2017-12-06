@@ -3,14 +3,20 @@ Bundle-SymbolicName: org.gravity.modisco;singleton:=true
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.gmt.modisco.java;visibility:=reexport,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.jdt.core,
+ org.eclipse.modisco.infra.discovery.core,
+ org.eclipse.core.resources,
+ org.eclipse.modisco.java.discoverer
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.modisco,
- org.gravity.modisco.util,
- org.gravity.modisco.impl
+ org.gravity.modisco.discovery,
+ org.gravity.modisco.impl,
+ org.gravity.modisco.preprocessing,
+ org.gravity.modisco.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .

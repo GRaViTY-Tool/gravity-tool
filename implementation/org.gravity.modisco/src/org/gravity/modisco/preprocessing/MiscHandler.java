@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.preprocessing;
+package org.gravity.modisco.preprocessing;
 
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;

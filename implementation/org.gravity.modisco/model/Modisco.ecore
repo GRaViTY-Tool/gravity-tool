@@ -141,4 +141,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MClass" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+  </eClassifiers>
 </ecore:EPackage>

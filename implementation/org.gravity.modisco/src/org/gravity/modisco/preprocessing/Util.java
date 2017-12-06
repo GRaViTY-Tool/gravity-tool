@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.preprocessing;
+package org.gravity.modisco.preprocessing;
 
 import java.util.ArrayList;
 

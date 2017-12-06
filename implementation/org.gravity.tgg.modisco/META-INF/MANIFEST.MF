@@ -5,7 +5,6 @@ Export-Package: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.Rules.impl,
  org.gravity.tgg.modisco.Rules.util,
  org.gravity.tgg.modisco.impl,
- org.gravity.tgg.modisco.preprocessing,
  org.gravity.tgg.modisco.util
 Bundle-Name: org.gravity.tgg.modisco
 Bundle-Version: 1.0.0.qualifier

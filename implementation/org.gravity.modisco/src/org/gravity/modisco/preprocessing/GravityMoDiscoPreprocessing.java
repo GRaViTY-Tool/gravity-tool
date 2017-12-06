@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.preprocessing;
+package org.gravity.modisco.preprocessing;
 
 import java.lang.Iterable;
 import java.util.LinkedList;
@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.Annotation;
@@ -40,6 +41,7 @@ import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
 import org.gravity.modisco.MAnonymous;
+import org.gravity.modisco.MClass;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
@@ -54,9 +56,8 @@ import org.gravity.modisco.MName;
 import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoFactory;
-import org.gravity.typegraph.basic.TMethodDefinition;
 
-public class MoDiscoTGGPreprocessing extends EObjectImpl {
+public class GravityMoDiscoPreprocessing extends EObjectImpl {
 
 	private static boolean createParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		MEntry prev = null;
@@ -397,6 +398,7 @@ public class MoDiscoTGGPreprocessing extends EObjectImpl {
 			if (!StatementHandler.handle(block, def)) {
 				return false;
 			}
+			calculateTypeDependencies(def);
 		}
 		for (MFieldDefinition def : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment fragment : def.getFragments()) {
@@ -404,8 +406,28 @@ public class MoDiscoTGGPreprocessing extends EObjectImpl {
 					return false;
 				}
 			}
+			calculateTypeDependencies(def);
 		}
 		return true;
+	}
+
+	private static void calculateTypeDependencies(MDefinition def) {
+		Type mType = def.getAbstractTypeDeclaration();
+		if (mType instanceof MClass) {
+			EList<Type> deps = ((MClass) mType).getDependencies();
+			for(AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
+				deps.add(methodInvocation.getMethod().getAbstractTypeDeclaration());
+			}
+			for(SingleVariableAccess methodInvocation : def.getMAbstractFieldAccess()) {
+				VariableDeclaration variable = methodInvocation.getVariable();
+				if (variable instanceof VariableDeclarationFragment) {
+					AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable).getVariablesContainer();
+					if (variablesContainer instanceof FieldDeclaration) {
+						deps.add(((FieldDeclaration) variablesContainer).getAbstractTypeDeclaration());
+					}
+				}
+			}
+		}
 	}
 
 	private static boolean preprocessOrphanTypes(MGravityModel model) {
