@@ -12,6 +12,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/opt/gurobi702/linux64/lib/gurobi.jar"/>
+	<classpathentry kind="src" path="injection"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
