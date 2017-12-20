@@ -9,6 +9,8 @@
       eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticType" upperBound="-1"
         eType="#//MethodInvocationStaticType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mInnerTypes" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"

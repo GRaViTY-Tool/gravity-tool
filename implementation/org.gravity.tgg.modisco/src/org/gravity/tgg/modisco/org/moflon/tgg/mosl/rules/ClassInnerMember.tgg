@@ -5,59 +5,53 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ typeDeclarationStatement : TypeDeclarationStatement {
-	++  -declaration -> eInnerClass
-}
-mBlock : Block {
-	++  -statements -> typeDeclarationStatement
-}
-++ eInnerClass : ClassDeclaration {
-}
-eOuterClass : ClassDeclaration {
-	 -bodyDeclarations -> mDefinition
-}
-mDefinition : MAbstractMethodDefinition {
-	 -body -> mBlock
-}
+	eOuterClass : ClassDeclaration {
+		 -bodyDeclarations -> mDefinition
+	}
+	mDefinition : MAbstractMethodDefinition {
+		 ++ -mInnerTypes->mInnerClass
+	}
+	++ mInnerClass : ClassDeclaration {
+	}
 }
 
 #target {
-++ tInnerPackage : TPackage {
-	++  -parent -> tOuterPackage
-	++  -classes -> tInnerClass
-	++  -ownedTypes -> tInnerClass
-}
-typeGraph : TypeGraph {
-	++  -ownedTypes -> tInnerClass
-	++  -classes -> tInnerClass
-	 -ownedTypes -> tOuterClass
-}
-tOuterClass : TClass {
-	++ -innerTypes -> tInnerClass
-}
-++ tInnerClass : TClass {
-}
-tOuterPackage : TPackage {
-	 -ownedTypes -> tOuterClass
-}
+	++ tInnerPackage : TPackage {
+		++  -parent -> tOuterPackage
+		++  -classes -> tInnerClass
+		++  -ownedTypes -> tInnerClass
+	}
+	typeGraph : TypeGraph {
+		++  -ownedTypes -> tInnerClass
+		++  -classes -> tInnerClass
+		 -ownedTypes -> tOuterClass
+	}
+	tOuterClass : TClass {
+		++ -innerTypes -> tInnerClass
+	}
+	++ tInnerClass : TClass {
+	}
+	tOuterPackage : TPackage {
+		 -ownedTypes -> tOuterClass
+	}
 }
 
 #correspondence {
-eOuterClassToTOuterClass : ClassDeclarationToTClass {
-	#src->eOuterClass
-	#trg->tOuterClass
-}
-++ tInnerClassToTInnerClass : ClassDeclarationToTClass {
-	#src->eInnerClass
-	#trg->tInnerClass
-}
-++ tInnerTypeToTInnerAbstractType : TypeToTAbstractType {
-	#src->eInnerClass
-	#trg->tInnerClass
-}
+	eOuterClassToTOuterClass : ClassDeclarationToTClass {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
+	++ tInnerClassToTInnerClass : ClassDeclarationToTClass {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+	++ tInnerTypeToTInnerAbstractType : TypeToTAbstractType {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
 }
 
 #attributeConditions {
-	eq(eInnerClass.name, tInnerClass.tName)
+	eq(mInnerClass.name, tInnerClass.tName)
 	addSuffix(tOuterClass.tName, "$1", tInnerPackage.tName)
 }

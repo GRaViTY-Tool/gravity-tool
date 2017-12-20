@@ -8,6 +8,7 @@
       ecorePackage="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#/">
     <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition/invocationStaticType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MAbstractMethodDefinition/mInnerTypes"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MConstructorDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MConstructorDefinition/model"/>

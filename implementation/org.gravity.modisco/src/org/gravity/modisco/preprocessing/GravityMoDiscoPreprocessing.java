@@ -32,10 +32,12 @@ import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Statement;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
 import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
+import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -562,7 +564,16 @@ public class GravityMoDiscoPreprocessing extends EObjectImpl {
 		TreeIterator<EObject> iterator = model.eResource().getAllContents();
 		while (iterator.hasNext()) {
 			EObject next = iterator.next();
-			if (next instanceof MAnonymous) {
+			if (next instanceof TypeDeclarationStatement) {
+				TypeDeclarationStatement statement = (TypeDeclarationStatement) next;
+				AbstractTypeDeclaration type = statement.getDeclaration();
+				EObject eObject = statement.eContainer();
+				while(!(eObject instanceof MAbstractMethodDefinition)) {
+					eObject = eObject.eContainer();
+				}
+				((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
+			}
+			else if (next instanceof MAnonymous) {
 				MAnonymous mAnonymous = (MAnonymous) next;
 				EObject owner = mAnonymous.eContainer();
 				while(!(owner instanceof AbstractTypeDeclaration)) {
@@ -576,12 +587,24 @@ public class GravityMoDiscoPreprocessing extends EObjectImpl {
 				EObject eObject = next.eContainer();
 				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
 						|| eObject instanceof SingleVariableDeclaration));
-			}
-			else if (next instanceof MAbstractMethodDefinition) {
+			} else if (next instanceof MAbstractMethodDefinition) {
 				staticTypePreprocessor.addStaticTypeAccesses((MAbstractMethodDefinition) next);	
 				if (next instanceof MMethodDefinition) {
 					SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);			
 				}
+			}
+			else if (next instanceof Modifier) {
+				Modifier modifier = (Modifier) next;
+				if(modifier.getVisibility() == null) {
+					AbstractTypeDeclaration typeDecl = modifier.getBodyDeclaration().getAbstractTypeDeclaration();
+					if(typeDecl.eContainer() instanceof TypeDeclarationStatement) {
+						modifier.setVisibility(VisibilityKind.PRIVATE);
+					}
+					else {
+						System.err.println("Type \""+typeDecl.getName()+"\" has no visibility.");
+					}
+				}
+				
 			}
 			if (progressMonitor.isCanceled()) {
 				return false;
