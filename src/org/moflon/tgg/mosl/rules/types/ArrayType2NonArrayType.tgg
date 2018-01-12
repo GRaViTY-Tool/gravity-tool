@@ -1,7 +1,7 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule ArrayType2NonArrayType #with MoDiscoTGG
+#rule ArrayType2NonArrayType #with org.gravity.tgg.modisco.uml
 
 #source {
 	jType:Type

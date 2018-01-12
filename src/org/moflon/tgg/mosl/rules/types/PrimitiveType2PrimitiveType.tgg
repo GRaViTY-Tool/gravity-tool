@@ -1,7 +1,7 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule PrimitiveType2PrimitiveType #with MoDiscoTGG
+#abstract #rule PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jm : Model{
@@ -36,63 +36,63 @@
 }
 
 
-#rule PrimitiveTypeBoolean #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeBoolean #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeBoolean
 }
 
-#rule PrimitiveTypeByte #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeByte #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeByte
 }
 
-#rule PrimitiveTypeChar #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeChar #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeChar
 }
 
-#rule PrimitiveTypeDouble #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeDouble #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeDouble
 }
 
-#rule PrimitiveTypeShort #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeShort #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeShort
 }
 
-#rule PrimitiveTypeFloat #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeFloat #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeFloat
 }
 
-#rule PrimitiveTypeInt #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeInt #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeInt
 }
 
-#rule PrimitiveTypeLong #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeLong #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 
 	++jpt : PrimitiveTypeLong
 }
 
-#rule PrimitiveTypeVoid #extends PrimitiveType2PrimitiveType #with MoDiscoTGG
+#rule PrimitiveTypeVoid #extends PrimitiveType2PrimitiveType #with org.gravity.tgg.modisco.uml
 
 #source { 
 

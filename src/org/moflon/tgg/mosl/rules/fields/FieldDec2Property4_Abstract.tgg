@@ -1,14 +1,14 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule FieldDec2Property4_Abstract #with MoDiscoTGG
+#abstract #rule FieldDec2Property4_Abstract #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jOwnerType : AbstractTypeDeclaration{
 		++-bodyDeclarations->bodyDeclaration
 	}
 	
-	++bodyDeclaration : FieldDeclaration{
+	++bodyDeclaration : MFieldDefinition{
 		++-type->typeAccess
 		++-fragments->vdf
 	}
@@ -37,6 +37,11 @@
 	jo2uo : NamedElement2NamedElement{
 		#src->jOwnerType
 		#trg->uOwnerType
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
 	}
 	
 	++bd2ne : NamedElement2NamedElement {

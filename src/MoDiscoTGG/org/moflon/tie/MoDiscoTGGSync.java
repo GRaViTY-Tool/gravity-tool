@@ -2,20 +2,19 @@ package MoDiscoTGG.org.moflon.tie;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
+import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 
 import org.moflon.tgg.runtime.CorrespondenceModel;
 import java.util.function.BiConsumer;
 
-import MoDiscoTGG.MoDiscoTGGPackage;
-
 
 public class MoDiscoTGGSync extends SynchronizationHelper{
 
    public MoDiscoTGGSync()
    {
-      super(MoDiscoTGGPackage.eINSTANCE, ".");
+      super(UmlPackage.eINSTANCE, ".");
    }
 	
 	public static void main(String[] args) throws IOException {
@@ -65,7 +64,7 @@ public class MoDiscoTGGSync extends SynchronizationHelper{
 
 	private void saveResult(String direction) {
 		saveSrc("instances/" + direction + ".src.xmi");
-		saveTrg("instances/" + direction + ".trg.xmi");
+		saveTrg("instances/" + direction + ".trg.uml");
 		saveCorr("instances/" + direction + ".corr.xmi");
 		saveSynchronizationProtocol("instances/" + direction + ".protocol.xmi");
 	}

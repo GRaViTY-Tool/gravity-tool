@@ -1,24 +1,24 @@
-package MoDiscoTGG.org.moflon.tie;
+package org.gravity.tgg.modisco.uml.org.moflon.tie;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 
-import MoDiscoTGG.MoDiscoTGGPackage;
+import org.gravity.tgg.modisco.uml.UmlPackage;
 
 
-public class MoDiscoTGGConsistencyCheck extends SynchronizationHelper{
+public class UmlConsistencyCheck extends SynchronizationHelper{
 
-   public MoDiscoTGGConsistencyCheck()
+   public UmlConsistencyCheck()
    {
-      super(MoDiscoTGGPackage.eINSTANCE, ".");
+      super(UmlPackage.eINSTANCE, ".");
    }
 	public static void main(String[] args) throws IOException {
 		// Set up logging
         BasicConfigurator.configure();
         
-        MoDiscoTGGConsistencyCheck helper = new MoDiscoTGGConsistencyCheck();
+        UmlConsistencyCheck helper = new UmlConsistencyCheck();
         helper.loadSrc("instances/src.xmi");
 		helper.loadTrg("instances/trg.xmi");
 

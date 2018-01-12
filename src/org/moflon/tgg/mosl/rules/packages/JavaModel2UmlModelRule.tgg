@@ -1,10 +1,10 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule JavaModel2UmlModelRule #with MoDiscoTGG
+#rule JavaModel2UmlModelRule #with org.gravity.tgg.modisco.uml
 
 #source { 
-	++ javaModel : Model 
+	++ javaModel : MGravityModel 
 }
 
 #target {

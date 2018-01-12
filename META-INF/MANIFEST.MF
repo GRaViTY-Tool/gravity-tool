@@ -1,28 +1,32 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: MoDiscoTGG;singleton:=true
-Export-Package: MoDiscoTGG.util,
- MoDiscoTGG.impl,
- MoDiscoTGG,
- MoDiscoTGG.Rules,
- MoDiscoTGG.Rules.impl,
- MoDiscoTGG.Rules.util
+Bundle-SymbolicName: org.gravity.tgg.modisco.uml;singleton:=true
+Export-Package: org.gravity.tgg.modisco.uml,
+ org.gravity.tgg.modisco.uml.Rules.impl,
+ org.gravity.tgg.modisco.uml.Rules.util,
+ org.gravity.tgg.modisco.uml.util,
+ org.gravity.tgg.modisco.uml.impl,
+ org.gravity.tgg.modisco.uml.Rules
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore,
- org.eclipse.emf.ecore.xmi,
- org.moflon.core.utilities,
- org.apache.log4j,
+Bundle-ClassPath: lib/annotations.jar,.
+Require-Bundle: org.moflon.core.utilities,
  MocaTree,
  org.eclipse.core.runtime,
  SDMLanguage,
  org.moflon.tgg.language,
  org.moflon.tgg.runtime,
- org.eclipse.uml2.uml,
  org.eclipse.gmt.modisco.java,
- org.eclipse.uml2.types.source,
  org.eclipse.jdt.core;bundle-version="3.12.0",
  org.eclipse.emf.compare;bundle-version="3.3.1",
- com.google.guava;bundle-version="15.0.0"
+ carisma.profile.umlsec;bundle-version="1.0.6",
+ org.eclipse.modisco.java.discoverer,
+ org.eclipse.modisco.infra.discovery.core,
+ org.eclipse.core.resources,
+ org.junit,
+ org.junit.jupiter.api,
+ org.gravity.eclipse;bundle-version="1.0.0",
+ org.eclipse.gmt.modisco.java.generation;bundle-version="1.1.0",
+ org.gravity.modisco;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

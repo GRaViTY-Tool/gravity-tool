@@ -5,15 +5,15 @@ import org.apache.log4j.BasicConfigurator;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import org.eclipse.emf.ecore.EObject;
+import org.gravity.tgg.modisco.uml.UmlPackage;
 
-import MoDiscoTGG.MoDiscoTGGPackage;
 
 
 public class MoDiscoTGGTrafo extends SynchronizationHelper{
 
    public MoDiscoTGGTrafo()
    {
-      super(MoDiscoTGGPackage.eINSTANCE, ".");
+      super(UmlPackage.eINSTANCE, ".");
    }
 
 	public static void main(String[] args) throws IOException {

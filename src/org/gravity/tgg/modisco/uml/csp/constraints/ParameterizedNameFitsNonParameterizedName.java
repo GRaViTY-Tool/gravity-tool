@@ -1,4 +1,4 @@
-package MoDiscoTGG.csp.constraints;
+package org.gravity.tgg.modisco.uml.csp.constraints;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,7 +1,7 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule MethodDec2Operation4EnumWithModifier #extends MethodDec2Operation4Enum,Modifier2Feature_Abstract #with MoDiscoTGG
+#rule MethodDec2Operation4EnumWithModifier #extends MethodDec2Operation4Enum,Modifier2Feature_Abstract #with org.gravity.tgg.modisco.uml
 
 #source { 
 	

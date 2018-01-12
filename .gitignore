@@ -77,3 +77,4 @@ local.properties
 .worksheet
 
 sh.exe.stackdump
+/testdata/

@@ -1,0 +1,50 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule TypeDependency2UsageDependency #with org.gravity.tgg.modisco.uml
+
+#source { 
+	mPackage : Package{
+		-ownedElements-> mSrcType
+	}
+	mSrcType : MClass {
+		++ -dependencies-> mTrgType
+	}
+	mTrgType : Type {
+		
+	}
+}
+
+#target {
+	uPackage : Package {
+		-ownedElement-> uSrcType
+		++ -packagedElement-> uUsage
+	}
+	uSrcType : Class {
+	}
+	++ uUsage : Usage {
+		++ -client-> uSrcType
+		++ -supplier-> uTrgType
+	}
+	uTrgType : Classifier {		
+	}
+}
+
+#correspondence {
+	p2p : JavaPackage2UmlPackage {
+		#src->mPackage
+		#trg->uPackage
+	}
+	src2Src : NamedElement2NamedElement {
+		#src-> mSrcType
+		#trg-> uSrcType
+	}
+	trg2Trg : NamedElement2NamedElement {
+		#src-> mTrgType
+		#trg-> uTrgType
+	}
+}
+
+#attributeConditions {
+	
+}

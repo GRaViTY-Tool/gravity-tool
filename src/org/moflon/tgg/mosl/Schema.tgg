@@ -1,19 +1,31 @@
 // Add imports here
-#import "platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"
+#import "platform:/plugin/org.gravity.modisco/model/Modisco.ecore"
+#import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
 #import "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
 #import "platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"
 
-#schema MoDiscoTGG
+#schema org.gravity.tgg.modisco.uml
 	
 #source {
-	java
+	java.java
+	org.gravity.modisco.modisco
 }
 
 #target { 
-	uml
+	uml.uml
 } 
 
 #correspondence {
+	Expression2Comment {
+		#src->Expression
+		#trg->Comment
+	}
+	
+	ASTNode2Element {
+		#src->ASTNode
+		#trg->Element
+	}
+	
 	Modifier2NamedElement {
 		#src->Modifier
 		#trg->NamedElement
@@ -58,14 +70,17 @@
 		#src->ParameterizedType
 		#trg->RedefinableTemplateSignature
 	}
+	
 	TypeAccess2TemplateBinding {
 		#src->TypeAccess
 		#trg->TemplateBinding
 	}
+	
 	TypeAccess2Property {
 		#src->TypeAccess
 		#trg->Property
 	}
+	
 	TypeAccess2Parameter {
 		#src->TypeAccess
 		#trg->Parameter

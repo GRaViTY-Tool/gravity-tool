@@ -1,14 +1,14 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule OrphanedClassDec2OrphanedClass #with MoDiscoTGG
+#rule OrphanedClassDec2OrphanedClass #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jPackage : Model {
 		++ -orphanTypes->bodyDeclaration
 	}
 	
-	++ bodyDeclaration : ClassDeclaration
+	++ bodyDeclaration : MClass
 }
 
 #target {
@@ -23,6 +23,11 @@
 	jp2up : JavaModel2UMLPackage {
 		#src->jPackage
 		#trg->umlPackage
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
 	}
 	
 	++ md2o : NamedElement2NamedElement {

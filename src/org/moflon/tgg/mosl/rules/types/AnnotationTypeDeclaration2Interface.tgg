@@ -1,7 +1,7 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationTypeDeclaration2Interface #with MoDiscoTGG
+#rule AnnotationTypeDeclaration2Interface #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jPackage:Package {
@@ -21,6 +21,11 @@
 	jp2up : JavaPackage2UmlPackage {
 		#src->jPackage
 		#trg->uPackage
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
 	}
 	
 	++ bd2ne : NamedElement2NamedElement {

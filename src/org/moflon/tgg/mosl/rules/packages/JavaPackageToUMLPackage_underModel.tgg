@@ -1,7 +1,7 @@
-#using MoDiscoTGG.*
+#using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#rule JavaPackageToUMLPackage_underModel #with MoDiscoTGG
+#rule JavaPackageToUMLPackage_underModel #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jm : Model{

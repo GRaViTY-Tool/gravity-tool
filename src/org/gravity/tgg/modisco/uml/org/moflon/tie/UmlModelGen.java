@@ -1,4 +1,4 @@
-package MoDiscoTGG.org.moflon.tie;
+package org.gravity.tgg.modisco.uml.org.moflon.tie;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
@@ -8,14 +8,14 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.algorithm.modelgenerator.ModelGenerator;
 import org.moflon.tgg.algorithm.modelgenerator.controller.*;
 
-import MoDiscoTGG.MoDiscoTGGPackage;
+import org.gravity.tgg.modisco.uml.UmlPackage;
 
 
-public class MoDiscoTGGModelGen extends SynchronizationHelper{
+public class UmlModelGen extends SynchronizationHelper{
 
-   public MoDiscoTGGModelGen()
+   public UmlModelGen()
    {
-      super(MoDiscoTGGPackage.eINSTANCE, ".");
+      super(UmlPackage.eINSTANCE, ".");
    }
 	
 	public static void main(String[] args) throws IOException {
@@ -27,7 +27,7 @@ public class MoDiscoTGGModelGen extends SynchronizationHelper{
       	controller.addContinuationController(new TimeoutController(5000));
       	controller.setRuleSelector(new LimitedRandomRuleSelector().addRuleLimit("<enter rule name>", 1));
 
-		ModelGenerator gen = new ModelGenerator(MoDiscoTGGPackage.eINSTANCE, controller);
+		ModelGenerator gen = new ModelGenerator(UmlPackage.eINSTANCE, controller);
 		gen.generate();
 	}
 }
