@@ -7,3 +7,6 @@ Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0"
+Export-Package: org.gravity.security.annotations,
+ org.gravity.security.annotations.access,
+ org.gravity.security.annotations.requirements
