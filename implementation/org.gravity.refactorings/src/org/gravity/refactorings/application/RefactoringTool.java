@@ -40,11 +40,11 @@ public class RefactoringTool {
 
 	private TypeGraph tool_pg;
 	
-	Pull_Up_MethodImpl pumRefactoring;
-	Pull_Up_FieldImpl pufRefactoring;
-	Move_MethodImpl momRefactoring;
-	Create_SuperclassImpl cscRefactoring;
-	Extract_SuperclassImpl escRefactoring;
+	private Pull_Up_MethodImpl pumRefactoring;
+	private Pull_Up_FieldImpl pufRefactoring;
+	private Move_MethodImpl momRefactoring;
+	private Create_SuperclassImpl cscRefactoring;
+	private Extract_SuperclassImpl escRefactoring;
 	
 
 	private List<org.gravity.arte.testdsl.arteLanguage.Refactoring> bookkeeping;
