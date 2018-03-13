@@ -2,10 +2,9 @@
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
-
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMethodDefinition;
-
+import org.gravity.typegraph.basic.TSyntethicMethod;
 import org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class HMethodToDataClassAccessCalculatorImpl {
@@ -34,6 +33,9 @@ partial class HMethodToDataClassAccessCalculatorImpl {
 				} else if (member instanceof TFieldDefinition) {
 					TFieldDefinition field = (TFieldDefinition) member;
 					redefined = field.getHiding();
+				} else if (member instanceof TSyntethicMethod){
+					// Ignore synthetic methods
+					continue;
 				} else {
 					throw new RuntimeException("Unknown TMember subtype.");
 				}

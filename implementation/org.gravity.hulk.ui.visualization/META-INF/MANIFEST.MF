@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.gravity.hulk,
  org.eclipse.ui,
- org.gravity.typegraph.basic;bundle-version="1.0.0"
+ org.gravity.typegraph.basic;bundle-version="1.0.0",
+ org.gravity.hulk.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui.visualization.detection,

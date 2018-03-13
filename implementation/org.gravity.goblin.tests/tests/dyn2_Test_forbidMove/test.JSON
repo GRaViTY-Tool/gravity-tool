@@ -1,0 +1,8 @@
+{"unit":"dyn2MoveMethod",
+"postresult":0,
+"preresult":false,
+"Parameters":{
+"methodSig":"C.overrideableMethod():TMethodSignature",
+"targetClass":"dyn2_Test_forbidMove.B:TClass"
+}
+}

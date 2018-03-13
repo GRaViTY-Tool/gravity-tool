@@ -30,7 +30,7 @@ public class AstUtil {
 				builder.append('\n');
 				line = reader.readLine();
 			}
-			ASTParser parser = ASTParser.newParser(AST.JLS8);
+			ASTParser parser = ASTParser.newParser(AST.JLS9);
 			parser.setKind(ASTParser.K_COMPILATION_UNIT);
 			parser.setResolveBindings(true);
 			parser.setSource(builder.toString().toCharArray());
@@ -47,7 +47,6 @@ public class AstUtil {
 				}
 			});
 		} catch (CoreException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultLine.get(0);
@@ -66,7 +65,6 @@ public class AstUtil {
 				}
 			}
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return -1;

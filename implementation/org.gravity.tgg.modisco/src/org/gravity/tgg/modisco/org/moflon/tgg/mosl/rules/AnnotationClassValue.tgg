@@ -1,0 +1,57 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationClassValue
+#with org.gravity.tgg.modisco
+
+#source {
+	mAnnotation : MAnnotation{
+		-values->mAnnotationValue
+	}
+	mAnnotationValue : AnnotationMemberValuePair {
+		++ -value-> mTypeLiteral
+	}
+	++ mTypeLiteral: TypeLiteral{
+		++ -type->mTypeAccess
+	}
+	++ mTypeAccess : TypeAccess {
+		++ -type-> mType
+	}
+	mType : Type{
+		
+	}
+}
+
+#target {
+	tAnnotation : TAnnotation {
+		-tValues->tAnnotationValue
+	}
+	tAnnotationValue : TAnnotationValue {
+		++ -tValue-> tClass
+	}
+	++ tClass : TClassNode {
+		++ -tClass->tType
+	}
+	tType : TAbstractType {
+		
+	}
+}
+
+#correspondence {
+	mAnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->mAnnotation
+		#trg->tAnnotation
+	}
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+	AnnotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
+		#src->mAnnotationValue
+		#trg->tAnnotationValue
+	}
+}
+
+#attributeConditions {
+	eq(mAnnotation.mRelevant, true)
+}

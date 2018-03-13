@@ -1,18 +1,45 @@
+import  java.util.Collections;
+import  java.util.LinkedList;
+import  java.util.List;
+import  org.gravity.hulk.antipatterngraph.HMetric;
+import  org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 
 partial class HDetectorImpl {
 
+@members<--
 
+	protected double calculateRelativeThreshold(HRelativeValueConstants level, Class<? extends HMetric> clazz) {
+		EList<HAnnotation> annotations = getHAntiPatternHandling().getApg().getHAnnotations();
 
-@model detect (HAntiPatternGraph apg) <--
+		List<Double> keys = new LinkedList<>();
+		for (HAnnotation a : annotations) {
+			if (clazz.isAssignableFrom(a.getClass())) {
+				double key = ((HMetric) a).getValue();
+				keys.add(key);
+			}
+		}
+		int size = keys.size();
+		if (keys.size() == 0) {
+			throw new RuntimeException();
+		}
 
-		// TODO: implement this method here but do not remove the injection
-		// marker
-		throw new UnsupportedOperationException();
--->
+		Collections.sort(keys);
 
-@model getNextID () <--
+		switch (level) {
+		case VERY_LOW:
+			return keys.get(size * 1 / 6);
+		case LOW:
+			return keys.get(size * 2 / 6);
+		case MEDIUM:
+			return keys.get(size * 3 / 6);
+		case HIGH:
+			return keys.get(size * 4 / 6);
+		case VERY_HIGH:
+			return keys.get(size * 5 / 6);
+		}
+		throw new RuntimeException();
+	}
 
-		return hAntiPatternHandling.getApg().getNextID();
--->
+	-->
 
 }

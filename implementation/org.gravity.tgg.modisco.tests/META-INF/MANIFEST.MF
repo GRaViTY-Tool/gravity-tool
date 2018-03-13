@@ -16,8 +16,7 @@ Require-Bundle: org.gravity.tgg.modisco;bundle-version="1.0.0",
  org.eclipse.emf.ecore,
  org.gravity.modisco;bundle-version="1.0.0",
  org.eclipse.gmt.modisco.java;bundle-version="0.13.1",
- org.gravity.typegraph.basic,
- org.gravity.tgg.modisco.preprocessing
+ org.gravity.typegraph.basic
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt

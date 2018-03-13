@@ -133,7 +133,7 @@ public abstract class RefactoringHandler extends AbstractHandler {
 	}
 
 	protected static CompilationUnit parse(ICompilationUnit icu) {
-		final ASTParser parser = ASTParser.newParser(AST.JLS8);
+		final ASTParser parser = ASTParser.newParser(AST.JLS9);
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setSource(icu);
 		// parser.setResolveBindings(true); // we need bindings later on

@@ -1,0 +1,43 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodParameter
+#with org.gravity.tgg.modisco
+
+#source {
+	mMethodSignature : MParameterList {
+		++  -mEntrys -> mEntry
+	}
+	++ mEntry : MEntry {
+		++ -singleVariableDeclaration -> mVar
+	}
+	++ mVar : SingleVariableDeclaration {
+		
+	}
+}
+
+#target {
+	++ tParameter : TParameter {
+	}
+	tParameterList : TParameterList {
+		++  -entries -> tParameter
+	}
+}
+
+#correspondence {
+	++ singleVariableDeclarationToTAnnotatable : ASTNodeToTAnnotatable {
+		#src->mVar
+		#trg->tParameter
+	}
+	++ mEntryToTParameter : MEntryToTParameter {
+		#src->mEntry
+		#trg->tParameter
+	}
+	mParameterListToTParameterList : MParameterListToTParameterList {
+		#src->mMethodSignature
+		#trg->tParameterList
+	}
+}
+
+#attributeConditions {
+}

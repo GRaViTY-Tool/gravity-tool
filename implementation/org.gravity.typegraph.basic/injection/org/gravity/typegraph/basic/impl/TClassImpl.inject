@@ -1,23 +1,25 @@
-
-import java.util.ArrayList;
-import java.util.Collections;
-import org.gravity.typegraph.basic.TAbstractType;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import org.gravity.typegraph.basic.TFieldDefinition;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
+import  java.util.ArrayList;
+import  java.util.Collections;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  java.util.HashSet;
+import  java.util.List;
+import  java.util.Set;
+import  java.util.Stack;
+import  org.eclipse.emf.common.util.BasicEList;
+import  org.gravity.typegraph.basic.TFieldDefinition;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TMethodDefinition;
+import  org.gravity.typegraph.basic.TMethodSignature;
+import  org.gravity.typegraph.basic.TSyntethicMethod;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.containers.ContainersFactory;
 
 partial class TClassImpl {
 
-@members <--
+@members<--
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		String string = super.toString();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(tName).concat(")");
 	}
@@ -32,36 +34,51 @@ partial class TClassImpl {
 		return parents;
 	}
 
-	private boolean hasCommonSuperClass(TClassImpl tClass) {
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		if (!(tAbstractType instanceof TClassImpl)) {
+			return false;
+		}
+		TClassImpl tClass = (TClassImpl) tAbstractType;
+
 		List<TClass> parents = this.getParents();
+		parents.add(this);
 		List<TClass> otherParents = tClass.getParents();
+		otherParents.add(tClass);
 
 		return (!Collections.disjoint(parents, otherParents));
 	}
 
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
+	-->
+
+@model getTMethodDefinitions ()<--		Set<TMethodSignature> tMethodSignatures = new HashSet<>();
+		TMethodDefinitionContainer methods = ContainersFactory.eINSTANCE.createTMethodDefinitionContainer();
+		EList<TMethodDefinition> tMethodDefinitions = methods.getTMethodDefinitions();
+		TClass current = this;
+		while (current != null) {
+			for (TMember member : current.getDefines()) {
+				if (member instanceof TMethodDefinition) {
+					TMethodDefinition tMethodDefinition = (TMethodDefinition) member;
+					TMethodSignature tMethodSignature = tMethodDefinition.getSignature();
+					if (!tMethodSignatures.contains(tMethodSignature)) {
+						tMethodSignatures.add(tMethodSignature);
+						tMethodDefinitions.add(tMethodDefinition);
+					}
+				}
+			}
+			current = current.getParentClass();
 		}
+		return methods;-->
 
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
+@model getDeclaredTMethodDefinitions ()<--		EList<TMethodDefinition> tMethodDefinitions = new BasicEList<TMethodDefinition>();
+		for (TMember member : getDefines()) {
+			if (member instanceof TMethodDefinition) {
+				tMethodDefinitions.add((TMethodDefinition) member);
+			}
 		}
+		return tMethodDefinitions;-->
 
-		if (tAbstractType instanceof TClassImpl && hasCommonSuperClass((TClassImpl) tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
-
-	}
-	
--->
-
-@model getAllTMembers () <--
-
-		Set<TMember> allMembers = new HashSet<>();
+@model getAllTMembers ()<--
+		EList<TMember> allMembers = new BasicEList<>();
 		TClass current = this;
 		while (current != null) {
 			for (TMember member : current.getDefines()) {
@@ -72,6 +89,9 @@ partial class TClassImpl {
 				} else if (member instanceof TFieldDefinition) {
 					TFieldDefinition field = (TFieldDefinition) member;
 					redefinedBy = field.getHiddenBy();
+				} else if (member instanceof TSyntethicMethod) {
+					// Ignore synthetic methods
+					continue;
 				} else {
 					throw new RuntimeException("Unknown TMember subtype.");
 				}
@@ -85,9 +105,37 @@ partial class TClassImpl {
 			}
 			current = current.getParentClass();
 		}
-		TMemberContainer container = ContainersFactory.eINSTANCE.createTMemberContainer();
-		container.getTMembers().addAll(allMembers);
-		return container;
--->
+		return allMembers;-->
+
+@model getAllChildren ()<--		EList<TClass> children = new BasicEList<>();
+		for (TClass child : getChildClasses()) {
+			children.add(child);
+			children.addAll(child.getChildClasses());
+		}
+		return children;-->
+
+@model isSuperTypeOf (TAbstractType tType)<--		if (tType instanceof TClass) {
+			TClass tClass = (TClass) tType;
+			TClass tParentClass = getParentClass();
+			if (tParentClass == null) {
+				return false;
+			}
+			if (tParentClass.equals(tType)) {
+				return true;
+			}
+			return tParentClass.isSuperTypeOf(tType);
+		} else if (tType instanceof TInterface) {
+			EList<TInterface> tInterfaces = getImplements();
+			if (tInterfaces.contains(tType)) {
+				return true;
+			} else {
+				for (TInterface tInterface : tInterfaces) {
+					if (tInterface.isSuperTypeOf(tType)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;-->
 
 }

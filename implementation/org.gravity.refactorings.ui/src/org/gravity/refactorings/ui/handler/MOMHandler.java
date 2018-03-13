@@ -25,8 +25,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
-import org.gravity.refactorings.Move_Method;
-import org.gravity.refactorings.RefactoringsFactory;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.refactorings.impl.Move_MethodImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -62,8 +62,13 @@ public class MOMHandler extends RefactoringHandler{
 
 					@Override
 					public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
-						IPGConverter converter = GravityActivator.getDefault()
-								.getConverter(icu.getJavaProject().getProject());
+						IPGConverter converter;
+						try {
+							converter = GravityActivator.getDefault()
+									.getConverter(icu.getJavaProject().getProject());
+						} catch (NoConverterRegisteredException e) {
+							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
+						}
 						if (!converter.convertProject(icu.getJavaProject(), monitor)) {
 							asyncPrintError(shell, "Refactoring Error", "Creating an PG from the sourcecode failed");
 
@@ -88,7 +93,7 @@ public class MOMHandler extends RefactoringHandler{
 							TClass targetClassCopy = targetClass;
 							
 							TMethodSignature tSignature = getMethodSignature(pg, method);
-							Move_Method momRefactoring = RefactoringsFactory.eINSTANCE.createMove_Method();
+							Move_MethodImpl momRefactoring = new Move_MethodImpl();
 							momRefactoring.setPg(pg);
 
 							if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) {  // Already changed to new isApplicable
@@ -98,9 +103,7 @@ public class MOMHandler extends RefactoringHandler{
 									public void run() {
 
 											converter.syncProjectBwd(SynchronizationHelper -> {
-												momRefactoring.Perform(tSignature, targetClassCopy, sourceClass);		// TYPO in EA model, perfom
-												TypeGraph pg = sourceClass.getPg(); //TODO remove
-												pg.getClasses(); // TODO remove
+												momRefactoring.perform(tSignature, targetClassCopy, sourceClass);
 											}, monitor);
 										JOptionPane.showMessageDialog(null, "Moved Method from " +sourceClass.getTName() + " to " + targetClassName);
 											

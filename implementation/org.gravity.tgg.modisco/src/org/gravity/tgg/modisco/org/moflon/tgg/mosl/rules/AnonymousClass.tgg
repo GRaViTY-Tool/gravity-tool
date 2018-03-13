@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnonymousClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ mAnonymous : MAnonymous {
+	}
+	mModel : MGravityModel {
+		++  -anonymousClassDeclarations -> mAnonymous
+	}
+}
+
+#target {
+	++ tClass : TClass {
+		tLib := false
+		tName := "Anonymous"
+	}
+	pg : TypeGraph {
+		++  -classes -> tClass
+		++  -ownedTypes -> tClass
+	}
+}
+
+#correspondence {
+	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tClass
+	}
+	eModelToPg : ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
+}
+
+#attributeConditions {
+}

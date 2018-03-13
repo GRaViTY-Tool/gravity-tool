@@ -1,0 +1,44 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDefinition
+#with org.gravity.tgg.modisco
+
+#source {
+mSignature : MMethodSignature {
+	++  -mMethodDefinitions -> mDefinition
+	++  -mDefinitions -> mDefinition
+}
+++ mDefinition : MMethodDefinition {
+}
+}
+
+#target {
+++ tDefinition : TMethodDefinition {
+}
+tMethodSignature : TMethodSignature {
+	++  -definitions -> tDefinition
+}
+}
+
+#correspondence {
+++ mDefinitionToTMember : MDefinitionToTMember {
+	#src->mDefinition
+	#trg->tDefinition
+}
+mSignatureToTMethodSignature : MMethodSignatureToTMethodSignature {
+	#src->mSignature
+	#trg->tMethodSignature
+}
+++ mDefinitionToTDefinition : MMethodDefinitionToTMethodDefinition {
+	#src->mDefinition
+	#trg->tDefinition
+}
+++ mBodyToTAnnotation : ASTNodeToTAnnotatable {
+	#src->mDefinition
+	#trg->tDefinition
+}
+}
+
+#attributeConditions {
+}

@@ -68,7 +68,6 @@ public class DetectionLinkListener implements Listener {
 		try {
 			page.openEditor(iEditorInput, desc.getId());
 		} catch (PartInitException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

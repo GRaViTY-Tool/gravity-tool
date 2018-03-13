@@ -1,0 +1,45 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule NestedTypesinAnonymous
+#with org.gravity.tgg.modisco
+
+#source {
+eAnonymousClassDeclaration : AnonymousClassDeclaration {
+}
+++ mNestedType : AbstractTypeDeclaration {
+	++  -anonymousClassDeclarationOwner -> eAnonymousClassDeclaration
+}
+}
+
+#target {
+tClass : TClass {
+}
+pg : TypeGraph {
+	 -classes -> tClass
+	 -ownedTypes -> tClass
+	++  -ownedTypes -> tNestedType
+}
+++ tNestedType : TAbstractType {
+}
+}
+
+#correspondence {
+++ mNestedTypeToTNestedType : TypeToTAbstractType {
+	#src->mNestedType
+	#trg->tNestedType
+}
+eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+	#src->eAnonymousClassDeclaration
+	#trg->tClass
+}
+++ mbodyToTAnnotatable : ASTNodeToTAnnotatable {
+	#src->mNestedType
+	#trg->tNestedType
+}
+}
+
+#attributeConditions {
+	eq(mNestedType.name, tNestedType.tName)
+	eq(mNestedType.proxy, tNestedType.tLib)
+}

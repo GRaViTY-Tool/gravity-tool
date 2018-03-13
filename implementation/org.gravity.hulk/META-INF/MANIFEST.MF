@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk;singleton:=true
-Export-Package: org.gravity.hulk.detection,
+Export-Package: org.gravity.hulk,
+ org.gravity.hulk.detection,
  org.gravity.hulk.detection.antipattern,
  org.gravity.hulk.detection.antipattern.impl,
  org.gravity.hulk.detection.antipattern.util,
@@ -22,22 +23,25 @@ Export-Package: org.gravity.hulk.detection,
  org.gravity.hulk.resolve.calculators.util,
  org.gravity.hulk.resolve.impl,
  org.gravity.hulk.resolve.util,
- org.gravity.hulk.util,
- org.gravity.hulk
+ org.gravity.hulk.util
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: lib/hierarchical-clustering.jar,.
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.typegraph.basic;bundle-version="1.0.0",
  org.moflon.core.dfs;bundle-version="2.0.0",
  org.gravity.hulk.antipatterngraph,
- org.gravity.hulk.refactoringgraph;bundle-version="1.0.0",
  org.gravity.refactorings;bundle-version="1.0.0",
  org.gravity.hulk.annotations,
- org.eclipse.core.runtime;bundle-version="3.12.0"
+ org.eclipse.core.runtime;bundle-version="3.12.0",
+ org.gravity.hulk.refactoringgraph;bundle-version="1.0.0",
+ org.gravity.eclipse,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.moflon.core.utilities
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: TU Darmstadt
-Bundle-ClassPath: lib/hierarchical-clustering.jar,
- .
 Bundle-Activator: org.gravity.hulk.HulkActivator
+Bundle-Vendor: TU Darmstadt

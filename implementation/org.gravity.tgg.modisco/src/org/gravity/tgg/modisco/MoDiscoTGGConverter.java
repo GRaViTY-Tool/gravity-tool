@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 import java.util.function.Consumer;
@@ -17,52 +16,38 @@ import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicMonitor;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
 import org.eclipse.gmt.modisco.java.ImportDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.Package;
-import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
-import org.eclipse.jdt.core.IClasspathContainer;
 import org.eclipse.jdt.core.IClasspathEntry;
-import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.JarPackageFragmentRoot;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
-import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
-import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
-import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
 import org.gravity.eclipse.converter.IPGConverter;
 import static org.gravity.eclipse.io.ModelSaver.*;
-import org.gravity.modisco.GravityMoDiscoFactoryImpl;
+
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.tgg.modisco.preprocessing.MoDiscoTGGPreprocessing;
-import org.gravity.tgg.modisco.preprocessing.PreprocessingFactory;
+import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
+import org.gravity.tgg.modisco.postprocessing.MoDiscoTGGPostprocessing;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
@@ -81,24 +66,16 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	private Resource tggRulesResource;
 
-	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
-		public ResourceSet getRS() {
-			return getResourceSet();
-		}
+	private GravityModiscoProjectDiscoverer discoverer;
 
-		public ElementsToAnalyze getElemetstoAnalyze() {
-			return getElementsToAnalyze();
-		}
-	}
-
-	private MyDiscoverJavaModelFromJavaProject discoverer;
+	private MGravityModel targetModel;
 
 	public MoDiscoTGGConverter() throws MalformedURLException, IOException {
-		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
+		this.discoverer = new GravityModiscoProjectDiscoverer();
 
 		BasicConfigurator.configure();
 
-		this.set = this.discoverer.getRS();
+		this.set = this.discoverer.getResourceSet();
 		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
@@ -138,8 +115,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		} else {
 			progressMonitor = monitor;
 		}
+		
 		long start = System.currentTimeMillis();
 		System.out.println(start + " GRaViTY convert project: " + java_project.getProject().getName());
+		
 		this.java_project = java_project;
 		this.modisco_folder = java_project.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
@@ -149,61 +128,17 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		// return false;
 		// }
 
-		long t0 = System.currentTimeMillis();
-		System.out.println(t0 + " MoDisco discover project: " + java_project.getProject().getName());
-		Model eobject = discoverProject(java_project, libs, progressMonitor);
-		long t1 = System.currentTimeMillis();
-		System.out.println(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
-
-		if (this.debug) {
-			saveModel(eobject, this.modisco_folder.getFile("modisco.xmi"), progressMonitor); //$NON-NLS-1$ );
-		}
-		if (progressMonitor.isCanceled()) {
+		try {
+			targetModel = discoverer.discoverMGravityModelFromProject(java_project, libs, progressMonitor);
+		} catch (DiscoveryException e) {
+			e.printStackTrace();
 			return false;
 		}
-
-		long t2 = System.currentTimeMillis();
-		System.out.println(t2 + " MoDisco preprocessing");
-		if (eobject instanceof MGravityModel) {
-			MGravityModel model = (MGravityModel) eobject;
-
-			GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
-			if (model.getMFieldDefinitions().size() == 0) {
-				model.getMFieldDefinitions().addAll(factory.getFdefs());
-			}
-			if (model.getMMethodDefinitions().size() == 0) {
-				model.getMMethodDefinitions().addAll(factory.getMdefs());
-			}
-			if (model.getMConstructorDefinitions().size() == 0) {
-				model.getMConstructorDefinitions().addAll(factory.getCdefs());
-			}
-			MoDiscoTGGPreprocessing preprocessing = PreprocessingFactory.eINSTANCE.createMoDiscoTGGPreprocessing();
-			preprocessing.fixStaticMethodCallOnField(model);
-			if (!preprocessing.preprocess(model)) {
-				System.out.println("ERROR: Preprocessing failed");
-				return false;
-			}
-			TreeIterator<EObject> iterator = model.eResource().getAllContents();
-			while (iterator.hasNext()) {
-				EObject next = iterator.next();
-				if (next instanceof AnonymousClassDeclaration) {
-					model.getAnonymousClassDeclarations().add((AnonymousClassDeclaration) next);
-				} else if (next instanceof TypeParameter) {
-					model.getTypeParameters().add((TypeParameter) next);
-				}
-
-				if (progressMonitor.isCanceled()) {
-					return false;
-				}
-			}
-		}
-		long t3 = System.currentTimeMillis();
-		System.out.println(t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
 		if (this.debug) {
-			saveModel(eobject, this.modisco_folder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
+			saveModel(targetModel, this.modisco_folder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
 
-		setSrc(eobject);
+		setSrc(targetModel);
 		setChangeSrc(null);
 		this.changeSrc = (root -> {
 		});
@@ -219,6 +154,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long t4 = System.currentTimeMillis();
 		System.out.println(t4 + " eMoflon TGG fwd trafo");
 		integrateForward();
+
+		MoDiscoTGGPostprocessing.postprocess(getPG(), monitor);
 
 		long t5 = System.currentTimeMillis();
 		System.out.println(t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
@@ -264,25 +201,42 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			return false;
 		}
 
-		Resource targetModel = this.discoverer.getTargetModel();
-		if (targetModel == null || targetModel.getContents().size() == 0) {
+		if (targetModel == null) {
 			return convertProject(java_project, monitor);
 		}
-		MGravityModel oldProject = (MGravityModel) targetModel.getContents().get(0);
+		MGravityModel oldProject = targetModel;
 		System.out.println(System.currentTimeMillis() + " Discover Project");
-		MGravityModel newProject = (MGravityModel) discoverProject(java_project, monitor);
+		try {
+			targetModel = this.discoverer.discoverMGravityModelFromProject(java_project, monitor);
+		} catch (DiscoveryException e) {
+			e.printStackTrace();
+			return false;
+		}
 		System.out.println(System.currentTimeMillis() + " Discover Project - Done");
-
+		
 		GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
-
-		System.out.println(System.currentTimeMillis() + " Integrate FWD");
-		setChangeSrc(SynchronizationHelper -> {
+		
+		Consumer<EObject> changeSrc2 = SynchronizationHelper -> {
 
 			System.out.println(System.currentTimeMillis() + " Calculate Patch");
-			patcher.update(oldProject, newProject);
+			patcher.update(oldProject, targetModel);
 			System.out.println(System.currentTimeMillis() + " Calculate Patch - Done");
 
-		});
+		};
+		
+		boolean success = syncProjectFwd(changeSrc2, monitor);
+		
+		long stop = System.currentTimeMillis();
+		System.out.println(stop + "MoDisco sync project -done: " + (stop - start) + "ms");
+		
+		return success;
+	}
+
+	@Override
+	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
+		System.out.println(System.currentTimeMillis() + " Integrate FWD");
+
+		setChangeSrc(consumer);
 
 		integrateForward();
 		System.out.println(System.currentTimeMillis() + " Integrate FWD - Done");
@@ -291,8 +245,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			saveMoDiscoModel(this.modisco_folder.getFile("modisco.xmi"), monitor); //$NON-NLS-1$
 			savePG(this.modisco_folder.getFile("pg.xmi"), monitor); //$NON-NLS-1$
 		}
-		long stop = System.currentTimeMillis();
-		System.out.println(stop + "MoDisco sync project -done: " + (stop - start) + "ms");
 		return getTrg() != null;
 	}
 
@@ -370,68 +322,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		return true;
 	}
 
-	public Model discoverProject(IJavaProject java_project, IProgressMonitor monitor) {
-		return discoverProject(java_project, new HashSet<IPath>(), monitor);
-	}
-
-	public Model discoverProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
-
-		Model model = null;
-
-		if (this.discoverer.isApplicableTo(java_project)) {
-			try {
-
-				ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
-				List<Object> discoverableElements = AbstractDiscoverJavaModelFromProject
-						.computeDiscoverableElements(java_project);
-
-				for (Object discoverableObject : discoverableElements) {
-					IPath path = null;
-					if (discoverableObject instanceof IJavaProject) {
-						IJavaProject proj = (IJavaProject) discoverableObject;
-						path = proj.getProject().getLocation();
-					} else if (discoverableObject instanceof IPackageFragmentRoot) {
-						IPackageFragmentRoot root = (IPackageFragmentRoot) discoverableObject;
-						path = root.getPath();
-					}
-
-					if (path != null) {
-						for (IPath libPath : libs) {
-							if (libPath.isPrefixOf(path)) {
-								analyze.addElementToDiscover(discoverableObject);
-							}
-						}
-					}
-				}
-
-				this.discoverer.setElementsToAnalyze(analyze);
-
-				this.discoverer.discoverElement(java_project, monitor);
-				Resource java_resource = this.discoverer.getTargetModel();
-				if (java_resource != null) {
-					if (java_resource.getURI() == null) {
-						java_resource.setURI(URI.createURI(java_project.getProject().getName() + ".xmi"));
-					}
-					EList<EObject> contents = java_resource.getContents();
-
-					if (contents.size() > 0) {
-						EObject eobject = contents.get(0);
-
-						if (eobject instanceof Model) {
-							model = (Model) eobject;
-
-						}
-					}
-				}
-
-			} catch (DiscoveryException e) {
-				e.printStackTrace();
-			}
-		}
-
-		return model;
-	}
-
 	private void addLibToProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
 		try {
 			Set<IPackageFragmentRoot> roots = new HashSet<>(libs.size());
@@ -504,11 +394,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	public void setDebug(boolean debug) {
 		this.verbose = debug;
 		this.debug = debug;
-	}
-
-	@Override
-	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
-		return false;
 	}
 
 }

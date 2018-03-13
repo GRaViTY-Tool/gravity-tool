@@ -1,0 +1,64 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationStaticType #with org.gravity.tgg.modisco
+
+#source { 
+invocation : AbstractMethodInvocation {
+	 -method -> mMethod
+}
+mMember : MDefinition {
+	 -abstractMethodInvocations -> invocation
+}
+mMethod : MMethodDefinition {}
+
+++ staticTypeInvoc: MethodInvocationStaticType{
+	++ -methodInvoc->invocation
+	++ -type->mType	
+}
+mType : Type{}
+
+}
+
+#target {
+	tMethod : TMethodDefinition {
+	  -accessedBy -> tAccess
+}
+ tAccess : TCall {
+ 	++-staticType->tType
+}
+tType: TAbstractType{}
+
+tMember : TMember {
+	  -tAccessing -> tAccess
+}
+
+}
+
+#correspondence {
+	 invocationToTAccess : AbstractMethodInvocationToTAccess {
+	#src->invocation
+	#trg->tAccess
+}
+mMethodToTMethod : MDefinitionToTMember {
+	#src->mMethod
+	#trg->tMethod
+}
+mMemberToTMember : MDefinitionToTMember {
+	#src->mMember
+	#trg->tMember
+}
+ mTypeToTType : TypeToTAbstractType {
+	#src->mType
+	#trg->tType
+}
+
+++staticTypeInvocationToAccessStaticType:StaticTypeInvocationToAccessStaticType{
+	#src->staticTypeInvoc
+	#trg->tAccess
+}
+}
+
+#attributeConditions {
+	
+}

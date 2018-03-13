@@ -1,0 +1,15 @@
+import  org.eclipse.swt.widgets.TreeItem;
+
+partial class HTotalVisibilityMetricImpl {
+
+@members<--
+
+	@Override
+	public TreeItem createItemContents(TreeItem item, int style) {
+		item.setText("TotalMethodVisibility(" + getTAnnotated() + ")=" + getValue());
+		return item;
+	}
+
+	-->
+
+}
