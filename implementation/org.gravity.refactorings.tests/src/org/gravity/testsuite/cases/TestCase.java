@@ -23,7 +23,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.arte.Arte;
 import org.gravity.arte.testdsl.arteLanguage.Test_Case;
 import org.gravity.arte.testdsl.arteLanguage.Test_File;
 import org.junit.After;
@@ -35,8 +34,6 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class TestCase {
 
-	private static Arte arte;
-
 	private Pair data;
 
 	public TestCase(Pair data) {
@@ -45,8 +42,6 @@ public class TestCase {
 
 	@Parameters
 	public static Collection<Pair> data() throws IOException, CoreException {
-		arte = Arte.getInstance();
-
 		Collection<Pair> data = new ArrayList<>();
 
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -96,11 +91,13 @@ public class TestCase {
 					String file_extension = res.getFileExtension();
 					if (res.getType() == IResource.FILE
 							&& ("arte".equals(file_extension) || "ttc".equals(file_extension))) { //$NON-NLS-1$ //$NON-NLS-2$
-						Test_File test_file = arte.getTest_case_util().parseTestCase((IFile) res);
-						EList<Test_Case> test_cases = test_file.getTest_cases();
-						for (Test_Case test_case : test_cases) {
-							data.add(new Pair(test_case, java_project));
-						}
+						//TODO: Convert to classical JUnit tests
+						
+//						Test_File test_file = arte.getTest_case_util().parseTestCase((IFile) res);
+//						EList<Test_Case> test_cases = test_file.getTest_cases();
+//						for (Test_Case test_case : test_cases) {
+//							data.add(new Pair(test_case, java_project));
+//						}
 					}
 				}
 			}
@@ -110,16 +107,18 @@ public class TestCase {
 
 	@Test
 	public void test() {
-		System.out.println("Start GRaViTY Test ***"); //$NON-NLS-1$
-		Pair test_data = getData();
-		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
-				test_data.getTestCase());
-		if (!test_result) {
-			// Retry due to moflon parallel streams bug
-			test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(), test_data.getTestCase());
-		}
-		assertTrue(test_result);
-		System.out.println("*** End Test"); //$NON-NLS-1$
+		//TODO: Implement tests as classical JUnit tests
+		
+//		System.out.println("Start GRaViTY Test ***"); //$NON-NLS-1$
+//		Pair test_data = getData();
+//		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
+//				test_data.getTestCase());
+//		if (!test_result) {
+//			// Retry due to moflon parallel streams bug
+//			test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(), test_data.getTestCase());
+//		}
+//		assertTrue(test_result);
+//		System.out.println("*** End Test"); //$NON-NLS-1$
 	}
 
 	@After

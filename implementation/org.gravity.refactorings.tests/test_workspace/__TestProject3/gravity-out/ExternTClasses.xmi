@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore">
-  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Object"/>
-  <TypeGraphBasic:TClass tLib="true" tName="java.lang.Void"/>
-  <TypeGraphBasic:TClass tLib="true" tName="java.lang.String"/>
-</xmi:XMI>

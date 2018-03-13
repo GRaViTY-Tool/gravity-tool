@@ -1,7 +1,0 @@
-digraph "" {
-	label="";
-	     "jFieldName ==> s : ExtendedFieldName" [shape=record, color=green, label="{jFieldName ==> s : ExtendedFieldName | }"];
-	     "ejjc ==> ExtendedJamoppJavaContainer" [shape=record, color=black, label="{ejjc ==> ExtendedJamoppJavaContainer | }"];
-
-	     "ejjc ==> ExtendedJamoppJavaContainer" -> "jFieldName ==> s : ExtendedFieldName" [color=green, label="extendedFieldName", fontsize=11, constraint=true];
-}
