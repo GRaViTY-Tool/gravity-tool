@@ -8,7 +8,7 @@ Export-Package: org.gravity.tgg.modisco.uml,
  org.gravity.tgg.modisco.uml.Rules
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: lib/annotations.jar,.
+Bundle-ClassPath: .
 Require-Bundle: org.moflon.core.utilities,
  MocaTree,
  org.eclipse.core.runtime,
@@ -18,7 +18,7 @@ Require-Bundle: org.moflon.core.utilities,
  org.eclipse.gmt.modisco.java,
  org.eclipse.jdt.core;bundle-version="3.12.0",
  org.eclipse.emf.compare;bundle-version="3.3.1",
- carisma.profile.umlsec;bundle-version="1.0.6",
+ carisma.profile.umlsec,
  org.eclipse.modisco.java.discoverer,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.core.resources,
@@ -26,7 +26,8 @@ Require-Bundle: org.moflon.core.utilities,
  org.junit.jupiter.api,
  org.gravity.eclipse;bundle-version="1.0.0",
  org.eclipse.gmt.modisco.java.generation;bundle-version="1.1.0",
- org.gravity.modisco;bundle-version="1.0.0"
+ org.gravity.modisco;bundle-version="1.0.0",
+ org.gravity.security.annotations
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
