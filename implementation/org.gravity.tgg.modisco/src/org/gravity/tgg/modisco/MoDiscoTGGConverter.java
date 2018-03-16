@@ -196,11 +196,11 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	@Override
 	public boolean syncProjectFwd(IProgressMonitor monitor) {
 		long start = System.currentTimeMillis();
-		System.out.println(start + " MoDisco sync project: " + java_project.getProject().getName());
 		if (this.discoverer == null || this.java_project == null) {
 			return false;
 		}
-
+		System.out.println(start + " MoDisco sync project: " + java_project.getProject().getName());
+		
 		if (targetModel == null) {
 			return convertProject(java_project, monitor);
 		}
