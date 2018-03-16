@@ -1,6 +1,8 @@
 package org.gravity.modisco.preprocessing;
 
 import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
@@ -134,6 +136,25 @@ public class StaticTypePreprocessor {
 	
 	private Type getSingleVarAccessType(SingleVariableAccess expression, MAbstractMethodDefinition method) {
 		VariableDeclaration var = ((SingleVariableAccess)expression).getVariable();
+		if(var == null) {
+			/* Handling of constructs not supported by MoDisco like:
+			 * 
+			 *	try(Scanner s = new Scanner("")){
+			 * 		...
+			 *		s.nextInt();
+			 *		...
+			 *	}
+			 *
+			 * Assume static type to be type in which a called method has been defined.
+			 */
+			EObject container = expression.eContainer();
+			if (container instanceof MethodInvocation) {
+				return ((MethodInvocation) container).getMethod().getAbstractTypeDeclaration();	
+			}
+			else {
+				throw new RuntimeException("Preprocessing of unknown construct.");
+			}
+		}
 		Expression init = var.getInitializer();
 		
 		
