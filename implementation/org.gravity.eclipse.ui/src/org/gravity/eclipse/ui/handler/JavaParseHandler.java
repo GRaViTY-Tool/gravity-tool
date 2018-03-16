@@ -73,10 +73,10 @@ public class JavaParseHandler extends AbstractHandler {
 				IProject iProject = iJavaProject.getProject();
 				
 				GravityActivator gravityActivator = GravityActivator.getDefault();
-				IPGConverter converter = gravityActivator.getConverter(iProject);
+				IPGConverter converter = gravityActivator.getNewConverter(iProject);
 				
 				boolean success = converter.convertProject(iJavaProject, monitor);
-				gravityActivator.discardConverter(iProject);
+//				gravityActivator.discardConverter(iProject);
 				if (!success) {
 					System.err.println("No PG has been created for "+iProject.getName());
 					return false;
