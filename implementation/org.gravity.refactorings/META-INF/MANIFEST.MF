@@ -8,9 +8,7 @@ Export-Package: org.gravity.refactorings,
 Bundle-Name: Refactorings
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.gravity.typegraph.basic,
- org.gravity.arte.testdsl,
  org.eclipse.emf.ecore.xmi,
- org.gravity.arte.testdsl,
  org.eclipse.emf.ecore.xmi,
  MocaTree,
  org.eclipse.emf.ecore,

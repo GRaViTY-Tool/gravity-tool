@@ -23,8 +23,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.arte.testdsl.arteLanguage.Test_Case;
-import org.gravity.arte.testdsl.arteLanguage.Test_File;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -146,20 +144,20 @@ public class TestCase {
 	}
 
 	private static class Pair {
-		private IJavaProject project;
-		private Test_Case test_case;
-
-		Pair(Test_Case test_case, IJavaProject project) {
-			this.test_case = test_case;
-			this.project = project;
-		}
-
-		IJavaProject getJavaProject() {
-			return this.project;
-		}
-
-		Test_Case getTestCase() {
-			return this.test_case;
-		}
+//		private IJavaProject project;
+//		private Test_Case test_case;
+//
+//		Pair(Test_Case test_case, IJavaProject project) {
+//			this.test_case = test_case;
+//			this.project = project;
+//		}
+//
+//		IJavaProject getJavaProject() {
+//			return this.project;
+//		}
+//
+//		Test_Case getTestCase() {
+//			return this.test_case;
+//		}
 	}
 }

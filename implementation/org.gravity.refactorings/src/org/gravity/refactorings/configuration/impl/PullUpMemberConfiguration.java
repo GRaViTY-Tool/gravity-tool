@@ -18,7 +18,7 @@ public abstract class PullUpMemberConfiguration implements RefactoringConfigurat
 		return signature;
 	}
 	
-	public TClass getSourceClass() {
+	public TClass getTargetClass() {
 		return sourceClass;
 	}
 

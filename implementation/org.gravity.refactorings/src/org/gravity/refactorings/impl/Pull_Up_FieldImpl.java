@@ -34,7 +34,7 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 	public boolean isApplicable(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			PullUpFieldConfiguration esc = (PullUpFieldConfiguration) configuration;
-			return isApplicable(esc.getSignature(), esc.getSourceClass());
+			return isApplicable(esc.getSignature(), esc.getTargetClass());
 		}
 		return false;
 	}
@@ -43,7 +43,7 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			PullUpFieldConfiguration esc = (PullUpFieldConfiguration) configuration;
-			return perform(esc.getSignature(), esc.getSourceClass());
+			return perform(esc.getSignature(), esc.getTargetClass());
 		}
 		return Collections.emptyList();
 	}
