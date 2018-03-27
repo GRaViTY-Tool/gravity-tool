@@ -3,12 +3,6 @@
    <description name="GRaViTY Update Site">
       Graph based analysis and refactorings of Java programs.
    </description>
-   <feature url="features/org.gravity.features.arte_1.0.0.qualifier.jar" id="org.gravity.features.arte" version="1.0.0.qualifier">
-      <category name="org.gravity.arte"/>
-   </feature>
-   <feature url="features/org.gravity.features.arte.testdsl_1.0.0.qualifier.jar" id="org.gravity.features.arte.testdsl" version="1.0.0.qualifier">
-      <category name="org.gravity.arte"/>
-   </feature>
    <feature url="features/org.gravity.features.modisco_1.0.0.qualifier.jar" id="org.gravity.features.modisco" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
@@ -24,11 +18,6 @@
    <feature url="features/org.gravity.features.eclipse_1.0.0.qualifier.jar" id="org.gravity.features.eclipse" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
-   <category-def name="org.gravity.arte" label="ARTE">
-      <description>
-         Tools for testing refactorings
-      </description>
-   </category-def>
    <category-def name="org.gravity.basics" label="Parsing">
       <description>
          Basic tools for parsing a Java program into the PG representation

@@ -25,13 +25,8 @@
          id="org.gravity.features.typegraph.basic"
          version="0.0.0"/>
 
-   <includes
-         id="org.gravity.features.arte.testdsl"
-         version="0.0.0"/>
-
    <requires>
       <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.gravity.arte.testdsl"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="MocaTree"/>
       <import plugin="org.eclipse.emf.ecore"/>
@@ -46,7 +41,8 @@
       <import plugin="org.eclipse.jface.text" version="3.10.0" match="greaterOrEqual"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core.manipulation"/>
+      <import plugin="org.eclipse.ltk.core.refactoring"/>
    </requires>
 
    <plugin

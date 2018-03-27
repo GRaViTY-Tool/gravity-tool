@@ -45,8 +45,8 @@
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="MocaTree" version="2.0.0" match="greaterOrEqual"/>
-      <import feature="org.moflon.ide.feature" version="2.32.0.201710041120"/>
-      <import feature="org.moflon.tgg.mosl.feature" version="2.32.0.201710041120"/>
+      <import feature="org.moflon.ide.feature" version="3.0.0.201803160723" match="greaterOrEqual"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.0.201803160723" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -58,13 +58,6 @@
 
    <plugin
          id="org.gravity.tgg.modisco"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.gravity.tgg.modisco.preprocessing"
          download-size="0"
          install-size="0"
          version="0.0.0"
