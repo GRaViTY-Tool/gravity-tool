@@ -36,22 +36,19 @@
          version="0.0.0"/>
 
    <requires>
+      <import feature="org.moflon.core.feature" version="1.1.1.201803221329" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.gravity.refactorings" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.runtime" version="3.12.0" match="greaterOrEqual"/>
-      <import plugin="org.gravity.hulk.refactoringgraph" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.gravity.typegraph.basic"/>
+      <import plugin="org.moflon.core.dfs"/>
+      <import plugin="org.gravity.refactorings"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.gravity.hulk.refactoringgraph"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.swt"/>
-      <import plugin="org.eclipse.core.runtime" version="3.11.1" match="greaterOrEqual"/>
-      <import feature="org.moflon.core.feature" version="1.1.1.201803221329" match="greaterOrEqual"/>
-      <import plugin="org.moflon.core.dfs" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.moflon.core.utilities"/>
-      <import feature="org.moflon.ide.feature" version="3.1.0.201803250929" match="greaterOrEqual"/>
    </requires>
 
    <plugin
