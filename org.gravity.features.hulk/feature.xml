@@ -3,14 +3,18 @@
       id="org.gravity.features.hulk"
       label="GRaViTY Hulk Anti-Pattern Search"
       version="1.0.0.qualifier"
-      provider-name="TU Darmstadt - Real-Time Systems Lab">
+      provider-name="TU Darmstadt - Real-Time Systems Lab"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description>
+      The anti-pattern detection plugins.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright>
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
+Darmstadt.
    </copyright>
 
    <license url="http://www.example.com/license">

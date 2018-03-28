@@ -2,14 +2,18 @@
 <feature
       id="org.gravity.features.modisco"
       label="Modisco Feature"
-      version="1.0.0.qualifier">
+      version="1.0.0.qualifier"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description>
+      The plugins necessary for building a program model from source code.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright>
+      (C) Copyright ${year} Research Group Software Engineering - University
+of Koblenz-Landau and Real-Time Systems Lab - Technische Universität
+Darmstadt.
    </copyright>
 
    <license url="http://www.example.com/license">
