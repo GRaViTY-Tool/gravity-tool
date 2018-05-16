@@ -70,7 +70,6 @@ public class RefactoringTool {
 
 	public Changes executePlannedRefactorings(TypeGraph pg) {
 		Changes change_container = new Changes();
-		change_container.setChanged_classfiles(new HashSet<String>());
 		Consumer<EObject> changes = SynchronizationHelper -> {
 			RefactoringTool tool = new RefactoringTool(pg, false);
 			tool.applyBookkeeping(this.bookkeeping);
