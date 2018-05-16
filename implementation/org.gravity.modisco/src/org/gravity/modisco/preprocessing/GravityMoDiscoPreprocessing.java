@@ -556,7 +556,7 @@ public class GravityMoDiscoPreprocessing extends EObjectImpl {
 		if (model.getMConstructorDefinitions().size() == 0) {
 			model.getMConstructorDefinitions().addAll(factory.getCdefs());
 		}	
-		fixStaticMethodCallOnField(model);
+//		fixStaticMethodCallOnField(model);
 		if (!preprocess(model)) {
 			return false;
 		}
