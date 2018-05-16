@@ -296,126 +296,126 @@
             id="org.gravity.hulk.ui.visualization.problemFilter1"
             name="TheBlob markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HBlobAntiPatternMarker">
+               markerId="org.gravity.hulk.ui.visualization.HBlobAntiPatternMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter2"
             name="ControllerClassSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HControllerClassSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HControllerClassSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter3"
             name="DataClassSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HDataClassSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HDataClassSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter4"
             name="GetterSetterSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HGetterSetterSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HGetterSetterSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter5"
             name="GodClassAntiPattern markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HGodClassAntiPatternMarker">
+               markerId="org.gravity.hulk.ui.visualization.HGodClassAntiPatternMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter6"
             name="InvocationRelationSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HInvocationRelationSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HInvocationRelationSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter7"
             name="LargeClassLowCohesionSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLargeClassLowCohesionSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLargeClassLowCohesionSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter8"
             name="LargeClassSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLargeClassSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLargeClassSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter9"
             name="LowCohesionSmell markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLowCohesionSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLowCohesionSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter10"
             name="Spaghetti Code markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HSpaghettiCodeAntiPatternMarker">
+               markerId="org.gravity.hulk.ui.visualization.HSpaghettiCodeAntiPatternMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter11"
             name="Intensive Field Usage markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HIntensiveFieldUsageCodeSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HIntensiveFieldUsageCodeSmellMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter12"
             name="Average Parameters markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HAverageParametersMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HAverageParametersMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter13"
             name="Number Of Child markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HNumberOfChildMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HNumberOfChildMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter14"
             name="Depth Of Inheritance markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HDepthOfInheritanceMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HDepthOfInheritanceMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter15"
             name="Local Access  Relation markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLocalAccessRelationMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLocalAccessRelationMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter16"
             name="Local Field Access markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLocalFieldAccessesMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLocalFieldAccessesMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter17"
             name="Local Method Access markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HLocalMethodAccessesMetricMarker">
+               markerId="org.gravity.hulk.ui.visualization.HLocalMethodAccessesMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
             id="org.gravity.hulk.ui.visualization.problemFilter18"
             name="DataClassAccessor markers">
          <selectedType
-               markerid="org.gravity.hulk.ui.visualization.HDataClassAccessorMarker">
+               markerId="org.gravity.hulk.ui.visualization.HDataClassAccessorMarker">
          </selectedType>
       </problemFilter>
       <markerField
