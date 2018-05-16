@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.tgg.modisco.uml;singleton:=true
 Export-Package: org.gravity.tgg.modisco.uml,
+ org.gravity.tgg.modisco.uml.Rules,
  org.gravity.tgg.modisco.uml.Rules.impl,
  org.gravity.tgg.modisco.uml.Rules.util,
- org.gravity.tgg.modisco.uml.util,
  org.gravity.tgg.modisco.uml.impl,
- org.gravity.tgg.modisco.uml.Rules
+ org.gravity.tgg.modisco.uml.util,
+ org.gravity.tgg.uml
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
@@ -15,18 +16,16 @@ Require-Bundle: org.moflon.core.utilities,
  SDMLanguage,
  org.moflon.tgg.language,
  org.moflon.tgg.runtime,
- org.eclipse.gmt.modisco.java,
  org.eclipse.jdt.core;bundle-version="3.12.0",
- org.eclipse.emf.compare;bundle-version="3.3.1",
+ org.eclipse.emf.compare,
  carisma.profile.umlsec,
  org.eclipse.modisco.java.discoverer,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.core.resources,
  org.junit,
- org.junit.jupiter.api,
- org.gravity.eclipse;bundle-version="1.0.0",
- org.eclipse.gmt.modisco.java.generation;bundle-version="1.1.0",
- org.gravity.modisco;bundle-version="1.0.0",
+ org.gravity.eclipse,
+ org.eclipse.gmt.modisco.java.generation,
+ org.gravity.modisco,
  org.gravity.security.annotations
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy

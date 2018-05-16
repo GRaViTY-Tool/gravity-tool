@@ -2,6 +2,7 @@ package org.gravity.tgg.uml;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -17,13 +18,17 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.DifferenceKind;
+import org.eclipse.emf.compare.DifferenceState;
 import org.eclipse.emf.compare.EMFCompare;
+import org.eclipse.emf.compare.EMFCompare.Builder;
 import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.compare.scope.DefaultComparisonScope;
 import org.eclipse.emf.compare.scope.IComparisonScope;
@@ -34,7 +39,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
@@ -107,6 +114,10 @@ public class Transformation extends SynchronizationHelper {
 
 	public static Model projectToModel(IJavaProject project, IProgressMonitor monitor)
 			throws DiscoveryException, CoreException, FileNotFoundException, IOException {
+
+		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
+		subMonitor.setTaskName("Prepare Java Project");
+
 		IProject iproject = project.getProject();
 		IFolder gravityFolder = iproject.getFolder(".gravity");
 		if (!gravityFolder.exists()) {
@@ -116,7 +127,7 @@ public class Transformation extends SynchronizationHelper {
 		IClasspathEntry relativeLibraryEntry = null;
 		IFile annotationsFile = gravityFolder.getFile("org.gravity.annotations.jar");
 		if (!annotationsFile.exists()) {
-			try (InputStream annotations = new URL("platform:/plugin/org.gravity.tgg.modisco.uml/lib/annotations.jar") //$NON-NLS-1$
+			try (InputStream annotations = new URL("platform:/plugin/org.gravity.security.annotations/annotations.jar") //$NON-NLS-1$
 					.openConnection().getInputStream()) {
 				annotationsFile.create(annotations, true, monitor);
 			}
@@ -133,19 +144,30 @@ public class Transformation extends SynchronizationHelper {
 			}
 		}
 
-		
+		subMonitor.setWorkRemaining(95);
+		subMonitor.setTaskName("Discover MoDiscoModel");
+
 		GravityModiscoProjectDiscoverer discoverer = new GravityModiscoProjectDiscoverer();
-		MGravityModel mGravityModel = discoverer.discoverMGravityModelFromProject(project, Arrays.asList(relativeLibraryEntry.getPath()), monitor);
+		MGravityModel mGravityModel = discoverer.discoverMGravityModelFromProject(project,
+				Arrays.asList(relativeLibraryEntry.getPath()), subMonitor.split(25));
 		Transformation trafo = new Transformation(discoverer.getResourceSet());
-		
+
 		trafo.setSrc(mGravityModel);
 		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
 
+		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
 		trafo.integrateForward();
 
+		subMonitor.setTaskName("Postprocess UML Model");
+		subMonitor.setWorkRemaining(15);
 		Model model = (Model) trafo.getTrg();
+		if (model == null) {
+			throw new RuntimeException("Reverseengineering of a UML model failed.");
+		}
 		new UmlProcessor(model).processFwd();
 
+		subMonitor.setTaskName("Save UML Model");
+		subMonitor.setWorkRemaining(10);
 		trafo.saveTrg(gravityFolder.getFile(TRG_XMI).getLocation().toFile().getAbsolutePath());
 		trafo.saveTrg(iproject.getFile(iproject.getName() + ".uml").getLocation().toFile().getAbsolutePath());
 		trafo.saveCorr(gravityFolder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
@@ -165,11 +187,15 @@ public class Transformation extends SynchronizationHelper {
 		if (!gravityFolder.exists()) {
 			return;
 		}
+		IFile corrFile = gravityFolder.getFile(CORR_XMI);
+		if (!corrFile.exists()) {
+			return;
+		}
 
 		// trafo.loadSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
 		// trafo.loadTrg(iproject.getFile(iproject.getName() +
 		// ".uml").getLocation().toFile().getAbsolutePath());
-		trafo.loadCorr(gravityFolder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
+		trafo.loadCorr(corrFile.getLocation().toFile().getAbsolutePath());
 		CorrespondenceModel corrModel = (CorrespondenceModel) trafo.getCorr();
 		trafo.setSrc(corrModel.getSource());
 		trafo.setTrg(corrModel.getTarget());
@@ -181,6 +207,11 @@ public class Transformation extends SynchronizationHelper {
 
 		EObject oldModel = r.getContents().get(0);
 		EObject newModel = trafo.getTrg();
+
+		oldModel.eResource().save(new FileOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile()),
+				Collections.EMPTY_MAP);
+		newModel.eResource().save(new FileOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile()),
+				Collections.EMPTY_MAP);
 
 		new UmlProcessor((Model) newModel).processBwd();
 
@@ -200,94 +231,96 @@ public class Transformation extends SynchronizationHelper {
 			trafo.src = trafo.corr.getSource();
 
 		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
-		trafo.saveCorr(gravityFolder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
+		trafo.saveCorr(corrFile.getLocation().toFile().getAbsolutePath());
 		trafo.saveSynchronizationProtocol(gravityFolder.getFile(PROTOCOL_XMI).getLocation().toFile().getAbsolutePath());
 
 		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) trafo.getCorr().getSource();
-		
+
 		Package javaPackage = null;
-		for(Package p : model.getOwnedElements()) {
-			if("java".contentEquals(p.getName())) {
+		for (Package p : model.getOwnedElements()) {
+			if ("java".contentEquals(p.getName())) {
 				javaPackage = p;
 				break;
 			}
 		}
-		if(javaPackage == null) {
+		if (javaPackage == null) {
 			javaPackage = JavaFactory.eINSTANCE.createPackage();
 			javaPackage.setName("java");
 			model.getOwnedElements().add(javaPackage);
 		}
 		Package langPackage = null;
-		for(Package p : javaPackage.getOwnedPackages()) {
-			if("lang".equals(p.getName())) {
+		for (Package p : javaPackage.getOwnedPackages()) {
+			if ("lang".equals(p.getName())) {
 				langPackage = p;
 			}
 		}
-		if(langPackage == null) {
+		if (langPackage == null) {
 			langPackage = JavaFactory.eINSTANCE.createPackage();
 			langPackage.setName("lang");
 			javaPackage.getOwnedPackages().add(langPackage);
 		}
 		AbstractTypeDeclaration string = null;
-		for(AbstractTypeDeclaration stringType : langPackage.getOwnedElements()) {
-			if("String".equals(stringType.getName())) {
+		for (AbstractTypeDeclaration stringType : langPackage.getOwnedElements()) {
+			if ("String".equals(stringType.getName())) {
 				string = stringType;
 			}
 		}
-		if(string == null) {
+		if (string == null) {
 			string = JavaFactory.eINSTANCE.createClassDeclaration();
 			string.setName("String");
 			langPackage.getOwnedElements().add(string);
 		}
-		
+
 		ArrayType array = null;
-		for(Type orphan : model.getOrphanTypes()) {
+		for (Type orphan : model.getOrphanTypes()) {
 			if (orphan instanceof ArrayType) {
 				ArrayType tmp = (ArrayType) orphan;
-				if(tmp.getElementType().getType().equals(string)) {
+				if (tmp.getElementType().getType().equals(string)) {
 					array = tmp;
 					break;
 				}
 			}
 		}
-		
+
 		Hashtable<CompilationUnit, HashSet<NamedElement>> imports = new Hashtable<>();
 		SynchronizationProtocol sync = trafo.getSynchronizationProtocol();
-		for(EObject node : trafo.delta.getAddedNodes()) {
-			for(TripleMatch match : sync.getCreatingMatches(node)) {
-				for(EObject eObject : match.getCreatedSrcElts().getNodes()) {
+		for (EObject node : trafo.delta.getAddedNodes()) {
+			for (TripleMatch match : sync.getCreatingMatches(node)) {
+				for (EObject eObject : match.getCreatedSrcElts().getNodes()) {
 					if (eObject instanceof Annotation) {
 						Type type = ((Annotation) eObject).getType().getType();
 						CompilationUnit cu = ((Annotation) eObject).getOriginalCompilationUnit();
-						if(cu == null) {
+						if (cu == null) {
 							EObject current = eObject.eContainer();
-							while(!(current instanceof AbstractTypeDeclaration)) {
+							while (!(current instanceof AbstractTypeDeclaration)) {
 								current = current.eContainer();
 							}
 							cu = ((AbstractTypeDeclaration) current).getOriginalCompilationUnit();
 						}
 						HashSet<NamedElement> importedTypes;
-						if(imports.containsKey(cu)) {
-							importedTypes = imports.get(cu);
+						if (cu == null) {
+							continue;
 						}
-						else {
+						if (imports.containsKey(cu)) {
+							importedTypes = imports.get(cu);
+						} else {
 							importedTypes = new HashSet<>();
-							for(ImportDeclaration imp : cu.getImports()) {
+							for (ImportDeclaration imp : cu.getImports()) {
 								importedTypes.add(imp.getImportedElement());
 							}
 							imports.put(cu, importedTypes);
 						}
-						if(!importedTypes.contains(type)){
+						if (!importedTypes.contains(type)) {
 							importedTypes.add(type);
 							ImportDeclaration imp = JavaFactory.eINSTANCE.createImportDeclaration();
 							imp.setImportedElement(type);
 							cu.getImports().add(imp);
 						}
-					}
-					else if (eObject instanceof AnnotationMemberValuePair) {
+					} else if (eObject instanceof AnnotationMemberValuePair) {
 						AnnotationMemberValuePair pair = (AnnotationMemberValuePair) eObject;
-						if(pair.getMember() == null) {
-							AnnotationTypeMemberDeclaration decl = JavaFactory.eINSTANCE.createAnnotationTypeMemberDeclaration();
+						if (pair.getMember() == null) {
+							AnnotationTypeMemberDeclaration decl = JavaFactory.eINSTANCE
+									.createAnnotationTypeMemberDeclaration();
 							decl.setName(pair.getName());
 							pair.setMember(decl);
 							TypeAccess decl2Array = JavaFactory.eINSTANCE.createTypeAccess();
@@ -296,22 +329,22 @@ public class Transformation extends SynchronizationHelper {
 						}
 						Expression value = pair.getValue();
 						if (value instanceof ArrayInitializer) {
-							for(Expression entry : ((ArrayInitializer) value).getExpressions()) {
+							for (Expression entry : ((ArrayInitializer) value).getExpressions()) {
 								if (entry instanceof StringLiteral) {
 									StringLiteral stringLiteral = (StringLiteral) entry;
-									if(!stringLiteral.getEscapedValue().matches("\".*\"")){
-										stringLiteral.setEscapedValue('\"'+stringLiteral.getEscapedValue()+'\"');
+									if (!stringLiteral.getEscapedValue().matches("\".*\"")) {
+										stringLiteral.setEscapedValue('\"' + stringLiteral.getEscapedValue() + '\"');
 									}
 								}
 							}
-							
+
 						}
 
 					}
 				}
 			}
 		}
-		
+
 		try {
 			IFolder out_file = iproject.getFolder("src");
 			new GenerateJavaExtended(trafo.getSrc(), out_file.getLocation().toFile(), Collections.emptyList())
@@ -344,7 +377,9 @@ public class Transformation extends SynchronizationHelper {
 
 	private static Delta getDelta(EObject oldModel, EObject newModel) {
 		IComparisonScope scope = new DefaultComparisonScope(newModel, oldModel, null);
-		Comparison comparison = EMFCompare.builder().build().compare(scope);
+		Builder builder = EMFCompare.builder();
+		EMFCompare build = builder.build();
+		Comparison comparison = build.compare(scope);
 
 		Delta delta = new Delta();
 		EList<Diff> differences = comparison.getDifferences();
@@ -355,8 +390,8 @@ public class Transformation extends SynchronizationHelper {
 				case ADD:
 					if (diff instanceof ReferenceChange) {
 						ReferenceChange refChange = (ReferenceChange) diff;
-						
-						if(refChange.getReference().isContainment()) {
+
+						if (refChange.getReference().isContainment()) {
 							delta.addNode(refChange.getValue());
 						}
 						delta.addEdge(getChangedEMoflonEdge(refChange));
@@ -365,13 +400,22 @@ public class Transformation extends SynchronizationHelper {
 					}
 					break;
 				case CHANGE:
-					throw new UnsupportedOperationException();
+					if (diff instanceof ReferenceChange) {
+						ReferenceChange refChange = (ReferenceChange) diff;
+						if (diff.getState() == DifferenceState.UNRESOLVED) {
+							// Ignore
+						} else {
+							throw new UnsupportedOperationException();
+						}
+					} else {
+						throw new UnsupportedOperationException();
+					}
 					// break;
 				case DELETE:
 					if (diff instanceof ReferenceChange) {
 						ReferenceChange refChange = (ReferenceChange) diff;
-						
-						if(refChange.getReference().isContainment()) {
+
+						if (refChange.getReference().isContainment()) {
 							delta.deleteNode(refChange.getValue());
 						}
 						delta.deleteEdge(getChangedEMoflonEdge(refChange));
@@ -401,8 +445,7 @@ public class Transformation extends SynchronizationHelper {
 			edge.setSrc(value.eContainer());
 		} else {
 			ResourceSet resourceSet = refChange.getValue().eResource().getResourceSet();
-			ECrossReferenceAdapter adapter = ECrossReferenceAdapter
-					.getCrossReferenceAdapter(resourceSet);
+			ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(resourceSet);
 			if (adapter == null) {
 				resourceSet.eAdapters().add(new ECrossReferenceAdapter());
 			}
