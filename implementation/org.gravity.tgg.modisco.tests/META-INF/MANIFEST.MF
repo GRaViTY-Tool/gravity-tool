@@ -21,3 +21,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt
 Bundle-Activator: org.gravity.tgg.modisco.test.activator.MoDiscoTestActivator
+Automatic-Module-Name: org.gravity.tgg.modisco.test

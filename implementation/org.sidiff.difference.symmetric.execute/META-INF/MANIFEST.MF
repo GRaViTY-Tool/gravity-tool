@@ -15,3 +15,4 @@ Bundle-Vendor: Software Engineering Group, University of Siegen
 Export-Package: org.sidiff.difference.symmetric.execute,
  org.sidiff.difference.symmetric.execute.handler,
  org.sidiff.difference.symmetric.execute.util
+Automatic-Module-Name: org.sidiff.difference.symmetric.execute

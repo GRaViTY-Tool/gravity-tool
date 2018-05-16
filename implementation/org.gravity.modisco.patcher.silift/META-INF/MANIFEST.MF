@@ -11,3 +11,4 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.11.2",
  org.sidiff.difference.symmetric.execute;bundle-version="1.0.0",
  org.junit
 Export-Package: org.gravity.modisco.patcher.silift
+Automatic-Module-Name: org.gravity.modisco.patcher.silift

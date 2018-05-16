@@ -13,3 +13,4 @@ Export-Package: org.gravity.hulk.annotations,
  org.gravity.hulk.annotations.util
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.gravity.hulk.annotations.activator.AnnotationsActivator
+Automatic-Module-Name: org.gravity.hulk.annotations

@@ -19,3 +19,4 @@ Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.importer,
  org.gravity.eclipse.io,
  org.gravity.eclipse.selection
+Automatic-Module-Name: org.gravity.eclipse

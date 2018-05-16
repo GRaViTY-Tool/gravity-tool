@@ -18,3 +18,4 @@ Require-Bundle: org.gravity.eclipse,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui
+Automatic-Module-Name: org.gravity.hulk.ui
