@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.hulk.refactoringgraph/gen" modelPluginID="org.gravity.hulk.refactoringgraph"
+    modelName="Refactoringgraph" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.genmodel#//antipatterngraph platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel#//basic"
+    operationReflection="true">
+  <foreignModel>Refactoringgraph.ecore</foreignModel>
+  <genPackages prefix="Refactoringgraph" basePackage="org.gravity.hulk" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HMethodToDataClassAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HMethodToDataClassAccess/hDataClassSmell"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HMethodToDataClassAccess/hDataClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HMethodToDataClassAccess/tMethodDefinition"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HMethodToDataClassAccess/getRelativeAmount"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HInBlobAccess"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HBlobResolveAnnotation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HBlobResolveAnnotation/hBlobAntiPattern"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HBlobResolveAnnotation/hMoves"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HBlobResolveAnnotation/hRefactorings"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HCluster">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HCluster/tMembers"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HInBlobClusterAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HInBlobClusterAccess/hCluster"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//HInBlobClusterAccess/getRelativeAmount"/>
+    </genClasses>
+    <nestedGenPackages prefix="Refactorings" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings">
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HRefactoring"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMethod"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HExtractClass">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HExtractClass/tMembers"/>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HExtractClass/getAvgIba"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember/sourceClass"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember/targetClass"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember/m2dc"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember/iba"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMember/tSignature"/>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveField"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMembers">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMembers/hMoveMembers"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMembers/targetClass"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings/HMoveMembers/sourceClass"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

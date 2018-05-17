@@ -1,7 +1,5 @@
 package org.gravity.testsuite.cases;
 
-import static org.junit.Assert.assertTrue;
-
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -10,7 +8,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -20,12 +17,8 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.arte.Arte;
-import org.gravity.arte.testdsl.arteLanguage.Test_Case;
-import org.gravity.arte.testdsl.arteLanguage.Test_File;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,8 +28,6 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class TestCase {
 
-	private static Arte arte;
-
 	private Pair data;
 
 	public TestCase(Pair data) {
@@ -45,8 +36,6 @@ public class TestCase {
 
 	@Parameters
 	public static Collection<Pair> data() throws IOException, CoreException {
-		arte = Arte.getInstance();
-
 		Collection<Pair> data = new ArrayList<>();
 
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -76,7 +65,6 @@ public class TestCase {
 						project.create(description, null);
 						project.open(null);
 					} catch (CoreException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -97,11 +85,13 @@ public class TestCase {
 					String file_extension = res.getFileExtension();
 					if (res.getType() == IResource.FILE
 							&& ("arte".equals(file_extension) || "ttc".equals(file_extension))) { //$NON-NLS-1$ //$NON-NLS-2$
-						Test_File test_file = arte.getTest_case_util().parseTestCase((IFile) res);
-						EList<Test_Case> test_cases = test_file.getTest_cases();
-						for (Test_Case test_case : test_cases) {
-							data.add(new Pair(test_case, java_project));
-						}
+						//TODO: Convert to classical JUnit tests
+						
+//						Test_File test_file = arte.getTest_case_util().parseTestCase((IFile) res);
+//						EList<Test_Case> test_cases = test_file.getTest_cases();
+//						for (Test_Case test_case : test_cases) {
+//							data.add(new Pair(test_case, java_project));
+//						}
 					}
 				}
 			}
@@ -111,16 +101,18 @@ public class TestCase {
 
 	@Test
 	public void test() {
-		System.out.println("Start GRaViTY Test ***"); //$NON-NLS-1$
-		Pair test_data = getData();
-		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
-				test_data.getTestCase());
-		if (!test_result) {
-			// Retry due to moflon parallel streams bug
-			test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(), test_data.getTestCase());
-		}
-		assertTrue(test_result);
-		System.out.println("*** End Test"); //$NON-NLS-1$
+		//TODO: Implement tests as classical JUnit tests
+		
+//		System.out.println("Start GRaViTY Test ***"); //$NON-NLS-1$
+//		Pair test_data = getData();
+//		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
+//				test_data.getTestCase());
+//		if (!test_result) {
+//			// Retry due to moflon parallel streams bug
+//			test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(), test_data.getTestCase());
+//		}
+//		assertTrue(test_result);
+//		System.out.println("*** End Test"); //$NON-NLS-1$
 	}
 
 	@After
@@ -130,13 +122,11 @@ public class TestCase {
 		try {
 			workspace.delete(root.members(), true, null);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			root.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -150,20 +140,20 @@ public class TestCase {
 	}
 
 	private static class Pair {
-		private IJavaProject project;
-		private Test_Case test_case;
-
-		Pair(Test_Case test_case, IJavaProject project) {
-			this.test_case = test_case;
-			this.project = project;
-		}
-
-		IJavaProject getJavaProject() {
-			return this.project;
-		}
-
-		Test_Case getTestCase() {
-			return this.test_case;
-		}
+//		private IJavaProject project;
+//		private Test_Case test_case;
+//
+//		Pair(Test_Case test_case, IJavaProject project) {
+//			this.test_case = test_case;
+//			this.project = project;
+//		}
+//
+//		IJavaProject getJavaProject() {
+//			return this.project;
+//		}
+//
+//		Test_Case getTestCase() {
+//			return this.test_case;
+//		}
 	}
 }

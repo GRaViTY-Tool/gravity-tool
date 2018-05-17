@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.gravity.hulk,
  org.eclipse.ui,
- org.gravity.typegraph.basic;bundle-version="1.0.0"
+ org.gravity.typegraph.basic;bundle-version="1.0.0",
+ org.gravity.hulk.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.gravity.hulk.ui.visualization.detection,
@@ -27,3 +28,4 @@ Bundle-ClassPath: lib/org.eclipse.draw2d_3.10.1.201508170204.jar,
  lib/org.eclipse.zest.core_1.5.201.201508170204.jar,
  lib/org.eclipse.zest.layouts_1.1.200.201508170204.jar,
  .
+Automatic-Module-Name: org.gravity.hulk.ui.visualization

@@ -1,23 +1,19 @@
-
-import org.gravity.typegraph.basic.TParameter;
+import  org.gravity.typegraph.basic.TParameter;
 
 partial class TMethodDefinitionImpl {
 
-@members <--
+@members<--
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		String string = super.toString();
 		String name = getSignature().getMethod().getTName();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
 	}
-	
--->
 
-@model getSignatureString () <--
+	-->
 
-		return getSignature().getSignatureString();
--->
+@model getSignatureString ()<--
+		return getSignature().getSignatureString();-->
 
 }

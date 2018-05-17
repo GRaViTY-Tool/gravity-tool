@@ -1,6 +1,0 @@
-digraph "" {
-	label="";
-	     "extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer" [shape=record, color=green, label="{extendedJamoppJavaContainer ==> ExtendedJamoppJavaContainer | }"];
-
-
-}

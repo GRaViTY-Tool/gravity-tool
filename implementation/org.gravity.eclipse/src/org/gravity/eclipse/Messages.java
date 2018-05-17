@@ -2,7 +2,6 @@ package org.gravity.eclipse;
 
 import org.eclipse.osgi.util.NLS;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Messages.
  */

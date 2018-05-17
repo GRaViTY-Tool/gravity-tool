@@ -40,6 +40,11 @@
                      style="push">
                </command>
             </menu>
+            <command
+                  commandId="org.gravity.eclipse.ui.import.gradle"
+                  label="Import Gradle Project"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
    </extension>
@@ -87,6 +92,18 @@
             name="Verbose Command">
          <defaultHandler
                class="org.gravity.eclipse.ui.handler.VerboseHandler">
+            <parameter
+                  name="org.gravity.eclipse.ui.parameter1"
+                  value="org.gravity.eclipse.ui.parameter1">
+            </parameter>
+         </defaultHandler>
+      </command>
+      <command
+            defaultHandler="org.gravity.eclipse.ui.handler.GradleImportHandler"
+            id="org.gravity.eclipse.ui.import.gradle"
+            name="Gradle Import">
+         <defaultHandler
+               class="org.gravity.eclipse.ui.handler.GradleImportHandler">
             <parameter
                   name="org.gravity.eclipse.ui.parameter1"
                   value="org.gravity.eclipse.ui.parameter1">

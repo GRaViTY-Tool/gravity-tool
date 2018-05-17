@@ -1,0 +1,70 @@
+import  org.gravity.typegraph.basic.TClass;
+import  org.gravity.hulk.antipatterngraph.metrics.HTotalVisibilityMetric;
+import  org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import  org.gravity.typegraph.basic.TMember;
+import  org.gravity.typegraph.basic.TModifier;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TypeGraph;
+
+partial class HTotalVisibilityCalculatorImpl {
+
+@members<--
+
+	//TODO: make values changeable
+	private int privateValue = 0; //SearchParameters.privateValue;
+	private int packageValue = 1; //SearchParameters.packageValue;
+	private int protectedValue = 2; //SearchParameters.protectedValue;
+	private int publicValue = 3; //SearchParameters.publicValue;
+
+	@Override
+	public String getGuiName() {
+		return "TotalMethodVisibility";
+	}
+
+	-->
+
+@model detect (HAntiPatternGraph apg)<--		int totalValue = 0;
+		TypeGraph pg = apg.getPg();
+		for (TClass tClass : pg.getClasses()) {
+			if (!tClass.isTLib()) {
+				int value = 0;
+				for (TMember tMember : tClass.getDefines()) {
+					TModifier tModifier = tMember.getTModifier();
+					if (tModifier == null) {
+						//System.err.println("The member \"" + tMember.getSignatureString() + "\" in the  class \""
+						//		+ tClass.getFullyQualifiedName() + "\" has no modifier.");
+					} else {
+						TVisibility tVisibility = tModifier.getTVisibility();
+						if (tVisibility != null) {
+							switch (tVisibility) {
+							case TPUBLIC:
+								value += publicValue;
+								break;
+							case TPROTECTED:
+								value += protectedValue;
+								break;
+							case TPACKAGE:
+								value += packageValue;
+								break;
+							case TPRIVATE:
+								value += privateValue;
+								break;
+							}
+						}
+					}
+				}
+				totalValue += value;
+				HTotalVisibilityMetric metric = MetricsFactory.eINSTANCE.createHTotalVisibilityMetric();
+				metric.setValue(value);
+				metric.setTAnnotated(tClass);
+				getHAnnotation().add(metric);
+			}
+		}
+		HTotalVisibilityMetric metric = MetricsFactory.eINSTANCE.createHTotalVisibilityMetric();
+		metric.setValue(totalValue);
+		metric.setTAnnotated(pg);
+		getHAnnotation().add(metric);
+
+		return true;-->
+
+}

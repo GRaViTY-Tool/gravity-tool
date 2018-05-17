@@ -1,0 +1,9 @@
+{"unit":"checkPreconditions",
+"postresult":0,
+"preresult":false,
+"Parameters":{
+"methodSig":"B.n():TMethodSignature",
+"sourceClass":"dyn1_Test.B:TClass",
+"targetClass":"package1.C:TClass"
+}
+}

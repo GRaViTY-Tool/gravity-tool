@@ -1,17 +1,112 @@
-
-import java.util.LinkedList;
-import java.util.List;
+import  java.util.LinkedList;
+import  java.util.List;
+import  org.gravity.typegraph.basic.TMethodSignature;
+import  java.util.ArrayList;
+import  java.util.Collections;
 
 partial class TAbstractTypeImpl {
 
+@members<--
 
+	protected abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
-@model getFullyQualifiedName () <--
+	private void fillSameType(ArrayList<TAbstractType> list) {
+		boolean changed = false;
+		ArrayList<TAbstractType> copy = new ArrayList<TAbstractType>(list);
 
+		for (TAbstractType type : copy) {
+			for (TAbstractType innerType : type.getInnerTypes()) {
+				if (!list.contains(innerType)) {
+					list.add(innerType);
+					changed = true;
+				}
+			}
+			if (type.getOuterType() != null && !list.contains(type.getOuterType())) {
+				list.add(type.getOuterType());
+				changed = true;
+			}
+		}
+		if (changed) {
+			fillSameType(list);
+		}
+	}
+
+	private boolean isInnerType(TAbstractType tAbstractType) {
+
+		ArrayList<TAbstractType> list = new ArrayList<>();
+		list.add(this);
+		fillSameType(list);
+
+		ArrayList<TAbstractType> listOther = new ArrayList<>();
+		listOther.add(tAbstractType);
+		fillSameType(listOther);
+
+		return !Collections.disjoint(list, listOther);
+		/*
+		if (tAbstractType.getInnerTypes().contains(this)) {
+			return true;
+		}
+		if (this.getInnerTypes().contains(tAbstractType)) {
+		
+			return true;
+		}
+		
+		return false;/*
+						
+						String suffix = "$";
+						TPackage otherPackage = tAbstractType.getPackage();
+						TPackage thisPackage = this.getPackage();
+						if (thisPackage == null || otherPackage == null) {
+						return false;
+						}
+						
+						String otherPackageString = otherPackage.getTName();
+						String thisPackageString = thisPackage.getTName();
+						if (otherPackageString.endsWith(suffix)) {
+						otherPackageString = otherPackageString.substring(0, otherPackageString.length() - 1);
+						if (otherPackageString.equals(this.getTName())) {
+						return true;
+						}
+						}
+						
+						if (thisPackageString.endsWith(suffix)) {
+						thisPackageString = thisPackageString.substring(0, thisPackageString.length() - 1);
+						if (thisPackageString.equals(tAbstractType.getTName())) {
+						return true;
+						}
+						}
+						return false;*/
+	}
+
+	private TPackage getRealPackage(TAbstractType type) {
+
+		if (type.getOuterType() != null) {
+			return getRealPackage(type.getOuterType());
+		} else {
+			return type.getPackage();
+		}
+	}
+
+	-->
+
+@model isSubTypeOf (TAbstractType tType)<--		return tType.isSuperTypeOf(this);-->
+
+@model isDeclared ()<--		if (getTName().equals("T")) {
+			return false;
+		}
+		if (getTName().equals("Anonymous")) {
+			return false;
+		}
+		return !isTLib();-->
+
+@model getFullyQualifiedName ()<--
 		StringBuilder builder = new StringBuilder();
 		List<String> packages = new LinkedList<>();
 		TPackage tPackage = getPackage();
-		if(!"(default package)".equals(tPackage.getTName())){
+		if (tPackage == null) {
+			return getTName();
+		}
+		if (!"(default package)".equals(tPackage.getTName())) {
 			while (tPackage != null) {
 				packages.add(0, tPackage.getTName());
 				tPackage = tPackage.getParent();
@@ -24,7 +119,45 @@ partial class TAbstractTypeImpl {
 			}
 		}
 		builder.append(getTName());
-		return builder.toString();
--->
+		return builder.toString().replaceAll("%.*%", "");-->
+
+@model getTMethodSignature (String signature)<--
+		String voidString = ":void";
+		for (TSignature sig : getSignature()) {
+			if (sig instanceof TMethodSignature) {
+				String sigString = sig.getSignatureString().replaceAll(" ", "");
+
+				if (sigString.endsWith(voidString)) {
+					sigString = sigString.substring(0, sigString.length() - voidString.length());
+				}
+				String methodSigString = signature.replaceAll(" ", "");
+				if (methodSigString.endsWith(voidString)) {
+					methodSigString = methodSigString.substring(0, methodSigString.length() - voidString.length());
+				}
+				if (sigString.equals(methodSigString)) {
+					return (TMethodSignature) sig;
+				}
+			}
+		}
+		return null;-->
+
+@model getTMethodDefinition (String signature)<--		String voidString = ":void";
+		for (TMember def : getDefines()) {
+			if (def instanceof TMethodDefinition) {
+				String sigString = def.getSignatureString().replaceAll(" ", "");
+
+				if (sigString.endsWith(voidString)) {
+					sigString = sigString.substring(0, sigString.length() - voidString.length());
+				}
+				String methodSigString = signature.replaceAll(" ", "");
+				if (methodSigString.endsWith(voidString)) {
+					methodSigString = methodSigString.substring(0, methodSigString.length() - voidString.length());
+				}
+				if (sigString.equals(methodSigString)) {
+					return (TMethodDefinition) def;
+				}
+			}
+		}
+		return null;-->
 
 }

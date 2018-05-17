@@ -1,9 +1,0 @@
-digraph "" {
-	label="";
-	     "jFieldSig ==> ExtendedFieldType" [shape=record, color=black, label="{jFieldSig ==> ExtendedFieldType | }"];
-	     "jType ==> ExtendedType" [shape=record, color=green, label="{jType ==> ExtendedType | }"];
-	     "jClass ==> MainData : Class" [shape=record, color=black, label="{jClass ==> MainData : Class | }"];
-
-	     "jFieldSig ==> ExtendedFieldType" -> "jType ==> ExtendedType" [color=green, label="extendedTypes", fontsize=11, constraint=true];
-	     "jType ==> ExtendedType" -> "jClass ==> MainData : Class" [color=green, label="type", fontsize=11, constraint=true];
-}

@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule UnresolvedTypeDeclaration
+#with org.gravity.tgg.modisco
+
+#source {
+	eModel : MGravityModel {
+		++  -unresolvedItems -> eAnonymousClassDeclaration
+	}
+	++ eAnonymousClassDeclaration : UnresolvedTypeDeclaration {
+	}
+}
+
+#target {
+	++ tClass : TClass {
+	}
+	pg : TypeGraph {
+		++  -classes -> tClass
+		++  -ownedTypes -> tClass
+	}
+}
+
+#correspondence {
+	eModelToPg : ModelToTypeGraph {
+		#src->eModel
+		#trg->pg
+	}
+	++ eAnonymousClassDeclarationToTClass : TypeToTAbstractType {
+		#src->eAnonymousClassDeclaration
+		#trg->tClass
+	}
+}
+
+#attributeConditions {
+	eq(eAnonymousClassDeclaration.name, tClass.tName)
+	eq(eAnonymousClassDeclaration.proxy, tClass.tLib)
+}

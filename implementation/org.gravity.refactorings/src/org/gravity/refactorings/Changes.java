@@ -11,7 +11,7 @@ public class Changes {
 	private Consumer<EObject> changes;
 
 	public Changes() {
-
+		this.changed_classfiles = new HashSet<String>();
 	}
 
 	public Changes(Set<String> changed_classfiles, Consumer<EObject> changes) {
@@ -21,10 +21,6 @@ public class Changes {
 
 	public Set<String> getChanged_classfiles() {
 		return this.changed_classfiles;
-	}
-
-	public void setChanged_classfiles(Set<String> changed_classfiles) {
-		this.changed_classfiles = changed_classfiles;
 	}
 
 	public void addChanged_classfile(String chhanged_classfile) {

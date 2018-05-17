@@ -11,16 +11,13 @@ import org.eclipse.jface.viewers.Viewer;
 import org.gravity.hulk.HDetector;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
+
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -53,8 +50,8 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 				}
 			}
 			for (EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())){
-					if(!((EClass) eclassifier).isAbstract()){
+				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())) {
+					if (!((EClass) eclassifier).isAbstract()) {
 						elements.add(eclassifier);
 					}
 				}

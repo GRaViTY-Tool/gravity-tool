@@ -202,14 +202,14 @@ public abstract class InformationViewContentProvider {
 
 		adapter = new SelectionAdapter() {
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void widgetSelected(SelectionEvent event) {
 
 				if (checkLocalState()) {
 					refreshDetectionObjects();
 					refreshGraphInformationTabFolder();
 				}
 
-				List<GraphNode> selectionList = ((Graph) e.getSource()).getSelection();
+				List<GraphNode> selectionList = ((Graph) event.getSource()).getSelection();
 				if (selectionList.size() == 1) {
 					GraphNode node = selectionList.get(0);
 					if (!(node.getText().equals(GlobalStrings.AND) || node.getText().equals(GlobalStrings.OR)

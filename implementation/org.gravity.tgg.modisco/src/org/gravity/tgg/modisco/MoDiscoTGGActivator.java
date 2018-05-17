@@ -17,10 +17,6 @@ public class MoDiscoTGGActivator extends Plugin {
 
 	private GravityMoDiscoModelPatcher patcher;
 	
-	public MoDiscoTGGActivator() {
-		// TODO Auto-generated constructor stub
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 

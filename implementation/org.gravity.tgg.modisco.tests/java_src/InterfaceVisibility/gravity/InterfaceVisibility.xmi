@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.14 //@ownedTypes.15" interfaces="//@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.13" tName="InterfaceVisibility">
+  <packages classes="//@ownedTypes.7" interfaces="//@ownedTypes.10 //@ownedTypes.11" ownedTypes="//@ownedTypes.7 //@ownedTypes.10 //@ownedTypes.11" typeGraph="/" tName="package1">
+    <subpackage interfaces="//@ownedTypes.8" ownedTypes="//@ownedTypes.8" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.9" ownedTypes="//@ownedTypes.9" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.12" ownedTypes="//@ownedTypes.12" typeGraph="/" tName="InterfaceContainer$"/>
+    <subpackage interfaces="//@ownedTypes.13" ownedTypes="//@ownedTypes.13" typeGraph="/" tName="InterfaceContainer$"/>
+  </packages>
+  <methods tName="publicMethod">
+    <signatures returnType="//@ownedTypes.14">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.14">
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="publicDefaultMethod">
+    <signatures returnType="//@ownedTypes.14">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.14">
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <fields tName="defaultPublicInteger">
+    <signatures type="//@ownedTypes.4">
+      <definitions definedBy="//@ownedTypes.10">
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <fields tName="publicInteger">
+    <signatures type="//@ownedTypes.4">
+      <definitions definedBy="//@ownedTypes.10">
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" tName="InterfaceContainer" innerTypes="//@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.12 //@ownedTypes.13">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tName="protectedInterface">
+    <tModifier tVisibility="TProtected"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tName="PublicInnerInterface">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" signature="//@methods.0/@signatures.0 //@methods.1/@signatures.0 //@fields.1/@signatures.0 //@fields.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0 //@methods.0/@signatures.0/@definitions.0 //@fields.1/@signatures.0/@definitions.0 //@methods.1/@signatures.0/@definitions.0" tName="PublicInterface">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0" tName="PackageInterface">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.2" tName="PackageInnerInterface">
+    <tModifier tVisibility="TPackage"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.3" tName="PrivateInterface">
+    <tModifier/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+</org.gravity.typegraph.basic:TypeGraph>

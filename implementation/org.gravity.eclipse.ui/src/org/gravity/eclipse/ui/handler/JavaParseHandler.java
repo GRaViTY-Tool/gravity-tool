@@ -27,6 +27,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.typegraph.basic.TypeGraph;
 
@@ -52,8 +53,12 @@ public class JavaParseHandler extends AbstractHandler {
 						throw new RuntimeException(Messages.JavaParseHandler_0 + entry);
 					} else if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
-						if(!process(iJavaProject, monitor)){
-							fails.add(iJavaProject.getProject().getName());
+						try {
+							if(!process(iJavaProject, monitor)){
+								fails.add(iJavaProject.getProject().getName());
+							}
+						} catch (NoConverterRegisteredException e) {
+							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
 						}
 					} else if (entry instanceof IPackageFragment) {
 						throw new RuntimeException(Messages.JavaParseHandler_1 + entry);
@@ -64,14 +69,14 @@ public class JavaParseHandler extends AbstractHandler {
 				return fails.size()==0 ? Status.OK_STATUS : new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Creating PG failed on the follwoing Java projects: "+fails.toString());
 			}
 
-			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
+			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) throws NoConverterRegisteredException {
 				IProject iProject = iJavaProject.getProject();
 				
 				GravityActivator gravityActivator = GravityActivator.getDefault();
-				IPGConverter converter = gravityActivator.getConverter(iProject);
+				IPGConverter converter = gravityActivator.getNewConverter(iProject);
 				
 				boolean success = converter.convertProject(iJavaProject, monitor);
-				gravityActivator.discardConverter(iProject);
+//				gravityActivator.discardConverter(iProject);
 				if (!success) {
 					System.err.println("No PG has been created for "+iProject.getName());
 					return false;
@@ -102,11 +107,19 @@ public class JavaParseHandler extends AbstractHandler {
 	@Override
 	public boolean isEnabled() {
 		GravityActivator gravity = GravityActivator.getDefault();
-		return gravity.getSelectedConverterFactory().supportsFWDTrafo();
+		try {
+			return gravity.getSelectedConverterFactory().supportsFWDTrafo();
+		} catch (NoConverterRegisteredException e) {
+			return false;
+		}
 	}
 
 	@Override
 	public boolean isHandled() {
-		return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
+		} catch (NoConverterRegisteredException e) {
+			return false;
+		}
 	}
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kdm:Segment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:action="http://www.eclipse.org/MoDisco/kdm/action" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:source="http://www.eclipse.org/MoDisco/kdm/source">
+  <model xsi:type="code:CodeModel" name="Inh-1Test">
+    <codeElement xsi:type="code:Package" name="a">
+      <codeElement xsi:type="code:ClassUnit" name="A" isAbstract="false">
+        <attribute tag="export" value="public"/>
+        <source language="java">
+          <region file="//@model.2/@inventoryElement.0" language="java"/>
+        </source>
+        <codeElement xsi:type="code:MethodUnit" name="n" type="//@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0" export="protected">
+          <attribute tag="export" value="none"/>
+          <source language="java">
+            <region file="//@model.2/@inventoryElement.0" language="java"/>
+          </source>
+          <codeElement xsi:type="code:Signature" name="n">
+            <parameterUnit type="//@model.0/@codeElement.2/@codeElement.5" kind="return">
+              <source language="java">
+                <region language="java"/>
+              </source>
+            </parameterUnit>
+          </codeElement>
+          <codeElement xsi:type="action:BlockUnit">
+            <source language="java">
+              <region file="//@model.2/@inventoryElement.0" language="java"/>
+            </source>
+            <codeElement xsi:type="action:ActionElement" name="expression statement" kind="expression statement">
+              <source language="java">
+                <region file="//@model.2/@inventoryElement.0" language="java"/>
+              </source>
+              <codeElement xsi:type="action:ActionElement" name="ASSIGN" kind="assignment">
+                <source language="java">
+                  <region file="//@model.2/@inventoryElement.0" language="java"/>
+                </source>
+                <codeElement xsi:type="action:ActionElement" name="field access" kind="field access">
+                  <source language="java">
+                    <region file="//@model.2/@inventoryElement.0" language="java"/>
+                  </source>
+                  <codeElement xsi:type="action:ActionElement" name="parenthesized" kind="parenthesized">
+                    <source language="java">
+                      <region file="//@model.2/@inventoryElement.0" language="java"/>
+                    </source>
+                    <codeElement xsi:type="action:ActionElement" name="class instance creation" kind="class instance creation">
+                      <source language="java">
+                        <region file="//@model.2/@inventoryElement.0" language="java"/>
+                      </source>
+                      <actionRelation xsi:type="action:Calls" to="//@model.0/@codeElement.1/@codeElement.0/@codeElement.0" from="//@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+                      <actionRelation xsi:type="action:Creates" to="//@model.0/@codeElement.1/@codeElement.0" from="//@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+                    </codeElement>
+                  </codeElement>
+                  <actionRelation xsi:type="action:Addresses" to="//@model.1/@codeElement.0" from="//@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0"/>
+                </codeElement>
+                <codeElement xsi:type="code:Value" name="number literal" type="//@model.0/@codeElement.2/@codeElement.0" ext="1">
+                  <source language="java">
+                    <region file="//@model.2/@inventoryElement.0" language="java"/>
+                  </source>
+                </codeElement>
+              </codeElement>
+            </codeElement>
+          </codeElement>
+        </codeElement>
+      </codeElement>
+    </codeElement>
+    <codeElement xsi:type="code:Package" name="b">
+      <codeElement xsi:type="code:ClassUnit" name="B" isAbstract="false">
+        <attribute tag="export" value="public"/>
+        <source language="java">
+          <region file="//@model.2/@inventoryElement.1" language="java"/>
+        </source>
+        <codeRelation xsi:type="code:Imports" to="//@model.0/@codeElement.0/@codeElement.0" from="//@model.0/@codeElement.1/@codeElement.0"/>
+        <codeRelation xsi:type="code:Extends" to="//@model.0/@codeElement.0/@codeElement.0" from="//@model.0/@codeElement.1/@codeElement.0"/>
+        <codeElement xsi:type="code:MethodUnit" name="B" type="//@model.0/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0" kind="constructor" export="unknown">
+          <source language="java">
+            <region language="java"/>
+          </source>
+          <codeElement xsi:type="code:Signature" name="B"/>
+        </codeElement>
+      </codeElement>
+    </codeElement>
+    <codeElement xsi:type="code:LanguageUnit" name="Common Java datatypes">
+      <codeElement xsi:type="code:IntegerType" name="int"/>
+      <codeElement xsi:type="code:IntegerType" name="long"/>
+      <codeElement xsi:type="code:FloatType" name="float"/>
+      <codeElement xsi:type="code:FloatType" name="double"/>
+      <codeElement xsi:type="code:BooleanType" name="boolean"/>
+      <codeElement xsi:type="code:VoidType" name="void"/>
+      <codeElement xsi:type="code:CharType" name="char"/>
+      <codeElement xsi:type="code:IntegerType" name="short"/>
+      <codeElement xsi:type="code:OctetType" name="byte"/>
+      <codeElement xsi:type="code:StringType" name="string"/>
+    </codeElement>
+  </model>
+  <model xsi:type="code:CodeModel" name="externals">
+    <codeElement xsi:type="code:StorableUnit" name="i" type="//@model.0/@codeElement.2/@codeElement.0">
+      <attribute tag="export" value="protected"/>
+      <source language="java">
+        <region file="//@model.2/@inventoryElement.0" language="java"/>
+      </source>
+    </codeElement>
+  </model>
+  <model xsi:type="source:InventoryModel" name="source references">
+    <inventoryElement xsi:type="source:SourceFile" name="A.java" path="C:\Users\SRuland\runtime-MOMoT\Inh-1Test\src\a\A.java" language="java"/>
+    <inventoryElement xsi:type="source:SourceFile" name="B.java" path="C:\Users\SRuland\runtime-MOMoT\Inh-1Test\src\b\B.java" language="java"/>
+  </model>
+</kdm:Segment>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_kbcAoA4zEeesBIxrmdcSgw">
+  <imports href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_k7ojoA4zEeesBIxrmdcSgw" name="MoveMethod">
+    <parameters xmi:id="_rb9dEA4zEeesBIxrmdcSgw" name="methodSig">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </parameters>
+    <parameters xmi:id="_rb9dEQ4zEeesBIxrmdcSgw" name="sourceClass">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
+    <parameters xmi:id="_rb9dEg4zEeesBIxrmdcSgw" name="targetClass">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </parameters>
+    <lhs xmi:id="_k7xtlA4zEeesBIxrmdcSgw" name="Lhs">
+      <nodes xmi:id="_yP-HgA4zEeesBIxrmdcSgw" name="sourceClass" outgoing="_7kK2wA4zEeesBIxrmdcSgw _74bPgA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_zLR5MA4zEeesBIxrmdcSgw" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_z0spoA4zEeesBIxrmdcSgw" name="targetClass">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_0yP3AA4zEeesBIxrmdcSgw" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_3ihmQA4zEeesBIxrmdcSgw" incoming="_7kK2wA4zEeesBIxrmdcSgw" outgoing="_6FPaoA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_4Efq4A4zEeesBIxrmdcSgw" name="methodSig" incoming="_6FPaoA4zEeesBIxrmdcSgw _74bPgA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      </nodes>
+      <edges xmi:id="_6FPaoA4zEeesBIxrmdcSgw" source="_3ihmQA4zEeesBIxrmdcSgw" target="_4Efq4A4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/signature"/>
+      </edges>
+      <edges xmi:id="_7kK2wA4zEeesBIxrmdcSgw" source="_yP-HgA4zEeesBIxrmdcSgw" target="_3ihmQA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_74bPgA4zEeesBIxrmdcSgw" source="_yP-HgA4zEeesBIxrmdcSgw" target="_4Efq4A4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_COfZsA40EeesBIxrmdcSgw">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_COfZsQ40EeesBIxrmdcSgw">
+          <conclusion xmi:id="_COfZsg40EeesBIxrmdcSgw" name="1">
+            <nodes xmi:id="_COfZsw40EeesBIxrmdcSgw" name="sourceClass" outgoing="_COfZuA40EeesBIxrmdcSgw _COfZuw40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <attributes xmi:id="_COfZtA40EeesBIxrmdcSgw" value="false">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_COfZtg40EeesBIxrmdcSgw" incoming="_COfZuA40EeesBIxrmdcSgw" outgoing="_COfZvw40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+            </nodes>
+            <nodes xmi:id="_COfZuQ40EeesBIxrmdcSgw" name="methodSig" incoming="_COfZuw40EeesBIxrmdcSgw _COfZvw40EeesBIxrmdcSgw _Aww3cA40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+            </nodes>
+            <nodes xmi:id="_COfZvA40EeesBIxrmdcSgw" name="targetClass">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <attributes xmi:id="_COfZvQ40EeesBIxrmdcSgw" value="false">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_APFGsA40EeesBIxrmdcSgw" outgoing="_Aww3cA40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+            </nodes>
+            <edges xmi:id="_COfZuA40EeesBIxrmdcSgw" source="_COfZsw40EeesBIxrmdcSgw" target="_COfZtg40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+            </edges>
+            <edges xmi:id="_COfZuw40EeesBIxrmdcSgw" source="_COfZsw40EeesBIxrmdcSgw" target="_COfZuQ40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+            </edges>
+            <edges xmi:id="_COfZvw40EeesBIxrmdcSgw" source="_COfZtg40EeesBIxrmdcSgw" target="_COfZuQ40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/signature"/>
+            </edges>
+            <edges xmi:id="_Aww3cA40EeesBIxrmdcSgw" source="_APFGsA40EeesBIxrmdcSgw" target="_COfZuQ40EeesBIxrmdcSgw">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_COfZtQ40EeesBIxrmdcSgw" origin="_yP-HgA4zEeesBIxrmdcSgw" image="_COfZsw40EeesBIxrmdcSgw"/>
+          <mappings xmi:id="_COfZtw40EeesBIxrmdcSgw" origin="_3ihmQA4zEeesBIxrmdcSgw" image="_COfZtg40EeesBIxrmdcSgw"/>
+          <mappings xmi:id="_COfZug40EeesBIxrmdcSgw" origin="_4Efq4A4zEeesBIxrmdcSgw" image="_COfZuQ40EeesBIxrmdcSgw"/>
+          <mappings xmi:id="_COfZvg40EeesBIxrmdcSgw" origin="_z0spoA4zEeesBIxrmdcSgw" image="_COfZvA40EeesBIxrmdcSgw"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_k7xtlQ4zEeesBIxrmdcSgw" name="Rhs">
+      <nodes xmi:id="_yP-HgQ4zEeesBIxrmdcSgw" name="sourceClass">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_zLR5MQ4zEeesBIxrmdcSgw" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_z0spoQ4zEeesBIxrmdcSgw" name="targetClass" outgoing="_8BN_IA4zEeesBIxrmdcSgw _8KUQwA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_0yP3AQ4zEeesBIxrmdcSgw" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_3irXQA4zEeesBIxrmdcSgw" incoming="_8BN_IA4zEeesBIxrmdcSgw" outgoing="_6FPaoQ4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_4Efq4Q4zEeesBIxrmdcSgw" name="methodSig" incoming="_6FPaoQ4zEeesBIxrmdcSgw _8KUQwA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      </nodes>
+      <edges xmi:id="_6FPaoQ4zEeesBIxrmdcSgw" source="_3irXQA4zEeesBIxrmdcSgw" target="_4Efq4Q4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/signature"/>
+      </edges>
+      <edges xmi:id="_8BN_IA4zEeesBIxrmdcSgw" source="_z0spoQ4zEeesBIxrmdcSgw" target="_3irXQA4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_8KUQwA4zEeesBIxrmdcSgw" source="_z0spoQ4zEeesBIxrmdcSgw" target="_4Efq4Q4zEeesBIxrmdcSgw">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_yP-Hgg4zEeesBIxrmdcSgw" origin="_yP-HgA4zEeesBIxrmdcSgw" image="_yP-HgQ4zEeesBIxrmdcSgw"/>
+    <mappings xmi:id="_z0spog4zEeesBIxrmdcSgw" origin="_z0spoA4zEeesBIxrmdcSgw" image="_z0spoQ4zEeesBIxrmdcSgw"/>
+    <mappings xmi:id="_3irXQQ4zEeesBIxrmdcSgw" origin="_3ihmQA4zEeesBIxrmdcSgw" image="_3irXQA4zEeesBIxrmdcSgw"/>
+    <mappings xmi:id="_4Efq4g4zEeesBIxrmdcSgw" origin="_4Efq4A4zEeesBIxrmdcSgw" image="_4Efq4Q4zEeesBIxrmdcSgw"/>
+  </units>
+</henshin:Module>

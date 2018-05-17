@@ -1,0 +1,57 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ClassInnerMember
+#with org.gravity.tgg.modisco
+
+#source {
+	eOuterClass : ClassDeclaration {
+		 -bodyDeclarations -> mDefinition
+	}
+	mDefinition : MAbstractMethodDefinition {
+		 ++ -mInnerTypes->mInnerClass
+	}
+	++ mInnerClass : ClassDeclaration {
+	}
+}
+
+#target {
+	++ tInnerPackage : TPackage {
+		++  -parent -> tOuterPackage
+		++  -classes -> tInnerClass
+		++  -ownedTypes -> tInnerClass
+	}
+	typeGraph : TypeGraph {
+		++  -ownedTypes -> tInnerClass
+		++  -classes -> tInnerClass
+		 -ownedTypes -> tOuterClass
+	}
+	tOuterClass : TClass {
+		++ -innerTypes -> tInnerClass
+	}
+	++ tInnerClass : TClass {
+	}
+	tOuterPackage : TPackage {
+		 -ownedTypes -> tOuterClass
+	}
+}
+
+#correspondence {
+	eOuterClassToTOuterClass : ClassDeclarationToTClass {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
+	++ tInnerClassToTInnerClass : ClassDeclarationToTClass {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+	++ tInnerTypeToTInnerAbstractType : TypeToTAbstractType {
+		#src->mInnerClass
+		#trg->tInnerClass
+	}
+}
+
+#attributeConditions {
+	eq(mInnerClass.name, tInnerClass.tName)
+	addSuffix(tOuterClass.tName, "$1", tInnerPackage.tName)
+}

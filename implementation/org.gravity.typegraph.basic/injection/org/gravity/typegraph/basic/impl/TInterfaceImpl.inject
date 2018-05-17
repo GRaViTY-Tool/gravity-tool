@@ -1,12 +1,11 @@
-
-import org.gravity.typegraph.basic.TVisibility;
-import org.gravity.typegraph.basic.TAbstractType;
-import java.util.Collections;
-import java.util.HashSet;
+import  org.gravity.typegraph.basic.TVisibility;
+import  org.gravity.typegraph.basic.TAbstractType;
+import  java.util.Collections;
+import  java.util.HashSet;
 
 partial class TInterfaceImpl {
 
-@members <--
+@members<--
 
 	private HashSet<TInterface> fillParents(HashSet<TInterface> parents) {
 
@@ -19,34 +18,36 @@ partial class TInterfaceImpl {
 		return parents;
 	}
 
-	private boolean hasCommonSuperInterface(TInterfaceImpl tInterface) {
+	protected boolean hasCommonSuperType(TAbstractType tAbstractType) {
+		if (!(tAbstractType instanceof TInterfaceImpl)) {
+			return false;
+		}
+		TInterfaceImpl tInterface = (TInterfaceImpl) tAbstractType;
 		HashSet<TInterface> parents = new HashSet<TInterface>();
 		HashSet<TInterface> otherParents = new HashSet<TInterface>();
 
+		parents.add(this);
+		otherParents.add(tInterface);
 		this.fillParents(parents);
 		tInterface.fillParents(otherParents);
 
 		return (!Collections.disjoint(parents, otherParents));
 	}
 
-	@Override
-	public TVisibility getMinimumRequiredVisibility(TAbstractType tAbstractType) {
-		if (this == tAbstractType) {
-			return TVisibility.TPRIVATE;
+	-->
+
+@model isSuperTypeOf (TAbstractType tType)<--		if (tType instanceof TInterface) {
+			EList<TInterface> tInterfaces = getParentInterfaces();
+			if (tInterfaces.contains(tType)) {
+				return true;
+			} else {
+				for (TInterface tInterface : tInterfaces) {
+					if (tInterface.isSuperTypeOf(tType)) {
+						return true;
+					}
+				}
+			}
 		}
-
-		if (this.getPackage() == tAbstractType.getPackage()) {
-			return TVisibility.TPACKAGE;
-		}
-
-		if (tAbstractType instanceof TInterfaceImpl && hasCommonSuperInterface((TInterfaceImpl) tAbstractType)) {
-			return TVisibility.TPROTECTED;
-		}
-
-		return TVisibility.TPUBLIC;
-
-	}
-	
--->
+		return false;-->
 
 }
