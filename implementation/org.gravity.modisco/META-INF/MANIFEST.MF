@@ -15,7 +15,8 @@ Bundle-Vendor: %providerName
 Export-Package: org.gravity.modisco,
  org.gravity.modisco.discovery,
  org.gravity.modisco.impl,
- org.gravity.modisco.preprocessing,
+ org.gravity.modisco.processing,
+ org.gravity.modisco.processing.fwd,
  org.gravity.modisco.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier

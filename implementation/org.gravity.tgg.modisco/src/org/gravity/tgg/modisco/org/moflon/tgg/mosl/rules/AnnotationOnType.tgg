@@ -5,7 +5,7 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++ mAnnotation : MAnnotation {
+	mAnnotation : MAnnotation {
 		++  -type -> mAccess
 	}
 	mAnnotationType : AnnotationTypeDeclaration {
@@ -19,7 +19,7 @@
 }
 
 #target {
-	++ tAnnotation : TAnnotation {
+	tAnnotation : TAnnotation {
 		++  -tAnnotated -> tAnnotable
 	}
 	tAnnotable : TAnnotatable {
@@ -38,12 +38,12 @@
 		#src->astNode
 		#trg->tAnnotable
 	}
-	++ mAnnotationToTAnnotation : AnnotationToTAnnotation {
+	mAnnotationToTAnnotation : AnnotationToTAnnotation {
 		#src->mAnnotation
 		#trg->tAnnotation
 	}
 }
 
 #attributeConditions {
-	eq(mAnnotation.mRelevant, true)
+//	eq(mAnnotation.mRelevant, true)
 }

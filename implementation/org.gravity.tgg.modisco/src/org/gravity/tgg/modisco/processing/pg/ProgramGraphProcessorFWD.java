@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.postprocessing;
+package org.gravity.tgg.modisco.processing.pg;
 
 import java.security.InvalidParameterException;
 import java.util.Arrays;
@@ -19,17 +19,19 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
-public class MoDiscoTGGPostprocessing {
-
+public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
+	
 	private static final List<String> objectMethods = Arrays.asList("clone():void", "equals(Object):boolean",
 			"finalize():void", "getClass():Class", "hashCode():int", "notify():void", "notifyAll():void",
 			"toString():String", "wait():void", "wait(long):void", "wait(long,int):void");
 
-	public static boolean postprocess(TypeGraph pg, IProgressMonitor monitor) {
+	@Override
+	public boolean process(TypeGraph pg, IProgressMonitor monitor) {
 		createMissingOverrideEdges(pg);
 		return true;
 	}
 
+	
 	private static void createMissingOverrideEdges(TypeGraph pg) {
 		for (TClass tClass : pg.getDeclaredTClasses()) {
 			Hashtable<String, TMethodDefinition> signatures = new Hashtable<String, TMethodDefinition>();

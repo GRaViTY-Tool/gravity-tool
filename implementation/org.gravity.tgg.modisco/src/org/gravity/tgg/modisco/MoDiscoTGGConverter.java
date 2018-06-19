@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 import java.util.function.Consumer;
@@ -47,8 +49,13 @@ import static org.gravity.eclipse.io.ModelSaver.*;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
-import org.gravity.tgg.modisco.postprocessing.MoDiscoTGGPostprocessing;
+import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
+import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.tgg.modisco.processing.pg.IProgramGraphProcessor;
+import org.gravity.tgg.modisco.processing.pg.ProgramGraphProcesorUtil;
+import org.gravity.tgg.modisco.processing.pg.ProgramGraphProcessorFWD;
 import org.gravity.typegraph.basic.TypeGraph;
+import org.moflon.core.utilities.eMoflonEMFUtil;
 import org.moflon.tgg.algorithm.configuration.Configurator;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
@@ -115,10 +122,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		} else {
 			progressMonitor = monitor;
 		}
-		
+
 		long start = System.currentTimeMillis();
 		System.out.println(start + " GRaViTY convert project: " + java_project.getProject().getName());
-		
+
 		this.java_project = java_project;
 		this.modisco_folder = java_project.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
@@ -155,18 +162,32 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		System.out.println(t4 + " eMoflon TGG fwd trafo");
 		integrateForward();
 
-		MoDiscoTGGPostprocessing.postprocess(getPG(), monitor);
+		boolean trgNotNull = getTrg() != null;
+		boolean success = trgNotNull && getTrg() instanceof TypeGraph;
+
+		org.moflon.tgg.runtime.PrecedenceStructure ps = null;
+		if (this.debug) {
+			// Create precedence structure before applying prepocessing to allow
+			// replacements of model elements using crossreferences.
+			ps = protocol.save();
+			set.createResource(eMoflonEMFUtil
+					.createFileURI(this.modisco_folder.getFile("sync_protocol.xmi").getLocation().toString(), false)) //$NON-NLS-1$
+					.getContents().add(ps);
+		}
+
+		if (success)
+			for (IProgramGraphProcessor processor : ProgramGraphProcesorUtil
+					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD)) {
+				processor.process(getPG(), progressMonitor);
+			}
 
 		long t5 = System.currentTimeMillis();
 		System.out.println(t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
 		if (this.debug) {
 			savePG(this.modisco_folder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
 			saveCorr(this.modisco_folder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
-			saveSynchronizationProtocol(this.modisco_folder.getFile("sync_protocol.xmi").getLocation().toString()); //$NON-NLS-1$
+			eMoflonEMFUtil.saveModel(ps.eResource().getResourceSet(), ps, ps.eResource().getURI().path());
 		}
-
-		boolean trgNotNull = getTrg() != null;
-		boolean success = trgNotNull && getTrg() instanceof TypeGraph;
 
 		if (!success) {
 			if (src != null) {
@@ -200,7 +221,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			return false;
 		}
 		System.out.println(start + " MoDisco sync project: " + java_project.getProject().getName());
-		
+
 		if (targetModel == null) {
 			return convertProject(java_project, monitor);
 		}
@@ -213,9 +234,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			return false;
 		}
 		System.out.println(System.currentTimeMillis() + " Discover Project - Done");
-		
+
 		GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
-		
+
 		Consumer<EObject> changeSrc2 = SynchronizationHelper -> {
 
 			System.out.println(System.currentTimeMillis() + " Calculate Patch");
@@ -223,12 +244,12 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			System.out.println(System.currentTimeMillis() + " Calculate Patch - Done");
 
 		};
-		
+
 		boolean success = syncProjectFwd(changeSrc2, monitor);
-		
+
 		long stop = System.currentTimeMillis();
 		System.out.println(stop + "MoDisco sync project -done: " + (stop - start) + "ms");
-		
+
 		return success;
 	}
 
@@ -254,6 +275,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			return false;
 		}
 
+		for (IProgramGraphProcessor processor : ProgramGraphProcesorUtil
+				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_BWD)) {
+			processor.process(getPG(), monitor);
+		}
 		setChangeTrg(consumer);
 		integrateBackward();
 
@@ -266,38 +291,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 		}
 
-		Stack<Package> packages = new Stack<>();
-		Model model = (Model) getSrc();
-		packages.addAll(model.getOwnedElements());
-
-		while (!packages.isEmpty()) {
-			Package p = packages.pop();
-			packages.addAll(p.getOwnedPackages());
-			for (AbstractTypeDeclaration t : p.getOwnedElements()) {
-				if (!t.isProxy()) {
-					if (t.getOriginalClassFile() != null && t.getOriginalCompilationUnit() == null) {
-						CompilationUnit cu = JavaFactory.eINSTANCE.createCompilationUnit();
-						cu.getTypes().add(t);
-						cu.setPackage(p);
-						cu.setName(t.getName() + ".java");
-						t.setOriginalCompilationUnit(cu);
-						model.getCompilationUnits().add(cu);
-					}
-					CompilationUnit cu = t.getOriginalCompilationUnit();
-					Set<NamedElement> types = new HashSet<>();
-					for (ImportDeclaration i : cu.getImports()) {
-						types.add(i.getImportedElement());
-					}
-					for (Annotation a : t.getAnnotations()) {
-						org.eclipse.gmt.modisco.java.Type type = a.getType().getType();
-						if (!types.contains(type)) {
-							ImportDeclaration imp = JavaFactory.eINSTANCE.createImportDeclaration();
-							imp.setImportedElement(type);
-							cu.getImports().add(imp);
-						}
-					}
-				}
-			}
+		for (IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil
+				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_MODISCO_BWD)) {
+			processor.process((MGravityModel) getSrc(), monitor);
 		}
 
 		try {
@@ -392,7 +388,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	@Override
 	public void setDebug(boolean debug) {
-		this.verbose = debug;
+		// this.verbose = debug;
 		this.debug = debug;
 	}
 

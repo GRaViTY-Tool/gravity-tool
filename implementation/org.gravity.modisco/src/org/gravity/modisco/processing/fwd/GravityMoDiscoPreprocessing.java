@@ -1,4 +1,4 @@
-package org.gravity.modisco.preprocessing;
+package org.gravity.modisco.processing.fwd;
 
 import java.lang.Iterable;
 import java.util.LinkedList;
@@ -8,7 +8,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
@@ -58,8 +57,9 @@ import org.gravity.modisco.MName;
 import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoFactory;
+import org.gravity.modisco.processing.IMoDiscoProcessor;
 
-public class GravityMoDiscoPreprocessing extends EObjectImpl {
+public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
 	private static boolean createParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		MEntry prev = null;
@@ -544,8 +544,9 @@ public class GravityMoDiscoPreprocessing extends EObjectImpl {
 		}
 		return false;
 	}
-
-	public static boolean preprocess(IProgressMonitor progressMonitor, MGravityModel model) {
+	
+	@Override
+	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
 		if (model.getMFieldDefinitions().size() == 0) {
 			model.getMFieldDefinitions().addAll(factory.getFdefs());
@@ -606,7 +607,7 @@ public class GravityMoDiscoPreprocessing extends EObjectImpl {
 				}
 				
 			}
-			if (progressMonitor.isCanceled()) {
+			if (monitor.isCanceled()) {
 				return false;
 			}
 		}

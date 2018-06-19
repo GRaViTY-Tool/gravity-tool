@@ -1,4 +1,4 @@
-package org.gravity.modisco.preprocessing;
+package org.gravity.modisco.processing.fwd;
 
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;

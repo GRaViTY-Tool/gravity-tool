@@ -14,7 +14,7 @@
 <booleanAttribute key="default" value="true"/>
 <stringAttribute key="deselected_workspace_plugins" value="org.gravity.arte,org.gravity.arte.testdsl,org.gravity.arte.testdsl.ide,org.gravity.arte.testdsl.tests,org.gravity.arte.testdsl.ui,org.gravity.arte.testdsl.ui.tests,org.gravity.arte.ui,org.gravity.eclipse.ui,org.gravity.hulk,org.gravity.hulk.annotations,org.gravity.hulk.antipatterngraph,org.gravity.hulk.refactoringgraph,org.gravity.hulk.ui,org.gravity.hulk.visualization,org.gravity.refactoring.test,org.gravity.refactorings,org.gravity.refactorings.ui,org.gravity.tgg.modisco.ui"/>
 <booleanAttribute key="includeOptional" value="true"/>
-<stringAttribute key="location" value="${workspace_loc:org.gravity.tgg.modisco.test/java_src}"/>
+<stringAttribute key="location" value="${workspace_loc}:org.gravity.tgg.modisco.test/java_src"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/org.gravity.tgg.modisco.test/src/org/gravity/tgg/modisco/test/src/ForwardFromSrcTests.java"/>
 </listAttribute>

@@ -11,8 +11,13 @@ public class MoDiscoTGGActivator extends Plugin {
 	
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.ui"; //$NON-NLS-1$
+	
+	// The extension points
+	public static final String PROCESS_PG_FWD = "org.gravity.tgg.modisco.ProcessingPgFwd";
+	public static final String PROCESS_PG_BWD = "org.gravity.tgg.modisco.ProcessingPgBwd";
+	public static final String PROCESS_MODISCO_BWD = "org.gravity.tgg.modisco.ProcessingModiscoBwd";
 
-		// The shared instance
+	// The shared instance
 	private static MoDiscoTGGActivator plugin;
 
 	private GravityMoDiscoModelPatcher patcher;

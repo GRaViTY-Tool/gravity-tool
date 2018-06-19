@@ -1,4 +1,4 @@
-package org.gravity.modisco.preprocessing;
+package org.gravity.modisco.processing.fwd;
 
 import java.util.ArrayList;
 

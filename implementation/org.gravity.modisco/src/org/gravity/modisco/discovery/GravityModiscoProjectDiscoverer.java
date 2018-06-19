@@ -21,8 +21,10 @@ import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
 import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
 import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
+import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.preprocessing.GravityMoDiscoPreprocessing;
+import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
+import org.gravity.modisco.processing.IMoDiscoProcessor;
 
 public class GravityModiscoProjectDiscoverer {
 	
@@ -79,11 +81,17 @@ public class GravityModiscoProjectDiscoverer {
 		MGravityModel model;
 		if (eobject instanceof MGravityModel) {
 			model = (MGravityModel) eobject;
-
-			if (!GravityMoDiscoPreprocessing.preprocess(progressMonitor, model)) {
-				System.out.println("ERROR: Preprocessing failed");
-				throw new RuntimeException("Preprocessing failed");
+			for (IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD)) {
+				if(!processor.process(model, progressMonitor)) {
+					System.out.println("ERROR: Preprocessing failed");
+					throw new RuntimeException("Preprocessing failed");
+				}
 			}
+			
+//			if (!new GravityMoDiscoPreprocessing().process(model, progressMonitor)) {
+//				System.out.println("ERROR: Preprocessing failed");
+//				throw new RuntimeException("Preprocessing failed");
+//			}
 
 		} else {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
