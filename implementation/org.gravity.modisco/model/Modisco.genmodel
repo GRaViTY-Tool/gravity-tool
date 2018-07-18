@@ -76,6 +76,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldNames"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mAbstractMethodDefinitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/typeParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mExtensions"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldName"/>
@@ -99,5 +100,6 @@
     <genClasses ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MClass">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MClass/dependencies"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MExtension"/>
   </genPackages>
 </genmodel:GenModel>

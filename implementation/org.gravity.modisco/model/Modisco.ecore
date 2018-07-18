@@ -118,6 +118,8 @@
         upperBound="-1" eType="#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameters" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mExtensions" upperBound="-1"
+        eType="#//MExtension" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MFieldSignature" eSuperTypes="#//MSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldName" lowerBound="1"
@@ -147,4 +149,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MExtension" abstract="true"/>
 </ecore:EPackage>

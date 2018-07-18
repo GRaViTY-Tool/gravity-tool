@@ -27,7 +27,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	}
 	
 	@Override
-	public Model createModel() {
+	public final Model createModel() {
 		this.model = ModiscoFactory.eINSTANCE.createMGravityModel();
 		this.mdefs = new HashSet<>();
 		this.fdefs = new HashSet<>();
@@ -38,36 +38,46 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	@Override
 	public MConstructorDefinition createConstructorDeclaration() {
 		MConstructorDefinition decl = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
+		addMconstructorDefinition(decl);
+		return decl;
+	}
+	public void addMconstructorDefinition(MConstructorDefinition decl) {
 		if (this.model != null) {
 			this.cdefs.add(decl);
 			this.model.getMConstructorDefinitions().add(decl);
 			this.model.getMAbstractMethodDefinitions().add(decl);
 			decl.setModel(this.model);
 		}
-		return decl;
 	}
 
 	@Override
 	public MMethodDefinition createMethodDeclaration() {
 		MMethodDefinition decl = ModiscoFactory.eINSTANCE.createMMethodDefinition();
+		addMMethodDefinition(decl);
+		return decl;
+	}
+	public void addMMethodDefinition(MMethodDefinition decl) {
 		if (this.model != null) {
 			this.mdefs.add(decl);
 			this.model.getMMethodDefinitions().add(decl);
 			this.model.getMAbstractMethodDefinitions().add(decl);
 			decl.setModel(this.model);
 		}
-		return decl;
 	}
 
 	@Override
 	public MFieldDefinition createFieldDeclaration() {
 		MFieldDefinition decl = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		addMFieldDefinition(decl);
+		return decl;
+	}
+	
+	public void addMFieldDefinition(MFieldDefinition decl) {
 		if (this.model != null) {
 			this.fdefs.add(decl);
 			this.model.getMFieldDefinitions().add(decl);
 			decl.setModel(this.model);
 		}
-		return decl;
 	}
 
 	public Set<MMethodDefinition> getMdefs() {
