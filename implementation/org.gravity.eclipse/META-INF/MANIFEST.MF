@@ -18,5 +18,6 @@ Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.exceptions,
  org.gravity.eclipse.importer,
  org.gravity.eclipse.io,
+ org.gravity.eclipse.os,
  org.gravity.eclipse.selection
 Automatic-Module-Name: org.gravity.eclipse

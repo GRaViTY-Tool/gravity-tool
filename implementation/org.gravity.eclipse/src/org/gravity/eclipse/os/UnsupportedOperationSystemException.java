@@ -11,4 +11,8 @@ public class UnsupportedOperationSystemException extends Exception {
 		super("ErrorMessage=\""+string+"\",\nos.name=\""+System.getProperty("os.name")+"\",\nOS="+OperationSystem.os+"\"");
 	}
 
+	public UnsupportedOperationSystemException() {
+		super();
+	}
+
 }

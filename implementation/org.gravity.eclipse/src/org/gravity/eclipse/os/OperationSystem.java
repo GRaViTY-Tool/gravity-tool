@@ -8,7 +8,7 @@ public enum OperationSystem {
 		
 		public static final OperationSystem  os = getCurrentOS();
 		
-		private static  OperationSystem getCurrentOS() {
+		public static  OperationSystem getCurrentOS() {
 			if(System.getProperty("os.name").toLowerCase().indexOf("windows") >= 0) {
 				return OperationSystem.WINDOWS;
 			}

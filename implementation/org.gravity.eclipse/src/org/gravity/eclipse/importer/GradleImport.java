@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
+import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,6 +67,7 @@ public class GradleImport {
 	private File gradleHome, androidHome;
 
 	private Set<Path> javaSourceFiles = new HashSet<Path>();
+	private Set<Path> buildDotGradleFiles = new HashSet<Path>();
 
 	private Set<String> appliedPlugins;
 
@@ -137,20 +140,11 @@ public class GradleImport {
 
 	public IJavaProject importGradleProject(IProgressMonitor monitor)
 			throws IOException, CoreException, InterruptedException, NoGradleRootFolderException {
-		// build gradle project
-		try {
-			if (!buildGradleProject(rootDir)) {
-				return null;
-			}
-		} catch (UnsupportedOperationSystemException e1) {
-			System.err.println("WARNING: Build of gradle project failed, some lib imports might be missing.");
-		}
-
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
 
-		Set<Path> buildDotGradleFiles = scanDirectoryForSubRoots(rootDir);
+		buildDotGradleFiles = scanDirectoryForSubRoots(rootDir);
 
 		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
 		androidApp = appliedPlugins.contains("com.android.application");
@@ -176,6 +170,25 @@ public class GradleImport {
 		addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
 				monitor);
 
+		// build gradle project
+		try {
+			if (!buildGradleProject(rootDir)) {
+				return null;
+			}
+		} catch (UnsupportedOperationSystemException e1) {
+			System.err.println("WARNING: Build of gradle project failed, some lib imports might be missing.");
+		}
+		
+		if(androidApp) {
+			IPath outputLocation = project.getOutputLocation().removeFirstSegments(1);
+			IFolder outputLocationFolder = project.getProject().getFolder(outputLocation);
+			if(!outputLocationFolder.exists()) {
+				outputLocationFolder.create(true, true, monitor);
+			}
+			outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL, monitor);
+		}
+
+		// search libs
 		IFolder libFolder = project.getProject().getFolder("lib");
 		List<IClasspathEntry> entries = new LinkedList<>();
 		Set<Path> requiredLibs = getLibs(buildDotGradleFiles);
@@ -387,10 +400,11 @@ public class GradleImport {
 		Process p = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assembleDebug", null, folder);
+			p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
 			break;
 		case LINUX:
-			p = Runtime.getRuntime().exec("./gradlew", null, folder);
+			p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
+			break;
 		default:
 			System.err.println("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
@@ -403,15 +417,73 @@ public class GradleImport {
 		// System.out.println("GRADLE: " + line);
 		// }
 		// }
+		StringBuilder message = new StringBuilder();
+		try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
+			String line;
+			while ((line = stream.readLine()) != null) {
+				message.append(line);
+				message.append('\n');
+				System.out.println("GRADLE: "+message);
+			}
+		}
 		try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
 			String line;
 			while ((line = stream.readLine()) != null) {
-				System.err.println("GRADLE: " + line);
+				message.append(line);
+				message.append('\n');
+				System.err.println("GRADLE: "+message);
+			}
+		}
+		p.waitFor();
+		boolean success = p.exitValue() == 0;
+		
+		if(!success && androidApp) {
+			if(message.toString().contains("File google-services.json is missing")) {
+				boolean fix = false;
+				Pattern pattern = Pattern.compile("apply\\s+plugin:\\s+'com.google.gms.google-services'");
+				for(Path buildFile : buildDotGradleFiles) {
+					boolean change = false;
+					List<String> content = Files.readAllLines(buildFile);
+					for(int i = 0; i < content.size(); i++) {
+						String l = content.get(i);
+						Matcher matcher = pattern.matcher(l);
+						while(matcher.find()) {
+							change = true;
+							content.set(i, l.substring(0, matcher.regionStart())+l.substring(matcher.regionEnd()));
+						}
+					}
+					if(change) {
+						fix = true;
+						Files.write(buildFile, content);
+					}
+				}
+				if(fix) {
+					switch (OperationSystem.os) {
+					case WINDOWS:
+						p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
+						break;
+					case LINUX:
+						p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
+						break;
+					default:
+						System.err.println("Unsupported OS");
+						throw new UnsupportedOperationSystemException("Cannot execute gradlew");
+					}
+
+					try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
+						String line;
+						while ((line = stream.readLine()) != null) {
+							System.out.println("GRADLE: "+line);
+						}
+					}
+
+					p.waitFor();
+					success = p.exitValue() == 0;	
+				}
 			}
 		}
 
-		p.waitFor();
-		return p.exitValue() == 0;
+		return success;
 	}
 
 	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoGradleRootFolderException {
@@ -453,7 +525,9 @@ public class GradleImport {
 					if (match != null) {
 						String var = includeMatcher.group(13);
 						String type = includeMatcher.group(14);
-						match = defs.get(var);
+						if (var != null) {
+							match = defs.get(var);
+						}
 					}
 
 					Matcher mEntry = entryPattern.matcher(match);
@@ -625,8 +699,8 @@ public class GradleImport {
 		int minSdk = Integer.MAX_VALUE;
 		int targetSdk = -1;
 
-		ArrayList<String> parsedBuildFiles  = new ArrayList<String>(buildDotGradleFiles.size());
-		
+		ArrayList<String> parsedBuildFiles = new ArrayList<String>(buildDotGradleFiles.size());
+
 		// Pattern patternDepenencies =
 		// Pattern.compile("(\\s*)(dependencies)(\\s+)(\\{)");
 		Pattern patternSingleDependency = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
@@ -644,56 +718,55 @@ public class GradleImport {
 				parsedBuildFiles.add(contentBuilder.toString());
 			}
 		}
-		for(String content : parsedBuildFiles) {
-				Matcher m = patternSingleDependency.matcher(content);
-				while (m.find()) {
-					String dependency = m.group(4);
-					int index = dependency.indexOf('$');
-					if(index > 0) {
-						Pattern pattern = Pattern.compile(dependency.substring(index+1)+"\\s+=\\s+('|\")(.+)('|\")");
-						Matcher matcher = pattern.matcher(content);
-						if(matcher.find()) {
-							dependency = dependency.substring(0, index) + matcher.group(2);
-						}
-						else {
-							for(String buildFile : parsedBuildFiles) {
-								matcher = pattern.matcher(buildFile);
-								if(matcher.find()) {
-									dependency = dependency.substring(0, index) + matcher.group(2);
-									break;
-								}
+		for (String content : parsedBuildFiles) {
+			Matcher m = patternSingleDependency.matcher(content);
+			while (m.find()) {
+				String dependency = m.group(4);
+				int index = dependency.indexOf('$');
+				if (index > 0) {
+					Pattern pattern = Pattern.compile(dependency.substring(index + 1) + "\\s+=\\s+('|\")(.+)('|\")");
+					Matcher matcher = pattern.matcher(content);
+					if (matcher.find()) {
+						dependency = dependency.substring(0, index) + matcher.group(2);
+					} else {
+						for (String buildFile : parsedBuildFiles) {
+							matcher = pattern.matcher(buildFile);
+							if (matcher.find()) {
+								dependency = dependency.substring(0, index) + matcher.group(2);
+								break;
 							}
 						}
 					}
-					if ("compile".equals(m.group(0))) {
+				}
+				if ("compile".equals(m.group(0))) {
+					compileLibs.add(dependency);
+				} else {
+					if (dependency.contains(":")) {
 						compileLibs.add(dependency);
 					} else {
-						if (dependency.contains(":")) {
-							compileLibs.add(dependency);
-						} else {
-							useLibs.add(dependency);
-						}
+						useLibs.add(dependency);
 					}
 				}
+			}
 
-				if (androidApp) {
-					Matcher matcherSdk = patternSdk.matcher(content);
-					while (matcherSdk.find()) {
-						String group = matcherSdk.group(1);
-						if ("minSdkVersion".equals(group)) {
-							int value = Integer.valueOf(matcherSdk.group(6));
-							if (minSdk > value) {
-								minSdk = value;
-							}
-						} else if ("targetSdkVersion".equals(group)) {
-							int value = Integer.valueOf(matcherSdk.group(6));
-							if (targetSdk < value) {
-								targetSdk = value;
-							}
+			if (androidApp) {
+				Matcher matcherSdk = patternSdk.matcher(content);
+				while (matcherSdk.find()) {
+					String group = matcherSdk.group(1);
+					if ("minSdkVersion".equals(group)) {
+						int value = Integer.valueOf(matcherSdk.group(6));
+						if (minSdk > value) {
+							minSdk = value;
+						}
+					} else if ("targetSdkVersion".equals(group)) {
+						int value = Integer.valueOf(matcherSdk.group(6));
+						if (targetSdk < value) {
+							targetSdk = value;
 						}
 					}
 				}
-			
+			}
+
 		}
 
 		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleHome, gradleCache));
