@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.gravity.security.annotations/gen" modelPluginID="org.gravity.security.annotations"
+    modelName="Annotations" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel#//basic"
+    operationReflection="true">
+  <foreignModel>Annotations.ecore</foreignModel>
+  <genPackages prefix="Annotations" basePackage="org.gravity.security" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/">
+    <nestedGenPackages prefix="Access" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//access">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//access/TApi"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Requirements" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//requirements">
+      <genClasses ecoreClass="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//requirements/TSecrecy"/>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#//requirements/TIntegrity"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

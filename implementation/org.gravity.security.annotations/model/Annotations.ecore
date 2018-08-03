@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="annotations" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore"
+    nsPrefix="org.gravity.security.annotations">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="org.gravity.security"/>
+  </eAnnotations>
+  <eSubpackages name="access" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access"
+      nsPrefix="access">
+    <eClassifiers xsi:type="ecore:EClass" name="TApi" eSuperTypes="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
+  </eSubpackages>
+  <eSubpackages name="requirements" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"
+      nsPrefix="requirements">
+    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
+  </eSubpackages>
+</ecore:EPackage>
