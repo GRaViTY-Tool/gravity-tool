@@ -38,21 +38,10 @@ public abstract class RefactoringHandler extends AbstractHandler {
 		builder.append("in the classes\n\n");
 		for (TClass c : tParent.getChildClasses()) {
 			builder.append('\t');
-			builder.append(getFullyQualifiedName(c));
+			builder.append(c.getFullyQualifiedName());
 			builder.append('\n');
 		}
 		builder.append("\nhave an equivalent implementation.");
-		return builder.toString();
-	}
-
-	private static String getFullyQualifiedName(TClass c) {
-		StringBuilder builder = new StringBuilder(c.getTName());
-		TPackage p = c.getPackage();
-		while (p != null) {
-			builder.insert(0, '.');
-			builder.insert(0, p.getTName());
-			p = p.getParent();
-		}
 		return builder.toString();
 	}
 
