@@ -184,7 +184,7 @@ public class Extract_SuperclassImpl extends RefactoringImpl {
 
 	public static final Object[] pattern_Extract_Superclass_0_5_ActivityNode198_bindingFBBB(HelpersImpl helpers,
 			List<TClass> children, TSignature tSignature) {
-		TMember _localVariable_0 = helpers.esc_Helper_GetBestTMember(children, tSignature);
+		TMember _localVariable_0 = helpers.getBestTMember(children, tSignature);
 		TMember bestDefinition = _localVariable_0;
 		if (bestDefinition != null) {
 			return new Object[] { bestDefinition, helpers, children, tSignature };
@@ -268,7 +268,7 @@ public class Extract_SuperclassImpl extends RefactoringImpl {
 
 	public static final boolean pattern_Extract_Superclass_0_10_ActivityNode200_expressionFBBBB(HelpersImpl helpers,
 			TClass child, TClass new_parent, TSignature tSignature) {
-		boolean _localVariable_0 = helpers.esc_Helper_MountAccesses(child, new_parent, tSignature);
+		boolean _localVariable_0 = helpers.mountAccesses(child, new_parent, tSignature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}

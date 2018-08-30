@@ -32,20 +32,27 @@ public class Search {
 	 * @generated
 	 */
 	public static boolean equivalent(TPackage package2, TPackage package1) {//
-		if (!package1.equals(package2)) {
+		if (package1.equals(package2)) {
+			return true;
+		}
+		else {
 			//
-			String package1_tName = package1.getTName();
-			String package2_tName = package2.getTName();
-			if (package1_tName.equals(package2_tName)) {
+			String tName1 = package1.getTName();
+			String tName2 = package2.getTName();
+			if (tName1.equals(tName2)) {
 				//
-				Object[] result3_black = Search.pattern_Search_0_3_ActivityNode61_blackFB(package1);
+				TPackage result3_black = null;
+				for (TPackage child1 : package1.getSubpackage()) {
+					if (!child1.equals(package1)) {
+						result3_black = child1;
+					}
+				}
 				if (result3_black != null) {
-					TPackage child1 = (TPackage) result3_black[0];
+					TPackage child1 = result3_black;
 					//
-					Object[] result4_black = Search.pattern_Search_0_4_ActivityNode62_blackFB(package2);
-					if (result4_black != null) {
-						TPackage child2 = (TPackage) result4_black[0];
-						return equivalent(child1, child2);
+					EList<TPackage> subPackages = package2.getSubpackage();;
+					if (subPackages.size() > 0) {
+						return equivalent(child1, subPackages.get(0));
 					} else {
 						return false;
 					}
@@ -63,10 +70,7 @@ public class Search {
 				return false;
 			}
 
-		} else {
-			return true;
 		}
-
 	}
 
 	/**
@@ -299,33 +303,6 @@ public class Search {
 		}
 		return false;
 
-	}
-
-	public static final Object[] pattern_Search_0_3_ActivityNode61_blackFB(TPackage package1) {
-		for (TPackage child1 : package1.getSubpackage()) {
-			if (!child1.equals(package1)) {
-				return new Object[] { child1, package1 };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Search_0_4_ActivityNode62_blackFB(TPackage package2) {
-		for (TPackage child2 : package2.getSubpackage()) {
-			if (!child2.equals(package2)) {
-				return new Object[] { child2, package2 };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Search_0_7_ActivityNode63_blackFB(TPackage package2) {
-		for (TPackage child2 : package2.getSubpackage()) {
-			if (!child2.equals(package2)) {
-				return new Object[] { child2, package2 };
-			}
-		}
-		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_Search_7_4_ActivityNode153_blackBFFB(TFieldSignature tFieldSignature,

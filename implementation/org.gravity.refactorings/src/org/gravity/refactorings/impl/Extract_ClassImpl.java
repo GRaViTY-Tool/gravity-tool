@@ -31,10 +31,10 @@ import org.gravity.typegraph.basic.TMethodDefinition;
  * @generated
  */
 public class Extract_ClassImpl extends RefactoringImpl {
-	
+
 	@Override
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
-		//TODO: Implement Refactoring
+		// TODO: Implement Refactoring
 		throw new UnsupportedOperationException();
 	}
 
@@ -96,51 +96,54 @@ public class Extract_ClassImpl extends RefactoringImpl {
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			ExtractClassConfiguration tExtractConfiguration = (ExtractClassConfiguration) tRefactoringConfiguration;
 
-			Object[] result3_black = Extract_ClassImpl
-					.pattern_Extract_Class_1_3_ActivityNode245_blackBFFFF(tExtractConfiguration);
-			if (result3_black == null) {
+
+			TClass tClass = null;
+			TPackage tPackage = null;
+			TypeGraph tPG = null;
+			
+			for (TMember tSomeMember : tExtractConfiguration.getTMembers()) {
+				TAbstractType tmpTClass = tSomeMember.getDefinedBy();
+				if (tmpTClass instanceof TClass) {
+					tPG = tClass.getPg();
+					if (tPG != null) {
+						tPackage = tClass.getPackage();
+						if (tPackage != null) {
+							tClass = (TClass) tmpTClass;
+							break;
+						}
+
+					}
+
+				}
+
+			}
+			if (tClass == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tExtractConfiguration] = "
 						+ tExtractConfiguration + ".");
 			}
-			// nothing TMember tSomeMember = (TMember) result3_black[1];
-			TClass tClass = (TClass) result3_black[2];
-			TPackage tPackage = (TPackage) result3_black[3];
-			TypeGraph tPG = (TypeGraph) result3_black[4];
 
-			Object[] result4_black = Extract_ClassImpl.pattern_Extract_Class_1_4_ActivityNode246_blackBB(tPG, tPackage);
-			if (result4_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tPG] = " + tPG + ", "
-						+ "[tPackage] = " + tPackage + ".");
-			}
-			Object[] result4_green = Extract_ClassImpl.pattern_Extract_Class_1_4_ActivityNode246_greenBBFB(tPG,
-					tPackage, tExtractConfiguration);
-			TClass tNewClass = (TClass) result4_green[2];
+			TClass tNewClass = createNewTClass(tExtractConfiguration, tPackage, tPG);
 
-			if (tClass.equals(tNewClass)) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tNewClass] = " + tNewClass
-						+ ", " + "[tClass] = " + tClass + ".");
-			}
-			
 			List<TClass> tContainer = new LinkedList<>();
 			tContainer.add(tNewClass);
 			tContainer.add(tClass);
-			
 
 			// ForEach
 			for (Object[] result6_black : Extract_ClassImpl
 					.pattern_Extract_Class_1_6_ActivityNode247_blackBF(tExtractConfiguration)) {
 				TMember tMember = (TMember) result6_black[1];
 
-				Object[] result7_bindingAndBlack = Extract_ClassImpl
-						.pattern_Extract_Class_1_7_ActivityNode248_bindingAndBlackFBBB(tMember, tClass, tNewClass);
-				if (result7_bindingAndBlack == null) {
+				TSignature tSignature = tMember.getSignature();
+				if (tSignature != null && !tClass.equals(tNewClass) && tClass.equals(tMember.getDefinedBy())
+						&& tClass.getSignature().contains(tSignature)) {
+					tMember.setDefinedBy(null);
+					tMember.setDefinedBy(tNewClass);
+					tNewClass.getSignature().add(tSignature);
+
+				} else {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMember] = " + tMember
 							+ ", " + "[tClass] = " + tClass + ", " + "[tNewClass] = " + tNewClass + ".");
 				}
-				TSignature tSignature = (TSignature) result7_bindingAndBlack[0];
-				Extract_ClassImpl.pattern_Extract_Class_1_7_ActivityNode248_redBB(tMember, tClass);
-
-				Extract_ClassImpl.pattern_Extract_Class_1_7_ActivityNode248_greenBBB(tSignature, tMember, tNewClass);
 
 			}
 			return tContainer;
@@ -150,43 +153,15 @@ public class Extract_ClassImpl extends RefactoringImpl {
 
 	}
 
-	public static final Object[] pattern_Extract_Class_1_3_ActivityNode245_blackBFFFF(
-			ExtractClassConfiguration tExtractConfiguration) {
-		for (TMember tSomeMember : tExtractConfiguration.getTMembers()) {
-			TAbstractType tmpTClass = tSomeMember.getDefinedBy();
-			if (tmpTClass instanceof TClass) {
-				TClass tClass = (TClass) tmpTClass;
-				TypeGraph tPG = tClass.getPg();
-				if (tPG != null) {
-					TPackage tPackage = tClass.getPackage();
-					if (tPackage != null) {
-						return new Object[] { tExtractConfiguration, tSomeMember, tClass, tPackage, tPG };
-					}
-
-				}
-
-			}
-
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Extract_Class_1_4_ActivityNode246_blackBB(TypeGraph tPG, TPackage tPackage) {
-		return new Object[] { tPG, tPackage };
-	}
-
-	public static final Object[] pattern_Extract_Class_1_4_ActivityNode246_greenBBFB(TypeGraph tPG, TPackage tPackage,
-			ExtractClassConfiguration tExtractConfiguration) {
+	private TClass createNewTClass(ExtractClassConfiguration tExtractConfiguration, TPackage tPackage, TypeGraph tPG) {
 		TClass tNewClass = BasicFactory.eINSTANCE.createTClass();
+		tNewClass.setTName(tExtractConfiguration.getTNewClassName());
 		tPG.getOwnedTypes().add(tNewClass);
 		tPG.getClasses().add(tNewClass);
 		tPackage.getOwnedTypes().add(tNewClass);
 		tPackage.getClasses().add(tNewClass);
-		String tExtractConfiguration_tNewClassName = tExtractConfiguration.getTNewClassName();
-		String tNewClass_tName_prime = tExtractConfiguration_tNewClassName;
-		tNewClass.setTName(tNewClass_tName_prime);
-		return new Object[] { tPG, tPackage, tNewClass, tExtractConfiguration };
-
+		
+		return tNewClass;
 	}
 
 	public static final Iterable<Object[]> pattern_Extract_Class_1_6_ActivityNode247_blackBF(
@@ -196,56 +171,6 @@ public class Extract_ClassImpl extends RefactoringImpl {
 			_result.add(new Object[] { tExtractConfiguration, tMember });
 		}
 		return _result;
-	}
-
-	public static final Object[] pattern_Extract_Class_1_7_ActivityNode248_bindingFB(TMember tMember) {
-		TSignature _localVariable_0 = tMember.getSignature();
-		TSignature tSignature = _localVariable_0;
-		if (tSignature != null) {
-			return new Object[] { tSignature, tMember };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Extract_Class_1_7_ActivityNode248_blackBBBB(TSignature tSignature,
-			TMember tMember, TClass tClass, TClass tNewClass) {
-		if (!tClass.equals(tNewClass)) {
-			if (tClass.equals(tMember.getDefinedBy())) {
-				if (tClass.getSignature().contains(tSignature)) {
-					return new Object[] { tSignature, tMember, tClass, tNewClass };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Extract_Class_1_7_ActivityNode248_bindingAndBlackFBBB(TMember tMember,
-			TClass tClass, TClass tNewClass) {
-		Object[] result_pattern_Extract_Class_1_7_ActivityNode248_binding = pattern_Extract_Class_1_7_ActivityNode248_bindingFB(
-				tMember);
-		if (result_pattern_Extract_Class_1_7_ActivityNode248_binding != null) {
-			TSignature tSignature = (TSignature) result_pattern_Extract_Class_1_7_ActivityNode248_binding[0];
-
-			Object[] result_pattern_Extract_Class_1_7_ActivityNode248_black = pattern_Extract_Class_1_7_ActivityNode248_blackBBBB(
-					tSignature, tMember, tClass, tNewClass);
-			if (result_pattern_Extract_Class_1_7_ActivityNode248_black != null) {
-
-				return new Object[] { tSignature, tMember, tClass, tNewClass };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Extract_Class_1_7_ActivityNode248_redBB(TMember tMember, TClass tClass) {
-		tMember.setDefinedBy(null);
-		return new Object[] { tMember, tClass };
-	}
-
-	public static final Object[] pattern_Extract_Class_1_7_ActivityNode248_greenBBB(TSignature tSignature,
-			TMember tMember, TClass tNewClass) {
-		tMember.setDefinedBy(tNewClass);
-		tNewClass.getSignature().add(tSignature);
-		return new Object[] { tSignature, tMember, tNewClass };
 	}
 
 	@Override
