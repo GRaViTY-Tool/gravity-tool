@@ -6,6 +6,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * An UMLsecRT CounterMesure annotation
+ * 
+ * @author speldszus
+ *
+ */
 @Retention(RUNTIME)
 @Target(value=METHOD)
 public @interface CounterMeasure {

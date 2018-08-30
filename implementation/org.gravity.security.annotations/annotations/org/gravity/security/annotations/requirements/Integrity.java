@@ -12,6 +12,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
 /**
+ * Equivalent to umlsec <<critical>>{integrity={annotated member}}
+ * 
  * @author speldszus
  *
  */

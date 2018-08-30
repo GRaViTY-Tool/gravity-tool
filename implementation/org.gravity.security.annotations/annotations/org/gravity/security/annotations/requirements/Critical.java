@@ -10,6 +10,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Equivalent to umlsec <<critical>>
+ * 
  * @author speldszus
  *
  */

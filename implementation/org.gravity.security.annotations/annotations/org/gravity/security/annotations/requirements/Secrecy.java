@@ -12,7 +12,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
 /**
- * @author speldszus
+ * Equivalent to umlsec <<critical>>{secrecy={annotated member}}
+ * 
+  * @author speldszus
  *
  */
 @Target(value={FIELD, METHOD, CONSTRUCTOR})

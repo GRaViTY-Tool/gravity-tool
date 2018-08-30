@@ -12,6 +12,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * For annotating expected api interfaces
+ * 
  * @author speldszus
  *
  */

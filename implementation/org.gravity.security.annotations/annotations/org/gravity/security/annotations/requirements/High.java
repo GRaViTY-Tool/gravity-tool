@@ -12,6 +12,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
+ * Equivalent to umlsec <<critical>>{high={annotated member}}
+ * 
  * @author speldszus
  *
  */

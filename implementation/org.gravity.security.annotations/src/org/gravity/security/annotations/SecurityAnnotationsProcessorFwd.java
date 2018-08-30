@@ -22,10 +22,19 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
+/**
+ * A forward processor for replacing java annotations created from UMLsec sterotypes with corresponding security annotations 
+ * 
+ * @author speldszus
+ *
+ */
 public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 
 	private ResourceSet rs;
 	
+	/**
+	 * Replaces UMLsec java annotations with corresponding security annotations
+	 */
 	@Override
 	public boolean process(TypeGraph pg, IProgressMonitor monitor) {
 		rs = pg.eResource().getResourceSet();
@@ -58,6 +67,12 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 		return true;
 	}
 
+	/**
+	 * Replaces an annotation in a the program model
+	 * 
+	 * @param tAnnotation the current annotation
+	 * @param replacement the replacement
+	 */
 	private void replace(TAnnotation tAnnotation, TAnnotation replacement) {
 		EcoreUtil.replace(tAnnotation, replacement);
 		for(Setting setting : EcoreUtil.UsageCrossReferencer.find(tAnnotation, rs)) {
