@@ -32,6 +32,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import static org.gravity.eclipse.io.ModelSaver.*;
 
@@ -114,6 +115,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long start = System.currentTimeMillis();
 		System.out.println(start + " GRaViTY convert project: " + java_project.getProject().getName());
 
+		this.projectName = java_project.getProject().getName();
+		GravityActivator.getDefault().addProject(java_project.getProject());
 		this.java_project = java_project;
 		this.modisco_folder = java_project.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
@@ -304,6 +307,18 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		}
 
 		return true;
+	}
+	
+	@Override
+	public void setSrc(EObject sourceModel) {
+		GravityActivator.getDefault().addSrc(projectName, sourceModel);
+		super.setSrc(sourceModel);
+	}
+	
+	@Override
+	public void setTrg(EObject targetModel) {
+		GravityActivator.getDefault().addTrg(projectName, targetModel);
+		super.setTrg(targetModel);
 	}
 
 	private void addLibToProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor) {
