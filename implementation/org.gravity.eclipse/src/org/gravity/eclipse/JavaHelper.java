@@ -85,16 +85,19 @@ public class JavaHelper {
 					if (iMethod.getNumberOfParameters() == tParamList.getEntries().size()) {
 						boolean equal = true;
 						TParameter tParam = tParamList.getFirst();
+						ILocalVariable[] parameters;
 						try {
-							for (ILocalVariable param : iMethod.getParameters()) {
-								String iParamSignature = Signature.toString(param.getTypeSignature());
-								iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
-								if (!(equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature))) {
-									break;
-								}
-								tParam = tParam.getNext();
+							parameters = iMethod.getParameters();
+						} catch (JavaModelException e) {
+							continue;
+						}
+						for (ILocalVariable param : parameters) {
+							String iParamSignature = Signature.toString(param.getTypeSignature());
+							iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
+							if (!(equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature))) {
+								break;
 							}
-						} catch (JavaModelException | IllegalArgumentException e) {
+							tParam = tParam.getNext();
 						}
 						if (equal) {
 							return tMethodDefinition;
