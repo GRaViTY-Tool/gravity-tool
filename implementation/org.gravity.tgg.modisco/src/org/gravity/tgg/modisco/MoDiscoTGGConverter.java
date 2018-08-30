@@ -134,6 +134,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		try {
 			targetModel = discoverer.discoverMGravityModelFromProject(javaProject, libs, progressMonitor);
 		} catch (DiscoveryException e) {
+			e.printStackTrace();
 			return false;
 		}
 		if (this.debug) {
@@ -239,6 +240,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		try {
 			targetModel = this.discoverer.discoverMGravityModelFromProject(iJavaProject, monitor);
 		} catch (DiscoveryException e) {
+			e.printStackTrace();
 			return false;
 		}
 		System.out.println(System.currentTimeMillis() + " Discover Project - Done");
@@ -349,6 +351,10 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	@Override
 	public boolean savePG(IFile file, IProgressMonitor monitor) {
 		return saveModel(getTrg(), file, monitor);
+	}
+
+	private boolean saveMoDiscoModel(IFile modisco_file, IProgressMonitor monitor) {
+		return saveModel(getSrc(), modisco_file, monitor);
 	}
 
 	@Override
