@@ -27,7 +27,7 @@ import org.gravity.eclipse.importer.NoGradleRootFolderException;
  */
 public class GradleImportHandler extends AbstractHandler {
 	
-	private final static Logger LOGGER = Logger.getLogger(GradleImportHandler.class);
+	private static final Logger LOGGER = Logger.getLogger(GradleImportHandler.class);
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {

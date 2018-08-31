@@ -49,6 +49,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
@@ -60,6 +61,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * Allows to import a gradle java project as single eclipse project into the workspace
+ * 
+ * @author speldszus
+ *
+ */
 public class GradleImport {
 
 	private File gradleHome, androidHome;
@@ -73,13 +80,23 @@ public class GradleImport {
 
 	private final File rootDir;
 
-	private final static String gradleCache = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
-	private final static String androidSdkPlatforms = "platforms";
+	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
+	private static final String ANDROID_SDK_PLATFORMS = "platforms";
 	private static final boolean LINKONPROJECT = false;
 	
 	private static final Logger LOGGER = Logger.getLogger(GradleImport.class.getName());
 
-	public GradleImport(File rootDir) throws NoGradleRootFolderException {
+	/**
+	 * Creates an importer for the given gradle root directory of a gradle project
+	 * 
+	 * The gradle home directory has to be registered at the environment variable GRADLE_HOME.
+	 * If the imported project is an Android project the Android Sdk should be registered at the environment variable ANDROID_HOME.
+	 * 
+	 * @param rootDir the path to the gradle root directory
+	 * @throws NoGradleRootFolderException iff the given root directory is not the root of a gradle project
+	 * @throws FileNotFoundException iff the gradle home directory couldn't be found
+	 */
+	public GradleImport(File rootDir) throws NoGradleRootFolderException, FileNotFoundException {
 		LinkedList<File> queue = new LinkedList<File>();
 		queue.add(rootDir);
 		boolean success = false;
@@ -120,7 +137,7 @@ public class GradleImport {
 		}
 	}
 
-	private void initGradleHome() {
+	private void initGradleHome() throws FileNotFoundException {
 		String gradleHome = System.getenv("GRADLE_HOME");
 		if (gradleHome != null) {
 			File tmpGradleHome = new File(gradleHome);
@@ -133,7 +150,7 @@ public class GradleImport {
 			if (tmpGradleHome.exists()) {
 				this.gradleHome = tmpGradleHome;
 			} else {
-				throw new RuntimeException("Gradle home not found");
+				throw new FileNotFoundException("Gradle home not found");
 			}
 		}
 	}
@@ -187,8 +204,22 @@ public class GradleImport {
 			}
 			outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL, monitor);
 		}
+		
+		return addRequiredLibsToProject(project, monitor);
+	}
 
-		// search libs
+	/**
+	 * Searches the libs required by the gradle project and adds them to the given eclipse project
+	 * 
+	 * @param monitor A progress monitor
+	 * @param project The project to which the libs should be added
+	 * @return The eclise project with the requried libs
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 * @throws CoreException
+	 */
+	private IJavaProject addRequiredLibsToProject(IJavaProject project, IProgressMonitor monitor)
+			throws IOException, FileNotFoundException, CoreException {
 		IFolder libFolder = project.getProject().getFolder("lib");
 		List<IClasspathEntry> entries = new LinkedList<>();
 		Set<Path> requiredLibs = getLibs(buildDotGradleFiles);
@@ -208,27 +239,7 @@ public class GradleImport {
 				jarFiles = extractAar(libPath, libFolder, monitor);
 			}
 			if (jarFiles.size() == 0) {
-				File currentVersion = libPath.getParent().toFile();
-				List<File> otherVersions = Arrays.asList(currentVersion.getParentFile().listFiles());
-				otherVersions.sort(new Comparator<File>() {
-
-					@Override
-					public int compare(File o1, File o2) {
-						return o1.getName().compareTo(o2.getName());
-					}
-
-				});
-				for (int i = otherVersions.indexOf(currentVersion) - 1; i > 0; i--) {
-					File tmpFolder = otherVersions.get(i);
-					File tmpFile = new File(tmpFolder,
-							libName.replace(currentVersion.getName().toString(), tmpFolder.getName()));
-					if (tmpFile.exists()) {
-						jarFiles = extractAar(tmpFile.toPath(), libFolder, monitor);
-						if (jarFiles.size() > 0) {
-							break;
-						}
-					}
-				}
+				jarFiles = searchOtherVersionOfLib(libName, libFolder, libPath, jarFiles, monitor);
 				if (jarFiles.size() == 0) {
 					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
 					continue;
@@ -248,6 +259,62 @@ public class GradleImport {
 			}
 		}
 
+		addToClassPath(project, entries, monitor);
+		
+		return project;
+	}
+
+	/**
+	 * 
+	 * Searches a other version of a lib. This method should only be used if an exact version match hasn't been found before!
+	 * 
+	 * @param libName The name of the lib
+	 * @param libFolder The folder to which the lib should be linked or copied
+	 * @param libPath The path to the not existing exact version match
+	 * @param jarFiles The found files
+	 * @param monitor A progress monitor
+	 * @return The found files
+	 * @throws IOException
+	 * @throws CoreException
+	 * @throws FileNotFoundException
+	 */
+	private List<IFile> searchOtherVersionOfLib(String libName, IFolder libFolder, Path libPath, List<IFile> jarFiles,
+			IProgressMonitor monitor) throws IOException, CoreException, FileNotFoundException {
+		File currentVersion = libPath.getParent().toFile();
+		List<File> otherVersions = Arrays.asList(currentVersion.getParentFile().listFiles());
+		otherVersions.sort(new Comparator<File>() {
+
+			@Override
+			public int compare(File o1, File o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+
+		});
+		for (int i = otherVersions.indexOf(currentVersion) - 1; i > 0; i--) {
+			File tmpFolder = otherVersions.get(i);
+			File tmpFile = new File(tmpFolder,
+					libName.replace(currentVersion.getName().toString(), tmpFolder.getName()));
+			if (tmpFile.exists()) {
+				jarFiles = extractAar(tmpFile.toPath(), libFolder, monitor);
+				if (jarFiles.size() > 0) {
+					break;
+				}
+			}
+		}
+		return jarFiles;
+	}
+
+	/**
+	 * 
+	 * Adds the given class path entries to the classpath of the eclipse java project
+	 * 
+	 * @param project the java project
+	 * @param entries the class path entries
+	 * @param monitor a progress monitor
+	 * @throws JavaModelException
+	 */
+	private void addToClassPath(IJavaProject project, List<IClasspathEntry> entries, IProgressMonitor monitor)
+			throws JavaModelException {
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		int i = oldEntries.length;
 		IClasspathEntry[] newEntries = new IClasspathEntry[entries.size() + i];
@@ -257,8 +324,6 @@ public class GradleImport {
 		}
 
 		project.setRawClasspath(newEntries, monitor);
-
-		return project;
 	}
 
 	private static Set<Path> getRClasses(Set<Path> buildDotGradleFiles) throws IOException {
@@ -268,34 +333,41 @@ public class GradleImport {
 			if (mainFolder.exists() && mainFolder.isDirectory()) {
 				File manifestFile = new File(mainFolder, "AndroidManifest.xml");
 				if (manifestFile.exists()) {
-					try {
-						Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-								.parse(manifestFile);
-						document.getDocumentElement().normalize();
-						NodeList manifest = document.getElementsByTagName("manifest");
-						Node attribute = manifest.item(0).getAttributes().getNamedItem("package");
-						String basePackage = attribute.getNodeValue();
-						File rFolder = new File(buildDotGradle.getParent().toFile(), "build/generated/source/r");
-						File releaseFolder;
-						if (!(releaseFolder = new File(rFolder, "release")).exists()) {
-							if (!(releaseFolder = new File(rFolder, "debug")).exists()) {
-								LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
-								continue;
-							}
-						}
-						File rFile = new File(new File(releaseFolder, basePackage.replace('.', '/')), "R.java");
-						if (rFile.exists()) {
-							classes.add(rFile.toPath());
-						} else {
-							LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
-						}
-					} catch (ParserConfigurationException | SAXException e) {
-						e.printStackTrace();
+					File rFile = searchRClassInAdroidMainfest(manifestFile, buildDotGradle.getParent().toFile());
+					
+					if (rFile != null && rFile.exists()) {
+						classes.add(rFile.toPath());
+					}
+					else {
+						LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
 					}
 				}
 			}
 		}
 		return classes;
+	}
+
+	private static File searchRClassInAdroidMainfest(File manifestFile, File gradleRoot) throws IOException {
+		try {
+			Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+					.parse(manifestFile);
+			document.getDocumentElement().normalize();
+			NodeList manifest = document.getElementsByTagName("manifest");
+			Node attribute = manifest.item(0).getAttributes().getNamedItem("package");
+			String basePackage = attribute.getNodeValue();
+			File rFolder = new File(gradleRoot, "build/generated/source/r");
+			File releaseFolder;
+			if (!(releaseFolder = new File(rFolder, "release")).exists()) {
+				if (!(releaseFolder = new File(rFolder, "debug")).exists()) {
+					LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
+					return null;
+				}
+			}
+			return new File(new File(releaseFolder, basePackage.replace('.', '/')), "R.java");
+		} catch (ParserConfigurationException | SAXException e) {
+			LOGGER.log(Level.ERROR, e);
+		}
+		return null;
 	}
 
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
@@ -397,45 +469,22 @@ public class GradleImport {
 			localProperties.delete();
 		}
 
-		Process p = null;
+		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
+			process = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
 			break;
 		case LINUX:
-			p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
+			process = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
 			break;
 		default:
 			LOGGER.log(Level.WARN, "Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 
-		// try(BufferedReader stream = new BufferedReader(new
-		// InputStreamReader(p.getInputStream()))){
-		// String line;
-		// while((line = stream.readLine()) != null) {
-		// LOGGER.log( Level.INFO, "GRADLE: " + line);
-		// }
-		// }
-		StringBuilder message = new StringBuilder();
-		try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
-			String line;
-			while ((line = stream.readLine()) != null) {
-				message.append(line);
-				message.append('\n');
-				LOGGER.log( Level.INFO, "GRADLE: "+message);
-			}
-		}
-		try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
-			String line;
-			while ((line = stream.readLine()) != null) {
-				message.append(line);
-				message.append('\n');
-				LOGGER.log(Level.WARN, "GRADLE: "+message);
-			}
-		}
-		p.waitFor();
-		boolean success = p.exitValue() == 0;
+		StringBuilder message = collectMessages(process);
+		process.waitFor();
+		boolean success = process.exitValue() == 0;
 		
 		if(!success && androidApp) {
 			if(message.toString().contains("File google-services.json is missing")) {
@@ -460,30 +509,58 @@ public class GradleImport {
 				if(fix) {
 					switch (OperationSystem.os) {
 					case WINDOWS:
-						p = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
+						process = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, folder);
 						break;
 					case LINUX:
-						p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
+						process = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
 						break;
 					default:
 						LOGGER.log(Level.WARN, "Unsupported OS");
 						throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 					}
 
-					try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
+					try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 						String line;
 						while ((line = stream.readLine()) != null) {
 							LOGGER.log( Level.INFO, "GRADLE: "+line);
 						}
 					}
 
-					p.waitFor();
-					success = p.exitValue() == 0;	
+					process.waitFor();
+					success = process.exitValue() == 0;	
 				}
 			}
 		}
 
 		return success;
+	}
+
+	/**
+	 * Collects content of error and output stream in a single string builder
+	 * 
+	 * @param process the process to monitor
+	 * @return the string builder
+	 * @throws IOException
+	 */
+	private StringBuilder collectMessages(Process process) throws IOException {
+		StringBuilder message = new StringBuilder();
+		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+			String line;
+			while ((line = stream.readLine()) != null) {
+				message.append(line);
+				message.append('\n');
+				LOGGER.log( Level.INFO, "GRADLE: "+line);
+			}
+		}
+		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
+			String line;
+			while ((line = stream.readLine()) != null) {
+				message.append(line);
+				message.append('\n');
+				LOGGER.log(Level.WARN, "GRADLE: "+line);
+			}
+		}
+		return message;
 	}
 
 	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoGradleRootFolderException {
@@ -768,7 +845,7 @@ public class GradleImport {
 
 		}
 
-		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleHome, gradleCache));
+		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleHome, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
 		Set<Path> libsAsJar = new HashSet<>(pathsToLibs.values());
@@ -777,7 +854,7 @@ public class GradleImport {
 
 			if (targetSdk != -1) {
 				boolean compAndroidSdk = false;
-				File platforms = new File(androidHome, androidSdkPlatforms);
+				File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
 				for (int i = targetSdk; i >= minSdk; i--) {
 					File androidPlatform = new File(platforms, "android-" + i);
 					File androidJar = new File(androidPlatform, "android.jar");
