@@ -68,7 +68,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	private MGravityModel targetModel;
 	
-	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
 
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
@@ -126,7 +126,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		this.libs = libs;
 
 		long start = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, start + " GRaViTY convert project: " + this.projectName);
+		LOGGER.log( Level.INFO, "GRaViTY convert project: " + this.projectName);
 
 		
 		try {
@@ -150,7 +150,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		}
 
 		long t4 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t4 + " eMoflon TGG fwd trafo");
+		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
 		integrateForward();
 
 		
@@ -172,8 +172,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			}
 		}
 
-		long t5 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
+		LOGGER.log( Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 		if (this.debug) {
 			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
 			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
@@ -184,8 +183,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			reset();
 		}
 
-		long stop = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, stop + " GRaViTY convert project - done " + (stop - start) + "ms");
+		LOGGER.log( Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
 
 		return success;
 	}

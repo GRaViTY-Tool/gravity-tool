@@ -1,8 +1,10 @@
 package org.gravity.modisco.processing.fwd;
 
-import java.lang.Iterable;
+import java.util.Collection;
+import java.util.Hashtable;
 import java.util.LinkedList;
-import java.util.Stack;
+import java.util.List;
+import java.util.Map.Entry;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -10,27 +12,16 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.CompilationUnit;
-import org.eclipse.gmt.modisco.java.Expression;
-import org.eclipse.gmt.modisco.java.ExpressionStatement;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.MethodDeclaration;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Modifier;
-import org.eclipse.gmt.modisco.java.ParameterizedType;
-import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.Statement;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
@@ -60,155 +51,48 @@ import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.util.MoDiscoUtil;
 
 public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
-	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class.getName());
-	
-	private static boolean createParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
-		MEntry prev = null;
-		EList<MEntry> mEntrys = mParams.getMEntrys();
-		for (SingleVariableDeclaration param : mDef.getParameters()) {
-			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
-			entry.setSingleVariableDeclaration(param);
-			mEntrys.add(entry);
-			Type type = param.getType().getType();
-			if (!(type instanceof TypeParameter)) {
-				entry.setType(type);
-			}
-			if (prev == null) {
-				mParams.setMFirstEntry(entry);
-			} else {
-				entry.setMPrevious(prev);
-				prev.setMNext(entry);
-			}
-			prev = entry;
-		}
-		return true;
-	}
-
-	private static Type getMostGenericReturnType(MMethodDefinition method) {
-		TypeAccess returnType = method.getReturnType();
-		if (returnType == null) {
-			// TODO: Currently a dirty hack: assuming void
-			TypeAccess a = JavaFactory.eINSTANCE.createTypeAccess();
-			method.setReturnType(a);
-			for (Type t : method.getModel().getOrphanTypes()) {
-				if (t instanceof PrimitiveTypeVoid) {
-					a.setType(t);
-					return t;
-				}
-			}
-		}
-		Type ret = returnType.getType();
-
-		Stack<Type> stack = new Stack<>();
-		AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
-		if (abstractTypeDeclaration != null) {
-			stack.add(abstractTypeDeclaration);
-		}
-		while (!stack.isEmpty()) {
-			Type type = stack.pop();
-			if (type instanceof ClassDeclaration) {
-				ClassDeclaration clazz = (ClassDeclaration) type;
-				TypeAccess superClass = clazz.getSuperClass();
-				if (superClass != null) {
-					stack.add(superClass.getType());
-				}
-			} else if (type instanceof ParameterizedType) {
-				stack.add(((ParameterizedType) type).getType().getType());
-			} else {
-				AbstractTypeDeclaration abst = (AbstractTypeDeclaration) type;
-				for (TypeAccess interf : abst.getSuperInterfaces()) {
-					Type typeInterf = interf.getType();
-					if (typeInterf == null) {
-						LOGGER.log(Level.WARN, "Skipped type of: " + interf);
-						continue;
-					}
-					stack.add(typeInterf);
-				}
-
-				for (BodyDeclaration body : abst.getBodyDeclarations()) {
-					if (body instanceof MethodDeclaration) {
-						MethodDeclaration decl = (MethodDeclaration) body;
-						if (method.getName().equals(decl.getName())) {
-							if (isParamListEqual(method.getParameters(), decl.getParameters())) {
-								TypeAccess returnTypeDecl = decl.getReturnType();
-								if (returnTypeDecl == null) {
-									LOGGER.log(Level.WARN, "Skipped return type of: " + decl);
-									continue;
-								}
-								if (isSuperType(ret, returnTypeDecl.getType())) {
-									ret = returnTypeDecl.getType();
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return ret;
-	}
-
-	private static boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
-		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
-		EList<MEntry> parameters2 = mSig.getMParameterList().getMEntrys();
-		if (parameters1.size() == parameters2.size()) {
-			for (int i = 0; i < parameters1.size(); i++) {
-				if (!parameters1.get(i).getType().getType().equals(parameters2.get(i).getType())) {
-					return false;
-				}
-			}
-			return true;
-		}
-		return false;
-	}
-
-	private static boolean isSuperType(Type type, Type supertype) {
-		if (type instanceof AbstractTypeDeclaration) {
-			if (type instanceof ClassDeclaration) {
-				ClassDeclaration clazz = (ClassDeclaration) type;
-				TypeAccess superClass = clazz.getSuperClass();
-				if (superClass != null) {
-					Type parent = superClass.getType();
-					if (supertype.equals(parent) || isSuperType(parent, supertype)) {
-						return true;
-					}
-				}
-			}
-			for (TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
-				if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class);
 
 	private static boolean preprocess(MGravityModel model) {
-		for(MConstructorDefinition mConst : model.getMConstructorDefinitions()) {
+		for (MConstructorDefinition mConst : model.getMConstructorDefinitions()) {
 			MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
 			mConst.setMParameterList(mParameterList);
-			createParamList(mConst, mParameterList);
+			fillParamList(mConst, mParameterList);
 		}
-		
-		if (preprocessFields(model) && preprocessMethods(model) && preprocessAccesses(model)) {
-			for (MName mName : model.getMNames()) {
-				for (MSignature mSignature : mName.getMSignatures()) {
-					for (MDefinition mDefinition : mSignature.getMDefinitions()) {
-						AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
-						if (mType != null) {
-							mSignature.getImplementedBy().add(mType);
-						}
+
+		return preprocessFields(model) && preprocessMethods(model) && preprocessAccesses(model) && preprocessImplementedSignatures(model);
+	}
+
+	/**
+	 * Adds implementedBy edge from Classes to Signatures if the classes contain according definitions
+	 * 
+	 * @param model The model which should be preprocessed
+	 */
+	private static boolean preprocessImplementedSignatures(MGravityModel model) {
+		Hashtable<MSignature, Collection<AbstractTypeDeclaration>> mapping = new Hashtable<>();
+		for (MName mName : model.getMNames()) {
+			for (MSignature mSignature : mName.getMSignatures()) {
+				List<AbstractTypeDeclaration> implementingTypes = new LinkedList<>();
+				for (MDefinition mDefinition : mSignature.getMDefinitions()) {
+					AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
+					if (mType != null) {
+						implementingTypes.add(mType);
+					}
+					else {
+						return false;
 					}
 				}
+				mapping.put(mSignature, implementingTypes);
 			}
-			return preprocessOrphanTypes(model);
-
-		} else {
-			return false;
 		}
-
+		for(Entry<MSignature, Collection<AbstractTypeDeclaration>> entry : mapping.entrySet()) {
+			entry.getKey().getImplementedBy().addAll(entry.getValue());
+		}
+		return true;
 	}
 
 	/**
@@ -228,8 +112,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
 			if (fragments.size() > 0) {
 				fstDeclFragment = fragments.get(0);
-			}
-			else {
+			} else {
 				throw new RuntimeException("Pattern matching in node [ActivityNode37] failed." + " Variables: "
 						+ "[mDefinition] = " + mDefinition + ".");
 			}
@@ -271,7 +154,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			}
 
 		}
-		
+
 		for (MFieldDefinition mfDefinition : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment declFragment : mfDefinition.getFragments()) {
 				MFieldName mName = null;
@@ -359,19 +242,21 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		for (MMethodName mName : model.getMMethodNames()) {
 			for (MMethodDefinition mDef : mName.getMMethodDefinitions()) {
 
-				Type mSigReturnType = getMostGenericReturnType(mDef);
+				Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(mDef);
 				if (mSigReturnType == null) {
-					throw new RuntimeException("Couldn't find most geric return type for method definition:" + mDef + ".");
+					throw new RuntimeException(
+							"Couldn't find most geric return type for method definition:" + mDef + ".");
 				}
 				for (MMethodSignature mSig : mName.getMMethodSignatures()) {
 					if (mSigReturnType.equals(mSig.getReturnType())) {
-				
-					if (isParamListEqual(mDef, mSig)) {
-						mSig.getMMethodDefinitions().add(mDef);
-						mSig.getMDefinitions().add(mDef);
-					}
 
-				}}
+						if (isParamListEqual(mDef, mSig)) {
+							mSig.getMMethodDefinitions().add(mDef);
+							mSig.getMDefinitions().add(mDef);
+						}
+
+					}
+				}
 				MMethodSignature mOldSig = mDef.getMMethodSignature();
 				if (mOldSig == null) {
 					MParameterList mParams = ModiscoFactory.eINSTANCE.createMParameterList();
@@ -383,19 +268,14 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 					mNewSig.setReturnType(mSigReturnType);
 					mNewSig.getMDefinitions().add(mDef);
 					mNewSig.setMParameterList(mParams);
-					
-					createParamList(mDef, mParams);
+
+					fillParamList(mDef, mParams);
 
 				}
 
 			}
 		}
 		return true;
-	}
-
-	private boolean updateName(MName mName, MDefinition mDef) {
-		// TODO: implement this method
-		throw new UnsupportedOperationException();
 	}
 
 	private static boolean preprocessAccesses(MGravityModel model) {
@@ -421,13 +301,14 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		Type mType = def.getAbstractTypeDeclaration();
 		if (mType instanceof MClass) {
 			EList<Type> deps = ((MClass) mType).getDependencies();
-			for(AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
+			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
 				deps.add(methodInvocation.getMethod().getAbstractTypeDeclaration());
 			}
-			for(SingleVariableAccess methodInvocation : def.getMAbstractFieldAccess()) {
+			for (SingleVariableAccess methodInvocation : def.getMAbstractFieldAccess()) {
 				VariableDeclaration variable = methodInvocation.getVariable();
 				if (variable instanceof VariableDeclarationFragment) {
-					AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable).getVariablesContainer();
+					AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable)
+							.getVariablesContainer();
 					if (variablesContainer instanceof FieldDeclaration) {
 						deps.add(((FieldDeclaration) variablesContainer).getAbstractTypeDeclaration());
 					}
@@ -435,88 +316,17 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			}
 		}
 	}
-
-	private static boolean preprocessOrphanTypes(MGravityModel model) {
-		// [user code injected with eMoflon]
-		return true;
-	}
-
-	private static final void fixStaticMethodCallOnField(
-			MGravityModel model) {
-		for (CompilationUnit cu : model.getCompilationUnits()) {
-			for (AbstractTypeDeclaration tmpClazz : cu.getTypes()) {
-				if (tmpClazz instanceof ClassDeclaration) {
-					ClassDeclaration clazz = (ClassDeclaration) tmpClazz;
-					for (BodyDeclaration tmpMethod : clazz.getBodyDeclarations()) {
-						if (tmpMethod instanceof MethodDeclaration) {
-							MethodDeclaration method = (MethodDeclaration) tmpMethod;
-							Block block = method.getBody();
-							if (block != null) {
-								for (Statement tmpExpression : block.getStatements()) {
-									if (tmpExpression instanceof ExpressionStatement) {
-										ExpressionStatement expression = (ExpressionStatement) tmpExpression;
-										Expression tmpInvoc = expression.getExpression();
-										if (tmpInvoc instanceof MethodInvocation) {
-											MethodInvocation invoc = (MethodInvocation) tmpInvoc;
-											Expression tmpAccess = invoc.getExpression();
-											if (tmpAccess instanceof SingleVariableAccess) {
-												SingleVariableAccess access = (SingleVariableAccess) tmpAccess;
-												AbstractMethodDeclaration tmpCalled = invoc.getMethod();
-												if (tmpCalled instanceof MethodDeclaration) {
-													MethodDeclaration called = (MethodDeclaration) tmpCalled;
-													if (!called.equals(method)) {
-														VariableDeclaration tmpVar = access.getVariable();
-														if (tmpVar instanceof VariableDeclarationFragment) {
-															VariableDeclarationFragment var = (VariableDeclarationFragment) tmpVar;
-															AbstractTypeDeclaration type = called
-																	.getAbstractTypeDeclaration();
-															if (type != null) {
-																if (!clazz.equals(type)) {
-																	AbstractVariablesContainer tmpVarDecl = var
-																			.getVariablesContainer();
-																	if (tmpVarDecl instanceof FieldDeclaration) {
-																		FieldDeclaration varDecl = (FieldDeclaration) tmpVarDecl;
-																		if (varDecl.getType() != null) {
-																			TypeAccess create = JavaFactory.eINSTANCE.createTypeAccess();
-																			type.getUsagesInTypeAccess().add(create);
-																			varDecl.setType(create);
-																		}
-																	}
-
-																}
-															}
-
-														}
-
-													}
-												}
-
-											}
-
-										}
-
-									}
-								}
-							}
-
-						}
-					}
-				}
-			}
-		}
-	}
-
 	private static final Iterable<VariableDeclarationFragment> getOtherFragments(MFieldDefinition mDefinition,
 			VariableDeclarationFragment fragment) {
-		LinkedList<VariableDeclarationFragment> _result = new LinkedList<VariableDeclarationFragment>();
+		LinkedList<VariableDeclarationFragment> result = new LinkedList<VariableDeclarationFragment>();
 		if (mDefinition.getFragments().contains(fragment)) {
 			for (VariableDeclarationFragment otherFragment : mDefinition.getFragments()) {
 				if (!fragment.equals(otherFragment)) {
-					_result.add(otherFragment);
+					result.add(otherFragment);
 				}
 			}
 		}
-		return _result;
+		return result;
 	}
 
 	private static final MFieldSignature getMFieldSignature(MFieldName mName, MFieldDefinition mfDefinition) {
@@ -536,11 +346,34 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		return null;
 	}
 
-	private static boolean isParamListEqual(EList<SingleVariableDeclaration> parameters1,
-			EList<SingleVariableDeclaration> parameters2) {
+	private static boolean fillParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
+		MEntry prev = null;
+		EList<MEntry> mEntrys = mParams.getMEntrys();
+		for (SingleVariableDeclaration param : mDef.getParameters()) {
+			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			entry.setSingleVariableDeclaration(param);
+			mEntrys.add(entry);
+			Type type = param.getType().getType();
+			if (!(type instanceof TypeParameter)) {
+				entry.setType(type);
+			}
+			if (prev == null) {
+				mParams.setMFirstEntry(entry);
+			} else {
+				entry.setMPrevious(prev);
+				prev.setMNext(entry);
+			}
+			prev = entry;
+		}
+		return true;
+	}
+
+	private static boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
+		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
+		EList<MEntry> parameters2 = mSig.getMParameterList().getMEntrys();
 		if (parameters1.size() == parameters2.size()) {
 			for (int i = 0; i < parameters1.size(); i++) {
-				if (!parameters1.get(i).getType().equals(parameters2.get(i).getType())) {
+				if (!parameters1.get(i).getType().getType().equals(parameters2.get(i).getType())) {
 					return false;
 				}
 			}
@@ -548,7 +381,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
@@ -560,7 +393,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		if (model.getMConstructorDefinitions().size() == 0) {
 			model.getMConstructorDefinitions().addAll(factory.getCdefs());
-		}	
+		}
 //		fixStaticMethodCallOnField(model);
 		if (!preprocess(model)) {
 			return false;
@@ -573,15 +406,14 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				TypeDeclarationStatement statement = (TypeDeclarationStatement) next;
 				AbstractTypeDeclaration type = statement.getDeclaration();
 				EObject eObject = statement.eContainer();
-				while(!(eObject instanceof MAbstractMethodDefinition)) {
+				while (!(eObject instanceof MAbstractMethodDefinition)) {
 					eObject = eObject.eContainer();
 				}
 				((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
-			}
-			else if (next instanceof MAnonymous) {
+			} else if (next instanceof MAnonymous) {
 				MAnonymous mAnonymous = (MAnonymous) next;
 				EObject owner = mAnonymous.eContainer();
-				while(!(owner instanceof AbstractTypeDeclaration)) {
+				while (!(owner instanceof AbstractTypeDeclaration)) {
 					owner = owner.eContainer();
 				}
 				mAnonymous.setMSourroundingType((AbstractTypeDeclaration) owner);
@@ -593,23 +425,21 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
 						|| eObject instanceof SingleVariableDeclaration));
 			} else if (next instanceof MAbstractMethodDefinition) {
-				staticTypePreprocessor.addStaticTypeAccesses((MAbstractMethodDefinition) next);	
+				staticTypePreprocessor.addStaticTypeAccesses((MAbstractMethodDefinition) next);
 				if (next instanceof MMethodDefinition) {
-					SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);			
+					SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);
 				}
-			}
-			else if (next instanceof Modifier) {
+			} else if (next instanceof Modifier) {
 				Modifier modifier = (Modifier) next;
-				if(modifier.getVisibility() == null) {
+				if (modifier.getVisibility() == null) {
 					AbstractTypeDeclaration typeDecl = modifier.getBodyDeclaration().getAbstractTypeDeclaration();
-					if(typeDecl.eContainer() instanceof TypeDeclarationStatement) {
+					if (typeDecl.eContainer() instanceof TypeDeclarationStatement) {
 						modifier.setVisibility(VisibilityKind.PRIVATE);
-					}
-					else {
-						LOGGER.log(Level.WARN, "Type \""+typeDecl.getName()+"\" has no visibility.");
+					} else {
+						LOGGER.log(Level.WARN, "Type \"" + typeDecl.getName() + "\" has no visibility.");
 					}
 				}
-				
+
 			}
 			if (monitor.isCanceled()) {
 				return false;
@@ -617,4 +447,70 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		return true;
 	}
+
+//	private static final void fixStaticMethodCallOnField(MGravityModel model) {
+//		for (CompilationUnit cu : model.getCompilationUnits()) {
+//			for (AbstractTypeDeclaration tmpClazz : cu.getTypes()) {
+//				if (tmpClazz instanceof ClassDeclaration) {
+//					ClassDeclaration clazz = (ClassDeclaration) tmpClazz;
+//					for (BodyDeclaration tmpMethod : clazz.getBodyDeclarations()) {
+//						if (tmpMethod instanceof MethodDeclaration) {
+//							MethodDeclaration method = (MethodDeclaration) tmpMethod;
+//							Block block = method.getBody();
+//							if (block != null) {
+//								for (Statement tmpExpression : block.getStatements()) {
+//									if (tmpExpression instanceof ExpressionStatement) {
+//										ExpressionStatement expression = (ExpressionStatement) tmpExpression;
+//										Expression tmpInvoc = expression.getExpression();
+//										if (tmpInvoc instanceof MethodInvocation) {
+//											MethodInvocation invoc = (MethodInvocation) tmpInvoc;
+//											Expression tmpAccess = invoc.getExpression();
+//											if (tmpAccess instanceof SingleVariableAccess) {
+//												SingleVariableAccess access = (SingleVariableAccess) tmpAccess;
+//												AbstractMethodDeclaration tmpCalled = invoc.getMethod();
+//												if (tmpCalled instanceof MethodDeclaration) {
+//													MethodDeclaration called = (MethodDeclaration) tmpCalled;
+//													if (!called.equals(method)) {
+//														VariableDeclaration tmpVar = access.getVariable();
+//														if (tmpVar instanceof VariableDeclarationFragment) {
+//															VariableDeclarationFragment var = (VariableDeclarationFragment) tmpVar;
+//															AbstractTypeDeclaration type = called
+//																	.getAbstractTypeDeclaration();
+//															if (type != null) {
+//																if (!clazz.equals(type)) {
+//																	AbstractVariablesContainer tmpVarDecl = var
+//																			.getVariablesContainer();
+//																	if (tmpVarDecl instanceof FieldDeclaration) {
+//																		FieldDeclaration varDecl = (FieldDeclaration) tmpVarDecl;
+//																		if (varDecl.getType() != null) {
+//																			TypeAccess create = JavaFactory.eINSTANCE
+//																					.createTypeAccess();
+//																			type.getUsagesInTypeAccess().add(create);
+//																			varDecl.setType(create);
+//																		}
+//																	}
+//
+//																}
+//															}
+//
+//														}
+//
+//													}
+//												}
+//
+//											}
+//
+//										}
+//
+//									}
+//								}
+//							}
+//
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//
 }
