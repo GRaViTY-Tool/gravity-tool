@@ -13,7 +13,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class ChangeVisibilityPreConditions {
 	
-	private static Logger LOGGER = Logger.getLogger(ChangeVisibilityPreConditions.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(ChangeVisibilityPreConditions.class.getName());
 	
 	// if a childClass implements an interface with the same field as the field in
 	// the violation do not change the visibility as this may introduce ambiguity

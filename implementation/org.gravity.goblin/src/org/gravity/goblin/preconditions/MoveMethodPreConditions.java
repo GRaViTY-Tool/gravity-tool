@@ -15,7 +15,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class MoveMethodPreConditions {
 	
-	private static Logger LOGGER = Logger.getLogger(MoveMethodPreConditions.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(MoveMethodPreConditions.class.getName());
 
 	private static boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass) {
 		List<TAnnotation> annotations = new ArrayList<TAnnotation>();

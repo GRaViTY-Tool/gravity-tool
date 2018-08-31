@@ -14,7 +14,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 public class VisibilityConstraintCalculator implements IFitnessCalculator {
 
-	private static Logger LOGGER = Logger.getLogger(VisibilityConstraintCalculator.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(VisibilityConstraintCalculator.class.getName());
 	
 	@Override
 	public double calculate(TypeGraph graph) {

@@ -22,7 +22,7 @@ import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolut
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 
-	private static Logger LOGGER = Logger.getLogger(VisibilityRepairer.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(VisibilityRepairer.class.getName());
 			
 	@Override
 	public TransformationSolution repair(TransformationSolution solution) {
