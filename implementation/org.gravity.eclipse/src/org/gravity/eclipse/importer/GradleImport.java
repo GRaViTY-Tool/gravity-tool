@@ -1,13 +1,11 @@
 package org.gravity.eclipse.importer;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +19,6 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,29 +32,18 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
-import org.eclipse.jdt.launching.IVMInstall;
-import org.eclipse.jdt.launching.JavaRuntime;
-import org.eclipse.jdt.launching.LibraryLocation;
 import org.gravity.eclipse.io.ZipUtil;
-import org.gravity.eclipse.os.OperationSystem;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
-import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.eclipse.util.JavaProjectUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -181,7 +167,7 @@ public class GradleImport {
 		IJavaProject project = null;
 		do {
 			try {
-				project = EclipseProjectUtil.createJavaProject(name + (appendix == 0 ? "" : appendix), monitor);
+				project = JavaProjectUtil.createJavaProject(name + (appendix == 0 ? "" : appendix), monitor);
 			} catch (DuplicateProjectNameException e) {
 				appendix++;
 			}
@@ -190,7 +176,7 @@ public class GradleImport {
 		if (androidApp) {
 			javaSourceFiles.addAll(getRClasses(buildDotGradleFiles));
 		}
-		EclipseProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
+		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
 				LINKONPROJECT, monitor);
 
 		// build gradle project
@@ -268,7 +254,7 @@ public class GradleImport {
 			}
 		}
 
-		EclipseProjectUtil.addToClassPath(project, entries, monitor);
+		JavaProjectUtil.addToClassPath(project, entries, monitor);
 
 		return project;
 	}

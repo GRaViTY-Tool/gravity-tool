@@ -34,7 +34,8 @@ import org.eclipse.jdt.launching.LibraryLocation;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 
 /**
- * This class provides frequently used functionalities when working with eclipse java projects
+ * This class provides frequently used functionalities when working with eclipse
+ * java projects
  * 
  * @author speldszus
  *
@@ -42,7 +43,8 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
 public class JavaProjectUtil extends EclipseProjectUtil {
 	/**
 	 * 
-	 * Adds the given class path entries to the classpath of the eclipse java project
+	 * Adds the given class path entries to the classpath of the eclipse java
+	 * project
 	 * 
 	 * @param project the java project
 	 * @param entries the class path entries
@@ -58,14 +60,14 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		for (IClasspathEntry entry : entries) {
 			newEntries[i++] = entry;
 		}
-	
+
 		project.setRawClasspath(newEntries, monitor);
 	}
 
 	/**
 	 * Creates a copy of a eclipse java project with the given name
 	 * 
-	 * @param project The java project to copy
+	 * @param project    The java project to copy
 	 * @param nameOfCopy The name of the copy
 	 * @return The copy
 	 */
@@ -75,7 +77,8 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	}
 
 	/**
-	 * Converts a eclipse project to a java project if the java nature has already been applied
+	 * Converts a eclipse project to a java project if the java nature has already
+	 * been applied
 	 * 
 	 * @param project The eclipse project
 	 * @return a java project or null if the conversion failed
@@ -146,8 +149,8 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		return javaProject;
 	}
 
-	public static void addJavaSourceFilesToRoot(Collection<Path> javaSourceFiles, IPackageFragmentRoot root, boolean link,
-			IProgressMonitor monitor) throws CoreException, IOException {
+	public static void addJavaSourceFilesToRoot(Collection<Path> javaSourceFiles, IPackageFragmentRoot root,
+			boolean link, IProgressMonitor monitor) throws CoreException, IOException {
 		Hashtable<String, List<Path>> packages = getPackagesOfJavaFiles(javaSourceFiles);
 
 		for (Entry<String, List<Path>> entry : packages.entrySet()) {
@@ -162,10 +165,8 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 					if (iFile.getLocation().toFile().getAbsolutePath().equals(location.toFile().getAbsolutePath())) {
 						continue;
 					} else {
-
-						throw new RuntimeException(
+						throw new IOException(
 								"Duplicate: \n\t" + iFile.getLocation().toString() + "\n\t" + location.toString());
-
 					}
 				}
 				if (link) {
@@ -177,7 +178,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 			}
 		}
 	}
-	
+
 	private static Hashtable<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles)
 			throws IOException, FileNotFoundException {
 		Hashtable<String, List<Path>> packages = new Hashtable<>();
