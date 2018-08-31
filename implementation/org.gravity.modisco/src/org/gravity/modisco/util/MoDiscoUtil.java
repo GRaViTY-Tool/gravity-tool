@@ -28,7 +28,7 @@ import org.gravity.modisco.MMethodDefinition;
  */
 public class MoDiscoUtil {
 	
-	public static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
+	private static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
 
 	/**
 	 * Checks if supertype is a super type of type
@@ -61,8 +61,8 @@ public class MoDiscoUtil {
 	/**
 	 * Searches the most generic return type of a method overwritten by the given method
 	 * 
-	 * @param method
-	 * @return
+	 * @param method The method for which the most generic return type should be searched
+	 * @return the most generic return type
 	 */
 	public static Type getMostGenericReturnType(MMethodDefinition method) {
 		TypeAccess returnType = method.getReturnType();
