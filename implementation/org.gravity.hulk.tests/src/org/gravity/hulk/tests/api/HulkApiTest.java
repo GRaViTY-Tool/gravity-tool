@@ -3,6 +3,8 @@ package org.gravity.hulk.tests.api;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -28,6 +30,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class HulkApiTest {
 
+	private static final Logger LOGGER = Logger.getLogger( HulkApiTest.class.getName() );
+	
 	private IJavaProject javaProject;
 
 	public HulkApiTest(String name, IJavaProject project) {
@@ -54,7 +58,7 @@ public class HulkApiTest {
 	@Test
 	public void detectBlobs() throws NoConverterRegisteredException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.Blob);
-		System.out.println("Number of Blobs = " + results.size());
+		LOGGER.log( Level.INFO, "Number of Blobs = " + results.size());
 	}
 
 	@Test
@@ -62,7 +66,7 @@ public class HulkApiTest {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAM);
 		for(HAnnotation hAnnotation : results) {
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				System.out.println("IGAM = "+((HMetric) hAnnotation).getValue());
+				LOGGER.log( Level.INFO, "IGAM = "+((HMetric) hAnnotation).getValue());
 			}
 		}
 	}
@@ -72,7 +76,7 @@ public class HulkApiTest {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAT);
 		for(HAnnotation hAnnotation : results) {
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				System.out.println("IGAT = "+((HMetric) hAnnotation).getValue());
+				LOGGER.log( Level.INFO, "IGAT = "+((HMetric) hAnnotation).getValue());
 			}
 		}
 	}
@@ -88,13 +92,13 @@ public class HulkApiTest {
 			}
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
 				if (hAnnotation instanceof HIGAMMetric) {
-					System.out.println("IGAM = "+((HMetric) hAnnotation).getValue());
+					LOGGER.log( Level.INFO, "IGAM = "+((HMetric) hAnnotation).getValue());
 				}
 				else if (hAnnotation instanceof HIGATMetric) {
-					System.out.println("IGAT = "+((HMetric) hAnnotation).getValue());
+					LOGGER.log( Level.INFO, "IGAT = "+((HMetric) hAnnotation).getValue());
 				}
 			}
 		}
-		System.out.println("Blobs = "+blobs);
+		LOGGER.log( Level.INFO, "Blobs = "+blobs);
 	}
 }

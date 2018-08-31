@@ -10,10 +10,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
-import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,9 +22,7 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Queue;
 import java.util.Set;
-import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -35,6 +31,8 @@ import java.util.zip.ZipInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -78,6 +76,8 @@ public class GradleImport {
 	private final static String gradleCache = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private final static String androidSdkPlatforms = "platforms";
 	private static final boolean LINKONPROJECT = false;
+	
+	private static final Logger LOGGER = Logger.getLogger(GradleImport.class.getName());
 
 	public GradleImport(File rootDir) throws NoGradleRootFolderException {
 		LinkedList<File> queue = new LinkedList<File>();
@@ -115,7 +115,7 @@ public class GradleImport {
 			if (tmpAndroidHome.exists()) {
 				this.androidHome = tmpAndroidHome;
 			} else {
-				System.err.println("Adroid home not specified.");
+				LOGGER.log(Level.WARN, "Adroid home not specified.");
 			}
 		}
 	}
@@ -176,7 +176,7 @@ public class GradleImport {
 				return null;
 			}
 		} catch (UnsupportedOperationSystemException e1) {
-			System.err.println("WARNING: Build of gradle project failed, some lib imports might be missing.");
+			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
 		}
 		
 		if(androidApp) {
@@ -200,7 +200,7 @@ public class GradleImport {
 				jarFiles.add(f);
 				IPath jarPath = new org.eclipse.core.runtime.Path(libPath.toFile().getAbsolutePath());
 				if (f.exists()) {
-					System.err.println("Lib is already existent: " + jarFiles);
+					LOGGER.log(Level.WARN, "Lib is already existent: " + jarFiles);
 					continue;
 				}
 				f.createLink(jarPath, IResource.FILE, monitor);
@@ -230,7 +230,7 @@ public class GradleImport {
 					}
 				}
 				if (jarFiles.size() == 0) {
-					System.err.println("No jar found in aar file: " + libPath);
+					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
 					continue;
 				}
 			}
@@ -279,7 +279,7 @@ public class GradleImport {
 						File releaseFolder;
 						if (!(releaseFolder = new File(rFolder, "release")).exists()) {
 							if (!(releaseFolder = new File(rFolder, "debug")).exists()) {
-								System.err.println("No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
+								LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
 								continue;
 							}
 						}
@@ -287,7 +287,7 @@ public class GradleImport {
 						if (rFile.exists()) {
 							classes.add(rFile.toPath());
 						} else {
-							System.err.println("The R.java does not exist: " + rFile.getAbsolutePath());
+							LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
 						}
 					} catch (ParserConfigurationException | SAXException e) {
 						e.printStackTrace();
@@ -385,7 +385,7 @@ public class GradleImport {
 			}
 			break;
 		default:
-			System.err.println("WARNING: Lineendings of \"" + gradlew.toString()
+			LOGGER.log(Level.WARN, "WARNING: Lineendings of \"" + gradlew.toString()
 					+ "\" haven't been changed due to a unsupported operation sytem.");
 			break;
 		}
@@ -406,7 +406,7 @@ public class GradleImport {
 			p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
 			break;
 		default:
-			System.err.println("Unsupported OS");
+			LOGGER.log(Level.WARN, "Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 
@@ -414,7 +414,7 @@ public class GradleImport {
 		// InputStreamReader(p.getInputStream()))){
 		// String line;
 		// while((line = stream.readLine()) != null) {
-		// System.out.println("GRADLE: " + line);
+		// LOGGER.log( Level.INFO, "GRADLE: " + line);
 		// }
 		// }
 		StringBuilder message = new StringBuilder();
@@ -423,7 +423,7 @@ public class GradleImport {
 			while ((line = stream.readLine()) != null) {
 				message.append(line);
 				message.append('\n');
-				System.out.println("GRADLE: "+message);
+				LOGGER.log( Level.INFO, "GRADLE: "+message);
 			}
 		}
 		try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getErrorStream()))) {
@@ -431,7 +431,7 @@ public class GradleImport {
 			while ((line = stream.readLine()) != null) {
 				message.append(line);
 				message.append('\n');
-				System.err.println("GRADLE: "+message);
+				LOGGER.log(Level.WARN, "GRADLE: "+message);
 			}
 		}
 		p.waitFor();
@@ -466,14 +466,14 @@ public class GradleImport {
 						p = Runtime.getRuntime().exec("./gradlew assemble", null, folder);
 						break;
 					default:
-						System.err.println("Unsupported OS");
+						LOGGER.log(Level.WARN, "Unsupported OS");
 						throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 					}
 
 					try (BufferedReader stream = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
 						String line;
 						while ((line = stream.readLine()) != null) {
-							System.out.println("GRADLE: "+line);
+							LOGGER.log( Level.INFO, "GRADLE: "+line);
 						}
 					}
 
@@ -524,7 +524,6 @@ public class GradleImport {
 					String match = includeMatcher.group(3);
 					if (match != null) {
 						String var = includeMatcher.group(13);
-						String type = includeMatcher.group(14);
 						if (var != null) {
 							match = defs.get(var);
 						}
@@ -792,14 +791,14 @@ public class GradleImport {
 							if (lib.exists()) {
 								libsAsJar.add(lib.toPath());
 							} else {
-								System.err.println("UseLib dependency not resolved: " + use);
+								LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
 							}
 						}
 						break;
 					}
 				}
 				if (!compAndroidSdk) {
-					System.err.println("WARNING: Install android SDK " + targetSdk);
+					LOGGER.log(Level.WARN, "WARNING: Install android SDK " + targetSdk);
 					for (File sdk : platforms.listFiles()) {
 						int i = Integer.valueOf(sdk.getName().substring("android-".length()));
 						if (i > targetSdk) {
@@ -824,9 +823,9 @@ public class GradleImport {
 		if (compileLibs.size() > 0)
 
 		{
-			System.err.println("The following libs haven't been found on the system:");
+			LOGGER.log(Level.WARN, "The following libs haven't been found on the system:");
 			for (String lib : compileLibs) {
-				System.err.println("\t" + lib);
+				LOGGER.log(Level.WARN, "\t" + lib);
 			}
 		}
 		return libsAsJar;

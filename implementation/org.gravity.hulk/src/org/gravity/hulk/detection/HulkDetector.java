@@ -7,6 +7,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 import java.util.Stack;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -29,6 +31,8 @@ import org.moflon.core.dfs.Node;
 
 public class HulkDetector {
 
+	private static final Logger LOGGER = Logger.getLogger( HulkDetector.class.getName() );
+	
 	private Hashtable<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
@@ -85,7 +89,7 @@ public class HulkDetector {
 				}
 				if (verbose) {
 					t2 = System.currentTimeMillis();
-					System.out.println(t2 + " Hulk " + n.getGuiName());
+					LOGGER.log( Level.INFO, t2 + " Hulk " + n.getGuiName());
 				}
 				if (n instanceof HRelativeDetector) {
 					HRelativeDetector relativeDetector = (HRelativeDetector) n;
@@ -113,11 +117,11 @@ public class HulkDetector {
 					n.setPreTraversal(0);
 					processed_detectors.add(n);
 				} else {
-					System.err.println(Messages.getString("detector.failed") + n); //$NON-NLS-1$
+					LOGGER.log(Level.ERROR, Messages.getString("detector.failed") + n); //$NON-NLS-1$
 				}
 				if (verbose) {
 					long t3 = System.currentTimeMillis();
-					System.out.println(t3 + " Hulk " + n.getGuiName() + " - done " + (t3 - t2) + "ms");
+					LOGGER.log( Level.INFO, t3 + " Hulk " + n.getGuiName() + " - done " + (t3 - t2) + "ms");
 				}
 			}
 		}
@@ -128,7 +132,7 @@ public class HulkDetector {
 		long h0 = 0;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
-			System.out.println(h0 + " Hulk Anti-Pattern Detection");
+			LOGGER.log( Level.INFO, h0 + " Hulk Anti-Pattern Detection");
 		}
 		while (!worklist.isEmpty()) {
 			HDetector detector = worklist.pop();
@@ -137,7 +141,7 @@ public class HulkDetector {
 		}
 		if (verbose) {
 			long h1 = System.currentTimeMillis();
-			System.out.println(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
+			LOGGER.log( Level.INFO, h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
 		}
 
 		return true;
@@ -156,7 +160,7 @@ public class HulkDetector {
 		}
 
 		if (selected_detectors.size() != selection.size()) {
-			System.err.println("Not all detecors found.");
+			LOGGER.log(Level.ERROR, "Not all detecors found.");
 			return false;
 		}
 

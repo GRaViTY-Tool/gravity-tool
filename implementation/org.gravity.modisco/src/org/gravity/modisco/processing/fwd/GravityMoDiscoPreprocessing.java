@@ -3,6 +3,8 @@ package org.gravity.modisco.processing.fwd;
 import java.lang.Iterable;
 import java.util.LinkedList;
 import java.util.Stack;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
@@ -61,6 +63,8 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
 
 public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
+	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class.getName());
+	
 	private static boolean createParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		MEntry prev = null;
 		EList<MEntry> mEntrys = mParams.getMEntrys();
@@ -118,7 +122,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				for (TypeAccess interf : abst.getSuperInterfaces()) {
 					Type typeInterf = interf.getType();
 					if (typeInterf == null) {
-						System.err.println("Skipped type of: " + interf);
+						LOGGER.log(Level.WARN, "Skipped type of: " + interf);
 						continue;
 					}
 					stack.add(typeInterf);
@@ -131,7 +135,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 							if (isParamListEqual(method.getParameters(), decl.getParameters())) {
 								TypeAccess returnTypeDecl = decl.getReturnType();
 								if (returnTypeDecl == null) {
-									System.err.println("Skipped return type of: " + decl);
+									LOGGER.log(Level.WARN, "Skipped return type of: " + decl);
 									continue;
 								}
 								if (isSuperType(ret, returnTypeDecl.getType())) {
@@ -602,7 +606,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 						modifier.setVisibility(VisibilityKind.PRIVATE);
 					}
 					else {
-						System.err.println("Type \""+typeDecl.getName()+"\" has no visibility.");
+						LOGGER.log(Level.WARN, "Type \""+typeDecl.getName()+"\" has no visibility.");
 					}
 				}
 				

@@ -4,9 +4,10 @@ package org.gravity.refactorings.impl;
 
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -33,6 +34,9 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class HelpersImpl {
+	
+	private static final Logger LOGGER = Logger.getLogger(HelpersImpl.class.getName());
+	
 	/**
 	 * The cached value of the '{@link #getTypeGraph() <em>Type Graph</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -232,7 +236,7 @@ public class HelpersImpl {
 
 			int tWeightMember = internalAccesses - externalAccesses;
 
-			System.out.println("GetBestTMember: class=" + tClass.getTName() + " i=" + internalAccesses + "; e="
+			LOGGER.log( Level.INFO, "GetBestTMember: class=" + tClass.getTName() + " i=" + internalAccesses + "; e="
 					+ externalAccesses + "; tWeight=" + tWeightMember);
 
 			if (tWeightMember > bestTMemberWeight) {
@@ -241,7 +245,7 @@ public class HelpersImpl {
 			}
 		}
 
-		System.out.println(
+		LOGGER.log( Level.INFO, 
 				"Best-GetBestTMember: tWeight=" + bestTMemberWeight + "; tMember=" + returnMember.getSignatureString());
 
 		return returnMember;

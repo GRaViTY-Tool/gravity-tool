@@ -103,7 +103,7 @@ public class TestCase {
 	public void test() {
 		//TODO: Implement tests as classical JUnit tests
 		
-//		System.out.println("Start GRaViTY Test ***"); //$NON-NLS-1$
+//		LOGGER.log( Level.INFO, "Start GRaViTY Test ***"); //$NON-NLS-1$
 //		Pair test_data = getData();
 //		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
 //				test_data.getTestCase());
@@ -112,7 +112,7 @@ public class TestCase {
 //			test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(), test_data.getTestCase());
 //		}
 //		assertTrue(test_result);
-//		System.out.println("*** End Test"); //$NON-NLS-1$
+//		LOGGER.log( Level.INFO, "*** End Test"); //$NON-NLS-1$
 	}
 
 	@After

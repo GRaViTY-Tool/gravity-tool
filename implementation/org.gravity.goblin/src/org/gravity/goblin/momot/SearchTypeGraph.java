@@ -5,16 +5,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.security.interfaces.RSAKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.SearchParameters;
@@ -30,16 +27,12 @@ import org.gravity.goblin.repair.PostProcessRepairMultiDimensionalFitnessFunctio
 import org.gravity.goblin.repair.VisibilityReducer;
 import org.gravity.goblin.repair.VisibilityRepairer;
 import org.gravity.goblin.typegraph.equality.EqualityHelper;
-import org.gravity.hulk.HulkAPI;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TypeGraph;
-import org.moeaframework.core.comparator.DominanceComparator;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.osgi.framework.Bundle;
 
 import com.beust.jcommander.JCommander;
-import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 
 import at.ac.tuwien.big.moea.SearchExperiment;
@@ -57,13 +50,13 @@ import at.ac.tuwien.big.momot.search.algorithm.operator.mutation.TransformationP
 import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunction;
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
-import at.ac.tuwien.big.momot.search.solution.repair.ITransformationRepairer;
-
-import static org.gravity.hulk.HulkAPI.AntiPatternNames.*;
 
 @SuppressWarnings("all")
 public class SearchTypeGraph {
 
+	private static final Logger LOGGER = Logger.getLogger( SearchTypeGraph.class.getName() );
+
+	
 	protected List<FitnessFunction> fitnessFunctions;
 	public static List<FitnessFunction> constraints;
 
@@ -257,7 +250,7 @@ public class SearchTypeGraph {
 		try {
 			jCommander.parse(args);
 		} catch (ParameterException ex) {
-			System.out.println(ex.getMessage());
+			LOGGER.log( Level.INFO, ex.getMessage());
 			jCommander.usage();
 			System.exit(0);
 		}
@@ -274,11 +267,11 @@ public class SearchTypeGraph {
 		// parseArgs(args);
 		search.handleInput(args);
 		BasicPackage.eINSTANCE.eClass();
-		System.out.println("Search started.");
+		LOGGER.log( Level.INFO, "Search started.");
 
 		search.initializeFitnessFunctions();
 		search.initializeConstraints();
 		search.performSearch(SearchParameters.INITIAL_MODEL, SearchParameters.SOLUTION_LENGTH);
-		System.out.println("Search finished.");
+		LOGGER.log( Level.INFO, "Search finished.");
 	}
 }

@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Hashtable;
 import java.util.Map.Entry;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import javax.swing.JOptionPane;
 
@@ -16,6 +18,8 @@ public class MetricCalculator {
 	private Hashtable<String, String[]> results;
 	private Hashtable<String, String> unqualified;
 
+	private static final Logger LOGGER = Logger.getLogger( MetricCalculator.class.getName() );
+	
 	public MetricCalculator() {
 		this.results = new Hashtable<>();
 		this.unqualified = new Hashtable<>();
@@ -46,7 +50,7 @@ public class MetricCalculator {
 				String line = file_reader.readLine();
 				if (line == null) {
 					file_reader.close();
-					System.err.println("Sourcemeter metric file is empty");
+					LOGGER.log(Level.ERROR, "Sourcemeter metric file is empty");
 					return SourceMeterStatus.ERROR;
 				}
 				while ((line = file_reader.readLine()) != null) {
@@ -79,7 +83,7 @@ public class MetricCalculator {
 			return SourceMeterStatus.NOT_INSTALLED;
 		}
 		if(!new File(src_meter).exists()){
-			System.err.println("Sourcemeter is not installed at the specified location!");
+			LOGGER.log(Level.WARN, "Sourcemeter is not installed at the specified location!");
 			JOptionPane.showMessageDialog(null,
 					"Sourcemeter is not installed at the specified location! Set the environment variable \""
 							+ env_variable_name + "\" to the path of the \"SourceMeterJava\" file.");
@@ -95,7 +99,7 @@ public class MetricCalculator {
 			BufferedReader stream_reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line;
 			while ((line = stream_reader.readLine()) != null) {
-				System.out.println("> " + line); //$NON-NLS-1$
+				LOGGER.log( Level.INFO, "> " + line); //$NON-NLS-1$
 			}
 			stream_reader.close();
 			process.waitFor();

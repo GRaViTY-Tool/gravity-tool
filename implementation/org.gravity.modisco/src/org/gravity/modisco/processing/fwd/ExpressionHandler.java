@@ -1,5 +1,8 @@
 package org.gravity.modisco.processing.fwd;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.ArrayCreation;
@@ -36,9 +39,12 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MDefinition;
+import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 
 public class ExpressionHandler {
 
+	private static final Logger LOGGER = Logger.getLogger(ExpressionHandler.class.getName());
+	
 	public static boolean handle(Expression expression, MDefinition member) {
 		if (expression == null) {
 			return true; // assume nothing to do is success
@@ -145,7 +151,7 @@ public class ExpressionHandler {
 			return true;
 
 		}
-		System.out.println("ERROR: Unknown Expression: " + expression);
+		LOGGER.log( Level.INFO, "ERROR: Unknown Expression: " + expression);
 		return false;
 	}
 

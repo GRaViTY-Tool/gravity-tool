@@ -2,6 +2,8 @@ package org.gravity.goblin.preconditions;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.gravity.goblin.SearchParameters;
 import org.gravity.refactorings.impl.Move_MethodImpl;
@@ -12,6 +14,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class MoveMethodPreConditions {
+	
+	private static Logger LOGGER = Logger.getLogger(MoveMethodPreConditions.class.getName());
 
 	private static boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass) {
 		List<TAnnotation> annotations = new ArrayList<TAnnotation>();
@@ -29,7 +33,7 @@ public class MoveMethodPreConditions {
 			String tName = annotation.getType().getTName();
 			if (tName.equals("High") || tName.equals("Critical") || tName.equals("Secrecy")
 					|| tName.equals("Integrity")) {
-				System.err.println("Can't move " + sourceClass.getFullyQualifiedName() + "."
+				LOGGER.log(Level.WARN, "Can't move " + sourceClass.getFullyQualifiedName() + "."
 						+ methodSig.getSignatureString() + ", REASON security");
 				return false;
 			}

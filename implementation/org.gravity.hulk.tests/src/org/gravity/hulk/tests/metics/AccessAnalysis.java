@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -54,6 +56,8 @@ import de.uni_hamburg.informatik.swt.accessanalysis.results.Result;
 
 @RunWith(Parameterized.class)
 public class AccessAnalysis {
+	
+	private static final Logger LOGGER = Logger.getLogger(AccessAnalysis.class.getName());
 
 	private IJavaProject javaProject;
 
@@ -72,7 +76,7 @@ public class AccessAnalysis {
 					data.add(new Object[] { project.getName(), javaProject });
 				}
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.toString());
 			}
 		}
 		return data;
@@ -180,7 +184,7 @@ public class AccessAnalysis {
 						element = "Java Project \""+((TypeGraph) tAnnotated).getTName()+"\"";
 					}
 					
-					System.err.println(kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
+					LOGGER.log(Level.ERROR, kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
 				}
 			}
 		}

@@ -3,6 +3,8 @@ package org.gravity.eclipse.ui.handler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -32,6 +34,8 @@ import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.typegraph.basic.TypeGraph;
 
 public class JavaParseHandler extends AbstractHandler {
+	
+	private static final Logger LOGGER = Logger.getLogger(JavaParseHandler.class.getName());
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -78,7 +82,7 @@ public class JavaParseHandler extends AbstractHandler {
 				boolean success = converter.convertProject(iJavaProject, monitor);
 //				gravityActivator.discardConverter(iProject);
 				if (!success) {
-					System.err.println("No PG has been created for "+iProject.getName());
+					LOGGER.log(Level.ERROR, "No PG has been created for "+iProject.getName());
 					return false;
 				}
 				TypeGraph pg = converter.getPG();
@@ -87,7 +91,7 @@ public class JavaParseHandler extends AbstractHandler {
 					try {
 						folder.create(true, true, monitor);
 					} catch (CoreException e) {
-						System.err.println("Couldn't create output location: "+folder.getLocation().toString());
+						LOGGER.log(Level.ERROR, "Couldn't create output location: "+folder.getLocation().toString());
 					}
 				}
 				IFile file = folder.getFile(iProject.getName()+".xmi");

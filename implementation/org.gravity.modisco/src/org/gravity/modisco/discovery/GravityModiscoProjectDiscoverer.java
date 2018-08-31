@@ -4,6 +4,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CancellationException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -27,6 +30,8 @@ import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
 
 public class GravityModiscoProjectDiscoverer {
+	
+	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
 	
 	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
 		
@@ -60,12 +65,12 @@ public class GravityModiscoProjectDiscoverer {
 		}
 		
 		long t0 = System.currentTimeMillis();
-		System.out.println(t0 + " MoDisco discover project: " + java_project.getProject().getName());
+		LOGGER.log( Level.INFO, t0 + " MoDisco discover project: " + java_project.getProject().getName());
 		
 		Model eobject = discoverProject(java_project, libs, progressMonitor);
 		
 		long t1 = System.currentTimeMillis();
-		System.out.println(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
+		LOGGER.log( Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
 
 		if (eobject == null) {
 			throw new DiscoveryException("Discovered modisco model is null");
@@ -76,20 +81,20 @@ public class GravityModiscoProjectDiscoverer {
 		}
 
 		long t2 = System.currentTimeMillis();
-		System.out.println(t2 + " MoDisco preprocessing");
+		LOGGER.log( Level.INFO, t2 + " MoDisco preprocessing");
 		
 		MGravityModel model;
 		if (eobject instanceof MGravityModel) {
 			model = (MGravityModel) eobject;
 			for (IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD)) {
 				if(!processor.process(model, progressMonitor)) {
-					System.out.println("ERROR: Preprocessing failed");
+					LOGGER.log( Level.INFO, "ERROR: Preprocessing failed");
 					throw new RuntimeException("Preprocessing failed");
 				}
 			}
 			
 //			if (!new GravityMoDiscoPreprocessing().process(model, progressMonitor)) {
-//				System.out.println("ERROR: Preprocessing failed");
+//				LOGGER.log( Level.INFO, "ERROR: Preprocessing failed");
 //				throw new RuntimeException("Preprocessing failed");
 //			}
 
@@ -98,7 +103,7 @@ public class GravityModiscoProjectDiscoverer {
 		}
 		
 		long t3 = System.currentTimeMillis();
-		System.out.println(t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
+		LOGGER.log( Level.INFO, t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
 		
 		return model;
 	}

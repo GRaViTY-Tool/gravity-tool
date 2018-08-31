@@ -3,6 +3,8 @@ package org.gravity.goblin.momot;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.emf.ecore.EObject;
 import org.moeaframework.core.Population;
@@ -18,6 +20,8 @@ import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 import at.ac.tuwien.big.momot.util.MomotUtil;
 
 public class SearchPrinter {
+	
+	private static final Logger LOGGER = Logger.getLogger( SearchPrinter.class.getName() );
 	
 	String baseName;
 	TransformationSearchOrchestration orchestration;
@@ -45,22 +49,22 @@ public class SearchPrinter {
 	    analysis.setShowStatisticalSignificance(true);
 	    analysis.setSignificanceLevel(significanceLevel);
 	    SearchAnalyzer searchAnalyzer = analysis.analyze();
-	    System.out.println("---------------------------");
-	    System.out.println("Analysis Results");
-	    System.out.println("---------------------------");
+	    LOGGER.log( Level.INFO, "---------------------------");
+	    LOGGER.log( Level.INFO, "Analysis Results");
+	    LOGGER.log( Level.INFO, "---------------------------");
 	    searchAnalyzer.printAnalysis();
-	    System.out.println("---------------------------");
+	    LOGGER.log( Level.INFO, "---------------------------");
 
     	File analysisFolder = new File(folder, "analysis");
     	File analysisFolderTxt = new File(analysisFolder, "analysis.txt");
 	    try {
-			System.out.println("- Save Analysis to '"+analysisFolderTxt
+			LOGGER.log( Level.INFO, "- Save Analysis to '"+analysisFolderTxt
 	    			+ "'");
 	    	searchAnalyzer.saveAnalysis(analysisFolderTxt);
 	    } catch(IOException e) {
 	    	e.printStackTrace();
 	    }
-	    System.out.println("- Save Indicator BoxPlots to '"
+	    LOGGER.log( Level.INFO, "- Save Indicator BoxPlots to '"
 	    		+ analysisFolder
 	    		+ "'");
 	    searchAnalyzer.saveIndicatorBoxPlots(
@@ -78,17 +82,17 @@ public class SearchPrinter {
 	    population = 
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
 	    File objectivesTxt = new File(folder, "objectives/objective_values.txt");
-		System.out.println("- Save objectives of all algorithms to '"
+		LOGGER.log( Level.INFO, "- Save objectives of all algorithms to '"
 	    		+ objectivesTxt.getPath()
 	    		+ "'");
 	    TransformationResultManager.saveObjectives(
 	    	objectivesTxt,
 	    	population
 	    );
-	    System.out.println("---------------------------");
-	    System.out.println("Objectives of all algorithms");
-	    System.out.println("---------------------------");
-	    System.out.println(TransformationResultManager.printObjectives(
+	    LOGGER.log( Level.INFO, "---------------------------");
+	    LOGGER.log( Level.INFO, "Objectives of all algorithms");
+	    LOGGER.log( Level.INFO, "---------------------------");
+	    LOGGER.log( Level.INFO, TransformationResultManager.printObjectives(
 	    	population
 	    ));
 	    
@@ -96,7 +100,7 @@ public class SearchPrinter {
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
 	    File solutionsFolder = new File(folder, "solutions");
 		File solutionsTxt = new File(solutionsFolder ,"objective_values.txt");
-		System.out.println("- Save solutions of all algorithms to '"
+		LOGGER.log( Level.INFO, "- Save solutions of all algorithms to '"
 	    		+ solutionsTxt
 	    		+ "'");
 	    TransformationResultManager.savePopulation(
@@ -104,7 +108,7 @@ public class SearchPrinter {
 	    	population,
 	    	populationWriter
 	    );
-	    System.out.println("- Save solutions of all algorithms to '"
+	    LOGGER.log( Level.INFO, "- Save solutions of all algorithms to '"
 	    		+ solutionsFolder
 	    		+ "'");
 	    TransformationResultManager.saveSolutions(
@@ -119,7 +123,7 @@ public class SearchPrinter {
 	    population = 
 	    	TransformationResultManager.createApproximationSet(experiment, (String[])null);
 	    File modelsFolder = new File(folder, "models");
-		System.out.println("- Save models of all algorithms to '"
+		LOGGER.log( Level.INFO, "- Save models of all algorithms to '"
 	    		+ modelsFolder
 	    		+ "'");
 	    TransformationResultManager.saveModels(
@@ -134,34 +138,34 @@ public class SearchPrinter {
 
 	  
 	  public TransformationResultManager printResults( SearchExperiment<TransformationSolution> experiment, File folder){
-		  System.out.println("-------------------------------------------------------");
-		    System.out.println("Analysis");
-		    System.out.println("-------------------------------------------------------");
+		  LOGGER.log( Level.INFO, "-------------------------------------------------------");
+		    LOGGER.log( Level.INFO, "Analysis");
+		    LOGGER.log( Level.INFO, "-------------------------------------------------------");
 		    performAnalysis(experiment, folder);
-		    System.out.println("-------------------------------------------------------");
-		    System.out.println("Results");
-		    System.out.println("-------------------------------------------------------");
+		    LOGGER.log( Level.INFO, "-------------------------------------------------------");
+		    LOGGER.log( Level.INFO, "Results");
+		    LOGGER.log( Level.INFO, "-------------------------------------------------------");
 		    return handleResults(experiment, folder);
 	  }
 
 	public void printSearchInfo(String initalModel, String[] modules, int populationSize, int maxEvaluations,
 			int nrRuns) {
-	    System.out.println("-------------------------------------------------------");
-	    System.out.println("Search");
-	    System.out.println("-------------------------------------------------------");
-	    System.out.println("InputModel:      " + initalModel);
-	    System.out.println("Objectives:      " + orchestration.getFitnessFunction().getObjectiveNames());
-	    System.out.println("NrObjectives:    " + orchestration.getNumberOfObjectives());
-	    System.out.println("Constraints:     " + orchestration.getFitnessFunction().getConstraintNames());
-	    System.out.println("NrConstraints:   " + orchestration.getNumberOfConstraints());
-	    System.out.println("Transformations: " + Arrays.toString(modules));
-	    System.out.println("Units:           " + orchestration.getModuleManager().getUnits());
-	    System.out.println("SolutionLength:  " + orchestration.getSolutionLength());
-	    System.out.println("PopulationSize:  " + populationSize);
-	    System.out.println("Iterations:      " + maxEvaluations / populationSize);
-	    System.out.println("MaxEvaluations:  " + maxEvaluations);
-	    System.out.println("AlgorithmRuns:   " + nrRuns);
-	    System.out.println("---------------------------");
+	    LOGGER.log( Level.INFO, "-------------------------------------------------------");
+	    LOGGER.log( Level.INFO, "Search");
+	    LOGGER.log( Level.INFO, "-------------------------------------------------------");
+	    LOGGER.log( Level.INFO, "InputModel:      " + initalModel);
+	    LOGGER.log( Level.INFO, "Objectives:      " + orchestration.getFitnessFunction().getObjectiveNames());
+	    LOGGER.log( Level.INFO, "NrObjectives:    " + orchestration.getNumberOfObjectives());
+	    LOGGER.log( Level.INFO, "Constraints:     " + orchestration.getFitnessFunction().getConstraintNames());
+	    LOGGER.log( Level.INFO, "NrConstraints:   " + orchestration.getNumberOfConstraints());
+	    LOGGER.log( Level.INFO, "Transformations: " + Arrays.toString(modules));
+	    LOGGER.log( Level.INFO, "Units:           " + orchestration.getModuleManager().getUnits());
+	    LOGGER.log( Level.INFO, "SolutionLength:  " + orchestration.getSolutionLength());
+	    LOGGER.log( Level.INFO, "PopulationSize:  " + populationSize);
+	    LOGGER.log( Level.INFO, "Iterations:      " + maxEvaluations / populationSize);
+	    LOGGER.log( Level.INFO, "MaxEvaluations:  " + maxEvaluations);
+	    LOGGER.log( Level.INFO, "AlgorithmRuns:   " + nrRuns);
+	    LOGGER.log( Level.INFO, "---------------------------");
 		
 	}
 

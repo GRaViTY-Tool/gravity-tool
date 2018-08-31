@@ -1,5 +1,8 @@
 package org.gravity.hulk.ui.visualization.handlers;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -10,6 +13,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.hulk.ui.visualization.views.SwissArmyKnifInformationView;
 
 public class SwissArmyKnifeInformationHandler extends AbstractHandler {
+
+	private static final Logger LOGGER = Logger.getLogger( SwissArmyKnifeInformationHandler.class.getName() );
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -24,10 +29,10 @@ public class SwissArmyKnifeInformationHandler extends AbstractHandler {
 		try {
 			page.showView(SwissArmyKnifInformationView.ID);
 		} catch (PartInitException e) {
-			System.out.println("Failed to open the Swiss Army Knife information view");
+			LOGGER.log( Level.ERROR, "Failed to open the Swiss Army Knife information view");
 		}
 		
-		return true;
+		return null;
 	}
 
 	@Override

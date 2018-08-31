@@ -1,5 +1,8 @@
 package org.gravity.tgg.modisco.test.util;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -7,6 +10,8 @@ import org.junit.runners.model.Statement;
 //http://stackoverflow.com/a/8301639
 public class RetryTest implements TestRule {
 
+	private static final Logger LOGGER = Logger.getLogger(RetryTest.class.getName());
+	
 	private final int retryCount;
 
 	public RetryTest(final int retryCount) {
@@ -28,10 +33,10 @@ public class RetryTest implements TestRule {
 						return;
 					} catch (final Throwable t) {
 						caughtThrowable = t;
-						System.err.println("\n" + description.getDisplayName() + ": run " + (i + 1) + " failed.\n");
+						LOGGER.log(Level.WARN, "\n" + description.getDisplayName() + ": run " + (i + 1) + " failed.\n");
 					}
 				}
-				System.err.println("\n" + description.getDisplayName() + ": giving up after "
+				LOGGER.log(Level.ERROR, "\n" + description.getDisplayName() + ": giving up after "
 						+ RetryTest.this.retryCount + " failures.\n");
 				throw caughtThrowable;
 			}

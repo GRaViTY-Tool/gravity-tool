@@ -3,6 +3,8 @@ package org.gravity.tgg.modisco.test.src;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -18,6 +20,8 @@ import org.gravity.tgg.modisco.test.util.TimeStampUtil;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 public class TestGeneratorFromSrc {
+
+	private static final Logger LOGGER = Logger.getLogger(TestGeneratorFromSrc.class.getName() );
 
 	private final static boolean DEBUG = true;
 
@@ -61,21 +65,21 @@ public class TestGeneratorFromSrc {
 
 				conv.setDebug(DEBUG);
 
-				System.out.println("Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+				LOGGER.log( Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 				if (!conv.convertProject(source, new NullProgressMonitor())) {
 					throw new AssertionError("Trafo failed");
 				}
-				System.out.println("Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+				LOGGER.log( Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 
 				if (DEBUG) {
-					System.out.println("Save MoDisco Src - " + TimeStampUtil.getCurrentTimeStamp());
+					LOGGER.log( Level.INFO, "Save MoDisco Src - " + TimeStampUtil.getCurrentTimeStamp());
 					((SynchronizationHelper) conv).saveSrc(createSrcName(name));
 
-					System.out.println("Save Output Model - " + TimeStampUtil.getCurrentTimeStamp());
+					LOGGER.log( Level.INFO, "Save Output Model - " + TimeStampUtil.getCurrentTimeStamp());
 					((SynchronizationHelper) conv).saveTrg(createTrgName(name));
 
 					try {
-						System.out.println("Save correspondence model - " + TimeStampUtil.getCurrentTimeStamp());
+						LOGGER.log( Level.INFO, "Save correspondence model - " + TimeStampUtil.getCurrentTimeStamp());
 						((SynchronizationHelper) conv).saveCorr(createCorrName(name));
 					} catch (final Throwable t) {
 						System.err
@@ -83,10 +87,10 @@ public class TestGeneratorFromSrc {
 					}
 
 					try {
-						System.out.println("Save protocol xmi - " + TimeStampUtil.getCurrentTimeStamp());
+						LOGGER.log( Level.INFO, "Save protocol xmi - " + TimeStampUtil.getCurrentTimeStamp());
 						((SynchronizationHelper) conv).saveSynchronizationProtocol(createProtocolName(name));
 					} catch (final Throwable t) {
-						System.err.println("Failed to save protocol xmi: " + t + "\nMessage: " + t.getMessage());
+						LOGGER.log(Level.ERROR, "Failed to save protocol xmi: " + t + "\nMessage: " + t.getMessage());
 					}
 				}
 			} catch (final MalformedURLException e) {

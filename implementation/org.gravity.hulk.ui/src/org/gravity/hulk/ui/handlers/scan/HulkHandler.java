@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -63,6 +65,8 @@ import org.moflon.core.dfs.DFSGraph;
 
 public abstract class HulkHandler extends AbstractHandler {
 
+	private static final Logger LOGGER = Logger.getLogger( HulkHandler.class.getName() );
+	
 	protected boolean javaAnnotationsEnabled;
 	protected HAntiPatternHandling hulk;
 	protected IPGConverter converter;
@@ -123,12 +127,12 @@ public abstract class HulkHandler extends AbstractHandler {
 
 	public void InitHulkWithStatusOutput() {
 		long t1 = System.currentTimeMillis();
-		System.out.println(t1 + " Init Hulk");
+		LOGGER.log( Level.INFO, t1 + " Init Hulk");
 
 		InitHulk();
 
 		long t2 = System.currentTimeMillis();
-		System.out.println(t2 + " Init Hulk - done " + (t2 - t1) + "ms");
+		LOGGER.log( Level.INFO, t2 + " Init Hulk - done " + (t2 - t1) + "ms");
 	}
 
 	public void SyncBWD() {
@@ -139,9 +143,9 @@ public abstract class HulkHandler extends AbstractHandler {
 		if (javaAnnotationsEnabled) {
 			converter.syncProjectBwd(IPGConverter -> {
 
-				System.out.println(System.currentTimeMillis() + " Hulk Detect AP");
+				LOGGER.log( Level.INFO, System.currentTimeMillis() + " Hulk Detect AP");
 				detector.detectSelectedAntiPattern(selection, selected_detectors, executed_detectors);
-				System.out.println(System.currentTimeMillis() + " Hulk Detect AP - done");
+				LOGGER.log( Level.INFO, System.currentTimeMillis() + " Hulk Detect AP - done");
 
 			}, hHmonitor);
 			IFolder folder = project.getProject().getFolder("src/org/gravity/hulk/annotations"); //$NON-NLS-1$
@@ -153,9 +157,9 @@ public abstract class HulkHandler extends AbstractHandler {
 				}
 			}
 		} else {
-			System.out.println(System.currentTimeMillis() + " Hulk Detect AP");
+			LOGGER.log( Level.INFO, System.currentTimeMillis() + " Hulk Detect AP");
 			detector.detectSelectedAntiPattern(selection, selected_detectors, executed_detectors);
-			System.out.println(System.currentTimeMillis() + " Hulk Detect AP - done");
+			LOGGER.log( Level.INFO, System.currentTimeMillis() + " Hulk Detect AP - done");
 		}
 
 	}
@@ -271,7 +275,7 @@ public abstract class HulkHandler extends AbstractHandler {
 	 * @throws ExecutionException
 	 */
 	public boolean initialize(ExecutionEvent event) throws ExecutionException {
-		System.out.println(Messages.HulkScanHandler_0);
+		LOGGER.log( Level.INFO, Messages.HulkScanHandler_0);
 
 		window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
@@ -315,7 +319,7 @@ public abstract class HulkHandler extends AbstractHandler {
 				for (IJavaProject javaProject : projects) {
 					project = javaProject;
 					long t0 = System.currentTimeMillis();
-					System.out.println(t0 + " Hulk Anti-Pattern Detection");
+					LOGGER.log( Level.INFO, t0 + " Hulk Anti-Pattern Detection");
 
 					IFolder hulk_folder = project.getProject().getFolder(HulkActivator.HULK_FOLDER_NAME);
 
@@ -334,7 +338,7 @@ public abstract class HulkHandler extends AbstractHandler {
 
 					boolean success = converter.convertProject(project, libs, monitor);
 					if (!success || converter.getPG() == null) {
-						System.err.println("Creating PG from project failed: " + project.getProject().getName());
+						LOGGER.log(Level.ERROR, "Creating PG from project failed: " + project.getProject().getName());
 						fails.add(javaProject.getProject().getName());
 						continue;
 					}
@@ -342,7 +346,7 @@ public abstract class HulkHandler extends AbstractHandler {
 					InitHulkWithStatusOutput();
 
 					long t3 = System.currentTimeMillis();
-					System.out.println(t3 + " Sync Bwd");
+					LOGGER.log( Level.INFO, t3 + " Sync Bwd");
 
 					SyncBWD();
 
@@ -352,8 +356,8 @@ public abstract class HulkHandler extends AbstractHandler {
 					}
 
 					long t4 = System.currentTimeMillis();
-					System.out.println(t4 + " Sync Bwd - Done " + (t4 - t3) + "ms");
-					System.out.println(t4 + " Hulk Anti-Pattern Detection - Done " + (t4 - t0) + "ms");
+					LOGGER.log( Level.INFO, t4 + " Sync Bwd - Done " + (t4 - t3) + "ms");
+					LOGGER.log( Level.INFO, t4 + " Hulk Anti-Pattern Detection - Done " + (t4 - t0) + "ms");
 
 					displayResults();
 
@@ -378,7 +382,7 @@ public abstract class HulkHandler extends AbstractHandler {
 			runJob();
 
 		} else {
-			System.out.println(Messages.HulkScanHandler_8);
+			LOGGER.log( Level.INFO, Messages.HulkScanHandler_8);
 		}
 		return null;
 	}

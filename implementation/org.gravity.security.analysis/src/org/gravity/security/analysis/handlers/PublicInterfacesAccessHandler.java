@@ -8,6 +8,8 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -48,6 +50,8 @@ import org.osgi.framework.Bundle;
 
 public class PublicInterfacesAccessHandler extends AbstractHandler {
 
+	private static final Logger LOGGER = Logger.getLogger(PublicInterfacesAccessHandler.class.getName());
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
@@ -112,7 +116,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 				boolean success = converter.convertProject(iJavaProject, libs.values(), monitor);
 				gravityActivator.discardConverter(iProject);
 				if (!success) {
-					System.out.println("No PG has been created for "+iProject.getName());
+					LOGGER.log(Level.ERROR, "No PG has been created for "+iProject.getName());
 					return false;
 				}
 				TypeGraph pg = converter.getPG();
@@ -152,7 +156,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 	private boolean inspect(TypeGraph pg, Set<String> names) {
 		TAbstractType high = pg.getType("org.gravity.security.annotations.requirements.High");
 		if(high == null){
-			System.out.println("Nothing to check!");
+			LOGGER.log(Level.INFO, "Nothing to check!");
 			return true;
 		}
 		Set<TAnnotationType> protectors = new HashSet<>();
@@ -161,7 +165,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 		TAbstractType api = pg.getType("org.gravity.security.annotations.access.Api");
 		Set<TAnnotationType> allowed = new HashSet<>();
 		if(api == null){
-			System.err.println("Warning no API specified");
+			LOGGER.log(Level.WARN, "Warning no API specified");
 		}
 		else{
 			allowed.add((TAnnotationType) api);
@@ -195,7 +199,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 		for(TMember tSource : accessing){
 			visited.add(tSource);
 			if(names.contains(tSource.getDefinedBy().getFullyQualifiedName())){
-				System.err.println("Access violation for \""+member.getSignatureString()+"\" at \""+tSource.getSignatureString()+"\" in class \""+tSource.getDefinedBy().getFullyQualifiedName()+"\"");
+				LOGGER.log(Level.INFO, "Access violation for \""+member.getSignatureString()+"\" at \""+tSource.getSignatureString()+"\" in class \""+tSource.getDefinedBy().getFullyQualifiedName()+"\"");
 				continue;
 			}
 			if(tSource.getAccessedBy().size()==0){ //TODO: Replace by access modifier check
@@ -204,7 +208,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 					bool |= allowed.contains(annotation.getType());
 				}
 				if(!bool){
-					System.out.println("Potential access violation for \""+member.getSignatureString()+"\" at \""+tSource.getSignatureString()+"\" in class \""+tSource.getDefinedBy().getFullyQualifiedName()+"\"");
+					LOGGER.log(Level.INFO, "Potential access violation for \""+member.getSignatureString()+"\" at \""+tSource.getSignatureString()+"\" in class \""+tSource.getDefinedBy().getFullyQualifiedName()+"\"");
 				}
 			}
 			dfs(tSource, allowed, names, visited);

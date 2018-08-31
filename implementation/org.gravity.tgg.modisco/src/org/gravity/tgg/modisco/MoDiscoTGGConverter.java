@@ -1,6 +1,5 @@
 package org.gravity.tgg.modisco;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -8,14 +7,14 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.function.Consumer;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -27,10 +26,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
-import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
@@ -71,6 +67,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	private GravityModiscoProjectDiscoverer discoverer;
 
 	private MGravityModel targetModel;
+	
+	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class.getName());
 
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
@@ -128,7 +126,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		this.libs = libs;
 
 		long start = System.currentTimeMillis();
-		System.out.println(start + " GRaViTY convert project: " + this.projectName);
+		LOGGER.log( Level.INFO, start + " GRaViTY convert project: " + this.projectName);
 
 		
 		try {
@@ -152,7 +150,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		}
 
 		long t4 = System.currentTimeMillis();
-		System.out.println(t4 + " eMoflon TGG fwd trafo");
+		LOGGER.log( Level.INFO, t4 + " eMoflon TGG fwd trafo");
 		integrateForward();
 
 		
@@ -175,7 +173,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		}
 
 		long t5 = System.currentTimeMillis();
-		System.out.println(t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
+		LOGGER.log( Level.INFO, t5 + " eMoflon TGG fwd trafo - done " + (t5 - t4) + "ms");
 		if (this.debug) {
 			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
 			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
@@ -187,7 +185,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		}
 
 		long stop = System.currentTimeMillis();
-		System.out.println(stop + " GRaViTY convert project - done " + (stop - start) + "ms");
+		LOGGER.log( Level.INFO, stop + " GRaViTY convert project - done " + (stop - start) + "ms");
 
 		return success;
 	}
@@ -230,47 +228,47 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		if (this.discoverer == null || this.iJavaProject == null) {
 			return false;
 		}
-		System.out.println(start + " MoDisco sync project: " + iJavaProject.getProject().getName());
+		LOGGER.log( Level.INFO, start + " MoDisco sync project: " + iJavaProject.getProject().getName());
 
 		if (targetModel == null) {
 			return convertProject(iJavaProject, monitor);
 		}
 		MGravityModel oldProject = targetModel;
-		System.out.println(System.currentTimeMillis() + " Discover Project");
+		LOGGER.log( Level.INFO, System.currentTimeMillis() + " Discover Project");
 		try {
 			targetModel = this.discoverer.discoverMGravityModelFromProject(iJavaProject, monitor);
 		} catch (DiscoveryException e) {
 			e.printStackTrace();
 			return false;
 		}
-		System.out.println(System.currentTimeMillis() + " Discover Project - Done");
+		LOGGER.log( Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
 
 		GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
 
 		Consumer<EObject> changeSrc2 = SynchronizationHelper -> {
 
-			System.out.println(System.currentTimeMillis() + " Calculate Patch");
+			LOGGER.log( Level.INFO, System.currentTimeMillis() + " Calculate Patch");
 			patcher.update(oldProject, targetModel);
-			System.out.println(System.currentTimeMillis() + " Calculate Patch - Done");
+			LOGGER.log( Level.INFO, System.currentTimeMillis() + " Calculate Patch - Done");
 
 		};
 
 		boolean success = syncProjectFwd(changeSrc2, monitor);
 
 		long stop = System.currentTimeMillis();
-		System.out.println(stop + "MoDisco sync project -done: " + (stop - start) + "ms");
+		LOGGER.log( Level.INFO, stop + "MoDisco sync project -done: " + (stop - start) + "ms");
 
 		return success;
 	}
 
 	@Override
 	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
-		System.out.println(System.currentTimeMillis() + " Integrate FWD");
+		LOGGER.log( Level.INFO, System.currentTimeMillis() + " Integrate FWD");
 
 		setChangeSrc(consumer);
 
 		integrateForward();
-		System.out.println(System.currentTimeMillis() + " Integrate FWD - Done");
+		LOGGER.log( Level.INFO, System.currentTimeMillis() + " Integrate FWD - Done");
 
 		if (this.debug) {
 			saveModel(src, this.modiscoFolder.getFile("modisco.xmi"), monitor); //$NON-NLS-1$
@@ -351,10 +349,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	@Override
 	public boolean savePG(IFile file, IProgressMonitor monitor) {
 		return saveModel(getTrg(), file, monitor);
-	}
-
-	private boolean saveMoDiscoModel(IFile modisco_file, IProgressMonitor monitor) {
-		return saveModel(getSrc(), modisco_file, monitor);
 	}
 
 	@Override

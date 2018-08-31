@@ -1,6 +1,8 @@
 package org.gravity.goblin.repair;
 
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.goblin.Utility;
@@ -20,6 +22,8 @@ import at.ac.tuwien.big.momot.search.solution.repair.AbstractTransformationSolut
 
 public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 
+	private static Logger LOGGER = Logger.getLogger(VisibilityRepairer.class.getName());
+			
 	@Override
 	public TransformationSolution repair(TransformationSolution solution) {
 		EGraph graph = solution.getResultGraph();
@@ -30,7 +34,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 				List<TAnnotation> metrics = tDef.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());
 				if (metrics.size() != 1) {
 					if (tDef instanceof TConstructorDefinition) {
-						System.err.println("Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
+						LOGGER.log(Level.WARN, "Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
 								+ tDef.getSignatureString() + "\".");
 					} else {
 						throw new RuntimeException("Unexpected amount of metrics for \""

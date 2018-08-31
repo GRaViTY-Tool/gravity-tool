@@ -3,6 +3,8 @@ package org.gravity.refactorings.ui;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
@@ -25,6 +27,8 @@ import org.gravity.typegraph.basic.TMethodSignature;
 
 public class EclipseMoveMethodRefactoring {
 	
+	private static final Logger LOGGER = Logger.getLogger(EclipseMoveMethodRefactoring.class.getName());
+	
 	private Hashtable<String, IType> types;
 	private IJavaProject project;
 	
@@ -36,7 +40,7 @@ public class EclipseMoveMethodRefactoring {
 	public boolean moveMethod(TClass tSourceClass, TClass tTargetClass, TMethodSignature tMethod,
 					IProgressMonitor monitor) throws JavaModelException, IllegalArgumentException {
 		if (tSourceClass.isTLib() || tTargetClass.isTLib()) {
-			System.err.println("Source or target class is library.");
+			LOGGER.log(Level.ERROR, "Source or target class is library.");
 			return false;
 		}
 
@@ -48,7 +52,7 @@ public class EclipseMoveMethodRefactoring {
 		IType trg = types.get(tTargetClass.getFullyQualifiedName());
 		IMethod iMethod = JavaHelper.getIMethod(tMethod, src);
 		
-		System.out.println(iMethod);
+		LOGGER.log(Level.INFO, iMethod.toString());
 		return move2(project, monitor, trg,iMethod);
 	}
 

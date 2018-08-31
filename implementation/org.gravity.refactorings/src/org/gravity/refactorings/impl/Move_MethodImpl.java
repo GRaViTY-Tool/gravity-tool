@@ -103,7 +103,7 @@ public class Move_MethodImpl extends Move_MemberImpl {
 		for (TInterface tInterface : interfaces) {
 			for (TSignature interfaceSig : tInterface.getSignature()) {
 				if (interfaceSig == methodSig) {
-					// System.err.println("Can't move
+					// LOGGER.log(Level.WARNING, "Can't move
 					// "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+",
 					// REASON interface");
 					return false;
@@ -119,7 +119,7 @@ public class Move_MethodImpl extends Move_MemberImpl {
 			if (member.getSignature() == methodSig) {
 				for (TAnnotation annotation : member.getTAnnotation()) {
 					if (annotation.getType() != null && annotation.getType().getTName().equalsIgnoreCase("override")) {
-						// System.err.println("Can't move
+						// LOGGER.log(Level.WARNING, "Can't move
 						// "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+",
 						// REASON override");
 						return false;

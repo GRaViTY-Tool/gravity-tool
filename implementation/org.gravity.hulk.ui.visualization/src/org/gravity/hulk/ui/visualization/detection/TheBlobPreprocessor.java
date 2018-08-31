@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
@@ -30,6 +32,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
 
 public class TheBlobPreprocessor extends DetectionPreprocessor {
+
+	private static final Logger LOGGER = Logger.getLogger( TheBlobPreprocessor.class.getName() );
 
 	private TheBlobInformationStringProvider theBlobStringProvider;
 
@@ -216,7 +220,7 @@ public class TheBlobPreprocessor extends DetectionPreprocessor {
 									hnaccMetric, printHeader, TheBlobInformationStringProvider.NACC_METRIC);
 							printHeader = false;
 						}
-						else{System.out.println("HNACC IS NULL");}
+						else{LOGGER.log( Level.WARN, "HNACC IS NULL");}
 					}
 					thresholds.put("none", "-1");
 					DetectionObject hnaccDetectionObjectDummy = new DetectionObject();

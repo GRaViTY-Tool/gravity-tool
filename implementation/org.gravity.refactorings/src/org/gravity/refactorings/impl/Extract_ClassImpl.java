@@ -6,6 +6,8 @@ import java.lang.Iterable;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -31,6 +33,8 @@ import org.gravity.typegraph.basic.TMethodDefinition;
  * @generated
  */
 public class Extract_ClassImpl extends RefactoringImpl {
+	
+	private static final Logger LOGGER = Logger.getLogger(Extract_ClassImpl.class.getName());
 
 	@Override
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
@@ -75,7 +79,7 @@ public class Extract_ClassImpl extends RefactoringImpl {
 						return false;
 					}
 				} else {
-					System.err.println("Extract_Class: Unknown member type: " + tMember);
+					LOGGER.log(Level.ERROR, "Extract_Class: Unknown member type: " + tMember);
 					return false;
 				}
 			}

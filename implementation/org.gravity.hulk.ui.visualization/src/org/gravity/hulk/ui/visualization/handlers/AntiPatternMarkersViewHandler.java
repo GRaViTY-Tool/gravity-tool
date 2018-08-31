@@ -1,5 +1,8 @@
 package org.gravity.hulk.ui.visualization.handlers;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -11,6 +14,8 @@ import org.gravity.hulk.ui.visualization.views.AntiPatternMarkerView;
 
 public class AntiPatternMarkersViewHandler extends AbstractHandler {
 
+	private static final Logger LOGGER = Logger.getLogger( AntiPatternMarkersViewHandler.class.getName() );
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
@@ -24,7 +29,7 @@ public class AntiPatternMarkersViewHandler extends AbstractHandler {
 		try {
 			page.showView(AntiPatternMarkerView.ID);
 		} catch (PartInitException e) {
-			System.out.println("Failed to open the AntiPattern Marker view");
+			LOGGER.log( Level.ERROR, "Failed to open the AntiPattern Marker view");
 		}
 
 		return null;

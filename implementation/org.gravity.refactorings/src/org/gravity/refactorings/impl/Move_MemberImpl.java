@@ -16,10 +16,14 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 
 public class Move_MemberImpl extends RefactoringImpl {
 
+	private static final Logger LOGGER = Logger.getLogger(Move_MemberImpl.class.getName());
+	
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
@@ -48,7 +52,7 @@ public class Move_MemberImpl extends RefactoringImpl {
 			Move_FieldImpl move = new Move_FieldImpl();
 			return move.isApplicable(field, tTargetClass, tSourceClass);
 		} else {
-			System.err.println("Move_MemberImpl: Unknown TSignature: " + signature);
+			LOGGER.log(Level.ERROR, "Move_MemberImpl: Unknown TSignature: " + signature);
 			return false;
 		}
 
@@ -64,7 +68,7 @@ public class Move_MemberImpl extends RefactoringImpl {
 			Move_FieldImpl move = new Move_FieldImpl();
 			return move.perform(field, tTargetClass, tSourceClass);
 		} else {
-			System.err.println("Move_MemberImpl: Unknown TSignature: " + signature);
+			LOGGER.log(Level.ERROR, "Move_MemberImpl: Unknown TSignature: " + signature);
 			return null;
 		}
 

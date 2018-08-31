@@ -1,5 +1,8 @@
 package org.gravity.hulk.ui.visualization.handlers;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -10,6 +13,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.hulk.ui.visualization.views.TheBlobInformationView;
 
 public class TheBlobInformationHandler extends AbstractHandler {
+
+	private static final Logger LOGGER = Logger.getLogger( TheBlobInformationHandler.class.getName() );
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -25,7 +30,7 @@ public class TheBlobInformationHandler extends AbstractHandler {
 		try {
 			page.showView(TheBlobInformationView.ID);
 		} catch (PartInitException e) {
-			System.out.println("Failed to open the The Blob information view");
+			LOGGER.log( Level.ERROR, "Failed to open the The Blob information view");
 		}
 
 		return null;
