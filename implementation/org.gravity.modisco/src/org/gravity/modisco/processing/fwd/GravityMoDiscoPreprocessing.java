@@ -31,6 +31,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
@@ -82,7 +83,11 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 					if (mType != null) {
 						implementingTypes.add(mType);
 					}
+					else if(JavaPackage.eINSTANCE.getAnonymousClassDeclaration().isSuperTypeOf(mDefinition.eContainer().eClass())) {
+						// Ignore this case
+					}
 					else {
+						LOGGER.log(Level.ERROR, "Couldn't preprocess implemented siganture: "+mSignature);
 						return false;
 					}
 				}
@@ -282,6 +287,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		for (MAbstractMethodDefinition def : model.getMAbstractMethodDefinitions()) {
 			Block block = def.getBody();
 			if (!StatementHandler.handle(block, def)) {
+				LOGGER.log(Level.ERROR, "Couldn't handle method statement \""+block+"\" at preprocessing of accesses.");
 				return false;
 			}
 			calculateTypeDependencies(def);
@@ -289,6 +295,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		for (MFieldDefinition def : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment fragment : def.getFragments()) {
 				if (!MiscHandler.handle(fragment, def)) {
+					LOGGER.log(Level.ERROR, "Couldn't handle field statement \""+fragment+"\" at preprocessing of accesses.");
 					return false;
 				}
 			}
