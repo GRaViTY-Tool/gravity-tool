@@ -24,7 +24,8 @@ import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
- * This class provides the functionality to semantically comapre two program models
+ * This class provides the functionality to semantically comapre two program
+ * models
  * 
  * @author speldszus
  *
@@ -51,7 +52,7 @@ public class PGComparator {
 	 * 
 	 * @param elementA The first element
 	 * @param elementB The second element
-	 * @param print Specifies if differences should be logged in detail
+	 * @param print    Specifies if differences should be logged in detail
 	 * @return true if the two elements are semantically equal, false otherwise
 	 * @throws UnsupportetElementException
 	 */
@@ -153,9 +154,8 @@ public class PGComparator {
 				return compareOrdered(a, b, print);
 			}
 			return compareUnordered(a, b, print);
-			
-		} 
-		
+
+		}
 
 		throw new UnsupportetElementException(elementA.getClass());
 	}
@@ -181,20 +181,17 @@ public class PGComparator {
 			if (compare(a.getPg(), b.getPg(), print)) {
 				if (compare(a.getSignatures(), b.getSignatures(), print)) {
 					return true;
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The signatures doesn't match");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The signatures doesn't match");
+
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The TypeGraph containers doesn't match");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The TypeGraph containers doesn't match");
+
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The fields have different names");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The fields have different names");
+
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -222,28 +219,24 @@ public class PGComparator {
 					if (compare(a.getDefinitions(), b.getDefinitions(), print)) {
 						if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 							return true;
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The annotations are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The annotations are different");
+
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The definitions are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The definitions are different");
+
 					}
 				} catch (UnsupportetElementException e) {
 					LOGGER.log(Level.WARN, e);
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The types are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The types are different");
+
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The fields are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The fields are different");
+
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -292,18 +285,18 @@ public class PGComparator {
 				if (compare((TMember) a, (TMember) b, print)) {
 					if (compareUnordered(a.getHiddenBy(), b.getHiddenBy(), print)) {
 						return true;
-					} else {
-						if (print)
-							LOGGER.log(Level.INFO, a + ": The hiding is different");
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The hiding is different");
+
 					}
 				}
-			} else {
-				if (print)
-					LOGGER.log(Level.INFO, a + ": The hidden field definitions are different");
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The hidden field definitions are different");
+
 			}
-		} else {
-			if (print)
-				LOGGER.log(Level.INFO, a + ": The signature is different");
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The signature is different");
+
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -325,21 +318,17 @@ public class PGComparator {
 				if (compare(a.getDefinedBy(), b.getDefinedBy(), print)) {
 					if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 						return true;
-					} else {
-						if (print)
-							LOGGER.log(Level.INFO, a + ": The annotations are different");
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The annotations are different");
 					}
-				} else {
-					if (print)
-						LOGGER.log(Level.INFO, a + ": The defining type is different");
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The defining type is different");
 				}
-			} else {
-				if (print)
-					LOGGER.log(Level.INFO, a + ": The incomming accesses are different");
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The incomming accesses are different");
 			}
-		} else {
-			if (print)
-				LOGGER.log(Level.INFO, a + ": The accesses are different");
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The accesses are different");
 		}
 		return false;
 	}
@@ -363,15 +352,11 @@ public class PGComparator {
 		if (compare(a.getTSource(), b.getTSource(), print)) {
 			if (compare(a.getTTarget(), b.getTTarget(), print)) {
 				return true;
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The accessed member is different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The accessed member is different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The accessing member is different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The accessing member is different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -420,19 +405,16 @@ public class PGComparator {
 			if (compare(a.getPg(), b.getPg(), print)) {
 				if (compare(a.getSignatures(), b.getSignatures(), print)) {
 					return true;
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The signatures are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The signatures are different");
+
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
+
 			}
-		} else {
-			if (print)
-				LOGGER.log(Level.INFO, a + ": The names are different");
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The names are different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -460,30 +442,20 @@ public class PGComparator {
 					if (compare(a.getDefinitions(), b.getDefinitions(), print)) {
 						if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 							return true;
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The annotations are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The annotations are different");
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The definitions are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The definitions are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The parameter lists are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The parameter lists are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The return types are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The return types are different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The method names are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The method names are different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -509,15 +481,11 @@ public class PGComparator {
 		if (compareUnordered(a.getEntries(), b.getEntries(), false)) {
 			if (compare(a.getFirst(), b.getFirst(), print)) {
 				return true;
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The first parameters are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The first parameters are different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The parameters are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The parameters are different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -543,19 +511,14 @@ public class PGComparator {
 			if (compare(a.getNext(), b.getNext(), print)) {
 				if (compare(a.getPrevious(), b.getPrevious(), print)) {
 					return true;
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The previous parameters are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The previous parameters are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The next are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The next are different");
 			}
-		} else {
-			if (print)
-				LOGGER.log(Level.INFO, a + ": The parameter types are different");
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The parameter types are different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -587,40 +550,27 @@ public class PGComparator {
 								if (compare(a.getReturnType(), b.getReturnType(), print)) {
 									if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 										return true;
-									} else {
-										if (print) {
-											LOGGER.log(Level.INFO, a + ": The annotations are different");
-										}
+									} else if (print) {
+										LOGGER.log(Level.INFO, a + ": The annotations are different");
 									}
-								} else {
-									if (print) {
-										LOGGER.log(Level.INFO, a + ": The return types are different");
-									}
+								} else if (print) {
+									LOGGER.log(Level.INFO, a + ": The return types are different");
 								}
 							}
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The overloading methods are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The overloading methods are different");
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The overloaded methods are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The overloaded methods are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The overriding definitions are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The overriding definitions are different");
 				}
-			} else {
-				if (print)
-					LOGGER.log(Level.INFO, a + ": The overridden definitions are different");
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The overridden definitions are different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The signatures are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The signatures are different");
 		}
 		this.compared.remove(a, b);
 		return false;
@@ -647,20 +597,14 @@ public class PGComparator {
 				if (compare(a.getChildInterfaces(), b.getChildInterfaces(), print)) {
 					if (compare(a.getImplementedBy(), b.getImplementedBy(), print)) {
 						return true;
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The implementing classes are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The implementing classes are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The child interfaces are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The child interfaces are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The parent interfaces are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The parent interfaces are different");
 			}
 		}
 		this.compared.remove(a, b);
@@ -688,20 +632,14 @@ public class PGComparator {
 				if (compareUnordered(a.getImplements(), b.getImplements(), print)) {
 					if (compareUnordered(a.getChildClasses(), b.getChildClasses(), print)) {
 						return true;
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The child classes are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The child classes are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The implemented interfaces are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The implemented interfaces are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The parent classes are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The parent classes are different");
 			}
 		}
 		this.compared.remove(a, b);
@@ -726,9 +664,7 @@ public class PGComparator {
 			try {
 				if (!compare(a.get(i), b.get(i), print)) {
 					if (print) {
-						if (print) {
-							LOGGER.log(Level.INFO, "Lists don't match");
-						}
+						LOGGER.log(Level.INFO, "Lists don't match");
 					}
 					return false;
 				}
@@ -754,9 +690,7 @@ public class PGComparator {
 		int size = a.size();
 		if (size != b.size()) {
 			if (print) {
-				if (print) {
-					LOGGER.log(Level.INFO, "Lists don't have the same size.");
-				}
+				LOGGER.log(Level.INFO, "Lists don't have the same size.");
 			}
 			return false;
 		}
@@ -784,9 +718,7 @@ public class PGComparator {
 			}
 			if (!success) {
 				if (print) {
-					if (print) {
-						LOGGER.log(Level.INFO, a.get(i) + " No corresponding entry");
-					}
+					LOGGER.log(Level.INFO, a.get(i) + " No corresponding entry");
 				}
 				return false;
 			}
@@ -814,45 +746,29 @@ public class PGComparator {
 								if (compare(a.getDefines(), b.getDefines(), print)) {
 									if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 										return true;
-									} else {
-										if (print) {
-											LOGGER.log(Level.INFO, a + ": The annotations are different");
-										}
+									} else if (print) {
+										LOGGER.log(Level.INFO, a + ": The annotations are different");
 									}
-								} else {
-									if (print) {
-										LOGGER.log(Level.INFO, a + ": The definitions are different");
-									}
+								} else if (print) {
+									LOGGER.log(Level.INFO, a + ": The definitions are different");
 								}
-							} else {
-								if (print) {
-									LOGGER.log(Level.INFO, a + ": The signatures are different");
-								}
+							} else if (print) {
+								LOGGER.log(Level.INFO, a + ": The signatures are different");
 							}
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The packages are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The packages are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The names are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The names are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The library values are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The library values are different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The types are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The types are different");
 		}
 		return false;
 	}
@@ -882,36 +798,24 @@ public class PGComparator {
 								if (compare(a.getSubpackage(), b.getSubpackage(), print)) {
 									if (compare(a.getTAnnotation(), b.getTAnnotation(), print)) {
 										return true;
-									} else {
-										if (print) {
-											LOGGER.log(Level.INFO, a + ": The annotations are different");
-										}
+									} else if (print) {
+										LOGGER.log(Level.INFO, a + ": The annotations are different");
 									}
 								}
-							} else {
-								if (print) {
-									LOGGER.log(Level.INFO, a + ": The subpackages are different");
-								}
+							} else if (print) {
+								LOGGER.log(Level.INFO, a + ": The subpackages are different");
 							}
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The interfaces are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The interfaces are different");
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The classes are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The classes are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The TypeGraph containers are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The parent packages are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The parent packages are different");
 			}
 		}
 		this.compared.remove(a, b);
@@ -942,40 +846,26 @@ public class PGComparator {
 							if (compareUnordered(a.getMethods(), b.getMethods(), print)) {
 								if (compareUnordered(a.getFields(), b.getFields(), print)) {
 									return true;
-								} else {
-									if (print) {
-										LOGGER.log(Level.INFO, a + " Fields don't match");
-									}
+								} else if (print) {
+									LOGGER.log(Level.INFO, a + " Fields don't match");
 								}
-							} else {
-								if (print) {
-									LOGGER.log(Level.INFO, a + ": The defined method names are different");
-								}
+							} else if (print) {
+								LOGGER.log(Level.INFO, a + ": The defined method names are different");
 							}
-						} else {
-							if (print) {
-								LOGGER.log(Level.INFO, a + ": The defined interfaces are different");
-							}
+						} else if (print) {
+							LOGGER.log(Level.INFO, a + ": The defined interfaces are different");
 						}
-					} else {
-						if (print) {
-							LOGGER.log(Level.INFO, a + ": The defined classes are different");
-						}
+					} else if (print) {
+						LOGGER.log(Level.INFO, a + ": The defined classes are different");
 					}
-				} else {
-					if (print) {
-						LOGGER.log(Level.INFO, a + ": The owned types are different");
-					}
+				} else if (print) {
+					LOGGER.log(Level.INFO, a + ": The owned types are different");
 				}
-			} else {
-				if (print) {
-					LOGGER.log(Level.INFO, a + ": The defined packages are different");
-				}
+			} else if (print) {
+				LOGGER.log(Level.INFO, a + ": The defined packages are different");
 			}
-		} else {
-			if (print) {
-				LOGGER.log(Level.INFO, a + ": The names are different");
-			}
+		} else if (print) {
+			LOGGER.log(Level.INFO, a + ": The names are different");
 		}
 		this.compared.remove(a, b);
 		return false;
