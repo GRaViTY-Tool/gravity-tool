@@ -3,12 +3,14 @@
  */
 package org.gravity.modisco.util;
 
+import java.util.HashSet;
 import java.util.Stack;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
@@ -18,6 +20,7 @@ import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 
 /**
@@ -65,68 +68,157 @@ public class MoDiscoUtil {
 	 * @return the most generic return type
 	 */
 	public static Type getMostGenericReturnType(MMethodDefinition method) {
-		TypeAccess returnType = method.getReturnType();
-		if (returnType == null) {
-			// TODO: Currently a dirty hack: assuming void
-			TypeAccess a = JavaFactory.eINSTANCE.createTypeAccess();
-			method.setReturnType(a);
-			for (Type t : method.getModel().getOrphanTypes()) {
-				if (t instanceof PrimitiveTypeVoid) {
-					a.setType(t);
-					return t;
+		Type returnType = getAndFixReturnType(method);
+		AbstractTypeDeclaration owner = method.getAbstractTypeDeclaration();
+
+		HashSet<Type> allTypes = getAllParentTypes(owner);
+		for(Type type : allTypes) {
+			if (!(type instanceof AbstractTypeDeclaration)) {
+				continue;
+			}
+			
+			MethodDeclaration otherDecl = getOtherDeclarationOfMethod(method, (AbstractTypeDeclaration) type);
+			if(otherDecl != null) {
+				TypeAccess returnTypeDecl = otherDecl.getReturnType();
+				if (returnTypeDecl == null) {
+					LOGGER.log(Level.WARN, "Skipped return type of: " + otherDecl);
+				}
+				else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
+					returnType = returnTypeDecl.getType();
 				}
 			}
 		}
-		Type ret = returnType.getType();
+		return returnType;
+	}
 
+	/**
+	 * Searches recursively all parents (classes and interfaces) of the given child
+	 * 
+	 * @param child The given child
+	 * @return All parents
+	 */
+	public static HashSet<Type> getAllParentTypes(AbstractTypeDeclaration child) {
+		HashSet<Type> allTypes = new HashSet<>();
 		Stack<Type> stack = new Stack<>();
-		AbstractTypeDeclaration owner = method.getAbstractTypeDeclaration();
-		if (owner != null) {
-			stack.add(owner);
+		if (child != null) {
+			stack.add(child);
 		}
 		while (!stack.isEmpty()) {
 			Type type = stack.pop();
-			if (type instanceof ClassDeclaration) {
-				ClassDeclaration clazz = (ClassDeclaration) type;
-				TypeAccess superClass = clazz.getSuperClass();
-				if (superClass != null) {
-					stack.add(superClass.getType());
-				}
-			} else if (type instanceof ParameterizedType) {
-				stack.add(((ParameterizedType) type).getType().getType());
-			} else {
-				AbstractTypeDeclaration abst = (AbstractTypeDeclaration) type;
-				for (TypeAccess interf : abst.getSuperInterfaces()) {
-					Type typeInterf = interf.getType();
-					if (typeInterf == null) {
-						LOGGER.log(Level.WARN, "Skipped type of: " + interf);
-						continue;
+			if (type instanceof AbstractTypeDeclaration) {
+				allTypes.addAll(getTypesOfImplementedInterface(((AbstractTypeDeclaration) type)));
+				if (type instanceof ClassDeclaration) {
+					TypeAccess superClass = ((ClassDeclaration) type).getSuperClass();
+					if (superClass != null) {
+						allTypes.add(superClass.getType());
 					}
-					stack.add(typeInterf);
 				}
+			}
+			else if (type instanceof ParameterizedType) {
+				allTypes.add(((ParameterizedType) type).getType().getType());
+			}
+			else if (type instanceof ArrayType) {
+				allTypes.add(((ArrayType) type).getElementType().getType());
+			}
+		}
+		return allTypes;
+	}
 
-				for (BodyDeclaration body : abst.getBodyDeclarations()) {
-					if (body instanceof MethodDeclaration) {
-						MethodDeclaration decl = (MethodDeclaration) body;
-						if (method.getName().equals(decl.getName())) {
-							if (isParamListEqual(method.getParameters(), decl.getParameters())) {
-								TypeAccess returnTypeDecl = decl.getReturnType();
-								if (returnTypeDecl == null) {
-									LOGGER.log(Level.WARN, "Skipped return type of: " + decl);
-									continue;
-								}
-								if (MoDiscoUtil.isSuperType(ret, returnTypeDecl.getType())) {
-									ret = returnTypeDecl.getType();
-								}
-							}
-						}
+	/**
+	 * Searches the types of the interfaces directly implemented by the given type
+	 * 
+	 * @param type The given type
+	 * @return The implemented interfaces
+	 */
+	public static HashSet<Type> getTypesOfImplementedInterface(AbstractTypeDeclaration type) {
+		HashSet<Type> types = new HashSet<Type>();
+		for (TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
+			Type typeOfInterface = superInterfaceReference.getType();
+			if (typeOfInterface == null) {
+				LOGGER.log(Level.WARN, "Skipped type of: " + superInterfaceReference);
+			}
+			else {
+				types.add(typeOfInterface);
+			}
+		}
+		return types;
+	}
+
+	/**
+	 * Searches in the pg for the primitive void type
+	 * 
+	 * @param pg the program model
+	 * @return The primitive void type
+	 */
+	public static PrimitiveTypeVoid getVoid(MGravityModel pg) {
+		PrimitiveTypeVoid voidType = null;
+		for (Type type : pg.getOrphanTypes()) {
+			if (type instanceof PrimitiveTypeVoid) {
+				voidType = (PrimitiveTypeVoid) type;
+			}
+		}
+		if(voidType == null) {
+			voidType = JavaFactory.eINSTANCE.createPrimitiveTypeVoid();
+			pg.getOrphanTypes().add(voidType);
+		}
+		return voidType;
+	}
+	
+	/**
+	 * Searches if the type declares a method with the same signature
+	 * 
+	 * @param method The method signature for which should be searched
+	 * @param type The type in which probably also implements the method
+	 * @return The method declaration object implemented in the type or null
+	 */
+	private static MethodDeclaration getOtherDeclarationOfMethod(MMethodDefinition method,
+			AbstractTypeDeclaration type) {
+		MethodDeclaration otherDecl = null;
+		for (BodyDeclaration body : type.getBodyDeclarations()) {
+			if (body instanceof MethodDeclaration) {
+				MethodDeclaration decl = (MethodDeclaration) body;
+				if (method.getName().equals(decl.getName())) {
+					if (isParamListEqual(method.getParameters(), decl.getParameters())) {
+						otherDecl = decl;
 					}
 				}
 			}
 		}
+		return otherDecl;
+	}
+
+	/**
+	 * Retrieves the return type of the given method. 
+	 * Iff the return type is null it is set to void! 
+	 * 
+	 * @param method The method for which the return type should be retrieved 
+	 * @return The return type of the mehtod
+	 */
+	private static Type getAndFixReturnType(MMethodDefinition method) {
+		TypeAccess returnType = method.getReturnType();
+		if (returnType == null) {
+			// TODO: Currently a dirty hack: assuming void
+			returnType = JavaFactory.eINSTANCE.createTypeAccess();
+			method.setReturnType(returnType);
+			MGravityModel pg = method.getModel();
+			returnType.setType(getVoid(pg));
+			
+		}
+		Type ret = returnType.getType();
+		if(ret == null) {
+			LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
+			return null;
+		}
 		return ret;
 	}
-	
+
+	/**
+	 * Compares two parameter lists
+	 * 
+	 * @param parameters1 The fist parameter list
+	 * @param parameters2 The second parameter list
+	 * @return true, iff the parameter lists are equal
+	 */
 	private static boolean isParamListEqual(EList<SingleVariableDeclaration> parameters1,
 			EList<SingleVariableDeclaration> parameters2) {
 		if (parameters1.size() == parameters2.size()) {
