@@ -34,6 +34,8 @@ public class PGComparator {
 
 	private boolean ordered;
 
+	private final Hashtable<EObject, EObject> compared = new Hashtable<>();
+
 	private static final Logger LOGGER = Logger.getLogger(PGComparator.class.getName());
 
 	/**
@@ -45,8 +47,6 @@ public class PGComparator {
 		this.ordered = ordered;
 	}
 
-	private Hashtable<EObject, EObject> compared = new Hashtable<>();
-
 	/**
 	 * Compares the given two elements semantically
 	 * 
@@ -57,15 +57,8 @@ public class PGComparator {
 	 * @throws UnsupportetElementException
 	 */
 	public <T> boolean compare(T elementA, T elementB, boolean print) throws UnsupportetElementException {
-
-		if (elementA == null) {
-			if (elementB == null) {
-				return true;
-			}
-			return false;
-		}
-
-		if (elementB == null) {
+		if(!nullCheck(elementA, elementB)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+elementA);
 			return false;
 		}
 
@@ -161,14 +154,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TField a, TField b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -198,13 +185,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TFieldSignature a, TFieldSignature b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -248,13 +230,8 @@ public class PGComparator {
 	 * Currently only a null check and for equal types is performed
 	 */
 	private boolean compare(TAnnotation a, TAnnotation b, boolean print) {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -265,13 +242,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TFieldDefinition a, TFieldDefinition b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -303,13 +275,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TMember a, TMember b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -334,13 +301,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TAccess a, TAccess b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -364,13 +326,8 @@ public class PGComparator {
 
 	private boolean resolveAndCompare(TAbstractType a, TAbstractType b, boolean print)
 			throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -386,13 +343,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TMethod a, TMethod b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -421,13 +373,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TMethodSignature a, TMethodSignature b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -462,13 +409,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TParameterList a, TParameterList b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -492,13 +434,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TParameter a, TParameter b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -526,13 +463,8 @@ public class PGComparator {
 
 	private boolean compare(TMethodDefinition a, TMethodDefinition b, boolean print)
 			throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -577,13 +509,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TInterface a, TInterface b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -612,13 +539,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TClass a, TClass b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -647,13 +569,8 @@ public class PGComparator {
 	}
 
 	private boolean compareOrdered(EList<?> a, EList<?> b, boolean print) {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -677,13 +594,8 @@ public class PGComparator {
 	}
 
 	private boolean compareUnordered(EList<?> a, EList<?> b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -727,13 +639,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TAbstractType a, TAbstractType b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -774,13 +681,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TPackage a, TPackage b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -823,13 +725,8 @@ public class PGComparator {
 	}
 
 	private boolean compare(TypeGraph a, TypeGraph b, boolean print) throws UnsupportetElementException {
-		if (a == null) {
-			if (b == null) {
-				return true;
-			}
-			return false;
-		}
-		if (b == null) {
+		if(!nullCheck(a, b)) {
+			LOGGER.log(Level.INFO, "The null-check failed for: "+a);
 			return false;
 		}
 
@@ -869,5 +766,24 @@ public class PGComparator {
 		}
 		this.compared.remove(a, b);
 		return false;
+	}
+
+	/**
+	 * Checks if both objects are null or both are not null
+	 * 
+	 * @param a The first object
+	 * @param b The second object
+	 */
+	private boolean nullCheck(Object a, Object b) {
+		if (a == null) {
+			if (b == null) {
+				return true;
+			}
+			return false;
+		}
+		if (b == null) {
+			return false;
+		}
+		return true;
 	}
 }
