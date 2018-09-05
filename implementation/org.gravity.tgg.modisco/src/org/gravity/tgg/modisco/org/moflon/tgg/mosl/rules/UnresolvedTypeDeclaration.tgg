@@ -13,10 +13,9 @@
 }
 
 #target {
-	++ tClass : TClass {
+	++ tClass : TUnresolvedType {
 	}
 	pg : TypeGraph {
-		++  -classes -> tClass
 		++  -ownedTypes -> tClass
 	}
 }

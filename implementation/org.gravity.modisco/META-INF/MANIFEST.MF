@@ -7,7 +7,8 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.core.resources,
  org.eclipse.modisco.java.discoverer,
- org.apache.log4j
+ org.apache.log4j,
+ org.eclipse.emf.ecore
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

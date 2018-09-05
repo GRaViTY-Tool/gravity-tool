@@ -417,14 +417,6 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 					eObject = eObject.eContainer();
 				}
 				((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
-			} else if (next instanceof MAnonymous) {
-				MAnonymous mAnonymous = (MAnonymous) next;
-				EObject owner = mAnonymous.eContainer();
-				while (!(owner instanceof AbstractTypeDeclaration)) {
-					owner = owner.eContainer();
-				}
-				mAnonymous.setMSourroundingType((AbstractTypeDeclaration) owner);
-				model.getAnonymousClassDeclarations().add(mAnonymous);
 			} else if (next instanceof TypeParameter) {
 				model.getTypeParameters().add((TypeParameter) next);
 			} else if (next instanceof Annotation) {

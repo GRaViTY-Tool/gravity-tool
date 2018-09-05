@@ -1,0 +1,71 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AnonymousClassType
+#with org.gravity.tgg.modisco
+
+#source {
+	mAnonymous : MAnonymous {
+		++-classInstanceCreation->mCreation
+	}
+	++ mCreation : ClassInstanceCreation {
+		++-type->mType
+	}
+	++ mType : TypeAccess {
+		++-type->mParent
+	}
+	mParent : AbstractTypeDeclaration {
+		
+	}
+}
+
+#target {
+	tClass : TClass {
+		tName := "Anonymous"
+	}
+	tParent : TAbstractType {
+		
+	}
+}
+
+#correspondence {
+	eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
+		#src->mAnonymous
+		#trg->tClass
+	}
+	parentToParent : TypeToTAbstractType {
+		#src->mParent
+		#trg->tParent
+	}
+}
+
+#attributeConditions {
+}
+
+#rule AnonymousClassTypeInterface #extends AnonymousClassType
+#with org.gravity.tgg.modisco
+
+#target {
+	tClass : TClass {
+		tName := "Anonymous"
+		++-implements->tParent
+		
+	}
+	tParent : TInterface {
+		
+	}
+}
+
+#rule AnonymousClassTypeClass #extends AnonymousClassType
+#with org.gravity.tgg.modisco
+
+#target {
+	tClass : TClass {
+		tName := "Anonymous"
+		++-parentClass->tParent
+		
+	}
+	tParent : TClass {
+		
+	}
+}

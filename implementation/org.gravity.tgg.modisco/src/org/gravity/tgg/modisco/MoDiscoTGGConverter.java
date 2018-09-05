@@ -152,6 +152,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		long t4 = System.currentTimeMillis();
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
 		integrateForward();
+		LOGGER.log( Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 
 		
 		org.moflon.tgg.runtime.PrecedenceStructure ps = null;
@@ -163,16 +164,17 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 					.createFileURI(this.modiscoFolder.getFile("sync_protocol.xmi").getLocation().toString(), false)) //$NON-NLS-1$
 					.getContents().add(ps);
 		}
-
 		boolean success = trg != null && trg instanceof TypeGraph;
 		if (success) {
-			for (IProgramGraphProcessor processor : ProgramGraphProcesorUtil
-					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD)) {
+			Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
+					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
+			LOGGER.log( Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
+			for (IProgramGraphProcessor processor : sortedProcessors) {
 				processor.process(getPG(), progressMonitor);
 			}
+			LOGGER.log( Level.INFO, "Postprocessing - done ");
 		}
 
-		LOGGER.log( Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 		if (this.debug) {
 			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
 			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$

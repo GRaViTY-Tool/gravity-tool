@@ -6,7 +6,8 @@
     <factory class="org.gravity.modisco.GravityMoDiscoFactoryImpl" uri="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"/>
   </extension>
   <extension point="org.gravity.modisco.ProcessingModiscoFwd">
-    <processor priority="10" processor="org.gravity.modisco.processing.fwd.GravityMoDiscoPreprocessing"/>
+    <processor priority="9" processor="org.gravity.modisco.processing.fwd.GravityMoDiscoPreprocessing"/>
+    <processor priority="10" processor="org.gravity.modisco.processing.fwd.AnonymousClassProcessor"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"/>
