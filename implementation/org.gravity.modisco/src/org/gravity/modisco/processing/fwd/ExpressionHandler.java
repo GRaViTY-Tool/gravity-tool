@@ -39,7 +39,6 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MDefinition;
-import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 
 public class ExpressionHandler {
 

@@ -35,7 +35,6 @@ import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
-import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;

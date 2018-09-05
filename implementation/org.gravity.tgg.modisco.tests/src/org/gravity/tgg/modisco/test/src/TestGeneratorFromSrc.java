@@ -36,7 +36,6 @@ public class TestGeneratorFromSrc {
 	}
 
 	public static boolean runTest_ForwardTransformationFromJavaSrc(final IJavaProject src) {
-
 		// Set up logging
 		BasicConfigurator.configure();
 
