@@ -94,23 +94,15 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 	 * @generated
 	 */
 	private static boolean preprocessFields(MGravityModel model) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (MFieldDefinition mDefinition : model.getMFieldDefinitions()) {
-			_result.add(new Object[] { model, mDefinition });
-		}
-		for (Object[] result2_black : _result) {
-			MFieldDefinition mDefinition = (MFieldDefinition) result2_black[1];
 
-			VariableDeclarationFragment fstDeclFragment;
 			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
-			if (fragments.size() > 0) {
-				fstDeclFragment = fragments.get(0);
-			} else {
-				throw new RuntimeException("Pattern matching in node [ActivityNode37] failed." + " Variables: "
+			if (fragments.size() == 0) {
+				LOGGER.log(Level.ERROR, "Pattern matching in node [ActivityNode37] failed." + " Variables: "
 						+ "[mDefinition] = " + mDefinition + ".");
+				return false;
 			}
-			// ForEach ActivityNode36
-			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fstDeclFragment)) {
+			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
 				scndDeclFragment.setVariablesContainer(null);
 
 				MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
@@ -237,8 +229,8 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
 				Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(mDef);
 				if (mSigReturnType == null) {
-					throw new RuntimeException(
-							"Couldn't find most geric return type for method definition:" + mDef + ".");
+					LOGGER.log(Level.ERROR, "Couldn't find most geric return type for method definition:" + mDef + ".");
+					return false;
 				}
 				for (MMethodSignature mSig : mName.getMMethodSignatures()) {
 					if (mSigReturnType.equals(mSig.getReturnType())) {
@@ -409,17 +401,22 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 	}
 
 	/**
-	 * @param modifier
+	 * Checks if the visibility of a modifier is set and tries to repair it if not
+	 * 
+	 * @param modifier The modifier
+	 * @return true, if there was no problem or the problem has been repaired.
 	 */
-	private void checkModifierVisibility(Modifier modifier) {
+	private boolean checkModifierVisibility(Modifier modifier) {
 		if (modifier.getVisibility() == null) {
 			AbstractTypeDeclaration typeDecl = modifier.getBodyDeclaration().getAbstractTypeDeclaration();
 			if (typeDecl.eContainer() instanceof TypeDeclarationStatement) {
 				modifier.setVisibility(VisibilityKind.PRIVATE);
 			} else {
 				LOGGER.log(Level.WARN, "Type \"" + typeDecl.getName() + "\" has no visibility.");
+				return false;
 			}
 		}
+		return true;
 	}
 
 //	private static final void fixStaticMethodCallOnField(MGravityModel model) {
