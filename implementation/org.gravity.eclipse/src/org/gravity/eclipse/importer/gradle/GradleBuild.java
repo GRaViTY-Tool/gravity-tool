@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.gravity.eclipse.importer;
+package org.gravity.eclipse.importer.gradle;
 
 import java.io.BufferedReader;
 import java.io.File;

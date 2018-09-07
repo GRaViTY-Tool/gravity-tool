@@ -1,4 +1,4 @@
-package org.gravity.eclipse.importer;
+package org.gravity.eclipse.importer.gradle;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,7 +40,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
+import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.io.ZipUtil;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -60,8 +62,8 @@ public class GradleImport {
 
 	private File gradleHome, androidHome;
 
-	private Set<Path> javaSourceFiles = new HashSet<Path>();
-	private Set<Path> buildDotGradleFiles = new HashSet<Path>();
+	private final Set<Path> javaSourceFiles = new HashSet<Path>();
+	private final Set<Path> buildDotGradleFiles;
 
 	private Set<String> appliedPlugins;
 
@@ -85,17 +87,17 @@ public class GradleImport {
 	 * @param rootDir the path to the gradle root directory
 	 * @throws NoGradleRootFolderException iff the given root directory is not the
 	 *                                     root of a gradle project
-	 * @throws FileNotFoundException       iff the gradle home directory couldn't be
-	 *                                     found
+	 * @throws IOException 
 	 */
-	public GradleImport(File rootDir) throws NoGradleRootFolderException, FileNotFoundException {
+	public GradleImport(File rootDir) throws NoGradleRootFolderException, IOException {
+		
 		LinkedList<File> queue = new LinkedList<File>();
 		queue.add(rootDir);
-		boolean success = false;
+		File root = null;
 		while (!queue.isEmpty()) {
 			File dir = queue.poll();
 			if (new File(dir, "build.gradle").exists()) {
-				success = true;
+				root = dir;
 				break;
 			}
 			for (File file : dir.listFiles()) {
@@ -104,11 +106,61 @@ public class GradleImport {
 				}
 			}
 		}
-		if (!success) {
+		if (root == null) {
 			throw new NoGradleRootFolderException();
 		}
-		this.rootDir = rootDir;
+		this.rootDir = root;
+		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
+		
 		initGradleHome();
+	}
+
+	/**
+	 * Imports the gradle project as single eclipse project
+	 * 
+	 * @param ignoreBuildErrors If set to true gradle project are imported even if there are build errors
+	 * @param monitor A progress monitor
+	 * @return The new eclipse java project
+	 * @throws IOException
+	 * @throws CoreException
+	 * @throws InterruptedException
+	 * @throws NoGradleRootFolderException
+	 */
+	public IJavaProject importGradleProject(boolean ignoreBuildErrors, IProgressMonitor monitor)
+			throws IOException, CoreException, InterruptedException, NoGradleRootFolderException {
+		if (monitor == null) {
+			monitor = new NullProgressMonitor();
+		}
+	
+		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
+		androidApp = appliedPlugins.contains("com.android.application");
+	
+		for (Path root : buildDotGradleFiles) {
+			scanRootForSourceFiles(root.getParent().toFile());
+		}
+	
+		IJavaProject project = getProjectWithUniqueName(monitor);
+	
+		if (androidApp) {
+			javaSourceFiles.addAll(getRClasses(buildDotGradleFiles));
+		}
+		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
+				LINKONPROJECT, monitor);
+	
+		// build gradle project
+		try {
+			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
+				return null;
+			}
+		} catch (UnsupportedOperationSystemException e1) {
+			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
+		}
+	
+		if (androidApp) {
+			linkApkFolderToProject(project, monitor);
+		}
+	
+		return addRequiredLibsToProject(project, monitor);
 	}
 
 	private void initAndroidHome() {
@@ -147,21 +199,35 @@ public class GradleImport {
 		}
 	}
 
-	public IJavaProject importGradleProject(IProgressMonitor monitor)
-			throws IOException, CoreException, InterruptedException, NoGradleRootFolderException {
-		if (monitor == null) {
-			monitor = new NullProgressMonitor();
+	/**
+	 * Links the gradle folder as "apk" folder to the projects output location
+	 * 
+	 * @param project The project
+	 * @param monitor A progress monitor
+	 * @throws JavaModelException
+	 * @throws CoreException
+	 */
+	private void linkApkFolderToProject(IJavaProject project, IProgressMonitor monitor)
+			throws JavaModelException, CoreException {
+		IPath outputLocation = project.getOutputLocation().removeFirstSegments(1);
+		IFolder outputLocationFolder = project.getProject().getFolder(outputLocation);
+		if (!outputLocationFolder.exists()) {
+			outputLocationFolder.create(true, true, monitor);
 		}
+		outputLocationFolder.getFolder("apk").createLink(
+				new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
+				monitor);
+	}
 
-		buildDotGradleFiles = scanDirectoryForSubRoots(rootDir);
-
-		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
-		androidApp = appliedPlugins.contains("com.android.application");
-
-		for (Path root : buildDotGradleFiles) {
-			scanRootForSourceFiles(root.getParent().toFile());
-		}
-
+	/**
+	 * Creates and initializes a new java project for the gradle project with a new unused name
+	 * 
+	 * @param monitor A progress monitor
+	 * @return A new java project
+	 * @throws CoreException
+	 * @throws IOException
+	 */
+	private IJavaProject getProjectWithUniqueName(IProgressMonitor monitor) throws CoreException, IOException {
 		String name = rootDir.getName();
 		int appendix = 0;
 		IJavaProject project = null;
@@ -172,34 +238,7 @@ public class GradleImport {
 				appendix++;
 			}
 		} while (project == null);
-
-		if (androidApp) {
-			javaSourceFiles.addAll(getRClasses(buildDotGradleFiles));
-		}
-		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
-				LINKONPROJECT, monitor);
-
-		// build gradle project
-		try {
-			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp)) {
-				return null;
-			}
-		} catch (UnsupportedOperationSystemException e1) {
-			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
-		}
-
-		if (androidApp) {
-			IPath outputLocation = project.getOutputLocation().removeFirstSegments(1);
-			IFolder outputLocationFolder = project.getProject().getFolder(outputLocation);
-			if (!outputLocationFolder.exists()) {
-				outputLocationFolder.create(true, true, monitor);
-			}
-			outputLocationFolder.getFolder("apk").createLink(
-					new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
-					monitor);
-		}
-
-		return addRequiredLibsToProject(project, monitor);
+		return project;
 	}
 
 	/**
@@ -242,18 +281,15 @@ public class GradleImport {
 			}
 			for (IFile jarFile : jarFiles) {
 				IClasspathEntry entry = new ClasspathEntry(IPackageFragmentRoot.K_BINARY, IClasspathEntry.CPE_LIBRARY,
-						jarFile.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion
-																			// patterns
+						jarFile.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion patterns
 						ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
 						null, null, null, // specific output folder
 						false, // exported
-						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to
-																// combine
+						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
 						ClasspathEntry.NO_EXTRA_ATTRIBUTES);
 				entries.add(entry);
 			}
 		}
-
 		JavaProjectUtil.addToClassPath(project, entries, monitor);
 
 		return project;
@@ -348,12 +384,11 @@ public class GradleImport {
 
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
 		Set<String> appliedPlugins = new HashSet<>();
-		Pattern patternAndroid = Pattern.compile("(apply\\W+plugin:\\W*')(.+)(')");
 		for (Path path : buildDotGradleFiles) {
 			try (BufferedReader in = new BufferedReader(new FileReader(path.toFile()))) {
 				String line;
 				while ((line = in.readLine()) != null) {
-					Matcher androidMatcher = patternAndroid.matcher(line);
+					Matcher androidMatcher = GradleRegexPatterns.PLUGIN.matcher(line);
 					while (androidMatcher.find()) {
 						appliedPlugins.add(androidMatcher.group(2));
 					}
@@ -402,72 +437,90 @@ public class GradleImport {
 	}
 
 	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoGradleRootFolderException {
+		Set<Path> buildDotGradleFiles = new HashSet<Path>();
 		File buildFile = new File(rootDir, "build.gradle");
-		if (!buildFile.exists()) {
+		if (buildFile.exists()) {
+			buildDotGradleFiles.add(buildFile.toPath());
+		}
+		else {
 			throw new NoGradleRootFolderException();
 		}
-
-		Set<Path> buildDotGradleFiles = new HashSet<>();
-		buildDotGradleFiles.add(buildFile.toPath());
-
+		
 		File settingsFile = new File(rootDir, "settings.gradle");
 		if (settingsFile.exists()) {
-			Pattern includePattern = Pattern.compile(
-					"(include)(\\s*)((((('(:)?)((\\w|-|_|\\d)+)('))(\\s*,\\s+)?)+)|\\((\\w+)\\s+as\\s+((\\w|\\[|\\]|_)+)\\))");
-			Pattern entryPattern = Pattern.compile("('(:)?)((\\w|-|_|\\d)+)(')");
-			Pattern defPattern = Pattern.compile("def\\s+(\\w+)\\s+=\\s+\\[((.|\\n|\\r)+?)\\]");
+			String settingsContentString;
 			try (BufferedReader reader = new BufferedReader(new FileReader(settingsFile))) {
-				Hashtable<String, String> defs = new Hashtable<>();
-
+				
 				StringBuilder contents = new StringBuilder();
 				String line;
 				while ((line = reader.readLine()) != null) {
 					contents.append(line);
 					contents.append('\n');
 				}
-				String string = contents.toString();
+				settingsContentString = contents.toString();
+			}
+			
+			Hashtable<String, String> defs = new Hashtable<>();
 
-				// 1. get all variable definitions
-				Matcher defMatcher = defPattern.matcher(string);
-				while (defMatcher.find()) {
-					defs.put(defMatcher.group(1), defMatcher.group(2));
+			// 1. get all variable definitions
+			Matcher defMatcher = GradleRegexPatterns.DEFINITION.matcher(settingsContentString);
+			while (defMatcher.find()) {
+				defs.put(defMatcher.group(1), defMatcher.group(2));
+			}
+
+			// 2. Search for includes
+			buildDotGradleFiles.addAll(searchIncludes(settingsContentString, rootDir, buildFile, defs));
+			
+		}
+		return buildDotGradleFiles;
+	}
+
+	/**
+	 * Searches for includes in the settings file and adds those build.gradle files to the set of build.gradle files
+	 * 
+	 * @param contentString The content of the settings file
+	 * @param rootDir The gradle root dir
+	 * @param buildFile The build.gradle file
+	 * @param defs A table of defined vars
+	 * @throws IOException
+	 * @throws NoGradleRootFolderException
+	 */
+	private Set<Path> searchIncludes(String contentString, File rootDir, File buildFile, Hashtable<String, String> defs)
+			throws IOException, NoGradleRootFolderException {
+		Set<Path>buildDotGradleFiles = new HashSet<Path>();
+		
+		Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
+		while (includeMatcher.find()) {
+			String match = includeMatcher.group(3);
+			if (match != null) {
+				String var = includeMatcher.group(13);
+				if (var != null) {
+					match = defs.get(var);
 				}
+			}
 
-				// 2. Search for includes
-				Matcher includeMatcher = includePattern.matcher(string);
-				while (includeMatcher.find()) {
-					String match = includeMatcher.group(3);
-					if (match != null) {
-						String var = includeMatcher.group(13);
-						if (var != null) {
-							match = defs.get(var);
-						}
-					}
-
-					Matcher mEntry = entryPattern.matcher(match);
-					while (mEntry.find()) {
-						String subProject = mEntry.group(3);
-						File nextRoot = null;
-						LinkedList<File> queue = new LinkedList<>();
-						queue.add(rootDir);
-						while (!queue.isEmpty()) {
-							File tmp = queue.poll();
-							File tmpSubProject = new File(tmp, subProject);
-							if (tmpSubProject.exists()) {
-								nextRoot = tmpSubProject;
-								break;
-							} else {
-								for (File f : tmp.listFiles()) {
-									if (f.isDirectory()) {
-										queue.add(f);
-									}
-								}
+			Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(match);
+			while (mEntry.find()) {
+				String subProject = mEntry.group(3);
+				File nextRoot = null;
+				LinkedList<File> queue = new LinkedList<>();
+				queue.add(rootDir);
+				while (!queue.isEmpty()) {
+					File tmp = queue.poll();
+					File tmpSubProject = new File(tmp, subProject);
+					if (tmpSubProject.exists()) {
+						nextRoot = tmpSubProject;
+						break;
+					} else {
+						for (File f : tmp.listFiles()) {
+							if (f.isDirectory()) {
+								queue.add(f);
 							}
 						}
-						if (nextRoot != null) {
-							buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
-						}
 					}
+				}
+				if (nextRoot != null) {
+					buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
 				}
 			}
 		}
@@ -502,10 +555,6 @@ public class GradleImport {
 
 		ArrayList<String> parsedBuildFiles = new ArrayList<String>(buildDotGradleFiles.size());
 
-		// Pattern patternDepenencies =
-		// Pattern.compile("(\\s*)(dependencies)(\\s+)(\\{)");
-		Pattern patternSingleDependency = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
-		Pattern patternSdk = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
 		for (Path path : buildDotGradleFiles) {
 			try (BufferedReader in = new BufferedReader(new FileReader(path.toFile()))) {
 
@@ -520,7 +569,7 @@ public class GradleImport {
 			}
 		}
 		for (String content : parsedBuildFiles) {
-			Matcher m = patternSingleDependency.matcher(content);
+			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 			while (m.find()) {
 				String dependency = m.group(4);
 				int index = dependency.indexOf('$');
@@ -551,7 +600,7 @@ public class GradleImport {
 			}
 
 			if (androidApp) {
-				Matcher matcherSdk = patternSdk.matcher(content);
+				Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(content);
 				while (matcherSdk.find()) {
 					String group = matcherSdk.group(1);
 					if ("minSdkVersion".equals(group)) {

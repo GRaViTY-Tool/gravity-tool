@@ -1,6 +1,7 @@
 package org.gravity.eclipse.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -110,7 +112,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		// Create new project with given name
 		IProject project = getProjectByName(name);
 
-		if (project.exists()) {
+		if (project.exists() || new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
 			throw new DuplicateProjectNameException(
 					"There is already a project with the name \"" + name + "\" in the workspace.");
 		}

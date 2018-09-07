@@ -16,8 +16,8 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
-import org.gravity.eclipse.importer.GradleImport;
-import org.gravity.eclipse.importer.NoGradleRootFolderException;
+import org.gravity.eclipse.importer.gradle.GradleImport;
+import org.gravity.eclipse.importer.gradle.NoGradleRootFolderException;
 
 /**
  * A handler for importing gradle projects as single eclipse project into the workspace
@@ -40,7 +40,7 @@ public class GradleImportHandler extends AbstractHandler {
 
 		try {
 			NullProgressMonitor monitor = new NullProgressMonitor();
-			IJavaProject project = new GradleImport(parentFile).importGradleProject(monitor);
+			IJavaProject project = new GradleImport(parentFile).importGradleProject(true, monitor);
 			if(project != null) {
 				project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			}

@@ -17,7 +17,7 @@ Bundle-ClassPath: .
 Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.converter,
  org.gravity.eclipse.exceptions,
- org.gravity.eclipse.importer,
+ org.gravity.eclipse.importer.gradle,
  org.gravity.eclipse.io,
  org.gravity.eclipse.os,
  org.gravity.eclipse.selection

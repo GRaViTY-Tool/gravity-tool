@@ -1,4 +1,4 @@
-package org.gravity.eclipse.importer;
+package org.gravity.eclipse.importer.gradle;
 
 public class NoGradleRootFolderException extends Exception {
 
