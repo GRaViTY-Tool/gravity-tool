@@ -3,11 +3,16 @@ package org.gravity.modisco;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.AnnotationImpl;
+import org.gravity.modisco.util.MoDiscoUtil;
 
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
@@ -38,6 +43,9 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	@Override
 	public MConstructorDefinition createConstructorDeclaration() {
 		MConstructorDefinition decl = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
+		MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
+		decl.setMParameterList(mParameterList);
+		MoDiscoUtil.fillParamList(decl, mParameterList);
 		addMconstructorDefinition(decl);
 		return decl;
 	}
@@ -91,5 +99,4 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	public Set<MConstructorDefinition> getCdefs() {
 		return this.cdefs;
 	}
-
 }

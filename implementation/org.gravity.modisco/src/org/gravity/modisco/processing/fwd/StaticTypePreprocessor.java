@@ -1,10 +1,12 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
+import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.Assignment;
@@ -31,6 +33,7 @@ import org.eclipse.gmt.modisco.java.TypeLiteral;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MFieldDefinition;
@@ -38,6 +41,7 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
+import org.gravity.modisco.util.MoDiscoUtil;
 
 public class StaticTypePreprocessor {
 
@@ -191,22 +195,6 @@ public class StaticTypePreprocessor {
 		return null;
 	}
 
-	public Type getTypeOfStringClass() {
-		ArrayList<ClassDeclaration> classes = Util.getAllClasses(model, true);
-		for (ClassDeclaration classDecl : classes) {
-			if (classDecl.getName().equals("String")) {
-				Package langPackage = classDecl.getPackage();
-				if (langPackage != null && langPackage.getName().equals("lang")) {
-					Package javaPackage = langPackage.getPackage();
-					if (javaPackage != null && javaPackage.getName().equals("java")) {
-						return classDecl;
-					}
-				}
-			}
-		}
-		return null;
-	}
-
 	public Type getStaticType(Expression expression, MAbstractMethodDefinition method) {
 		if (expression instanceof FieldAccess) {
 			return getFieldAccessType((FieldAccess) expression, method);
@@ -236,7 +224,7 @@ public class StaticTypePreprocessor {
 		}
 
 		if (expression instanceof StringLiteral) {
-			return getTypeOfStringClass();
+			return getOrCreateJavaLangString();
 		}
 		if (expression instanceof Assignment) {
 			return getStaticType(((Assignment) expression).getLeftHandSide(), method);
@@ -267,6 +255,31 @@ public class StaticTypePreprocessor {
 		}
 
 		return null;
+	}
+
+	/**
+	 * @return
+	 */
+	private Type getOrCreateJavaLangString() {
+		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
+		if(string == null) {
+			string = JavaFactory.eINSTANCE.createClassDeclaration();
+			string.setName("String");
+			Package lang = MoDiscoUtil.getPackage(model, new String[] {"java", "lang"});
+			if(lang == null) {
+				Package java = MoDiscoUtil.getPackage(model, new String[] {"java"});
+				if(java == null) {
+					java = JavaFactory.eINSTANCE.createPackage();
+					java.setName("java");
+					model.getOwnedElements().add(java);
+				}
+				lang = JavaFactory.eINSTANCE.createPackage();
+				lang.setName("lang");
+				java.getOwnedPackages().add(java);
+			}
+			lang.getOwnedElements().add(string);
+		}
+		return string;
 	}
 
 }

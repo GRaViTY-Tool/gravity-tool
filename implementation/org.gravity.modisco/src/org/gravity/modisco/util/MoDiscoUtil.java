@@ -14,14 +14,21 @@ import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
+import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
+import org.gravity.modisco.MParameterList;
+import org.gravity.modisco.ModiscoFactory;
 
 /**
  * This class provides frequently required functionalities when working with modisco models
@@ -233,4 +240,100 @@ public class MoDiscoUtil {
 	}
 
 	
+	/**
+	 * Fills the MParameterList with MParam entries discovered from the given definition
+	 * 
+	 * @param mDef The definiton
+	 * @param mParams The empty parameter list
+	 * @return
+	 */
+	public static boolean fillParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
+		EList<MEntry> mEntrys = mParams.getMEntrys();
+		if(mEntrys.size() > 0) {
+			return false;
+		}
+		MEntry prev = null;
+		for (SingleVariableDeclaration param : mDef.getParameters()) {
+			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			entry.setSingleVariableDeclaration(param);
+			mEntrys.add(entry);
+			Type type = param.getType().getType();
+			if (!(type instanceof TypeParameter)) {
+				entry.setType(type);
+			}
+			if (prev == null) {
+				mParams.setMFirstEntry(entry);
+			} else {
+				entry.setMPrevious(prev);
+				prev.setMNext(entry);
+			}
+			prev = entry;
+		}
+		return true;
+	}
+	
+	/**
+	 * Searches for a type in a model
+	 * 
+	 * @param model The model
+	 * @param fullyQualifiedName The fully qualified name of the type
+	 * @return The type or null
+	 */
+	public static AbstractTypeDeclaration getType(Model model, String fullyQualifiedName) {
+		int index = fullyQualifiedName.lastIndexOf('.');
+		String defaultPackage = "default";
+		if (index > 0) {
+			defaultPackage = fullyQualifiedName.substring(0, index);
+		}
+		Package tPackage = getPackage(model, defaultPackage);
+		if (tPackage != null) {
+			String name = fullyQualifiedName.substring(index + 1);
+			for (AbstractTypeDeclaration tType : tPackage.getOwnedElements()) {
+				if (tType.getName().equals(name) || tType.getName().contentEquals(fullyQualifiedName)) {
+					return tType;
+				}
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * Searches for the given name space in the model
+	 * 
+	 * @param model The model
+	 * @param namespace The name space
+	 * @return The last package of the namespace or null
+	 */
+	public static Package getPackage(Model model, String namespace) {
+		return getPackage(model, namespace.split("\\."));
+	}
+
+	/**
+	 * Searches for the given name space in the model
+	 * 
+	 * @param model The model
+	 * @param namespace The name space
+	 * @return The last package of the namespace or null
+	 */
+	public static Package getPackage(Model model, String[] namespace) {
+		EList<Package> next = model.getOwnedElements();
+		for (int i = 0; i < namespace.length;) {
+			String name = namespace[i++];
+			boolean contains = false;
+			for (Package tPackage : next) {
+				if (name.equals(tPackage.getName())) {
+					if (i == namespace.length) {
+						return tPackage;
+					}
+					next = tPackage.getOwnedPackages();
+					contains = true;
+					break;
+				}
+			}
+			if (!contains) {
+				return null;
+			}
+		}
+		return null;
+	}
 }
