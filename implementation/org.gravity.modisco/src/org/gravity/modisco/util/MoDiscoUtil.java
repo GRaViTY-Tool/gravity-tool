@@ -245,7 +245,7 @@ public class MoDiscoUtil {
 	 * 
 	 * @param mDef The definiton
 	 * @param mParams The empty parameter list
-	 * @return
+	 * @return true, iff no error occured
 	 */
 	public static boolean fillParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		EList<MEntry> mEntrys = mParams.getMEntrys();

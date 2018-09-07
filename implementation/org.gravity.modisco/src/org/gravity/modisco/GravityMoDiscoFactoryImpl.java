@@ -3,13 +3,9 @@ package org.gravity.modisco;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.AnnotationImpl;
 import org.gravity.modisco.util.MoDiscoUtil;

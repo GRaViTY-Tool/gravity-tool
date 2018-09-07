@@ -1,8 +1,5 @@
 package org.gravity.modisco.processing.fwd;
 
-import java.util.ArrayList;
-import java.util.Stack;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
@@ -11,7 +8,6 @@ import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.CastExpression;
-import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
@@ -258,7 +254,10 @@ public class StaticTypePreprocessor {
 	}
 
 	/**
-	 * @return
+	 * Searches for the type "java.lang.Sting" and returns it.
+	 * If there is no such type in the model, it is created and returned.
+	 * 
+	 * @return The Type representing "java.lang.String"
 	 */
 	private Type getOrCreateJavaLangString() {
 		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
