@@ -469,7 +469,7 @@ public class GradleImport {
 			}
 
 			// 2. Search for includes
-			buildDotGradleFiles.addAll(searchIncludes(settingsContentString, rootDir, buildFile, defs));
+			buildDotGradleFiles.addAll(searchIncludes(settingsContentString, rootDir, defs));
 			
 		}
 		return buildDotGradleFiles;
@@ -480,12 +480,11 @@ public class GradleImport {
 	 * 
 	 * @param contentString The content of the settings file
 	 * @param rootDir The gradle root dir
-	 * @param buildFile The build.gradle file
 	 * @param defs A table of defined vars
 	 * @throws IOException
 	 * @throws NoGradleRootFolderException
 	 */
-	private Set<Path> searchIncludes(String contentString, File rootDir, File buildFile, Hashtable<String, String> defs)
+	private Set<Path> searchIncludes(String contentString, File rootDir, Hashtable<String, String> defs)
 			throws IOException, NoGradleRootFolderException {
 		Set<Path>buildDotGradleFiles = new HashSet<Path>();
 		
