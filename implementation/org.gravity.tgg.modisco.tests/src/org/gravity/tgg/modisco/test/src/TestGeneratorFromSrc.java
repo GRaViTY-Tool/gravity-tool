@@ -23,7 +23,7 @@ public class TestGeneratorFromSrc {
 
 	private static final Logger LOGGER = Logger.getLogger(TestGeneratorFromSrc.class.getName() );
 
-	private final static boolean DEBUG = true;
+	private static final boolean DEBUG = true;
 
 	private final IJavaProject source;
 	private final String name;

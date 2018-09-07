@@ -13,32 +13,32 @@ class GradleRegexPatterns {
 	/**
 	 * Plugin applications
 	 */
-	final static Pattern PLUGIN = Pattern.compile("(apply\\W+plugin:\\W*')(.+)(')");
+	static final Pattern PLUGIN = Pattern.compile("(apply\\W+plugin:\\W*')(.+)(')");
 	
 	/**
 	 * Defintions
 	 */
-	final static Pattern DEFINITION = Pattern.compile("def\\s+(\\w+)\\s+=\\s+\\[((.|\\n|\\r)+?)\\]");
+	static final Pattern DEFINITION = Pattern.compile("def\\s+(\\w+)\\s+=\\s+\\[((.|\\n|\\r)+?)\\]");
 	
 	/**
 	 * The single entries of an include
 	 */
-	final static Pattern INCLUDE_ENTRY = Pattern.compile("('(:)?)((\\w|-|_|\\d)+)(')");
+	static final Pattern INCLUDE_ENTRY = Pattern.compile("('(:)?)((\\w|-|_|\\d)+)(')");
 	
 	/**
 	 * inclusions
 	 */
-	final static Pattern INCLUDE = Pattern.compile(
+	static final Pattern INCLUDE = Pattern.compile(
 			"(include)(\\s*)((((('(:)?)((\\w|-|_|\\d)+)('))(\\s*,\\s+)?)+)|\\((\\w+)\\s+as\\s+((\\w|\\[|\\]|_)+)\\))");
 	
 	/**
 	 * Dependencies
 	 */
-	final static Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
+	static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
 	
 	/**
 	 * The min and max Android SDK version
 	 */
-	final static Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
+	static final Pattern ANDROID_SDK_VERSION = Pattern.compile("(((min)|(target))SdkVersion)(\\s+)(\\d+)");
 	
 }
