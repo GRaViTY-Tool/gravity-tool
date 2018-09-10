@@ -672,7 +672,7 @@ public class GradleImport {
 		return libsAsJar;
 	}
 
-	private Hashtable<String, Path> searchInCache(Set<String> libs, File cacheFile) {
+	private Hashtable<String, Path> searchInCache(Set<String> libs, File cacheFile) throws IOException {
 		Hashtable<String, Path> results = new Hashtable<>();
 		HashSet<String> newLibs = new HashSet<>();
 		for (String lib : libs) {
@@ -694,30 +694,14 @@ public class GradleImport {
 					libFile = new File(libFile, segment.replace('.', '/'));
 				}
 			}
-			File libJar = null;
 			if (libFile.exists()) {
-				for (File child : libFile.listFiles()) {
-					if (child.isDirectory()) {
-						for (File potentialLib : child.listFiles()) {
-							if (potentialLib.getName().equals(name + ".jar")
-									|| potentialLib.getName().equals(name + ".aar")) {
-								libJar = potentialLib;
-								break;
-							}
-						}
-						if (libJar != null) {
-							break;
-						}
-					} else {
-						if (child.getName().equals(name + ".jar") || child.getName().equals(name + ".aar")) {
-							libJar = child;
-							break;
-						}
-					}
-				}
-				if (libJar != null) {
-					results.put(lib, libJar.toPath());
-					File pom = new File(libJar.getParent(), name + ".pom");
+				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar","aar"));
+				Files.walkFileTree(libFile.toPath(), extensionFileVisitor);
+				List<Path> files = extensionFileVisitor.getFiles();
+				if (files.size() == 1) {
+					Path libJar = files.get(0);
+					results.put(lib, libJar);
+					File pom = libJar.getParent().resolve(name + ".pom").toFile();
 					if (pom.exists()) {
 						parsePomFile(pom, cacheFile, results, newLibs);
 					}
@@ -731,10 +715,12 @@ public class GradleImport {
 	}
 
 	/**
-	 * @param pom
-	 * @param cacheFile
-	 * @param results
-	 * @param newLibs
+	 * Discovers new libs from the given pom file
+	 * 
+	 * @param pom The pom file
+	 * @param cacheFile A cache of already discovered libs
+	 * @param results A mapping between libs and their locations
+	 * @param newLibs The set of newly discovered libs
 	 */
 	private void parsePomFile(File pom, File cacheFile, Hashtable<String, Path> results, HashSet<String> newLibs) {
 		try {
