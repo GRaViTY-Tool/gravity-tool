@@ -6,11 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -43,6 +40,7 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.ZipUtil;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -533,16 +531,9 @@ public class GradleImport {
 			if (main.exists()) {
 				srcFolder = main;
 			}
-			Files.walkFileTree(srcFolder.toPath(), new SimpleFileVisitor<Path>() {
-
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-					if (attrs.isRegularFile() && file.getFileName().toString().endsWith("java")) {
-						javaSourceFiles.add(file);
-					}
-					return super.visitFile(file, attrs);
-				}
-			});
+			ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
+			Files.walkFileTree(srcFolder.toPath(), extensionFileVisitor);
+			javaSourceFiles.addAll(extensionFileVisitor.getFiles());
 		}
 	}
 
@@ -728,40 +719,7 @@ public class GradleImport {
 					results.put(lib, libJar.toPath());
 					File pom = new File(libJar.getParent(), name + ".pom");
 					if (pom.exists()) {
-						try {
-							Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pom);
-							document.getDocumentElement().normalize();
-							NodeList deps = document.getElementsByTagName("dependency");
-							for (int i = 0; i < deps.getLength(); i++) {
-								Node dependency = deps.item(i);
-								String group = null, artifact = null, version = null;
-								NodeList childNodes = dependency.getChildNodes();
-								for (int j = 0; j < childNodes.getLength(); j++) {
-									Node child = childNodes.item(j);
-									String nodeName = child.getNodeName();
-									if ("groupId".equals(nodeName)) {
-										group = child.getChildNodes().item(0).getNodeValue();
-									} else if ("artifactId".equals(nodeName)) {
-										artifact = child.getChildNodes().item(0).getNodeValue();
-									} else if ("version".equals(nodeName)) {
-										version = child.getChildNodes().item(0).getNodeValue();
-									}
-								}
-								String string = group + ':' + artifact + ':' + version;
-								HashSet<String> set = new HashSet<String>();
-								set.add(string);
-								Hashtable<String, Path> subResults = searchInCache(set, cacheFile);
-								if (subResults.isEmpty()) {
-									if (!results.containsKey(string)) {
-										newLibs.add(string);
-									}
-								} else {
-									results.putAll(subResults);
-								}
-							}
-						} catch (SAXException | IOException | ParserConfigurationException e) {
-							e.printStackTrace();
-						}
+						parsePomFile(pom, cacheFile, results, newLibs);
 					}
 				}
 			}
@@ -770,5 +728,48 @@ public class GradleImport {
 			libs.addAll(newLibs);
 		}
 		return results;
+	}
+
+	/**
+	 * @param pom
+	 * @param cacheFile
+	 * @param results
+	 * @param newLibs
+	 */
+	private void parsePomFile(File pom, File cacheFile, Hashtable<String, Path> results, HashSet<String> newLibs) {
+		try {
+			Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pom);
+			document.getDocumentElement().normalize();
+			NodeList deps = document.getElementsByTagName("dependency");
+			for (int i = 0; i < deps.getLength(); i++) {
+				Node dependency = deps.item(i);
+				String group = null, artifact = null, version = null;
+				NodeList childNodes = dependency.getChildNodes();
+				for (int j = 0; j < childNodes.getLength(); j++) {
+					Node child = childNodes.item(j);
+					String nodeName = child.getNodeName();
+					if ("groupId".equals(nodeName)) {
+						group = child.getChildNodes().item(0).getNodeValue();
+					} else if ("artifactId".equals(nodeName)) {
+						artifact = child.getChildNodes().item(0).getNodeValue();
+					} else if ("version".equals(nodeName)) {
+						version = child.getChildNodes().item(0).getNodeValue();
+					}
+				}
+				String string = group + ':' + artifact + ':' + version;
+				HashSet<String> set = new HashSet<String>();
+				set.add(string);
+				Hashtable<String, Path> subResults = searchInCache(set, cacheFile);
+				if (subResults.isEmpty()) {
+					if (!results.containsKey(string)) {
+						newLibs.add(string);
+					}
+				} else {
+					results.putAll(subResults);
+				}
+			}
+		} catch (SAXException | IOException | ParserConfigurationException e) {
+			LOGGER.log(Level.WARN, e);
+		}
 	}
 }
