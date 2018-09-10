@@ -26,6 +26,7 @@ public class SearchPrinter {
 	String baseName;
 	TransformationSearchOrchestration orchestration;
 	protected double significanceLevel = 0.01;
+	
 	public SearchPrinter(TransformationSearchOrchestration orchestration){
 		deriveBaseName(orchestration);
 		this.orchestration = orchestration;
@@ -34,10 +35,12 @@ public class SearchPrinter {
 	
 	  protected void deriveBaseName(final TransformationSearchOrchestration orchestration) {
 		    EObject root = MomotUtil.getRoot(orchestration.getProblemGraph());
-		    if(root == null || root.eResource() == null || root.eResource().getURI() == null)
+		    if(root == null || root.eResource() == null || root.eResource().getURI() == null) {
 		    	baseName = getClass().getSimpleName();
-		    else
+		    }
+		    else {
 		    	baseName = root.eResource().getURI().trimFileExtension().lastSegment();
+		    }
 		  }
 	
 	protected SearchAnalyzer performAnalysis(final SearchExperiment<TransformationSolution> experiment, File folder) {
@@ -62,7 +65,7 @@ public class SearchPrinter {
 	    			+ "'");
 	    	searchAnalyzer.saveAnalysis(analysisFolderTxt);
 	    } catch(IOException e) {
-	    	e.printStackTrace();
+	    	LOGGER.log(Level.WARN, e.getMessage(), e);
 	    }
 	    LOGGER.log( Level.INFO, "- Save Indicator BoxPlots to '"
 	    		+ analysisFolder

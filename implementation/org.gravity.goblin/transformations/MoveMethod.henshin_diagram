@@ -466,14 +466,14 @@
   <element xmi:type="henshin:Module" href="MoveMethod.henshin#_WL0uoOlEEeajyLi0pWzMmQ"/>
   <edges xmi:type="notation:Connector" xmi:id="_u8a6cOlEEeajyLi0pWzMmQ" type="4001" source="_svcskOlEEeajyLi0pWzMmQ" target="_j3RK8OlEEeajyLi0pWzMmQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_u8a6c-lEEeajyLi0pWzMmQ" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_u8a6dOlEEeajyLi0pWzMmQ" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u8a6dOlEEeajyLi0pWzMmQ" x="-12" y="14"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_u8a6delEEeajyLi0pWzMmQ" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_u8a6dulEEeajyLi0pWzMmQ" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u8a6dulEEeajyLi0pWzMmQ" x="-12" y="35"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_u8a6celEEeajyLi0pWzMmQ" fontName="Segoe UI"/>
     <element xmi:type="henshin:Edge" href="MoveMethod.henshin#_u8RJcOlEEeajyLi0pWzMmQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u8a6culEEeajyLi0pWzMmQ" points="[-31, 21, 109, -64]$[-88, 79, 52, -6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u8a6culEEeajyLi0pWzMmQ" points="[-79, 0, 63, -85]$[-152, 0, -10, -85]$[-152, 64, -10, -21]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_w00mgelEEeajyLi0pWzMmQ" type="4001" source="_svcskOlEEeajyLi0pWzMmQ" target="_lSd9oOlEEeajyLi0pWzMmQ">
     <children xmi:type="notation:DecorationNode" xmi:id="_w00mhOlEEeajyLi0pWzMmQ" type="6001">
@@ -484,7 +484,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_w00mgulEEeajyLi0pWzMmQ" fontName="Segoe UI"/>
     <element xmi:type="henshin:Edge" href="MoveMethod.henshin#_w00mgOlEEeajyLi0pWzMmQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_w00mg-lEEeajyLi0pWzMmQ" points="[14, 8, -117, -77]$[131, 64, 0, -21]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_w00mg-lEEeajyLi0pWzMmQ" points="[16, 0, -107, -85]$[123, 0, 0, -85]$[123, 64, 0, -21]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_w09wcOlEEeajyLi0pWzMmQ" id="(0.9027777777777778,0.5)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xXZIEulEEeajyLi0pWzMmQ" type="4001" source="_j3RK8OlEEeajyLi0pWzMmQ" target="_m2A0AOlEEeajyLi0pWzMmQ">

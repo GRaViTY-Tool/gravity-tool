@@ -78,22 +78,23 @@ public class HenshinExecutor {
 
 		boolean saveResult = true;
 
-		// String graphPath = "input/dyn1_Test";
-		// String graphPath = "input/03_JUnit3.8.2";
-		String graphPath = "input/SecureMailApp";
-		// String graphPath = "input/00_JavaSolitaire1.3";
-		// String graphPath = "input/01_QuickUML2001";
-		// String graphPath = "input/02_JsciCalc2.1.0";
-		// String graphPath = "input/03_JUnit3.8.2";
-		// String graphPath = "input/04_Gantt1.10.2";
-		// String graphPath = "input/05_Nutch0.9";
-		// String graphPath = "input/06_Lucene1.4.3";
-		// String graphPath = "input/07_log4j1.2.17";
-		// String graphPath = "input/08_JHotDraw7.6";
-		// String graphPath = "input/09_JEdit4.0";
-		// String graphPath = "input/10_PMD3.9";
-		// String graphPath = "input/11_JTransform3.1";
-		// String graphPath = "input/12_iTrust21.0";
+		String graphPath =
+		//"input/dyn1_Test";
+		//"input/03_JUnit3.8.2";
+		 "input/SecureMailApp";
+		//"input/00_JavaSolitaire1.3";
+		//"input/01_QuickUML2001";
+		//"input/02_JsciCalc2.1.0";
+		//"input/03_JUnit3.8.2";
+		//"input/04_Gantt1.10.2";
+		//"input/05_Nutch0.9";
+		//"input/06_Lucene1.4.3";
+		//"input/07_log4j1.2.17";
+		//"input/08_JHotDraw7.6";
+		//"input/09_JEdit4.0";
+		//"input/10_PMD3.9";
+		//"input/11_JTransform3.1";
+		//"input/12_iTrust21.0";
 
 		resourceSet = new HenshinResourceSet("");
 		module = resourceSet.getModule(modulePath);
@@ -162,11 +163,7 @@ public class HenshinExecutor {
 	}
 
 	public static void main(String[] args) {
-
-		double result = Double.POSITIVE_INFINITY - Double.POSITIVE_INFINITY;
-
 		new HenshinExecutor().run();
-
 	}
 
 	public HashMap<String, Object> getDynParameter(String methodName, String sourceClassName, TypeGraph graph) {

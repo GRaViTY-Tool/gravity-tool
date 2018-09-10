@@ -7,9 +7,19 @@ import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TypeGraph;
 
-
+/**
+ * 
+ * Frequently used helpers
+ *
+ */
 public abstract class Utility {
 	
+	/**
+	 * Searches the TypeGraph in an Henshin egraph
+	 * 
+	 * @param graph The egraph
+	 * @return The program model
+	 */
 	public static TypeGraph getPG(EGraph graph){
 		TypeGraph pg = null;
 		EObject root = graph.getRoots().get(0);

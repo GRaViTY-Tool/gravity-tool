@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_C14ooAfYEeeu593mruqPzg" type="Henshin" name="testrule.henshin_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_C14ooQfYEeeu593mruqPzg"/>
-  <element xmi:type="henshin:Module" href="testrule.henshin#_C1uQkAfYEeeu593mruqPzg"/>
-</notation:Diagram>

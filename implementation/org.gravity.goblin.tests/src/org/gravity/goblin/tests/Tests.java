@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -37,6 +39,8 @@ import static org.junit.Assert.*;
 @RunWith(value = Parameterized.class)
 public class Tests {
 
+	private static final Logger LOGGER = Logger.getLogger(Tests.class);
+	
 	String name;
 	IProject project;
 	String unitName;
@@ -125,7 +129,7 @@ public class Tests {
 	}
 	
 	@Parameters(name = "{0}")
-	public static Iterable collecTests(){
+	public static Iterable<Object[]> collecTests(){
 		IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
 		ArrayList<Object[]> iter = new ArrayList<>();
 		for (IProject test : projects) {
@@ -146,7 +150,7 @@ public class Tests {
 										return false;
 									}
 									
-									
+
 									JSONObject jsonObject = (JSONObject) json;
 									
 									ArrayList<Object> testProject = new ArrayList<Object>();
@@ -157,35 +161,24 @@ public class Tests {
 									testProject.add(jsonObject.get(POSTCODITIONRESULT));
 									testProject.add((Map<String, Object>)jsonObject.get("Parameters"));
 
-									
-									/*
-									
-									testProject.add(jsonObject.get(METHODSIGNATURE));
-									testProject.add(jsonObject.get(SOURCE));
-									testProject.add(jsonObject.get(TARGET));
-									
-									testProject.add(jsonObject.get(VISIBILITY));
-									
-									
-									*/
 									iter.add(testProject.toArray());
 									
 								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
+									LOGGER.log(Level.ERROR, e.getMessage(), e);
 								} catch (ParseException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
+									LOGGER.log(Level.ERROR, e.getMessage(), e);
 								}
-							}else{return true;}
-							// TODO Auto-generated method stub
+							}
+							else{
+								return true;
+							}
 							return false;
 						}
 					});
 					
 				}
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
 		return iter;
