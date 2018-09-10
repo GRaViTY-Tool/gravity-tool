@@ -40,7 +40,6 @@ Darmstadt.
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.moflon.core.feature" version="1.1.1.201803221329" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.moflon.core.dfs"/>
@@ -53,6 +52,7 @@ Darmstadt.
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.swt"/>
+      <import feature="org.moflon.core.feature" version="1.3.2.201808141328"/>
    </requires>
 
    <plugin

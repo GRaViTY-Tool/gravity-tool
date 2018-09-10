@@ -3,8 +3,8 @@
       id="org.gravity.features.typegraph.basic"
       label="GRaViTY Type Graph Basic"
       version="1.0.0.qualifier"
-      license-feature="org.eclipse.modisco.eclipse.feature"
-      license-feature-version="1.1.1.201802201718">
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
 
    <description>
       The meta model of the program model and general operations on program models

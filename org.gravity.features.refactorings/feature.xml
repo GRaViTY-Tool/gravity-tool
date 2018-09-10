@@ -48,6 +48,7 @@ Darmstadt.
       <import plugin="org.eclipse.jdt.core.manipulation"/>
       <import plugin="org.eclipse.ltk.core.refactoring"/>
       <import feature="org.moflon.core.feature" version="1.1.1.201803221329" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
    </requires>
 
    <plugin

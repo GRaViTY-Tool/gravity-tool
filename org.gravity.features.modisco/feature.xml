@@ -38,7 +38,6 @@ Darmstadt.
       <import plugin="SDMLanguage"/>
       <import plugin="org.moflon.tgg.language"/>
       <import plugin="org.moflon.tgg.runtime"/>
-      <import plugin="org.eclipse.gmt.modisco.java" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.gravity.modisco" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
@@ -51,6 +50,7 @@ Darmstadt.
       <import plugin="MocaTree" version="2.0.0" match="greaterOrEqual"/>
       <import feature="org.moflon.ide.feature" version="3.0.0.201803160723" match="greaterOrEqual"/>
       <import feature="org.moflon.tgg.mosl.feature" version="3.0.0.201803160723" match="greaterOrEqual"/>
+      <import feature="org.eclipse.modisco.eclipse.feature" version="1.2.0.201805182005" match="greaterOrEqual"/>
    </requires>
 
    <plugin
