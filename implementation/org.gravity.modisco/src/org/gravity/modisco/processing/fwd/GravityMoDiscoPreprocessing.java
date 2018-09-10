@@ -16,14 +16,12 @@ import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.Modifier;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
 import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
@@ -39,8 +37,6 @@ import org.gravity.modisco.MClass;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
-import org.gravity.modisco.MFieldName;
-import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
@@ -84,113 +80,6 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		for (Entry<MSignature, Collection<AbstractTypeDeclaration>> entry : mapping.entrySet()) {
 			entry.getKey().getImplementedBy().addAll(entry.getValue());
-		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	private static boolean preprocessFields(MGravityModel model) {
-		for (MFieldDefinition mDefinition : model.getMFieldDefinitions()) {
-
-			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
-			if (fragments.size() == 0) {
-				LOGGER.log(Level.ERROR, "Pattern matching in node [ActivityNode37] failed." + " Variables: "
-						+ "[mDefinition] = " + mDefinition + ".");
-				return false;
-			}
-			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
-				scndDeclFragment.setVariablesContainer(null);
-
-				MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
-				newDef.getFragments().add(scndDeclFragment);
-				model.getMFieldDefinitions().add(newDef);
-				newDef.setName(mDefinition.getName());
-				newDef.setProxy(mDefinition.isProxy());
-				newDef.setAbstractTypeDeclaration(mDefinition.getAbstractTypeDeclaration());
-
-				TypeAccess oldTypeAccess = mDefinition.getType();
-				if (oldTypeAccess != null) {
-					Type type = oldTypeAccess.getType();
-					if (type != null) {
-						TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-						newDef.setType(newTypeAccess);
-						newTypeAccess.setType(type);
-					}
-
-				}
-
-				if (!mDefinition.equals(newDef)) {
-					Modifier modifier = mDefinition.getModifier();
-					Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
-					newDef.setModifier(clonedModifier);
-					clonedModifier.setVisibility(modifier.getVisibility());
-					clonedModifier.setInheritance(modifier.getInheritance());
-
-					AnonymousClassDeclaration anno = mDefinition.getAnonymousClassDeclarationOwner();
-					if (anno != null) {
-						anno.getBodyDeclarations().add(newDef);
-					}
-
-				}
-			}
-
-		}
-
-		for (MFieldDefinition mfDefinition : model.getMFieldDefinitions()) {
-			for (VariableDeclarationFragment declFragment : mfDefinition.getFragments()) {
-				MFieldName mName = null;
-				String declFragment_name = declFragment.getName();
-				for (MFieldName m : model.getMFieldNames()) {
-					String mName_mName = m.getMName();
-					if (mName_mName.equals(declFragment_name)) {
-						mName = m;
-					}
-
-				}
-				if (mName == null) {
-					mName = ModiscoFactory.eINSTANCE.createMFieldName();
-					model.getMNames().add(mName);
-					model.getMFieldNames().add(mName);
-					mName.setMName(declFragment_name);
-				}
-				mName.getMFieldDefinitions().add(mfDefinition);
-
-			}
-		}
-		// ForEach ActivityNode6
-		for (MFieldName mName : model.getMFieldNames()) {
-			for (MFieldDefinition mfDefinition2 : mName.getMFieldDefinitions()) {
-				MFieldSignature mSig = getMFieldSignature(mName, mfDefinition2);
-				if (mSig != null) {
-					mSig.getMDefinitions().add(mfDefinition2);
-					mSig.getMFieldDefinitions().add(mfDefinition2);
-
-				} else {
-
-					mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
-					mSig.getMDefinitions().add(mfDefinition2);
-					model.getMFieldSignatures().add(mSig);
-					mSig.setMFieldName(mName);
-					mSig.getMFieldDefinitions().add(mfDefinition2);
-					mName.getMSignatures().add(mSig);
-
-					if (mSig.getMFieldDefinitions().contains(mfDefinition2)) {
-						TypeAccess mAccess = mfDefinition2.getType();
-						if (mAccess != null) {
-							Type mType = mAccess.getType();
-							if (mType != null) {
-								mSig.setType(mType);
-							}
-						}
-					}
-
-				}
-
-			}
 		}
 		return true;
 	}
@@ -306,36 +195,6 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 	}
 
-	private static final Iterable<VariableDeclarationFragment> getOtherFragments(MFieldDefinition mDefinition,
-			VariableDeclarationFragment fragment) {
-		LinkedList<VariableDeclarationFragment> result = new LinkedList<VariableDeclarationFragment>();
-		if (mDefinition.getFragments().contains(fragment)) {
-			for (VariableDeclarationFragment otherFragment : mDefinition.getFragments()) {
-				if (!fragment.equals(otherFragment)) {
-					result.add(otherFragment);
-				}
-			}
-		}
-		return result;
-	}
-
-	private static final MFieldSignature getMFieldSignature(MFieldName mName, MFieldDefinition mfDefinition) {
-		TypeAccess mAccess = mfDefinition.getType();
-		if (mAccess != null) {
-			Type mType = mAccess.getType();
-			if (mType != null) {
-				for (MFieldSignature mSig : mName.getMFieldSignatures()) {
-					if (mType.equals(mSig.getType())) {
-						return mSig;
-					}
-				}
-			}
-
-		}
-
-		return null;
-	}
-
 	private static boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
 		EList<SingleVariableDeclaration> parameters1 = mDef.getParameters();
 		EList<MEntry> parameters2 = mSig.getMParameterList().getMEntrys();
@@ -363,7 +222,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			model.getMConstructorDefinitions().addAll(factory.getCdefs());
 		}
 //		fixStaticMethodCallOnField(model);
-		if (!preprocessFields(model) || !preprocessMethods(model) || !preprocessAccesses(model)
+		if (!preprocessMethods(model) || !preprocessAccesses(model)
 				|| !preprocessImplementedSignatures(model)) {
 			return false;
 		}

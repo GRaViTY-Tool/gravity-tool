@@ -19,9 +19,9 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
  * @author speldszus
  *
  */
-public class AnonymousClassProcessor implements IMoDiscoProcessor {
+public class AnonymousClassPreprocessing implements IMoDiscoProcessor {
 	
-private static final Logger LOGGER = Logger.getLogger(AnonymousClassProcessor.class);
+private static final Logger LOGGER = Logger.getLogger(AnonymousClassPreprocessing.class);
 
 	/* (non-Javadoc)
 	 * @see org.gravity.modisco.processing.IMoDiscoProcessor#process(org.gravity.modisco.MGravityModel, org.eclipse.core.runtime.IProgressMonitor)
