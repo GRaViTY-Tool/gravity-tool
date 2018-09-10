@@ -25,7 +25,7 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> {
 	/**
 	 * Creates a new file visitor collecting files with one of the given file extensions
 	 * 
-	 * @param fileExtension The extension of the files
+	 * @param fileExtensions The extensions of the files
 	 */
 	public ExtensionFileVisitor(Collection<String> fileExtensions) {
 		this.fileExtensions = new ArrayList<>(fileExtensions.size());
