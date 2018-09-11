@@ -13,5 +13,5 @@ public class GoblinActivator extends Plugin {
 	/**
 	 * The plugin ID
 	 */
-	public static final String PLUGIN_ID = "org.goblin.movemethod";
+	public static final String PLUGIN_ID = "org.gravity.goblin";
 }

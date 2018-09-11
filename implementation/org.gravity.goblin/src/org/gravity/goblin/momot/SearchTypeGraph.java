@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
+import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.SearchParameters;
 import org.gravity.goblin.Utility;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
@@ -54,7 +55,7 @@ import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimen
 @SuppressWarnings("all")
 public class SearchTypeGraph {
 
-	private static final Logger LOGGER = Logger.getLogger( SearchTypeGraph.class.getName() );
+	private static final Logger LOGGER = Logger.getLogger(SearchTypeGraph.class);
 
 	
 	protected List<FitnessFunction> fitnessFunctions;
@@ -141,7 +142,7 @@ public class SearchTypeGraph {
 	}
 
 	protected ModuleManager createModuleManager() {
-		Bundle bundle = Platform.getBundle("org.goblin.movemethod");
+		Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
 		ModuleManager manager = new ModuleManager();
 		for (String module : SearchParameters.modules) {
 			if(bundle == null) {
@@ -262,6 +263,11 @@ public class SearchTypeGraph {
 
 	}
 
+	/**
+	 * The main method to execute an optimization
+	 * 
+	 * @param args For the param have a look at the class @see org.gravity.goblin.SearchParameters
+	 */
 	public static void main(final String... args) {
 		SearchTypeGraph search = new SearchTypeGraph();
 		// parseArgs(args);
