@@ -1,5 +1,8 @@
 package org.gravity.modisco.processing.fwd;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
@@ -31,20 +34,34 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
-import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
+import org.gravity.modisco.processing.IMoDiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
-public class StaticTypePreprocessor {
+/**
+ *  
+ * A Preprocessor for resolving the static type on an access
+ *
+ */
+public class StaticTypePreprocessing implements IMoDiscoProcessor {
 
-	MGravityModel model;
+	private static final Logger LOGGER = Logger.getLogger(StaticTypePreprocessing.class);
+	
+	private MGravityModel model;
 
-	public StaticTypePreprocessor(MGravityModel model) {
+	@Override
+	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		this.model = model;
+		for(MAbstractMethodDefinition definition : model.getMAbstractMethodDefinitions()) {
+			if(!addStaticTypeAccesses(definition)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method) {
@@ -66,8 +83,8 @@ public class StaticTypePreprocessor {
 			exp = null;
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
-			throw new RuntimeException(
-					"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+			LOGGER.log(Level.ERROR,	"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+			return null;
 		}
 		if (exp == null) {
 			type = method.getAbstractTypeDeclaration();
@@ -77,51 +94,21 @@ public class StaticTypePreprocessor {
 		return type;
 	}
 
-	private Type getStaticType(SingleVariableAccess access, MAbstractMethodDefinition method) {
-		Type type = null;
-		Expression qualifier = access.getQualifier();
-		if (qualifier == null) {
-			type = method.getAbstractTypeDeclaration();
-		} else {
-			type = getStaticType(qualifier, method);
-		}
-
-		if (type == null) {
-			throw new RuntimeException(
-					"Could not calculate the Type of SingleVariableAccess, this is not supposed to happen!");
-		}
-		return type;
-	}
-
-	void addStaticTypeAccesses(MAbstractMethodDefinition method) {
+	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
 		for (AbstractMethodInvocation methodInvoc : method.getAbstractMethodInvocations()) {
 			Type type = getStaticType(methodInvoc, method);
+			if(type == null) {
+				return false;
+			}
 			MethodInvocationStaticType invocStatic = ModiscoFactory.eINSTANCE.createMethodInvocationStaticType();
 			invocStatic.setType(type);
 			invocStatic.setMethodInvoc(methodInvoc);
 			method.getInvocationStaticType().add(invocStatic);
 		}
+		return true;
 	}
 
-	public void addStaticTypeAccesses() {
-		for (MMethodDefinition method : model.getMMethodDefinitions()) {
-			addStaticTypeAccesses(method);
-		}
-
-		for (MConstructorDefinition ctor : model.getMConstructorDefinitions()) {
-			addStaticTypeAccesses(ctor);
-		}
-	}
-
-	public Type getFieldAccessType(FieldAccess access, MAbstractMethodDefinition method) {
-		/*
-		 * if(((FieldAccess)access).getField() != null){ return
-		 * getStaticType(((FieldAccess)access).getField(), method); }
-		 */
-		return getStaticType(((FieldAccess) access).getExpression(), method);
-	}
-
-	public Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model) {
+	private Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model) {
 		AbstractMethodDeclaration aMethod = methodInvoc.getMethod();
 		if (aMethod instanceof MMethodDefinition) {
 			return ((MMethodDefinition) aMethod).getReturnType().getType();
@@ -191,11 +178,10 @@ public class StaticTypePreprocessor {
 		return null;
 	}
 
-	public Type getStaticType(Expression expression, MAbstractMethodDefinition method) {
+	private Type getStaticType(Expression expression, MAbstractMethodDefinition method) {
 		if (expression instanceof FieldAccess) {
-			return getFieldAccessType((FieldAccess) expression, method);
+			return getStaticType(((FieldAccess) expression).getExpression(), method);
 		}
-
 		if (expression instanceof MethodInvocation) {
 			return getMethodInvocType((MethodInvocation) expression, method);
 		}
@@ -205,7 +191,6 @@ public class StaticTypePreprocessor {
 		if (expression instanceof TypeAccess) {
 			return ((TypeAccess) expression).getType();
 		}
-
 		if (expression instanceof ParenthesizedExpression) {
 			return getStaticType(((ParenthesizedExpression) expression).getExpression(), method);
 		}

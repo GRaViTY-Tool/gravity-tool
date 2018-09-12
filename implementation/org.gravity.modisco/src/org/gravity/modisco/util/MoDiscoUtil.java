@@ -21,7 +21,6 @@ import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MEntry;
@@ -257,10 +256,7 @@ public class MoDiscoUtil {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
 			entry.setSingleVariableDeclaration(param);
 			mEntrys.add(entry);
-			Type type = param.getType().getType();
-			if (!(type instanceof TypeParameter)) {
-				entry.setType(type);
-			}
+			entry.setType(param.getType().getType());
 			if (prev == null) {
 				mParams.setMFirstEntry(entry);
 			} else {
