@@ -6,9 +6,12 @@ package org.gravity.modisco.processing.fwd;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
@@ -28,7 +31,16 @@ private static final Logger LOGGER = Logger.getLogger(AnonymousClassPreprocessin
 	 */
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		for(AnonymousClassDeclaration anonymous : model.getAnonymousClassDeclarations()) {
+		EList<AnonymousClassDeclaration> anonymousClassDeclarations = model.getAnonymousClassDeclarations();
+		TreeIterator<EObject> iterator = model.eAllContents();
+		while(iterator.hasNext()) {
+			EObject anonymous = iterator.next();
+			if(JavaPackage.eINSTANCE.getAnonymousClassDeclaration().isSuperTypeOf(anonymous.eClass())) {
+				anonymousClassDeclarations.add((AnonymousClassDeclaration) anonymous);
+			}
+			else {
+				continue;
+			}
 			EObject owner = anonymous.eContainer();
 			while(owner != null && !(owner instanceof AbstractTypeDeclaration)) {
 				owner = owner.eContainer();
