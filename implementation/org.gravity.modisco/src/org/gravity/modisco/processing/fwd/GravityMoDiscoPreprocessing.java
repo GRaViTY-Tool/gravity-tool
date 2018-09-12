@@ -226,7 +226,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				|| !preprocessImplementedSignatures(model)) {
 			return false;
 		}
-		StaticTypePreprocessor staticTypePreprocessor = new StaticTypePreprocessor(model);
+
 		TreeIterator<EObject> iterator = model.eResource().getAllContents();
 		while (iterator.hasNext()) {
 			EObject next = iterator.next();
@@ -245,7 +245,6 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
 						|| eObject instanceof SingleVariableDeclaration));
 			} else if (next instanceof MAbstractMethodDefinition) {
-				staticTypePreprocessor.addStaticTypeAccesses((MAbstractMethodDefinition) next);
 				if (next instanceof MMethodDefinition) {
 					SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);
 				}

@@ -14,6 +14,7 @@ eAnonymousClassDeclaration : AnonymousClassDeclaration {
 
 #target {
 tClass : TClass {
+	++-innerTypes->tNestedType
 }
 pg : TypeGraph {
 	 -classes -> tClass
