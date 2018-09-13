@@ -11,7 +11,6 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.GoblinActivator;
@@ -29,7 +28,6 @@ import org.gravity.goblin.repair.VisibilityReducer;
 import org.gravity.goblin.repair.VisibilityRepairer;
 import org.gravity.goblin.typegraph.equality.EqualityHelper;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.containers.ContainersPackage;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.osgi.framework.Bundle;
@@ -40,7 +38,6 @@ import com.beust.jcommander.ParameterException;
 import at.ac.tuwien.big.moea.SearchExperiment;
 import at.ac.tuwien.big.moea.experiment.executor.listener.SeedRuntimePrintListener;
 import at.ac.tuwien.big.moea.search.algorithm.EvolutionaryAlgorithmFactory;
-import at.ac.tuwien.big.moea.search.algorithm.LocalSearchAlgorithmFactory;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension;
 import at.ac.tuwien.big.moea.search.fitness.dimension.IFitnessDimension.FunctionType;
 import at.ac.tuwien.big.momot.ModuleManager;
@@ -53,6 +50,11 @@ import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunct
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 
+/**
+ * 
+ * The main class for executing search experiments
+ *
+ */
 public class SearchTypeGraph {
 
 	private static final Logger LOGGER = Logger.getLogger(SearchTypeGraph.class);
@@ -207,7 +209,6 @@ public class SearchTypeGraph {
 
 		EvolutionaryAlgorithmFactory<TransformationSolution> moea = orchestration
 				.createEvolutionaryAlgorithmFactory(SearchParameters.populationSize);
-		LocalSearchAlgorithmFactory<TransformationSolution> local = orchestration.createLocalSearchAlgorithmFactory();
 
 		initializeAlgorithms(orchestration, moea);
 		return orchestration;
@@ -222,10 +223,25 @@ public class SearchTypeGraph {
 		return experiment;
 	}
 
+	/**
+	 * Performs the search on the given model saving at the current location
+	 * 
+	 * @param initialGraph The path of the given model
+	 * @param solutionLength The desired solution length
+	 * @return A manager for accessing the search solution
+	 */
 	public TransformationResultManager performSearch(String initialGraph, int solutionLength) {
 		return performSearch(initialGraph, solutionLength, new File("./"));
 	}
 
+	/**
+	 * Performs the search on the given model
+	 * 
+	 * @param initialGraph The path of the given model
+	 * @param solutionLength The desired solution length
+	 * @param folder The output location
+	 * @return A manager for accessing the search solution
+	 */
 	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength, File folder) {
 		TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
 		SearchPrinter printer = new SearchPrinter(orchestration);
@@ -237,12 +253,12 @@ public class SearchTypeGraph {
 		try {
 			Files.write(new File(folder, "durationGoblinInMs.txt").toPath(), Long.toString(duration).getBytes());
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.WARN, e.getMessage(), e);
 		}
 		return printer.printResults(experiment, folder);
 	}
 
-	private void handleInput(String[] args) {
+	private boolean handleInput(String[] args) {
 		JCommander jCommander = new JCommander(new SearchParameters());
 		jCommander.setProgramName("Search Type Graph");
 
@@ -251,14 +267,14 @@ public class SearchTypeGraph {
 		} catch (ParameterException ex) {
 			LOGGER.log( Level.INFO, ex.getMessage());
 			jCommander.usage();
-			System.exit(0);
+			System.exit(-1);
 		}
 
 		if (SearchParameters.help) {
 			jCommander.usage();
-			System.exit(0);
+			return false;
 		}
-
+		return true;
 	}
 
 	/**
@@ -268,8 +284,9 @@ public class SearchTypeGraph {
 	 */
 	public static void main(final String... args) {
 		SearchTypeGraph search = new SearchTypeGraph();
-		// parseArgs(args);
-		search.handleInput(args);
+		if(!search.handleInput(args)) {
+			return;
+		}
 		BasicPackage.eINSTANCE.eClass();
 		LOGGER.log( Level.INFO, "Search started.");
 
