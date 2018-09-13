@@ -4,6 +4,7 @@ import static org.gravity.hulk.HulkAPI.AntiPatternNames.Blob;
 import static org.gravity.hulk.HulkAPI.AntiPatternNames.IGAM;
 import static org.gravity.hulk.HulkAPI.AntiPatternNames.LCOM5;
 import static org.gravity.hulk.HulkAPI.AntiPatternNames.TotalCoupling;
+import static org.gravity.hulk.HulkAPI.AntiPatternNames.TotalMethodVisibility;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,7 +32,26 @@ import at.ac.tuwien.big.momot.search.solution.repair.ITransformationRepairer;
 public class PostProcessRepairMultiDimensionalFitnessFunction
 		implements IEGraphMultiDimensionalFitnessFunction, IMultiDimensionalFitnessFunction<TransformationSolution> {
 
-	ITransformationRepairer optimizationRepairer;
+	private ITransformationRepairer optimizationRepairer;
+
+	// ----------------------------Copied from
+	// MultiDimensionalFitnessFunction---------------
+	// Removed Post and Preprocessing methods
+	// changed above methods
+	private List<IFitnessDimension<TransformationSolution>> objectives;
+	private List<IFitnessDimension<TransformationSolution>> constraints;
+
+	private Class<TransformationSolution> clazz;
+	private ISolutionRepairer<TransformationSolution> repairer;
+
+	/**
+	 * The constructor initializing all lists
+	 */
+	public PostProcessRepairMultiDimensionalFitnessFunction() {
+		this.objectives = new ArrayList<>();
+		this.constraints = new ArrayList<>();
+		this.clazz = TransformationSolution.class;
+	}
 
 	@Override
 	public IEGraphMultiDimensionalFitnessFunction setSolutionRepairer(ITransformationRepairer repairer) {
@@ -39,6 +59,12 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 		return this;
 	}
 
+	/**
+	 * A setter for the transformation repairer
+	 * 
+	 * @param repairer The repairer
+	 * @return this object
+	 */
 	public IEGraphMultiDimensionalFitnessFunction setOptimizationRepairer(ITransformationRepairer repairer) {
 		this.optimizationRepairer = repairer;
 		return this;
@@ -46,7 +72,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 
 	private double delegateEvaluation(final Solution solution) {
 		boolean failedConstraint = false;
-		
+
 		int i = 0;
 		for (final IFitnessDimension<TransformationSolution> dimension : constraints) {
 			if (!failedConstraint) {
@@ -73,19 +99,18 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 	@Override
 	public double doEvaluate(Solution solution) {
 		if (clazz.isInstance(solution)) {
-			//Calculate metrics
+			// Calculate metrics
 			EGraph graph = ((TransformationSolution) solution).execute();
 			TypeGraph pg = Utility.getPG(graph);
 			Resource r = pg.eResource();
-			if(r == null) {
+			if (r == null) {
 				ResourceSetImpl rs = new ResourceSetImpl();
-				rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", 
-					       new XMIResourceFactoryImpl());
+				rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 				r = rs.createResource(URI.createURI("pg.xmi"));
 				r.getContents().add(pg);
 			}
-			HulkAPI.detect(pg, "", Blob, LCOM5, IGAM, TotalCoupling);
-			
+			HulkAPI.detect(pg, "", Blob, LCOM5, IGAM, TotalCoupling, TotalMethodVisibility);
+
 			double result = delegateEvaluation(solution);
 			if (solution.violatesConstraints()) {
 				// repair
@@ -104,22 +129,6 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 		} else {
 			throw new RuntimeException("wrong solution type");
 		}
-	}
-
-	// ----------------------------Copied from
-	// MultiDimensionalFitnessFunction---------------
-	// Removed Post and Preprocessing methods
-	// changed above methods
-	protected List<IFitnessDimension<TransformationSolution>> objectives;
-	protected List<IFitnessDimension<TransformationSolution>> constraints;
-
-	protected Class<TransformationSolution> clazz;
-	protected ISolutionRepairer<TransformationSolution> repairer;
-
-	public PostProcessRepairMultiDimensionalFitnessFunction() {
-		this.objectives = new ArrayList<>();
-		this.constraints = new ArrayList<>();
-		this.clazz = TransformationSolution.class;
 	}
 
 	@Override
@@ -178,11 +187,11 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 		return objectiveIndices;
 	}
 
-	protected double getAggregateFitness(final Solution solution) {
+	private double getAggregateFitness(final Solution solution) {
 		return MathUtil.getSum(solution.getObjectives(), solution.getConstraints());
 	}
 
-	protected IFitnessDimension<TransformationSolution> getByName(final String name,
+	private IFitnessDimension<TransformationSolution> getByName(final String name,
 			final Iterable<IFitnessDimension<TransformationSolution>> list) {
 		for (final IFitnessDimension<TransformationSolution> dimension : list) {
 			if (dimension.getName().equals(name)) {
@@ -220,7 +229,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 		return constraints;
 	}
 
-	protected int getIndex(final String name, final Iterable<IFitnessDimension<TransformationSolution>> values) {
+	private int getIndex(final String name, final Iterable<IFitnessDimension<TransformationSolution>> values) {
 		int index = 0;
 		for (final IFitnessDimension<TransformationSolution> dimension : values) {
 			if (dimension.getName().equals(name)) {
