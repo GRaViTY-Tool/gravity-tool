@@ -6,12 +6,12 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.GoblinActivator;
@@ -29,6 +29,7 @@ import org.gravity.goblin.repair.VisibilityReducer;
 import org.gravity.goblin.repair.VisibilityRepairer;
 import org.gravity.goblin.typegraph.equality.EqualityHelper;
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.containers.ContainersPackage;
 import org.moeaframework.core.operator.OnePointCrossover;
 import org.moeaframework.core.operator.TournamentSelection;
 import org.osgi.framework.Bundle;
@@ -52,14 +53,13 @@ import at.ac.tuwien.big.momot.search.fitness.IEGraphMultiDimensionalFitnessFunct
 import at.ac.tuwien.big.momot.search.fitness.dimension.AbstractEGraphFitnessDimension;
 import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimension;
 
-@SuppressWarnings("all")
 public class SearchTypeGraph {
 
 	private static final Logger LOGGER = Logger.getLogger(SearchTypeGraph.class);
 
 	
 	protected List<FitnessFunction> fitnessFunctions;
-	public static List<FitnessFunction> constraints;
+	private List<FitnessFunction> constraints;
 
 	// protected final String[] modules = new String[] {
 	// "transformations/allInOne.henshin" };
@@ -156,16 +156,16 @@ public class SearchTypeGraph {
 					Files.copy(entry.openStream(), file.toPath());
 					manager.addModule(file.getAbsolutePath());
 				} catch (IOException e) {
-					e.printStackTrace();
+					LOGGER.log(Level.WARN, e.getMessage(), e);
 				}
 			}
 		}
 
 		List<String> units = new ArrayList<String>();
 		for (Unit unit : manager.getUnits()) {
-			units.add(manager.getQualifiedName(unit));
+			units.add(ModuleManager.getQualifiedName(unit));
 		}
-		units.removeAll((Arrays.asList(SearchParameters.units)));
+		units.removeAll(SearchParameters.units);
 		manager.removeUnits(units);
 
 		return manager;
@@ -196,8 +196,7 @@ public class SearchTypeGraph {
 	protected TransformationSearchOrchestration createOrchestration(final String initialGraph,
 			final int solutionLength) {
 		MoveMethodTransformationSearchOrchestration orchestration = new MoveMethodTransformationSearchOrchestration();
-		// TransformationSearchOrchestration orchestration = new
-		// TransformationSearchOrchestration();
+
 		ModuleManager moduleManager = createModuleManager();
 		EGraph graph = moduleManager.loadGraph(initialGraph);
 		orchestration.setModuleManager(moduleManager);
@@ -230,8 +229,7 @@ public class SearchTypeGraph {
 	public TransformationResultManager performSearch(final String initialGraph, final int solutionLength, File folder) {
 		TransformationSearchOrchestration orchestration = createOrchestration(initialGraph, solutionLength);
 		SearchPrinter printer = new SearchPrinter(orchestration);
-		printer.printSearchInfo(SearchParameters.INITIAL_MODEL, SearchParameters.modules,
-				SearchParameters.populationSize, SearchParameters.maxEvaluations, SearchParameters.nrRuns);
+		printer.logSearchInfo();
 		SearchExperiment<TransformationSolution> experiment = createExperiment(orchestration);
 		long start = System.currentTimeMillis();
 		experiment.run();

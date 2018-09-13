@@ -55,3 +55,4 @@ Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
    at.ac.tuwien.big.momot.search.fitness,
    org.eclipse.emf.henshin.interpreter"
 Bundle-Activator: org.gravity.goblin.GoblinActivator
+Automatic-Module-Name: org.gravity.goblin

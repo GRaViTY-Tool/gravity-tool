@@ -1,5 +1,8 @@
 package org.gravity.goblin;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -101,14 +104,14 @@ public class SearchParameters {
 	 */
 	@Parameter(	names = { "-mod", "--modules" },
 				description = "modules containing transformation rules")
-	public static String[] modules = new String[] { "transformations/MoveMethod.henshin" };
+	public static List<String> modules = Arrays.asList(new String[] { "transformations/MoveMethod.henshin"});
 
 	/**
 	 * Units that will be used as transformation rules
 	 */
 	@Parameter(	names = { "-u", "--units" },
 			description = "units that will be used as transformation rules")
-	public static String[] units = new String[] { "MoveMethod::rules::MoveMethodMain", "MoveMethod::rules::changeMethodVisibility","MoveMethod::rules::changeFieldVisibility"};
+	public static List<String> units = Arrays.asList(new String[] { "MoveMethod::rules::MoveMethodMain", "MoveMethod::rules::changeMethodVisibility","MoveMethod::rules::changeFieldVisibility"});
 	
 	/**
 	 * Flag to toggle usage of custom DominanceComperator
@@ -131,7 +134,7 @@ public class SearchParameters {
 	 */
 	@Parameter(	names = { "-w", "--weight" },
 			description = "weights used for dominance comparation")
-	public static double[] weight = {1,1,1,1,1};
+	public static List<Double> weight = Arrays.asList(new Double[]{1.0,1.0,1.0,1.0,1.0});
 	
 	/**
 	 * Value for public access modifier used in metric calculation
