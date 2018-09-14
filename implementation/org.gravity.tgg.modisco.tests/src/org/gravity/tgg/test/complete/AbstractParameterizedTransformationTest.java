@@ -88,9 +88,11 @@ public abstract class AbstractParameterizedTransformationTest {
 
 	/**
 	 * The method in which tests on eclipse java projects can be defined
+	 * 
+	 * @throws Exception The test might throws exceptions 
 	 */
 	@Test
-	public abstract void testForward();
+	public abstract void testForward() throws Exception;
 
 	/**
 	 * Loads the resource located at the given URI into a new ResourceSet
