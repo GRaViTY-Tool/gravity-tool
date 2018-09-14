@@ -31,7 +31,7 @@
   <orphanTypes xsi:type="java:PrimitiveTypeChar" name="char"/>
   <orphanTypes xsi:type="java:PrimitiveTypeShort" name="short"/>
   <orphanTypes xsi:type="java:PrimitiveTypeByte" name="byte"/>
-  <compilationUnits name="Clazz.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.modisco.test/java_src/PreprocessMultipleFieldDeclarationsInLine/src/Clazz.java" types="//@ownedElements.0/@ownedElements.0"/>
+  <compilationUnits name="Clazz.java" originalFilePath="/home/sven/workspace/gravity-eclipse-markus2/org.gravity.tgg.test/java_src/PreprocessMultipleFieldDeclarationsInLine/src/Clazz.java" types="//@ownedElements.0/@ownedElements.0"/>
   <mFieldSignatures mDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0" mFieldName="//@mFieldNames.0" type="//@orphanTypes.0" mFieldDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
   <mFieldSignatures mDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1" mFieldName="//@mFieldNames.1" type="//@orphanTypes.0" mFieldDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.1"/>
   <mFieldSignatures mDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2" mFieldName="//@mFieldNames.2" type="//@orphanTypes.0" mFieldDefinitions="//@ownedElements.0/@ownedElements.0/@bodyDeclarations.2"/>

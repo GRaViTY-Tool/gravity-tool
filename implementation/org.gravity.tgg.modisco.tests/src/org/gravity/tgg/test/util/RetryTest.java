@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.test.util;
+package org.gravity.tgg.test.util;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

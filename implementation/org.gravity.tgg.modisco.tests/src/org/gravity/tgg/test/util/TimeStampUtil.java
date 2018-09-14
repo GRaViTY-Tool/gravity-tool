@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.test.util;
+package org.gravity.tgg.test.util;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;

@@ -1,4 +1,4 @@
-package org.gravity.tgg.modisco.test.preprocessing;
+package org.gravity.tgg.test.preprocessing;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.fwd.GravityMoDiscoPreprocessing;
-import org.gravity.tgg.modisco.test.util.CustomFeatureFilter;
-import org.gravity.tgg.modisco.test.util.TestBody;
+import org.gravity.tgg.test.util.CustomFeatureFilter;
+import org.gravity.tgg.test.util.TestBody;
 import org.junit.Assert;
 
 public class TestGeneratorPreprocessing {
