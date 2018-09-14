@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.gravity.eclipse.io.EclipseProjectUtil;
+import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.tgg.uml.Transformation;
 import org.junit.Test;
 
@@ -39,7 +39,7 @@ public class UmlTest {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("SecureDependency");
 		IJavaProject jp = JavaCore.create(project);
-		IJavaProject iJjavaProject = EclipseProjectUtil.copyJavaProject(jp, "SecureDependency"+System.currentTimeMillis());
+		IJavaProject iJjavaProject = JavaProjectUtil.copyJavaProject(jp, "SecureDependency"+System.currentTimeMillis());
 
 		Model model = Transformation.projectToModel(iJjavaProject, new NullProgressMonitor());
 
