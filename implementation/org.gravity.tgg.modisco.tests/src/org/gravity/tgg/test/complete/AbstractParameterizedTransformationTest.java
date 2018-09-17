@@ -34,7 +34,7 @@ import org.junit.runners.Parameterized.Parameters;
  */
 @RunWith(Parameterized.class)
 public abstract class AbstractParameterizedTransformationTest {
-
+	
 	@Rule
 	public ToFileLogger logToFile = new ToFileLogger(Paths.get(new File("testlogs").toURI()));
 
@@ -127,8 +127,8 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name The test name
 	 * @return The path as string
 	 */
-	protected String createSrcName(final String name) {
-		return String.format("%s/Testcases/CreatedOutput/%s.src.xmi", out, name);
+	protected String createSrcName(final String name, final String extension) {
+		return String.format("%s/Testcases/CreatedOutput/%s.src.%s", out, name, extension);
 	}
 
 	/**
@@ -137,8 +137,8 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name The test name
 	 * @return The path as string
 	 */
-	protected String createTrgName(final String name) {
-		return String.format("%s/Testcases/CreatedOutput/%s.trg.xmi", out, name);
+	protected String createTrgName(final String name, final String extension) {
+		return String.format("%s/Testcases/CreatedOutput/%s.trg.%s", out, name, extension);
 	}
 
 	/**
@@ -147,8 +147,8 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name The test name
 	 * @return The path as string
 	 */
-	protected String createCorrName(final String name) {
-		return String.format("%s/Testcases/CreatedOutput/%s.corr.xmi", out, name);
+	protected String createCorrName(final String name, final String extension) {
+		return String.format("%s/Testcases/CreatedOutput/%s.corr.%s", out, name, extension);
 	}
 
 	/**
@@ -157,8 +157,8 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name The test name
 	 * @return The path as string
 	 */
-	protected String createProtocolName(final String name) {
-		return String.format("%s/Testcases/CreatedOutput/%s.protocol.xmi", out, name);
+	protected String createProtocolName(final String name, final String extension) {
+		return String.format("%s/Testcases/CreatedOutput/%s.protocol.%s", out, name, extension);
 	}
 
 	/**
@@ -167,8 +167,8 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @param name The test name
 	 * @return The path as string
 	 */
-	protected String createExpectedName(final String name) {
-		return String.format("%s/Testcases/ExpectedResults/%s.xmi", out, name);
+	protected String createExpectedName(final String name, final String extension) {
+		return String.format("%s/Testcases/ExpectedResults/%s.%s", out, name, extension);
 	}
 
 }

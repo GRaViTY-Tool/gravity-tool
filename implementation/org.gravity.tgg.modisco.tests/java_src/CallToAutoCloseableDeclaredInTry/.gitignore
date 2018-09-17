@@ -1,4 +1,4 @@
-gravity/
-modisco/
-hulk/
-bin/
+/bin/
+/modisco/
+/.gravity/
+/gravity/
