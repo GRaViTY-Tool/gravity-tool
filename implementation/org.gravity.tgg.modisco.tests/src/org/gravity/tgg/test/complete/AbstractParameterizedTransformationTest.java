@@ -125,6 +125,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * Returns a formatted path for saving the source model
 	 * 
 	 * @param name The test name
+	 * @param extension The file extension of the result file
 	 * @return The path as string
 	 */
 	protected String createSrcName(final String name, final String extension) {
