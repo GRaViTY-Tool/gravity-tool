@@ -1,3 +1,6 @@
+
+import  org.apache.log4j.Level;
+import  org.apache.log4j.Logger;
 import  java.util.HashSet;
 import  java.util.LinkedList;
 import  java.util.List;
@@ -73,7 +76,7 @@ partial class HIGAMCalculatorImpl {
 		TAbstractType tType = tMember.getDefinedBy();
 		if (tModifier == null) {
 			if (tMember instanceof TConstructorDefinition) {
-				System.err.println("WARNING: Skipped constructor \"" + tMember.getSignatureString()
+				LOGGER.log(Level.WARN, "Skipped constructor \"" + tMember.getSignatureString()
 						+ "\" it is probably a default constructor and has no modifer.");
 			} else if (tType.getTName().startsWith("%ENUM%")) {
 				System.err.println("WARNING: Skipped member in enum \"" + tMember.getSignatureString() + "\".");
@@ -160,19 +163,20 @@ partial class HIGAMCalculatorImpl {
 	}
 
 	// <-- [user code injected with eMoflon]
+	
+	private static final Logger LOGGER = Logger.getLogger(HIGAMCalculator.class);
 
 	private TVisibility acc1acc2(TAccess tAccess) {
 		TAbstractType tType = tAccess.getTTarget().getDefinedBy();
 		TAbstractType tAccessingType = tAccess.getTSource().getDefinedBy();
-		
+
 		//acc1
 		TVisibility tVisibility = access(tAccessingType, tType);
-		
+
 		//acc2
 		TClass sourceClass = (TClass) tAccess.getTSource().getDefinedBy();
-		if (tVisibility == TVisibility.TPROTECTED
-				&& tAccess.getStaticType() != null 
-				&& tAccess.getStaticType() instanceof TClass 
+		if (tVisibility == TVisibility.TPROTECTED && tAccess.getStaticType() != null
+				&& tAccess.getStaticType() instanceof TClass
 				&& !(((TClass) tAccess.getStaticType()).isSubTypeOf(sourceClass))
 				&& sourceClass != tAccess.getStaticType()) {
 			return TVisibility.TPUBLIC;
@@ -194,8 +198,10 @@ partial class HIGAMCalculatorImpl {
 		TMember tMember = tAccess.getTTarget();
 		TAbstractType tTarget = tMember.getDefinedBy();
 		if (tStaticType == null || tStaticType.getTName().equals("Void")) {
-			System.err.println("No static type for access from \""+tAccess.getTSource().getDefinedBy().getFullyQualifiedName()+"->"+tAccess.getTSource().getSignatureString()+"\" to \"" + tTarget.getFullyQualifiedName() + "->"
-					+ tMember.getSignatureString() + "\".");
+			System.err.println(
+					"No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
+							+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
+							+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
 			return TVisibility.TPUBLIC;
 		}
 		return access(tStaticType, tTarget);
@@ -249,6 +255,7 @@ partial class HIGAMCalculatorImpl {
 		}
 		return TVisibility.TPRIVATE;
 	}
+
 	-->
 
 @model detect (HAntiPatternGraph apg)<--
