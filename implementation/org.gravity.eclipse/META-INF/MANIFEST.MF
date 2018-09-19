@@ -20,5 +20,6 @@ Export-Package: org.gravity.eclipse,
  org.gravity.eclipse.importer.gradle,
  org.gravity.eclipse.io,
  org.gravity.eclipse.os,
- org.gravity.eclipse.selection
+ org.gravity.eclipse.selection,
+ org.gravity.eclipse.util
 Automatic-Module-Name: org.gravity.eclipse

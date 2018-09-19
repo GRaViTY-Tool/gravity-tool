@@ -10,6 +10,7 @@
     <processor priority="8" processor="org.gravity.modisco.processing.fwd.GravityMoDiscoPreprocessing"/>
     <processor priority="9" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
     <processor priority="10" processor="org.gravity.modisco.processing.fwd.AnonymousClassPreprocessing"/>
+    <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"/>
