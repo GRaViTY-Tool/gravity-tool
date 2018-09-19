@@ -6,24 +6,27 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mNestedType : ClassDeclaration {
+	++mNestedType:MClass {
 }
 }
 
 #target {
-pg : TypeGraph {
-	++  -classes -> tNestedType
-}
-++ tNestedType : TClass {
+	pg:TypeGraph {
+		++  -classes -> tNestedType
+	}
+
+	++tNestedType:TClass {
 }
 }
 
 #correspondence {
-++ mClassDeclarationToTClass : ClassDeclarationToTClass {
-	#src->mNestedType
-	#trg->tNestedType
-}
+	++ mClassDeclarationToTClass :ClassDeclarationToTClass {
+		#src->mNestedType
+		#trg->tNestedType
+	}
 }
 
 #attributeConditions {
 }
+
+

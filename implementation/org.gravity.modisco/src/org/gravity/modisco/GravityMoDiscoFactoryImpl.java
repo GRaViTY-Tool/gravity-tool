@@ -1,15 +1,23 @@
 package org.gravity.modisco;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.AnnotationImpl;
 import org.gravity.modisco.util.MoDiscoUtil;
 
+/**
+ * A factory overwrite for providing GRaViTY MoDisco elements
+ * 
+ * @author speldszus
+ *
+ */
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	private MGravityModel model = null;
@@ -22,9 +30,15 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	public AnonymousClassDeclaration createAnonymousClassDeclaration() {
 		return ModiscoFactory.eINSTANCE.createMAnonymous();
 	}
+	
 	@Override
 	public Annotation createAnnotation() {
 		return new AnnotationImpl();
+	}
+	
+	@Override
+	public ClassDeclaration createClassDeclaration() {
+		return ModiscoFactory.eINSTANCE.createMClass();
 	}
 	
 	@Override
@@ -45,7 +59,8 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		addMconstructorDefinition(decl);
 		return decl;
 	}
-	public void addMconstructorDefinition(MConstructorDefinition decl) {
+	
+	private void addMconstructorDefinition(MConstructorDefinition decl) {
 		if (this.model != null) {
 			this.cdefs.add(decl);
 			this.model.getMConstructorDefinitions().add(decl);
@@ -60,7 +75,8 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		addMMethodDefinition(decl);
 		return decl;
 	}
-	public void addMMethodDefinition(MMethodDefinition decl) {
+	
+	private  void addMMethodDefinition(MMethodDefinition decl) {
 		if (this.model != null) {
 			this.mdefs.add(decl);
 			this.model.getMMethodDefinitions().add(decl);
@@ -76,7 +92,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		return decl;
 	}
 	
-	public void addMFieldDefinition(MFieldDefinition decl) {
+	private void addMFieldDefinition(MFieldDefinition decl) {
 		if (this.model != null) {
 			this.fdefs.add(decl);
 			this.model.getMFieldDefinitions().add(decl);
@@ -84,15 +100,39 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		}
 	}
 
+	/**
+	 * Get all MMethodDefinitions created by this factory
+	 * 
+	 * @return A set of the method definitions
+	 */
 	public Set<MMethodDefinition> getMdefs() {
+		if(this.mdefs == null) {
+			return Collections.emptySet();
+		}
 		return this.mdefs;
 	}
 
+	/**
+	 * Get all MFieldDefinitions created by this factory
+	 * 
+	 * @return A set of the field definitions
+	 */
 	public Set<MFieldDefinition> getFdefs() {
+		if(this.fdefs == null) {
+			return Collections.emptySet();
+		}
 		return this.fdefs;
 	}
 
+	/**
+	 * Get all MConstructorDefinitions created by this factory
+	 * 
+	 * @return A set of the constructor definitions
+	 */
 	public Set<MConstructorDefinition> getCdefs() {
+		if(this.cdefs == null) {
+			return Collections.emptySet();
+		}
 		return this.cdefs;
 	}
 }
