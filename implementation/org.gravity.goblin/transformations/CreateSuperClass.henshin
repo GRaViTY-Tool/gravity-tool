@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_K_pGkLWfEeiHxtaJPOhGLA">
+  <imports href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_Mh6xoLWfEeiHxtaJPOhGLA" name="CreateSuperClass-SameParent">
+    <parameters xmi:id="_zPO5YLczEeiYLM5pT2OaBA" name="parentVis" >
+      <type xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+    </parameters>
+    <lhs xmi:id="_MiOToLWfEeiHxtaJPOhGLA" name="Lhs">
+      <nodes xmi:id="_PtNB4LWfEeiHxtaJPOhGLA" name="" incoming="_VwI0sLWfEeiHxtaJPOhGLA _WUVG4LWfEeiHxtaJPOhGLA" outgoing="_tP0rALaLEeilKuzrEwthbQ _KcSd0LaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_Q_cs4LWfEeiHxtaJPOhGLA" incoming="_5J3eMLWmEeiV3ZR7k4DLVQ" outgoing="_WUVG4LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_-SjEsLWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RiGuALWfEeiHxtaJPOhGLA" incoming="_6MIzgLWmEeiV3ZR7k4DLVQ" outgoing="_VwI0sLWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_9WRCoLWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1ibdcLWmEeiV3ZR7k4DLVQ" outgoing="_5J3eMLWmEeiV3ZR7k4DLVQ _6MIzgLWmEeiV3ZR7k4DLVQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+      </nodes>
+      <nodes xmi:id="_PiVucLaLEeilKuzrEwthbQ" incoming="_tP0rALaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+      </nodes>
+      <nodes xmi:id="_HLQx8LaPEei_2LPeSk39dA" name="parent" incoming="_KcSd0LaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <attributes xmi:id="_J_asoLc0EeiYLM5pT2OaBA" value="parentVis">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_VwI0sLWfEeiHxtaJPOhGLA" source="_RiGuALWfEeiHxtaJPOhGLA" target="_PtNB4LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_WUVG4LWfEeiHxtaJPOhGLA" source="_Q_cs4LWfEeiHxtaJPOhGLA" target="_PtNB4LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_5J3eMLWmEeiV3ZR7k4DLVQ" source="_1ibdcLWmEeiV3ZR7k4DLVQ" target="_Q_cs4LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_6MIzgLWmEeiV3ZR7k4DLVQ" source="_1ibdcLWmEeiV3ZR7k4DLVQ" target="_RiGuALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_tP0rALaLEeilKuzrEwthbQ" source="_PtNB4LWfEeiHxtaJPOhGLA" target="_PiVucLaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/package"/>
+      </edges>
+      <edges xmi:id="_KcSd0LaPEei_2LPeSk39dA" source="_PtNB4LWfEeiHxtaJPOhGLA" target="_HLQx8LaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tModifier"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_MiOTobWfEeiHxtaJPOhGLA" name="Rhs">
+      <nodes xmi:id="_PtNB4bWfEeiHxtaJPOhGLA" incoming="_mNCsALWfEeiHxtaJPOhGLA" outgoing="_tP0rAbaLEeilKuzrEwthbQ _KcTr8LaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
+      </nodes>
+      <nodes xmi:id="_Q_dT8LWfEeiHxtaJPOhGLA" incoming="_5J4FQLWmEeiV3ZR7k4DLVQ" outgoing="_hueO8LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_-SjEsbWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RiHVELWfEeiHxtaJPOhGLA" incoming="_6MIzgbWmEeiV3ZR7k4DLVQ" outgoing="_fHxScLWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_9WaMkLWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_dZOtALWfEeiHxtaJPOhGLA" incoming="_fHxScLWfEeiHxtaJPOhGLA _hueO8LWfEeiHxtaJPOhGLA _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ _TtAYELaLEeilKuzrEwthbQ _sN7JILaLEeilKuzrEwthbQ" outgoing="_mNCsALWfEeiHxtaJPOhGLA _A4SYALaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_AvavwLWmEeiHxtaJPOhGLA" value="&quot;NewSuperClass&quot;">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_2eUd8LWmEeiV3ZR7k4DLVQ" outgoing="_5J4FQLWmEeiV3ZR7k4DLVQ _6MIzgbWmEeiV3ZR7k4DLVQ _6mMSQLWmEeiV3ZR7k4DLVQ _67qzALWmEeiV3ZR7k4DLVQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+      </nodes>
+      <nodes xmi:id="_PiVucbaLEeilKuzrEwthbQ" incoming="_tP0rAbaLEeilKuzrEwthbQ" outgoing="_TtAYELaLEeilKuzrEwthbQ _sN7JILaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+      </nodes>
+      <nodes xmi:id="__SuvcLaOEei_2LPeSk39dA" name="intermidiate" incoming="_A4SYALaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <attributes xmi:id="_BldAALaPEei_2LPeSk39dA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/isStatic"/>
+        </attributes>
+        <attributes xmi:id="_MOIm8Lc0EeiYLM5pT2OaBA" value="parentVis">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HLRZALaPEei_2LPeSk39dA" name="parent" incoming="_KcTr8LaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <attributes xmi:id="_J_bTsLc0EeiYLM5pT2OaBA" value="parentVis">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_fHxScLWfEeiHxtaJPOhGLA" source="_RiHVELWfEeiHxtaJPOhGLA" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_hueO8LWfEeiHxtaJPOhGLA" source="_Q_dT8LWfEeiHxtaJPOhGLA" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_mNCsALWfEeiHxtaJPOhGLA" source="_dZOtALWfEeiHxtaJPOhGLA" target="_PtNB4bWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_5J4FQLWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_Q_dT8LWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_6MIzgbWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_RiHVELWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_6mMSQLWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_67qzALWmEeiV3ZR7k4DLVQ" source="_2eUd8LWmEeiV3ZR7k4DLVQ" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/classes"/>
+      </edges>
+      <edges xmi:id="_TtAYELaLEeilKuzrEwthbQ" source="_PiVucbaLEeilKuzrEwthbQ" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/classes"/>
+      </edges>
+      <edges xmi:id="_sN7JILaLEeilKuzrEwthbQ" source="_PiVucbaLEeilKuzrEwthbQ" target="_dZOtALWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_tP0rAbaLEeilKuzrEwthbQ" source="_PtNB4bWfEeiHxtaJPOhGLA" target="_PiVucbaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/package"/>
+      </edges>
+      <edges xmi:id="_A4SYALaPEei_2LPeSk39dA" source="_dZOtALWfEeiHxtaJPOhGLA" target="__SuvcLaOEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tModifier"/>
+      </edges>
+      <edges xmi:id="_KcTr8LaPEei_2LPeSk39dA" source="_PtNB4bWfEeiHxtaJPOhGLA" target="_HLRZALaPEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tModifier"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_PtNB4rWfEeiHxtaJPOhGLA" origin="_PtNB4LWfEeiHxtaJPOhGLA" image="_PtNB4bWfEeiHxtaJPOhGLA"/>
+    <mappings xmi:id="_Q_d7ALWfEeiHxtaJPOhGLA" origin="_Q_cs4LWfEeiHxtaJPOhGLA" image="_Q_dT8LWfEeiHxtaJPOhGLA"/>
+    <mappings xmi:id="_RiHVEbWfEeiHxtaJPOhGLA" origin="_RiGuALWfEeiHxtaJPOhGLA" image="_RiHVELWfEeiHxtaJPOhGLA"/>
+    <mappings xmi:id="_2eVFALWmEeiV3ZR7k4DLVQ" origin="_1ibdcLWmEeiV3ZR7k4DLVQ" image="_2eUd8LWmEeiV3ZR7k4DLVQ"/>
+    <mappings xmi:id="_PiVucraLEeilKuzrEwthbQ" origin="_PiVucLaLEeilKuzrEwthbQ" image="_PiVucbaLEeilKuzrEwthbQ"/>
+    <mappings xmi:id="_HLRZAbaPEei_2LPeSk39dA" origin="_HLQx8LaPEei_2LPeSk39dA" image="_HLRZALaPEei_2LPeSk39dA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_zB3CULWfEeiHxtaJPOhGLA" name="CreateSuperClass-NoParent">
+    <parameters xmi:id="_4qkgsLczEeiYLM5pT2OaBA" name="childName1" >
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_8ZAhULczEeiYLM5pT2OaBA" name="childName2" >
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_zB3CUbWfEeiHxtaJPOhGLA" name="Lhs">
+      <nodes xmi:id="_zB3CU7WfEeiHxtaJPOhGLA" name="child2" incoming="_xhA2cLWmEeiV3ZR7k4DLVQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="__qgWILWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+        <attributes xmi:id="_bBY_4Lc0EeiYLM5pT2OaBA" value="childName2">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zB3CVLWfEeiHxtaJPOhGLA" name="child1" incoming="_yHxUcLWmEeiV3ZR7k4DLVQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="__D3M4LWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+        <attributes xmi:id="_Z9AxwLc0EeiYLM5pT2OaBA" value="childName1">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_uMPTALWmEeiV3ZR7k4DLVQ" outgoing="_xhA2cLWmEeiV3ZR7k4DLVQ _yHxUcLWmEeiV3ZR7k4DLVQ _RUawELaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+      </nodes>
+      <nodes xmi:id="_O810sLaLEeilKuzrEwthbQ" incoming="_RUawELaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+      </nodes>
+      <edges xmi:id="_xhA2cLWmEeiV3ZR7k4DLVQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_zB3CU7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_yHxUcLWmEeiV3ZR7k4DLVQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_zB3CVLWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_RUawELaLEeilKuzrEwthbQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_O810sLaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/packages"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_6TMh8LWfEeiHxtaJPOhGLA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_6TMh8bWfEeiHxtaJPOhGLA">
+          <conclusion xmi:id="_6TMh8rWfEeiHxtaJPOhGLA">
+            <nodes xmi:id="_zB3CUrWfEeiHxtaJPOhGLA" incoming="_zB3CVbWfEeiHxtaJPOhGLA _zB3CVrWfEeiHxtaJPOhGLA">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
+            </nodes>
+            <nodes xmi:id="_6TMh9bWfEeiHxtaJPOhGLA" outgoing="_zB3CVbWfEeiHxtaJPOhGLA">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <attributes xmi:id="__D4bALWlEeiHxtaJPOhGLA" value="false">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+              </attributes>
+              <attributes xmi:id="_Z9Axwrc0EeiYLM5pT2OaBA" value="childName1">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_6TMh-LWfEeiHxtaJPOhGLA" outgoing="_zB3CVrWfEeiHxtaJPOhGLA">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <attributes xmi:id="__qgWIrWlEeiHxtaJPOhGLA" value="false">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+              </attributes>
+              <attributes xmi:id="_bBY_4rc0EeiYLM5pT2OaBA" value="childName2">
+                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+              </attributes>
+            </nodes>
+            <edges xmi:id="_zB3CVbWfEeiHxtaJPOhGLA" source="_6TMh9bWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+            </edges>
+            <edges xmi:id="_zB3CVrWfEeiHxtaJPOhGLA" source="_6TMh-LWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
+              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_6TMh9rWfEeiHxtaJPOhGLA" origin="_zB3CVLWfEeiHxtaJPOhGLA" image="_6TMh9bWfEeiHxtaJPOhGLA"/>
+          <mappings xmi:id="_6TMh-bWfEeiHxtaJPOhGLA" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_6TMh-LWfEeiHxtaJPOhGLA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_zB3CV7WfEeiHxtaJPOhGLA" name="Rhs">
+      <nodes xmi:id="_zB3CWbWfEeiHxtaJPOhGLA" incoming="_xhDSsLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXbWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="__qgWIbWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+        <attributes xmi:id="_bBY_4bc0EeiYLM5pT2OaBA" value="childName2">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zB3CWrWfEeiHxtaJPOhGLA" incoming="_yHxUcbWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXLWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="__D3z8LWlEeiHxtaJPOhGLA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+        </attributes>
+        <attributes xmi:id="_Z9Axwbc0EeiYLM5pT2OaBA" value="childName1">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zB3CW7WfEeiHxtaJPOhGLA" incoming="_zB3CXLWfEeiHxtaJPOhGLA _zB3CXbWfEeiHxtaJPOhGLA _ysNeQLWmEeiV3ZR7k4DLVQ _zDZ2QLWmEeiV3ZR7k4DLVQ _Se_s0LaLEeilKuzrEwthbQ _S_nGkLaLEeilKuzrEwthbQ" outgoing="_WRq68LaQEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <attributes xmi:id="_FrtDkLWmEeiHxtaJPOhGLA" value="&quot;NewSuperClass&quot;">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_uMP6ELWmEeiV3ZR7k4DLVQ" outgoing="_xhDSsLWmEeiV3ZR7k4DLVQ _yHxUcbWmEeiV3ZR7k4DLVQ _ysNeQLWmEeiV3ZR7k4DLVQ _zDZ2QLWmEeiV3ZR7k4DLVQ _RUbXILaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+      </nodes>
+      <nodes xmi:id="_O83C0LaLEeilKuzrEwthbQ" incoming="_RUbXILaLEeilKuzrEwthbQ" outgoing="_Se_s0LaLEeilKuzrEwthbQ _S_nGkLaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+      </nodes>
+      <nodes xmi:id="_3Y33QLaOEei_2LPeSk39dA" incoming="_WRq68LaQEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <attributes xmi:id="_XRIz4LaQEei_2LPeSk39dA" value="false">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/isStatic"/>
+        </attributes>
+        <attributes xmi:id="_XkRyULaQEei_2LPeSk39dA" value="&quot;TPublic&quot;">
+          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_zB3CXLWfEeiHxtaJPOhGLA" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_zB3CXbWfEeiHxtaJPOhGLA" source="_zB3CWbWfEeiHxtaJPOhGLA" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_xhDSsLWmEeiV3ZR7k4DLVQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_zB3CWbWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_yHxUcbWmEeiV3ZR7k4DLVQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_zB3CWrWfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_ysNeQLWmEeiV3ZR7k4DLVQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_zDZ2QLWmEeiV3ZR7k4DLVQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/classes"/>
+      </edges>
+      <edges xmi:id="_RUbXILaLEeilKuzrEwthbQ" source="_uMP6ELWmEeiV3ZR7k4DLVQ" target="_O83C0LaLEeilKuzrEwthbQ">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph/packages"/>
+      </edges>
+      <edges xmi:id="_Se_s0LaLEeilKuzrEwthbQ" source="_O83C0LaLEeilKuzrEwthbQ" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/ownedTypes"/>
+      </edges>
+      <edges xmi:id="_S_nGkLaLEeilKuzrEwthbQ" source="_O83C0LaLEeilKuzrEwthbQ" target="_zB3CW7WfEeiHxtaJPOhGLA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage/classes"/>
+      </edges>
+      <edges xmi:id="_WRq68LaQEei_2LPeSk39dA" source="_zB3CW7WfEeiHxtaJPOhGLA" target="_3Y33QLaOEei_2LPeSk39dA">
+        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tModifier"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_6HUS4LcwEeiYLM5pT2OaBA" name="forbid type parameter" conditionText="childName1 != &quot;T&quot; &amp;&amp; childName2 != &quot;T&quot; &amp;&amp; childName1 != &quot;Anonymous&quot; &amp;&amp; childName2 != &quot;Anonymous&quot;"/>
+    <mappings xmi:id="_zB3CYLWfEeiHxtaJPOhGLA" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_zB3CWbWfEeiHxtaJPOhGLA"/>
+    <mappings xmi:id="_zB3CYbWfEeiHxtaJPOhGLA" origin="_zB3CVLWfEeiHxtaJPOhGLA" image="_zB3CWrWfEeiHxtaJPOhGLA"/>
+    <mappings xmi:id="_uMP6EbWmEeiV3ZR7k4DLVQ" origin="_uMPTALWmEeiV3ZR7k4DLVQ" image="_uMP6ELWmEeiV3ZR7k4DLVQ"/>
+    <mappings xmi:id="_O83C0baLEeilKuzrEwthbQ" origin="_O810sLaLEeilKuzrEwthbQ" image="_O83C0LaLEeilKuzrEwthbQ"/>
+  </units>
+</henshin:Module>
