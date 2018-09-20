@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -17,6 +19,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
@@ -106,44 +109,63 @@ public class Transformation extends SynchronizationHelper {
 		});
 	}
 
-	public static Model projectToModel(IJavaProject project, IProgressMonitor monitor)
+	/**
+	 * Translates the given java project into an UML model
+	 *  
+	 * @param project The java project
+	 * @param addUMLsec Iff the UMLsec annotations should be added to the java project
+	 * @param monitor A progress monitor
+	 * @return The UML model
+	 * @throws DiscoveryException
+	 * @throws CoreException
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static Model projectToModel(IJavaProject project, boolean addUMLsec, IProgressMonitor monitor)
 			throws DiscoveryException, CoreException, FileNotFoundException, IOException {
 
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
-		subMonitor.setTaskName("Prepare Java Project");
-
+		
 		IProject iproject = project.getProject();
 		IFolder gravityFolder = iproject.getFolder(".gravity");
 		if (!gravityFolder.exists()) {
 			gravityFolder.create(true, true, monitor);
 		}
 
-		IClasspathEntry relativeLibraryEntry = null;
-		IFile annotationsFile = gravityFolder.getFile("org.gravity.annotations.jar");
-		if (!annotationsFile.exists()) {
-			try (InputStream annotations = new URL("platform:/plugin/org.gravity.security.annotations/annotations.jar") //$NON-NLS-1$
-					.openConnection().getInputStream()) {
-				annotationsFile.create(annotations, true, monitor);
-			}
-			relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
-
+		Collection<IPath> libs;
+		if (!addUMLsec) {
+			libs = new ArrayList<>();
 		} else {
-			for (IClasspathEntry entry : project.getRawClasspath()) {
-				if (entry.getPath().makeAbsolute().equals(annotationsFile.getLocation())) {
-					relativeLibraryEntry = entry;
+			subMonitor.setTaskName("Prepare Java Project");
+
+			IClasspathEntry relativeLibraryEntry = null;
+			IFile annotationsFile = gravityFolder.getFile("org.gravity.annotations.jar");
+			if (!annotationsFile.exists()) {
+				try (InputStream annotations = new URL(
+						"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
+								.openConnection().getInputStream()) {
+					annotationsFile.create(annotations, true, monitor);
+				}
+				relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
+
+			} else {
+				for (IClasspathEntry entry : project.getRawClasspath()) {
+					if (entry.getPath().makeAbsolute().equals(annotationsFile.getLocation())) {
+						relativeLibraryEntry = entry;
+					}
+				}
+				if (relativeLibraryEntry == null) {
+					relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
 				}
 			}
-			if (relativeLibraryEntry == null) {
-				relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
-			}
+			libs = Arrays.asList(relativeLibraryEntry.getPath());
+			
+			subMonitor.setWorkRemaining(95);
 		}
-
-		subMonitor.setWorkRemaining(95);
 		subMonitor.setTaskName("Discover MoDiscoModel");
 
 		GravityModiscoProjectDiscoverer discoverer = new GravityModiscoProjectDiscoverer();
-		MGravityModel mGravityModel = discoverer.discoverMGravityModelFromProject(project,
-				Arrays.asList(relativeLibraryEntry.getPath()), subMonitor.split(25));
+		MGravityModel mGravityModel = discoverer.discoverMGravityModelFromProject(project, libs, subMonitor.split(25));
 		Transformation trafo = new Transformation(discoverer.getResourceSet());
 
 		trafo.setSrc(mGravityModel);
@@ -353,20 +375,30 @@ public class Transformation extends SynchronizationHelper {
 	private static IClasspathEntry addLibToClasspath(IJavaProject project, IFile annotationsFile)
 			throws JavaModelException {
 		IClasspathEntry relativeLibraryEntry;
-		relativeLibraryEntry = new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
-				IClasspathEntry.CPE_LIBRARY, annotationsFile.getLocation(), ClasspathEntry.INCLUDE_ALL, // inclusion
-																										// patterns
-				ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
-				null, null, null, // specific output folder
-				false, // exported
-				ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
-				ClasspathEntry.NO_EXTRA_ATTRIBUTES);
+		relativeLibraryEntry = createClassPathEntry(annotationsFile);
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 		newEntries[oldEntries.length] = relativeLibraryEntry;
 		project.setRawClasspath(newEntries, null);
 		return relativeLibraryEntry;
+	}
+
+	/**
+	 * Creates a class path entry for the given file
+	 * 
+	 * @param file The file
+	 * @return The class path entry
+	 */
+	private static ClasspathEntry createClassPathEntry(IFile file) {
+		return new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
+				IClasspathEntry.CPE_LIBRARY, file.getLocation(), ClasspathEntry.INCLUDE_ALL, // inclusion
+																										// patterns
+				ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
+				null, null, null, // specific output folder
+				false, // exported
+				ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
+				ClasspathEntry.NO_EXTRA_ATTRIBUTES);
 	}
 
 	private static Delta getDelta(EObject oldModel, EObject newModel) {

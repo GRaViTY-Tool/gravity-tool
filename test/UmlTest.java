@@ -41,7 +41,7 @@ public class UmlTest {
 		IJavaProject jp = JavaCore.create(project);
 		IJavaProject iJjavaProject = JavaProjectUtil.copyJavaProject(jp, "SecureDependency"+System.currentTimeMillis());
 
-		Model model = Transformation.projectToModel(iJjavaProject, new NullProgressMonitor());
+		Model model = Transformation.projectToModel(iJjavaProject, true, new NullProgressMonitor());
 
 		assertNotNull(model);
 		IFolder folder = iJjavaProject.getProject().getFolder(".gravity");
