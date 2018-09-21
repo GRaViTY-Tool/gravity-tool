@@ -1,6 +1,6 @@
-[submodule "implementation"]
-	path = implementation
-	url = https://github.com/GRaViTY-Tool/gravity-implementation.git
+[submodule "uml tgg"]
+	path = implementation/org.gravity.tgg.modisco.uml
+	url = https://github.com/SvenPeldszus/eMoflon-MoDiscoTGG.git
 [submodule "build"]
 	path = build
 	url = https://github.com/GRaViTY-Tool/gravity-build.git
