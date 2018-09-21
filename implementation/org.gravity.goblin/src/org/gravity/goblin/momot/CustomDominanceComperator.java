@@ -59,13 +59,13 @@ public class CustomDominanceComperator implements DominanceComparator{
 		
 		for (int i = 0; i < solution1.getNumberOfObjectives(); i++) {
 			if(solution1.getObjective(i) < solution2.getObjective(i)) {
-				solution1SingleObjective += SearchParameters.weight[i];		
+				solution1SingleObjective += SearchParameters.weight.get(i);		
 			}
 			else if(solution1.getObjective(i) == solution2.getObjective(i)) {
 				solution1SingleObjective += 0;
 			}
 			else {
-				solution1SingleObjective += - SearchParameters.weight[i];
+				solution1SingleObjective += - SearchParameters.weight.get(i);
 			}
 		}
 		
