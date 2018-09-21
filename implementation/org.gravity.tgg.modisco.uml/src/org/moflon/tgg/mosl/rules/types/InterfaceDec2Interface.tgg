@@ -1,0 +1,42 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InterfaceDec2Interface #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jPackage : Package {
+		++ -ownedElements->bodyDeclaration
+	}
+	
+	++ bodyDeclaration : InterfaceDeclaration
+}
+
+#target {
+	umlPackage : Package {
+		++ -packagedElement->feature
+	}
+	
+	++ feature : Interface
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->jPackage
+		#trg->umlPackage
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+	
+	++ bd2ne : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+	nonParameterizedName(feature.name)
+}

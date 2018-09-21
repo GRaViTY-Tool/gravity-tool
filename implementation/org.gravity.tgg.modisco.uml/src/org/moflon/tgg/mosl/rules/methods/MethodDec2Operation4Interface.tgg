@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule MethodDec2Operation4Interface #extends MethodDec2Operation_Abstract #with org.gravity.tgg.modisco.uml
+
+
+
+#source { 
+
+	classDec : AbstractTypeDeclaration {
+
+	}
+
+}
+
+#target {
+	umlClass : Interface {
+		++ -ownedOperation->feature
+	}
+	
+
+	++ feature : Operation{
+
+	}
+	
+
+}
+
+#correspondence {
+	cd2c : NamedElement2NamedElement {
+		#src->classDec
+		#trg->umlClass
+	}
+
+}
+
+	
+

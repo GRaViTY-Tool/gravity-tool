@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule ClassDecWithModifier2Class #extends ClassDec2Class, Modifier2NamedElement_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

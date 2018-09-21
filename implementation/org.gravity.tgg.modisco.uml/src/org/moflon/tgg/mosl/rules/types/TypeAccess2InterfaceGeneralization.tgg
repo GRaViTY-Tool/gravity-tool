@@ -1,0 +1,49 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2InterfaceGeneralization #with org.gravity.tgg.modisco.uml
+
+#source { 
+	classDec : AbstractTypeDeclaration {
+		++ -superInterfaces->typeAcc
+	}
+	
+	++ typeAcc : TypeAccess {
+		++ -type->superInterfaceDec
+	}
+	
+	superInterfaceDec : Type
+}
+
+#target {
+	umlClass : Classifier {
+		++ -generalization->interfaceGeneralization
+	}
+	
+	++ interfaceGeneralization : Generalization {
+		++ -general->superInterface
+	}
+	
+	superInterface : Interface
+}
+
+#correspondence {
+	cd2c : NamedElement2NamedElement {
+		#src->classDec
+		#trg->umlClass
+	}
+	
+	++ ta2g : TypeAccess2Generalization {
+		#src->typeAcc
+		#trg->interfaceGeneralization
+	}
+	
+	cd2c2 : NamedElement2NamedElement {
+		#src->superInterfaceDec
+		#trg->superInterface
+	}
+}
+
+#attributeConditions {
+	
+}

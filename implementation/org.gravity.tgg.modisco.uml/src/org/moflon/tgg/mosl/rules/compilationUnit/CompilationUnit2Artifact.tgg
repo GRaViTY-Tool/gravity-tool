@@ -1,0 +1,39 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule CompilationUnit2Artifact #with org.gravity.tgg.modisco.uml
+
+#source {
+	jm:Model{
+		++ -compilationUnits -> compilationUnit
+	}
+
+	++compilationUnit:CompilationUnit
+}
+
+#target {
+	um:Model{
+		++ -packagedElement -> artifact
+	}
+
+	++artifact:Artifact
+}
+
+#correspondence {
+	jm2um :JavaModel2UMLPackage{
+		#src->jm
+		#trg->um
+	}
+
+	++c2a:CompilationUnit2Artifact {
+		#src->compilationUnit
+		#trg->artifact
+	}
+}
+
+#attributeConditions {
+	eq(compilationUnit.name, artifact.name)
+	eq(compilationUnit.originalFilePath, artifact.fileName)
+}
+
+

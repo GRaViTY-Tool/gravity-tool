@@ -1,0 +1,19 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Modifier2Feature_Abstract #extends Modifier2NamedElement_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	++modifier:Modifier
+}
+
+#target {
+	++feature:Feature
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+	eq(modifier.static, feature.isStatic)
+}

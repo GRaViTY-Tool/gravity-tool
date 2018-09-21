@@ -1,0 +1,24 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule IgnoreOrphanTypesEdge #with org.gravity.tgg.modisco.uml
+
+#source { 
+	model:Model{
+		++-orphanTypes->pt
+	}
+	
+	pt:ParameterizedType
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

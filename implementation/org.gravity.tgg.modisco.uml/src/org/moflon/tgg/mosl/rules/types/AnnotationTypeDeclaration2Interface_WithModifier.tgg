@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeDeclaration2Interface_WithModifier #extends AnnotationTypeDeclaration2Interface,Modifier2NamedElement_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

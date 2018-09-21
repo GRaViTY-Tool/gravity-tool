@@ -1,0 +1,44 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule JavaAnnotation2Comment_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	type : AnnotationTypeDeclaration {
+		
+	}
+	++ access : TypeAccess {
+		++ -type-> type
+	}
+	++ annotation : MAnnotation {
+		++ -type->access	
+	}
+}
+
+#target {
+	interf : Interface {
+		
+	}
+	++ comment : Comment {
+		++ -annotatedElement-> interf
+		++ -annotatedElement-> element
+	}
+	element : Element {
+		++ -ownedComment-> comment
+	}
+}
+
+#correspondence {
+	type2Interface : NamedElement2NamedElement {
+		#src->type
+		#trg->interf
+	}
+	++ a2c : ASTNode2Element {
+		#src->annotation
+		#trg->comment
+	}
+}
+
+#attributeConditions {
+	eq(comment.body, type.name)
+}
