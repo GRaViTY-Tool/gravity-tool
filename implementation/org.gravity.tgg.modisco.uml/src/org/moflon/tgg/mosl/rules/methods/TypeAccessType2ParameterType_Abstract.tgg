@@ -3,32 +3,42 @@
 
 #abstract #rule TypeAccessType2ParameterType_Abstract #with org.gravity.tgg.modisco.uml
 
-#source { 
-	typeAccess:TypeAccess {
-		++-type->jType
+#source {
+	owner : AbstractTypeDeclaration{
+		-bodyDeclarations->method
 	}
-	
+	method : AbstractMethodDeclaration {
+		
+	}
+	typeAccess:TypeAccess {
+		++-type -> jType
+	}
+
 	jType:Type
 }
 
 #target {
-	operation:Operation{
+	operation:Operation {
 		-ownedParameter -> param
 	}
-	
-	param : Parameter{
-		++-type->uType
+
+	param:Parameter{
+		++-type -> uType
 	}
-	
+
 	uType:Type
 }
 
 #correspondence {
+	method2operation : NamedElement2NamedElement {
+		#src->method
+		#trg->operation
+	}
 	ta2p:TypeAccess2Parameter {
 		#src->typeAccess
 		#trg->param
 	}
-	
+
 	ne2ne:NamedElement2NamedElement {
 		#src->jType
 		#trg->uType
@@ -38,3 +48,5 @@
 #attributeConditions {
 	
 }
+
+

@@ -4,6 +4,9 @@
 #rule VariableDec2Parameter #with org.gravity.tgg.modisco.uml
 
 #source { 
+	owner : AbstractTypeDeclaration {
+		-bodyDeclarations->method
+	}
 	method : AbstractMethodDeclaration {
 		++ -parameters->variableDec
 	}
