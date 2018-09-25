@@ -1,7 +1,7 @@
 package p;
 
 public class OuterClass {
-	public OuterClass( boolean isApplet ) {
+	public void method( boolean isApplet ) {
 		
 		class InnerClass {
             
