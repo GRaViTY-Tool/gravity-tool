@@ -6,7 +6,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.Assignment;
@@ -17,7 +16,6 @@ import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
@@ -32,7 +30,6 @@ import org.eclipse.gmt.modisco.java.TypeLiteral;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
-import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
@@ -205,7 +202,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		}
 
 		if (expression instanceof StringLiteral) {
-			return getOrCreateJavaLangString();
+			return MoDiscoUtil.getOrCreateJavaLangString(model);
 		}
 		if (expression instanceof Assignment) {
 			return getStaticType(((Assignment) expression).getLeftHandSide(), method);
@@ -237,33 +234,4 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 
 		return null;
 	}
-
-	/**
-	 * Searches for the type "java.lang.Sting" and returns it.
-	 * If there is no such type in the model, it is created and returned.
-	 * 
-	 * @return The Type representing "java.lang.String"
-	 */
-	private Type getOrCreateJavaLangString() {
-		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
-		if(string == null) {
-			string = JavaFactory.eINSTANCE.createClassDeclaration();
-			string.setName("String");
-			Package lang = MoDiscoUtil.getPackage(model, new String[] {"java", "lang"});
-			if(lang == null) {
-				Package java = MoDiscoUtil.getPackage(model, new String[] {"java"});
-				if(java == null) {
-					java = JavaFactory.eINSTANCE.createPackage();
-					java.setName("java");
-					model.getOwnedElements().add(java);
-				}
-				lang = JavaFactory.eINSTANCE.createPackage();
-				lang.setName("lang");
-				java.getOwnedPackages().add(java);
-			}
-			lang.getOwnedElements().add(string);
-		}
-		return string;
-	}
-
 }

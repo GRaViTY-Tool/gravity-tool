@@ -1,3 +1,5 @@
+package org.gravity.tgg.modisco.uml.tests;
+
 import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
@@ -27,15 +29,16 @@ import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.tgg.uml.Transformation;
+import org.gravity.tgg.uml.TransformationFailedException;
 import org.junit.Test;
 
 import carisma.profile.umlsec.UmlsecFactory;
 import carisma.profile.umlsec.critical;
 
-public class UmlTest {
+public class UMLsecTest {
 
 	@Test
-	public void test() throws FileNotFoundException, DiscoveryException, CoreException, IOException {
+	public void test() throws FileNotFoundException, DiscoveryException, CoreException, IOException, TransformationFailedException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("SecureDependency");
 		IJavaProject jp = JavaCore.create(project);

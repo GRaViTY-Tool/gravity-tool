@@ -269,6 +269,35 @@ public class MoDiscoUtil {
 	}
 	
 	/**
+	 * Searches for the type "java.lang.Sting" and returns it.
+	 * If there is no such type in the model, it is created and returned.
+	 * @param model The MoDisco model
+	 * 
+	 * @return The Type representing "java.lang.String"
+	 */
+	public static Type getOrCreateJavaLangString(Model model) {
+		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
+		if(string == null) {
+			string = JavaFactory.eINSTANCE.createClassDeclaration();
+			string.setName("String");
+			Package lang = MoDiscoUtil.getPackage(model, new String[] {"java", "lang"});
+			if(lang == null) {
+				Package java = MoDiscoUtil.getPackage(model, new String[] {"java"});
+				if(java == null) {
+					java = JavaFactory.eINSTANCE.createPackage();
+					java.setName("java");
+					model.getOwnedElements().add(java);
+				}
+				lang = JavaFactory.eINSTANCE.createPackage();
+				lang.setName("lang");
+				java.getOwnedPackages().add(java);
+			}
+			lang.getOwnedElements().add(string);
+		}
+		return string;
+	}
+	
+	/**
 	 * Searches for a type in a model
 	 * 
 	 * @param model The model
