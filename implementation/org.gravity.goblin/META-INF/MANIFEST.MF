@@ -34,6 +34,7 @@ Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.defaultprovider,
  com.beust.jcommander.internal,
  com.beust.jcommander.validators,
+ org.gravity.goblin,
  org.gravity.goblin.constraints,
  org.gravity.goblin.fitness,
  org.gravity.goblin.momot;
@@ -53,6 +54,7 @@ Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
    org.moeaframework.util.progress,
    at.ac.tuwien.big.moea.search.algorithm.provider,
    at.ac.tuwien.big.momot.search.fitness,
-   org.eclipse.emf.henshin.interpreter"
+   org.eclipse.emf.henshin.interpreter",
+ org.gravity.goblin.repair
 Bundle-Activator: org.gravity.goblin.GoblinActivator
 Automatic-Module-Name: org.gravity.goblin
