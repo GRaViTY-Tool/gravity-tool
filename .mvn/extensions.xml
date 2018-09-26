@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+  <!-- https://wiki.eclipse.org/Tycho/Release_Notes/0.24#POM-less_Tycho_builds -->
+  <!-- Derived packaging:
+    eclipse-plugin if META-INF/MANIFEST.MF found
+    eclipse-feature if feature.xml found
+    eclipse-test-plugin if Bundle-SymbolicName ending with .tests found in META-INF/MANIFEST.MF 
+  -->
+  <extension>
+    <groupId>org.eclipse.tycho.extras</groupId>
+    <artifactId>tycho-pomless</artifactId>
+    <version>1.0.0</version>
+  </extension>
+</extensions>
