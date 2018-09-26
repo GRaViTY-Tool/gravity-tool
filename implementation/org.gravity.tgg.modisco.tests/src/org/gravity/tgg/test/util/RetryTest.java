@@ -7,13 +7,21 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-//http://stackoverflow.com/a/8301639
+/**
+  * A test rule for retrying a test if an exception is thrown as recommenden in: http://stackoverflow.com/a/8301639
+  *
+  */ 
 public class RetryTest implements TestRule {
 
 	private static final Logger LOGGER = Logger.getLogger(RetryTest.class.getName());
 	
 	private final int retryCount;
 
+	/**
+          * A constructor taking the amount of retries
+          *
+          * @param retryCount The amount how often a test should be retried
+          */	
 	public RetryTest(final int retryCount) {
 		this.retryCount = retryCount;
 	}
@@ -38,7 +46,9 @@ public class RetryTest implements TestRule {
 				}
 				LOGGER.log(Level.ERROR, "\n" + description.getDisplayName() + ": giving up after "
 						+ RetryTest.this.retryCount + " failures.\n");
-				throw caughtThrowable;
+				if(caughtThrowable != null) {
+					throw caughtThrowable;
+				}
 			}
 		};
 
