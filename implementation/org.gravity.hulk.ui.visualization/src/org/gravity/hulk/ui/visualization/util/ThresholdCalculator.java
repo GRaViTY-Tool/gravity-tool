@@ -35,16 +35,20 @@ public class ThresholdCalculator {
 	private static double calculateThresholdValue(boolean isLowThreshold, SortedSet<Double> before,
 			SortedSet<Double> after, double lowestPossibleValue) {
 
-		if (isLowThreshold)
+		if (isLowThreshold) {
 			if (before == null || before.isEmpty())
 				return lowestPossibleValue;
-			else
+			else {
 				return before.last();
+			}
+		}
 		else {
-			if (after == null || after.isEmpty())
+			if (after == null || after.isEmpty()) {
 				return -1;
-			else
+			}
+			else {
 				return after.first();
+			}
 		}
 
 	}
@@ -84,16 +88,21 @@ public class ThresholdCalculator {
 			double index = keys.headSet(i).size();
 			double q = (index + 1) / keys.size();
 
-			if (q < 0.2)
+			if (q < 0.2) {
 				veryLow.add(i);
-			else if (q < 0.4)
+			}
+			else if (q < 0.4) {
 				low.add(i);
-			else if (q < 0.6)
+			}
+			else if (q < 0.6) {
 				medium.add(i);
-			else if (q < 0.8)
+			}
+			else if (q < 0.8) {
 				high.add(i);
-			else
+			}
+			else {
 				veryHigh.add(i);
+			}
 		}
 
 		switch (relativeValue) {
