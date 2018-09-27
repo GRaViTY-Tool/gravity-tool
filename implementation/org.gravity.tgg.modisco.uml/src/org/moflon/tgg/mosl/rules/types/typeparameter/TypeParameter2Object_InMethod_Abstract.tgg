@@ -1,0 +1,27 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule TypeParameter2Object_InMethod_Abstract #extends TypeParameter2Object_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	mowner : AbstractTypeDeclaration {
+		-bodyDeclarations->mmethod
+	}
+	
+	mmethod : AbstractMethodDeclaration {
+		++-typeParameters->mparam
+	}
+
+	++ mparam : TypeParameter
+}
+
+#target {
+}
+
+#correspondence {
+
+}
+
+#attributeConditions {
+
+}
