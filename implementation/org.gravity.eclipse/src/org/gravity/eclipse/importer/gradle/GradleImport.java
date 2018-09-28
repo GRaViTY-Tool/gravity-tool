@@ -685,7 +685,7 @@ public class GradleImport {
 			String name;
 			if (segments.length == 1) {
 				name = segments[0];
-			} else if (segments.length == 3) {
+			} else if (segments.length >= 3) {
 				name = segments[1] + '-' + segments[2];
 			} else {
 				throw new RuntimeException();
