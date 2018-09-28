@@ -43,6 +43,7 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
  *
  */
 public class JavaProjectUtil extends EclipseProjectUtil {
+	
 	/**
 	 * 
 	 * Adds the given class path entries to the classpath of the eclipse java
@@ -100,10 +101,10 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	/**
 	 * Creates a new empty java project in the current workspace
 	 * 
-	 * @param name
-	 * @param monitor
-	 * @return
-	 * @throws DuplicateProjectNameException
+	 * @param name The desired name of the project
+	 * @param monitor A progress monitor
+	 * @return The new java project
+	 * @throws DuplicateProjectNameException If there is already a project with this name
 	 * @throws CoreException
 	 * @throws IOException
 	 */
@@ -151,6 +152,16 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		return javaProject;
 	}
 
+	/**
+	 * Adds the set of Java source files to the given package fragment root
+	 * 
+	 * @param javaSourceFiles The java source files
+	 * @param root The package fragment root
+	 * @param link If the files should be linked or copied to the root
+	 * @param monitor A progress monitor
+	 * @throws CoreException
+	 * @throws IOException
+	 */
 	public static void addJavaSourceFilesToRoot(Collection<Path> javaSourceFiles, IPackageFragmentRoot root,
 			boolean link, IProgressMonitor monitor) throws CoreException, IOException {
 		Hashtable<String, List<Path>> packages = getPackagesOfJavaFiles(javaSourceFiles);

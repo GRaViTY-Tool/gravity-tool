@@ -54,7 +54,6 @@ import org.eclipse.gmt.modisco.java.CompilationUnit;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.ImportDeclaration;
 import org.eclipse.gmt.modisco.java.NamedElement;
-import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.StringLiteral;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
@@ -226,6 +225,15 @@ public class Transformation extends SynchronizationHelper {
 		return libs;
 	}
 
+	/**
+	 * Synchronizes changes from the UML model to the Java project
+	 * 
+	 * @param project The java project
+	 * @param monitor A progress monitor
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @throws CoreException
+	 */
 	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
 			throws FileNotFoundException, IOException, CoreException {
 		Transformation trafo = new Transformation(new ResourceSetImpl());
@@ -437,10 +445,8 @@ public class Transformation extends SynchronizationHelper {
 					break;
 				case MOVE:
 					throw new UnsupportedOperationException();
-					// break;
 				default:
 					throw new UnsupportedOperationException();
-					// break;
 				}
 			}
 		}

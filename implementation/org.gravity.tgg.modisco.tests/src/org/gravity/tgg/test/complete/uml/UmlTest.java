@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.uml.Transformation;
+import org.gravity.tgg.uml.TransformationFailedException;
 
 /**
  * 
@@ -72,7 +73,7 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 					Collections.EMPTY_MAP);
 
 		}
-		catch(RuntimeException e) {
+		catch(TransformationFailedException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			fail = e;
 		}
@@ -84,7 +85,6 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 			IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length -1];
 			int i = 0;
 			for(IClasspathEntry e : oldCp){
-				System.out.println(e);
 				if(!e.getPath().equals(file.getLocation())) {
 					newCp[i++] = e;
 				}

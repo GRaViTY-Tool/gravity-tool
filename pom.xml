@@ -48,16 +48,6 @@
   <build>
     <plugins>
       <plugin>
-        <!-- Docu: https://www.eclipse.org/tycho/sitedocs/tycho-surefire/tycho-surefire-plugin/test-mojo.html -->
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-surefire-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <skipTests>true</skipTests>
-          <!-- <useUIHarness>true</useUIHarness> -->
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>

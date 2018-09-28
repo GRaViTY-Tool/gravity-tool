@@ -136,6 +136,10 @@ public class GradleImport {
 		for (Path root : buildDotGradleFiles) {
 			scanRootForSourceFiles(root.getParent().toFile());
 		}
+		if(javaSourceFiles.size() == 0) {
+			LOGGER.log(Level.ERROR, "No Java source files found!");
+			return null;
+		}
 	
 		IJavaProject project = getProjectWithUniqueName(monitor);
 	

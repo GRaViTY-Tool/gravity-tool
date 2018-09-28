@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.gravity.tgg.modisco.test
-Bundle-SymbolicName: org.gravity.tgg.test;singleton:=true
+Bundle-SymbolicName: org.gravity.tgg.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.gravity.tgg.modisco;bundle-version="1.0.0",
  org.apache.log4j,
