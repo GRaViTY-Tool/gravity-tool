@@ -31,10 +31,10 @@ import at.ac.tuwien.big.momot.util.MomotUtil;
 public class SearchPrinter {
 
 	private static final Logger LOGGER = Logger.getLogger(SearchPrinter.class.getName());
+	private static final double SIGNIFICANCE_LEVEL = 0.01;
 
 	private String baseName;
 	private final TransformationSearchOrchestration orchestration;
-	private double significanceLevel = 0.01;
 
 	/**
 	 * Creates a new instance for printing the given search orchestration
@@ -58,7 +58,7 @@ public class SearchPrinter {
 		analysis.setShowAggregate(true);
 		analysis.setShowIndividualValues(true);
 		analysis.setShowStatisticalSignificance(true);
-		analysis.setSignificanceLevel(significanceLevel);
+		analysis.setSignificanceLevel(SIGNIFICANCE_LEVEL);
 		SearchAnalyzer searchAnalyzer = analysis.analyze();
 		LOGGER.log(Level.INFO, "---------------------------");
 		LOGGER.log(Level.INFO, "Analysis Results");

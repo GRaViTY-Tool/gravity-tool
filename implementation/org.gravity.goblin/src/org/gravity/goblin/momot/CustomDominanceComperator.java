@@ -11,79 +11,73 @@ import org.moeaframework.core.comparator.ParetoObjectiveComparator;
 
 import at.ac.tuwien.big.momot.problem.solution.TransformationSolution;
 
-public class CustomDominanceComperator implements DominanceComparator{
+public class CustomDominanceComperator implements DominanceComparator {
 
-	
-	ParetoObjectiveComparator paretoCompare;
-	
+	private ParetoObjectiveComparator paretoCompare;
+
+	private List<FitnessFunction> fitnessfunctions;
+
+	private double[] initialObjectives;
+
+	/**
+	 * The constructor of the comperator
+	 * 
+	 * @param fitnessfunctions
+	 */
+	public CustomDominanceComperator(List<FitnessFunction> fitnessfunctions) {
+		this.fitnessfunctions = fitnessfunctions;
+	}
+
 	private ParetoObjectiveComparator getParetoCompare() {
-		if(paretoCompare == null) {
+		if (paretoCompare == null) {
 			paretoCompare = new ParetoObjectiveComparator();
 		}
 		return paretoCompare;
 	}
-	
-	
-	List<FitnessFunction> fitnessfunctions;
-	public CustomDominanceComperator(List<FitnessFunction> fitnessfunctions) {
-		this.fitnessfunctions = fitnessfunctions;
-	}
-	
-	double[] initialObjectives;
 
 	private void calculateInititialObjectives(TransformationSolution solution) {
-		int objectivesSize = fitnessfunctions.size()+1;
+		int objectivesSize = fitnessfunctions.size() + 1;
 		initialObjectives = new double[objectivesSize];
-		//number of refactorings
+		// number of refactorings
 		initialObjectives[0] = 0;
-		
-		for(int i = 1; i < objectivesSize; i++) {
-			initialObjectives[i] = fitnessfunctions.get(i-1).calculator.calculate(Utility.getPG(solution.getSourceGraph()));
+
+		for (int i = 1; i < objectivesSize; i++) {
+			initialObjectives[i] = fitnessfunctions.get(i - 1).calculator
+					.calculate(Utility.getPG(solution.getSourceGraph()));
 		}
 	}
-	
+
 	@Override
 	public int compare(Solution solution1, Solution solution2) {
-		
-		if(!(solution1 instanceof TransformationSolution && solution2 instanceof TransformationSolution)) {
+
+		if (!(solution1 instanceof TransformationSolution && solution2 instanceof TransformationSolution)) {
 			return getParetoCompare().compare(solution1, solution2);
 		}
-		
-		
-		if(initialObjectives == null) {
+
+		if (initialObjectives == null) {
 			calculateInititialObjectives((TransformationSolution) solution1);
 		}
-		
+
 		double solution1SingleObjective = 0;
-		//double[] solution1NormalizedObjectives = new double[solution1.getNumberOfObjectives()];
 		
 		for (int i = 0; i < solution1.getNumberOfObjectives(); i++) {
-			if(solution1.getObjective(i) < solution2.getObjective(i)) {
-				solution1SingleObjective += SearchParameters.weight.get(i);		
-			}
-			else if(solution1.getObjective(i) == solution2.getObjective(i)) {
+			if (solution1.getObjective(i) < solution2.getObjective(i)) {
+				solution1SingleObjective += SearchParameters.weight.get(i);
+			} else if (solution1.getObjective(i) == solution2.getObjective(i)) {
 				solution1SingleObjective += 0;
-			}
-			else {
-				solution1SingleObjective += - SearchParameters.weight.get(i);
+			} else {
+				solution1SingleObjective += -SearchParameters.weight.get(i);
 			}
 		}
-		
-		
-		
-		
-		if(solution1SingleObjective < 0) {
+
+		if (solution1SingleObjective < 0) {
 			return -1;
-		} 
-		
-		if(solution1SingleObjective > 0) {
+		}
+
+		if (solution1SingleObjective > 0) {
 			return 1;
-		} 
-		
-		
-		
-		
-		
+		}
+
 		return 0;
 	}
 }

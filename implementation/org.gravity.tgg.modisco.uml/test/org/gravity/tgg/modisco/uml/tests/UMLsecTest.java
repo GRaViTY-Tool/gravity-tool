@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.tgg.uml.Transformation;
-import org.gravity.tgg.uml.TransformationFailedException;
+import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.junit.Test;
 
 import carisma.profile.umlsec.UmlsecFactory;

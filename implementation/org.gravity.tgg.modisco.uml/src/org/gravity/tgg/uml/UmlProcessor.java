@@ -27,6 +27,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.security.annotations.requirements.Critical;
 import org.gravity.security.annotations.requirements.High;
 import org.gravity.security.annotations.requirements.Integrity;
@@ -70,7 +71,7 @@ public class UmlProcessor {
 		}
 	}
 	
-	public boolean processFwd() {
+	public boolean processFwd() throws ProcessingException {
 		for (Element e : model.allOwnedElements()) {
 			if (e instanceof Comment) {
 				Comment comment = (Comment) e;
@@ -90,6 +91,7 @@ public class UmlProcessor {
 						try {
 							Field field = critical.getClass().getDeclaredField(tag.getBody());
 							field.setAccessible(true);
+							@SuppressWarnings("unchecked")
 							EList<String> values = (EList<String>) field.get(critical);
 							if(values == null) {
 								values = new BasicEList<String>();
@@ -124,13 +126,14 @@ public class UmlProcessor {
 							classifier = (Classifier) element.getOwner();
 						}
 						else {
-							throw new RuntimeException();
+							throw new ProcessingException(element);
 						}
 						critical = getCriticalStereotype(classifier);
 					}
 					try {
 						Field field = critical.getClass().getDeclaredField(tag);
 						field.setAccessible(true);
+						@SuppressWarnings("unchecked")
 						EList<String> values = (EList<String>) field.get(critical);
 						if(values == null) {
 							values = new BasicEList<String>();
@@ -147,7 +150,7 @@ public class UmlProcessor {
 		return true;
 	}
 
-	public boolean processBwd() {
+	public boolean processBwd() throws ProcessingException {
 		List<EObject> delete = new LinkedList<>();
 
 		for (Element element : model.allOwnedElements()) {
@@ -201,7 +204,7 @@ public class UmlProcessor {
 
 	private void processBwd(Classifier classifier, Hashtable<String, Element> signatures,
 			Hashtable<String, Comment> tagComments, Comment criticalComment, List<String> tagValues,
-			String memberAnnotationString, String tagString, Interface iface) {
+			String memberAnnotationString, String tagString, Interface iface) throws ProcessingException {
 
 		Comment tagComment = null;
 		for (String value : tagValues) {
@@ -221,7 +224,7 @@ public class UmlProcessor {
 					} else if (Secrecy.class.getSimpleName().equals(memberAnnotationString)) {
 						comment.getAnnotatedElements().add(iSecrecy);
 					} else {
-						throw new RuntimeException();
+						throw new ProcessingException("Unknown UMLsec security level: \""+memberAnnotationString+"\"");
 					}
 					member.getOwnedComments().add(comment);
 				} else {
