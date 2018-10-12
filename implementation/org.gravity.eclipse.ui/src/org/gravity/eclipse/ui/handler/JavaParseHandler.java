@@ -31,6 +31,12 @@ import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/**
+ * A handler for triggering the initial creation of a new pms for the selected projects
+ * 
+ * @author speldszus
+ *
+ */
 public class JavaParseHandler extends AbstractHandler {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaParseHandler.class.getName());

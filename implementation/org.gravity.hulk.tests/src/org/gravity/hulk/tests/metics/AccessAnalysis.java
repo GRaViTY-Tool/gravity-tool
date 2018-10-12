@@ -27,6 +27,7 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.JavaHelper;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
@@ -83,14 +84,14 @@ public class AccessAnalysis {
 	}
 
 	@Test
-	public void test() throws NoConverterRegisteredException, AnalysisException {
+	public void test() throws NoConverterRegisteredException, AnalysisException, TransformationFailedException {
 		IProject iproject = javaProject.getProject();
 		IPGConverter converter = GravityActivator.getDefault().getNewConverter(iproject);
 
 		IProgressMonitor monitor = new NullProgressMonitor();
 		boolean success = converter.convertProject(javaProject, Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
-			throw new RuntimeException("Creating PG from project failed: " + javaProject.getProject().getName());
+			throw new TransformationFailedException("Creating PG from project failed: " + javaProject.getProject().getName());
 		}
 		TypeGraph pg = converter.getPG();
 

@@ -24,11 +24,18 @@ import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
 import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
 import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
+import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.GravityMoDiscoProcessorUtil;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
 
+/**
+ * A discoverer for the GRaViTY extensions to MoDisco
+ * 
+ * @author speldszus
+ *
+ */
 public class GravityModiscoProjectDiscoverer {
 	
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
@@ -46,28 +53,48 @@ public class GravityModiscoProjectDiscoverer {
 
 	private MyDiscoverJavaModelFromJavaProject discoverer;
 	
+	/**
+	 *  The default constructor
+	 */
 	public GravityModiscoProjectDiscoverer() {
 		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
 	}
 	
-	public MGravityModel discoverMGravityModelFromProject(IJavaProject java_project, IProgressMonitor progressMonitor)
+	/**
+	 * Discovers a java project
+	 * 
+	 * @param javaProject The java project
+	 * @param progressMonitor A progress monitor
+	 * @return The discovered MoDisco model with GRaViTY extensions
+	 * @throws DiscoveryException If the discovery fails
+	 */
+	public MGravityModel discoverMGravityModelFromProject(IJavaProject javaProject, IProgressMonitor progressMonitor)
 			throws DiscoveryException {
-		return discoverMGravityModelFromProject(java_project, Collections.emptySet(), progressMonitor);
+		return discoverMGravityModelFromProject(javaProject, Collections.emptySet(), progressMonitor);
 	}
 
-	public MGravityModel discoverMGravityModelFromProject(IJavaProject java_project, Collection<IPath> libs,
+	/**
+	 * Discovers a java project taking additional libs into account
+	 * 
+	 * @param javaProject The java project
+	 * @param libs The locations of the additional libs
+	 * @param progressMonitor A progress monitor
+	 * @return The discovered MoDisco model with GRaViTY extensions
+	 * @throws DiscoveryException If the discovery fails
+	 */
+	public MGravityModel discoverMGravityModelFromProject(IJavaProject javaProject, Collection<IPath> libs,
 			IProgressMonitor progressMonitor) throws DiscoveryException {
 		try {
-			IProject iproject = java_project.getProject();
+			IProject iproject = javaProject.getProject();
 			iproject.refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.WARN, "The project couldn't be refreshed before discovery: "+e.getMessage(), e);
 		}
 		
 		long t0 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t0 + " MoDisco discover project: " + java_project.getProject().getName());
+		LOGGER.log( Level.INFO, t0 + " MoDisco discover project: " + javaProject.getProject().getName());
 		
-		Model eobject = discoverProject(java_project, libs, progressMonitor);
+		Model eobject = discoverProject(javaProject, libs, progressMonitor);
 		
 		long t1 = System.currentTimeMillis();
 		LOGGER.log( Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
@@ -89,15 +116,9 @@ public class GravityModiscoProjectDiscoverer {
 			for (IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD)) {
 				if(!processor.process(model, progressMonitor)) {
 					LOGGER.log( Level.INFO, "ERROR: Preprocessing failed");
-					throw new RuntimeException("Preprocessing failed");
+					throw new DiscoveryException(new ProcessingException("Preprocessing failed"));
 				}
 			}
-			
-//			if (!new GravityMoDiscoPreprocessing().process(model, progressMonitor)) {
-//				LOGGER.log( Level.INFO, "ERROR: Preprocessing failed");
-//				throw new RuntimeException("Preprocessing failed");
-//			}
-
 		} else {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
@@ -163,6 +184,11 @@ public class GravityModiscoProjectDiscoverer {
 		return model;
 	}
 	
+	/**
+	 * A getter for the resource set used at discovery by MoDisco
+	 * 
+	 * @return the resource set
+	 */
 	public ResourceSet getResourceSet() {
 		return this.discoverer.getRS();
 	}
