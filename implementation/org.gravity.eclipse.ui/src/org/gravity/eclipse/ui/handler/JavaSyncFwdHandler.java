@@ -14,11 +14,13 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
+import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
@@ -56,6 +58,8 @@ public class JavaSyncFwdHandler extends AbstractHandler {
 						if (!converter.syncProjectFwd(monitor)) {
 							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 						}
+					} else if (entry instanceof IPackageFragment) {
+						throw new RuntimeException(Messages.JavaParseHandler_1 + entry);
 					} else {
 						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
 						LOGGER.log(Level.ERROR, exception.getMessage());
