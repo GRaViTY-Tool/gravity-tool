@@ -4,30 +4,39 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
-import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/**
+ * A handler for triggering the synchronization of changes on the pm into the source code
+ * 
+ * @author speldszus
+ *
+ */
 public class JavaSyncBwdHandler extends AbstractHandler {
+
+	protected static final Logger LOGGER = Logger.getLogger(JavaSyncBwdHandler.class);
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -41,14 +50,12 @@ public class JavaSyncBwdHandler extends AbstractHandler {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				for (Object entry : selection) {
-					if (entry instanceof IResource) {
-						throw new RuntimeException(Messages.JavaParseHandler_0 + entry);
-					} else if (entry instanceof IJavaProject) {
+					if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
 						IPGConverter converter;
 						try {
 							converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
-						} catch (NoConverterRegisteredException e) {
+						} catch (NoConverterRegisteredException | CoreException e) {
 							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
 						}
 						Consumer<EObject> consumer = IPGConverter -> {
@@ -59,12 +66,12 @@ public class JavaSyncBwdHandler extends AbstractHandler {
 							pg.getPackages().add(createTPackage);
 						};
 						if (!converter.syncProjectBwd(consumer, monitor)) {
-							throw new RuntimeException("No PG has been created");
+							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 						}
-					} else if (entry instanceof IPackageFragment) {
-						throw new RuntimeException(Messages.JavaParseHandler_1 + entry);
-					} else {
-						throw new RuntimeException(Messages.JavaParseHandler_2 + entry);
+					}  else {
+						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+						LOGGER.log(Level.ERROR, exception.getMessage(), exception);
+						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
 					}
 				}
 				return Status.OK_STATUS;
@@ -80,7 +87,8 @@ public class JavaSyncBwdHandler extends AbstractHandler {
 	public boolean isEnabled() {
 		try {
 			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
-		} catch (NoConverterRegisteredException e) {
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
 	}
@@ -89,7 +97,8 @@ public class JavaSyncBwdHandler extends AbstractHandler {
 	public boolean isHandled() {
 		try {
 			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
-		} catch (NoConverterRegisteredException e) {
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
 	}

@@ -25,6 +25,12 @@ import org.gravity.eclipse.JavaHelper;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 
+/**
+ * This class provides the functionality to execute eclipse refactorings
+ * 
+ *  @author speldszus
+ *
+ */
 public class EclipseMoveMethodRefactoring {
 	
 	private static final Logger LOGGER = Logger.getLogger(EclipseMoveMethodRefactoring.class.getName());
@@ -42,10 +48,6 @@ public class EclipseMoveMethodRefactoring {
 		if (tSourceClass.isTLib() || tTargetClass.isTLib()) {
 			LOGGER.log(Level.ERROR, "Source or target class is library.");
 			return false;
-		}
-
-		if (types == null) {
-			throw new RuntimeException();
 		}
 
 		IType src = types.get(tSourceClass.getFullyQualifiedName());

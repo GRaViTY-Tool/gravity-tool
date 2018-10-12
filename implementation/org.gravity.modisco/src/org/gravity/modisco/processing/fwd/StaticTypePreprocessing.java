@@ -30,6 +30,7 @@ import org.eclipse.gmt.modisco.java.TypeLiteral;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
@@ -61,7 +62,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return true;
 	}
 
-	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method) {
+	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method) throws ProcessingException {
 		Expression exp = null;
 		Type type = null;
 		if (methodInvoc instanceof MethodInvocation) {
@@ -81,7 +82,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
 			LOGGER.log(Level.ERROR,	"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
-			return null;
+			throw new ProcessingException(methodInvoc);
 		}
 		if (exp == null) {
 			type = method.getAbstractTypeDeclaration();
@@ -93,7 +94,13 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
 		for (AbstractMethodInvocation methodInvoc : method.getAbstractMethodInvocations()) {
-			Type type = getStaticType(methodInvoc, method);
+			Type type;
+			try {
+				type = getStaticType(methodInvoc, method);
+			} catch (ProcessingException e) {
+				LOGGER.log(Level.ERROR, e.getMessage(), e);
+				return false;
+			}
 			if(type == null) {
 				return false;
 			}
@@ -105,7 +112,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return true;
 	}
 
-	private Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model) {
+	private Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model) throws ProcessingException {
 		AbstractMethodDeclaration aMethod = methodInvoc.getMethod();
 		if (aMethod instanceof MMethodDefinition) {
 			return ((MMethodDefinition) aMethod).getReturnType().getType();
@@ -121,7 +128,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return getStaticType(((MethodInvocation) methodInvoc).getExpression(), model);
 	}
 
-	private Type getSingleVarAccessType(SingleVariableAccess expression, MAbstractMethodDefinition method) {
+	private Type getSingleVarAccessType(SingleVariableAccess expression, MAbstractMethodDefinition method) throws ProcessingException {
 		VariableDeclaration var = ((SingleVariableAccess) expression).getVariable();
 		if (var == null) {
 			/*
@@ -135,7 +142,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 			if (container instanceof MethodInvocation) {
 				return ((MethodInvocation) container).getMethod().getAbstractTypeDeclaration();
 			} else {
-				throw new RuntimeException("Preprocessing of unknown construct.");
+				throw new ProcessingException("Preprocessing of unknown construct.");
 			}
 		}
 		Expression init = var.getInitializer();
@@ -175,7 +182,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return null;
 	}
 
-	private Type getStaticType(Expression expression, MAbstractMethodDefinition method) {
+	private Type getStaticType(Expression expression, MAbstractMethodDefinition method) throws ProcessingException {
 		if (expression instanceof FieldAccess) {
 			return getStaticType(((FieldAccess) expression).getExpression(), method);
 		}

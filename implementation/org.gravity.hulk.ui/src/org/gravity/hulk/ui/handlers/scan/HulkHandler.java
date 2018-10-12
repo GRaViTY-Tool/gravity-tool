@@ -332,8 +332,11 @@ public abstract class HulkHandler extends AbstractHandler {
 					try {
 						converter = GravityActivator.getDefault().getNewConverter(project.getProject());
 					} catch (NoConverterRegisteredException e) {
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+						return new Status(Status.ERROR, HulkUiActivator.PLUGIN_ID,
 								"Please install a converter and restart the task.");
+					} catch (CoreException e) {
+						return new Status(Status.ERROR, HulkUiActivator.PLUGIN_ID,
+								"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 					}
 
 					boolean success = converter.convertProject(project, libs, monitor);

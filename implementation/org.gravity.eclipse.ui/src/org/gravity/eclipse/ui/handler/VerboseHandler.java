@@ -9,6 +9,12 @@ import org.eclipse.ui.commands.IElementUpdater;
 import org.eclipse.ui.menus.UIElement;
 import org.gravity.eclipse.GravityActivator;
 
+/**
+ * A handler for switching the verbose state of GRaViTY
+ * 
+ * @author speldszus
+ *
+ */
 public class VerboseHandler extends AbstractHandler implements IElementUpdater {
 
 	@Override

@@ -25,10 +25,17 @@ import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
 import org.gravity.hulk.detection.codesmells.HLowCohesionDetector;
 import org.gravity.hulk.detection.codesmells.HManyParametersDetector;
 import org.gravity.hulk.detection.codesmells.HMuchOverloadingDetector;
+import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.moflon.core.dfs.DepthFirstSearch;
 import org.moflon.core.dfs.DfsFactory;
 import org.moflon.core.dfs.Node;
 
+/**
+ * This class provides the functionality to execute the anti-pattern detection
+ * 
+ * @author speldszus
+ *
+ */
 public class HulkDetector {
 
 	private static final Logger LOGGER = Logger.getLogger( HulkDetector.class.getName() );
@@ -39,10 +46,23 @@ public class HulkDetector {
 	
 	private boolean verbose;
 
+	/**
+	 * Creates a new detection instance disabling verbose
+	 * 
+	 * @param hulk The detection configuration
+	 * @param thresholds The thresholds for the detection
+	 */
 	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds){
 		this(hulk, thresholds, false);
 	}
 	
+	/**
+	 * Creates a new detection instance
+	 * 
+	 * @param hulk The detection configuration
+	 * @param thresholds The thresholds for the detection
+	 * @param verbose The verbose state
+	 */
 	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds, boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
@@ -79,7 +99,7 @@ public class HulkDetector {
 	}
 
 	private void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processed_detectors,
-			boolean verbose) {
+			boolean verbose) throws DetectionFailedException {
 		List<HDetector> sorted = getSorted(detector);
 		for (HDetector n : sorted) {
 			long t2 = 0;
@@ -106,7 +126,8 @@ public class HulkDetector {
 								if (number != null) {
 									relativeDetector.setThreshold(number.doubleValue());
 								} else {
-									throw new RuntimeException();
+									throw new DetectionFailedException("The stored threshold of the metric \""+ key
+											+ "\" is not a double!");
 								}
 							}
 						}
@@ -128,7 +149,7 @@ public class HulkDetector {
 	}
 
 	private boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processed_detectors,
-			boolean verbose) {
+			boolean verbose) throws DetectionFailedException {
 		long h0 = 0;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
@@ -147,26 +168,44 @@ public class HulkDetector {
 		return true;
 	}
 
-	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selected_detectors,
-			Set<HDetector> processed_detectors) {
+	/**
+	 * Executes the anti-pattern detection with the selected detectors on the loaded program model
+	 * 
+	 * @param selection The types of the selected detectors
+	 * @param selectedDetectors This set will contain the instances of the selected detectors after detection.
+	 * @param processedDetectors This set will contain the instances of all executed detectors after detection.
+	 * @return true, iff the detection has been performed successfully
+	 */
+	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selectedDetectors,
+			Set<HDetector> processedDetectors) {
 		Stack<HDetector> worklist = new Stack<>();
 
 		// Fill worklist
 		for (HDetector detector : hulk.getHDetector()) {
 			if (selection.contains(detector.eClass())) {
-				selected_detectors.add(detector);
+				selectedDetectors.add(detector);
 				worklist.add(detector);
 			}
 		}
 
-		if (selected_detectors.size() != selection.size()) {
+		if (selectedDetectors.size() != selection.size()) {
 			LOGGER.log(Level.ERROR, "Not all detecors found.");
 			return false;
 		}
 
-		return detectSelectedAntiPattern(worklist, processed_detectors, this.verbose);
+		try {
+			return detectSelectedAntiPattern(worklist, processedDetectors, this.verbose);
+		} catch (DetectionFailedException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		}
+		return false;
 	}
 
+	/**
+	 * A getter for the default detection thresholds
+	 * 
+	 * @return The defaults
+	 */
 	public static Hashtable<String, String> getDefaultThresholds() {
 		Hashtable<String, String> thresholds = new Hashtable<String, String>();
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());

@@ -31,6 +31,12 @@ import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/**
+ * A handler for triggering the initial creation of a new pms for the selected projects
+ * 
+ * @author speldszus
+ *
+ */
 public class JavaParseHandler extends AbstractHandler {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaParseHandler.class.getName());
@@ -53,13 +59,8 @@ public class JavaParseHandler extends AbstractHandler {
 					}
 					if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
-						try {
-							if (!process(iJavaProject, monitor)) {
-								fails.add(iJavaProject.getProject().getName());
-							}
-						} catch (NoConverterRegisteredException e) {
-							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
-									"Please install a converter and restart the task.");
+						if (!process(iJavaProject, monitor)) {
+							fails.add(iJavaProject.getProject().getName());
 						}
 					} else {
 						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
@@ -72,12 +73,17 @@ public class JavaParseHandler extends AbstractHandler {
 								"Creating PG failed on the follwoing Java projects: " + fails.toString());
 			}
 
-			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor)
-					throws NoConverterRegisteredException {
+			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
 				IProject iProject = iJavaProject.getProject();
 
 				GravityActivator gravityActivator = GravityActivator.getDefault();
-				IPGConverter converter = gravityActivator.getNewConverter(iProject);
+				IPGConverter converter;
+				try {
+					converter = gravityActivator.getNewConverter(iProject);
+				} catch (CoreException | NoConverterRegisteredException e) {
+					LOGGER.log(Level.ERROR, e.getMessage(), e);
+					return false;
+				}
 
 				boolean success = converter.convertProject(iJavaProject, monitor);
 //				gravityActivator.discardConverter(iProject);
@@ -113,7 +119,8 @@ public class JavaParseHandler extends AbstractHandler {
 		GravityActivator gravity = GravityActivator.getDefault();
 		try {
 			return gravity.getSelectedConverterFactory().supportsFWDTrafo();
-		} catch (NoConverterRegisteredException e) {
+		} catch (CoreException | NoConverterRegisteredException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
 	}
@@ -122,7 +129,8 @@ public class JavaParseHandler extends AbstractHandler {
 	public boolean isHandled() {
 		try {
 			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
-		} catch (NoConverterRegisteredException e) {
+		} catch (CoreException | NoConverterRegisteredException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
 	}

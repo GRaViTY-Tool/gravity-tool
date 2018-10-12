@@ -32,6 +32,9 @@ public class ConverterSelection extends ContributionItem {
 		} catch (NoConverterRegisteredException e1) {
 			MessageDialog.openError(getShell(), "No Converter installed", "Please install a converter from the GRaViTY updatesite.");
 			return;
+		} catch (CoreException e) {
+			MessageDialog.openError(getShell(), "Critical ERROR", "The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
+			return;
 		}
 
 		for (IConfigurationElement element : configuration_elements) {

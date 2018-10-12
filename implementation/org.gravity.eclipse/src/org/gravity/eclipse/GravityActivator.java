@@ -102,21 +102,19 @@ public class GravityActivator extends Plugin {
 	/**
 	 * Selects the first converter registered at "org.gravity.eclipse.converters"
 	 * 
-	 * @throws NoConverterRegisteredException
+	 * @throws NoConverterRegisteredException If no converter has been registered at the extension point
+	 * @throws CoreException If the extension point couldn't be read
 	 */
-	private void initializeSelectedConverter() throws NoConverterRegisteredException {
+	private void initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
 		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] configuration_elements = extension_registry
 				.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID);
 		if (configuration_elements.length <= 0) {
 			throw new NoConverterRegisteredException();
 		}
-		try {
 			setSelectedConverterFactory(
 					(IPGConverterFactory) configuration_elements[0].createExecutableExtension("class")); //$NON-NLS-1$
-		} catch (CoreException e) {
-			throw new RuntimeException(e);
-		}
+		
 	}
 
 	/**
@@ -208,9 +206,11 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @param project the project
 	 * @return the converter
-	 * @throws CoreException
+	 * 
+	 * @throws NoConverterRegisteredException If no converter has been registered at the extension point
+	 * @throws CoreException If the extension point couldn't be read
 	 */
-	public IPGConverter getConverter(IProject project) throws NoConverterRegisteredException {
+	public IPGConverter getConverter(IProject project) throws NoConverterRegisteredException, CoreException {
 		String name = project.getName();
 		if (this.converters.containsKey(name)) {
 			IPGConverter converter = this.converters.get(name);
@@ -242,9 +242,11 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @param project the project
 	 * @return the converter
-	 * @throws CoreException
+	 * 
+	 * @throws NoConverterRegisteredException If no converter has been registered at the extension point
+	 * @throws CoreException If the extension point couldn't be read
 	 */
-	public IPGConverter getNewConverter(IProject project) throws NoConverterRegisteredException {
+	public IPGConverter getNewConverter(IProject project) throws NoConverterRegisteredException, CoreException {
 		IPGConverter converter = getSelectedConverterFactory().createConverter(project);
 		converter.setDebug(isVerbose());
 		this.converters.put(project.getName(), converter);
@@ -264,9 +266,11 @@ public class GravityActivator extends Plugin {
 	 * Gets the selected converter factory.
 	 *
 	 * @return the selected converter factory
-	 * @throws CoreException
+	 * 
+	 * @throws NoConverterRegisteredException If no converter has been registered at the extension point
+	 * @throws CoreException If the extension point couldn't be read
 	 */
-	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException {
+	public IPGConverterFactory getSelectedConverterFactory() throws NoConverterRegisteredException, CoreException {
 		if (this.selectedConverterFactory == null) {
 			initializeSelectedConverter();
 		}
