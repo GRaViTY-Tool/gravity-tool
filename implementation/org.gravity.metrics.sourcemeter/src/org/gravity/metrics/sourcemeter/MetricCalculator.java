@@ -16,15 +16,15 @@ import javax.swing.JOptionPane;
  * This class provides the functionality to execute SourceMeter and get values
  * of specific metrics
  * 
- * @see https://www.sourcemeter.com/
+ * https://www.sourcemeter.com/
  * 
  * @author speldszus
  *
  */
 public class MetricCalculator {
 
-	private HashMap<String, String[]> results = new HashMap<>();
-	private HashMap<String, String> unqualified = new HashMap<>();
+	private final HashMap<String, String[]> results = new HashMap<>();
+	private final HashMap<String, String> unqualified = new HashMap<>();
 
 	private static final Logger LOGGER = Logger.getLogger(MetricCalculator.class.getName());
 
@@ -38,7 +38,7 @@ public class MetricCalculator {
 	 *                        should be executed
 	 * @param outputLocation  The location to which sourcemeter should write the
 	 *                        results
-	 * @return
+	 * @return A object describing the results status
 	 */
 	public SourceMeterStatus calculateMetrics(File programLocation, File outputLocation) {
 		File sourcemeterOutputFolder = new File(outputLocation, SRC_METER_FOLDER);
@@ -140,7 +140,7 @@ public class MetricCalculator {
 	/**
 	 * Returns the metric at the given key
 	 * 
-	 * @param index The key of the metric
+	 * @param key The key of the metric
 	 * @return A mapping between the class names and the according values of the
 	 *         requested metric
 	 */
@@ -202,7 +202,7 @@ public class MetricCalculator {
 	/**
 	 * Returns the metric value of a specific class for a metric
 	 * 
-	 * @param fullyqualifiedName The fully qualified name of the class
+	 * @param fullyQualifiedName The fully qualified name of the class
 	 * @param key                The key of the metric
 	 * @return A mapping between the class names and the according values of the
 	 *         requested metric

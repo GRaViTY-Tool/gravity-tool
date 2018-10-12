@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.goblin.Utility;
 import org.gravity.hulk.HulkAPI;
+import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moeaframework.core.Solution;
 
@@ -109,7 +110,11 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 				r = rs.createResource(URI.createURI("pg.xmi"));
 				r.getContents().add(pg);
 			}
-			HulkAPI.detect(pg, "", Blob, LCOM5, IGAM, TotalCoupling, TotalMethodVisibility);
+			try {
+				HulkAPI.detect(pg, "", Blob, LCOM5, IGAM, TotalCoupling, TotalMethodVisibility);
+			} catch (DetectionFailedException e) {
+				throw new RuntimeException(e);
+			}
 
 			double result = delegateEvaluation(solution);
 			if (solution.violatesConstraints()) {

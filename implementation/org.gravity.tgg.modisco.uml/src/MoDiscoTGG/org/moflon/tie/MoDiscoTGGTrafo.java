@@ -2,6 +2,7 @@ package MoDiscoTGG.org.moflon.tie;
 
 import java.io.IOException;
 import org.apache.log4j.BasicConfigurator;
+import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import org.eclipse.emf.ecore.EObject;
@@ -30,6 +31,8 @@ public class MoDiscoTGGTrafo extends SynchronizationHelper{
 	}
 
 	public void performForward() {
+		configurator = new PGSavingConfigurator(this, "instances/pg.xmi");
+		
 		integrateForward();
 
 		saveTrg("instances/fwd.trg.xmi");

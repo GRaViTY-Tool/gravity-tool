@@ -13,7 +13,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.hulk.HulkAPI;
 import org.gravity.hulk.HulkAPI.AntiPatternNames;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
@@ -21,6 +20,7 @@ import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
+import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,13 +56,13 @@ public class HulkApiTest {
 	}
 
 	@Test
-	public void detectBlobs() throws NoConverterRegisteredException {
+	public void detectBlobs() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.Blob);
 		LOGGER.log( Level.INFO, "Number of Blobs = " + results.size());
 	}
 
 	@Test
-	public void detectIGAM() throws NoConverterRegisteredException {
+	public void detectIGAM() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAM);
 		for(HAnnotation hAnnotation : results) {
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
@@ -72,7 +72,7 @@ public class HulkApiTest {
 	}
 
 	@Test
-	public void detectIGAT() throws NoConverterRegisteredException {
+	public void detectIGAT() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAT);
 		for(HAnnotation hAnnotation : results) {
 			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
@@ -82,7 +82,7 @@ public class HulkApiTest {
 	}
 
 	@Test
-	public void detectAll() throws NoConverterRegisteredException {
+	public void detectAll() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.Blob,
 				AntiPatternNames.IGAT, AntiPatternNames.IGAM);
 		int blobs = 0;

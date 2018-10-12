@@ -14,7 +14,6 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -38,6 +37,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.security.analysis.Activator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
@@ -48,6 +48,12 @@ import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.osgi.framework.Bundle;
 
+/**
+ * This class contains an experiment for searching paths from sensitive data to public interfaces not declared with <code>@Api</code>
+ * 
+ * @author speldszus
+ *
+ */
 public class PublicInterfacesAccessHandler extends AbstractHandler {
 
 	private static final Logger LOGGER = Logger.getLogger(PublicInterfacesAccessHandler.class.getName());
@@ -67,15 +73,13 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 					if(monitor.isCanceled()){
 						return Status.CANCEL_STATUS;
 					}
-					if (entry instanceof IResource) {
-						throw new RuntimeException();
-					} else if (entry instanceof IJavaProject) {
+					if (entry instanceof IJavaProject) {
 						IJavaProject iJavaProject = (IJavaProject) entry;
 						process(iJavaProject, monitor);
-					} else if (entry instanceof IPackageFragment) {
-						throw new RuntimeException();
 					} else {
-						throw new RuntimeException();
+						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+						LOGGER.log(Level.ERROR, exception.getMessage());
+						return new Status(Status.ERROR, Activator.PLUGIN_ID, exception.getMessage(), exception);
 					}
 				}
 				return Status.OK_STATUS;

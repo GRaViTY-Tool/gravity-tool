@@ -12,12 +12,15 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
+import org.eclipse.gmt.modisco.java.Javadoc;
 import org.eclipse.gmt.modisco.java.Modifier;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
@@ -67,12 +70,15 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 					AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
 					if (mType != null) {
 						implementingTypes.add(mType);
-					} else if (JavaPackage.eINSTANCE.getAnonymousClassDeclaration()
-							.isSuperTypeOf(mDefinition.eContainer().eClass())) {
-						// Ignore this case
 					} else {
-						LOGGER.log(Level.ERROR, "Couldn't preprocess implemented siganture: " + mSignature);
-						return false;
+						EObject eContainer = mDefinition.eContainer();
+						if (JavaPackage.eINSTANCE.getAnonymousClassDeclaration()
+								.isSuperTypeOf(eContainer.eClass())) {
+							// Ignore this case
+						} else {
+							LOGGER.log(Level.ERROR, "Couldn't preprocess implemented siganture: " + mSignature);
+							return false;
+						}
 					}
 				}
 				mapping.put(mSignature, implementingTypes);
@@ -96,6 +102,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			for (MMethodName mMethodName : model.getMMethodNames()) {
 				if (mMethodName.getMName().equals(mDef.getName())) {
 					mName = mMethodName;
+					continue;
 				}
 			}
 			if (mName != null) {
@@ -106,9 +113,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				mName.setModel(model);
 				model.getMNames().add(mName);
 				mName.getMMethodDefinitions().add(mDef);
-				String mDef_name = mDef.getName();
-				String mName_mName_prime = mDef_name;
-				mName.setMName(mName_mName_prime);
+				mName.setMName(mDef.getName());
 			}
 
 		}
@@ -123,10 +128,10 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				}
 				for (MMethodSignature mSig : mName.getMMethodSignatures()) {
 					if (mSigReturnType.equals(mSig.getReturnType())) {
-
 						if (isParamListEqual(mDef, mSig)) {
 							mSig.getMMethodDefinitions().add(mDef);
 							mSig.getMDefinitions().add(mDef);
+							continue;
 						}
 
 					}
@@ -180,7 +185,13 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		if (mType instanceof MClass) {
 			EList<Type> deps = ((MClass) mType).getDependencies();
 			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
-				deps.add(methodInvocation.getMethod().getAbstractTypeDeclaration());
+				AbstractMethodDeclaration method = methodInvocation.getMethod();
+				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+				if(abstractTypeDeclaration == null && JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
+					LOGGER.log(Level.WARN, "Skipped unresolved method: "+method.getName());
+					continue;
+				}
+				deps.add(abstractTypeDeclaration);
 			}
 			for (SingleVariableAccess methodInvocation : def.getMAbstractFieldAccess()) {
 				VariableDeclaration variable = methodInvocation.getVariable();
@@ -212,15 +223,11 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
-		if (model.getMFieldDefinitions().size() == 0) {
-			model.getMFieldDefinitions().addAll(factory.getFdefs());
-		}
-		if (model.getMMethodDefinitions().size() == 0) {
-			model.getMMethodDefinitions().addAll(factory.getMdefs());
-		}
-		if (model.getMConstructorDefinitions().size() == 0) {
-			model.getMConstructorDefinitions().addAll(factory.getCdefs());
-		}
+		factory.cleanup();
+		model.getMFieldDefinitions().addAll(factory.getFdefs());
+		model.getMMethodDefinitions().addAll(factory.getMdefs());
+		model.getMConstructorDefinitions().addAll(factory.getCdefs());
+		
 //		fixStaticMethodCallOnField(model);
 		if (!preprocessMethods(model) || !preprocessAccesses(model)
 				|| !preprocessImplementedSignatures(model)) {
@@ -250,6 +257,9 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				}
 			} else if (next instanceof Modifier) {
 				checkModifierVisibility((Modifier) next);
+			} else if (next instanceof Javadoc) {
+				EcoreUtil.delete(next, true);
+				
 			}
 			if (monitor.isCanceled()) {
 				return false;

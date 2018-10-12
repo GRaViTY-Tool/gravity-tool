@@ -66,6 +66,8 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
+import org.gravity.eclipse.exceptions.ProcessingException;
+import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.modisco.util.MoDiscoUtil;
@@ -82,7 +84,8 @@ import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.RuntimeFactory;
 
 /**
- * This class provides the API for transforming Java projects into UML models and synchronizing changes
+ * This class provides the API for transforming Java projects into UML models
+ * and synchronizing changes
  * 
  * @author speldszus
  *
@@ -90,7 +93,7 @@ import org.moflon.tgg.runtime.RuntimeFactory;
 public class Transformation extends SynchronizationHelper {
 
 	private static final Logger LOGGER = Logger.getLogger(Transformation.class);
-	
+
 	private static final String PROTOCOL_XMI = "protocol.xmi";
 	private static final String SRC_XMI = "src.xmi";
 	private static final String TRG_XMI = "trg.xmi";
@@ -171,7 +174,11 @@ public class Transformation extends SynchronizationHelper {
 		if (model == null) {
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
-		new UmlProcessor(model).processFwd();
+		try {
+			new UmlProcessor(model).processFwd();
+		} catch (ProcessingException e) {
+			throw new TransformationFailedException(e);
+		}
 
 		subMonitor.setTaskName("Save UML Model");
 		subMonitor.setWorkRemaining(10);
@@ -230,13 +237,16 @@ public class Transformation extends SynchronizationHelper {
 	 * 
 	 * @param project The java project
 	 * @param monitor A progress monitor
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 * @throws CoreException
+	 * @throws TransformationFailedException If the transformation wasn't successful
 	 */
 	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
-			throws FileNotFoundException, IOException, CoreException {
-		Transformation trafo = new Transformation(new ResourceSetImpl());
+			throws TransformationFailedException {
+		Transformation trafo;
+		try {
+			trafo = new Transformation(new ResourceSetImpl());
+		} catch (IOException e) {
+			throw new TransformationFailedException(e);
+		}
 
 		IProject iproject = project.getProject();
 		IFolder gravityFolder = iproject.getFolder(".gravity");
@@ -256,17 +266,29 @@ public class Transformation extends SynchronizationHelper {
 
 		File oldTrgResource = gravityFolder.getFile(TRG_XMI).getLocation().toFile();
 		Resource r = trafo.set.createResource(URI.createFileURI(oldTrgResource.getAbsolutePath()));
-		r.load(Collections.EMPTY_MAP);
+		try {
+			r.load(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			throw new TransformationFailedException(e);
+		}
 
 		EObject oldModel = r.getContents().get(0);
 		EObject newModel = trafo.getTrg();
 
-		oldModel.eResource().save(new FileOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile()),
-				Collections.EMPTY_MAP);
-		newModel.eResource().save(new FileOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile()),
-				Collections.EMPTY_MAP);
+		try {
+			oldModel.eResource().save(new FileOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile()),
+					Collections.EMPTY_MAP);
+			newModel.eResource().save(new FileOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile()),
+					Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			throw new TransformationFailedException(e);
+		}
 
-		new UmlProcessor((Model) newModel).processBwd();
+		try {
+			new UmlProcessor((Model) newModel).processBwd();
+		} catch (ProcessingException e) {
+			throw new TransformationFailedException(e);
+		}
 
 		trafo.delta = getDelta(oldModel, newModel);
 		if (trafo.noChangesWereMade()) {
@@ -288,7 +310,28 @@ public class Transformation extends SynchronizationHelper {
 		trafo.saveCorr(corrFile.getLocation().toFile().getAbsolutePath());
 		trafo.saveSynchronizationProtocol(gravityFolder.getFile(PROTOCOL_XMI).getLocation().toFile().getAbsolutePath());
 
-		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) trafo.getCorr().getSource();
+		trafo.postprocessAdditionsBwd();
+
+		try {
+			IFolder outFile = iproject.getFolder("src");
+			new GenerateJavaExtended(trafo.getSrc(), outFile.getLocation().toFile(), Collections.emptyList())
+					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
+		} catch (IOException e1) {
+			throw new TransformationFailedException(e1);
+		}
+
+		try {
+			iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		} catch (CoreException e) {
+			LOGGER.log(Level.WARN, "The project couldn't be refreshed after sucessfully synchronizing changes into code: "+e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * Postprocesses the transformation
+	 */
+	private void postprocessAdditionsBwd() {
+		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) getCorr().getSource();
 
 		Type string = MoDiscoUtil.getOrCreateJavaLangString(model);
 		ArrayType array = null;
@@ -302,9 +345,10 @@ public class Transformation extends SynchronizationHelper {
 			}
 		}
 
+		SynchronizationProtocol sync = getSynchronizationProtocol();
+		Collection<EObject> additions = delta.getAddedNodes();
 		Hashtable<CompilationUnit, HashSet<NamedElement>> imports = new Hashtable<>();
-		SynchronizationProtocol sync = trafo.getSynchronizationProtocol();
-		for (EObject node : trafo.delta.getAddedNodes()) {
+		for (EObject node : additions) {
 			for (TripleMatch match : sync.getCreatingMatches(node)) {
 				for (EObject eObject : match.getCreatedSrcElts().getNodes()) {
 					if (eObject instanceof Annotation) {
@@ -364,16 +408,6 @@ public class Transformation extends SynchronizationHelper {
 				}
 			}
 		}
-
-		try {
-			IFolder outFile = iproject.getFolder("src");
-			new GenerateJavaExtended(trafo.getSrc(), outFile.getLocation().toFile(), Collections.emptyList())
-					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
-		} catch (IOException e1) {
-			LOGGER.log(Level.ERROR, e1.getMessage(), e1);
-		}
-
-		iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 	}
 
 	private static IClasspathEntry addLibToClasspath(IJavaProject project, IFile annotationsFile)
@@ -479,7 +513,8 @@ public class Transformation extends SynchronizationHelper {
 			ResourceSet resourceSet = refChange.getValue().eResource().getResourceSet();
 			ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(resourceSet);
 			if (adapter == null) {
-				resourceSet.eAdapters().add(new ECrossReferenceAdapter());
+				adapter = new ECrossReferenceAdapter();
+				resourceSet.eAdapters().add(adapter);
 			}
 			for (Setting setting : adapter.getInverseReferences(value)) {
 				if (setting.getEStructuralFeature().equals(reference)) {

@@ -85,10 +85,10 @@ public class GradleImport {
 	 * @param rootDir the path to the gradle root directory
 	 * @throws NoGradleRootFolderException iff the given root directory is not the
 	 *                                     root of a gradle project
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public GradleImport(File rootDir) throws NoGradleRootFolderException, IOException {
-		
+
 		LinkedList<File> queue = new LinkedList<File>();
 		queue.add(rootDir);
 		File root = null;
@@ -109,15 +109,16 @@ public class GradleImport {
 		}
 		this.rootDir = root;
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
-		
+
 		initGradleHome();
 	}
 
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
-	 * @param ignoreBuildErrors If set to true gradle project are imported even if there are build errors
-	 * @param monitor A progress monitor
+	 * @param ignoreBuildErrors If set to true gradle project are imported even if
+	 *                          there are build errors
+	 * @param monitor           A progress monitor
 	 * @return The new eclipse java project
 	 * @throws IOException
 	 * @throws CoreException
@@ -129,26 +130,26 @@ public class GradleImport {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
-	
+
 		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
 		androidApp = appliedPlugins.contains("com.android.application");
-	
+
 		for (Path root : buildDotGradleFiles) {
 			scanRootForSourceFiles(root.getParent().toFile());
 		}
-		if(javaSourceFiles.size() == 0) {
+		if (javaSourceFiles.size() == 0) {
 			LOGGER.log(Level.ERROR, "No Java source files found!");
 			return null;
 		}
-	
+
 		IJavaProject project = getProjectWithUniqueName(monitor);
-	
+
 		if (androidApp) {
 			javaSourceFiles.addAll(getRClasses(buildDotGradleFiles));
 		}
-		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles, project.getPackageFragmentRoot(project.getProject().getFolder("src")),
-				LINKONPROJECT, monitor);
-	
+		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles,
+				project.getPackageFragmentRoot(project.getProject().getFolder("src")), LINKONPROJECT, monitor);
+
 		// build gradle project
 		try {
 			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
@@ -157,11 +158,11 @@ public class GradleImport {
 		} catch (UnsupportedOperationSystemException e1) {
 			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
 		}
-	
+
 		if (androidApp) {
 			linkApkFolderToProject(project, monitor);
 		}
-	
+
 		return addRequiredLibsToProject(project, monitor);
 	}
 
@@ -216,13 +217,13 @@ public class GradleImport {
 		if (!outputLocationFolder.exists()) {
 			outputLocationFolder.create(true, true, monitor);
 		}
-		outputLocationFolder.getFolder("apk").createLink(
-				new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
-				monitor);
+		outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()),
+				IResource.ALLOW_MISSING_LOCAL, monitor);
 	}
 
 	/**
-	 * Creates and initializes a new java project for the gradle project with a new unused name
+	 * Creates and initializes a new java project for the gradle project with a new
+	 * unused name
 	 * 
 	 * @param monitor A progress monitor
 	 * @return A new java project
@@ -443,16 +444,15 @@ public class GradleImport {
 		File buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
 			buildDotGradleFiles.add(buildFile.toPath());
-		}
-		else {
+		} else {
 			throw new NoGradleRootFolderException();
 		}
-		
+
 		File settingsFile = new File(rootDir, "settings.gradle");
 		if (settingsFile.exists()) {
 			String settingsContentString;
 			try (BufferedReader reader = new BufferedReader(new FileReader(settingsFile))) {
-				
+
 				StringBuilder contents = new StringBuilder();
 				String line;
 				while ((line = reader.readLine()) != null) {
@@ -461,7 +461,7 @@ public class GradleImport {
 				}
 				settingsContentString = contents.toString();
 			}
-			
+
 			Hashtable<String, String> defs = new Hashtable<>();
 
 			// 1. get all variable definitions
@@ -472,24 +472,25 @@ public class GradleImport {
 
 			// 2. Search for includes
 			buildDotGradleFiles.addAll(searchIncludes(settingsContentString, rootDir, defs));
-			
+
 		}
 		return buildDotGradleFiles;
 	}
 
 	/**
-	 * Searches for includes in the settings file and adds those build.gradle files to the set of build.gradle files
+	 * Searches for includes in the settings file and adds those build.gradle files
+	 * to the set of build.gradle files
 	 * 
 	 * @param contentString The content of the settings file
-	 * @param rootDir The gradle root dir
-	 * @param defs A table of defined vars
+	 * @param rootDir       The gradle root dir
+	 * @param defs          A table of defined vars
 	 * @throws IOException
 	 * @throws NoGradleRootFolderException
 	 */
 	private Set<Path> searchIncludes(String contentString, File rootDir, Hashtable<String, String> defs)
 			throws IOException, NoGradleRootFolderException {
-		Set<Path>buildDotGradleFiles = new HashSet<Path>();
-		
+		Set<Path> buildDotGradleFiles = new HashSet<Path>();
+
 		Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
 		while (includeMatcher.find()) {
 			String match = includeMatcher.group(3);
@@ -688,7 +689,7 @@ public class GradleImport {
 			} else if (segments.length >= 3) {
 				name = segments[1] + '-' + segments[2];
 			} else {
-				throw new RuntimeException();
+				throw new IllegalAccessError("The lib \"" + lib + "\" doesn't has the expected amount of segments");
 			}
 			for (String segment : segments) {
 				File tmpLibFile = new File(libFile, segment);
@@ -699,7 +700,7 @@ public class GradleImport {
 				}
 			}
 			if (libFile.exists()) {
-				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar","aar"));
+				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar", "aar"));
 				Files.walkFileTree(libFile.toPath(), extensionFileVisitor);
 				List<Path> files = extensionFileVisitor.getFiles();
 				if (files.size() == 1) {
@@ -721,10 +722,10 @@ public class GradleImport {
 	/**
 	 * Discovers new libs from the given pom file
 	 * 
-	 * @param pom The pom file
+	 * @param pom       The pom file
 	 * @param cacheFile A cache of already discovered libs
-	 * @param results A mapping between libs and their locations
-	 * @param newLibs The set of newly discovered libs
+	 * @param results   A mapping between libs and their locations
+	 * @param newLibs   The set of newly discovered libs
 	 */
 	private void parsePomFile(File pom, File cacheFile, Hashtable<String, Path> results, HashSet<String> newLibs) {
 		try {

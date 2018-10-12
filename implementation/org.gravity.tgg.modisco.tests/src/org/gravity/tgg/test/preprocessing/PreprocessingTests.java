@@ -43,6 +43,12 @@ public class PreprocessingTests {
 	@Rule
 	public TestRule ruleChain = RuleChain.outerRule(TESTLOG).around(RETRY);
 
+	private final TestBody testcase;
+
+	public PreprocessingTests(final String fileName, final TestBody testcase) {
+		this.testcase = testcase;
+	}
+
 	@Parameters(name = "{index}: Preprocessing: {0}")
 	public static Iterable<Object[]> data() {
 		final List<Object[]> testcases = new ArrayList<>();
@@ -69,13 +75,40 @@ public class PreprocessingTests {
 		return testcases;
 	}
 
+	@Test
+	public void testForward() {
+	
+		final EList<Diff> diffs = this.compare();
+	
+		if (!diffs.isEmpty()) {
+			final StringBuilder errorMsg = new StringBuilder(
+					"Expected: Generated model and expected model are equal. But: detected some differences:\n");
+	
+			boolean more = false;
+			for (final Diff diff : diffs) {
+	
+				if (more) {
+					errorMsg.append('\n');
+				} else {
+					more = true;
+				}
+	
+				errorMsg.append(diff);
+			}
+	
+			// TODO: Enable AssertionError as soon as reliable compare is available
+			// throw new AssertionError(errorMsg);
+		}
+	
+	}
+
 	/**
 	 * Crates test bodies from the detected test files
 	 * 
 	 * @param xmiFolder The folder with the input models
 	 * @param logFolder The folder to which should be logged
 	 * @param detectedExpectedResults The folder with the expected results
-	 * @return
+	 * @return A list of all tests
 	 */
 	private static List<TestBody> getTestBodies(final Path xmiFolder, final Path logFolder,
 			final LinkedList<Path> detectedExpectedResults) {
@@ -108,39 +141,6 @@ public class PreprocessingTests {
 			throw new IllegalArgumentException(e);
 		}
 		return detectedExpectedResults;
-	}
-
-	private final TestBody testcase;
-
-	public PreprocessingTests(final String fileName, final TestBody testcase) {
-		this.testcase = testcase;
-	}
-
-	@Test
-	public void testForward() {
-
-		final EList<Diff> diffs = this.compare();
-
-		if (!diffs.isEmpty()) {
-			final StringBuilder errorMsg = new StringBuilder(
-					"Expected: Generated model and expected model are equal. But: detected some differences:\n");
-
-			boolean more = false;
-			for (final Diff diff : diffs) {
-
-				if (more) {
-					errorMsg.append('\n');
-				} else {
-					more = true;
-				}
-
-				errorMsg.append(diff);
-			}
-
-			// TODO: Enable AssertionError as soon as reliable compare is available
-			// throw new AssertionError(errorMsg);
-		}
-
 	}
 
 	private EList<Diff> compare() {

@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.uml.Transformation;
-import org.gravity.tgg.uml.TransformationFailedException;
+import org.gravity.eclipse.exceptions.TransformationFailedException;
 
 /**
  * 
@@ -56,8 +56,8 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	@Override
 	public void testForward() throws FileNotFoundException, DiscoveryException, CoreException, IOException {
 		String trg = createTrgName(name, UMLResource.FILE_EXTENSION);
-		System.out.println(trg);
-		
+		LOGGER.log(Level.INFO, trg);
+
 		deleteFile(createSrcName(name, UMLResource.FILE_EXTENSION));
 		deleteFile(trg);
 		deleteFile(createCorrName(name, UMLResource.FILE_EXTENSION));
@@ -69,31 +69,29 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 			Model model = Transformation.projectToModel(project, ADD_UMLSEC, monitor);
 			assertNotNull(model);
 
-			model.eResource().save(new FileOutputStream(trg),
-					Collections.EMPTY_MAP);
+			model.eResource().save(new FileOutputStream(trg), Collections.EMPTY_MAP);
 
-		}
-		catch(TransformationFailedException e) {
+		} catch (TransformationFailedException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			fail = e;
 		}
-				
+
 		IFile file = project.getProject().getFolder(".gravity").getFile("org.gravity.annotations.jar");
 		IClasspathEntry cpe = project.getClasspathEntryFor(file.getLocation());
-		if(cpe!= null) {
+		if (cpe != null) {
 			IClasspathEntry[] oldCp = project.getRawClasspath();
-			IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length -1];
+			IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length - 1];
 			int i = 0;
-			for(IClasspathEntry e : oldCp){
-				if(!e.getPath().equals(file.getLocation())) {
+			for (IClasspathEntry e : oldCp) {
+				if (!e.getPath().equals(file.getLocation())) {
 					newCp[i++] = e;
 				}
 			}
 			project.setRawClasspath(newCp, monitor);
 		}
 		file.delete(true, monitor);
-		
-		if(fail != null) {
+
+		if (fail != null) {
 			throw new AssertionError(fail.getMessage(), fail);
 		}
 	}

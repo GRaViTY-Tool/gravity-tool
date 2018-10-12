@@ -49,11 +49,11 @@ public class SelectionHelper {
 				}
 			}
 			else if (entry instanceof IPackageFragment) {
-				throw new RuntimeException(Messages.JavaParseHandler_1 + entry);
+				throw new IllegalArgumentException(Messages.JavaParseHandler_1 + entry);
 			} else if (entry instanceof IResource) {
-				throw new RuntimeException(Messages.JavaParseHandler_0 + entry);
+				throw new IllegalArgumentException(Messages.JavaParseHandler_0 + entry);
 			} else {
-				throw new RuntimeException(Messages.JavaParseHandler_2 + entry);
+				throw new IllegalArgumentException(Messages.JavaParseHandler_2 + entry);
 			}
 		}
 

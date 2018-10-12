@@ -1,4 +1,4 @@
-package org.gravity.typegraph.basic.compare;
+package org.gravity.typegraph.basic.exceptions;
 
 import java.util.Hashtable;
 import org.apache.log4j.Level;
@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.gravity.typegraph.basic.compare.UnsupportetElementException;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
