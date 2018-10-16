@@ -1,12 +1,10 @@
 package org.gravity.eclipse.ui.handler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
@@ -20,10 +18,6 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
@@ -37,46 +31,19 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  *
  */
-public class JavaParseHandler extends AbstractHandler {
+public class JavaParseHandler extends TransformationHandler {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaParseHandler.class.getName());
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		ISelectionService service = window.getSelectionService();
-		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
-		if(structured == null) {
-			throw new ExecutionException("No projects have been selected for discovery!");
-		}
-		List<Object> selection = Arrays.asList(structured.toArray());
+		List<Object> selection = getSelection(event);
 
-		Job job = new PGCreatorJob("GRaViTY Create PG", selection);
+		Job job = new PGCreatorJob(selection);
 		job.setUser(true);
 		job.schedule();
 
 		return null;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		GravityActivator gravity = GravityActivator.getDefault();
-		try {
-			return gravity.getSelectedConverterFactory().supportsFWDTrafo();
-		} catch (CoreException | NoConverterRegisteredException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
-	}
-
-	@Override
-	public boolean isHandled() {
-		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
-		} catch (CoreException | NoConverterRegisteredException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			return false;
-		}
 	}
 
 	/**
@@ -88,8 +55,8 @@ public class JavaParseHandler extends AbstractHandler {
 	private final class PGCreatorJob extends Job {
 			private final List<Object> selection;
 	
-			private PGCreatorJob(String name, List<Object> selection) {
-				super(name);
+			private PGCreatorJob(List<Object> selection) {
+				super("GRaViTY Create PG");
 				this.selection = selection;
 			}
 	
