@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -41,6 +42,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.io.ZipUtil;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.JavaProjectUtil;
@@ -62,6 +64,7 @@ public class GradleImport {
 
 	private final Set<Path> javaSourceFiles = new HashSet<Path>();
 	private final Set<Path> buildDotGradleFiles;
+	private final Set<Path> includes;
 
 	private Set<String> appliedPlugins;
 
@@ -108,6 +111,7 @@ public class GradleImport {
 			throw new NoGradleRootFolderException();
 		}
 		this.rootDir = root;
+		this.includes = new HashSet<>();
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
 
 		initGradleHome();
@@ -134,8 +138,8 @@ public class GradleImport {
 		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
 		androidApp = appliedPlugins.contains("com.android.application");
 
-		for (Path root : buildDotGradleFiles) {
-			scanRootForSourceFiles(root.getParent().toFile());
+		for (Path root : includes) {
+			scanRootForSourceFiles(root.toFile());
 		}
 		if (javaSourceFiles.size() == 0) {
 			LOGGER.log(Level.ERROR, "No Java source files found!");
@@ -388,14 +392,13 @@ public class GradleImport {
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
 		Set<String> appliedPlugins = new HashSet<>();
 		for (Path path : buildDotGradleFiles) {
-			try (BufferedReader in = new BufferedReader(new FileReader(path.toFile()))) {
-				String line;
-				while ((line = in.readLine()) != null) {
+			try (Stream<String> lines = Files.lines(path)) {
+				lines.forEach(line -> {
 					Matcher androidMatcher = GradleRegexPatterns.PLUGIN.matcher(line);
 					while (androidMatcher.find()) {
 						appliedPlugins.add(androidMatcher.group(2));
 					}
-				}
+				});
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e);
 			}
@@ -450,17 +453,7 @@ public class GradleImport {
 
 		File settingsFile = new File(rootDir, "settings.gradle");
 		if (settingsFile.exists()) {
-			String settingsContentString;
-			try (BufferedReader reader = new BufferedReader(new FileReader(settingsFile))) {
-
-				StringBuilder contents = new StringBuilder();
-				String line;
-				while ((line = reader.readLine()) != null) {
-					contents.append(line);
-					contents.append('\n');
-				}
-				settingsContentString = contents.toString();
-			}
+			String settingsContentString = FileUtils.getContentsAsString(settingsFile);
 
 			Hashtable<String, String> defs = new Hashtable<>();
 
@@ -522,7 +515,12 @@ public class GradleImport {
 					}
 				}
 				if (nextRoot != null) {
-					buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+					includes.add(nextRoot.toPath());
+					try {
+						buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+					} catch (NoGradleRootFolderException e) {
+						LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
+					}
 				}
 			}
 		}
@@ -551,17 +549,7 @@ public class GradleImport {
 		ArrayList<String> parsedBuildFiles = new ArrayList<String>(buildDotGradleFiles.size());
 
 		for (Path path : buildDotGradleFiles) {
-			try (BufferedReader in = new BufferedReader(new FileReader(path.toFile()))) {
-
-				StringBuilder contentBuilder = new StringBuilder();
-				String line;
-				while ((line = in.readLine()) != null) {
-					contentBuilder.append(line);
-					contentBuilder.append('\n');
-				}
-
-				parsedBuildFiles.add(contentBuilder.toString());
-			}
+			parsedBuildFiles.add(FileUtils.getContentsAsString(path.toFile()));
 		}
 		for (String content : parsedBuildFiles) {
 			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);

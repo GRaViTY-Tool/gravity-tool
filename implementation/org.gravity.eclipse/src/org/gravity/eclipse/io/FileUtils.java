@@ -1,6 +1,9 @@
 package org.gravity.eclipse.io;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -59,5 +62,28 @@ public class FileUtils {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Reads the contents from the given file and returns them as single string
+	 * 
+	 * @param file The file containing contents
+	 * @return The content of the file
+	 * @throws IOException If an I/O error occurs
+	 * @throws FileNotFoundException Iff the file doesn't exists
+	 */
+	public static String getContentsAsString(File file) throws IOException, FileNotFoundException {
+		String settingsContentString;
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+	
+			StringBuilder contents = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				contents.append(line);
+				contents.append('\n');
+			}
+			settingsContentString = contents.toString();
+		}
+		return settingsContentString;
 	}
 }
