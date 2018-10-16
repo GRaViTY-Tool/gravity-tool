@@ -1,10 +1,8 @@
 package org.gravity.eclipse.importer.gradle;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -76,7 +74,7 @@ public class GradleImport {
 	private static final String ANDROID_SDK_PLATFORMS = "platforms";
 	private static final boolean LINKONPROJECT = false;
 
-	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	static final Logger LOGGER = Logger.getLogger(GradleImport.class);
 
 	/**
 	 * Creates an importer for the given gradle root directory of a gradle project
@@ -149,7 +147,7 @@ public class GradleImport {
 		IJavaProject project = getProjectWithUniqueName(monitor);
 
 		if (androidApp) {
-			javaSourceFiles.addAll(getRClasses(buildDotGradleFiles));
+			javaSourceFiles.addAll(GradleAndroid.getRClasses(buildDotGradleFiles));
 		}
 		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles,
 				project.getPackageFragmentRoot(project.getProject().getFolder("src")), LINKONPROJECT, monitor);
@@ -341,52 +339,6 @@ public class GradleImport {
 			}
 		}
 		return jarFiles;
-	}
-
-	private static Set<Path> getRClasses(Set<Path> buildDotGradleFiles) throws IOException {
-		Set<Path> classes = new HashSet<Path>();
-		for (Path buildDotGradle : buildDotGradleFiles) {
-			File mainFolder = new File(buildDotGradle.getParent().toFile(), "src/main");
-			if (mainFolder.exists() && mainFolder.isDirectory()) {
-				File manifestFile = new File(mainFolder, "AndroidManifest.xml");
-				if (manifestFile.exists()) {
-					File rFile = searchRClassInAdroidMainfest(manifestFile, buildDotGradle.getParent().toFile());
-
-					if (rFile != null) {
-						if (rFile.exists()) {
-							classes.add(rFile.toPath());
-						} else {
-							LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
-						}
-					} else {
-						LOGGER.log(Level.WARN, "No R.java file found");
-					}
-				}
-			}
-		}
-		return classes;
-	}
-
-	private static File searchRClassInAdroidMainfest(File manifestFile, File gradleRoot) throws IOException {
-		try {
-			Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(manifestFile);
-			document.getDocumentElement().normalize();
-			NodeList manifest = document.getElementsByTagName("manifest");
-			Node attribute = manifest.item(0).getAttributes().getNamedItem("package");
-			String basePackage = attribute.getNodeValue();
-			File rFolder = new File(gradleRoot, "build/generated/source/r");
-			File releaseFolder;
-			if (!(releaseFolder = new File(rFolder, "release")).exists()) {
-				if (!(releaseFolder = new File(rFolder, "debug")).exists()) {
-					LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
-					return null;
-				}
-			}
-			return new File(new File(releaseFolder, basePackage.replace('.', '/')), "R.java");
-		} catch (ParserConfigurationException | SAXException e) {
-			LOGGER.log(Level.ERROR, e);
-		}
-		return null;
 	}
 
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {

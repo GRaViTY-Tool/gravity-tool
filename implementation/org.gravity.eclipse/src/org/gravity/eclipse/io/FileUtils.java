@@ -6,13 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
-import java.util.List;
-import java.util.regex.Pattern;
-
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.gravity.eclipse.os.OperationSystem;
 
 /**
  * 
@@ -28,39 +27,46 @@ public class FileUtils {
 	/**
 	 * Replaces the line endings with the endings of the current system
 	 * 
-	 * Currently only Windows and Linux are supported
-	 * 
 	 * @param file - The file
 	 * @return true, if the endings have been replaced successfully
-	 * @throws IOException - if an I/O error occurs writing to or creating the file,
-	 *                     or the text cannot be encoded as UTF-8
+	 * @throws IOException Iff the original file has been lost due to an error
 	 */
 	public static boolean changeToOSEncoding(File file) throws IOException {
-		String regex;
-		String replacement;
-		switch (OperationSystem.os) {
-		case WINDOWS:
-			regex = "(?<!\\r)\\n";
-			replacement = "\\r\\n";
-			break;
-		case LINUX:
-			regex = "\\r\\n?";
-			replacement = "\\n";
-			break;
-		default:
-			LOGGER.log(Level.WARN, "WARNING: Lineendings of \"" + file.toString()
-					+ "\" haven't been changed due to a unsupported operation sytem.");
+		Path tempFile = null;
+		try {
+			// move the file to a temporary file
+			tempFile = Files.move(file.toPath(), Files.createTempFile("gravity", null), StandardCopyOption.REPLACE_EXISTING);
+			tempFile.toFile().deleteOnExit();
+			// print all lines to the original location using system encoding
+			try (PrintWriter stream = new PrintWriter(new FileWriter(file, true))) {
+				Files.lines(tempFile).forEach(s->{
+					stream.println(s);
+				});
+			}
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
+			try {
+				// Try to recover file
+				if(tempFile != null) {
+					Files.move(tempFile, file.toPath());
+				}
+			} catch (IOException e2) {
+				// Iff recover wasn't possible throw original error
+				throw new IOException("A copy of the orgiginal file is maybe present at: "+tempFile.toString(), e);
+			}
 			return false;
 		}
-		Pattern pattern = Pattern.compile(regex);
-		List<String> lines = Files.readAllLines(file.toPath());
-		file.delete();
-		try (FileWriter stream = new FileWriter(file, true)) {
-			for (String s : lines) {
-				stream.write(pattern.matcher(s).replaceAll(replacement));
-			}
+		// delete the temp file
+		try {
+			Files.deleteIfExists(tempFile);
 		}
-
+		catch(IOException e) {
+			/* 
+			 * As the temporal files will be deleted anyways we currently only log a warning.
+			 * However, sensitive data might be leaked this way!
+			 */ 
+			LOGGER.log(Level.WARN, "The temporal copy of a file couldn't be deleted: "+e.getMessage(), e);
+		}
 		return true;
 	}
 
@@ -69,13 +75,13 @@ public class FileUtils {
 	 * 
 	 * @param file The file containing contents
 	 * @return The content of the file
-	 * @throws IOException If an I/O error occurs
+	 * @throws IOException           If an I/O error occurs
 	 * @throws FileNotFoundException Iff the file doesn't exists
 	 */
 	public static String getContentsAsString(File file) throws IOException, FileNotFoundException {
 		String settingsContentString;
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-	
+
 			StringBuilder contents = new StringBuilder();
 			String line;
 			while ((line = reader.readLine()) != null) {
