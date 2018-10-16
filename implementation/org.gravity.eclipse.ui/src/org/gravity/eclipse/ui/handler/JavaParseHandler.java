@@ -46,68 +46,12 @@ public class JavaParseHandler extends AbstractHandler {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		ISelectionService service = window.getSelectionService();
 		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
+		if(structured == null) {
+			throw new ExecutionException("No projects have been selected for discovery!");
+		}
 		List<Object> selection = Arrays.asList(structured.toArray());
 
-		Job job = new Job("Create PG") {
-
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				ArrayList<String> fails = new ArrayList<>();
-				for (Object entry : selection) {
-					if (monitor.isCanceled()) {
-						return Status.CANCEL_STATUS;
-					}
-					if (entry instanceof IJavaProject) {
-						IJavaProject iJavaProject = (IJavaProject) entry;
-						if (!process(iJavaProject, monitor)) {
-							fails.add(iJavaProject.getProject().getName());
-						}
-					} else {
-						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
-						LOGGER.log(Level.ERROR, exception.getMessage());
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
-					}
-				}
-				return fails.size() == 0 ? Status.OK_STATUS
-						: new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
-								"Creating PG failed on the follwoing Java projects: " + fails.toString());
-			}
-
-			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
-				IProject iProject = iJavaProject.getProject();
-
-				GravityActivator gravityActivator = GravityActivator.getDefault();
-				IPGConverter converter;
-				try {
-					converter = gravityActivator.getNewConverter(iProject);
-				} catch (CoreException | NoConverterRegisteredException e) {
-					LOGGER.log(Level.ERROR, e.getMessage(), e);
-					return false;
-				}
-
-				boolean success = converter.convertProject(iJavaProject, monitor);
-//				gravityActivator.discardConverter(iProject);
-				if (!success) {
-					LOGGER.log(Level.ERROR, "No PG has been created for " + iProject.getName());
-					return false;
-				}
-				TypeGraph pg = converter.getPG();
-				IFolder folder = iProject.getFolder("gravity");
-				if (!folder.exists()) {
-					try {
-						folder.create(true, true, monitor);
-					} catch (CoreException e) {
-						LOGGER.log(Level.ERROR, "Couldn't create output location: " + folder.getLocation().toString());
-					}
-				}
-				IFile file = folder.getFile(iProject.getName() + ".xmi");
-				URI out = URI.createFileURI(file.getLocation().toString());
-				Resource original = pg.eResource();
-				original.setURI(out);
-				ModelSaver.saveModel(pg, file, monitor);
-				return true;
-			}
-		};
+		Job job = new PGCreatorJob("GRaViTY Create PG", selection);
 		job.setUser(true);
 		job.schedule();
 
@@ -134,4 +78,77 @@ public class JavaParseHandler extends AbstractHandler {
 			return false;
 		}
 	}
+
+	/**
+	 * An implementation of java.lang.Job for creating a PG from  a selection in an eclipse workspace
+	 * 
+	 * @author speldszus
+	 *
+	 */
+	private final class PGCreatorJob extends Job {
+			private final List<Object> selection;
+	
+			private PGCreatorJob(String name, List<Object> selection) {
+				super(name);
+				this.selection = selection;
+			}
+	
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
+				ArrayList<String> fails = new ArrayList<>();
+				for (Object entry : selection) {
+					if (monitor.isCanceled()) {
+						return Status.CANCEL_STATUS;
+					}
+					if (entry instanceof IJavaProject) {
+						IJavaProject iJavaProject = (IJavaProject) entry;
+						if (!process(iJavaProject, monitor)) {
+							fails.add(iJavaProject.getProject().getName());
+						}
+					} else {
+						UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+						LOGGER.log(Level.ERROR, exception.getMessage());
+						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
+					}
+				}
+				return fails.size() == 0 ? Status.OK_STATUS
+						: new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+								"Creating PG failed on the follwoing Java projects: " + fails.toString());
+			}
+	
+			private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
+				IProject iProject = iJavaProject.getProject();
+	
+				GravityActivator gravityActivator = GravityActivator.getDefault();
+				IPGConverter converter;
+				try {
+					converter = gravityActivator.getNewConverter(iProject);
+				} catch (CoreException | NoConverterRegisteredException e) {
+					LOGGER.log(Level.ERROR, e.getMessage(), e);
+					return false;
+				}
+	
+				boolean success = converter.convertProject(iJavaProject, monitor);
+	//				gravityActivator.discardConverter(iProject);
+				if (!success) {
+					LOGGER.log(Level.ERROR, "No PG has been created for " + iProject.getName());
+					return false;
+				}
+				TypeGraph pg = converter.getPG();
+				IFolder folder = iProject.getFolder("gravity");
+				if (!folder.exists()) {
+					try {
+						folder.create(true, true, monitor);
+					} catch (CoreException e) {
+						LOGGER.log(Level.ERROR, "Couldn't create output location: " + folder.getLocation().toString());
+					}
+				}
+				IFile file = folder.getFile(iProject.getName() + ".xmi");
+				URI out = URI.createFileURI(file.getLocation().toString());
+				Resource original = pg.eResource();
+				original.setURI(out);
+				ModelSaver.saveModel(pg, file, monitor);
+				return true;
+			}
+		}
 }
