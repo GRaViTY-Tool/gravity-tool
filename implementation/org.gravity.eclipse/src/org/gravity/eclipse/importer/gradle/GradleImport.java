@@ -71,7 +71,6 @@ public class GradleImport {
 	private final File rootDir;
 
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
-	private static final String ANDROID_SDK_PLATFORMS = "platforms";
 	private static final boolean LINKONPROJECT = false;
 
 	static final Logger LOGGER = Logger.getLogger(GradleImport.class);
@@ -563,7 +562,7 @@ public class GradleImport {
 
 			if (targetSdk != -1) {
 				boolean compAndroidSdk = false;
-				File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
+				File platforms = new File(androidHome, GradleAndroid.ANDROID_SDK_PLATFORMS);
 				for (int i = targetSdk; i >= minSdk; i--) {
 					File androidPlatform = new File(platforms, "android-" + i);
 					File androidJar = new File(androidPlatform, "android.jar");
