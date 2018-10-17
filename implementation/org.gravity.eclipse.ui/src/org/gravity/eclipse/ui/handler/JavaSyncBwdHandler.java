@@ -29,7 +29,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  *
  */
-public class JavaSyncBwdHandler extends TransformationHandler {
+public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 	protected static final Logger LOGGER = Logger.getLogger(JavaSyncBwdHandler.class);
 
@@ -42,6 +42,26 @@ public class JavaSyncBwdHandler extends TransformationHandler {
 		job.schedule();
 
 		return null;
+	}
+	
+	@Override
+	public boolean isEnabled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean isHandled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsBWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
 	}
 
 	/**

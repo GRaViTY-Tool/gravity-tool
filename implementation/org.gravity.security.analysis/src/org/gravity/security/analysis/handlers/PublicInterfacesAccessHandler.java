@@ -14,6 +14,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -94,7 +95,8 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 				IPGConverter converter;
 				try {
 					converter = gravityActivator.getConverter(iProject);
-				} catch (NoConverterRegisteredException e1) {
+				} catch (NoConverterRegisteredException | CoreException e1) {
+					LOGGER.log(Level.ERROR, e1.getMessage(), e1);
 					return false;
 				}
 				

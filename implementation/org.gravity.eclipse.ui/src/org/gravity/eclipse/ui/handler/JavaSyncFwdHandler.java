@@ -26,7 +26,7 @@ import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
  * @author speldszus
  *
  */
-public class JavaSyncFwdHandler extends TransformationHandler {
+public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
 	protected static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
 
@@ -42,6 +42,26 @@ public class JavaSyncFwdHandler extends TransformationHandler {
 
 	}
 
+	@Override
+	public boolean isEnabled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean isHandled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+	}
+	
 	/**
 	 * An implementation of java.lang.Job for synchronizing changes on java projects
 	 * to the according PGs from a selection in an eclipse workspace

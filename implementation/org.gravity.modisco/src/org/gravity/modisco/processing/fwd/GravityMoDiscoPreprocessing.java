@@ -55,6 +55,44 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class);
 
+	@Override
+	public boolean process(MGravityModel model, IProgressMonitor monitor) {
+		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
+		factory.cleanup();
+		model.getMFieldDefinitions().addAll(factory.getFdefs());
+		model.getMMethodDefinitions().addAll(factory.getMdefs());
+		model.getMConstructorDefinitions().addAll(factory.getCdefs());
+
+		// fixStaticMethodCallOnField(model);
+		if (!preprocessMethods(model) || !preprocessAccesses(model) || !preprocessImplementedSignatures(model)) {
+			return false;
+		}
+
+		TreeIterator<EObject> iterator = model.eResource().getAllContents();
+		while (iterator.hasNext()) {
+			EObject next = iterator.next();
+			if (next instanceof TypeDeclarationStatement) {
+				preprocessTypeDeclarationStatement((TypeDeclarationStatement) next);
+			} else if (next instanceof TypeParameter) {
+				model.getTypeParameters().add((TypeParameter) next);
+			} else if (next instanceof Annotation) {
+				EObject eObject = next.eContainer();
+				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
+						|| eObject instanceof SingleVariableDeclaration));
+			} else if (next instanceof MMethodDefinition) {
+				SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);
+			} else if (next instanceof Modifier) {
+				checkModifierVisibility((Modifier) next);
+			} else if (next instanceof Javadoc) {
+				EcoreUtil.delete(next, true); // TODO: check if we can remove this
+			}
+			if (monitor.isCanceled()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	/**
 	 * Adds implementedBy edge from Classes to Signatures if the classes contain
 	 * according definitions
@@ -72,8 +110,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 						implementingTypes.add(mType);
 					} else {
 						EObject eContainer = mDefinition.eContainer();
-						if (JavaPackage.eINSTANCE.getAnonymousClassDeclaration()
-								.isSuperTypeOf(eContainer.eClass())) {
+						if (JavaPackage.eINSTANCE.getAnonymousClassDeclaration().isSuperTypeOf(eContainer.eClass())) {
 							// Ignore this case
 						} else {
 							LOGGER.log(Level.ERROR, "Couldn't preprocess implemented siganture: " + mSignature);
@@ -187,8 +224,9 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
 				AbstractMethodDeclaration method = methodInvocation.getMethod();
 				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
-				if(abstractTypeDeclaration == null && JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
-					LOGGER.log(Level.WARN, "Skipped unresolved method: "+method.getName());
+				if (abstractTypeDeclaration == null
+						&& JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
+					LOGGER.log(Level.WARN, "Skipped unresolved method: " + method.getName());
 					continue;
 				}
 				deps.add(abstractTypeDeclaration);
@@ -220,52 +258,19 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		return false;
 	}
 
-	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		GravityMoDiscoFactoryImpl factory = (GravityMoDiscoFactoryImpl) JavaFactory.eINSTANCE;
-		factory.cleanup();
-		model.getMFieldDefinitions().addAll(factory.getFdefs());
-		model.getMMethodDefinitions().addAll(factory.getMdefs());
-		model.getMConstructorDefinitions().addAll(factory.getCdefs());
-		
-//		fixStaticMethodCallOnField(model);
-		if (!preprocessMethods(model) || !preprocessAccesses(model)
-				|| !preprocessImplementedSignatures(model)) {
-			return false;
+	/**
+	 * Searches the method in which a type is declared and adds the type to the
+	 * inner types of the method
+	 * 
+	 * @param statement The type declaration statement
+	 */
+	private void preprocessTypeDeclarationStatement(TypeDeclarationStatement statement) {
+		AbstractTypeDeclaration type = statement.getDeclaration();
+		EObject eObject = statement.eContainer();
+		while (!(eObject instanceof MAbstractMethodDefinition)) {
+			eObject = eObject.eContainer();
 		}
-
-		TreeIterator<EObject> iterator = model.eResource().getAllContents();
-		while (iterator.hasNext()) {
-			EObject next = iterator.next();
-			if (next instanceof TypeDeclarationStatement) {
-				TypeDeclarationStatement statement = (TypeDeclarationStatement) next;
-				AbstractTypeDeclaration type = statement.getDeclaration();
-				EObject eObject = statement.eContainer();
-				while (!(eObject instanceof MAbstractMethodDefinition)) {
-					eObject = eObject.eContainer();
-				}
-				((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
-			} else if (next instanceof TypeParameter) {
-				model.getTypeParameters().add((TypeParameter) next);
-			} else if (next instanceof Annotation) {
-				EObject eObject = next.eContainer();
-				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
-						|| eObject instanceof SingleVariableDeclaration));
-			} else if (next instanceof MAbstractMethodDefinition) {
-				if (next instanceof MMethodDefinition) {
-					SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);
-				}
-			} else if (next instanceof Modifier) {
-				checkModifierVisibility((Modifier) next);
-			} else if (next instanceof Javadoc) {
-				EcoreUtil.delete(next, true);
-				
-			}
-			if (monitor.isCanceled()) {
-				return false;
-			}
-		}
-		return true;
+		((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
 	}
 
 	/**

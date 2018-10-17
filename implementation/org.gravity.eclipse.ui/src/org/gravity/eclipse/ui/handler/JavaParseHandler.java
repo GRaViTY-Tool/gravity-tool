@@ -31,7 +31,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  *
  */
-public class JavaParseHandler extends TransformationHandler {
+public class JavaParseHandler extends AbstractTransformationHandler {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaParseHandler.class.getName());
 
@@ -44,6 +44,26 @@ public class JavaParseHandler extends TransformationHandler {
 		job.schedule();
 
 		return null;
+	}
+	
+	@Override
+	public boolean isEnabled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean isHandled() {
+		try {
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+		} catch (NoConverterRegisteredException | CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
 	}
 
 	/**
