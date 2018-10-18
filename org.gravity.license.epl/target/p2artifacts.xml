@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='org.eclipse.update.feature' id='org.gravity.license.epl' version='1.0.0'>
+    <properties size='6'>
+      <property name='artifact.size' value='5600'/>
+      <property name='download.size' value='5600'/>
+      <property name='maven-groupId' value='org.gravity'/>
+      <property name='maven-artifactId' value='org.gravity.license.epl'/>
+      <property name='maven-version' value='1.0.0'/>
+      <property name='download.contentType' value='application/zip'/>
+    </properties>
+  </artifact>
+</artifacts>

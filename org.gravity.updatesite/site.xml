@@ -18,6 +18,9 @@
    <feature url="features/org.gravity.features.eclipse_1.0.0.qualifier.jar" id="org.gravity.features.eclipse" version="1.0.0.qualifier">
       <category name="org.gravity.basics"/>
    </feature>
+   <feature url="features/org.gravity.features.security_1.0.0.qualifier.jar" id="org.gravity.features.security" version="1.0.0.qualifier">
+      <category name="org.gravity.security"/>
+   </feature>
    <category-def name="org.gravity.basics" label="Parsing">
       <description>
          Basic tools for parsing a Java program into the PG representation
@@ -31,6 +34,11 @@
    <category-def name="org.gravity.refactorings" label="Refactorings">
       <description>
          Implementation of refactorings on the PG.
+      </description>
+   </category-def>
+   <category-def name="org.gravity.security" label="Security">
+      <description>
+         Security analysis related features
       </description>
    </category-def>
 </site>

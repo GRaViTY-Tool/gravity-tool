@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="GRaViTY Update Site">
+      Graph based analysis and refactorings of Java programs.
+   </description>
+   <feature url="features/org.gravity.features.modisco_1.0.0.201809281048.jar" id="org.gravity.features.modisco" version="1.0.0.201809281048">
+      <category name="org.gravity.basics"/>
+   </feature>
+   <feature url="features/org.gravity.features.typegraph.basic_1.0.0.201809281048.jar" id="org.gravity.features.typegraph.basic" version="1.0.0.201809281048">
+      <category name="org.gravity.basics"/>
+   </feature>
+   <feature url="features/org.gravity.features.hulk_1.0.0.201809281048.jar" id="org.gravity.features.hulk" version="1.0.0.201809281048">
+      <category name="org.gravity.hulk"/>
+   </feature>
+   <feature url="features/org.gravity.features.refactorings_1.0.0.201809281048.jar" id="org.gravity.features.refactorings" version="1.0.0.201809281048">
+      <category name="org.gravity.refactorings"/>
+   </feature>
+   <feature url="features/org.gravity.features.eclipse_1.0.0.201809281048.jar" id="org.gravity.features.eclipse" version="1.0.0.201809281048">
+      <category name="org.gravity.basics"/>
+   </feature>
+   <category-def name="org.gravity.basics" label="Parsing">
+      <description>
+         Basic tools for parsing a Java program into the PG representation
+      </description>
+   </category-def>
+   <category-def name="org.gravity.hulk" label="Anti-Pattern Search">
+      <description>
+         Search for Anti-Patterns on the PG
+      </description>
+   </category-def>
+   <category-def name="org.gravity.refactorings" label="Refactorings">
+      <description>
+         Implementation of refactorings on the PG.
+      </description>
+   </category-def>
+</site>

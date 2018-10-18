@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gravity.features.security"
+      label="GRaViTY Security"
+      version="1.0.0.qualifier"
+      license-feature="org.gravity.license.epl"
+      license-feature-version="1.0.0">
+
+   <description url="http://www.example.com/description">
+      This feature provides UMLsec (https://http://carisma.umlsec.de) like security annotations to the program model.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.gravity.typegraph.basic"/>
+      <import plugin="org.gravity.tgg.modisco"/>
+      <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
+      <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.gravity.security.annotations"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
