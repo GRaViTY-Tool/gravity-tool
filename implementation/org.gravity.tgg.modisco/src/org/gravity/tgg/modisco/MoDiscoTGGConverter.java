@@ -137,14 +137,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		if (this.debug) {
 			saveModel(targetModel, this.modiscoFolder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
-		try {
-			targetModel.eResource().save(new java.io.FileOutputStream(
-					"/home/speldszus/Documents/git/gravity-tool/implementation/org.gravity.tgg.modisco/instances/fwd.src.xmi"),
-					Collections.EMPTY_MAP);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		setSrc(targetModel);
 		setChangeSrc(null);
