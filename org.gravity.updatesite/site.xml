@@ -21,6 +21,9 @@
    <feature url="features/org.gravity.features.security_1.0.0.qualifier.jar" id="org.gravity.features.security" version="1.0.0.qualifier">
       <category name="org.gravity.security"/>
    </feature>
+   <feature url="features/org.gravity.features.uml_1.0.0.qualifier.jar" id="org.gravity.features.uml" version="1.0.0.qualifier">
+      <category name="org.gravity.uml"/>
+   </feature>
    <category-def name="org.gravity.basics" label="Parsing">
       <description>
          Basic tools for parsing a Java program into the PG representation
@@ -41,4 +44,5 @@
          Security analysis related features
       </description>
    </category-def>
+   <category-def name="org.gravity.uml" label="UML"/>
 </site>
