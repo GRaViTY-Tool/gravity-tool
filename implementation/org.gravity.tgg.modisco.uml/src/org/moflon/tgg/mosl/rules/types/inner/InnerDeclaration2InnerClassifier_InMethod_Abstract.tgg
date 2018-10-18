@@ -1,0 +1,52 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule InnerDeclaration2InnerClassifier_InMethod_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	jContainer : AbstractTypeDeclaration {
+		-bodyDeclarations->method
+	}
+	
+	method : MMethodDefinition {
+		++-mInnerTypes->bodyDeclaration
+	}
+	
+	++bodyDeclaration:AbstractTypeDeclaration
+}
+
+#target {
+	operation : Operation
+	
+	uContainer:Class {
+		-ownedOperation->operation
+		++-nestedClassifier->feature
+	}
+	
+	++feature:Classifier
+}
+
+#correspondence {
+	me2op : NamedElement2NamedElement {
+		#src->method
+		#trg->operation
+	}
+	ne2ne:NamedElement2NamedElement {
+		#src->jContainer
+		#trg->uContainer
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+	
+	++bd2ne:NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+}
