@@ -439,7 +439,7 @@ public class GradleImport {
 		while (includeMatcher.find()) {
 			String match = includeMatcher.group(3);
 			if (match != null) {
-				String var = includeMatcher.group(13);
+				String var = includeMatcher.group(14);
 				if (var != null) {
 					match = defs.get(var);
 				}
@@ -447,7 +447,7 @@ public class GradleImport {
 
 			Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(match);
 			while (mEntry.find()) {
-				String subProject = mEntry.group(3);
+				String subProject = mEntry.group(4);
 				File nextRoot = null;
 				LinkedList<File> queue = new LinkedList<>();
 				queue.add(rootDir);

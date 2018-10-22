@@ -23,13 +23,13 @@ class GradleRegexPatterns {
 	/**
 	 * The single entries of an include
 	 */
-	static final Pattern INCLUDE_ENTRY = Pattern.compile("('(:)?)((\\w|-|_|\\d)+)(')");
+	static final Pattern INCLUDE_ENTRY = Pattern.compile("(('|\")(:)?)((\\w|-|_|\\d)+)('|\")");
 	
 	/**
 	 * inclusions
 	 */
 	static final Pattern INCLUDE = Pattern.compile(
-			"(include)(\\s*)((((('(:)?)((\\w|-|_|\\d)+)('))(\\s*,\\s+)?)+)|\\((\\w+)\\s+as\\s+((\\w|\\[|\\]|_)+)\\))");
+			"(include)(\\s*)(((((('|\")(:)?)((\\w|-|_|\\d)+)('|\"))(\\s*,\\s+)?)+)|\\((\\w+)\\s+as\\s+((\\w|\\[|\\]|_)+)\\))");
 	
 	/**
 	 * Dependencies
