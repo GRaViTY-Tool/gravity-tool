@@ -1,17 +1,23 @@
 package org.gravity.hulk;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
@@ -32,6 +38,8 @@ import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 
 public class HulkAPI {
+
+	private static final Logger LOGGER = Logger.getLogger(HulkAPI.class);
 
 	/**
 	 * Detects given anti-patterns on an Eclipse java project
@@ -63,7 +71,11 @@ public class HulkAPI {
 		}
 		String programLocation = project.getProject().getLocation().toString();
 
-		return detect(pg, programLocation, aps);
+		final List<HAnnotation> results = detect(pg, programLocation, aps);
+		
+		clean(iproject, converter, pg);
+		
+		return results;
 	}
 
 	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps)
@@ -134,6 +146,32 @@ public class HulkAPI {
 		}
 
 		return results;
+	}
+
+	/**
+	 * Removes all generated EMF models except for the PG
+	 * 
+	 * @param iproject The project which has been discovered
+	 * @param converter The executed converter
+	 * @param pg The created PG
+	 * @return true, iff the cleanup was successful
+	 */
+	private static boolean clean(IProject iproject, IPGConverter converter, TypeGraph pg) {
+		final Resource keep = pg.eResource();
+		final EList<Resource> resources = converter.getResourceSet().getResources();
+		while(!resources.isEmpty()) {
+			Resource resource = resources.remove(0);
+			if(resource != keep) {
+				try {
+					resource.delete(Collections.EMPTY_MAP);
+				} catch (IOException e) {
+					LOGGER.log(Level.WARN, "Cleaninig resource failed: "+e.getMessage(), e);
+					return false;
+				}
+			}
+		}
+		resources.add(keep);
+		return GravityActivator.getDefault().discardConverter(iproject);
 	}
 
 	public static enum AntiPatternNames {
