@@ -109,6 +109,9 @@ public class GradleImport {
 		}
 		this.rootDir = root;
 		this.includes = new HashSet<>();
+		if(new File(root, "src").exists()) {
+			this.includes.add(root.toPath());
+		}
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
 
 		initGradleHome();
