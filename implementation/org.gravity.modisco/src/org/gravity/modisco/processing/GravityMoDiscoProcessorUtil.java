@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
@@ -11,8 +13,26 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.InvalidRegistryObjectException;
 import org.eclipse.core.runtime.Platform;
 
+/**
+ * Functionality to get processors from an extension point
+ * 
+ * @author speldszus
+ *
+ */
 public class GravityMoDiscoProcessorUtil {
 
+	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoProcessorUtil.class);
+
+	private GravityMoDiscoProcessorUtil() {
+		// As this class only holds static methods we don't want instances
+	}
+	
+	/**
+	 * Created a sorted collection of processors regitstered at the given extension point
+	 * 
+	 * @param extensionPoint The id of the extension point
+	 * @return The soreted collection
+	 */
 	public static Collection<IMoDiscoProcessor> getSortedProcessors(String extensionPoint) {
 		IExtensionPoint pointPgFwd = Platform.getExtensionRegistry()
 				.getExtensionPoint(extensionPoint);
@@ -33,7 +53,7 @@ public class GravityMoDiscoProcessorUtil {
 					}
 				}
 			} catch (InvalidRegistryObjectException | CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
 		Collection<IMoDiscoProcessor> values = modiscoProcessorsFwd.values();
