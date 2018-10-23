@@ -12,7 +12,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
@@ -33,6 +32,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAnnotation;
@@ -68,6 +68,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			return false;
 		}
 
+		LinkedList<EObject> delete = new LinkedList<>();
 		TreeIterator<EObject> iterator = model.eResource().getAllContents();
 		while (iterator.hasNext()) {
 			EObject next = iterator.next();
@@ -84,12 +85,16 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			} else if (next instanceof Modifier) {
 				checkModifierVisibility((Modifier) next);
 			} else if (next instanceof Javadoc) {
-				EcoreUtil.delete(next, true); // TODO: check if we can remove this
+				delete.add(next); // TODO: check if we can remove this
 			}
 			if (monitor.isCanceled()) {
 				return false;
 			}
 		}
+		LOGGER.log(Level.INFO, "Deleting " + delete.size() + " EObjects");
+		long start = System.nanoTime();
+		EMFUtil.deleteAll(delete, model.eResource());
+		LOGGER.log(Level.INFO, "Deletion took " + (System.nanoTime() - start) / 1000 / 1000 + "ms");
 		return true;
 	}
 
