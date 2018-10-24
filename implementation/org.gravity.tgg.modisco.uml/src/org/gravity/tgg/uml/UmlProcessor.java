@@ -1,21 +1,12 @@
 package org.gravity.tgg.uml;
 
 import java.lang.reflect.Field;
-import java.util.Collection;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
@@ -28,6 +19,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.gravity.eclipse.exceptions.ProcessingException;
+import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.security.annotations.requirements.Critical;
 import org.gravity.security.annotations.requirements.High;
 import org.gravity.security.annotations.requirements.Integrity;
@@ -199,7 +191,8 @@ public class UmlProcessor {
 				delete.addAll(integrityComments.values());
 			}
 		}
-		return deleteAll(delete, model.eResource());
+		EMFUtil.deleteAll(delete, model.eResource());
+		return true;
 	}
 
 	private void processBwd(Classifier classifier, Hashtable<String, Element> signatures,
@@ -345,24 +338,5 @@ public class UmlProcessor {
 		} else {
 			throw new UnsupportedOperationException();
 		}
-	}
-
-	private static boolean deleteAll(Collection<EObject> eObjects, Resource resource) {
-		Map<EObject, Collection<Setting>> usages = UsageCrossReferencer.findAll(eObjects, resource);
-		for (EObject eObject : eObjects) {
-			if (eObject != null && !usages.containsKey(eObject)) {
-				EcoreUtil.delete(eObject);
-			}
-		}
-		for (Entry<EObject, Collection<Setting>> entry : usages.entrySet()) {
-			EObject eObject = entry.getKey();
-			for (EStructuralFeature.Setting setting : entry.getValue()) {
-				if (setting.getEStructuralFeature().isChangeable()) {
-					EcoreUtil.remove(setting, eObject);
-				}
-			}
-			EcoreUtil.remove(eObject);
-		}
-		return true;
 	}
 }
