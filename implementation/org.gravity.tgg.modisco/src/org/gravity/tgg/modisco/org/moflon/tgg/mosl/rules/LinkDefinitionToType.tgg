@@ -5,31 +5,36 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mDefinition : MDefinition {
-}
-mType : AbstractTypeDeclaration {
-	++  -bodyDeclarations -> mDefinition
-}
+	mDefinition:MDefinition {
+	}
+
+	mType:AbstractTypeDeclaration {
+		++  -bodyDeclarations -> mDefinition
+	}
 }
 
 #target {
-tDefinition : TMember {
-	++  -definedBy -> tType
-}
-tType : TAbstractType {
-}
+	tDefinition:TMember {
+		++  -definedBy -> tType
+	}
+
+	tType:TAbstractType {
+	}
 }
 
 #correspondence {
-mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
-}
-mDefinitionToTMember : MDefinitionToTMember {
-	#src->mDefinition
-	#trg->tDefinition
-}
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
 }
 
 #attributeConditions {
 }
+
+

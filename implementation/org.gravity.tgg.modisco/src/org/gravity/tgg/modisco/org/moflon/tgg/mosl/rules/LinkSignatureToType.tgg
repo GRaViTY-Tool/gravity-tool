@@ -5,31 +5,36 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mSignature : MSignature {
-	++  -implementedBy -> mType
-}
-mType : AbstractTypeDeclaration {
-}
+	mSignature:MSignature {
+		++  -implementedBy -> mType
+	}
+
+	mType:AbstractTypeDeclaration {
+	}
 }
 
 #target {
-tSignature : TSignature {
-}
-tType : TAbstractType {
-	++  -signature -> tSignature
-}
+	tSignature:TSignature {
+	}
+
+	tType:TAbstractType {
+		++  -signature -> tSignature
+	}
 }
 
 #correspondence {
-mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
-}
-mSignatureToTSignature : MSignatureToTSignature {
-	#src->mSignature
-	#trg->tSignature
-}
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
 }
 
 #attributeConditions {
 }
+
+
