@@ -20,7 +20,7 @@ partial class HDetectorImpl {
 		}
 		int size = keys.size();
 		if (keys.size() == 0) {
-			throw new RuntimeException();
+			return Double.valueOf(HulkDetector.getDefaultThresholds().get(clazz.getName()));
 		}
 
 		Collections.sort(keys);

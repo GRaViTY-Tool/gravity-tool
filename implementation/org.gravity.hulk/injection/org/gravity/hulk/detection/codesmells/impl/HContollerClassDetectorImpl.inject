@@ -1,7 +1,7 @@
 
 partial class HContollerClassDetectorImpl {
 
-@members <--
+@members<--
 
 	private final String[] controller_names = { "main", "run", "controller", "process", "control", "ctrl", "system",
 			"cmd" };
@@ -10,12 +10,10 @@ partial class HContollerClassDetectorImpl {
 	public String getGuiName() {
 		return "Controller Class Smell";
 	}
-	
--->
 
-@model calculateRelativeThreshold (HRelativeValueConstants level) <--
+	-->
 
-		return calculateRelativeThreshold(HRelativeValueConstants.HIGH, HInvocationRelation.class);
--->
+@model calculateRelativeThreshold (HRelativeValueConstants level)<--
+		return calculateRelativeThreshold(level, HInvocationRelation.class);-->
 
 }
