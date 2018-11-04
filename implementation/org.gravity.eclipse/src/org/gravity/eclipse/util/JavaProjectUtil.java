@@ -178,8 +178,8 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 					if (iFile.getLocation().toFile().getAbsolutePath().equals(location.toFile().getAbsolutePath())) {
 						continue;
 					} else {
-						throw new IOException(
-								"Duplicate: \n\t" + iFile.getLocation().toString() + "\n\t" + location.toString());
+						
+						throw new IOException("Duplicate: \n\t" + iFile.getLocation().toString() + "\n\t" + location.toString());
 					}
 				}
 				if (link) {
@@ -219,5 +219,29 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 			}
 		}
 		return packages;
+	}
+
+	/**
+	 * Creates and initializes a new java project for the gradle project with a new
+	 * unused name by appending a number
+	 *  to the desired name
+	 *  
+	 * @param name The desired name of the project
+	 * @param monitor A progress monitor
+	 * @return A new java project
+	 * @throws CoreException
+	 * @throws IOException
+	 */
+	public static IJavaProject createJavaProjectWithUniqueName(String name, IProgressMonitor monitor) throws CoreException, IOException {
+		int appendix = 0;
+		IJavaProject project = null;
+		do {
+			try {
+				project = createJavaProject(name + (appendix == 0 ? "" : appendix), monitor);
+			} catch (DuplicateProjectNameException e) {
+				appendix++;
+			}
+		} while (project == null);
+		return project;
 	}
 }

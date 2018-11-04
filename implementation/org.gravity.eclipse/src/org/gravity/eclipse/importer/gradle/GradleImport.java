@@ -38,7 +38,6 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
-import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.io.ZipUtil;
@@ -109,7 +108,7 @@ public class GradleImport {
 		}
 		this.rootDir = root;
 		this.includes = new HashSet<>();
-		if(new File(root, "src").exists()) {
+		if (new File(root, "src").exists()) {
 			this.includes.add(root.toPath());
 		}
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
@@ -146,7 +145,7 @@ public class GradleImport {
 			return null;
 		}
 
-		IJavaProject project = getProjectWithUniqueName(monitor);
+		IJavaProject project = JavaProjectUtil.createJavaProjectWithUniqueName(rootDir.getName(), monitor);
 
 		if (androidApp) {
 			javaSourceFiles.addAll(GradleAndroid.getRClasses(buildDotGradleFiles));
@@ -223,29 +222,6 @@ public class GradleImport {
 		}
 		outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()),
 				IResource.ALLOW_MISSING_LOCAL, monitor);
-	}
-
-	/**
-	 * Creates and initializes a new java project for the gradle project with a new
-	 * unused name
-	 * 
-	 * @param monitor A progress monitor
-	 * @return A new java project
-	 * @throws CoreException
-	 * @throws IOException
-	 */
-	private IJavaProject getProjectWithUniqueName(IProgressMonitor monitor) throws CoreException, IOException {
-		String name = rootDir.getName();
-		int appendix = 0;
-		IJavaProject project = null;
-		do {
-			try {
-				project = JavaProjectUtil.createJavaProject(name + (appendix == 0 ? "" : appendix), monitor);
-			} catch (DuplicateProjectNameException e) {
-				appendix++;
-			}
-		} while (project == null);
-		return project;
 	}
 
 	/**
@@ -406,7 +382,7 @@ public class GradleImport {
 		}
 
 		File settingsFile = new File(rootDir, "settings.gradle");
-		if (settingsFile.exists()) {
+		if (settingsFile.exists() || (settingsFile  = new File(rootDir, "settings.gradle.kts")).exists()) {
 			String settingsContentString = FileUtils.getContentsAsString(settingsFile);
 
 			Hashtable<String, String> defs = new Hashtable<>();
@@ -440,9 +416,9 @@ public class GradleImport {
 
 		Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
 		while (includeMatcher.find()) {
-			String match = includeMatcher.group(3);
+			String match = includeMatcher.group(4);
 			if (match != null) {
-				String var = includeMatcher.group(14);
+				String var = includeMatcher.group(15);
 				if (var != null) {
 					match = defs.get(var);
 				}
@@ -450,7 +426,8 @@ public class GradleImport {
 
 			Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(match);
 			while (mEntry.find()) {
-				String subProject = mEntry.group(4);
+				final String includeMatch = mEntry.group(4);
+				String subProject = includeMatch.replace(':', File.separatorChar);
 				File nextRoot = null;
 				LinkedList<File> queue = new LinkedList<>();
 				queue.add(rootDir);
@@ -469,16 +446,21 @@ public class GradleImport {
 					}
 				}
 				if (nextRoot != null) {
-					includes.add(nextRoot.toPath());
-					try {
-						buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
-					} catch (NoGradleRootFolderException e) {
-						LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
+					if (includes.add(nextRoot.toPath())) {
+						// If the path hasn't already been included: scan for more roots in the inclusion
+						try {
+							buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+						} catch (NoGradleRootFolderException e) {
+							LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
+						}
 					}
+				} else {
+					LOGGER.log(Level.ERROR, "Include not found: " + includeMatch);
 				}
 			}
 		}
 		return buildDotGradleFiles;
+
 	}
 
 	private void scanRootForSourceFiles(File rootDir) throws IOException {
@@ -511,7 +493,9 @@ public class GradleImport {
 				String dependency = m.group(4);
 				int index = dependency.indexOf('$');
 				if (index > 0) {
-					Pattern pattern = Pattern.compile(dependency.substring(index + 1) + "\\s+=\\s+('|\")(.+)('|\")");
+					final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}","") + "\\s+=\\s+('|\")(.+)('|\")";
+					System.err.println("Regex: " + regex); // TODO: Remove
+					Pattern pattern = Pattern.compile(regex);
 					Matcher matcher = pattern.matcher(content);
 					if (matcher.find()) {
 						dependency = dependency.substring(0, index) + matcher.group(2);
