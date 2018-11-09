@@ -1,0 +1,14 @@
+
+partial class TSignatureImpl {
+
+
+
+@model getSignatureString ()<--
+		// has to be implemented in subclasses
+		throw new UnsupportedOperationException();-->
+
+@model getTDefinition (TAbstractType defining)<--
+		// has to be implemented in subclasses
+		throw new UnsupportedOperationException();-->
+
+}

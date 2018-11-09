@@ -160,4 +160,14 @@ partial class TAbstractTypeImpl {
 		}
 		return null;-->
 
+@model getBasePackage ()<--		TPackage tPackage = getPackage();
+		if (tPackage != null) {
+			return tPackage.getBasePackage();
+		}
+		return null;-->
+
+@model getTDefinition (TSignature signature)<--		return signature.getTDefinition(this);-->
+
+@model hasTMember (TMember member)<--		return this.equals(member.getDefinedBy());-->
+
 }

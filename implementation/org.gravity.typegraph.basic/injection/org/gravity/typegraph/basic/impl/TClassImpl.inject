@@ -1,12 +1,15 @@
 import  java.util.ArrayList;
 import  java.util.Collections;
 import  org.gravity.typegraph.basic.TAbstractType;
+import  org.gravity.typegraph.basic.TAccess;
 import  java.util.HashSet;
+import  java.util.LinkedList;
 import  java.util.List;
 import  java.util.Set;
 import  java.util.Stack;
 import  org.eclipse.emf.common.util.BasicEList;
 import  org.gravity.typegraph.basic.TFieldDefinition;
+import  org.gravity.typegraph.basic.TFieldSignature;
 import  org.gravity.typegraph.basic.TMember;
 import  org.gravity.typegraph.basic.TMethodDefinition;
 import  org.gravity.typegraph.basic.TMethodSignature;
@@ -137,5 +140,44 @@ partial class TClassImpl {
 			}
 		}
 		return false;-->
+
+@model getAllOutgoingAccesses (TSignature signature)<--
+		EList<? extends TMember> definitions = null;
+		if (signature instanceof TFieldSignature) {
+			TFieldSignature tFieldSignature = (TFieldSignature) signature;
+			definitions = tFieldSignature.getDefinitions();
+		} else if (signature instanceof TMethodSignature) {
+			TMethodSignature tMethodSignature = (TMethodSignature) signature;
+			definitions = tMethodSignature.getDefinitions();
+		}
+
+		EList<TMember> returnList = new BasicEList<TMember>();
+		for (TMember tDefinition : definitions) {
+			if (this.equals(tDefinition.getDefinedBy())) {
+				for (TAccess tAccess : tDefinition.getTAccessing()) {
+					returnList.add(tAccess.getTTarget());
+				}
+			}
+
+		}
+		return returnList;-->
+
+@model hasAParentThisTMember (TMember member)<--		TClass parent = getParentClass();
+		if (parent != null && !parent.equals(this)) {
+			if (parent.hasTMember(member)) {
+				return true;
+			}
+			return parent.hasAParentThisTMember(member);
+		}
+		return false;-->
+
+@model getResolvedParentClass ()<--		if (parentClass != null) {
+			return parentClass;
+		}
+		TAbstractType object = getPg().getType("java.lang.Object");
+		if(object != null) {
+			return (TClass) object;
+		}
+		return null;-->
 
 }

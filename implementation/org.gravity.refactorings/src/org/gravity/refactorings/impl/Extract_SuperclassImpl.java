@@ -134,7 +134,7 @@ public class Extract_SuperclassImpl extends RefactoringImpl {
 						.pattern_Extract_Superclass_1_5_ActivityNode169_blackBB(child, tSignature);
 				if (result5_black != null) {
 
-					List<TMember> allOutgoingAccesses = Search.getAllOutgoingAccesses(tSignature, child);
+					List<TMember> allOutgoingAccesses = child.getAllOutgoingAccesses(tSignature);
 					//
 					Object[] result7_black = Extract_SuperclassImpl
 							.pattern_Extract_Superclass_1_7_ActivityNode157_blackBBFB(allOutgoingAccesses, child,

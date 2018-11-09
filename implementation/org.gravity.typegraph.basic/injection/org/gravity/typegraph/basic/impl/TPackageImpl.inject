@@ -10,7 +10,7 @@ partial class TPackageImpl {
 		while (current != null) {
 			names.add(current.getTName());
 			TPackage parent = getParent();
-			if(parent == current) {
+			if (parent == current) {
 				break;
 			}
 			current = parent;
@@ -35,5 +35,12 @@ partial class TPackageImpl {
 			tAllOwnedTypes.addAll(tSubPackage.getAllOwnedClasses());
 		}
 		return tAllOwnedTypes;-->
+
+@model getBasePackage ()<--		TPackage parent = getParent();
+		if (parent != null && !parent.equals(this)) {
+			return parent.getBasePackage();
+		} else {
+			return this;
+		}-->
 
 }

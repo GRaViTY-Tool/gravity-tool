@@ -2,7 +2,6 @@
  */
 package org.gravity.refactorings.impl;
 
-import java.lang.Iterable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -43,31 +42,31 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(List<TClass> child, TClass new_parent) {
+	public List<TClass> perform(List<TClass> child, TClass newParent) {
 
 		List<TClass> container = new LinkedList<TClass>();
 
-		container.add(new_parent);
-		pg.getOwnedTypes().add(new_parent);
-		pg.getClasses().add(new_parent);
+		container.add(newParent);
+		pg.getOwnedTypes().add(newParent);
+		pg.getClasses().add(newParent);
 
-		Search.linkClass(pg, new_parent);
+		PGAdditionHelper.linkClass(pg, newParent);
 
-		TClass old_tParent = null;
+		TClass oldParent = null;
 		for (TClass tChild : child) {
-			if (!new_parent.equals(tChild)) {
-				old_tParent = tChild.getParentClass();
+			if (!newParent.equals(tChild)) {
+				oldParent = tChild.getParentClass();
 			}
 		}
-		if (old_tParent != null && !new_parent.equals(old_tParent)) {
-			old_tParent.getChildClasses().add(new_parent);
-			container.add(old_tParent);
+		if (oldParent != null && !newParent.equals(oldParent)) {
+			oldParent.getChildClasses().add(newParent);
+			container.add(oldParent);
 
 		}
 
 		for (TClass tChildClass : child) {
-			if (new_parent.equals(tChildClass)) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[new_parent] = " + new_parent
+			if (newParent.equals(tChildClass)) {
+				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
 						+ ", " + "[tChildClass] = " + tChildClass + ", " + "[container] = " + container + ".");
 			}
 			TClass tParent = tChildClass.getParentClass();
@@ -77,7 +76,7 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tParent] = " + tParent + ", "
 						+ "[tChildClass] = " + tChildClass + ".");
 			}
-			new_parent.getChildClasses().add(tChildClass);
+			newParent.getChildClasses().add(tChildClass);
 			container.add(tChildClass);
 
 		}
@@ -93,63 +92,62 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 
 		TClass existingParent = getOtherTClassByName(pg, new_parent);
 		if (existingParent != null) {
+			TPackage newParentsPackage = null;
+			TPackage existingParentsPackage = null;
+			if (!existingParent.equals(new_parent)) {
+				newParentsPackage = new_parent.getPackage();
+				if (newParentsPackage != null) {
+					existingParentsPackage = existingParent.getPackage();
+					if (existingParentsPackage != null) {
+						if (!existingParentsPackage.equals(newParentsPackage)) {
 
-			Object[] result3_black = Create_SuperclassImpl
-					.pattern_Create_Superclass_1_3_ActivityNode57_blackBFBF(new_parent, existingParent);
-			if (result3_black == null) {
+						}
+					}
+				}
+			}
+
+			if (newParentsPackage == null || existingParentsPackage == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[new_parent] = " + new_parent
 						+ ", " + "[existingParent] = " + existingParent + ".");
 			}
-			TPackage new_parent_package = (TPackage) result3_black[1];
-			TPackage existing_parent_package = (TPackage) result3_black[3];
 			//
-			if (Search.equivalent(existing_parent_package, new_parent_package)) {
+			if (PGAdditionHelper.equivalent(existingParentsPackage, newParentsPackage)) {
 				return false;
 			}
 
 		}
 		//
-		boolean result6_black = false;
+		boolean classesAreEqual = false;
 		for (TClass one : child) {
 			for (TClass two : child) {
 				if (!one.equals(two)) {
-					result6_black = true;
+					classesAreEqual = true;
 				}
 			}
 		}
-		if (result6_black) {
+		if (classesAreEqual) {
 			for (TClass b : child) {
 				for (TClass a : child) {
 					//
-					TPackage basePackageOne = Search.getBasePackage(a);
-					TPackage basePackageTwo = Search.getBasePackage(b);
+					TPackage basePackageOne = a.getBasePackage();
+					TPackage basePackageTwo = b.getBasePackage();
 					if (basePackageOne != basePackageTwo) {
 						return false;
 					}
 
 				}
 			}
-			// ForEach
-			for (Object[] result10_black : Create_SuperclassImpl
-					.pattern_Create_Superclass_1_10_ActivityNode39_blackBFF(child)) {
-				TClass tChildOne = (TClass) result10_black[1];
-				TClass tChildTwo = (TClass) result10_black[2];
-				//
-				Object[] result11_black = Create_SuperclassImpl
-						.pattern_Create_Superclass_1_11_ActivityNode40_blackBBF(tChildOne, tChildTwo);
-				if (result11_black == null) {
-					for (TClass tChild : child) {
-						TClass tParentClass = tChild.getParentClass();
-						if (tParentClass != null && !tChild.equals(tParentClass)) {
-							if (!tParentClass.getFullyQualifiedName().equals("java.lang.Object")) {
-								return false;
-							}
+			// ForEach pair of children
+			for (TClass tChildOne : child) {
+				TClass parentOne = tChildOne.getResolvedParentClass();
+				for (TClass tChildTwo : child) {
+					if (!tChildOne.equals(tChildTwo)) {
+						TClass parentTwo = tChildTwo.getResolvedParentClass();
+						if(!parentOne.equals(parentTwo)) {
+							return false;
 						}
-
 					}
-					return true;
 				}
-
 			}
 			return true;
 		} else {
@@ -170,54 +168,6 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 			}
 		}
 
-		return null;
-	}
-
-	public static final Object[] pattern_Create_Superclass_1_3_ActivityNode57_blackBFBF(TClass new_parent,
-			TClass existingParent) {
-		if (!existingParent.equals(new_parent)) {
-			TPackage new_parent_package = new_parent.getPackage();
-			if (new_parent_package != null) {
-				TPackage existing_parent_package = existingParent.getPackage();
-				if (existing_parent_package != null) {
-					if (!existing_parent_package.equals(new_parent_package)) {
-						return new Object[] { new_parent, new_parent_package, existingParent, existing_parent_package };
-					}
-				}
-
-			}
-
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_Create_Superclass_1_10_ActivityNode39_blackBFF(List<TClass> child) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TClass tChildOne : child) {
-			for (TClass tChildTwo : child) {
-				if (!tChildOne.equals(tChildTwo)) {
-					_result.add(new Object[] { child, tChildOne, tChildTwo });
-				}
-			}
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_Create_Superclass_1_11_ActivityNode40_blackBBF(TClass tChildOne,
-			TClass tChildTwo) {
-		if (!tChildOne.equals(tChildTwo)) {
-			TClass tParent = tChildOne.getParentClass();
-			if (tParent != null) {
-				if (!tChildOne.equals(tParent)) {
-					if (!tChildTwo.equals(tParent)) {
-						if (tParent.getChildClasses().contains(tChildTwo)) {
-							return new Object[] { tChildOne, tChildTwo, tParent };
-						}
-					}
-				}
-			}
-
-		}
 		return null;
 	}
 

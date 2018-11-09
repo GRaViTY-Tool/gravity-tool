@@ -204,8 +204,8 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 										&& definingClass.equals(accessed.getDefinedBy())) {
 									accessedMembers.add(accessed);
 									//
-									if (Search.isChild(definingClass, tParentClass)
-											&& !Search.isChild(definingClass, activeClass)) {
+									if (definingClass.isSubTypeOf(tParentClass)
+											&& !definingClass.isSubTypeOf(activeClass)) {
 										return false;
 									}
 								}

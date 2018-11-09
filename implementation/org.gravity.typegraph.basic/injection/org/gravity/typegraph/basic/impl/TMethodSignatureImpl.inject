@@ -1,4 +1,5 @@
 import  org.gravity.typegraph.basic.TParameter;
+import  org.gravity.typegraph.basic.TMember;
 
 partial class TMethodSignatureImpl {
 
@@ -34,5 +35,14 @@ partial class TMethodSignatureImpl {
 		} else {
 			return s + "):" + ret.getTName();
 		}-->
+
+@model getTDefinition (TAbstractType defining)<--		if (defining.getSignature().contains(this)) {
+			for (TMember definition : defining.getDefines()) {
+				if (this.getDefinitions().contains(definition)) {
+					return (TMethodDefinition) definition;
+				}
+			}
+		}
+		return null;-->
 
 }

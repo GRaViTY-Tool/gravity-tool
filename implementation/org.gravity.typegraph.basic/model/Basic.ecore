@@ -30,6 +30,16 @@
     <eOperations xsi:type="activities:MoflonEOperation" name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="tType" eType="#//TAbstractType"/>
     </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getAllOutgoingAccesses"
+        upperBound="-1" eType="#//TMember">
+      <eParameters name="signature" eType="#//TSignature"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="hasAParentThisTMember"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="member" eType="#//TMember"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getResolvedParentClass"
+        eType="#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentClass" eType="#//TClass"
         eOpposite="#//TClass/childClasses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childClasses" upperBound="-1"
@@ -58,6 +68,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="TFieldSignature" eSuperTypes="#//TSignature">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTDefinition" eType="#//TFieldDefinition">
+      <eParameters name="defining" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
         eType="#//TFieldDefinition" containment="true" eOpposite="#//TFieldDefinition/signature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//TField"
@@ -106,6 +119,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="TMethodSignature" eSuperTypes="#//TSignature">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTDefinition" eType="#//TMethodDefinition">
+      <eParameters name="defining" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
         eType="#//TMethod" eOpposite="#//TMethod/signatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paramList" eType="#//TParameterList"
@@ -121,6 +137,7 @@
         eType="#//TAbstractType"/>
     <eOperations xsi:type="activities:MoflonEOperation" name="getAllOwnedClasses"
         upperBound="-1" eType="#//TClass"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getBasePackage" eType="#//TPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/packages"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subpackage" upperBound="-1"
@@ -153,6 +170,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTDefinition" eType="#//TMember">
+      <eParameters name="defining" eType="#//TAbstractType"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeGraph" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations xsi:type="activities:MoflonEOperation" name="getDeclaredTClasses"
@@ -206,6 +226,13 @@
     <eOperations xsi:type="activities:MoflonEOperation" name="getTMethodDefinition"
         eType="#//TMethodDefinition">
       <eParameters name="signature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getBasePackage" eType="#//TPackage"/>
+    <eOperations xsi:type="activities:MoflonEOperation" name="getTDefinition" eType="#//TMember">
+      <eParameters name="signature" eType="#//TSignature"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="hasTMember" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="member" eType="#//TMember"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/ownedTypes"/>

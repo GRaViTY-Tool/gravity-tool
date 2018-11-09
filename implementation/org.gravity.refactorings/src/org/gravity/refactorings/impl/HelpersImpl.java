@@ -213,14 +213,14 @@ public class HelpersImpl {
 
 		for (TClass tClass : tMemberPool) {
 
-			TMember tMemberOfClass = Search.getDefinition(tClass, signature);
+			TMember tMemberOfClass = signature.getTDefinition(tClass);
 
 			int internalAccesses = 0;
 			for (TAccess tAccess : tMemberOfClass.getTAccessing()) {
 				TMember accessedTMember = tAccess.getTTarget();
 				if (accessedTMember != null && !accessedTMember.equals(tMemberOfClass)) {
-					if (Search.hasTMember(tClass, accessedTMember)
-							|| Search.hasParentTMember(tClass, accessedTMember)) {
+					if (tClass.hasTMember(accessedTMember)
+							|| tClass.hasAParentThisTMember(accessedTMember)) {
 						internalAccesses++;
 					}
 				}
@@ -228,7 +228,7 @@ public class HelpersImpl {
 
 			int externalAccesses = 0;
 			for (TMember accessedTMember : HelpersImpl.getAccessedMembers(tMemberOfClass)) {
-				if (!Search.hasTMember(tClass, accessedTMember) && !Search.hasParentTMember(tClass, accessedTMember)) {
+				if (!tClass.hasTMember(accessedTMember) && !tClass.hasAParentThisTMember(accessedTMember)) {
 					externalAccesses++;
 				}
 

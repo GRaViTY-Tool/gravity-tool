@@ -122,7 +122,7 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 
 		if (!parent.getSignature().contains(field)) {
 
-			TPackage basePackage = Search.getBasePackage(parent);
+			TPackage basePackage = parent.getBasePackage();
 			
 			List<TFieldDefinition> tFieldDefinitions = new LinkedList<>();
 			// ForEach
@@ -148,7 +148,7 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 			}
 			// ForEach
 			for (TClass child : parent.getChildClasses()) {
-					TPackage childBasePackage = Search.getBasePackage(child);
+					TPackage childBasePackage = child.getBasePackage();
 					if (!basePackage.equals(childBasePackage)) {
 						return false;
 					}

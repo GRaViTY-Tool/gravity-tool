@@ -1,12 +1,20 @@
+import  org.gravity.typegraph.basic.TMember;
 
 partial class TFieldSignatureImpl {
 
 
 
-@model getSignatureString () <--
-
+@model getSignatureString ()<--
 		String name = getField().getTName();
-		return name + ":" + getType().getTName();
--->
+		return name + ":" + getType().getTName();-->
+
+@model getTDefinition (TAbstractType defining)<--		if (defining.getSignature().contains(this)) {
+			for (TMember definition : defining.getDefines()) {
+				if (this.getDefinitions().contains(definition)) {
+					return (TFieldDefinition) definition;
+				}
+			}
+		}
+		return null;-->
 
 }
