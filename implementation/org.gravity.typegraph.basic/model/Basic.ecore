@@ -47,13 +47,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
         eType="#//TInterface" eOpposite="#//TInterface/implementedBy"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TField">
+  <eClassifiers xsi:type="ecore:EClass" name="TField" eSuperTypes="#//TName">
     <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
         eType="#//TFieldSignature" containment="true" eOpposite="#//TFieldSignature/field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/fields"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TFieldDefinition" eSuperTypes="#//TMember">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
@@ -91,13 +89,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TMethod">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
-        eOpposite="#//TypeGraph/methods"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TMethod" eSuperTypes="#//TName">
     <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
         eType="#//TMethodSignature" containment="true" eOpposite="#//TMethodSignature/method"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
+        eOpposite="#//TypeGraph/methods"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodDefinition" eSuperTypes="#//TMember">
     <eOperations xsi:type="activities:MoflonEOperation" name="getSignatureString"
@@ -276,6 +272,10 @@
         eType="#//TMethodSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TUnresolvedType" eSuperTypes="#//TClass #//TInterface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eSubpackages name="containers" nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
       nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
