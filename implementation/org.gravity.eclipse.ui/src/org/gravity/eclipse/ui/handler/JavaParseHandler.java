@@ -49,7 +49,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 	@Override
 	public boolean isEnabled() {
 		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
 		} catch (NoConverterRegisteredException | CoreException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
@@ -59,7 +59,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 	@Override
 	public boolean isHandled() {
 		try {
-			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDSync();
+			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
 		} catch (NoConverterRegisteredException | CoreException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
