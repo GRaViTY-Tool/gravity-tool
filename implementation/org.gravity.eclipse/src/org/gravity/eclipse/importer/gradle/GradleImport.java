@@ -8,10 +8,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,11 +34,13 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -52,17 +56,16 @@ import org.xml.sax.SAXException;
  */
 public class GradleImport {
 
-	private File gradleHome, androidHome;
+	private final File gradleHome;
+	private final File buildDotGradle;
+	private final File rootDir;
 
-	private final Set<Path> javaSourceFiles = new HashSet<Path>();
 	private final Set<Path> buildDotGradleFiles;
 	private final Set<Path> includes;
 
 	private Set<String> appliedPlugins;
 
 	private boolean androidApp;
-
-	private final File rootDir;
 
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
@@ -82,13 +85,14 @@ public class GradleImport {
 	 * @throws IOException
 	 */
 	public GradleImport(File rootDir) throws NoGradleRootFolderException, IOException {
-
 		LinkedList<File> queue = new LinkedList<File>();
 		queue.add(rootDir);
 		File root = null;
+		File buildDotGradle = null;
 		while (!queue.isEmpty()) {
 			File dir = queue.poll();
-			if (new File(dir, "build.gradle").exists()) {
+			buildDotGradle = new File(dir, "build.gradle");
+			if (buildDotGradle.exists()) {
 				root = dir;
 				break;
 			}
@@ -101,14 +105,14 @@ public class GradleImport {
 		if (root == null) {
 			throw new NoGradleRootFolderException();
 		}
+		this.buildDotGradle = buildDotGradle;
 		this.rootDir = root;
 		this.includes = new HashSet<>();
 		if (new File(root, "src").exists()) {
 			this.includes.add(root.toPath());
 		}
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
-
-		initGradleHome();
+		this.gradleHome = initGradleHome();
 	}
 
 	/**
@@ -118,13 +122,11 @@ public class GradleImport {
 	 *                          there are build errors
 	 * @param monitor           A progress monitor
 	 * @return The new eclipse java project
-	 * @throws IOException
-	 * @throws CoreException
-	 * @throws InterruptedException
-	 * @throws NoGradleRootFolderException
+	 * @throws GradleImportException 
 	 */
 	public IJavaProject importGradleProject(boolean ignoreBuildErrors, IProgressMonitor monitor)
-			throws IOException, CoreException, InterruptedException, NoGradleRootFolderException {
+			throws GradleImportException {
+
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -132,71 +134,192 @@ public class GradleImport {
 		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
 		androidApp = appliedPlugins.contains("com.android.application");
 
-		for (Path root : includes) {
-			scanRootForSourceFiles(root.toFile());
-		}
-		if (javaSourceFiles.size() == 0) {
-			LOGGER.log(Level.ERROR, "No Java source files found!");
-			return null;
-		}
+		build(ignoreBuildErrors);
 
-		IJavaProject project = JavaProjectUtil.createJavaProjectWithUniqueName(rootDir.getName(), monitor);
-
-		if (androidApp) {
-			javaSourceFiles.addAll(GradleAndroid.getRClasses(buildDotGradleFiles));
-		}
-		JavaProjectUtil.addJavaSourceFilesToRoot(javaSourceFiles,
-				project.getPackageFragmentRoot(project.getProject().getFolder("src")), LINKONPROJECT, monitor);
-
-		// build gradle project
-		try {
-			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
-				return null;
-			}
-		} catch (UnsupportedOperationSystemException e1) {
-			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
-		}
-
-		if (androidApp) {
-			linkApkFolderToProject(project, monitor);
-		}
-
-		return addRequiredLibsToProject(project, monitor);
+		Set<Path> javaSourceFiles = getAllJavaSourceFiles(buildDotGradle.toPath());
+		return createJavaProject(javaSourceFiles, monitor);
 	}
 
-	private void initAndroidHome() {
+	/**
+	 * Creates a new Java project containing a set of given java source files
+	 * 
+	 * @param javaSourceFiles The Java source files
+	 * @param monitor A progress monitor
+	 * @return The new Java project
+	 * @throws GradleImportException If the project cannot be created
+	 */
+	private IJavaProject createJavaProject(Set<Path> javaSourceFiles, IProgressMonitor monitor)
+			throws GradleImportException {
+		IJavaProject project = null;
+		try {
+			project = JavaProjectUtil.createJavaProjectWithUniqueName(rootDir.getName(), monitor);
+			HashMap<String, Set<Path>> sourceFolders = getSourceFolderMapping(javaSourceFiles);
+			for (Entry<String, Set<Path>> entry : sourceFolders.entrySet()) {
+				final IFolder folder = project.getProject().getFolder(entry.getKey());
+				if (!folder.exists()) {
+					EclipseProjectUtil.createFolder(folder, monitor);
+				}
+				IPackageFragmentRoot packageFragmentRoot = project.getPackageFragmentRoot(folder);
+				JavaProjectUtil.addToClassPath(project,
+						Arrays.asList(JavaCore.newSourceEntry(packageFragmentRoot.getPath())), monitor);
+				JavaProjectUtil.addJavaSourceFilesToRoot(entry.getValue(), packageFragmentRoot, LINKONPROJECT, monitor);
+			}
+
+			if (androidApp) {
+				linkApkFolderToProject(project, monitor);
+			}
+			return addRequiredLibsToProject(project, monitor);
+		} catch (IOException | CoreException e) {
+			try {
+				if(project != null) {
+					project.getProject().delete(true, true, monitor);
+				}
+			} catch (CoreException e1) {
+				LOGGER.log(Level.WARN, e1.getLocalizedMessage(), e1);
+			}
+			throw new GradleImportException(e);
+		}
+	}
+
+	/**
+	 * Builds the gradle project.
+	 * 
+	 * @param ignoreBuildErrors If non critical errors should be ignored
+	 * @throws GradleImportException If the build failed
+	 */
+	private void build(boolean ignoreBuildErrors) throws GradleImportException {
+		try {
+			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
+				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
+			}
+		} catch (UnsupportedOperationSystemException e) {
+			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
+			if(!ignoreBuildErrors) {
+				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
+			}
+		} catch (IOException | InterruptedException e) {
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			throw new GradleImportException(e);
+		}
+	}
+
+	/**
+	 * Searches all java source files of the gradle project including the generated android R.java
+	 * 
+	 * @param buildDotGradle The path to the build.gradle file
+	 * @return A set of all java source files
+	 * @throws GradleImportException If the source files cannot be found
+	 */
+	private Set<Path> getAllJavaSourceFiles(Path buildDotGradle) throws GradleImportException {
+		Set<Path> javaSourceFiles;
+		try {
+			javaSourceFiles = getJavaSourceFiles(buildDotGradle);
+		} catch (IOException e) {
+			throw new GradleImportException(e);
+		}
+		if (javaSourceFiles.size() == 0) {
+			final String message = "No Java source files found!";
+			LOGGER.log(Level.ERROR, message);
+			throw new GradleImportException(message);
+		}
+		if (androidApp) {
+			try {
+				Set<Path> rClasses = GradleAndroid.getRClasses(buildDotGradleFiles);
+				javaSourceFiles.addAll(rClasses);
+			} catch (IOException e) {
+				LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+			}
+		}
+		return javaSourceFiles;
+	}
+
+	/**
+	 * Searches all java source files of the gradle project
+	 * 
+	 * @param buildDotGradle The path to the build.gradle file
+	 * @return All java source files of the build
+	 * @throws IOException
+	 */
+	private Set<Path> getJavaSourceFiles(Path buildDotGradle) throws IOException {
+		Set<Path> javaSourceFiles = null;
+		try {
+			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
+		} catch (IOException | InterruptedException | UnsupportedOperationSystemException e) {
+			LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+			LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
+			javaSourceFiles = new HashSet<>();
+			for (Path root : includes) {
+				scanRootForSourceFiles(root.toFile(), javaSourceFiles);
+			}
+		}
+		return javaSourceFiles;
+	}
+
+	/**
+	 * Creates a map from names for source folders to java files
+	 * 
+	 * @param javaSourceFiles A set of java files
+	 * @return the mapping
+	 */
+	private HashMap<String, Set<Path>> getSourceFolderMapping(Set<Path> javaSourceFiles) {
+		HashMap<String, Set<Path>> sourceFolders = new HashMap<>();
+		for (Path sourceFile : javaSourceFiles) {
+			String[] split = rootDir.toPath().relativize(sourceFile).toString().split("/src/main/java/");
+			String key;
+			if (split.length == 2) {
+				key = split[0];
+			} else {
+				key = "src";
+			}
+			Set<Path> files;
+			if (sourceFolders.containsKey(key)) {
+				files = sourceFolders.get(key);
+			} else {
+				sourceFolders.put(key, files = new HashSet<>());
+			}
+			files.add(sourceFile);
+		}
+		return sourceFolders;
+	}
+
+	private File initAndroidHome() throws FileNotFoundException {
 		String androidHome = System.getenv("ANDROID_HOME");
 		if (androidHome != null) {
 			File tmpAndroidHome = new File(androidHome);
 			if (tmpAndroidHome.exists()) {
-				this.androidHome = tmpAndroidHome;
+				return tmpAndroidHome;
 			}
 		}
-		if (this.androidHome == null) {
-			File tmpAndroidHome = new File(new File(System.getProperty("user.home")), "Android/Sdk");
-			if (tmpAndroidHome.exists()) {
-				this.androidHome = tmpAndroidHome;
-			} else {
-				LOGGER.log(Level.WARN, "Adroid home not specified.");
-			}
+		File tmpAndroidHome = new File(new File(System.getProperty("user.home")), "Android/Sdk");
+		if (tmpAndroidHome.exists()) {
+			return tmpAndroidHome;
+		} else {
+			String message = "Adroid home not specified.";
+			LOGGER.log(Level.WARN, message);
+			throw new FileNotFoundException(message);
 		}
+
 	}
 
-	private void initGradleHome() throws FileNotFoundException {
+	/**
+	 * Resolves the GRADLE_HOME directory
+	 * 
+	 * @return A file holding the location of GRADLE_HOME
+	 * @throws FileNotFoundException If GRADLE_HOME hasn't been found
+	 */
+	private File initGradleHome() throws FileNotFoundException {
 		String gradleHome = System.getenv("GRADLE_HOME");
 		if (gradleHome != null) {
 			File tmpGradleHome = new File(gradleHome);
 			if (tmpGradleHome.exists()) {
-				this.gradleHome = tmpGradleHome;
+				return tmpGradleHome;
 			}
 		}
-		if (this.gradleHome == null) {
-			File tmpGradleHome = new File(new File(System.getProperty("user.home")), ".gradle");
-			if (tmpGradleHome.exists()) {
-				this.gradleHome = tmpGradleHome;
-			} else {
-				throw new FileNotFoundException("Gradle home not found");
-			}
+		File tmpGradleHome = new File(new File(System.getProperty("user.home")), ".gradle");
+		if (tmpGradleHome.exists()) {
+			return tmpGradleHome;
+		} else {
+			throw new FileNotFoundException("Gradle home not found");
 		}
 	}
 
@@ -300,7 +423,7 @@ public class GradleImport {
 		}
 
 		File settingsFile = new File(rootDir, "settings.gradle");
-		if (settingsFile.exists() || (settingsFile  = new File(rootDir, "settings.gradle.kts")).exists()) {
+		if (settingsFile.exists() || (settingsFile = new File(rootDir, "settings.gradle.kts")).exists()) {
 			String settingsContentString = FileUtils.getContentsAsString(settingsFile);
 
 			Hashtable<String, String> defs = new Hashtable<>();
@@ -365,7 +488,8 @@ public class GradleImport {
 				}
 				if (nextRoot != null) {
 					if (includes.add(nextRoot.toPath())) {
-						// If the path hasn't already been included: scan for more roots in the inclusion
+						// If the path hasn't already been included: scan for more roots in the
+						// inclusion
 						try {
 							buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
 						} catch (NoGradleRootFolderException e) {
@@ -381,7 +505,7 @@ public class GradleImport {
 
 	}
 
-	private void scanRootForSourceFiles(File rootDir) throws IOException {
+	private void scanRootForSourceFiles(File rootDir, Set<Path> javaSourceFiles) throws IOException {
 		File srcFolder = new File(rootDir, "src");
 		if (srcFolder.exists()) {
 			File main = new File(srcFolder, "main");
@@ -411,8 +535,8 @@ public class GradleImport {
 				String dependency = m.group(4);
 				int index = dependency.indexOf('$');
 				if (index > 0) {
-					final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}","") + "\\s+=\\s+('|\")(.+)('|\")";
-					System.err.println("Regex: " + regex); // TODO: Remove
+					final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "")
+							+ "\\s+=\\s+('|\")(.+)('|\")";
 					Pattern pattern = Pattern.compile(regex);
 					Matcher matcher = pattern.matcher(content);
 					if (matcher.find()) {
@@ -463,7 +587,7 @@ public class GradleImport {
 
 		Set<Path> libsAsJar = new HashSet<>(pathsToLibs.values());
 		if (androidApp) {
-			initAndroidHome();
+			File androidHome = initAndroidHome();
 
 			if (targetSdk != -1) {
 				boolean compAndroidSdk = false;
@@ -502,7 +626,7 @@ public class GradleImport {
 					for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
 							"extras/m2repository" }) {
 						int before = compileLibs.size();
-						pathsToLibs = searchInCache(compileLibs, new File(this.androidHome, location));
+						pathsToLibs = searchInCache(compileLibs, new File(androidHome, location));
 						newLibs |= compileLibs.size() > before;
 						compileLibs.removeAll(pathsToLibs.keySet());
 						libsAsJar.addAll(pathsToLibs.values());
@@ -510,9 +634,7 @@ public class GradleImport {
 				} while (newLibs);
 			}
 		}
-		if (compileLibs.size() > 0)
-
-		{
+		if (compileLibs.size() > 0) {
 			LOGGER.log(Level.WARN, "The following libs haven't been found on the system:");
 			for (String lib : compileLibs) {
 				LOGGER.log(Level.WARN, "\t" + lib);

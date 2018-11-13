@@ -1,9 +1,14 @@
 package org.gravity.eclipse.util;
 
+import java.util.Stack;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -75,5 +80,25 @@ public class EclipseProjectUtil {
 		System.arraycopy(oldNatures, 0, newNatures, 1, oldNatures.length);
 		description.setNatureIds(newNatures);
 		project.setDescription(description, monitor);
+	}
+
+	/**
+	 * Creates the folder and all missing parents
+	 * 
+	 * @param folder The folder to create
+	 * @param monitor A progress monitor
+	 * @throws CoreException if the method fails @see org.eclipse.core.resources.IFolder.create(boolean, boolean, IProgressMonitor)
+	 */
+	public static void createFolder(IFolder folder, IProgressMonitor monitor) throws CoreException {
+		Stack<IFolder> stack = new Stack<>();
+		IContainer parent = folder.getParent();
+		while (!parent.exists() && parent.getType() == IResource.FOLDER) {
+			stack.add((IFolder) parent);
+			parent = parent.getParent();
+		}
+		while (!stack.isEmpty()) {
+			stack.pop().create(true, true, monitor);
+		}
+		folder.create(true, true, monitor);
 	}
 }

@@ -20,6 +20,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.gradle.GradleImport;
+import org.gravity.eclipse.importer.gradle.GradleImportException;
 import org.gravity.eclipse.importer.gradle.NoGradleRootFolderException;
 
 /**
@@ -53,15 +54,15 @@ public class GradleImportHandler extends AbstractHandler {
 				LOGGER.log(Level.WARN, e);
 				return new Status(Status.WARNING, GravityActivator.PLUGIN_ID,
 						"Refreshing the workspace failed a manual refresh can be necessary!", e);
-			} catch (IOException | InterruptedException e) {
-				LOGGER.log(Level.ERROR, e);
-				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
-						"The import of the gradle project at \"" + parentFile.getPath() + "\" failed.", e);
 			} catch (NoGradleRootFolderException e) {
 				LOGGER.log(Level.ERROR, e);
 				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "The import of the gradle project at \""
 						+ parentFile.getPath() + "\" failed. The root of the gradle project couldn't be found!", e);
-			}
+			} catch (IOException | GradleImportException e) {
+				LOGGER.log(Level.ERROR, e);
+				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+						"The import of the gradle project at \"" + parentFile.getPath() + "\" failed.", e);
+			} 
 		}
 	}
 

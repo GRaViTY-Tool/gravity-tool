@@ -16,6 +16,7 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Level;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -34,6 +35,7 @@ import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.LibraryLocation;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.io.FileUtils;
 
 /**
  * This class provides frequently used functionalities when working with eclipse
@@ -174,12 +176,14 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 				fileName.substring(0, fileName.length() - ".java".length());
 				IPath location = new org.eclipse.core.runtime.Path(javaFile.toFile().getAbsolutePath());
 				IFile iFile = ((IFolder) pack.getResource()).getFile(fileName);
-				if (iFile.exists()) {
+				if (iFile.getLocation().toFile().exists()) {
 					if (iFile.getLocation().toFile().getAbsolutePath().equals(location.toFile().getAbsolutePath())) {
 						continue;
+					} else if(FileUtils.getContentsAsString(iFile.getLocation().toFile()).equals(FileUtils.getContentsAsString(location.toFile()))){
+						//LOGGER.log(Level.WARN, "Duplicate with identical content: "+location.toString());
+						continue;
 					} else {
-						
-						throw new IOException("Duplicate: \n\t" + iFile.getLocation().toString() + "\n\t" + location.toString());
+						throw new IOException("Duplicate: \n\t" + iFile.getLocation().toFile().toPath().toRealPath().toString() + "\n\t" + location.toString());
 					}
 				}
 				if (link) {

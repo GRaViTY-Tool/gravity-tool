@@ -59,7 +59,7 @@ class GradleBuild {
 			localProperties.delete();
 		}
 
-		Process process = build(gradleRootFolder);
+		Process process = build(gradleRootFolder, "assemble");
 		StringBuilder message = collectMessages(process);
 		process.waitFor();
 
@@ -72,7 +72,7 @@ class GradleBuild {
 					fix |= replaceGoogleServices(buildFile);
 				}
 				if (fix) {
-					process = build(gradleRootFolder);
+					process = build(gradleRootFolder,"assemble");
 					collectMessages(process);
 					process.waitFor();
 
@@ -87,19 +87,20 @@ class GradleBuild {
 	/**
 	 * Executed the gradle wrapper located in the given gradle Root folder
 	 * 
-	 * @param gradleRootFolder The root folder
+	 * @param path The root folder
+	 * @param buildTarget 
 	 * @return The running build process
 	 * @throws IOException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	private static Process build(File gradleRootFolder) throws IOException, UnsupportedOperationSystemException {
+	static Process build(File path, String buildTarget) throws IOException, UnsupportedOperationSystemException {
 		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			process = Runtime.getRuntime().exec("cmd /c \"" + "gradlew assemble", null, gradleRootFolder);
+			process = Runtime.getRuntime().exec("cmd /c \"" + "gradlew "+buildTarget, null, path);
 			break;
 		case LINUX:
-			process = Runtime.getRuntime().exec("./gradlew assemble", null, gradleRootFolder);
+			process = Runtime.getRuntime().exec("./gradlew "+buildTarget, null, path);
 			break;
 		default:
 			LOGGER.log(Level.WARN, "Unsupported OS");
