@@ -1,4 +1,3 @@
-
 import  org.apache.log4j.Level;
 import  org.apache.log4j.Logger;
 import  java.util.HashSet;
@@ -76,12 +75,13 @@ partial class HIGAMCalculatorImpl {
 		TAbstractType tType = tMember.getDefinedBy();
 		if (tModifier == null) {
 			if (tMember instanceof TConstructorDefinition) {
-				LOGGER.log(Level.WARN, "Skipped constructor \"" + tMember.getSignatureString()
+				LOGGER.log(Level.INFO, "Skipped constructor \"" + tMember.getSignatureString()
 						+ "\" it is probably a default constructor and has no modifer.");
 			} else if (tType.getTName().startsWith("%ENUM%")) {
-				System.err.println("WARNING: Skipped member in enum \"" + tMember.getSignatureString() + "\".");
+				LOGGER.log(Level.INFO, "Skipped member in enum \"" + tMember.getSignatureString() + "\".");
 			} else {
-				throw new RuntimeException("The member \"" + tMember.getSignatureString() + "\" has no modifer.");
+				LOGGER.log(Level.ERROR,
+						"The member \"" + tMember.getSignatureString() + "\" has no modifer, assuming PUBLIC!");
 			}
 		} else {
 			TVisibility tCurVis = tModifier.getTVisibility();
@@ -163,7 +163,7 @@ partial class HIGAMCalculatorImpl {
 	}
 
 	// <-- [user code injected with eMoflon]
-	
+
 	private static final Logger LOGGER = Logger.getLogger(HIGAMCalculator.class);
 
 	private TVisibility acc1acc2(TAccess tAccess) {
@@ -198,8 +198,7 @@ partial class HIGAMCalculatorImpl {
 		TMember tMember = tAccess.getTTarget();
 		TAbstractType tTarget = tMember.getDefinedBy();
 		if (tStaticType == null || tStaticType.getTName().equals("Void")) {
-			System.err.println(
-					"No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
+			LOGGER.log(Level.ERROR, "No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
 							+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
 							+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
 			return TVisibility.TPUBLIC;
@@ -223,7 +222,7 @@ partial class HIGAMCalculatorImpl {
 			if (tOverriddenMod != null) {
 				return tOverriddenMod.getTVisibility();
 			} else {
-				System.err.println("TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName() + "->"
+				LOGGER.log(Level.ERROR, "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName() + "->"
 						+ tOverriddenDef.getSignatureString() + "\" is null.");
 				return TVisibility.TPUBLIC;
 			}
