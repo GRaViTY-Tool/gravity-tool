@@ -211,7 +211,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		for (MFieldDefinition def : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment fragment : def.getFragments()) {
-				if (!MiscHandler.handle(fragment, def)) {
+				if (!MiscHandler.handle(fragment, def)) { // TODO: Add access types here
 					LOGGER.log(Level.ERROR,
 							"Couldn't handle field statement \"" + fragment + "\" at preprocessing of accesses.");
 					return false;
@@ -229,9 +229,12 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
 				AbstractMethodDeclaration method = methodInvocation.getMethod();
 				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
-				if (abstractTypeDeclaration == null
-						&& JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
-					LOGGER.log(Level.WARN, "Skipped unresolved method: " + method.getName());
+				if (abstractTypeDeclaration == null) {
+					if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
+						LOGGER.log(Level.WARN, "Skipped unresolved method: " + method.getName());
+					} else {
+						LOGGER.log(Level.ERROR, "Skipped unresolved method: " + method.getName());
+					}
 					continue;
 				}
 				deps.add(abstractTypeDeclaration);
@@ -242,7 +245,16 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 					AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable)
 							.getVariablesContainer();
 					if (variablesContainer instanceof FieldDeclaration) {
-						deps.add(((FieldDeclaration) variablesContainer).getAbstractTypeDeclaration());
+						final AbstractTypeDeclaration abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
+								.getAbstractTypeDeclaration();
+						if (abstractTypeDeclaration == null) {
+							LOGGER.log(Level.ERROR,
+									"Access from \"" + def.getAbstractTypeDeclaration().getName() + "." + def.getName()
+											+ "\" to unresolved field: " + variable.getName() + ":"
+											+ variablesContainer.getType().getType().getName());
+						} else {
+							deps.add(abstractTypeDeclaration);
+						}
 					}
 				}
 			}
