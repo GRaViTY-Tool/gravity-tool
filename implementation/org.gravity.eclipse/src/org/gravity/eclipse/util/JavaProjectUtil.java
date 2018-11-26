@@ -9,14 +9,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Level;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -104,13 +105,14 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * Creates a new empty java project in the current workspace
 	 * 
 	 * @param name The desired name of the project
+	 * @param sourceFolderNames The names of the source folders
 	 * @param monitor A progress monitor
 	 * @return The new java project
 	 * @throws DuplicateProjectNameException If there is already a project with this name
 	 * @throws CoreException
 	 * @throws IOException
 	 */
-	public static IJavaProject createJavaProject(String name, IProgressMonitor monitor)
+	public static IJavaProject createJavaProject(String name, Set<String> sourceFolderNames, IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException, IOException {
 		// Create new project with given name
 		IProject project = getProjectByName(name);
@@ -138,11 +140,13 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		List<IClasspathEntry> entries = new ArrayList<>();
 
 		// Create src folder
-		IFolder sourceFolder = project.getFolder("src");
-		sourceFolder.create(false, true, monitor);
-		IPackageFragmentRoot packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
-		entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
-
+		for(String sourceFolderName : sourceFolderNames) {
+			IFolder sourceFolder = project.getFolder(sourceFolderName);
+			sourceFolder.create(false, true, monitor);
+			IPackageFragmentRoot packageFragmentRoot = javaProject.getPackageFragmentRoot(sourceFolder);
+			entries.add(JavaCore.newSourceEntry(packageFragmentRoot.getPath()));
+		}
+		
 		// Add Java libs
 		IVMInstall vmInstall = JavaRuntime.getDefaultVMInstall();
 		LibraryLocation[] locations = JavaRuntime.getLibraryLocations(vmInstall);
@@ -241,7 +245,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		IJavaProject project = null;
 		do {
 			try {
-				project = createJavaProject(name + (appendix == 0 ? "" : appendix), monitor);
+				project = createJavaProject(name + (appendix == 0 ? "" : appendix), Collections.emptySet(), monitor);
 			} catch (DuplicateProjectNameException e) {
 				appendix++;
 			}
