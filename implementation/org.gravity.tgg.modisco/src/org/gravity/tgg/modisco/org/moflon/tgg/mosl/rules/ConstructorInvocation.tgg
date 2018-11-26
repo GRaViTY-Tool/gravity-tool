@@ -6,11 +6,11 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ invocation : ConstructorInvocation {
-}
+	++invocation:ConstructorInvocation
 }
 
 #target {
+	++tAccess:TCall
 }
 
 #correspondence {
@@ -18,3 +18,5 @@
 
 #attributeConditions {
 }
+
+

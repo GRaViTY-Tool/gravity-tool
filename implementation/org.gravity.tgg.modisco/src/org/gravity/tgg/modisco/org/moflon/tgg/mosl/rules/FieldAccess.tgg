@@ -5,44 +5,52 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mAccess : SingleVariableAccess {
-	++  -variable -> varDeclFrag
+	++mAccess:SingleVariableAccess {
+		++  -variable -> varDeclFrag
+	}
+
+	mField:MFieldDefinition {
 }
-mField : MFieldDefinition {
-}
-varDeclFrag : VariableDeclarationFragment {
-	 -variablesContainer -> mField
-}
-mMember : MDefinition {
-	++  -mAbstractFieldAccess -> mAccess
-}
+
+	varDeclFrag:VariableDeclarationFragment {
+		-variablesContainer -> mField
+	}
+
+	mMember:MDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+	}
 }
 
 #target {
-++ tAccess : TAccess {
-}
-tField : TFieldDefinition {
-	++  -accessedBy -> tAccess
-}
-tMember : TMember {
-	++  -tAccessing -> tAccess
-}
+	++tAccess:TAccess
+
+	tField:TFieldDefinition {
+		++  -accessedBy -> tAccess
+	}
+
+	tMember:TMember {
+		++  -tAccessing -> tAccess
+	}
 }
 
 #correspondence {
-mMemberToTMember : MDefinitionToTMember {
-	#src->mMember
-	#trg->tMember
-}
-mMethodToTMethod : MDefinitionToTMember {
-	#src->mField
-	#trg->tField
-}
-++ mAccessToTAccess : SingleVariableAccessToTAccess {
-	#src->mAccess
-	#trg->tAccess
-}
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mField
+		#trg->tField
+	}
+
+	++ mAccessToTAccess :SingleVariableAccessToTAccess {
+		#src->mAccess
+		#trg->tAccess
+	}
 }
 
 #attributeConditions {
 }
+
+

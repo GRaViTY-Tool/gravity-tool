@@ -5,41 +5,49 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ invocation : AbstractMethodInvocation {
-	++  -method -> mMethod
-}
-mMember : MDefinition {
-	++  -abstractMethodInvocations -> invocation
-}
-mMethod : MMethodDefinition {
+	++invocation:AbstractMethodInvocation {
+		++  -method -> mMethod
+	}
+
+	mMember:MDefinition {
+		++  -abstractMethodInvocations -> invocation
+	}
+
+	mMethod:MMethodDefinition {
 }
 }
 
 #target {
-tMethod : TMethodDefinition {
-	++  -accessedBy -> tAccess
+	tMethod:TMethodDefinition {
+		++  -accessedBy -> tAccess
+	}
+
+	++tAccess:TCall {
 }
-++ tAccess : TCall {
-}
-tMember : TMember {
-	++  -tAccessing -> tAccess
-}
+
+	tMember:TMember {
+		++  -tAccessing -> tAccess
+	}
 }
 
 #correspondence {
-++ invocationToTAccess : AbstractMethodInvocationToTAccess {
-	#src->invocation
-	#trg->tAccess
-}
-mMethodToTMethod : MDefinitionToTMember {
-	#src->mMethod
-	#trg->tMethod
-}
-mMemberToTMember : MDefinitionToTMember {
-	#src->mMember
-	#trg->tMember
-}
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mMethod
+		#trg->tMethod
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
 }
 
 #attributeConditions {
 }
+
+
