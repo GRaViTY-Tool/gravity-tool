@@ -213,6 +213,7 @@ public class ExpressionHandler {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 			if (variablesContainer instanceof FieldDeclaration) {
+				// TODO: Check type of access here
 				if(member.getMAbstractFieldAccess().contains(singleVariableAccess)){
 					return true;
 				}
