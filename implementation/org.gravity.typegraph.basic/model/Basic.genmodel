@@ -43,7 +43,6 @@
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/signatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/pg"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField/tName"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition/signature"/>
@@ -70,9 +69,8 @@
       <genOperations ecoreOperation="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/getSignatureString"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/pg"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/signatures"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/tName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod/pg"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/signature"/>
@@ -192,6 +190,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod/signature"/>
     </genClasses>
     <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TUnresolvedType"/>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TName/tName"/>
+    </genClasses>
     <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers">
       <genClasses ecoreClass="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TTypeContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
