@@ -56,7 +56,7 @@ import org.xml.sax.SAXException;
  */
 public class GradleImport {
 
-	private final File gradleHome;
+	private final File gradleCache;
 	private final File buildDotGradle;
 	private final File rootDir;
 
@@ -70,13 +70,18 @@ public class GradleImport {
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
 
-	static final Logger LOGGER = Logger.getLogger(GradleImport.class);
-
+	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	
+	/**
+	 * An instance of the gradle builder
+	 */
+	private final GradleBuild gradleBuild;
+	
 	/**
 	 * Creates an importer for the given gradle root directory of a gradle project
 	 * 
 	 * The gradle home directory has to be registered at the environment variable
-	 * GRADLE_HOME. If the imported project is an Android project the Android Sdk
+	 * GRADLE_USER_HOME. If the imported project is an Android project the Android Sdk
 	 * should be registered at the environment variable ANDROID_HOME.
 	 * 
 	 * @param rootDir the path to the gradle root directory
@@ -112,7 +117,8 @@ public class GradleImport {
 			this.includes.add(root.toPath());
 		}
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
-		this.gradleHome = initGradleHome();
+		this.gradleCache = initGradleUserHome();
+		gradleBuild = new GradleBuild();
 	}
 
 	/**
@@ -155,7 +161,7 @@ public class GradleImport {
 			project = JavaProjectUtil.createJavaProjectWithUniqueName(rootDir.getName(), monitor);
 			HashMap<String, Set<Path>> sourceFolders = getSourceFolderMapping(javaSourceFiles);
 			for (Entry<String, Set<Path>> entry : sourceFolders.entrySet()) {
-				final IFolder folder = project.getProject().getFolder(entry.getKey());
+				final IFolder folder = project.getProject().getFolder(entry.getKey().replace("/", "-"));
 				if (!folder.exists()) {
 					EclipseProjectUtil.createFolder(folder, monitor);
 				}
@@ -189,7 +195,7 @@ public class GradleImport {
 	 */
 	private void build(boolean ignoreBuildErrors) throws GradleImportException {
 		try {
-			if (!GradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
+			if (!gradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
 			}
 		} catch (UnsupportedOperationSystemException e) {
@@ -244,8 +250,10 @@ public class GradleImport {
 		Set<Path> javaSourceFiles = null;
 		try {
 			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
-		} catch (IOException | InterruptedException | UnsupportedOperationSystemException e) {
+		} catch (IOException | GradleImportException e) {
 			LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+		}
+		if(javaSourceFiles == null || javaSourceFiles.size() == 0) {
 			LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (Path root : includes) {
@@ -264,11 +272,23 @@ public class GradleImport {
 	private HashMap<String, Set<Path>> getSourceFolderMapping(Set<Path> javaSourceFiles) {
 		HashMap<String, Set<Path>> sourceFolders = new HashMap<>();
 		for (Path sourceFile : javaSourceFiles) {
-			String[] split = rootDir.toPath().relativize(sourceFile).toString().split("/src/main/java/");
+			Path path = rootDir.toPath();
+			String relativize;
+			try {
+				relativize = path.relativize(sourceFile).toString();
+			}
+			catch(IllegalArgumentException e) {
+				relativize = sourceFile.toString().replaceFirst(new File("").getAbsolutePath(), "");
+				if(relativize.startsWith("/") || relativize.startsWith("\\")) {
+					relativize =relativize.substring(1);
+				}
+			}
+			String[] split = relativize.split("/src/((main|test)/(java|scala)/)?");
 			String key;
 			if (split.length == 2) {
 				key = split[0];
 			} else {
+				LOGGER.log(Level.WARN, "Couldn't determine source folder of file, using \"src\": "+relativize);
 				key = "src";
 			}
 			Set<Path> files;
@@ -302,13 +322,13 @@ public class GradleImport {
 	}
 
 	/**
-	 * Resolves the GRADLE_HOME directory
+	 * Resolves the GRADLE_USER_HOME directory
 	 * 
-	 * @return A file holding the location of GRADLE_HOME
-	 * @throws FileNotFoundException If GRADLE_HOME hasn't been found
+	 * @return A file holding the location of GRADLE_USER_HOME
+	 * @throws FileNotFoundException If GRADLE_USER_HOME hasn't been found
 	 */
-	private File initGradleHome() throws FileNotFoundException {
-		String gradleHome = System.getenv("GRADLE_HOME");
+	private File initGradleUserHome() throws FileNotFoundException {
+		String gradleHome = System.getenv("GRADL_USER_HOME");
 		if (gradleHome != null) {
 			File tmpGradleHome = new File(gradleHome);
 			if (tmpGradleHome.exists()) {
@@ -319,7 +339,7 @@ public class GradleImport {
 		if (tmpGradleHome.exists()) {
 			return tmpGradleHome;
 		} else {
-			throw new FileNotFoundException("Gradle home not found");
+			throw new FileNotFoundException("Gradle user home not found");
 		}
 	}
 
@@ -582,7 +602,7 @@ public class GradleImport {
 
 		}
 
-		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleHome, GRADLE_CACHE));
+		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
 		Set<Path> libsAsJar = new HashSet<>(pathsToLibs.values());

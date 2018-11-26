@@ -34,6 +34,39 @@ class GradleBuild {
 			.compile("apply\\s+plugin:\\s+'com.google.gms.google-services'");
 
 	/**
+	 * The location of the primary gradle installation as specified in GRADLE_HOME
+	 */
+	private final File gradleBin;
+	
+	/**
+	 * 
+	 */
+	public GradleBuild() {
+		String env = System.getenv("GRADLE_HOME");
+		if(env != null) {
+			File gradleHome = new File(env);
+			if(gradleHome.exists()) {
+				final File bin = new File(gradleHome, "bin/gradle");
+				if(bin.exists() && bin.isFile()) {
+					this.gradleBin = bin;
+				}
+				else {
+					this.gradleBin = null;
+					LOGGER.warn("The gradle installation at \""+env+"\" doesn't has the expected structure.");
+				}
+			}
+			else {
+				this.gradleBin = null;
+				LOGGER.warn("GRADLE_HOME points to a not existing path: "+env);
+			}
+		}
+		else {
+			this.gradleBin = null;
+			LOGGER.warn("GRADLE_HOME is not set, only gradle projects providing warappers can be built.");
+		}
+	}
+
+	/**
 	 * Builds the gradle project
 	 * 
 	 * @param gradleRootFolder The root of the project
@@ -44,11 +77,14 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	static boolean buildGradleProject(File gradleRootFolder, Iterable<Path> buildDotGradleFiles, boolean androidApp)
+	boolean buildGradleProject(File gradleRootFolder, Iterable<Path> buildDotGradleFiles, boolean androidApp)
 			throws IOException, InterruptedException, UnsupportedOperationSystemException {
 		File gradlew = new File(gradleRootFolder, "gradlew");
 		if (!gradlew.exists()) {
-			return false;
+			if(gradleBin == null) {
+				return false;
+			}
+			gradlew = gradleBin;
 		}
 
 		FileUtils.changeToOSEncoding(gradlew);
@@ -59,7 +95,7 @@ class GradleBuild {
 			localProperties.delete();
 		}
 
-		Process process = build(gradleRootFolder, "assemble");
+		Process process = createBuildProcess(gradleRootFolder, "assemble");
 		StringBuilder message = collectMessages(process);
 		process.waitFor();
 
@@ -72,7 +108,7 @@ class GradleBuild {
 					fix |= replaceGoogleServices(buildFile);
 				}
 				if (fix) {
-					process = build(gradleRootFolder,"assemble");
+					process = createBuildProcess(gradleRootFolder,"assemble");
 					collectMessages(process);
 					process.waitFor();
 
@@ -93,7 +129,7 @@ class GradleBuild {
 	 * @throws IOException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	static Process build(File path, String buildTarget) throws IOException, UnsupportedOperationSystemException {
+	private static Process createBuildProcess(File path, String buildTarget) throws IOException, UnsupportedOperationSystemException {
 		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
@@ -107,6 +143,26 @@ class GradleBuild {
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 		return process;
+	}
+	
+	/**
+	 * @param location The location of the gradle project
+	 * @param target   The build target
+	 * @throws IOException
+	 * @throws UnsupportedOperationSystemException
+	 * @throws InterruptedException
+	 * @return true, iff the project has been build successfully
+	 */
+	public static boolean build(File location, String target) {
+		try {
+			Process process = createBuildProcess(location, target);
+			GradleBuild.collectMessages(process);
+			process.waitFor();
+			return process.exitValue() == 0;
+		} catch (IOException | UnsupportedOperationSystemException | InterruptedException e) {
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			return false;
+		}
 	}
 
 	/**
@@ -143,7 +199,7 @@ class GradleBuild {
 	 * @return the string builder
 	 * @throws IOException
 	 */
-	private static StringBuilder collectMessages(Process process) throws IOException {
+	static StringBuilder collectMessages(Process process) throws IOException {
 		StringBuilder message = new StringBuilder();
 		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;

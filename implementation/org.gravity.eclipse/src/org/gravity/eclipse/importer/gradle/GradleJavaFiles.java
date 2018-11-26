@@ -9,8 +9,13 @@ import java.nio.file.StandardOpenOption;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.gravity.eclipse.os.UnsupportedOperationSystemException;
-
+/**
+ * This class can be used to insert a print java files task into a gradle
+ * project and to read the results
+ * 
+ * @author speldszus
+ *
+ */
 public class GradleJavaFiles {
 
 	private static final String BUILD_TARGET = "exportCode";
@@ -19,7 +24,8 @@ public class GradleJavaFiles {
 	private final Path path;
 
 	/**
-	 * Manipulates the build.gradle file for getting all java files and initializes an opject for getting them
+	 * Manipulates the build.gradle file for getting all java files and initializes
+	 * an opject for getting them
 	 * 
 	 * @param path The path to the build.gradle file
 	 * @throws IOException if an I/O error occurs manipulating the file
@@ -30,14 +36,18 @@ public class GradleJavaFiles {
 		this.original = manipuateBuildFile(path);
 	}
 
-	public Set<Path> getJavaFiles() throws IOException, UnsupportedOperationSystemException, InterruptedException {
-		Process process = GradleBuild.build(path.getParent().toFile(), BUILD_TARGET);
-		process.waitFor();
-		final Set<Path> collect = Files.readAllLines(output).parallelStream().map(s -> Paths.get(s)).collect(Collectors.toSet());
+	public Set<Path> getJavaFiles() throws IOException, GradleImportException {
+		boolean success = GradleBuild.build(path.getParent().toFile(), BUILD_TARGET);
+		if(!success) {
+			throw new GradleImportException("Couldn't get Java files");
+		}
+		final Set<Path> collect = Files.readAllLines(output).parallelStream().map(s -> Paths.get(s))
+				.collect(Collectors.toSet());
 		Files.move(original, path, StandardCopyOption.REPLACE_EXISTING);
 		return collect;
 	}
 
+	
 
 	/**
 	 * Adds a task to save all java sourcefiles into temp file
@@ -47,25 +57,16 @@ public class GradleJavaFiles {
 	 * @return path to a backup of the original file
 	 */
 	private Path manipuateBuildFile(Path build) throws IOException {
-		Path original = Files.copy(build, Files.createTempFile("backupBuildGardle", ""), StandardCopyOption.REPLACE_EXISTING);
-		String taskCode =  "\n" + 
-				"task "+BUILD_TARGET+" {\n" + 
-				"  def outputFile = file(\""
-				+ output
-				+ "\")\n" + 
-				"  outputs.file  outputFile\n" + 
-				"  doLast {\n" + 
-				"    subprojects { project ->\n" + 
-				"      project.plugins.withType(JavaPlugin) {\n" + 
-				"        project.sourceSets.main.allJava.collect { sourceFile ->\n" + 
-				"          outputFile << sourceFile.path + '\\n'\n" + 
-				"        }\n" + 
-				"      }\n" + 
-				"    }\n" + 
-				"  }\n" + 
-				"}\n";
+		Path original = Files.copy(build, Files.createTempFile("backupBuildGardle", ""),
+				StandardCopyOption.REPLACE_EXISTING);
+		String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + output + "\")\n"
+				+ "  outputs.file  outputFile\n" + "  doLast {\n" + "    subprojects { project ->\n"
+				+ "      project.plugins.withType(JavaPlugin) {\n"
+				+ "        project.sourceSets.main.allJava.collect { sourceFile ->\n"
+				+ "          outputFile << sourceFile.path + '\\n'\n" + "        }\n" + "      }\n" + "    }\n"
+				+ "  }\n" + "}\n";
 		Files.write(build, taskCode.getBytes(), StandardOpenOption.APPEND);
 		return original;
 	}
-	
+
 }
