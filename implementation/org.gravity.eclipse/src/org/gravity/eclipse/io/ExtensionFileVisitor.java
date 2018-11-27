@@ -35,6 +35,18 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> {
 		this.files = new LinkedList<Path>();
 	}
 
+	/**
+	 * Creates a new file visitor collecting files with a given file extensions
+	 * 
+	 * @param fileExtensions The extensions of the files
+	 */
+	public ExtensionFileVisitor(String... fileExtensions) {
+		this.fileExtensions = new ArrayList<>(fileExtensions.length);
+		for(String f : fileExtensions) {
+			this.fileExtensions.add(addPrefix(f));
+		}
+		this.files = new LinkedList<Path>();
+	}
 	
 	/**
 	 * Creates a new file visitor collecting files with a given file extension
