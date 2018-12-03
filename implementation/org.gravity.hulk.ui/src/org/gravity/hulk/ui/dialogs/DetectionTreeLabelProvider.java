@@ -7,19 +7,26 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
 import org.gravity.hulk.ui.Messages;
 
+/**
+ * A provider for anti-pattern labels
+ * 
+ * @author speldszus
+ *
+ */
 public class DetectionTreeLabelProvider extends LabelProvider {
+	
 	@Override
 	public String getText(Object element) {
 		if (element instanceof EClass) {
-			EClass e_class = (EClass) element;
-			if (e_class.isAbstract() || e_class.isInterface()) {
+			EClass eClass = (EClass) element;
+			if (eClass.isAbstract() || eClass.isInterface()) {
 				return Messages.HulkScanHandler_5;
 			}
-			if (HulkPackage.eINSTANCE.getHDetector().isSuperTypeOf(e_class)) {
-				EPackage e_package = e_class.getEPackage();
-				return ((HDetector) e_package.getEFactoryInstance().create(e_class)).getGuiName();
+			if (HulkPackage.eINSTANCE.getHDetector().isSuperTypeOf(eClass)) {
+				EPackage ePackage = eClass.getEPackage();
+				return ((HDetector) ePackage.getEFactoryInstance().create(eClass)).getGuiName();
 			}
-			return e_class.getName();
+			return eClass.getName();
 		} else if (element instanceof EPackage) {
 			return ((EPackage) element).getName();
 		}
