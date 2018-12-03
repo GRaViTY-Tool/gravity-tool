@@ -130,17 +130,6 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fillParents(EList<TAbstractType> list) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -318,11 +307,6 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicPackage.TUNRESOLVED_TYPE___FILL_PARENTS__ELIST:
-				fillParents((EList<TAbstractType>)arguments.get(0));
-				return null;
-		}
 		return super.eInvoke(operationID, arguments);
 	}
 	// <-- [user code injected with eMoflon]

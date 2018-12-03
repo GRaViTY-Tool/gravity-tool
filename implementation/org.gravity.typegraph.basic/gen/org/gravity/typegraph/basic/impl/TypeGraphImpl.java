@@ -508,12 +508,28 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public TPackage getPackage(EList<String> namespace) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		EList<TPackage> next = getPackages();
+		for (int i = 0; i < namespace.size();) {
+			String name = namespace.get(i++);
+			boolean contains = false;
+			for (TPackage tPackage : next) {
+				if (name.equals(tPackage.getTName())) {
+					if (i == namespace.size()) {
+						return tPackage;
+					}
+					next = tPackage.getSubpackage();
+					contains = true;
+					break;
+				}
+			}
+			if (!contains) {
+				return null;
+			}
+		}
+		return null;
 	}
 
 	public TPackage getPackage(String[] namespace) {
@@ -566,12 +582,24 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public TAbstractType getAbstractType(String fullyQualifiedName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		int index = fullyQualifiedName.lastIndexOf('.');
+		String defaultPackage = "default";
+		if (index > 0) {
+			defaultPackage = fullyQualifiedName.substring(0, index);
+		}
+		TPackage tPackage = getPackage(defaultPackage);
+		if (tPackage != null) {
+			String name = fullyQualifiedName.substring(index + 1);
+			for (TAbstractType tType : tPackage.getOwnedTypes()) {
+				if (tType.getTName().equals(name) || tType.getTName().contentEquals(fullyQualifiedName)) {
+					return tType;
+				}
+			}
+		}
+		return null;
 	}
 
 	public TInterface getInterface(String fullyQualifiedName) {

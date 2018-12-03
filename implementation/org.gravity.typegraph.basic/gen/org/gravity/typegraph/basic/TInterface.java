@@ -96,14 +96,6 @@ public interface TInterface extends TAbstractType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model listMany="true"
-	 * @generated
-	 */
-	void fillParents(EList<TAbstractType> list);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */

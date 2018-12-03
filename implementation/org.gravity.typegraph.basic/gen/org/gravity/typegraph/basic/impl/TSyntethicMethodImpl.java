@@ -257,5 +257,10 @@ public class TSyntethicMethodImpl extends TMemberImpl implements TSyntethicMetho
 	}
 	// <-- [user code injected with eMoflon]
 
+	@Override
+	public String getSignatureString() {
+		return signature.getSignatureString();
+	}
+
 	// [user code injected with eMoflon] -->
 } //TSyntethicMethodImpl

@@ -128,17 +128,6 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void fillParents(EList<TAbstractType> list) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean isSuperTypeOf(TAbstractType tType) {
@@ -285,11 +274,6 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicPackage.TINTERFACE___FILL_PARENTS__ELIST:
-				fillParents((EList<TAbstractType>)arguments.get(0));
-				return null;
-		}
 		return super.eInvoke(operationID, arguments);
 	}
 

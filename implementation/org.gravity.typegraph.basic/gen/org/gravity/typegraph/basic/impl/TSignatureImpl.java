@@ -47,24 +47,16 @@ public abstract class TSignatureImpl extends TAnnotatableImpl implements TSignat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getSignatureString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract String getSignatureString();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public TMember getTDefinition(TAbstractType defining) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract TMember getTDefinition(TAbstractType defining);
 
 	/**
 	 * <!-- begin-user-doc -->

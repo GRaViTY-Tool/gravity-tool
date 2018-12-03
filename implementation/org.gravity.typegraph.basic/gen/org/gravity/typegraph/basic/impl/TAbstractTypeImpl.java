@@ -465,13 +465,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public boolean isSuperTypeOf(TAbstractType tType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract boolean isSuperTypeOf(TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -172,5 +172,10 @@ public class TAnnotationTypeImpl extends TAbstractTypeImpl implements TAnnotatio
 		return false;
 	}
 
+	@Override
+	public boolean isSuperTypeOf(TAbstractType tType) {
+		return false;
+	}
+
 	// [user code injected with eMoflon] -->
 } //TAnnotationTypeImpl
