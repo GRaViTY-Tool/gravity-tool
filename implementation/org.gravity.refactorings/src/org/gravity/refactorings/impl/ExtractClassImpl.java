@@ -2,7 +2,6 @@
  */
 package org.gravity.refactorings.impl;
 
-import java.lang.Iterable;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,36 +31,44 @@ import org.gravity.typegraph.basic.TMethodDefinition;
  *
  * @generated
  */
-public class Extract_ClassImpl extends RefactoringImpl {
-	
-	private static final Logger LOGGER = Logger.getLogger(Extract_ClassImpl.class.getName());
+public class ExtractClassImpl extends RefactoringImpl {
 
-	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
-		// TODO: Implement Refactoring
-		throw new UnsupportedOperationException();
-	}
+	private static final Logger LOGGER = Logger.getLogger(ExtractClassImpl.class.getName());
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Checks if the refactoring is applicable
 	 * 
-	 * @generated
+	 * @param tRefactoringConfiguration The refactoring configuration
+	 * @return true, iff the refactoring is applicable
 	 */
+	@Override
 	public boolean isApplicable(RefactoringConfiguration tRefactoringConfiguration) {
-		// [user code injected with eMoflon]
-
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			ExtractClassConfiguration configuration = (ExtractClassConfiguration) tRefactoringConfiguration;
 
 			List<TMember> tMembers = configuration.getTMembers();
-			if (tMembers.size() == 0) {
+			LOGGER.log(Level.INFO, "There is no memebr which should be extracted");
+			if (tMembers.isEmpty()) {
 				return false;
 			}
-			TPackage tPackage = tMembers.get(0).getDefinedBy().getPackage();
-			for (TAbstractType type : tPackage.getOwnedTypes()) {
-				if (type.getTName().equals(configuration.getTNewClassName())) {
+
+			TAbstractType tOwner = null;
+			for (TMember tMember : tMembers) {
+				TAbstractType tmp = tMember.getDefinedBy();
+				if (tOwner == null) {
+					tOwner = tmp;
+				}
+				if (tOwner != tmp) {
+					LOGGER.log(Level.INFO, "Not all members have the same owner");
 					return false;
 				}
+			}
+
+			final String tNewClassName = configuration.getTNewClassName();
+			if (tOwner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
+				LOGGER.log(Level.INFO,
+						"There is already a type with the name \"" + tNewClassName + "\"");
+				return false;
 			}
 
 			for (TMember tMember : tMembers) {
@@ -79,13 +86,14 @@ public class Extract_ClassImpl extends RefactoringImpl {
 						return false;
 					}
 				} else {
-					LOGGER.log(Level.ERROR, "Extract_Class: Unknown member type: " + tMember);
+					LOGGER.log(Level.ERROR, "Unknown member type: " + tMember);
 					return false;
 				}
 			}
 			return true;
 
 		}
+		LOGGER.log(Level.INFO, "Unsupported refactoring configuration");
 		return false;
 
 	}
@@ -93,24 +101,24 @@ public class Extract_ClassImpl extends RefactoringImpl {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
-	public List<TClass> Perform(RefactoringConfiguration tRefactoringConfiguration) {
+	@Override
+	public Collection<TClass> perform(RefactoringConfiguration tRefactoringConfiguration) {
 
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			ExtractClassConfiguration tExtractConfiguration = (ExtractClassConfiguration) tRefactoringConfiguration;
 
-
 			TClass tClass = null;
 			TPackage tPackage = null;
 			TypeGraph tPG = null;
-			
+
 			for (TMember tSomeMember : tExtractConfiguration.getTMembers()) {
 				TAbstractType tmpTClass = tSomeMember.getDefinedBy();
 				if (tmpTClass instanceof TClass) {
-					tPG = tClass.getPg();
+					tPG = tmpTClass.getPg();
 					if (tPG != null) {
-						tPackage = tClass.getPackage();
+						tPackage = tmpTClass.getPackage();
 						if (tPackage != null) {
 							tClass = (TClass) tmpTClass;
 							break;
@@ -133,10 +141,7 @@ public class Extract_ClassImpl extends RefactoringImpl {
 			tContainer.add(tClass);
 
 			// ForEach
-			for (Object[] result6_black : Extract_ClassImpl
-					.pattern_Extract_Class_1_6_ActivityNode247_blackBF(tExtractConfiguration)) {
-				TMember tMember = (TMember) result6_black[1];
-
+			for (TMember tMember : tExtractConfiguration.getTMembers()) {
 				TSignature tSignature = tMember.getSignature();
 				if (tSignature != null && !tClass.equals(tNewClass) && tClass.equals(tMember.getDefinedBy())
 						&& tClass.getSignature().contains(tSignature)) {
@@ -164,17 +169,8 @@ public class Extract_ClassImpl extends RefactoringImpl {
 		tPG.getClasses().add(tNewClass);
 		tPackage.getOwnedTypes().add(tNewClass);
 		tPackage.getClasses().add(tNewClass);
-		
-		return tNewClass;
-	}
 
-	public static final Iterable<Object[]> pattern_Extract_Class_1_6_ActivityNode247_blackBF(
-			ExtractClassConfiguration tExtractConfiguration) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TMember tMember : tExtractConfiguration.getTMembers()) {
-			_result.add(new Object[] { tExtractConfiguration, tMember });
-		}
-		return _result;
+		return tNewClass;
 	}
 
 	@Override
