@@ -10,12 +10,16 @@ Export-Package: org.gravity.typegraph.basic,
  org.gravity.typegraph.basic.annotations.util,
  org.gravity.typegraph.basic.annotations.impl,
  org.gravity.typegraph.basic.annotations
-Bundle-Name: org.gravity.typegraph.basic
+Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
- org.apache.log4j
+ org.apache.log4j,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: TU Darmstadt
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.typegraph.basic
