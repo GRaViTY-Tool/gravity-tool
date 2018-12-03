@@ -35,8 +35,6 @@ public class ExtractClassImpl extends RefactoringImpl {
 
 	private static final Logger LOGGER = Logger.getLogger(ExtractClassImpl.class.getName());
 	
-	private TAbstractType owner;
-
 	/**
 	 * Checks if the refactoring is applicable
 	 * 
@@ -54,14 +52,7 @@ public class ExtractClassImpl extends RefactoringImpl {
 				return false;
 			}
 
-			if(!checkOwner(tMembers)) {
-				return false;
-			}
-
-			final String tNewClassName = configuration.getTNewClassName();
-			if (owner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
-				LOGGER.log(Level.INFO,
-						"There is already a type with the name \"" + tNewClassName + "\"");
+			if(!checkTypes(configuration)) {
 				return false;
 			}
 
@@ -106,13 +97,14 @@ public class ExtractClassImpl extends RefactoringImpl {
 	}
 
 	/**
-	 * Checks if all members have the same owner and that this owner is not null and no lib
+	 * Checks if the owner and the target type allow the refactoring
 	 * 
-	 * @param tMembers The members
+	 * @param configuration The refactoring configuration
 	 * @return true, iff the owner allows the refactoring
 	 */
-	private boolean checkOwner(List<TMember> tMembers) {
-		for (TMember tMember : tMembers) {
+	private boolean checkTypes(ExtractClassConfiguration configuration) {
+		TAbstractType owner = null;
+		for (TMember tMember : configuration.getTMembers()) {
 			TAbstractType tmp = tMember.getDefinedBy();
 			if (owner == null) {
 				owner = tmp;
@@ -123,6 +115,13 @@ public class ExtractClassImpl extends RefactoringImpl {
 			}
 		}
 		if(owner == null || owner.isTLib()) {
+			return false;
+		}
+		
+		final String tNewClassName = configuration.getTNewClassName();
+		if (owner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
+			LOGGER.log(Level.INFO,
+					"There is already a type with the name \"" + tNewClassName + "\"");
 			return false;
 		}
 		return true;
