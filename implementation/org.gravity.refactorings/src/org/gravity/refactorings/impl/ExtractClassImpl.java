@@ -34,6 +34,8 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 public class ExtractClassImpl extends RefactoringImpl {
 
 	private static final Logger LOGGER = Logger.getLogger(ExtractClassImpl.class.getName());
+	
+	private TAbstractType owner;
 
 	/**
 	 * Checks if the refactoring is applicable
@@ -52,41 +54,19 @@ public class ExtractClassImpl extends RefactoringImpl {
 				return false;
 			}
 
-			TAbstractType tOwner = null;
-			for (TMember tMember : tMembers) {
-				TAbstractType tmp = tMember.getDefinedBy();
-				if (tOwner == null) {
-					tOwner = tmp;
-				}
-				if (tOwner != tmp) {
-					LOGGER.log(Level.INFO, "Not all members have the same owner");
-					return false;
-				}
+			if(!checkOwner(tMembers)) {
+				return false;
 			}
 
 			final String tNewClassName = configuration.getTNewClassName();
-			if (tOwner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
+			if (owner.getPackage().getOwnedTypes().parallelStream().anyMatch(t -> tNewClassName.equals(t.getTName()))) {
 				LOGGER.log(Level.INFO,
 						"There is already a type with the name \"" + tNewClassName + "\"");
 				return false;
 			}
 
 			for (TMember tMember : tMembers) {
-				if (tMember instanceof TMethodDefinition) {
-					TMethodDefinition mDef = (TMethodDefinition) tMember;
-					if (mDef instanceof TConstructorDefinition) {
-						return false;
-					}
-					if (mDef.getOverriding() != null || mDef.getOverriddenBy().size() > 0) {
-						return false;
-					}
-				} else if (tMember instanceof TFieldDefinition) {
-					TFieldDefinition fDef = (TFieldDefinition) tMember;
-					if (fDef.getHiding() != null || fDef.getHiddenBy().size() > 0) {
-						return false;
-					}
-				} else {
-					LOGGER.log(Level.ERROR, "Unknown member type: " + tMember);
+				if(!checkMember(tMember)) {
 					return false;
 				}
 			}
@@ -96,6 +76,56 @@ public class ExtractClassImpl extends RefactoringImpl {
 		LOGGER.log(Level.INFO, "Unsupported refactoring configuration");
 		return false;
 
+	}
+
+	/**
+	 * Checks if the member can be extracted
+	 * 
+	 * @param tMember The member
+	 * @return true, iff the member can be extracted
+	 */
+	private boolean checkMember(TMember tMember) {
+		if (tMember instanceof TMethodDefinition) {
+			TMethodDefinition mDef = (TMethodDefinition) tMember;
+			if (mDef instanceof TConstructorDefinition) {
+				return false;
+			}
+			if (mDef.getOverriding() != null || mDef.getOverriddenBy().size() > 0) {
+				return false;
+			}
+		} else if (tMember instanceof TFieldDefinition) {
+			TFieldDefinition fDef = (TFieldDefinition) tMember;
+			if (fDef.getHiding() != null || fDef.getHiddenBy().size() > 0) {
+				return false;
+			}
+		} else {
+			LOGGER.log(Level.ERROR, "Unknown member type: " + tMember);
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Checks if all members have the same owner and that this owner is not null and no lib
+	 * 
+	 * @param tMembers The members
+	 * @return true, iff the owner allows the refactoring
+	 */
+	private boolean checkOwner(List<TMember> tMembers) {
+		for (TMember tMember : tMembers) {
+			TAbstractType tmp = tMember.getDefinedBy();
+			if (owner == null) {
+				owner = tmp;
+			}
+			if (owner != tmp) {
+				LOGGER.log(Level.INFO, "Not all members have the same owner");
+				return false;
+			}
+		}
+		if(owner == null || owner.isTLib()) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
