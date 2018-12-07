@@ -15,6 +15,7 @@ import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
+import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
@@ -41,55 +42,60 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
- *  
+ * 
  * A Preprocessor for resolving the static type on an access
  *
  */
 public class StaticTypePreprocessing implements IMoDiscoProcessor {
 
 	private static final Logger LOGGER = Logger.getLogger(StaticTypePreprocessing.class);
-	
+
 	private MGravityModel model;
 
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		this.model = model;
-		for(MAbstractMethodDefinition definition : model.getMAbstractMethodDefinitions()) {
-			if(!addStaticTypeAccesses(definition)) {
+		for (MAbstractMethodDefinition definition : model.getMAbstractMethodDefinitions()) {
+			if (!addStaticTypeAccesses(definition)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method) throws ProcessingException {
-		Expression exp = null;
-		Type type = null;
+	/**
+	 * Searches the static type of the object used in a method invocation in a
+	 * calling method
+	 * 
+	 * @param methodInvoc The method invocation
+	 * @param method      The calling method
+	 * @return The static type of the object on which the invoked method is called
+	 * @throws ProcessingException
+	 */
+	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method)
+			throws ProcessingException {
 		if (methodInvoc instanceof MethodInvocation) {
-			exp = ((MethodInvocation) methodInvoc).getExpression();
+			return getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 		} else if (methodInvoc instanceof SuperMethodInvocation) {
 			// super method invoc cannot happen with a qualifier other than "this"
 			// => static type is always the type that defines this method
-			exp = null;
-
+			return method.getAbstractTypeDeclaration();
 		} else if (methodInvoc instanceof ClassInstanceCreation) {
-			exp = ((ClassInstanceCreation) methodInvoc).getExpression();
+			return getStaticType(((ClassInstanceCreation) methodInvoc).getExpression(), method);
 		} else if (methodInvoc instanceof ConstructorInvocation) {
 			// ConstructorInvocation : this()
 			// => does not have a qualifier
 			// => static type is always type that defines this method
-			exp = null;
+			return method.getAbstractTypeDeclaration();
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
-			LOGGER.log(Level.ERROR,	"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+			LOGGER.log(Level.ERROR,
+					"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+			throw new ProcessingException(methodInvoc);
+		} else {
+			LOGGER.log(Level.ERROR, "Unknown invocation type : " + methodInvoc.getClass().getName());
 			throw new ProcessingException(methodInvoc);
 		}
-		if (exp == null) {
-			type = method.getAbstractTypeDeclaration();
-		} else {
-			type = getStaticType(exp, method);
-		}
-		return type;
 	}
 
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
@@ -101,7 +107,7 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 				return false;
 			}
-			if(type == null) {
+			if (type == null) {
 				return false;
 			}
 			MethodInvocationStaticType invocStatic = ModiscoFactory.eINSTANCE.createMethodInvocationStaticType();
@@ -112,7 +118,8 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return true;
 	}
 
-	private Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model) throws ProcessingException {
+	private Type getMethodInvocType(MethodInvocation methodInvoc, MAbstractMethodDefinition model)
+			throws ProcessingException {
 		AbstractMethodDeclaration aMethod = methodInvoc.getMethod();
 		if (aMethod instanceof MMethodDefinition) {
 			return ((MMethodDefinition) aMethod).getReturnType().getType();
@@ -128,7 +135,8 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		return getStaticType(((MethodInvocation) methodInvoc).getExpression(), model);
 	}
 
-	private Type getSingleVarAccessType(SingleVariableAccess expression, MAbstractMethodDefinition method) throws ProcessingException {
+	private Type getSingleVarAccessType(SingleVariableAccess expression, MAbstractMethodDefinition method)
+			throws ProcessingException {
 		VariableDeclaration var = ((SingleVariableAccess) expression).getVariable();
 		if (var == null) {
 			/*
@@ -207,7 +215,6 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		if (expression instanceof SuperMethodInvocation) {
 			return null;
 		}
-
 		if (expression instanceof StringLiteral) {
 			return MoDiscoUtil.getOrCreateJavaLangString(model);
 		}
@@ -230,15 +237,25 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		if (expression instanceof SuperFieldAccess) {
 			TypeAccess qualifier = ((SuperFieldAccess) expression).getQualifier();
 			if (qualifier == null) {
-				//Dirty hack for super.field access in libs
-				return (Type) ((MFieldDefinition)((SuperFieldAccess) expression).getField().getVariable().eContainer()).eContainer();
+				// Dirty hack for super.field access in libs
+				return (Type) ((MFieldDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
+						.eContainer();
 			}
 			return qualifier.getType();
 		}
 		if (expression instanceof ArrayAccess) {
 			return getStaticType(((ArrayAccess) expression).getArray(), method);
 		}
-
+		if (expression instanceof InfixExpression) {
+			final InfixExpression infix = (InfixExpression) expression;
+			Type type = getStaticType(infix.getLeftOperand(), method);
+			if (type == null) {
+				type = getStaticType(infix.getRightOperand(), method);
+			}
+			return type;
+		}
+		LOGGER.log(Level.ERROR, "Calculating static types from \"" + expression.getClass().getSimpleName()
+				+ "\" expressions is not supported");
 		return null;
 	}
 }

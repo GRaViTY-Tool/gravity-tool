@@ -37,11 +37,11 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
  *
  */
 public class GravityModiscoProjectDiscoverer {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
-	
+
 	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
-		
+
 		public ResourceSet getRS() {
 			return getResourceSet();
 		}
@@ -52,18 +52,18 @@ public class GravityModiscoProjectDiscoverer {
 	}
 
 	private MyDiscoverJavaModelFromJavaProject discoverer;
-	
+
 	/**
-	 *  The default constructor
+	 * The default constructor
 	 */
 	public GravityModiscoProjectDiscoverer() {
 		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
 	}
-	
+
 	/**
 	 * Discovers a java project
 	 * 
-	 * @param javaProject The java project
+	 * @param javaProject     The java project
 	 * @param progressMonitor A progress monitor
 	 * @return The discovered MoDisco model with GRaViTY extensions
 	 * @throws DiscoveryException If the discovery fails
@@ -76,8 +76,8 @@ public class GravityModiscoProjectDiscoverer {
 	/**
 	 * Discovers a java project taking additional libs into account
 	 * 
-	 * @param javaProject The java project
-	 * @param libs The locations of the additional libs
+	 * @param javaProject     The java project
+	 * @param libs            The locations of the additional libs
 	 * @param progressMonitor A progress monitor
 	 * @return The discovered MoDisco model with GRaViTY extensions
 	 * @throws DiscoveryException If the discovery fails
@@ -88,16 +88,16 @@ public class GravityModiscoProjectDiscoverer {
 			IProject iproject = javaProject.getProject();
 			iproject.refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (CoreException e) {
-			LOGGER.log(Level.WARN, "The project couldn't be refreshed before discovery: "+e.getMessage(), e);
+			LOGGER.log(Level.WARN, "The project couldn't be refreshed before discovery: " + e.getMessage(), e);
 		}
-		
+
 		long t0 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t0 + " MoDisco discover project: " + javaProject.getProject().getName());
-		
+		LOGGER.log(Level.INFO, t0 + " MoDisco discover project: " + javaProject.getProject().getName());
+
 		Model eobject = discoverProject(javaProject, libs, progressMonitor);
-		
+
 		long t1 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
+		LOGGER.log(Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
 
 		if (eobject == null) {
 			throw new DiscoveryException("Discovered modisco model is null");
@@ -108,24 +108,29 @@ public class GravityModiscoProjectDiscoverer {
 		}
 
 		long t2 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t2 + " MoDisco preprocessing");
-		
+		LOGGER.log(Level.INFO, t2 + " MoDisco preprocessing");
+
 		MGravityModel model;
 		if (eobject instanceof MGravityModel) {
 			model = (MGravityModel) eobject;
-			for (IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD)) {
-				if(!processor.process(model, progressMonitor)) {
-					LOGGER.log( Level.INFO, "ERROR: Preprocessing failed");
-					throw new DiscoveryException(new ProcessingException("Preprocessing failed"));
+			final Collection<IMoDiscoProcessor> sortedPreProcessors = GravityMoDiscoProcessorUtil
+					.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD);
+			LOGGER.log(Level.INFO,
+					t2 + " Starting MoDisco preprocessing with " + sortedPreProcessors.size() + " pre-processors");
+			for (IMoDiscoProcessor processor : sortedPreProcessors) {
+				if (!processor.process(model, progressMonitor)) {
+					LOGGER.log(Level.INFO, "ERROR: Preprocessing failed");
+					throw new DiscoveryException(
+							new ProcessingException("Preprocessing failed for " + processor.getClass().getName()));
 				}
 			}
 		} else {
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
-		
+
 		long t3 = System.currentTimeMillis();
-		LOGGER.log( Level.INFO, t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
-		
+		LOGGER.log(Level.INFO, t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
+
 		return model;
 	}
 
@@ -183,7 +188,7 @@ public class GravityModiscoProjectDiscoverer {
 
 		return model;
 	}
-	
+
 	/**
 	 * A getter for the resource set used at discovery by MoDisco
 	 * 

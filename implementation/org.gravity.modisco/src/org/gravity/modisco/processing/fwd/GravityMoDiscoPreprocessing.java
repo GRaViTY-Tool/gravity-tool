@@ -61,7 +61,9 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		factory.cleanup();
 		model.getMFieldDefinitions().addAll(factory.getFdefs());
 		model.getMMethodDefinitions().addAll(factory.getMdefs());
+		model.getMAbstractMethodDefinitions().addAll(factory.getMdefs());
 		model.getMConstructorDefinitions().addAll(factory.getCdefs());
+		model.getMAbstractMethodDefinitions().addAll(factory.getCdefs());
 
 		// fixStaticMethodCallOnField(model);
 		if (!preprocessMethods(model) || !preprocessAccesses(model) || !preprocessImplementedSignatures(model)) {
