@@ -21,7 +21,7 @@ import  org.gravity.typegraph.basic.TypeGraph;
 import  org.gravity.typegraph.basic.containers.TMemberContainer;
 import  org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
 import  org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
-import  org.gravity.refactorings.impl.Extract_ClassImpl;
+import  org.gravity.refactorings.impl.ExtractClassImpl;
 import  org.gravity.refactorings.impl.Move_MemberImpl;
 import  org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import  org.eclipse.emf.ecore.util.EcoreUtil;
@@ -56,8 +56,9 @@ partial class HBlobResolverImpl {
 			return true;
 		} else if (refactoring instanceof HExtractClass) {
 			HExtractClass e = (HExtractClass) refactoring;
-			ExtractClassConfiguration config = new ExtractClassConfiguration(e.getTMembers(), "ExtractedClass" + System.currentTimeMillis());
-			Extract_ClassImpl r = new Extract_ClassImpl();
+			ExtractClassConfiguration config = new ExtractClassConfiguration(e.getTMembers(),
+					"ExtractedClass" + System.currentTimeMillis());
+			ExtractClassImpl r = new ExtractClassImpl();
 			return r.isApplicable(config);
 		} else {
 			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
