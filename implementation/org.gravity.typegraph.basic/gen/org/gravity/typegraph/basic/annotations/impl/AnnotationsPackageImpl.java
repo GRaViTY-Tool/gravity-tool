@@ -481,6 +481,7 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 
 		// Add supertypes to classes
 		tTextAnnotationEClass.getESuperTypes().add(this.getTAnnotation());
+		tAnnotationEClass.getESuperTypes().add(ecorePackage.getEObject());
 		tAnnotationTypeEClass.getESuperTypes().add(theBasicPackage.getTAbstractType());
 
 		// Initialize classes, features, and operations; add parameters

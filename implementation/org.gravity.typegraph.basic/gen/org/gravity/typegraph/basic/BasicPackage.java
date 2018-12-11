@@ -2294,22 +2294,13 @@ public interface BasicPackage extends EPackage {
 	int TINTERFACE___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Fill Parents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINTERFACE___FILL_PARENTS__ELIST = TABSTRACT_TYPE_OPERATION_COUNT + 2;
-
-	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TINTERFACE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 3;
+	int TINTERFACE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>TInterface</em>' class.
@@ -2318,7 +2309,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TINTERFACE_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 4;
+	int TINTERFACE_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TConstructorNameImpl <em>TConstructor Name</em>}' class.
@@ -3301,22 +3292,13 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TCLASS_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Fill Parents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___FILL_PARENTS__ELIST = TCLASS_OPERATION_COUNT + 2;
-
-	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TUNRESOLVED_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TCLASS_OPERATION_COUNT + 3;
+	int TUNRESOLVED_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TCLASS_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>TUnresolved Type</em>' class.
@@ -3325,7 +3307,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TUNRESOLVED_TYPE_OPERATION_COUNT = TCLASS_OPERATION_COUNT + 4;
+	int TUNRESOLVED_TYPE_OPERATION_COUNT = TCLASS_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
@@ -4461,16 +4443,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTInterface__IsSuperTypeOf__TAbstractType();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TInterface#fillParents(org.eclipse.emf.common.util.EList) <em>Fill Parents</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fill Parents</em>' operation.
-	 * @see org.gravity.typegraph.basic.TInterface#fillParents(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getTInterface__FillParents__EList();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TInterface#hasCommonSuperType(org.gravity.typegraph.basic.TAbstractType) <em>Has Common Super Type</em>}' operation.
@@ -5786,14 +5758,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TINTERFACE___IS_SUPER_TYPE_OF__TABSTRACTTYPE = eINSTANCE.getTInterface__IsSuperTypeOf__TAbstractType();
-
-		/**
-		 * The meta object literal for the '<em><b>Fill Parents</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TINTERFACE___FILL_PARENTS__ELIST = eINSTANCE.getTInterface__FillParents__EList();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Common Super Type</b></em>' operation.

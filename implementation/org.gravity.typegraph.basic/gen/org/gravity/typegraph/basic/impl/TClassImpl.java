@@ -26,8 +26,6 @@ import org.gravity.typegraph.basic.TSignature;
 
 import org.gravity.typegraph.basic.containers.TMemberContainer;
 import org.gravity.typegraph.basic.containers.TMethodDefinitionContainer;
-// <-- [user defined imports]
-import java.util.ArrayList;
 import java.util.Collections;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
@@ -40,7 +38,6 @@ import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TSyntethicMethod;
 import org.gravity.typegraph.basic.containers.ContainersFactory;
 // [user defined imports] -->

@@ -1284,17 +1284,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTInterface__FillParents__EList() {
-		return tInterfaceEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getTInterface__HasCommonSuperType__TAbstractType() {
-		return tInterfaceEClass.getEOperations().get(3);
+		return tInterfaceEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1789,7 +1780,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEReference(tInterfaceEClass, TINTERFACE__CHILD_INTERFACES);
 		createEOperation(tInterfaceEClass, TINTERFACE___IS_SUB_TYPE_OF__TABSTRACTTYPE);
 		createEOperation(tInterfaceEClass, TINTERFACE___IS_SUPER_TYPE_OF__TABSTRACTTYPE);
-		createEOperation(tInterfaceEClass, TINTERFACE___FILL_PARENTS__ELIST);
 		createEOperation(tInterfaceEClass, TINTERFACE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE);
 
 		tAbstractTypeEClass = createEClass(TABSTRACT_TYPE);
@@ -2077,9 +2067,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTInterface__IsSuperTypeOf__TAbstractType(), ecorePackage.getEBoolean(), "isSuperTypeOf", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "tType", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getTInterface__FillParents__EList(), null, "fillParents", 0, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "list", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getTInterface__HasCommonSuperType__TAbstractType(), ecorePackage.getEBoolean(), "hasCommonSuperType", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "tType", 0, 1, IS_UNIQUE, IS_ORDERED);

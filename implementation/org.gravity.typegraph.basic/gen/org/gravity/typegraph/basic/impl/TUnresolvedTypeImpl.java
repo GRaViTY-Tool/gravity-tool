@@ -2,8 +2,6 @@
  */
 package org.gravity.typegraph.basic.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,7 +15,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TUnresolvedType;
@@ -278,36 +275,6 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == TInterface.class) {
-			switch (baseOperationID) {
-				case BasicPackage.TINTERFACE___IS_SUB_TYPE_OF__TABSTRACTTYPE: return BasicPackage.TUNRESOLVED_TYPE___IS_SUB_TYPE_OF__TABSTRACTTYPE;
-				case BasicPackage.TINTERFACE___IS_SUPER_TYPE_OF__TABSTRACTTYPE: return BasicPackage.TUNRESOLVED_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE;
-				case BasicPackage.TINTERFACE___FILL_PARENTS__ELIST: return BasicPackage.TUNRESOLVED_TYPE___FILL_PARENTS__ELIST;
-				case BasicPackage.TINTERFACE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE: return BasicPackage.TUNRESOLVED_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		return super.eInvoke(operationID, arguments);
 	}
 	// <-- [user code injected with eMoflon]
 

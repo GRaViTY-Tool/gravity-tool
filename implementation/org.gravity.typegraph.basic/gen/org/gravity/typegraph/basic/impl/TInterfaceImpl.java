@@ -2,8 +2,6 @@
  */
 package org.gravity.typegraph.basic.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -264,17 +262,6 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 				return childInterfaces != null && !childInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		return super.eInvoke(operationID, arguments);
 	}
 
 	// <-- [user code injected with eMoflon]
