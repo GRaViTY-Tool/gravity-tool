@@ -137,7 +137,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		if (this.debug) {
 			saveModel(targetModel, this.modiscoFolder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
-
+		
 		setSrc(targetModel);
 		setChangeSrc(null);
 		clearChanges();

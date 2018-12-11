@@ -22,9 +22,8 @@ public class ModiscoTrafo extends SynchronizationHelper{
 
 		// Forward Transformation
         ModiscoTrafo helper = new ModiscoTrafo();
-        helper.setVerbose(true);
 		helper.performForward("instances/fwd.src.xmi");
-		
+
 		// Backward Transformation
 		helper = new ModiscoTrafo();
 		helper.performBackward("instances/bwd.src.xmi");

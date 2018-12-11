@@ -17,7 +17,7 @@ public class ModiscoModelGen extends SynchronizationHelper{
    {
       super(ModiscoPackage.eINSTANCE, ".");
    }
-	
+
 	public static void main(String[] args) throws IOException {
 		// Set up logging
 		BasicConfigurator.configure();

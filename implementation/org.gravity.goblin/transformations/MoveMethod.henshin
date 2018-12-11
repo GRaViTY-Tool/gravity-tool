@@ -1,117 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_WL0uoOlEEeajyLi0pWzMmQ" name="rules" description="">
-  <imports href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations"/>
-  <imports href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"/>
-  <imports href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#/"/>
+  <imports href="http://www.gravity.org/typegraph/basic#//annotations"/>
+  <imports href="http://www.gravity.org/typegraph/basic#//containers"/>
+  <imports href="http://www.gravity.org/typegraph/basic#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_er3dEOlEEeajyLi0pWzMmQ" name="MoveMethod-Parameter">
     <parameters xmi:id="_ioJscOlEEeajyLi0pWzMmQ" name="methodSig">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
     </parameters>
     <parameters xmi:id="_ioJscelEEeajyLi0pWzMmQ" name="sourceClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <parameters xmi:id="_ioJsculEEeajyLi0pWzMmQ" name="targetClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <lhs xmi:id="_er3dFelEEeajyLi0pWzMmQ" name="Lhs">
       <nodes xmi:id="_j21GEOlEEeajyLi0pWzMmQ" name="sourceClass" outgoing="_xXZIEOlEEeajyLi0pWzMmQ _yOrVYOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_4QtdMLaZEeiV2NIR8ibbKQ" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_lSLCsOlEEeajyLi0pWzMmQ" name="targetClass" incoming="_l1HCULdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_0Cw2ELaZEeiV2NIR8ibbKQ" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_m1jhAOlEEeajyLi0pWzMmQ" name="methodSig" incoming="_xXZIEOlEEeajyLi0pWzMmQ" outgoing="_Q0Do0PqUEeae5NW9ACbbhw _hg40ELdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_oYf6cOlEEeajyLi0pWzMmQ" name="methodDef" incoming="_yOrVYOlEEeajyLi0pWzMmQ _Q0Do0PqUEeae5NW9ACbbhw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_b4zxQLdOEeiE6OEABRuRCw" incoming="_knBekLdOEeiE6OEABRuRCw" outgoing="_l1HCULdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameter"/>
       </nodes>
       <nodes xmi:id="_feO_0LdOEeiE6OEABRuRCw" incoming="_hg40ELdOEeiE6OEABRuRCw" outgoing="_knBekLdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameterList"/>
       </nodes>
       <edges xmi:id="_xXZIEOlEEeajyLi0pWzMmQ" source="_j21GEOlEEeajyLi0pWzMmQ" target="_m1jhAOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_yOrVYOlEEeajyLi0pWzMmQ" source="_j21GEOlEEeajyLi0pWzMmQ" target="_oYf6cOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_Q0Do0PqUEeae5NW9ACbbhw" source="_m1jhAOlEEeajyLi0pWzMmQ" target="_oYf6cOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
       <edges xmi:id="_hg40ELdOEeiE6OEABRuRCw" source="_m1jhAOlEEeajyLi0pWzMmQ" target="_feO_0LdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/paramList"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/paramList"/>
       </edges>
       <edges xmi:id="_knBekLdOEeiE6OEABRuRCw" source="_feO_0LdOEeiE6OEABRuRCw" target="_b4zxQLdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList/entries"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameterList/entries"/>
       </edges>
       <edges xmi:id="_l1HCULdOEeiE6OEABRuRCw" source="_b4zxQLdOEeiE6OEABRuRCw" target="_lSLCsOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/type"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameter/type"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_7cUdkLaZEeiV2NIR8ibbKQ">
         <child xsi:type="henshin:NestedCondition" xmi:id="_7cUdkbaZEeiV2NIR8ibbKQ">
           <conclusion xmi:id="_7cUdkraZEeiV2NIR8ibbKQ">
             <nodes xmi:id="_7cVEoLaZEeiV2NIR8ibbKQ" name="targetClass" outgoing="_N04Y8LdNEeiE6OEABRuRCw _Cc2wwLdNEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
               <attributes xmi:id="_7cVEobaZEeiV2NIR8ibbKQ" value="false">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
               </attributes>
               <attributes xmi:id="_5d4a8LaZEeiV2NIR8ibbKQ" value="&quot;T&quot;">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
               </attributes>
             </nodes>
             <nodes xmi:id="_phUgQLdMEeiE6OEABRuRCw" name="sourceClass" outgoing="_phVHUbdMEeiE6OEABRuRCw _phVuYLdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
               <attributes xmi:id="_phUgQbdMEeiE6OEABRuRCw" value="false">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
               </attributes>
             </nodes>
             <nodes xmi:id="_phUgQ7dMEeiE6OEABRuRCw" name="methodSig" incoming="_phVHUbdMEeiE6OEABRuRCw _Reye4LdNEeiE6OEABRuRCw _Cc2wwLdNEeiE6OEABRuRCw" outgoing="_phVuYbdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
             </nodes>
             <nodes xmi:id="_phVHUrdMEeiE6OEABRuRCw" name="methodDef" incoming="_phVuYLdMEeiE6OEABRuRCw _phVuYbdMEeiE6OEABRuRCw" outgoing="_tWnW0LdMEeiE6OEABRuRCw _xJJNQLdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_oLIwcLdMEeiE6OEABRuRCw" incoming="_xJJNQLdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_oa98MLdMEeiE6OEABRuRCw" incoming="_tWnW0LdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_HjONoLdNEeiE6OEABRuRCw" incoming="_N04Y8LdNEeiE6OEABRuRCw" outgoing="_Reye4LdNEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TSyntethicMethod"/>
             </nodes>
             <edges xmi:id="_phVHUbdMEeiE6OEABRuRCw" source="_phUgQLdMEeiE6OEABRuRCw" target="_phUgQ7dMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
             </edges>
             <edges xmi:id="_phVuYLdMEeiE6OEABRuRCw" source="_phUgQLdMEeiE6OEABRuRCw" target="_phVHUrdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
             </edges>
             <edges xmi:id="_phVuYbdMEeiE6OEABRuRCw" source="_phUgQ7dMEeiE6OEABRuRCw" target="_phVHUrdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
             </edges>
             <edges xmi:id="_tWnW0LdMEeiE6OEABRuRCw" source="_phVHUrdMEeiE6OEABRuRCw" target="_oa98MLdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriding"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition/overriding"/>
             </edges>
             <edges xmi:id="_xJJNQLdMEeiE6OEABRuRCw" source="_phVHUrdMEeiE6OEABRuRCw" target="_oLIwcLdMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriddenBy"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition/overriddenBy"/>
             </edges>
             <edges xmi:id="_N04Y8LdNEeiE6OEABRuRCw" source="_7cVEoLaZEeiV2NIR8ibbKQ" target="_HjONoLdNEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
             </edges>
             <edges xmi:id="_Reye4LdNEeiE6OEABRuRCw" source="_HjONoLdNEeiE6OEABRuRCw" target="_phUgQ7dMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TSyntethicMethod/signature"/>
             </edges>
             <edges xmi:id="_Cc2wwLdNEeiE6OEABRuRCw" source="_7cVEoLaZEeiV2NIR8ibbKQ" target="_phUgQ7dMEeiE6OEABRuRCw">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
             </edges>
           </conclusion>
           <mappings xmi:id="_7cVrsLaZEeiV2NIR8ibbKQ" origin="_lSLCsOlEEeajyLi0pWzMmQ" image="_7cVEoLaZEeiV2NIR8ibbKQ"/>
@@ -123,64 +123,64 @@
     </lhs>
     <rhs xmi:id="_er3dFulEEeajyLi0pWzMmQ" name="Rhs">
       <nodes xmi:id="_j21GEelEEeajyLi0pWzMmQ" name="sourceClass" incoming="_u8RJcOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_4QurULaZEeiV2NIR8ibbKQ" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_lSLCselEEeajyLi0pWzMmQ" name="targetClass" incoming="_w00mgOlEEeajyLi0pWzMmQ _l1HCUbdOEeiE6OEABRuRCw" outgoing="_04P_sOlEEeajyLi0pWzMmQ _V5IjQLdNEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_0Cw2EbaZEeiV2NIR8ibbKQ" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_m1jhAelEEeajyLi0pWzMmQ" name="methodSig" incoming="_V5IjQLdNEeiE6OEABRuRCw" outgoing="_Q0Do0fqUEeae5NW9ACbbhw _hg40EbdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_oYf6celEEeajyLi0pWzMmQ" name="methodDef" incoming="_04P_sOlEEeajyLi0pWzMmQ _Q0Do0fqUEeae5NW9ACbbhw" outgoing="_cKca4BJREeeQnbn5-JYXJQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_svKYsOlEEeajyLi0pWzMmQ" name="container" outgoing="_u8RJcOlEEeajyLi0pWzMmQ _w00mgOlEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer"/>
       </nodes>
       <nodes xmi:id="_WW_OgBJREeeQnbn5-JYXJQ" incoming="_cKca4BJREeeQnbn5-JYXJQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TTextAnnotation"/>
         <attributes xmi:id="_XpZ4oBJREeeQnbn5-JYXJQ" value="sourceClass.getTName()+&quot;.&quot;+methodSig.getMethod().getTName()+&quot;->&quot;+targetClass.getTName()">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation/text"/>
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TTextAnnotation/text"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_dQ-eELdOEeiE6OEABRuRCw" incoming="_knBekbdOEeiE6OEABRuRCw" outgoing="_l1HCUbdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameter"/>
       </nodes>
       <nodes xmi:id="_feO_0bdOEeiE6OEABRuRCw" incoming="_hg40EbdOEeiE6OEABRuRCw" outgoing="_knBekbdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameterList"/>
       </nodes>
       <edges xmi:id="_u8RJcOlEEeajyLi0pWzMmQ" source="_svKYsOlEEeajyLi0pWzMmQ" target="_j21GEelEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer/tClass"/>
       </edges>
       <edges xmi:id="_w00mgOlEEeajyLi0pWzMmQ" source="_svKYsOlEEeajyLi0pWzMmQ" target="_lSLCselEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer/tClass"/>
       </edges>
       <edges xmi:id="_04P_sOlEEeajyLi0pWzMmQ" source="_lSLCselEEeajyLi0pWzMmQ" target="_oYf6celEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_Q0Do0fqUEeae5NW9ACbbhw" source="_m1jhAelEEeajyLi0pWzMmQ" target="_oYf6celEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
       <edges xmi:id="_cKca4BJREeeQnbn5-JYXJQ" source="_oYf6celEEeajyLi0pWzMmQ" target="_WW_OgBJREeeQnbn5-JYXJQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_V5IjQLdNEeiE6OEABRuRCw" source="_lSLCselEEeajyLi0pWzMmQ" target="_m1jhAelEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_hg40EbdOEeiE6OEABRuRCw" source="_m1jhAelEEeajyLi0pWzMmQ" target="_feO_0bdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/paramList"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/paramList"/>
       </edges>
       <edges xmi:id="_knBekbdOEeiE6OEABRuRCw" source="_feO_0bdOEeiE6OEABRuRCw" target="_dQ-eELdOEeiE6OEABRuRCw">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList/entries"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameterList/entries"/>
       </edges>
       <edges xmi:id="_l1HCUbdOEeiE6OEABRuRCw" source="_dQ-eELdOEeiE6OEABRuRCw" target="_lSLCselEEeajyLi0pWzMmQ">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter/type"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TParameter/type"/>
       </edges>
     </rhs>
     <mappings xmi:id="_j21GEulEEeajyLi0pWzMmQ" origin="_j21GEOlEEeajyLi0pWzMmQ" image="_j21GEelEEeajyLi0pWzMmQ"/>
@@ -192,107 +192,107 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_CnfXkLgKEeiiFNJQ7MV_9A" name="MoveMethod-Field">
     <parameters xmi:id="_CnfXkbgKEeiiFNJQ7MV_9A" name="methodSig">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
     </parameters>
     <parameters xmi:id="_CnfXkrgKEeiiFNJQ7MV_9A" name="sourceClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <parameters xmi:id="_CnfXk7gKEeiiFNJQ7MV_9A" name="targetClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <lhs xmi:id="_CnfXlLgKEeiiFNJQ7MV_9A" name="Lhs">
       <nodes xmi:id="_CnfXlbgKEeiiFNJQ7MV_9A" name="sourceClass" outgoing="_CnfXnbgKEeiiFNJQ7MV_9A _CnfXnrgKEeiiFNJQ7MV_9A _geQWgLgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_CnfXlrgKEeiiFNJQ7MV_9A" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_CnfXl7gKEeiiFNJQ7MV_9A" name="targetClass" incoming="_iRX58LgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_CnfXmLgKEeiiFNJQ7MV_9A" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_CnfXmbgKEeiiFNJQ7MV_9A" name="methodSig" incoming="_CnfXnbgKEeiiFNJQ7MV_9A" outgoing="_CnfXn7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_CnfXmrgKEeiiFNJQ7MV_9A" name="methodDef" incoming="_CnfXnrgKEeiiFNJQ7MV_9A _CnfXn7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_detcMLgLEeiiFNJQ7MV_9A" incoming="_geQWgLgLEeiiFNJQ7MV_9A" outgoing="_iRX58LgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature"/>
       </nodes>
       <edges xmi:id="_CnfXnbgKEeiiFNJQ7MV_9A" source="_CnfXlbgKEeiiFNJQ7MV_9A" target="_CnfXmbgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_CnfXnrgKEeiiFNJQ7MV_9A" source="_CnfXlbgKEeiiFNJQ7MV_9A" target="_CnfXmrgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_CnfXn7gKEeiiFNJQ7MV_9A" source="_CnfXmbgKEeiiFNJQ7MV_9A" target="_CnfXmrgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
       <edges xmi:id="_geQWgLgLEeiiFNJQ7MV_9A" source="_CnfXlbgKEeiiFNJQ7MV_9A" target="_detcMLgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_iRX58LgLEeiiFNJQ7MV_9A" source="_detcMLgLEeiiFNJQ7MV_9A" target="_CnfXl7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/type"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature/type"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_CnfXo7gKEeiiFNJQ7MV_9A">
         <child xsi:type="henshin:NestedCondition" xmi:id="_CnfXpLgKEeiiFNJQ7MV_9A">
           <conclusion xmi:id="_CnfXpbgKEeiiFNJQ7MV_9A">
             <nodes xmi:id="_CnfXprgKEeiiFNJQ7MV_9A" name="targetClass" outgoing="_CnfXtbgKEeiiFNJQ7MV_9A _CnfXt7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
               <attributes xmi:id="_CnfXp7gKEeiiFNJQ7MV_9A" value="false">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
               </attributes>
               <attributes xmi:id="_CnfXqLgKEeiiFNJQ7MV_9A" value="&quot;T&quot;">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tName"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
               </attributes>
             </nodes>
             <nodes xmi:id="_CnfXqbgKEeiiFNJQ7MV_9A" name="sourceClass" outgoing="_CnfXsLgKEeiiFNJQ7MV_9A _CnfXsbgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
               <attributes xmi:id="_CnfXqrgKEeiiFNJQ7MV_9A" value="false">
-                <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
               </attributes>
             </nodes>
             <nodes xmi:id="_CnfXq7gKEeiiFNJQ7MV_9A" name="methodSig" incoming="_CnfXsLgKEeiiFNJQ7MV_9A _CnfXtrgKEeiiFNJQ7MV_9A _CnfXt7gKEeiiFNJQ7MV_9A" outgoing="_CnfXsrgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
             </nodes>
             <nodes xmi:id="_CnfXrLgKEeiiFNJQ7MV_9A" name="methodDef" incoming="_CnfXsbgKEeiiFNJQ7MV_9A _CnfXsrgKEeiiFNJQ7MV_9A" outgoing="_CnfXs7gKEeiiFNJQ7MV_9A _CnfXtLgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_CnfXrbgKEeiiFNJQ7MV_9A" incoming="_CnfXtLgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_CnfXrrgKEeiiFNJQ7MV_9A" incoming="_CnfXs7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
             </nodes>
             <nodes xmi:id="_CnfXr7gKEeiiFNJQ7MV_9A" incoming="_CnfXtbgKEeiiFNJQ7MV_9A" outgoing="_CnfXtrgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TSyntethicMethod"/>
             </nodes>
             <edges xmi:id="_CnfXsLgKEeiiFNJQ7MV_9A" source="_CnfXqbgKEeiiFNJQ7MV_9A" target="_CnfXq7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
             </edges>
             <edges xmi:id="_CnfXsbgKEeiiFNJQ7MV_9A" source="_CnfXqbgKEeiiFNJQ7MV_9A" target="_CnfXrLgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
             </edges>
             <edges xmi:id="_CnfXsrgKEeiiFNJQ7MV_9A" source="_CnfXq7gKEeiiFNJQ7MV_9A" target="_CnfXrLgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
             </edges>
             <edges xmi:id="_CnfXs7gKEeiiFNJQ7MV_9A" source="_CnfXrLgKEeiiFNJQ7MV_9A" target="_CnfXrrgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriding"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition/overriding"/>
             </edges>
             <edges xmi:id="_CnfXtLgKEeiiFNJQ7MV_9A" source="_CnfXrLgKEeiiFNJQ7MV_9A" target="_CnfXrbgKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition/overriddenBy"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition/overriddenBy"/>
             </edges>
             <edges xmi:id="_CnfXtbgKEeiiFNJQ7MV_9A" source="_CnfXprgKEeiiFNJQ7MV_9A" target="_CnfXr7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
             </edges>
             <edges xmi:id="_CnfXtrgKEeiiFNJQ7MV_9A" source="_CnfXr7gKEeiiFNJQ7MV_9A" target="_CnfXq7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSyntethicMethod/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TSyntethicMethod/signature"/>
             </edges>
             <edges xmi:id="_CnfXt7gKEeiiFNJQ7MV_9A" source="_CnfXprgKEeiiFNJQ7MV_9A" target="_CnfXq7gKEeiiFNJQ7MV_9A">
-              <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
             </edges>
           </conclusion>
           <mappings xmi:id="_CnfXuLgKEeiiFNJQ7MV_9A" origin="_CnfXl7gKEeiiFNJQ7MV_9A" image="_CnfXprgKEeiiFNJQ7MV_9A"/>
@@ -304,58 +304,58 @@
     </lhs>
     <rhs xmi:id="_CnfXvLgKEeiiFNJQ7MV_9A" name="Rhs">
       <nodes xmi:id="_CnfXvbgKEeiiFNJQ7MV_9A" name="sourceClass" incoming="_CnfXyLgKEeiiFNJQ7MV_9A" outgoing="_geRkoLgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_CnfXvrgKEeiiFNJQ7MV_9A" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_CnfXv7gKEeiiFNJQ7MV_9A" name="targetClass" incoming="_CnfXybgKEeiiFNJQ7MV_9A _iRX58bgLEeiiFNJQ7MV_9A" outgoing="_CnfXyrgKEeiiFNJQ7MV_9A _CnfXzbgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="_CnfXwLgKEeiiFNJQ7MV_9A" value="false">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/tLib"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_CnfXwbgKEeiiFNJQ7MV_9A" name="methodSig" incoming="_CnfXzbgKEeiiFNJQ7MV_9A" outgoing="_CnfXy7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_CnfXwrgKEeiiFNJQ7MV_9A" name="methodDef" incoming="_CnfXyrgKEeiiFNJQ7MV_9A _CnfXy7gKEeiiFNJQ7MV_9A" outgoing="_CnfXzLgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_CnfXw7gKEeiiFNJQ7MV_9A" name="container" outgoing="_CnfXyLgKEeiiFNJQ7MV_9A _CnfXybgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer"/>
       </nodes>
       <nodes xmi:id="_CnfXxLgKEeiiFNJQ7MV_9A" incoming="_CnfXzLgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TTextAnnotation"/>
         <attributes xmi:id="_CnfXxbgKEeiiFNJQ7MV_9A" value="sourceClass.getTName()+&quot;.&quot;+methodSig.getMethod().getTName()+&quot;->&quot;+targetClass.getTName()">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TTextAnnotation/text"/>
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TTextAnnotation/text"/>
         </attributes>
       </nodes>
       <nodes xmi:id="_devRYLgLEeiiFNJQ7MV_9A" incoming="_geRkoLgLEeiiFNJQ7MV_9A" outgoing="_iRX58bgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature"/>
       </nodes>
       <edges xmi:id="_CnfXyLgKEeiiFNJQ7MV_9A" source="_CnfXw7gKEeiiFNJQ7MV_9A" target="_CnfXvbgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer/tClass"/>
       </edges>
       <edges xmi:id="_CnfXybgKEeiiFNJQ7MV_9A" source="_CnfXw7gKEeiiFNJQ7MV_9A" target="_CnfXv7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers/TClassContainer/tClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//containers/TClassContainer/tClass"/>
       </edges>
       <edges xmi:id="_CnfXyrgKEeiiFNJQ7MV_9A" source="_CnfXv7gKEeiiFNJQ7MV_9A" target="_CnfXwrgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_CnfXy7gKEeiiFNJQ7MV_9A" source="_CnfXwbgKEeiiFNJQ7MV_9A" target="_CnfXwrgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
       <edges xmi:id="_CnfXzLgKEeiiFNJQ7MV_9A" source="_CnfXwrgKEeiiFNJQ7MV_9A" target="_CnfXxLgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_CnfXzbgKEeiiFNJQ7MV_9A" source="_CnfXv7gKEeiiFNJQ7MV_9A" target="_CnfXwbgKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_geRkoLgLEeiiFNJQ7MV_9A" source="_CnfXvbgKEeiiFNJQ7MV_9A" target="_devRYLgLEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_iRX58bgLEeiiFNJQ7MV_9A" source="_devRYLgLEeiiFNJQ7MV_9A" target="_CnfXv7gKEeiiFNJQ7MV_9A">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/type"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature/type"/>
       </edges>
     </rhs>
     <mappings xmi:id="_CnfX0bgKEeiiFNJQ7MV_9A" origin="_CnfXlbgKEeiiFNJQ7MV_9A" image="_CnfXvbgKEeiiFNJQ7MV_9A"/>
@@ -366,73 +366,73 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_VFwzMAi5Eeeu0bGbdiaZxA" name="changeMethodVisibility">
     <parameters xmi:id="_cSNy0Ai5Eeeu0bGbdiaZxA" name="methodSig">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
     </parameters>
     <parameters xmi:id="_cSNy0Qi5Eeeu0bGbdiaZxA" name="sourceClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <parameters xmi:id="_mpK6wIgJEeeylb2ZShMrhg" name="oldVis">
-      <type xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      <type xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <parameters xmi:id="_mpK6wYgJEeeylb2ZShMrhg" name="newVis">
-      <type xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      <type xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <lhs xmi:id="_VGz8EAi5Eeeu0bGbdiaZxA" name="Lhs">
       <nodes xmi:id="_dDYxEAi5Eeeu0bGbdiaZxA" name="sourceClass" outgoing="_gqpysAi5Eeeu0bGbdiaZxA _g3BawAi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_eGJOkAi5Eeeu0bGbdiaZxA" name="methodSig" incoming="_g3BawAi5Eeeu0bGbdiaZxA" outgoing="_ILg-IIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_fdwhwAi5Eeeu0bGbdiaZxA" incoming="_gqpysAi5Eeeu0bGbdiaZxA _ILg-IIgMEeeylb2ZShMrhg" outgoing="_5O-0wIgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_zLGmwIgIEeeylb2ZShMrhg" incoming="_5O-0wIgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TModifier"/>
         <attributes xmi:id="__6WgkIgIEeeylb2ZShMrhg" value="oldVis">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
       <edges xmi:id="_gqpysAi5Eeeu0bGbdiaZxA" source="_dDYxEAi5Eeeu0bGbdiaZxA" target="_fdwhwAi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_g3BawAi5Eeeu0bGbdiaZxA" source="_dDYxEAi5Eeeu0bGbdiaZxA" target="_eGJOkAi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_5O-0wIgIEeeylb2ZShMrhg" source="_fdwhwAi5Eeeu0bGbdiaZxA" target="_zLGmwIgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMember/tModifier"/>
       </edges>
       <edges xmi:id="_ILg-IIgMEeeylb2ZShMrhg" source="_eGJOkAi5Eeeu0bGbdiaZxA" target="_fdwhwAi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
     </lhs>
     <rhs xmi:id="_VGz8EQi5Eeeu0bGbdiaZxA" name="Rhs">
       <nodes xmi:id="_dDYxEQi5Eeeu0bGbdiaZxA" name="sourceClass" outgoing="_gqpysQi5Eeeu0bGbdiaZxA _g3BawQi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_eGJOkQi5Eeeu0bGbdiaZxA" name="methodSig" incoming="_g3BawQi5Eeeu0bGbdiaZxA" outgoing="_ILg-IYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature"/>
       </nodes>
       <nodes xmi:id="_fdwhwQi5Eeeu0bGbdiaZxA" incoming="_gqpysQi5Eeeu0bGbdiaZxA _ILg-IYgMEeeylb2ZShMrhg" outgoing="_5O-0wYgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
       </nodes>
       <nodes xmi:id="_0d9VwIgIEeeylb2ZShMrhg" incoming="_5O-0wYgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TModifier"/>
         <attributes xmi:id="__6WgkYgIEeeylb2ZShMrhg" value="newVis">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
       <edges xmi:id="_gqpysQi5Eeeu0bGbdiaZxA" source="_dDYxEQi5Eeeu0bGbdiaZxA" target="_fdwhwQi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_g3BawQi5Eeeu0bGbdiaZxA" source="_dDYxEQi5Eeeu0bGbdiaZxA" target="_eGJOkQi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_5O-0wYgIEeeylb2ZShMrhg" source="_fdwhwQi5Eeeu0bGbdiaZxA" target="_0d9VwIgIEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMember/tModifier"/>
       </edges>
       <edges xmi:id="_ILg-IYgMEeeylb2ZShMrhg" source="_eGJOkQi5Eeeu0bGbdiaZxA" target="_fdwhwQi5Eeeu0bGbdiaZxA">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMethodSignature/definitions"/>
       </edges>
     </rhs>
     <mappings xmi:id="_dDYxEgi5Eeeu0bGbdiaZxA" origin="_dDYxEAi5Eeeu0bGbdiaZxA" image="_dDYxEQi5Eeeu0bGbdiaZxA"/>
@@ -442,73 +442,73 @@
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_LmQmsIgMEeeylb2ZShMrhg" name="changeFieldVisibility">
     <parameters xmi:id="_TRtPcIgMEeeylb2ZShMrhg" name="fieldSig">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TFieldSignature"/>
     </parameters>
     <parameters xmi:id="_TRtPcYgMEeeylb2ZShMrhg" name="sourceClass">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </parameters>
     <parameters xmi:id="_TRtPcogMEeeylb2ZShMrhg" name="oldVis">
-      <type xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      <type xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <parameters xmi:id="_TRtPc4gMEeeylb2ZShMrhg" name="newVis">
-      <type xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+      <type xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <lhs xmi:id="_LmQmtYgMEeeylb2ZShMrhg" name="Lhs">
       <nodes xmi:id="_XGr88IgMEeeylb2ZShMrhg" name="sourceClass" outgoing="_dxAf4IgMEeeylb2ZShMrhg _eb7FIIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_aAzksIgMEeeylb2ZShMrhg" name="fieldSig" incoming="_dxAf4IgMEeeylb2ZShMrhg" outgoing="_e-zIsIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature"/>
       </nodes>
       <nodes xmi:id="_bfkowIgMEeeylb2ZShMrhg" incoming="_eb7FIIgMEeeylb2ZShMrhg _e-zIsIgMEeeylb2ZShMrhg" outgoing="_fd77wIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldDefinition"/>
       </nodes>
       <nodes xmi:id="_cpe3IIgMEeeylb2ZShMrhg" incoming="_fd77wIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TModifier"/>
         <attributes xmi:id="_gp700IgMEeeylb2ZShMrhg" value="oldVis">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
       <edges xmi:id="_dxAf4IgMEeeylb2ZShMrhg" source="_XGr88IgMEeeylb2ZShMrhg" target="_aAzksIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_eb7FIIgMEeeylb2ZShMrhg" source="_XGr88IgMEeeylb2ZShMrhg" target="_bfkowIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_e-zIsIgMEeeylb2ZShMrhg" source="_aAzksIgMEeeylb2ZShMrhg" target="_bfkowIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature/definitions"/>
       </edges>
       <edges xmi:id="_fd77wIgMEeeylb2ZShMrhg" source="_bfkowIgMEeeylb2ZShMrhg" target="_cpe3IIgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMember/tModifier"/>
       </edges>
     </lhs>
     <rhs xmi:id="_LmQmtogMEeeylb2ZShMrhg" name="Rhs">
       <nodes xmi:id="_XGr88YgMEeeylb2ZShMrhg" name="sourceClass" outgoing="_dxAf4YgMEeeylb2ZShMrhg _eb7FIYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_aAzksYgMEeeylb2ZShMrhg" name="fieldSig" incoming="_dxAf4YgMEeeylb2ZShMrhg" outgoing="_e-zIsYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature"/>
       </nodes>
       <nodes xmi:id="_bfkowYgMEeeylb2ZShMrhg" incoming="_eb7FIYgMEeeylb2ZShMrhg _e-zIsYgMEeeylb2ZShMrhg" outgoing="_fd77wYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldDefinition"/>
       </nodes>
       <nodes xmi:id="_cpe3IYgMEeeylb2ZShMrhg" incoming="_fd77wYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TModifier"/>
         <attributes xmi:id="_gp700YgMEeeylb2ZShMrhg" value="newVis">
-          <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TModifier/tVisibility"/>
+          <type href="http://www.gravity.org/typegraph/basic#//TModifier/tVisibility"/>
         </attributes>
       </nodes>
       <edges xmi:id="_dxAf4YgMEeeylb2ZShMrhg" source="_XGr88YgMEeeylb2ZShMrhg" target="_aAzksYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/signature"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/signature"/>
       </edges>
       <edges xmi:id="_eb7FIYgMEeeylb2ZShMrhg" source="_XGr88YgMEeeylb2ZShMrhg" target="_bfkowYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType/defines"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
       </edges>
       <edges xmi:id="_e-zIsYgMEeeylb2ZShMrhg" source="_aAzksYgMEeeylb2ZShMrhg" target="_bfkowYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature/definitions"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TFieldSignature/definitions"/>
       </edges>
       <edges xmi:id="_fd77wYgMEeeylb2ZShMrhg" source="_bfkowYgMEeeylb2ZShMrhg" target="_cpe3IYgMEeeylb2ZShMrhg">
-        <type href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember/tModifier"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TMember/tModifier"/>
       </edges>
     </rhs>
     <mappings xmi:id="_XGr88ogMEeeylb2ZShMrhg" origin="_XGr88IgMEeeylb2ZShMrhg" image="_XGr88YgMEeeylb2ZShMrhg"/>

@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     name="basic"
-    nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"
+    nsURI="http://www.gravity.org/typegraph/basic"
     nsPrefix="org.gravity.typegraph.basic">
   <eAnnotations
       source="http://www.eclipse.org/emf/2002/GenModel">
@@ -807,7 +807,7 @@
   </eClassifiers>
   <eSubpackages
       name="containers"
-      nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"
+      nsURI="http://www.gravity.org/typegraph/basic#//containers"
       nsPrefix="containers">
     <eClassifiers
         xsi:type="ecore:EClass"
@@ -893,7 +893,7 @@
   </eSubpackages>
   <eSubpackages
       name="annotations"
-      nsURI="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations"
+      nsURI="http://www.gravity.org/typegraph/basic#//annotations"
       nsPrefix="annotations">
     <eClassifiers
         xsi:type="ecore:EClass"

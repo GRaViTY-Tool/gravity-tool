@@ -1,7 +1,7 @@
 // Add imports here
 #import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
 #import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
-#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
+#import "http://www.gravity.org/typegraph/basic"
 
 #schema org.gravity.tgg.modisco
 

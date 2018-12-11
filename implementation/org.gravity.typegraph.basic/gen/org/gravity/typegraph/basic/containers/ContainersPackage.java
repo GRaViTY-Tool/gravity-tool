@@ -37,7 +37,7 @@ public interface ContainersPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers";
+	String eNS_URI = "http://www.gravity.org/typegraph/basic#//containers";
 
 	/**
 	 * The package namespace name.

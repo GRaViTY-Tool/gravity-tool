@@ -3,7 +3,7 @@
   <dependencies value="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"/>
   <dependencies value="platform:/resource/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore"/>
   <dependencies value="platform:/resource/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore"/>
-  <dependencies value="platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"/>
+  <dependencies value="http://www.gravity.org/typegraph/basic"/>
   <dependencies value="platform:/resource/org.moflon.core.dfs/model/Dfs.ecore"/>
   <metaModelProject MetaModelProjectName="org.gravity.metamodels.hulk"/>
   <replaceGenModel/>

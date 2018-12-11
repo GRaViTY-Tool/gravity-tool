@@ -164,9 +164,6 @@
       <genOperations ecoreOperation="Basic.ecore#//TInterface/isSuperTypeOf">
         <genParameters ecoreParameter="Basic.ecore#//TInterface/isSuperTypeOf/tType"/>
       </genOperations>
-      <genOperations ecoreOperation="Basic.ecore#//TInterface/fillParents">
-        <genParameters ecoreParameter="Basic.ecore#//TInterface/fillParents/list"/>
-      </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TInterface/hasCommonSuperType">
         <genParameters ecoreParameter="Basic.ecore#//TInterface/hasCommonSuperType/tType"/>
       </genOperations>

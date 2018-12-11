@@ -9,22 +9,21 @@ Export-Package: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.util
 Bundle-Name: org.gravity.tgg.modisco
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore.xmi,
+Require-Bundle: org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.moflon.core.utilities,
  SDMLanguage,
- org.moflon.tgg.language,
+ org.moflon.tgg.language;visibility:=reexport,
  org.moflon.tgg.runtime,
- org.eclipse.gmt.modisco.java;bundle-version="1.0.0",
- org.gravity.typegraph.basic;bundle-version="1.0.0",
- org.gravity.modisco;bundle-version="1.0.0",
+ org.gravity.typegraph.basic,
+ org.gravity.modisco,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.gmt.modisco.java.generation,
  org.eclipse.jdt.core,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.modisco.java.discoverer,
- org.gravity.eclipse,
- MocaTree;bundle-version="2.0.0"
+ org.gravity.eclipse;visibility:=reexport,
+ MocaTree
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.gravity.tgg.modisco.MoDiscoTGGActivator

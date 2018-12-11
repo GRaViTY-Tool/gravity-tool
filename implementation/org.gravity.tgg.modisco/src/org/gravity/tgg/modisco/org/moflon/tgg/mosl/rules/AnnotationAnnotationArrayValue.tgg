@@ -34,9 +34,7 @@
 	tAnnotationValue : TAnnotationValue {
 		++ -tValue-> tAnnotation
 	}
-	++ tAnnotation : TAnnotation {
-		
-	}
+	++ tAnnotation : TAnnotation
 }
 
 #correspondence {

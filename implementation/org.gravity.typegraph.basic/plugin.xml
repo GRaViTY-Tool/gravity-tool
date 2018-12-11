@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.typegraph.basic.BasicPackage" genModel="model/Basic.genmodel" uri="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"/>
+    <package class="org.gravity.typegraph.basic.BasicPackage" genModel="model/Basic.genmodel" uri="http://www.gravity.org/typegraph/basic"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.typegraph.basic.containers.ContainersPackage" genModel="model/Basic.genmodel" uri="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//containers"/>
+    <package class="org.gravity.typegraph.basic.containers.ContainersPackage" genModel="model/Basic.genmodel" uri="http://www.gravity.org/typegraph/basic#//containers"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.typegraph.basic.annotations.AnnotationsPackage" genModel="model/Basic.genmodel" uri="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations"/>
+    <package class="org.gravity.typegraph.basic.annotations.AnnotationsPackage" genModel="model/Basic.genmodel" uri="http://www.gravity.org/typegraph/basic#//annotations"/>
   </extension>
 </plugin>

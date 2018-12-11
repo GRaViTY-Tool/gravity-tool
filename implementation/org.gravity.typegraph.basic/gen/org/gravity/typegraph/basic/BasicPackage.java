@@ -43,7 +43,7 @@ public interface BasicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore";
+	String eNS_URI = "http://www.gravity.org/typegraph/basic";
 
 	/**
 	 * The package namespace name.

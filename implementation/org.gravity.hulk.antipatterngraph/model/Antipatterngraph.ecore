@@ -4,7 +4,7 @@
     <details key="basePackage" value="org.gravity.hulk"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="HAnnotation" abstract="true">
-    <eSuperTypes href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation"/>
+    <eSuperTypes href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="apg" lowerBound="1" eType="//HAntiPatternGraph" eOpposite="//HAntiPatternGraph/hAnnotations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" upperBound="-1" eType="//HAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="changed" ordered="false" lowerBound="1">
@@ -27,7 +27,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" containment="true">
-      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+      <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TypeGraph"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hAnnotations" upperBound="-1" eType="//HAnnotation" eOpposite="//HAnnotation/apg"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentID" ordered="false" lowerBound="1">
@@ -67,7 +67,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="HEmptyClassSmell" eSuperTypes="//HCodeSmell"/>
     <eClassifiers xsi:type="ecore:EClass" name="HGetterSetterSmell" eSuperTypes="//HCodeSmell">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldDefinition">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TFieldDefinition"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HLargeClassLowCohesionSmell" eSuperTypes="//HCodeSmell">
@@ -112,12 +112,12 @@
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfChildMetric" eSuperTypes="//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HIGAMMetric" eSuperTypes="//HMetric">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="hMinVis" ordered="false" lowerBound="1">
-        <eType xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+        <eType xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HIGATMetric" eSuperTypes="//HMetric">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="hMinVis" ordered="false" lowerBound="1">
-        <eType xsi:type="ecore:EEnum" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TVisibility"/>
+        <eType xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HNumberOfMethodsMetric" eSuperTypes="//HMetric"/>

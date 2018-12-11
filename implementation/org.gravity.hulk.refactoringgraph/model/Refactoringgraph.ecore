@@ -12,10 +12,10 @@
       <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClass">
-      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition">
-      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+      <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMember"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HInBlobAccess">
@@ -32,7 +32,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="HCluster">
     <eSuperTypes href="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1">
-      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+      <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMember"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HInBlobClusterAccess">
@@ -52,30 +52,30 @@
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TMember"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveMember" abstract="true" eSuperTypes="//refactorings/HRefactoring">
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass" lowerBound="1">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" lowerBound="1">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="m2dc" lowerBound="1" eType="//HMethodToDataClassAccess"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="iba" lowerBound="1" eType="//HInBlobAccess"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tSignature" upperBound="-1">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TSignature"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveField" eSuperTypes="//refactorings/HMoveMember"/>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveMembers" eSuperTypes="//refactorings/HRefactoring">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hMoveMembers" upperBound="-1" eType="//refactorings/HMoveMember"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass">
-        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <eType xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
