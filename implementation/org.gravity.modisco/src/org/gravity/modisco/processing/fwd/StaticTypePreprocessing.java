@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.CastExpression;
@@ -38,7 +39,7 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
-import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
@@ -46,7 +47,7 @@ import org.gravity.modisco.util.MoDiscoUtil;
  * A Preprocessor for resolving the static type on an access
  *
  */
-public class StaticTypePreprocessing implements IMoDiscoProcessor {
+public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbstractMethodDefinition> {
 
 	private static final Logger LOGGER = Logger.getLogger(StaticTypePreprocessing.class);
 
@@ -74,19 +75,33 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 	 */
 	private Type getStaticType(AbstractMethodInvocation methodInvoc, MAbstractMethodDefinition method)
 			throws ProcessingException {
+		Type type = null;
 		if (methodInvoc instanceof MethodInvocation) {
-			return getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
+			final Expression expression = ((MethodInvocation) methodInvoc).getExpression();
+			if (expression == null) {
+				// If the call is not in an expression it is a direct call to a member of the
+				// same type
+				type = getDeclaringType(method);
+			} else {
+				type = getStaticType(expression, method);
+				if (type == null) {
+					LOGGER.log(Level.WARN, "Cannot find static type of invocation of \"" + methodInvoc.getMethod()
+							+ "\" in " + method.getAbstractTypeDeclaration() + "." + method.getName());
+					// If we cannot find the static type assume the declaring type
+					type = getDeclaringType(methodInvoc.getMethod());
+				}
+			}
 		} else if (methodInvoc instanceof SuperMethodInvocation) {
 			// super method invoc cannot happen with a qualifier other than "this"
 			// => static type is always the type that defines this method
-			return method.getAbstractTypeDeclaration();
+			type = getDeclaringType(method);
 		} else if (methodInvoc instanceof ClassInstanceCreation) {
-			return getStaticType(((ClassInstanceCreation) methodInvoc).getExpression(), method);
+			type = getStaticType(((ClassInstanceCreation) methodInvoc).getExpression(), method);
 		} else if (methodInvoc instanceof ConstructorInvocation) {
 			// ConstructorInvocation : this()
 			// => does not have a qualifier
 			// => static type is always type that defines this method
-			return method.getAbstractTypeDeclaration();
+			type = method.getAbstractTypeDeclaration();
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
 			LOGGER.log(Level.ERROR,
@@ -96,6 +111,27 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 			LOGGER.log(Level.ERROR, "Unknown invocation type : " + methodInvoc.getClass().getName());
 			throw new ProcessingException(methodInvoc);
 		}
+		return type;
+	}
+
+	/**
+	 * Searches the type declaring this method definition
+	 * 
+	 * @param method The method definition
+	 * @return the declaring type
+	 */
+	private Type getDeclaringType(AbstractMethodDeclaration method) {
+		Type type;
+		type = method.getAbstractTypeDeclaration();
+		if (type == null) {
+			final EObject container = method.eContainer();
+			if (container instanceof AnonymousClassDeclaration) {
+				type = ((AnonymousClassDeclaration) container).getClassInstanceCreation().getType().getType();
+			} else {
+				type = (Type) container;
+			}
+		}
+		return type;
 	}
 
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
@@ -152,13 +188,21 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 			} else {
 				throw new ProcessingException("Preprocessing of unknown construct.");
 			}
-		}
-		Expression init = var.getInitializer();
-
-		if (var instanceof SingleVariableDeclaration) {
+		} else if (var instanceof SingleVariableDeclaration) {
 			return ((SingleVariableDeclaration) var).getType().getType();
+		} else if (var instanceof VariableDeclarationFragment) {
+			AbstractVariablesContainer container = ((VariableDeclarationFragment) var).getVariablesContainer();
+			TypeAccess access = container.getType();
+			if (access != null) {
+				return access.getType();
+			}
+		} else if (var instanceof EnumConstantDeclaration) {
+			return getStaticType(expression.getQualifier(), method);
+		} else {
+			LOGGER.log(Level.WARN, "Unknown variable declaration: " + var.getClass().getName());
 		}
 
+		Expression init = var.getInitializer();
 		if (init != null) {
 			if (init instanceof MethodInvocation) {
 				AbstractMethodDeclaration targetMethod = ((MethodInvocation) init).getMethod();
@@ -174,19 +218,6 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 				return ((CastExpression) init).getType().getType();
 			}
 		}
-
-		if (var instanceof VariableDeclarationFragment) {
-			AbstractVariablesContainer container = ((VariableDeclarationFragment) var).getVariablesContainer();
-			TypeAccess access = container.getType();
-			if (access != null) {
-				return access.getType();
-			}
-		}
-
-		if (var instanceof EnumConstantDeclaration) {
-			return getStaticType(expression.getQualifier(), method);
-		}
-
 		return null;
 	}
 
@@ -257,5 +288,22 @@ public class StaticTypePreprocessing implements IMoDiscoProcessor {
 		LOGGER.log(Level.ERROR, "Calculating static types from \"" + expression.getClass().getSimpleName()
 				+ "\" expressions is not supported");
 		return null;
+	}
+
+	@Override
+	public boolean process(MGravityModel model, Iterable<MAbstractMethodDefinition> elements,
+			IProgressMonitor monitor) {
+		this.model = model;
+		for (MAbstractMethodDefinition definition : elements) {
+			if (!addStaticTypeAccesses(definition)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	@Override
+	public Class<MAbstractMethodDefinition> getSupportedType() {
+		return MAbstractMethodDefinition.class;
 	}
 }
