@@ -10,32 +10,22 @@ import org.apache.log4j.Logger;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.Javadoc;
-import org.eclipse.gmt.modisco.java.Modifier;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
-import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
-import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
-import org.eclipse.gmt.modisco.java.VisibilityKind;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
-import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.modisco.GravityMoDiscoFactoryImpl;
 import org.gravity.modisco.MAbstractMethodDefinition;
-import org.gravity.modisco.MAnnotation;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
@@ -70,33 +60,29 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			return false;
 		}
 
-		LinkedList<EObject> delete = new LinkedList<>();
-		TreeIterator<EObject> iterator = model.eResource().getAllContents();
-		while (iterator.hasNext()) {
-			EObject next = iterator.next();
-			if (next instanceof TypeDeclarationStatement) {
-				preprocessTypeDeclarationStatement((TypeDeclarationStatement) next);
-			} else if (next instanceof TypeParameter) {
-				model.getTypeParameters().add((TypeParameter) next);
-			} else if (next instanceof Annotation) {
-				EObject eObject = next.eContainer();
-				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
-						|| eObject instanceof SingleVariableDeclaration));
-			} else if (next instanceof MMethodDefinition) {
-				SyntethicMethodsPreprocessor.addSyntethicMembers((MMethodDefinition) next);
-			} else if (next instanceof Modifier) {
-				checkModifierVisibility((Modifier) next);
-			} else if (next instanceof Javadoc) {
-				delete.add(next); // TODO: check if we can remove this
-			}
+//		LinkedList<EObject> delete = new LinkedList<>();
+//		TreeIterator<EObject> iterator = model.eResource().getAllContents();
+//		while (iterator.hasNext()) {
+//			EObject next = iterator.next();
+//			if (next instanceof TypeParameter) {
+//				model.getTypeParameters().add((TypeParameter) next);
+//			} 
+//			else if (next instanceof Annotation) {
+//				EObject eObject = next.eContainer();
+//				((MAnnotation) next).setMRelevant(!(eObject instanceof VariableDeclarationStatement
+//						|| eObject instanceof SingleVariableDeclaration));
+//			} 
+//			else if (next instanceof Javadoc) {
+//				delete.add(next); // TODO: check if we can remove this
+//			}
 			if (monitor.isCanceled()) {
 				return false;
 			}
-		}
-		LOGGER.log(Level.INFO, "Deleting " + delete.size() + " EObjects");
-		long start = System.nanoTime();
-		EMFUtil.deleteAll(delete, model.eResource());
-		LOGGER.log(Level.INFO, "Deletion took " + (System.nanoTime() - start) / 1000 / 1000 + "ms");
+//		}
+//		LOGGER.log(Level.INFO, "Deleting " + delete.size() + " EObjects");
+//		long start = System.nanoTime();
+////		EMFUtil.deleteAll(delete, model.eResource());
+//		LOGGER.log(Level.INFO, "Deletion took " + (System.nanoTime() - start) / 1000 / 1000 + "ms");
 		return true;
 	}
 
@@ -230,6 +216,10 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			EList<Type> deps = ((MClass) mType).getDependencies();
 			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
 				AbstractMethodDeclaration method = methodInvocation.getMethod();
+				if(method == null) {
+					LOGGER.log(Level.WARN, "Empty method invocation in method \""+def.getName()+"\" of type \""+mType.getName()+"\".");
+					continue;
+				}
 				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 				if (abstractTypeDeclaration == null) {
 					if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
@@ -275,40 +265,6 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			return true;
 		}
 		return false;
-	}
-
-	/**
-	 * Searches the method in which a type is declared and adds the type to the
-	 * inner types of the method
-	 * 
-	 * @param statement The type declaration statement
-	 */
-	private void preprocessTypeDeclarationStatement(TypeDeclarationStatement statement) {
-		AbstractTypeDeclaration type = statement.getDeclaration();
-		EObject eObject = statement.eContainer();
-		while (!(eObject instanceof MAbstractMethodDefinition)) {
-			eObject = eObject.eContainer();
-		}
-		((MAbstractMethodDefinition) eObject).getMInnerTypes().add(type);
-	}
-
-	/**
-	 * Checks if the visibility of a modifier is set and tries to repair it if not
-	 * 
-	 * @param modifier The modifier
-	 * @return true, if there was no problem or the problem has been repaired.
-	 */
-	private boolean checkModifierVisibility(Modifier modifier) {
-		if (modifier.getVisibility() == null) {
-			AbstractTypeDeclaration typeDecl = modifier.getBodyDeclaration().getAbstractTypeDeclaration();
-			if (typeDecl.eContainer() instanceof TypeDeclarationStatement) {
-				modifier.setVisibility(VisibilityKind.PRIVATE);
-			} else {
-				LOGGER.log(Level.WARN, "Type \"" + typeDecl.getName() + "\" has no visibility.");
-				return false;
-			}
-		}
-		return true;
 	}
 
 //	private static final void fixStaticMethodCallOnField(MGravityModel model) {

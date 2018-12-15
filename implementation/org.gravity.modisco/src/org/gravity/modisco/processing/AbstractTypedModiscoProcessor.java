@@ -1,5 +1,6 @@
 package org.gravity.modisco.processing;
 
+import java.util.Collection;
 import java.util.LinkedList;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -24,7 +25,7 @@ public abstract class AbstractTypedModiscoProcessor<T extends EObject> implement
 	 * @param monitor A progress monitor
 	 * @return true, iff all elements have been processed successfully
 	 */
-	public abstract boolean process(MGravityModel model, Iterable<T> elements, IProgressMonitor monitor);
+	public abstract boolean process(MGravityModel model, Collection<T> elements, IProgressMonitor monitor);
 
 	/**
 	 * This method should be only used if there is no other possibility as it

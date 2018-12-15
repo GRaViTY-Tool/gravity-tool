@@ -1,5 +1,7 @@
 package org.gravity.modisco.processing.fwd;
 
+import java.util.Collection;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -71,7 +73,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	}
 
 	@Override
-	public boolean process(MGravityModel model, Iterable<MAbstractMethodDefinition> elements,
+	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
 			IProgressMonitor monitor) {
 		this.model = model;
 		for (MAbstractMethodDefinition definition : elements) {

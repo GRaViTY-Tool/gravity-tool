@@ -11,6 +11,18 @@
     <processor priority="7" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
     <processor priority="10" processor="org.gravity.modisco.processing.fwd.AnonymousClassPreprocessing"/>
     <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
+    <processor
+          priority="1"
+          processor="org.gravity.modisco.processing.fwd.TypeDeclarationStatementPreprocessor">
+    </processor>
+    <processor
+          priority="0"
+          processor="org.gravity.modisco.processing.fwd.VisibilityRepairPreprocessor">
+    </processor>
+    <processor
+          priority="9"
+          processor="org.gravity.modisco.processing.fwd.TypeParameterPreprocessor">
+    </processor>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"/>
