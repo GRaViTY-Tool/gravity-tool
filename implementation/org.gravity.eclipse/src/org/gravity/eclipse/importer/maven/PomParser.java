@@ -15,7 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Level;
-import org.gravity.eclipse.importer.gradle.GradleImport;
+import org.apache.log4j.Logger;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -29,6 +29,8 @@ import org.xml.sax.SAXException;
  *
  */
 public class PomParser {
+
+	private static final Logger LOGGER = Logger.getLogger(PomParser.class);
 
 	/**
 	 * Discovers new libs from the given pom file
@@ -55,7 +57,7 @@ public class PomParser {
 				}
 			}
 		} catch (SAXException | IOException | ParserConfigurationException e) {
-			GradleImport.LOGGER.log(Level.WARN, e);
+			LOGGER.log(Level.WARN, e);
 		}
 	}
 

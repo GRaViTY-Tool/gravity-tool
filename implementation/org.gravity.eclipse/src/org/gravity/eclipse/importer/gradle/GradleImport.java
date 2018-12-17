@@ -64,7 +64,7 @@ public class GradleImport {
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
 
-	public static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
 
 	/**
 	 * An instance of the gradle builder
