@@ -7,11 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.runtime.Platform;
 
 /**
  * 
@@ -91,5 +93,22 @@ public class FileUtils {
 			settingsContentString = contents.toString();
 		}
 		return settingsContentString;
+	}
+
+	/**
+	 * Extracts an file from this plugin to a temporary file
+	 * 
+	 * @param bundle The plugin id of the bundle from which data should be extracted
+	 * @param folder The folder within this plugin
+	 * @param file The file name
+	 * @return The location of the extracted file
+	 * @throws IOException If reading or writing the file failed
+	 */
+	public static Path extractToTmpFile(final String bundle, final String folder, final String file) throws IOException {
+		URL image = Platform.getBundle(bundle).getEntry(folder+File.separator+file);
+		Path tmp = Files.createTempFile(file, "");
+		Files.copy(image.openStream(), tmp, StandardCopyOption.REPLACE_EXISTING);
+		tmp.toFile().deleteOnExit();
+		return tmp;
 	}
 }
