@@ -20,9 +20,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -37,15 +34,12 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.gravity.eclipse.importer.maven.PomParser;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 /**
  * Allows to import a gradle java project as single eclipse project into the
@@ -70,7 +64,7 @@ public class GradleImport {
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
 
-	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	public static final Logger LOGGER = Logger.getLogger(GradleImport.class);
 
 	/**
 	 * An instance of the gradle builder
@@ -581,7 +575,7 @@ public class GradleImport {
 
 		}
 
-		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleCache, GRADLE_CACHE));
+		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs, new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
 		Collection<Path> libsAsJar = pathsToLibs.values();
@@ -654,7 +648,7 @@ public class GradleImport {
 					"extras/m2repository" }) {
 				int before = compileLibs.size();
 				try {
-					pathsToLibs = searchInCache(compileLibs, new File(androidHome, location));
+					pathsToLibs = PomParser.searchInCache(compileLibs, new File(androidHome, location));
 					newLibs |= compileLibs.size() > before;
 					compileLibs.removeAll(pathsToLibs.keySet());
 					libsAsJar.addAll(pathsToLibs.values());
@@ -694,92 +688,5 @@ public class GradleImport {
 			}
 		}
 		return sdkVersion;
-	}
-
-	private Hashtable<String, Path> searchInCache(Set<String> libs, File cacheFile) throws IOException {
-		Hashtable<String, Path> results = new Hashtable<>();
-		HashSet<String> newLibs = new HashSet<>();
-		for (String lib : libs) {
-			String[] segments = lib.split(":");
-			File libFile = cacheFile;
-			String name;
-			if (segments.length == 1) {
-				name = segments[0];
-			} else if (segments.length >= 3) {
-				name = segments[1] + '-' + segments[2];
-			} else {
-				throw new IllegalAccessError("The lib \"" + lib + "\" doesn't has the expected amount of segments");
-			}
-			for (String segment : segments) {
-				File tmpLibFile = new File(libFile, segment);
-				if (tmpLibFile.exists()) {
-					libFile = tmpLibFile;
-				} else {
-					libFile = new File(libFile, segment.replace('.', '/'));
-				}
-			}
-			if (libFile.exists()) {
-				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar", "aar"));
-				Files.walkFileTree(libFile.toPath(), extensionFileVisitor);
-				List<Path> files = extensionFileVisitor.getFiles();
-				if (files.size() == 1) {
-					Path libJar = files.get(0);
-					results.put(lib, libJar);
-					File pom = libJar.getParent().resolve(name + ".pom").toFile();
-					if (pom.exists()) {
-						parsePomFile(pom, cacheFile, results, newLibs);
-					}
-				}
-			}
-		}
-		if (newLibs.size() > 0) {
-			libs.addAll(newLibs);
-		}
-		return results;
-	}
-
-	/**
-	 * Discovers new libs from the given pom file
-	 * 
-	 * @param pom       The pom file
-	 * @param cacheFile A cache of already discovered libs
-	 * @param results   A mapping between libs and their locations
-	 * @param newLibs   The set of newly discovered libs
-	 */
-	private void parsePomFile(File pom, File cacheFile, Hashtable<String, Path> results, HashSet<String> newLibs) {
-		try {
-			Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pom);
-			document.getDocumentElement().normalize();
-			NodeList deps = document.getElementsByTagName("dependency");
-			for (int i = 0; i < deps.getLength(); i++) {
-				Node dependency = deps.item(i);
-				String group = null, artifact = null, version = null;
-				NodeList childNodes = dependency.getChildNodes();
-				for (int j = 0; j < childNodes.getLength(); j++) {
-					Node child = childNodes.item(j);
-					String nodeName = child.getNodeName();
-					if ("groupId".equals(nodeName)) {
-						group = child.getChildNodes().item(0).getNodeValue();
-					} else if ("artifactId".equals(nodeName)) {
-						artifact = child.getChildNodes().item(0).getNodeValue();
-					} else if ("version".equals(nodeName)) {
-						version = child.getChildNodes().item(0).getNodeValue();
-					}
-				}
-				String string = group + ':' + artifact + ':' + version;
-				HashSet<String> set = new HashSet<String>();
-				set.add(string);
-				Hashtable<String, Path> subResults = searchInCache(set, cacheFile);
-				if (subResults.isEmpty()) {
-					if (!results.containsKey(string)) {
-						newLibs.add(string);
-					}
-				} else {
-					results.putAll(subResults);
-				}
-			}
-		} catch (SAXException | IOException | ParserConfigurationException e) {
-			LOGGER.log(Level.WARN, e);
-		}
 	}
 }
