@@ -5,6 +5,7 @@ package org.gravity.typegraph.basic.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -25,13 +26,18 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TInterface;
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
+import org.gravity.typegraph.basic.TName;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
+
+import com.sun.xml.internal.txw2.output.StreamSerializer;
+
 // <-- [user defined imports]
 import org.eclipse.emf.common.util.BasicEList;
 
@@ -638,5 +644,24 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		return null;
 	}
 
-	// [user code injected with eMoflon] -->
+	/**
+	 * Searches the method with the given name
+	 * 
+	 * @param name The desired name
+	 * @return The method or null if there is no element with the desired name
+	 */
+	public TMethod getMethod(String name) {
+		return (TMethod) getElementByName(name, getMethods().parallelStream());
+	}
+	
+	/**
+	 * Searches in the stream for the element with the given name
+	 * 
+	 * @param name The desired name
+	 * @param stream The elements
+	 * @return The searched element or null if there is no element with the desired name
+	 */
+	private TName getElementByName(String name, final Stream<? extends TName> stream) {
+		return stream.filter(m -> name.equals(m.getTName())).findAny().orElse(null);
+	}
 } //TypeGraphImpl
