@@ -3,7 +3,6 @@
 package org.gravity.typegraph.basic.annotations;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.gravity.typegraph.basic.TAbstractType;
 // <-- [user defined imports]
 // [user defined imports] -->

@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.annotations.TTextNode;
 // <-- [user defined imports]
@@ -26,7 +26,7 @@ import org.gravity.typegraph.basic.annotations.TTextNode;
  *
  * @generated
  */
-public class TTextNodeImpl extends MinimalEObjectImpl.Container implements TTextNode {
+public class TTextNodeImpl extends EObjectImpl implements TTextNode {
 	/**
 	 * The default value of the '{@link #getTText() <em>TText</em>}' attribute.
 	 * <!-- begin-user-doc -->

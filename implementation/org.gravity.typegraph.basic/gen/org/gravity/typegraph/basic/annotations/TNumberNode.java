@@ -3,8 +3,6 @@
 package org.gravity.typegraph.basic.annotations;
 
 import org.eclipse.emf.ecore.EObject;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->

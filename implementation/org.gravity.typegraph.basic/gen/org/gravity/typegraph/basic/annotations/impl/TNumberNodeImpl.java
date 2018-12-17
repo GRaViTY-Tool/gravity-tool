@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.annotations.TNumberNode;
 // <-- [user defined imports]
@@ -26,7 +26,7 @@ import org.gravity.typegraph.basic.annotations.TNumberNode;
  *
  * @generated
  */
-public class TNumberNodeImpl extends MinimalEObjectImpl.Container implements TNumberNode {
+public class TNumberNodeImpl extends EObjectImpl implements TNumberNode {
 	/**
 	 * The default value of the '{@link #getTNumber() <em>TNumber</em>}' attribute.
 	 * <!-- begin-user-doc -->
