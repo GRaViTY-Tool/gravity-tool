@@ -17,6 +17,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,7 +37,6 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
@@ -71,18 +71,18 @@ public class GradleImport {
 	private static final boolean LINKONPROJECT = false;
 
 	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
-	
+
 	/**
 	 * An instance of the gradle builder
 	 */
 	private final GradleBuild gradleBuild;
-	
+
 	/**
 	 * Creates an importer for the given gradle root directory of a gradle project
 	 * 
 	 * The gradle home directory has to be registered at the environment variable
-	 * GRADLE_USER_HOME. If the imported project is an Android project the Android Sdk
-	 * should be registered at the environment variable ANDROID_HOME.
+	 * GRADLE_USER_HOME. If the imported project is an Android project the Android
+	 * Sdk should be registered at the environment variable ANDROID_HOME.
 	 * 
 	 * @param rootDir the path to the gradle root directory
 	 * @throws NoGradleRootFolderException iff the given root directory is not the
@@ -128,7 +128,7 @@ public class GradleImport {
 	 *                          there are build errors
 	 * @param monitor           A progress monitor
 	 * @return The new eclipse java project
-	 * @throws GradleImportException 
+	 * @throws GradleImportException
 	 */
 	public IJavaProject importGradleProject(boolean ignoreBuildErrors, IProgressMonitor monitor)
 			throws GradleImportException {
@@ -150,7 +150,7 @@ public class GradleImport {
 	 * Creates a new Java project containing a set of given java source files
 	 * 
 	 * @param javaSourceFiles The Java source files
-	 * @param monitor A progress monitor
+	 * @param monitor         A progress monitor
 	 * @return The new Java project
 	 * @throws GradleImportException If the project cannot be created
 	 */
@@ -177,7 +177,7 @@ public class GradleImport {
 			return addRequiredLibsToProject(project, monitor);
 		} catch (IOException | CoreException e) {
 			try {
-				if(project != null) {
+				if (project != null) {
 					project.getProject().delete(true, true, monitor);
 				}
 			} catch (CoreException e1) {
@@ -200,7 +200,7 @@ public class GradleImport {
 			}
 		} catch (UnsupportedOperationSystemException e) {
 			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
-			if(!ignoreBuildErrors) {
+			if (!ignoreBuildErrors) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
 			}
 		} catch (IOException | InterruptedException e) {
@@ -210,7 +210,8 @@ public class GradleImport {
 	}
 
 	/**
-	 * Searches all java source files of the gradle project including the generated android R.java
+	 * Searches all java source files of the gradle project including the generated
+	 * android R.java
 	 * 
 	 * @param buildDotGradle The path to the build.gradle file
 	 * @return A set of all java source files
@@ -253,7 +254,7 @@ public class GradleImport {
 		} catch (IOException | GradleImportException e) {
 			LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
 		}
-		if(javaSourceFiles == null || javaSourceFiles.size() == 0) {
+		if (javaSourceFiles == null || javaSourceFiles.size() == 0) {
 			LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (Path root : includes) {
@@ -276,11 +277,10 @@ public class GradleImport {
 			String relativize;
 			try {
 				relativize = path.relativize(sourceFile).toString();
-			}
-			catch(IllegalArgumentException e) {
+			} catch (IllegalArgumentException e) {
 				relativize = sourceFile.toString().replaceFirst(new File("").getAbsolutePath(), "");
-				if(relativize.startsWith("/") || relativize.startsWith("\\")) {
-					relativize =relativize.substring(1);
+				if (relativize.startsWith("/") || relativize.startsWith("\\")) {
+					relativize = relativize.substring(1);
 				}
 			}
 			String[] split = relativize.split("/src/((main|test)/(java|scala)/)?");
@@ -288,7 +288,7 @@ public class GradleImport {
 			if (split.length == 2) {
 				key = split[0];
 			} else {
-				LOGGER.log(Level.WARN, "Couldn't determine source folder of file, using \"src\": "+relativize);
+				LOGGER.log(Level.WARN, "Couldn't determine source folder of file, using \"src\": " + relativize);
 				key = "src";
 			}
 			Set<Path> files;
@@ -302,7 +302,7 @@ public class GradleImport {
 		return sourceFolders;
 	}
 
-	private File initAndroidHome() throws FileNotFoundException {
+	private File initAndroidHome() throws GradleImportException {
 		String androidHome = System.getenv("ANDROID_HOME");
 		if (androidHome != null) {
 			File tmpAndroidHome = new File(androidHome);
@@ -316,7 +316,7 @@ public class GradleImport {
 		} else {
 			String message = "Adroid home not specified.";
 			LOGGER.log(Level.WARN, message);
-			throw new FileNotFoundException(message);
+			throw new GradleImportException(message);
 		}
 
 	}
@@ -368,16 +368,17 @@ public class GradleImport {
 	 * 
 	 * @param monitor A progress monitor
 	 * @param project The project to which the libs should be added
-	 * @return The eclise project with the requried libs
+	 * @return The eclipse project with the required libs
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 * @throws CoreException
+	 * @throws GradleImportException
 	 */
 	private IJavaProject addRequiredLibsToProject(IJavaProject project, IProgressMonitor monitor)
-			throws IOException, FileNotFoundException, CoreException {
+			throws IOException, FileNotFoundException, CoreException, GradleImportException {
 		IFolder libFolder = project.getProject().getFolder("lib");
-		List<IClasspathEntry> entries = new LinkedList<>();
-		Set<Path> requiredLibs = getLibs(buildDotGradleFiles);
+		Stream<IClasspathEntry> entries = Stream.empty();
+		Collection<Path> requiredLibs = getLibs(buildDotGradleFiles);
 		for (Path libPath : requiredLibs) {
 			List<IFile> jarFiles = new LinkedList<>();
 			String libName = libPath.toFile().getName();
@@ -400,18 +401,9 @@ public class GradleImport {
 					continue;
 				}
 			}
-			for (IFile jarFile : jarFiles) {
-				IClasspathEntry entry = new ClasspathEntry(IPackageFragmentRoot.K_BINARY, IClasspathEntry.CPE_LIBRARY,
-						jarFile.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion patterns
-						ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
-						null, null, null, // specific output folder
-						false, // exported
-						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
-						ClasspathEntry.NO_EXTRA_ATTRIBUTES);
-				entries.add(entry);
-			}
+			entries = Stream.concat(entries, JavaProjectUtil.getClasspathEntries(jarFiles));
 		}
-		JavaProjectUtil.addToClassPath(project, entries, monitor);
+		JavaProjectUtil.addToClassPath(project, entries.collect(Collectors.toList()), monitor);
 
 		return project;
 	}
@@ -538,17 +530,18 @@ public class GradleImport {
 		}
 	}
 
-	private Set<Path> getLibs(Collection<Path> buildDotGradleFiles) throws IOException, FileNotFoundException {
-		Set<String> compileLibs = new HashSet<>(), useLibs = new HashSet<String>();
-
-		int minSdk = Integer.MAX_VALUE;
-		int targetSdk = -1;
+	private Collection<Path> getLibs(Collection<Path> buildDotGradleFiles)
+			throws IOException, FileNotFoundException, GradleImportException {
+		Set<String> compileLibs = new HashSet<>();
+		Set<String> useLibs = new HashSet<String>();
 
 		ArrayList<String> parsedBuildFiles = new ArrayList<String>(buildDotGradleFiles.size());
 
 		for (Path path : buildDotGradleFiles) {
 			parsedBuildFiles.add(FileUtils.getContentsAsString(path.toFile()));
 		}
+
+		SdkVersion sdkVersion = null;
 		for (String content : parsedBuildFiles) {
 			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 			while (m.find()) {
@@ -583,21 +576,7 @@ public class GradleImport {
 			}
 
 			if (androidApp) {
-				Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(content);
-				while (matcherSdk.find()) {
-					String group = matcherSdk.group(1);
-					if ("minSdkVersion".equals(group)) {
-						int value = Integer.valueOf(matcherSdk.group(6));
-						if (minSdk > value) {
-							minSdk = value;
-						}
-					} else if ("targetSdkVersion".equals(group)) {
-						int value = Integer.valueOf(matcherSdk.group(6));
-						if (targetSdk < value) {
-							targetSdk = value;
-						}
-					}
-				}
+				sdkVersion = getAndroidSdkVersion(content);
 			}
 
 		}
@@ -605,54 +584,10 @@ public class GradleImport {
 		Hashtable<String, Path> pathsToLibs = searchInCache(compileLibs, new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
-		Set<Path> libsAsJar = new HashSet<>(pathsToLibs.values());
+		Collection<Path> libsAsJar = pathsToLibs.values();
 		if (androidApp) {
-			File androidHome = initAndroidHome();
+			libsAsJar.addAll(getAndroidLibs(compileLibs, useLibs, sdkVersion));
 
-			if (targetSdk != -1) {
-				boolean compAndroidSdk = false;
-				File platforms = new File(androidHome, GradleAndroid.ANDROID_SDK_PLATFORMS);
-				for (int i = targetSdk; i >= minSdk; i--) {
-					File androidPlatform = new File(platforms, "android-" + i);
-					File androidJar = new File(androidPlatform, "android.jar");
-					if (androidJar.exists()) {
-						compAndroidSdk = true;
-						libsAsJar.add(androidJar.toPath());
-
-						File optional = new File(androidPlatform, "optional");
-						for (String use : useLibs) {
-							File lib = new File(optional, use + ".jar");
-							if (lib.exists()) {
-								libsAsJar.add(lib.toPath());
-							} else {
-								LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
-							}
-						}
-						break;
-					}
-				}
-				if (!compAndroidSdk) {
-					LOGGER.log(Level.WARN, "WARNING: Install android SDK " + targetSdk);
-					for (File sdk : platforms.listFiles()) {
-						int i = Integer.valueOf(sdk.getName().substring("android-".length()));
-						if (i > targetSdk) {
-							libsAsJar.add(new File(sdk, "android.jar").toPath());
-							break;
-						}
-					}
-				}
-				boolean newLibs = false;
-				do {
-					for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
-							"extras/m2repository" }) {
-						int before = compileLibs.size();
-						pathsToLibs = searchInCache(compileLibs, new File(androidHome, location));
-						newLibs |= compileLibs.size() > before;
-						compileLibs.removeAll(pathsToLibs.keySet());
-						libsAsJar.addAll(pathsToLibs.values());
-					}
-				} while (newLibs);
-			}
 		}
 		if (compileLibs.size() > 0) {
 			LOGGER.log(Level.WARN, "The following libs haven't been found on the system:");
@@ -661,6 +596,104 @@ public class GradleImport {
 			}
 		}
 		return libsAsJar;
+	}
+
+	/**
+	 * Searches the Android libraries
+	 * 
+	 * @param compileLibs The signatures of the compile libs
+	 * @param useLibs The signatures of the use libs
+	 * @param sdkVersion  The SDK information for the project
+	 * @return The jar files of the libraries
+	 * @throws GradleImportException If the search for the libraries in the Android SDK location failed
+	 */
+	private Set<Path> getAndroidLibs(Set<String> compileLibs, Set<String> useLibs,
+			SdkVersion sdkVersion) throws GradleImportException {
+		Hashtable<String, Path> pathsToLibs;
+		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
+			throw new GradleImportException("Couldn't determine the SDK version information");
+		}
+
+		File androidHome = initAndroidHome();
+
+		boolean compAndroidSdk = false;
+		File platforms = new File(androidHome, GradleAndroid.ANDROID_SDK_PLATFORMS);
+		Set<Path> libsAsJar = new HashSet<>();
+		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
+			File androidPlatform = new File(platforms, "android-" + i);
+			File androidJar = new File(androidPlatform, "android.jar");
+			if (androidJar.exists()) {
+				compAndroidSdk = true;
+				libsAsJar.add(androidJar.toPath());
+
+				File optional = new File(androidPlatform, "optional");
+				for (String use : useLibs) {
+					File lib = new File(optional, use + ".jar");
+					if (lib.exists()) {
+						libsAsJar.add(lib.toPath());
+					} else {
+						LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
+					}
+				}
+				break;
+			}
+		}
+		if (!compAndroidSdk) {
+			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
+			for (File sdk : platforms.listFiles()) {
+				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
+				if (i > sdkVersion.getTargetSdk()) {
+					libsAsJar.add(new File(sdk, "android.jar").toPath());
+					break;
+				}
+			}
+		}
+		boolean newLibs = false;
+		do {
+			for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
+					"extras/m2repository" }) {
+				int before = compileLibs.size();
+				try {
+					pathsToLibs = searchInCache(compileLibs, new File(androidHome, location));
+					newLibs |= compileLibs.size() > before;
+					compileLibs.removeAll(pathsToLibs.keySet());
+					libsAsJar.addAll(pathsToLibs.values());
+				} catch (IOException e) {
+					throw new GradleImportException(e);
+				}
+			}
+		} while (newLibs);
+		
+		return libsAsJar;
+	}
+
+	/**
+	 * Determines the SDK version information of the android project described in
+	 * the gradle build file
+	 * 
+	 * @param gradleContent The content of the gradle build file
+	 * @return The SDK version information
+	 */
+	private SdkVersion getAndroidSdkVersion(String gradleContent) {
+		SdkVersion sdkVersion = new SdkVersion();
+		Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
+		while (matcherSdk.find()) {
+			String group = matcherSdk.group(1);
+			if ("minSdkVersion".equals(group)) {
+				int value = Integer.valueOf(matcherSdk.group(6));
+				double minSdk = sdkVersion.getMinSdk();
+				if (Double.isNaN(minSdk) || minSdk > value) {
+					sdkVersion.setMinSdk(value);
+				}
+			} else if ("targetSdkVersion".equals(group)) {
+				int value = Integer.valueOf(matcherSdk.group(6));
+				double targetSdk = sdkVersion.getTargetSdk();
+				if (Double.isNaN(targetSdk) || targetSdk < value) {
+					sdkVersion.setTargetSdk(value);
+				}
+			}
+		}
+		return sdkVersion;
 	}
 
 	private Hashtable<String, Path> searchInCache(Set<String> libs, File cacheFile) throws IOException {

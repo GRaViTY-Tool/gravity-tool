@@ -16,6 +16,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -33,6 +34,7 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.LibraryLocation;
@@ -273,5 +275,23 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 			}
 		} while (project == null);
 		return project;
+	}
+
+	/**
+	 * Creates class path entries for the given binary files
+	 * 
+	 * @param binaries The files
+	 * @return
+	 */
+	public static Stream<IClasspathEntry> getClasspathEntries(List<IFile> binaries) {
+		return binaries.parallelStream()
+				.map(b -> new ClasspathEntry(IPackageFragmentRoot.K_BINARY, IClasspathEntry.CPE_LIBRARY,
+						b.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion patterns
+						ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
+						null, null, null, // specific output folder
+						false, // exported
+						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
+						ClasspathEntry.NO_EXTRA_ATTRIBUTES));
+	
 	}
 }
