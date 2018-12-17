@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.HulkPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore"/>
+    <package class="org.gravity.hulk.HulkPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.detection.DetectionPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection"/>
+    <package class="org.gravity.hulk.detection.DetectionPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.detection.antipattern.AntipatternPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern"/>
+    <package class="org.gravity.hulk.detection.antipattern.AntipatternPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.detection.codesmells.CodesmellsPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells"/>
+    <package class="org.gravity.hulk.detection.codesmells.CodesmellsPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.detection.metrics.MetricsPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics"/>
+    <package class="org.gravity.hulk.detection.metrics.MetricsPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//detection/metrics"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.resolve.ResolvePackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//resolve"/>
+    <package class="org.gravity.hulk.resolve.ResolvePackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//resolve"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.resolve.calculators.CalculatorsPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//resolve/calculators"/>
+    <package class="org.gravity.hulk.resolve.calculators.CalculatorsPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//resolve/calculators"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.resolve.antipattern.AntipatternPackage" genModel="model/Hulk.genmodel" uri="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//resolve/antipattern"/>
+    <package class="org.gravity.hulk.resolve.antipattern.AntipatternPackage" genModel="model/Hulk.genmodel" uri="platform:/resource/org.gravity.hulk/model/Hulk.ecore#//resolve/antipattern"/>
   </extension>
 </plugin>

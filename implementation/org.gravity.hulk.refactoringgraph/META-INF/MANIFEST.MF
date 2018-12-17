@@ -6,16 +6,19 @@ Export-Package: org.gravity.hulk.refactoringgraph.util,
  org.gravity.hulk.refactoringgraph.refactorings,
  org.gravity.hulk.refactoringgraph.refactorings.util,
  org.gravity.hulk.refactoringgraph.refactorings.impl
-Bundle-Name: org.gravity.hulk.refactoringgraph
+Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
- org.gravity.hulk.antipatterngraph,
- org.gravity.typegraph.basic,
+ org.gravity.hulk.antipatterngraph;visibility:=reexport,
+ org.gravity.typegraph.basic;visibility:=reexport,
  org.eclipse.swt,
- org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.moflon.core.utilities
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: TU Darmstadt
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.hulk.refactoringgraph
