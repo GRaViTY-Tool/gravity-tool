@@ -268,8 +268,11 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		int appendix = 0;
 		IJavaProject project = null;
 		do {
+			if(appendix == 0) {
+				name = name.concat(Integer.toString(appendix));
+			}
 			try {
-				project = createJavaProject(name + (appendix == 0 ? "" : appendix), Collections.emptySet(), monitor);
+				project = createJavaProject(name, Collections.emptySet(), monitor);
 			} catch (DuplicateProjectNameException e) {
 				appendix++;
 			}
@@ -281,7 +284,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * Creates class path entries for the given binary files
 	 * 
 	 * @param binaries The files
-	 * @return
+	 * @return A stream containing the classpath entries 
 	 */
 	public static Stream<IClasspathEntry> getClasspathEntries(List<IFile> binaries) {
 		return binaries.parallelStream()
