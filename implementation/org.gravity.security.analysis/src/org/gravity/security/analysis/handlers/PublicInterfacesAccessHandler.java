@@ -106,16 +106,16 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 				IExtensionPoint point = registry.getExtensionPoint(Activator.EXTENSIONPOINT_REGISTER_PROJECT);
 				for(IConfigurationElement element : point.getConfigurationElements()){
 					try{
-						String plugin_id = element.getAttribute("plugin");
-						Bundle bundle = Platform.getBundle(plugin_id);
+						String pluginId = element.getAttribute("plugin");
+						Bundle bundle = Platform.getBundle(pluginId);
 						if(bundle==null){
 							continue;
 						}
 						File file = FileLocator.getBundleFile(bundle);
-						libs.put(plugin_id, new Path(file.getAbsolutePath()));
+						libs.put(pluginId, new Path(file.getAbsolutePath()));
 					}
 					catch(IOException e){
-						e.printStackTrace();
+						LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 					}
 				}
 								
