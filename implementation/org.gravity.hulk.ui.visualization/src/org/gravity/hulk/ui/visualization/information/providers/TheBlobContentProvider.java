@@ -1,5 +1,9 @@
 package org.gravity.hulk.ui.visualization.information.providers;
 
+import java.io.IOException;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.widgets.Composite;
@@ -8,14 +12,24 @@ import org.eclipse.zest.core.widgets.GraphConnection;
 import org.eclipse.zest.core.widgets.GraphNode;
 import org.eclipse.zest.core.widgets.ZestStyles;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
+import org.gravity.eclipse.io.FileUtils;
+import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
 import org.gravity.hulk.ui.visualization.util.GlobalStrings;
 
 public class TheBlobContentProvider extends InformationViewContentProvider {
 	
+	private static final Logger LOGGER = Logger.getLogger(TheBlobContentProvider.class);
+	
+	private String blobImage;
+
 	public TheBlobContentProvider() {
-		super();
+		try {
+			blobImage = FileUtils.extractToTmpFile(Activator.PLUGIN_ID, "icons", "Blob.png").toFile().getAbsolutePath();
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, "Couldn't extract the blob figure to a temporary file.");
+		}
 	}
 
 	@Override
@@ -27,7 +41,9 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 				+ "The Blob AntiPattern can be found in programms where one class does all the processing while the other classes only store data and do no real processing themselves. "
 				+ "One class has all the responsibilities which contradicts the principle of object-oriented programming. A programm with The Blob is structured more like a procedural "
 				+ "design rather than an object-oriented." + "</p>"
-				+ "<center><img src=\"/home/gregor/Dropbox/Hulk_Playground/org.gravity.hulk.visualization/icons/Blob.png\" alt=\"TheBlob\"></center>"
+				+ "<center><img src=\""
+				+ blobImage
+				+ "\" alt=\"TheBlob\"></center>"
 				+ "<h2 align=\"left\">Symptoms</h2>" + "<p>" + "<ul>"
 				+ "<li>Single class with a large number of attributes, operations or both </li>"
 				+ "<li>A single class encapsulates a lot of unrelated attributes and operations </li>"

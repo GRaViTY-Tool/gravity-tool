@@ -4,32 +4,32 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            id="org.gravity.hulk.ui.visualization.ui.views.HulkViews"
+            id="org.gravity.hulk.ui.visualization.views.HulkViews"
             name="Hulk">
       </category>
       <view
-            category="org.gravity.hulk.ui.visualization.ui.views.HulkViews"
+            category="org.gravity.hulk.ui.visualization.views.HulkViews"
             class="org.gravity.hulk.ui.visualization.views.TheBlobInformationView"
             id="org.gravity.hulk.ui.visualization.views.TheBlobInformationView"
             name="The Blob Information View"
             restorable="true">
       </view>
       <view
-            category="org.gravity.hulk.ui.visualization.ui.views.HulkViews"
+            category="org.gravity.hulk.ui.visualization.views.HulkViews"
             class="org.gravity.hulk.ui.visualization.views.AntiPatternMarkerView"
             id="org.gravity.hulk.ui.visualization.views.AntiPatternMarkersView"
             name="Antipattern Marker View"
             restorable="true">
       </view>
       <view
-            category="org.gravity.hulk.ui.visualization.ui.views.HulkViews"
+            category="org.gravity.hulk.ui.visualization.views.HulkViews"
             class="org.gravity.hulk.ui.visualization.views.SwissArmyKnifInformationView"
             id="org.gravity.hulk.ui.visualization.views.SwissArmyKnifeInformationView"
             name="Swiss Army Knife information view"
             restorable="true">
       </view>
       <view
-            category="org.gravity.hulk.ui.visualization.ui.views.HulkViews"
+            category="org.gravity.hulk.ui.visualization.views.HulkViews"
             class="org.gravity.hulk.ui.visualization.views.SpaghettiCodeInformationView"
             id="org.gravity.hulk.ui.visualization.views.SpaghettiCodeInformationView"
             name="Spaghetti Code information view"
@@ -191,7 +191,7 @@
    <extension
          point="org.eclipse.ui.ide.markerSupport">
       <markerContentGenerator
-            defaultMarkerGrouping="org.gravity.hulk.ui.visualization.ui.markerGrouping3"
+            defaultMarkerGrouping="org.gravity.hulk.ui.visualization.markerGrouping3"
             id="org.gravity.hulk.ui.visualization.markerContentGenerator"
             name="Marker Content Generator">
          <markerTypeReference
@@ -280,7 +280,7 @@
             </markerGroupingEntry>
             <markerAttributeGrouping
                   attribute="org.eclipse.core.resources.marker"
-                  defaultGroupingEntry="org.gravity.hulk.ui.visualization.ui.markerGroupingEntry1"
+                  defaultGroupingEntry="org.gravity.hulk.ui.visualization.markerGroupingEntry1"
                   markerType="org.eclipse.core.resources.problemmarker">
             </markerAttributeGrouping>
          </markerGrouping>
@@ -445,7 +445,7 @@
          name="DetectionMarker"
          point="org.eclipse.core.resources.markers">
       <attribute
-            name="org.gravity.hulk.ui.visualization.ui.className">
+            name="org.gravity.hulk.ui.visualization.className">
       </attribute>
       <super
             type="org.eclipse.core.resources.problemmarker">

@@ -24,6 +24,7 @@ import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.zest.core.widgets.Graph;
 import org.eclipse.zest.core.widgets.GraphNode;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionObject;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.listener.DetectionLinkListener;
