@@ -44,7 +44,7 @@ public class SdkVersion {
 	/**
 	 * Sets the optimal target SDK version
 	 * 
-	 * @param minSdk the SDK version
+	 * @param targetSdk the SDK version
 	 */
 	public void setTargetSdk(double targetSdk) {
 		this.targetSdk = targetSdk;
@@ -62,7 +62,7 @@ public class SdkVersion {
 	/**
 	 * Sets the newest supported SDK version
 	 * 
-	 * @param minSdk the SDK version
+	 * @param maxSdk the SDK version
 	 */
 	public void setMaxSdk(double maxSdk) {
 		this.maxSdk = maxSdk;

@@ -60,8 +60,10 @@ public class PomParser {
 	}
 
 	/**
-	 * @param dependency
-	 * @return
+	 * Creates a dependency string from a pom dependency node
+	 * 
+	 * @param dependency The dependency node
+	 * @return The string representation
 	 */
 	private static String getDependency(Node dependency) {
 		String group = null;
