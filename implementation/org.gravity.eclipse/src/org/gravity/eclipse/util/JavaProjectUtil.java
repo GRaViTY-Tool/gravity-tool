@@ -222,7 +222,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @return A mapping from packages to java source files
 	 * @throws IOException If a source file cannot be read
 	 */
-	private static Hashtable<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles)
+	public static Hashtable<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles)
 			throws IOException {
 		Hashtable<String, List<Path>> packages = new Hashtable<>();
 
