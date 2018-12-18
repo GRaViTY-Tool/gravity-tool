@@ -6,28 +6,32 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mType : MClass {
+	++mType:MClass {
 }
 }
 
 #target {
-++ tType : TClass {
+	++tType:TClass {
 }
-tPackage : TPackage {
-	++  -classes -> tType
-}
-pg : TypeGraph {
-	++  -classes -> tType
-}
+
+	tPackage:TPackage {
+		++  -classes -> tType
+	}
+
+	pg:TypeGraph {
+		++  -classes -> tType
+	}
 }
 
 #correspondence {
-++ mClassDeclarationToTClass : ClassDeclarationToTClass {
-	#src->mType
-	#trg->tType
-}
+	++ mClassDeclarationToTClass :ClassDeclarationToTClass {
+		#src->mType
+		#trg->tType
+	}
 }
 
 #attributeConditions {
 	eq(mType.name, tType.tName)
 }
+
+
