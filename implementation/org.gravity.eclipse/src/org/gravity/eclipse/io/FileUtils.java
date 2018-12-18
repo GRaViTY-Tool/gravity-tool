@@ -34,23 +34,26 @@ public class FileUtils {
 	 * @throws IOException Iff the original file has been lost due to an error
 	 */
 	public static boolean changeToOSEncoding(File file) throws IOException {
-		Path tempFile = null;
+		File tempFile;
+		try{
+			tempFile = Files.createTempFile("gravity", null).toFile();
+			tempFile.deleteOnExit();
+		}
+		catch(IOException e) {
+			LOGGER.log(Level.ERROR, "Couldn't create temp file: "+e.getMessage(), e);
+			return false;
+		}
 		try {
 			// move the file to a temporary file
-			tempFile = Files.move(file.toPath(), Files.createTempFile("gravity", null), StandardCopyOption.REPLACE_EXISTING);
-			tempFile.toFile().deleteOnExit();
+			Files.move(file.toPath(), tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			// print all lines to the original location using system encoding
-			try (PrintWriter stream = new PrintWriter(new FileWriter(file, true))) {
-				Files.lines(tempFile).forEach(s->{
-					stream.println(s);
-				});
-			}
+			copy(file, tempFile);
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
 			try {
 				// Try to recover file
 				if(tempFile != null) {
-					Files.move(tempFile, file.toPath());
+					Files.move(tempFile.toPath(), file.toPath());
 				}
 			} catch (IOException e2) {
 				// Iff recover wasn't possible throw original error
@@ -60,7 +63,7 @@ public class FileUtils {
 		}
 		// delete the temp file
 		try {
-			Files.deleteIfExists(tempFile);
+			Files.deleteIfExists(tempFile.toPath());
 		}
 		catch(IOException e) {
 			/* 
@@ -70,6 +73,21 @@ public class FileUtils {
 			LOGGER.log(Level.WARN, "The temporal copy of a file couldn't be deleted: "+e.getMessage(), e);
 		}
 		return true;
+	}
+
+	/**
+	 * Copies a file from a source location to a target location using system specific line endings
+	 * 
+	 * @param source The source file
+	 * @param target The target file
+	 * @throws IOException If the source file cannot be read or the target file cannot be written
+	 */
+	public static void copy(File source, File target) throws IOException {
+		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true))) {
+			Files.lines(target.toPath()).forEach(s->{
+				stream.println(s);
+			});
+		}
 	}
 
 	/**
