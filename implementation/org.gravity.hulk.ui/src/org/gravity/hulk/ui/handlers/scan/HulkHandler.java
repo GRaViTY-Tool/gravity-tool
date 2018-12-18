@@ -153,7 +153,7 @@ public abstract class HulkHandler extends AbstractHandler {
 				try {
 					folder.delete(true, hHmonitor);
 				} catch (CoreException e) {
-					e.printStackTrace();
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			}
 		} else {
@@ -170,7 +170,7 @@ public abstract class HulkHandler extends AbstractHandler {
 			try {
 				hulk.create(true, true, hHmonitor);
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
 		return hulk;
@@ -188,11 +188,11 @@ public abstract class HulkHandler extends AbstractHandler {
 					annotations_out.create(in, true, monitor);
 				}
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			} catch (MalformedURLException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 
 			try {
@@ -202,7 +202,7 @@ public abstract class HulkHandler extends AbstractHandler {
 				cp_new[cp.length] = JavaCore.newLibraryEntry(annotations_out.getFullPath(), null, null);
 				project.setRawClasspath(cp_new, hHmonitor);
 			} catch (JavaModelException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
 		return annotations_out;

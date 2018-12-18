@@ -587,7 +587,7 @@ public class PGComparator {
 					return false;
 				}
 			} catch (UnsupportetElementException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				return false;
 			}
 		}

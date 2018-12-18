@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -20,14 +22,12 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.gravity.hulk.ui.visualization.util.AstUtil;
 
 public class DetectionLinkListener implements Listener {
-	
-	Map<String,IFile> fileMap = new HashMap<String, IFile>();
+
+	private static final Logger LOGGER = Logger.getLogger(DetectionLinkListener.class);
+
+	Map<String, IFile> fileMap = new HashMap<String, IFile>();
 
 	private static IProject project;
-
-
-	public DetectionLinkListener() {
-	}
 
 	public static void setProject(IProject project) {
 		DetectionLinkListener.project = project;
@@ -41,21 +41,20 @@ public class DetectionLinkListener implements Listener {
 
 		IFolder src = project.getFolder("src");
 		IFile iClass;
-		
-		if(fileMap.containsKey(iClassString))
+
+		if (fileMap.containsKey(iClassString))
 			iClass = fileMap.get(iClassString);
-		else{
+		else {
 			iClass = (IFile) src.findMember(iClassString);
-			if(iClass!=null){
-				fileMap.put(iClassString,iClass);
-			}
-			else{
+			if (iClass != null) {
+				fileMap.put(iClassString, iClass);
+			} else {
 				IFolder iFolder = src.getFolder(tempString[0]);
 				List<IFile> resultList = new ArrayList<IFile>();
-				AstUtil.findFileWithTypeDeclaration(iFolder, tempString[1].trim(),
-						resultList);
-				iClass=resultList.get(0);
-				fileMap.put(iClassString, iClass);			}
+				AstUtil.findFileWithTypeDeclaration(iFolder, tempString[1].trim(), resultList);
+				iClass = resultList.get(0);
+				fileMap.put(iClassString, iClass);
+			}
 		}
 
 		IEditorInput iEditorInput = new FileEditorInput(iClass);
@@ -68,7 +67,7 @@ public class DetectionLinkListener implements Listener {
 		try {
 			page.openEditor(iEditorInput, desc.getId());
 		} catch (PartInitException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 	}
 

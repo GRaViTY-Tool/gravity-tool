@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -26,18 +28,33 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 
+/**
+ * The dialog for showing detection results 
+ * 
+ * @author speldszus
+ *
+ */
 public class DetectionResultDialog extends Dialog {
 
+	private static final Logger LOGGER = Logger.getLogger(DetectionResultDialog.class);
+	
 	Iterable<HDetector> selection;
 	Iterable<HDetector> executed;
 	Shell pShell;
 
-	public DetectionResultDialog(Shell parentShell, Iterable<HDetector> selected_detectors,
-			Iterable<HDetector> executed_detectors) {
+	/**
+	 * Creates a new dialog
+	 * 
+	 * @param parentShell The parent shell in which the dialog should be shown
+	 * @param selectedDetectors All selected detectors
+	 * @param executedDetectors All executed detectors
+	 */
+	public DetectionResultDialog(Shell parentShell, Iterable<HDetector> selectedDetectors,
+			Iterable<HDetector> executedDetectors) {
 		super(parentShell);
 		pShell = parentShell;
-		this.selection = selected_detectors;
-		this.executed = executed_detectors;
+		this.selection = selectedDetectors;
+		this.executed = executedDetectors;
 	}
 
 	@Override
@@ -199,7 +216,7 @@ public class DetectionResultDialog extends Dialog {
 			out.flush();
 			out.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 		
 	}

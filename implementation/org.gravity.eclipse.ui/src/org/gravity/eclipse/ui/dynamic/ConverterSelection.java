@@ -1,5 +1,7 @@
 package org.gravity.eclipse.ui.dynamic;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
@@ -17,7 +19,16 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 
+/**
+ * This class fills an menu with all available modisco to pm converters and
+ * allows the selection of the active converter
+ * 
+ * @author speldszus
+ *
+ */
 public class ConverterSelection extends ContributionItem {
+
+	private static final Logger LOGGER = Logger.getLogger(ConverterSelection.class);
 
 	@Override
 	public void fill(Menu menu, int index) {
@@ -30,10 +41,12 @@ public class ConverterSelection extends ContributionItem {
 		try {
 			selected_converter = GravityActivator.getDefault().getSelectedConverterFactory();
 		} catch (NoConverterRegisteredException e1) {
-			MessageDialog.openError(getShell(), "No Converter installed", "Please install a converter from the GRaViTY updatesite.");
+			MessageDialog.openError(getShell(), "No Converter installed",
+					"Please install a converter from the GRaViTY updatesite.");
 			return;
 		} catch (CoreException e) {
-			MessageDialog.openError(getShell(), "Critical ERROR", "The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
+			MessageDialog.openError(getShell(), "Critical ERROR",
+					"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 			return;
 		}
 
@@ -55,11 +68,16 @@ public class ConverterSelection extends ContributionItem {
 					}
 				});
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
 	}
 
+	/**
+	 * Gets the current active shell
+	 * 
+	 * @return the shell
+	 */
 	public static Shell getShell() {
 		Display display = Display.getCurrent();
 		// may be null if outside the UI thread

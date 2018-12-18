@@ -236,7 +236,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		try {
 			targetModel = this.discoverer.discoverMGravityModelFromProject(iJavaProject, monitor);
 		} catch (DiscoveryException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			return false;
 		}
 		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");

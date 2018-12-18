@@ -3,6 +3,9 @@ package org.gravity.hulk.ui.visualization.markerManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IMarker;
@@ -15,6 +18,8 @@ import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.util.AstUtil;
 
 public class AntipatternMarkerManager {
+
+	private static final Logger LOGGER = Logger.getLogger(AntipatternMarkerManager.class);
 
 	private DetectionPreprocessor preprocessor;
 	private IFolder src;
@@ -96,7 +101,7 @@ public class AntipatternMarkerManager {
 								marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_WARNING);
 							}
 						} catch (Exception e) {
-							e.printStackTrace();
+							LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 						}
 					}
 				}

@@ -5,6 +5,8 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.util.Collections;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -13,7 +15,24 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
+/**
+ * This class provides the functionality to save a model into an eclipse file
+ * 
+ * @author speldszus
+ *
+ */
 public class ModelSaver {
+	
+	private static final Logger LOGGER = Logger.getLogger(ModelSaver.class);
+
+	/**
+	 * Save a emf model into an eclipse file
+	 * 
+	 * @param model The model
+	 * @param file An eclipse file
+	 * @param monitor A progress monitor
+	 * @return true, iff the model has been saved successfully
+	 */
 	public static boolean saveModel(EObject model, IFile file, IProgressMonitor monitor) {
 		if (model == null) {
 			return false;
@@ -33,7 +52,7 @@ public class ModelSaver {
 					resource.save(out, Collections.EMPTY_MAP);
 					out.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
 			Runnable rin = () -> {
@@ -51,9 +70,9 @@ public class ModelSaver {
 					}
 					in.close();
 				} catch (CoreException e) {
-					e.printStackTrace();
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				} catch (IOException e) {
-					e.printStackTrace();
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
 			new Thread(rout).start();

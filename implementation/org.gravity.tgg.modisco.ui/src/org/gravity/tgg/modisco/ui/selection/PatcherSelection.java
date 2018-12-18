@@ -1,6 +1,7 @@
 package org.gravity.tgg.modisco.ui.selection;
 
-
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
@@ -14,13 +15,22 @@ import org.eclipse.swt.widgets.MenuItem;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.gravity.tgg.modisco.MoDiscoTGGActivator;
 
+/**
+ * This class provides the functionality for listing all modisco model patcher
+ * and selecting the active one
+ * 
+ * @author speldszus
+ *
+ */
 public class PatcherSelection extends ContributionItem {
+
+	private static final Logger LOGGER = Logger.getLogger(PatcherSelection.class);
 
 	@Override
 	public void fill(Menu menu, int index) {
 		MoDiscoTGGActivator modiscoUI = MoDiscoTGGActivator.getDefault();
 		GravityMoDiscoModelPatcher selected_patcher = modiscoUI.getSelectedPatcher();
-		
+
 		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
 
 		IConfigurationElement[] configuration_elements = extension_registry
@@ -28,8 +38,9 @@ public class PatcherSelection extends ContributionItem {
 
 		for (IConfigurationElement element : configuration_elements) {
 			try {
-				GravityMoDiscoModelPatcher patcher = (GravityMoDiscoModelPatcher) element.createExecutableExtension("class"); //$NON-NLS-1$
-				
+				GravityMoDiscoModelPatcher patcher = (GravityMoDiscoModelPatcher) element
+						.createExecutableExtension("class"); //$NON-NLS-1$
+
 				MenuItem item = new MenuItem(menu, SWT.RADIO, index);
 				item.setText(patcher.getName());
 				item.setToolTipText(patcher.getDescription());
@@ -44,7 +55,7 @@ public class PatcherSelection extends ContributionItem {
 					}
 				});
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
 	}

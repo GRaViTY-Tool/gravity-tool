@@ -45,7 +45,7 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		List<Object> workspace_selection = Arrays.asList(structured.toArray());
 
 		try {
-			for(Object object : SelectionHelper.getJavaProjects(workspace_selection)){
+			for (Object object : SelectionHelper.getJavaProjects(workspace_selection)) {
 				if (object instanceof IJavaProject) {
 					IProject project = ((IJavaProject) object).getProject();
 					openProject(project);
@@ -76,19 +76,16 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		EObject eObject = contents.get(0);
 		HAntiPatternGraph apg;
 		if (eObject instanceof HAntiPatternGraph) {
-			apg = (HAntiPatternGraph) eObject;	
-		}
-		else if (eObject instanceof HAntiPatternDetection) {
-			apg = ((HAntiPatternDetection) eObject).getApg();				
-		}
-		else {
+			apg = (HAntiPatternGraph) eObject;
+		} else if (eObject instanceof HAntiPatternDetection) {
+			apg = ((HAntiPatternDetection) eObject).getApg();
+		} else {
 			throw new Exception();
 		}
-		
+
 		InformationViewContentProvider.setAPG(apg);
 		DetectionLinkListener.setProject(project);
-		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg,
-				new TheBlobPreprocessor(), project);
+		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new TheBlobPreprocessor(), project);
 		AntipatternMarkerManager swissArmyKnifeManager = new AntipatternMarkerManager(apg,
 				new SwissArmyKnifePreprocessor(), project);
 		AntipatternMarkerManager spaghettiCodeManager = new AntipatternMarkerManager(apg,

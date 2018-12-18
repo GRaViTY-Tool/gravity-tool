@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -36,6 +38,8 @@ import at.ac.tuwien.big.momot.problem.unit.parameter.comparator.IEObjectEquality
 
 public class HenshinExecutor {
 
+	private static final Logger LOGGER = Logger.getLogger(HenshinExecutor.class);
+	
 	HenshinResourceSet resourceSet;
 	Module module;
 	EGraph graph;
@@ -66,8 +70,7 @@ public class HenshinExecutor {
 		try (InputStream s = res.openStream()) {
 			r.load(s, Collections.EMPTY_MAP);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 		module = (Module) r.getContents().get(0);
 	}

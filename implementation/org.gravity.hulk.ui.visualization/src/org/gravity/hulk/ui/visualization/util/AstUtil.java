@@ -6,6 +6,8 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
@@ -17,6 +19,8 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 public class AstUtil {
+
+	private static final Logger LOGGER = Logger.getLogger(AstUtil.class);
 
 	public static int findLineNumberOfTypeDeclaration(IFile iFile, String typeName) {
 		List<Integer> resultLine = new ArrayList<Integer>();
@@ -47,7 +51,7 @@ public class AstUtil {
 				}
 			});
 		} catch (CoreException | IOException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 		return resultLine.get(0);
 	}
@@ -65,7 +69,7 @@ public class AstUtil {
 				}
 			}
 		} catch (CoreException e) {
-			e.printStackTrace();
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 		return -1;
 	}
