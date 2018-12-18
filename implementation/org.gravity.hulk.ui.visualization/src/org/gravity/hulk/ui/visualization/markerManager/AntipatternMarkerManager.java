@@ -11,6 +11,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionObject;
@@ -82,7 +83,8 @@ public class AntipatternMarkerManager {
 								List<IFile> resultList = new ArrayList<IFile>();
 								int lineNumber = AstUtil.findFileWithTypeDeclaration(iFolder, tempString[1].trim(),
 										resultList);
-								IMarker[] oldMarkers = resultList.get(0).findMarkers(
+								IFile file2 = resultList.get(0);
+								IMarker[] oldMarkers = file2.findMarkers(
 										Activator.PLUGIN_ID + "." + detectionObject.getType() + "Marker", false,
 										IResource.DEPTH_ZERO);
 								for (IMarker m : oldMarkers) {
@@ -93,14 +95,14 @@ public class AntipatternMarkerManager {
 										break;
 									}
 								}
-								IMarker marker = resultList.get(0)
+								IMarker marker = file
 										.createMarker(Activator.PLUGIN_ID + "." + detectionObject.getType() + "Marker");
 								marker.setAttribute(IMarker.MESSAGE, detectionObject.getType() + " detected");
 								marker.setAttribute(IMarker.LINE_NUMBER, lineNumber);
 								marker.setAttribute("org.gravity.hulk.ui.visualization.className", tempString[1]);
 								marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_WARNING);
 							}
-						} catch (Exception e) {
+						} catch (CoreException e) {
 							LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 						}
 					}
