@@ -25,3 +25,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt
 Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
+Export-Package: org.gravity.tgg.test.complete

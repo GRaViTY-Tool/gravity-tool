@@ -7,26 +7,30 @@ Export-Package: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.impl,
  org.gravity.tgg.modisco.processing.pg,
  org.gravity.tgg.modisco.util
-Bundle-Name: org.gravity.tgg.modisco
+Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.moflon.core.utilities,
- SDMLanguage,
+ SDMLanguage;visibility:=reexport,
  org.moflon.tgg.language;visibility:=reexport,
- org.moflon.tgg.runtime,
- org.gravity.typegraph.basic,
- org.gravity.modisco,
+ org.moflon.tgg.runtime;visibility:=reexport,
+ org.gravity.typegraph.basic;visibility:=reexport,
+ org.eclipse.gmt.modisco.java;visibility:=reexport,
+ org.gravity.modisco;visibility:=reexport,
  org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.resources,
  org.eclipse.gmt.modisco.java.generation,
  org.eclipse.jdt.core,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse;visibility:=reexport,
- MocaTree
+ MocaTree;visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.gravity.tgg.modisco.MoDiscoTGGActivator
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: TU Darmstadt
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.tgg.modisco
