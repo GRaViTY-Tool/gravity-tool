@@ -93,7 +93,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 					}
 				} else if (entry instanceof IPackageFragment) {
-					throw new RuntimeException(Messages.JavaParseHandler1 + entry);
+					throw new RuntimeException(Messages.javaParseHandler1 + entry);
 				} else {
 					UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage());

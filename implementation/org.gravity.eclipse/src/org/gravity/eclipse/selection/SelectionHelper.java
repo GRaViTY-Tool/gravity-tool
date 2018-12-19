@@ -34,11 +34,11 @@ public class SelectionHelper {
 				}
 				projects.add(java);
 			} else if (entry instanceof IPackageFragment) {
-				throw new IllegalArgumentException(Messages.JavaParseHandler1 + entry);
+				throw new IllegalArgumentException(Messages.javaParseHandler1 + entry);
 			} else if (entry instanceof IResource) {
-				throw new IllegalArgumentException(Messages.JavaParseHandler0 + entry);
+				throw new IllegalArgumentException(Messages.javaParseHandler0 + entry);
 			} else {
-				throw new IllegalArgumentException(Messages.JavaParseHandler2 + entry);
+				throw new IllegalArgumentException(Messages.javaParseHandler2 + entry);
 			}
 		}
 
