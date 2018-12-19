@@ -42,16 +42,16 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 
 		ISelectionService service = window.getSelectionService();
 		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
-		List<Object> workspace_selection = Arrays.asList(structured.toArray());
+		List<Object> workspaceSelection = Arrays.asList(structured.toArray());
 
 		try {
-			for (Object object : SelectionHelper.getJavaProjects(workspace_selection)) {
+			for (Object object : SelectionHelper.getJavaProjects(workspaceSelection)) {
 				if (object instanceof IJavaProject) {
 					IProject project = ((IJavaProject) object).getProject();
 					openProject(project);
 				}
 			}
-		} catch (Exception e) {
+		} catch (IOException e) {
 			MessageBox failure = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
 			failure.setText("Visualisation not possible");
 			failure.setMessage("You must scan the project for Antipatterns before you can visualize it!");
@@ -66,7 +66,7 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		return true;
 	}
 
-	private void openProject(IProject project) throws IOException, Exception {
+	private void openProject(IProject project) throws IOException {
 		IFolder src = project.getFolder(HulkActivator.HULK_FOLDER_NAME);
 		IFile antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_PG_XMI_NAME);
 		URI uri = URI.createFileURI(antiPatternXmi.getLocation().toString());
@@ -80,7 +80,8 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		} else if (eObject instanceof HAntiPatternDetection) {
 			apg = ((HAntiPatternDetection) eObject).getApg();
 		} else {
-			throw new Exception();
+			throw new IllegalStateException(
+					"The root of the antipattern graph has an unexpected type: " + eObject.eClass().getName());
 		}
 
 		InformationViewContentProvider.setAPG(apg);

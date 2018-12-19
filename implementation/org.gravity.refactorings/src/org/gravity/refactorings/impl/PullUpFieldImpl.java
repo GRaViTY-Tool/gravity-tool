@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.PullUpFieldConfiguration;
@@ -28,7 +29,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class Pull_Up_FieldImpl extends RefactoringImpl {
+public class PullUpFieldImpl extends RefactoringImpl {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -40,7 +41,7 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
+	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			PullUpFieldConfiguration esc = (PullUpFieldConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getTargetClass());
@@ -48,63 +49,63 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(TFieldSignature field, TClass parent) {
+	public List<TClass> perform(TFieldSignature field, TClass parent) throws RefactoringFailedException {
 
 		TypeGraph pg = getPg();
 
 		List<TClass> classContainer = new LinkedList<TClass>();
 		//
-		Object[] result3_black = Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(parent, field,
+		Object[] result3_black = PullUpFieldImpl.pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(parent, field,
 				classContainer);
 		if (result3_black != null) {
 			TClass tchild = (TClass) result3_black[1];
 			TFieldDefinition fieldParentDefinition = (TFieldDefinition) result3_black[2];
-			Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_3_ActivityNode135_redBBB(tchild, fieldParentDefinition, field);
 
-			Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_3_ActivityNode135_greenBBBBB(parent, tchild,
-					fieldParentDefinition, field, classContainer);
+			tchild.getSignature().remove(field);
+			fieldParentDefinition.setDefinedBy(null);
+
+			parent.getSignature().add(field);
+			fieldParentDefinition.setDefinedBy(parent);
+			classContainer.add(tchild);
 
 			// ForEach
-			for (Object[] result4_black : Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
+			for (Object[] result4_black : PullUpFieldImpl.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
 					field, classContainer)) {
 				TClass child = (TClass) result4_black[1];
 				TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
-				Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_4_ActivityNode137_greenBB(child, classContainer);
+				classContainer.add(child);
 
 				// ForEach
-				for (Object[] result5_black : Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(pg,
+				for (Object[] result5_black : PullUpFieldImpl.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(pg,
 						fieldChildDefinition)) {
 					TAccess currentAccess = (TAccess) result5_black[1];
 					// nothing TClass accesserClass = (TClass) result5_black[3];
 					// nothing TMember tMember = (TMember) result5_black[4];
 
-					Object[] result6_black = Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(
+					Object[] result6_black = PullUpFieldImpl.pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(
 							currentAccess, fieldChildDefinition, fieldParentDefinition);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[currentAccess] = "
-								+ currentAccess + ", " + "[fieldChildDefinition] = " + fieldChildDefinition + ", "
-								+ "[fieldParentDefinition] = " + fieldParentDefinition + ".");
+						throw new RefactoringFailedException(
+								"Pattern matching failed." + " Variables: " + "[currentAccess] = " + currentAccess
+										+ ", " + "[fieldChildDefinition] = " + fieldChildDefinition + ", "
+										+ "[fieldParentDefinition] = " + fieldParentDefinition + ".");
 					}
-					Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_6_ActivityNode139_redBB(currentAccess,
-							fieldChildDefinition);
-
-					Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_6_ActivityNode139_greenBB(currentAccess,
-							fieldParentDefinition);
-
+					fieldChildDefinition.getAccessedBy().remove(currentAccess);
+					fieldParentDefinition.getAccessedBy().add(currentAccess);
 				}
 
-				Object[] result7_black = Pull_Up_FieldImpl
+				Object[] result7_black = PullUpFieldImpl
 						.pattern_Pull_Up_Field_0_7_ActivityNode140_blackBBB(fieldChildDefinition, child, field);
 				if (result7_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[fieldChildDefinition] = "
-							+ fieldChildDefinition + ", " + "[child] = " + child + ", " + "[field] = " + field + ".");
+					throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
+							+ "[fieldChildDefinition] = " + fieldChildDefinition + ", " + "[child] = " + child + ", "
+							+ "[field] = " + field + ".");
 				}
-				Pull_Up_FieldImpl.pattern_Pull_Up_Field_0_7_ActivityNode140_redBBB(fieldChildDefinition, child, field);
-
+				fieldChildDefinition.setDefinedBy(null);
+				child.getSignature().remove(field);
+				
 				EcoreUtil.delete(fieldChildDefinition);
 				fieldChildDefinition = null;
-				;
-
 			}
 			return classContainer;
 		} else {
@@ -123,15 +124,13 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 		if (!parent.getSignature().contains(field)) {
 
 			TPackage basePackage = parent.getBasePackage();
-			
+
 			List<TFieldDefinition> tFieldDefinitions = new LinkedList<>();
 			// ForEach
-			for (Object[] result5_black : Pull_Up_FieldImpl.pattern_Pull_Up_Field_1_5_ActivityNode128_blackBF(parent)) {
+			for (Object[] result5_black : PullUpFieldImpl.pattern_Pull_Up_Field_1_5_ActivityNode128_blackBF(parent)) {
 				TClass child = (TClass) result5_black[1];
 				//
-				Object[] result6_black = Pull_Up_FieldImpl.pattern_Pull_Up_Field_1_6_ActivityNode129_blackBB(child,
-						field);
-				if (result6_black != null) {
+				if (child.getSignature().contains(field)) {
 					//
 					TFieldDefinition fieldDefinition = getTFieldDefinition(child, field);
 					if (fieldDefinition != null) {
@@ -148,11 +147,11 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 			}
 			// ForEach
 			for (TClass child : parent.getChildClasses()) {
-					TPackage childBasePackage = child.getBasePackage();
-					if (!basePackage.equals(childBasePackage)) {
-						return false;
-					}
-				}			
+				TPackage childBasePackage = child.getBasePackage();
+				if (!basePackage.equals(childBasePackage)) {
+					return false;
+				}
+			}
 			return true;
 		} else {
 			return false;
@@ -176,21 +175,6 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 		return null;
 	}
 
-	public static final Object[] pattern_Pull_Up_Field_0_3_ActivityNode135_redBBB(TClass tchild,
-			TFieldDefinition fieldParentDefinition, TFieldSignature field) {
-		tchild.getSignature().remove(field);
-		fieldParentDefinition.setDefinedBy(null);
-		return new Object[] { tchild, fieldParentDefinition, field };
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_0_3_ActivityNode135_greenBBBBB(TClass parent, TClass tchild,
-			TFieldDefinition fieldParentDefinition, TFieldSignature field, List<TClass> classContainer) {
-		parent.getSignature().add(field);
-		fieldParentDefinition.setDefinedBy(parent);
-		classContainer.add(tchild);
-		return new Object[] { parent, tchild, fieldParentDefinition, field, classContainer };
-	}
-
 	public static final Iterable<Object[]> pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(TClass parent,
 			TFieldSignature field, List<TClass> classContainer) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -206,12 +190,6 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 			}
 		}
 		return _result;
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_0_4_ActivityNode137_greenBB(TClass child,
-			List<TClass> classContainer) {
-		classContainer.add(child);
-		return new Object[] { child, classContainer };
 	}
 
 	public static final Iterable<Object[]> pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(TypeGraph pg,
@@ -244,18 +222,6 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 		return null;
 	}
 
-	public static final Object[] pattern_Pull_Up_Field_0_6_ActivityNode139_redBB(TAccess currentAccess,
-			TFieldDefinition fieldChildDefinition) {
-		fieldChildDefinition.getAccessedBy().remove(currentAccess);
-		return new Object[] { currentAccess, fieldChildDefinition };
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_0_6_ActivityNode139_greenBB(TAccess currentAccess,
-			TFieldDefinition fieldParentDefinition) {
-		fieldParentDefinition.getAccessedBy().add(currentAccess);
-		return new Object[] { currentAccess, fieldParentDefinition };
-	}
-
 	public static final Object[] pattern_Pull_Up_Field_0_7_ActivityNode140_blackBBB(
 			TFieldDefinition fieldChildDefinition, TClass child, TFieldSignature field) {
 		if (child.equals(fieldChildDefinition.getDefinedBy())) {
@@ -268,13 +234,6 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 		return null;
 	}
 
-	public static final Object[] pattern_Pull_Up_Field_0_7_ActivityNode140_redBBB(TFieldDefinition fieldChildDefinition,
-			TClass child, TFieldSignature field) {
-		fieldChildDefinition.setDefinedBy(null);
-		child.getSignature().remove(field);
-		return new Object[] { fieldChildDefinition, child, field };
-	}
-
 	public static final Iterable<Object[]> pattern_Pull_Up_Field_1_5_ActivityNode128_blackBF(TClass parent) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (TClass child : parent.getChildClasses()) {
@@ -283,14 +242,6 @@ public class Pull_Up_FieldImpl extends RefactoringImpl {
 			}
 		}
 		return _result;
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_1_6_ActivityNode129_blackBB(TClass child,
-			TFieldSignature field) {
-		if (child.getSignature().contains(field)) {
-			return new Object[] { child, field };
-		}
-		return null;
 	}
 
 	public static final TFieldDefinition getTFieldDefinition(TClass child, TFieldSignature field) {

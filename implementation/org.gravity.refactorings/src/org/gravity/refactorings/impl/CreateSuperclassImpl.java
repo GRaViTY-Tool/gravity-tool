@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.CreateSuperClassConfiguration;
@@ -22,10 +23,10 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class Create_SuperclassImpl extends RefactoringImpl {
+public class CreateSuperclassImpl extends RefactoringImpl {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) {
+	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
 			CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
 			return isApplicable(csc.getChildren(), csc.getNewParent());
@@ -34,7 +35,7 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
+	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
 			CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
 			return perform(csc.getChildren(), csc.getNewParent());
@@ -42,7 +43,7 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(List<TClass> child, TClass newParent) {
+	public List<TClass> perform(List<TClass> child, TClass newParent) throws RefactoringFailedException {
 
 		List<TClass> container = new LinkedList<TClass>();
 
@@ -66,14 +67,14 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 
 		for (TClass tChildClass : child) {
 			if (newParent.equals(tChildClass)) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
 						+ ", " + "[tChildClass] = " + tChildClass + ", " + "[container] = " + container + ".");
 			}
 			TClass tParent = tChildClass.getParentClass();
 			if (tParent != null && !tChildClass.equals(tParent)) {
 				tChildClass.setParentClass(null);
 			} else {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tParent] = " + tParent + ", "
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tParent] = " + tParent + ", "
 						+ "[tChildClass] = " + tChildClass + ".");
 			}
 			newParent.getChildClasses().add(tChildClass);
@@ -85,10 +86,11 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @throws RefactoringFailedException 
 	 * 
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> child, TClass new_parent) {
+	public boolean isApplicable(List<TClass> child, TClass new_parent) throws RefactoringFailedException {
 
 		TClass existingParent = getOtherTClassByName(pg, new_parent);
 		if (existingParent != null) {
@@ -107,7 +109,7 @@ public class Create_SuperclassImpl extends RefactoringImpl {
 			}
 
 			if (newParentsPackage == null || existingParentsPackage == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[new_parent] = " + new_parent
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + new_parent
 						+ ", " + "[existingParent] = " + existingParent + ".");
 			}
 			//

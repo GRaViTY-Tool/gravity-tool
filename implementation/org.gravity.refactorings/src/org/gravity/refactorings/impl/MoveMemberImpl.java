@@ -20,9 +20,9 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 
-public class Move_MemberImpl extends RefactoringImpl {
+public class MoveMemberImpl extends RefactoringImpl {
 
-	private static final Logger LOGGER = Logger.getLogger(Move_MemberImpl.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(MoveMemberImpl.class.getName());
 	
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -45,14 +45,14 @@ public class Move_MemberImpl extends RefactoringImpl {
 	public boolean isApplicable(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
 			TMethodSignature method = (TMethodSignature) signature;
-			Move_MethodImpl move = new Move_MethodImpl();
+			MoveMethodImpl move = new MoveMethodImpl();
 			return move.isApplicable(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
 			TFieldSignature field = (TFieldSignature) signature;
-			Move_FieldImpl move = new Move_FieldImpl();
+			MoveFieldImpl move = new MoveFieldImpl();
 			return move.isApplicable(field, tTargetClass, tSourceClass);
 		} else {
-			LOGGER.log(Level.ERROR, "Move_MemberImpl: Unknown TSignature: " + signature);
+			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);
 			return false;
 		}
 
@@ -61,14 +61,14 @@ public class Move_MemberImpl extends RefactoringImpl {
 	public List<TClass> perform(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
 			TMethodSignature method = (TMethodSignature) signature;
-			Move_MethodImpl move = new Move_MethodImpl();
+			MoveMethodImpl move = new MoveMethodImpl();
 			return move.perform(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
 			TFieldSignature field = (TFieldSignature) signature;
-			Move_FieldImpl move = new Move_FieldImpl();
+			MoveFieldImpl move = new MoveFieldImpl();
 			return move.perform(field, tTargetClass, tSourceClass);
 		} else {
-			LOGGER.log(Level.ERROR, "Move_MemberImpl: Unknown TSignature: " + signature);
+			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);
 			return null;
 		}
 

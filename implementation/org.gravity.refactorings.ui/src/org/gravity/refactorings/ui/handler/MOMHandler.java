@@ -26,7 +26,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.refactorings.impl.Move_MethodImpl;
+import org.gravity.refactorings.impl.MoveMethodImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -93,7 +93,7 @@ public class MOMHandler extends RefactoringHandler{
 							TClass targetClassCopy = targetClass;
 							
 							TMethodSignature tSignature = getMethodSignature(pg, method);
-							Move_MethodImpl momRefactoring = new Move_MethodImpl();
+							MoveMethodImpl momRefactoring = new MoveMethodImpl();
 							momRefactoring.setPg(pg);
 
 							if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) {  // Already changed to new isApplicable

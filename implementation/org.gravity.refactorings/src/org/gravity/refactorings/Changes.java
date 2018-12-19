@@ -30,7 +30,7 @@ public class Changes {
 		this.changed_classfiles.add(chhanged_classfile);
 	}
 
-	public void addChanged_classfiles(Set<String> changed_classfiles) {
+	public void addChangedClassfiles(Set<String> changed_classfiles) {
 		if (this.changed_classfiles == null) {
 			this.changed_classfiles = new HashSet<>();
 		}

@@ -38,9 +38,9 @@ public class PGAdditionHelper {
 		} else {
 			EList<TPackage> packages = match.getSubpackage();
 			while (packages.size() > 0) {
-				EList<TPackage> next_child = next.getSubpackage();
-				if (next_child.size() > 0) {
-					next = next_child.get(0);
+				EList<TPackage> nextChild = next.getSubpackage();
+				if (nextChild.size() > 0) {
+					next = nextChild.get(0);
 					boolean success = false;
 					for (TPackage p : packages) {
 						if (p.getTName().compareTo(next.getTName()) == 0) {
@@ -59,10 +59,10 @@ public class PGAdditionHelper {
 					return;
 				}
 			}
-			EList<TPackage> next_child = next.getSubpackage();
-			if (next_child.size() > 0) {
-				match.getSubpackage().add(next_child.get(0));
-				setPG4Package(next_child.get(0), pg);
+			EList<TPackage> nextChild = next.getSubpackage();
+			if (nextChild.size() > 0) {
+				match.getSubpackage().add(nextChild.get(0));
+				setPG4Package(nextChild.get(0), pg);
 			} else {
 				match.getOwnedTypes().add(tClass);
 				match.getClasses().add(tClass);
@@ -100,14 +100,14 @@ public class PGAdditionHelper {
 			String tName2 = package2.getTName();
 			if (tName1.equals(tName2)) {
 				//
-				TPackage result3_black = null;
+				TPackage match = null;
 				for (TPackage child1 : package1.getSubpackage()) {
 					if (!child1.equals(package1)) {
-						result3_black = child1;
+						match = child1;
 					}
 				}
-				if (result3_black != null) {
-					TPackage child1 = result3_black;
+				if (match != null) {
+					TPackage child1 = match;
 					//
 					EList<TPackage> subPackages = package2.getSubpackage();
 					;

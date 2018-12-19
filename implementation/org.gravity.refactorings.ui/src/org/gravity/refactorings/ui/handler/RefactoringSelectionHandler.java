@@ -25,7 +25,8 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
-import org.gravity.refactorings.impl.Pull_Up_MethodImpl;
+import org.gravity.refactorings.RefactoringFailedException;
+import org.gravity.refactorings.impl.PullUpMethodImpl;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -71,7 +72,7 @@ public class RefactoringSelectionHandler extends RefactoringHandler {
 							TClass tParent = tChild.getParentClass();
 							TMethodSignature tSignature = getMethodSignature(pg, method);
 
-							Pull_Up_MethodImpl refactoring = new Pull_Up_MethodImpl();
+							PullUpMethodImpl refactoring = new PullUpMethodImpl();
 							refactoring.setPg(pg);
 
 							if (refactoring.isApplicable(tSignature, tParent)) {
@@ -85,7 +86,12 @@ public class RefactoringSelectionHandler extends RefactoringHandler {
 
 										if (status == 0) {
 											converter.syncProjectBwd(SynchronizationHelper -> {
-												refactoring.perform(tSignature, tParent);
+												try {
+													refactoring.perform(tSignature, tParent);
+												} catch (RefactoringFailedException e) {
+													asyncPrintError(shell, "Refactoring not possible",
+															"The desired pull up method refactoring failed unexpectedly.");
+												}
 											}, monitor);
 										}
 									}

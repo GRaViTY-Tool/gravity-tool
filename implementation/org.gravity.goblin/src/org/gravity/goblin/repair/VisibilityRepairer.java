@@ -37,7 +37,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 						LOGGER.log(Level.WARN, "Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
 								+ tDef.getSignatureString() + "\".");
 					} else {
-						throw new RuntimeException("Unexpected amount of metrics for \""
+						throw new IllegalStateException("Unexpected amount of metrics for \""
 								+ tClass.getFullyQualifiedName() + "->" + tDef.getSignatureString() + "\".");
 					}
 				} else {

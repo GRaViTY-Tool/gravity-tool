@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
@@ -129,11 +129,12 @@ public class ExtractClassImpl extends RefactoringImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @throws RefactoringFailedException 
 	 * 
 	 * @generated NOT
 	 */
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration tRefactoringConfiguration) {
+	public Collection<TClass> perform(RefactoringConfiguration tRefactoringConfiguration) throws RefactoringFailedException {
 
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			ExtractClassConfiguration tExtractConfiguration = (ExtractClassConfiguration) tRefactoringConfiguration;
@@ -159,7 +160,7 @@ public class ExtractClassImpl extends RefactoringImpl {
 
 			}
 			if (tClass == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tExtractConfiguration] = "
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tExtractConfiguration] = "
 						+ tExtractConfiguration + ".");
 			}
 
@@ -179,7 +180,7 @@ public class ExtractClassImpl extends RefactoringImpl {
 					tNewClass.getSignature().add(tSignature);
 
 				} else {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tMember] = " + tMember
+					throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tMember] = " + tMember
 							+ ", " + "[tClass] = " + tClass + ", " + "[tNewClass] = " + tNewClass + ".");
 				}
 

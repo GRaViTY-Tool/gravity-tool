@@ -23,7 +23,7 @@ import org.gravity.typegraph.basic.TMember;
  *
  * @generated
  */
-public class Move_FieldImpl extends Move_MemberImpl {
+public class MoveFieldImpl extends MoveMemberImpl {
 	
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {

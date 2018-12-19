@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.PullUpMethodConfiguration;
@@ -27,7 +28,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class Pull_Up_MethodImpl extends RefactoringImpl {
+public class PullUpMethodImpl extends RefactoringImpl {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -39,7 +40,7 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
+	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			PullUpMethodConfiguration esc = (PullUpMethodConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getTargetClass());
@@ -47,22 +48,19 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 		return Collections.emptyList();
 	}
 
-	public Pull_Up_MethodImpl() {
-		super();
-	}
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @throws RefactoringFailedException 
 	 * 
 	 * @generated
 	 */
-	public List<TClass> perform(TMethodSignature method, TClass parent) {
+	public List<TClass> perform(TMethodSignature method, TClass parent) throws RefactoringFailedException {
 
 		TypeGraph pg = getPg();
 		List<TClass> container = new LinkedList<TClass>();
 
 		//
-		TMethodDefinition tMethodDefinition = Pull_Up_MethodImpl.selectRandomDefinitionOfChild(parent, method);
+		TMethodDefinition tMethodDefinition = PullUpMethodImpl.selectRandomDefinitionOfChild(parent, method);
 		if (tMethodDefinition != null) {
 			TClass tmpChild = (TClass) tMethodDefinition.getDefinedBy();
 			tmpChild.getSignature().remove(method);
@@ -90,7 +88,7 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 
 									if (childsDefinition.equals(tMethodDefinition)
 											|| !childsDefinition.getAccessedBy().contains(tOldAccess)) {
-										throw new RuntimeException("Pattern matching failed." + " Variables: "
+										throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
 												+ "[tMethodDefinition] = " + tMethodDefinition + ", "
 												+ "[childsDefinition] = " + childsDefinition + ", " + "[tOldAccess] = "
 												+ tOldAccess + ".");
@@ -117,7 +115,7 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 
 						TAbstractType retType = childsDefinition.getReturnType();
 						if (retType == null) {
-							throw new RuntimeException("Pattern matching failed." + " Variables: "
+							throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
 									+ "[childsDefinition] = " + childsDefinition + ".");
 						}
 						childsDefinition.setReturnType(null);
@@ -131,7 +129,7 @@ public class Pull_Up_MethodImpl extends RefactoringImpl {
 							EcoreUtil.delete(childsDefinition);
 							childsDefinition = null;
 						} else {
-							throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tChild] = "
+							throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tChild] = "
 									+ tChild + ", " + "[method] = " + method + ", " + "[childsDefinition] = "
 									+ childsDefinition + ".");
 						}

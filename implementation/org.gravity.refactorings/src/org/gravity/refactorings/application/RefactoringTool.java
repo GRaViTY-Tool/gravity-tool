@@ -5,19 +5,23 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gravity.refactorings.Changes;
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.impl.CreateSuperClassConfiguration;
 import org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
 import org.gravity.refactorings.configuration.impl.PullUpFieldConfiguration;
 import org.gravity.refactorings.configuration.impl.PullUpMethodConfiguration;
-import org.gravity.refactorings.impl.Create_SuperclassImpl;
-import org.gravity.refactorings.impl.Extract_SuperclassImpl;
-import org.gravity.refactorings.impl.Move_MethodImpl;
-import org.gravity.refactorings.impl.Pull_Up_FieldImpl;
-import org.gravity.refactorings.impl.Pull_Up_MethodImpl;
+import org.gravity.refactorings.impl.CreateSuperclassImpl;
+import org.gravity.refactorings.impl.ExtractSuperclassImpl;
+import org.gravity.refactorings.impl.MoveMethodImpl;
+import org.gravity.refactorings.impl.PullUpFieldImpl;
+import org.gravity.refactorings.impl.PullUpMethodImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -25,61 +29,89 @@ import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/**
+ * This class provides the functionality to execute refactorings on a duplicate
+ * of a program model and to re-execute them later on the real instance
+ * 
+ * @author speldszus
+ *
+ */
 public class RefactoringTool {
 
-	private TypeGraph tool_pg;
-	
-	private Pull_Up_MethodImpl pumRefactoring;
-	private Pull_Up_FieldImpl pufRefactoring;
-	private Move_MethodImpl momRefactoring;
-	private Create_SuperclassImpl cscRefactoring;
-	private Extract_SuperclassImpl escRefactoring;
-	
+	private static final Logger LOGGER = Logger.getLogger(RefactoringTool.class);
+
+	private TypeGraph toolPg;
+
+	private PullUpMethodImpl pumRefactoring;
+	private PullUpFieldImpl pufRefactoring;
+	private MoveMethodImpl momRefactoring;
+	private CreateSuperclassImpl cscRefactoring;
+	private ExtractSuperclassImpl escRefactoring;
 
 	private List<RefactoringConfiguration> bookkeeping;
 	private Set<String> changes;
 
-	
-	private void initRefactorings(){
-		this.pumRefactoring = new Pull_Up_MethodImpl();
-		this.pumRefactoring.setPg(this.tool_pg);
-		
-		this.pufRefactoring = new Pull_Up_FieldImpl();
-		this.pufRefactoring.setPg(this.tool_pg);
-		
-		this.momRefactoring = new Move_MethodImpl();
-		this.momRefactoring.setPg(this.tool_pg);
-		
-		this.cscRefactoring = new Create_SuperclassImpl();
-		this.cscRefactoring.setPg(this.tool_pg);
-		
-		this.escRefactoring = new Extract_SuperclassImpl();
-		this.escRefactoring.setPg(this.tool_pg);	
+	private void initRefactorings() {
+		this.pumRefactoring = new PullUpMethodImpl();
+		this.pumRefactoring.setPg(this.toolPg);
+
+		this.pufRefactoring = new PullUpFieldImpl();
+		this.pufRefactoring.setPg(this.toolPg);
+
+		this.momRefactoring = new MoveMethodImpl();
+		this.momRefactoring.setPg(this.toolPg);
+
+		this.cscRefactoring = new CreateSuperclassImpl();
+		this.cscRefactoring.setPg(this.toolPg);
+
+		this.escRefactoring = new ExtractSuperclassImpl();
+		this.escRefactoring.setPg(this.toolPg);
 	}
-	
+
+	/**
+	 * Creates a new instance of the refactoring application tool. Optionally a copy
+	 * of the program model can be created for testing refactoring result before
+	 * applying them to the real program model.
+	 * 
+	 * @param pg The program model which should be refactored
+	 * @param copy If a copy should be created
+	 */
 	public RefactoringTool(TypeGraph pg, boolean copy) {
 		if (copy) {
-			this.tool_pg = EcoreUtil.copy(pg);
+			this.toolPg = EcoreUtil.copy(pg);
 		} else {
-			this.tool_pg = pg;
+			this.toolPg = pg;
 		}
 		initRefactorings();
 		this.bookkeeping = new LinkedList<>();
 		this.changes = new HashSet<>();
 	}
 
+	/**
+	 * Executes the tested refactorings on the given program model
+	 * 
+	 * @param pg The program model on which the refactorings should be executed
+	 * @return The changes of the refactoring execution
+	 */
 	public Changes executePlannedRefactorings(TypeGraph pg) {
-		Changes change_container = new Changes();
+		Changes changeContainer = new Changes();
 		Consumer<EObject> changes = SynchronizationHelper -> {
 			RefactoringTool tool = new RefactoringTool(pg, false);
 			tool.applyBookkeeping(this.bookkeeping);
-			change_container.addChanged_classfiles(tool.getChanges());
+			changeContainer.addChangedClassfiles(tool.getChanges());
 		};
-		change_container.setChanges(changes);
-		return change_container;
+		changeContainer.setChanges(changes);
+		return changeContainer;
 	}
 
-	public boolean applyPullUpMethod(PullUpMethodConfiguration refactoring) {
+	/**
+	 * Applies the PUM refactoring to the program model
+	 * 
+	 * @param refactoring The refactoring configuration
+	 * @return true, if the refactoring is possible and has been applied
+	 * @throws RefactoringFailedException if the refactoing failed unexpectedly
+	 */
+	public boolean applyPullUpMethod(PullUpMethodConfiguration refactoring) throws RefactoringFailedException {
 		TClass parent = refactoring.getTargetClass();
 		if (parent == null) {
 			return false;
@@ -90,8 +122,8 @@ public class RefactoringTool {
 			return false;
 		}
 
-		boolean pum_isApplicable = this.pumRefactoring.isApplicable(sig, parent);
-		if (pum_isApplicable) {
+		boolean pumIsApplicable = this.pumRefactoring.isApplicable(sig, parent);
+		if (pumIsApplicable) {
 			this.bookkeeping.add(refactoring);
 			for (TClass tClass : this.pumRefactoring.perform(sig, parent)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
@@ -105,10 +137,17 @@ public class RefactoringTool {
 				}
 			}
 		}
-		return pum_isApplicable;
+		return pumIsApplicable;
 	}
 
-	public boolean applyPullupField(PullUpFieldConfiguration refactoring) {
+	/**
+	 * Applies the pull-up field refactoring to the program model
+	 * 
+	 * @param refactoring The refactoring configuration
+	 * @return true, if the refactoring is possible and has been applied
+	 * @throws RefactoringFailedException if the refactoring failed unexpectedly
+	 */
+	public boolean applyPullupField(PullUpFieldConfiguration refactoring) throws RefactoringFailedException {
 		TClass parent = refactoring.getTargetClass();
 		if (parent == null) {
 			return false;
@@ -116,8 +155,8 @@ public class RefactoringTool {
 
 		TFieldSignature sig = refactoring.getSignature();
 
-		boolean pum_isApplicable = this.pufRefactoring.isApplicable(sig, parent);
-		if (pum_isApplicable) {
+		boolean pumIsApplicable = this.pufRefactoring.isApplicable(sig, parent);
+		if (pumIsApplicable) {
 			this.bookkeeping.add(refactoring);
 
 			// Perform refactoring and record changed classes
@@ -133,18 +172,24 @@ public class RefactoringTool {
 				}
 			}
 		}
-		return pum_isApplicable;
+		return pumIsApplicable;
 	}
 
-	public boolean applyCreateSuperclass(CreateSuperClassConfiguration refactoring) {
+	/**
+	 * Applies the create superclass refactoring to the program model
+	 * 
+	 * @param refactoring The refactoring configuration
+	 * @return true, if the refactoring is possible and has been applied
+	 */
+	public boolean applyCreateSuperclass(CreateSuperClassConfiguration refactoring) throws RefactoringFailedException {
 		List<TClass> tClasses = refactoring.getChildren();
 
-		TClass new_parent = refactoring.getNewParent();
-		
-		boolean csc_isApplicable = this.cscRefactoring.isApplicable(tClasses, new_parent);
-		if (csc_isApplicable) {
+		TClass newParent = refactoring.getNewParent();
+
+		boolean cscIsApplicable = this.cscRefactoring.isApplicable(tClasses, newParent);
+		if (cscIsApplicable) {
 			this.bookkeeping.add(refactoring);
-			for (TClass tClass : this.cscRefactoring.perform(tClasses, new_parent)) {
+			for (TClass tClass : this.cscRefactoring.perform(tClasses, newParent)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
@@ -157,21 +202,28 @@ public class RefactoringTool {
 			}
 		}
 
-		return csc_isApplicable;
+		return cscIsApplicable;
 	}
 
-	public boolean applyExtractSuperclassRefactoring(ExtractSuperClassConfiguration refactoring) {
+	/**
+	 * Applies the extract superclass refactoring to the program model
+	 * 
+	 * @param refactoring The refactoring configuration
+	 * @return true, if the refactoring is possible and has been applied
+	 */
+	public boolean applyExtractSuperclassRefactoring(ExtractSuperClassConfiguration refactoring)
+			throws RefactoringFailedException {
 		List<TClass> tClasses = refactoring.getChildren();
 
-		TClass new_parent = refactoring.getNewParent();
+		TClass newParent = refactoring.getNewParent();
 
 		List<TSignature> tSignatures = refactoring.getSignatures();
 
 		// check if Refactoring is applicable and perform it
-		boolean esc_isApplicable = this.escRefactoring.isApplicable(tClasses, new_parent, tSignatures);
-		if (esc_isApplicable) {
+		boolean escIsApplicable = this.escRefactoring.isApplicable(tClasses, newParent, tSignatures);
+		if (escIsApplicable) {
 			this.bookkeeping.add(refactoring);
-			for (TClass tClass : this.escRefactoring.perform(tClasses, new_parent, tSignatures)) {
+			for (TClass tClass : this.escRefactoring.perform(tClasses, newParent, tSignatures)) {
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
@@ -184,14 +236,19 @@ public class RefactoringTool {
 			}
 		}
 
-		return esc_isApplicable;
+		return escIsApplicable;
 	}
-	
-	public  List<RefactoringConfiguration> getBookkeeping() {
+
+	/**
+	 * Returns a list of all refactorings successfully applied to the program model
+	 * 
+	 * @return the configurations of the applied refactorings
+	 */
+	public List<RefactoringConfiguration> getBookkeeping() {
 		return this.bookkeeping;
 	}
 
-	public boolean applyRefactoring(RefactoringConfiguration r) {
+	public boolean applyRefactoring(RefactoringConfiguration r) throws RefactoringFailedException {
 		if (r instanceof PullUpMethodConfiguration) {
 			return applyPullUpMethod((PullUpMethodConfiguration) r);
 		} else if (r instanceof PullUpFieldConfiguration) {
@@ -201,14 +258,25 @@ public class RefactoringTool {
 		} else if (r instanceof ExtractSuperClassConfiguration) {
 			return applyExtractSuperclassRefactoring((ExtractSuperClassConfiguration) r);
 		} else {
-			throw new RuntimeException("Unknown Refactoring Kind");
+			throw new RefactoringFailedException("Unknown Refactoring Kind");
 		}
 	}
 
+	/**
+	 * Applies all stored refactoring to the program model
+	 * 
+	 * @param bookkeeping The refactoring configurations
+	 * @return true, if all refactorings have been applied successfully
+	 */
 	public boolean applyBookkeeping(List<RefactoringConfiguration> bookkeeping) {
 		boolean success = true;
 		for (RefactoringConfiguration r : bookkeeping) {
-			success &= applyRefactoring(r);
+			try {
+				success &= applyRefactoring(r);
+			} catch (RefactoringFailedException e) {
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+				return false;
+			}
 			if (!success) {
 				return false;
 			}
@@ -216,6 +284,11 @@ public class RefactoringTool {
 		return true;
 	}
 
+	/**
+	 * Get all changes performed by this instance
+	 * 
+	 * @return The changes
+	 */
 	public Set<String> getChanges() {
 		return this.changes;
 	}

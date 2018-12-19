@@ -8,6 +8,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -67,10 +68,11 @@ public class HelpersImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @throws RefactoringFailedException 
 	 * 
 	 * @generated
 	 */
-	public boolean mountAccesses(TClass child, TClass parent, TSignature tSignature) {
+	public boolean mountAccesses(TClass child, TClass parent, TSignature tSignature) throws RefactoringFailedException {
 
 		if (tSignature instanceof TFieldSignature) {
 			return mountAccesses(child, parent, (TFieldSignature) tSignature);
@@ -81,13 +83,13 @@ public class HelpersImpl {
 
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature) {
+	public boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature) throws RefactoringFailedException {
 		for (TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
 				for (TAccess tMethodAccess : tMethodDefinition.getAccessedBy()) {
 					TMethodDefinition tMethodParentDefinition = getMethodDefinition(parent, tMethodSignature);
 					if (tMethodParentDefinition == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[parent] = " + parent
+						throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[parent] = " + parent
 								+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[tMethodAccess] = "
 								+ tMethodAccess + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
 					}
@@ -108,7 +110,7 @@ public class HelpersImpl {
 							EcoreUtil.delete(tMethodAccess);
 							tMethodAccess = null;
 						} else {
-							throw new RuntimeException(
+							throw new RefactoringFailedException(
 									"Pattern matching failed." + " Variables: " + "[tMethodAccess] = " + tMethodAccess
 											+ ", " + "[tMethodAccessTarget] = " + tMethodAccessTarget + ".");
 						}
@@ -120,7 +122,7 @@ public class HelpersImpl {
 
 		TMethodDefinition tMethodDefinition = HelpersImpl.getMethodDefinition(child, tMethodSignature);
 		if (tMethodDefinition == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
+			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
 					+ "[tMethodSignature] = " + tMethodSignature + ".");
 		}
 		child.getSignature().remove(tMethodSignature);
@@ -133,7 +135,7 @@ public class HelpersImpl {
 		return true;
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature) {
+	public boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature) throws RefactoringFailedException {
 		for (TMember tmpTFieldDefinition : child.getDefines()) {
 			if (tmpTFieldDefinition instanceof TFieldDefinition) {
 				if (tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
@@ -151,7 +153,7 @@ public class HelpersImpl {
 							}
 						}
 						if (tFieldParentDefinition == null) {
-							throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tFieldAccess] = "
+							throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tFieldAccess] = "
 									+ tFieldAccess + ", " + "[tFieldDefinition] = " + tmpTFieldDefinition + ", "
 									+ "[parent] = " + parent + ", " + "[tFieldSignature] = " + tFieldSignature + ".");
 						}
@@ -190,7 +192,7 @@ public class HelpersImpl {
 			}
 		}
 		if (tFieldDefinition == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
+			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
 					+ "[tFieldSignature] = " + tFieldSignature + ".");
 		}
 		child.getSignature().remove(tFieldSignature);

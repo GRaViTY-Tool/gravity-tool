@@ -48,6 +48,7 @@ import org.gravity.eclipse.io.FileUtils;
  * @author speldszus
  *
  */
+@SuppressWarnings("restriction")
 public class JavaProjectUtil extends EclipseProjectUtil {
 	
 	private static final Logger LOGGER = Logger.getLogger(JavaProjectUtil.class);

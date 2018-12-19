@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="TypeParameter">
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="http://www.gravity.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10" tName="TypeParameter">
   <packages classes="//@ownedTypes.7" ownedTypes="//@ownedTypes.7" typeGraph="/" tName="(default package)"/>
   <methods tName="m">
     <signatures returnType="//@ownedTypes.8">

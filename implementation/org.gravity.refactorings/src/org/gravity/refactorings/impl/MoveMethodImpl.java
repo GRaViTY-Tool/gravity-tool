@@ -28,7 +28,7 @@ import java.util.List;
  *
  * @generated
  */
-public class Move_MethodImpl extends Move_MemberImpl {
+public class MoveMethodImpl extends MoveMemberImpl {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
