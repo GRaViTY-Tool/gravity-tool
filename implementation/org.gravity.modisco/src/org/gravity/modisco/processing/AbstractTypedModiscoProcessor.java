@@ -30,6 +30,9 @@ public abstract class AbstractTypedModiscoProcessor<T extends EObject> implement
 	/**
 	 * This method should be only used if there is no other possibility as it
 	 * iterates over all elements contained in the model to find those of type T.
+	 * 
+	 * @param model The model which should be processed
+	 * @param monitor A progress monitor
 	 */
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
@@ -45,5 +48,10 @@ public abstract class AbstractTypedModiscoProcessor<T extends EObject> implement
 		return process(model, elements, monitor);
 	}
 	
+	/**
+	 * Returns the type of the object which can be processed with this processor
+	 * 
+	 * @return The supported type
+	 */
 	public abstract Class<T> getSupportedType();
 }

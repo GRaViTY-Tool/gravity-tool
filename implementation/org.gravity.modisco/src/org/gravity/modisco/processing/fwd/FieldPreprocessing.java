@@ -13,6 +13,7 @@ import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MFieldName;
 import org.gravity.modisco.MFieldSignature;
@@ -53,38 +54,8 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 				return false;
 			}
 			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
-				scndDeclFragment.setVariablesContainer(null);
-
-				MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
-				newDef.getFragments().add(scndDeclFragment);
+				MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
 				newDefs.add(newDef);
-				newDef.setName(mDefinition.getName());
-				newDef.setProxy(mDefinition.isProxy());
-				newDef.setAbstractTypeDeclaration(mDefinition.getAbstractTypeDeclaration());
-
-				TypeAccess oldTypeAccess = mDefinition.getType();
-				if (oldTypeAccess != null) {
-					Type type = oldTypeAccess.getType();
-					if (type != null) {
-						TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
-						newDef.setType(newTypeAccess);
-						newTypeAccess.setType(type);
-					}
-
-				} else {
-					LOGGER.log(Level.WARN, "The field \"" + mDefinition + "\" has no type!");
-				}
-
-				Modifier modifier = mDefinition.getModifier();
-				Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
-				newDef.setModifier(clonedModifier);
-				clonedModifier.setVisibility(modifier.getVisibility());
-				clonedModifier.setInheritance(modifier.getInheritance());
-
-				AnonymousClassDeclaration anno = mDefinition.getAnonymousClassDeclarationOwner();
-				if (anno != null) {
-					anno.getBodyDeclarations().add(newDef);
-				}
 			}
 
 		}
@@ -92,7 +63,50 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 		return true;
 	}
 
-	private static final Iterable<VariableDeclarationFragment> getOtherFragments(MFieldDefinition mDefinition,
+	/**
+	 * Creates a new definition for the declaration fragment
+	 * 
+	 * @param oldDefiniton The old definition containing multiple variable declarations
+	 * @param declFragment The declaration fragment which should be relocated
+	 * @return The new definiton containing the declaration fragment
+	 */
+	private MFieldDefinition createNewDefinitionForFragment(MFieldDefinition oldDefiniton,
+			VariableDeclarationFragment declFragment) {
+		declFragment.setVariablesContainer(null);
+
+		MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		newDef.getFragments().add(declFragment);
+		newDef.setName(oldDefiniton.getName());
+		newDef.setProxy(oldDefiniton.isProxy());
+		newDef.setAbstractTypeDeclaration(oldDefiniton.getAbstractTypeDeclaration());
+
+		TypeAccess oldTypeAccess = oldDefiniton.getType();
+		if (oldTypeAccess != null) {
+			Type type = oldTypeAccess.getType();
+			if (type != null) {
+				TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
+				newDef.setType(newTypeAccess);
+				newTypeAccess.setType(type);
+			}
+
+		} else {
+			LOGGER.log(Level.WARN, "The field \"" + oldDefiniton + "\" has no type!");
+		}
+
+		Modifier modifier = oldDefiniton.getModifier();
+		Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
+		newDef.setModifier(clonedModifier);
+		clonedModifier.setVisibility(modifier.getVisibility());
+		clonedModifier.setInheritance(modifier.getInheritance());
+
+		AnonymousClassDeclaration anno = oldDefiniton.getAnonymousClassDeclarationOwner();
+		if (anno != null) {
+			anno.getBodyDeclarations().add(newDef);
+		}
+		return newDef;
+	}
+
+	private static Iterable<VariableDeclarationFragment> getOtherFragments(MFieldDefinition mDefinition,
 			VariableDeclarationFragment fragment) {
 		LinkedList<VariableDeclarationFragment> result = new LinkedList<VariableDeclarationFragment>();
 		if (mDefinition.getFragments().contains(fragment)) {
@@ -155,39 +169,71 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 	 * @return true, iff no error occurred
 	 */
 	private boolean createFieldSignatureNodes(MGravityModel model) {
-		for (MFieldName mName : model.getMFieldNames()) {
-			for (MFieldDefinition mfDefinition : mName.getMFieldDefinitions()) {
-				MFieldSignature mSig = getMFieldSignature(mName, mfDefinition);
+		for (MFieldName name : model.getMFieldNames()) {
+			for (MFieldDefinition mfDefinition : name.getMFieldDefinitions()) {
+				MFieldSignature mSig;
+				try {
+					mSig = getMFieldSignature(model, name, mfDefinition);
+				} catch (ProcessingException e) {
+					return false;
+				}
 				if (mSig != null) {
 					mSig.getMDefinitions().add(mfDefinition);
 					mSig.getMFieldDefinitions().add(mfDefinition);
-
 				} else {
-					mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
-					mSig.setMFieldName(mName);
-					mSig.getMDefinitions().add(mfDefinition);
-					mSig.getMFieldDefinitions().add(mfDefinition);
-					mName.getMSignatures().add(mSig);
-					model.getMFieldSignatures().add(mSig);
-
-					TypeAccess typeAccess = mfDefinition.getType();
-					if (typeAccess != null) {
-						Type type = typeAccess.getType();
-						mSig.setType(type);
-					} 
-					else if (mfDefinition.isProxy()) {
-						LOGGER.log(Level.WARN, "The field \"" + mfDefinition + "\" has no type!");
-					} else {
-						LOGGER.log(Level.ERROR, "The field \"" + mfDefinition + "\" has no type!");
-						return false;
-					}
+					return false;
 				}
 			}
 		}
 		return true;
 	}
 
-	private static final MFieldSignature getMFieldSignature(MFieldName mName, MFieldDefinition mfDefinition) {
+	/**
+	 * Creates a new field signature between the field name and definition
+	 * 
+	 * @param model      The model containing all elements
+	 * @param name       The field name
+	 * @param definition The field definition
+	 * @return a field signature
+	 * @throws ProcessingException If the type of the field cannot be resolved
+	 */
+	private static MFieldSignature createNewSignature(MGravityModel model, MFieldName name, MFieldDefinition definition)
+			throws ProcessingException {
+		MFieldSignature mSig;
+		mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
+		mSig.setMFieldName(name);
+		name.getMSignatures().add(mSig);
+		model.getMFieldSignatures().add(mSig);
+
+		TypeAccess typeAccess = definition.getType();
+		if (typeAccess != null) {
+			Type type = typeAccess.getType();
+			mSig.setType(type);
+		} else {
+			String message = "The field \"" + definition + "\" has no type!";
+			if (definition.isProxy()) {
+				LOGGER.log(Level.WARN, message);
+			} else {
+				LOGGER.log(Level.ERROR, message);
+				throw new ProcessingException(message);
+			}
+		}
+		return mSig;
+	}
+
+	/**
+	 * Searches if there is already a signature for the field with the given name
+	 * for the given definition
+	 * 
+	 * @param model        The model containing all elements
+	 * @param mName        The name of the field
+	 * @param mfDefinition A definition of a field with this name
+	 * @return A signature connecting the name and definition if existent, null
+	 *         otherwise
+	 * @throws ProcessingException If no signature can be found or created
+	 */
+	private static MFieldSignature getMFieldSignature(MGravityModel model, MFieldName mName,
+			MFieldDefinition mfDefinition) throws ProcessingException {
 		TypeAccess mAccess = mfDefinition.getType();
 		if (mAccess != null) {
 			Type mType = mAccess.getType();
@@ -201,6 +247,6 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 
 		}
 
-		return null;
+		return createNewSignature(model, mName, mfDefinition);
 	}
 }
