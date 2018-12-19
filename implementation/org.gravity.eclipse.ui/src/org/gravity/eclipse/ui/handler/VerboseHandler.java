@@ -19,9 +19,9 @@ public class VerboseHandler extends AbstractHandler implements IElementUpdater {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		GravityActivator gravity_activator = GravityActivator.getDefault();
-		boolean verbose = gravity_activator.isVerbose();
-		gravity_activator.setVerbose(!verbose);
+		GravityActivator activator = GravityActivator.getDefault();
+		boolean verbose = activator.isVerbose();
+		activator.setVerbose(!verbose);
 
 		return null;
 	}

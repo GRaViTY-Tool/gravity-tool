@@ -106,14 +106,14 @@ public class GravityActivator extends Plugin {
 	 * @throws CoreException If the extension point couldn't be read
 	 */
 	private void initializeSelectedConverter() throws NoConverterRegisteredException, CoreException {
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] configuration_elements = extension_registry
+		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
+		IConfigurationElement[] configurationElements = extensionRegistry
 				.getConfigurationElementsFor(GRAVITY_CONVERTER_EXTENSION_POINT_ID);
-		if (configuration_elements.length <= 0) {
+		if (configurationElements.length <= 0) {
 			throw new NoConverterRegisteredException();
 		}
 			setSelectedConverterFactory(
-					(IPGConverterFactory) configuration_elements[0].createExecutableExtension("class")); //$NON-NLS-1$
+					(IPGConverterFactory) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
 		
 	}
 

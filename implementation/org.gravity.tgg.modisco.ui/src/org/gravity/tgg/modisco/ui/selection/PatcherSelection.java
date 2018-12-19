@@ -29,14 +29,14 @@ public class PatcherSelection extends ContributionItem {
 	@Override
 	public void fill(Menu menu, int index) {
 		MoDiscoTGGActivator modiscoUI = MoDiscoTGGActivator.getDefault();
-		GravityMoDiscoModelPatcher selected_patcher = modiscoUI.getSelectedPatcher();
+		GravityMoDiscoModelPatcher selectedPatcher = modiscoUI.getSelectedPatcher();
 
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
+		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 
-		IConfigurationElement[] configuration_elements = extension_registry
+		IConfigurationElement[] configurationElements = extensionRegistry
 				.getConfigurationElementsFor("org.gravity.modisco.patcher"); //$NON-NLS-1$
 
-		for (IConfigurationElement element : configuration_elements) {
+		for (IConfigurationElement element : configurationElements) {
 			try {
 				GravityMoDiscoModelPatcher patcher = (GravityMoDiscoModelPatcher) element
 						.createExecutableExtension("class"); //$NON-NLS-1$
@@ -44,7 +44,7 @@ public class PatcherSelection extends ContributionItem {
 				MenuItem item = new MenuItem(menu, SWT.RADIO, index);
 				item.setText(patcher.getName());
 				item.setToolTipText(patcher.getDescription());
-				if (selected_patcher.getClass().equals(patcher.getClass())) {
+				if (selectedPatcher.getClass().equals(patcher.getClass())) {
 					item.setSelection(true);
 				}
 				item.addSelectionListener(new SelectionAdapter() {

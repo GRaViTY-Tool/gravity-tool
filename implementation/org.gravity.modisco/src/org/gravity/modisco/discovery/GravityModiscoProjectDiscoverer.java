@@ -169,7 +169,8 @@ public class GravityModiscoProjectDiscoverer {
 			// Execute processors
 			boolean success;
 			if (processor instanceof AbstractTypedModiscoProcessor) {
-				List<? extends EObject> elementsToProcess = elements.get(((AbstractTypedModiscoProcessor<?>) processor).getSupportedType());
+				List<? extends EObject> elementsToProcess = elements
+						.get(((AbstractTypedModiscoProcessor<?>) processor).getSupportedType());
 				success = ((AbstractTypedModiscoProcessor) processor).process(model, elementsToProcess, monitor);
 			} else {
 				success = processor.process(model, monitor);
@@ -182,16 +183,16 @@ public class GravityModiscoProjectDiscoverer {
 		}
 	}
 
-	private Model discoverProject(IJavaProject java_project, Collection<IPath> libs, IProgressMonitor monitor)
+	private Model discoverProject(IJavaProject javaProject, Collection<IPath> libs, IProgressMonitor monitor)
 			throws DiscoveryException {
 
 		Model model = null;
 
-		if (this.discoverer.isApplicableTo(java_project)) {
+		if (this.discoverer.isApplicableTo(javaProject)) {
 
-			ElementsToAnalyze analyze = new ElementsToAnalyze(java_project);
+			ElementsToAnalyze analyze = new ElementsToAnalyze(javaProject);
 			List<Object> discoverableElements = AbstractDiscoverJavaModelFromProject
-					.computeDiscoverableElements(java_project);
+					.computeDiscoverableElements(javaProject);
 
 			for (Object discoverableObject : discoverableElements) {
 				IPath path = null;
@@ -214,13 +215,13 @@ public class GravityModiscoProjectDiscoverer {
 
 			this.discoverer.setElementsToAnalyze(analyze);
 
-			this.discoverer.discoverElement(java_project, monitor);
-			Resource java_resource = this.discoverer.getTargetModel();
-			if (java_resource != null) {
-				if (java_resource.getURI() == null) {
-					java_resource.setURI(URI.createURI(java_project.getProject().getName() + ".xmi"));
+			this.discoverer.discoverElement(javaProject, monitor);
+			Resource javaResource = this.discoverer.getTargetModel();
+			if (javaResource != null) {
+				if (javaResource.getURI() == null) {
+					javaResource.setURI(URI.createURI(javaProject.getProject().getName() + ".xmi"));
 				}
-				EList<EObject> contents = java_resource.getContents();
+				EList<EObject> contents = javaResource.getContents();
 
 				if (contents.size() > 0) {
 					EObject eobject = contents.get(0);

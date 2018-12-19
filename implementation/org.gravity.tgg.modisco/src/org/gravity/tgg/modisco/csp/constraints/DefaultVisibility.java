@@ -42,24 +42,24 @@ public class DefaultVisibility extends TGGConstraintImpl {
 	}
 	
 	
-	public void solve(Variable var_0, Variable var_1){
-    	String bindingStates = getBindingStates(var_0, var_1);
+	public void solve(Variable var0, Variable var1){
+    	String bindingStates = getBindingStates(var0, var1);
     	
     	switch(bindingStates){
     	case "FB":
-    		TVisibility tVisibility = (TVisibility) var_1.getValue();
-    		var_0.bindToValue(TVisibilityToVKind(tVisibility));
+    		TVisibility tVisibility = (TVisibility) var1.getValue();
+    		var0.bindToValue(TVisibilityToVKind(tVisibility));
     		setSatisfied(true);
     		break;
     	case "BF":
-    		VisibilityKind vKind = (VisibilityKind) var_0.getValue();
-    		var_1.bindToValue(VKindToTVisibility(vKind));
+    		VisibilityKind vKind = (VisibilityKind) var0.getValue();
+    		var1.bindToValue(VKindToTVisibility(vKind));
     		setSatisfied(true);
     		break;
     	case "BB":
 
-    		TVisibility tVis = (TVisibility) var_1.getValue();
-    		VisibilityKind visKind = (VisibilityKind) var_0.getValue();
+    		TVisibility tVis = (TVisibility) var1.getValue();
+    		VisibilityKind visKind = (VisibilityKind) var0.getValue();
     		setSatisfied(visKind.equals(TVisibilityToVKind(tVis)));
     		break;
     		

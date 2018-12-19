@@ -6,54 +6,54 @@ import org.eclipse.osgi.util.NLS;
  * The Class Messages.
  */
 public class Messages extends NLS {
-	
-	/** The Constant BUNDLE_NAME. */
-	private static final String BUNDLE_NAME = "org.gravity.eclipse.messages"; //$NON-NLS-1$
-	
-	/** The Java parse handler_0. */
-	public static String JavaParseHandler_0;
-	
-	/** The Java parse handler_1. */
-	public static String JavaParseHandler_1;
-	
-	/** The Java parse handler_2. */
-	public static String JavaParseHandler_2;
-	
-	/** The Java source to emf converter_0. */
-	public static String JavaSourceToEMFConverter_0;
-	
-	/** The Java source to emf converter_1. */
-	public static String JavaSourceToEMFConverter_1;
-	
-	/** The Java source to emf converter_2. */
-	public static String JavaSourceToEMFConverter_2;
-	
-	/** The Java source to emf converter_3. */
-	public static String JavaSourceToEMFConverter_3;
-	
-	/** The Java source to emf converter_4. */
-	public static String JavaSourceToEMFConverter_4;
-	
-	/** The Java source to emf converter_5. */
-	public static String JavaSourceToEMFConverter_5;
-	
-	/** The Java source to emf converter_6. */
-	public static String JavaSourceToEMFConverter_6;
-	
-	/** The Java source to emf converter_7. */
-	public static String JavaSourceToEMFConverter_7;
-	
-	/** The Typed tree node_0. */
-	public static String TypedTreeNode_0;
-
-	static {
-		// initialize resource bundle
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
 
 	/**
 	 * Instantiates a new messages.
 	 */
 	private Messages() {
+	}
+	
+	/** The Constant BUNDLENAME. */
+	private static final String BUNDLENAME = "org.gravity.eclipse.messages"; //$NON-NLS-1$
+	
+	/** The Java parse handler0. */
+	public static String JavaParseHandler0;
+	
+	/** The Java parse handler1. */
+	public static String JavaParseHandler1;
+	
+	/** The Java parse handler2. */
+	public static String JavaParseHandler2;
+	
+	/** The Java source to emf converter0. */
+	public static String JavaSourceToEMFConverter0;
+	
+	/** The Java source to emf converter1. */
+	public static String JavaSourceToEMFConverter1;
+	
+	/** The Java source to emf converter2. */
+	public static String JavaSourceToEMFConverter2;
+	
+	/** The Java source to emf converter3. */
+	public static String JavaSourceToEMFConverter3;
+	
+	/** The Java source to emf converter4. */
+	public static String JavaSourceToEMFConverter4;
+	
+	/** The Java source to emf converter5. */
+	public static String JavaSourceToEMFConverter5;
+	
+	/** The Java source to emf converter6. */
+	public static String JavaSourceToEMFConverter6;
+	
+	/** The Java source to emf converter7. */
+	public static String JavaSourceToEMFConverter7;
+	
+	/** The Typed tree node0. */
+	public static String TypedTreeNode0;
+
+	static {
+		// initialize resource bundle
+		NLS.initializeMessages(BUNDLENAME, Messages.class);
 	}
 }

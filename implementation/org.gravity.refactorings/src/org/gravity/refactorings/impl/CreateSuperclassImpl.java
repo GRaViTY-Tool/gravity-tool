@@ -90,14 +90,14 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 	 * 
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> child, TClass new_parent) throws RefactoringFailedException {
+	public boolean isApplicable(List<TClass> child, TClass newParent) throws RefactoringFailedException {
 
-		TClass existingParent = getOtherTClassByName(pg, new_parent);
+		TClass existingParent = getOtherTClassByName(pg, newParent);
 		if (existingParent != null) {
 			TPackage newParentsPackage = null;
 			TPackage existingParentsPackage = null;
-			if (!existingParent.equals(new_parent)) {
-				newParentsPackage = new_parent.getPackage();
+			if (!existingParent.equals(newParent)) {
+				newParentsPackage = newParent.getPackage();
 				if (newParentsPackage != null) {
 					existingParentsPackage = existingParent.getPackage();
 					if (existingParentsPackage != null) {
@@ -109,7 +109,7 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 			}
 
 			if (newParentsPackage == null || existingParentsPackage == null) {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + new_parent
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
 						+ ", " + "[existingParent] = " + existingParent + ".");
 			}
 			//
@@ -159,11 +159,11 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 	}
 
 	public static final TClass getOtherTClassByName(TypeGraph pg, TClass exclude) {
-		String new_parent_tName = exclude.getTName();
+		String newParentName = exclude.getTName();
 		for (TClass existingParent : pg.getClasses()) {
 			if (!existingParent.equals(exclude)) {
-				String existingParent_tName = existingParent.getTName();
-				if (existingParent_tName.equals(new_parent_tName)) {
+				String existingParentName = existingParent.getTName();
+				if (existingParentName.equals(newParentName)) {
 					return existingParent;
 				}
 
