@@ -35,9 +35,9 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class HelpersImpl {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(HelpersImpl.class.getName());
-	
+
 	/**
 	 * The cached value of the '{@link #getTypeGraph() <em>Type Graph</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -68,7 +68,8 @@ public class HelpersImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @throws RefactoringFailedException 
+	 * 
+	 * @throws RefactoringFailedException
 	 * 
 	 * @generated
 	 */
@@ -83,15 +84,17 @@ public class HelpersImpl {
 
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature) throws RefactoringFailedException {
+	public boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature)
+			throws RefactoringFailedException {
 		for (TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
 				for (TAccess tMethodAccess : tMethodDefinition.getAccessedBy()) {
 					TMethodDefinition tMethodParentDefinition = getMethodDefinition(parent, tMethodSignature);
 					if (tMethodParentDefinition == null) {
-						throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[parent] = " + parent
-								+ ", " + "[tMethodSignature] = " + tMethodSignature + ", " + "[tMethodAccess] = "
-								+ tMethodAccess + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
+						throw new RefactoringFailedException(
+								"Pattern matching failed." + " Variables: " + "[parent] = " + parent + ", "
+										+ "[tMethodSignature] = " + tMethodSignature + ", " + "[tMethodAccess] = "
+										+ tMethodAccess + ", " + "[tMethodDefinition] = " + tMethodDefinition + ".");
 					}
 					tMethodDefinition.getAccessedBy().remove(tMethodAccess);
 					tMethodParentDefinition.getAccessedBy().add(tMethodAccess);
@@ -122,8 +125,8 @@ public class HelpersImpl {
 
 		TMethodDefinition tMethodDefinition = HelpersImpl.getMethodDefinition(child, tMethodSignature);
 		if (tMethodDefinition == null) {
-			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
-					+ "[tMethodSignature] = " + tMethodSignature + ".");
+			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child
+					+ ", " + "[tMethodSignature] = " + tMethodSignature + ".");
 		}
 		child.getSignature().remove(tMethodSignature);
 		tMethodDefinition.setDefinedBy(null);
@@ -135,7 +138,8 @@ public class HelpersImpl {
 		return true;
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature) throws RefactoringFailedException {
+	public boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature)
+			throws RefactoringFailedException {
 		for (TMember tmpTFieldDefinition : child.getDefines()) {
 			if (tmpTFieldDefinition instanceof TFieldDefinition) {
 				if (tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
@@ -153,9 +157,10 @@ public class HelpersImpl {
 							}
 						}
 						if (tFieldParentDefinition == null) {
-							throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tFieldAccess] = "
-									+ tFieldAccess + ", " + "[tFieldDefinition] = " + tmpTFieldDefinition + ", "
-									+ "[parent] = " + parent + ", " + "[tFieldSignature] = " + tFieldSignature + ".");
+							throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
+									+ "[tFieldAccess] = " + tFieldAccess + ", " + "[tFieldDefinition] = "
+									+ tmpTFieldDefinition + ", " + "[parent] = " + parent + ", "
+									+ "[tFieldSignature] = " + tFieldSignature + ".");
 						}
 						tmpTFieldDefinition.getAccessedBy().remove(tFieldAccess);
 						tFieldParentDefinition.getAccessedBy().add(tFieldAccess);
@@ -192,8 +197,8 @@ public class HelpersImpl {
 			}
 		}
 		if (tFieldDefinition == null) {
-			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child + ", "
-					+ "[tFieldSignature] = " + tFieldSignature + ".");
+			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child
+					+ ", " + "[tFieldSignature] = " + tFieldSignature + ".");
 		}
 		child.getSignature().remove(tFieldSignature);
 		tFieldDefinition.setDefinedBy(null);
@@ -205,40 +210,25 @@ public class HelpersImpl {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Searches the implementation of the signature which has the highest cohesion and lowest coupling
 	 * 
-	 * @generated
+	 * @param tMemberPool The pool of classes containing implementations of the signature
+	 * @param signature The signature for which an implementation should be searched
+	 * @return The best implementation within the pool
 	 */
 	public TMember getBestTMember(List<TClass> tMemberPool, TSignature signature) {
 		TMember returnMember = null;
 		int bestTMemberWeight = Integer.MIN_VALUE;
-
 		for (TClass tClass : tMemberPool) {
-
 			TMember tMemberOfClass = signature.getTDefinition(tClass);
-
-			int internalAccesses = 0;
-			for (TAccess tAccess : tMemberOfClass.getTAccessing()) {
-				TMember accessedTMember = tAccess.getTTarget();
-				if (accessedTMember != null && !accessedTMember.equals(tMemberOfClass)) {
-					if (tClass.hasTMember(accessedTMember)
-							|| tClass.hasAParentThisTMember(accessedTMember)) {
-						internalAccesses++;
-					}
-				}
+			if(tMemberOfClass == null) {
+				continue;
 			}
 
-			int externalAccesses = 0;
-			for (TMember accessedTMember : HelpersImpl.getAccessedMembers(tMemberOfClass)) {
-				if (!tClass.hasTMember(accessedTMember) && !tClass.hasAParentThisTMember(accessedTMember)) {
-					externalAccesses++;
-				}
-
-			}
-
+			int internalAccesses = getInternalAccesses(tClass, tMemberOfClass);
+			int externalAccesses = getExternalAcesses(tClass, tMemberOfClass);
 			int tWeightMember = internalAccesses - externalAccesses;
-
-			LOGGER.log( Level.INFO, "GetBestTMember: class=" + tClass.getTName() + " i=" + internalAccesses + "; e="
+			LOGGER.log(Level.INFO, "GetBestTMember: class=" + tClass.getTName() + " i=" + internalAccesses + "; e="
 					+ externalAccesses + "; tWeight=" + tWeightMember);
 
 			if (tWeightMember > bestTMemberWeight) {
@@ -246,12 +236,53 @@ public class HelpersImpl {
 				returnMember = tMemberOfClass;
 			}
 		}
+		if (returnMember == null) {
+			throw new IllegalStateException(
+					"No implementation of the signature \"" + signature.getSignatureString() + "\" found");
+		}
 
-		LOGGER.log( Level.INFO, 
+		LOGGER.log(Level.INFO,
 				"Best-GetBestTMember: tWeight=" + bestTMemberWeight + "; tMember=" + returnMember.getSignatureString());
 
 		return returnMember;
 
+	}
+
+	/**
+	 * Counts the amount of accesses to different members within of the given class
+	 * 
+	 * @param type   The class to whose members accesses should be counted
+	 * @param member The member with outgoing accesses
+	 * @return the amount of accesses
+	 */
+	private int getInternalAccesses(TClass type, TMember member) {
+		int internalAccesses = 0;
+		for (TAccess tAccess : member.getTAccessing()) {
+			TMember accessedTMember = tAccess.getTTarget();
+			if (accessedTMember != null && !accessedTMember.equals(member)) {
+				if (type.hasTMember(accessedTMember) || type.hasAParentThisTMember(accessedTMember)) {
+					internalAccesses++;
+				}
+			}
+		}
+		return internalAccesses;
+	}
+
+	/**
+	 * Counts the amount of accesses to different members outside of the given class
+	 * 
+	 * @param type   The class to which accesses should be excluded
+	 * @param member The member with outgoing accesses
+	 * @return the amount of accesses
+	 */
+	private int getExternalAcesses(TClass type, TMember member) {
+		int externalAccesses = 0;
+		for (TMember accessedTMember : HelpersImpl.getAccessedMembers(member)) {
+			if (!type.hasTMember(accessedTMember) && !type.hasAParentThisTMember(accessedTMember)) {
+				externalAccesses++;
+			}
+		}
+		return externalAccesses;
 	}
 
 	public static final TMethodDefinition getMethodDefinition(TClass child, TMethodSignature tMethodSignature) {

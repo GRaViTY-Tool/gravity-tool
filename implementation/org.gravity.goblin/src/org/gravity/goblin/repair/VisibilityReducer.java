@@ -28,7 +28,7 @@ public class VisibilityReducer implements ITransformationRepairer {
 					if (!(tMember instanceof TConstructorDefinition) && !(tMember instanceof TFieldDefinition)) {
 						EList<TAnnotation> annotations = tMember.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());	
 						if(annotations.size() != 1) {
-							throw new RuntimeException("Unexpected amount of IGAM metrics on \""+tClass.getFullyQualifiedName()+"->"+tMember.getSignatureString()+"\".");
+							throw new IllegalStateException("Unexpected amount of IGAM metrics on \""+tClass.getFullyQualifiedName()+"->"+tMember.getSignatureString()+"\".");
 						}
 						HIGAMMetric higamMetric = (HIGAMMetric) annotations.get(0);
 						if(higamMetric.getValue() > 0.0) {

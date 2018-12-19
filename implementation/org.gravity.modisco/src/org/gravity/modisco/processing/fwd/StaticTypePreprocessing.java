@@ -340,8 +340,9 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @param expression The access
 	 * @param method     The method containing the access
 	 * @return The static type
+	 * @throws ProcessingException If the expression is not supported
 	 */
-	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method) {
+	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method) throws ProcessingException {
 		TypeAccess qualifier = expression.getQualifier();
 		if (qualifier == null) {
 			if (expression instanceof ThisExpression) {
@@ -355,6 +356,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return (Type) ((MDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
 						.eContainer();
 			}
+			throw new ProcessingException("Not suported expression: "+expression.eClass().getName());
 		}
 		return qualifier.getType();
 	}

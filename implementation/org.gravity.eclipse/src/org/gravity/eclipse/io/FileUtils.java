@@ -35,12 +35,11 @@ public class FileUtils {
 	 */
 	public static boolean changeToOSEncoding(File file) throws IOException {
 		File tempFile;
-		try{
+		try {
 			tempFile = Files.createTempFile("gravity", null).toFile();
 			tempFile.deleteOnExit();
-		}
-		catch(IOException e) {
-			LOGGER.log(Level.ERROR, "Couldn't create temp file: "+e.getMessage(), e);
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, "Couldn't create temp file: " + e.getMessage(), e);
 			return false;
 		}
 		try {
@@ -50,41 +49,43 @@ public class FileUtils {
 			copy(file, tempFile);
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
-			try {
-				// Try to recover file
-				if(tempFile != null) {
+			// Try to recover file
+			if (tempFile != null) {
+				try {
 					Files.move(tempFile.toPath(), file.toPath());
+				} catch (IOException e2) {
+					// Iff recover wasn't possible throw original error
+					throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(),
+							e);
 				}
-			} catch (IOException e2) {
-				// Iff recover wasn't possible throw original error
-				throw new IOException("A copy of the orgiginal file is maybe present at: "+tempFile.toString(), e);
 			}
 			return false;
 		}
 		// delete the temp file
 		try {
 			Files.deleteIfExists(tempFile.toPath());
-		}
-		catch(IOException e) {
-			/* 
-			 * As the temporal files will be deleted anyways we currently only log a warning.
-			 * However, sensitive data might be leaked this way!
-			 */ 
-			LOGGER.log(Level.WARN, "The temporal copy of a file couldn't be deleted: "+e.getMessage(), e);
+		} catch (IOException e) {
+			/*
+			 * As the temporal files will be deleted anyways we currently only log a
+			 * warning. However, sensitive data might be leaked this way!
+			 */
+			LOGGER.log(Level.WARN, "The temporal copy of a file couldn't be deleted: " + e.getMessage(), e);
 		}
 		return true;
 	}
 
 	/**
-	 * Copies a file from a source location to a target location using system specific line endings
+	 * Copies a file from a source location to a target location using system
+	 * specific line endings
 	 * 
 	 * @param source The source file
 	 * @param target The target file
-	 * @throws IOException If the source file cannot be read or the target file cannot be written
+	 * @throws IOException If the source file cannot be read or the target file
+	 *                     cannot be written
 	 */
 	public static void copy(File source, File target) throws IOException {
 		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true))) {
-			Files.lines(target.toPath()).forEach(s->{
+			Files.lines(target.toPath()).forEach(s -> {
 				stream.println(s);
 			});
 		}
@@ -118,12 +119,13 @@ public class FileUtils {
 	 * 
 	 * @param bundle The plugin id of the bundle from which data should be extracted
 	 * @param folder The folder within this plugin
-	 * @param file The file name
+	 * @param file   The file name
 	 * @return The location of the extracted file
 	 * @throws IOException If reading or writing the file failed
 	 */
-	public static Path extractToTmpFile(final String bundle, final String folder, final String file) throws IOException {
-		URL image = Platform.getBundle(bundle).getEntry(folder+File.separator+file);
+	public static Path extractToTmpFile(final String bundle, final String folder, final String file)
+			throws IOException {
+		URL image = Platform.getBundle(bundle).getEntry(folder + File.separator + file);
 		Path tmp = Files.createTempFile(file, "");
 		Files.copy(image.openStream(), tmp, StandardCopyOption.REPLACE_EXISTING);
 		tmp.toFile().deleteOnExit();

@@ -45,7 +45,14 @@ public abstract class RefactoringHandler extends AbstractHandler {
 		return builder.toString();
 	}
 
-	TClass getTClass(TypeDeclaration type, TypeGraph pg) {
+	/**
+	 * Searches for the TClass corresponding to a type declaration
+	 * 
+	 * @param type The type declaration
+	 * @param pg The program model in which should be searched
+	 * @return the tClass
+	 */
+	static TClass getTClass(TypeDeclaration type, TypeGraph pg) {
 		TClass tChild = null;
 
 		ASTNode tmpASTNode2 = type.getParent();
@@ -66,7 +73,7 @@ public abstract class RefactoringHandler extends AbstractHandler {
 					}
 				}
 				if (next == null) {
-
+					throw new IllegalStateException("The program model doesn't contain the expected package structure");
 				} else {
 					packages = next.getSubpackage();
 				}

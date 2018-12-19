@@ -1,5 +1,7 @@
 package org.gravity.hulk.tests.metics;
 
+import static org.junit.Assert.fail;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -55,15 +57,29 @@ import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory;
 import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory.AnalysisMode;
 import de.uni_hamburg.informatik.swt.accessanalysis.results.Result;
 
+/**
+ * A test if our implementation of the IGAM and IGAT metrics return the results
+ * as the original implementation
+ * 
+ * @author speldszus
+ *
+ */
 @RunWith(Parameterized.class)
-public class AccessAnalysis {
-	
-	private static final Logger LOGGER = Logger.getLogger(AccessAnalysis.class.getName());
+public class AccessAnalysisTest {
+
+	private static final Logger LOGGER = Logger.getLogger(AccessAnalysisTest.class.getName());
 
 	private IJavaProject javaProject;
 
-	public AccessAnalysis(String name, IJavaProject project) {
+	/**
+	 * Creates a new test instance for the given project
+	 * 
+	 * @param name The name of the project
+	 * @param project The project
+	 */
+	public AccessAnalysisTest(String name, IJavaProject project) {
 		this.javaProject = project;
+		LOGGER.log(Level.INFO, "Perform test on project: " + name);
 	}
 
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
@@ -84,7 +100,7 @@ public class AccessAnalysis {
 	}
 
 	@Test
-	public void test() throws AnalysisException, TransformationFailedException {
+	public void testAccessAnalysis() throws AnalysisException, TransformationFailedException {
 		IProject iproject = javaProject.getProject();
 		IPGConverter converter;
 		try {
@@ -96,7 +112,8 @@ public class AccessAnalysis {
 		IProgressMonitor monitor = new NullProgressMonitor();
 		boolean success = converter.convertProject(javaProject, Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
-			throw new TransformationFailedException("Creating PG from project failed: " + javaProject.getProject().getName());
+			throw new TransformationFailedException(
+					"Creating PG from project failed: " + javaProject.getProject().getName());
 		}
 		TypeGraph pg = converter.getPG();
 
@@ -157,6 +174,12 @@ public class AccessAnalysis {
 				TMethodDefinition tMethodDefinition = JavaHelper.getTMethodDefinition((IMethod) javaElement, pg);
 				tAnnotations = tMethodDefinition.getTAnnotation();
 			}
+			else {
+				String message = "Annotations cannot be retrieved for the following element: "+javaElement;
+				LOGGER.log(Level.ERROR, message);
+				fail(message);
+				continue;
+			}
 
 			for (TAnnotation tAnnotation : tAnnotations) {
 				double hValue = -1;
@@ -177,20 +200,19 @@ public class AccessAnalysis {
 					TAnnotatable tAnnotated = tAnnotation.getTAnnotated();
 					if (tAnnotated instanceof TMember) {
 						TMember tMember = (TMember) tAnnotated;
-						element = "Member \""+tMember.getDefinedBy().getFullyQualifiedName()+" -> "+tMember.getSignatureString()+ '\"';
+						element = "Member \"" + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
+								+ tMember.getSignatureString() + '\"';
+					} else if (tAnnotated instanceof TAbstractType) {
+						element = "Type \"" + ((TAbstractType) tAnnotated).getFullyQualifiedName() + '\"';
+					} else if (tAnnotated instanceof TPackage) {
+						element = "Package \"" + ((TPackage) tAnnotated).getFullyQualifiedName();
+
+					} else if (tAnnotated instanceof TypeGraph) {
+						element = "Java Project \"" + ((TypeGraph) tAnnotated).getTName() + "\"";
 					}
-					else if (tAnnotated instanceof TAbstractType) {
-						element = "Type \""+((TAbstractType) tAnnotated).getFullyQualifiedName()+ '\"';		
-					}
-					else if (tAnnotated instanceof TPackage) {
-						element = "Package \""+((TPackage) tAnnotated).getFullyQualifiedName();
-						
-					}
-					else if (tAnnotated instanceof TypeGraph) {
-						element = "Java Project \""+((TypeGraph) tAnnotated).getTName()+"\"";
-					}
-					
-					LOGGER.log(Level.ERROR, kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
+
+					LOGGER.log(Level.ERROR,
+							kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
 				}
 			}
 		}
