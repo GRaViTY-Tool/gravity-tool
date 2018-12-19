@@ -64,19 +64,21 @@ public abstract class RefactoringHandler extends AbstractHandler {
 			String[] names = childPackage.getName().getFullyQualifiedName().split("\\."); //$NON-NLS-1$
 			EList<TPackage> packages = pg.getPackages();
 			TPackage next = null;
-			for (int i = 0; i < names.length; i++) {
-				next = null;
+			for (String name : names) {
 				for (TPackage p : packages) {
-					if (p.getTName().equals(names[i])) {
+					if (p.getTName().equals(name)) {
 						next = p;
 						break;
 					}
 				}
 				if (next == null) {
-					throw new IllegalStateException("The program model doesn't contain the expected package structure");
+					break;
 				} else {
 					packages = next.getSubpackage();
 				}
+			}
+			if (next == null) {
+				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
 
 			for (TClass c : next.getClasses()) {
@@ -89,6 +91,13 @@ public abstract class RefactoringHandler extends AbstractHandler {
 		return tChild;
 	}
 
+	/**
+	 * Searches for the signature in the program model corresponding to the method declarations signature
+	 * 
+	 * @param pg The program model
+	 * @param method The method declaration
+	 * @return The found signature or null
+	 */
 	TMethodSignature getMethodSignature(TypeGraph pg, MethodDeclaration method) {
 		TMethod tMethod = null;
 		for (TMethod m : pg.getMethods()) {
@@ -102,30 +111,40 @@ public abstract class RefactoringHandler extends AbstractHandler {
 			return null;
 		}
 
-		for (TMethodSignature s : tMethod.getSignatures()) {
-			if (method.parameters().size() != s.getParamList().getEntries().size()) {
+		for (TMethodSignature signature : tMethod.getSignatures()) {
+			if (method.parameters().size() != signature.getParamList().getEntries().size()) {
 				continue;
 			}
-			boolean success = true;
-			TParameter tParam = s.getParamList().getFirst();
-			for (Object p : method.parameters()) {
-				if (p instanceof SingleVariableDeclaration) {
-					SingleVariableDeclaration var = (SingleVariableDeclaration) p;
-					Type vt = var.getType();
-					if (vt.toString().equals(tParam.getType().getTName())) {
-						tParam = tParam.getNext();
-					} else {
-						success = false;
-						break;
-					}
-				}
-			}
+			boolean success = hasSameSignature(method, signature);
 			if (success) {
-				return s;
+				return signature;
 			}
 		}
 
 		return null;
+	}
+
+	/**
+	 * Checks if the signature is equivalent to the method declarations signature
+	 * 
+	 * @param method A method declaration
+	 * @param signature A method signature
+	 * @return true, if the signatures are equal
+	 */
+	private boolean hasSameSignature(MethodDeclaration method, TMethodSignature signature) {
+		TParameter tParam = signature.getParamList().getFirst();
+		for (Object p : method.parameters()) {
+			if (p instanceof SingleVariableDeclaration) {
+				SingleVariableDeclaration var = (SingleVariableDeclaration) p;
+				Type vt = var.getType();
+				if (vt.toString().equals(tParam.getType().getTName())) {
+					tParam = tParam.getNext();
+				} else {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	protected static CompilationUnit parse(ICompilationUnit icu) {
