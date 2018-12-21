@@ -17,7 +17,8 @@ public class TypeParameterPreprocessor extends AbstractTypedModiscoProcessor<Typ
 
 	@Override
 	public boolean process(MGravityModel model, Collection<TypeParameter> elements, IProgressMonitor monitor) {
-		return model.getTypeParameters().addAll(elements);
+		model.getTypeParameters().addAll(elements);
+		return true;
 	}
 
 	@Override
