@@ -24,9 +24,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
-import org.gravity.hulk.HAntiPatternDetection;
-import org.gravity.hulk.HDetector;
-import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
@@ -37,6 +34,12 @@ import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/**
+ * This class provides an API for easily using the Hulk anti-pattern detection
+ * 
+ * @author speldszus
+ *
+ */
 public class HulkAPI {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkAPI.class);
@@ -48,7 +51,7 @@ public class HulkAPI {
 	 * @param monitor A progress monitor, if null is given the variable is
 	 *                instantiated with a new NullProgressMonitor
 	 * @param aps     The list of anti-patterns to detect
-	 * @return a lost of all detected anti-pattern instances
+	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
 	public static List<HAnnotation> detect(IJavaProject project, IProgressMonitor monitor, AntiPatternNames... aps)
@@ -78,6 +81,15 @@ public class HulkAPI {
 		return results;
 	}
 
+	/**
+	 * Detects given anti-patterns on a program model
+	 * 
+	 * @param pg The program model
+	 * @param programLocation The location of the project from which the model has been created
+	 * @param aps The list of anti-patterns to detect
+	 * @return a list of all detected anti-pattern instances
+	 * @throws DetectionFailedException If the anti-pattern detection failed
+	 */
 	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps)
 			throws DetectionFailedException {
 		ResourceSet rs = pg.eResource().getResourceSet();
@@ -100,6 +112,30 @@ public class HulkAPI {
 
 		rs.createResource(URI.createURI("SmellDependencyGraph.xmi")).getContents().add(hulk.getDependencyGraph()); //$NON-NLS-1$
 
+		Set<EClass> detectors = getDetecors(aps);
+		HashSet<HDetector> detectorResults = new HashSet<>();
+		if (!new HulkDetector(hulk, HulkDetector.getDefaultThresholds()).detectSelectedAntiPattern(detectors,
+				detectorResults, new HashSet<>())) {
+			throw new DetectionFailedException("Anti-pattern detection failed.");
+		}
+
+		List<HAnnotation> results = new ArrayList<>();
+		for (HDetector detector : detectorResults) {
+			for (HAnnotation annotation : detector.getHAnnotation()) {
+				results.add(annotation);
+			}
+		}
+
+		return results;
+	}
+
+	/**
+	 * Creates detecor instances for all given anti-patterns
+	 * 
+	 * @param aps The anti-patterns
+	 * @return The list of detectors
+	 */
+	private static Set<EClass> getDetecors(AntiPatternNames... aps) {
 		Set<EClass> detectors = new HashSet<>();
 		for (AntiPatternNames name : aps) {
 			switch (name) {
@@ -130,22 +166,14 @@ public class HulkAPI {
 			case TotalMethodVisibility:
 				detectors.add(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator());
 				break;
+			case DIT:
+				detectors.add(MetricsPackage.eINSTANCE.getHDepthOfInheritanceCalculator());
+				break;
+			default:
+				break;
 			}
 		}
-		HashSet<HDetector> detectorResults = new HashSet<>();
-		if (!new HulkDetector(hulk, HulkDetector.getDefaultThresholds()).detectSelectedAntiPattern(detectors,
-				detectorResults, new HashSet<>())) {
-			throw new DetectionFailedException("Anti-pattern detection failed.");
-		}
-
-		List<HAnnotation> results = new ArrayList<>();
-		for (HDetector detector : detectorResults) {
-			for (HAnnotation annotation : detector.getHAnnotation()) {
-				results.add(annotation);
-			}
-		}
-
-		return results;
+		return detectors;
 	}
 
 	/**
@@ -174,10 +202,22 @@ public class HulkAPI {
 		return GravityActivator.getDefault().discardConverter(iproject);
 	}
 
+	/**
+	 * An enumeration over all anti-patterns supported by the HulkAPI
+	 * 
+	 * @author speldszus
+	 *
+	 */
 	public static enum AntiPatternNames {
 
-		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT, LCOM5, TotalCoupling, TotalMethodVisibility;
+		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT, LCOM5, TotalCoupling, TotalMethodVisibility, DIT;
 
+		/**
+		 * Get the enum constant corresponding with the eclass of a given anti-pattern annotation
+		 * 
+		 * @param metricClass The EClass of the anti-pattern annotation
+		 * @return The corresponding enum constant
+		 */
 		public static AntiPatternNames get(EClass metricClass) {
 			org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage antipattern = AntipatternPackage.eINSTANCE;
 			if (antipattern.getHBlobAntiPattern().isSuperTypeOf(metricClass)) {
@@ -208,7 +248,10 @@ public class HulkAPI {
 			if (metricPackage.getHTotalVisibilityMetric().isSuperTypeOf(metricClass)) {
 				return TotalMethodVisibility;
 			}
-			return null;
+			if (metricPackage.getHDepthOfInheritanceMetric().isSuperTypeOf(metricClass)) {
+				return DIT;
+			}
+		return null;
 		}
 	}
 }
