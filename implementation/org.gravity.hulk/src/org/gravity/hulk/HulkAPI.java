@@ -27,7 +27,6 @@ import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.detection.antipattern.impl.AntipatternPackageImpl;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
@@ -42,6 +41,9 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public class HulkAPI {
 
+	/**
+	 * The Logger of this class
+	 */
 	private static final Logger LOGGER = Logger.getLogger(HulkAPI.class);
 
 	/**
@@ -75,18 +77,19 @@ public class HulkAPI {
 		String programLocation = project.getProject().getLocation().toString();
 
 		final List<HAnnotation> results = detect(pg, programLocation, aps);
-		
+
 		clean(iproject, converter, pg);
-		
+
 		return results;
 	}
 
 	/**
 	 * Detects given anti-patterns on a program model
 	 * 
-	 * @param pg The program model
-	 * @param programLocation The location of the project from which the model has been created
-	 * @param aps The list of anti-patterns to detect
+	 * @param pg              The program model
+	 * @param programLocation The location of the project from which the model has
+	 *                        been created
+	 * @param aps             The list of anti-patterns to detect
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
@@ -130,7 +133,7 @@ public class HulkAPI {
 	}
 
 	/**
-	 * Creates detecor instances for all given anti-patterns
+	 * Creates detector instances for all given anti-patterns
 	 * 
 	 * @param aps The anti-patterns
 	 * @return The list of detectors
@@ -138,40 +141,7 @@ public class HulkAPI {
 	private static Set<EClass> getDetecors(AntiPatternNames... aps) {
 		Set<EClass> detectors = new HashSet<>();
 		for (AntiPatternNames name : aps) {
-			switch (name) {
-			case Blob:
-				detectors.add(AntipatternPackageImpl.eINSTANCE.getHBlobDetector());
-				break;
-			case GodClass:
-				detectors.add(AntipatternPackageImpl.eINSTANCE.getHGodClassDetector());
-				break;
-			case SwissArmyKnife:
-				detectors.add(AntipatternPackageImpl.eINSTANCE.getHSwissArmyKnifeDetector());
-				break;
-			case SpaghettiCode:
-				detectors.add(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector());
-				break;
-			case IGAM:
-				detectors.add(MetricsPackage.eINSTANCE.getHIGAMCalculator());
-				break;
-			case IGAT:
-				detectors.add(MetricsPackage.eINSTANCE.getHIGATCalculator());
-				break;
-			case LCOM5:
-				detectors.add(MetricsPackage.eINSTANCE.getHLcom5Calculator());
-				break;
-			case TotalCoupling:
-				detectors.add(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator());
-				break;
-			case TotalMethodVisibility:
-				detectors.add(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator());
-				break;
-			case DIT:
-				detectors.add(MetricsPackage.eINSTANCE.getHDepthOfInheritanceCalculator());
-				break;
-			default:
-				break;
-			}
+			detectors.add(name.getEClass());
 		}
 		return detectors;
 	}
@@ -179,21 +149,21 @@ public class HulkAPI {
 	/**
 	 * Removes all generated EMF models except for the PG
 	 * 
-	 * @param iproject The project which has been discovered
+	 * @param iproject  The project which has been discovered
 	 * @param converter The executed converter
-	 * @param pg The created PG
+	 * @param pg        The created PG
 	 * @return true, iff the cleanup was successful
 	 */
 	private static boolean clean(IProject iproject, IPGConverter converter, TypeGraph pg) {
 		final Resource keep = pg.eResource();
 		final EList<Resource> resources = converter.getResourceSet().getResources();
-		while(!resources.isEmpty()) {
+		while (!resources.isEmpty()) {
 			Resource resource = resources.remove(0);
-			if(resource != keep) {
+			if (resource != keep) {
 				try {
 					resource.delete(Collections.EMPTY_MAP);
 				} catch (IOException e) {
-					LOGGER.log(Level.WARN, "Cleaninig resource failed: "+e.getMessage(), e);
+					LOGGER.log(Level.WARN, "Cleaninig resource failed: " + e.getMessage(), e);
 					return false;
 				}
 			}
@@ -210,48 +180,46 @@ public class HulkAPI {
 	 */
 	public static enum AntiPatternNames {
 
-		Blob, GodClass, SpaghettiCode, SwissArmyKnife, IGAM, IGAT, LCOM5, TotalCoupling, TotalMethodVisibility, DIT;
+		BLOB(AntipatternPackageImpl.eINSTANCE.getHBlobDetector()), 
+		GOD_CLASS(AntipatternPackageImpl.eINSTANCE.getHGodClassDetector()), 
+		SPAGHETTI_CODE(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector()), 
+		SWISS_ARMY_KNIFE(AntipatternPackageImpl.eINSTANCE.getHSwissArmyKnifeDetector()), 
+		IGAM(MetricsPackage.eINSTANCE.getHIGAMCalculator()), 
+		IGAT(MetricsPackage.eINSTANCE.getHIGATCalculator()), 
+		LCOM5(MetricsPackage.eINSTANCE.getHLcom5Calculator()), 
+		TOTAL_COUPLING(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator()), 
+		TOTAL_METHOD_VISIBILITY(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator()), 
+		DIT(MetricsPackage.eINSTANCE.getHDepthOfInheritanceCalculator());
+		
+		private final EClass eClass;
+		
+		private AntiPatternNames(EClass eClass) {
+			this.eClass = eClass;
+		}
 
 		/**
-		 * Get the enum constant corresponding with the eclass of a given anti-pattern annotation
+		 * Get the enum constant corresponding with the EClass of a given anti-pattern
+		 * annotation
 		 * 
 		 * @param metricClass The EClass of the anti-pattern annotation
 		 * @return The corresponding enum constant
 		 */
 		public static AntiPatternNames get(EClass metricClass) {
-			org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage antipattern = AntipatternPackage.eINSTANCE;
-			if (antipattern.getHBlobAntiPattern().isSuperTypeOf(metricClass)) {
-				return Blob;
+			for(AntiPatternNames name : AntiPatternNames.values()) {
+				if(name.getEClass().isSuperTypeOf(metricClass)) {
+					return name;
+				}
 			}
-			if (antipattern.getHGodClassAntiPattern().isSuperTypeOf(metricClass)) {
-				return GodClass;
-			}
-			if (antipattern.getHSpaghettiCodeAntiPattern().isSuperTypeOf(metricClass)) {
-				return SpaghettiCode;
-			}
-			if (antipattern.getHSwissArmyKnifeAntiPattern().isSuperTypeOf(metricClass)) {
-				return SwissArmyKnife;
-			}
-			org.gravity.hulk.antipatterngraph.metrics.MetricsPackage metricPackage = org.gravity.hulk.antipatterngraph.metrics.MetricsPackage.eINSTANCE;
-			if (metricPackage.getHIGAMMetric().isSuperTypeOf(metricClass)) {
-				return IGAM;
-			}
-			if (metricPackage.getHIGATMetric().isSuperTypeOf(metricClass)) {
-				return IGAT;
-			}
-			if (metricPackage.getHLCOM5Metric().isSuperTypeOf(metricClass)) {
-				return LCOM5;
-			}
-			if (metricPackage.getHTotalCouplingMetric().isSuperTypeOf(metricClass)) {
-				return TotalCoupling;
-			}
-			if (metricPackage.getHTotalVisibilityMetric().isSuperTypeOf(metricClass)) {
-				return TotalMethodVisibility;
-			}
-			if (metricPackage.getHDepthOfInheritanceMetric().isSuperTypeOf(metricClass)) {
-				return DIT;
-			}
-		return null;
+			return null;
+		}
+
+		/**
+		 * A getter for the EClass of the calculator
+		 * 
+		 * @return the eClass
+		 */
+		public EClass getEClass() {
+			return eClass;
 		}
 	}
 }

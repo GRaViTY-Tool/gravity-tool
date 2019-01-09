@@ -1,10 +1,10 @@
 package org.gravity.goblin.repair;
 
-import static org.gravity.hulk.HulkAPI.AntiPatternNames.Blob;
+import static org.gravity.hulk.HulkAPI.AntiPatternNames.BLOB;
 import static org.gravity.hulk.HulkAPI.AntiPatternNames.IGAM;
 import static org.gravity.hulk.HulkAPI.AntiPatternNames.LCOM5;
-import static org.gravity.hulk.HulkAPI.AntiPatternNames.TotalCoupling;
-import static org.gravity.hulk.HulkAPI.AntiPatternNames.TotalMethodVisibility;
+import static org.gravity.hulk.HulkAPI.AntiPatternNames.TOTAL_COUPLING;
+import static org.gravity.hulk.HulkAPI.AntiPatternNames.TOTAL_METHOD_VISIBILITY;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -111,7 +111,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 				r.getContents().add(pg);
 			}
 			try {
-				HulkAPI.detect(pg, "", Blob, LCOM5, IGAM, TotalCoupling, TotalMethodVisibility);
+				HulkAPI.detect(pg, "", BLOB, LCOM5, IGAM, TOTAL_COUPLING, TOTAL_METHOD_VISIBILITY);
 			} catch (DetectionFailedException e) {
 				throw new RuntimeException(e);
 			}

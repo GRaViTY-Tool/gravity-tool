@@ -57,7 +57,7 @@ public class HulkApiTest {
 
 	@Test
 	public void detectBlobs() throws DetectionFailedException {
-		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.Blob);
+		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB);
 		LOGGER.log( Level.INFO, "Number of Blobs = " + results.size());
 	}
 
@@ -83,7 +83,7 @@ public class HulkApiTest {
 
 	@Test
 	public void detectAll() throws DetectionFailedException {
-		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.Blob,
+		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
 				AntiPatternNames.IGAT, AntiPatternNames.IGAM);
 		int blobs = 0;
 		for(HAnnotation hAnnotation : results) {
