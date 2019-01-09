@@ -27,17 +27,37 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * A class for testing the HulkAPI
+ * This test should be executed as JUnit plugin test.
+ * The test subjects have to be loaded in the workspace of the plugin test
+ * 
+ * @author speldszus
+ *
+ */
 @RunWith(Parameterized.class)
 public class HulkApiTest {
 
-	private static final Logger LOGGER = Logger.getLogger( HulkApiTest.class.getName() );
-	
+	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class.getName());
+
 	private IJavaProject javaProject;
 
+	/**
+	 * Creates a new test instance for a a project
+	 * 
+	 * @param name    The name of the project
+	 * @param project The project
+	 */
 	public HulkApiTest(String name, IJavaProject project) {
+		LOGGER.log(Level.INFO, "Starting HulkAPI test with project: " + name);
 		this.javaProject = project;
 	}
 
+	/**
+	 * Collects the projects from the current workspace on which Hulk should be executed
+	 * 
+	 * @return A list of projects and their names
+	 */
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
 	public static Collection<Object[]> collectProjects() {
 		Collection<Object[]> data = new LinkedList<>();
@@ -55,50 +75,69 @@ public class HulkApiTest {
 		return data;
 	}
 
+	/**
+	 * The HulkAPI is used to detect Blob anti-pattern
+	 * 
+	 * @throws DetectionFailedException If the detection failed
+	 */
 	@Test
 	public void detectBlobs() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB);
-		LOGGER.log( Level.INFO, "Number of Blobs = " + results.size());
+		LOGGER.log(Level.INFO, "Number of Blobs = " + results.size());
 	}
 
+	/**
+	 * The HulkAPI is used to calculate the IGAM metric
+	 * 
+	 * @throws DetectionFailedException If the detection failed
+	 */
 	@Test
 	public void detectIGAM() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAM);
-		for(HAnnotation hAnnotation : results) {
-			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				LOGGER.log( Level.INFO, "IGAM = "+((HMetric) hAnnotation).getValue());
+		for (HAnnotation hAnnotation : results) {
+			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
+				LOGGER.log(Level.INFO, "IGAM = " + ((HMetric) hAnnotation).getValue());
 			}
 		}
 	}
 
+	/**
+	 * The HulkAPI is used to calculate the IGAT metric
+	 * 
+	 * @throws DetectionFailedException If the detection failed
+	 */
 	@Test
 	public void detectIGAT() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAT);
-		for(HAnnotation hAnnotation : results) {
-			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				LOGGER.log( Level.INFO, "IGAT = "+((HMetric) hAnnotation).getValue());
+		for (HAnnotation hAnnotation : results) {
+			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
+				LOGGER.log(Level.INFO, "IGAT = " + ((HMetric) hAnnotation).getValue());
 			}
 		}
 	}
 
+	/**
+	 * The HulkAPI is used to calculate multiple metrics and anti-patterns
+	 * 
+	 * @throws DetectionFailedException If the detection failed
+	 */
 	@Test
 	public void detectAll() throws DetectionFailedException {
 		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.BLOB,
 				AntiPatternNames.IGAT, AntiPatternNames.IGAM);
 		int blobs = 0;
-		for(HAnnotation hAnnotation : results) {
+		for (HAnnotation hAnnotation : results) {
 			if (hAnnotation instanceof HBlobAntiPattern) {
-				blobs++;		
+				blobs++;
 			}
-			if(hAnnotation.getTAnnotated() instanceof TypeGraph) {
+			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
 				if (hAnnotation instanceof HIGAMMetric) {
-					LOGGER.log( Level.INFO, "IGAM = "+((HMetric) hAnnotation).getValue());
-				}
-				else if (hAnnotation instanceof HIGATMetric) {
-					LOGGER.log( Level.INFO, "IGAT = "+((HMetric) hAnnotation).getValue());
+					LOGGER.log(Level.INFO, "IGAM = " + ((HMetric) hAnnotation).getValue());
+				} else if (hAnnotation instanceof HIGATMetric) {
+					LOGGER.log(Level.INFO, "IGAT = " + ((HMetric) hAnnotation).getValue());
 				}
 			}
 		}
-		LOGGER.log( Level.INFO, "Blobs = "+blobs);
+		LOGGER.log(Level.INFO, "Blobs = " + blobs);
 	}
 }
