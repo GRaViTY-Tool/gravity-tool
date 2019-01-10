@@ -5,34 +5,39 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mDefinition : MMethodDefinition {
-	++  -returnType -> eTypeAccess
-}
-++ eTypeAccess : TypeAccess {
-	++  -type -> eReturnType
-}
-eReturnType : Type {
-}
+	mDefinition:MMethodDefinition {
+		++  -returnType -> eTypeAccess
+	}
+
+	++eTypeAccess:TypeAccess {
+		++  -type -> eReturnType
+	}
+
+	eReturnType:Type 
 }
 
 #target {
-tAbstractType : TAbstractType {
+	tAbstractType:TAbstractType {
 }
-tMethodDefinition : TMethodDefinition {
-	++  -returnType -> tAbstractType
-}
+
+	tMethodDefinition:TMethodDefinition {
+		++  -returnType -> tAbstractType
+	}
 }
 
 #correspondence {
-eReturnTypeToTAbstractType : TypeToTAbstractType {
-	#src->eReturnType
-	#trg->tAbstractType
-}
-mMethodDefinitionToTMethodDefinition : MMethodDefinitionToTMethodDefinition {
-	#src->mDefinition
-	#trg->tMethodDefinition
-}
+	eReturnTypeToTAbstractType :TypeToTAbstractType {
+		#src->eReturnType
+		#trg->tAbstractType
+	}
+
+	mMethodDefinitionToTMethodDefinition :MMethodDefinitionToTMethodDefinition {
+		#src->mDefinition
+		#trg->tMethodDefinition
+	}
 }
 
 #attributeConditions {
 }
+
+
