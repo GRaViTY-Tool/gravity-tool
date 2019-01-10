@@ -64,7 +64,7 @@ public class GradleImport {
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
 
-	static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
 
 	/**
 	 * An instance of the gradle builder
@@ -88,37 +88,17 @@ public class GradleImport {
 	 * @throws IOException
 	 */
 	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws NoGradleRootFolderException, IOException {
-		LinkedList<File> queue = new LinkedList<File>();
-		queue.add(rootDir);
-		File root = null;
-		File buildDotGradle = null;
-		while (!queue.isEmpty()) {
-			File dir = queue.poll();
-			buildDotGradle = new File(dir, "build.gradle");
-			if (buildDotGradle.exists()) {
-				root = dir;
-				break;
-			}
-			for (File file : dir.listFiles()) {
-				if (file.isDirectory()) {
-					queue.add(file);
-				}
-			}
-		}
-		if (root == null) {
-			throw new NoGradleRootFolderException();
-		}
 		this.buildSuccess = false;
 		this.ignoreBuildErrors = ignoreBuildErrors;
-		this.buildDotGradle = buildDotGradle;
-		this.rootDir = root;
+		this.rootDir = getRoot(rootDir);
+		this.buildDotGradle = new File(this.rootDir, "build.gradle");
 		this.includes = new HashSet<>();
-		if (new File(root, "src").exists()) {
-			this.includes.add(root.toPath());
+		if (new File(this.rootDir, "src").exists()) {
+			this.includes.add(this.rootDir.toPath());
 		}
 		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
 		this.gradleCache = initGradleUserHome();
-		gradleBuild = new GradleBuild();
+		this.gradleBuild = new GradleBuild();
 	}
 
 	/**
@@ -129,7 +109,6 @@ public class GradleImport {
 	 * @throws GradleImportException
 	 */
 	public IJavaProject importGradleProject(IProgressMonitor monitor) throws GradleImportException {
-
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -300,6 +279,21 @@ public class GradleImport {
 	}
 
 	/**
+	 * Searches the root directory containing the build.gradle file
+	 * 
+	 * @param rootDir The top level root directory
+	 * @return The root folder
+	 * @throws NoGradleRootFolderException If no build.gradle file has been found
+	 */
+	private File getRoot(File rootDir) throws NoGradleRootFolderException {
+		File buildDotGradle = FileUtils.findRecursive(rootDir, "build.gradle");
+		if (buildDotGradle == null) {
+			throw new NoGradleRootFolderException();
+		}
+		return buildDotGradle.getParentFile();
+	}
+
+	/**
 	 * Resolves the GRADLE_USER_HOME directory
 	 * 
 	 * @return A file holding the location of GRADLE_USER_HOME
@@ -454,45 +448,41 @@ public class GradleImport {
 					match = defs.get(var);
 				}
 			}
-
-			Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(match);
-			while (mEntry.find()) {
-				final String includeMatch = mEntry.group(4);
-				String subProject = includeMatch.replace(':', File.separatorChar);
-				File nextRoot = null;
-				LinkedList<File> queue = new LinkedList<>();
-				queue.add(rootDir);
-				while (!queue.isEmpty()) {
-					File tmp = queue.poll();
-					File tmpSubProject = new File(tmp, subProject);
-					if (tmpSubProject.exists()) {
-						nextRoot = tmpSubProject;
-						break;
-					} else {
-						for (File f : tmp.listFiles()) {
-							if (f.isDirectory()) {
-								queue.add(f);
-							}
-						}
-					}
-				}
-				if (nextRoot != null) {
-					if (includes.add(nextRoot.toPath())) {
-						// If the path hasn't already been included: scan for more roots in the
-						// inclusion
-						try {
-							buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
-						} catch (NoGradleRootFolderException e) {
-							LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
-						}
-					}
-				} else {
-					LOGGER.log(Level.ERROR, "Include not found: " + includeMatch);
-				}
-			}
+			searchSingleInclude(match, rootDir, buildDotGradleFiles);
 		}
 		return buildDotGradleFiles;
 
+	}
+
+	/**
+	 * Searches if the included sub project and all its sub projects in the root
+	 * 
+	 * @param include             The the include specification
+	 * @param rootDir             The root of the project
+	 * @param buildDotGradleFiles All included build.gradle files
+	 * @throws IOException If a settings file cannot be read
+	 */
+	private void searchSingleInclude(String include, File rootDir, Set<Path> buildDotGradleFiles)
+			throws IOException {
+		Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(include);
+		while (mEntry.find()) {
+			final String includeMatch = mEntry.group(4);
+			String subProject = includeMatch.replace(':', File.separatorChar);
+			File nextRoot = FileUtils.findRecursive(rootDir, subProject);
+			if (nextRoot != null) {
+				if (includes.add(nextRoot.toPath())) {
+					// If the path hasn't already been included: scan for more roots in the
+					// inclusion
+					try {
+						buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
+					} catch (NoGradleRootFolderException e) {
+						LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
+					}
+				}
+			} else {
+				LOGGER.log(Level.ERROR, "Include not found: " + includeMatch);
+			}
+		}
 	}
 
 	private void scanRootForSourceFiles(File rootDir, Set<Path> javaSourceFiles) throws IOException {
@@ -524,24 +514,7 @@ public class GradleImport {
 			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 			while (m.find()) {
 				String dependency = m.group(4);
-				int index = dependency.indexOf('$');
-				if (index > 0) {
-					final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "")
-							+ "\\s+=\\s+('|\")(.+)('|\")";
-					Pattern pattern = Pattern.compile(regex);
-					Matcher matcher = pattern.matcher(content);
-					if (matcher.find()) {
-						dependency = dependency.substring(0, index) + matcher.group(2);
-					} else {
-						for (String buildFile : parsedBuildFiles) {
-							matcher = pattern.matcher(buildFile);
-							if (matcher.find()) {
-								dependency = dependency.substring(0, index) + matcher.group(2);
-								break;
-							}
-						}
-					}
-				}
+				dependency = normalizeDependencyString(dependency, content, parsedBuildFiles);
 				if ("compile".equals(m.group(0))) {
 					compileLibs.add(dependency);
 				} else {
@@ -583,5 +556,35 @@ public class GradleImport {
 			}
 		}
 		return libsAsJar;
+	}
+
+	/**
+	 * Normalizes a dependency string
+	 * 
+	 * @param dependency The dependency string
+	 * @param content The content of the build file containing the dependency
+	 * @param parsedBuildFiles All known build files
+	 * @return The normalized dependency string
+	 */
+	private String normalizeDependencyString(String dependency, String content, ArrayList<String> parsedBuildFiles) {
+		int index = dependency.indexOf('$');
+		if (index > 0) {
+			final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "")
+					+ "\\s+=\\s+('|\")(.+)('|\")";
+			Pattern pattern = Pattern.compile(regex);
+			Matcher matcher = pattern.matcher(content);
+			if (matcher.find()) {
+				dependency = dependency.substring(0, index) + matcher.group(2);
+			} else {
+				for (String buildFile : parsedBuildFiles) {
+					matcher = pattern.matcher(buildFile);
+					if (matcher.find()) {
+						dependency = dependency.substring(0, index) + matcher.group(2);
+						break;
+					}
+				}
+			}
+		}
+		return dependency;
 	}
 }

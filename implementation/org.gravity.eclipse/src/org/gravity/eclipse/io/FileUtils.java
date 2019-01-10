@@ -11,6 +11,8 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.LinkedList;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
@@ -130,5 +132,33 @@ public class FileUtils {
 		Files.copy(image.openStream(), tmp, StandardCopyOption.REPLACE_EXISTING);
 		tmp.toFile().deleteOnExit();
 		return tmp;
+	}
+
+	/**
+	 * Recursively searches the folder for a file with the given name and returns the first match
+	 * 
+	 * @param folder The folder
+	 * @param filename The file name
+	 * @return The match
+	 */
+	public static File findRecursive(File folder, String filename) {
+		File nextRoot = null;
+		LinkedList<File> queue = new LinkedList<>();
+		queue.add(folder);
+		while (!queue.isEmpty()) {
+			File tmp = queue.poll();
+			File tmpSubProject = new File(tmp, filename);
+			if (tmpSubProject.exists()) {
+				nextRoot = tmpSubProject;
+				break;
+			} else {
+				for (File f : tmp.listFiles()) {
+					if (f.isDirectory()) {
+						queue.add(f);
+					}
+				}
+			}
+		}
+		return nextRoot;
 	}
 }

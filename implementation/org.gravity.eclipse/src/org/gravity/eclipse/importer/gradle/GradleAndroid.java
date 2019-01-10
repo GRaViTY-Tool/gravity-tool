@@ -132,7 +132,7 @@ public class GradleAndroid {
 			return tmpAndroidHome;
 		} else {
 			String message = "Adroid home not specified.";
-			GradleImport.LOGGER.log(Level.WARN, message);
+			LOGGER.log(Level.WARN, message);
 			throw new GradleImportException(message);
 		}
 	
@@ -173,14 +173,14 @@ public class GradleAndroid {
 					if (lib.exists()) {
 						libsAsJar.add(lib.toPath());
 					} else {
-						GradleImport.LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
+						LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
 					}
 				}
 				break;
 			}
 		}
 		if (!compAndroidSdk) {
-			GradleImport.LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
+			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
 			for (File sdk : platforms.listFiles()) {
 				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
 				if (i > sdkVersion.getTargetSdk()) {
