@@ -1,7 +1,6 @@
 package org.gravity.tgg.uml;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +22,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
@@ -130,38 +130,52 @@ public class Transformation extends SynchronizationHelper {
 	 *                  project
 	 * @param monitor   A progress monitor
 	 * @return The UML model
-	 * @throws DiscoveryException
-	 * @throws CoreException
-	 * @throws FileNotFoundException
-	 * @throws IOException
 	 * @throws TransformationFailedException If the UML model couldn't be created
 	 *                                       due to a transformation error
 	 */
 	public static Model projectToModel(IJavaProject project, boolean addUMLsec, IProgressMonitor monitor)
-			throws DiscoveryException, CoreException, FileNotFoundException, IOException,
-			TransformationFailedException {
+			throws TransformationFailedException {
 
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
 
 		IProject iproject = project.getProject();
 		IFolder gravityFolder = iproject.getFolder(".gravity");
 		if (!gravityFolder.exists()) {
-			gravityFolder.create(true, true, monitor);
+			try {
+				gravityFolder.create(true, true, monitor);
+			} catch (CoreException e) {
+				throw new TransformationFailedException(e);
+			}
 		}
 
 		Collection<IPath> libs;
 		if (!addUMLsec) {
 			libs = new ArrayList<>();
 		} else {
-			libs = applyUMLsecLib(project, subMonitor);
-			subMonitor.setWorkRemaining(95);
+			try {
+				libs = applyUMLsecLib(project, subMonitor);
+			} catch (CoreException | IOException e) {
+				throw new TransformationFailedException(e);
+			}
 		}
+		subMonitor.setWorkRemaining(95);
 		subMonitor.setTaskName("Discover MoDiscoModel");
 
 		GravityModiscoProjectDiscoverer discoverer = new GravityModiscoProjectDiscoverer();
-		MGravityModel mGravityModel = discoverer.discoverMGravityModelFromProject(project, libs, subMonitor.split(25));
-		Transformation trafo = new Transformation(discoverer.getResourceSet());
 
+		MGravityModel mGravityModel;
+		try {
+			mGravityModel = discoverer.discoverMGravityModelFromProject(project, libs, subMonitor.split(25));
+		} catch (OperationCanceledException | DiscoveryException e) {
+			throw new TransformationFailedException(e);
+		}
+		
+		Transformation trafo;
+		try {
+			trafo = new Transformation(discoverer.getResourceSet());
+		} catch (IOException e) {
+			throw new TransformationFailedException(e);
+		}
 		trafo.setSrc(mGravityModel);
 		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
 
@@ -187,7 +201,11 @@ public class Transformation extends SynchronizationHelper {
 		trafo.saveCorr(gravityFolder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
 		trafo.saveSynchronizationProtocol(gravityFolder.getFile(PROTOCOL_XMI).getLocation().toFile().getAbsolutePath());
 
-		iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		try {
+			iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		} catch (CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		}
 
 		return model;
 	}
@@ -237,7 +255,7 @@ public class Transformation extends SynchronizationHelper {
 	 * 
 	 * @param project The java project
 	 * @param monitor A progress monitor
-	 * @throws TransformationFailedException If the transformation wasn't successful
+	 * @throws TransformationFailedException
 	 */
 	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
 			throws TransformationFailedException {
@@ -316,14 +334,14 @@ public class Transformation extends SynchronizationHelper {
 			IFolder outFile = iproject.getFolder("src");
 			new GenerateJavaExtended(trafo.getSrc(), outFile.getLocation().toFile(), Collections.emptyList())
 					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
-		} catch (IOException e1) {
-			throw new TransformationFailedException(e1);
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
 
 		try {
 			iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		} catch (CoreException e) {
-			LOGGER.log(Level.WARN, "The project couldn't be refreshed after sucessfully synchronizing changes into code: "+e.getMessage(), e);
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
 	}
 

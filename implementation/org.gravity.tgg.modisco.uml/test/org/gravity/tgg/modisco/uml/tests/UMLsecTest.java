@@ -21,7 +21,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Model;
@@ -35,10 +34,25 @@ import org.junit.Test;
 import carisma.profile.umlsec.UmlsecFactory;
 import carisma.profile.umlsec.critical;
 
+/**
+ * This class contains tests for the synchronization of UMLsec annotations
+ * 
+ * @author speldszus
+ *
+ */
 public class UMLsecTest {
 
+	/**
+	 * 
+	 * Discovers a UML model, adds a UMLsec annotation and synchronizes it to the code
+	 * 
+	 * @throws TransformationFailedException If the trafo failed
+	 * @throws FileNotFoundException If there is a problem with loading models
+	 * @throws IOException If there is a problem with loading models
+	 * @throws CoreException If there is a problem with refreshing the workspace after changes
+	 */
 	@Test
-	public void test() throws FileNotFoundException, DiscoveryException, CoreException, IOException, TransformationFailedException {
+	public void test() throws TransformationFailedException, FileNotFoundException, IOException, CoreException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("SecureDependency");
 		IJavaProject jp = JavaCore.create(project);
