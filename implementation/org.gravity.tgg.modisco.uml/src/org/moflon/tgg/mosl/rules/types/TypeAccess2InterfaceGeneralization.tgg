@@ -4,7 +4,7 @@
 #rule TypeAccess2InterfaceGeneralization #with org.gravity.tgg.modisco.uml
 
 #source { 
-	classDec : AbstractTypeDeclaration {
+	classDec : InterfaceDeclaration {
 		++ -superInterfaces->typeAcc
 	}
 	
@@ -12,7 +12,7 @@
 		++ -type->superInterfaceDec
 	}
 	
-	superInterfaceDec : Type
+	superInterfaceDec : InterfaceDeclaration
 }
 
 #target {
