@@ -64,12 +64,14 @@ public class GradleImport {
 	private static final String GRADLE_CACHE = "caches" + File.separator + "modules-2" + File.separator + "files-2.1";
 	private static final boolean LINKONPROJECT = false;
 
-	private static final Logger LOGGER = Logger.getLogger(GradleImport.class);
+	static final Logger LOGGER = Logger.getLogger(GradleImport.class);
 
 	/**
 	 * An instance of the gradle builder
 	 */
 	private final GradleBuild gradleBuild;
+	private boolean ignoreBuildErrors;
+	private boolean buildSuccess;
 
 	/**
 	 * Creates an importer for the given gradle root directory of a gradle project
@@ -78,12 +80,14 @@ public class GradleImport {
 	 * GRADLE_USER_HOME. If the imported project is an Android project the Android
 	 * Sdk should be registered at the environment variable ANDROID_HOME.
 	 * 
-	 * @param rootDir the path to the gradle root directory
+	 * @param rootDir           the path to the gradle root directory
+	 * @param ignoreBuildErrors If set to true gradle project are imported even if
+	 *                          there are build errors
 	 * @throws NoGradleRootFolderException iff the given root directory is not the
 	 *                                     root of a gradle project
 	 * @throws IOException
 	 */
-	public GradleImport(File rootDir) throws NoGradleRootFolderException, IOException {
+	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws NoGradleRootFolderException, IOException {
 		LinkedList<File> queue = new LinkedList<File>();
 		queue.add(rootDir);
 		File root = null;
@@ -104,6 +108,8 @@ public class GradleImport {
 		if (root == null) {
 			throw new NoGradleRootFolderException();
 		}
+		this.buildSuccess = false;
+		this.ignoreBuildErrors = ignoreBuildErrors;
 		this.buildDotGradle = buildDotGradle;
 		this.rootDir = root;
 		this.includes = new HashSet<>();
@@ -118,14 +124,11 @@ public class GradleImport {
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
-	 * @param ignoreBuildErrors If set to true gradle project are imported even if
-	 *                          there are build errors
-	 * @param monitor           A progress monitor
+	 * @param monitor A progress monitor
 	 * @return The new eclipse java project
 	 * @throws GradleImportException
 	 */
-	public IJavaProject importGradleProject(boolean ignoreBuildErrors, IProgressMonitor monitor)
-			throws GradleImportException {
+	public IJavaProject importGradleProject(IProgressMonitor monitor) throws GradleImportException {
 
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
@@ -134,7 +137,7 @@ public class GradleImport {
 		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
 		androidApp = appliedPlugins.contains("com.android.application");
 
-		build(ignoreBuildErrors);
+		build();
 
 		Set<Path> javaSourceFiles = getAllJavaSourceFiles(buildDotGradle.toPath());
 		return createJavaProject(javaSourceFiles, monitor);
@@ -184,12 +187,12 @@ public class GradleImport {
 	/**
 	 * Builds the gradle project.
 	 * 
-	 * @param ignoreBuildErrors If non critical errors should be ignored
 	 * @throws GradleImportException If the build failed
 	 */
-	private void build(boolean ignoreBuildErrors) throws GradleImportException {
+	private void build() throws GradleImportException {
 		try {
-			if (!gradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp) && !ignoreBuildErrors) {
+			buildSuccess = gradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp);
+			if (!buildSuccess && !ignoreBuildErrors) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
 			}
 		} catch (UnsupportedOperationSystemException e) {
@@ -223,7 +226,7 @@ public class GradleImport {
 			LOGGER.log(Level.ERROR, message);
 			throw new GradleImportException(message);
 		}
-		if (androidApp) {
+		if (androidApp && buildSuccess) {
 			try {
 				Set<Path> rClasses = GradleAndroid.getRClasses(buildDotGradleFiles);
 				javaSourceFiles.addAll(rClasses);
@@ -294,25 +297,6 @@ public class GradleImport {
 			files.add(sourceFile);
 		}
 		return sourceFolders;
-	}
-
-	private File initAndroidHome() throws GradleImportException {
-		String androidHome = System.getenv("ANDROID_HOME");
-		if (androidHome != null) {
-			File tmpAndroidHome = new File(androidHome);
-			if (tmpAndroidHome.exists()) {
-				return tmpAndroidHome;
-			}
-		}
-		File tmpAndroidHome = new File(new File(System.getProperty("user.home")), "Android/Sdk");
-		if (tmpAndroidHome.exists()) {
-			return tmpAndroidHome;
-		} else {
-			String message = "Adroid home not specified.";
-			LOGGER.log(Level.WARN, message);
-			throw new GradleImportException(message);
-		}
-
 	}
 
 	/**
@@ -570,17 +554,26 @@ public class GradleImport {
 			}
 
 			if (androidApp) {
-				sdkVersion = getAndroidSdkVersion(content);
+				sdkVersion = GradleAndroid.getAndroidSdkVersion(content);
 			}
 
 		}
 
-		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs, new File(this.gradleCache, GRADLE_CACHE));
+		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
+				new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
 		Collection<Path> libsAsJar = pathsToLibs.values();
 		if (androidApp) {
-			libsAsJar.addAll(getAndroidLibs(compileLibs, useLibs, sdkVersion));
+			try {
+				libsAsJar.addAll(GradleAndroid.getAndroidLibs(compileLibs, useLibs, sdkVersion));
+			} catch (GradleImportException e) {
+				if (ignoreBuildErrors) {
+					LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+				} else {
+					throw e;
+				}
+			}
 
 		}
 		if (compileLibs.size() > 0) {
@@ -590,103 +583,5 @@ public class GradleImport {
 			}
 		}
 		return libsAsJar;
-	}
-
-	/**
-	 * Searches the Android libraries
-	 * 
-	 * @param compileLibs The signatures of the compile libs
-	 * @param useLibs The signatures of the use libs
-	 * @param sdkVersion  The SDK information for the project
-	 * @return The jar files of the libraries
-	 * @throws GradleImportException If the search for the libraries in the Android SDK location failed
-	 */
-	private Set<Path> getAndroidLibs(Set<String> compileLibs, Set<String> useLibs,
-			SdkVersion sdkVersion) throws GradleImportException {
-		Hashtable<String, Path> pathsToLibs;
-		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
-			throw new GradleImportException("Couldn't determine the SDK version information");
-		}
-
-		File androidHome = initAndroidHome();
-
-		boolean compAndroidSdk = false;
-		File platforms = new File(androidHome, GradleAndroid.ANDROID_SDK_PLATFORMS);
-		Set<Path> libsAsJar = new HashSet<>();
-		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
-			File androidPlatform = new File(platforms, "android-" + i);
-			File androidJar = new File(androidPlatform, "android.jar");
-			if (androidJar.exists()) {
-				compAndroidSdk = true;
-				libsAsJar.add(androidJar.toPath());
-
-				File optional = new File(androidPlatform, "optional");
-				for (String use : useLibs) {
-					File lib = new File(optional, use + ".jar");
-					if (lib.exists()) {
-						libsAsJar.add(lib.toPath());
-					} else {
-						LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
-					}
-				}
-				break;
-			}
-		}
-		if (!compAndroidSdk) {
-			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
-			for (File sdk : platforms.listFiles()) {
-				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
-				if (i > sdkVersion.getTargetSdk()) {
-					libsAsJar.add(new File(sdk, "android.jar").toPath());
-					break;
-				}
-			}
-		}
-		boolean newLibs = false;
-		do {
-			for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
-					"extras/m2repository" }) {
-				int before = compileLibs.size();
-				try {
-					pathsToLibs = PomParser.searchInCache(compileLibs, new File(androidHome, location));
-					newLibs |= compileLibs.size() > before;
-					compileLibs.removeAll(pathsToLibs.keySet());
-					libsAsJar.addAll(pathsToLibs.values());
-				} catch (IOException e) {
-					throw new GradleImportException(e);
-				}
-			}
-		} while (newLibs);
-		
-		return libsAsJar;
-	}
-
-	/**
-	 * Determines the SDK version information of the android project described in
-	 * the gradle build file
-	 * 
-	 * @param gradleContent The content of the gradle build file
-	 * @return The SDK version information
-	 */
-	private SdkVersion getAndroidSdkVersion(String gradleContent) {
-		SdkVersion sdkVersion = new SdkVersion();
-		Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
-		while (matcherSdk.find()) {
-			String group = matcherSdk.group(1);
-			if ("minSdkVersion".equals(group)) {
-				int value = Integer.valueOf(matcherSdk.group(6));
-				double minSdk = sdkVersion.getMinSdk();
-				if (Double.isNaN(minSdk) || minSdk > value) {
-					sdkVersion.setMinSdk(value);
-				}
-			} else if ("targetSdkVersion".equals(group)) {
-				int value = Integer.valueOf(matcherSdk.group(6));
-				double targetSdk = sdkVersion.getTargetSdk();
-				if (Double.isNaN(targetSdk) || targetSdk < value) {
-					sdkVersion.setTargetSdk(value);
-				}
-			}
-		}
-		return sdkVersion;
 	}
 }

@@ -4,13 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Set;
+import java.util.regex.Matcher;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.gravity.eclipse.importer.maven.PomParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -80,5 +83,129 @@ public class GradleAndroid {
 	}
 
 	static final String ANDROID_SDK_PLATFORMS = "platforms";
+
+	/**
+	 * Determines the SDK version information of the android project described in
+	 * the gradle build file
+	 * 
+	 * @param gradleContent The content of the gradle build file
+	 * @return The SDK version information
+	 */
+	static SdkVersion getAndroidSdkVersion(String gradleContent) {
+		SdkVersion sdkVersion = new SdkVersion();
+		Matcher matcherSdk = GradleRegexPatterns.ANDROID_SDK_VERSION.matcher(gradleContent);
+		while (matcherSdk.find()) {
+			String group = matcherSdk.group(1);
+			if ("minSdkVersion".equals(group)) {
+				int value = Integer.valueOf(matcherSdk.group(6));
+				double minSdk = sdkVersion.getMinSdk();
+				if (Double.isNaN(minSdk) || minSdk > value) {
+					sdkVersion.setMinSdk(value);
+				}
+			} else if ("targetSdkVersion".equals(group)) {
+				int value = Integer.valueOf(matcherSdk.group(6));
+				double targetSdk = sdkVersion.getTargetSdk();
+				if (Double.isNaN(targetSdk) || targetSdk < value) {
+					sdkVersion.setTargetSdk(value);
+				}
+			}
+		}
+		return sdkVersion;
+	}
+
+	/**
+	 * Searched the ANDROID_HOME location
+	 * 
+	 * @return The location of ANDROID_HOME
+	 * @throws GradleImportException If the ANDROID_HOME cannot be found
+	 */
+	private static File initAndroidHome() throws GradleImportException {
+		String androidHome = System.getenv("ANDROID_HOME");
+		if (androidHome != null) {
+			File tmpAndroidHome = new File(androidHome);
+			if (tmpAndroidHome.exists()) {
+				return tmpAndroidHome;
+			}
+		}
+		File tmpAndroidHome = new File(new File(System.getProperty("user.home")), "Android/Sdk");
+		if (tmpAndroidHome.exists()) {
+			return tmpAndroidHome;
+		} else {
+			String message = "Adroid home not specified.";
+			GradleImport.LOGGER.log(Level.WARN, message);
+			throw new GradleImportException(message);
+		}
+	
+	}
+
+	/**
+	 * Searches the Android libraries
+	 * 
+	 * @param compileLibs The signatures of the compile libs
+	 * @param useLibs     The signatures of the use libs
+	 * @param sdkVersion  The SDK information for the project
+	 * @return The jar files of the libraries
+	 * @throws GradleImportException If the search for the libraries in the Android
+	 *                               SDK location failed
+	 */
+	static Set<Path> getAndroidLibs(Set<String> compileLibs, Set<String> useLibs, SdkVersion sdkVersion)
+			throws GradleImportException {
+		Hashtable<String, Path> pathsToLibs;
+		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
+			throw new GradleImportException("Couldn't determine the SDK version information");
+		}
+	
+		File androidHome = initAndroidHome();
+	
+		boolean compAndroidSdk = false;
+		File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
+		Set<Path> libsAsJar = new HashSet<>();
+		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
+			File androidPlatform = new File(platforms, "android-" + i);
+			File androidJar = new File(androidPlatform, "android.jar");
+			if (androidJar.exists()) {
+				compAndroidSdk = true;
+				libsAsJar.add(androidJar.toPath());
+	
+				File optional = new File(androidPlatform, "optional");
+				for (String use : useLibs) {
+					File lib = new File(optional, use + ".jar");
+					if (lib.exists()) {
+						libsAsJar.add(lib.toPath());
+					} else {
+						GradleImport.LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
+					}
+				}
+				break;
+			}
+		}
+		if (!compAndroidSdk) {
+			GradleImport.LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
+			for (File sdk : platforms.listFiles()) {
+				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
+				if (i > sdkVersion.getTargetSdk()) {
+					libsAsJar.add(new File(sdk, "android.jar").toPath());
+					break;
+				}
+			}
+		}
+		boolean newLibs = false;
+		do {
+			for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
+					"extras/m2repository" }) {
+				int before = compileLibs.size();
+				try {
+					pathsToLibs = PomParser.searchInCache(compileLibs, new File(androidHome, location));
+					newLibs |= compileLibs.size() > before;
+					compileLibs.removeAll(pathsToLibs.keySet());
+					libsAsJar.addAll(pathsToLibs.values());
+				} catch (IOException e) {
+					throw new GradleImportException(e);
+				}
+			}
+		} while (newLibs);
+	
+		return libsAsJar;
+	}
 
 }

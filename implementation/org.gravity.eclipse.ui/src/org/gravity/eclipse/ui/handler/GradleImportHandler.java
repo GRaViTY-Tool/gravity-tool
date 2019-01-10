@@ -45,7 +45,7 @@ public class GradleImportHandler extends AbstractHandler {
 		protected IStatus run(IProgressMonitor monitor) {
 
 			try {
-				IJavaProject project = new GradleImport(parentFile).importGradleProject(true, monitor);
+				IJavaProject project = new GradleImport(parentFile, true).importGradleProject(monitor);
 				if (project != null) {
 					project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				}
