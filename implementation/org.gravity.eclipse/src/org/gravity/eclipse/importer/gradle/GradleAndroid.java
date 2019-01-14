@@ -3,8 +3,8 @@ package org.gravity.eclipse.importer.gradle;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.Set;
 import java.util.regex.Matcher;
 
@@ -144,13 +144,13 @@ public class GradleAndroid {
 	 * @param compileLibs The signatures of the compile libs
 	 * @param useLibs     The signatures of the use libs
 	 * @param sdkVersion  The SDK information for the project
-	 * @return The jar files of the libraries
+	 * @return A mapping between the names of libraries and the jar files of the libraries
 	 * @throws GradleImportException If the search for the libraries in the Android
 	 *                               SDK location failed
 	 */
-	static Set<Path> getAndroidLibs(Set<String> compileLibs, Set<String> useLibs, SdkVersion sdkVersion)
+	static HashMap<String, Path> getAndroidLibs(Set<String> compileLibs, Set<String> useLibs, SdkVersion sdkVersion)
 			throws GradleImportException {
-		Hashtable<String, Path> pathsToLibs;
+		HashMap<String, Path> pathsToLibs = new HashMap<>();
 		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
@@ -159,19 +159,19 @@ public class GradleAndroid {
 	
 		boolean compAndroidSdk = false;
 		File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
-		Set<Path> libsAsJar = new HashSet<>();
 		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
-			File androidPlatform = new File(platforms, "android-" + i);
+			String android = "android-" + i;
+			File androidPlatform = new File(platforms, android);
 			File androidJar = new File(androidPlatform, "android.jar");
 			if (androidJar.exists()) {
 				compAndroidSdk = true;
-				libsAsJar.add(androidJar.toPath());
+				pathsToLibs.put(android, androidJar.toPath());
 	
 				File optional = new File(androidPlatform, "optional");
 				for (String use : useLibs) {
 					File lib = new File(optional, use + ".jar");
 					if (lib.exists()) {
-						libsAsJar.add(lib.toPath());
+						pathsToLibs.put(use, lib.toPath());
 					} else {
 						LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
 					}
@@ -182,9 +182,10 @@ public class GradleAndroid {
 		if (!compAndroidSdk) {
 			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
 			for (File sdk : platforms.listFiles()) {
-				int i = Integer.valueOf(sdk.getName().substring("android-".length()));
+				String name = sdk.getName();
+				int i = Integer.valueOf(name.substring("android-".length()));
 				if (i > sdkVersion.getTargetSdk()) {
-					libsAsJar.add(new File(sdk, "android.jar").toPath());
+					pathsToLibs.put(name, new File(sdk, "android.jar").toPath());
 					break;
 				}
 			}
@@ -195,17 +196,16 @@ public class GradleAndroid {
 					"extras/m2repository" }) {
 				int before = compileLibs.size();
 				try {
-					pathsToLibs = PomParser.searchInCache(compileLibs, new File(androidHome, location));
+					pathsToLibs.putAll(PomParser.searchInCache(compileLibs, new File(androidHome, location)));
 					newLibs |= compileLibs.size() > before;
 					compileLibs.removeAll(pathsToLibs.keySet());
-					libsAsJar.addAll(pathsToLibs.values());
 				} catch (IOException e) {
 					throw new GradleImportException(e);
 				}
 			}
 		} while (newLibs);
 	
-		return libsAsJar;
+		return pathsToLibs;
 	}
 
 }

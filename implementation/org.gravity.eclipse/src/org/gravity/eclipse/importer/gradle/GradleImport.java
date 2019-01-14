@@ -380,19 +380,37 @@ public class GradleImport {
 		return project;
 	}
 
+	/**
+	 * Returns the plugins applied in the gradle project config
+	 * 
+	 * @param path The paths of all build.gradle files of the project
+	 * @return A set of the applied plugins
+	 */
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
 		Set<String> appliedPlugins = new HashSet<>();
 		for (Path path : buildDotGradleFiles) {
-			try (Stream<String> lines = Files.lines(path)) {
-				lines.forEach(line -> {
-					Matcher androidMatcher = GradleRegexPatterns.PLUGIN.matcher(line);
-					while (androidMatcher.find()) {
-						appliedPlugins.add(androidMatcher.group(2));
-					}
-				});
-			} catch (IOException e) {
-				LOGGER.log(Level.ERROR, e);
-			}
+			appliedPlugins.addAll(getAppliedPlugins(path));
+		}
+		return appliedPlugins;
+	}
+
+	/**
+	 * Returns the plugins applied in the gradle project config
+	 * 
+	 * @param path The path to the build.gradle file
+	 * @return A set of the applied plugins
+	 */
+	private Set<String> getAppliedPlugins(Path path) {
+		Set<String> appliedPlugins = new HashSet<>();
+		try (Stream<String> lines = Files.lines(path)) {
+			lines.forEach(line -> {
+				Matcher androidMatcher = GradleRegexPatterns.PLUGIN.matcher(line);
+				while (androidMatcher.find()) {
+					appliedPlugins.add(androidMatcher.group(2));
+				}
+			});
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, e);
 		}
 		return appliedPlugins;
 	}
@@ -462,8 +480,7 @@ public class GradleImport {
 	 * @param buildDotGradleFiles All included build.gradle files
 	 * @throws IOException If a settings file cannot be read
 	 */
-	private void searchSingleInclude(String include, File rootDir, Set<Path> buildDotGradleFiles)
-			throws IOException {
+	private void searchSingleInclude(String include, File rootDir, Set<Path> buildDotGradleFiles) throws IOException {
 		Matcher mEntry = GradleRegexPatterns.INCLUDE_ENTRY.matcher(include);
 		while (mEntry.find()) {
 			final String includeMatch = mEntry.group(4);
@@ -514,7 +531,7 @@ public class GradleImport {
 			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 			while (m.find()) {
 				String dependency = m.group(4);
-				dependency = normalizeDependencyString(dependency, content, parsedBuildFiles);
+				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
 				if ("compile".equals(m.group(0))) {
 					compileLibs.add(dependency);
 				} else {
@@ -536,10 +553,10 @@ public class GradleImport {
 				new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
-		Collection<Path> libsAsJar = pathsToLibs.values();
+		Collection<Path> libsAsJar = new ArrayList<>(pathsToLibs.values());
 		if (androidApp) {
 			try {
-				libsAsJar.addAll(GradleAndroid.getAndroidLibs(compileLibs, useLibs, sdkVersion));
+				libsAsJar.addAll(GradleAndroid.getAndroidLibs(compileLibs, useLibs, sdkVersion).values());
 			} catch (GradleImportException e) {
 				if (ignoreBuildErrors) {
 					LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
@@ -559,32 +576,35 @@ public class GradleImport {
 	}
 
 	/**
-	 * Normalizes a dependency string
+	 * Resolves a dependency string
 	 * 
-	 * @param dependency The dependency string
-	 * @param content The content of the build file containing the dependency
+	 * @param dependency       The dependency string
+	 * @param content          The content of the build file containing the
+	 *                         dependency
 	 * @param parsedBuildFiles All known build files
 	 * @return The normalized dependency string
+	 * @throws GradleImportException If the normalization failed
 	 */
-	private String normalizeDependencyString(String dependency, String content, ArrayList<String> parsedBuildFiles) {
+	private String resolveDependencyString(String dependency, String content, ArrayList<String> parsedBuildFiles) throws GradleImportException {
 		int index = dependency.indexOf('$');
-		if (index > 0) {
-			final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "")
-					+ "\\s+=\\s+('|\")(.+)('|\")";
-			Pattern pattern = Pattern.compile(regex);
-			Matcher matcher = pattern.matcher(content);
+		if (index < 0) {
+			// Nothing has to be done
+			return dependency;
+		}
+		final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "") + "\\s+=\\s+('|\")(.+)('|\")";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(content);
+		if (matcher.find()) {
+			// Try the file containing the dependency first
+			return dependency.substring(0, index) + matcher.group(2);
+		}
+		// Try to find the variable in all other build.gradle files
+		for (String buildFile : parsedBuildFiles) {
+			matcher = pattern.matcher(buildFile);
 			if (matcher.find()) {
-				dependency = dependency.substring(0, index) + matcher.group(2);
-			} else {
-				for (String buildFile : parsedBuildFiles) {
-					matcher = pattern.matcher(buildFile);
-					if (matcher.find()) {
-						dependency = dependency.substring(0, index) + matcher.group(2);
-						break;
-					}
-				}
+				return dependency.substring(0, index) + matcher.group(2);
 			}
 		}
-		return dependency;
+		throw new GradleImportException("The dependency cannot be resolved: "+dependency);
 	}
 }
