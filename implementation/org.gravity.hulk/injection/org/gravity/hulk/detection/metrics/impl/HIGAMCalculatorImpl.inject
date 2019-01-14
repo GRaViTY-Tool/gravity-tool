@@ -174,7 +174,7 @@ partial class HIGAMCalculatorImpl {
 		TVisibility tVisibility = access(tAccessingType, tType);
 
 		//acc2
-		TClass sourceClass = (TClass) tAccess.getTSource().getDefinedBy();
+		TAbstractType sourceClass = (TAbstractType) tAccess.getTSource().getDefinedBy();
 		if (tVisibility == TVisibility.TPROTECTED && tAccess.getStaticType() != null
 				&& tAccess.getStaticType() instanceof TClass
 				&& !(((TClass) tAccess.getStaticType()).isSubTypeOf(sourceClass))
@@ -198,7 +198,8 @@ partial class HIGAMCalculatorImpl {
 		TMember tMember = tAccess.getTTarget();
 		TAbstractType tTarget = tMember.getDefinedBy();
 		if (tStaticType == null || tStaticType.getTName().equals("Void")) {
-			LOGGER.log(Level.ERROR, "No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
+			LOGGER.log(Level.ERROR,
+					"No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
 							+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
 							+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
 			return TVisibility.TPUBLIC;
@@ -222,8 +223,8 @@ partial class HIGAMCalculatorImpl {
 			if (tOverriddenMod != null) {
 				return tOverriddenMod.getTVisibility();
 			} else {
-				LOGGER.log(Level.ERROR, "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName() + "->"
-						+ tOverriddenDef.getSignatureString() + "\" is null.");
+				LOGGER.log(Level.ERROR, "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName()
+						+ "->" + tOverriddenDef.getSignatureString() + "\" is null.");
 				return TVisibility.TPUBLIC;
 			}
 
