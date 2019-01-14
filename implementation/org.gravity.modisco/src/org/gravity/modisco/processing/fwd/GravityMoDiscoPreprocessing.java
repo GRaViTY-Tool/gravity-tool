@@ -20,6 +20,7 @@ import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
@@ -41,6 +42,12 @@ import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
+/**
+ * This class contains preprocessings which haven't been extracted to separate preprocessors yet
+ * 
+ * @author speldszus
+ *
+ */
 public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class);
@@ -75,9 +82,9 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 //			else if (next instanceof Javadoc) {
 //				delete.add(next); // TODO: check if we can remove this
 //			}
-			if (monitor.isCanceled()) {
-				return false;
-			}
+		if (monitor.isCanceled()) {
+			return false;
+		}
 //		}
 //		LOGGER.log(Level.INFO, "Deleting " + delete.size() + " EObjects");
 //		long start = System.nanoTime();
@@ -216,8 +223,9 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 			EList<Type> deps = ((MClass) mType).getDependencies();
 			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
 				AbstractMethodDeclaration method = methodInvocation.getMethod();
-				if(method == null) {
-					LOGGER.log(Level.WARN, "Empty method invocation in method \""+def.getName()+"\" of type \""+mType.getName()+"\".");
+				if (method == null) {
+					LOGGER.log(Level.WARN, "Empty method invocation in method \"" + def.getName() + "\" of type \""
+							+ mType.getName() + "\".");
 					continue;
 				}
 				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
@@ -240,10 +248,8 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 						final AbstractTypeDeclaration abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
 								.getAbstractTypeDeclaration();
 						if (abstractTypeDeclaration == null) {
-							LOGGER.log(Level.ERROR,
-									"Access from \"" + def.getAbstractTypeDeclaration().getName() + "." + def.getName()
-											+ "\" to unresolved field: " + variable.getName() + ":"
-											+ variablesContainer.getType().getType().getName());
+							String message = buildUnresolvedFieldAccessErrorMessage(def, variable, variablesContainer);
+							LOGGER.log(Level.ERROR, message);
 						} else {
 							deps.add(abstractTypeDeclaration);
 						}
@@ -251,6 +257,32 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Builds an error message for an access to an unresolved field
+	 * 
+	 * @param definition The definition of the accessing member
+	 * @param declaration The declaration of the unresolved field
+	 * @param container The container of the unresolved field
+	 * @return An error message
+	 */
+	private static String buildUnresolvedFieldAccessErrorMessage(MDefinition definition, VariableDeclaration declaration,
+			AbstractVariablesContainer container) {
+		StringBuilder messageBuilder = new StringBuilder("Access from \"");
+		messageBuilder.append(definition.getAbstractTypeDeclaration().getName());
+		messageBuilder.append('.');
+		messageBuilder.append(definition.getName());
+		messageBuilder.append("\" to unresolved field: ");
+		messageBuilder.append(declaration.getName());
+
+		TypeAccess fieldTypeAccess = container.getType();
+		if (fieldTypeAccess != null) {
+			messageBuilder.append(':');
+			messageBuilder.append(fieldTypeAccess.getType().getName());
+		}
+		String message = messageBuilder.toString();
+		return message;
 	}
 
 	private static boolean isParamListEqual(MMethodDefinition mDef, MMethodSignature mSig) {
