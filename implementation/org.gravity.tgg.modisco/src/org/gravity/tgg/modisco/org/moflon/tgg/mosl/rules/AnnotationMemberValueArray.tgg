@@ -1,0 +1,28 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AnnotationMemberValueArray
+#with org.gravity.tgg.modisco
+
+#source {
+	mAnnotationValue : AnnotationMemberValuePair {
+		++ -value-> mArray
+	}
+	++ mArray : ArrayInitializer {
+		++ -expressions-> mValue
+	}
+	++ mValue : Expression {
+		
+	}
+}
+
+#target {
+	tAnnotationValue : TAnnotationValue
+}
+
+#correspondence {
+	AnnotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
+		#src->mAnnotationValue
+		#trg->tAnnotationValue
+	}
+}

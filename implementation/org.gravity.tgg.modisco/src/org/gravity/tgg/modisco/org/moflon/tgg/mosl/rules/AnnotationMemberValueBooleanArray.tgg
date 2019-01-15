@@ -1,0 +1,26 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationMemberValueBooleanArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
+
+#source {
+	++ mValue : BooleanLiteral
+}
+
+#target {
+	tAnnotationValue : TAnnotationValue {
+		++ -tValue-> tValue
+	}
+	++ tValue : TBoolNode
+}
+
+#correspondence {
+	++ mValueToTValue : BooleanLiteralToTBoolNode {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+#attributeConditions {
+	eq(mValue.value, tValue.value)
+}

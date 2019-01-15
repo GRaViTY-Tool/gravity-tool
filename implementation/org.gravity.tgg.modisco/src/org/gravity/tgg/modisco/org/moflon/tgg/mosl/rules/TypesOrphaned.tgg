@@ -1,18 +1,22 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule TypesOrphaned
+#abstract #rule Types
 #with org.gravity.tgg.modisco
 
 #source {
-	mModel : Model {
-		++  -orphanTypes -> mType
+	mPackage : Package {
+		++  -ownedElements -> mType
 	}
 	++ mType : AbstractTypeDeclaration {
 	}
 }
 
 #target {
+	tPackage : TPackage {
+		 -typeGraph -> pg
+		++  -ownedTypes -> tType
+	}
 	pg : TypeGraph {
 		++  -ownedTypes -> tType
 	}
@@ -21,9 +25,9 @@
 }
 
 #correspondence {
-	mModelToTypeGraph : ModelToTypeGraph {
-		#src->mModel
-		#trg->pg
+	mPackageToTPackage : PackageToTPackage {
+		#src->mPackage
+		#trg->tPackage
 	}
 	++ mBodyToTAnnotation : ASTNodeToTAnnotatable {
 		#src->mType

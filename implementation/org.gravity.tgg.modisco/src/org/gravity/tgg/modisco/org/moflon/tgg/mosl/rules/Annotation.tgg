@@ -1,0 +1,74 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule Annotation #with org.gravity.tgg.modisco
+
+#source {
+	++ mAnnotation : MAnnotation {
+	}
+	astNode : ASTNode {
+	}
+}
+
+#target {
+	++ tAnnotation : TAnnotation {
+		++  -tAnnotated -> tAnnotable
+	}
+	tAnnotable : TAnnotatable {
+	}
+}
+
+#correspondence {
+	aSTNodeToTAnnotable : ASTNodeToTAnnotatable {
+		#src->astNode
+		#trg->tAnnotable
+	}
+	++ mAnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->mAnnotation
+		#trg->tAnnotation
+	}
+}
+
+#attributeConditions {
+	//eq(mAnnotation.mRelevant, true)
+}
+
+#rule AnnotationOnBodyDeclaration #extends Annotation #with org.gravity.tgg.modisco
+
+#source {
+	++ mAnnotation : MAnnotation 
+	
+	astNode : BodyDeclaration {
+		++ -annotations-> mAnnotation
+	}
+}
+
+#rule AnnotationOnVariableDeclarationExpression #extends Annotation #with org.gravity.tgg.modisco
+
+#source {
+	++ mAnnotation : MAnnotation
+	
+	astNode : VariableDeclarationExpression {
+		++ -annotations-> mAnnotation
+	}
+}
+
+#rule AnnotationOnVariableDeclarationStatement #with org.gravity.tgg.modisco
+
+#source {
+	++ mAnnotation : MAnnotation
+	
+	astNode : VariableDeclarationStatement {
+		++ -annotations-> mAnnotation
+	}
+}
+
+#rule AnnotationOnSingleVariableDeclaration #extends Annotation #with org.gravity.tgg.modisco
+
+#source {
+	++ mAnnotation : MAnnotation
+	
+	astNode : SingleVariableDeclaration {
+		++ -annotations-> mAnnotation
+	}
+}

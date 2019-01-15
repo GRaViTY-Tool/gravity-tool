@@ -1,28 +1,25 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationOnType
+#rule AnnotationTypeAccess
 #with org.gravity.tgg.modisco
 
 #source {
+	! variable : VariableDeclarationStatement {
+		-annotations-> mAnnotation
+	}
 	mAnnotation : MAnnotation {
 		++  -type -> mAccess
 	}
-	mAnnotationType : AnnotationTypeDeclaration {
-		++  -usagesInTypeAccess -> mAccess
-	}
-	astNode : BodyDeclaration {
-		++  -annotations-> mAnnotation
-	}
 	++ mAccess : TypeAccess {
+		++ -type-> mAnnotationType
+	}
+	mAnnotationType : AnnotationTypeDeclaration {
 	}
 }
 
 #target {
 	tAnnotation : TAnnotation {
-		++  -tAnnotated -> tAnnotable
-	}
-	tAnnotable : TAnnotatable {
 	}
 	tAnnotationType : TAnnotationType {
 		++  -annotations -> tAnnotation
@@ -33,10 +30,6 @@
 	mAnnotationTypeToTAnnotationType : TypeToTAbstractType {
 		#src->mAnnotationType
 		#trg->tAnnotationType
-	}
-	aSTNodeToTAnnotable : ASTNodeToTAnnotatable {
-		#src->astNode
-		#trg->tAnnotable
 	}
 	mAnnotationToTAnnotation : AnnotationToTAnnotation {
 		#src->mAnnotation

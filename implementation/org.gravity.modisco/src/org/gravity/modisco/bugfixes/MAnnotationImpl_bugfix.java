@@ -3,7 +3,7 @@ package org.gravity.modisco.bugfixes;
 import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
 import org.gravity.modisco.impl.MAnnotationImpl;
 
-public class AnnotationImpl extends MAnnotationImpl {
+public class MAnnotationImpl_bugfix extends MAnnotationImpl {
 
 	@Override
 	public String toString() {

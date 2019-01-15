@@ -10,7 +10,7 @@ import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
-import org.gravity.modisco.bugfixes.AnnotationImpl;
+import org.gravity.modisco.bugfixes.MAnnotationImpl_bugfix;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
@@ -32,7 +32,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public Annotation createAnnotation() {
-		return new AnnotationImpl();
+		return new MAnnotationImpl_bugfix();
 	}
 
 	@Override
