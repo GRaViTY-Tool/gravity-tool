@@ -5,25 +5,23 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	! variable : VariableDeclarationStatement {
-		-annotations-> mAnnotation
-	}
 	mAnnotation : MAnnotation {
 		++  -type -> mAccess
 	}
+	
 	++ mAccess : TypeAccess {
 		++ -type-> mAnnotationType
 	}
-	mAnnotationType : AnnotationTypeDeclaration {
-	}
+	
+	mAnnotationType : AnnotationTypeDeclaration
 }
 
 #target {
-	tAnnotation : TAnnotation {
-	}
 	tAnnotationType : TAnnotationType {
 		++  -annotations -> tAnnotation
 	}
+	
+	tAnnotation : TAnnotation
 }
 
 #correspondence {
@@ -38,5 +36,5 @@
 }
 
 #attributeConditions {
-//	eq(mAnnotation.mRelevant, true)
+	eq(mAnnotation.mRelevant, true)
 }

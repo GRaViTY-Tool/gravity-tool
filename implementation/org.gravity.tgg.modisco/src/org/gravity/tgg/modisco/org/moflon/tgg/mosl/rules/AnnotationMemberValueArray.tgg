@@ -5,6 +5,10 @@
 #with org.gravity.tgg.modisco
 
 #source {
+	mAnnotation : MAnnotation {
+		-values-> mAnnotationValue	
+	}
+	
 	mAnnotationValue : AnnotationMemberValuePair {
 		++ -value-> mArray
 	}
@@ -25,4 +29,8 @@
 		#src->mAnnotationValue
 		#trg->tAnnotationValue
 	}
+}
+
+#attributeConditions {
+	eq(mAnnotation.mRelevant, true)
 }
