@@ -383,7 +383,7 @@ public class GradleImport {
 	/**
 	 * Returns the plugins applied in the gradle project config
 	 * 
-	 * @param path The paths of all build.gradle files of the project
+	 * @param buildDotGradleFiles The paths of all build.gradle files of the project
 	 * @return A set of the applied plugins
 	 */
 	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
@@ -526,28 +526,7 @@ public class GradleImport {
 			parsedBuildFiles.add(FileUtils.getContentsAsString(path.toFile()));
 		}
 
-		SdkVersion sdkVersion = null;
-		for (String content : parsedBuildFiles) {
-			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
-			while (m.find()) {
-				String dependency = m.group(4);
-				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-				if ("compile".equals(m.group(0))) {
-					compileLibs.add(dependency);
-				} else {
-					if (dependency.contains(":")) {
-						compileLibs.add(dependency);
-					} else {
-						useLibs.add(dependency);
-					}
-				}
-			}
-
-			if (androidApp) {
-				sdkVersion = GradleAndroid.getAndroidSdkVersion(content);
-			}
-
-		}
+		SdkVersion sdkVersion = getDependencies(parsedBuildFiles, compileLibs, useLibs);
 
 		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
 				new File(this.gradleCache, GRADLE_CACHE));
@@ -573,6 +552,42 @@ public class GradleImport {
 			}
 		}
 		return libsAsJar;
+	}
+
+	/**
+	 * Searches all use and compile dependencies in the parsed build.gradle files 
+	 * 
+	 * @param parsedBuildFiles	The contents of the build.gradle files
+	 * @param compileDependencies A set for storing the compile dependencies
+	 * @param useDependencies A set for storing the use dependencies
+	 * @return The SDK version if the gradle project has the Android plugin, null otherwise
+	 * @throws GradleImportException If a dependency variable cannot be resolved
+	 */
+	private SdkVersion getDependencies(ArrayList<String> parsedBuildFiles, Set<String> compileDependencies,
+			Set<String> useDependencies) throws GradleImportException {
+		SdkVersion sdkVersion = null;
+		for (String content : parsedBuildFiles) {
+			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
+			while (m.find()) {
+				String dependency = m.group(4);
+				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
+				if ("compile".equals(m.group(0))) {
+					compileDependencies.add(dependency);
+				} else {
+					if (dependency.contains(":")) {
+						compileDependencies.add(dependency);
+					} else {
+						useDependencies.add(dependency);
+					}
+				}
+			}
+
+			if (androidApp) {
+				sdkVersion = GradleAndroid.getAndroidSdkVersion(content);
+			}
+
+		}
+		return sdkVersion;
 	}
 
 	/**
