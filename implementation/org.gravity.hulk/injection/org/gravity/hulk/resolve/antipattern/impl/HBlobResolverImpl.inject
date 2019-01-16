@@ -22,7 +22,7 @@ import  org.gravity.typegraph.basic.containers.TMemberContainer;
 import  org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
 import  org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
 import  org.gravity.refactorings.impl.ExtractClassImpl;
-import  org.gravity.refactorings.impl.Move_MemberImpl;
+import  org.gravity.refactorings.impl.MoveMemberImpl;
 import  org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import  org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -30,7 +30,7 @@ partial class HBlobResolverImpl {
 
 @members<--
 
-	private Move_MemberImpl move;
+	private MoveMemberImpl move;
 
 	@Override
 	public String getGuiName() {
@@ -134,7 +134,7 @@ partial class HBlobResolverImpl {
 @model init (HAntiPatternGraph pg)<--		original_apg = pg;
 		copy_apg = EcoreUtil.copy(pg);
 
-		move = new Move_MemberImpl();
+		move = new MoveMemberImpl();
 
 		return copy_apg;-->
 
