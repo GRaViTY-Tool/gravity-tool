@@ -11,7 +11,6 @@ import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.MAnnotationImpl_bugfix;
-import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
  * A factory overwrite for providing GRaViTY MoDisco elements
@@ -53,7 +52,6 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		MConstructorDefinition decl = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
 		MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
 		decl.setMParameterList(mParameterList);
-		MoDiscoUtil.fillParamList(decl, mParameterList);
 		this.cdefs.add(decl);
 		return decl;
 	}
