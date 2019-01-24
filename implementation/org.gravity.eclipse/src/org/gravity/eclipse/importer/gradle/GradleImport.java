@@ -14,6 +14,8 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,6 +36,9 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.gravity.eclipse.importer.ImportException;
+import org.gravity.eclipse.importer.NoRootFolderException;
+import org.gravity.eclipse.importer.ProjectImport;
 import org.gravity.eclipse.importer.maven.PomParser;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
@@ -48,11 +53,9 @@ import org.gravity.eclipse.util.JavaProjectUtil;
  * @author speldszus
  *
  */
-public class GradleImport {
+public class GradleImport extends ProjectImport {
 
 	private final File gradleCache;
-	private final File buildDotGradle;
-	private final File rootDir;
 
 	private final Set<Path> buildDotGradleFiles;
 	private final Set<Path> includes;
@@ -70,7 +73,6 @@ public class GradleImport {
 	 * An instance of the gradle builder
 	 */
 	private final GradleBuild gradleBuild;
-	private boolean ignoreBuildErrors;
 	private boolean buildSuccess;
 
 	/**
@@ -83,20 +85,16 @@ public class GradleImport {
 	 * @param rootDir           the path to the gradle root directory
 	 * @param ignoreBuildErrors If set to true gradle project are imported even if
 	 *                          there are build errors
-	 * @throws NoGradleRootFolderException iff the given root directory is not the
-	 *                                     root of a gradle project
-	 * @throws IOException
+	 * @throws ImportException 
 	 */
-	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws NoGradleRootFolderException, IOException {
+	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws IOException, ImportException {
+		super(rootDir, "build.gradle", ignoreBuildErrors);
 		this.buildSuccess = false;
-		this.ignoreBuildErrors = ignoreBuildErrors;
-		this.rootDir = getRoot(rootDir);
-		this.buildDotGradle = new File(this.rootDir, "build.gradle");
 		this.includes = new HashSet<>();
-		if (new File(this.rootDir, "src").exists()) {
-			this.includes.add(this.rootDir.toPath());
+		if (new File(getRootDir(), "src").exists()) {
+			this.includes.add(getRootDir().toPath());
 		}
-		this.buildDotGradleFiles = scanDirectoryForSubRoots(this.rootDir);
+		this.buildDotGradleFiles = scanDirectoryForSubRoots(getRootDir());
 		this.gradleCache = initGradleUserHome();
 		this.gradleBuild = new GradleBuild();
 	}
@@ -106,9 +104,10 @@ public class GradleImport {
 	 * 
 	 * @param monitor A progress monitor
 	 * @return The new eclipse java project
-	 * @throws GradleImportException
+	 * @throws ImportException
 	 */
-	public IJavaProject importGradleProject(IProgressMonitor monitor) throws GradleImportException {
+	@Override
+	public IJavaProject importProject(IProgressMonitor monitor) throws ImportException {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -118,7 +117,7 @@ public class GradleImport {
 
 		build();
 
-		Set<Path> javaSourceFiles = getAllJavaSourceFiles(buildDotGradle.toPath());
+		Set<Path> javaSourceFiles = getAllJavaSourceFiles(getRootFile().toPath());
 		return createJavaProject(javaSourceFiles, monitor);
 	}
 
@@ -134,7 +133,7 @@ public class GradleImport {
 			throws GradleImportException {
 		IJavaProject project = null;
 		try {
-			project = JavaProjectUtil.createJavaProjectWithUniqueName(rootDir.getName(), monitor);
+			project = JavaProjectUtil.createJavaProjectWithUniqueName(getRootDir().getName(), monitor);
 			HashMap<String, Set<Path>> sourceFolders = getSourceFolderMapping(javaSourceFiles);
 			for (Entry<String, Set<Path>> entry : sourceFolders.entrySet()) {
 				final IFolder folder = project.getProject().getFolder(entry.getKey().replace("/", "-"));
@@ -170,13 +169,13 @@ public class GradleImport {
 	 */
 	private void build() throws GradleImportException {
 		try {
-			buildSuccess = gradleBuild.buildGradleProject(rootDir, buildDotGradleFiles, androidApp);
-			if (!buildSuccess && !ignoreBuildErrors) {
+			buildSuccess = gradleBuild.buildGradleProject(getRootDir(), buildDotGradleFiles, androidApp);
+			if (!buildSuccess && !ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
 			}
 		} catch (UnsupportedOperationSystemException e) {
 			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
-			if (!ignoreBuildErrors) {
+			if (!ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
 			}
 		} catch (IOException | InterruptedException e) {
@@ -249,7 +248,7 @@ public class GradleImport {
 	private HashMap<String, Set<Path>> getSourceFolderMapping(Set<Path> javaSourceFiles) {
 		HashMap<String, Set<Path>> sourceFolders = new HashMap<>();
 		for (Path sourceFile : javaSourceFiles) {
-			Path path = rootDir.toPath();
+			Path path = getRootDir().toPath();
 			String relativize;
 			try {
 				relativize = path.relativize(sourceFile).toString();
@@ -276,21 +275,6 @@ public class GradleImport {
 			files.add(sourceFile);
 		}
 		return sourceFolders;
-	}
-
-	/**
-	 * Searches the root directory containing the build.gradle file
-	 * 
-	 * @param rootDir The top level root directory
-	 * @return The root folder
-	 * @throws NoGradleRootFolderException If no build.gradle file has been found
-	 */
-	private File getRoot(File rootDir) throws NoGradleRootFolderException {
-		File buildDotGradle = FileUtils.findRecursive(rootDir, "build.gradle");
-		if (buildDotGradle == null) {
-			throw new NoGradleRootFolderException();
-		}
-		return buildDotGradle.getParentFile();
 	}
 
 	/**
@@ -330,7 +314,7 @@ public class GradleImport {
 		if (!outputLocationFolder.exists()) {
 			outputLocationFolder.create(true, true, monitor);
 		}
-		outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(rootDir.getAbsolutePath()),
+		outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(getRootDir().getAbsolutePath()),
 				IResource.ALLOW_MISSING_LOCAL, monitor);
 	}
 
@@ -415,13 +399,13 @@ public class GradleImport {
 		return appliedPlugins;
 	}
 
-	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoGradleRootFolderException {
+	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoRootFolderException {
 		Set<Path> buildDotGradleFiles = new HashSet<Path>();
 		File buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
 			buildDotGradleFiles.add(buildFile.toPath());
 		} else {
-			throw new NoGradleRootFolderException();
+			throw new NoRootFolderException();
 		}
 
 		File settingsFile = new File(rootDir, "settings.gradle");
@@ -451,10 +435,10 @@ public class GradleImport {
 	 * @param rootDir       The gradle root dir
 	 * @param defs          A table of defined vars
 	 * @throws IOException
-	 * @throws NoGradleRootFolderException
+	 * @throws NoRootFolderException
 	 */
 	private Set<Path> searchIncludes(String contentString, File rootDir, Hashtable<String, String> defs)
-			throws IOException, NoGradleRootFolderException {
+			throws IOException, NoRootFolderException {
 		Set<Path> buildDotGradleFiles = new HashSet<Path>();
 
 		Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
@@ -492,7 +476,7 @@ public class GradleImport {
 					// inclusion
 					try {
 						buildDotGradleFiles.addAll(scanDirectoryForSubRoots(nextRoot));
-					} catch (NoGradleRootFolderException e) {
+					} catch (NoRootFolderException e) {
 						LOGGER.log(Level.WARN, "The subroot \"" + nextRoot + "\" has no build.gradle file!");
 					}
 				}
@@ -520,13 +504,7 @@ public class GradleImport {
 		Set<String> compileLibs = new HashSet<>();
 		Set<String> useLibs = new HashSet<String>();
 
-		ArrayList<String> parsedBuildFiles = new ArrayList<String>(buildDotGradleFiles.size());
-
-		for (Path path : buildDotGradleFiles) {
-			parsedBuildFiles.add(FileUtils.getContentsAsString(path.toFile()));
-		}
-
-		SdkVersion sdkVersion = getDependencies(parsedBuildFiles, compileLibs, useLibs);
+		SdkVersion sdkVersion = getDependencies(readBuildDotGradleFiles(buildDotGradleFiles), compileLibs, useLibs);
 
 		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
 				new File(this.gradleCache, GRADLE_CACHE));
@@ -537,7 +515,7 @@ public class GradleImport {
 			try {
 				libsAsJar.addAll(GradleAndroid.getAndroidLibs(compileLibs, useLibs, sdkVersion).values());
 			} catch (GradleImportException e) {
-				if (ignoreBuildErrors) {
+				if (ignoreBuildErrors()) {
 					LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
 				} else {
 					throw e;
@@ -555,37 +533,63 @@ public class GradleImport {
 	}
 
 	/**
-	 * Searches all use and compile dependencies in the parsed build.gradle files 
+	 * Reads all build.gradle files and returns their contents
 	 * 
-	 * @param parsedBuildFiles	The contents of the build.gradle files
-	 * @param compileDependencies A set for storing the compile dependencies
-	 * @param useDependencies A set for storing the use dependencies
-	 * @return The SDK version if the gradle project has the Android plugin, null otherwise
-	 * @throws GradleImportException If a dependency variable cannot be resolved
+	 * @param buildDotGradleFiles The build.gradle files
+	 * @return The files contents
+	 * @throws IOException
 	 */
-	private SdkVersion getDependencies(ArrayList<String> parsedBuildFiles, Set<String> compileDependencies,
+	private List<String> readBuildDotGradleFiles(Collection<Path> buildDotGradleFiles) throws IOException {
+		try {
+			return buildDotGradleFiles.parallelStream().map(path -> {
+				try {
+					return FileUtils.getContentsAsString(path.toFile());
+				} catch (IOException e) {
+					LOGGER.log(Level.ERROR, "Couldn't read file: " + path, e);
+					throw new RuntimeException(e);
+				}
+			}).filter(Objects::nonNull).collect(Collectors.toList());
+		} catch (RuntimeException e) {
+			throw (IOException) e.getCause();
+		}
+	}
+
+	/**
+	 * Searches all use and compile dependencies in the parsed build.gradle files
+	 * 
+	 * @param parsedBuildFiles    The contents of the build.gradle files
+	 * @param compileDependencies A set for storing the compile dependencies
+	 * @param useDependencies     A set for storing the use dependencies
+	 * @return The SDK version if the gradle project has the Android plugin, null
+	 *         otherwise
+	 */
+	private SdkVersion getDependencies(List<String> parsedBuildFiles, Set<String> compileDependencies,
 			Set<String> useDependencies) throws GradleImportException {
-		SdkVersion sdkVersion = null;
-		for (String content : parsedBuildFiles) {
+		final SdkVersion sdkVersion = new SdkVersion();
+		parsedBuildFiles.parallelStream().forEach(content -> {
 			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
 			while (m.find()) {
 				String dependency = m.group(4);
-				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-				if ("compile".equals(m.group(0))) {
-					compileDependencies.add(dependency);
-				} else {
-					if (dependency.contains(":")) {
+				try {
+					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
+					if ("compile".equals(m.group(0))) {
 						compileDependencies.add(dependency);
 					} else {
-						useDependencies.add(dependency);
+						if (dependency.contains(":")) {
+							compileDependencies.add(dependency);
+						} else {
+							useDependencies.add(dependency);
+						}
 					}
+				} catch (GradleImportException e) {
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			}
 
-			if (androidApp) {
-				sdkVersion = GradleAndroid.getAndroidSdkVersion(content);
-			}
+		});
 
+		if (androidApp) {
+			parsedBuildFiles.forEach(content -> sdkVersion.update(GradleAndroid.getAndroidSdkVersion(content)));
 		}
 		return sdkVersion;
 	}
@@ -600,26 +604,32 @@ public class GradleImport {
 	 * @return The normalized dependency string
 	 * @throws GradleImportException If the normalization failed
 	 */
-	private String resolveDependencyString(String dependency, String content, ArrayList<String> parsedBuildFiles) throws GradleImportException {
+	private String resolveDependencyString(String dependency, String content, List<String> parsedBuildFiles)
+			throws GradleImportException {
 		int index = dependency.indexOf('$');
 		if (index < 0) {
 			// Nothing has to be done
 			return dependency;
 		}
 		final String regex = dependency.substring(index + 1).replaceAll("\\{|\\}", "") + "\\s+=\\s+('|\")(.+)('|\")";
-		Pattern pattern = Pattern.compile(regex);
+		final Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(content);
 		if (matcher.find()) {
 			// Try the file containing the dependency first
 			return dependency.substring(0, index) + matcher.group(2);
 		}
 		// Try to find the variable in all other build.gradle files
-		for (String buildFile : parsedBuildFiles) {
-			matcher = pattern.matcher(buildFile);
-			if (matcher.find()) {
-				return dependency.substring(0, index) + matcher.group(2);
+		Optional<String> result = parsedBuildFiles.parallelStream().map(buildFile -> {
+			Matcher m = pattern.matcher(buildFile);
+			if (m.find()) {
+				return m.group(2);
+			} else {
+				return null;
 			}
+		}).filter(Objects::nonNull).findAny();
+		if (result.isPresent()) {
+			return dependency.substring(0, index) + result.get();
 		}
-		throw new GradleImportException("The dependency cannot be resolved: "+dependency);
+		throw new GradleImportException("The dependency cannot be resolved: " + dependency);
 	}
 }

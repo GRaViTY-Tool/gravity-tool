@@ -1,12 +1,14 @@
 package org.gravity.eclipse.importer.gradle;
 
+import org.gravity.eclipse.importer.ImportException;
+
 /**
  * This exception should be thrwon if the import of a gradle project failed
  * 
  * @author speldszus
  *
  */
-public class GradleImportException extends Exception {
+public class GradleImportException extends ImportException {
 
 	/**
 	 * A generated serial version ID 

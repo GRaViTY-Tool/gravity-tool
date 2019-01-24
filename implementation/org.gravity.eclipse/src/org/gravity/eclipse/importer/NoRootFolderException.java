@@ -1,11 +1,13 @@
-package org.gravity.eclipse.importer.gradle;
+package org.gravity.eclipse.importer;
+
+import org.gravity.eclipse.importer.gradle.GradleImportException;
 
 /**
  * A Exception of this type should be thrown if the root of a gradle project cannot be found
  * @author speldszus
  *
  */
-public class NoGradleRootFolderException extends GradleImportException {
+public class NoRootFolderException extends GradleImportException {
 
 	/**
 	 * A generated id
@@ -15,7 +17,7 @@ public class NoGradleRootFolderException extends GradleImportException {
 	/**
 	 * Creates a new Exception with a default message
 	 */
-	public NoGradleRootFolderException() {
+	public NoRootFolderException() {
 		super("The gradle root folder cannot be found.");
 	}
 

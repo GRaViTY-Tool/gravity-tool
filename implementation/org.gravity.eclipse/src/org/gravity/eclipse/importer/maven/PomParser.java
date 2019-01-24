@@ -46,8 +46,10 @@ public class PomParser {
 			document.getDocumentElement().normalize();
 			NodeList deps = document.getElementsByTagName("dependency");
 			for (int i = 0; i < deps.getLength(); i++) {
+				Set<String> libs = new HashSet<>();
 				String dependency = getDependency(deps.item(i));
-				Hashtable<String, Path> subResults = PomParser.searchInCache(Collections.singleton(dependency), cacheFile);
+				libs.add(dependency);
+				Hashtable<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
 				if (subResults.isEmpty()) {
 					if (!results.containsKey(dependency)) {
 						newLibs.add(dependency);

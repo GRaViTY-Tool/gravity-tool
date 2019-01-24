@@ -14,6 +14,7 @@ public class SdkVersion {
 	private double minSdk = Double.NaN;
 	private double targetSdk = Double.NaN;
 	private double maxSdk = Double.NaN;
+
 	/**
 	 * Returns the minimal required SDK version
 	 * 
@@ -66,5 +67,32 @@ public class SdkVersion {
 	 */
 	public void setMaxSdk(double maxSdk) {
 		this.maxSdk = maxSdk;
+	}
+
+	/**
+	 * Updates the values of this SdkVersion
+	 * 
+	 * @param other 
+	 */
+	public void update(SdkVersion other) {
+		if (Double.isNaN(minSdk)) {
+			minSdk = other.getMinSdk();
+		} else {
+			if (minSdk < other.getMinSdk()) {
+				minSdk = other.getMinSdk();
+			}
+		}
+		
+		if (Double.isNaN(maxSdk)) {
+			maxSdk = other.getMaxSdk();
+		} else {
+			if (maxSdk > other.getMaxSdk()) {
+				maxSdk = other.getMaxSdk();
+			}
+		}
+		
+		if(Double.isNaN(targetSdk)) {
+			targetSdk = other.getTargetSdk();
+		}
 	}
 }

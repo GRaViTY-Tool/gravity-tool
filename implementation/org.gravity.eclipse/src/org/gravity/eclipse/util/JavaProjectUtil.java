@@ -269,7 +269,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		int appendix = 0;
 		IJavaProject project = null;
 		do {
-			if(appendix == 0) {
+			if(appendix != 0) {
 				name = name.concat(Integer.toString(appendix));
 			}
 			try {
