@@ -20,6 +20,7 @@ import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.util.MoDiscoUtil;
 
 public class FieldPreprocessing implements IMoDiscoProcessor {
 
@@ -66,7 +67,8 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 	/**
 	 * Creates a new definition for the declaration fragment
 	 * 
-	 * @param oldDefiniton The old definition containing multiple variable declarations
+	 * @param oldDefiniton The old definition containing multiple variable
+	 *                     declarations
 	 * @param declFragment The declaration fragment which should be relocated
 	 * @return The new definiton containing the declaration fragment
 	 */
@@ -205,20 +207,47 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 		name.getMSignatures().add(mSig);
 		model.getMFieldSignatures().add(mSig);
 
+		Type type;
 		TypeAccess typeAccess = definition.getType();
 		if (typeAccess != null) {
-			Type type = typeAccess.getType();
-			mSig.setType(type);
+			 type = typeAccess.getType();
 		} else {
-			String message = "The field \"" + definition + "\" has no type!";
+			String message = "The field \"" + definition + "\" has no type! Assuming \"java.lang.Object\"";
 			if (definition.isProxy()) {
 				LOGGER.log(Level.WARN, message);
 			} else {
 				LOGGER.log(Level.ERROR, message);
-				throw new ProcessingException(message);
+			}
+			type = fixMissingFieldType(model, definition);
+			
+		}
+		mSig.setType(type);
+		return mSig;
+	}
+
+	/**
+	 * This method searches for a proper type of a field. 
+	 * In the worst case this is always "java.lang.Object".
+	 * 
+	 * @param model The model containing the filed
+	 * @param definition The fields definition
+	 * @return A suitable type for the field
+	 */
+	private static Type fixMissingFieldType(MGravityModel model, MFieldDefinition definition) {
+		TypeAccess typeAccess = definition.getType();
+		if(typeAccess == null) {
+			typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
+			definition.setType(typeAccess);
+		}
+		else {
+			Type type = typeAccess.getType();	
+			if(type != null) {
+				return type;
 			}
 		}
-		return mSig;
+		Type type = MoDiscoUtil.getJavaLangObject(model);
+		typeAccess.setType(type);
+		return type;
 	}
 
 	/**

@@ -9,11 +9,9 @@
 		++  -mEntrys -> mEntry
 	}
 	++ mEntry : MEntry {
-		++ -singleVariableDeclaration -> mVar
+//		++ -singleVariableDeclaration -> mVar
 	}
-	++ mVar : SingleVariableDeclaration {
-		
-	}
+//	++ mVar : SingleVariableDeclaration
 }
 
 #target {
@@ -25,10 +23,10 @@
 }
 
 #correspondence {
-	++ singleVariableDeclarationToTAnnotatable : ASTNodeToTAnnotatable {
-		#src->mVar
-		#trg->tParameter
-	}
+//	++ singleVariableDeclarationToTAnnotatable : ASTNodeToTAnnotatable {
+//		#src->mVar
+//		#trg->tParameter
+//	}
 	++ mEntryToTParameter : MEntryToTParameter {
 		#src->mEntry
 		#trg->tParameter

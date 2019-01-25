@@ -27,6 +27,10 @@
 	}
 }
 
+#attributeConditions {
+	eq(mAnnotation.mRelevant, true)
+}
+
 #rule AnnotationOnBodyDeclaration #extends Annotation #with org.gravity.tgg.modisco
 
 #source {
@@ -57,12 +61,12 @@
 //	}
 //}
 
-#rule AnnotationOnSingleVariableDeclaration #extends Annotation #with org.gravity.tgg.modisco
-
-#source {
-	++ mAnnotation : MAnnotation
-	
-	astNode : SingleVariableDeclaration {
-		++ -annotations-> mAnnotation
-	}
-}
+//#rule AnnotationOnSingleVariableDeclaration #extends Annotation #with org.gravity.tgg.modisco
+//
+//#source {
+//	++ mAnnotation : MAnnotation
+//	
+//	astNode : SingleVariableDeclaration {
+//		++ -annotations-> mAnnotation
+//	}
+//}

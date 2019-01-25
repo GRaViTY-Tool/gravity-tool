@@ -22,12 +22,13 @@ public class AnnotationPreprocessing extends AbstractTypedModiscoProcessor<MAnno
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MAnnotation> elements, IProgressMonitor monitor) {
-		final EClass singleVariableDeclaration = JavaPackage.eINSTANCE.getSingleVariableDeclaration();
 		final EClass bodyDeclaration = JavaPackage.eINSTANCE.getBodyDeclaration();
+		
+		final EClass annotationTypeMemberDecl = JavaPackage.eINSTANCE.getAnnotationTypeMemberDeclaration();
+		final EClass enumConst = JavaPackage.eINSTANCE.getEnumConstantDeclaration();
 		elements.parallelStream().forEach(a -> {
 			EClass eContainer = a.eContainer().eClass();
-			boolean relevant = bodyDeclaration.isSuperTypeOf(eContainer)
-					|| singleVariableDeclaration.isSuperTypeOf(eContainer);
+			boolean relevant = bodyDeclaration.isSuperTypeOf(eContainer) && ! eContainer.equals(annotationTypeMemberDecl) && ! eContainer.equals(enumConst);
 			a.setMRelevant(relevant);
 		});
 		return true;

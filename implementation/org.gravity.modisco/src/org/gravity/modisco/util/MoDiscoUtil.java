@@ -4,6 +4,8 @@
 package org.gravity.modisco.util;
 
 import java.util.HashSet;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Stack;
 
 import org.apache.log4j.Level;
@@ -360,5 +362,29 @@ public class MoDiscoUtil {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Searches for the type "java.lang.Object" and creates it if not available
+	 * 
+	 * @param model The model in which the type should be searched
+	 * @return The type
+	 */
+	public static Type getJavaLangObject(MGravityModel model) {
+		Type type;
+		Package javaLang = getPackage(model, new String[] {"java", "lang"});
+		Optional<AbstractTypeDeclaration> result = javaLang
+		.getOwnedElements().parallelStream().filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny();
+		if(result.isPresent()) {
+			type = result.get();
+		}
+		else {
+			AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
+			object.setName("Object");
+			object.setProxy(true);
+			javaLang.getOwnedElements().add(object);
+			type = object;
+		}
+		return type;
 	}
 }
