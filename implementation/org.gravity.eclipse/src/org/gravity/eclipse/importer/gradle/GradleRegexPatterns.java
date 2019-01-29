@@ -35,6 +35,8 @@ class GradleRegexPatterns {
 	 * Dependencies
 	 */
 	static final Pattern SINGLE_DEPENDENCY = Pattern.compile("(compile|useLibrary)(\\s+)('|\")(.+)('|\")");
+	static final Pattern MULTIPLE_DEPENDENCIES = Pattern.compile("dependencies\\s*\\{((.|\\s)+?)\\}");
+	static final Pattern MULTIPLE_DEPENDENCIES_ENTRY = Pattern.compile("classpath\\s+('|\")(.+)('|\")");
 	
 	/**
 	 * The min and max Android SDK version

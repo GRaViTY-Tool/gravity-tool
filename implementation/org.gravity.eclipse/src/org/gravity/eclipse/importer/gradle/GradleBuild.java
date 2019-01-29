@@ -98,6 +98,7 @@ class GradleBuild {
 		Process process = createBuildProcess(gradleRootFolder, "assemble");
 		StringBuilder message = collectMessages(process);
 		process.waitFor();
+		process.destroy();
 
 		boolean success = process.exitValue() == 0;
 

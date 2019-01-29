@@ -269,11 +269,15 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		int appendix = 0;
 		IJavaProject project = null;
 		do {
+			String uniqueName;
 			if(appendix != 0) {
-				name = name.concat(Integer.toString(appendix));
+				uniqueName = name.concat(Integer.toString(appendix));
+			}
+			else {
+				uniqueName = name;
 			}
 			try {
-				project = createJavaProject(name, Collections.emptySet(), monitor);
+				project = createJavaProject(uniqueName, Collections.emptySet(), monitor);
 			} catch (DuplicateProjectNameException e) {
 				appendix++;
 			}

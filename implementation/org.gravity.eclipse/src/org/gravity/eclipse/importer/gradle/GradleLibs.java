@@ -71,7 +71,7 @@ public class GradleLibs {
 	 * @throws CoreException
 	 * @throws FileNotFoundException
 	 */
-	static List<IFile> searchOtherVersionOfLib(String libName, IFolder libFolder, Path libPath, List<IFile> jarFiles,
+	static List<IFile> searchOtherVersionOfAarLib(String libName, IFolder libFolder, Path libPath, List<IFile> jarFiles,
 			IProgressMonitor monitor) throws IOException, CoreException, FileNotFoundException {
 		File currentVersion = libPath.getParent().toFile();
 		List<File> otherVersions = Arrays.asList(currentVersion.getParentFile().listFiles());

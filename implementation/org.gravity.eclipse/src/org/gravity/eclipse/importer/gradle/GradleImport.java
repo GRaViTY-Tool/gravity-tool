@@ -17,6 +17,12 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -85,7 +91,7 @@ public class GradleImport extends ProjectImport {
 	 * @param rootDir           the path to the gradle root directory
 	 * @param ignoreBuildErrors If set to true gradle project are imported even if
 	 *                          there are build errors
-	 * @throws ImportException 
+	 * @throws ImportException
 	 */
 	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws IOException, ImportException {
 		super(rootDir, "build.gradle", ignoreBuildErrors);
@@ -226,8 +232,10 @@ public class GradleImport extends ProjectImport {
 		Set<Path> javaSourceFiles = null;
 		try {
 			javaSourceFiles = new GradleJavaFiles(buildDotGradle).getJavaFiles();
-		} catch (IOException | GradleImportException e) {
-			LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+		} catch (GradleImportException e) {
+			LOGGER.log(Level.INFO, e.getMessage(), e);
 		}
 		if (javaSourceFiles == null || javaSourceFiles.size() == 0) {
 			LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
@@ -314,8 +322,9 @@ public class GradleImport extends ProjectImport {
 		if (!outputLocationFolder.exists()) {
 			outputLocationFolder.create(true, true, monitor);
 		}
-		outputLocationFolder.getFolder("apk").createLink(new org.eclipse.core.runtime.Path(getRootDir().getAbsolutePath()),
-				IResource.ALLOW_MISSING_LOCAL, monitor);
+		outputLocationFolder.getFolder("apk").createLink(
+				new org.eclipse.core.runtime.Path(getRootDir().getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL,
+				monitor);
 	}
 
 	/**
@@ -351,7 +360,7 @@ public class GradleImport extends ProjectImport {
 				jarFiles = GradleLibs.extractAar(libPath, libFolder, monitor);
 			}
 			if (jarFiles.size() == 0) {
-				jarFiles = GradleLibs.searchOtherVersionOfLib(libName, libFolder, libPath, jarFiles, monitor);
+				jarFiles = GradleLibs.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
 				if (jarFiles.size() == 0) {
 					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
 					continue;
@@ -537,20 +546,37 @@ public class GradleImport extends ProjectImport {
 	 * 
 	 * @param buildDotGradleFiles The build.gradle files
 	 * @return The files contents
-	 * @throws IOException
+	 * @throws GradleImportException
 	 */
-	private List<String> readBuildDotGradleFiles(Collection<Path> buildDotGradleFiles) throws IOException {
-		try {
-			return buildDotGradleFiles.parallelStream().map(path -> {
-				try {
+	private List<String> readBuildDotGradleFiles(Collection<Path> buildDotGradleFiles) throws GradleImportException {
+		ExecutorService pool = Executors.newCachedThreadPool();
+		Collection<Callable<String>> tasks = buildDotGradleFiles.parallelStream().map(path -> {
+			return new Callable<String>() {
+
+				@Override
+				public String call() throws Exception {
 					return FileUtils.getContentsAsString(path.toFile());
-				} catch (IOException e) {
-					LOGGER.log(Level.ERROR, "Couldn't read file: " + path, e);
-					throw new RuntimeException(e);
 				}
-			}).filter(Objects::nonNull).collect(Collectors.toList());
-		} catch (RuntimeException e) {
-			throw (IOException) e.getCause();
+			};
+		}).collect(Collectors.toList());
+		List<Future<String>> futures;
+		try {
+			futures = pool.invokeAll(tasks);
+			pool.shutdown();
+			int duration = 10;
+			TimeUnit unit = TimeUnit.MINUTES;
+			if (!pool.awaitTermination(duration, unit)) {
+				throw new GradleImportException("Parsing " + buildDotGradleFiles.size()
+						+ " build.gradle files timed out after " + duration + " " + unit.toString());
+			}
+
+			List<String> results = new ArrayList<>(buildDotGradleFiles.size());
+			for (Future<String> f : futures) {
+				results.add(f.get());
+			}
+			return results;
+		} catch (InterruptedException | ExecutionException e) {
+			throw new GradleImportException(e);
 		}
 	}
 
@@ -567,24 +593,8 @@ public class GradleImport extends ProjectImport {
 			Set<String> useDependencies) throws GradleImportException {
 		final SdkVersion sdkVersion = new SdkVersion();
 		parsedBuildFiles.parallelStream().forEach(content -> {
-			Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
-			while (m.find()) {
-				String dependency = m.group(4);
-				try {
-					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-					if ("compile".equals(m.group(0))) {
-						compileDependencies.add(dependency);
-					} else {
-						if (dependency.contains(":")) {
-							compileDependencies.add(dependency);
-						} else {
-							useDependencies.add(dependency);
-						}
-					}
-				} catch (GradleImportException e) {
-					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-				}
-			}
+			getSingleDependencies(content, parsedBuildFiles, compileDependencies, useDependencies);
+			getMultipleDependencies(content, parsedBuildFiles, compileDependencies);
 
 		});
 
@@ -592,6 +602,64 @@ public class GradleImport extends ProjectImport {
 			parsedBuildFiles.forEach(content -> sdkVersion.update(GradleAndroid.getAndroidSdkVersion(content)));
 		}
 		return sdkVersion;
+	}
+
+	/**
+	 * Searched all dependencies declared in a group in the parsed build.gradle file
+	 * 
+	 * @param content          The content of the build.gradle file in which should
+	 *                         be searched
+	 * @param parsedBuildFiles The contents of the build.gradle files
+	 * @param dependenciesSet  A set for storing the use dependencies
+	 */
+	private void getMultipleDependencies(String content, List<String> parsedBuildFiles, Set<String> dependenciesSet) {
+		Matcher dependenciesMatcher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES.matcher(content);
+		while (dependenciesMatcher.find()) {
+			String dependencies = dependenciesMatcher.group(1);
+			Matcher entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
+			while (entryMatecher.find()) {
+				String dependency = entryMatecher.group(2);
+				try {
+					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
+					dependenciesSet.add(dependency);
+				} catch (GradleImportException e) {
+					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+				}
+
+			}
+		}
+	}
+
+	/**
+	 * Searches all single use and compile dependencies in the parsed build.gradle
+	 * files
+	 * 
+	 * @param content             The content of the build.gradle file in which
+	 *                            should be searched
+	 * @param parsedBuildFiles    The contents of the build.gradle files
+	 * @param compileDependencies A set for storing the compile dependencies
+	 * @param useDependencies     A set for storing the use dependencies
+	 */
+	private void getSingleDependencies(String content, List<String> parsedBuildFiles, Set<String> compileDependencies,
+			Set<String> useDependencies) {
+		Matcher m = GradleRegexPatterns.SINGLE_DEPENDENCY.matcher(content);
+		while (m.find()) {
+			String dependency = m.group(4);
+			try {
+				dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
+				if ("compile".equals(m.group(0))) {
+					compileDependencies.add(dependency);
+				} else {
+					if (dependency.contains(":")) {
+						compileDependencies.add(dependency);
+					} else {
+						useDependencies.add(dependency);
+					}
+				}
+			} catch (GradleImportException e) {
+				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			}
+		}
 	}
 
 	/**
