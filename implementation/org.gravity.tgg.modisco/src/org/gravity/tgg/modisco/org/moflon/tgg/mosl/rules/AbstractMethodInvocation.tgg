@@ -5,29 +5,35 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++invocation:AbstractMethodInvocation {
-		++  -method -> mMethod
-	}
-
 	mMember:MDefinition {
 		++  -abstractMethodInvocations -> invocation
 	}
 
+	++invocation:AbstractMethodInvocation {
+		++  -method -> mMethod
+	}
+
 	mMethod:MMethodDefinition {
-}
+		-abstractTypeDeclaration -> mType
+	}
+
+	mType:AbstractTypeDeclaration
 }
 
 #target {
-	tMethod:TMethodDefinition {
-		++  -accessedBy -> tAccess
-	}
-
-	++tAccess:TCall {
-}
-
 	tMember:TMember {
 		++  -tAccessing -> tAccess
 	}
+
+	++tAccess:TCall {
+		++-tTarget -> tMethod
+	}
+
+	tMethod:TMethodDefinition {
+		-definedBy -> tType
+	}
+
+	tType:TAbstractType
 }
 
 #correspondence {
@@ -44,6 +50,11 @@
 	mMemberToTMember :MDefinitionToTMember {
 		#src->mMember
 		#trg->tMember
+	}
+
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
 	}
 }
 

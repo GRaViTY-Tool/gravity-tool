@@ -1,8 +1,11 @@
 package org.gravity.modisco.processing;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -38,25 +41,35 @@ public class GravityMoDiscoProcessorUtil {
 				.getExtensionPoint(extensionPoint);
 		IExtension[] extensionsPgFwd = pointPgFwd.getExtensions();
 	
-		SortedMap<Integer, IMoDiscoProcessor> modiscoProcessorsFwd = new TreeMap<>();
+		SortedMap<Integer, Set<IMoDiscoProcessor>> modiscoProcessorsFwd = new TreeMap<>();
 		for (IExtension extension : extensionsPgFwd) {
 			try {
 				IConfigurationElement[] configurationElements = extension.getConfigurationElements();
 				for (IConfigurationElement configurationElement : configurationElements) {
 					IMoDiscoProcessor processor = (IMoDiscoProcessor) configurationElement
 							.createExecutableExtension("processor");
+					int key;
 					String priority = configurationElement.getAttribute("priority");
 					if (priority != null) {
-						modiscoProcessorsFwd.put(-1*Integer.valueOf(priority), processor);
+						key = -1*Integer.valueOf(priority);
 					} else {
-						modiscoProcessorsFwd.put(1, processor);
+						key = 1;
 					}
+					Set<IMoDiscoProcessor> values;
+					if(modiscoProcessorsFwd.containsKey(key)) {
+						values = modiscoProcessorsFwd.get(key);
+					}
+					else {
+						values = new HashSet<>();
+						modiscoProcessorsFwd.put(key, values);
+					}
+					values.add(processor);
 				}
 			} catch (InvalidRegistryObjectException | CoreException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
-		Collection<IMoDiscoProcessor> values = modiscoProcessorsFwd.values();
+		Collection<IMoDiscoProcessor> values = modiscoProcessorsFwd.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
 		return values;
 	}
 

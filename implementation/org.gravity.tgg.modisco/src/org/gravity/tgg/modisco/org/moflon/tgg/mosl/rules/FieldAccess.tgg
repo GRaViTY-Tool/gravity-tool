@@ -5,32 +5,39 @@
 #with org.gravity.tgg.modisco
 
 #source {
+	mMember:MDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+	}
+
 	++mAccess:SingleVariableAccess {
 		++  -variable -> varDeclFrag
 	}
-
-	mField:MFieldDefinition {
-}
 
 	varDeclFrag:VariableDeclarationFragment {
 		-variablesContainer -> mField
 	}
 
-	mMember:MDefinition {
-		++  -mAbstractFieldAccess -> mAccess
+	mField:MFieldDefinition {
+		-abstractTypeDeclaration -> mType
 	}
+
+	mType:AbstractTypeDeclaration
 }
 
 #target {
-	++tAccess:TAccess
-
-	tField:TFieldDefinition {
-		++  -accessedBy -> tAccess
-	}
-
 	tMember:TMember {
 		++  -tAccessing -> tAccess
 	}
+
+	++tAccess:TAccess {
+		++-tTarget -> tField
+	}
+
+	tField:TFieldDefinition {
+		-definedBy -> tType
+	}
+
+	tType:basic.TAbstractType
 }
 
 #correspondence {
@@ -44,13 +51,13 @@
 		#trg->tField
 	}
 
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
 	++ mAccessToTAccess :SingleVariableAccessToTAccess {
 		#src->mAccess
 		#trg->tAccess
 	}
 }
-
-#attributeConditions {
-}
-
-
