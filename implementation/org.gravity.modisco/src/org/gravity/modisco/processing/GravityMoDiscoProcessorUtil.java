@@ -46,24 +46,7 @@ public class GravityMoDiscoProcessorUtil {
 			try {
 				IConfigurationElement[] configurationElements = extension.getConfigurationElements();
 				for (IConfigurationElement configurationElement : configurationElements) {
-					IMoDiscoProcessor processor = (IMoDiscoProcessor) configurationElement
-							.createExecutableExtension("processor");
-					int key;
-					String priority = configurationElement.getAttribute("priority");
-					if (priority != null) {
-						key = -1*Integer.valueOf(priority);
-					} else {
-						key = 1;
-					}
-					Set<IMoDiscoProcessor> values;
-					if(modiscoProcessorsFwd.containsKey(key)) {
-						values = modiscoProcessorsFwd.get(key);
-					}
-					else {
-						values = new HashSet<>();
-						modiscoProcessorsFwd.put(key, values);
-					}
-					values.add(processor);
+					addProcessor(modiscoProcessorsFwd, configurationElement);
 				}
 			} catch (InvalidRegistryObjectException | CoreException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
@@ -71,6 +54,35 @@ public class GravityMoDiscoProcessorUtil {
 		}
 		Collection<IMoDiscoProcessor> values = modiscoProcessorsFwd.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
 		return values;
+	}
+
+	/**
+	 * Adds a new processor instance for the element to the map of processors 
+	 * 
+	 * @param processors The map of processors
+	 * @param element The configuration element describing the processor
+	 * @throws CoreException If an instance of the executable extension could not be created for any reason
+	 */
+	private static void addProcessor(SortedMap<Integer, Set<IMoDiscoProcessor>> processors,
+			IConfigurationElement element) throws CoreException {
+		IMoDiscoProcessor processor = (IMoDiscoProcessor) element
+				.createExecutableExtension("processor");
+		int key;
+		String priority = element.getAttribute("priority");
+		if (priority != null) {
+			key = -1*Integer.valueOf(priority);
+		} else {
+			key = 1;
+		}
+		Set<IMoDiscoProcessor> values;
+		if(processors.containsKey(key)) {
+			values = processors.get(key);
+		}
+		else {
+			values = new HashSet<>();
+			processors.put(key, values);
+		}
+		values.add(processor);
 	}
 
 }
