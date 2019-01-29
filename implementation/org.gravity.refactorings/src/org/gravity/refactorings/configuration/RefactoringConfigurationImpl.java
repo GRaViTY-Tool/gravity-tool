@@ -2,8 +2,6 @@
  */
 package org.gravity.refactorings.configuration;
 
-import org.gravity.refactorings.configuration.RefactoringConfiguration;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Refactoring Configuration</b></em>'.

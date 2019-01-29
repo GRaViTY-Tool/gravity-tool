@@ -17,11 +17,10 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TSignature;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.TConstructorDefinition;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Extract

@@ -135,7 +135,7 @@ public class EclipseMoveMethodRefactoring {
 	 * 
 	 * @return the java project
 	 */
-	public IJavaProject getJavaProject(){
+	public IJavaProject getJavaProject() {
 		return this.project;
 	}
 }

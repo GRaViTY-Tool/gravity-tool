@@ -110,7 +110,6 @@ public class PGAdditionHelper {
 					TPackage child1 = match;
 					//
 					EList<TPackage> subPackages = package2.getSubpackage();
-					;
 					if (subPackages.size() > 0) {
 						return equivalent(child1, subPackages.get(0));
 					} else {
