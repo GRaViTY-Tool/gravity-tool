@@ -37,7 +37,6 @@ import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeLiteral;
 import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
-import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -238,17 +237,14 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			// member of the type declaring the method
 			return getDeclaringType(method);
 		}
+		if (expression instanceof TypeAccess) {
+			return ((TypeAccess) expression).getType();
+		}
 		if (expression instanceof FieldAccess) {
 			return getStaticType(((FieldAccess) expression).getExpression(), method);
 		}
-		if (expression instanceof AbstractMethodInvocation) {
-			return getStaticType(((AbstractMethodInvocation) expression), method);
-		}
 		if (expression instanceof SingleVariableAccess) {
 			return getStaticType((SingleVariableAccess) expression, method);
-		}
-		if (expression instanceof TypeAccess) {
-			return ((TypeAccess) expression).getType();
 		}
 		if (expression instanceof ParenthesizedExpression) {
 			return getStaticType(((ParenthesizedExpression) expression).getExpression(), method);
@@ -271,8 +267,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (expression instanceof TypeLiteral) {
 			return ((TypeLiteral) expression).getType().getType();
 		}
-		if (expression instanceof VariableDeclarationExpression) {
-			return ((VariableDeclarationExpression) expression).getType().getType();
+		if (expression instanceof AbstractVariablesContainer) {
+			return ((AbstractVariablesContainer) expression).getType().getType();
 		}
 		if (expression instanceof ArrayAccess) {
 			return getStaticType(((ArrayAccess) expression).getArray(), method);
@@ -326,22 +322,11 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The type of the field or null if there is no field with this name
 	 */
 	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
-//		return type.getBodyDeclarations().parallelStream()
-//				.filter(body -> body instanceof FieldDeclaration)
-//				.flatMap(field -> ((FieldDeclaration) field).getFragments().parallelStream())
-//				.filter(fragment -> fragment.getName().equals(name)).findAny().orElse(null);
-
-		for (BodyDeclaration body : type.getBodyDeclarations()) {
-			if (body instanceof FieldDeclaration) {
-				final FieldDeclaration fieldDeclaration = (FieldDeclaration) body;
-				for (VariableDeclarationFragment fragment : fieldDeclaration.getFragments()) {
-					if (name.equals(fragment.getName())) {
-						return fieldDeclaration.getType().getType();
-					}
-				}
-			}
-		}
-		return null;
+		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
+				.map(body -> (FieldDeclaration) body).filter(field -> {
+					return field.getFragments().stream().filter(fragment -> fragment.getName().equals(name))
+							.findAny().isPresent();
+				}).map(field -> field.getType().getType()).findAny().orElse(null);
 	}
 
 	/**
