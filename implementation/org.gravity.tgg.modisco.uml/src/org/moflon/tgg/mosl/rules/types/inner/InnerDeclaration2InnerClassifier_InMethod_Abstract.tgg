@@ -8,7 +8,7 @@
 		-bodyDeclarations->method
 	}
 	
-	method : MMethodDefinition {
+	method : MAbstractMethodDefinition {
 		++-mInnerTypes->bodyDeclaration
 	}
 	

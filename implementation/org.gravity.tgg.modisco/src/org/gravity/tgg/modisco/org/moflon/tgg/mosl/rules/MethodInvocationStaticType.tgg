@@ -3,62 +3,65 @@
 
 #rule MethodInvocationStaticType #with org.gravity.tgg.modisco
 
-#source { 
-invocation : AbstractMethodInvocation {
-	 -method -> mMethod
-}
-mMember : MDefinition {
-	 -abstractMethodInvocations -> invocation
-}
-mMethod : MMethodDefinition {}
+#source {
+	mOwner : MClass {
+		-bodyDeclarations->mMember
+	}
+	
+	mMember:MDefinition {
+		-abstractMethodInvocations -> invocation
+		++-invocationStaticTypes-> staticTypeInvoc
+	}
 
-++ staticTypeInvoc: MethodInvocationStaticType{
-	++ -methodInvoc->invocation
-	++ -type->mType	
-}
-mType : Type{}
+	invocation:AbstractMethodInvocation
 
+	++staticTypeInvoc:MethodInvocationStaticType{
+		++ -methodInvoc -> invocation
+		++ -type -> mStaticType
+	}
+
+	mStaticType:Type
 }
 
 #target {
-	tMethod : TMethodDefinition {
-	  -accessedBy -> tAccess
-}
- tAccess : TCall {
- 	++-staticType->tType
-}
-tType: TAbstractType{}
+	tOwner : TAbstractType {
+		-defines->tMember
+	}
+	tMember:TMember {
+		-tAccessing -> tAccess
+	}
 
-tMember : TMember {
-	  -tAccessing -> tAccess
-}
+	tAccess:TCall {
+		++-staticType -> tStaticType
+	}
 
+	tStaticType:TAbstractType
 }
 
 #correspondence {
-	 invocationToTAccess : AbstractMethodInvocationToTAccess {
-	#src->invocation
-	#trg->tAccess
-}
-mMethodToTMethod : MDefinitionToTMember {
-	#src->mMethod
-	#trg->tMethod
-}
-mMemberToTMember : MDefinitionToTMember {
-	#src->mMember
-	#trg->tMember
-}
- mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
+	mOwnerToTOwner : TypeToTAbstractType {
+		#src->mOwner
+		#trg->tOwner
+	}
+	invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mStaticTypeTotStaticType :TypeToTAbstractType {
+		#src->mStaticType
+		#trg->tStaticType
+	}
+
+	++staticTypeInvocationToAccessStaticType:StaticTypeInvocationToAccessStaticType{
+		#src->staticTypeInvoc
+		#trg->tAccess
+	}
 }
 
-++staticTypeInvocationToAccessStaticType:StaticTypeInvocationToAccessStaticType{
-	#src->staticTypeInvoc
-	#trg->tAccess
-}
-}
 
-#attributeConditions {
-	
-}

@@ -1,7 +1,6 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -110,7 +109,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			MethodInvocationStaticType invocStatic = ModiscoFactory.eINSTANCE.createMethodInvocationStaticType();
 			invocStatic.setType(type);
 			invocStatic.setMethodInvoc(methodInvoc);
-			method.getInvocationStaticType().add(invocStatic);
+			method.getInvocationStaticTypes().add(invocStatic);
 		}
 		return true;
 	}
@@ -197,21 +196,29 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else {
 			LOGGER.log(Level.WARN, "Unknown variable declaration: " + var.getClass().getName());
 		}
+		return getStaticTypeFromInitializer(var.getInitializer());
+	}
 
-		Expression init = var.getInitializer();
-		if (init != null) {
-			if (init instanceof MethodInvocation) {
-				AbstractMethodDeclaration targetMethod = ((MethodInvocation) init).getMethod();
+	/**
+	 * Tries to guess the static type of a variable from the initializer
+	 * 
+	 * @param initializer The expression used as initializer
+	 * @return The possible static type of the variable
+	 */
+	private Type getStaticTypeFromInitializer(Expression initializer) {
+		if (initializer != null) {
+			if (initializer instanceof MethodInvocation) {
+				AbstractMethodDeclaration targetMethod = ((MethodInvocation) initializer).getMethod();
 				if (targetMethod instanceof MMethodDefinition) {
 					return ((MMethodDefinition) targetMethod).getReturnType().getType();
 				}
 			}
 
-			if (init instanceof ClassInstanceCreation) {
-				return ((ClassInstanceCreation) init).getType().getType();
+			if (initializer instanceof ClassInstanceCreation) {
+				return ((ClassInstanceCreation) initializer).getType().getType();
 			}
-			if (init instanceof CastExpression) {
-				return ((CastExpression) init).getType().getType();
+			if (initializer instanceof CastExpression) {
+				return ((CastExpression) initializer).getType().getType();
 			}
 		}
 		return null;
@@ -292,28 +299,48 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 */
 	private Type getStaticType(UnresolvedItemAccess expression, MAbstractMethodDefinition method) {
-		String item = expression.getElement().getName();
+		String nameOfAccessedElement = expression.getElement().getName();
 		// Check if the item is a parameter
 		for (SingleVariableDeclaration parameter : method.getParameters()) {
-			if (item.equals(parameter.getName())) {
+			if (nameOfAccessedElement.equals(parameter.getName())) {
 				return parameter.getType().getType();
 			}
 		}
 		// Check is the accessed item is a field
-		Type type = getDeclaringType(method);
-		if (type instanceof AbstractTypeDeclaration) {
-			for (BodyDeclaration body : ((AbstractTypeDeclaration) type).getBodyDeclarations()) {
-				if (body instanceof FieldDeclaration) {
-					final FieldDeclaration fieldDeclaration = (FieldDeclaration) body;
-					for (VariableDeclarationFragment fragment : fieldDeclaration.getFragments()) {
-						if (item.equals(fragment.getName())) {
-							return fieldDeclaration.getType().getType();
-						}
+		Type declaringType = getDeclaringType(method);
+		if (declaringType instanceof AbstractTypeDeclaration) {
+			Type type = searchTypeOfFieldWithName(nameOfAccessedElement, (AbstractTypeDeclaration) declaringType);
+			if (type != null) {
+				return type;
+			}
+		}
+		LOGGER.log(Level.WARN, "Couldn't resolve the static type of an access to an unresolved item: " + expression);
+		return null;
+	}
+
+	/**
+	 * Searches if a type declares a field with a given name and returns its type
+	 * 
+	 * @param name The name of the field
+	 * @param type The type containing the field
+	 * @return The type of the field or null if there is no field with this name
+	 */
+	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
+//		return type.getBodyDeclarations().parallelStream()
+//				.filter(body -> body instanceof FieldDeclaration)
+//				.flatMap(field -> ((FieldDeclaration) field).getFragments().parallelStream())
+//				.filter(fragment -> fragment.getName().equals(name)).findAny().orElse(null);
+
+		for (BodyDeclaration body : type.getBodyDeclarations()) {
+			if (body instanceof FieldDeclaration) {
+				final FieldDeclaration fieldDeclaration = (FieldDeclaration) body;
+				for (VariableDeclarationFragment fragment : fieldDeclaration.getFragments()) {
+					if (name.equals(fragment.getName())) {
+						return fieldDeclaration.getType().getType();
 					}
 				}
 			}
 		}
-		LOGGER.log(Level.WARN, "Couldn't resolve the static type of an access to an unresolved item: " + expression);
 		return null;
 	}
 
@@ -342,7 +369,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return The static type
 	 * @throws ProcessingException If the expression is not supported
 	 */
-	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method) throws ProcessingException {
+	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method)
+			throws ProcessingException {
 		TypeAccess qualifier = expression.getQualifier();
 		if (qualifier == null) {
 			if (expression instanceof ThisExpression) {
@@ -356,7 +384,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return (Type) ((MDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
 						.eContainer();
 			}
-			throw new ProcessingException("Not suported expression: "+expression.eClass().getName());
+			throw new ProcessingException("Not suported expression: " + expression.eClass().getName());
 		}
 		return qualifier.getType();
 	}
@@ -372,13 +400,37 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (type == null) {
 			final EObject container = body.eContainer();
 			if (container instanceof AnonymousClassDeclaration) {
-				type = ((AnonymousClassDeclaration) container).getClassInstanceCreation().getType().getType();
-			} else if (container instanceof Type) {
-				type = (Type) container;
+				type = getDeclaringType((AnonymousClassDeclaration) container);
+			} else if (container instanceof AbstractTypeDeclaration) {
+				type = (AbstractTypeDeclaration) container;
 			} else {
 				LOGGER.log(Level.ERROR, "Unknown deklaring type of: " + body);
 			}
 		}
 		return type;
+	}
+
+	/**
+	 * Searches the type declaring this anonymous class
+	 * 
+	 * @param anon The anonymous class
+	 * @return the declaring type
+	 */
+	private Type getDeclaringType(AnonymousClassDeclaration anon) {
+		EObject container = anon.eContainer();
+		if (container instanceof ClassInstanceCreation) {
+			ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
+			TypeAccess typeAccess = classInstanceCreation.getType();
+			if (typeAccess == null) {
+				LOGGER.log(Level.ERROR, "Class instance has not type: " + classInstanceCreation);
+				return null;
+			}
+			return typeAccess.getType();
+		} else if (container instanceof EnumConstantDeclaration) {
+			EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
+			return enumConst.getAbstractTypeDeclaration();
+		}
+		LOGGER.log(Level.ERROR, "Unknown container of anon class: " + container.eClass().getName());
+		return null;
 	}
 }

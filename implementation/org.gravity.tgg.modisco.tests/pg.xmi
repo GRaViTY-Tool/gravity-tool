@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <tripleMatches ruleName="PrimitiveTypeLong">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.1"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.1"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.1"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.1"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeFloat" number="1">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.2"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.2"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.2"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.2"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18 //@tripleMatches.16 //@tripleMatches.13 //@tripleMatches.5 //@tripleMatches.4" ruleName="MethodDec2Operation4InterfaceWithModifier" number="2">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.2/@containedEdges.3"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.2/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="CompilationUnit2Artifact" number="3">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@compilationUnits.0"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="compilationUnit">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@compilationUnits.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="compilationUnits">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@compilationUnits.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@compilationUnits.0"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16" ruleName="TypeAccess2ReturnParam" number="4">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <nodeMappings nodeName="owner">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18" ruleName="TypeParameter2Object_InMethod_InClass" number="5">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    <sourceElements href="#//@tripleMatches.5/@containedEdges.2"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="#//@tripleMatches.5/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.5/@containedEdges.1"/>
+    <nodeMappings nodeName="mowner">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mmethod">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="mparam">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="typeParameters">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    <createdElements href="#//@tripleMatches.5/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.16" ruleName="PrimitiveTypeVoid" number="6">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    <sourceElements href="#//@tripleMatches.6/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    <createdElements href="#//@tripleMatches.6/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.20 //@tripleMatches.17 //@tripleMatches.14 //@tripleMatches.11 //@tripleMatches.12 //@tripleMatches.9 //@tripleMatches.8 //@tripleMatches.6 //@tripleMatches.3 //@tripleMatches.1 //@tripleMatches.0" ruleName="JavaModel2UmlModelRule" number="7">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="javaModel">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeBoolean" number="8">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.4"/>
+    <sourceElements href="#//@tripleMatches.8/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.4"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.4"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.4"/>
+    <createdElements href="#//@tripleMatches.8/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeDouble" number="9">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.3"/>
+    <sourceElements href="#//@tripleMatches.9/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.3"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.3"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.3"/>
+    <createdElements href="#//@tripleMatches.9/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.19 //@tripleMatches.18 //@tripleMatches.16 //@tripleMatches.15 //@tripleMatches.13 //@tripleMatches.5 //@tripleMatches.2 //@tripleMatches.4" ruleName="ClassDecWithModifier2Class_InPackage" number="10">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.10/@containedEdges.3"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    <nodeMappings nodeName="jPackage">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="package">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@modifier"/>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.10/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeByte" number="11">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.8"/>
+    <sourceElements href="#//@tripleMatches.11/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.8"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.8"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.8"/>
+    <createdElements href="#//@tripleMatches.11/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeInt" number="12">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.0"/>
+    <sourceElements href="#//@tripleMatches.12/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.0"/>
+    <createdElements href="#//@tripleMatches.12/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18" ruleName="VariableDec2Parameter" number="13">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.13/@containedEdges.4"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.13/@containedEdges.1"/>
+    <nodeMappings nodeName="owner">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.3"/>
+    <createdElements href="#//@tripleMatches.13/@containedEdges.4"/>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeShort" number="14">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.7"/>
+    <sourceElements href="#//@tripleMatches.14/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.7"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.7"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.7"/>
+    <createdElements href="#//@tripleMatches.14/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18 //@tripleMatches.16 //@tripleMatches.13 //@tripleMatches.5 //@tripleMatches.4" ruleName="MethodDec2Operation4ClassWithModifier" number="15">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.15/@containedEdges.3"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.15/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.16/@containedEdges.3 //@tripleMatches.16/@containedEdges.4" ruleName="TypeAccessType2ParameterType_Return" number="16">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.16/@containedEdges.4"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.16/@containedEdges.2"/>
+    <nodeMappings nodeName="owner">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="returnType">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.5"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@returnType"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches ruleName="PrimitiveTypeChar" number="17">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.6"/>
+    <sourceElements href="#//@tripleMatches.17/@containedEdges.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jpt">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.6"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="orphanTypes">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.6"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@orphanTypes.6"/>
+    <createdElements href="#//@tripleMatches.17/@containedEdges.0"/>
+  </tripleMatches>
+  <tripleMatches createdElements="//@tripleMatches.18/@containedEdges.5 //@tripleMatches.18/@containedEdges.6" ruleName="TypeAccessType2ParameterType_Parameter" number="18">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.5"/>
+    <sourceElements href="#//@tripleMatches.18/@containedEdges.6"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.1"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.3"/>
+    <contextElements href="#//@tripleMatches.18/@containedEdges.4"/>
+    <nodeMappings nodeName="owner">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="method">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jType">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="typeAccess">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    </nodeMappings>
+    <nodeMappings nodeName="variableDec">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="parameters">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="methodDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="type">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="usagesInTypeAccess">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@typeParameters.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@parameters.0/@type"/>
+    </containedEdges>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.18 //@tripleMatches.16 //@tripleMatches.13 //@tripleMatches.5 //@tripleMatches.4" ruleName="MethodDec2Operation4EnumWithModifier" number="19">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <sourceElements href="#//@tripleMatches.19/@containedEdges.3"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    <nodeMappings nodeName="bodyDeclaration">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="modifier">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </nodeMappings>
+    <nodeMappings nodeName="classDec">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="modifier">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="bodyDeclarations">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="abstractTypeDeclaration">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0"/>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0/@ownedElements.0/@bodyDeclarations.0/@modifier"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.1"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.2"/>
+    <createdElements href="#//@tripleMatches.19/@containedEdges.3"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.10" ruleName="JavaPackageToUMLPackage_underModel" number="20">
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <sourceElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <sourceElements href="#//@tripleMatches.20/@containedEdges.1"/>
+    <contextElements href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    <nodeMappings nodeName="jm">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="jp">
+      <node href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="ownedElements">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="model">
+      <src href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+      <trg href="java_src/TypeParameter/.gravity/src.xmi#/"/>
+    </containedEdges>
+    <createdElements href="java_src/TypeParameter/.gravity/src.xmi#//@ownedElements.0"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.0"/>
+    <createdElements href="#//@tripleMatches.20/@containedEdges.1"/>
+  </tripleMatches>
+</org.moflon.tgg.runtime:PrecedenceStructure>

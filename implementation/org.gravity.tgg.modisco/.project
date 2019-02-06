@@ -16,10 +16,11 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-  <name>org.moflon.ide.core.runtime.builders.IntegrationBuilder</name>
-  <triggers>clean,full,incremental</triggers>
-  <arguments></arguments>
-</buildCommand>
+			<name>org.moflon.ide.core.runtime.builders.IntegrationBuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>

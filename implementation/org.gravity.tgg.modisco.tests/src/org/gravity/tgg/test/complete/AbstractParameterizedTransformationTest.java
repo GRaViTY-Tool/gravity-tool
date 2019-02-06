@@ -91,7 +91,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * 
 	 * @throws Exception The test might throws exceptions 
 	 */
-	@Test
+	@Test(timeout = 5*60*1000)
 	public abstract void testForward() throws Exception;
 
 	/**
