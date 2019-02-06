@@ -1,7 +1,7 @@
 package org.gravity.eclipse;
 
 import java.util.Arrays;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Stack;
 
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -23,10 +23,22 @@ import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TypeGraph;
 
+/** 
+ * This helper class provides functionalities for mapping program models to Eclipse Java projects 
+ * 
+ * @author speldszus
+ */
 public class JavaHelper {
-
-	public static Hashtable<String, IType> getTypesForProject(IJavaProject project) throws JavaModelException {
-		Hashtable<String, IType> types = new Hashtable<>();
+ 
+	/**
+	 * Builds a mapping from type names to instances for a Java project
+	 * 
+	 * @param project The Java project
+	 * @return The mapping
+	 * @throws JavaModelException If there is an error in accessing contents from the project
+	 */
+	public static HashMap<String, IType> getTypesForProject(IJavaProject project) throws JavaModelException {
+		HashMap<String, IType> types = new HashMap<>();
 
 		for (IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
 			Stack<IJavaElement> children = new Stack<IJavaElement>();
@@ -45,10 +57,18 @@ public class JavaHelper {
 		return types;
 	}
 
-	public static IMethod getIMethod(TMethodSignature tMethod, IType src) throws JavaModelException {
-		TParameterList tParamList = tMethod.getParamList();
-		String tName = tMethod.getMethod().getTName();
-		for (IMethod m : src.getMethods()) {
+	/**
+	 * Searches the method definition with the given signature
+	 * 
+	 * @param signature The signature
+	 * @param type The type containing the signature
+	 * @return The method
+	 * @throws JavaModelException If there is an exception in accessing content from the type
+	 */
+	public static IMethod getIMethod(TMethodSignature signature, IType type) throws JavaModelException {
+		TParameterList tParamList = signature.getParamList();
+		String tName = signature.getMethod().getTName();
+		for (IMethod m : type.getMethods()) {
 			if (m.getElementName().equals(tName)) {
 				if (m.getNumberOfParameters() == tParamList.getEntries().size()) {
 					boolean equal = true;
@@ -69,45 +89,66 @@ public class JavaHelper {
 		return null;
 	}
 
-	public static TMethodDefinition getTMethodDefinition(IMethod iMethod, TypeGraph pg) {
-		IType iType = iMethod.getDeclaringType();
-		TAbstractType tType = pg.getType(iType.getFullyQualifiedName());
+	/**
+	 * Searches in the program model for a method
+	 * 
+	 * @param method The method
+	 * @param pm The program model
+	 * @return The method definition
+	 */
+	public static TMethodDefinition getTMethodDefinition(IMethod method, TypeGraph pm) {
+		IType iType = method.getDeclaringType();
+		TAbstractType tType = pm.getType(iType.getFullyQualifiedName());
 		for (TMember tMember : tType.getDefines()) {
 			if (tMember instanceof TMethodDefinition) {
 				TMethodDefinition tMethodDefinition = (TMethodDefinition) tMember;
-				TMethodSignature tMethodSignature = tMethodDefinition.getSignature();
-				TMethod tMethodName = tMethodSignature.getMethod();
-
-				String tName = tMethodName.getTName();
-				if (iMethod.getElementName().equals(tName)) {
-
-					TParameterList tParamList = tMethodSignature.getParamList();
-					if (iMethod.getNumberOfParameters() == tParamList.getEntries().size()) {
-						boolean equal = true;
-						TParameter tParam = tParamList.getFirst();
-						ILocalVariable[] parameters;
-						try {
-							parameters = iMethod.getParameters();
-						} catch (JavaModelException e) {
-							continue;
-						}
-						for (ILocalVariable param : parameters) {
-							String iParamSignature = Signature.toString(param.getTypeSignature());
-							iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
-							if (!(equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature))) {
-								break;
-							}
-							tParam = tParam.getNext();
-						}
-						if (equal) {
-							return tMethodDefinition;
-						}
-					}
+				if(equivalent(tMethodDefinition, method)) {
+					return tMethodDefinition;
 				}
 			}
 
 		}
 		return null;
+	}
+
+	/**
+	 * Checks if the two methods are equivalent
+	 * 
+	 * @param tMethod A method from a program model
+	 * @param iMethod A method from a Eclipse Java project
+	 * @return true, if the methods are equivalent
+	 */
+	private static boolean equivalent(TMethodDefinition tMethod, IMethod iMethod) {
+		TMethodSignature tMethodSignature = tMethod.getSignature();
+		TMethod tMethodName = tMethodSignature.getMethod();
+
+		String tName = tMethodName.getTName();
+		if (iMethod.getElementName().equals(tName)) {
+
+			TParameterList tParamList = tMethodSignature.getParamList();
+			if (iMethod.getNumberOfParameters() == tParamList.getEntries().size()) {
+				boolean equal = true;
+				TParameter tParam = tParamList.getFirst();
+				ILocalVariable[] parameters;
+				try {
+					parameters = iMethod.getParameters();
+				} catch (JavaModelException e) {
+					return false;
+				}
+				for (ILocalVariable param : parameters) {
+					String iParamSignature = Signature.toString(param.getTypeSignature());
+					iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
+					if (!(equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature))) {
+						break;
+					}
+					tParam = tParam.getNext();
+				}
+				if (equal) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

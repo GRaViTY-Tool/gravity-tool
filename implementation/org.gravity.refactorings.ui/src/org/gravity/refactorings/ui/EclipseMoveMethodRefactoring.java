@@ -1,7 +1,6 @@
 package org.gravity.refactorings.ui;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -36,8 +35,8 @@ public class EclipseMoveMethodRefactoring {
 	
 	private static final Logger LOGGER = Logger.getLogger(EclipseMoveMethodRefactoring.class.getName());
 	
-	private Hashtable<String, IType> types;
-	private IJavaProject project;
+	private final HashMap<String, IType> types;
+	private final IJavaProject project;
 	
 	/**
 	 * Searches for all types defined in the given Java project and initializes the refactoring engine
