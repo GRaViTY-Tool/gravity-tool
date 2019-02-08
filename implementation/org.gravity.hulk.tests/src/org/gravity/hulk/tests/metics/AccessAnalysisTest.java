@@ -82,6 +82,11 @@ public class AccessAnalysisTest {
 		LOGGER.log(Level.INFO, "Perform test on project: " + name);
 	}
 
+	/**
+	 * Collects all Java projects in the workspace
+	 * 
+	 * @return The test data
+	 */
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
 	public static Collection<Object[]> collectProjects() {
 		Collection<Object[]> data = new LinkedList<>();
@@ -99,23 +104,17 @@ public class AccessAnalysisTest {
 		return data;
 	}
 
+	/**
+	 * 
+	 * Calculates IGAM and IGAT on all projects with Hulk and compares the values to those of the original AccessAnalysis
+	 * 
+	 * @throws AnalysisException If the AccessAnalysis tool failed
+	 * @throws TransformationFailedException If a pm cannot be created
+	 */
 	@Test
 	public void testAccessAnalysis() throws AnalysisException, TransformationFailedException {
-		IProject iproject = javaProject.getProject();
-		IPGConverter converter;
-		try {
-			converter = GravityActivator.getDefault().getNewConverter(iproject);
-		} catch (CoreException | NoConverterRegisteredException e) {
-			throw new TransformationFailedException(e);
-		}
-
 		IProgressMonitor monitor = new NullProgressMonitor();
-		boolean success = converter.convertProject(javaProject, Collections.emptySet(), monitor);
-		if (!success || converter.getPG() == null) {
-			throw new TransformationFailedException(
-					"Creating PG from project failed: " + javaProject.getProject().getName());
-		}
-		TypeGraph pg = converter.getPG();
+		TypeGraph pg = createProgramModel(javaProject, monitor);
 
 		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		apg.setPg(pg);
@@ -135,52 +134,26 @@ public class AccessAnalysisTest {
 		Analysis accessAnalysis = AnalysisFactory.analyzer(Arrays.asList(javaProject), AnalysisMode.ACCESS_QUIET);
 		accessAnalysis.run(monitor);
 
+		compareResults(pg, accessAnalysis.getResults());
+	}
+
+	/**
+	 * Compares the results of Hulk and the AccessAnalysis tool
+	 * 
+	 * @param programModel The program model of Hulk
+	 * @param accessAnalysis The result list of the AccessAnalysis tool
+	 */
+	private void compareResults(TypeGraph programModel, List<Result> accessAnalysis) {
 		Stack<Result> stack = new Stack<>();
-		stack.addAll(accessAnalysis.getResults());
+		stack.addAll(accessAnalysis);
 		while (!stack.isEmpty()) {
 			Result r = stack.pop();
 			stack.addAll(r.getChildren());
-			EList<TAnnotation> tAnnotations = null;
-
-			IJavaElement javaElement = r.getJavaElement();
-			if (javaElement instanceof IJavaProject) {
-				tAnnotations = pg.getTAnnotation();
-			} else if (javaElement instanceof IPackageFragmentRoot) {
-				TPackage tPackage = pg
-						.getPackage(new String[] { ((IPackageFragmentRoot) javaElement).getElementName() });
-				if (tPackage == null) {
-					continue;
-				}
-				tAnnotations = tPackage.getTAnnotation();
-
-			} else if (javaElement instanceof IPackageFragment) {
-				List<String> namespace = new LinkedList<>();
-				IJavaElement tmp = javaElement;
-				while (tmp != null && tmp instanceof IPackageFragment) {
-					String[] names = tmp.getElementName().split("\\.");
-					for (int i = names.length - 1; i >= 0; i--) {
-						namespace.add(0, names[i]);
-					}
-					tmp = tmp.getParent();
-				}
-
-				TPackage tPackage = pg.getPackage(namespace.toArray(new String[namespace.size()]));
-
-				tAnnotations = tPackage.getTAnnotation();
-			} else if (javaElement instanceof IType) {
-				TAbstractType tClass = pg.getType(((IType) javaElement).getFullyQualifiedName());
-				tAnnotations = tClass.getTAnnotation();
-			} else if (javaElement instanceof IMethod) {
-				TMethodDefinition tMethodDefinition = JavaHelper.getTMethodDefinition((IMethod) javaElement, pg);
-				tAnnotations = tMethodDefinition.getTAnnotation();
-			}
-			else {
-				String message = "Annotations cannot be retrieved for the following element: "+javaElement;
-				LOGGER.log(Level.ERROR, message);
-				fail(message);
+			
+			Collection<TAnnotation> tAnnotations = getTAnnotations(programModel, r);
+			if(tAnnotations == null) {
 				continue;
 			}
-
 			for (TAnnotation tAnnotation : tAnnotations) {
 				double hValue = -1;
 				double aValue = -1;
@@ -216,5 +189,82 @@ public class AccessAnalysisTest {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Searches the annotations corresponding with the AccessAnalysis result
+	 * 
+	 * @param programModel The program model
+	 * @param result The AccessAnalysis result
+	 * @return The corresponding annotations
+	 */
+	private Collection<TAnnotation> getTAnnotations(TypeGraph programModel, Result result) {
+		EList<TAnnotation> tAnnotations = null;
+
+		IJavaElement javaElement = result.getJavaElement();
+		if (javaElement instanceof IJavaProject) {
+			tAnnotations = programModel.getTAnnotation();
+		} else if (javaElement instanceof IPackageFragmentRoot) {
+			TPackage tPackage = programModel
+					.getPackage(new String[] { ((IPackageFragmentRoot) javaElement).getElementName() });
+			if (tPackage == null) {
+				return null;
+			}
+			tAnnotations = tPackage.getTAnnotation();
+
+		} else if (javaElement instanceof IPackageFragment) {
+			List<String> namespace = new LinkedList<>();
+			IJavaElement tmp = javaElement;
+			while (tmp != null && tmp instanceof IPackageFragment) {
+				String[] names = tmp.getElementName().split("\\.");
+				for (int i = names.length - 1; i >= 0; i--) {
+					namespace.add(0, names[i]);
+				}
+				tmp = tmp.getParent();
+			}
+
+			TPackage tPackage = programModel.getPackage(namespace.toArray(new String[namespace.size()]));
+
+			tAnnotations = tPackage.getTAnnotation();
+		} else if (javaElement instanceof IType) {
+			TAbstractType tClass = programModel.getType(((IType) javaElement).getFullyQualifiedName());
+			tAnnotations = tClass.getTAnnotation();
+		} else if (javaElement instanceof IMethod) {
+			TMethodDefinition tMethodDefinition = JavaHelper.getTMethodDefinition((IMethod) javaElement, programModel);
+			tAnnotations = tMethodDefinition.getTAnnotation();
+		}
+		else {
+			String message = "Annotations cannot be retrieved for the following element: "+javaElement;
+			LOGGER.log(Level.ERROR, message);
+			fail(message);
+			return null;
+		}
+		return tAnnotations;
+	}
+
+	/**
+	 * Discovers the Java project and creates a program model
+	 * 
+	 * @param project A Java project
+	 * @param monitor A progress monitor
+	 * @return The program model
+	 * @throws TransformationFailedException If the program model cannot be created
+	 */
+	private TypeGraph createProgramModel(IJavaProject project, IProgressMonitor monitor) throws TransformationFailedException {
+		IProject iproject = project.getProject();
+		IPGConverter converter;
+		try {
+			converter = GravityActivator.getDefault().getNewConverter(iproject);
+		} catch (CoreException | NoConverterRegisteredException e) {
+			throw new TransformationFailedException(e);
+		}
+
+		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
+		if (!success || converter.getPG() == null) {
+			throw new TransformationFailedException(
+					"Creating PG from project failed: " + project.getProject().getName());
+		}
+		TypeGraph pg = converter.getPG();
+		return pg;
 	}
 }
