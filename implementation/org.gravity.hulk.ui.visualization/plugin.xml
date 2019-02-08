@@ -497,7 +497,7 @@
 				id="hulk.visualization.ui.openTheBlobInformationView"
 				name="Open The Blob information view">
 			<defaultHandler
-					class="org.gravity.hulk.ui.visualization.handlers.TheBlobInformationHandler">
+					class="org.gravity.hulk.ui.visualization.handlers.views.TheBlobInformationHandler">
 				<parameter
 					name="org.gravity.hulk.ui.parameter1"
 					value="org.gravity.hulk.ui.parameter1">
@@ -508,7 +508,7 @@
 				id="hulk.visualization.ui.openAntiPatternMarkerView"
 				name="Open AntiPattern Marker view">
 			<defaultHandler
-					class="org.gravity.hulk.ui.visualization.handlers.AntiPatternMarkersViewHandler">
+					class="org.gravity.hulk.ui.visualization.handlers.views.AntiPatternMarkersViewHandler">
 				<parameter
 					name="org.gravity.hulk.ui.parameter1"
 					value="org.gravity.hulk.ui.parameter1">
@@ -519,7 +519,7 @@
 				id="hulk.visualization.ui.openSwissArmyKnifeInformationView"
 				name="Open Swiss Army Knife information view">
 			<defaultHandler
-					class="org.gravity.hulk.ui.visualization.handlers.SwissArmyKnifeInformationHandler">
+					class="org.gravity.hulk.ui.visualization.handlers.views.SwissArmyKnifeInformationHandler">
 				<parameter
 					name="org.gravity.hulk.ui.parameter1"
 					value="org.gravity.hulk.ui.parameter1">
@@ -530,7 +530,7 @@
 				id="hulk.visualization.ui.openSpaghettiCodeInformationView"
 				name="OpenSpaghetti Code information view">
 			<defaultHandler
-					class="org.gravity.hulk.ui.visualization.handlers.SpaghettiCodeInformationHandler">
+					class="org.gravity.hulk.ui.visualization.handlers.views.SpaghettiCodeInformationHandler">
 				<parameter
 					name="org.gravity.hulk.ui.parameter1"
 					value="org.gravity.hulk.ui.parameter1">

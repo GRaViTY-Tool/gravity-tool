@@ -105,5 +105,4 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 	public boolean isHandled() {
 		return true;
 	}
-
 }

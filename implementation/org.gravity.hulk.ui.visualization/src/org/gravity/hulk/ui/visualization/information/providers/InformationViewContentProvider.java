@@ -99,8 +99,9 @@ public abstract class InformationViewContentProvider {
 
 		tabItems.clear();
 
-		if (graphInformationTabFolder != null)
+		if (graphInformationTabFolder != null) {
 			graphInformationTabFolder.dispose();
+		}
 
 		graphInformationTabFolder = new TabFolder(graphInformationLabelComposite, SWT.BORDER);
 		graphInformationTabFolder
@@ -150,11 +151,13 @@ public abstract class InformationViewContentProvider {
 
 				Map<String, String> detectionObjectDetections = detectionObject.getDetections();
 				for (String detection : detectionObjectDetections.keySet()) {
-					String value = "";
-					if (!detectionObjectDetections.get(detection).equals("-1"))
-						value = value + "Value: " + detectionObjectDetections.get(detection);
-					else
-						value = value + "Value: none";
+					String value;
+					if (!detectionObjectDetections.get(detection).equals("-1")) {
+						value = "Value: " + detectionObjectDetections.get(detection);
+					}
+					else {
+						value = "Value: none";
+					}
 					Link link = new Link(detectionsComposite, SWT.NONE);
 					link.setText("<A>" + detection + "</A>" + "\n" + value);
 					link.addListener(SWT.Selection, new DetectionLinkListener());
@@ -176,8 +179,9 @@ public abstract class InformationViewContentProvider {
 				Map<String, Number> thresholds = detectionObject.getThresholds();
 				for (String detection : thresholds.keySet()) {
 					String value = "";
-					if (!thresholds.get(detection).equals(-1))
+					if (!thresholds.get(detection).equals(-1)) {
 						value = value + "\n Value: " + thresholds.get(detection);
+					}
 					Label label = new Label(thresholdsComposite, SWT.NONE);
 					label.setText(detection + value);
 					label.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
@@ -212,9 +216,12 @@ public abstract class InformationViewContentProvider {
 				List<GraphNode> selectionList = ((Graph) event.getSource()).getSelection();
 				if (selectionList.size() == 1) {
 					GraphNode node = selectionList.get(0);
-					if (!(node.getText().equals("AND") || node.getText().equals("OR")
-							|| node.getText().equals("CALCULATE")))
-						graphInformationTabFolder.setSelection(tabItems.get(node.getText()));
+					String text = node.getText();
+					if (!(text.equals("AND") || text.equals("OR")
+							|| text.equals("CALCULATE"))) {
+						Flaws flaw = Flaws.valueOf(text);
+						graphInformationTabFolder.setSelection(tabItems.get(flaw));
+					}
 				}
 
 			}
@@ -223,20 +230,23 @@ public abstract class InformationViewContentProvider {
 	}
 
 	public Browser getInformationLabel() {
-		if (informationBrowser == null)
+		if (informationBrowser == null) {
 			setUpInformationViewContent();
+		}
 		return informationBrowser;
 	}
 
 	public Graph getGraph() {
-		if (graph == null)
+		if (graph == null) {
 			setUpInformationViewContent();
+		}
 		return graph;
 	}
 
 	public TabFolder getGraphInformationTabFolder() {
-		if (graphInformationTabFolder == null)
+		if (graphInformationTabFolder == null) {
 			setUpInformationViewContent();
+		}
 		return graphInformationTabFolder;
 	}
 }

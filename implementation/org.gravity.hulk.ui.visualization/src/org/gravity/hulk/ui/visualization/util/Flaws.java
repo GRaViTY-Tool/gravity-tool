@@ -29,14 +29,23 @@ public enum Flaws {
 	H_LOCAL_METHOD_ACCESSES_METRIC("HLocalMethodAccessesMetric"),
 	H_DATA_CLASS_ACCESSOR("HDataClassAccessor");
 	
-	final String string;
+	private final String name;
 	
 	private Flaws(String string) {
-		this.string = string;
+		this.name = string;
 	}
 	
 	@Override
 	public String toString() {
-		return string;
+		return super.toString();
+	}
+	
+	/**
+	 * A getter for the name of the flaw
+	 * 
+	 * @return The name
+	 */
+	public String getName() {
+		return name;
 	}
 }
