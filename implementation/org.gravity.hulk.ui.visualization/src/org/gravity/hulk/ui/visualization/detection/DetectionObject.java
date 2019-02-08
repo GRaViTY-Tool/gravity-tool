@@ -1,41 +1,25 @@
 package org.gravity.hulk.ui.visualization.detection;
 
-import java.util.HashMap;
 import java.util.Map;
+
+import org.gravity.hulk.ui.visualization.util.GlobalStrings;
 
 public class DetectionObject {
 
-	private String type;
-	private Map<String, String> detections;
-	private Map<String, String> thresholds;
-	private String fullInformationString;
+	final private GlobalStrings type;
+	final private Map<String, String> detections;
+	final private Map<String, Number> thresholds;
+	final private String fullInformationString;
 	
-	public DetectionObject() {
-		detections = new HashMap<String, String>();
-		thresholds = new HashMap<String, String>();
-		type = null;
-		fullInformationString = null;
-	}
-	
-	public void setType(String type){
+	public DetectionObject(Map<String, String> detections, Map<String, Number> thresholds,
+			String fullInformationString, GlobalStrings type) {
+		this.detections = detections;
+		this.thresholds =thresholds;
 		this.type = type;
-	}
-	
-	public void setDetections(Map<String, String> detections){
-		this.detections.clear();
-		this.detections.putAll(detections);
-	}
-	
-	public void setThresholds(Map<String, String> thresholds){
-		this.thresholds.clear();
-		this.thresholds.putAll(thresholds);
-	}
-	
-	public void setFullInformationString(String fullInformationString){
 		this.fullInformationString = fullInformationString;
 	}
 	
-	public String getType(){
+	public GlobalStrings getType(){
 		return type;
 	}
 	
@@ -43,7 +27,7 @@ public class DetectionObject {
 		return detections;
 	}
 	
-	public Map<String, String> getThresholds(){
+	public Map<String, Number> getThresholds(){
 		return thresholds;
 	}
 	

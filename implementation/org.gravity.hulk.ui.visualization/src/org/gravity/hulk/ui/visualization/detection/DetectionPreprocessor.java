@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.ui.visualization.util.GlobalStrings;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TPackage;
 
@@ -27,5 +28,5 @@ public abstract class DetectionPreprocessor {
 		return detectionString;
 	}
 
-	public abstract Map<String, List<DetectionObject>> preprocessDetectionts(HAntiPatternGraph apg);
+	public abstract Map<GlobalStrings, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg);
 }

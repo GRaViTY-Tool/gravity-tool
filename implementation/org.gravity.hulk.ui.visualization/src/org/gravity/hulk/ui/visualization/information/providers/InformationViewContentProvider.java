@@ -24,7 +24,6 @@ import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.zest.core.widgets.Graph;
 import org.eclipse.zest.core.widgets.GraphNode;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionObject;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.listener.DetectionLinkListener;
@@ -38,13 +37,13 @@ public abstract class InformationViewContentProvider {
 	private Browser informationBrowser;
 	private Graph graph;
 	private TabFolder graphInformationTabFolder;
-	private Map<String, List<DetectionObject>> detectionObjects;
+	private Map<GlobalStrings, List<DetectionObject>> detectionObjects;
 	protected static HAntiPatternGraph apg;
 	protected static String GLOBAL_SCAN_ID = "";
 	protected DetectionPreprocessor detectionPreprocesser;
 	private String localScanID;
 
-	private Map<String, TabItem> tabItems;
+	private Map<GlobalStrings, TabItem> tabItems;
 
 	protected abstract Browser setUpInformationBrowser(Composite informationLabelComposite);
 
@@ -54,8 +53,8 @@ public abstract class InformationViewContentProvider {
 
 	public InformationViewContentProvider() {
 		detectionPreprocesser = setUpDetectionPreprocesser();
-		detectionObjects = detectionPreprocesser.preprocessDetectionts(null);
-		tabItems = new HashMap<String, TabItem>();
+		detectionObjects = detectionPreprocesser.preprocessDetections(null);
+		tabItems = new HashMap<GlobalStrings, TabItem>();
 		localScanID = "";
 	}
 
@@ -88,7 +87,7 @@ public abstract class InformationViewContentProvider {
 	}
 
 	public void refreshDetectionObjects() {
-		detectionObjects = detectionPreprocesser.preprocessDetectionts(apg);
+		detectionObjects = detectionPreprocesser.preprocessDetections(apg);
 	}
 
 	public static void setAPG(HAntiPatternGraph apg) {
@@ -108,9 +107,9 @@ public abstract class InformationViewContentProvider {
 				.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		graphInformationTabFolder.setLayout(new FillLayout());
 
-		for (String smell : detectionObjects.keySet()) {
+		for (GlobalStrings smell : detectionObjects.keySet()) {
 			TabItem item = new TabItem(graphInformationTabFolder, SWT.V_SCROLL);
-			item.setText(smell);
+			item.setText(smell.toString());
 			tabItems.put(smell, item);
 
 			GridLayout gridLayout = new GridLayout();
@@ -174,10 +173,10 @@ public abstract class InformationViewContentProvider {
 						.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				thresholdsComposite.setLayout(new FillLayout(SWT.VERTICAL));
 
-				Map<String, String> thresholds = detectionObject.getThresholds();
+				Map<String, Number> thresholds = detectionObject.getThresholds();
 				for (String detection : thresholds.keySet()) {
 					String value = "";
-					if (!thresholds.get(detection).equals("-1"))
+					if (!thresholds.get(detection).equals(-1))
 						value = value + "\n Value: " + thresholds.get(detection);
 					Label label = new Label(thresholdsComposite, SWT.NONE);
 					label.setText(detection + value);
