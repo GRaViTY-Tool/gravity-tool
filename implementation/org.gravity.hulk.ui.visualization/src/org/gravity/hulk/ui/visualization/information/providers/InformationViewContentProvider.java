@@ -27,7 +27,7 @@ import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.ui.visualization.detection.DetectionObject;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.listener.DetectionLinkListener;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public abstract class InformationViewContentProvider {
 
@@ -37,13 +37,13 @@ public abstract class InformationViewContentProvider {
 	private Browser informationBrowser;
 	private Graph graph;
 	private TabFolder graphInformationTabFolder;
-	private Map<GlobalStrings, List<DetectionObject>> detectionObjects;
+	private Map<Flaws, List<DetectionObject>> detectionObjects;
 	protected static HAntiPatternGraph apg;
 	protected static String GLOBAL_SCAN_ID = "";
 	protected DetectionPreprocessor detectionPreprocesser;
 	private String localScanID;
 
-	private Map<GlobalStrings, TabItem> tabItems;
+	private Map<Flaws, TabItem> tabItems;
 
 	protected abstract Browser setUpInformationBrowser(Composite informationLabelComposite);
 
@@ -54,7 +54,7 @@ public abstract class InformationViewContentProvider {
 	public InformationViewContentProvider() {
 		detectionPreprocesser = setUpDetectionPreprocesser();
 		detectionObjects = detectionPreprocesser.preprocessDetections(null);
-		tabItems = new HashMap<GlobalStrings, TabItem>();
+		tabItems = new HashMap<Flaws, TabItem>();
 		localScanID = "";
 	}
 
@@ -107,7 +107,7 @@ public abstract class InformationViewContentProvider {
 				.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		graphInformationTabFolder.setLayout(new FillLayout());
 
-		for (GlobalStrings smell : detectionObjects.keySet()) {
+		for (Flaws smell : detectionObjects.keySet()) {
 			TabItem item = new TabItem(graphInformationTabFolder, SWT.V_SCROLL);
 			item.setText(smell.toString());
 			tabItems.put(smell, item);
@@ -212,8 +212,8 @@ public abstract class InformationViewContentProvider {
 				List<GraphNode> selectionList = ((Graph) event.getSource()).getSelection();
 				if (selectionList.size() == 1) {
 					GraphNode node = selectionList.get(0);
-					if (!(node.getText().equals(GlobalStrings.AND) || node.getText().equals(GlobalStrings.OR)
-							|| node.getText().equals(GlobalStrings.CALCULATE)))
+					if (!(node.getText().equals("AND") || node.getText().equals("OR")
+							|| node.getText().equals("CALCULATE")))
 						graphInformationTabFolder.setSelection(tabItems.get(node.getText()));
 				}
 

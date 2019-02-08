@@ -17,24 +17,24 @@ import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HLocalMethodAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.TClass;
 
 public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 
 	@Override
-	public Map<GlobalStrings, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {
-		Map<GlobalStrings, List<DetectionObject>> detectionObjectDummys = new HashMap<GlobalStrings, List<DetectionObject>>();
-		detectionObjectDummys.put(GlobalStrings.H_SPAGHETTI_CODE_ANTIPATTERN, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_INTENSIVE_FIELD_USAGE_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_AVERAGE_OVERLOADING_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_AVERAGE_PARAMETERS_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_NUMBER_OF_CHILD_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_DEPTH_OF_INHERITANCE_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LOCAL_ACCESS_RELATION_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LOCAL_FIELD_ACCESSES_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LOCAL_METHOD_ACCESSES_METRIC, new LinkedList<DetectionObject>());
+	public Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {
+		Map<Flaws, List<DetectionObject>> detectionObjectDummys = new HashMap<Flaws, List<DetectionObject>>();
+		detectionObjectDummys.put(Flaws.H_SPAGHETTI_CODE_ANTIPATTERN, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_INTENSIVE_FIELD_USAGE_SMELL, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_AVERAGE_OVERLOADING_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_AVERAGE_PARAMETERS_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_NUMBER_OF_CHILD_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_DEPTH_OF_INHERITANCE_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_LOCAL_ACCESS_RELATION_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_LOCAL_FIELD_ACCESSES_METRIC, new LinkedList<DetectionObject>());
+		detectionObjectDummys.put(Flaws.H_LOCAL_METHOD_ACCESSES_METRIC, new LinkedList<DetectionObject>());
 
 		if (apg != null) {
 			for (HAnnotation a : apg.getHAnnotations()) {
@@ -67,24 +67,24 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 					tClass = (TClass) spaghettiCodeAntiPattern.getTAnnotated();
 					detections.put(createDetectionString(tClass), "-1");
 					if (averageOverloadingInClassMetric != null)
-						thresholds.put(GlobalStrings.H_AVERAGE_OVERLOADING_METRIC + ": VERY_LOW",
+						thresholds.put(Flaws.H_AVERAGE_OVERLOADING_METRIC + ": VERY_LOW",
 								(ThresholdCalculator.getThresholdValue(averageOverloadingInClassMetric,
 										HRelativeValueConstants.VERY_LOW, false)));
 					if (averageParametersMetric != null)
-						thresholds.put(GlobalStrings.H_AVERAGE_PARAMETERS_METRIC + ": VERY_LOW",
+						thresholds.put(Flaws.H_AVERAGE_PARAMETERS_METRIC + ": VERY_LOW",
 								(ThresholdCalculator.getThresholdValue(averageParametersMetric,
 										HRelativeValueConstants.VERY_LOW, false)));
 					if (numberOfChildMetric != null)
-						thresholds.put(GlobalStrings.H_NUMBER_OF_CHILD_METRIC + ": VERY_LOW",
+						thresholds.put(Flaws.H_NUMBER_OF_CHILD_METRIC + ": VERY_LOW",
 								(ThresholdCalculator.getThresholdValue(numberOfChildMetric,
 										HRelativeValueConstants.VERY_LOW, false)));
 					if (depthOfInheritanceMetric != null)
-						thresholds.put(GlobalStrings.H_DEPTH_OF_INHERITANCE_METRIC + ": VERY_LOW",
+						thresholds.put(Flaws.H_DEPTH_OF_INHERITANCE_METRIC + ": VERY_LOW",
 								(ThresholdCalculator.getThresholdValue(depthOfInheritanceMetric,
 										HRelativeValueConstants.VERY_LOW, false)));
 					DetectionObject spaghettiCodeDetectionObject = new DetectionObject(detections, thresholds, "",
-							GlobalStrings.H_SPAGHETTI_CODE_ANTIPATTERN);
-					detectionObjectDummys.get(GlobalStrings.H_SPAGHETTI_CODE_ANTIPATTERN)
+							Flaws.H_SPAGHETTI_CODE_ANTIPATTERN);
+					detectionObjectDummys.get(Flaws.H_SPAGHETTI_CODE_ANTIPATTERN)
 							.add(spaghettiCodeDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -93,13 +93,13 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 					if (intenseFieldUsageCodeSmell != null) {
 						tClass = (TClass) intenseFieldUsageCodeSmell.getTAnnotated();
 						detections.put(createDetectionString(tClass), "-1");
-						thresholds.put(GlobalStrings.H_LOCAL_ACCESS_RELATION_METRIC + ": VERY_HIGH",
+						thresholds.put(Flaws.H_LOCAL_ACCESS_RELATION_METRIC + ": VERY_HIGH",
 								(ThresholdCalculator.getThresholdValue(
 										intenseFieldUsageCodeSmell.getHLocalAccessRelationMetric(),
 										HRelativeValueConstants.VERY_HIGH, true)));
 					}
-					DetectionObject intensiveFieldUsageDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_INTENSIVE_FIELD_USAGE_SMELL);
-					detectionObjectDummys.get(GlobalStrings.H_INTENSIVE_FIELD_USAGE_SMELL)
+					DetectionObject intensiveFieldUsageDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_INTENSIVE_FIELD_USAGE_SMELL);
+					detectionObjectDummys.get(Flaws.H_INTENSIVE_FIELD_USAGE_SMELL)
 							.add(intensiveFieldUsageDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -112,8 +112,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(averageOverloadingInClassMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject averageOverloadingDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_AVERAGE_OVERLOADING_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_AVERAGE_OVERLOADING_METRIC)
+					DetectionObject averageOverloadingDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_AVERAGE_OVERLOADING_METRIC);
+					detectionObjectDummys.get(Flaws.H_AVERAGE_OVERLOADING_METRIC)
 							.add(averageOverloadingDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -126,8 +126,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(averageParametersMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject averageParametersDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_AVERAGE_PARAMETERS_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_AVERAGE_PARAMETERS_METRIC)
+					DetectionObject averageParametersDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_AVERAGE_PARAMETERS_METRIC);
+					detectionObjectDummys.get(Flaws.H_AVERAGE_PARAMETERS_METRIC)
 							.add(averageParametersDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -140,8 +140,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(numberOfChildMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject numberOfChildDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_NUMBER_OF_CHILD_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_NUMBER_OF_CHILD_METRIC).add(numberOfChildDetectionObject);
+					DetectionObject numberOfChildDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_NUMBER_OF_CHILD_METRIC);
+					detectionObjectDummys.get(Flaws.H_NUMBER_OF_CHILD_METRIC).add(numberOfChildDetectionObject);
 					detections.clear();
 					thresholds.clear();
 					tClass = null;
@@ -153,8 +153,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(depthOfInheritanceMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject depthOfInheritanceDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_DEPTH_OF_INHERITANCE_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_DEPTH_OF_INHERITANCE_METRIC)
+					DetectionObject depthOfInheritanceDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_DEPTH_OF_INHERITANCE_METRIC);
+					detectionObjectDummys.get(Flaws.H_DEPTH_OF_INHERITANCE_METRIC)
 							.add(depthOfInheritanceDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -167,8 +167,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(localAccessRelationMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject localAccessRelationDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_LOCAL_ACCESS_RELATION_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_LOCAL_ACCESS_RELATION_METRIC)
+					DetectionObject localAccessRelationDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_LOCAL_ACCESS_RELATION_METRIC);
+					detectionObjectDummys.get(Flaws.H_LOCAL_ACCESS_RELATION_METRIC)
 							.add(localAccessRelationDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -181,8 +181,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(localFieldAccessesMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject localFieldAccessDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_LOCAL_FIELD_ACCESSES_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_LOCAL_FIELD_ACCESSES_METRIC)
+					DetectionObject localFieldAccessDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_LOCAL_FIELD_ACCESSES_METRIC);
+					detectionObjectDummys.get(Flaws.H_LOCAL_FIELD_ACCESSES_METRIC)
 							.add(localFieldAccessDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -195,8 +195,8 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 										+ String.valueOf(localMethodAccessesMetric.getValue()));
 						thresholds.put("none", -1);
 					}
-					DetectionObject localMethodAccessDetectionObject = new DetectionObject(detections,thresholds,"",GlobalStrings.H_LOCAL_METHOD_ACCESSES_METRIC);
-					detectionObjectDummys.get(GlobalStrings.H_LOCAL_METHOD_ACCESSES_METRIC)
+					DetectionObject localMethodAccessDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_LOCAL_METHOD_ACCESSES_METRIC);
+					detectionObjectDummys.get(Flaws.H_LOCAL_METHOD_ACCESSES_METRIC)
 							.add(localMethodAccessDetectionObject);
 					detections.clear();
 					thresholds.clear();

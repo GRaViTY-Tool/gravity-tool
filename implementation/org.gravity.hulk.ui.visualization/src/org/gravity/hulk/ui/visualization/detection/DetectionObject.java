@@ -2,24 +2,24 @@ package org.gravity.hulk.ui.visualization.detection;
 
 import java.util.Map;
 
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class DetectionObject {
 
-	final private GlobalStrings type;
-	final private Map<String, String> detections;
-	final private Map<String, Number> thresholds;
-	final private String fullInformationString;
+	private final Flaws type;
+	private final Map<String, String> detections;
+	private final Map<String, Number> thresholds;
+	private final String fullInformationString;
 	
 	public DetectionObject(Map<String, String> detections, Map<String, Number> thresholds,
-			String fullInformationString, GlobalStrings type) {
+			String fullInformationString, Flaws type) {
 		this.detections = detections;
 		this.thresholds =thresholds;
 		this.type = type;
 		this.fullInformationString = fullInformationString;
 	}
 	
-	public GlobalStrings getType(){
+	public Flaws getType(){
 		return type;
 	}
 	

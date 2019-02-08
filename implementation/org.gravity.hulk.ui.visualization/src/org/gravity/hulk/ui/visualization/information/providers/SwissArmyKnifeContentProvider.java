@@ -10,7 +10,7 @@ import org.eclipse.zest.core.widgets.ZestStyles;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class SwissArmyKnifeContentProvider extends InformationViewContentProvider {
 
@@ -42,31 +42,31 @@ public class SwissArmyKnifeContentProvider extends InformationViewContentProvide
 		Graph graph = new Graph(graphComposite, SWT.BORDER);
 
 		GraphNode swissArmyKnife = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_SWISS_ARMY_KNIFE_ANTIPATTERN);
+				Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN);
 		swissArmyKnife.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
 		swissArmyKnife.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
-		GraphNode largeClass = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_LARGE_CLASS_SMELL);
+		GraphNode largeClass = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_LARGE_CLASS_SMELL);
 		largeClass.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		largeClass.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
 		GraphNode muchOverloadingSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_MUCH_OVERLOADING_SMELL);
+				Flaws.H_MUCH_OVERLOADING_SMELL);
 		muchOverloadingSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		muchOverloadingSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
 		GraphNode numberOfIncommingInvocations = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL);
+				Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
 		numberOfIncommingInvocations.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
 		numberOfIncommingInvocations.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode numberOfMembers = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_NUMBER_OF_MEMBERS_METRIC);
+				Flaws.H_NUMBER_OF_MEMBERS_METRIC);
 		numberOfMembers.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
 		numberOfMembers.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode averageOverloadingInClassMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_AVERAGE_OVERLOADING_METRIC);
+				Flaws.H_AVERAGE_OVERLOADING_METRIC);
 		averageOverloadingInClassMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
 		averageOverloadingInClassMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 

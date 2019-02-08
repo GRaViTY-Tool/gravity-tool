@@ -17,6 +17,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
@@ -24,54 +25,39 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 
 public class TheBlobInformationStringProvider implements InformationStringProvider {
 
-	public static final int THE_BLOB = 0;
-	public static final int GOD_CLASS = 1;
-	public static final int CONTROLLER_CLASS = 2;
-	public static final int DATA_CLASS = 3;
-	public static final int GETTER_SETTER_SMELL = 4;
-	public static final int INVOCATION_RELATION = 5;
-	public static final int LARGE_CLASS_LOW_COHESION_SMELL = 6;
-	public static final int LARGE_CLASS_SMELL = 7;
-	public static final int LCOM5 = 8;
-	public static final int LOW_COHESION_SMELL = 9;
-	public static final int NACC_METRIC = 10;
-	public static final int NUMBER_OF_INCOMMING_INVOCATIONS_METRIC = 11;
-	public static final int NUMBER_OF_MEMBERS_METRIC = 12;
-	public static final int NUMBER_OF_OUTGOING_INVOCATIONS_METRIC = 13;
-	
-	private String eol = System.getProperty("line.separator");
+	private static final String eol = System.getProperty("line.separator");
 
 	@Override
-	public String getInformationString(HAnnotation annotation, boolean printHeader, int annotationID) {
+	public String getInformationString(HAnnotation annotation, boolean printHeader, Flaws annotationID) {
 		
 		switch (annotationID) {
-		case THE_BLOB:
+		case H_BLOB_ANTIPATTERN:
 			return buildTheBlobString(annotation, printHeader);
-		case GOD_CLASS:
+		case H_GODCLASS_ANTIPATTERN:
 			return buildGodClassString(annotation, printHeader);
-		case CONTROLLER_CLASS:
+		case H_CONTROLLERCLASS_SMELL:
 			return buildControllerClassString(annotation, printHeader);
-		case DATA_CLASS:
+		case H_DATA_CLASS_SMELL:
 			return buildDataClassString(annotation, printHeader);
-		case GETTER_SETTER_SMELL:
+		case H_GETTER_SETTER_SMELLS:
 			return buildGetterSetterString(annotation, printHeader);
-		case INVOCATION_RELATION:
+		case H_INVOCATIONRELATION_METRIC:
 			return buildInvocationRelationString(annotation, printHeader);
-		case LARGE_CLASS_LOW_COHESION_SMELL:
+		case H_LARGE_CLASS_LOW_COHESION_SMELL:
 			return buildLargeClassLowCohesionString(annotation, printHeader);
-		case LARGE_CLASS_SMELL:
+		case H_LARGE_CLASS_SMELL:
 			return buildLargeClassString(annotation, printHeader);
-		case LCOM5:
+		case H_LCOM5_METRIC:
 			return buildLCOM5String(annotation, printHeader);
-		case LOW_COHESION_SMELL:
+		case H_LOW_COHESION_SMELL:
 			return buildLowCohesionString(annotation, printHeader);
-		case NACC_METRIC:
+		case H_NACC_METRIC:
 			return buildNACCString(annotation, printHeader);
-		case NUMBER_OF_INCOMMING_INVOCATIONS_METRIC:
+		case H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC:
 			return buildNumberOfIncommingInvocationsString(annotation, printHeader);
-		case NUMBER_OF_MEMBERS_METRIC:
+		case H_NUMBER_OF_MEMBERS_METRIC:
 			return buildNumberOfMembersString(annotation, printHeader);
-		case NUMBER_OF_OUTGOING_INVOCATIONS_METRIC:
+		case H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC:
 			return buildNumberOfOutgoingInvocationsString(annotation, printHeader);
 		default:
 			return "annotationID not supported";
@@ -79,16 +65,14 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 	}
 
 	private String buildTheBlobString(HAnnotation annotation, boolean printHeader) {
-		String theBlobInfo = "";
 		HBlobAntiPattern blob = (HBlobAntiPattern) annotation;
-		TClass tClass;
+		
+		TClass tClass = (TClass) blob.getTAnnotated();
+
 		HDataClassAccessor hDataClassAccessor = null;
-		double hDataClassAccessorValue = -1;
 		double hDataClassAccessorThresholdValue = -1;
+		double hDataClassAccessorValue = -1;
 		String hDataClassAccessorRelativeAmount = "-1";
-
-		tClass = (TClass) blob.getTAnnotated();
-
 		for (TAnnotation tAnnotation : tClass.getTAnnotation()) {
 			if (tAnnotation instanceof HDataClassAccessor) {
 				hDataClassAccessor = (HDataClassAccessor) tAnnotation;
@@ -97,6 +81,7 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 			}
 		}
 
+		String theBlobInfo = "";
 		if (printHeader && hDataClassAccessor != null) {
 			hDataClassAccessorThresholdValue = ThresholdCalculator.getThresholdValue(hDataClassAccessor,
 					HRelativeValueConstants.MEDIUM, true);

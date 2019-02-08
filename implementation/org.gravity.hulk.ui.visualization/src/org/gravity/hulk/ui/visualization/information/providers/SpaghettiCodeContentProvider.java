@@ -10,7 +10,7 @@ import org.eclipse.zest.core.widgets.ZestStyles;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SpaghettiCodePreprocessor;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class SpaghettiCodeContentProvider extends InformationViewContentProvider {
 
@@ -54,51 +54,51 @@ public class SpaghettiCodeContentProvider extends InformationViewContentProvider
 		Graph graph = new Graph(graphComposite, SWT.BORDER);
 		
 		GraphNode spaghettiCode = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_SPAGHETTI_CODE_ANTIPATTERN);
+				Flaws.H_SPAGHETTI_CODE_ANTIPATTERN);
 		spaghettiCode.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
 		spaghettiCode.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode intensiveFieldUsage = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_INTENSIVE_FIELD_USAGE_SMELL);
+				Flaws.H_INTENSIVE_FIELD_USAGE_SMELL);
 		intensiveFieldUsage.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		intensiveFieldUsage.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
 		GraphNode averageOverloadingInClass = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_AVERAGE_OVERLOADING_METRIC);
+				Flaws.H_AVERAGE_OVERLOADING_METRIC);
 		averageOverloadingInClass.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		averageOverloadingInClass.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode averageParameters = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_AVERAGE_PARAMETERS_METRIC);
+				Flaws.H_AVERAGE_PARAMETERS_METRIC);
 		averageParameters.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		averageParameters.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode numberOfChild = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_NUMBER_OF_CHILD_METRIC);
+				Flaws.H_NUMBER_OF_CHILD_METRIC);
 		numberOfChild.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		numberOfChild.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode depthOfInheritance = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_DEPTH_OF_INHERITANCE_METRIC);
+				Flaws.H_DEPTH_OF_INHERITANCE_METRIC);
 		depthOfInheritance.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		depthOfInheritance.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode localAccessRelation = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_LOCAL_ACCESS_RELATION_METRIC);
+				Flaws.H_LOCAL_ACCESS_RELATION_METRIC);
 		localAccessRelation.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		localAccessRelation.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode localFieldAccess = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_LOCAL_FIELD_ACCESSES_METRIC);
+				Flaws.H_LOCAL_FIELD_ACCESSES_METRIC);
 		localFieldAccess.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		localFieldAccess.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode localMethodAccess = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_LOCAL_METHOD_ACCESSES_METRIC);
+				Flaws.H_LOCAL_METHOD_ACCESSES_METRIC);
 		localMethodAccess.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		localMethodAccess.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
-		GraphNode or = new GraphNode(graph, ZestStyles.NODES_FISHEYE,GlobalStrings.OR);
+		GraphNode or = new GraphNode(graph, ZestStyles.NODES_FISHEYE, "OR");
 		or.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLUE));
 		or.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		//SpaghettiCodeConections

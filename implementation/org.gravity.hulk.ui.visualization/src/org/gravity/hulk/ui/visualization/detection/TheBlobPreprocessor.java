@@ -26,7 +26,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.information.providers.TheBlobInformationStringProvider;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
@@ -42,150 +42,371 @@ public class TheBlobPreprocessor extends DetectionPreprocessor {
 	}
 
 	@Override
-	public Map<GlobalStrings, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {
-		Map<GlobalStrings, List<DetectionObject>> detectionObjectDummys = initializeMap();
+	public Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {
+		Map<Flaws, List<DetectionObject>> detectionObjects = initializeMap();
 
 		if (apg != null) {
 			for (HAnnotation a : apg.getHAnnotations()) {
 				if (a instanceof HBlobAntiPattern) {
-					preprocessDetections(detectionObjectDummys, (HBlobAntiPattern) a);
+					preprocessDetections(detectionObjects, (HBlobAntiPattern) a);
 				}
 			}
 
 		}
-		return detectionObjectDummys;
+		return detectionObjects;
 	}
 
-	private void preprocessDetections(Map<GlobalStrings, List<DetectionObject>> detectionObjectDummys,
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HBlobAntiPattern hBlob) {
-		boolean printHeader = true;
 
 		Map<String, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// The Blob
-		TClass tClass = (TClass) hBlob.getTAnnotated();
-		for (TAnnotation tAnnotation : tClass.getTAnnotation()) {
+		for (TAnnotation tAnnotation : hBlob.getTAnnotated().getTAnnotation()) {
 			if (tAnnotation instanceof HDataClassAccessor) {
 				HDataClassAccessor hDataClassAccessor = (HDataClassAccessor) tAnnotation;
 				// HDataClassAccessor
 				TClass accessorClass = (TClass) hDataClassAccessor.getTAnnotated();
 				DetectionObject dataClassAccessorObject = new DetectionObject(detections, thresholds, null,
-						GlobalStrings.H_DATA_CLASS_ACCESSOR);
+						Flaws.H_DATA_CLASS_ACCESSOR);
 				detections.put(createDetectionString(accessorClass), String.valueOf(hDataClassAccessor.getValue()));
-				thresholds.put("none", -1);
-				detectionObjectDummys.get(GlobalStrings.H_DATA_CLASS_ACCESSOR).add(dataClassAccessorObject);
-				detections.clear();
-				thresholds.clear();
+				detectionObjects.get(Flaws.H_DATA_CLASS_ACCESSOR).add(dataClassAccessorObject);
 				// .....
-				thresholds.put("HDataClassAccessor: MEDIUM", (ThresholdCalculator
-						.getThresholdValue(hDataClassAccessor, HRelativeValueConstants.MEDIUM, true)));
+				thresholds.put("HDataClassAccessor: MEDIUM", (ThresholdCalculator.getThresholdValue(hDataClassAccessor,
+						HRelativeValueConstants.MEDIUM, true)));
 				break;
 			}
 		}
-		detections.put(createDetectionString(tClass), "-1");
+		detections.put(createDetectionString((TClass) hBlob.getTAnnotated()), "-1");
 		DetectionObject theBlobDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				theBlobStringProvider.getInformationString(hBlob, true, TheBlobInformationStringProvider.THE_BLOB),
-				GlobalStrings.H_BLOB_ANTIPATTERN);
-		detectionObjectDummys.get(GlobalStrings.H_BLOB_ANTIPATTERN).add(theBlobDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		// GodClass
+				theBlobStringProvider.getInformationString(hBlob, true, Flaws.H_BLOB_ANTIPATTERN),
+				Flaws.H_BLOB_ANTIPATTERN);
+		detectionObjects.get(Flaws.H_BLOB_ANTIPATTERN).add(theBlobDetectionObjectDummy);
+
 		HGodClassAntiPattern hGodClassAntiPattern = hBlob.getHGodClassAntiPattern();
-		if (hGodClassAntiPattern != null) {
-			tClass = (TClass) hGodClassAntiPattern.getTAnnotated();
-			detections.put(createDetectionString(tClass), "-1");
-		}
-		thresholds.put("none", -1);
-		DetectionObject godClassDetectionObjectDummy = new DetectionObject(detections, thresholds, theBlobStringProvider
-				.getInformationString(hGodClassAntiPattern, true, TheBlobInformationStringProvider.GOD_CLASS),
-				GlobalStrings.H_GODCLASS_ANTIPATTERN);
-		detectionObjectDummys.get(GlobalStrings.H_GODCLASS_ANTIPATTERN).add(godClassDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		// DataClassSmells
-		thresholds.put("HNACCMetric: HIGH", -1);
-		String dataClassFullInformationString = "";
+		preprocessDetections(detectionObjects, hGodClassAntiPattern);
+
 		List<HDataClassSmell> hDataClassSmells = hBlob.getHDataClassSmells();
-		if (hDataClassSmells.size() > 0) {
-			HNACCMetric hnacc = hDataClassSmells.get(0).getHNACCMetric();
-			for (HDataClassSmell smell : hDataClassSmells) {
-				tClass = (TClass) smell.getTAnnotated();
-				detections.put(createDetectionString(tClass), "-1");
-				if (smell.getHNACCMetric() != null) {
-					dataClassFullInformationString = theBlobStringProvider.getInformationString(smell,
-							printHeader, TheBlobInformationStringProvider.DATA_CLASS);
-				}
-				printHeader = false;
-			}
-			if (hnacc != null)
-				thresholds.put("HNACCMetric: HIGH", ThresholdCalculator.getThresholdValue(hnacc, HRelativeValueConstants.HIGH, true));
-		}
-		DetectionObject dataClassDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				dataClassFullInformationString, GlobalStrings.H_DATA_CLASS_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_DATA_CLASS_SMELL).add(dataClassDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
+		preprocessDetections(detectionObjects, hDataClassSmells.toArray(new HDataClassSmell[hDataClassSmells.size()]));
+
 		// HLargeClassLowCohesionSmell
-		String lclcInformationString = null;
 		HLargeClassLowCohesionSmell hLargeClassLowCohesionSmell = null;
 		if (hGodClassAntiPattern != null) {
 			hLargeClassLowCohesionSmell = hGodClassAntiPattern.getHLargeClassLowCohesionSmell();
 		}
-		if (hLargeClassLowCohesionSmell != null) {
-			tClass = (TClass) hLargeClassLowCohesionSmell.getTAnnotated();
-			detections.put(createDetectionString(tClass), "-1");
-			lclcInformationString = theBlobStringProvider.getInformationString(hLargeClassLowCohesionSmell, true,
-					TheBlobInformationStringProvider.LARGE_CLASS_LOW_COHESION_SMELL);
+		preprocessDetections(detectionObjects, hLargeClassLowCohesionSmell);
 
-		}
-		thresholds.put("none", -1);
-		DetectionObject hLargeClassLowCohesionDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				lclcInformationString, GlobalStrings.H_LARGE_CLASS_LOW_COHESION_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_LARGE_CLASS_LOW_COHESION_SMELL)
-				.add(hLargeClassLowCohesionDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		// HControllerClassSmell
-		thresholds.put("HInvocationRelationMetric: MEDIUM", -1);
 		HControllerClassSmell hControllerClassSmell = null;
 		if (hGodClassAntiPattern != null) {
 			hControllerClassSmell = hGodClassAntiPattern.getHControllerClassSmell();
 		}
-		String controllerInformationString = null;
+		HInvocationRelation hInvocationRelation = preprocessDetections(detectionObjects, hControllerClassSmell);
+
+		// HLowCohesionSmell
+		HLowCohesionSmell hLowCohesionSmell = null;
+		if (hLargeClassLowCohesionSmell != null) {
+			hLowCohesionSmell = hLargeClassLowCohesionSmell.getHLowCohesionSmell();
+		}
+		preprocessDetections(detectionObjects, hLowCohesionSmell);
+
+		// HLargeClassSmell
+		HLargeClassSmell hLargeClassSmell = null;
+		if (hLargeClassLowCohesionSmell != null) {
+			hLargeClassSmell = hLargeClassLowCohesionSmell.getHLargeClassSmell();
+		}
+		HNumberOfMembersMetric hNumberOfMembersMetric = preprocessDetections(detectionObjects, hLargeClassSmell);
+
+		preprocessDetections(detectionObjects, hInvocationRelation);
+
+		HLCOM5Metric hlcom5Metric = null;
+		if (hLowCohesionSmell != null) {
+			hlcom5Metric = hLowCohesionSmell.getHLCOM5CustomMetric();
+		}
+		preprocessDetections(detectionObjects, hlcom5Metric);
+
+		if (hLargeClassSmell != null) {
+			hNumberOfMembersMetric = hLargeClassSmell.getHNumberOfMembers();
+		}
+		preprocessDetections(detectionObjects, hNumberOfMembersMetric);
+
+		HIncommingInvocationMetric hNumberOfIncommingInvocationsMetric = null;
+		if (hInvocationRelation != null) {
+			hNumberOfIncommingInvocationsMetric = hInvocationRelation.getHIncommingInvocationCustomMetric();
+		}
+		preprocessDetections(detectionObjects, hNumberOfIncommingInvocationsMetric);
+
+		HOutgoingInvocationMetric hNumberOfOutgoingInvocationsMetric = null;
+		if (hInvocationRelation != null) {
+			hNumberOfOutgoingInvocationsMetric = hInvocationRelation.getHOutgoingInvocationCustomMetric();
+		}
+		preprocessDetections(detectionObjects, hNumberOfOutgoingInvocationsMetric);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HNumberOfMembersMetric hNumberOfMembersMetric) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HNumberOfMembersMetric
+		String numMembersFullInformationString = "";
+		thresholds.put("none", -1);
+		if (hNumberOfMembersMetric != null) {
+			TClass tClass = (TClass) hNumberOfMembersMetric.getTAnnotated();
+			detections.put(createDetectionString(tClass),
+					hNumberOfMembersMetric.getRelativeAmount().getValue().toString() + ": "
+							+ (hNumberOfMembersMetric.getValue()));
+			thresholds.put("none", -1);
+			numMembersFullInformationString = theBlobStringProvider.getInformationString(hNumberOfMembersMetric, true,
+					Flaws.H_NUMBER_OF_MEMBERS_METRIC);
+		}
+		DetectionObject hNumberOfMembersDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				numMembersFullInformationString, Flaws.H_NUMBER_OF_MEMBERS_METRIC);
+		detectionObjects.get(Flaws.H_NUMBER_OF_MEMBERS_METRIC).add(hNumberOfMembersDetectionObjectDummy);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HIncommingInvocationMetric hNumberOfIncommingInvocationsMetric) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HNumberOfIncommingInvocation
+		String inInvocFullInformationString = "";
+		thresholds.put("none", -1);
+		if (hNumberOfIncommingInvocationsMetric != null) {
+			TClass tClass = (TClass) hNumberOfIncommingInvocationsMetric.getTAnnotated();
+			detections.put(createDetectionString(tClass),
+					hNumberOfIncommingInvocationsMetric.getRelativeAmount().getValue() + ": "
+							+ (hNumberOfIncommingInvocationsMetric.getValue()));
+			inInvocFullInformationString = theBlobStringProvider.getInformationString(
+					hNumberOfIncommingInvocationsMetric, true,
+					Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
+		}
+		DetectionObject hNumberOfIcommingInvocationsDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				inInvocFullInformationString, Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
+		detectionObjects.get(Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC)
+				.add(hNumberOfIcommingInvocationsDetectionObjectDummy);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HOutgoingInvocationMetric hNumberOfOutgoingInvocationsMetric) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HNumberOfOutgoingInvocationsMetric
+		String outInvocFullInformationString = "";
+		thresholds.put("none", -1);
+		if (hNumberOfOutgoingInvocationsMetric != null) {
+			TClass tClass = (TClass) hNumberOfOutgoingInvocationsMetric.getTAnnotated();
+			detections.put(createDetectionString(tClass),
+					hNumberOfOutgoingInvocationsMetric.getRelativeAmount().getValue().toString() + ": "
+							+ (hNumberOfOutgoingInvocationsMetric.getValue()));
+			outInvocFullInformationString = theBlobStringProvider.getInformationString(
+					hNumberOfOutgoingInvocationsMetric, true,
+					Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC);
+		}
+		DetectionObject hNumberOfOutgoingInvocationsDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				outInvocFullInformationString, Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC);
+		detectionObjects.get(Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC)
+				.add(hNumberOfOutgoingInvocationsDetectionObjectDummy);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HLCOM5Metric hlcom5Metric) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HLCOM5Metric
+		String lcomFullInformationString = "";
+		thresholds.put("none", -1);
+		if (hlcom5Metric != null) {
+			TClass tClass = (TClass) hlcom5Metric.getTAnnotated();
+			detections.put(createDetectionString(tClass),
+					hlcom5Metric.getRelativeAmount().getValue().toString() + ": " + (hlcom5Metric.getValue()));
+			lcomFullInformationString = theBlobStringProvider.getInformationString(hlcom5Metric, true,
+					Flaws.H_LCOM5_METRIC);
+		}
+		DetectionObject hLCOM5DetectionObjectDummy = new DetectionObject(detections, thresholds,
+				lcomFullInformationString, Flaws.H_LCOM5_METRIC);
+		detectionObjects.get(Flaws.H_LCOM5_METRIC).add(hLCOM5DetectionObjectDummy);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HInvocationRelation hInvocationRelation) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HInvocationRelation
+		String invocRelFullInformationString = "";
+		thresholds.put("none", -1);
+		if (hInvocationRelation != null) {
+			TClass tClass = (TClass) hInvocationRelation.getTAnnotated();
+			detections.put(createDetectionString(tClass), hInvocationRelation.getRelativeAmount().getValue().toString()
+					+ ": " + (hInvocationRelation.getValue()));
+			invocRelFullInformationString = theBlobStringProvider.getInformationString(hInvocationRelation, true,
+					Flaws.H_INVOCATIONRELATION_METRIC);
+		}
+		DetectionObject hInvocationRelationDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				invocRelFullInformationString, Flaws.H_INVOCATIONRELATION_METRIC);
+		detectionObjects.get(Flaws.H_INVOCATIONRELATION_METRIC).add(hInvocationRelationDetectionObjectDummy);
+	}
+
+	private HNumberOfMembersMetric preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HLargeClassSmell hLargeClassSmell) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		String largeClassfullInformationString = "";
+		thresholds.put("HNumberOfMembersMetric: at least HIGH", -1);
+		HNumberOfMembersMetric hNumberOfMembersMetric = null;
+		if (hLargeClassSmell != null) {
+			hNumberOfMembersMetric = hLargeClassSmell.getHNumberOfMembers();
+			TClass tClass = (TClass) hLargeClassSmell.getTAnnotated();
+			detections.put(createDetectionString(tClass), "-1");
+			if (hNumberOfMembersMetric != null) {
+				thresholds.put("HNumberOfMembersMetric: at least HIGH", (ThresholdCalculator
+						.getThresholdValue(hNumberOfMembersMetric, HRelativeValueConstants.HIGH, true)));
+			}
+			largeClassfullInformationString = theBlobStringProvider.getInformationString(hLargeClassSmell, true,
+					Flaws.H_LARGE_CLASS_SMELL);
+		}
+		DetectionObject hLargeClassDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				largeClassfullInformationString, Flaws.H_LARGE_CLASS_SMELL);
+		detectionObjects.get(Flaws.H_LARGE_CLASS_SMELL).add(hLargeClassDetectionObjectDummy);
+		return hNumberOfMembersMetric;
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HLowCohesionSmell hLowCohesionSmell) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		String lowCohesionFullInformationString = "";
+		thresholds.put("HLCOM5Metric : at least HIGH", -1);
+		if (hLowCohesionSmell != null) {
+			HLCOM5Metric metric = hLowCohesionSmell.getHLCOM5CustomMetric();
+			TClass tClass = (TClass) hLowCohesionSmell.getTAnnotated();
+			detections.put(createDetectionString(tClass), "-1");
+			thresholds.put("HLCOM5Metric : at least HIGH",
+					(ThresholdCalculator.getThresholdValue(metric, HRelativeValueConstants.HIGH, true)));
+			lowCohesionFullInformationString = theBlobStringProvider.getInformationString(hLowCohesionSmell, true,
+					Flaws.H_LOW_COHESION_SMELL);
+		}
+		DetectionObject hLowCohesionDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				lowCohesionFullInformationString, Flaws.H_LOW_COHESION_SMELL);
+		detectionObjects.get(Flaws.H_LOW_COHESION_SMELL).add(hLowCohesionDetectionObjectDummy);
+	}
+
+	private HInvocationRelation preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HControllerClassSmell hControllerClassSmell) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// HControllerClassSmell
+		thresholds.put("HInvocationRelationMetric: MEDIUM", -1);
+		String controllerInformationString = "";
 		HInvocationRelation hInvocationRelation = null;
 		if (hControllerClassSmell != null) {
 			hInvocationRelation = hControllerClassSmell.getHInvocationRelation();
-			tClass = (TClass) hControllerClassSmell.getTAnnotated();
+			TClass tClass = (TClass) hControllerClassSmell.getTAnnotated();
 			detections.put(createDetectionString(tClass), "-1");
 			if (hInvocationRelation != null) {
 				thresholds.put("HInvocationRelationMetric: MEDIUM", (ThresholdCalculator
 						.getThresholdValue(hInvocationRelation, HRelativeValueConstants.MEDIUM, true)));
 			}
 			controllerInformationString = theBlobStringProvider.getInformationString(hControllerClassSmell, true,
-					TheBlobInformationStringProvider.CONTROLLER_CLASS);
+					Flaws.H_CONTROLLERCLASS_SMELL);
 		}
 		DetectionObject hControllerClassDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				controllerInformationString, GlobalStrings.H_CONTROLLERCLASS_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_CONTROLLERCLASS_SMELL).add(hControllerClassDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
+				controllerInformationString, Flaws.H_CONTROLLERCLASS_SMELL);
+		detectionObjects.get(Flaws.H_CONTROLLERCLASS_SMELL).add(hControllerClassDetectionObjectDummy);
+		return hInvocationRelation;
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HLargeClassLowCohesionSmell hLargeClassLowCohesionSmell) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		String lclcInformationString = "";
+		if (hLargeClassLowCohesionSmell != null) {
+			TClass tClass = (TClass) hLargeClassLowCohesionSmell.getTAnnotated();
+			detections.put(createDetectionString(tClass), "-1");
+			lclcInformationString = theBlobStringProvider.getInformationString(hLargeClassLowCohesionSmell, true,
+					Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL);
+
+		}
+		thresholds.put("none", -1);
+		DetectionObject hLargeClassLowCohesionDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				lclcInformationString, Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL);
+		detectionObjects.get(Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL)
+				.add(hLargeClassLowCohesionDetectionObjectDummy);
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HDataClassSmell[] hDataClassSmells) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// DataClassSmells
+		thresholds.put("HNACCMetric: HIGH", -1);
+		String dataClassFullInformationString = "";
+		boolean printHeader = true;
+
+		if (hDataClassSmells.length > 0) {
+			List<HNACCMetric> hnaccMetrics = new LinkedList<HNACCMetric>();
+			for (HDataClassSmell smell : hDataClassSmells) {
+				HNACCMetric hnaccMetric = smell.getHNACCMetric();
+				if (hnaccMetric != null) {
+					hnaccMetrics.add(hnaccMetric);
+				}
+				TClass tClass = (TClass) smell.getTAnnotated();
+				detections.put(createDetectionString(tClass), "-1");
+				if (hnaccMetric != null) {
+					dataClassFullInformationString = theBlobStringProvider.getInformationString(smell, printHeader,
+							Flaws.H_DATA_CLASS_SMELL);
+				}
+				printHeader = false;
+			}
+			if (!hnaccMetrics.isEmpty()) {
+				thresholds.put("HNACCMetric: HIGH",
+						ThresholdCalculator.getThresholdValue(hnaccMetrics.get(0), HRelativeValueConstants.HIGH, true));
+			}
+
+			preprocessDetections(detectionObjects, hnaccMetrics.toArray(new HNACCMetric[hnaccMetrics.size()]));
+
+			Map<String, String> detections2 = new HashMap<>();
+			Map<String, Number> thresholds2 = new HashMap<>();
+			// HGetterSetterSmell
+			String getterSetterFullInformationString = "";
+			for (HDataClassSmell smell : hDataClassSmells) {
+				List<HGetterSetterSmell> getterSetterSmells = smell.getGetterSetterSmells();
+				int numberOfGetterSetters = 0;
+				for (HGetterSetterSmell getterSetter : getterSetterSmells) {
+					numberOfGetterSetters++;
+					getterSetterFullInformationString = getterSetterFullInformationString
+							+ theBlobStringProvider.getInformationString(getterSetter, printHeader,
+									Flaws.H_GETTER_SETTER_SMELLS);
+					printHeader = false;
+				}
+				TClass tClass = (TClass) smell.getTAnnotated();
+				detections2.put(createDetectionString(tClass), (numberOfGetterSetters) + " getters/setters");
+			}
+			thresholds2.put("none", -1);
+			DetectionObject hGetterSetterDetectionObjectDummy = new DetectionObject(detections2, thresholds2,
+					getterSetterFullInformationString, Flaws.H_GETTER_SETTER_SMELLS);
+			detectionObjects.get(Flaws.H_GETTER_SETTER_SMELLS).add(hGetterSetterDetectionObjectDummy);
+		}
+		DetectionObject dataClassDetectionObjectDummy = new DetectionObject(detections, thresholds,
+				dataClassFullInformationString, Flaws.H_DATA_CLASS_SMELL);
+		detectionObjects.get(Flaws.H_DATA_CLASS_SMELL).add(dataClassDetectionObjectDummy);
+
+	}
+
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HNACCMetric[] hnaccMetrics) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
 		// HNACCMetric
 		String fullInformationString = "";
-		for (HDataClassSmell smell : hDataClassSmells) {
-			HNACCMetric hnaccMetric = smell.getHNACCMetric();
+		boolean printHeader = true;
+		for (HNACCMetric hnaccMetric : hnaccMetrics) {
 			if (hnaccMetric != null) {
-				tClass = (TClass) hnaccMetric.getTAnnotated();
-				detections.put(createDetectionString(tClass), hnaccMetric.getRelativeAmount().getValue()
-						+ ": " + (hnaccMetric.getValue()));
+				TClass tClass = (TClass) hnaccMetric.getTAnnotated();
+				detections.put(createDetectionString(tClass),
+						hnaccMetric.getRelativeAmount().getValue() + ": " + (hnaccMetric.getValue()));
 				fullInformationString = fullInformationString + theBlobStringProvider.getInformationString(hnaccMetric,
-						printHeader, TheBlobInformationStringProvider.NACC_METRIC);
+						printHeader, Flaws.H_NACC_METRIC);
 				printHeader = false;
 			} else {
 				LOGGER.log(Level.WARN, "HNACC IS NULL");
@@ -193,205 +414,44 @@ public class TheBlobPreprocessor extends DetectionPreprocessor {
 		}
 		thresholds.put("none", -1);
 		DetectionObject hnaccDetectionObjectDummy = new DetectionObject(detections, thresholds, fullInformationString,
-				GlobalStrings.H_NACC_METRIC);
-		detectionObjectDummys.get(GlobalStrings.H_NACC_METRIC).add(hnaccDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HGetterSetterSmell
-		String getterSetterFullInformationString = "";
-		for (HDataClassSmell smell : hDataClassSmells) {
-			List<HGetterSetterSmell> getterSetterSmells = smell.getGetterSetterSmells();
-			int numberOfGetterSetters = 0;
-			tClass = (TClass) smell.getTAnnotated();
-			for (HGetterSetterSmell getterSetter : getterSetterSmells) {
-				numberOfGetterSetters++;
-				getterSetterFullInformationString = getterSetterFullInformationString + theBlobStringProvider.getInformationString(getterSetter,
-						printHeader, TheBlobInformationStringProvider.GETTER_SETTER_SMELL);
-				printHeader = false;
-			}
-			detections.put(createDetectionString(tClass), (numberOfGetterSetters) + " getters/setters");
-		}
-		thresholds.put("none", -1);
-		DetectionObject hGetterSetterDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				getterSetterFullInformationString, GlobalStrings.H_GETTER_SETTER_SMELLS);
-		detectionObjectDummys.get(GlobalStrings.H_GETTER_SETTER_SMELLS).add(hGetterSetterDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HLowCohesionSmell
-		String lowCohesionFullInformationString = "";
-		thresholds.put("HLCOM5Metric : at least HIGH", -1);
-		HLowCohesionSmell hLowCohesionSmell = null;
-		if (hLargeClassLowCohesionSmell != null) {
-			hLowCohesionSmell = hLargeClassLowCohesionSmell.getHLowCohesionSmell();
-		}
-		if (hLowCohesionSmell != null) {
-			HLCOM5Metric metric = hLowCohesionSmell.getHLCOM5CustomMetric();
-			tClass = (TClass) hLowCohesionSmell.getTAnnotated();
-			detections.put(createDetectionString(tClass), "-1");
-			thresholds.put("HLCOM5Metric : at least HIGH",
-					(ThresholdCalculator.getThresholdValue(metric, HRelativeValueConstants.HIGH, true)));
-			lowCohesionFullInformationString = theBlobStringProvider.getInformationString(hLowCohesionSmell, true,
-					TheBlobInformationStringProvider.LOW_COHESION_SMELL);
-		}
-		DetectionObject hLowCohesionDetectionObjectDummy = new DetectionObject(detections, thresholds,
-				lowCohesionFullInformationString, GlobalStrings.H_LOW_COHESION_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_LOW_COHESION_SMELL).add(hLowCohesionDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HLargeClassSmell
-		String largeClassfullInformationString = "";
-		thresholds.put("HNumberOfMembersMetric: at least HIGH", -1);
-		HLargeClassSmell hLargeClassSmell = null;
-		if (hLargeClassLowCohesionSmell != null) {
-			hLargeClassSmell = hLargeClassLowCohesionSmell.getHLargeClassSmell();
-		}
-		HNumberOfMembersMetric hNumberOfMembersMetric = null;
-		if (hLargeClassSmell != null) {
-			hNumberOfMembersMetric = hLargeClassSmell.getHNumberOfMembers();
-			tClass = (TClass) hLargeClassSmell.getTAnnotated();
-			detections.put(createDetectionString(tClass), "-1");
-			if (hNumberOfMembersMetric != null) {
-				thresholds.put("HNumberOfMembersMetric: at least HIGH", (ThresholdCalculator
-						.getThresholdValue(hNumberOfMembersMetric, HRelativeValueConstants.HIGH, true)));
-			}
-			largeClassfullInformationString = theBlobStringProvider.getInformationString(hLargeClassSmell, true,
-					TheBlobInformationStringProvider.LARGE_CLASS_SMELL);
-		}
-		DetectionObject hLargeClassDetectionObjectDummy = new DetectionObject(detections,thresholds,largeClassfullInformationString,GlobalStrings.H_LARGE_CLASS_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_LARGE_CLASS_SMELL).add(hLargeClassDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HInvocationRelation
-		String invocRelFullInformationString = "";
-		thresholds.put("none", -1);
-		if (hInvocationRelation != null) {
-			tClass = (TClass) hInvocationRelation.getTAnnotated();
-			detections.put(createDetectionString(tClass), hInvocationRelation.getRelativeAmount().getValue().toString()
-					+ ": " + (hInvocationRelation.getValue()));
-			invocRelFullInformationString = theBlobStringProvider.getInformationString(hInvocationRelation, true,
-					TheBlobInformationStringProvider.INVOCATION_RELATION);
-		}
-		DetectionObject hInvocationRelationDetectionObjectDummy = new DetectionObject(detections,thresholds,invocRelFullInformationString,GlobalStrings.H_INVOCATIONRELATION_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_INVOCATIONRELATION_SMELL)
-				.add(hInvocationRelationDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HLCOM5Metric
-		String lcomFullInformationString = "";
-		thresholds.put("none", -1);
-		HLCOM5Metric hlcom5Metric = null;
-		if (hLowCohesionSmell != null) {
-			hlcom5Metric = hLowCohesionSmell.getHLCOM5CustomMetric();
-		}
-		if (hlcom5Metric != null) {
-			tClass = (TClass) hlcom5Metric.getTAnnotated();
-			detections.put(createDetectionString(tClass), hlcom5Metric.getRelativeAmount().getValue().toString() + ": "
-					+ (hlcom5Metric.getValue()));
-			lcomFullInformationString = theBlobStringProvider.getInformationString(hlcom5Metric, true,
-					TheBlobInformationStringProvider.LCOM5);
-		}
-		DetectionObject hLCOM5DetectionObjectDummy = new DetectionObject(detections,thresholds,lcomFullInformationString,GlobalStrings.H_LCOM5_METRIC);
-		detectionObjectDummys.get(GlobalStrings.H_LCOM5_METRIC).add(hLCOM5DetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HNumberOfMembersMetric
-		String numMembersFullInformationString = "";
-		thresholds.put("none", -1);
-		if (hLargeClassSmell != null)
-			hNumberOfMembersMetric = hLargeClassSmell.getHNumberOfMembers();
-		if (hNumberOfMembersMetric != null) {
-			tClass = (TClass) hNumberOfMembersMetric.getTAnnotated();
-			detections.put(createDetectionString(tClass),
-					hNumberOfMembersMetric.getRelativeAmount().getValue().toString() + ": "
-							+ (hNumberOfMembersMetric.getValue()));
-			thresholds.put("none", -1);
-			numMembersFullInformationString = theBlobStringProvider.getInformationString(hNumberOfMembersMetric, true,
-					TheBlobInformationStringProvider.NUMBER_OF_MEMBERS_METRIC);
-		}
-		DetectionObject hNumberOfMembersDetectionObjectDummy = new DetectionObject(detections,thresholds,numMembersFullInformationString,GlobalStrings.H_NUMBER_OF_MEMBERS_METRIC);
-		detectionObjectDummys.get(GlobalStrings.H_NUMBER_OF_MEMBERS_METRIC).add(hNumberOfMembersDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HNumberOfIncommingInvocation
-		String inInvocFullInformationString = "";
-		thresholds.put("none", -1);
-		HIncommingInvocationMetric hNumberOfIncommingInvocationsMetric = null;
-		if (hInvocationRelation != null) {
-			hNumberOfIncommingInvocationsMetric = hInvocationRelation.getHIncommingInvocationCustomMetric();
-		}
-		if (hNumberOfIncommingInvocationsMetric != null) {
-			tClass = (TClass) hNumberOfIncommingInvocationsMetric.getTAnnotated();
-			detections.put(createDetectionString(tClass),
-					hNumberOfIncommingInvocationsMetric.getRelativeAmount().getValue() + ": "
-							+ (hNumberOfIncommingInvocationsMetric.getValue()));
-			inInvocFullInformationString = theBlobStringProvider.getInformationString(hNumberOfIncommingInvocationsMetric,
-					true, TheBlobInformationStringProvider.NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
-		}
-		DetectionObject hNumberOfIcommingInvocationsDetectionObjectDummy = new DetectionObject(detections,thresholds,inInvocFullInformationString, GlobalStrings.H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL)
-				.add(hNumberOfIcommingInvocationsDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
-		// HNumberOfOutgoingInvocationsMetric
-		String outInvocFullInformationString = "";
-		thresholds.put("none", -1);
-		HOutgoingInvocationMetric hNumberOfOutgoingInvocationsMetric = null;
-		if (hInvocationRelation != null) {
-			hNumberOfOutgoingInvocationsMetric = hInvocationRelation.getHOutgoingInvocationCustomMetric();
-		}
-		if (hNumberOfOutgoingInvocationsMetric != null) {
-			tClass = (TClass) hNumberOfOutgoingInvocationsMetric.getTAnnotated();
-			detections.put(createDetectionString(tClass),
-					hNumberOfOutgoingInvocationsMetric.getRelativeAmount().getValue().toString() + ": "
-							+ (hNumberOfOutgoingInvocationsMetric.getValue()));
-			outInvocFullInformationString = theBlobStringProvider.getInformationString(hNumberOfOutgoingInvocationsMetric, true,
-					TheBlobInformationStringProvider.NUMBER_OF_OUTGOING_INVOCATIONS_METRIC);
-		}
-		DetectionObject hNumberOfOutgoingInvocationsDetectionObjectDummy = new DetectionObject(detections,thresholds,outInvocFullInformationString, GlobalStrings.H_NUMBER_OF_OUTGOING_INVOCATIONS_SMELL);
-		detectionObjectDummys.get(GlobalStrings.H_NUMBER_OF_OUTGOING_INVOCATIONS_SMELL)
-				.add(hNumberOfOutgoingInvocationsDetectionObjectDummy);
-		detections.clear();
-		thresholds.clear();
-		tClass = null;
-		printHeader = true;
+				Flaws.H_NACC_METRIC);
+		detectionObjects.get(Flaws.H_NACC_METRIC).add(hnaccDetectionObjectDummy);
 	}
 
-	private Map<GlobalStrings, List<DetectionObject>> initializeMap() {
-		Map<GlobalStrings, List<DetectionObject>> detectionObjectDummys = new HashMap<GlobalStrings, List<DetectionObject>>();
-		detectionObjectDummys.put(GlobalStrings.H_BLOB_ANTIPATTERN, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_GODCLASS_ANTIPATTERN, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_DATA_CLASS_ACCESSOR, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_DATA_CLASS_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_GETTER_SETTER_SMELLS, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_NACC_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_CONTROLLERCLASS_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LARGE_CLASS_LOW_COHESION_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_INVOCATIONRELATION_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LOW_COHESION_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LARGE_CLASS_SMELL, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_LCOM5_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_NUMBER_OF_MEMBERS_METRIC, new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL,
-				new LinkedList<DetectionObject>());
-		detectionObjectDummys.put(GlobalStrings.H_NUMBER_OF_OUTGOING_INVOCATIONS_SMELL,
-				new LinkedList<DetectionObject>());
-		return detectionObjectDummys;
+	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
+			HGodClassAntiPattern hGodClassAntiPattern) {
+		Map<String, String> detections = new HashMap<>();
+		Map<String, Number> thresholds = new HashMap<>();
+		// GodClass
+		if (hGodClassAntiPattern != null) {
+			TClass tClass = (TClass) hGodClassAntiPattern.getTAnnotated();
+			detections.put(createDetectionString(tClass), "-1");
+		}
+		thresholds.put("none", -1);
+		DetectionObject godClassDetectionObjectDummy = new DetectionObject(detections, thresholds, theBlobStringProvider
+				.getInformationString(hGodClassAntiPattern, true, Flaws.H_GODCLASS_ANTIPATTERN),
+				Flaws.H_GODCLASS_ANTIPATTERN);
+		detectionObjects.get(Flaws.H_GODCLASS_ANTIPATTERN).add(godClassDetectionObjectDummy);
+	}
+
+	private Map<Flaws, List<DetectionObject>> initializeMap() {
+		Map<Flaws, List<DetectionObject>> detectionObjects = new HashMap<>();
+		detectionObjects.put(Flaws.H_BLOB_ANTIPATTERN, new LinkedList<>());
+		detectionObjects.put(Flaws.H_GODCLASS_ANTIPATTERN, new LinkedList<>());
+		detectionObjects.put(Flaws.H_DATA_CLASS_ACCESSOR, new LinkedList<>());
+		detectionObjects.put(Flaws.H_DATA_CLASS_SMELL, new LinkedList<>());
+		detectionObjects.put(Flaws.H_GETTER_SETTER_SMELLS, new LinkedList<>());
+		detectionObjects.put(Flaws.H_NACC_METRIC, new LinkedList<>());
+		detectionObjects.put(Flaws.H_CONTROLLERCLASS_SMELL, new LinkedList<>());
+		detectionObjects.put(Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL, new LinkedList<>());
+		detectionObjects.put(Flaws.H_INVOCATIONRELATION_METRIC, new LinkedList<>());
+		detectionObjects.put(Flaws.H_LOW_COHESION_SMELL, new LinkedList<>());
+		detectionObjects.put(Flaws.H_LARGE_CLASS_SMELL, new LinkedList<>());
+		detectionObjects.put(Flaws.H_LCOM5_METRIC, new LinkedList<>());
+		detectionObjects.put(Flaws.H_NUMBER_OF_MEMBERS_METRIC, new LinkedList<>());
+		detectionObjects.put(Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC, new LinkedList<>());
+		detectionObjects.put(Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC, new LinkedList<>());
+		return detectionObjects;
 	}
 
 }

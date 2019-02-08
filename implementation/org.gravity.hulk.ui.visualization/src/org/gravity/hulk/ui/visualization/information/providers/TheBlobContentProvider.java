@@ -16,7 +16,7 @@ import org.gravity.eclipse.io.FileUtils;
 import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class TheBlobContentProvider extends InformationViewContentProvider {
 	
@@ -66,74 +66,74 @@ public class TheBlobContentProvider extends InformationViewContentProvider {
 	protected Graph setUpGraph(Composite graphComposite) {
 		Graph graph = new Graph(graphComposite, SWT.BORDER);
 
-		GraphNode theBlob = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_BLOB_ANTIPATTERN);
+		GraphNode theBlob = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_BLOB_ANTIPATTERN);
 		theBlob.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
 		theBlob.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		theBlob.setSize(-1, -1);
 		
 
-		GraphNode hGodClassAntiPattern = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_GODCLASS_ANTIPATTERN);
+		GraphNode hGodClassAntiPattern = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_GODCLASS_ANTIPATTERN);
 		hGodClassAntiPattern.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
 		hGodClassAntiPattern.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
-		GraphNode hDataClassAccessor = new GraphNode(graph, ZestStyles.NODES_FISHEYE,GlobalStrings.H_DATA_CLASS_ACCESSOR);
+		GraphNode hDataClassAccessor = new GraphNode(graph, ZestStyles.NODES_FISHEYE,Flaws.H_DATA_CLASS_ACCESSOR);
 		hDataClassAccessor.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hDataClassAccessor.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
 		
-		GraphNode hControllerClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_CONTROLLERCLASS_SMELL);
+		GraphNode hControllerClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_CONTROLLERCLASS_SMELL);
 		hControllerClassSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hControllerClassSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hInvocationRelationMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_INVOCATIONRELATION_SMELL);
+		GraphNode hInvocationRelationMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_INVOCATIONRELATION_METRIC);
 		hInvocationRelationMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hInvocationRelationMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode hNumberOfIncommingInvocationsMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL);
+				Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
 		hNumberOfIncommingInvocationsMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hNumberOfIncommingInvocationsMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode hNumberOfOutgoingInvocationsMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_NUMBER_OF_OUTGOING_INVOCATIONS_SMELL);
+				Flaws.H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC);
 		hNumberOfOutgoingInvocationsMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hNumberOfOutgoingInvocationsMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 		GraphNode hLargeClassLowCohesionSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				GlobalStrings.H_LARGE_CLASS_LOW_COHESION_SMELL);
+				Flaws.H_LARGE_CLASS_LOW_COHESION_SMELL);
 		hLargeClassLowCohesionSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hLargeClassLowCohesionSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hLowCohesionSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_LOW_COHESION_SMELL);
+		GraphNode hLowCohesionSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_LOW_COHESION_SMELL);
 		hLowCohesionSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hLowCohesionSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hLCOM5Metric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_LCOM5_METRIC);
+		GraphNode hLCOM5Metric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_LCOM5_METRIC);
 		hLCOM5Metric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hLCOM5Metric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
-		GraphNode hLargeClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_LARGE_CLASS_SMELL);
+		GraphNode hLargeClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_LARGE_CLASS_SMELL);
 		hLargeClassSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hLargeClassSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hNumberOfMembersMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_NUMBER_OF_MEMBERS_METRIC);
+		GraphNode hNumberOfMembersMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_NUMBER_OF_MEMBERS_METRIC);
 		hNumberOfMembersMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hNumberOfMembersMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
-		GraphNode hDataClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_DATA_CLASS_SMELL);
+		GraphNode hDataClassSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_DATA_CLASS_SMELL);
 		hDataClassSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hDataClassSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hGetterSetterSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_GETTER_SETTER_SMELLS);
+		GraphNode hGetterSetterSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_GETTER_SETTER_SMELLS);
 		hGetterSetterSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
 		hGetterSetterSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
 		
-		GraphNode hNACCMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.H_NACC_METRIC);
+		GraphNode hNACCMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_NACC_METRIC);
 		hNACCMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		hNACCMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		
 
-		GraphNode or1 = new GraphNode(graph, ZestStyles.NODES_FISHEYE, GlobalStrings.OR);
+		GraphNode or1 = new GraphNode(graph, ZestStyles.NODES_FISHEYE, "OR");
 		or1.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLUE));
 		or1.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		//TheBlobConnections

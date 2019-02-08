@@ -17,7 +17,7 @@ import org.gravity.hulk.ui.visualization.Activator;
 import org.gravity.hulk.ui.visualization.detection.DetectionObject;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.util.AstUtil;
-import org.gravity.hulk.ui.visualization.util.GlobalStrings;
+import org.gravity.hulk.ui.visualization.util.Flaws;
 
 public class AntipatternMarkerManager {
 
@@ -26,7 +26,7 @@ public class AntipatternMarkerManager {
 	private DetectionPreprocessor preprocessor;
 	private IFolder src;
 	private HAntiPatternGraph apg;
-	private Map<GlobalStrings, List<DetectionObject>> detectionObjects;
+	private Map<Flaws, List<DetectionObject>> detectionObjects;
 
 	public AntipatternMarkerManager(HAntiPatternGraph apg, DetectionPreprocessor preprocessor, IProject project) {
 		this.preprocessor = preprocessor;
@@ -49,7 +49,7 @@ public class AntipatternMarkerManager {
 	public void setMarkers() {
 		IFile file = null;
 		detectionObjects = preprocessor.preprocessDetections(apg);
-		for (GlobalStrings key : detectionObjects.keySet()) {
+		for (Flaws key : detectionObjects.keySet()) {
 			if (!key.toString().endsWith("Metric")) {
 				for (DetectionObject detectionObject : detectionObjects.get(key)) {
 					Map<String, String> detections = detectionObject.getDetections();

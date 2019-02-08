@@ -1,13 +1,13 @@
 package org.gravity.hulk.ui.visualization.util;
 
-public enum GlobalStrings {
+public enum Flaws {
 	
 	H_BLOB_ANTIPATTERN("HBlobAntiPattern"),
 	H_GODCLASS_ANTIPATTERN("HGodClassAntiPattern"),
 	H_CONTROLLERCLASS_SMELL("HControllerClassSmell"),
-	H_INVOCATIONRELATION_SMELL("HInvocationRelationMetric"),
-	H_NUMBER_OF_INCOMMING_INVOCATIONS_SMELL("HNumberOfIncommingInvocationsMetric"),
-	H_NUMBER_OF_OUTGOING_INVOCATIONS_SMELL("HNumberOfOutgoingInvocationsMetric"),
+	H_INVOCATIONRELATION_METRIC("HInvocationRelationMetric"),
+	H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC("HNumberOfIncommingInvocationsMetric"),
+	H_NUMBER_OF_OUTGOING_INVOCATIONS_METRIC("HNumberOfOutgoingInvocationsMetric"),
 	H_LARGE_CLASS_LOW_COHESION_SMELL("HLargeClassLowCohesionSmell"),
 	H_LOW_COHESION_SMELL("HLowCohesionSmell"),
 	H_LCOM5_METRIC("HLCOM5Metric"),
@@ -27,14 +27,11 @@ public enum GlobalStrings {
 	H_LOCAL_ACCESS_RELATION_METRIC("HLocalAccessRelationMetric"),
 	H_LOCAL_FIELD_ACCESSES_METRIC("HLocalFieldAccessesMetric"),
 	H_LOCAL_METHOD_ACCESSES_METRIC("HLocalMethodAccessesMetric"),
-	H_DATA_CLASS_ACCESSOR("HDataClassAccessor"),
-	AND("AND"),
-	OR("OR"),
-	CALCULATE("CALCULATE");
+	H_DATA_CLASS_ACCESSOR("HDataClassAccessor");
 	
 	final String string;
 	
-	private GlobalStrings(String string) {
+	private Flaws(String string) {
 		this.string = string;
 	}
 	
