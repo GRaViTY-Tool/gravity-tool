@@ -4,7 +4,6 @@ import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -17,7 +16,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
@@ -25,10 +23,8 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.GravityActivator;
+import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.JavaHelper;
-import org.gravity.eclipse.converter.IPGConverter;
-import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
@@ -114,7 +110,7 @@ public class AccessAnalysisTest {
 	@Test
 	public void testAccessAnalysis() throws AnalysisException, TransformationFailedException {
 		IProgressMonitor monitor = new NullProgressMonitor();
-		TypeGraph pg = createProgramModel(javaProject, monitor);
+		TypeGraph pg = GravityAPI.createProgramModel(javaProject, monitor);
 
 		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		apg.setPg(pg);
@@ -169,26 +165,36 @@ public class AccessAnalysisTest {
 				}
 
 				if (hValue != aValue) {
-					String element = null;
-					TAnnotatable tAnnotated = tAnnotation.getTAnnotated();
-					if (tAnnotated instanceof TMember) {
-						TMember tMember = (TMember) tAnnotated;
-						element = "Member \"" + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
-								+ tMember.getSignatureString() + '\"';
-					} else if (tAnnotated instanceof TAbstractType) {
-						element = "Type \"" + ((TAbstractType) tAnnotated).getFullyQualifiedName() + '\"';
-					} else if (tAnnotated instanceof TPackage) {
-						element = "Package \"" + ((TPackage) tAnnotated).getFullyQualifiedName();
-
-					} else if (tAnnotated instanceof TypeGraph) {
-						element = "Java Project \"" + ((TypeGraph) tAnnotated).getTName() + "\"";
-					}
-
+					String element = getNameOfAnnotatedElement(tAnnotation);
 					LOGGER.log(Level.ERROR,
 							kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
 				}
 			}
 		}
+	}
+
+	/**
+	 * 
+	 * Builds a String with the name of the annotated Element
+	 * @param tAnnotation The annotation
+	 * @return The String representation
+	 */
+	private String getNameOfAnnotatedElement(TAnnotation tAnnotation) {
+		String element = null;
+		TAnnotatable tAnnotated = tAnnotation.getTAnnotated();
+		if (tAnnotated instanceof TMember) {
+			TMember tMember = (TMember) tAnnotated;
+			element = "Member \"" + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
+					+ tMember.getSignatureString() + '\"';
+		} else if (tAnnotated instanceof TAbstractType) {
+			element = "Type \"" + ((TAbstractType) tAnnotated).getFullyQualifiedName() + '\"';
+		} else if (tAnnotated instanceof TPackage) {
+			element = "Package \"" + ((TPackage) tAnnotated).getFullyQualifiedName();
+
+		} else if (tAnnotated instanceof TypeGraph) {
+			element = "Java Project \"" + ((TypeGraph) tAnnotated).getTName() + "\"";
+		}
+		return element;
 	}
 
 	/**
@@ -199,39 +205,28 @@ public class AccessAnalysisTest {
 	 * @return The corresponding annotations
 	 */
 	private Collection<TAnnotation> getTAnnotations(TypeGraph programModel, Result result) {
-		EList<TAnnotation> tAnnotations = null;
-
 		IJavaElement javaElement = result.getJavaElement();
 		if (javaElement instanceof IJavaProject) {
-			tAnnotations = programModel.getTAnnotation();
+			return programModel.getTAnnotation();
 		} else if (javaElement instanceof IPackageFragmentRoot) {
 			TPackage tPackage = programModel
 					.getPackage(new String[] { ((IPackageFragmentRoot) javaElement).getElementName() });
 			if (tPackage == null) {
 				return null;
 			}
-			tAnnotations = tPackage.getTAnnotation();
+			return tPackage.getTAnnotation();
 
 		} else if (javaElement instanceof IPackageFragment) {
-			List<String> namespace = new LinkedList<>();
-			IJavaElement tmp = javaElement;
-			while (tmp != null && tmp instanceof IPackageFragment) {
-				String[] names = tmp.getElementName().split("\\.");
-				for (int i = names.length - 1; i >= 0; i--) {
-					namespace.add(0, names[i]);
-				}
-				tmp = tmp.getParent();
-			}
-
+			List<String> namespace = getNameSpace((IPackageFragment) javaElement);
 			TPackage tPackage = programModel.getPackage(namespace.toArray(new String[namespace.size()]));
 
-			tAnnotations = tPackage.getTAnnotation();
+			return tPackage.getTAnnotation();
 		} else if (javaElement instanceof IType) {
 			TAbstractType tClass = programModel.getType(((IType) javaElement).getFullyQualifiedName());
-			tAnnotations = tClass.getTAnnotation();
+			return tClass.getTAnnotation();
 		} else if (javaElement instanceof IMethod) {
 			TMethodDefinition tMethodDefinition = JavaHelper.getTMethodDefinition((IMethod) javaElement, programModel);
-			tAnnotations = tMethodDefinition.getTAnnotation();
+			return tMethodDefinition.getTAnnotation();
 		}
 		else {
 			String message = "Annotations cannot be retrieved for the following element: "+javaElement;
@@ -239,32 +234,24 @@ public class AccessAnalysisTest {
 			fail(message);
 			return null;
 		}
-		return tAnnotations;
 	}
 
 	/**
-	 * Discovers the Java project and creates a program model
+	 * Builds a list with the name space of the package fragment
 	 * 
-	 * @param project A Java project
-	 * @param monitor A progress monitor
-	 * @return The program model
-	 * @throws TransformationFailedException If the program model cannot be created
+	 * @param fragment A package fragment
+	 * @return A list with the name space
 	 */
-	private TypeGraph createProgramModel(IJavaProject project, IProgressMonitor monitor) throws TransformationFailedException {
-		IProject iproject = project.getProject();
-		IPGConverter converter;
-		try {
-			converter = GravityActivator.getDefault().getNewConverter(iproject);
-		} catch (CoreException | NoConverterRegisteredException e) {
-			throw new TransformationFailedException(e);
+	private static List<String> getNameSpace(IPackageFragment fragment) {
+		List<String> namespace = new LinkedList<>();
+		IJavaElement tmp = fragment;
+		while (tmp != null && tmp instanceof IPackageFragment) {
+			String[] names = tmp.getElementName().split("\\.");
+			for (int i = names.length - 1; i >= 0; i--) {
+				namespace.add(0, names[i]);
+			}
+			tmp = tmp.getParent();
 		}
-
-		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
-		if (!success || converter.getPG() == null) {
-			throw new TransformationFailedException(
-					"Creating PG from project failed: " + project.getProject().getName());
-		}
-		TypeGraph pg = converter.getPG();
-		return pg;
+		return namespace;
 	}
 }
