@@ -3,31 +3,34 @@ package org.gravity.modisco.bugfixes;
 import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
 import org.gravity.modisco.impl.MAnnotationImpl;
 
+/**
+ * An override for the standard annotation implementation to fix an exception in
+ * the toString operation
+ * 
+ * @author speldszus
+ *
+ */
 public class MAnnotationImpl_bugfix extends MAnnotationImpl {
 
 	@Override
 	public String toString() {
 		StringBuilder result = new StringBuilder(getClass().getName());
-	    result.append('@');
-	    result.append(Integer.toHexString(hashCode()));
+		result.append('@');
+		result.append(System.identityHashCode(this));
 
-	    if (eIsProxy())
-	    {
-	      result.append(" (eProxyURI: ");
-	      result.append(eProxyURI());
-	      if (eDynamicClass() != null)
-	      {
-	        result.append(" eClass: ");
-	        result.append(eDynamicClass());
-	      }
-	      result.append(')');
-	    }
-	    else if (eDynamicClass() != null)
-	    {
-	      result.append(" (eClass: ");
-	      result.append(eDynamicClass());
-	      result.append(')');
-	    }
+		if (eIsProxy()) {
+			result.append(" (eProxyURI: ");
+			result.append(eProxyURI());
+			if (eDynamicClass() != null) {
+				result.append(" eClass: ");
+				result.append(eDynamicClass());
+			}
+			result.append(')');
+		} else if (eDynamicClass() != null) {
+			result.append(" (eClass: ");
+			result.append(eDynamicClass());
+			result.append(')');
+		}
 		result.append("\n"); //$NON-NLS-1$
 		result.append("annotation type = "); //$NON-NLS-1$
 		if (getType() != null) {
