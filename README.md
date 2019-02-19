@@ -62,9 +62,8 @@ Build:
 This project is licensed under the Eclipse Public License - seet the [LICENSE](https://github.com/GRaViTY-Tool/gravity-tool/blob/master/LICENSE) file for details.
 
 ## Contact
-Sven Peldszus (speldszus@uni-koblenz.de)\\
-University of Koblenz-Landau\\
-
-Universitätsstraße 1
-
-56073 Koblenz, Germany
+Sven Peldszus (speldszus@uni-koblenz.de)  
+University of Koblenz-Landau  
+Universitätsstraße 1  
+56073 Koblenz  
+Germany
