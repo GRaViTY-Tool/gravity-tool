@@ -22,6 +22,12 @@ import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
+/**
+ * Preprocessing of fields
+ * 
+ * @author speldszus
+ *
+ */
 public class FieldPreprocessing implements IMoDiscoProcessor {
 
 	private static final Logger LOGGER = Logger.getLogger(FieldPreprocessing.class);
