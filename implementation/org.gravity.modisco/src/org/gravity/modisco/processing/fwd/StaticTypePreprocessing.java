@@ -17,12 +17,14 @@ import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.CastExpression;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.ConditionalExpression;
+import org.eclipse.gmt.modisco.java.ConstructorDeclaration;
 import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InfixExpression;
+import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
@@ -36,6 +38,7 @@ import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.TypeLiteral;
 import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
+import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.eclipse.exceptions.ProcessingException;
@@ -281,6 +284,22 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		}
 		if (expression instanceof UnresolvedItemAccess) {
 			return getStaticType((UnresolvedItemAccess) expression, method);
+		}
+		if(expression instanceof AbstractMethodInvocation) {
+			AbstractMethodDeclaration calledOn = ((AbstractMethodInvocation) expression).getMethod();
+			if (calledOn instanceof MethodDeclaration) {
+				TypeAccess returnType = ((MethodDeclaration) calledOn).getReturnType();
+				if(returnType == null) {
+					if (calledOn instanceof UnresolvedMethodDeclaration) {
+						return null;
+					}
+					throw new ProcessingException();
+				}
+				return returnType.getType();			
+			}
+			else if (calledOn instanceof ConstructorDeclaration) {
+				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
+			}
 		}
 		LOGGER.log(Level.ERROR, "Calculating static types from \"" + expression.getClass().getSimpleName()
 				+ "\" expressions is not supported");

@@ -21,6 +21,11 @@ public class ConstructorPreprocessor extends AbstractTypedModiscoProcessor<MCons
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MConstructorDefinition> elements, IProgressMonitor monitor) {
+		// Add constructors to model
+		model.getMConstructorDefinitions().addAll(elements);
+		model.getMAbstractMethodDefinitions().addAll(elements);
+		
+		// Add parameter lists to constructors
 		elements.parallelStream().forEach(a -> {
 			MoDiscoUtil.fillParamList(a, a.getMParameterList());
 		});

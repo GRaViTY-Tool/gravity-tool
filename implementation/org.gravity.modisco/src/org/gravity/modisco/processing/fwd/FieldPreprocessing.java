@@ -1,5 +1,6 @@
 package org.gravity.modisco.processing.fwd;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import org.gravity.modisco.MFieldName;
 import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.ModiscoFactory;
-import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
@@ -28,16 +29,21 @@ import org.gravity.modisco.util.MoDiscoUtil;
  * @author speldszus
  *
  */
-public class FieldPreprocessing implements IMoDiscoProcessor {
+public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefinition> {
 
 	private static final Logger LOGGER = Logger.getLogger(FieldPreprocessing.class);
 
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		if (!resolveMultipleDeclarationsInOneStatement(model)) {
+	public boolean process(MGravityModel model, Collection<MFieldDefinition> elements, IProgressMonitor monitor) {
+		Collection<MFieldDefinition> allDefinitions;
+		try{
+			allDefinitions = resolveMultipleDeclarationsInOneStatement(elements);
+			model.getMFieldDefinitions().addAll(allDefinitions);
+		}
+		catch(ProcessingException e) {
 			return false;
 		}
-		if (!createFieldNameNodes(model)) {
+		if (!createFieldNameNodes(allDefinitions, model)) {
 			return false;
 		}
 		return createFieldSignatureNodes(model);
@@ -48,26 +54,25 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 	 * for every declaration
 	 * 
 	 * @param model The MoDisco model
-	 * @return true, iff no error occurred
+	 * @return a collection of all field definitions
+	 * @throws ProcessingException If the preprocessing failed
 	 */
-	private boolean resolveMultipleDeclarationsInOneStatement(MGravityModel model) {
-		List<MFieldDefinition> newDefs = new LinkedList<>();
-		for (MFieldDefinition mDefinition : model.getMFieldDefinitions()) {
-
+	private Collection<MFieldDefinition> resolveMultipleDeclarationsInOneStatement(Collection<MFieldDefinition> elements) throws ProcessingException {
+		List<MFieldDefinition> allDefinitions = new LinkedList<>(elements);
+		for (MFieldDefinition mDefinition : elements) {
 			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
 			if (fragments.size() == 0) {
-				LOGGER.log(Level.ERROR, "Pattern matching in node [ActivityNode37] failed." + " Variables: "
-						+ "[mDefinition] = " + mDefinition + ".");
-				return false;
+				String message = "A field definition has no fragments: " + mDefinition + ".";
+				LOGGER.log(Level.ERROR, message);
+				throw new ProcessingException(message);
 			}
 			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
 				MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
-				newDefs.add(newDef);
+				allDefinitions.add(newDef);
 			}
 
 		}
-		model.getMFieldDefinitions().addAll(newDefs);
-		return true;
+		return allDefinitions;
 	}
 
 	/**
@@ -136,9 +141,8 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 	 * @param model The MoDisco model
 	 * @return true, iff no error occurred
 	 */
-	private boolean createFieldNameNodes(MGravityModel model) {
-
-		for (MFieldDefinition mfDefinition : model.getMFieldDefinitions()) {
+	private boolean createFieldNameNodes(Collection<MFieldDefinition> mFieldDefinitions, MGravityModel model) {
+		for (MFieldDefinition mfDefinition : mFieldDefinitions) {
 			EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
 			if (fragments.size() == 0) {
 				LOGGER.log(Level.ERROR, "The field \"" + mfDefinition + "\" has no fragment!");
@@ -283,5 +287,10 @@ public class FieldPreprocessing implements IMoDiscoProcessor {
 		}
 
 		return createNewSignature(model, mName, mfDefinition);
+	}
+
+	@Override
+	public Class<MFieldDefinition> getSupportedType() {
+		return MFieldDefinition.class;
 	}
 }

@@ -48,11 +48,16 @@
    </element>
 
    <element name="processor">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="processor"/>
+         </appInfo>
+      </annotation>
       <complexType>
          <attribute name="processor" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  A fully qualified name of the  processor.
                </documentation>
                <appInfo>
                   <meta.attribute kind="java" basedOn=":org.gravity.modisco.processing.IMoDiscoProcessor"/>
