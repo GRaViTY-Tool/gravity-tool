@@ -53,7 +53,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 * If multiple fields are declared in one statement a separate field is created
 	 * for every declaration
 	 * 
-	 * @param model The MoDisco model
+	 * @param elements The field definitions
 	 * @return a collection of all field definitions
 	 * @throws ProcessingException If the preprocessing failed
 	 */

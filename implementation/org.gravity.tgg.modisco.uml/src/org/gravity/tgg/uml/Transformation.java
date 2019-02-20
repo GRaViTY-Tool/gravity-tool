@@ -68,6 +68,7 @@ import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.modisco.util.MoDiscoUtil;
@@ -132,21 +133,15 @@ public class Transformation extends SynchronizationHelper {
 	 * @return The UML model
 	 * @throws TransformationFailedException If the UML model couldn't be created
 	 *                                       due to a transformation error
+	 * @throws IOException If writing files failed
 	 */
 	public static Model projectToModel(IJavaProject project, boolean addUMLsec, IProgressMonitor monitor)
-			throws TransformationFailedException {
+			throws TransformationFailedException, IOException {
 
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
 
 		IProject iproject = project.getProject();
-		IFolder gravityFolder = iproject.getFolder(".gravity");
-		if (!gravityFolder.exists()) {
-			try {
-				gravityFolder.create(true, true, monitor);
-			} catch (CoreException e) {
-				throw new TransformationFailedException(e);
-			}
-		}
+		IFolder gravityFolder = EclipseProjectUtil.getGravityFolder(iproject, monitor);
 
 		Collection<IPath> libs;
 		if (!addUMLsec) {
@@ -227,7 +222,7 @@ public class Transformation extends SynchronizationHelper {
 		monitor.setTaskName("Prepare Java Project");
 
 		IClasspathEntry relativeLibraryEntry = null;
-		IFile annotationsFile = project.getProject().getFolder(".gravity").getFile("org.gravity.annotations.jar");
+		IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor).getFile("org.gravity.annotations.jar");
 		if (!annotationsFile.exists()) {
 			try (InputStream annotations = new URL(
 					"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
@@ -255,10 +250,11 @@ public class Transformation extends SynchronizationHelper {
 	 * 
 	 * @param project The java project
 	 * @param monitor A progress monitor
-	 * @throws TransformationFailedException
+	 * @throws TransformationFailedException If the transformation wasn't successful
+	 * @throws IOException If writing files failed
 	 */
 	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
-			throws TransformationFailedException {
+			throws TransformationFailedException, IOException {
 		Transformation trafo;
 		try {
 			trafo = new Transformation(new ResourceSetImpl());
@@ -267,10 +263,7 @@ public class Transformation extends SynchronizationHelper {
 		}
 
 		IProject iproject = project.getProject();
-		IFolder gravityFolder = iproject.getFolder(".gravity");
-		if (!gravityFolder.exists()) {
-			return;
-		}
+		IFolder gravityFolder = EclipseProjectUtil.getGravityFolder(iproject, monitor);
 		IFile corrFile = gravityFolder.getFile(CORR_XMI);
 		if (!corrFile.exists()) {
 			return;

@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 
 /**
  * 
@@ -48,7 +49,7 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	 * 
 	 * @param name    The project name
 	 * @param project The java project
-	 * @throws IOException
+	 * @throws IOException           If reading or writing files failed
 	 * @throws CoreException
 	 * @throws DiscoveryException
 	 * @throws FileNotFoundException
@@ -76,7 +77,8 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 			fail = e;
 		}
 
-		IFile file = project.getProject().getFolder(".gravity").getFile("org.gravity.annotations.jar");
+		IFile file = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
+				.getFile("org.gravity.annotations.jar");
 		IClasspathEntry cpe = project.getClasspathEntryFor(file.getLocation());
 		if (cpe != null) {
 			IClasspathEntry[] oldCp = project.getRawClasspath();
