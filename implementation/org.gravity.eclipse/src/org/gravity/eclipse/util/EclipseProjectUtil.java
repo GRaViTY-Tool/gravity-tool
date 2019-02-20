@@ -13,7 +13,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.gravity.eclipse.exceptions.TransformationFailedException;
 
 /**
  * This class provides frequently used functionalities when working with eclipse
