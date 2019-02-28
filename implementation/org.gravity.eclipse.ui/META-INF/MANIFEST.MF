@@ -13,6 +13,7 @@ Require-Bundle: org.eclipse.ui,
  org.gravity.typegraph.basic
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.eclipse.ui.exceptions,
+Export-Package: org.gravity.eclipse.ui,
+ org.gravity.eclipse.ui.exceptions,
  org.gravity.eclipse.ui.handler
 Automatic-Module-Name: org.gravity.eclipse.ui
