@@ -26,9 +26,13 @@ Require-Bundle: org.moflon.core.utilities,
  org.gravity.eclipse,
  org.eclipse.gmt.modisco.java.generation,
  org.gravity.modisco,
- org.gravity.security.annotations
+ org.gravity.security.annotations,
+ org.gravity.eclipse.ui,
+ org.eclipse.core.commands,
+ org.eclipse.ui.workbench
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: TU Darmstadt
 Automatic-Module-Name: org.gravity.tgg.modisco.uml
+Bundle-Activator: org.gravity.tgg.uml.GravityUmlActivator

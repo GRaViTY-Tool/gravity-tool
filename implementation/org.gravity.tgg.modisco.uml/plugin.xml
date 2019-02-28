@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.gravity.mainmenu">
+      <command commandId="org.gravity.uml.command.trafo" label="Generate UML Model" style="push"/>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="org.gravity.tgg.uml.ui.UmlParseHandler" id="org.gravity.uml.command.trafo" name="Generate UML Model"/>
+  </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.tgg.modisco.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>
   </extension>

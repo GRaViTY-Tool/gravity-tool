@@ -23,7 +23,7 @@ public class UmlTrafo extends SynchronizationHelper{
 		// Forward Transformation
         UmlTrafo helper = new UmlTrafo();
 		helper.performForward("instances/fwd.src.xmi");
-		
+
 		// Backward Transformation
 		helper = new UmlTrafo();
 		helper.performBackward("instances/bwd.src.xmi");

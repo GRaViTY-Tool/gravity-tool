@@ -28,7 +28,7 @@ public abstract class AbstractTransformationHandler extends AbstractHandler {
 	 * @return The selected objects
 	 * @throws ExecutionException Iff the selection cannot be determined
 	 */
-	List<Object> getSelection(ExecutionEvent event) throws ExecutionException {
+	protected List<Object> getSelection(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		ISelectionService service = window.getSelectionService();
 		IStructuredSelection structured = (IStructuredSelection) service.getSelection();

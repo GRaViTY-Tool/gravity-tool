@@ -4,7 +4,7 @@
 #rule TypeAccess2InterfaceRealization #with org.gravity.tgg.modisco.uml
 
 #source { 
-	classDec : AbstractTypeDeclaration {
+	classDec : ClassDeclaration {
 		++ -superInterfaces->typeAcc
 	}
 	
@@ -12,11 +12,11 @@
 		++ -type->superInterfaceDec
 	}
 	
-	superInterfaceDec : Type
+	superInterfaceDec : InterfaceDeclaration
 }
 
 #target {
-	umlClass : Class {
+	umlClass : BehavioredClassifier {
 		++ -interfaceRealization->interfaceRealization
 	}
 	

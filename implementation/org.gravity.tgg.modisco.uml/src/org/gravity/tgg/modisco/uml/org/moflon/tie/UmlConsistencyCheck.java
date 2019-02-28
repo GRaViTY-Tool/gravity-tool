@@ -17,14 +17,21 @@ public class UmlConsistencyCheck extends SynchronizationHelper{
 	public static void main(String[] args) throws IOException {
 		// Set up logging
         BasicConfigurator.configure();
-        
+
         UmlConsistencyCheck helper = new UmlConsistencyCheck();
         helper.loadSrc("instances/src.xmi");
 		helper.loadTrg("instances/trg.xmi");
 
 		boolean prepareDeltas = true;
-		helper.createCorrespondences(prepareDeltas);
 		
+		//TODO
+		//set your solver here:
+		//helper.setILPSolver(GurobiSolver.create().build());
+		// OR
+		//helper.setILPSolver(CplexSolver.create().withPresolve().build());
+		
+		helper.createCorrespondences(prepareDeltas);
+
 		if(prepareDeltas){
 			//src and trg models are modified when preparing deltas.
 			//save all files in a separate location
@@ -32,8 +39,8 @@ public class UmlConsistencyCheck extends SynchronizationHelper{
 			helper.saveTrg("instances/cc_result/trg.xmi");
 			helper.saveCorr("instances/cc_result/corr.xmi");
 			helper.saveConsistencyCheckProtocol("instances/cc_result/protocol.xmi");
-			helper.saveInconsistentSourceDelta("instances/cc_result/src.delta.xmi");
-			helper.saveInconsistentTargetDelta("instances/cc_result/trg.delta.xmi");
+			helper.saveInconsistentSourceDelta();
+			helper.saveInconsistentTargetDelta();
 		}
 		else{
 			//src and trg models are not modified.

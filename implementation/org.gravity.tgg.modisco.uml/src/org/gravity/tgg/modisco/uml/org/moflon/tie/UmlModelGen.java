@@ -17,7 +17,7 @@ public class UmlModelGen extends SynchronizationHelper{
    {
       super(UmlPackage.eINSTANCE, ".");
    }
-	
+
 	public static void main(String[] args) throws IOException {
 		// Set up logging
 		BasicConfigurator.configure();

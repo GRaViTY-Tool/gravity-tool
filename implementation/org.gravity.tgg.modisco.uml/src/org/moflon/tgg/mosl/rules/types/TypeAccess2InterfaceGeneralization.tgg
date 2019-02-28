@@ -16,8 +16,9 @@
 }
 
 #target {
-	umlClass : Classifier {
+	childInterface : Interface {
 		++ -generalization->interfaceGeneralization
+		++ -general->superInterface
 	}
 	
 	++ interfaceGeneralization : Generalization {
@@ -30,7 +31,7 @@
 #correspondence {
 	cd2c : NamedElement2NamedElement {
 		#src->classDec
-		#trg->umlClass
+		#trg->childInterface
 	}
 	
 	++ ta2g : TypeAccess2Generalization {

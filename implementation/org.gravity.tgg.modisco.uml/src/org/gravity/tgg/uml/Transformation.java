@@ -172,7 +172,7 @@ public class Transformation extends SynchronizationHelper {
 			throw new TransformationFailedException(e);
 		}
 		trafo.setSrc(mGravityModel);
-		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
+//		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
 
 		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
 		trafo.integrateForward();

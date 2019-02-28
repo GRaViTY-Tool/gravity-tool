@@ -17,7 +17,7 @@ public class UmlSync extends SynchronizationHelper{
    {
       super(UmlPackage.eINSTANCE, ".");
    }
-	
+
 	public static void main(String[] args) throws IOException {
 		// Create helper
 		BasicConfigurator.configure();
@@ -27,7 +27,7 @@ public class UmlSync extends SynchronizationHelper{
 		String delta = "instances/fwd.trg.delta.xmi";
 		String corr  = "instances/fwd.corr.xmi";
 		BiConsumer<String, String> synchronizer = helper::syncBackward;
-		
+
 		// Propagate changes
 		synchronizer.accept(corr, delta);
 	}
