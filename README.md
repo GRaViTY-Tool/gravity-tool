@@ -22,11 +22,11 @@ This is the main repository under which everything is merged
 ## HowTo Build GRaViTY
 
 Requirements:
-1. Eclipse Modeling Tools (tested with Mars and Neon)
-2. Eclipse plugins: 
- a) MoDisco Plugin (install from Eclipse Modeling Components)
- b) eMoflon  (>= 2.23, www.emoflon.org)
- d) xtext (should be installed with eMoflon)
+1. Eclipse Modeling Tools (tested with Mars and Neon)  
+2. Eclipse plugins:   
+ a) eMoflon::TIE-GT Plugin (install from Eclipse Modeling Components)  
+ b) eMoflon  (>= 2.23, www.emoflon.org)  
+ d) xtext (should be installed with eMoflon)  
 
 Get the source code:
 - The whole project is hosted in a git repository via github: https://github.com/GRaViTY-Tool/gravity-tool 
