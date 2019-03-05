@@ -24,8 +24,8 @@ This is the main repository under which everything is merged
 Requirements:
 1. Eclipse Modeling Tools (tested with Mars and Neon)  
 2. Eclipse plugins:   
- a) eMoflon::TIE-GT Plugin (install from Eclipse Modeling Components)  
- b) eMoflon  (>= 2.23, www.emoflon.org)  
+ a) MoDisco Plugin (install from Eclipse Modeling Components)  
+ b) eMoflon::TIE-GT  (>= 2.23, www.emoflon.org)  
  d) xtext (should be installed with eMoflon)  
 
 Get the source code:
