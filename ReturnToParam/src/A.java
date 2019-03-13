@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * Simple flow from a return value to a method parameter.
+ *
+ */
 public class A {
 	
 	public int m() {
