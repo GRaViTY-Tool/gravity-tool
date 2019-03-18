@@ -1,6 +1,6 @@
 /**
  * 
- * An example without data flow.
+ * An example without intra-procedural data flow.
  *
  */
 public class A {
