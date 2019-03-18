@@ -5,7 +5,7 @@
  */
 public class A {
 	
-	public int m() {
-		return 5;
+	public void m() {
+		int a = 1 + 2;
 	}
 }
