@@ -6,15 +6,11 @@
 public class B {
 	
 	// Secrecy
-	int f = 2;
+	int e = 2;
 
-	public int x(int a, int b) {
+	public int m(int a, int b) {
 		System.out.println("DO");
-		return n(a, b + f) + f;
-	}
-	
-	public void m(int a, int b) {
-		n(a, b);
+		return n(a, b + e) + e;
 	}
 	
 	public int n(int c, int d) {
