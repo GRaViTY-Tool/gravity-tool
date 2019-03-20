@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GRaViTY Dataflow
+Bundle-SymbolicName: org.gravity.modisco.dataflow;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of Koblenz-Landau
+Automatic-Module-Name: org.gravity.modisco.dataflow
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.gravity.modisco

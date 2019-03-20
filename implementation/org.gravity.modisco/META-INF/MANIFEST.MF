@@ -4,8 +4,9 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.gmt.modisco.java;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.jdt.core,
- org.eclipse.modisco.infra.discovery.core,
+ org.eclipse.modisco.infra.discovery.core;visibility:=reexport,
  org.eclipse.core.resources,
+ org.eclipse.core.runtime,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse
 Bundle-ManifestVersion: 2
