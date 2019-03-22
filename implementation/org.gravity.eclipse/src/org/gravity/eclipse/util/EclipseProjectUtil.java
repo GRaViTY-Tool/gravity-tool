@@ -14,6 +14,7 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -52,8 +53,8 @@ public class EclipseProjectUtil {
 		}
 		try {
 			project.copy(new org.eclipse.core.runtime.Path(nameOfCopy), true, null); // $NON-NLS-1$
-		} catch (CoreException e2) {
-			e2.printStackTrace();
+		} catch (CoreException e) {
+			LOGGER.log(Level.ERROR, e);
 			return null;
 		}
 		return tmp;
@@ -156,14 +157,14 @@ public class EclipseProjectUtil {
 	/**
 	 * Adds a library to the classpath of the project
 	 * 
-	 * @param project
-	 * @param annotationsFile
-	 * @return
-	 * @throws JavaModelException
+	 * @param project The Java project
+	 * @param lib The library
+	 * @return The created classpath entry
+	 * @throws JavaModelException if the classpath could not be set
 	 */
-	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile annotationsFile)
+	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib)
 			throws JavaModelException {
-		IClasspathEntry relativeLibraryEntry = createClassPathEntry(annotationsFile);
+		IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
@@ -181,7 +182,7 @@ public class EclipseProjectUtil {
 	 * @throws DuplicateProjectNameException If there is already a project with this name
 	 * @throws CoreException If there is an Exception in Eclipse
 	 */
-	static IProject createProject(String name, IProgressMonitor monitor)
+	public static IProject createProject(String name, IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
 		IProject project = getProjectByName(name);
 	
@@ -193,5 +194,18 @@ public class EclipseProjectUtil {
 		project.create(monitor);
 		project.open(monitor);
 		return project;
+	}
+
+	/**
+	 * Links a file to an eclipse IFile
+	 * 
+	 * @param source The source file
+	 * @param target The target file 
+	 * @param monitor A progress monitor
+	 * @throws CoreException If the link cannot be created
+	 */
+	public static void createLink(File source, IFile target, IProgressMonitor monitor) throws CoreException {
+		IPath jarPath = new org.eclipse.core.runtime.Path(source.getAbsolutePath());
+		target.createLink(jarPath, IResource.FILE, monitor);
 	}
 }

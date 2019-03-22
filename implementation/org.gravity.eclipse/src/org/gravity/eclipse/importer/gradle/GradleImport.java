@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -104,7 +105,9 @@ public class GradleImport extends ProjectImport {
 		this.gradleCache = initGradleUserHome();
 		this.gradleBuild = new GradleBuild();
 	}
+	
 
+	
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
@@ -114,6 +117,18 @@ public class GradleImport extends ProjectImport {
 	 */
 	@Override
 	public IJavaProject importProject(IProgressMonitor monitor) throws ImportException {
+		return importProject(getRootDir().getName(), monitor);
+	}
+
+	/**
+	 * Imports the gradle project as single eclipse project
+	 * 
+	 * @param name the desired name of the project
+	 * @param monitor A progress monitor
+	 * @return The new eclipse java project
+	 * @throws ImportException
+	 */
+	public IJavaProject importProject(String name, IProgressMonitor monitor) throws ImportException {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
@@ -124,7 +139,7 @@ public class GradleImport extends ProjectImport {
 		build();
 
 		Set<Path> javaSourceFiles = getAllJavaSourceFiles(getRootFile().toPath());
-		return createJavaProject(javaSourceFiles, monitor);
+		return createJavaProject(name, javaSourceFiles, monitor);
 	}
 
 	/**
@@ -135,11 +150,11 @@ public class GradleImport extends ProjectImport {
 	 * @return The new Java project
 	 * @throws GradleImportException If the project cannot be created
 	 */
-	private IJavaProject createJavaProject(Set<Path> javaSourceFiles, IProgressMonitor monitor)
+	private IJavaProject createJavaProject(String name, Set<Path> javaSourceFiles, IProgressMonitor monitor)
 			throws GradleImportException {
 		IJavaProject project = null;
 		try {
-			project = JavaProjectUtil.createJavaProjectWithUniqueName(getRootDir().getName(), monitor);
+			project = JavaProjectUtil.createJavaProjectWithUniqueName(name, monitor);
 			HashMap<String, Set<Path>> sourceFolders = getSourceFolderMapping(javaSourceFiles);
 			for (Entry<String, Set<Path>> entry : sourceFolders.entrySet()) {
 				final IFolder folder = project.getProject().getFolder(entry.getKey().replace("/", "-"));
@@ -346,16 +361,16 @@ public class GradleImport extends ProjectImport {
 		Collection<Path> requiredLibs = getLibs(buildDotGradleFiles);
 		for (Path libPath : requiredLibs) {
 			List<IFile> jarFiles = new LinkedList<>();
-			String libName = libPath.toFile().getName();
+			File file = libPath.toFile();
+			String libName = file.getName();
 			if (libName.endsWith(".jar")) {
 				IFile f = libFolder.getFile(libPath.getFileName().toString());
-				jarFiles.add(f);
-				IPath jarPath = new org.eclipse.core.runtime.Path(libPath.toFile().getAbsolutePath());
 				if (f.exists()) {
 					LOGGER.log(Level.WARN, "Lib is already existent: " + jarFiles);
 					continue;
 				}
-				f.createLink(jarPath, IResource.FILE, monitor);
+				jarFiles.add(f);
+				EclipseProjectUtil.createLink(file, f, monitor);
 			} else if (libName.endsWith(".aar")) {
 				jarFiles = GradleLibs.extractAar(libPath, libFolder, monitor);
 			}
@@ -395,6 +410,9 @@ public class GradleImport extends ProjectImport {
 	 */
 	private Set<String> getAppliedPlugins(Path path) {
 		Set<String> appliedPlugins = new HashSet<>();
+		if(!Files.exists(path) || !Files.isReadable(path)) {
+			return Collections.emptySet();
+		}
 		try (Stream<String> lines = Files.lines(path)) {
 			lines.forEach(line -> {
 				Matcher androidMatcher = GradleRegexPatterns.PLUGIN.matcher(line);

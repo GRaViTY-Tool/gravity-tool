@@ -12,8 +12,10 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * This class provides the functionality to save a model into an eclipse file
@@ -38,6 +40,22 @@ public class ModelSaver {
 			return false;
 		}
 		Resource resource = model.eResource();
+		if(resource == null) {
+			resource = new ResourceSetImpl().createResource(URI.createURI(file.getName()));
+			resource.getContents().add(model);
+		}
+		return saveModel(resource, file, monitor);
+	}
+
+	/**
+	 * Save a emf model into an eclipse file
+	 * 
+	 * @param resource The resource containing the model
+	 * @param file An eclipse file
+	 * @param monitor A progress monitor
+	 * @return true, iff the model has been saved successfully
+	 */
+	public static boolean saveModel(Resource resource, IFile file, IProgressMonitor monitor) {
 		if(resource == null){
 			return false;
 		}
