@@ -5,13 +5,9 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mDefinition : MDefinition {
-	}
+	mDefinition : MDefinition
 	mType : AnonymousClassDeclaration {
 		++  -bodyDeclarations -> mDefinition
-	}
-	mModel : MGravityModel {
-		-anonymousClassDeclarations-> mType
 	}
 }
 	
@@ -19,11 +15,7 @@
 	tDefinition : TMember {
 		++  -definedBy -> tType
 	}
-	tType : TClass {
-	}
-	pg : TypeGraph {
-		-classes-> tType
-	}
+	tType : TClass
 }
 
 #correspondence {
@@ -35,11 +27,4 @@
 		#src->mDefinition
 		#trg->tDefinition
 	}
-	mModelToPG : ModelToTypeGraph {
-		#src->mModel
-		#trg->pg
-	}
-}
-
-#attributeConditions {
 }

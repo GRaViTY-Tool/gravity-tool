@@ -102,8 +102,6 @@
         eType="#//MFieldDefinition" eOpposite="#//MFieldDefinition/model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mConstructorDefinitions"
         upperBound="-1" eType="#//MConstructorDefinition" eOpposite="#//MConstructorDefinition/model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="anonymousClassDeclarations"
-        upperBound="-1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodNames" upperBound="-1"
         eType="#//MMethodName" containment="true" eOpposite="#//MMethodName/model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mNames" upperBound="-1"

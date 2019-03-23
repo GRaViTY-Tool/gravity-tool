@@ -12,15 +12,13 @@
 	++ mAnonymous : MAnonymous {
 		++-mSourroundingType->mType
 	}
-	mModel : MGravityModel {
-		++  -anonymousClassDeclarations -> mAnonymous
-	}
 }
 
 #target {
 	tPackage : TPackage 
 	tType : TAbstractType {
 		-package->tPackage
+		-pg->pg
 		++-innerTypes->tAnonymous
 	}
 	++ tNewPackage : TPackage {
@@ -41,10 +39,6 @@
 	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
 		#src->mAnonymous
 		#trg->tAnonymous
-	}
-	eModelToPg : ModelToTypeGraph {
-		#src->mModel
-		#trg->pg
 	}
 	mTypeToTType : TypeToTAbstractType {
 		#src->mType

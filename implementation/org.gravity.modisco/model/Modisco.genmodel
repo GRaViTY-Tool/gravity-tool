@@ -68,7 +68,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mMethodDefinitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldDefinitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mConstructorDefinitions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/anonymousClassDeclarations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mMethodNames"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mNames"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mMethodSignatures"/>
