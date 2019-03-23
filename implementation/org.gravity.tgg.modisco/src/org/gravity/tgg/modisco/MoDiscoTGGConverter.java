@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
@@ -70,6 +71,8 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
 
+	private org.moflon.tgg.runtime.PrecedenceStructure ps;
+
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
 	 * 
@@ -80,8 +83,18 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		this.discoverer = new GravityModiscoProjectDiscoverer();
 
 		BasicConfigurator.configure();
+		init(this.discoverer.getResourceSet());
+	}
 
-		this.set = this.discoverer.getResourceSet();
+	/**
+	 * Initializes the class
+	 * 
+	 * @param set The resource set which should be used
+	 * @throws IOException
+	 * @throws MalformedURLException
+	 */
+	private void init(ResourceSet set) throws IOException, MalformedURLException {
+		this.set = set;
 		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
@@ -138,22 +151,53 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			saveModel(targetModel, this.modiscoFolder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
 		
-		setSrc(targetModel);
-		setChangeSrc(null);
-		clearChanges();
-		setSynchronizationProtocol(null);
-
 		if (debug) {
 			setConfigurator(new PGSavingConfigurator(this,
 					this.modiscoFolder.getFile("emoflon_pg.xmi").getLocation().toString()));
 		}
+
+		boolean success = convertModel(progressMonitor);
+
+		if (this.debug) {
+			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
+			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
+			eMoflonEMFUtil.saveModel(ps.eResource().getResourceSet(), ps, ps.eResource().getURI().path());
+		}
+
+		if (!success) {
+			reset();
+		}
+
+		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
+
+		return success;
+	}
+
+	/**
+	 * Converts a GRaViTY MoDisco model into a program model
+	 * 
+	 * @param model The input model
+	 * @param progressMonitor A progress monitor
+	 * @return true, iff the conversion was successful
+	 */
+	public boolean convertModel(MGravityModel model, IProgressMonitor progressMonitor) {
+		getResourceSet().getResources().add(model.eResource());
+		targetModel = model;
+		projectName = model.getName();
+		return convertModel(progressMonitor);
+	}
+	
+	private boolean convertModel(IProgressMonitor progressMonitor) {
+		setSrc(targetModel);
+		setChangeSrc(null);
+		clearChanges();
+		setSynchronizationProtocol(null);
 
 		long t4 = System.currentTimeMillis();
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
 		integrateForward();
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 
-		org.moflon.tgg.runtime.PrecedenceStructure ps = null;
 		if (this.debug) {
 			// Create precedence structure before applying prepocessing to allow
 			// replacements of model elements using crossreferences.
@@ -172,19 +216,6 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 			}
 			LOGGER.log(Level.INFO, "Postprocessing - done ");
 		}
-
-		if (this.debug) {
-			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
-			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
-			eMoflonEMFUtil.saveModel(ps.eResource().getResourceSet(), ps, ps.eResource().getURI().path());
-		}
-
-		if (!success) {
-			reset();
-		}
-
-		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
-
 		return success;
 	}
 

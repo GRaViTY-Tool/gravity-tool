@@ -5,34 +5,33 @@
 #with org.gravity.tgg.modisco
 
 #source {
-eClassDeclaration : ClassDeclaration {
-	++  -superClass -> eTypeAccess
-}
-eExtendedClass : ClassDeclaration {
-}
-++ eTypeAccess : TypeAccess {
-	++  -type -> eExtendedClass
-}
+	eClassDeclaration:ClassDeclaration {
+		++  -superClass -> eTypeAccess
+	}
+
+	++eTypeAccess:TypeAccess {
+		++  -type -> eExtendedClass
+	}
+	
+	eExtendedClass:ClassDeclaration
 }
 
 #target {
-tClass : TClass {
-	++  -parentClass -> tExtendedClass
-}
-tExtendedClass : TClass {
-}
+	tClass:TClass {
+		++  -parentClass -> tExtendedClass
+	}
+
+	tExtendedClass:TClass
 }
 
 #correspondence {
-eClassDeclarationToTClass : ClassDeclarationToTClass {
-	#src->eClassDeclaration
-	#trg->tClass
-}
-eExtendedClassToTExtendedClass : ClassDeclarationToTClass {
-	#src->eExtendedClass
-	#trg->tExtendedClass
-}
-}
+	eClassDeclarationToTClass :ClassDeclarationToTClass {
+		#src->eClassDeclaration
+		#trg->tClass
+	}
 
-#attributeConditions {
+	eExtendedClassToTExtendedClass :ClassDeclarationToTClass {
+		#src->eExtendedClass
+		#trg->tExtendedClass
+	}
 }

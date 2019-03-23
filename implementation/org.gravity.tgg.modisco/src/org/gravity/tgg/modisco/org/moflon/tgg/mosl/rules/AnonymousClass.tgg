@@ -5,7 +5,12 @@
 #with org.gravity.tgg.modisco
 
 #source {
+	mPackage : Package
+	mType : AbstractTypeDeclaration {
+		-package->mPackage
+	}
 	++ mAnonymous : MAnonymous {
+		++-mSourroundingType->mType
 	}
 	mModel : MGravityModel {
 		++  -anonymousClassDeclarations -> mAnonymous
@@ -13,26 +18,44 @@
 }
 
 #target {
-	++ tClass : TClass {
+	tPackage : TPackage 
+	tType : TAbstractType {
+		-package->tPackage
+		++-innerTypes->tAnonymous
+	}
+	++ tNewPackage : TPackage {
+		++-ownedTypes->tAnonymous
+		++-parent->tPackage
+	}
+	++ tAnonymous : TClass {
 		tLib := false
 		tName := "Anonymous"
 	}
 	pg : TypeGraph {
-		++  -classes -> tClass
-		++  -ownedTypes -> tClass
+		++  -classes -> tAnonymous
+		++  -ownedTypes -> tAnonymous
 	}
 }
 
 #correspondence {
 	++ eAnonymousClassDeclarationToTClass : AnonymousClassDeclarationToTClass {
 		#src->mAnonymous
-		#trg->tClass
+		#trg->tAnonymous
 	}
 	eModelToPg : ModelToTypeGraph {
 		#src->mModel
 		#trg->pg
 	}
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+	mPackageToTPackage : PackageToTPackage {
+		#src->mPackage
+		#trg->tPackage
+	}
 }
 
 #attributeConditions {
+	addSuffix(tType.tName, "$1", tNewPackage.tName)
 }

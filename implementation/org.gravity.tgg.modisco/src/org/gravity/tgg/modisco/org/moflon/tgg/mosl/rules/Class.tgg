@@ -6,13 +6,11 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++mType:MClass {
-}
+	++mType:MClass
 }
 
 #target {
-	++tType:TClass {
-}
+	++tType:TClass
 
 	tPackage:TPackage {
 		++  -classes -> tType

@@ -8,8 +8,7 @@
 	mPackage : Package {
 		++  -ownedElements -> mType
 	}
-	++ mType : AbstractTypeDeclaration {
-	}
+	++ mType : AbstractTypeDeclaration 
 }
 
 #target {
@@ -20,8 +19,7 @@
 	pg : TypeGraph {
 		++  -ownedTypes -> tType
 	}
-	++ tType : TAbstractType {
-	}
+	++ tType : TAbstractType 
 }
 
 #correspondence {

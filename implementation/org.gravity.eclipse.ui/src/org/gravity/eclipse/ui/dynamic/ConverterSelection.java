@@ -11,13 +11,12 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.swt.widgets.Shell;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.GravityUiActivator;
 
 /**
  * This class fills an menu with all available modisco to pm converters and
@@ -41,11 +40,11 @@ public class ConverterSelection extends ContributionItem {
 		try {
 			selected_converter = GravityActivator.getDefault().getSelectedConverterFactory();
 		} catch (NoConverterRegisteredException e1) {
-			MessageDialog.openError(getShell(), "No Converter installed",
+			MessageDialog.openError(GravityUiActivator.getShell(), "No Converter installed",
 					"Please install a converter from the GRaViTY updatesite.");
 			return;
 		} catch (CoreException e) {
-			MessageDialog.openError(getShell(), "Critical ERROR",
+			MessageDialog.openError(GravityUiActivator.getShell(), "Critical ERROR",
 					"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 			return;
 		}
@@ -71,18 +70,5 @@ public class ConverterSelection extends ContributionItem {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
-	}
-
-	/**
-	 * Gets the current active shell
-	 * 
-	 * @return the shell
-	 */
-	public static Shell getShell() {
-		Display display = Display.getCurrent();
-		// may be null if outside the UI thread
-		if (display == null)
-			display = Display.getDefault();
-		return display.getActiveShell();
 	}
 }

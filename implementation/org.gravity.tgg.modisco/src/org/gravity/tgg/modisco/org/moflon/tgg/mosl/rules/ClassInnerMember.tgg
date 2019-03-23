@@ -1,18 +1,14 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule ClassInnerMember
+#abstract #rule ClassInnerMember
 #with org.gravity.tgg.modisco
 
 #source {
-	eOuterClass : ClassDeclaration {
-		 -bodyDeclarations -> mDefinition
-	}
 	mDefinition : MAbstractMethodDefinition {
 		 ++ -mInnerTypes->mInnerClass
 	}
-	++ mInnerClass : MClass {
-	}
+	++ mInnerClass : MClass
 }
 
 #target {
@@ -26,21 +22,16 @@
 		++  -classes -> tInnerClass
 		 -ownedTypes -> tOuterClass
 	}
-	tOuterClass : TClass {
+	tOuterClass : TAbstractType {
 		++ -innerTypes -> tInnerClass
+		-package->tOuterPackage
 	}
-	++ tInnerClass : TClass {
-	}
-	tOuterPackage : TPackage {
-		 -ownedTypes -> tOuterClass
-	}
+	++ tInnerClass : TClass 
+	
+	tOuterPackage : TPackage
 }
 
 #correspondence {
-	eOuterClassToTOuterClass : ClassDeclarationToTClass {
-		#src->eOuterClass
-		#trg->tOuterClass
-	}
 	++ tInnerClassToTInnerClass : ClassDeclarationToTClass {
 		#src->mInnerClass
 		#trg->tInnerClass
@@ -54,4 +45,46 @@
 #attributeConditions {
 	eq(mInnerClass.name, tInnerClass.tName)
 	addSuffix(tOuterClass.tName, "$1", tInnerPackage.tName)
+}
+
+#using org.gravity.tgg.modisco.*
+
+#rule ClassInnerClassMember #extends ClassInnerMember
+#with org.gravity.tgg.modisco
+
+#source {
+	eOuterClass : ClassDeclaration {
+		-bodyDeclarations->mDefinition
+	}
+	mDefinition : MAbstractMethodDefinition
+}
+#target {
+	tOuterClass:TClass
+}
+#correspondence {
+	eOuterClassToTOuterClass : TypeToTAbstractType {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
+}
+
+#using org.gravity.tgg.modisco.*
+
+#rule ClassInnerAnonClassMember #extends ClassInnerMember
+#with org.gravity.tgg.modisco
+
+#source {
+	eOuterClass : AnonymousClassDeclaration {
+		-bodyDeclarations->mDefinition
+	}
+	mDefinition : MAbstractMethodDefinition
+}
+#target {
+	tOuterClass:TClass
+}
+#correspondence {
+	eOuterClassToTOuterClass : AnonymousClassDeclarationToTClass {
+		#src->eOuterClass
+		#trg->tOuterClass
+	}
 }

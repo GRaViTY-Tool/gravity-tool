@@ -5,6 +5,7 @@ Export-Package: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.Rules.impl,
  org.gravity.tgg.modisco.Rules.util,
  org.gravity.tgg.modisco.impl,
+ org.gravity.tgg.modisco.org.moflon.tie,
  org.gravity.tgg.modisco.processing.pg,
  org.gravity.tgg.modisco.util
 Bundle-Name: %pluginName
