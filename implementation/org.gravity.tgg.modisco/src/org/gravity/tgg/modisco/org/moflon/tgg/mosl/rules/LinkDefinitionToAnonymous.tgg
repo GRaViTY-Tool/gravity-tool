@@ -5,17 +5,22 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mDefinition : MDefinition
-	mType : AnonymousClassDeclaration {
+	mOuterType : AbstractTypeDeclaration
+	mType : MAnonymous {
+		-mSourroundingType->mOuterType
 		++  -bodyDeclarations -> mDefinition
 	}
+	mDefinition : MDefinition
 }
 	
 #target {
 	tDefinition : TMember {
 		++  -definedBy -> tType
 	}
-	tType : TClass
+	tType : TClass {
+		-outerType->tOuterType
+	}
+	tOuterType : TAbstractType
 }
 
 #correspondence {
@@ -26,5 +31,9 @@
 	mDefinitionToTMember : MDefinitionToTMember {
 		#src->mDefinition
 		#trg->tDefinition
+	}
+	mOuterTypeToTOuterType : TypeToTAbstractType {
+		#src->mOuterType
+		#trg->tOuterType
 	}
 }

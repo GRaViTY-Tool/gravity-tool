@@ -4,45 +4,54 @@
 #rule MethodInvocationStaticType #with org.gravity.tgg.modisco
 
 #source {
-	mOwner : MClass {
-		-bodyDeclarations->mMember
-	}
-	
-	mMember:MDefinition {
-		-abstractMethodInvocations -> invocation
-		++-invocationStaticTypes-> staticTypeInvoc
+	mOwner:MClass {
+		-bodyDeclarations -> mMember
 	}
 
-	invocation:AbstractMethodInvocation
+	mMember:MDefinition {
+		-abstractMethodInvocations -> invocation
+		++-invocationStaticTypes -> staticTypeInvoc
+	}
+
+	invocation:AbstractMethodInvocation {
+		-method -> mCalled
+	}
 
 	++staticTypeInvoc:MethodInvocationStaticType{
 		++ -methodInvoc -> invocation
 		++ -type -> mStaticType
 	}
 
+	mCalled:MMethodDefinition
+
 	mStaticType:Type
 }
 
 #target {
-	tOwner : TAbstractType {
-		-defines->tMember
+	tOwner:TAbstractType {
+		-defines -> tMember
 	}
+
 	tMember:TMember {
 		-tAccessing -> tAccess
 	}
 
 	tAccess:TCall {
 		++-staticType -> tStaticType
+		-tTarget -> tCalled
 	}
+
+	tCalled:TMethodDefinition
 
 	tStaticType:TAbstractType
 }
 
 #correspondence {
-	mOwnerToTOwner : TypeToTAbstractType {
+	mOwnerToTOwner :TypeToTAbstractType {
 		#src->mOwner
 		#trg->tOwner
 	}
+
 	invocationToTAccess :AbstractMethodInvocationToTAccess {
 		#src->invocation
 		#trg->tAccess
@@ -51,6 +60,11 @@
 	mMemberToTMember :MDefinitionToTMember {
 		#src->mMember
 		#trg->tMember
+	}
+
+	mCalledToTCalled :MDefinitionToTMember {
+		#src->mCalled
+		#trg->tCalled
 	}
 
 	mStaticTypeTotStaticType :TypeToTAbstractType {

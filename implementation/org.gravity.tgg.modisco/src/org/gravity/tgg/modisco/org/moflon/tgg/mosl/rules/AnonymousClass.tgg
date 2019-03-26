@@ -5,13 +5,10 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mPackage : Package
-	mType : AbstractTypeDeclaration {
-		-package->mPackage
-	}
 	++ mAnonymous : MAnonymous {
 		++-mSourroundingType->mType
 	}
+	mType : AbstractTypeDeclaration
 }
 
 #target {
@@ -43,10 +40,6 @@
 	mTypeToTType : TypeToTAbstractType {
 		#src->mType
 		#trg->tType
-	}
-	mPackageToTPackage : PackageToTPackage {
-		#src->mPackage
-		#trg->tPackage
 	}
 }
 
