@@ -1,14 +1,18 @@
 package org.gravity.modisco.dataflow;
 
+import java.util.Collection;
+
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
+import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MethodInvocationStaticType;
-import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
 /**
  * A preprocessor for calculating data flow edges
@@ -16,14 +20,8 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
  * @author speldszus
  *
  */
-public class DataFlowProcessor implements IMoDiscoProcessor {
+public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition> {
 
-	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		// TODO: Implement the preprocessing
-		return false;
-	}
-	
 	/**
 	 * Identifies the accesses in each field definition to create data flow edges from the field to the accessed members.
 	 * 
@@ -75,5 +73,21 @@ public class DataFlowProcessor implements IMoDiscoProcessor {
 			//sva.getVariable().getDataFlowEdges().add ...
 		}
 		return false;
+	}
+
+	@Override
+	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
+		SubMonitor sub = SubMonitor.convert(monitor, "Do Something", elements.size());
+		for(MDefinition m : elements) {
+			sub.beginTask(m.getName(), 5);
+			//TODO:
+			sub.internalWorked(1);
+		}
+		return false;
+	}
+
+	@Override
+	public Class<MDefinition> getSupportedType() {
+		return MDefinition.class;
 	}
 }

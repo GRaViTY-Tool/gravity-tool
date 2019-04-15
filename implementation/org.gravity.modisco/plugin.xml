@@ -21,4 +21,12 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.modisco.ModiscoPackage" genModel="model/Modisco.genmodel" uri="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"/>
   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Modisco -->
+      <package
+            uri="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"
+            class="org.gravity.modisco.ModiscoPackage"
+            genModel="model/Modisco.genmodel"/>
+   </extension>
+
 </plugin>
