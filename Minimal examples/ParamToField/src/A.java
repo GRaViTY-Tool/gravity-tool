@@ -5,6 +5,7 @@
  */
 public class A {
 
+	// Integrity
 	int a;
 	
 	public void m(int b) {

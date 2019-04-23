@@ -5,6 +5,7 @@
  */
 public class A {
 	
+	// Secrecy
 	int a;
 	
 	public int m() {
