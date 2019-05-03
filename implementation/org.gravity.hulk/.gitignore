@@ -1,5 +1,4 @@
 /bin
-/gen/*
 /model/*.ecore
 /model/*.genmodel
 /model/*.xmi

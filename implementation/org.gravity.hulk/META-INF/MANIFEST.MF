@@ -27,10 +27,11 @@ Export-Package: org.gravity.hulk,
  org.gravity.hulk.util
 Bundle-Name: Hulk
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: lib/hierarchical-clustering.jar,.
+Bundle-ClassPath: .,
+ lib/org.moflon.core.dfs_2.0.0.201811071039.jar,
+ lib/hierarchical-clustering.jar
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.typegraph.basic,
- org.moflon.core.dfs,
  org.gravity.hulk.antipatterngraph,
  org.gravity.refactorings,
  org.gravity.hulk.annotations,
