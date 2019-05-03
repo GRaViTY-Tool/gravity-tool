@@ -21,13 +21,16 @@ import org.gravity.tgg.uml.Transformation;
  */
 final class UmlCreatorJob extends ModelCreatorJob {
 
+	private boolean addUmlSec;
+
 	/**
 	 * Creates a new job for discovering UML models from a project selection
 	 * 
-	 * @param selection
+	 * @param selection The selection from the workspace
 	 */
-	UmlCreatorJob(List<Object> selection) {
+	UmlCreatorJob(List<Object> selection, boolean addUmlSec) {
 		super(selection, "UML Model", "uml");
+		this.addUmlSec = addUmlSec;
 	}
 
 	@Override
@@ -35,7 +38,7 @@ final class UmlCreatorJob extends ModelCreatorJob {
 		IProject iProject = iJavaProject.getProject();
 		Model model;
 		try {
-			model = Transformation.projectToModel(iJavaProject, false, monitor);
+			model = Transformation.projectToModel(iJavaProject, addUmlSec, monitor);
 		} catch (TransformationFailedException | IOException e) {
 			UmlParseHandler.LOGGER.log(Level.ERROR, e);
 			return false;

@@ -24,8 +24,8 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.GravityAPI;
-import org.gravity.eclipse.JavaHelper;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
@@ -225,7 +225,7 @@ public class AccessAnalysisTest {
 			TAbstractType tClass = programModel.getType(((IType) javaElement).getFullyQualifiedName());
 			return tClass.getTAnnotation();
 		} else if (javaElement instanceof IMethod) {
-			TMethodDefinition tMethodDefinition = JavaHelper.getTMethodDefinition((IMethod) javaElement, programModel);
+			TMethodDefinition tMethodDefinition = JavaASTUtil.getTMethodDefinition((IMethod) javaElement, programModel);
 			return tMethodDefinition.getTAnnotation();
 		}
 		else {

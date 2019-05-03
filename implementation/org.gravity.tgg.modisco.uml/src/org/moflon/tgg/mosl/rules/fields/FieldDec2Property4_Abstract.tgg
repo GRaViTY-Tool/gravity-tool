@@ -9,12 +9,7 @@
 	}
 	
 	++bodyDeclaration : MFieldDefinition{
-		++-type->typeAccess
 		++-fragments->vdf
-	}
-	
-	++typeAccess : TypeAccess{
-
 	}
 	
 	++vdf : VariableDeclarationFragment{
@@ -46,11 +41,6 @@
 	
 	++bd2ne : NamedElement2NamedElement {
 		#src->bodyDeclaration
-		#trg->feature
-	}
-	
-	++ta2p:TypeAccess2Property {
-		#src->typeAccess
 		#trg->feature
 	}
 }

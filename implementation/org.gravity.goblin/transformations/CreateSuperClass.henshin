@@ -2,7 +2,7 @@
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_K_pGkLWfEeiHxtaJPOhGLA">
   <imports href="http://www.gravity.org/typegraph/basic#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_Mh6xoLWfEeiHxtaJPOhGLA" name="CreateSuperClass-SameParent">
-    <parameters xmi:id="_zPO5YLczEeiYLM5pT2OaBA" name="parentVis" >
+    <parameters xmi:id="_zPO5YLczEeiYLM5pT2OaBA" name="parentVis">
       <type xsi:type="ecore:EEnum" href="http://www.gravity.org/typegraph/basic#//TVisibility"/>
     </parameters>
     <lhs xmi:id="_MiOToLWfEeiHxtaJPOhGLA" name="Lhs">
@@ -140,14 +140,14 @@
     <mappings xmi:id="_HLRZAbaPEei_2LPeSk39dA" origin="_HLQx8LaPEei_2LPeSk39dA" image="_HLRZALaPEei_2LPeSk39dA"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_zB3CULWfEeiHxtaJPOhGLA" name="CreateSuperClass-NoParent">
-    <parameters xmi:id="_4qkgsLczEeiYLM5pT2OaBA" name="childName1" >
+    <parameters xmi:id="_4qkgsLczEeiYLM5pT2OaBA" name="childName1">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
-    <parameters xmi:id="_8ZAhULczEeiYLM5pT2OaBA" name="childName2" >
+    <parameters xmi:id="_8ZAhULczEeiYLM5pT2OaBA" name="childName2">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </parameters>
     <lhs xmi:id="_zB3CUbWfEeiHxtaJPOhGLA" name="Lhs">
-      <nodes xmi:id="_zB3CU7WfEeiHxtaJPOhGLA" name="child2" incoming="_xhA2cLWmEeiV3ZR7k4DLVQ">
+      <nodes xmi:id="_zB3CU7WfEeiHxtaJPOhGLA" name="child2" incoming="_xhA2cLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CVrWfEeiHxtaJPOhGLA">
         <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__qgWILWlEeiHxtaJPOhGLA" value="false">
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
@@ -156,7 +156,7 @@
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_zB3CVLWfEeiHxtaJPOhGLA" name="child1" incoming="_yHxUcLWmEeiV3ZR7k4DLVQ">
+      <nodes xmi:id="_zB3CVLWfEeiHxtaJPOhGLA" name="child1" incoming="_yHxUcLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CVbWfEeiHxtaJPOhGLA">
         <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__D3M4LWlEeiHxtaJPOhGLA" value="false">
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
@@ -171,6 +171,12 @@
       <nodes xmi:id="_O810sLaLEeilKuzrEwthbQ" incoming="_RUawELaLEeilKuzrEwthbQ">
         <type href="http://www.gravity.org/typegraph/basic#//TPackage"/>
       </nodes>
+      <nodes xmi:id="_zB3CUrWfEeiHxtaJPOhGLA" incoming="_zB3CVbWfEeiHxtaJPOhGLA _zB3CVrWfEeiHxtaJPOhGLA">
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType"/>
+        <attributes xmi:id="_eL_ogEzCEemYW_KBiJlMkw" value="&quot;Object&quot;">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
       <edges xmi:id="_xhA2cLWmEeiV3ZR7k4DLVQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_zB3CU7WfEeiHxtaJPOhGLA">
         <type href="http://www.gravity.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </edges>
@@ -180,44 +186,15 @@
       <edges xmi:id="_RUawELaLEeilKuzrEwthbQ" source="_uMPTALWmEeiV3ZR7k4DLVQ" target="_O810sLaLEeilKuzrEwthbQ">
         <type href="http://www.gravity.org/typegraph/basic#//TypeGraph/packages"/>
       </edges>
-      <formula xsi:type="henshin:Not" xmi:id="_6TMh8LWfEeiHxtaJPOhGLA">
-        <child xsi:type="henshin:NestedCondition" xmi:id="_6TMh8bWfEeiHxtaJPOhGLA">
-          <conclusion xmi:id="_6TMh8rWfEeiHxtaJPOhGLA">
-            <nodes xmi:id="_zB3CUrWfEeiHxtaJPOhGLA" incoming="_zB3CVbWfEeiHxtaJPOhGLA _zB3CVrWfEeiHxtaJPOhGLA">
-              <type href="http://www.gravity.org/typegraph/basic#//TAbstractType"/>
-            </nodes>
-            <nodes xmi:id="_6TMh9bWfEeiHxtaJPOhGLA" outgoing="_zB3CVbWfEeiHxtaJPOhGLA">
-              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
-              <attributes xmi:id="__D4bALWlEeiHxtaJPOhGLA" value="false">
-                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
-              </attributes>
-              <attributes xmi:id="_Z9Axwrc0EeiYLM5pT2OaBA" value="childName1">
-                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-            </nodes>
-            <nodes xmi:id="_6TMh-LWfEeiHxtaJPOhGLA" outgoing="_zB3CVrWfEeiHxtaJPOhGLA">
-              <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
-              <attributes xmi:id="__qgWIrWlEeiHxtaJPOhGLA" value="false">
-                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
-              </attributes>
-              <attributes xmi:id="_bBY_4rc0EeiYLM5pT2OaBA" value="childName2">
-                <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
-              </attributes>
-            </nodes>
-            <edges xmi:id="_zB3CVbWfEeiHxtaJPOhGLA" source="_6TMh9bWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
-              <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
-            </edges>
-            <edges xmi:id="_zB3CVrWfEeiHxtaJPOhGLA" source="_6TMh-LWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
-              <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
-            </edges>
-          </conclusion>
-          <mappings xmi:id="_6TMh9rWfEeiHxtaJPOhGLA" origin="_zB3CVLWfEeiHxtaJPOhGLA" image="_6TMh9bWfEeiHxtaJPOhGLA"/>
-          <mappings xmi:id="_6TMh-bWfEeiHxtaJPOhGLA" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_6TMh-LWfEeiHxtaJPOhGLA"/>
-        </child>
-      </formula>
+      <edges xmi:id="_zB3CVbWfEeiHxtaJPOhGLA" source="_zB3CVLWfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_zB3CVrWfEeiHxtaJPOhGLA" source="_zB3CU7WfEeiHxtaJPOhGLA" target="_zB3CUrWfEeiHxtaJPOhGLA">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
     </lhs>
     <rhs xmi:id="_zB3CV7WfEeiHxtaJPOhGLA" name="Rhs">
-      <nodes xmi:id="_zB3CWbWfEeiHxtaJPOhGLA" incoming="_xhDSsLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXbWfEeiHxtaJPOhGLA">
+      <nodes xmi:id="_zB3CWbWfEeiHxtaJPOhGLA" incoming="_xhDSsLWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXbWfEeiHxtaJPOhGLA _cDOlMkzCEemYW_KBiJlMkw">
         <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__qgWIbWlEeiHxtaJPOhGLA" value="false">
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
@@ -226,7 +203,7 @@
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_zB3CWrWfEeiHxtaJPOhGLA" incoming="_yHxUcbWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXLWfEeiHxtaJPOhGLA">
+      <nodes xmi:id="_zB3CWrWfEeiHxtaJPOhGLA" incoming="_yHxUcbWmEeiV3ZR7k4DLVQ" outgoing="_zB3CXLWfEeiHxtaJPOhGLA _cDOlMUzCEemYW_KBiJlMkw">
         <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
         <attributes xmi:id="__D3z8LWlEeiHxtaJPOhGLA" value="false">
           <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
@@ -254,6 +231,12 @@
         </attributes>
         <attributes xmi:id="_XkRyULaQEei_2LPeSk39dA" value="&quot;TPublic&quot;">
           <type href="http://www.gravity.org/typegraph/basic#//TModifier/tVisibility"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_cDN-IEzCEemYW_KBiJlMkw" incoming="_cDOlMUzCEemYW_KBiJlMkw _cDOlMkzCEemYW_KBiJlMkw">
+        <type href="http://www.gravity.org/typegraph/basic#//TAbstractType"/>
+        <attributes xmi:id="_eL_ogUzCEemYW_KBiJlMkw" value="&quot;Object&quot;">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tName"/>
         </attributes>
       </nodes>
       <edges xmi:id="_zB3CXLWfEeiHxtaJPOhGLA" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_zB3CW7WfEeiHxtaJPOhGLA">
@@ -286,11 +269,18 @@
       <edges xmi:id="_WRq68LaQEei_2LPeSk39dA" source="_zB3CW7WfEeiHxtaJPOhGLA" target="_3Y33QLaOEei_2LPeSk39dA">
         <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tModifier"/>
       </edges>
+      <edges xmi:id="_cDOlMUzCEemYW_KBiJlMkw" source="_zB3CWrWfEeiHxtaJPOhGLA" target="_cDN-IEzCEemYW_KBiJlMkw">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_cDOlMkzCEemYW_KBiJlMkw" source="_zB3CWbWfEeiHxtaJPOhGLA" target="_cDN-IEzCEemYW_KBiJlMkw">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
     </rhs>
     <attributeConditions xmi:id="_6HUS4LcwEeiYLM5pT2OaBA" name="forbid type parameter" conditionText="childName1 != &quot;T&quot; &amp;&amp; childName2 != &quot;T&quot; &amp;&amp; childName1 != &quot;Anonymous&quot; &amp;&amp; childName2 != &quot;Anonymous&quot;"/>
     <mappings xmi:id="_zB3CYLWfEeiHxtaJPOhGLA" origin="_zB3CU7WfEeiHxtaJPOhGLA" image="_zB3CWbWfEeiHxtaJPOhGLA"/>
     <mappings xmi:id="_zB3CYbWfEeiHxtaJPOhGLA" origin="_zB3CVLWfEeiHxtaJPOhGLA" image="_zB3CWrWfEeiHxtaJPOhGLA"/>
     <mappings xmi:id="_uMP6EbWmEeiV3ZR7k4DLVQ" origin="_uMPTALWmEeiV3ZR7k4DLVQ" image="_uMP6ELWmEeiV3ZR7k4DLVQ"/>
     <mappings xmi:id="_O83C0baLEeilKuzrEwthbQ" origin="_O810sLaLEeilKuzrEwthbQ" image="_O83C0LaLEeilKuzrEwthbQ"/>
+    <mappings xmi:id="_cDOlMEzCEemYW_KBiJlMkw" origin="_zB3CUrWfEeiHxtaJPOhGLA" image="_cDN-IEzCEemYW_KBiJlMkw"/>
   </units>
 </henshin:Module>

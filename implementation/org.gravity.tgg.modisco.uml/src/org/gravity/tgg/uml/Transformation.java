@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -25,24 +24,11 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.compare.Comparison;
-import org.eclipse.emf.compare.Diff;
-import org.eclipse.emf.compare.DifferenceKind;
-import org.eclipse.emf.compare.DifferenceState;
-import org.eclipse.emf.compare.EMFCompare;
-import org.eclipse.emf.compare.EMFCompare.Builder;
-import org.eclipse.emf.compare.ReferenceChange;
-import org.eclipse.emf.compare.scope.DefaultComparisonScope;
-import org.eclipse.emf.compare.scope.IComparisonScope;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Annotation;
@@ -59,30 +45,25 @@ import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
-import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.modisco.util.MoDiscoUtil;
+import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.configuration.PGSavingConfigurator;
 import org.moflon.tgg.algorithm.datastructures.SynchronizationProtocol;
 import org.moflon.tgg.algorithm.datastructures.TripleMatch;
-import org.moflon.tgg.algorithm.delta.Delta;
 import org.moflon.tgg.algorithm.synchronization.BackwardSynchronizer;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 import org.moflon.tgg.runtime.CorrespondenceModel;
-import org.moflon.tgg.runtime.EMoflonEdge;
-import org.moflon.tgg.runtime.RuntimeFactory;
 
 /**
  * This class provides the API for transforming Java projects into UML models
@@ -133,7 +114,7 @@ public class Transformation extends SynchronizationHelper {
 	 * @return The UML model
 	 * @throws TransformationFailedException If the UML model couldn't be created
 	 *                                       due to a transformation error
-	 * @throws IOException If writing files failed
+	 * @throws IOException                   If writing files failed
 	 */
 	public static Model projectToModel(IJavaProject project, boolean addUMLsec, IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
@@ -141,14 +122,13 @@ public class Transformation extends SynchronizationHelper {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
 
 		IProject iproject = project.getProject();
-		IFolder gravityFolder = EclipseProjectUtil.getGravityFolder(iproject, monitor);
 
 		Collection<IPath> libs;
 		if (!addUMLsec) {
 			libs = new ArrayList<>();
 		} else {
 			try {
-				libs = applyUMLsecLib(project, subMonitor);
+				libs = AnnotationsActivator.applyUMLsecLib(project, subMonitor);
 			} catch (CoreException | IOException e) {
 				throw new TransformationFailedException(e);
 			}
@@ -164,7 +144,8 @@ public class Transformation extends SynchronizationHelper {
 		} catch (OperationCanceledException | DiscoveryException e) {
 			throw new TransformationFailedException(e);
 		}
-		
+		mGravityModel.setName(mGravityModel.getName().replace('.', '-'));
+
 		Transformation trafo;
 		try {
 			trafo = new Transformation(discoverer.getResourceSet());
@@ -172,7 +153,13 @@ public class Transformation extends SynchronizationHelper {
 			throw new TransformationFailedException(e);
 		}
 		trafo.setSrc(mGravityModel);
-//		trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
+
+		boolean debugging = GravityActivator.getDefault().isDebugging();
+		IFolder gravityFolder = null;
+		if (debugging) {
+			gravityFolder = EclipseProjectUtil.getGravityFolder(iproject, monitor);
+			trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
+		}
 
 		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
 		trafo.integrateForward();
@@ -189,60 +176,32 @@ public class Transformation extends SynchronizationHelper {
 			throw new TransformationFailedException(e);
 		}
 
-		subMonitor.setTaskName("Save UML Model");
-		subMonitor.setWorkRemaining(10);
-		trafo.saveTrg(gravityFolder.getFile(TRG_XMI).getLocation().toFile().getAbsolutePath());
-		trafo.saveTrg(iproject.getFile(iproject.getName() + ".uml").getLocation().toFile().getAbsolutePath());
-		trafo.saveCorr(gravityFolder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
-		trafo.saveSynchronizationProtocol(gravityFolder.getFile(PROTOCOL_XMI).getLocation().toFile().getAbsolutePath());
-
-		try {
-			iproject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-		} catch (CoreException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		if (debugging) {
+			save(gravityFolder, trafo, subMonitor);
 		}
 
 		return model;
 	}
 
 	/**
-	 * Adds the UMLsec Java-Annotations library to the project
+	 * Saves all target model
 	 * 
-	 * @param project The Java project
+	 * @param folder  A folder in the project to which the models should be saved
+	 * @param trafo   The transformation of which the models should be saved
 	 * @param monitor A progress monitor
-	 * @return The libs of the project
-	 * @throws CoreException
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws JavaModelException
 	 */
-	private static Collection<IPath> applyUMLsecLib(IJavaProject project, IProgressMonitor monitor)
-			throws CoreException, IOException, MalformedURLException, JavaModelException {
-		Collection<IPath> libs;
-		monitor.setTaskName("Prepare Java Project");
-
-		IClasspathEntry relativeLibraryEntry = null;
-		IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor).getFile("org.gravity.annotations.jar");
-		if (!annotationsFile.exists()) {
-			try (InputStream annotations = new URL(
-					"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
-							.openConnection().getInputStream()) {
-				annotationsFile.create(annotations, true, monitor);
-			}
-			relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
-
-		} else {
-			for (IClasspathEntry entry : project.getRawClasspath()) {
-				if (entry.getPath().makeAbsolute().equals(annotationsFile.getLocation())) {
-					relativeLibraryEntry = entry;
-				}
-			}
-			if (relativeLibraryEntry == null) {
-				relativeLibraryEntry = addLibToClasspath(project, annotationsFile);
-			}
+	private static void save(IFolder folder, Transformation trafo, IProgressMonitor monitor) {
+		monitor.setTaskName("Save UML Model");
+		trafo.saveTrg(folder.getFile(TRG_XMI).getLocation().toFile().getAbsolutePath());
+		trafo.saveTrg(folder.getProject().getFile(folder.getProject().getName() + ".uml").getLocation().toFile()
+				.getAbsolutePath());
+		trafo.saveCorr(folder.getFile(CORR_XMI).getLocation().toFile().getAbsolutePath());
+		trafo.saveSynchronizationProtocol(folder.getFile(PROTOCOL_XMI).getLocation().toFile().getAbsolutePath());
+		try {
+			folder.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+		} catch (CoreException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
-		libs = Arrays.asList(relativeLibraryEntry.getPath());
-		return libs;
 	}
 
 	/**
@@ -251,7 +210,7 @@ public class Transformation extends SynchronizationHelper {
 	 * @param project The java project
 	 * @param monitor A progress monitor
 	 * @throws TransformationFailedException If the transformation wasn't successful
-	 * @throws IOException If writing files failed
+	 * @throws IOException                   If writing files failed
 	 */
 	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
@@ -301,7 +260,7 @@ public class Transformation extends SynchronizationHelper {
 			throw new TransformationFailedException(e);
 		}
 
-		trafo.delta = getDelta(oldModel, newModel);
+		trafo.delta = DeltaHelper.getDelta(oldModel, newModel);
 		if (trafo.noChangesWereMade()) {
 			return;
 		}
@@ -419,121 +378,6 @@ public class Transformation extends SynchronizationHelper {
 				}
 			}
 		}
-	}
-
-	private static IClasspathEntry addLibToClasspath(IJavaProject project, IFile annotationsFile)
-			throws JavaModelException {
-		IClasspathEntry relativeLibraryEntry;
-		relativeLibraryEntry = createClassPathEntry(annotationsFile);
-		IClasspathEntry[] oldEntries = project.getRawClasspath();
-		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
-		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
-		newEntries[oldEntries.length] = relativeLibraryEntry;
-		project.setRawClasspath(newEntries, null);
-		return relativeLibraryEntry;
-	}
-
-	/**
-	 * Creates a class path entry for the given file
-	 * 
-	 * @param file The file
-	 * @return The class path entry
-	 */
-	private static ClasspathEntry createClassPathEntry(IFile file) {
-		return new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
-				IClasspathEntry.CPE_LIBRARY, file.getLocation(), ClasspathEntry.INCLUDE_ALL, // inclusion
-																								// patterns
-				ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
-				null, null, null, // specific output folder
-				false, // exported
-				ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
-				ClasspathEntry.NO_EXTRA_ATTRIBUTES);
-	}
-
-	private static Delta getDelta(EObject oldModel, EObject newModel) {
-		IComparisonScope scope = new DefaultComparisonScope(newModel, oldModel, null);
-		Builder builder = EMFCompare.builder();
-		EMFCompare build = builder.build();
-		Comparison comparison = build.compare(scope);
-
-		Delta delta = new Delta();
-		EList<Diff> differences = comparison.getDifferences();
-		if (differences.size() > 0) {
-			for (Diff diff : differences) {
-				DifferenceKind kind = diff.getKind();
-				switch (kind) {
-				case ADD:
-					if (diff instanceof ReferenceChange) {
-						addToAdd(delta, (ReferenceChange) diff);
-					} else {
-						throw new UnsupportedOperationException();
-					}
-					break;
-				case CHANGE:
-					if (diff instanceof ReferenceChange) {
-						ReferenceChange refChange = (ReferenceChange) diff;
-						if (refChange.getState() == DifferenceState.UNRESOLVED) {
-							// Ignore
-						} else {
-							throw new UnsupportedOperationException();
-						}
-					} else {
-						throw new UnsupportedOperationException();
-					}
-					break;
-				case DELETE:
-					if (diff instanceof ReferenceChange) {
-						addToDelete(delta, (ReferenceChange) diff);
-					} else {
-						throw new UnsupportedOperationException();
-					}
-					break;
-				case MOVE:
-					throw new UnsupportedOperationException();
-				default:
-					throw new UnsupportedOperationException();
-				}
-			}
-		}
-		return delta;
-	}
-
-	private static void addToDelete(Delta delta, ReferenceChange refChange) {
-		if (refChange.getReference().isContainment()) {
-			delta.deleteNode(refChange.getValue());
-		}
-		delta.deleteEdge(getChangedEMoflonEdge(refChange));
-	}
-
-	private static void addToAdd(Delta delta, ReferenceChange refChange) {
-		if (refChange.getReference().isContainment()) {
-			delta.addNode(refChange.getValue());
-		}
-		delta.addEdge(getChangedEMoflonEdge(refChange));
-	}
-
-	private static EMoflonEdge getChangedEMoflonEdge(ReferenceChange refChange) {
-		EObject value = refChange.getValue();
-		EReference reference = refChange.getReference();
-		EMoflonEdge edge = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		edge.setName(refChange.getReference().getName());
-		edge.setTrg(value);
-		if (reference.isContainment()) {
-			edge.setSrc(value.eContainer());
-		} else {
-			ResourceSet resourceSet = refChange.getValue().eResource().getResourceSet();
-			ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(resourceSet);
-			if (adapter == null) {
-				adapter = new ECrossReferenceAdapter();
-				resourceSet.eAdapters().add(adapter);
-			}
-			for (Setting setting : adapter.getInverseReferences(value)) {
-				if (setting.getEStructuralFeature().equals(reference)) {
-					edge.setSrc(setting.getEObject());
-				}
-			}
-		}
-		return edge;
 	}
 
 }

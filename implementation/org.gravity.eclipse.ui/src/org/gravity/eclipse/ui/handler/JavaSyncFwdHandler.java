@@ -17,6 +17,7 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.Messages;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 
 /**
@@ -32,7 +33,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = getSelection(event);
+		List<Object> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new PGSyncFwdJob(selection);
 		job.setUser(true);

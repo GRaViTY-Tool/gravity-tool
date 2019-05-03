@@ -10,6 +10,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.jobs.Job;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.PGCreatorJob;
 
 /**
@@ -24,7 +25,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = getSelection(event);
+		List<Object> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new PGCreatorJob(selection);
 		job.setUser(true);

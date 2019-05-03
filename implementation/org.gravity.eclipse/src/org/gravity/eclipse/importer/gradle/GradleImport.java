@@ -631,9 +631,12 @@ public class GradleImport extends ProjectImport {
 	 * @param dependenciesSet  A set for storing the use dependencies
 	 */
 	private void getMultipleDependencies(String content, List<String> parsedBuildFiles, Set<String> dependenciesSet) {
-		Matcher dependenciesMatcher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES.matcher(content);
-		while (dependenciesMatcher.find()) {
-			String dependencies = dependenciesMatcher.group(1);
+		String cur = content;
+		int i;
+		String str = "dependencies";
+		while ((i = cur.indexOf(str)) > 0) {
+			cur = cur.substring(i + str.length()).trim().substring(1);
+			String dependencies = cur.substring(0, cur.indexOf('}'));
 			Matcher entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
 			while (entryMatecher.find()) {
 				String dependency = entryMatecher.group(2);
@@ -646,6 +649,21 @@ public class GradleImport extends ProjectImport {
 
 			}
 		}
+//		Matcher dependenciesMatcher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES.matcher(content);
+//		while (dependenciesMatcher.find()) {
+//			String dependencies = dependenciesMatcher.group(1);
+//			Matcher entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
+//			while (entryMatecher.find()) {
+//				String dependency = entryMatecher.group(2);
+//				try {
+//					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
+//					dependenciesSet.add(dependency);
+//				} catch (GradleImportException e) {
+//					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+//				}
+//
+//			}
+//		}
 	}
 
 	/**

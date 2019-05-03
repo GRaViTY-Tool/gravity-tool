@@ -17,6 +17,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TPackage;
@@ -35,7 +36,7 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = getSelection(event);
+		List<Object> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new SyncPGJob(selection);
 		job.setUser(true);
