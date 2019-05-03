@@ -16,13 +16,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration #//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="abstractMethodInvocations"
         upperBound="-1" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
         upperBound="-1" eType="#//MethodInvocationStaticType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlow" eType="#//MFlow"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
@@ -80,13 +82,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="syntheticMethodDefinitions"
         upperBound="-1" eType="#//MSyntheticMethodDefinition" eOpposite="#//MSyntheticMethodDefinition/originalMethodDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mDefinitions" upperBound="-1"
         eType="#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MEntry">
+  <eClassifiers xsi:type="ecore:EClass" name="MEntry" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mNext" eType="#//MEntry"
         eOpposite="#//MEntry/mPrevious"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mPrevious" eType="#//MEntry"
@@ -150,8 +152,24 @@
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MExtension" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnFlow" upperBound="-1"
-        eType="#//MDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MFlow" eSuperTypes="#//MAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSources" upperBound="-1"
+        eType="#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTargets" upperBound="-1"
+        eType="#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
+        eType="#//MAbstractFlowElement" containment="true" eOpposite="#//MAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
+        eType="#//MFlow" containment="true" eOpposite="#//MFlow/flowOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
+        eType="#//MFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
+        eType="#//MFlow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAccess" eSuperTypes="#//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldFlow" eSuperTypes="#//MFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MReturnFlow" eSuperTypes="#//MFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MParamFlow" eSuperTypes="#//MFlow"/>
 </ecore:EPackage>
