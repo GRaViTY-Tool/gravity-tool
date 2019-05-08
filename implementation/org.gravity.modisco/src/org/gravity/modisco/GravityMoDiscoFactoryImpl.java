@@ -53,4 +53,19 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	public MFieldDefinition createFieldDeclaration() {
 		return  ModiscoFactory.eINSTANCE.createMFieldDefinition();
 	}
+	
+	@Override
+	public MSingleVariableAccess createSingleVariableAccess() {
+		return ModiscoFactory.eINSTANCE.createMSingleVariableAccess();
+	}
+	
+	@Override 
+	public MMethodInvocation createMethodInvocation() {
+		return ModiscoFactory.eINSTANCE.createMMethodInvocation();
+	}
+	
+	@Override
+	public MConstructorInvocation createConstructorInvocation() {
+		return ModiscoFactory.eINSTANCE.createMConstructorInvocation();
+	}
 }
