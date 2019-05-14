@@ -1,19 +1,31 @@
 package org.gravity.modisco.dataflow;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
+/**
+ * An intermediate representation of data flow elements.
+ * It captures the flow information of a single statement node.
+ * 
+ * @author dmebus
+ *
+ */
 public class FlowNode {
 
-	private HashMap<FlowNode, String> inRef = new HashMap<FlowNode, String>();
-	private HashMap<FlowNode, String> outRef = new HashMap<FlowNode, String>();
-	
-	private LinkedList<FlowNode> def = new LinkedList<FlowNode>();
+	/**
+	 * Collection of all statements from which a data flow goes <b>into</b> this statement.
+	 */
+	private final List<FlowNode> inRef = new ArrayList<>();
 	
 	/**
-	 * The corresponding model element.
+	 * Collection of all statements to which data flows <b>from</b> this statement.
+	 */
+	private final List<FlowNode> outRef = new ArrayList<>();
+	
+	/**
+	 * The model element, which corresponds to this statement node.
 	 */
 	private EObject modelElement;
 	
@@ -21,16 +33,12 @@ public class FlowNode {
 		modelElement = correspondingElement;
 	}
 
-	public HashMap<FlowNode, String> getInRef() {
+	public List<FlowNode> getInRef() {
 		return inRef;
 	}
 	
-	public HashMap<FlowNode, String> getOutRef() {
+	public List<FlowNode> getOutRef() {
 		return outRef;
-	}
-	
-	public LinkedList<FlowNode> getDef() {
-		return def;
 	}
 	
 	public EObject getModelElement() {
