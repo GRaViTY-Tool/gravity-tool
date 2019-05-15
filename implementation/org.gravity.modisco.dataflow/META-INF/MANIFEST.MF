@@ -8,4 +8,5 @@ Automatic-Module-Name: org.gravity.modisco.dataflow
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime,
  org.gravity.modisco,
- org.eclipse.emf.ecore.xmi;bundle-version="2.15.0"
+ org.eclipse.emf.ecore.xmi;bundle-version="2.15.0",
+ org.apache.log4j;bundle-version="1.2.15"
