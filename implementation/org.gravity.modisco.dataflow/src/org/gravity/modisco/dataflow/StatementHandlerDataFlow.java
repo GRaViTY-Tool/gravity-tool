@@ -1,5 +1,8 @@
 package org.gravity.modisco.dataflow;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.gmt.modisco.java.AssertStatement;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BreakStatement;
@@ -27,10 +30,42 @@ import org.eclipse.gmt.modisco.java.UnresolvedLabeledStatement;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
+import org.gravity.modisco.MDefinition;
 
+/**
+ * A statement handler for all kinds of java statements, which determines the data flow between statements.
+ * The inter-statement flow is used to derive inter-member flow, which is stored in the corresponding fields of each handler.
+ * 
+ * @author dmebus
+ *
+ */
 public class StatementHandlerDataFlow {
+	
+	/**
+	 * The statements, which have already been processed.
+	 */
+	List<FlowNode> alreadySeen = new ArrayList<>();
+	
+	/**
+	 * The incoming flow of the member corresponding to this handler.
+	 */
+	List<FlowNode> memberIn = new ArrayList<>();
+	
+	/**
+	 * The outgoing flow of the member corresponding to this handler.
+	 */
+	List<FlowNode> memberOut = new ArrayList<>();
+	
+	/**
+	 * The member corresponding to this handler.
+	 */
+	MDefinition member;
 
-	public static FlowNode handle(Statement statement, FlowNode member) {
+	public StatementHandlerDataFlow(MDefinition correspondingMember) {
+		member = correspondingMember;
+	}
+	
+	public FlowNode handle(Statement statement, FlowNode member) {
 		if (statement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -135,7 +170,7 @@ public class StatementHandlerDataFlow {
 		}
 	}
 
-	private static FlowNode handle(WhileStatement whileStatement, FlowNode member) {
+	private FlowNode handle(WhileStatement whileStatement, FlowNode member) {
 		if (whileStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -145,7 +180,7 @@ public class StatementHandlerDataFlow {
 	}
 
 	// TODO
-	private static FlowNode handle(VariableDeclarationStatement variableDeclarationStatement, FlowNode member) {
+	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement, FlowNode member) {
 		if (variableDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -155,14 +190,14 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(TypeDeclarationStatement typeDeclarationStatement, FlowNode member) {
+	private FlowNode handle(TypeDeclarationStatement typeDeclarationStatement, FlowNode member) {
 		if (typeDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
 		return MiscHandlerDataFlow.handle(typeDeclarationStatement.getDeclaration(), member);
 	}
 
-	private static FlowNode handle(TryStatement tryStatement, FlowNode member) {
+	private FlowNode handle(TryStatement tryStatement, FlowNode member) {
 		if (tryStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -174,7 +209,7 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ThrowStatement throwStatement, FlowNode member) {
+	private FlowNode handle(ThrowStatement throwStatement, FlowNode member) {
 		if (throwStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -182,7 +217,7 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(SynchronizedStatement synchronizedStatement, FlowNode member) {
+	private FlowNode handle(SynchronizedStatement synchronizedStatement, FlowNode member) {
 		if (synchronizedStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -191,7 +226,7 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(SwitchStatement switchStatement, FlowNode member) {
+	private FlowNode handle(SwitchStatement switchStatement, FlowNode member) {
 		if (switchStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -202,14 +237,14 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(SwitchCase switchCase, FlowNode member) {
+	private FlowNode handle(SwitchCase switchCase, FlowNode member) {
 		if (switchCase == null) {
 			return member; // assume nothing to do is success
 		}
 		return ExpressionHandlerDataFlow.handle(switchCase.getExpression(), member);
 	}
 
-	private static FlowNode handle(SuperConstructorInvocation superConstructorInvocation, FlowNode member) {
+	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation, FlowNode member) {
 		if (superConstructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
@@ -221,14 +256,14 @@ public class StatementHandlerDataFlow {
 	}
 
 	// TODO
-	private static FlowNode handle(ReturnStatement returnStatement, FlowNode member) {
+	private FlowNode handle(ReturnStatement returnStatement, FlowNode member) {
 		if (returnStatement == null) {
 			return member; // assume nothing to do is success
 		}
 		return ExpressionHandlerDataFlow.handle(returnStatement.getExpression(), member);
 	}
 
-	private static FlowNode handle(LabeledStatement labeledStatement, FlowNode member) {
+	private FlowNode handle(LabeledStatement labeledStatement, FlowNode member) {
 		if (labeledStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -236,7 +271,7 @@ public class StatementHandlerDataFlow {
 	}
 
 	// TODO
-	private static FlowNode handle(IfStatement ifStatement, FlowNode member) {
+	private FlowNode handle(IfStatement ifStatement, FlowNode member) {
 		if (ifStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -247,7 +282,7 @@ public class StatementHandlerDataFlow {
 	}
 
 	// TODO
-	private static FlowNode handle(ForStatement forStatement, FlowNode member) {
+	private FlowNode handle(ForStatement forStatement, FlowNode member) {
 		if (forStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -262,14 +297,14 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ExpressionStatement expressionStatement, FlowNode member) {
+	private FlowNode handle(ExpressionStatement expressionStatement, FlowNode member) {
 		if (expressionStatement == null) {
 			return member; // assume nothing to do is success
 		}
 		return ExpressionHandlerDataFlow.handle(expressionStatement.getExpression(), member);
 	}
 
-	private static FlowNode handle(EnhancedForStatement enhancedForStatement, FlowNode member) {
+	private FlowNode handle(EnhancedForStatement enhancedForStatement, FlowNode member) {
 		if (enhancedForStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -278,11 +313,11 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(EmptyStatement emptyStatement, FlowNode member) {
+	private FlowNode handle(EmptyStatement emptyStatement, FlowNode member) {
 		return member;
 	}
 
-	private static FlowNode handle(DoStatement doStatement, FlowNode member) {
+	private FlowNode handle(DoStatement doStatement, FlowNode member) {
 		if (doStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -291,7 +326,7 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ContinueStatement continueStatement, FlowNode member) {
+	private FlowNode handle(ContinueStatement continueStatement, FlowNode member) {
 		if (continueStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -299,7 +334,7 @@ public class StatementHandlerDataFlow {
 	}
 
 	// TODO
-	private static FlowNode handle(ConstructorInvocation constructorInvocation, FlowNode member) {
+	private FlowNode handle(ConstructorInvocation constructorInvocation, FlowNode member) {
 		if (constructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
@@ -317,14 +352,14 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(BreakStatement breakStatement, FlowNode member) {
+	private FlowNode handle(BreakStatement breakStatement, FlowNode member) {
 		if (breakStatement == null) {
 			return member; // assume nothing to do is success
 		}
 		return handle(breakStatement.getLabel(), member);
 	}
 
-	private static FlowNode handle(CatchClause catchClause, FlowNode member) {
+	private FlowNode handle(CatchClause catchClause, FlowNode member) {
 		if (catchClause == null) {
 			return member; // assume nothing to do is success
 		}
@@ -333,7 +368,7 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 	
-	private static FlowNode handle(AssertStatement assertStatement, FlowNode member) {
+	private FlowNode handle(AssertStatement assertStatement, FlowNode member) {
 		if (assertStatement == null) {
 			return member; // assume nothing to do is success
 		}
@@ -342,13 +377,12 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(Block block, FlowNode member) {
+	private FlowNode handle(Block block, FlowNode member) {
 		if (block == null) {
 			return member; // assume nothing to do is success
 		}
-		// TODO: Needs to be handled differently; new member for each statement
 		for (Statement statement : block.getStatements()) {
-			handle(statement, member);
+			handle(statement, new FlowNode(statement));
 		}
 		return member;
 	}
