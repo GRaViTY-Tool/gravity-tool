@@ -54,7 +54,7 @@ public class DataflowProcessingTest {
 	 * 
 	 * @return A collection of test configurations as name - project pair
 	 */
-	@Parameters
+	@Parameters(name="{0}")
 	public static Collection<Object[]> collectTestcases() {
 		Collection<Object[]> testCases = new LinkedList<>();
 		IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
