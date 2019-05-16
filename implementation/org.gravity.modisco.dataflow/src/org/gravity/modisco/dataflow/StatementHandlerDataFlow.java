@@ -1,6 +1,7 @@
 package org.gravity.modisco.dataflow;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.gmt.modisco.java.AssertStatement;
@@ -27,6 +28,7 @@ import org.eclipse.gmt.modisco.java.ThrowStatement;
 import org.eclipse.gmt.modisco.java.TryStatement;
 import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
 import org.eclipse.gmt.modisco.java.UnresolvedLabeledStatement;
+import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
@@ -55,6 +57,8 @@ public class StatementHandlerDataFlow {
 	 * The outgoing flow of the member corresponding to this handler.
 	 */
 	private final List<FlowNode> memberOut = new ArrayList<>();
+	
+	private final HashMap<VariableDeclaration, FlowNode> locals = new HashMap<>();
 	
 	/**
 	 * The member definition corresponding to this handler.
@@ -363,7 +367,7 @@ public class StatementHandlerDataFlow {
 			expressionHandler.handle(argument, member);
 		}
 		memberIn.add(member);
-		if (constructorInvocation.getArguments().isEmpty()) {
+		if (!constructorInvocation.getArguments().isEmpty()) {
 			memberOut.add(member);
 		}
 		alreadySeen.add(member);
@@ -423,6 +427,10 @@ public class StatementHandlerDataFlow {
 
 	public List<FlowNode> getMemberOut() {
 		return memberOut;
+	}
+	
+	public HashMap<VariableDeclaration, FlowNode> getLocals() {
+		return locals;
 	}
 	
 	public MDefinition getMemberDef() {
