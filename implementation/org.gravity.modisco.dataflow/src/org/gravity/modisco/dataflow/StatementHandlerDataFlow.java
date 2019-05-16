@@ -44,25 +44,37 @@ public class StatementHandlerDataFlow {
 	/**
 	 * The statements, which have already been processed.
 	 */
-	List<FlowNode> alreadySeen = new ArrayList<>();
+	private final List<FlowNode> alreadySeen = new ArrayList<>();
 	
 	/**
 	 * The incoming flow of the member corresponding to this handler.
 	 */
-	List<FlowNode> memberIn = new ArrayList<>();
+	private final List<FlowNode> memberIn = new ArrayList<>();
 	
 	/**
 	 * The outgoing flow of the member corresponding to this handler.
 	 */
-	List<FlowNode> memberOut = new ArrayList<>();
+	private final List<FlowNode> memberOut = new ArrayList<>();
 	
 	/**
-	 * The member corresponding to this handler.
+	 * The member definition corresponding to this handler.
 	 */
-	MDefinition member;
+	private MDefinition memberDef;
+	
+	/**
+	 * The expression handler associated with this statement handler.
+	 */
+	private ExpressionHandlerDataFlow expressionHandler;
+	
+	/**
+	 * The misc handler associated with this statement handler.
+	 */
+	private MiscHandlerDataFlow miscHandler;
 
 	public StatementHandlerDataFlow(MDefinition correspondingMember) {
-		member = correspondingMember;
+		memberDef = correspondingMember;
+		expressionHandler = new ExpressionHandlerDataFlow(this);
+		miscHandler = new MiscHandlerDataFlow(this);
 	}
 	
 	public FlowNode handle(Statement statement, FlowNode member) {
@@ -175,18 +187,21 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(whileStatement.getBody(), member);
-		ExpressionHandlerDataFlow.handle(whileStatement.getExpression(), member);
+		expressionHandler.handle(whileStatement.getExpression(), member);
 		return member;
 	}
 
-	// TODO
 	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement, FlowNode member) {
 		if (variableDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			MiscHandlerDataFlow.handle(fragment, member);
+		if (alreadySeen.contains(member)) {
+			return member;
 		}
+		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
+			miscHandler.handle(fragment, member);
+		}
+		alreadySeen.add(member);
 		return member;
 	}
 
@@ -194,7 +209,7 @@ public class StatementHandlerDataFlow {
 		if (typeDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		return MiscHandlerDataFlow.handle(typeDeclarationStatement.getDeclaration(), member);
+		return miscHandler.handle(typeDeclarationStatement.getDeclaration(), member);
 	}
 
 	private FlowNode handle(TryStatement tryStatement, FlowNode member) {
@@ -213,7 +228,7 @@ public class StatementHandlerDataFlow {
 		if (throwStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		ExpressionHandlerDataFlow.handle(throwStatement.getExpression(), member);
+		expressionHandler.handle(throwStatement.getExpression(), member);
 		return member;
 	}
 
@@ -222,7 +237,7 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(synchronizedStatement.getBody(), member);
-		ExpressionHandlerDataFlow.handle(synchronizedStatement.getExpression(), member);
+		expressionHandler.handle(synchronizedStatement.getExpression(), member);
 		return member;
 	}
 
@@ -233,7 +248,7 @@ public class StatementHandlerDataFlow {
 		for (Statement statement : switchStatement.getStatements()) {
 			handle(statement, member);
 		}
-		ExpressionHandlerDataFlow.handle(switchStatement.getExpression(), member);
+		expressionHandler.handle(switchStatement.getExpression(), member);
 		return member;
 	}
 
@@ -241,26 +256,30 @@ public class StatementHandlerDataFlow {
 		if (switchCase == null) {
 			return member; // assume nothing to do is success
 		}
-		return ExpressionHandlerDataFlow.handle(switchCase.getExpression(), member);
+		return expressionHandler.handle(switchCase.getExpression(), member);
 	}
 
 	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation, FlowNode member) {
 		if (superConstructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
-		ExpressionHandlerDataFlow.handle(superConstructorInvocation.getExpression(), member);
+		expressionHandler.handle(superConstructorInvocation.getExpression(), member);
 		for (Expression expression : superConstructorInvocation.getArguments()) {
-			ExpressionHandlerDataFlow.handle(expression, member);
+			expressionHandler.handle(expression, member);
 		}
 		return member;
 	}
 
-	// TODO
 	private FlowNode handle(ReturnStatement returnStatement, FlowNode member) {
 		if (returnStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		return ExpressionHandlerDataFlow.handle(returnStatement.getExpression(), member);
+		if (alreadySeen.contains(member)) {
+			return member;
+		}
+		expressionHandler.handle(returnStatement.getExpression(), member);
+		alreadySeen.add(member);
+		return member;
 	}
 
 	private FlowNode handle(LabeledStatement labeledStatement, FlowNode member) {
@@ -277,7 +296,7 @@ public class StatementHandlerDataFlow {
 		}
 		handle(ifStatement.getElseStatement(), member);
 		handle(ifStatement.getThenStatement(), member);
-		ExpressionHandlerDataFlow.handle(ifStatement.getExpression(), member);
+		expressionHandler.handle(ifStatement.getExpression(), member);
 		return member;
 	}
 
@@ -287,12 +306,12 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(forStatement.getBody(), member);
-		ExpressionHandlerDataFlow.handle(forStatement.getExpression(), member);
+		expressionHandler.handle(forStatement.getExpression(), member);
 		for (Expression expression : forStatement.getInitializers()) {
-			ExpressionHandlerDataFlow.handle(expression, member);
+			expressionHandler.handle(expression, member);
 		}
 		for (Expression expression : forStatement.getUpdaters()) {
-			ExpressionHandlerDataFlow.handle(expression, member);
+			expressionHandler.handle(expression, member);
 		}
 		return member;
 	}
@@ -301,7 +320,7 @@ public class StatementHandlerDataFlow {
 		if (expressionStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		return ExpressionHandlerDataFlow.handle(expressionStatement.getExpression(), member);
+		return expressionHandler.handle(expressionStatement.getExpression(), member);
 	}
 
 	private FlowNode handle(EnhancedForStatement enhancedForStatement, FlowNode member) {
@@ -309,7 +328,7 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(enhancedForStatement.getBody(), member);
-		ExpressionHandlerDataFlow.handle(enhancedForStatement.getExpression(), member);
+		expressionHandler.handle(enhancedForStatement.getExpression(), member);
 		return member;
 	}
 
@@ -322,7 +341,7 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(doStatement.getBody(), member);
-		ExpressionHandlerDataFlow.handle(doStatement.getExpression(), member);
+		expressionHandler.handle(doStatement.getExpression(), member);
 		return member;
 	}
 
@@ -333,14 +352,21 @@ public class StatementHandlerDataFlow {
 		return handle(continueStatement.getLabel(), member);
 	}
 
-	// TODO
 	private FlowNode handle(ConstructorInvocation constructorInvocation, FlowNode member) {
 		if (constructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
-		for (Expression argument : constructorInvocation.getArguments()) {
-			ExpressionHandlerDataFlow.handle(argument, member);
+		if (alreadySeen.contains(member)) {
+			return member;
 		}
+		for (Expression argument : constructorInvocation.getArguments()) {
+			expressionHandler.handle(argument, member);
+		}
+		memberIn.add(member);
+		if (constructorInvocation.getArguments().isEmpty()) {
+			memberOut.add(member);
+		}
+		alreadySeen.add(member);
 		/*
 		if(member.getAbstractMethodInvocations().contains(constructorInvocation)){
 			return true;
@@ -364,7 +390,7 @@ public class StatementHandlerDataFlow {
 			return member; // assume nothing to do is success
 		}
 		handle(catchClause.getBody(), member);
-		MiscHandlerDataFlow.handle(catchClause.getException(), member);
+		miscHandler.handle(catchClause.getException(), member);
 		return member;
 	}
 	
@@ -372,8 +398,8 @@ public class StatementHandlerDataFlow {
 		if (assertStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		ExpressionHandlerDataFlow.handle(assertStatement.getExpression(), member);
-		ExpressionHandlerDataFlow.handle(assertStatement.getMessage(), member);
+		expressionHandler.handle(assertStatement.getExpression(), member);
+		expressionHandler.handle(assertStatement.getMessage(), member);
 		return member;
 	}
 
@@ -385,6 +411,30 @@ public class StatementHandlerDataFlow {
 			handle(statement, new FlowNode(statement));
 		}
 		return member;
+	}
+
+	public List<FlowNode> getAlreadySeen() {
+		return alreadySeen;
+	}
+
+	public List<FlowNode> getMemberIn() {
+		return memberIn;
+	}
+
+	public List<FlowNode> getMemberOut() {
+		return memberOut;
+	}
+	
+	public MDefinition getMemberDef() {
+		return memberDef;
+	}
+
+	public ExpressionHandlerDataFlow getExpressionHandler() {
+		return expressionHandler;
+	}
+
+	public MiscHandlerDataFlow getMiscHandler() {
+		return miscHandler;
 	}
 
 }

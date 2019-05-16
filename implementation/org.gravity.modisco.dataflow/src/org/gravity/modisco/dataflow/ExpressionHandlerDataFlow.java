@@ -43,7 +43,22 @@ public class ExpressionHandlerDataFlow {
 
 	private static final Logger LOGGER = Logger.getLogger(ExpressionHandlerDataFlow.class.getName());
 	
-	public static FlowNode handle(Expression expression, FlowNode member) {
+	/**
+	 * The statement handler associated with this expression handler.
+	 */
+	private StatementHandlerDataFlow statementHandler;
+	
+	/**
+	 * The misc handler associated with this expression handler.
+	 */
+	private MiscHandlerDataFlow miscHandler;
+	
+	public ExpressionHandlerDataFlow(StatementHandlerDataFlow parentHandler) {
+		statementHandler = parentHandler;
+		miscHandler = parentHandler.getMiscHandler();
+	}
+	
+	public FlowNode handle(Expression expression, FlowNode member) {
 		if (expression == null) {
 			return member; // assume nothing to do is success
 		}
@@ -60,7 +75,7 @@ public class ExpressionHandlerDataFlow {
 
 		} else if (expression instanceof ConstructorInvocation) {
 			ConstructorInvocation constructorInvocation = (ConstructorInvocation) expression;
-			return StatementHandlerDataFlow.handle(constructorInvocation, member);
+			return statementHandler.handle(constructorInvocation, member);
 
 		} else if (expression instanceof StringLiteral) {
 			StringLiteral stringLiteral = (StringLiteral) expression;
@@ -151,25 +166,25 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(SuperFieldAccess superFieldAccess, FlowNode member) {
+	private FlowNode handle(SuperFieldAccess superFieldAccess, FlowNode member) {
 		return handle(superFieldAccess.getField(), member);
 	}
 
-	private static FlowNode handle(PostfixExpression postfixExpression, FlowNode member) {
+	private FlowNode handle(PostfixExpression postfixExpression, FlowNode member) {
 		return handle(postfixExpression.getOperand(), member);
 	}
 
-	private static FlowNode handle(VariableDeclarationExpression variableDeclarationExpression, FlowNode member) {
+	private FlowNode handle(VariableDeclarationExpression variableDeclarationExpression, FlowNode member) {
 		if (variableDeclarationExpression == null) {
 			return member; // assume nothing to do is success
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
-			MiscHandlerDataFlow.handle(fragment, member);
+			miscHandler.handle(fragment, member);
 		}
 		return member;
 	}
 
-	private static FlowNode handle(ArrayCreation arrayCreation, FlowNode member) {
+	private FlowNode handle(ArrayCreation arrayCreation, FlowNode member) {
 		handle(arrayCreation.getInitializer(), member);
 		for (Expression dimension : arrayCreation.getDimensions()) {
 			handle(dimension, member);
@@ -177,7 +192,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ArrayInitializer arrayInitializer, FlowNode member) {
+	private FlowNode handle(ArrayInitializer arrayInitializer, FlowNode member) {
 		if (arrayInitializer == null) {
 			return member; // assume nothing to to is success
 		}
@@ -187,7 +202,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(SingleVariableAccess singleVariableAccess, FlowNode member) {
+	private FlowNode handle(SingleVariableAccess singleVariableAccess, FlowNode member) {
 		handle(singleVariableAccess.getQualifier(), member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
 		if (variable instanceof VariableDeclarationFragment) {
@@ -210,7 +225,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(InfixExpression infixExpression, FlowNode member) {
+	private FlowNode handle(InfixExpression infixExpression, FlowNode member) {
 		handle(infixExpression.getLeftOperand(), member);
 		handle(infixExpression.getRightOperand(), member);
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
@@ -219,7 +234,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ClassInstanceCreation classInstanceCreation, FlowNode member) {
+	private FlowNode handle(ClassInstanceCreation classInstanceCreation, FlowNode member) {
 		handle(classInstanceCreation.getExpression(), member);
 		for (Expression argument : classInstanceCreation.getArguments()) {
 			handle(argument, member);
@@ -227,22 +242,22 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(InstanceofExpression instanceofExpression, FlowNode member) {
+	private FlowNode handle(InstanceofExpression instanceofExpression, FlowNode member) {
 		return handle(instanceofExpression.getLeftOperand(), member);
 	}
 
 	// TODO: Complete + change handling (access info?)
-	private static FlowNode handle(Assignment assignment, FlowNode member) {
+	private FlowNode handle(Assignment assignment, FlowNode member) {
 		member.getOutRef().add(handle(assignment.getLeftHandSide(), member));
 		handle(assignment.getRightHandSide(), member); // Determine ref of member
 		return member;
 	}
 
-	private static FlowNode handle(PrefixExpression prefixExpression, FlowNode member) {
+	private FlowNode handle(PrefixExpression prefixExpression, FlowNode member) {
 		return handle(prefixExpression.getOperand(), member);
 	}
 
-	private static FlowNode handle(SuperMethodInvocation superMethodInvocation, FlowNode member) {
+	private FlowNode handle(SuperMethodInvocation superMethodInvocation, FlowNode member) {
 		for (Expression argument : superMethodInvocation.getArguments()) {
 			handle(argument, member);
 		}
@@ -257,16 +272,15 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(CastExpression castExpression, FlowNode member) {
+	private FlowNode handle(CastExpression castExpression, FlowNode member) {
 		return handle(castExpression.getExpression(), member);
 	}
 
-	private static FlowNode handle(ParenthesizedExpression parenthesizedExpression, FlowNode member) {
+	private FlowNode handle(ParenthesizedExpression parenthesizedExpression, FlowNode member) {
 		return handle(parenthesizedExpression.getExpression(), member);
 	}
 
-	// TODO Equivalent on statement level?
-	private static FlowNode handle(ConditionalExpression conditionalExpression, FlowNode member) {
+	private FlowNode handle(ConditionalExpression conditionalExpression, FlowNode member) {
 		if (conditionalExpression == null) {
 			return member; // assume nothing to do is success
 		}
@@ -276,7 +290,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(ArrayAccess arrayAccess, FlowNode member) {
+	private FlowNode handle(ArrayAccess arrayAccess, FlowNode member) {
 		if (arrayAccess == null) {
 			return member; // assume nothing to do is success;
 		}
@@ -285,7 +299,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(FieldAccess fieldAccess, FlowNode member) {
+	private FlowNode handle(FieldAccess fieldAccess, FlowNode member) {
 		if (fieldAccess == null) {
 			return member; // assume nothing to do is success
 		}
@@ -294,7 +308,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	private static FlowNode handle(MethodInvocation methodInvocation, FlowNode member) {
+	private FlowNode handle(MethodInvocation methodInvocation, FlowNode member) {
 		handle(methodInvocation.getExpression(), member);
 		for (Expression argument : methodInvocation.getArguments()) {
 			handle(argument, member);
@@ -308,6 +322,14 @@ public class ExpressionHandlerDataFlow {
 		}
 		*/
 		return member;
+	}
+
+	public StatementHandlerDataFlow getStatementHandler() {
+		return statementHandler;
+	}
+	
+	public MiscHandlerDataFlow getMiscHandler() {
+		return miscHandler;
 	}
 
 }

@@ -7,23 +7,45 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 
 public class MiscHandlerDataFlow {
 
-	public static FlowNode handle(VariableDeclarationFragment fragment, FlowNode member) {
-		return ExpressionHandlerDataFlow.handle(fragment.getInitializer(), member);
+	/**
+	 * The statement handler associated with this misc handler.
+	 */
+	private StatementHandlerDataFlow statementHandler;
+	
+	/**
+	 * The expression handler associated with this misc handler.
+	 */
+	private ExpressionHandlerDataFlow expressionHandler;
+	
+	public MiscHandlerDataFlow(StatementHandlerDataFlow parentHandler) {
+		statementHandler = parentHandler;
+		expressionHandler = parentHandler.getExpressionHandler();
+	}
+	
+	public FlowNode handle(VariableDeclarationFragment fragment, FlowNode member) {
+		return expressionHandler.handle(fragment.getInitializer(), member);
 	}
 
-	public static FlowNode handle(AbstractTypeDeclaration declaration, FlowNode member) {
+	public FlowNode handle(AbstractTypeDeclaration declaration, FlowNode member) {
 		for (BodyDeclaration body : declaration.getBodyDeclarations()) {
 			handle(body, member);
 		}
 		return member;
 	}
 
-	private static FlowNode handle(BodyDeclaration body, FlowNode member) {
+	private FlowNode handle(BodyDeclaration body, FlowNode member) {
 		return member;
 	}
 
-	public static FlowNode handle(SingleVariableDeclaration singleVariableDeclaration, FlowNode member) {
-		return ExpressionHandlerDataFlow.handle(singleVariableDeclaration.getInitializer(), member);
+	public FlowNode handle(SingleVariableDeclaration singleVariableDeclaration, FlowNode member) {
+		return expressionHandler.handle(singleVariableDeclaration.getInitializer(), member);
 	}
 
+	public StatementHandlerDataFlow getStatementHandler() {
+		return statementHandler;
+	}
+	
+	public ExpressionHandlerDataFlow getExpressionHandler() {
+		return expressionHandler;
+	}
 }
