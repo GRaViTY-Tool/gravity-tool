@@ -23,6 +23,7 @@ public class MiscHandlerDataFlow {
 	}
 	
 	public FlowNode handle(VariableDeclarationFragment fragment, FlowNode member) {
+		statementHandler.getLocals().put(fragment, member);
 		return expressionHandler.handle(fragment.getInitializer(), member);
 	}
 

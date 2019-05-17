@@ -202,9 +202,14 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
+	// TODO
 	private FlowNode handle(SingleVariableAccess singleVariableAccess, FlowNode member) {
 		handle(singleVariableAccess.getQualifier(), member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
+		// TODO: Check if accessed var is a parameter
+		if (statementHandler.getLocals().containsKey(variable)) {
+			member.getInRef().add(statementHandler.getLocals().get(variable));
+		}
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
@@ -225,6 +230,7 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
+	// TODO ?
 	private FlowNode handle(InfixExpression infixExpression, FlowNode member) {
 		handle(infixExpression.getLeftOperand(), member);
 		handle(infixExpression.getRightOperand(), member);
@@ -246,9 +252,9 @@ public class ExpressionHandlerDataFlow {
 		return handle(instanceofExpression.getLeftOperand(), member);
 	}
 
-	// TODO: Complete + change handling (access info?)
 	private FlowNode handle(Assignment assignment, FlowNode member) {
-		member.getOutRef().add(handle(assignment.getLeftHandSide(), member));
+		statementHandler.getMemberOut().add(member);
+		// TODO: Store access type
 		handle(assignment.getRightHandSide(), member); // Determine ref of member
 		return member;
 	}
@@ -298,13 +304,15 @@ public class ExpressionHandlerDataFlow {
 		handle(arrayAccess.getIndex(), member);
 		return member;
 	}
-
+	
+	// TODO: Never called?
 	private FlowNode handle(FieldAccess fieldAccess, FlowNode member) {
 		if (fieldAccess == null) {
 			return member; // assume nothing to do is success
 		}
 		handle(fieldAccess.getExpression(), member);
 		handle(fieldAccess.getField(), member);
+		statementHandler.getMemberIn().add(member);
 		return member;
 	}
 
@@ -313,6 +321,10 @@ public class ExpressionHandlerDataFlow {
 		for (Expression argument : methodInvocation.getArguments()) {
 			handle(argument, member);
 		}
+		if (!methodInvocation.getArguments().isEmpty()) {
+			statementHandler.getMemberOut().add(member);
+		}
+		// TODO: Check, if the method's return type is != void; if so, add member to memberIn
 		/*
 		if (member.getAbstractMethodInvocations().contains(methodInvocation)){
 			return member;

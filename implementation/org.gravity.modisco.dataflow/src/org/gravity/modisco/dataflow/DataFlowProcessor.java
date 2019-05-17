@@ -83,7 +83,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			//fieldProcessor.handle(fieldDef, new FlowNode(fieldDef));
 			handlers.add(fieldProcessor);
 		}
-		return true;
+		return handlers.size() > 0;
 	}
 	
 	
