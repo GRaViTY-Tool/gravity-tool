@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AssertStatement;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BreakStatement;
@@ -28,7 +30,6 @@ import org.eclipse.gmt.modisco.java.ThrowStatement;
 import org.eclipse.gmt.modisco.java.TryStatement;
 import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
 import org.eclipse.gmt.modisco.java.UnresolvedLabeledStatement;
-import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
@@ -44,11 +45,6 @@ import org.gravity.modisco.MDefinition;
 public class StatementHandlerDataFlow {
 	
 	/**
-	 * The statements, which have already been processed.
-	 */
-	private final List<FlowNode> alreadySeen = new ArrayList<>();
-	
-	/**
 	 * The incoming flow of the member corresponding to this handler.
 	 */
 	private final List<FlowNode> memberIn = new ArrayList<>();
@@ -58,7 +54,10 @@ public class StatementHandlerDataFlow {
 	 */
 	private final List<FlowNode> memberOut = new ArrayList<>();
 	
-	private final HashMap<VariableDeclaration, FlowNode> locals = new HashMap<>();
+	/**
+	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
+	 */
+	private final HashMap<Object, FlowNode> alreadySeen = new HashMap<>();
 	
 	/**
 	 * The member definition corresponding to this handler.
@@ -190,8 +189,14 @@ public class StatementHandlerDataFlow {
 		if (whileStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(whileStatement.getBody(), member);
-		expressionHandler.handle(whileStatement.getExpression(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Statement body = whileStatement.getBody();
+		handle(body, new FlowNode(body));
+		Expression expression = whileStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		alreadySeen.put(whileStatement, member);
 		return member;
 	}
 
@@ -199,13 +204,13 @@ public class StatementHandlerDataFlow {
 		if (variableDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		if (alreadySeen.contains(member)) {
+		if (alreadySeen.containsValue(member)) {
 			return member;
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			miscHandler.handle(fragment, member);
+			miscHandler.handle(fragment, new FlowNode(fragment));
 		}
-		alreadySeen.add(member);
+		alreadySeen.put(variableDeclarationStatement, member);
 		return member;
 	}
 
@@ -213,7 +218,13 @@ public class StatementHandlerDataFlow {
 		if (typeDeclarationStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		return miscHandler.handle(typeDeclarationStatement.getDeclaration(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		AbstractTypeDeclaration declaration = typeDeclarationStatement.getDeclaration();
+		miscHandler.handle(declaration, new FlowNode(declaration));
+		alreadySeen.put(typeDeclarationStatement, member);
+		return member;
 	}
 
 	private FlowNode handle(TryStatement tryStatement, FlowNode member) {
@@ -267,10 +278,15 @@ public class StatementHandlerDataFlow {
 		if (superConstructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
-		expressionHandler.handle(superConstructorInvocation.getExpression(), member);
-		for (Expression expression : superConstructorInvocation.getArguments()) {
-			expressionHandler.handle(expression, member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
+		Expression expression = superConstructorInvocation.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		for (Expression argument : superConstructorInvocation.getArguments()) {
+			expressionHandler.handle(argument, new FlowNode(argument));
+		}
+		alreadySeen.put(superConstructorInvocation, member);
 		return member;
 	}
 
@@ -278,11 +294,12 @@ public class StatementHandlerDataFlow {
 		if (returnStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		if (alreadySeen.contains(member)) {
+		if (alreadySeen.containsValue(member)) {
 			return member;
 		}
-		expressionHandler.handle(returnStatement.getExpression(), member);
-		alreadySeen.add(member);
+		Expression expression = returnStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		alreadySeen.put(returnStatement, member);
 		return member;
 	}
 
@@ -293,30 +310,41 @@ public class StatementHandlerDataFlow {
 		return handle(labeledStatement.getBody(), member);
 	}
 
-	// TODO
 	private FlowNode handle(IfStatement ifStatement, FlowNode member) {
 		if (ifStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(ifStatement.getElseStatement(), member);
-		handle(ifStatement.getThenStatement(), member);
-		expressionHandler.handle(ifStatement.getExpression(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Statement elseStatement = ifStatement.getElseStatement();
+		handle(elseStatement, new FlowNode(elseStatement));
+		Statement thenStatement = ifStatement.getThenStatement();
+		handle(thenStatement, new FlowNode(thenStatement));
+		Expression expression = ifStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		alreadySeen.put(ifStatement, member);
 		return member;
 	}
 
-	// TODO
 	private FlowNode handle(ForStatement forStatement, FlowNode member) {
 		if (forStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(forStatement.getBody(), member);
-		expressionHandler.handle(forStatement.getExpression(), member);
-		for (Expression expression : forStatement.getInitializers()) {
-			expressionHandler.handle(expression, member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
-		for (Expression expression : forStatement.getUpdaters()) {
-			expressionHandler.handle(expression, member);
+		Statement body = forStatement.getBody();
+		handle(body, new FlowNode(body));
+		Expression expression = forStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		for (Expression initializer : forStatement.getInitializers()) {
+			expressionHandler.handle(initializer, new FlowNode(initializer));
 		}
+		for (Expression updater : forStatement.getUpdaters()) {
+			expressionHandler.handle(updater, new FlowNode(updater));
+		}
+		alreadySeen.put(forStatement, member);
 		return member;
 	}
 
@@ -331,8 +359,14 @@ public class StatementHandlerDataFlow {
 		if (enhancedForStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(enhancedForStatement.getBody(), member);
-		expressionHandler.handle(enhancedForStatement.getExpression(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Statement body = enhancedForStatement.getBody();
+		handle(body, new FlowNode(body));
+		Expression expression = enhancedForStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		alreadySeen.put(enhancedForStatement, member);
 		return member;
 	}
 
@@ -344,8 +378,14 @@ public class StatementHandlerDataFlow {
 		if (doStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(doStatement.getBody(), member);
-		expressionHandler.handle(doStatement.getExpression(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Statement body = doStatement.getBody();
+		handle(body, new FlowNode(body));
+		Expression expression = doStatement.getExpression();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		alreadySeen.put(doStatement, member);
 		return member;
 	}
 
@@ -360,17 +400,18 @@ public class StatementHandlerDataFlow {
 		if (constructorInvocation == null) {
 			return member; // assume nothing to do is success
 		}
-		if (alreadySeen.contains(member)) {
+		if (alreadySeen.containsValue(member)) {
 			return member;
 		}
-		for (Expression argument : constructorInvocation.getArguments()) {
-			expressionHandler.handle(argument, member);
-		}
-		memberIn.add(member);
-		if (!constructorInvocation.getArguments().isEmpty()) {
+		EList<Expression> arguments = constructorInvocation.getArguments();
+		if (!arguments.isEmpty()) {
+			for (Expression argument : arguments) {
+				expressionHandler.handle(argument, new FlowNode(argument));
+			}
 			memberOut.add(member);
 		}
-		alreadySeen.add(member);
+		memberIn.add(member);
+		alreadySeen.put(constructorInvocation, member);
 		/*
 		if(member.getAbstractMethodInvocations().contains(constructorInvocation)){
 			return true;
@@ -402,8 +443,14 @@ public class StatementHandlerDataFlow {
 		if (assertStatement == null) {
 			return member; // assume nothing to do is success
 		}
-		expressionHandler.handle(assertStatement.getExpression(), member);
-		expressionHandler.handle(assertStatement.getMessage(), member);
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Expression expression = assertStatement.getExpression();
+		Expression message = assertStatement.getMessage();
+		expressionHandler.handle(expression, new FlowNode(expression));
+		expressionHandler.handle(message, new FlowNode(message));
+		alreadySeen.put(assertStatement, member);
 		return member;
 	}
 
@@ -411,14 +458,14 @@ public class StatementHandlerDataFlow {
 		if (block == null) {
 			return member; // assume nothing to do is success
 		}
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
 		for (Statement statement : block.getStatements()) {
 			handle(statement, new FlowNode(statement));
 		}
+		alreadySeen.put(block, member);
 		return member;
-	}
-
-	public List<FlowNode> getAlreadySeen() {
-		return alreadySeen;
 	}
 
 	public List<FlowNode> getMemberIn() {
@@ -429,8 +476,8 @@ public class StatementHandlerDataFlow {
 		return memberOut;
 	}
 	
-	public HashMap<VariableDeclaration, FlowNode> getLocals() {
-		return locals;
+	public HashMap<Object, FlowNode> getAlreadySeen() {
+		return alreadySeen;
 	}
 	
 	public MDefinition getMemberDef() {

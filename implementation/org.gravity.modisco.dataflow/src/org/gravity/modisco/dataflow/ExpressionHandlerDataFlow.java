@@ -1,8 +1,11 @@
 package org.gravity.modisco.dataflow;
 
+import java.util.HashMap;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.ArrayCreation;
@@ -20,6 +23,7 @@ import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.InstanceofExpression;
+import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NullLiteral;
 import org.eclipse.gmt.modisco.java.NumberLiteral;
@@ -178,9 +182,14 @@ public class ExpressionHandlerDataFlow {
 		if (variableDeclarationExpression == null) {
 			return member; // assume nothing to do is success
 		}
-		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
-			miscHandler.handle(fragment, member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
+		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
+			miscHandler.handle(fragment, new FlowNode(fragment));
+		}
+		alreadySeen.put(variableDeclarationExpression, member);
 		return member;
 	}
 
@@ -202,19 +211,23 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
-	// TODO
 	private FlowNode handle(SingleVariableAccess singleVariableAccess, FlowNode member) {
-		handle(singleVariableAccess.getQualifier(), member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Expression qualifier = singleVariableAccess.getQualifier();
+		handle(qualifier, new FlowNode(qualifier));
 		VariableDeclaration variable = singleVariableAccess.getVariable();
-		// TODO: Check if accessed var is a parameter
-		if (statementHandler.getLocals().containsKey(variable)) {
-			member.getInRef().add(statementHandler.getLocals().get(variable));
+		if (alreadySeen.containsKey(variable)) {
+			member.getInRef().add(alreadySeen.get(variable));
 		}
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 			if (variablesContainer instanceof FieldDeclaration) {
-				// TODO: Check type of access here
+				// TODO: Create read access edge
+				statementHandler.getMemberIn().add(member);
 				/*
 				if(member.getMAbstractFieldAccess().contains(singleVariableAccess)){
 					return member;
@@ -226,17 +239,27 @@ public class ExpressionHandlerDataFlow {
 			}
 		} else if (variable instanceof SingleVariableDeclaration) {
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
+			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) {
+				// TODO: What kind of processing is needed?
+			}
 		}
+		alreadySeen.put(singleVariableAccess, member);
 		return member;
 	}
 
-	// TODO ?
 	private FlowNode handle(InfixExpression infixExpression, FlowNode member) {
-		handle(infixExpression.getLeftOperand(), member);
-		handle(infixExpression.getRightOperand(), member);
-		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
-			handle(extendedOperand, member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
+		Expression leftOperand = infixExpression.getLeftOperand();
+		handle(leftOperand, new FlowNode(leftOperand));
+		Expression rightOperand = infixExpression.getRightOperand();
+		handle(rightOperand, new FlowNode(rightOperand));
+		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
+			handle(extendedOperand, new FlowNode(extendedOperand));
+		}
+		alreadySeen.put(infixExpression, member);
 		return member;
 	}
 
@@ -253,9 +276,21 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(Assignment assignment, FlowNode member) {
-		statementHandler.getMemberOut().add(member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
 		// TODO: Store access type
-		handle(assignment.getRightHandSide(), member); // Determine ref of member
+		Expression leftHandSide = assignment.getLeftHandSide();
+		FlowNode leftHandFlow = handle(leftHandSide, new FlowNode(leftHandSide));
+		if (leftHandFlow.getModelElement() instanceof FieldDeclaration) {
+			statementHandler.getMemberOut().add(member); // TODO FieldDeclaration correct type to check against?
+		}
+		Expression rightHandSide = assignment.getRightHandSide();
+		for (FlowNode in : handle(rightHandSide, new FlowNode(rightHandSide)).getInRef()) {
+			member.getInRef().add(in);
+		}
+		alreadySeen.put(assignment, member);
 		return member;
 	}
 
@@ -310,21 +345,37 @@ public class ExpressionHandlerDataFlow {
 		if (fieldAccess == null) {
 			return member; // assume nothing to do is success
 		}
-		handle(fieldAccess.getExpression(), member);
-		handle(fieldAccess.getField(), member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Expression expression = fieldAccess.getExpression();
+		handle(expression, new FlowNode(expression));
+		SingleVariableAccess field = fieldAccess.getField();
+		handle(field, new FlowNode(field));
 		statementHandler.getMemberIn().add(member);
+		alreadySeen.put(fieldAccess, member);
 		return member;
 	}
 
 	private FlowNode handle(MethodInvocation methodInvocation, FlowNode member) {
-		handle(methodInvocation.getExpression(), member);
-		for (Expression argument : methodInvocation.getArguments()) {
-			handle(argument, member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
-		if (!methodInvocation.getArguments().isEmpty()) {
+		Expression expression = methodInvocation.getExpression();
+		handle(expression, new FlowNode(expression));
+		EList<Expression> arguments = methodInvocation.getArguments();
+		if (!arguments.isEmpty()) {
+			for (Expression argument : arguments) {
+				handle(argument, new FlowNode(argument));
+			}
 			statementHandler.getMemberOut().add(member);
 		}
-		// TODO: Check, if the method's return type is != void; if so, add member to memberIn
+		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+			statementHandler.getMemberIn().add(member);
+		}
+		alreadySeen.put(methodInvocation, member);
 		/*
 		if (member.getAbstractMethodInvocations().contains(methodInvocation)){
 			return member;

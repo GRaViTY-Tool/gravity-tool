@@ -1,7 +1,10 @@
 package org.gravity.modisco.dataflow;
 
+import java.util.HashMap;
+
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 
@@ -23,23 +26,42 @@ public class MiscHandlerDataFlow {
 	}
 	
 	public FlowNode handle(VariableDeclarationFragment fragment, FlowNode member) {
-		statementHandler.getLocals().put(fragment, member);
-		return expressionHandler.handle(fragment.getInitializer(), member);
-	}
-
-	public FlowNode handle(AbstractTypeDeclaration declaration, FlowNode member) {
-		for (BodyDeclaration body : declaration.getBodyDeclarations()) {
-			handle(body, member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
 		}
+		Expression initializer = fragment.getInitializer();
+		expressionHandler.handle(initializer, new FlowNode(initializer));
+		alreadySeen.put(fragment, member);
 		return member;
 	}
 
+	public FlowNode handle(AbstractTypeDeclaration declaration, FlowNode member) {
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		for (BodyDeclaration body : declaration.getBodyDeclarations()) {
+			handle(body, new FlowNode(body));
+		}
+		alreadySeen.put(declaration, member);
+		return member;
+	}
+
+	// TODO?
 	private FlowNode handle(BodyDeclaration body, FlowNode member) {
 		return member;
 	}
 
 	public FlowNode handle(SingleVariableDeclaration singleVariableDeclaration, FlowNode member) {
-		return expressionHandler.handle(singleVariableDeclaration.getInitializer(), member);
+		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
+		if (alreadySeen.containsValue(member)) {
+			return member;
+		}
+		Expression initializer = singleVariableDeclaration.getInitializer();
+		expressionHandler.handle(initializer, new FlowNode(initializer));
+		alreadySeen.put(singleVariableDeclaration, member);
+		return member;
 	}
 
 	public StatementHandlerDataFlow getStatementHandler() {

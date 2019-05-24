@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
+import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MFlow;
@@ -79,8 +80,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		for (MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
 			StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fieldDef);
-			// TODO How to access body of field def?
-			//fieldProcessor.handle(fieldDef, new FlowNode(fieldDef));
+			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
+				Expression initializer = fragment.getInitializer();
+				fieldProcessor.getExpressionHandler().handle(initializer, new FlowNode(initializer));
+			}
 			handlers.add(fieldProcessor);
 		}
 		return handlers.size() > 0;
