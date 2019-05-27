@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AssertStatement;
 import org.eclipse.gmt.modisco.java.Block;
@@ -57,12 +58,12 @@ public class StatementHandlerDataFlow {
 	/**
 	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
 	 */
-	private final HashMap<Object, FlowNode> alreadySeen = new HashMap<>();
+	private final HashMap<EObject, FlowNode> alreadySeen = new HashMap<>();
 	
 	/**
 	 * The member definition corresponding to this handler.
 	 */
-	private MDefinition memberDef;
+	private EObject memberDef;
 	
 	/**
 	 * The expression handler associated with this statement handler.
@@ -80,338 +81,303 @@ public class StatementHandlerDataFlow {
 		miscHandler = new MiscHandlerDataFlow(this);
 	}
 	
-	public FlowNode handle(Statement statement, FlowNode member) {
+	public StatementHandlerDataFlow(VariableDeclarationFragment correspondingMember) {
+		memberDef = correspondingMember;
+		expressionHandler = new ExpressionHandlerDataFlow(this);
+		miscHandler = new MiscHandlerDataFlow(this);
+	}
+	
+	public FlowNode handle(Statement statement) {
 		if (statement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
 		if (statement instanceof AssertStatement) {
 			AssertStatement assertStatement = (AssertStatement) statement;
-			return handle(assertStatement, member);
+			return handle(assertStatement);
 
 		} else if (statement instanceof Block) {
 			Block block = (Block) statement;
-			return handle(block, member);
+			return handle(block);
 
 		} else if (statement instanceof BreakStatement) {
 			BreakStatement breakStatement = (BreakStatement) statement;
-			return handle(breakStatement, member);
+			return handle(breakStatement);
 
 		} else if (statement instanceof CatchClause) {
 			CatchClause catchClause = (CatchClause) statement;
-			return handle(catchClause, member);
+			return handle(catchClause);
 
 		} else if (statement instanceof ConstructorInvocation) {
 			ConstructorInvocation constructorInvocation = (ConstructorInvocation) statement;
-			return handle(constructorInvocation, member);
+			return handle(constructorInvocation);
 
 		} else if (statement instanceof ContinueStatement) {
 			ContinueStatement continueStatement = (ContinueStatement) statement;
-			return handle(continueStatement, member);
+			return handle(continueStatement);
 
 		} else if (statement instanceof DoStatement) {
 			DoStatement doStatement = (DoStatement) statement;
-			return handle(doStatement, member);
+			return handle(doStatement);
 
 		} else if (statement instanceof EmptyStatement) {
 			EmptyStatement emptyStatement = (EmptyStatement) statement;
-			return handle(emptyStatement, member);
+			return handle(emptyStatement);
 
 		} else if (statement instanceof EnhancedForStatement) {
 			EnhancedForStatement enhancedForStetement = (EnhancedForStatement) statement;
-			return handle(enhancedForStetement, member);
+			return handle(enhancedForStetement);
 
 		} else if (statement instanceof ExpressionStatement) {
 			ExpressionStatement expressionStatement = (ExpressionStatement) statement;
-			return handle(expressionStatement, member);
+			return handle(expressionStatement);
 
 		} else if (statement instanceof ForStatement) {
 			ForStatement forStatement = (ForStatement) statement;
-			return handle(forStatement, member);
+			return handle(forStatement);
 
 		} else if (statement instanceof IfStatement) {
 			IfStatement ifStatement = (IfStatement) statement;
-			return handle(ifStatement, member);
+			return handle(ifStatement);
 
 		} else if (statement instanceof LabeledStatement) {
 			LabeledStatement labeledStatement = (LabeledStatement) statement;
-			return handle(labeledStatement, member);
+			return handle(labeledStatement);
 
 		} else if (statement instanceof ReturnStatement) {
 			ReturnStatement returnStatement = (ReturnStatement) statement;
-			return handle(returnStatement, member);
+			return handle(returnStatement);
 
 		} else if (statement instanceof SuperConstructorInvocation) {
 			SuperConstructorInvocation superConstructorInvocation = (SuperConstructorInvocation) statement;
-			return handle(superConstructorInvocation, member);
+			return handle(superConstructorInvocation);
 
 		} else if (statement instanceof SwitchCase) {
 			SwitchCase switchCase = (SwitchCase) statement;
-			return handle(switchCase, member);
+			return handle(switchCase);
 
 		} else if (statement instanceof SwitchStatement) {
 			SwitchStatement switchStatement = (SwitchStatement) statement;
-			return handle(switchStatement, member);
+			return handle(switchStatement);
 
 		} else if (statement instanceof SynchronizedStatement) {
 			SynchronizedStatement synchronizedStatement = (SynchronizedStatement) statement;
-			return handle(synchronizedStatement, member);
+			return handle(synchronizedStatement);
 
 		} else if (statement instanceof ThrowStatement) {
 			ThrowStatement throwStatement = (ThrowStatement) statement;
-			return handle(throwStatement, member);
+			return handle(throwStatement);
 
 		} else if (statement instanceof TryStatement) {
 			TryStatement tryStatement = (TryStatement) statement;
-			return handle(tryStatement, member);
+			return handle(tryStatement);
 
 		} else if (statement instanceof TypeDeclarationStatement) {
 			TypeDeclarationStatement typeDeclarationStatement = (TypeDeclarationStatement) statement;
-			return handle(typeDeclarationStatement, member);
+			return handle(typeDeclarationStatement);
 
 		} else if (statement instanceof UnresolvedLabeledStatement) {
 			UnresolvedLabeledStatement unresolvedLabeledStatement = (UnresolvedLabeledStatement) statement;
-			return handle(unresolvedLabeledStatement, member);
+			return handle(unresolvedLabeledStatement);
 
 		} else if (statement instanceof VariableDeclarationStatement) {
 			VariableDeclarationStatement variableDeclarationStatement = (VariableDeclarationStatement) statement;
-			return handle(variableDeclarationStatement, member);
+			return handle(variableDeclarationStatement);
 
 		} else if (statement instanceof WhileStatement) {
 			WhileStatement whileStatement = (WhileStatement) statement;
-			return handle(whileStatement, member);
+			return handle(whileStatement);
 
 		} else {
-			return member;
+			return null;
 		}
 	}
-
-	private FlowNode handle(WhileStatement whileStatement, FlowNode member) {
+	
+	private FlowNode handle(WhileStatement whileStatement) {
 		if (whileStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Statement body = whileStatement.getBody();
-		handle(body, new FlowNode(body));
-		Expression expression = whileStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		alreadySeen.put(whileStatement, member);
+		FlowNode member = getFlowNodeForElement(whileStatement);
+		propagateBack(handle(whileStatement.getBody()), member);
+		propagateBack(expressionHandler.handle(whileStatement.getExpression()), member);
 		return member;
 	}
 
-	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement, FlowNode member) {
+	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement) {
 		if (variableDeclarationStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
+		FlowNode member = getFlowNodeForElement(variableDeclarationStatement);
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			miscHandler.handle(fragment, new FlowNode(fragment));
+			propagateBack(miscHandler.handle(fragment), member);
 		}
-		alreadySeen.put(variableDeclarationStatement, member);
 		return member;
 	}
 
-	private FlowNode handle(TypeDeclarationStatement typeDeclarationStatement, FlowNode member) {
+	private FlowNode handle(TypeDeclarationStatement typeDeclarationStatement) {
 		if (typeDeclarationStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		AbstractTypeDeclaration declaration = typeDeclarationStatement.getDeclaration();
-		miscHandler.handle(declaration, new FlowNode(declaration));
-		alreadySeen.put(typeDeclarationStatement, member);
+		FlowNode member = getFlowNodeForElement(typeDeclarationStatement);
+		propagateBack(miscHandler.handle(typeDeclarationStatement.getDeclaration()), member);
 		return member;
 	}
 
-	private FlowNode handle(TryStatement tryStatement, FlowNode member) {
+	private FlowNode handle(TryStatement tryStatement) {
 		if (tryStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		handle(tryStatement.getBody(), member);
-		handle(tryStatement.getFinally(), member);
+		handle(tryStatement.getBody());
+		handle(tryStatement.getFinally());
 		for (CatchClause clause : tryStatement.getCatchClauses()) {
-			handle(clause, member);
+			handle(clause);
 		}
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(ThrowStatement throwStatement, FlowNode member) {
+	private FlowNode handle(ThrowStatement throwStatement) {
 		if (throwStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		expressionHandler.handle(throwStatement.getExpression(), member);
-		return member;
+		expressionHandler.handle(throwStatement.getExpression());
+		return null;
 	}
 
-	private FlowNode handle(SynchronizedStatement synchronizedStatement, FlowNode member) {
+	private FlowNode handle(SynchronizedStatement synchronizedStatement) {
 		if (synchronizedStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		handle(synchronizedStatement.getBody(), member);
-		expressionHandler.handle(synchronizedStatement.getExpression(), member);
-		return member;
+		handle(synchronizedStatement.getBody());
+		expressionHandler.handle(synchronizedStatement.getExpression());
+		return null;
 	}
 
-	private FlowNode handle(SwitchStatement switchStatement, FlowNode member) {
+	private FlowNode handle(SwitchStatement switchStatement) {
 		if (switchStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
 		for (Statement statement : switchStatement.getStatements()) {
-			handle(statement, member);
+			handle(statement);
 		}
-		expressionHandler.handle(switchStatement.getExpression(), member);
-		return member;
+		expressionHandler.handle(switchStatement.getExpression());
+		return null;
 	}
 
-	private FlowNode handle(SwitchCase switchCase, FlowNode member) {
+	private FlowNode handle(SwitchCase switchCase) {
 		if (switchCase == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		return expressionHandler.handle(switchCase.getExpression(), member);
+		return expressionHandler.handle(switchCase.getExpression());
 	}
 
-	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation, FlowNode member) {
+	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation) {
 		if (superConstructorInvocation == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression expression = superConstructorInvocation.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
+		FlowNode member = getFlowNodeForElement(superConstructorInvocation);
+		propagateBack(expressionHandler.handle(superConstructorInvocation.getExpression()), member);
 		for (Expression argument : superConstructorInvocation.getArguments()) {
-			expressionHandler.handle(argument, new FlowNode(argument));
+			propagateBack(expressionHandler.handle(argument), member);
 		}
-		alreadySeen.put(superConstructorInvocation, member);
 		return member;
 	}
 
-	private FlowNode handle(ReturnStatement returnStatement, FlowNode member) {
+	// TODO Safe reference to every created FlowNode in StatementHandler
+	private FlowNode handle(ReturnStatement returnStatement) {
 		if (returnStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression expression = returnStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		alreadySeen.put(returnStatement, member);
+		FlowNode member = getFlowNodeForElement(returnStatement);
+		propagateBack(expressionHandler.handle(returnStatement.getExpression()), member);
 		return member;
 	}
 
-	private FlowNode handle(LabeledStatement labeledStatement, FlowNode member) {
+	private FlowNode handle(LabeledStatement labeledStatement) {
 		if (labeledStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		return handle(labeledStatement.getBody(), member);
+		return handle(labeledStatement.getBody());
 	}
 
-	private FlowNode handle(IfStatement ifStatement, FlowNode member) {
+	private FlowNode handle(IfStatement ifStatement) {
 		if (ifStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Statement elseStatement = ifStatement.getElseStatement();
-		handle(elseStatement, new FlowNode(elseStatement));
-		Statement thenStatement = ifStatement.getThenStatement();
-		handle(thenStatement, new FlowNode(thenStatement));
-		Expression expression = ifStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		alreadySeen.put(ifStatement, member);
+		FlowNode member = getFlowNodeForElement(ifStatement);
+		propagateBack(handle(ifStatement.getElseStatement()), member);
+		propagateBack(handle(ifStatement.getThenStatement()), member);
+		propagateBack(expressionHandler.handle(ifStatement.getExpression()), member);
 		return member;
 	}
 
-	private FlowNode handle(ForStatement forStatement, FlowNode member) {
+	private FlowNode handle(ForStatement forStatement) {
 		if (forStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Statement body = forStatement.getBody();
-		handle(body, new FlowNode(body));
-		Expression expression = forStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
+		FlowNode member = getFlowNodeForElement(forStatement);
+		propagateBack(handle(forStatement.getBody()), member);
+		propagateBack(expressionHandler.handle(forStatement.getExpression()), member);
 		for (Expression initializer : forStatement.getInitializers()) {
-			expressionHandler.handle(initializer, new FlowNode(initializer));
+			propagateBack(expressionHandler.handle(initializer), member);
 		}
 		for (Expression updater : forStatement.getUpdaters()) {
-			expressionHandler.handle(updater, new FlowNode(updater));
+			propagateBack(expressionHandler.handle(updater), member);
 		}
-		alreadySeen.put(forStatement, member);
 		return member;
 	}
 
-	private FlowNode handle(ExpressionStatement expressionStatement, FlowNode member) {
+	private FlowNode handle(ExpressionStatement expressionStatement) {
 		if (expressionStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		return expressionHandler.handle(expressionStatement.getExpression(), member);
+		FlowNode member = getFlowNodeForElement(expressionStatement);
+		propagateBack(expressionHandler.handle(expressionStatement.getExpression()), member);
+		return member;
 	}
 
-	private FlowNode handle(EnhancedForStatement enhancedForStatement, FlowNode member) {
+	private FlowNode handle(EnhancedForStatement enhancedForStatement) {
 		if (enhancedForStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Statement body = enhancedForStatement.getBody();
-		handle(body, new FlowNode(body));
-		Expression expression = enhancedForStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		alreadySeen.put(enhancedForStatement, member);
+		FlowNode member = getFlowNodeForElement(enhancedForStatement);
+		propagateBack(handle(enhancedForStatement.getBody()), member);
+		propagateBack(expressionHandler.handle(enhancedForStatement.getExpression()), member);
 		return member;
 	}
 
-	private FlowNode handle(EmptyStatement emptyStatement, FlowNode member) {
-		return member;
+	private FlowNode handle(EmptyStatement emptyStatement) {
+		return null;
 	}
 
-	private FlowNode handle(DoStatement doStatement, FlowNode member) {
+	private FlowNode handle(DoStatement doStatement) {
 		if (doStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Statement body = doStatement.getBody();
-		handle(body, new FlowNode(body));
-		Expression expression = doStatement.getExpression();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		alreadySeen.put(doStatement, member);
+		FlowNode member = getFlowNodeForElement(doStatement);
+		propagateBack(handle(doStatement.getBody()), member);
+		propagateBack(expressionHandler.handle(doStatement.getExpression()), member);
 		return member;
 	}
 
-	private FlowNode handle(ContinueStatement continueStatement, FlowNode member) {
+	private FlowNode handle(ContinueStatement continueStatement) {
 		if (continueStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		return handle(continueStatement.getLabel(), member);
+		return handle(continueStatement.getLabel());
 	}
 
-	private FlowNode handle(ConstructorInvocation constructorInvocation, FlowNode member) {
+	private FlowNode handle(ConstructorInvocation constructorInvocation) {
 		if (constructorInvocation == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
+		FlowNode member = getFlowNodeForElement(constructorInvocation);
 		EList<Expression> arguments = constructorInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				expressionHandler.handle(argument, new FlowNode(argument));
+				propagateBack(expressionHandler.handle(argument), member);
 			}
 			memberOut.add(member);
 		}
 		memberIn.add(member);
-		alreadySeen.put(constructorInvocation, member);
 		/*
 		if(member.getAbstractMethodInvocations().contains(constructorInvocation)){
 			return true;
@@ -423,48 +389,40 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private FlowNode handle(BreakStatement breakStatement, FlowNode member) {
+	private FlowNode handle(BreakStatement breakStatement) {
 		if (breakStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		return handle(breakStatement.getLabel(), member);
+		return handle(breakStatement.getLabel());
 	}
 
-	private FlowNode handle(CatchClause catchClause, FlowNode member) {
+	private FlowNode handle(CatchClause catchClause) {
 		if (catchClause == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		handle(catchClause.getBody(), member);
-		miscHandler.handle(catchClause.getException(), member);
-		return member;
+		handle(catchClause.getBody());
+		miscHandler.handle(catchClause.getException());
+		return null;
 	}
 	
-	private FlowNode handle(AssertStatement assertStatement, FlowNode member) {
+	private FlowNode handle(AssertStatement assertStatement) {
 		if (assertStatement == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression expression = assertStatement.getExpression();
-		Expression message = assertStatement.getMessage();
-		expressionHandler.handle(expression, new FlowNode(expression));
-		expressionHandler.handle(message, new FlowNode(message));
-		alreadySeen.put(assertStatement, member);
+		FlowNode member = getFlowNodeForElement(assertStatement);
+		propagateBack(expressionHandler.handle(assertStatement.getExpression()), member);
+		propagateBack(expressionHandler.handle(assertStatement.getMessage()), member);
 		return member;
 	}
 
-	private FlowNode handle(Block block, FlowNode member) {
+	private FlowNode handle(Block block) {
 		if (block == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
+		FlowNode member = getFlowNodeForElement(block);
 		for (Statement statement : block.getStatements()) {
-			handle(statement, new FlowNode(statement));
+			propagateBack(handle(statement), member);
 		}
-		alreadySeen.put(block, member);
 		return member;
 	}
 
@@ -476,11 +434,11 @@ public class StatementHandlerDataFlow {
 		return memberOut;
 	}
 	
-	public HashMap<Object, FlowNode> getAlreadySeen() {
+	public HashMap<EObject, FlowNode> getAlreadySeen() {
 		return alreadySeen;
 	}
 	
-	public MDefinition getMemberDef() {
+	public EObject getMemberDef() {
 		return memberDef;
 	}
 
@@ -490,6 +448,34 @@ public class StatementHandlerDataFlow {
 
 	public MiscHandlerDataFlow getMiscHandler() {
 		return miscHandler;
+	}
+	
+	/**
+	 * Checks, if a (non-null) FlowNode has already been created for the given element and returns it.
+	 * Otherwise a new FlowNode is created, inserted into alreadySeen and returned.
+	 * 
+	 * @param element The element, for which the check is performed.
+	 * @return If already present, the FlowNode for the given element. A new FlowNode for the element otherwise.
+	 */
+	FlowNode getFlowNodeForElement(EObject element) {
+		FlowNode seenNode = alreadySeen.get(element);
+		if (seenNode != null) { // making sure, that null references lead to creation of new nodes
+			return seenNode;
+		}
+		FlowNode member = new FlowNode(element);
+		alreadySeen.put(element, member);
+		return member;
+	}
+	
+	/**
+	 * Writes references (in and out) of a child FlowNode to its parent.
+	 * 
+	 * @param child The child FlowNode, from which the references are written back to the parent.
+	 * @param parent The parent FlowNode, to which the references are written. 
+	 */
+	void propagateBack(FlowNode child, FlowNode parent) {
+		parent.getInRef().addAll(child.getInRef());
+		parent.getOutRef().addAll(child.getOutRef());
 	}
 
 }

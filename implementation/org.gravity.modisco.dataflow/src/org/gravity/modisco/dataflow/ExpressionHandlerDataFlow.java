@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
@@ -62,169 +63,161 @@ public class ExpressionHandlerDataFlow {
 		miscHandler = parentHandler.getMiscHandler();
 	}
 	
-	public FlowNode handle(Expression expression, FlowNode member) {
+	public FlowNode handle(Expression expression) {
 		if (expression == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
 		if (expression instanceof ArrayLengthAccess) {
 			ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
-			handle(arrayLengthAccess.getArray(), member);
-			return member;
+			return handle(arrayLengthAccess.getArray());
 		} else if (expression instanceof FieldAccess) {
 			FieldAccess fieldAccess = (FieldAccess) expression;
-			handle(fieldAccess, member);
+			handle(fieldAccess);
 		} else if (expression instanceof MethodInvocation) {
 			MethodInvocation methodInvocation = (MethodInvocation) expression;
-			return handle(methodInvocation, member);
+			return handle(methodInvocation);
 
 		} else if (expression instanceof ConstructorInvocation) {
 			ConstructorInvocation constructorInvocation = (ConstructorInvocation) expression;
-			return statementHandler.handle(constructorInvocation, member);
+			return statementHandler.handle(constructorInvocation);
 
 		} else if (expression instanceof StringLiteral) {
 			StringLiteral stringLiteral = (StringLiteral) expression;
-			return member;
+			return null;
 
 		} else if (expression instanceof NullLiteral) {
 			NullLiteral nullLiteral = (NullLiteral) expression;
-			return member;
+			return null;
 
 		} else if (expression instanceof ArrayCreation) {
 			ArrayCreation arrayCreation = (ArrayCreation) expression;
-			return handle(arrayCreation, member);
+			return handle(arrayCreation);
 
 		} else if (expression instanceof ArrayInitializer) {
 			ArrayInitializer arrayInitializer = (ArrayInitializer) expression;
-			return handle(arrayInitializer, member);
+			return handle(arrayInitializer);
 		} else if (expression instanceof NumberLiteral) {
 			NumberLiteral numberLiteral = (NumberLiteral) expression;
-			return member;
+			return null;
 
 		} else if (expression instanceof SingleVariableAccess) {
 			SingleVariableAccess singleVariableAccess = (SingleVariableAccess) expression;
-			return handle(singleVariableAccess, member);
+			return handle(singleVariableAccess);
 
 		} else if (expression instanceof TypeAccess) {
 			TypeAccess typAccess = (TypeAccess) expression;
-			return member;
+			return null;
 
 		} else if (expression instanceof InfixExpression) {
 			InfixExpression infixExpression = (InfixExpression) expression;
-			return handle(infixExpression, member);
+			return handle(infixExpression);
 		} else if (expression instanceof ClassInstanceCreation) {
 			ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) expression;
-			return handle(classInstanceCreation, member);
+			return handle(classInstanceCreation);
 		} else if (expression instanceof InstanceofExpression) {
 			InstanceofExpression instanceofExpression = (InstanceofExpression) expression;
-			return handle(instanceofExpression, member);
+			return handle(instanceofExpression);
 		} else if (expression instanceof Assignment) {
 			Assignment assignment = (Assignment) expression;
-			return handle(assignment, member);
+			return handle(assignment);
 		} else if (expression instanceof PrefixExpression) {
 			PrefixExpression prefixExpression = (PrefixExpression) expression;
-			return handle(prefixExpression, member);
+			return handle(prefixExpression);
 		} else if (expression instanceof SuperMethodInvocation) {
 			SuperMethodInvocation superMethodInvocation = (SuperMethodInvocation) expression;
-			return handle(superMethodInvocation, member);
+			return handle(superMethodInvocation);
 		} else if (expression instanceof ThisExpression) {
 			ThisExpression thisExpression = (ThisExpression) expression;
-			return member;
+			return null;
 
 		} else if (expression instanceof CastExpression) {
 			CastExpression castExpression = (CastExpression) expression;
-			return handle(castExpression, member);
+			return handle(castExpression);
 		} else if (expression instanceof ParenthesizedExpression) {
 			ParenthesizedExpression parenthesizedExpression = (ParenthesizedExpression) expression;
-			return handle(parenthesizedExpression, member);
+			return handle(parenthesizedExpression);
 		} else if (expression instanceof BooleanLiteral) {
 			BooleanLiteral booleanLiteral = (BooleanLiteral) expression;
-			return member;
+			return null;
 		} else if (expression instanceof CharacterLiteral) {
 			CharacterLiteral characterLiteral = (CharacterLiteral) expression;
-			return member;
+			return null;
 		} else if (expression instanceof ConditionalExpression) {
 			ConditionalExpression conditionalExpression = (ConditionalExpression) expression;
-			return handle(conditionalExpression, member);
+			return handle(conditionalExpression);
 		} else if (expression instanceof ArrayAccess) {
 			ArrayAccess arrayAccess = (ArrayAccess) expression;
-			handle(arrayAccess, member);
+			handle(arrayAccess);
 		} else if (expression instanceof TypeLiteral) {
 			TypeLiteral typeLiteral = (TypeLiteral) expression;
-			return member;
+			return null;
 		} else if (expression instanceof VariableDeclarationExpression) {
 			VariableDeclarationExpression variableDeclarationExpression = (VariableDeclarationExpression) expression;
-			return handle(variableDeclarationExpression, member);
+			return handle(variableDeclarationExpression);
 		} else if (expression instanceof PostfixExpression) {
 			PostfixExpression postfixExpression = (PostfixExpression) expression;
-			return handle(postfixExpression, member);
+			return handle(postfixExpression);
 
 		} else if (expression instanceof SuperFieldAccess) {
 			SuperFieldAccess superFieldAccess = (SuperFieldAccess) expression;
-			return handle(superFieldAccess, member);
+			return handle(superFieldAccess);
 		} else if (expression instanceof UnresolvedItemAccess) {
 			UnresolvedItemAccess itemAccess = (UnresolvedItemAccess) expression;
-			return member;
+			return null;
 
 		}
 		LOGGER.log( Level.INFO, "ERROR: Unknown Expression: " + expression);
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(SuperFieldAccess superFieldAccess, FlowNode member) {
-		return handle(superFieldAccess.getField(), member);
+	private FlowNode handle(SuperFieldAccess superFieldAccess) {
+		return handle(superFieldAccess.getField());
 	}
 
-	private FlowNode handle(PostfixExpression postfixExpression, FlowNode member) {
-		return handle(postfixExpression.getOperand(), member);
+	private FlowNode handle(PostfixExpression postfixExpression) {
+		return handle(postfixExpression.getOperand());
 	}
 
-	private FlowNode handle(VariableDeclarationExpression variableDeclarationExpression, FlowNode member) {
+	private FlowNode handle(VariableDeclarationExpression variableDeclarationExpression) {
 		if (variableDeclarationExpression == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
+		FlowNode member = statementHandler.getFlowNodeForElement(variableDeclarationExpression);
 		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
-			miscHandler.handle(fragment, new FlowNode(fragment));
+			statementHandler.propagateBack(miscHandler.handle(fragment), member);
 		}
-		alreadySeen.put(variableDeclarationExpression, member);
 		return member;
 	}
 
-	private FlowNode handle(ArrayCreation arrayCreation, FlowNode member) {
-		handle(arrayCreation.getInitializer(), member);
+	private FlowNode handle(ArrayCreation arrayCreation) {
+		handle(arrayCreation.getInitializer());
 		for (Expression dimension : arrayCreation.getDimensions()) {
-			handle(dimension, member);
+			handle(dimension);
 		}
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(ArrayInitializer arrayInitializer, FlowNode member) {
+	private FlowNode handle(ArrayInitializer arrayInitializer) {
 		if (arrayInitializer == null) {
-			return member; // assume nothing to to is success
+			return null; // assume nothing to to is success
 		}
 		for (Expression initializerExpression : arrayInitializer.getExpressions()) {
-			handle(initializerExpression, member);
+			handle(initializerExpression);
 		}
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(SingleVariableAccess singleVariableAccess, FlowNode member) {
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression qualifier = singleVariableAccess.getQualifier();
-		handle(qualifier, new FlowNode(qualifier));
+	private FlowNode handle(SingleVariableAccess singleVariableAccess) {
+		FlowNode member = statementHandler.getFlowNodeForElement(singleVariableAccess);
+		statementHandler.propagateBack(handle(singleVariableAccess.getQualifier()), member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
-		if (alreadySeen.containsKey(variable)) {
+		/*if (alreadySeen.containsKey(variable)) {
 			member.getInRef().add(alreadySeen.get(variable));
-		}
+		}*/
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
+			// Todo else handle unknown
 			if (variablesContainer instanceof FieldDeclaration) {
 				// TODO: Create read access edge
 				statementHandler.getMemberIn().add(member);
@@ -243,64 +236,54 @@ public class ExpressionHandlerDataFlow {
 				// TODO: What kind of processing is needed?
 			}
 		}
-		alreadySeen.put(singleVariableAccess, member);
 		return member;
 	}
 
-	private FlowNode handle(InfixExpression infixExpression, FlowNode member) {
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression leftOperand = infixExpression.getLeftOperand();
-		handle(leftOperand, new FlowNode(leftOperand));
-		Expression rightOperand = infixExpression.getRightOperand();
-		handle(rightOperand, new FlowNode(rightOperand));
+	private FlowNode handle(InfixExpression infixExpression) {
+		FlowNode member = statementHandler.getFlowNodeForElement(infixExpression);
+		statementHandler.propagateBack(handle(infixExpression.getLeftOperand()), member);
+		statementHandler.propagateBack(handle(infixExpression.getRightOperand()), member);
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
-			handle(extendedOperand, new FlowNode(extendedOperand));
+			statementHandler.propagateBack(handle(extendedOperand), member);
 		}
-		alreadySeen.put(infixExpression, member);
 		return member;
 	}
 
-	private FlowNode handle(ClassInstanceCreation classInstanceCreation, FlowNode member) {
-		handle(classInstanceCreation.getExpression(), member);
+	private FlowNode handle(ClassInstanceCreation classInstanceCreation) {
+		handle(classInstanceCreation.getExpression());
 		for (Expression argument : classInstanceCreation.getArguments()) {
-			handle(argument, member);
+			handle(argument);
 		}
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(InstanceofExpression instanceofExpression, FlowNode member) {
-		return handle(instanceofExpression.getLeftOperand(), member);
+	private FlowNode handle(InstanceofExpression instanceofExpression) {
+		return handle(instanceofExpression.getLeftOperand());
 	}
 
-	private FlowNode handle(Assignment assignment, FlowNode member) {
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
+	// TODO
+	private FlowNode handle(Assignment assignment) {
+		FlowNode member = statementHandler.getFlowNodeForElement(assignment);
 		// TODO: Store access type
 		Expression leftHandSide = assignment.getLeftHandSide();
-		FlowNode leftHandFlow = handle(leftHandSide, new FlowNode(leftHandSide));
+		FlowNode leftHandFlow = handle(leftHandSide);
 		if (leftHandFlow.getModelElement() instanceof FieldDeclaration) {
 			statementHandler.getMemberOut().add(member); // TODO FieldDeclaration correct type to check against?
 		}
 		Expression rightHandSide = assignment.getRightHandSide();
-		for (FlowNode in : handle(rightHandSide, new FlowNode(rightHandSide)).getInRef()) {
+		for (FlowNode in : handle(rightHandSide).getInRef()) {
 			member.getInRef().add(in);
 		}
-		alreadySeen.put(assignment, member);
 		return member;
 	}
 
-	private FlowNode handle(PrefixExpression prefixExpression, FlowNode member) {
-		return handle(prefixExpression.getOperand(), member);
+	private FlowNode handle(PrefixExpression prefixExpression) {
+		return handle(prefixExpression.getOperand());
 	}
 
-	private FlowNode handle(SuperMethodInvocation superMethodInvocation, FlowNode member) {
+	private FlowNode handle(SuperMethodInvocation superMethodInvocation) {
 		for (Expression argument : superMethodInvocation.getArguments()) {
-			handle(argument, member);
+			handle(argument);
 		}
 		/*
 		if(member.getAbstractMethodInvocations().contains(superMethodInvocation)){
@@ -310,72 +293,61 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		*/
-		return member;
+		return null;
 	}
 
-	private FlowNode handle(CastExpression castExpression, FlowNode member) {
-		return handle(castExpression.getExpression(), member);
+	private FlowNode handle(CastExpression castExpression) {
+		return handle(castExpression.getExpression());
 	}
 
-	private FlowNode handle(ParenthesizedExpression parenthesizedExpression, FlowNode member) {
-		return handle(parenthesizedExpression.getExpression(), member);
+	private FlowNode handle(ParenthesizedExpression parenthesizedExpression) {
+		return handle(parenthesizedExpression.getExpression());
 	}
 
-	private FlowNode handle(ConditionalExpression conditionalExpression, FlowNode member) {
+	private FlowNode handle(ConditionalExpression conditionalExpression) {
 		if (conditionalExpression == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		handle(conditionalExpression.getExpression(), member);
-		handle(conditionalExpression.getThenExpression(), member);
-		handle(conditionalExpression.getElseExpression(), member);
-		return member;
+		handle(conditionalExpression.getExpression());
+		handle(conditionalExpression.getThenExpression());
+		handle(conditionalExpression.getElseExpression());
+		return null;
 	}
 
-	private FlowNode handle(ArrayAccess arrayAccess, FlowNode member) {
+	private FlowNode handle(ArrayAccess arrayAccess) {
 		if (arrayAccess == null) {
-			return member; // assume nothing to do is success;
+			return null; // assume nothing to do is success;
 		}
-		handle(arrayAccess.getArray(), member);
-		handle(arrayAccess.getIndex(), member);
-		return member;
+		handle(arrayAccess.getArray());
+		handle(arrayAccess.getIndex());
+		return null;
 	}
 	
 	// TODO: Never called?
-	private FlowNode handle(FieldAccess fieldAccess, FlowNode member) {
+	private FlowNode handle(FieldAccess fieldAccess) {
 		if (fieldAccess == null) {
-			return member; // assume nothing to do is success
+			return null; // assume nothing to do is success
 		}
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression expression = fieldAccess.getExpression();
-		handle(expression, new FlowNode(expression));
-		SingleVariableAccess field = fieldAccess.getField();
-		handle(field, new FlowNode(field));
+		FlowNode member = statementHandler.getFlowNodeForElement(fieldAccess);
+		statementHandler.propagateBack(handle(fieldAccess.getExpression()), member);
+		statementHandler.propagateBack(handle(fieldAccess.getField()), member);
 		statementHandler.getMemberIn().add(member);
-		alreadySeen.put(fieldAccess, member);
 		return member;
 	}
 
-	private FlowNode handle(MethodInvocation methodInvocation, FlowNode member) {
-		HashMap<Object, FlowNode> alreadySeen = statementHandler.getAlreadySeen();
-		if (alreadySeen.containsValue(member)) {
-			return member;
-		}
-		Expression expression = methodInvocation.getExpression();
-		handle(expression, new FlowNode(expression));
+	private FlowNode handle(MethodInvocation methodInvocation) {
+		FlowNode member = statementHandler.getFlowNodeForElement(methodInvocation);
+		statementHandler.propagateBack(handle(methodInvocation.getExpression()), member);
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				handle(argument, new FlowNode(argument));
+				statementHandler.propagateBack(handle(argument), member);
 			}
 			statementHandler.getMemberOut().add(member);
 		}
 		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
 		}
-		alreadySeen.put(methodInvocation, member);
 		/*
 		if (member.getAbstractMethodInvocations().contains(methodInvocation)){
 			return member;
