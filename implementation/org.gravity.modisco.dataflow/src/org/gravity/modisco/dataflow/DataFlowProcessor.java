@@ -1,5 +1,7 @@
 package org.gravity.modisco.dataflow;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,6 +21,19 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+
+import guru.nidi.graphviz.attribute.Attributes;
+import guru.nidi.graphviz.attribute.Color;
+import guru.nidi.graphviz.attribute.ForGraph;
+import guru.nidi.graphviz.attribute.RankDir;
+import guru.nidi.graphviz.attribute.Size;
+import guru.nidi.graphviz.attribute.Style;
+import guru.nidi.graphviz.engine.Format;
+import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.Graph;
+import guru.nidi.graphviz.model.MutableGraph;
+
+import static guru.nidi.graphviz.model.Factory.*;
 
 /**
  * A preprocessor for calculating data flow edges
@@ -75,20 +90,21 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		List<StatementHandlerDataFlow> handlers = new ArrayList<>();
 		for (MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
 			StatementHandlerDataFlow methodProcessor = new StatementHandlerDataFlow(methodDef);
-			methodProcessor.handle(methodDef.getBody(), new FlowNode(methodDef));
+			methodProcessor.handle(methodDef.getBody());
 			handlers.add(methodProcessor);
 		}
 		for (MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
-			StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fieldDef);
 			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
+				StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
 				Expression initializer = fragment.getInitializer();
-				fieldProcessor.getExpressionHandler().handle(initializer, new FlowNode(initializer));
+				fieldProcessor.getExpressionHandler().handle(initializer);
+				handlers.add(fieldProcessor);
 			}
-			handlers.add(fieldProcessor);
 		}
+		GraphVisualizer.drawGraphs(handlers); // Drawing one graph per handler; comment out, if no graphs are needed
 		return handlers.size() > 0;
 	}
-	
+
 	
 	/**
 	 * Creates data flow edges between all elements from the given element list and the given definition.

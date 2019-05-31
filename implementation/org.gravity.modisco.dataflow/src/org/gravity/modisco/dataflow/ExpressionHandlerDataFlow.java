@@ -1,11 +1,8 @@
 package org.gravity.modisco.dataflow;
 
-import java.util.HashMap;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
@@ -190,21 +187,23 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(ArrayCreation arrayCreation) {
-		handle(arrayCreation.getInitializer());
+		FlowNode member = statementHandler.getFlowNodeForElement(arrayCreation);
+		statementHandler.propagateBack(handle(arrayCreation.getInitializer()), member);
 		for (Expression dimension : arrayCreation.getDimensions()) {
-			handle(dimension);
+			statementHandler.propagateBack(handle(dimension), member);
 		}
-		return null;
+		return member;
 	}
 
 	private FlowNode handle(ArrayInitializer arrayInitializer) {
 		if (arrayInitializer == null) {
 			return null; // assume nothing to to is success
 		}
+		FlowNode member = statementHandler.getFlowNodeForElement(arrayInitializer);
 		for (Expression initializerExpression : arrayInitializer.getExpressions()) {
-			handle(initializerExpression);
+			statementHandler.propagateBack(handle(initializerExpression), member);
 		}
-		return null;
+		return member;
 	}
 
 	private FlowNode handle(SingleVariableAccess singleVariableAccess) {
@@ -250,11 +249,12 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(ClassInstanceCreation classInstanceCreation) {
-		handle(classInstanceCreation.getExpression());
+		FlowNode member = statementHandler.getFlowNodeForElement(classInstanceCreation);
+		statementHandler.propagateBack(handle(classInstanceCreation.getExpression()), member);
 		for (Expression argument : classInstanceCreation.getArguments()) {
-			handle(argument);
+			statementHandler.propagateBack(handle(argument), member);
 		}
-		return null;
+		return member;
 	}
 
 	private FlowNode handle(InstanceofExpression instanceofExpression) {
@@ -271,8 +271,11 @@ public class ExpressionHandlerDataFlow {
 			statementHandler.getMemberOut().add(member); // TODO FieldDeclaration correct type to check against?
 		}
 		Expression rightHandSide = assignment.getRightHandSide();
-		for (FlowNode in : handle(rightHandSide).getInRef()) {
-			member.getInRef().add(in);
+		FlowNode rightHandFlow = handle(rightHandSide);
+		if (rightHandFlow != null) {
+			for (FlowNode in : handle(rightHandSide).getInRef()) {
+				member.getInRef().add(in);
+			}
 		}
 		return member;
 	}
@@ -282,8 +285,9 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(SuperMethodInvocation superMethodInvocation) {
+		FlowNode member = statementHandler.getFlowNodeForElement(superMethodInvocation);
 		for (Expression argument : superMethodInvocation.getArguments()) {
-			handle(argument);
+			statementHandler.propagateBack(handle(argument), member);
 		}
 		/*
 		if(member.getAbstractMethodInvocations().contains(superMethodInvocation)){
@@ -293,7 +297,7 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		*/
-		return null;
+		return member;
 	}
 
 	private FlowNode handle(CastExpression castExpression) {
@@ -308,19 +312,21 @@ public class ExpressionHandlerDataFlow {
 		if (conditionalExpression == null) {
 			return null; // assume nothing to do is success
 		}
-		handle(conditionalExpression.getExpression());
-		handle(conditionalExpression.getThenExpression());
-		handle(conditionalExpression.getElseExpression());
-		return null;
+		FlowNode member = statementHandler.getFlowNodeForElement(conditionalExpression);
+		statementHandler.propagateBack(handle(conditionalExpression.getExpression()), member);
+		statementHandler.propagateBack(handle(conditionalExpression.getThenExpression()), member);
+		statementHandler.propagateBack(handle(conditionalExpression.getElseExpression()), member);
+		return member;
 	}
 
 	private FlowNode handle(ArrayAccess arrayAccess) {
 		if (arrayAccess == null) {
 			return null; // assume nothing to do is success;
 		}
-		handle(arrayAccess.getArray());
-		handle(arrayAccess.getIndex());
-		return null;
+		FlowNode member = statementHandler.getFlowNodeForElement(arrayAccess);
+		statementHandler.propagateBack(handle(arrayAccess.getArray()), member);
+		statementHandler.propagateBack(handle(arrayAccess.getIndex()), member);
+		return member;
 	}
 	
 	// TODO: Never called?

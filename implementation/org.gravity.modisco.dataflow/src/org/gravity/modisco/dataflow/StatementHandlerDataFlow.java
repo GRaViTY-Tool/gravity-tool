@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AssertStatement;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BreakStatement;
@@ -226,40 +225,44 @@ public class StatementHandlerDataFlow {
 		if (tryStatement == null) {
 			return null; // assume nothing to do is success
 		}
-		handle(tryStatement.getBody());
-		handle(tryStatement.getFinally());
+		FlowNode member = getFlowNodeForElement(tryStatement);
+		propagateBack(handle(tryStatement.getBody()), member);
+		propagateBack(handle(tryStatement.getFinally()), member);
 		for (CatchClause clause : tryStatement.getCatchClauses()) {
-			handle(clause);
+			propagateBack(handle(clause), member);
 		}
-		return null;
+		return member;
 	}
 
 	private FlowNode handle(ThrowStatement throwStatement) {
 		if (throwStatement == null) {
 			return null; // assume nothing to do is success
 		}
-		expressionHandler.handle(throwStatement.getExpression());
-		return null;
+		FlowNode member = getFlowNodeForElement(throwStatement);
+		propagateBack(expressionHandler.handle(throwStatement.getExpression()), member);
+		return member;
 	}
 
 	private FlowNode handle(SynchronizedStatement synchronizedStatement) {
 		if (synchronizedStatement == null) {
 			return null; // assume nothing to do is success
 		}
-		handle(synchronizedStatement.getBody());
-		expressionHandler.handle(synchronizedStatement.getExpression());
-		return null;
+		FlowNode member = getFlowNodeForElement(synchronizedStatement);
+		propagateBack(handle(synchronizedStatement.getBody()), member);
+		propagateBack(expressionHandler.handle(synchronizedStatement.getExpression()), member);
+		return member;
 	}
 
 	private FlowNode handle(SwitchStatement switchStatement) {
 		if (switchStatement == null) {
 			return null; // assume nothing to do is success
 		}
+		FlowNode member = getFlowNodeForElement(switchStatement);
 		for (Statement statement : switchStatement.getStatements()) {
-			handle(statement);
+			propagateBack(handle(statement), member);
 		}
-		expressionHandler.handle(switchStatement.getExpression());
-		return null;
+		propagateBack(expressionHandler.handle(switchStatement.getExpression()), member);
+		return member;
 	}
 
 	private FlowNode handle(SwitchCase switchCase) {
@@ -400,9 +403,10 @@ public class StatementHandlerDataFlow {
 		if (catchClause == null) {
 			return null; // assume nothing to do is success
 		}
-		handle(catchClause.getBody());
-		miscHandler.handle(catchClause.getException());
-		return null;
+		FlowNode member = getFlowNodeForElement(catchClause);
+		propagateBack(handle(catchClause.getBody()), member);
+		propagateBack(miscHandler.handle(catchClause.getException()), member);
+		return member;
 	}
 	
 	private FlowNode handle(AssertStatement assertStatement) {
@@ -474,8 +478,10 @@ public class StatementHandlerDataFlow {
 	 * @param parent The parent FlowNode, to which the references are written. 
 	 */
 	void propagateBack(FlowNode child, FlowNode parent) {
-		parent.getInRef().addAll(child.getInRef());
-		parent.getOutRef().addAll(child.getOutRef());
+		if (child != null) {
+			parent.getInRef().addAll(child.getInRef());
+			parent.getOutRef().addAll(child.getOutRef());
+		}
 	}
 
 }

@@ -37,7 +37,8 @@ public class MiscHandlerDataFlow {
 	}
 
 	private FlowNode handle(BodyDeclaration body) {
-		return null;
+		FlowNode member = statementHandler.getFlowNodeForElement(body);
+		return member;
 	}
 
 	public FlowNode handle(SingleVariableDeclaration singleVariableDeclaration) {
