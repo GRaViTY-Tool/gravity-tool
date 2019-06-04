@@ -1,0 +1,7 @@
+Setting up the GraphVisualizer
+
+- Install the Graphviz visualization tool from https://www.graphviz.org/
+- Add it to your PATH environment variable, so that it can be invoked from the command line
+- Restart your IDE
+
+The GraphVisualizer should now be able to draw graphs and export them as images.

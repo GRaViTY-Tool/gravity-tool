@@ -196,6 +196,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(whileStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(whileStatement.getBody()), member);
 		propagateBack(expressionHandler.handle(whileStatement.getExpression()), member);
 		return member;
@@ -206,6 +209,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(variableDeclarationStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
 			propagateBack(miscHandler.handle(fragment), member);
 		}
@@ -217,6 +223,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(typeDeclarationStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(miscHandler.handle(typeDeclarationStatement.getDeclaration()), member);
 		return member;
 	}
@@ -226,6 +235,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(tryStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(tryStatement.getBody()), member);
 		propagateBack(handle(tryStatement.getFinally()), member);
 		for (CatchClause clause : tryStatement.getCatchClauses()) {
@@ -239,6 +251,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(throwStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(expressionHandler.handle(throwStatement.getExpression()), member);
 		return member;
 	}
@@ -248,6 +263,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(synchronizedStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(synchronizedStatement.getBody()), member);
 		propagateBack(expressionHandler.handle(synchronizedStatement.getExpression()), member);
 		return member;
@@ -258,6 +276,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(switchStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (Statement statement : switchStatement.getStatements()) {
 			propagateBack(handle(statement), member);
 		}
@@ -277,6 +298,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(superConstructorInvocation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(expressionHandler.handle(superConstructorInvocation.getExpression()), member);
 		for (Expression argument : superConstructorInvocation.getArguments()) {
 			propagateBack(expressionHandler.handle(argument), member);
@@ -290,6 +314,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(returnStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(expressionHandler.handle(returnStatement.getExpression()), member);
 		return member;
 	}
@@ -306,6 +333,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(ifStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(ifStatement.getElseStatement()), member);
 		propagateBack(handle(ifStatement.getThenStatement()), member);
 		propagateBack(expressionHandler.handle(ifStatement.getExpression()), member);
@@ -317,6 +347,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(forStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(forStatement.getBody()), member);
 		propagateBack(expressionHandler.handle(forStatement.getExpression()), member);
 		for (Expression initializer : forStatement.getInitializers()) {
@@ -333,6 +366,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(expressionStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(expressionHandler.handle(expressionStatement.getExpression()), member);
 		return member;
 	}
@@ -342,6 +378,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(enhancedForStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(enhancedForStatement.getBody()), member);
 		propagateBack(expressionHandler.handle(enhancedForStatement.getExpression()), member);
 		return member;
@@ -356,6 +395,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(doStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(doStatement.getBody()), member);
 		propagateBack(expressionHandler.handle(doStatement.getExpression()), member);
 		return member;
@@ -373,6 +415,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(constructorInvocation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		EList<Expression> arguments = constructorInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
@@ -404,6 +449,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(catchClause);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(handle(catchClause.getBody()), member);
 		propagateBack(miscHandler.handle(catchClause.getException()), member);
 		return member;
@@ -414,6 +462,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(assertStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		propagateBack(expressionHandler.handle(assertStatement.getExpression()), member);
 		propagateBack(expressionHandler.handle(assertStatement.getMessage()), member);
 		return member;
@@ -424,6 +475,9 @@ public class StatementHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = getFlowNodeForElement(block);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (Statement statement : block.getStatements()) {
 			propagateBack(handle(statement), member);
 		}
@@ -464,6 +518,7 @@ public class StatementHandlerDataFlow {
 	FlowNode getFlowNodeForElement(EObject element) {
 		FlowNode seenNode = alreadySeen.get(element);
 		if (seenNode != null) { // making sure, that null references lead to creation of new nodes
+			seenNode.setFromAlreadySeen();
 			return seenNode;
 		}
 		FlowNode member = new FlowNode(element);
@@ -472,15 +527,15 @@ public class StatementHandlerDataFlow {
 	}
 	
 	/**
-	 * Writes references (in and out) of a child FlowNode to its parent.
+	 * Adds containment references (e. g. a return expression is contained in a return statement) between parent and child FlowNodes.
 	 * 
-	 * @param child The child FlowNode, from which the references are written back to the parent.
-	 * @param parent The parent FlowNode, to which the references are written. 
+	 * @param child The child FlowNode, which is contained in the parent FlowNode.
+	 * @param parent The parent FlowNode, which contains the child FlowNode. 
 	 */
 	void propagateBack(FlowNode child, FlowNode parent) {
 		if (child != null) {
-			parent.getInRef().addAll(child.getInRef());
-			parent.getOutRef().addAll(child.getOutRef());
+			//parent.getInRef().add(child);
+			//child.getOutRef().add(parent);
 		}
 	}
 

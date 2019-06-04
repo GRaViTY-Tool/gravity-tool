@@ -24,12 +24,18 @@ public class MiscHandlerDataFlow {
 	
 	public FlowNode handle(VariableDeclarationFragment fragment) {
 		FlowNode member = statementHandler.getFlowNodeForElement(fragment);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(expressionHandler.handle(fragment.getInitializer()), member);
 		return member;
 	}
 
 	public FlowNode handle(AbstractTypeDeclaration declaration) {
 		FlowNode member = statementHandler.getFlowNodeForElement(declaration);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (BodyDeclaration body : declaration.getBodyDeclarations()) {
 			statementHandler.propagateBack(handle(body), member);
 		}
@@ -38,11 +44,17 @@ public class MiscHandlerDataFlow {
 
 	private FlowNode handle(BodyDeclaration body) {
 		FlowNode member = statementHandler.getFlowNodeForElement(body);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		return member;
 	}
 
 	public FlowNode handle(SingleVariableDeclaration singleVariableDeclaration) {
 		FlowNode member = statementHandler.getFlowNodeForElement(singleVariableDeclaration);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(expressionHandler.handle(singleVariableDeclaration.getInitializer()), member);
 		return member;
 	}

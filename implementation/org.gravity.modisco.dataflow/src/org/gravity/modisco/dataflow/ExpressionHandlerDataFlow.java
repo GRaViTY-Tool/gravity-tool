@@ -40,6 +40,7 @@ import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 
 public class ExpressionHandlerDataFlow {
 
@@ -180,6 +181,9 @@ public class ExpressionHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = statementHandler.getFlowNodeForElement(variableDeclarationExpression);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
 			statementHandler.propagateBack(miscHandler.handle(fragment), member);
 		}
@@ -188,6 +192,9 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(ArrayCreation arrayCreation) {
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayCreation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(arrayCreation.getInitializer()), member);
 		for (Expression dimension : arrayCreation.getDimensions()) {
 			statementHandler.propagateBack(handle(dimension), member);
@@ -200,6 +207,9 @@ public class ExpressionHandlerDataFlow {
 			return null; // assume nothing to to is success
 		}
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayInitializer);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (Expression initializerExpression : arrayInitializer.getExpressions()) {
 			statementHandler.propagateBack(handle(initializerExpression), member);
 		}
@@ -208,17 +218,22 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(SingleVariableAccess singleVariableAccess) {
 		FlowNode member = statementHandler.getFlowNodeForElement(singleVariableAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(singleVariableAccess.getQualifier()), member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
 		/*if (alreadySeen.containsKey(variable)) {
 			member.getInRef().add(alreadySeen.get(variable));
 		}*/
+		System.out.println("Called on local " + variable.getName() + " of type " + variable.getClass().getTypeName());
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 			// Todo else handle unknown
 			if (variablesContainer instanceof FieldDeclaration) {
 				// TODO: Create read access edge
+				// TODO Add FlowNode for variablesContainer + add to MemberIn
 				statementHandler.getMemberIn().add(member);
 				/*
 				if(member.getMAbstractFieldAccess().contains(singleVariableAccess)){
@@ -231,8 +246,12 @@ public class ExpressionHandlerDataFlow {
 			}
 		} else if (variable instanceof SingleVariableDeclaration) {
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
+			
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) {
 				// TODO: What kind of processing is needed?
+				System.out.println("Called on parameter " + variable.getName());
+			} else {
+				System.out.println("Called on local " + variable.getName());
 			}
 		}
 		return member;
@@ -240,6 +259,9 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(InfixExpression infixExpression) {
 		FlowNode member = statementHandler.getFlowNodeForElement(infixExpression);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(infixExpression.getLeftOperand()), member);
 		statementHandler.propagateBack(handle(infixExpression.getRightOperand()), member);
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
@@ -250,6 +272,9 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(ClassInstanceCreation classInstanceCreation) {
 		FlowNode member = statementHandler.getFlowNodeForElement(classInstanceCreation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(classInstanceCreation.getExpression()), member);
 		for (Expression argument : classInstanceCreation.getArguments()) {
 			statementHandler.propagateBack(handle(argument), member);
@@ -264,6 +289,9 @@ public class ExpressionHandlerDataFlow {
 	// TODO
 	private FlowNode handle(Assignment assignment) {
 		FlowNode member = statementHandler.getFlowNodeForElement(assignment);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		// TODO: Store access type
 		Expression leftHandSide = assignment.getLeftHandSide();
 		FlowNode leftHandFlow = handle(leftHandSide);
@@ -286,6 +314,9 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(SuperMethodInvocation superMethodInvocation) {
 		FlowNode member = statementHandler.getFlowNodeForElement(superMethodInvocation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		for (Expression argument : superMethodInvocation.getArguments()) {
 			statementHandler.propagateBack(handle(argument), member);
 		}
@@ -313,6 +344,9 @@ public class ExpressionHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = statementHandler.getFlowNodeForElement(conditionalExpression);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(conditionalExpression.getExpression()), member);
 		statementHandler.propagateBack(handle(conditionalExpression.getThenExpression()), member);
 		statementHandler.propagateBack(handle(conditionalExpression.getElseExpression()), member);
@@ -324,6 +358,9 @@ public class ExpressionHandlerDataFlow {
 			return null; // assume nothing to do is success;
 		}
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(arrayAccess.getArray()), member);
 		statementHandler.propagateBack(handle(arrayAccess.getIndex()), member);
 		return member;
@@ -335,6 +372,9 @@ public class ExpressionHandlerDataFlow {
 			return null; // assume nothing to do is success
 		}
 		FlowNode member = statementHandler.getFlowNodeForElement(fieldAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(fieldAccess.getExpression()), member);
 		statementHandler.propagateBack(handle(fieldAccess.getField()), member);
 		statementHandler.getMemberIn().add(member);
@@ -343,14 +383,19 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(MethodInvocation methodInvocation) {
 		FlowNode member = statementHandler.getFlowNodeForElement(methodInvocation);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
 		statementHandler.propagateBack(handle(methodInvocation.getExpression()), member);
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
 				statementHandler.propagateBack(handle(argument), member);
+				System.out.println("Argument type: " + argument.getClass().getTypeName());
 			}
 			statementHandler.getMemberOut().add(member);
 		}
+		// TODO FlowNode for method + for each argument
 		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
 		}

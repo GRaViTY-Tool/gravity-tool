@@ -29,6 +29,11 @@ public class FlowNode {
 	 */
 	private EObject modelElement;
 	
+	/**
+	 * A flag to indicate, whether this FlowNode has already been processed and thus was drawn from the alreadySeen HashMap at least once.
+	 */
+	private boolean fromAlreadySeen;
+	
 	public FlowNode(EObject correspondingElement) {
 		modelElement = correspondingElement;
 	}
@@ -41,7 +46,17 @@ public class FlowNode {
 		return outRef;
 	}
 	
+	// TODO: addOutRef + addInRef methods: To auto-add it on the opposite site (in => out at incoming node + vice versa)
+	
 	public EObject getModelElement() {
 		return modelElement;
+	}
+	
+	public boolean isFromAlreadySeen() {
+		return fromAlreadySeen;
+	}
+	
+	public void setFromAlreadySeen() {
+		fromAlreadySeen = true;
 	}
 }
