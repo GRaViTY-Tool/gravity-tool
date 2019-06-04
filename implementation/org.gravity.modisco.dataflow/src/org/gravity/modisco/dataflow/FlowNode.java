@@ -46,7 +46,15 @@ public class FlowNode {
 		return outRef;
 	}
 	
-	// TODO: addOutRef + addInRef methods: To auto-add it on the opposite site (in => out at incoming node + vice versa)
+	public void addInRef(FlowNode node) {
+		inRef.add(node);
+		node.getOutRef().add(this);
+	}
+	
+	public void addOutRef(FlowNode node) {
+		outRef.add(node);
+		node.getInRef().add(this);
+	}
 	
 	public EObject getModelElement() {
 		return modelElement;

@@ -243,8 +243,15 @@ public class ExpressionHandlerDataFlow {
 					return member;
 				}
 				*/
+			} else if (variablesContainer instanceof VariableDeclarationStatement) {
+				// Read access of a local
+				System.out.println("Var Decl! " + variablesContainer.getFragments().get(0).getName());
+				member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
+			} else if (variablesContainer instanceof VariableDeclarationExpression) {
+				System.out.println("This happens as well...");
 			}
 		} else if (variable instanceof SingleVariableDeclaration) {
+			// Read access of a parameter
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
 			
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) {
@@ -396,6 +403,10 @@ public class ExpressionHandlerDataFlow {
 			statementHandler.getMemberOut().add(member);
 		}
 		// TODO FlowNode for method + for each argument
+		statementHandler.getFlowNodeForElement(methodInvocation.getMethod());
+		for (SingleVariableDeclaration param :methodInvocation.getMethod().getParameters()) {
+			statementHandler.getFlowNodeForElement(param);
+		}
 		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
 		}

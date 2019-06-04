@@ -10,9 +10,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
 
 import guru.nidi.graphviz.attribute.Color;
+import guru.nidi.graphviz.attribute.Label;
 import guru.nidi.graphviz.attribute.RankDir;
 import guru.nidi.graphviz.attribute.Style;
 import guru.nidi.graphviz.engine.Format;
@@ -36,13 +38,16 @@ public class GraphVisualizer {
 				g.add(graphNode);
 				graphNodes.put(node, graphNode);
 			}
-			// Set containment edges for all graph nodes
+			// Set containment edges (+ links to nodes of called/accessed methods/fields) for all graph nodes
 			for (FlowNode node : alreadySeenNodes) {
 				MutableNode graphNode = graphNodes.get(node);
 				EObject eContainer = node.getModelElement().eContainer();
 				FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
 				if(flowCont == null) {
 					continue;
+				}
+				if (node.getModelElement() instanceof MethodInvocation) {
+					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getAlreadySeen().get(((MethodInvocation) node.getModelElement()).getMethod()))).with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
 				graphNode.addLink(graphNodes.get(flowCont));
 			}
@@ -51,7 +56,7 @@ public class GraphVisualizer {
 				MutableNode graphNode = graphNodes.get(node);
 				for (FlowNode out : node.getOutRef()) {
 					MutableNode outNode = graphNodes.get(out);
-					graphNode.addLink(graphNode.linkTo(outNode).with(Style.DOTTED, Color.GRAY));
+					graphNode.addLink(graphNode.linkTo(outNode).with(Style.DOTTED, Label.of("flows to"), Color.GRAY));
 				}
 			}
 			try {
