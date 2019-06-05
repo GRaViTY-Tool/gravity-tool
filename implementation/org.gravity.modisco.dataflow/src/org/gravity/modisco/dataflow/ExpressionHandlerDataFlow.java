@@ -405,7 +405,10 @@ public class ExpressionHandlerDataFlow {
 		// TODO FlowNode for method + for each argument
 		statementHandler.getFlowNodeForElement(methodInvocation.getMethod());
 		for (SingleVariableDeclaration param :methodInvocation.getMethod().getParameters()) {
-			statementHandler.getFlowNodeForElement(param);
+			FlowNode paramNode = statementHandler.getFlowNodeForElement(param);
+			for (SingleVariableAccess access : param.getUsageInVariableAccess()) {
+				paramNode.addOutRef(statementHandler.getFlowNodeForElement(access));
+			}
 		}
 		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);

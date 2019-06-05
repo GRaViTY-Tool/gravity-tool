@@ -47,9 +47,9 @@ public class GraphVisualizer {
 					continue;
 				}
 				if (node.getModelElement() instanceof MethodInvocation) {
-					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getAlreadySeen().get(((MethodInvocation) node.getModelElement()).getMethod()))).with(Style.DASHED, Label.of("calls"), Color.BLUE));
+					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getAlreadySeen().get(((MethodInvocation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
-				graphNode.addLink(graphNodes.get(flowCont));
+				graphNodes.get(flowCont).addLink(graphNode);
 			}
 			// Set flow edges
 			for (FlowNode node : alreadySeenNodes) {
@@ -71,11 +71,11 @@ public class GraphVisualizer {
 
 	private static MutableNode getDotNode(FlowNode node) {
 		EObject modelElement = node.getModelElement();
-		String name = modelElement.eClass().getName() + " " + modelElement.hashCode(); // TODO Solution, which doesn't require hashCode
+		String label = modelElement.eClass().getName();
 		if (modelElement instanceof NamedElement) {
-			name += " " + ((NamedElement) modelElement).getName();
+			label += " " + ((NamedElement) modelElement).getName();
 		}
-		MutableNode graphNode = mutNode(name);
+		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
 	}
 }
