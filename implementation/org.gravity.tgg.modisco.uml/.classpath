@@ -11,7 +11,6 @@
 			<attribute name="ignore_optional_problems" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="injection"/>
 	<classpathentry kind="output" path="bin"/>

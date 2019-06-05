@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Collections;
@@ -26,8 +27,10 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.tgg.uml.Transformation;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.junit.Test;
 
@@ -53,6 +56,8 @@ public class UMLsecTest {
 	 */
 	@Test
 	public void test() throws TransformationFailedException, FileNotFoundException, IOException, CoreException {
+		GravityActivator.getDefault().setDebugging(true);
+		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject("SecureDependency");
 		IJavaProject jp = JavaCore.create(project);
@@ -61,9 +66,10 @@ public class UMLsecTest {
 		Model model = Transformation.projectToModel(iJjavaProject, true, new NullProgressMonitor());
 
 		assertNotNull(model);
-		IFolder folder = iJjavaProject.getProject().getFolder(".gravity");
-		File srcFile = folder.getFile("src.xmi").getLocation().toFile();
-		Files.copy(new FileInputStream(srcFile), folder.getFile("fwd.src.xmi").getLocation().toFile().toPath());
+		IFolder folder = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
+		model.eResource().save(new FileOutputStream(folder.getFile(project.getName()+".uml").getLocation().toFile()), Collections.EMPTY_MAP);
+//		File srcFile = folder.getFile("src.xmi").getLocation().toFile();
+//		Files.copy(new FileInputStream(srcFile), folder.getFile("fwd.src.xmi").getLocation().toFile().toPath());
 
 		LinkedList<EObject> add = new LinkedList<EObject>();
 		ProfileApplication profileApplication = UMLFactory.eINSTANCE.createProfileApplication();

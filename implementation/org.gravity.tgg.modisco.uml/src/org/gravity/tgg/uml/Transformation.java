@@ -284,8 +284,9 @@ public class Transformation extends SynchronizationHelper {
 
 		try {
 			IFolder outFile = iproject.getFolder("src");
-			new GenerateJavaExtended(trafo.getSrc(), outFile.getLocation().toFile(), Collections.emptyList())
-					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
+			GenerateJavaExtended generateJavaExtended = new GenerateJavaExtended(trafo.getSrc(),
+					outFile.getLocation().toFile(), Collections.emptyList());
+			generateJavaExtended.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
