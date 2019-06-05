@@ -62,12 +62,6 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	 */
 	public HMetric calculateMetric(TClass tClass) {
 
-		Object[] result1_black = HLocalFieldUniqueAccessCalculatorImpl
-				.pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
 		Object[] result1_green = HLocalFieldUniqueAccessCalculatorImpl
 				.pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_greenBBF(this, tClass);
 		HLocalFieldUniqueAccessMetric metric = (HLocalFieldUniqueAccessMetric) result1_green[2];
@@ -111,11 +105,6 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_blackBB(
-			HLocalFieldUniqueAccessCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
 	}
 
 	public static final Object[] pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_greenBBF(
