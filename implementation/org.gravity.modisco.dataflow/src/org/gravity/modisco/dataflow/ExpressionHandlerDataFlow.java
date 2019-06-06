@@ -226,40 +226,29 @@ public class ExpressionHandlerDataFlow {
 		statementHandler.propagateBack(handle(singleVariableAccess.getQualifier()), member);
 		propagateBackAccess(singleVariableAccess);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
-		System.out.println("Called on local " + variable.getName() + " of type " + variable.getClass().getTypeName());
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
-			// Todo else handle unknown
-			if (variablesContainer instanceof FieldDeclaration) {
+			if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
 				// TODO: Create read access edge
-				// TODO Add FlowNode for variablesContainer + add to MemberIn
+				member.addInRef(statementHandler.getFlowNodeForElement(variablesContainer));
 				statementHandler.getMemberIn().add(member);
-				/*
-				if(member.getMAbstractFieldAccess().contains(singleVariableAccess)){
-					return member;
-				}
-				if (!member.getMAbstractFieldAccess().add(singleVariableAccess)) {
-					return member;
-				}
-				*/
-			} else if (variablesContainer instanceof VariableDeclarationStatement) {
-				// Read access of a local
-				System.out.println("Var Decl! " + variablesContainer.getFragments().get(0).getName());
+			} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 				member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
 			} else if (variablesContainer instanceof VariableDeclarationExpression) {
-				System.out.println("This happens as well...");
-			}
-		} else if (variable instanceof SingleVariableDeclaration) {
-			// Read access of a parameter
-			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
-			
-			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) {
-				// TODO: What kind of processing is needed?
-				System.out.println("Called on parameter " + variable.getName());
+				System.out.println("This happens as well...?"); // TODO Does this happen?
 			} else {
-				System.out.println("Called on local " + variable.getName());
+				LOGGER.log(Level.INFO, "Unknown VariableDeclarationFragment expression");
 			}
+		} else if (variable instanceof SingleVariableDeclaration) { 
+			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
+			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
+				// TODO Read access of a parameter only here? Or in general for each SingleVariableDecl?
+			} else {
+				System.out.println("Called on local " + variable.getName()); // TODO Does this happen?
+			}
+		} else {
+			LOGGER.log(Level.INFO, "Unknown SingleVariableAccess expression");
 		}
 		return member;
 	}
@@ -327,14 +316,6 @@ public class ExpressionHandlerDataFlow {
 		for (Expression argument : superMethodInvocation.getArguments()) {
 			statementHandler.propagateBack(handle(argument), member);
 		}
-		/*
-		if(member.getAbstractMethodInvocations().contains(superMethodInvocation)){
-			return member;
-		}
-		if (!member.getAbstractMethodInvocations().add(superMethodInvocation)) {
-			return member;
-		}
-		*/
 		return member;
 	}
 
@@ -398,29 +379,20 @@ public class ExpressionHandlerDataFlow {
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
 				statementHandler.propagateBack(handle(argument), member);
-				System.out.println("Argument type: " + argument.getClass().getTypeName());
 			}
 			statementHandler.getMemberOut().add(member);
 		}
-		// TODO FlowNode for method + for each argument
-		statementHandler.getFlowNodeForElement(methodInvocation.getMethod());
-		for (SingleVariableDeclaration param :methodInvocation.getMethod().getParameters()) {
-			FlowNode paramNode = statementHandler.getFlowNodeForElement(param);
+		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
+		statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
+		for (SingleVariableDeclaration param : calledMethod.getParameters()) {
+			FlowNode paramNode = statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
 			for (SingleVariableAccess access : param.getUsageInVariableAccess()) {
 				paramNode.addOutRef(statementHandler.getFlowNodeForElement(access));
 			}
 		}
-		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
 		}
-		/*
-		if (member.getAbstractMethodInvocations().contains(methodInvocation)){
-			return member;
-		}
-		if (!member.getAbstractMethodInvocations().add(methodInvocation)) {
-			return member;
-		}
-		*/
 		return member;
 	}
 	
