@@ -3,6 +3,7 @@ package org.gravity.modisco.dataflow;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
@@ -30,6 +31,7 @@ import org.eclipse.gmt.modisco.java.PostfixExpression;
 import org.eclipse.gmt.modisco.java.PrefixExpression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.gmt.modisco.java.Statement;
 import org.eclipse.gmt.modisco.java.StringLiteral;
 import org.eclipse.gmt.modisco.java.SuperFieldAccess;
 import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
@@ -222,10 +224,8 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		statementHandler.propagateBack(handle(singleVariableAccess.getQualifier()), member);
+		propagateBackAccess(singleVariableAccess);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
-		/*if (alreadySeen.containsKey(variable)) {
-			member.getInRef().add(alreadySeen.get(variable));
-		}*/
 		System.out.println("Called on local " + variable.getName() + " of type " + variable.getClass().getTypeName());
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
@@ -422,6 +422,20 @@ public class ExpressionHandlerDataFlow {
 		}
 		*/
 		return member;
+	}
+	
+	/**
+	 * Inserts flow edges from a variable access to its surrounding expression(s) and/or statement.
+	 * 
+	 * @param obj The variable access, from which the flow edges are propagated back.
+	 */
+	private void propagateBackAccess(EObject obj) {
+		if ((obj instanceof Statement) || (obj instanceof VariableDeclarationFragment)) {
+			return;
+		}
+		EObject container = obj.eContainer();
+		statementHandler.getFlowNodeForElement(container).addInRef(statementHandler.getFlowNodeForElement(obj));
+		propagateBackAccess(container);
 	}
 
 	public StatementHandlerDataFlow getStatementHandler() {
