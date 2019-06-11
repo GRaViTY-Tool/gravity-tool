@@ -14,6 +14,7 @@
   </properties>
 	
   <modules>
+    <!--<module>build/org.gravity.updatesite</module>-->
     <module>build/org.gravity.features.eclipse</module>
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
@@ -21,11 +22,9 @@
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
     <module>build/org.gravity.license.epl</module>
-    <!--<module>build/org.gravity.updatesite</module>-->
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
     <module>implementation/org.gravity.goblin</module>
-    <module>implementation/org.gravity.goblin.tests</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
     <module>implementation/org.gravity.hulk.antipatterngraph</module>
@@ -36,15 +35,17 @@
     <module>implementation/org.gravity.metrics.sourcemeter</module>
     <module>implementation/org.gravity.modisco</module>
     <module>implementation/org.gravity.refactorings</module>
-    <module>implementation/org.gravity.refactorings.tests</module>
     <module>implementation/org.gravity.refactorings.ui</module>
     <module>implementation/org.gravity.security.analysis</module>
     <module>implementation/org.gravity.security.annotations</module>
     <module>implementation/org.gravity.tgg.modisco</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
-    <module>implementation/org.gravity.tgg.tests</module>
     <module>implementation/org.gravity.typegraph.basic</module>
+    <module>tests/org.gravity.goblin.tests</module>
+    <module>tests/org.gravity.refactorings.tests</module>
+    <module>tests/org.gravity.tgg.tests</module>
+    <module>tests/org.gravity.tgg.modisco.uml.tests</module>
   </modules>
 
   <build>
