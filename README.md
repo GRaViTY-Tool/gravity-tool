@@ -25,7 +25,7 @@ Requirements:
 1. Eclipse Modeling Tools (tested with Mars and Neon)  
 2. Eclipse plugins:   
  a) MoDisco Plugin (install from Eclipse Modeling Components)  
- b) eMoflon::TIE-GT  (>= 2.23, www.emoflon.org)  
+ b) eMoflon::IBEX  (www.emoflon.org)  
  d) xtext (should be installed with eMoflon)  
 
 Get the source code:
