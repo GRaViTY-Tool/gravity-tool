@@ -231,7 +231,7 @@ public class ExpressionHandlerDataFlow {
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 			if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
 				// TODO: Create read access edge
-				member.addInRef(statementHandler.getFlowNodeForElement(variablesContainer));
+				member.addInRef(statementHandler.getFlowNodeForElement(((FieldDeclaration) variablesContainer).getFragments().get(0)));
 				statementHandler.getMemberIn().add(member);
 			} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 				member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
@@ -244,6 +244,7 @@ public class ExpressionHandlerDataFlow {
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
 				// TODO Read access of a parameter only here? Or in general for each SingleVariableDecl?
+				member.addInRef(statementHandler.getFlowNodeForElement(singleVariableDeclaration)); // Add edge from decl to access
 			} else {
 				System.out.println("Called on local " + variable.getName()); // TODO Does this happen?
 			}
@@ -385,13 +386,11 @@ public class ExpressionHandlerDataFlow {
 		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
 		statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
 		for (SingleVariableDeclaration param : calledMethod.getParameters()) {
-			FlowNode paramNode = statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
-			for (SingleVariableAccess access : param.getUsageInVariableAccess()) {
-				paramNode.addOutRef(statementHandler.getFlowNodeForElement(access));
-			}
+			statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
+			propagateBackAccess(methodInvocation);
 		}
 		return member;
 	}
@@ -401,7 +400,7 @@ public class ExpressionHandlerDataFlow {
 	 * 
 	 * @param obj The variable access, from which the flow edges are propagated back.
 	 */
-	private void propagateBackAccess(EObject obj) {
+	public void propagateBackAccess(EObject obj) {
 		if ((obj instanceof Statement) || (obj instanceof VariableDeclarationFragment)) {
 			return;
 		}

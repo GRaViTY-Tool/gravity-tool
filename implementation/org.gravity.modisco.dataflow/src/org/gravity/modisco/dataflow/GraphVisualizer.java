@@ -66,6 +66,8 @@ public class GraphVisualizer {
 				if (node.getModelElement() instanceof MethodInvocation) {
 					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getAlreadySeen().get(((MethodInvocation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
+				// TODO: Flow from called method?
+				// TODO: "accessed" edge to field?
 				graphNodes.get(flowCont).addLink(graphNode);
 			}
 			// Set flow edges

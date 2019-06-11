@@ -1,7 +1,5 @@
 package org.gravity.modisco.dataflow;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
+import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -21,19 +20,6 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
-
-import guru.nidi.graphviz.attribute.Attributes;
-import guru.nidi.graphviz.attribute.Color;
-import guru.nidi.graphviz.attribute.ForGraph;
-import guru.nidi.graphviz.attribute.RankDir;
-import guru.nidi.graphviz.attribute.Size;
-import guru.nidi.graphviz.attribute.Style;
-import guru.nidi.graphviz.engine.Format;
-import guru.nidi.graphviz.engine.Graphviz;
-import guru.nidi.graphviz.model.Graph;
-import guru.nidi.graphviz.model.MutableGraph;
-
-import static guru.nidi.graphviz.model.Factory.*;
 
 /**
  * A preprocessor for calculating data flow edges
@@ -90,6 +76,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		List<StatementHandlerDataFlow> handlers = new ArrayList<>();
 		for (MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
 			StatementHandlerDataFlow methodProcessor = new StatementHandlerDataFlow(methodDef);
+			methodProcessor.getFlowNodeForElement(methodDef);
+			for (SingleVariableDeclaration param : methodDef.getParameters()) {
+				methodProcessor.getFlowNodeForElement(param);
+			}
 			methodProcessor.handle(methodDef.getBody());
 			handlers.add(methodProcessor);
 		}
@@ -97,6 +87,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
 				StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
 				Expression initializer = fragment.getInitializer();
+				fieldProcessor.getFlowNodeForElement(fragment);
 				fieldProcessor.getExpressionHandler().handle(initializer);
 				handlers.add(fieldProcessor);
 			}
