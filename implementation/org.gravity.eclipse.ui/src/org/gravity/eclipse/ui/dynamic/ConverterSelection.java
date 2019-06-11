@@ -31,14 +31,14 @@ public class ConverterSelection extends ContributionItem {
 
 	@Override
 	public void fill(Menu menu, int index) {
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
+		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 
-		IConfigurationElement[] configuration_elements = extension_registry
+		IConfigurationElement[] configuration_elements = extensionRegistry
 				.getConfigurationElementsFor("org.gravity.eclipse.converters"); //$NON-NLS-1$
 
-		IPGConverterFactory selected_converter;
+		IPGConverterFactory selectedConverter;
 		try {
-			selected_converter = GravityActivator.getDefault().getSelectedConverterFactory();
+			selectedConverter = GravityActivator.getDefault().getSelectedConverterFactory();
 		} catch (NoConverterRegisteredException e1) {
 			MessageDialog.openError(GravityUiActivator.getShell(), "No Converter installed",
 					"Please install a converter from the GRaViTY updatesite.");
@@ -56,7 +56,7 @@ public class ConverterSelection extends ContributionItem {
 				MenuItem item = new MenuItem(menu, SWT.RADIO, index);
 				item.setText(converter.getName());
 				item.setToolTipText(converter.getDescription());
-				if (selected_converter.getClass().equals(converter.getClass())) {
+				if (selectedConverter.getClass().equals(converter.getClass())) {
 					item.setSelection(true);
 				}
 				item.addSelectionListener(new SelectionAdapter() {

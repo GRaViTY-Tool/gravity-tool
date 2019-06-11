@@ -17,7 +17,15 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.hulk.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.hulk.ui.visualization.detection,
+Export-Package: org.eclipse.draw2d,
+ org.eclipse.draw2d.geometry,
+ org.eclipse.draw2d.graph,
+ org.eclipse.draw2d.images,
+ org.eclipse.draw2d.internal;x-internal:=true,
+ org.eclipse.draw2d.parts,
+ org.eclipse.draw2d.text,
+ org.eclipse.draw2d.widgets,
+ org.gravity.hulk.ui.visualization.detection,
  org.gravity.hulk.ui.visualization.handlers;x-friends:="org.gravity.hulk.ui",
  org.gravity.hulk.ui.visualization.information.providers,
  org.gravity.hulk.ui.visualization.listener,

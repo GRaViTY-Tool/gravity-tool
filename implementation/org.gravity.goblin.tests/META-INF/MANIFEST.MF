@@ -20,3 +20,5 @@ Require-Bundle: org.junit,
 Bundle-ClassPath: json-simple-1.1.1.jar,
  .
 Automatic-Module-Name: org.gravity.goblin.tests
+Export-Package: org.json.simple,
+ org.json.simple.parser

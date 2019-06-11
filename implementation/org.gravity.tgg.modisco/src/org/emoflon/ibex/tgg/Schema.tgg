@@ -1,0 +1,271 @@
+// Add imports here
+//#import "platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"
+#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
+#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
+#import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
+//#import "http://www.gravity.org/modisco"
+//#import "http://www.gravity.org/typegraph/basic"
+
+#schema org.gravity.tgg.modisco
+
+#source {
+	org.gravity.modisco.modisco
+	java.java
+ }
+
+#target {
+	org.gravity.typegraph.basic.basic
+}
+
+#correspondence {
+	MParameterListToTParameterList {
+		#src->MParameterList
+		#trg->TParameterList
+	}
+
+	BooleanLiteralToTBoolNode {
+		#src->BooleanLiteral
+		#trg->TBoolNode
+	}
+
+	NumberLiteralToTNumberNode {
+		#src->NumberLiteral
+		#trg->TNumberNode
+	}
+
+	StringLiteralToTTextNode {
+		#src->StringLiteral
+		#trg->TTextNode
+	}
+
+	ClassLiteralToClassNode {
+		#src->TypeLiteral
+		#trg->TClassNode
+	}
+
+	MFieldDefinitionToTFieldDefinition {
+		#src->MFieldDefinition
+		#trg->TFieldDefinition
+	}
+
+	MConstructorDefinitionToTParameterList {
+		#src->MConstructorDefinition
+		#trg->TParameterList
+	}
+
+	ClassDeclarationToTClass {
+		#src->ClassDeclaration
+		#trg->TClass
+	}
+
+	CompilationUnitToTypeGraph {
+		#src->CompilationUnit
+		#trg->TypeGraph
+	}
+
+	PackageToTPackage {
+		#src->Package
+		#trg->TPackage
+	}
+
+	ModelToTypeGraph {
+		#src->Model
+		#trg->TypeGraph
+	}
+
+	MMethodDefinitionToTMethodDefinition {
+		#src->MMethodDefinition
+		#trg->TMethodDefinition
+	}
+
+	VariableDeclarationFragmentToTFieldDefinition {
+		#src->VariableDeclarationFragment
+		#trg->TFieldDefinition
+	}
+
+	AbstractMethodInvocationToTAccess {
+		#src->AbstractMethodInvocation
+		#trg->TAccess
+	}
+
+	InterfaceDeclarationToTInterface {
+		#src->InterfaceDeclaration
+		#trg->TInterface
+	}
+
+	MDefinitionToTMember {
+		#src->MDefinition
+		#trg->TMember
+	}
+
+	FieldAccessToTAccess {
+		#src->FieldAccess
+		#trg->TAccess
+	}
+
+	PrimitiveTypeToTClass {
+		#src->PrimitiveType
+		#trg->TClass
+	}
+
+	AnonymousClassDeclarationToTClass {
+		#src->AnonymousClassDeclaration
+		#trg->TClass
+	}
+
+	MMethodNameToTMethod {
+		#src->MMethodName
+		#trg->TMethod
+	}
+
+	MMethodSignatureToTMethodSignature {
+		#src->MMethodSignature
+		#trg->TMethodSignature
+	}
+
+	MMethodSignatureToTParameterList {
+		#src->MMethodSignature
+		#trg->TParameterList
+	}
+
+	MEntryToTParameter {
+		#src->MEntry
+		#trg->TParameter
+	}
+
+	BlockToTMethodDefinition {
+		#src->Block
+		#trg->TMethodDefinition
+	}
+
+	MSignatureToTSignature {
+		#src->MSignature
+		#trg->TSignature
+	}
+
+	MFieldSignatureToTFieldSignature {
+		#src->MFieldSignature
+		#trg->TFieldSignature
+	}
+
+	ASTNodeToTAnnotatable {
+		#src->ASTNode
+		#trg->TAnnotatable
+	}
+
+	TypeToTAbstractType {
+		#src->Type
+		#trg->TAbstractType
+	}
+
+	MFieldNameToTField {
+		#src->MFieldName
+		#trg->TField
+	}
+
+	LineCommentToTTextAnnotation {
+		#src->LineComment
+		#trg->TTextAnnotation
+	}
+
+	MSignatureToTMethodSignature {
+		#src->MSignature
+		#trg->TMethodSignature
+	}
+
+	SingleVariableAccessToTAccess {
+		#src->SingleVariableAccess
+		#trg->TAccess
+	}
+
+	ConstructorDeclarationToTMethodDefinition {
+		#src->ConstructorDeclaration
+		#trg->TMethodDefinition
+	}
+
+	AnnotationToTAnnotation {
+		#src->MAnnotation
+		#trg->TAnnotation
+	}
+
+	ConstructorDeclarationToTMethod {
+		#src->ConstructorDeclaration
+		#trg->TMethod
+	}
+
+	ConstructorDeclarationToTMethodSignature {
+		#src->ConstructorDeclaration
+		#trg->TMethodSignature
+	}
+
+	TypeParameterToTClass {
+		#src->TypeParameter
+		#trg->TClass
+	}
+
+	UnresolvedTypeDeclarationToTClass {
+		#src->UnresolvedTypeDeclaration
+		#trg->TClass
+	}
+
+	ModifierToTClassEntity{
+		#src->Modifier
+		#trg->TClass
+	}
+
+	ModifierToTFieldEntity{
+		#src->Modifier
+		#trg->TFieldDefinition
+	}
+
+	ModifierToTMethodEntity{
+		#src->Modifier
+		#trg->TMethodDefinition
+	}
+
+	ModifierToAbstractType{
+		#src->Modifier
+		#trg->TAbstractType
+	}
+
+	ModifierToConstructorVisibility{
+		#src->Modifier
+		#trg->TConstructorDefinition
+	}
+
+	MModifierToTModifier{
+		#src->Modifier
+		#trg->TModifier
+	}
+
+	MSyntethicMethodToTSyntethicMethod{
+		#src->MSyntheticMethodDefinition
+		#trg->TSyntethicMethod
+	}
+
+	AnnotationMemberValuePairToTAnnotationValue {
+		#src->AnnotationMemberValuePair
+		#trg->TAnnotationValue
+	}
+
+	StaticTypeToAccessStaticType {
+		#src->Type
+		#trg->TCall
+	}
+}
+
+#attributeConditions {
+	#userDefined
+	defaultVisibility(param0:VisibilityKind, param1:TVisibility){
+		#sync: [B B], [B F], [F B], [F F]
+		#gen:
+	}
+
+	#userDefined
+	interfaceVisibility(param0:VisibilityKind, param1:TVisibility){
+		#sync: [B B], [B F], [F B], [F F]
+		#gen:
+	}
+}
+
+

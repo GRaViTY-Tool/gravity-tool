@@ -1,0 +1,69 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ParameterizedType2Classifier_InnerTypeInClass_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	nonParamType:AbstractTypeDeclaration
+	
+	nonParamPackage:Package {
+		-ownedElements->jContainer
+	}
+	
+	jContainer:TypeDeclaration {
+		-bodyDeclarations->nonParamType
+	}
+	
+	++parameterizedType:ParameterizedType {
+		++-type->typeTypeAccess
+	}
+	
+	++typeTypeAccess:TypeAccess {
+		++-type->nonParamType
+	}
+}
+
+#target {
+	umlPackage:Package {
+		++-packagedElement->parameterizedClassifier
+		-packagedElement->uContainer
+	}
+	
+	uContainer:Class {
+		-nestedClassifier->nonParamElement
+	}
+	
+	nonParamElement:Classifier {
+	}
+	
+	++parameterizedClassifier:Classifier {
+		
+	}
+}
+
+#correspondence {
+	jp2up : JavaPackage2UmlPackage {
+		#src->nonParamPackage
+		#trg->umlPackage
+	}
+	
+	ne2neNonParam: NamedElement2NamedElement {
+		#src->nonParamType
+		#trg->nonParamElement
+	}
+	
+	c2c: NamedElement2NamedElement {
+		#src->jContainer
+		#trg->uContainer
+	}
+	
+	++ne2ne: NamedElement2NamedElement {
+		#src->parameterizedType
+		#trg->parameterizedClassifier
+	}
+}
+
+#attributeConditions {
+	eq_string(parameterizedType.name, parameterizedClassifier.name)
+	parameterizedNameFitsNonParameterizedName(parameterizedClassifier.name, nonParamElement.name)
+}

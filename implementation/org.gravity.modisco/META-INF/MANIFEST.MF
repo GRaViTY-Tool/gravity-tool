@@ -13,6 +13,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Export-Package: org.gravity.modisco,
+ org.gravity.modisco.bugfixes,
  org.gravity.modisco.discovery,
  org.gravity.modisco.impl,
  org.gravity.modisco.processing,

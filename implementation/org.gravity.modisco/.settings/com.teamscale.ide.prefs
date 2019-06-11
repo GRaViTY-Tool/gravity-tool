@@ -1,0 +1,6 @@
+branch=DMebus_Thesis_DataFlow
+eclipse.preferences.version=1
+prefixMappings=<list>\n  <com.teamscale.ide.commons.model.PrefixMapping>\n    <projectId>gravity</projectId>\n    <localPrefix></localPrefix>\n    <teamscalePrefix>implementation/org.gravity.modisco</teamscalePrefix>\n  </com.teamscale.ide.commons.model.PrefixMapping>\n</list>
+teamscaleEnabled=true
+teamscaleProject=gravity
+teamscaleServer=Helena

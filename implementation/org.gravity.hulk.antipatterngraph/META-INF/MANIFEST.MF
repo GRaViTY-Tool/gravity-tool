@@ -1,25 +1,26 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.hulk.antipatterngraph;singleton:=true
-Export-Package: org.gravity.hulk.antipatterngraph.values.util,
- org.gravity.hulk.antipatterngraph.values.impl,
- org.gravity.hulk.antipatterngraph.codesmells.impl,
- org.gravity.hulk.antipatterngraph,
- org.gravity.hulk.antipatterngraph.metrics.impl,
- org.gravity.hulk.antipatterngraph.metrics,
- org.gravity.hulk.antipatterngraph.codesmells.util,
- org.gravity.hulk.antipatterngraph.metrics.util,
- org.gravity.hulk.antipatterngraph.antipattern.util,
+Export-Package: org.gravity.hulk.antipatterngraph,
  org.gravity.hulk.antipatterngraph.antipattern,
+ org.gravity.hulk.antipatterngraph.antipattern.impl,
+ org.gravity.hulk.antipatterngraph.antipattern.util,
  org.gravity.hulk.antipatterngraph.codesmells,
+ org.gravity.hulk.antipatterngraph.codesmells.impl,
+ org.gravity.hulk.antipatterngraph.codesmells.util,
+ org.gravity.hulk.antipatterngraph.impl,
+ org.gravity.hulk.antipatterngraph.metrics,
+ org.gravity.hulk.antipatterngraph.metrics.impl,
+ org.gravity.hulk.antipatterngraph.metrics.util,
  org.gravity.hulk.antipatterngraph.util,
  org.gravity.hulk.antipatterngraph.values,
- org.gravity.hulk.antipatterngraph.antipattern.impl,
- org.gravity.hulk.antipatterngraph.impl
+ org.gravity.hulk.antipatterngraph.values.impl,
+ org.gravity.hulk.antipatterngraph.values.util,
+ org.gravity.hulk.help
 Bundle-Name: org.gravity.hulk.antipatterngraph
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.gravity.typegraph.basic,
- org.eclipse.swt
+ org.eclipse.ui
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

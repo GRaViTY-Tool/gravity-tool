@@ -1,39 +1,44 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.tgg.modisco.uml;singleton:=true
-Export-Package: org.gravity.tgg.modisco.uml,
- org.gravity.tgg.modisco.uml.Rules,
- org.gravity.tgg.modisco.uml.Rules.impl,
- org.gravity.tgg.modisco.uml.Rules.util,
- org.gravity.tgg.modisco.uml.impl,
- org.gravity.tgg.modisco.uml.util,
- org.gravity.tgg.uml
+Export-Package: org.emoflon.ibex.tgg,
+ org.emoflon.ibex.tgg.csp.lib,
+ org.emoflon.ibex.tgg.operational.csp.constraints.custom.uml,
+ org.emoflon.ibex.tgg.operational.csp.constraints.factories.uml,
+ org.emoflon.ibex.tgg.rules.annotations,
+ org.emoflon.ibex.tgg.rules.compilationUnit,
+ org.emoflon.ibex.tgg.rules.fields,
+ org.emoflon.ibex.tgg.rules.methods,
+ org.emoflon.ibex.tgg.rules.modifiers,
+ org.emoflon.ibex.tgg.rules.packages,
+ org.emoflon.ibex.tgg.rules.types,
+ org.emoflon.ibex.tgg.rules.types.anon,
+ org.emoflon.ibex.tgg.rules.types.inner,
+ org.emoflon.ibex.tgg.rules.types.parameterized,
+ org.emoflon.ibex.tgg.rules.types.typeparameter,
+ org.emoflon.ibex.tgg.run.uml,
+ org.gravity.tgg.uml,
+ org.gravity.tgg.uml.ui
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Require-Bundle: org.moflon.core.utilities;visibility:=reexport,
- MocaTree,
- org.eclipse.core.runtime,
- SDMLanguage,
- org.moflon.tgg.language;visibility:=reexport,
- org.moflon.tgg.runtime;visibility:=reexport,
- org.eclipse.jdt.core;bundle-version="3.12.0",
+Require-Bundle: org.eclipse.jdt.core,
  org.eclipse.emf.compare,
  carisma.profile.umlsec,
  org.eclipse.modisco.java.discoverer,
  org.eclipse.modisco.infra.discovery.core,
  org.eclipse.core.resources,
- org.junit,
  org.gravity.eclipse,
  org.eclipse.gmt.modisco.java.generation,
  org.gravity.modisco,
  org.gravity.security.annotations,
  org.gravity.eclipse.ui,
- org.eclipse.core.commands,
  org.eclipse.ui.workbench,
- org.eclipse.jface
+ org.eclipse.jface,
+ org.emoflon.ibex.tgg.core.runtime;visibility:=reexport,
+ org.emoflon.ibex.tgg.runtime.democles
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: TU Darmstadt
+Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Automatic-Module-Name: org.gravity.tgg.modisco.uml
 Bundle-Activator: org.gravity.tgg.uml.GravityUmlActivator

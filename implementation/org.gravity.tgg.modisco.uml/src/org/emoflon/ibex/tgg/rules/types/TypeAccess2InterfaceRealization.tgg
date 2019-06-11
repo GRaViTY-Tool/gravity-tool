@@ -1,0 +1,47 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2InterfaceRealization #with org.gravity.tgg.modisco.uml
+
+#source {
+	classDec:ClassDeclaration {
+		++ -superInterfaces -> typeAcc
+	}
+
+	++typeAcc:TypeAccess {
+		++ -type -> superInterfaceDec
+	}
+
+	superInterfaceDec:InterfaceDeclaration
+}
+
+#target {
+	umlClass:BehavioredClassifier {
+		++ -interfaceRealization -> interfaceRealization
+	}
+
+	++interfaceRealization:InterfaceRealization {
+		++ -contract -> superInterface
+	}
+
+	superInterface:Interface
+}
+
+#correspondence {
+	cd2c :NamedElement2NamedElement {
+		#src->classDec
+		#trg->umlClass
+	}
+
+	++ ta2g :TypeAccess2InterfaceRealization {
+		#src->typeAcc
+		#trg->interfaceRealization
+	}
+
+	cd2c2 :NamedElement2NamedElement {
+		#src->superInterfaceDec
+		#trg->superInterface
+	}
+}
+
+

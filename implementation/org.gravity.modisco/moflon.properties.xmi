@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<org.moflon.core.propertycontainer:MoflonPropertiesContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.core.propertycontainer="platform:/plugin/org.moflon.core.propertycontainer/model/Propertycontainer.ecore" projectName="org.gravity.modisco">
-  <additionalDependencies value="platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"/>
-  <metaModelProject MetaModelProjectName=""/>
-  <replaceGenModel bool="false"/>
-  <sdmCodegeneratorHandlerId/>
-  <additionalUsedGenPackages value="platform:/plugin/org.eclipse.gmt.modisco.java/model/java.genmodel"/>
-</org.moflon.core.propertycontainer:MoflonPropertiesContainer>

@@ -16,3 +16,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: org.gravity.tgg.modisco.uml.tests
 Bundle-ActivationPolicy: lazy
+Export-Package: org.gravity.tgg.modisco.uml.tests

@@ -34,7 +34,7 @@ public class AstUtil {
 				builder.append('\n');
 				line = reader.readLine();
 			}
-			ASTParser parser = ASTParser.newParser(AST.JLS10);
+			ASTParser parser = ASTParser.newParser(AST.JLS11);
 			parser.setKind(ASTParser.K_COMPILATION_UNIT);
 			parser.setResolveBindings(true);
 			parser.setSource(builder.toString().toCharArray());

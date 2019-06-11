@@ -2,12 +2,9 @@ package org.gravity.tgg.modisco.uml.tests;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Collections;
 import java.util.LinkedList;
 

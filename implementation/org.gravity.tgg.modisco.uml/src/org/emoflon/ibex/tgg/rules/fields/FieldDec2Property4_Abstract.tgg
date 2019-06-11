@@ -1,0 +1,50 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldDec2Property4_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jOwnerType : AbstractTypeDeclaration{
+		++-bodyDeclarations->bodyDeclaration
+	}
+	
+	++bodyDeclaration : MFieldDefinition{
+		++-fragments->vdf
+	}
+	
+	++vdf : VariableDeclarationFragment{
+		
+	}
+
+}
+
+#target {
+	uOwnerType : NamedElement{
+	}
+	
+	++feature : Property{
+
+	}
+	
+}
+
+#correspondence {
+	jo2uo : NamedElement2NamedElement{
+		#src->jOwnerType
+		#trg->uOwnerType
+	}
+	
+	++ b2e : ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+	
+	++bd2ne : NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq_string(vdf.name,feature.name)
+}

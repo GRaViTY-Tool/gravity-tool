@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.gravity.typegraph.basic,
  org.gravity.tgg.modisco,
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.gravity.eclipse
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.gravity.security.annotations.AnnotationsActivato
  r

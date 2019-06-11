@@ -1,0 +1,38 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccess2ReturnParam #with org.gravity.tgg.modisco.uml
+
+#source {
+	method:MethodDeclaration{
+		++-returnType -> typeAccess
+	}
+
+	++typeAccess:TypeAccess
+}
+
+#target {
+	operation:Operation{
+		++-ownedParameter -> returnParam
+	}
+
+	++returnParam:Parameter
+}
+
+#correspondence {
+	m2o :NamedElement2NamedElement{
+		#src->method
+		#trg->operation
+	}
+
+	++ta2p:TypeAccess2Parameter {
+		#src->typeAccess
+		#trg->returnParam
+	}
+}
+
+#attributeConditions {
+	isReturn(returnParam.direction)
+}
+
+

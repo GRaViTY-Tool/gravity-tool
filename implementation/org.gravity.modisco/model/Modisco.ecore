@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"
-    nsPrefix="org.gravity.modisco">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="http://www.gravity.org/modisco" nsPrefix="org.gravity.modisco">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity"/>
   </eAnnotations>
@@ -17,12 +16,10 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractMethodInvocations"
-        upperBound="-1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodInvocations" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
-        upperBound="-1" eType="#//MethodInvocationStaticType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
@@ -80,6 +77,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="syntheticMethodDefinitions"
         upperBound="-1" eType="#//MSyntheticMethodDefinition" eOpposite="#//MSyntheticMethodDefinition/originalMethodDefinition"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mDefinitions" upperBound="-1"
         eType="#//MDefinition"/>
@@ -134,11 +134,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="MSyntheticMethodDefinition" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
         lowerBound="1" eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/syntheticMethodDefinitions"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationStaticType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methodInvoc" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
