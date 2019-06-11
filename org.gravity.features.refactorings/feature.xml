@@ -3,7 +3,7 @@
       id="org.gravity.features.refactorings"
       label="GRaViTY Refactorings"
       version="1.0.0.qualifier"
-      provider-name="TU Darmstadt - Real-Time Systems Lab"
+      provider-name="University of Koblenz-Landau and TU Darmstadt"
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0">
 
@@ -21,10 +21,6 @@ Darmstadt.
       [Enter License Description here.]
    </license>
 
-   <url>
-      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/updatesite/"/>
-   </url>
-
    <includes
          id="org.gravity.features.typegraph.basic"
          version="0.0.0"/>
@@ -32,23 +28,21 @@ Darmstadt.
    <requires>
       <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="MocaTree"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.moflon.core.utilities"/>
       <import plugin="org.gravity.hulk.antipatterngraph"/>
       <import plugin="org.eclipse.swt"/>
-      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.jdt.ui" version="3.11.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.jface.text" version="3.10.0" match="greaterOrEqual"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core.manipulation"/>
       <import plugin="org.eclipse.ltk.core.refactoring"/>
-      <import feature="org.moflon.core.feature" version="1.1.1.201803221329" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
    </requires>
 
    <plugin

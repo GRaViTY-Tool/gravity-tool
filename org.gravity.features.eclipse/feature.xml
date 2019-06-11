@@ -3,7 +3,7 @@
       id="org.gravity.features.eclipse"
       label="GRaViTY Eclipse"
       version="1.0.0.qualifier"
-      provider-name="TU Darmstadt - Real-Time Systems Lab"
+      provider-name="University of Koblenz-Landau and TU Darmstadt"
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0">
 
@@ -26,13 +26,17 @@ Darmstadt.
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.gravity.typegraph.basic"/>
+      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+      <import plugin="org.apache.log4j"/>
    </requires>
 
    <plugin

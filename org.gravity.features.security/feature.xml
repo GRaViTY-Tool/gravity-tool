@@ -26,6 +26,8 @@
       <import plugin="org.gravity.tgg.modisco"/>
       <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
       <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.gravity.eclipse"/>
    </requires>
 
    <plugin

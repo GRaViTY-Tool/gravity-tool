@@ -3,6 +3,7 @@
       id="org.gravity.features.typegraph.basic"
       label="GRaViTY Type Graph Basic"
       version="1.0.0.qualifier"
+      provider-name="University of Koblenz-Landau"
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0">
 
@@ -22,6 +23,7 @@ Darmstadt.
 
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.apache.log4j"/>
    </requires>
 
    <plugin

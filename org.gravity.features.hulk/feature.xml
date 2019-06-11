@@ -3,7 +3,7 @@
       id="org.gravity.features.hulk"
       label="GRaViTY Hulk Anti-Pattern Search"
       version="1.0.0.qualifier"
-      provider-name="TU Darmstadt - Real-Time Systems Lab"
+      provider-name="University of Koblenz-Landau and TU Darmstadt"
       license-feature="org.gravity.license.epl"
       license-feature-version="1.0.0">
 
@@ -20,10 +20,6 @@ Darmstadt.
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
-
-   <url>
-      <discovery label="eMoflon" url="https://emoflon.github.io/eclipse-plugin/beta/updatesite/"/>
-   </url>
 
    <includes
          id="org.gravity.features.typegraph.basic"
@@ -42,7 +38,6 @@ Darmstadt.
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.moflon.core.dfs"/>
       <import plugin="org.gravity.refactorings"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.gravity.hulk.refactoringgraph"/>
@@ -51,8 +46,9 @@ Darmstadt.
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.swt"/>
-      <import feature="org.moflon.core.feature" version="1.3.2.201808141328"/>
+      <import plugin="org.eclipse.emf.henshin.model"/>
+      <import plugin="org.eclipse.emf.henshin.interpreter"/>
+      <import plugin="org.apache.log4j"/>
    </requires>
 
    <plugin

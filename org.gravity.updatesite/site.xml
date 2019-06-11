@@ -44,5 +44,9 @@
          Security analysis related features
       </description>
    </category-def>
-   <category-def name="org.gravity.uml" label="UML"/>
+   <category-def name="org.gravity.uml" label="UML">
+      <description>
+         Synchronization of UML models and code
+      </description>
+   </category-def>
 </site>
