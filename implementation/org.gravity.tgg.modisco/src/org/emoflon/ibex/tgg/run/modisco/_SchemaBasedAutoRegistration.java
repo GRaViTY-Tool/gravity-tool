@@ -13,9 +13,9 @@ import org.emoflon.ibex.tgg.operational.strategies.OperationalStrategy;
 public class _SchemaBasedAutoRegistration {
 	
 	public static void register(OperationalStrategy strategy) throws IOException {
-		strategy.loadAndRegisterMetamodel("platform:/resource/org.gravity.modisco/model/Modisco.ecore");
-		strategy.loadAndRegisterMetamodel("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore");
 		strategy.loadAndRegisterMetamodel("http://www.eclipse.org/MoDisco/Java/0.2.incubation/java");
+		strategy.loadAndRegisterMetamodel("http://www.gravity.org/modisco");
+		strategy.loadAndRegisterMetamodel("http://www.gravity.org/typegraph/basic");
 	}
 	
 }

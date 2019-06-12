@@ -41,15 +41,18 @@ public class TGGApp extends SYNC {
 	@Override
 	protected void registerUserMetamodels() throws IOException {
 		registerPackage(JavaPackage.eINSTANCE);
+		
+//		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore", ModiscoPackage.eINSTANCE);
 		registerPackage(ModiscoPackage.eINSTANCE);
-		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore", ModiscoPackage.eINSTANCE);
-		rs.getResources().remove(ModiscoPackage.eINSTANCE.eResource());
+		
+//		rs.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
 		registerPackage(BasicPackage.eINSTANCE);
-		rs.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
-		rs.getResources().remove(BasicPackage.eINSTANCE.eResource());
+		
 		EPackage tggPackage = loadMetaModelPackage(MODISCO_ECORE);
+//		rs.getPackageRegistry().put("platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore", tggPackage);
 		registerPackage(tggPackage);
 		options.setCorrMetamodel(tggPackage);
+		EcoreUtil.resolveAll(rs);
 	}
 
 	/**

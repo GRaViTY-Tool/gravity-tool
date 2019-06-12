@@ -11,7 +11,8 @@ Require-Bundle: org.gravity.typegraph.basic,
  org.eclipse.jdt.core,
  org.gravity.modisco,
  org.eclipse.modisco.infra.discovery.core,
- org.eclipse.gmt.modisco.java.generation
+ org.eclipse.gmt.modisco.java.generation,
+ org.emoflon.ibex.tgg.core.language
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
@@ -22,7 +23,6 @@ Export-Package: org.emoflon.ibex.tgg,
  org.emoflon.ibex.tgg.operational.csp.constraints.custom.modisco,
  org.emoflon.ibex.tgg.operational.csp.constraints.factories.modisco,
  org.emoflon.ibex.tgg.rules,
- org.emoflon.ibex.tgg.run.debug,
  org.emoflon.ibex.tgg.run.modisco,
  org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.processing.modisco,

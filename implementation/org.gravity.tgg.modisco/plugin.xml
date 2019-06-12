@@ -8,7 +8,6 @@
   <extension point="org.gravity.eclipse.converters">
     <converter class="org.gravity.tgg.modisco.MoDiscoTGGConverterFactory"/>
   </extension>
-  <!--Registred extensions for TGG models-->
   <!--Registred extensions for pre- and post processing-->
   <extension point="org.gravity.tgg.modisco.ProcessingModiscoBwd">
     <processor priority="10" processor="org.gravity.tgg.modisco.processing.modisco.MoDiscoProcessorBwd"/>
