@@ -27,7 +27,7 @@ public class MiscHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(expressionHandler.handle(fragment.getInitializer()), member);
+		expressionHandler.handle(fragment.getInitializer());
 		return member;
 	}
 
@@ -37,7 +37,7 @@ public class MiscHandlerDataFlow {
 			return member;
 		}
 		for (BodyDeclaration body : declaration.getBodyDeclarations()) {
-			statementHandler.propagateBack(handle(body), member);
+			handle(body);
 		}
 		return member;
 	}
@@ -55,7 +55,7 @@ public class MiscHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(expressionHandler.handle(singleVariableDeclaration.getInitializer()), member);
+		expressionHandler.handle(singleVariableDeclaration.getInitializer());
 		return member;
 	}
 

@@ -187,7 +187,7 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
-			statementHandler.propagateBack(miscHandler.handle(fragment), member);
+			miscHandler.handle(fragment);
 		}
 		return member;
 	}
@@ -197,9 +197,9 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(arrayCreation.getInitializer()), member);
+		handle(arrayCreation.getInitializer());
 		for (Expression dimension : arrayCreation.getDimensions()) {
-			statementHandler.propagateBack(handle(dimension), member);
+			handle(dimension);
 		}
 		return member;
 	}
@@ -213,7 +213,7 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		for (Expression initializerExpression : arrayInitializer.getExpressions()) {
-			statementHandler.propagateBack(handle(initializerExpression), member);
+			handle(initializerExpression);
 		}
 		return member;
 	}
@@ -223,7 +223,7 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(singleVariableAccess.getQualifier()), member);
+		handle(singleVariableAccess.getQualifier());
 		propagateBackAccess(singleVariableAccess);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
 		if (variable instanceof VariableDeclarationFragment) {
@@ -259,10 +259,10 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(infixExpression.getLeftOperand()), member);
-		statementHandler.propagateBack(handle(infixExpression.getRightOperand()), member);
+		handle(infixExpression.getLeftOperand());
+		handle(infixExpression.getRightOperand());
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
-			statementHandler.propagateBack(handle(extendedOperand), member);
+			handle(extendedOperand);
 		}
 		return member;
 	}
@@ -272,9 +272,9 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(classInstanceCreation.getExpression()), member);
+		handle(classInstanceCreation.getExpression());
 		for (Expression argument : classInstanceCreation.getArguments()) {
-			statementHandler.propagateBack(handle(argument), member);
+			handle(argument);
 		}
 		return member;
 	}
@@ -315,7 +315,7 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		for (Expression argument : superMethodInvocation.getArguments()) {
-			statementHandler.propagateBack(handle(argument), member);
+			handle(argument);
 		}
 		return member;
 	}
@@ -336,9 +336,9 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(conditionalExpression.getExpression()), member);
-		statementHandler.propagateBack(handle(conditionalExpression.getThenExpression()), member);
-		statementHandler.propagateBack(handle(conditionalExpression.getElseExpression()), member);
+		handle(conditionalExpression.getExpression());
+		handle(conditionalExpression.getThenExpression());
+		handle(conditionalExpression.getElseExpression());
 		return member;
 	}
 
@@ -350,8 +350,8 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(arrayAccess.getArray()), member);
-		statementHandler.propagateBack(handle(arrayAccess.getIndex()), member);
+		handle(arrayAccess.getArray());
+		handle(arrayAccess.getIndex());
 		return member;
 	}
 	
@@ -364,8 +364,8 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(fieldAccess.getExpression()), member);
-		statementHandler.propagateBack(handle(fieldAccess.getField()), member);
+		handle(fieldAccess.getExpression());
+		handle(fieldAccess.getField());
 		statementHandler.getMemberIn().add(member);
 		return member;
 	}
@@ -375,11 +375,11 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		statementHandler.propagateBack(handle(methodInvocation.getExpression()), member);
+		handle(methodInvocation.getExpression());
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				statementHandler.propagateBack(handle(argument), member);
+				handle(argument);
 			}
 			statementHandler.getMemberOut().add(member);
 		}

@@ -199,8 +199,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(whileStatement.getBody()), member);
-		propagateBack(expressionHandler.handle(whileStatement.getExpression()), member);
+		handle(whileStatement.getBody());
+		expressionHandler.handle(whileStatement.getExpression());
 		return member;
 	}
 
@@ -213,7 +213,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			propagateBack(miscHandler.handle(fragment), member);
+			miscHandler.handle(fragment);
 		}
 		return member;
 	}
@@ -226,7 +226,7 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(miscHandler.handle(typeDeclarationStatement.getDeclaration()), member);
+		miscHandler.handle(typeDeclarationStatement.getDeclaration());
 		return member;
 	}
 
@@ -238,10 +238,10 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(tryStatement.getBody()), member);
-		propagateBack(handle(tryStatement.getFinally()), member);
+		handle(tryStatement.getBody());
+		handle(tryStatement.getFinally());
 		for (CatchClause clause : tryStatement.getCatchClauses()) {
-			propagateBack(handle(clause), member);
+			handle(clause);
 		}
 		return member;
 	}
@@ -254,7 +254,7 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(expressionHandler.handle(throwStatement.getExpression()), member);
+		expressionHandler.handle(throwStatement.getExpression());
 		return member;
 	}
 
@@ -266,8 +266,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(synchronizedStatement.getBody()), member);
-		propagateBack(expressionHandler.handle(synchronizedStatement.getExpression()), member);
+		handle(synchronizedStatement.getBody());
+		expressionHandler.handle(synchronizedStatement.getExpression());
 		return member;
 	}
 
@@ -280,9 +280,9 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		for (Statement statement : switchStatement.getStatements()) {
-			propagateBack(handle(statement), member);
+			handle(statement);
 		}
-		propagateBack(expressionHandler.handle(switchStatement.getExpression()), member);
+		expressionHandler.handle(switchStatement.getExpression());
 		return member;
 	}
 
@@ -301,9 +301,9 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(expressionHandler.handle(superConstructorInvocation.getExpression()), member);
+		expressionHandler.handle(superConstructorInvocation.getExpression());
 		for (Expression argument : superConstructorInvocation.getArguments()) {
-			propagateBack(expressionHandler.handle(argument), member);
+			expressionHandler.handle(argument);
 		}
 		return member;
 	}
@@ -317,7 +317,7 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(expressionHandler.handle(returnStatement.getExpression()), member);
+		expressionHandler.handle(returnStatement.getExpression());
 		return member;
 	}
 
@@ -336,9 +336,9 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(ifStatement.getElseStatement()), member);
-		propagateBack(handle(ifStatement.getThenStatement()), member);
-		propagateBack(expressionHandler.handle(ifStatement.getExpression()), member);
+		handle(ifStatement.getElseStatement());
+		handle(ifStatement.getThenStatement());
+		expressionHandler.handle(ifStatement.getExpression());
 		return member;
 	}
 
@@ -350,13 +350,13 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(forStatement.getBody()), member);
-		propagateBack(expressionHandler.handle(forStatement.getExpression()), member);
+		handle(forStatement.getBody());
+		expressionHandler.handle(forStatement.getExpression());
 		for (Expression initializer : forStatement.getInitializers()) {
-			propagateBack(expressionHandler.handle(initializer), member);
+			expressionHandler.handle(initializer);
 		}
 		for (Expression updater : forStatement.getUpdaters()) {
-			propagateBack(expressionHandler.handle(updater), member);
+			expressionHandler.handle(updater);
 		}
 		return member;
 	}
@@ -369,7 +369,7 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(expressionHandler.handle(expressionStatement.getExpression()), member);
+		expressionHandler.handle(expressionStatement.getExpression());
 		return member;
 	}
 
@@ -381,8 +381,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(enhancedForStatement.getBody()), member);
-		propagateBack(expressionHandler.handle(enhancedForStatement.getExpression()), member);
+		handle(enhancedForStatement.getBody());
+		expressionHandler.handle(enhancedForStatement.getExpression());
 		return member;
 	}
 
@@ -398,8 +398,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(doStatement.getBody()), member);
-		propagateBack(expressionHandler.handle(doStatement.getExpression()), member);
+		handle(doStatement.getBody());
+		expressionHandler.handle(doStatement.getExpression());
 		return member;
 	}
 
@@ -421,19 +421,11 @@ public class StatementHandlerDataFlow {
 		EList<Expression> arguments = constructorInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				propagateBack(expressionHandler.handle(argument), member);
+				expressionHandler.handle(argument);
 			}
 			memberOut.add(member);
 		}
 		memberIn.add(member);
-		/*
-		if(member.getAbstractMethodInvocations().contains(constructorInvocation)){
-			return true;
-		}
-		if (!member.getAbstractMethodInvocations().add(constructorInvocation)) {
-			return false;
-		}
-		*/
 		return member;
 	}
 
@@ -452,8 +444,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(handle(catchClause.getBody()), member);
-		propagateBack(miscHandler.handle(catchClause.getException()), member);
+		handle(catchClause.getBody());
+		miscHandler.handle(catchClause.getException());
 		return member;
 	}
 	
@@ -465,8 +457,8 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		propagateBack(expressionHandler.handle(assertStatement.getExpression()), member);
-		propagateBack(expressionHandler.handle(assertStatement.getMessage()), member);
+		expressionHandler.handle(assertStatement.getExpression());
+		expressionHandler.handle(assertStatement.getMessage());
 		return member;
 	}
 
@@ -479,7 +471,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		for (Statement statement : block.getStatements()) {
-			propagateBack(handle(statement), member);
+			handle(statement);
 		}
 		return member;
 	}
@@ -525,18 +517,4 @@ public class StatementHandlerDataFlow {
 		alreadySeen.put(element, member);
 		return member;
 	}
-	
-	/**
-	 * Adds containment references (e. g. a return expression is contained in a return statement) between parent and child FlowNodes.
-	 * 
-	 * @param child The child FlowNode, which is contained in the parent FlowNode.
-	 * @param parent The parent FlowNode, which contains the child FlowNode. 
-	 */
-	void propagateBack(FlowNode child, FlowNode parent) {
-		if (child != null) {
-			//parent.getInRef().add(child);
-			//child.getOutRef().add(parent);
-		}
-	}
-
 }
