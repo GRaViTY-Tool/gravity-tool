@@ -14,6 +14,9 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
+import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MGravityModel;
 
 import guru.nidi.graphviz.attribute.Color;
 import guru.nidi.graphviz.attribute.Label;
@@ -35,8 +38,6 @@ public class GraphVisualizer {
 	
 	private static final Logger LOGGER = Logger.getLogger(GraphVisualizer.class);
 	
-	private static int j = 0;
-	
 	/**
 	 * Draws the dot graphs for each StatementHandlerDataFlow instance in the given list.
 	 * The graphs are exported as PNG image files.
@@ -45,7 +46,19 @@ public class GraphVisualizer {
 	 */
 	public static void drawGraphs(List<StatementHandlerDataFlow> handlers) {
 		int i = 0;
+		String projectName = getModelName(handlers.get(0).getMemberDef().eContainer());
 		for (StatementHandlerDataFlow handler : handlers) {
+			EObject memberDef = handler.getMemberDef();
+			String className = "Unknown";
+			String memberName = ((NamedElement) memberDef).getName();
+			String memberType = "Misc";
+			if (memberDef instanceof MAbstractMethodDefinition) {
+				memberType = "Method";
+				className = ((NamedElement) memberDef.eContainer()).getName();
+			} else if (memberDef instanceof VariableDeclarationFragment) {
+				memberType = "Field";
+				className = ((NamedElement) memberDef.eContainer().eContainer()).getName();
+			}
 			MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM).graphAttrs().add("dpi", 72);
 			HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
@@ -79,13 +92,12 @@ public class GraphVisualizer {
 				}
 			}
 			try {
-				Graphviz.fromGraph(g).width(10000).render(Format.PNG).toFile(new File("graphs" + File.separator + "project" + j + File.separator + "graph" + i + ".png"));
+				Graphviz.fromGraph(g).width(10000).render(Format.PNG).toFile(new File("graphs" + File.separator + projectName + File.separator + "Class-" + className + "-" + memberType + "-" + memberName + ".png"));
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 			i++;
 		}
-		j++;
 	}
 
 	/**
@@ -103,5 +115,24 @@ public class GraphVisualizer {
 		}
 		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
+	}
+	
+	/**
+	 * Retrieves the model name (which equals the equivalent java project's name).
+	 * It does so by navigating back the containment hierarchy starting from the given EObject.
+	 * 
+	 * @param obj The starting point for navigating back the containment hierarchy.
+	 * @return The name of the model of which the given EObject is a part.
+	 */
+	private static String getModelName(EObject obj) {
+		EObject container = obj.eContainer();
+		if (container == null) {
+			return "ERROR";
+		}
+		if (container instanceof MGravityModel) {
+			return ((MGravityModel) container).getName();
+		} else {
+			return getModelName(container);
+		}
 	}
 }
