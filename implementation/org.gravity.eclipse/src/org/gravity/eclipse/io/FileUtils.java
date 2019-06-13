@@ -1,11 +1,11 @@
 package org.gravity.eclipse.io;
 
-import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
@@ -94,6 +94,24 @@ public class FileUtils {
 	}
 
 	/**
+	 * Reads the contents from the stream and returns them as single string
+	 *
+	 * @param stream
+	 * @return The contents of the stream as string
+	 * @throws IOException if an I/O error occurs.
+	 */
+	public static String getContentsAsString(InputStream stream) throws IOException {
+		StringBuilder noComments = new StringBuilder();
+		
+		int nextInt;
+		while ((nextInt = stream.read()) != -1) {
+			noComments.append((char) nextInt);
+		}
+		String contentString = noComments.toString();
+		return contentString;
+	}
+
+	/**
 	 * Reads the contents from the given file and returns them as single string
 	 * 
 	 * @param file The file containing contents
@@ -102,18 +120,9 @@ public class FileUtils {
 	 * @throws FileNotFoundException Iff the file doesn't exists
 	 */
 	public static String getContentsAsString(File file) throws IOException, FileNotFoundException {
-		String settingsContentString;
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-
-			StringBuilder contents = new StringBuilder();
-			String line;
-			while ((line = reader.readLine()) != null) {
-				contents.append(line);
-				contents.append('\n');
-			}
-			settingsContentString = contents.toString();
+		try (FileInputStream stream = new FileInputStream(file)) {
+			return getContentsAsString(stream);
 		}
-		return settingsContentString;
 	}
 
 	/**
@@ -135,9 +144,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * Recursively searches the folder for a file with the given name and returns the first match
+	 * Recursively searches the folder for a file with the given name and returns
+	 * the first match
 	 * 
-	 * @param folder The folder
+	 * @param folder   The folder
 	 * @param filename The file name
 	 * @return The match
 	 */
