@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_Ww8xkG2jEem0WdBjFndsOw">
-  <imports href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#/"/>
-  <imports href="../../../org.gravity.typegraph.basic/model/Basic.ecore#/"/>
+  <imports href="http://www.gravity.org/typegraph/antipatterngraph#/"/>
+  <imports href="http://www.gravity.org/typegraph/basic#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_XeAE0G2jEem0WdBjFndsOw" name="blob">
     <lhs xmi:id="_XeInsG2jEem0WdBjFndsOw" name="Lhs">
       <nodes xmi:id="_hUqA4G2jEem0WdBjFndsOw" incoming="_mqakoG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HControllerClassSmell"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells/HControllerClassSmell"/>
       </nodes>
       <nodes xmi:id="_iwMKwG2jEem0WdBjFndsOw" outgoing="_mVRbEG2jEem0WdBjFndsOw _mqakoG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_kjjl0G2jEem0WdBjFndsOw" incoming="_mVRbEG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//antipattern/HGodClassAntiPattern"/>
       </nodes>
       <edges xmi:id="_mVRbEG2jEem0WdBjFndsOw" source="_iwMKwG2jEem0WdBjFndsOw" target="_kjjl0G2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_mqakoG2jEem0WdBjFndsOw" source="_iwMKwG2jEem0WdBjFndsOw" target="_hUqA4G2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
     </lhs>
     <rhs xmi:id="_XhD_4G2jEem0WdBjFndsOw" name="Rhs">
       <nodes xmi:id="_efWAoG2jEem0WdBjFndsOw" incoming="_l5on8G2jEem0WdBjFndsOw" outgoing="_ojeYAG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HBlobAntiPattern"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//antipattern/HBlobAntiPattern"/>
       </nodes>
       <nodes xmi:id="_hUqA4W2jEem0WdBjFndsOw" incoming="_mqakoW2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HControllerClassSmell"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells/HControllerClassSmell"/>
       </nodes>
       <nodes xmi:id="_iwMKwW2jEem0WdBjFndsOw" outgoing="_l5on8G2jEem0WdBjFndsOw _mVRbEW2jEem0WdBjFndsOw _mqakoW2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_kjkM4G2jEem0WdBjFndsOw" incoming="_mVRbEW2jEem0WdBjFndsOw _ojeYAG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HGodClassAntiPattern"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//antipattern/HGodClassAntiPattern"/>
       </nodes>
       <edges xmi:id="_l5on8G2jEem0WdBjFndsOw" source="_iwMKwW2jEem0WdBjFndsOw" target="_efWAoG2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_mVRbEW2jEem0WdBjFndsOw" source="_iwMKwW2jEem0WdBjFndsOw" target="_kjkM4G2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_mqakoW2jEem0WdBjFndsOw" source="_iwMKwW2jEem0WdBjFndsOw" target="_hUqA4W2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_ojeYAG2jEem0WdBjFndsOw" source="_efWAoG2jEem0WdBjFndsOw" target="_kjkM4G2jEem0WdBjFndsOw">
-        <type href="../../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//antipattern/HBlobAntiPattern/hGodClassAntiPattern"/>
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//antipattern/HBlobAntiPattern/hGodClassAntiPattern"/>
       </edges>
     </rhs>
     <mappings xmi:id="_hUqA4m2jEem0WdBjFndsOw" origin="_hUqA4G2jEem0WdBjFndsOw" image="_hUqA4W2jEem0WdBjFndsOw"/>
