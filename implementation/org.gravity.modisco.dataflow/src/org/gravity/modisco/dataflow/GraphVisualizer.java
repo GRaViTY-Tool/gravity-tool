@@ -12,6 +12,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
@@ -77,7 +78,10 @@ public class GraphVisualizer {
 					continue;
 				}
 				if (node.getModelElement() instanceof MethodInvocation) {
-					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getAlreadySeen().get(((MethodInvocation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
+					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getFlowNodeForElement(((MethodInvocation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
+				}
+				if (node.getModelElement() instanceof ClassInstanceCreation) {
+					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getFlowNodeForElement(((ClassInstanceCreation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
 				// TODO: Flow from called method?
 				// TODO: "accessed" edge to field?
@@ -111,7 +115,10 @@ public class GraphVisualizer {
 		EObject modelElement = node.getModelElement();
 		String label = modelElement.eClass().getName();
 		if (modelElement instanceof NamedElement) {
-			label += " " + ((NamedElement) modelElement).getName();
+			String name = ((NamedElement) modelElement).getName();
+			if (name != null) {
+				label += " " + name;
+			}
 		}
 		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;

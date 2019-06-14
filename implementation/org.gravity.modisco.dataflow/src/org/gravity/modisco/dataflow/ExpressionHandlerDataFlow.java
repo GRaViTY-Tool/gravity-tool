@@ -224,14 +224,25 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		handle(singleVariableAccess.getQualifier());
-		propagateBackAccess(singleVariableAccess);
+		statementHandler.getFlowNodeForElement(singleVariableAccess.eContainer()).addInRef(member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 			if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
 				// TODO: Create read access edge
-				member.addInRef(statementHandler.getFlowNodeForElement(((FieldDeclaration) variablesContainer).getFragments().get(0)));
+				// TODO: For all fragments?
+				FlowNode varDeclFragNode = statementHandler.getFlowNodeForElement(((FieldDeclaration) variablesContainer).getFragments().get(0));
+				// TODO: Also check, if access is on left hand side
+				if (singleVariableAccess.eContainer() instanceof Assignment) {
+					member.addOutRef(varDeclFragNode);
+					if (((Assignment) singleVariableAccess.eContainer()).getOperator().getName().length() > 1) {
+						member.addInRef(varDeclFragNode);
+					}
+				} else {
+					member.addInRef(varDeclFragNode);
+				}
+				statementHandler.getFlowNodeForElement(variablesContainer);
 				statementHandler.getMemberIn().add(member);
 			} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 				member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
@@ -264,6 +275,7 @@ public class ExpressionHandlerDataFlow {
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
 			handle(extendedOperand);
 		}
+		statementHandler.getFlowNodeForElement(infixExpression.eContainer()).addInRef(member);
 		return member;
 	}
 
@@ -276,6 +288,7 @@ public class ExpressionHandlerDataFlow {
 		for (Expression argument : classInstanceCreation.getArguments()) {
 			handle(argument);
 		}
+		statementHandler.getFlowNodeForElement(classInstanceCreation.eContainer()).addInRef(member);
 		return member;
 	}
 
@@ -292,6 +305,7 @@ public class ExpressionHandlerDataFlow {
 		// TODO: Store access type
 		Expression leftHandSide = assignment.getLeftHandSide();
 		FlowNode leftHandFlow = handle(leftHandSide);
+		member.addOutRef(leftHandFlow);
 		if (leftHandFlow.getModelElement() instanceof FieldDeclaration) {
 			statementHandler.getMemberOut().add(member); // TODO FieldDeclaration correct type to check against?
 		}
@@ -336,9 +350,9 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		handle(conditionalExpression.getExpression());
-		handle(conditionalExpression.getThenExpression());
-		handle(conditionalExpression.getElseExpression());
+		member.addInRef(handle(conditionalExpression.getExpression()));
+		member.addInRef(handle(conditionalExpression.getThenExpression()));
+		member.addInRef(handle(conditionalExpression.getElseExpression()));
 		return member;
 	}
 
@@ -352,6 +366,7 @@ public class ExpressionHandlerDataFlow {
 		}
 		handle(arrayAccess.getArray());
 		handle(arrayAccess.getIndex());
+		statementHandler.getFlowNodeForElement(arrayAccess.eContainer()).addInRef(member);
 		return member;
 	}
 	
@@ -367,6 +382,7 @@ public class ExpressionHandlerDataFlow {
 		handle(fieldAccess.getExpression());
 		handle(fieldAccess.getField());
 		statementHandler.getMemberIn().add(member);
+		statementHandler.getFlowNodeForElement(fieldAccess.eContainer()).addInRef(member);
 		return member;
 	}
 
@@ -390,23 +406,9 @@ public class ExpressionHandlerDataFlow {
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(member);
-			propagateBackAccess(methodInvocation);
+			statementHandler.getFlowNodeForElement(methodInvocation.eContainer()).addInRef(member);
 		}
 		return member;
-	}
-	
-	/**
-	 * Inserts flow edges from a variable access to its surrounding expression(s) and/or statement.
-	 * 
-	 * @param obj The variable access, from which the flow edges are propagated back.
-	 */
-	public void propagateBackAccess(EObject obj) {
-		if ((obj instanceof Statement) || (obj instanceof VariableDeclarationFragment)) {
-			return;
-		}
-		EObject container = obj.eContainer();
-		statementHandler.getFlowNodeForElement(container).addInRef(statementHandler.getFlowNodeForElement(obj));
-		propagateBackAccess(container);
 	}
 
 	public StatementHandlerDataFlow getStatementHandler() {

@@ -200,7 +200,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(whileStatement.getBody());
-		expressionHandler.handle(whileStatement.getExpression());
+		member.addInRef(expressionHandler.handle(whileStatement.getExpression()));
 		return member;
 	}
 
@@ -282,7 +282,7 @@ public class StatementHandlerDataFlow {
 		for (Statement statement : switchStatement.getStatements()) {
 			handle(statement);
 		}
-		expressionHandler.handle(switchStatement.getExpression());
+		member.addInRef(expressionHandler.handle(switchStatement.getExpression()));
 		return member;
 	}
 
@@ -290,7 +290,12 @@ public class StatementHandlerDataFlow {
 		if (switchCase == null) {
 			return null; // assume nothing to do is success
 		}
-		return expressionHandler.handle(switchCase.getExpression());
+		FlowNode member = getFlowNodeForElement(switchCase);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		member.addInRef(expressionHandler.handle(switchCase.getExpression()));
+		return member;
 	}
 
 	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation) {
@@ -338,7 +343,7 @@ public class StatementHandlerDataFlow {
 		}
 		handle(ifStatement.getElseStatement());
 		handle(ifStatement.getThenStatement());
-		expressionHandler.handle(ifStatement.getExpression());
+		member.addInRef(expressionHandler.handle(ifStatement.getExpression()));
 		return member;
 	}
 
@@ -351,7 +356,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(forStatement.getBody());
-		expressionHandler.handle(forStatement.getExpression());
+		member.addInRef(expressionHandler.handle(forStatement.getExpression()));
 		for (Expression initializer : forStatement.getInitializers()) {
 			expressionHandler.handle(initializer);
 		}
@@ -382,7 +387,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(enhancedForStatement.getBody());
-		expressionHandler.handle(enhancedForStatement.getExpression());
+		member.addInRef(expressionHandler.handle(enhancedForStatement.getExpression()));
 		return member;
 	}
 
@@ -399,7 +404,7 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(doStatement.getBody());
-		expressionHandler.handle(doStatement.getExpression());
+		member.addInRef(expressionHandler.handle(doStatement.getExpression()));
 		return member;
 	}
 
@@ -426,6 +431,7 @@ public class StatementHandlerDataFlow {
 			memberOut.add(member);
 		}
 		memberIn.add(member);
+		member.addOutRef(getFlowNodeForElement(constructorInvocation.eContainer()));
 		return member;
 	}
 
@@ -457,7 +463,7 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		expressionHandler.handle(assertStatement.getExpression());
+		member.addInRef(expressionHandler.handle(assertStatement.getExpression()));
 		expressionHandler.handle(assertStatement.getMessage());
 		return member;
 	}

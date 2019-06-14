@@ -1,7 +1,7 @@
 package org.gravity.modisco.dataflow;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -17,12 +17,12 @@ public class FlowNode {
 	/**
 	 * Collection of all statements from which a data flow goes <b>into</b> this statement.
 	 */
-	private final List<FlowNode> inRef = new ArrayList<>();
+	private final Set<FlowNode> inRef = new HashSet<>();
 	
 	/**
 	 * Collection of all statements to which data flows <b>from</b> this statement.
 	 */
-	private final List<FlowNode> outRef = new ArrayList<>();
+	private final Set<FlowNode> outRef = new HashSet<>();
 	
 	/**
 	 * The model element, which corresponds to this statement node.
@@ -38,11 +38,11 @@ public class FlowNode {
 		modelElement = correspondingElement;
 	}
 
-	public List<FlowNode> getInRef() {
+	public Set<FlowNode> getInRef() {
 		return inRef;
 	}
 	
-	public List<FlowNode> getOutRef() {
+	public Set<FlowNode> getOutRef() {
 		return outRef;
 	}
 	

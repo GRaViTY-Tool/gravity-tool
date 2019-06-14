@@ -88,6 +88,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
 				Expression initializer = fragment.getInitializer();
 				fieldProcessor.getFlowNodeForElement(fragment);
+				fieldProcessor.getFlowNodeForElement(fieldDef);
 				fieldProcessor.getExpressionHandler().handle(initializer);
 				handlers.add(fieldProcessor);
 			}
