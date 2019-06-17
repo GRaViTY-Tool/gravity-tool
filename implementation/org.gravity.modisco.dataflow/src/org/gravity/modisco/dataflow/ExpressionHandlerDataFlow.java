@@ -97,8 +97,7 @@ public class ExpressionHandlerDataFlow {
 			ArrayInitializer arrayInitializer = (ArrayInitializer) expression;
 			return handle(arrayInitializer);
 		} else if (expression instanceof NumberLiteral) {
-			NumberLiteral numberLiteral = (NumberLiteral) expression;
-			return null;
+			return statementHandler.getFlowNodeForElement(expression);
 
 		} else if (expression instanceof SingleVariableAccess) {
 			SingleVariableAccess singleVariableAccess = (SingleVariableAccess) expression;
@@ -236,6 +235,26 @@ public class ExpressionHandlerDataFlow {
 				// TODO: Also check, if access is on left hand side
 				if (singleVariableAccess.eContainer() instanceof Assignment) {
 					member.addOutRef(varDeclFragNode);
+					/*switch (((Assignment) singleVariableAccess.eContainer()).getOperator()) {
+					case ASSIGN: member.addOutRef(varDeclFragNode);
+						break;
+					case BIT_AND_ASSIGN:
+					case BIT_OR_ASSIGN:
+					case BIT_XOR_ASSIGN:
+					case DIVIDE_ASSIGN:
+					case LEFT_SHIFT_ASSIGN:
+					case MINUS_ASSIGN:
+					case PLUS_ASSIGN:
+					case REMAINDER_ASSIGN:
+					case RIGHT_SHIFT_SIGNED_ASSIGN:
+					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+					case TIMES_ASSIGN: member.addInRef(varDeclFragNode);
+						break;
+					default:
+						LOGGER.log(Level.ERROR, "Unknown operator!");
+						break;
+					}*/
+				
 					if (((Assignment) singleVariableAccess.eContainer()).getOperator().getName().length() > 1) {
 						member.addInRef(varDeclFragNode);
 					}
@@ -395,7 +414,7 @@ public class ExpressionHandlerDataFlow {
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				handle(argument);
+				handle(argument); // TODO: Flow back to MI
 			}
 			statementHandler.getMemberOut().add(member);
 		}

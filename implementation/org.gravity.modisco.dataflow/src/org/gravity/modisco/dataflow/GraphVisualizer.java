@@ -5,6 +5,7 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -29,25 +30,28 @@ import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.model.MutableNode;
 
 /**
- * Functionality to draw dot graphs with intra-procedural data flow edges for method/field definitions of Java programs.
- * The drawn graphs are based on the program representations created by the data flow handlers.
+ * Functionality to draw dot graphs with intra-procedural data flow edges for
+ * method/field definitions of Java programs. The drawn graphs are based on the
+ * program representations created by the data flow handlers.
  * 
  * @author dmebus
  *
  */
 public class GraphVisualizer {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(GraphVisualizer.class);
-	
+
 	/**
-	 * Draws the dot graphs for each StatementHandlerDataFlow instance in the given list.
-	 * The graphs are exported as PNG image files.
+	 * Draws the dot graphs for each StatementHandlerDataFlow instance in the given
+	 * list. The graphs are exported as PNG image files.
 	 * 
-	 * @param handlers The list of StatementHandlerDataFlow instances, for which a graph is supposed to be drawn.
+	 * @param handlers The list of StatementHandlerDataFlow instances, for which a
+	 *                 graph is supposed to be drawn.
 	 */
 	public static void drawGraphs(List<StatementHandlerDataFlow> handlers) {
 		int i = 0;
-		String projectName = getModelName(handlers.get(0).getMemberDef().eContainer());
+		String projectName = ((MGravityModel) handlers.get(0).getMemberDef().eResource().getContents().get(0))
+				.getName();// TODO getModelName(handlers.get(0).getMemberDef().eContainer());
 		for (StatementHandlerDataFlow handler : handlers) {
 			EObject memberDef = handler.getMemberDef();
 			String className = "Unknown";
@@ -60,28 +64,39 @@ public class GraphVisualizer {
 				memberType = "Field";
 				className = ((NamedElement) memberDef.eContainer().eContainer()).getName();
 			}
-			MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM).graphAttrs().add("dpi", 72);
+			MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
+					.graphAttrs().add("dpi", 72);
 			HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
-			Collection<FlowNode> alreadySeenNodes = handler.getAlreadySeen().values();
+			Collection<FlowNode> alreadySeenNodes = new ArrayList<>(handler.getAlreadySeen().values());
 			for (FlowNode node : alreadySeenNodes) {
 				MutableNode graphNode = getDotNode(node);
 				g.add(graphNode);
 				graphNodes.put(node, graphNode);
 			}
-			// Set containment edges (+ links to nodes of called/accessed methods/fields) for all graph nodes
+			// Set containment edges (+ links to nodes of called/accessed methods/fields)
+			// for all graph nodes
 			for (FlowNode node : alreadySeenNodes) {
 				MutableNode graphNode = graphNodes.get(node);
 				EObject eContainer = node.getModelElement().eContainer();
 				FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
-				if(flowCont == null) {
+				if (flowCont == null) {
 					continue;
 				}
 				if (node.getModelElement() instanceof MethodInvocation) {
-					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getFlowNodeForElement(((MethodInvocation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
+					graphNode.addLink(graphNode
+							.linkTo(getDotNode(handler
+									.getFlowNodeForElement(((MethodInvocation) node.getModelElement()).getMethod()))
+											.add(Style.FILLED, Color.AZURE))
+							.with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
 				if (node.getModelElement() instanceof ClassInstanceCreation) {
-					graphNode.addLink(graphNode.linkTo(getDotNode(handler.getFlowNodeForElement(((ClassInstanceCreation) node.getModelElement()).getMethod())).add(Style.FILLED, Color.AZURE)).with(Style.DASHED, Label.of("calls"), Color.BLUE));
+					graphNode
+							.addLink(graphNode
+									.linkTo(getDotNode(handler.getFlowNodeForElement(
+											((ClassInstanceCreation) node.getModelElement()).getMethod()))
+													.add(Style.FILLED, Color.AZURE))
+									.with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
 				// TODO: Flow from called method?
 				// TODO: "accessed" edge to field?
@@ -96,7 +111,9 @@ public class GraphVisualizer {
 				}
 			}
 			try {
-				Graphviz.fromGraph(g).width(10000).render(Format.PNG).toFile(new File("graphs" + File.separator + projectName + File.separator + "Class-" + className + "-" + memberType + "-" + memberName + ".png"));
+				Graphviz.fromGraph(g).width(10000).render(Format.PNG)
+						.toFile(new File("graphs" + File.separator + projectName + File.separator + "Class-" + className
+								+ "-" + memberType + "-" + memberName + ".png"));
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
@@ -105,11 +122,13 @@ public class GraphVisualizer {
 	}
 
 	/**
-	 * Returns a (new) dot graph node for the given FlowNode. 
-	 * If the node already exists, the existing one is returned (by the mutNode constructor), so duplicates are prevented.
+	 * Returns a (new) dot graph node for the given FlowNode. If the node already
+	 * exists, the existing one is returned (by the mutNode constructor), so
+	 * duplicates are prevented.
 	 * 
 	 * @param node The FlowNode, for which a dot graph node is requested.
-	 * @return The requested dot graph node, which corresponds to the given FlowNode.
+	 * @return The requested dot graph node, which corresponds to the given
+	 *         FlowNode.
 	 */
 	private static MutableNode getDotNode(FlowNode node) {
 		EObject modelElement = node.getModelElement();
@@ -123,10 +142,11 @@ public class GraphVisualizer {
 		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
 	}
-	
+
 	/**
 	 * Retrieves the model name (which equals the equivalent java project's name).
-	 * It does so by navigating back the containment hierarchy starting from the given EObject.
+	 * It does so by navigating back the containment hierarchy starting from the
+	 * given EObject.
 	 * 
 	 * @param obj The starting point for navigating back the containment hierarchy.
 	 * @return The name of the model of which the given EObject is a part.
