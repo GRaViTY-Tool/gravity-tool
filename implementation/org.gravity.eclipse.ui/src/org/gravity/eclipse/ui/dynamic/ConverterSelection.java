@@ -11,13 +11,12 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.swt.widgets.Shell;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverterFactory;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.ui.GravityUiActivator;
 
 /**
  * This class fills an menu with all available modisco to pm converters and
@@ -32,20 +31,20 @@ public class ConverterSelection extends ContributionItem {
 
 	@Override
 	public void fill(Menu menu, int index) {
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
+		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 
-		IConfigurationElement[] configuration_elements = extension_registry
+		IConfigurationElement[] configuration_elements = extensionRegistry
 				.getConfigurationElementsFor("org.gravity.eclipse.converters"); //$NON-NLS-1$
 
-		IPGConverterFactory selected_converter;
+		IPGConverterFactory selectedConverter;
 		try {
-			selected_converter = GravityActivator.getDefault().getSelectedConverterFactory();
+			selectedConverter = GravityActivator.getDefault().getSelectedConverterFactory();
 		} catch (NoConverterRegisteredException e1) {
-			MessageDialog.openError(getShell(), "No Converter installed",
+			MessageDialog.openError(GravityUiActivator.getShell(), "No Converter installed",
 					"Please install a converter from the GRaViTY updatesite.");
 			return;
 		} catch (CoreException e) {
-			MessageDialog.openError(getShell(), "Critical ERROR",
+			MessageDialog.openError(GravityUiActivator.getShell(), "Critical ERROR",
 					"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 			return;
 		}
@@ -57,7 +56,7 @@ public class ConverterSelection extends ContributionItem {
 				MenuItem item = new MenuItem(menu, SWT.RADIO, index);
 				item.setText(converter.getName());
 				item.setToolTipText(converter.getDescription());
-				if (selected_converter.getClass().equals(converter.getClass())) {
+				if (selectedConverter.getClass().equals(converter.getClass())) {
 					item.setSelection(true);
 				}
 				item.addSelectionListener(new SelectionAdapter() {
@@ -71,18 +70,5 @@ public class ConverterSelection extends ContributionItem {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
-	}
-
-	/**
-	 * Gets the current active shell
-	 * 
-	 * @return the shell
-	 */
-	public static Shell getShell() {
-		Display display = Display.getCurrent();
-		// may be null if outside the UI thread
-		if (display == null)
-			display = Display.getDefault();
-		return display.getActiveShell();
 	}
 }

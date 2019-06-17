@@ -11,11 +11,13 @@ Require-Bundle: org.gravity.eclipse,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.gravity.hulk,
- org.moflon.core.dfs,
  org.gravity.hulk.antipatterngraph,
  org.gravity.hulk.annotations,
  org.gravity.typegraph.basic
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.hulk.ui
+Export-Package: org.gravity.hulk.ui,
+ org.gravity.hulk.ui.dialogs,
+ org.gravity.hulk.ui.handlers.scan
 Automatic-Module-Name: org.gravity.hulk.ui
+Bundle-ClassPath: .

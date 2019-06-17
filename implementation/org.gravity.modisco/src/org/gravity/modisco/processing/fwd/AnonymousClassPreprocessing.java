@@ -8,7 +8,6 @@ import java.util.Collection;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
@@ -29,9 +28,7 @@ public class AnonymousClassPreprocessing extends AbstractTypedModiscoProcessor<A
 	@Override
 	public boolean process(MGravityModel model, Collection<AnonymousClassDeclaration> elements,
 			IProgressMonitor monitor) {
-		EList<AnonymousClassDeclaration> anonymousClassDeclarations = model.getAnonymousClassDeclarations();
 		for (AnonymousClassDeclaration anonymous : elements) {
-			anonymousClassDeclarations.add((AnonymousClassDeclaration) anonymous);
 			EObject owner = anonymous.eContainer();
 			while (owner != null && !(owner instanceof AbstractTypeDeclaration)) {
 				owner = owner.eContainer();

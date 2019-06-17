@@ -1,5 +1,9 @@
 package org.gravity.modisco.discovery;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,12 +13,13 @@ import java.util.Set;
 import java.util.concurrent.CancellationException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -22,13 +27,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.modisco.infra.discovery.core.IDiscoverer;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.modisco.java.discoverer.AbstractDiscoverJavaModelFromProject;
 import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromJavaProject;
+import org.eclipse.modisco.java.discoverer.DiscoverJavaModelFromLibrary;
 import org.eclipse.modisco.java.discoverer.ElementsToAnalyze;
 import org.gravity.eclipse.exceptions.ProcessingException;
+import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.modisco.GravityMoDiscoActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
@@ -41,7 +52,7 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
  * @author speldszus
  *
  */
-public class GravityModiscoProjectDiscoverer {
+public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject> {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
 
@@ -49,10 +60,6 @@ public class GravityModiscoProjectDiscoverer {
 
 		public ResourceSet getRS() {
 			return getResourceSet();
-		}
-
-		public ElementsToAnalyze getElemetstoAnalyze() {
-			return getElementsToAnalyze();
 		}
 	}
 
@@ -63,6 +70,48 @@ public class GravityModiscoProjectDiscoverer {
 	 */
 	public GravityModiscoProjectDiscoverer() {
 		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
+	}
+
+	/**
+	 * Discovers a java library
+	 * 
+	 * @param jar             The java library
+	 * @param progressMonitor A progress monitor
+	 * @return The discovered MoDisco model with GRaViTY extensions
+	 * @throws DiscoveryException If the discovery fails
+	 */
+	public MGravityModel discoverMGravityModelFromLibrary(File jar, IProgressMonitor progressMonitor)
+			throws DiscoveryException {
+		IFile file;
+		try {
+			IJavaProject project = JavaProjectUtil.createJavaProject("_tmp" + System.currentTimeMillis(),
+					Collections.emptySet(), progressMonitor);
+
+			IPath location = new Path(jar.getAbsolutePath());
+			file = project.getProject().getFile(location.lastSegment());
+			file.createLink(location, IResource.REPLACE, progressMonitor);
+
+			IPath filePath = project.getProject().getWorkspace().getRoot().getLocation().append(file.getFullPath());
+
+			IClasspathEntry cpe = JavaCore.newLibraryEntry(filePath, null, null);
+			JavaProjectUtil.addToClassPath(project, Arrays.asList(cpe), progressMonitor);
+		} catch (IOException | DuplicateProjectNameException | CoreException e) {
+			throw new DiscoveryException(e);
+		}
+
+		IPackageFragmentRoot fragment = JavaCore.createJarPackageFragmentRootFrom(file);
+		DiscoverJavaModelFromLibrary discoverer = new DiscoverJavaModelFromLibrary();
+		if (!discoverer.isApplicableTo(fragment)) {
+			throw new DiscoveryException("The discoverer cannot be applied to the file: " + jar.getName());
+		}
+		discoverer.discoverElement(fragment, progressMonitor);
+		MGravityModel model = (MGravityModel) discoverer.getTargetModel().getContents().get(0);
+
+		if (model == null) {
+			throw new DiscoveryException("An error occurred at discovery, no model has been created!");
+		}
+		model.eResource().setURI(URI.createURI(jar.getName() + ".xmi"));
+		return processFwd(model, progressMonitor);
 	}
 
 	/**
@@ -134,37 +183,17 @@ public class GravityModiscoProjectDiscoverer {
 	 * 
 	 * @param model   The modisco model
 	 * @param monitor A progress monitor
+	 * @return The processed model, this is identical to the parameter model!
 	 * @throws DiscoveryException If a processor fails
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void processFwd(MGravityModel model, IProgressMonitor monitor) throws DiscoveryException {
+	private MGravityModel processFwd(MGravityModel model, IProgressMonitor monitor) throws DiscoveryException {
 		final Collection<IMoDiscoProcessor> sortedPreProcessors = GravityMoDiscoProcessorUtil
 				.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD);
 		LOGGER.log(Level.INFO, "Starting MoDisco preprocessing with " + sortedPreProcessors.size() + " pre-processors");
 
-		HashMap<Class<?>, List<? extends EObject>> elements = new HashMap<>();
-		for (IMoDiscoProcessor processor : sortedPreProcessors) {
-			// Collect model elements
-			if (processor instanceof AbstractTypedModiscoProcessor) {
-				Class<?> type = ((AbstractTypedModiscoProcessor<?>) processor).getSupportedType();
-				if (!elements.containsKey(type)) {
-					elements.put(type, new LinkedList<>());
-				}
-			}
-		}
-		if (elements.size() > 0) {
-			Set<Class<?>> keys = elements.keySet();
-			TreeIterator<EObject> iterator = model.eAllContents();
-			while (iterator.hasNext()) {
-				EObject next = iterator.next();
-				Class<? extends EObject> nextClass = next.getClass();
-				keys.parallelStream().forEach(c -> {
-					if (c.isAssignableFrom(nextClass)) {
-						((List<EObject>) elements.get(c)).add(next);
-					}
-				});
-			}
-		}
+		HashMap<Class<?>, List<? extends EObject>> elements = getElementsForProcessing(sortedPreProcessors, model);
+
 		for (IMoDiscoProcessor processor : sortedPreProcessors) {
 			// Execute processors
 			boolean success;
@@ -181,6 +210,39 @@ public class GravityModiscoProjectDiscoverer {
 						new ProcessingException("Preprocessing failed for " + processor.getClass().getName()));
 			}
 		}
+		return model;
+	}
+
+	/**
+	 * Get a mapping from element types to all instances for all preprocessors
+	 * 
+	 * @param sortedPreProcessors The list of preprocessors to be applied
+	 * @param model               The model on which they should be applied
+	 * @return A mapping between the types to preprocess and their instances
+	 */
+	private HashMap<Class<?>, List<? extends EObject>> getElementsForProcessing(
+			final Collection<IMoDiscoProcessor> sortedPreProcessors, EObject model) {
+		HashMap<Class<?>, List<? extends EObject>> elements = new HashMap<>();
+		for (IMoDiscoProcessor processor : sortedPreProcessors) {
+			// Collect model elements
+			if (processor instanceof AbstractTypedModiscoProcessor) {
+				Class<?> type = ((AbstractTypedModiscoProcessor<?>) processor).getSupportedType();
+				if (!elements.containsKey(type)) {
+					elements.put(type, new LinkedList<>());
+				}
+			}
+		}
+		if (elements.size() > 0) {
+			Set<Class<?>> keys = elements.keySet();
+			TreeIterator<EObject> iterator = model.eAllContents();
+			while (iterator.hasNext()) {
+				EObject next = iterator.next();
+				Class<? extends EObject> nextClass = next.getClass();
+				keys.parallelStream().filter(c -> c.isAssignableFrom(nextClass))
+						.forEach(c -> ((List<EObject>) elements.get(c)).add(next));
+			}
+		}
+		return elements;
 	}
 
 	private Model discoverProject(IJavaProject javaProject, Collection<IPath> libs, IProgressMonitor monitor)
@@ -245,5 +307,23 @@ public class GravityModiscoProjectDiscoverer {
 	 */
 	public ResourceSet getResourceSet() {
 		return this.discoverer.getRS();
+	}
+
+	@Override
+	public boolean isApplicableTo(IJavaProject source) {
+		return discoverer.isApplicableTo(source);
+	}
+
+	@Override
+	public void discoverElement(IJavaProject source, IProgressMonitor monitor) throws DiscoveryException {
+		MGravityModel model = discoverMGravityModelFromProject(source, monitor);
+		IProject project = source.getProject();
+		IFile file = project.getFile(project.getName() + ".xmi");
+		try {
+			model.eResource().save(new FileOutputStream(file.getLocation().toFile()), Collections.emptyMap());
+			file.refreshLocal(IResource.DEPTH_ZERO, monitor);
+		} catch (IOException | CoreException e) {
+			throw new DiscoveryException(e);
+		}
 	}
 }

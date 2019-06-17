@@ -286,10 +286,10 @@ public class ExpressionHandler {
 				return false;
 			}
 		}
-		if(member.getAbstractMethodInvocations().contains(superMethodInvocation)){
+		if(member.getMMethodInvocations().contains(superMethodInvocation)){
 			return true;
 		}
-		if (!member.getAbstractMethodInvocations().add(superMethodInvocation)) {
+		if (!member.getMMethodInvocations().add(superMethodInvocation)) {
 			return false;
 		}
 		return true;
@@ -360,10 +360,10 @@ public class ExpressionHandler {
 				return false;
 			}
 		}
-		if(member.getAbstractMethodInvocations().contains(methodInvocation)){
+		if(member.getMMethodInvocations().contains(methodInvocation)){
 			return true;
 		}
-		if (!member.getAbstractMethodInvocations().add(methodInvocation)) {
+		if (!member.getMMethodInvocations().add(methodInvocation)) {
 			return false;
 		}
 		return true;

@@ -1,0 +1,14 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+	++invocation:MMethodInvocation
+}
+
+#target {
+	++tAccess:TCall
+}

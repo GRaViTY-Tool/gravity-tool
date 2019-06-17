@@ -85,12 +85,18 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 			}
 		}
 		for (Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
-				.findAll(brokenTypeAccesses, model.eResource().getResourceSet()).entrySet()) {
-			ClassDeclaration replacedClass = (ClassDeclaration) entry.getKey();
-			Collection<Setting> references = entry.getValue();
-			for (Setting s : references) {
-				s.getEObject().eSet(s.getEStructuralFeature(), replacements.get(replacedClass));
+				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
+			EObject key = entry.getKey();
+			if (key instanceof ClassDeclaration) {
+				ClassDeclaration replacedClass = (ClassDeclaration) key;
+				Collection<Setting> references = entry.getValue();
+				for (Setting s : references) {
+					s.getEObject().eSet(s.getEStructuralFeature(), replacements.get(replacedClass));
+				}
+			} else {
+				LOGGER.log(Level.ERROR, "Cannot handle crossreference to: " + key);
 			}
+
 		}
 		replacements.clear();
 		EcoreUtil.deleteAll(brokenTypeAccesses, true);

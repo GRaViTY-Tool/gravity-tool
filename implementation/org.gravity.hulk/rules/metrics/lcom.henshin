@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_IWzQoG2tEem0WdBjFndsOw">
+  <imports href="http://www.gravity.org/typegraph/antipatterngraph#//metrics"/>
+  <imports href="http://www.gravity.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_IvLUYG2tEem0WdBjFndsOw" name="lcom">
+    <parameters xmi:id="_TcAywHGYEemwJ96Iri41IA" name="tClass" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
+    </parameters>
+    <lhs xmi:id="_IvZ94G2tEem0WdBjFndsOw" name="Lhs">
+      <nodes xmi:id="_NQh_sG2tEem0WdBjFndsOw" name="tClass">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_ODkcgHGaEemwJ96Iri41IA" value="false">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_IyUH8G2tEem0WdBjFndsOw" name="Rhs">
+      <nodes xmi:id="_NQh_sW2tEem0WdBjFndsOw" name="tClass" outgoing="_ddaeAG2tEem0WdBjFndsOw">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_ODp8EHGaEemwJ96Iri41IA" value="false">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/tLib"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_bE4gYG2tEem0WdBjFndsOw" incoming="_ddaeAG2tEem0WdBjFndsOw">
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HLCOM5Metric"/>
+        <attributes xmi:id="_H_Aj8HGYEemwJ96Iri41IA" value="Lcom5.calculate(tClass)">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//HMetric/value"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_ddaeAG2tEem0WdBjFndsOw" source="_NQh_sW2tEem0WdBjFndsOw" target="_bE4gYG2tEem0WdBjFndsOw">
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_NQh_sm2tEem0WdBjFndsOw" origin="_NQh_sG2tEem0WdBjFndsOw" image="_NQh_sW2tEem0WdBjFndsOw"/>
+    <javaImports>org.gravity.hulk.detection.Lcom5</javaImports>
+  </units>
+</henshin:Module>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="platform:/plugin/org.gravity.modisco/model/Modisco.ecore"
-    nsPrefix="org.gravity.modisco">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="http://www.gravity.org/modisco" nsPrefix="org.gravity.modisco">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity"/>
   </eAnnotations>
@@ -17,14 +16,14 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration #//MAbstractFlowElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractMethodInvocations"
-        upperBound="-1" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
         upperBound="-1" eType="#//MethodInvocationStaticType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlow" eType="#//MFlow"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodInvocations" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
@@ -157,8 +156,8 @@
         eType="#//MAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowTargets" upperBound="-1"
         eType="#//MAbstractFlowElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
-        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/ownedFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" eType="#//MAbstractFlowElement"
+        eOpposite="#//MAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
@@ -170,7 +169,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAccess" eSuperTypes="#//MAbstractFlowElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess #//MAccess"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodInvocation #//MAccess"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodInvocation #//MAccess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorInvocation #//MAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="MFieldFlow" eSuperTypes="#//MFlow"/>
   <eClassifiers xsi:type="ecore:EClass" name="MReturnFlow" eSuperTypes="#//MFlow"/>

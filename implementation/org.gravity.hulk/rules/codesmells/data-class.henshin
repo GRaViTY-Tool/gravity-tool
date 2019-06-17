@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_MZCosHWdEemNtovqbMg-bw">
+  <imports href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells"/>
+  <imports href="http://www.gravity.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity.org/typegraph/antipatterngraph#//metrics"/>
+  <units xsi:type="henshin:Rule" xmi:id="_PQbFgHWdEemNtovqbMg-bw" name="data-class">
+    <parameters xmi:id="_i2JLEHWhEemNtovqbMg-bw" name="getters" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HGetterMetric"/>
+    </parameters>
+    <parameters xmi:id="_oO4KUHWhEemNtovqbMg-bw" name="setters" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HSetterMetric"/>
+    </parameters>
+    <parameters xmi:id="_rFB4EHWhEemNtovqbMg-bw" name="methods" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+    </parameters>
+    <parameters xmi:id="_Qn6GwHWmEemNtovqbMg-bw" name="type" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/basic#//TClass"/>
+    </parameters>
+    <lhs xmi:id="_PQyR4HWdEemNtovqbMg-bw" name="Lhs">
+      <nodes xmi:id="_NABeQHWfEemNtovqbMg-bw" name="type" outgoing="_gUpJkHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_e5sOgHWfEemNtovqbMg-bw" name="methods" incoming="_gUpJkHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+      </nodes>
+      <edges xmi:id="_gUpJkHWfEemNtovqbMg-bw" source="_NABeQHWfEemNtovqbMg-bw" target="_e5sOgHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_PTb9QHWdEemNtovqbMg-bw" name="Rhs">
+      <nodes xmi:id="_NABeQXWfEemNtovqbMg-bw" name="type" outgoing="_gUpwoHWfEemNtovqbMg-bw _yTiYEHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_e5sOgXWfEemNtovqbMg-bw" name="methods" incoming="_gUpwoHWfEemNtovqbMg-bw" outgoing="_MMZMcHWgEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+      </nodes>
+      <nodes xmi:id="_vVvKMHWfEemNtovqbMg-bw" incoming="_yTiYEHWfEemNtovqbMg-bw _MMZMcHWgEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells/HDataClassSmell"/>
+      </nodes>
+      <edges xmi:id="_gUpwoHWfEemNtovqbMg-bw" source="_NABeQXWfEemNtovqbMg-bw" target="_e5sOgXWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_yTiYEHWfEemNtovqbMg-bw" source="_NABeQXWfEemNtovqbMg-bw" target="_vVvKMHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_MMZMcHWgEemNtovqbMg-bw" source="_e5sOgXWfEemNtovqbMg-bw" target="_vVvKMHWfEemNtovqbMg-bw">
+        <type href="http://www.gravity.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_LN-m8HWhEemNtovqbMg-bw" conditionText="( (Aggregations.COUNT(setters) + Aggregations.COUNT(getters)) / methods.value ) > 0.5"/>
+    <attributeConditions xmi:id="_5DeTcHWiEemNtovqbMg-bw" conditionText="type.tName != &quot;T&quot; || type.tName != &quot;Anonymous&quot;"/>
+    <mappings xmi:id="_NABeQnWfEemNtovqbMg-bw" origin="_NABeQHWfEemNtovqbMg-bw" image="_NABeQXWfEemNtovqbMg-bw"/>
+    <mappings xmi:id="_e5sOgnWfEemNtovqbMg-bw" origin="_e5sOgHWfEemNtovqbMg-bw" image="_e5sOgXWfEemNtovqbMg-bw"/>
+    <multiRules xmi:id="_PKejoXWfEemNtovqbMg-bw">
+      <parameters xmi:id="_zGQuIHWiEemNtovqbMg-bw" name="getters" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HGetterMetric"/>
+      </parameters>
+      <parameters xmi:id="_zGQuIXWiEemNtovqbMg-bw" name="setters" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HSetterMetric"/>
+      </parameters>
+      <parameters xmi:id="_zGQuInWiEemNtovqbMg-bw" name="methods" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+      </parameters>
+      <parameters xmi:id="_0_5T0HWjEemNtovqbMg-bw" name="value" kind="VAR">
+        <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </parameters>
+      <lhs xmi:id="_PKejonWfEemNtovqbMg-bw" name="Lhs">
+        <nodes xmi:id="_PKejpnWfEemNtovqbMg-bw" outgoing="_RoIR0HWfEemNtovqbMg-bw _kp3dYHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <nodes xmi:id="_PKd8kHWfEemNtovqbMg-bw" incoming="_RoIR0HWfEemNtovqbMg-bw" outgoing="_oQatUHWfEemNtovqbMg-bw _o_6QkHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
+        </nodes>
+        <nodes xmi:id="_kp2PQHWfEemNtovqbMg-bw" incoming="_kp3dYHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+        </nodes>
+        <nodes xmi:id="_kp0aEHWfEemNtovqbMg-bw" name="setters" incoming="_o_6QkHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HSetterMetric"/>
+        </nodes>
+        <nodes xmi:id="_mRb4IHWfEemNtovqbMg-bw" name="getters" incoming="_oQatUHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HGetterMetric"/>
+        </nodes>
+        <edges xmi:id="_RoIR0HWfEemNtovqbMg-bw" source="_PKejpnWfEemNtovqbMg-bw" target="_PKd8kHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_kp3dYHWfEemNtovqbMg-bw" source="_PKejpnWfEemNtovqbMg-bw" target="_kp2PQHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_oQatUHWfEemNtovqbMg-bw" source="_PKd8kHWfEemNtovqbMg-bw" target="_mRb4IHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_o_6QkHWfEemNtovqbMg-bw" source="_PKd8kHWfEemNtovqbMg-bw" target="_kp0aEHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_PKejo3WfEemNtovqbMg-bw" name="Rhs">
+        <nodes xmi:id="_PKejpHWfEemNtovqbMg-bw" outgoing="_RoI44HWfEemNtovqbMg-bw _kp1BInWfEemNtovqbMg-bw _yTi_InWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <nodes xmi:id="_PKd8kXWfEemNtovqbMg-bw" incoming="_RoI44HWfEemNtovqbMg-bw" outgoing="_oQatUXWfEemNtovqbMg-bw _o_6QkXWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TMethodDefinition"/>
+        </nodes>
+        <nodes xmi:id="_kp1BIHWfEemNtovqbMg-bw" incoming="_kp1BInWfEemNtovqbMg-bw" outgoing="_MMZMcXWgEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMethodsMetric"/>
+        </nodes>
+        <nodes xmi:id="_kp0aEXWfEemNtovqbMg-bw" name="setters" incoming="_o_6QkXWfEemNtovqbMg-bw" outgoing="__ypBgHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HSetterMetric"/>
+        </nodes>
+        <nodes xmi:id="_mRb4IXWfEemNtovqbMg-bw" name="getters" incoming="_oQatUXWfEemNtovqbMg-bw" outgoing="_59RJkHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HGetterMetric"/>
+        </nodes>
+        <nodes xmi:id="_yTi_IHWfEemNtovqbMg-bw" incoming="_yTi_InWfEemNtovqbMg-bw _59RJkHWfEemNtovqbMg-bw __ypBgHWfEemNtovqbMg-bw _MMZMcXWgEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells/HDataClassSmell"/>
+        </nodes>
+        <edges xmi:id="_RoI44HWfEemNtovqbMg-bw" source="_PKejpHWfEemNtovqbMg-bw" target="_PKd8kXWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_kp1BInWfEemNtovqbMg-bw" source="_PKejpHWfEemNtovqbMg-bw" target="_kp1BIHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_oQatUXWfEemNtovqbMg-bw" source="_PKd8kXWfEemNtovqbMg-bw" target="_mRb4IXWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_o_6QkXWfEemNtovqbMg-bw" source="_PKd8kXWfEemNtovqbMg-bw" target="_kp0aEXWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_yTi_InWfEemNtovqbMg-bw" source="_PKejpHWfEemNtovqbMg-bw" target="_yTi_IHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+        <edges xmi:id="_59RJkHWfEemNtovqbMg-bw" source="_mRb4IXWfEemNtovqbMg-bw" target="_yTi_IHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
+        </edges>
+        <edges xmi:id="__ypBgHWfEemNtovqbMg-bw" source="_kp0aEXWfEemNtovqbMg-bw" target="_yTi_IHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
+        </edges>
+        <edges xmi:id="_MMZMcXWgEemNtovqbMg-bw" source="_kp1BIHWfEemNtovqbMg-bw" target="_yTi_IHWfEemNtovqbMg-bw">
+          <type href="http://www.gravity.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_PKejqHWfEemNtovqbMg-bw" origin="_PKejpnWfEemNtovqbMg-bw" image="_PKejpHWfEemNtovqbMg-bw"/>
+      <mappings xmi:id="_PKejoHWfEemNtovqbMg-bw" origin="_PKd8kHWfEemNtovqbMg-bw" image="_PKd8kXWfEemNtovqbMg-bw"/>
+      <mappings xmi:id="_kp55oHWfEemNtovqbMg-bw" origin="_kp2PQHWfEemNtovqbMg-bw" image="_kp1BIHWfEemNtovqbMg-bw"/>
+      <mappings xmi:id="_kp0aEnWfEemNtovqbMg-bw" origin="_kp0aEHWfEemNtovqbMg-bw" image="_kp0aEXWfEemNtovqbMg-bw"/>
+      <mappings xmi:id="_mRb4InWfEemNtovqbMg-bw" origin="_mRb4IHWfEemNtovqbMg-bw" image="_mRb4IXWfEemNtovqbMg-bw"/>
+      <multiMappings xmi:id="_PKejpXWfEemNtovqbMg-bw" origin="_NABeQXWfEemNtovqbMg-bw" image="_PKejpHWfEemNtovqbMg-bw"/>
+      <multiMappings xmi:id="_PKejp3WfEemNtovqbMg-bw" origin="_NABeQHWfEemNtovqbMg-bw" image="_PKejpnWfEemNtovqbMg-bw"/>
+      <multiMappings xmi:id="_kp1BIXWfEemNtovqbMg-bw" origin="_e5sOgXWfEemNtovqbMg-bw" image="_kp1BIHWfEemNtovqbMg-bw"/>
+      <multiMappings xmi:id="_kp22UHWfEemNtovqbMg-bw" origin="_e5sOgHWfEemNtovqbMg-bw" image="_kp2PQHWfEemNtovqbMg-bw"/>
+      <multiMappings xmi:id="_yTi_IXWfEemNtovqbMg-bw" origin="_vVvKMHWfEemNtovqbMg-bw" image="_yTi_IHWfEemNtovqbMg-bw"/>
+    </multiRules>
+    <javaImports>org.eclipse.emf.henshin.interpreter.util.Aggregations</javaImports>
+  </units>
+</henshin:Module>

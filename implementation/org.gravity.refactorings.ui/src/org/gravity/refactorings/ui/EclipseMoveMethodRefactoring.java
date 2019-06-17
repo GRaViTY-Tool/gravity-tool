@@ -20,7 +20,7 @@ import org.eclipse.ltk.core.refactoring.RefactoringCore;
 import org.eclipse.ltk.core.refactoring.RefactoringDescriptor;
 import org.eclipse.ltk.core.refactoring.RefactoringStatus;
 import org.eclipse.ltk.core.refactoring.participants.MoveRefactoring;
-import org.gravity.eclipse.JavaHelper;
+import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 
@@ -46,7 +46,7 @@ public class EclipseMoveMethodRefactoring {
 	 */
 	public EclipseMoveMethodRefactoring(IJavaProject project) throws JavaModelException {
 		this.project = project;
-		this.types = JavaHelper.getTypesForProject(project);
+		this.types = JavaASTUtil.getTypesForProject(project);
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class EclipseMoveMethodRefactoring {
 
 		IType src = types.get(tSourceClass.getFullyQualifiedName());
 		IType trg = types.get(tTargetClass.getFullyQualifiedName());
-		IMethod iMethod = JavaHelper.getIMethod(tMethod, src);
+		IMethod iMethod = JavaASTUtil.getIMethod(tMethod, src);
 		
 		LOGGER.log(Level.INFO, iMethod.toString());
 		return move(project, trg,iMethod, monitor);

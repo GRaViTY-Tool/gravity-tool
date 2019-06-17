@@ -34,6 +34,7 @@ public abstract class ProjectImport {
 	 * Creates a new importer for the given project
 	 * 
 	 * @param rootDir The root directory from which the project should be imported
+	 * @param rootFile The configuration file of the build system
 	 * @param ignoreBuildErrors If the project should be imported even if build errors occur
 	 * @return The importer
 	 * @throws ImportException
@@ -41,7 +42,7 @@ public abstract class ProjectImport {
 	public ProjectImport(File rootDir, String rootFile, boolean ignoreBuildErrors) throws ImportException {
 		this.ignoreBuildErrors = ignoreBuildErrors;
 		this.rootDir = getRoot(rootDir, rootFile);
-		this.rootFile = new File(getRootDir(), "build.gradle");
+		this.rootFile = new File(getRootDir(), rootFile);
 	}
 	
 	/**

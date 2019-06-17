@@ -1,0 +1,37 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule PackageToPGPackage
+#with org.gravity.tgg.modisco
+
+#source {
+mModel : Model {
+}
+++ mPackage : Package {
+	++  -model -> mModel
+}
+}
+
+#target {
+typeGraph : TypeGraph {
+	++  -packages -> tPackage
+}
+++ tPackage : TPackage {
+	++  -typeGraph -> typeGraph
+}
+}
+
+#correspondence {
+mModelToTypeGraph : ModelToTypeGraph {
+	#src->mModel
+	#trg->typeGraph
+}
+++ mPackageToTPackage : PackageToTPackage {
+	#src->mPackage
+	#trg->tPackage
+}
+}
+
+#attributeConditions {
+	eq_string(mPackage.name, tPackage.tName)
+}

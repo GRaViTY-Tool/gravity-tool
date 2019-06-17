@@ -1,0 +1,31 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationTypeNested
+#extends NestedTypes
+#with org.gravity.tgg.modisco
+
+#source {
+	++eNestedType:AnnotationTypeDeclaration
+}
+
+#target {
+	typeGraph:TypeGraph {
+		++  -tAnnotationTypes -> tNestedType
+	}
+
+	++tNestedType:TAnnotationType
+}
+
+#correspondence {
+	++ eNestedTypeToTNestedType :TypeToTAbstractType {
+		#src->eNestedType
+		#trg->tNestedType
+	}
+}
+
+#attributeConditions {
+	eq_string(eNestedType.name, tNestedType.tName)
+}
+
+

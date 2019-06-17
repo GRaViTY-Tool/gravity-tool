@@ -7,6 +7,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime,
  org.gravity.modisco,
  org.eclipse.ui,
- org.gravity.tgg.modisco
+ org.gravity.tgg.modisco,
+ org.apache.log4j
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.tgg.modisco.ui
+Export-Package: org.gravity.tgg.modisco.ui.selection

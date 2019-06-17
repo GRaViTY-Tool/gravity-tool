@@ -1,0 +1,29 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationMemberValueStringArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
+
+#source {
+	++mValue:StringLiteral
+}
+
+#target {
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
+	}
+
+	++tValue:TTextNode
+}
+
+#correspondence {
+	++ mTypeToTType :StringLiteralToTTextNode {
+		#src->mValue
+		#trg->tValue
+	}
+}
+
+#attributeConditions {
+	eq_string(mValue.escapedValue, tValue.tText)
+}
+
+

@@ -1,0 +1,34 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule MethodDec2Operation_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	classDec:AbstractTypeDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
+	}
+
+	++bodyDeclaration:MMethodDefinition
+}
+
+#target {
+	++feature:Operation
+}
+
+#correspondence {
+	++ b2e :ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+
+	++ bd2ne :NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq_string(bodyDeclaration.name, feature.name)
+}
+
+

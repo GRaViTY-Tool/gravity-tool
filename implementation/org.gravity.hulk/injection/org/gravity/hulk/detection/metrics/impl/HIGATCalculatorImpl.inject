@@ -10,6 +10,7 @@ import  org.gravity.typegraph.basic.TClass;
 import  org.gravity.typegraph.basic.TInterface;
 import  org.gravity.typegraph.basic.TMember;
 import  org.gravity.typegraph.basic.TMethodDefinition;
+import  org.gravity.typegraph.basic.TModifier;
 import  org.gravity.typegraph.basic.TPackage;
 import  org.gravity.typegraph.basic.TVisibility;
 import  org.gravity.typegraph.basic.TypeGraph;
@@ -18,6 +19,8 @@ import  org.gravity.typegraph.basic.annotations.TAnnotatable;
 partial class HIGATCalculatorImpl {
 
 @members<--
+	private static final Logger LOGGER =  Logger.getLogger(HIGATCalculatorImpl.class);
+
 
 	private TVisibility process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
 		int start = methods.size();
@@ -29,7 +32,7 @@ partial class HIGATCalculatorImpl {
 			}
 		}
 		for (TAbstractType tType : tPackage.getOwnedTypes()) {
-			if (!tType.isTLib()) {
+			if (tType.isDeclared()) {
 				TVisibility tVisibility = process(apg, tType, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
@@ -43,9 +46,13 @@ partial class HIGATCalculatorImpl {
 	}
 
 	private TVisibility process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
-
-		TVisibility tCurVis = tType.getTModifier().getTVisibility();
 		TVisibility tMinVis = TVisibility.TPUBLIC;
+		TModifier tModifier = tType.getTModifier();
+		if(tModifier == null) {
+			LOGGER.log(Level.ERROR, "Type has no modifier: "+tType.getFullyQualifiedName());
+			return tMinVis;
+		}
+		TVisibility tCurVis = tModifier.getTVisibility();
 
 		if (!(tType instanceof TInterface) || tType.getOuterType() != null) {
 

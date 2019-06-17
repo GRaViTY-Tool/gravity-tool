@@ -46,8 +46,7 @@ import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
-import org.gravity.modisco.MethodInvocationStaticType;
-import org.gravity.modisco.ModiscoFactory;
+import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
@@ -97,7 +96,10 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 * @return if the method has been processed sucessfully
 	 */
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
-		for (AbstractMethodInvocation methodInvoc : method.getAbstractMethodInvocations()) {
+		for (AbstractMethodInvocation methodInvoc : method.getMMethodInvocations()) {
+			if(!(methodInvoc instanceof MMethodInvocation)) {
+				continue;
+			}
 			Type type;
 			try {
 				type = getStaticType(methodInvoc, method);
@@ -108,10 +110,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			if (type == null && !methodInvoc.getMethod().isProxy()) {
 				return false;
 			}
-			MethodInvocationStaticType invocStatic = ModiscoFactory.eINSTANCE.createMethodInvocationStaticType();
-			invocStatic.setType(type);
-			invocStatic.setMethodInvoc(methodInvoc);
-			method.getInvocationStaticTypes().add(invocStatic);
+			((MMethodInvocation) methodInvoc).setMStaticType(type);
 		}
 		return true;
 	}

@@ -8,10 +8,4 @@
   <extension point="org.eclipse.ui.commands">
     <command defaultHandler="org.gravity.tgg.uml.ui.UmlParseHandler" id="org.gravity.uml.command.trafo" name="Generate UML Model"/>
   </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.tgg.modisco.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.tgg.modisco.uml.Rules.RulesPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules"/>
-  </extension>
 </plugin>

@@ -19,5 +19,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ltk.core.refactoring
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.gravity.refactorings.ui
+Export-Package: org.gravity.refactorings.ui,
+ org.gravity.refactorings.ui.dialogs,
+ org.gravity.refactorings.ui.handler
 Automatic-Module-Name: org.gravity.refactorings.ui

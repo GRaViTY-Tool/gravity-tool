@@ -1,0 +1,40 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule TypesVisibility #with org.gravity.tgg.modisco
+
+#source {
+	mType:AbstractTypeDeclaration {
+		++ -modifier -> mModifier
+	}
+
+	++mModifier:Modifier
+}
+
+#target {
+	tType:TAbstractType {
+		++ -tModifier -> tModifier
+	}
+
+	++tModifier:TModifier
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mModifierToTModifier:MModifierToTModifier{
+		#src->mModifier
+		#trg->tModifier
+	}
+}
+
+#attributeConditions {
+	defaultVisibility(mModifier.visibility, tModifier.tVisibility)
+
+	eq_boolean(mModifier.static, tModifier.isStatic)
+}
+
+

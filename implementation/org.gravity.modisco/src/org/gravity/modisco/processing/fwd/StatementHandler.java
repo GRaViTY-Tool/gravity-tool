@@ -373,10 +373,10 @@ public class StatementHandler {
 				return false;
 			}
 		}
-		if(member.getAbstractMethodInvocations().contains(constructorInvocation)){
+		if(member.getMMethodInvocations().contains(constructorInvocation)){
 			return true;
 		}
-		if (!member.getAbstractMethodInvocations().add(constructorInvocation)) {
+		if (!member.getMMethodInvocations().add(constructorInvocation)) {
 			return false;
 		}
 		return true;

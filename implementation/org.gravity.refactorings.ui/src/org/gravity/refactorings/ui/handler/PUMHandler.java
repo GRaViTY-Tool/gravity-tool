@@ -25,6 +25,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
+import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.impl.PullUpMethodImpl;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
@@ -73,10 +74,10 @@ public class PUMHandler extends RefactoringHandler {
 						}
 						TypeGraph pg = converter.getPG();
 
-						TClass tChild = getTClass(childType, pg);
+						TClass tChild = JavaASTUtil.getTClass(childType, pg);
 						if (tChild != null) {
 							TClass tParent = tChild.getParentClass();
-							TMethodSignature tSignature = getMethodSignature(pg, method);
+							TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
 
 							PullUpMethodImpl refactoring = new PullUpMethodImpl();
 							refactoring.setPg(pg);

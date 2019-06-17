@@ -114,7 +114,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		Type mType = def.getAbstractTypeDeclaration();
 		if (mType instanceof MClass) {
 			EList<Type> deps = ((MClass) mType).getDependencies();
-			for (AbstractMethodInvocation methodInvocation : def.getAbstractMethodInvocations()) {
+			for (AbstractMethodInvocation methodInvocation : def.getMMethodInvocations()) {
 				AbstractMethodDeclaration method = methodInvocation.getMethod();
 				if (method == null) {
 					LOGGER.log(Level.WARN, "Empty method invocation in method \"" + def.getName() + "\" of type \""

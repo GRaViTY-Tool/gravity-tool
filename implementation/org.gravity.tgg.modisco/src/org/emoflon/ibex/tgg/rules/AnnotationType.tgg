@@ -1,0 +1,31 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule AnnotationType
+#extends Types
+#with org.gravity.tgg.modisco
+
+#source {
+	++mType:AnnotationTypeDeclaration
+}
+
+#target {
+	++tType:TAnnotationType
+
+	pg:TypeGraph {
+		++  -tAnnotationTypes -> tType
+	}
+}
+
+#correspondence {
+	++ mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq_string(mType.name, tType.tName)
+}
+
+

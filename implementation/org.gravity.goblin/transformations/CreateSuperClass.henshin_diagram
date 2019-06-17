@@ -124,6 +124,10 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_zB0mFbWfEeiHxtaJPOhGLA" type="5002"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_zB0mFrWfEeiHxtaJPOhGLA" type="5003"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_zB0mF7WfEeiHxtaJPOhGLA" type="7002">
+          <children xmi:type="notation:Node" xmi:id="_eMVmwEzCEemYW_KBiJlMkw" type="3002">
+            <element xmi:type="henshin:Attribute" href="CreateSuperClass.henshin#_eL_ogEzCEemYW_KBiJlMkw"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_eMVmwUzCEemYW_KBiJlMkw"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_zB0mGLWfEeiHxtaJPOhGLA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_zB0mGbWfEeiHxtaJPOhGLA"/>
         </children>

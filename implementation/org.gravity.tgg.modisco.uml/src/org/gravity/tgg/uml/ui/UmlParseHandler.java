@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.handler.AbstractTransformationHandler;
 
 /**
@@ -21,9 +23,10 @@ public class UmlParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = getSelection(event);
+		List<Object> selection = GravityUiActivator.getSelection(event);
 
-		Job job = new UmlCreatorJob(selection);
+		boolean addUmlSec = MessageDialog.openQuestion(GravityUiActivator.getShell(), "UMLsec", "Should the UMLsec profile be added to the project?");
+		Job job = new UmlCreatorJob(selection, addUmlSec);
 		job.setUser(true);
 		job.schedule();
 

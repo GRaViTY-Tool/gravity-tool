@@ -1,24 +1,22 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.typegraph.basic;singleton:=true
 Export-Package: org.gravity.typegraph.basic,
+ org.gravity.typegraph.basic.annotations,
+ org.gravity.typegraph.basic.annotations.impl,
+ org.gravity.typegraph.basic.annotations.util,
  org.gravity.typegraph.basic.compare,
  org.gravity.typegraph.basic.containers,
  org.gravity.typegraph.basic.containers.impl,
  org.gravity.typegraph.basic.containers.util,
+ org.gravity.typegraph.basic.exceptions,
  org.gravity.typegraph.basic.impl,
- org.gravity.typegraph.basic.util,
- org.gravity.typegraph.basic.annotations.util,
- org.gravity.typegraph.basic.annotations.impl,
- org.gravity.typegraph.basic.annotations
+ org.gravity.typegraph.basic.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.ecore.xmi,
- org.apache.log4j,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.apache.log4j
 Bundle-ManifestVersion: 2
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

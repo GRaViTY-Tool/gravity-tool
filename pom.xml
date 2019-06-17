@@ -8,23 +8,23 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>1.2.0</tycho-version>
+    <tycho-version>1.4.0</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 	
   <modules>
+    <!--<module>build/org.gravity.updatesite</module>-->
     <module>build/org.gravity.features.eclipse</module>
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
     <module>build/org.gravity.features.refactorings</module>
     <module>build/org.gravity.features.typegraph.basic</module>
+    <module>build/org.gravity.features.uml</module>
     <module>build/org.gravity.license.epl</module>
-    <!--<module>build/org.gravity.updatesite</module>-->
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
     <module>implementation/org.gravity.goblin</module>
-    <module>implementation/org.gravity.goblin.tests</module>
     <module>implementation/org.gravity.hulk</module>
     <module>implementation/org.gravity.hulk.annotations</module>
     <module>implementation/org.gravity.hulk.antipatterngraph</module>
@@ -35,16 +35,19 @@
     <module>implementation/org.gravity.metrics.sourcemeter</module>
     <module>implementation/org.gravity.modisco</module>
     <module>implementation/org.gravity.refactorings</module>
-    <module>implementation/org.gravity.refactorings.tests</module>
     <module>implementation/org.gravity.refactorings.ui</module>
     <module>implementation/org.gravity.security.analysis</module>
     <module>implementation/org.gravity.security.annotations</module>
     <module>implementation/org.gravity.tgg.modisco</module>
-    <module>implementation/org.gravity.tgg.modisco.tests</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>
+    <module>tests/org.gravity.goblin.tests</module>
+    <module>tests/org.gravity.refactorings.tests</module>
+    <module>tests/org.gravity.tgg.tests</module>
+    <module>tests/org.gravity.tgg.modisco.uml.tests</module>
   </modules>
+
   <build>
     <plugins>
       <plugin>
@@ -52,39 +55,8 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
-        <version>${tycho-version}</version>
         <configuration>
-          <environments>
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86</arch>
-            </environment>
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86</arch>
-            </environment>
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
-              <arch>x86_64</arch>
-            </environment>
-          </environments>
+          <pomDependencies>consider</pomDependencies>
         </configuration>
       </plugin>
       <plugin>
@@ -97,26 +69,52 @@
       </plugin>
     </plugins>
   </build>
+
   <repositories>
     <repository>
-      <id>Eclipse Photon</id>
+      <id>Eclipse Latest</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/photon</url>
+      <url>http://download.eclipse.org/releases/latest</url>
+    </repository>
+    <repository>
+      <id>MoDisco</id>
+      <layout>p2</layout>
+      <url>https://download.eclipse.org/modeling/mdt/modisco/updates/release/</url>
+    </repository>
+    <repository>
+      <id>EMF</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/modeling/emf/updates/releases/</url>
+    </repository>
+    <repository>
+      <id>EMF Facets</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/facet/updates/release/</url>
+    </repository>
+    <repository>
+      <id>Papyrus</id>
+      <layout>p2</layout>
+      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-03/</url>
+    </repository>
+    <repository>
+      <id>eMoflon IBEX</id>
+      <layout>p2</layout>
+      <url>https://emoflon.org/emoflon-ibex-democles-updatesite/snapshot/updatesite/</url>
     </repository>
     <repository>
       <id>eMoflon Core</id>
       <layout>p2</layout>
-      <url>https://raw.githubusercontent.com/eMoflon/emoflon-core-updatesite/master/stable/updatesite/</url>
+      <url>https://emoflon.org/emoflon-core-updatesite/snapshot/updatesite/</url>
     </repository>
     <repository>
-      <id>eMoflon</id>
+      <id>eMoflon Democles</id>
       <layout>p2</layout>
-      <url>http://emoflon.org/eclipse-plugin/beta/updatesite/</url>
+      <url>http://gervarro.org/democles/integration-0.5.0/</url>
     </repository>
     <repository>
-      <id>GRaViTY</id>
+      <id>eMoflon Democles Advanced</id>
       <layout>p2</layout>
-      <url>https://gravity-tool.github.io/updatesite</url>
+      <url>http://gervarro.org/democles/advanced/integration-0.5.0/</url>
     </repository>
     <repository>
       <id>Henshin</id>
@@ -136,13 +134,12 @@
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>
-      <!--<url>http://files.idi.ntnu.no/publish/plantuml/repository/</url>-->
       <url>http://hallvard.github.io/plantuml</url>
     </repository>
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>https://rgse.uni-koblenz.de/carisma/beta-updatesite/</url>
+      <url>http://rgse.uni-koblenz.de/carisma/beta-updatesite/</url>
     </repository>
   </repositories>
 </project>
