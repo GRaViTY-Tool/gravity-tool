@@ -1,9 +1,15 @@
 package org.gravity.modisco.dataflow;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.net.SyslogAppender;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
@@ -24,6 +30,7 @@ import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.InstanceofExpression;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
+import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.NullLiteral;
 import org.eclipse.gmt.modisco.java.NumberLiteral;
 import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
@@ -43,6 +50,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
+import org.gravity.modisco.MMethodDefinition;
 
 public class ExpressionHandlerDataFlow {
 
@@ -72,7 +80,7 @@ public class ExpressionHandlerDataFlow {
 			return handle(arrayLengthAccess.getArray());
 		} else if (expression instanceof FieldAccess) {
 			FieldAccess fieldAccess = (FieldAccess) expression;
-			handle(fieldAccess);
+			return handle(fieldAccess);
 		} else if (expression instanceof MethodInvocation) {
 			MethodInvocation methodInvocation = (MethodInvocation) expression;
 			return handle(methodInvocation);
@@ -223,63 +231,91 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		handle(singleVariableAccess.getQualifier());
-		statementHandler.getFlowNodeForElement(singleVariableAccess.eContainer()).addInRef(member);
 		VariableDeclaration variable = singleVariableAccess.getVariable();
-		if (variable instanceof VariableDeclarationFragment) {
-			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
-			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
-			if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
-				// TODO: Create read access edge
-				// TODO: For all fragments?
-				FlowNode varDeclFragNode = statementHandler.getFlowNodeForElement(((FieldDeclaration) variablesContainer).getFragments().get(0));
-				// TODO: Also check, if access is on left hand side
-				if (singleVariableAccess.eContainer() instanceof Assignment) {
-					member.addOutRef(varDeclFragNode);
-					/*switch (((Assignment) singleVariableAccess.eContainer()).getOperator()) {
-					case ASSIGN: member.addOutRef(varDeclFragNode);
-						break;
-					case BIT_AND_ASSIGN:
-					case BIT_OR_ASSIGN:
-					case BIT_XOR_ASSIGN:
-					case DIVIDE_ASSIGN:
-					case LEFT_SHIFT_ASSIGN:
-					case MINUS_ASSIGN:
-					case PLUS_ASSIGN:
-					case REMAINDER_ASSIGN:
-					case RIGHT_SHIFT_SIGNED_ASSIGN:
-					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
-					case TIMES_ASSIGN: member.addInRef(varDeclFragNode);
-						break;
-					default:
-						LOGGER.log(Level.ERROR, "Unknown operator!");
-						break;
-					}*/
-				
-					if (((Assignment) singleVariableAccess.eContainer()).getOperator().getName().length() > 1) {
-						member.addInRef(varDeclFragNode);
+		FlowNode varDeclNode = statementHandler.getFlowNodeForElement(variable);
+		// Assignment flows
+		boolean isAssignment = false;
+		EObject currentContainer = singleVariableAccess.eContainer();
+		LinkedList<EObject> seenContainers = new LinkedList<>();
+		seenContainers.add(currentContainer);
+		while (!(currentContainer instanceof Statement) && (currentContainer != null)) {
+			if (currentContainer instanceof Assignment) {
+				isAssignment = true;
+				Assignment assignment = (Assignment) currentContainer;
+				switch (assignment.getOperator()) {
+				case ASSIGN:
+					EStructuralFeature assignmentSide;
+					int queueSize = seenContainers.size();
+					if (queueSize > 1) {
+						assignmentSide = seenContainers.get(queueSize - 2).eContainingFeature();	
+					} else {
+						assignmentSide = singleVariableAccess.eContainingFeature();
 					}
-				} else {
-					member.addInRef(varDeclFragNode);
+					if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
+						member.addOutRef(varDeclNode);
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+					} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
+						member.addInRef(varDeclNode);
+						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+					} else {
+						LOGGER.log(Level.INFO, "Unknown assignment side");
+					}
+					break;
+				case BIT_AND_ASSIGN:
+				case BIT_OR_ASSIGN:
+				case BIT_XOR_ASSIGN:
+				case DIVIDE_ASSIGN:
+				case LEFT_SHIFT_ASSIGN:
+				case MINUS_ASSIGN:
+				case PLUS_ASSIGN:
+				case REMAINDER_ASSIGN:
+				case RIGHT_SHIFT_SIGNED_ASSIGN:
+				case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+				case TIMES_ASSIGN:
+					member.addInRef(varDeclNode); 
+					member.addOutRef(varDeclNode);
+					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+					propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+				break;
+				default:
+					LOGGER.log(Level.INFO, "Unknown operator used in assignment");
+					break;
 				}
-				statementHandler.getFlowNodeForElement(variablesContainer);
-				statementHandler.getMemberIn().add(member);
-			} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
-				member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
-			} else if (variablesContainer instanceof VariableDeclarationExpression) {
-				System.out.println("This happens as well...?"); // TODO Does this happen?
-			} else {
-				LOGGER.log(Level.INFO, "Unknown VariableDeclarationFragment expression");
+				break;
 			}
-		} else if (variable instanceof SingleVariableDeclaration) { 
-			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
-			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
-				// TODO Read access of a parameter only here? Or in general for each SingleVariableDecl?
-				member.addInRef(statementHandler.getFlowNodeForElement(singleVariableDeclaration)); // Add edge from decl to access
+			currentContainer = currentContainer.eContainer();
+			seenContainers.add(currentContainer);
+		}
+		if (!isAssignment) {
+			statementHandler.getFlowNodeForElement(singleVariableAccess.eContainer()).addInRef(member);
+			// Field and (non-param) local flows
+			if (variable instanceof VariableDeclarationFragment) {
+				VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
+				AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
+				if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
+					// TODO: Create read access edge
+					statementHandler.getFlowNodeForElement(variablesContainer);
+					statementHandler.getMemberIn().add(member);
+					member.addInRef(varDeclNode);
+				} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
+					member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
+				} else if (variablesContainer instanceof VariableDeclarationExpression) {
+					System.out.println("This happens as well...?"); // TODO Does this happen?
+				} else {
+					LOGGER.log(Level.INFO, "Unknown VariableDeclarationFragment expression");
+				}
+				// Parameter flows
+			} else if (variable instanceof SingleVariableDeclaration) { 
+				SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
+				if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
+					// TODO Read access of a parameter only here? Or in general for each SingleVariableDecl?
+					member.addInRef(statementHandler.getFlowNodeForElement(singleVariableDeclaration)); // Add edge from decl to access
+				} else {
+					System.out.println("Called on local " + variable.getName()); // TODO Does this happen?
+				}
 			} else {
-				System.out.println("Called on local " + variable.getName()); // TODO Does this happen?
+				LOGGER.log(Level.INFO, "Unknown SingleVariableAccess expression");
 			}
-		} else {
-			LOGGER.log(Level.INFO, "Unknown SingleVariableAccess expression");
 		}
 		return member;
 	}
@@ -315,7 +351,6 @@ public class ExpressionHandlerDataFlow {
 		return handle(instanceofExpression.getLeftOperand());
 	}
 
-	// TODO
 	private FlowNode handle(Assignment assignment) {
 		FlowNode member = statementHandler.getFlowNodeForElement(assignment);
 		if (member.isFromAlreadySeen()) {
@@ -324,17 +359,12 @@ public class ExpressionHandlerDataFlow {
 		// TODO: Store access type
 		Expression leftHandSide = assignment.getLeftHandSide();
 		FlowNode leftHandFlow = handle(leftHandSide);
-		member.addOutRef(leftHandFlow);
-		if (leftHandFlow.getModelElement() instanceof FieldDeclaration) {
+		if (leftHandFlow.getModelElement() instanceof FieldDeclaration) { // TODO Fix!
 			statementHandler.getMemberOut().add(member); // TODO FieldDeclaration correct type to check against?
 		}
 		Expression rightHandSide = assignment.getRightHandSide();
-		FlowNode rightHandFlow = handle(rightHandSide);
-		if (rightHandFlow != null) {
-			for (FlowNode in : handle(rightHandSide).getInRef()) {
-				member.getInRef().add(in);
-			}
-		}
+		handle(rightHandSide);
+		statementHandler.getFlowNodeForElement(assignment.eContainer()).addInRef(member);
 		return member;
 	}
 
@@ -401,7 +431,6 @@ public class ExpressionHandlerDataFlow {
 		handle(fieldAccess.getExpression());
 		handle(fieldAccess.getField());
 		statementHandler.getMemberIn().add(member);
-		statementHandler.getFlowNodeForElement(fieldAccess.eContainer()).addInRef(member);
 		return member;
 	}
 
@@ -429,7 +458,25 @@ public class ExpressionHandlerDataFlow {
 		}
 		return member;
 	}
-
+	
+	private void propagateBackReadAccess(LinkedList<EObject> seenContainers, FlowNode currentNode) {
+		if (!seenContainers.isEmpty()) {
+			EObject currentObj = seenContainers.poll();
+			FlowNode newNode = statementHandler.getFlowNodeForElement(currentObj);
+			currentNode.addOutRef(newNode);
+			propagateBackReadAccess(seenContainers, newNode);
+		}
+	}
+	
+	private void propagateBackWriteAccess(LinkedList<EObject> seenContainers, FlowNode currentNode) {
+		if (!seenContainers.isEmpty()) {
+			EObject currentObj = seenContainers.poll();
+			FlowNode newNode = statementHandler.getFlowNodeForElement(currentObj);
+			currentNode.addInRef(newNode);
+			propagateBackWriteAccess(seenContainers, newNode);
+		}
+	}
+	
 	public StatementHandlerDataFlow getStatementHandler() {
 		return statementHandler;
 	}

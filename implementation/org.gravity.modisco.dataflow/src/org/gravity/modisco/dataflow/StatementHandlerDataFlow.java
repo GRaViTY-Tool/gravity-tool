@@ -323,7 +323,6 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		expressionHandler.handle(returnStatement.getExpression());
-		// TODO: Flow back from expr 
 		return member;
 	}
 

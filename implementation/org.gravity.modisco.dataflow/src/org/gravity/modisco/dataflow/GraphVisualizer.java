@@ -13,6 +13,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
@@ -138,6 +139,9 @@ public class GraphVisualizer {
 			if (name != null) {
 				label += " " + name;
 			}
+		}
+		if (modelElement instanceof Assignment) {
+			label += " " + ((Assignment) modelElement).getOperator().toString();
 		}
 		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
