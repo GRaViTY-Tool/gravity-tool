@@ -105,7 +105,8 @@ public class ExpressionHandlerDataFlow {
 			ArrayInitializer arrayInitializer = (ArrayInitializer) expression;
 			return handle(arrayInitializer);
 		} else if (expression instanceof NumberLiteral) {
-			return statementHandler.getFlowNodeForElement(expression);
+			NumberLiteral numberLiteral = (NumberLiteral) expression;
+			return handle(numberLiteral);
 
 		} else if (expression instanceof SingleVariableAccess) {
 			SingleVariableAccess singleVariableAccess = (SingleVariableAccess) expression;
@@ -224,6 +225,19 @@ public class ExpressionHandlerDataFlow {
 		}
 		return member;
 	}
+	
+	private FlowNode handle(NumberLiteral numberLiteral) {
+		if (numberLiteral == null) {
+			return null; // assume nothing to do is success
+		}
+		FlowNode member = statementHandler.getFlowNodeForElement(numberLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		// TODO: Adjust FlowNode retrieval
+		statementHandler.getFlowNodeForElement(numberLiteral.eContainer()).addInRef(member);
+		return member;
+	}
 
 	private FlowNode handle(SingleVariableAccess singleVariableAccess) {
 		FlowNode member = statementHandler.getFlowNodeForElement(singleVariableAccess);
@@ -295,7 +309,8 @@ public class ExpressionHandlerDataFlow {
 				if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
 					// TODO: Create read access edge
 					statementHandler.getFlowNodeForElement(variablesContainer);
-					statementHandler.getMemberIn().add(member);
+					statementHandler.getMemberIn().add(statementHandler.getFlowNodeForElement(variableDeclarationFragment.eContainer()));
+					System.out.println("Container: " + variableDeclarationFragment.eContainer());
 					member.addInRef(varDeclNode);
 				} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 					member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
@@ -448,12 +463,12 @@ public class ExpressionHandlerDataFlow {
 			statementHandler.getMemberOut().add(member);
 		}
 		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
-		statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
+		FlowNode methodNode = statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
 		for (SingleVariableDeclaration param : calledMethod.getParameters()) {
 			statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
-			statementHandler.getMemberIn().add(member);
+			statementHandler.getMemberIn().add(methodNode);
 			statementHandler.getFlowNodeForElement(methodInvocation.eContainer()).addInRef(member);
 		}
 		return member;

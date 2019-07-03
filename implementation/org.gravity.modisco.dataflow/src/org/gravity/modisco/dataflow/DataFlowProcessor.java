@@ -7,13 +7,17 @@ import java.util.List;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
+import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
@@ -33,27 +37,57 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
 		SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
 		boolean success = true;
-		sub.beginTask("Statement pre-processing", 10);
-		success &= preProcessStatements(model);
-		sub.internalWorked(5);
-		/* Naive approach; probably not going to be used anymore
-		for(MDefinition m : elements) {
-			sub.beginTask(m.getName(), 12);
-			EList<SingleVariableAccess> fieldAccesses = m.getMAbstractFieldAccess();
-			sub.internalWorked(1);
-			EList<AbstractMethodInvocation> methodInvocations = m.getAbstractMethodInvocations();
-			sub.internalWorked(1);
-			EList<MethodInvocationStaticType> staticInvocations = m.getInvocationStaticTypes();
-			sub.internalWorked(1);
-			if (!fieldAccesses.isEmpty()) success &= createDataFlowEdgesForSVA(fieldAccesses, m);
-			sub.internalWorked(3);
-			if (!methodInvocations.isEmpty()) success &= createDataFlowEdgesForAMI(methodInvocations, m);
-			sub.internalWorked(3);
-			if (!staticInvocations.isEmpty()) success &= createDataFlowEdgesForMIST(staticInvocations, m); 
-			sub.internalWorked(3);
-			m.getAbstractMethodInvocations().get(0).getMethod().getBody().getStatements();
+		sub.beginTask("Statement pre-processing", 50);
+		List<StatementHandlerDataFlow> handlers = preProcessStatements(model);
+		if (handlers == null) {
+			success = false;
 		}
-		*/
+		sub.internalWorked(50);
+		sub.beginTask("Insertion of data flow edges", 5);
+		for (StatementHandlerDataFlow handler : handlers) {
+			EObject memberDef = handler.getMemberDef();
+			MDefinition memberDefTyped = null;
+			if (memberDef instanceof MAbstractMethodDefinition) {
+				memberDefTyped = (MDefinition) memberDef;
+			} else if (memberDef instanceof VariableDeclarationFragment) {
+				memberDefTyped = (MDefinition) memberDef.eContainer();
+			} else {
+				// TODO: Error handling
+			}
+			// TODO: While isNotEmpty, keep reducing
+			for (FlowNode node : handler.getAlreadySeen().values()) {
+				// TODO: Build reduced DFG
+			}
+			for (FlowNode node : handler.getMemberIn()) {
+				// TODO: Incoming edges
+				EObject element = node.getModelElement();
+				if (element instanceof FieldDeclaration) {
+					// TODO: Insert edge from element's fieldDef to this def
+					MFlow flow = ModiscoFactory.eINSTANCE.createMFieldFlow();
+					flow.setFlowOwner(memberDefTyped);
+					flow.getFlowSources().add((MDefinition) element);
+				} else if (element instanceof MFieldDefinition) {
+					MFlow flow = ModiscoFactory.eINSTANCE.createMFieldFlow();
+					flow.setFlowOwner(memberDefTyped);
+					flow.getFlowSources().add((MDefinition) element);
+				} else if (element instanceof AbstractMethodDeclaration) {
+					MFlow accessIncoming = ModiscoFactory.eINSTANCE.createMReturnFlow();
+					MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMReturnFlow();
+					MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
+					accessIncoming.setFlowOwner(access);
+					accessIncoming.getFlowSources().add((MDefinition) element);
+					accessIncoming.getFlowTargets().add(access);
+					accessOutgoing.setFlowOwner(memberDefTyped);
+					accessOutgoing.getFlowSources().add(access);
+					accessOutgoing.getFlowTargets().add(memberDefTyped);
+				}
+			}
+			// TODO: Create edges based on already created handler-level references
+			for (FlowNode node : handler.getMemberOut()) {
+				// TODO: Outgoing edges
+			}
+		}
+		sub.internalWorked(5);
 		return success;
 	}
 
@@ -67,11 +101,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * The resulting intermediate representation of data flow is then used to derive the data flow of each field/method.
 	 * 
 	 * @param model The model, whose statements are processed.
-	 * @return true, if the pre-processing was successful.
+	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
-	private boolean preProcessStatements(MGravityModel model) {
+	private List<StatementHandlerDataFlow> preProcessStatements(MGravityModel model) {
 		if (model == null) {
-			return true;
+			return null;
 		}
 		List<StatementHandlerDataFlow> handlers = new ArrayList<>();
 		for (MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
@@ -94,7 +128,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 		GraphVisualizer.drawGraphs(handlers); // Drawing one graph per handler; comment out, if no graphs are needed
-		return handlers.size() > 0;
+		return handlers;
 	}
 
 	
