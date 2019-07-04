@@ -68,7 +68,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCall" eSuperTypes="#//TAccess"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TMember" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TMember" abstract="true" eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
     <eOperations name="getSignature" eType="#//TSignature"/>
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" lowerBound="1"
@@ -138,7 +138,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TParameter" eSuperTypes="#//annotations/TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TParameter" eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//TParameter"
         eOpposite="#//TParameter/previous"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//TParameter"
@@ -150,7 +150,7 @@
         eType="#//TParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//TParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
+  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="defining" eType="#//TAbstractType"/>
@@ -288,6 +288,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TFlow" eSuperTypes="#//TAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSources" upperBound="-1"
+        eType="#//TAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTargets" upperBound="-1"
+        eType="#//TAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" eType="#//TAbstractFlowElement"
+        eOpposite="#//TAbstractFlowElement/ownedFlows"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
+        eType="#//TFlow" containment="true" eOpposite="#//TFlow/flowOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
+        eType="#//TFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
+        eType="#//TFlow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TFieldFlow" eSuperTypes="#//TFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TReturnFlow" eSuperTypes="#//TFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TParamFlow" eSuperTypes="#//TFlow"/>
   <eSubpackages name="containers" nsURI="http://www.gravity.org/typegraph/basic#//containers"
       nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
