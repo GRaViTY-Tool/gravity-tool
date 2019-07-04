@@ -310,7 +310,6 @@ public class ExpressionHandlerDataFlow {
 					// TODO: Create read access edge
 					statementHandler.getFlowNodeForElement(variablesContainer);
 					statementHandler.getMemberIn().add(statementHandler.getFlowNodeForElement(variableDeclarationFragment.eContainer()));
-					System.out.println("Container: " + variableDeclarationFragment.eContainer());
 					member.addInRef(varDeclNode);
 				} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 					member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
@@ -454,18 +453,19 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
+		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
+		FlowNode methodNode = statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
 		handle(methodInvocation.getExpression());
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
 				handle(argument); // TODO: Flow back to MI
 			}
-			statementHandler.getMemberOut().add(member);
+			statementHandler.getMemberOut().add(methodNode);
 		}
-		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
-		FlowNode methodNode = statementHandler.getFlowNodeForElement(calledMethod); // Creating a FlowNode for the called method
 		for (SingleVariableDeclaration param : calledMethod.getParameters()) {
-			statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
+			FlowNode paramNode = statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
+			//statementHandler.getMemberOut().add(paramNode);
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(methodNode);

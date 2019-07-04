@@ -4,15 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MFlow;
@@ -21,7 +20,6 @@ import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.MethodInvocationStaticType;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
@@ -32,6 +30,8 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
  *
  */
 public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition> {
+	
+	private static final Logger LOGGER = Logger.getLogger(DataFlowProcessor.class.getName());
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
@@ -44,6 +44,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		sub.internalWorked(50);
 		sub.beginTask("Insertion of data flow edges", 5);
+		// TODO: Extract into own method
 		for (StatementHandlerDataFlow handler : handlers) {
 			EObject memberDef = handler.getMemberDef();
 			MDefinition memberDefTyped = null;
@@ -52,39 +53,52 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			} else if (memberDef instanceof VariableDeclarationFragment) {
 				memberDefTyped = (MDefinition) memberDef.eContainer();
 			} else {
-				// TODO: Error handling
+				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
+				return false;
 			}
 			// TODO: While isNotEmpty, keep reducing
 			for (FlowNode node : handler.getAlreadySeen().values()) {
 				// TODO: Build reduced DFG
 			}
-			for (FlowNode node : handler.getMemberIn()) {
-				// TODO: Incoming edges
-				EObject element = node.getModelElement();
-				if (element instanceof FieldDeclaration) {
-					// TODO: Insert edge from element's fieldDef to this def
-					MFlow flow = ModiscoFactory.eINSTANCE.createMFieldFlow();
-					flow.setFlowOwner(memberDefTyped);
-					flow.getFlowSources().add((MDefinition) element);
-				} else if (element instanceof MFieldDefinition) {
-					MFlow flow = ModiscoFactory.eINSTANCE.createMFieldFlow();
-					flow.setFlowOwner(memberDefTyped);
-					flow.getFlowSources().add((MDefinition) element);
-				} else if (element instanceof AbstractMethodDeclaration) {
-					MFlow accessIncoming = ModiscoFactory.eINSTANCE.createMReturnFlow();
-					MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMReturnFlow();
-					MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
-					accessIncoming.setFlowOwner(access);
-					accessIncoming.getFlowSources().add((MDefinition) element);
-					accessIncoming.getFlowTargets().add(access);
-					accessOutgoing.setFlowOwner(memberDefTyped);
-					accessOutgoing.getFlowSources().add(access);
-					accessOutgoing.getFlowTargets().add(memberDefTyped);
-				}
-			}
-			// TODO: Create edges based on already created handler-level references
+			// Calculating out-edges sufficient, since every out-edge leads to at most one in-edge
 			for (FlowNode node : handler.getMemberOut()) {
-				// TODO: Outgoing edges
+				EObject element = node.getModelElement();
+				System.out.println(element.getClass().getSimpleName()); // To check, if anything is not handled yet
+				MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMFieldFlow();
+				MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
+				MDefinition typedElement = null;
+				// Checking the type of the given flow target
+				if (element instanceof FieldDeclaration || element instanceof MFieldDefinition) {
+					// TODO: FieldDecl not a MDefinition
+					typedElement = (MDefinition) element;
+					MFlow accessIncoming = null;
+					if (memberDef instanceof AbstractMethodDeclaration) {
+						accessIncoming = ModiscoFactory.eINSTANCE.createMParamFlow();
+					} else if (memberDef instanceof VariableDeclarationFragment) {
+						accessIncoming = ModiscoFactory.eINSTANCE.createMFieldFlow();
+					} else {
+						LOGGER.log(Level.INFO, "ERROR: Unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
+						return false;
+					}
+					accessIncoming.setFlowOwner(access);
+					accessIncoming.getFlowSources().add(memberDefTyped);
+					accessIncoming.getFlowTargets().add(access);
+				} else if (element instanceof AbstractMethodDeclaration) { // TODO Get param instead
+					if (memberDef instanceof AbstractMethodDeclaration) {
+						// TODO: ONLY direct (without access), if source is a param too
+					}
+					MFlow accessIncoming = ModiscoFactory.eINSTANCE.createMParamFlow();
+					typedElement = (MDefinition) element;
+					accessIncoming.setFlowOwner(access);
+					accessIncoming.getFlowSources().add(memberDefTyped);
+					accessIncoming.getFlowTargets().add(typedElement); // TODO Param
+				} else {
+					LOGGER.log(Level.INFO, "ERROR: Unknown element type " + element.getClass().getName() + " in DataFlowProcessor");
+					return false;
+				}
+				accessOutgoing.setFlowOwner(typedElement);
+				accessOutgoing.getFlowSources().add(access);
+				accessOutgoing.getFlowTargets().add(typedElement);
 			}
 		}
 		sub.internalWorked(5);
@@ -127,46 +141,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				handlers.add(fieldProcessor);
 			}
 		}
-		GraphVisualizer.drawGraphs(handlers); // Drawing one graph per handler; comment out, if no graphs are needed
+		// Drawing one graph per handler; comment out next line, if no graphs are needed
+		// GraphVisualizer.drawGraphs(handlers);
 		return handlers;
 	}
-
-	
-	/**
-	 * Creates data flow edges between all elements from the given element list and the given definition.
-	 * @param <T>
-	 * 
-	 * @param elementList A list of model elements.
-	 * @param field The definition, to which the data flow edges will be connected.
-	 * @return A boolean, which indicates, if the creation of all edges was successful.
-	 */
-	/* Naive approach; probably not going to be used anymore
-	private boolean createDataFlowEdgesForSVA(EList<SingleVariableAccess> elementList, MDefinition definition) {
-		for (SingleVariableAccess accessed : elementList) {
-			// TODO: Insert edge between accessed and accessing member
-			// readAccess ? fieldFlow : checkFieldDef()
-		}
-		return false;
-	}
-	
-	private boolean createDataFlowEdgesForAMI(EList<AbstractMethodInvocation> elementList, MDefinition definition) {
-		for (AbstractMethodInvocation accessed : elementList) {
-			if (accessed.getMethod().getClass() != null) {
-				MFlow f = ModiscoFactory.eINSTANCE.createMFlow();
-				//f.getReturnFlow().add(definition);
-			}
-		}
-		return false;
-	}
-	
-	private boolean createDataFlowEdgesForMIST(EList<MethodInvocationStaticType> elementList, MDefinition definition) {
-		for (MethodInvocationStaticType accessed : elementList) {
-			if (accessed.getMethodInvoc().getMethod().getClass() != null) {
-				MFlow f = ModiscoFactory.eINSTANCE.createMFlow();
-				//f.getReturnFlow().add(definition);
-			}
-		}
-		return false;
-	}
-	*/
 }
