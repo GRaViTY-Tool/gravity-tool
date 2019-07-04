@@ -65,6 +65,7 @@ public class TMethodDefinitionContainerImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodDefinition> getTMethodDefinitions() {
 		if (tMethodDefinitions == null) {
 			tMethodDefinitions = new EObjectResolvingEList<TMethodDefinition>(TMethodDefinition.class, this, ContainersPackage.TMETHOD_DEFINITION_CONTAINER__TMETHOD_DEFINITIONS);

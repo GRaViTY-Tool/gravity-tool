@@ -71,6 +71,7 @@ public class TTextAnnotationImpl extends TAnnotationImpl implements TTextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getText() {
 		return text;
 	}
@@ -80,6 +81,7 @@ public class TTextAnnotationImpl extends TAnnotationImpl implements TTextAnnotat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;

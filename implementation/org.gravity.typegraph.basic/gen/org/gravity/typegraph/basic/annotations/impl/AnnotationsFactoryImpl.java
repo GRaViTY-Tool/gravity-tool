@@ -74,6 +74,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotationValue createTAnnotationValue() {
 		TAnnotationValueImpl tAnnotationValue = new TAnnotationValueImpl();
 		return tAnnotationValue;
@@ -84,6 +85,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TTextAnnotation createTTextAnnotation() {
 		TTextAnnotationImpl tTextAnnotation = new TTextAnnotationImpl();
 		return tTextAnnotation;
@@ -94,6 +96,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotation createTAnnotation() {
 		TAnnotationImpl tAnnotation = new TAnnotationImpl();
 		return tAnnotation;
@@ -104,6 +107,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotationType createTAnnotationType() {
 		TAnnotationTypeImpl tAnnotationType = new TAnnotationTypeImpl();
 		return tAnnotationType;
@@ -114,6 +118,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TTextNode createTTextNode() {
 		TTextNodeImpl tTextNode = new TTextNodeImpl();
 		return tTextNode;
@@ -124,6 +129,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TNumberNode createTNumberNode() {
 		TNumberNodeImpl tNumberNode = new TNumberNodeImpl();
 		return tNumberNode;
@@ -134,6 +140,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TBoolNode createTBoolNode() {
 		TBoolNodeImpl tBoolNode = new TBoolNodeImpl();
 		return tBoolNode;
@@ -144,6 +151,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClassNode createTClassNode() {
 		TClassNodeImpl tClassNode = new TClassNodeImpl();
 		return tClassNode;
@@ -154,6 +162,7 @@ public class AnnotationsFactoryImpl extends EFactoryImpl implements AnnotationsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AnnotationsPackage getAnnotationsPackage() {
 		return (AnnotationsPackage)getEPackage();
 	}

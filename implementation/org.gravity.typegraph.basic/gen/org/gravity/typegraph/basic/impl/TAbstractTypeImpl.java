@@ -185,6 +185,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getPg() {
 		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG) return null;
 		return (TypeGraph)eInternalContainer();
@@ -205,6 +206,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPg(TypeGraph newPg) {
 		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG && newPg != null)) {
 			if (EcoreUtil.isAncestor(this, newPg))
@@ -226,6 +228,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TPackage getPackage() {
 		if (package_ != null && package_.eIsProxy()) {
 			InternalEObject oldPackage = (InternalEObject)package_;
@@ -267,6 +270,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPackage(TPackage newPackage) {
 		if (newPackage != package_) {
 			NotificationChain msgs = null;
@@ -286,6 +290,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TSignature> getSignature() {
 		if (signature == null) {
 			signature = new EObjectResolvingEList<TSignature>(TSignature.class, this, BasicPackage.TABSTRACT_TYPE__SIGNATURE);
@@ -298,6 +303,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMember> getDefines() {
 		if (defines == null) {
 			defines = new EObjectWithInverseResolvingEList<TMember>(TMember.class, this, BasicPackage.TABSTRACT_TYPE__DEFINES, BasicPackage.TMEMBER__DEFINED_BY);
@@ -310,6 +316,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isTLib() {
 		return tLib;
 	}
@@ -319,6 +326,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTLib(boolean newTLib) {
 		boolean oldTLib = tLib;
 		tLib = newTLib;
@@ -331,6 +339,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTName() {
 		return tName;
 	}
@@ -340,6 +349,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTName(String newTName) {
 		String oldTName = tName;
 		tName = newTName;
@@ -352,6 +362,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TModifier getTModifier() {
 		return tModifier;
 	}
@@ -376,6 +387,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTModifier(TModifier newTModifier) {
 		if (newTModifier != tModifier) {
 			NotificationChain msgs = null;
@@ -395,6 +407,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAbstractType> getInnerTypes() {
 		if (innerTypes == null) {
 			innerTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE);
@@ -407,6 +420,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getOuterType() {
 		if (outerType != null && outerType.eIsProxy()) {
 			InternalEObject oldOuterType = (InternalEObject)outerType;
@@ -448,6 +462,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOuterType(TAbstractType newOuterType) {
 		if (newOuterType != outerType) {
 			NotificationChain msgs = null;

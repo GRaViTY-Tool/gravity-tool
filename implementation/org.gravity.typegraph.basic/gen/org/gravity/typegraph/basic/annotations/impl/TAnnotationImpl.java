@@ -86,6 +86,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotatable getTAnnotated() {
 		if (eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED) return null;
 		return (TAnnotatable)eInternalContainer();
@@ -106,6 +107,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTAnnotated(TAnnotatable newTAnnotated) {
 		if (newTAnnotated != eInternalContainer() || (eContainerFeatureID() != AnnotationsPackage.TANNOTATION__TANNOTATED && newTAnnotated != null)) {
 			if (EcoreUtil.isAncestor(this, newTAnnotated))
@@ -127,6 +129,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAnnotationType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -168,6 +171,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TAnnotationType newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
@@ -187,6 +191,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAnnotationValue> getTValues() {
 		if (tValues == null) {
 			tValues = new EObjectContainmentEList<TAnnotationValue>(TAnnotationValue.class, this, AnnotationsPackage.TANNOTATION__TVALUES);

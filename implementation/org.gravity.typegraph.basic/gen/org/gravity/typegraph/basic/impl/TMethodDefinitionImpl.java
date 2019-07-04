@@ -131,6 +131,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodSignature getSignature() {
 		if (eContainerFeatureID() != BasicPackage.TMETHOD_DEFINITION__SIGNATURE) return null;
 		return (TMethodSignature)eInternalContainer();
@@ -151,6 +152,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSignature(TMethodSignature newSignature) {
 		if (newSignature != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMETHOD_DEFINITION__SIGNATURE && newSignature != null)) {
 			if (EcoreUtil.isAncestor(this, newSignature))
@@ -172,6 +174,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodDefinition getOverriding() {
 		if (overriding != null && overriding.eIsProxy()) {
 			InternalEObject oldOverriding = (InternalEObject)overriding;
@@ -213,6 +216,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOverriding(TMethodDefinition newOverriding) {
 		if (newOverriding != overriding) {
 			NotificationChain msgs = null;
@@ -232,6 +236,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodDefinition> getOverriddenBy() {
 		if (overriddenBy == null) {
 			overriddenBy = new EObjectWithInverseResolvingEList<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, BasicPackage.TMETHOD_DEFINITION__OVERRIDING);
@@ -244,6 +249,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodDefinition> getOverloading() {
 		if (overloading == null) {
 			overloading = new EObjectWithInverseResolvingEList.ManyInverse<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERLOADING, BasicPackage.TMETHOD_DEFINITION__OVERLOADED_BY);
@@ -256,6 +262,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodDefinition> getOverloadedBy() {
 		if (overloadedBy == null) {
 			overloadedBy = new EObjectWithInverseResolvingEList.ManyInverse<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_DEFINITION__OVERLOADED_BY, BasicPackage.TMETHOD_DEFINITION__OVERLOADING);
@@ -268,6 +275,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getReturnType() {
 		if (returnType != null && returnType.eIsProxy()) {
 			InternalEObject oldReturnType = (InternalEObject)returnType;
@@ -294,6 +302,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReturnType(TAbstractType newReturnType) {
 		TAbstractType oldReturnType = returnType;
 		returnType = newReturnType;
@@ -306,6 +315,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TSyntethicMethod> getSyntethicMethods() {
 		if (syntethicMethods == null) {
 			syntethicMethods = new EObjectContainmentWithInverseEList<TSyntethicMethod>(TSyntethicMethod.class, this, BasicPackage.TMETHOD_DEFINITION__SYNTETHIC_METHODS, BasicPackage.TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION);

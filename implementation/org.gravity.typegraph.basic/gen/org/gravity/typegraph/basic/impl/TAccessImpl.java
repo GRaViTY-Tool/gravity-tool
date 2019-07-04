@@ -79,6 +79,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMember getTTarget() {
 		if (tTarget != null && tTarget.eIsProxy()) {
 			InternalEObject oldTTarget = (InternalEObject)tTarget;
@@ -120,6 +121,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTTarget(TMember newTTarget) {
 		if (newTTarget != tTarget) {
 			NotificationChain msgs = null;
@@ -139,6 +141,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMember getTSource() {
 		if (eContainerFeatureID() != BasicPackage.TACCESS__TSOURCE) return null;
 		return (TMember)eInternalContainer();
@@ -159,6 +162,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTSource(TMember newTSource) {
 		if (newTSource != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TACCESS__TSOURCE && newTSource != null)) {
 			if (EcoreUtil.isAncestor(this, newTSource))
@@ -180,6 +184,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getStaticType() {
 		if (staticType != null && staticType.eIsProxy()) {
 			InternalEObject oldStaticType = (InternalEObject)staticType;
@@ -206,6 +211,7 @@ public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStaticType(TAbstractType newStaticType) {
 		TAbstractType oldStaticType = staticType;
 		staticType = newStaticType;

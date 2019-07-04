@@ -93,6 +93,7 @@ public class TModifierImpl extends MinimalEObjectImpl.Container implements TModi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TVisibility getTVisibility() {
 		return tVisibility;
 	}
@@ -102,6 +103,7 @@ public class TModifierImpl extends MinimalEObjectImpl.Container implements TModi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTVisibility(TVisibility newTVisibility) {
 		TVisibility oldTVisibility = tVisibility;
 		tVisibility = newTVisibility == null ? TVISIBILITY_EDEFAULT : newTVisibility;
@@ -114,6 +116,7 @@ public class TModifierImpl extends MinimalEObjectImpl.Container implements TModi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsStatic() {
 		return isStatic;
 	}
@@ -123,6 +126,7 @@ public class TModifierImpl extends MinimalEObjectImpl.Container implements TModi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsStatic(boolean newIsStatic) {
 		boolean oldIsStatic = isStatic;
 		isStatic = newIsStatic;

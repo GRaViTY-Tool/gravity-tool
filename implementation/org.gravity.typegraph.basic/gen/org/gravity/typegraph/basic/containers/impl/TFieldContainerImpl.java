@@ -65,6 +65,7 @@ public class TFieldContainerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TField> getTFields() {
 		if (tFields == null) {
 			tFields = new EObjectResolvingEList<TField>(TField.class, this, ContainersPackage.TFIELD_CONTAINER__TFIELDS);

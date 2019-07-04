@@ -89,6 +89,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TFieldDefinition> getDefinitions() {
 		if (definitions == null) {
 			definitions = new EObjectContainmentWithInverseEList<TFieldDefinition>(TFieldDefinition.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TFIELD_DEFINITION__SIGNATURE);
@@ -101,6 +102,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TField getField() {
 		if (eContainerFeatureID() != BasicPackage.TFIELD_SIGNATURE__FIELD) return null;
 		return (TField)eInternalContainer();
@@ -121,6 +123,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setField(TField newField) {
 		if (newField != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD_SIGNATURE__FIELD && newField != null)) {
 			if (EcoreUtil.isAncestor(this, newField))
@@ -142,6 +145,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -168,6 +172,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TAbstractType newType) {
 		TAbstractType oldType = type;
 		type = newType;

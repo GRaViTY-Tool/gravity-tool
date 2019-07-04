@@ -88,6 +88,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameter getNext() {
 		if (next != null && next.eIsProxy()) {
 			InternalEObject oldNext = (InternalEObject)next;
@@ -129,6 +130,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNext(TParameter newNext) {
 		if (newNext != next) {
 			NotificationChain msgs = null;
@@ -148,6 +150,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameter getPrevious() {
 		if (previous != null && previous.eIsProxy()) {
 			InternalEObject oldPrevious = (InternalEObject)previous;
@@ -189,6 +192,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrevious(TParameter newPrevious) {
 		if (newPrevious != previous) {
 			NotificationChain msgs = null;
@@ -208,6 +212,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -234,6 +239,7 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(TAbstractType newType) {
 		TAbstractType oldType = type;
 		type = newType;

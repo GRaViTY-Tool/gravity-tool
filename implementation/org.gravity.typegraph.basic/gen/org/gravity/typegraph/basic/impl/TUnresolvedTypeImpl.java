@@ -91,6 +91,7 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getImplementedBy() {
 		if (implementedBy == null) {
 			implementedBy = new EObjectWithInverseResolvingEList.ManyInverse<TClass>(TClass.class, this, BasicPackage.TUNRESOLVED_TYPE__IMPLEMENTED_BY, BasicPackage.TCLASS__IMPLEMENTS);
@@ -103,6 +104,7 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getParentInterfaces() {
 		if (parentInterfaces == null) {
 			parentInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TUNRESOLVED_TYPE__PARENT_INTERFACES, BasicPackage.TINTERFACE__CHILD_INTERFACES);
@@ -115,6 +117,7 @@ public class TUnresolvedTypeImpl extends TClassImpl implements TUnresolvedType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getChildInterfaces() {
 		if (childInterfaces == null) {
 			childInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TUNRESOLVED_TYPE__CHILD_INTERFACES, BasicPackage.TINTERFACE__PARENT_INTERFACES);

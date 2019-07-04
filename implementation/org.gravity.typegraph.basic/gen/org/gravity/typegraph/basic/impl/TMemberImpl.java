@@ -112,6 +112,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getDefinedBy() {
 		if (definedBy != null && definedBy.eIsProxy()) {
 			InternalEObject oldDefinedBy = (InternalEObject)definedBy;
@@ -153,6 +154,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefinedBy(TAbstractType newDefinedBy) {
 		if (newDefinedBy != definedBy) {
 			NotificationChain msgs = null;
@@ -172,6 +174,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAccess> getAccessedBy() {
 		if (accessedBy == null) {
 			accessedBy = new EObjectWithInverseResolvingEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__ACCESSED_BY, BasicPackage.TACCESS__TTARGET);
@@ -184,6 +187,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAccess> getTAccessing() {
 		if (tAccessing == null) {
 			tAccessing = new EObjectContainmentWithInverseEList<TAccess>(TAccess.class, this, BasicPackage.TMEMBER__TACCESSING, BasicPackage.TACCESS__TSOURCE);
@@ -196,6 +200,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TModifier getTModifier() {
 		return tModifier;
 	}
@@ -220,6 +225,7 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTModifier(TModifier newTModifier) {
 		if (newTModifier != tModifier) {
 			NotificationChain msgs = null;

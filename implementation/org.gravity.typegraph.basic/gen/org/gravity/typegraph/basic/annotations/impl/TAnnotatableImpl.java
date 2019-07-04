@@ -72,6 +72,7 @@ public abstract class TAnnotatableImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAnnotation> getTAnnotation() {
 		if (tAnnotation == null) {
 			tAnnotation = new EObjectContainmentWithInverseEList<TAnnotation>(TAnnotation.class, this, AnnotationsPackage.TANNOTATABLE__TANNOTATION, AnnotationsPackage.TANNOTATION__TANNOTATED);

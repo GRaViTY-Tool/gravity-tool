@@ -65,6 +65,7 @@ public class TAccessContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAccess> getTAccessEdges() {
 		if (tAccessEdges == null) {
 			tAccessEdges = new EObjectResolvingEList<TAccess>(TAccess.class, this, ContainersPackage.TACCESS_CONTAINER__TACCESS_EDGES);

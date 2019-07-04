@@ -65,6 +65,7 @@ public class TFieldSignatureContainerImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TFieldSignature> getTFieldSignatures() {
 		if (tFieldSignatures == null) {
 			tFieldSignatures = new EObjectResolvingEList<TFieldSignature>(TFieldSignature.class, this, ContainersPackage.TFIELD_SIGNATURE_CONTAINER__TFIELD_SIGNATURES);

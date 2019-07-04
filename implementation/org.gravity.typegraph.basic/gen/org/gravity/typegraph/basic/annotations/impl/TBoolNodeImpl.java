@@ -71,6 +71,7 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isValue() {
 		return value;
 	}
@@ -80,6 +81,7 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(boolean newValue) {
 		boolean oldValue = value;
 		value = newValue;
