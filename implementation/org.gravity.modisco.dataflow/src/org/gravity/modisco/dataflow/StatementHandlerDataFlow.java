@@ -57,7 +57,7 @@ public class StatementHandlerDataFlow {
 	/**
 	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
 	 */
-	private final HashMap<EObject, FlowNode> alreadySeen = new HashMap<>();
+	private HashMap<EObject, FlowNode> alreadySeen = new HashMap<>();
 	
 	/**
 	 * The member definition corresponding to this handler.
@@ -522,5 +522,9 @@ public class StatementHandlerDataFlow {
 		FlowNode member = new FlowNode(element);
 		alreadySeen.put(element, member);
 		return member;
+	}
+
+	public void setAlreadySeen(HashMap<EObject, FlowNode> nodeMap) {
+		alreadySeen = nodeMap;
 	}
 }

@@ -44,12 +44,14 @@ public class GraphVisualizer {
 
 	/**
 	 * Draws the dot graphs for each StatementHandlerDataFlow instance in the given
-	 * list. The graphs are exported as PNG image files.
+	 * list. The graphs are exported as PNG image files to a folder with the given folder name (inside the project folder).
 	 * 
 	 * @param handlers The list of StatementHandlerDataFlow instances, for which a
 	 *                 graph is supposed to be drawn.
+	 *                 
+	 * @param folderName The name, that should be given to the output folder. If a folder with that name already exists, it is used.
 	 */
-	public static void drawGraphs(List<StatementHandlerDataFlow> handlers) {
+	public static void drawGraphs(List<StatementHandlerDataFlow> handlers, String folderName) {
 		int i = 0;
 		String projectName = ((MGravityModel) handlers.get(0).getMemberDef().eResource().getContents().get(0))
 				.getName();// TODO getModelName(handlers.get(0).getMemberDef().eContainer());
@@ -108,12 +110,14 @@ public class GraphVisualizer {
 				MutableNode graphNode = graphNodes.get(node);
 				for (FlowNode out : node.getOutRef()) {
 					MutableNode outNode = graphNodes.get(out);
-					graphNode.addLink(graphNode.linkTo(outNode).with(Style.DOTTED, Label.of("flows to"), Color.GRAY));
+					if (outNode != null) { // TODO: Check, if nothing else breaks, when this fix is used
+						graphNode.addLink(graphNode.linkTo(outNode).with(Style.DOTTED, Label.of("flows to"), Color.GRAY));
+					}
 				}
 			}
 			try {
 				Graphviz.fromGraph(g).width(10000).render(Format.PNG)
-						.toFile(new File("graphs" + File.separator + projectName + File.separator + "Class-" + className
+						.toFile(new File(folderName + File.separator + projectName + File.separator + "Class-" + className
 								+ "-" + memberType + "-" + memberName + ".png"));
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);

@@ -2,7 +2,9 @@ package org.gravity.modisco.dataflow;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -10,10 +12,18 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
+import org.eclipse.gmt.modisco.java.ForStatement;
+import org.eclipse.gmt.modisco.java.IfStatement;
+import org.eclipse.gmt.modisco.java.InfixExpression;
+import org.eclipse.gmt.modisco.java.MethodInvocation;
+import org.eclipse.gmt.modisco.java.NumberLiteral;
+import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAccess;
@@ -45,6 +55,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		sub.internalWorked(50);
 		sub.beginTask("Insertion of data flow edges", 5);
 		// TODO: Extract into own method
+		// TODO: Work with alreadySeen-Sets instead of handlers?
+		List<StatementHandlerDataFlow> reducedHandlers = new ArrayList<>();
 		for (StatementHandlerDataFlow handler : handlers) {
 			EObject memberDef = handler.getMemberDef();
 			MDefinition memberDefTyped = null;
@@ -56,9 +68,39 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
 				return false;
 			}
-			// TODO: While isNotEmpty, keep reducing
-			for (FlowNode node : handler.getAlreadySeen().values()) {
-				// TODO: Build reduced DFG
+			StatementHandlerDataFlow reducedHandler = handler;
+			HashMap<EObject, FlowNode> reducedDFG = (HashMap<EObject, FlowNode>) handler.getAlreadySeen().clone(); // TODO: Shallow copy ok here?
+			for (EObject node : handler.getAlreadySeen().keySet()) {
+				if (node instanceof MAbstractMethodDefinition) {
+					// Keep node
+				} else if (node instanceof VariableDeclarationFragment && node.eContainer() instanceof MFieldDefinition) {
+					// Keep node
+				} else if (node instanceof Block) {
+					// Keep node? Flows into this node can be ignored
+				} else if (node instanceof ReturnStatement) {
+					// Keep node
+				} else if (node instanceof MethodInvocation) {
+					// Keep node (and compute inter-edges?)
+				} else if (node instanceof SingleVariableDeclaration) {
+					// Keep node
+				} else if (node instanceof IfStatement 
+						|| node instanceof WhileStatement
+						|| node instanceof ForStatement) { // TODO: Add remaining types
+					// Keep nodes, as a flow into them indicates, that sensitive info can leak implicitly through observation of the construct's behavior
+				}
+				else if (node instanceof NumberLiteral) { // Irrelevant flows
+					reducedDFG.remove(node);
+				} else { // Everything else is reduced in the same way
+					Set<FlowNode> inRef = reducedDFG.get(node).getInRef();
+					for (FlowNode outNode : reducedDFG.get(node).getOutRef()) {
+						for (FlowNode inNode : inRef) {
+							outNode.addInRef(inNode);
+						}
+					}
+					reducedDFG.remove(node);
+				}
+				reducedHandler.setAlreadySeen(reducedDFG);
+				reducedHandlers.add(reducedHandler);
 			}
 			// Calculating out-edges sufficient, since every out-edge leads to at most one in-edge
 			for (FlowNode node : handler.getMemberOut()) {
@@ -101,6 +143,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOutgoing.getFlowTargets().add(typedElement);
 			}
 		}
+		GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");
 		sub.internalWorked(5);
 		return success;
 	}
@@ -142,7 +185,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 		// Drawing one graph per handler; comment out next line, if no graphs are needed
-		// GraphVisualizer.drawGraphs(handlers);
+		//GraphVisualizer.drawGraphs(handlers, "graphs");
 		return handlers;
 	}
 }
