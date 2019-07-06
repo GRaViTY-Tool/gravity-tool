@@ -150,24 +150,4 @@ public class GraphVisualizer {
 		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
 	}
-
-	/**
-	 * Retrieves the model name (which equals the equivalent java project's name).
-	 * It does so by navigating back the containment hierarchy starting from the
-	 * given EObject.
-	 * 
-	 * @param obj The starting point for navigating back the containment hierarchy.
-	 * @return The name of the model of which the given EObject is a part.
-	 */
-	private static String getModelName(EObject obj) {
-		EObject container = obj.eContainer();
-		if (container == null) {
-			return "ERROR";
-		}
-		if (container instanceof MGravityModel) {
-			return ((MGravityModel) container).getName();
-		} else {
-			return getModelName(container);
-		}
-	}
 }
