@@ -68,7 +68,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
 				return false;
 			}
-			StatementHandlerDataFlow reducedHandler = handler;
+			StatementHandlerDataFlow reducedHandler = new StatementHandlerDataFlow(memberDefTyped);
 			HashMap<EObject, FlowNode> reducedDFG = (HashMap<EObject, FlowNode>) handler.getAlreadySeen().clone(); // TODO: Shallow copy ok here?
 			for (EObject node : handler.getAlreadySeen().keySet()) {
 				if (node instanceof MAbstractMethodDefinition) {
@@ -99,13 +99,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					}
 					reducedDFG.remove(node);
 				}
-				reducedHandler.setAlreadySeen(reducedDFG);
-				reducedHandlers.add(reducedHandler);
 			}
+			reducedHandler.setAlreadySeen(reducedDFG);
+			reducedHandlers.add(reducedHandler);
 			// Calculating out-edges sufficient, since every out-edge leads to at most one in-edge
 			for (FlowNode node : handler.getMemberOut()) {
 				EObject element = node.getModelElement();
-				System.out.println(element.getClass().getSimpleName()); // To check, if anything is not handled yet
 				MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMFieldFlow();
 				MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
 				MDefinition typedElement = null;
