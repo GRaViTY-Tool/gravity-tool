@@ -256,7 +256,6 @@ public class MoDiscoUtil {
 		MEntry prev = null;
 		for (SingleVariableDeclaration param : mDef.getParameters()) {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
-			entry.setSingleVariableDeclaration(param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
 			if (prev == null) {

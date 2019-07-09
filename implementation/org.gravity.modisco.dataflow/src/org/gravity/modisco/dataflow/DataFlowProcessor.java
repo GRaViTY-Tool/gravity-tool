@@ -25,6 +25,7 @@ import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MFlow;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
@@ -106,7 +107,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			for (FlowNode node : handler.getMemberOut()) {
 				EObject element = node.getModelElement();
 				MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMFieldFlow();
-				MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
+//				MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
 				MDefinition typedElement = null;
 				// Checking the type of the given flow target
 				if (element instanceof FieldDeclaration || element instanceof MFieldDefinition) {
@@ -121,16 +122,16 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						LOGGER.log(Level.INFO, "ERROR: Unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
 						return false;
 					}
-					accessIncoming.setFlowOwner(access);
+//					accessIncoming.setFlowOwner(access);
 					accessIncoming.getFlowSources().add(memberDefTyped);
-					accessIncoming.getFlowTargets().add(access);
+//					accessIncoming.getFlowTargets().add(access);
 				} else if (element instanceof AbstractMethodDeclaration) { // TODO Get param instead
 					if (memberDef instanceof AbstractMethodDeclaration) {
 						// TODO: ONLY direct (without access), if source is a param too
 					}
 					MFlow accessIncoming = ModiscoFactory.eINSTANCE.createMParamFlow();
 					typedElement = (MDefinition) element;
-					accessIncoming.setFlowOwner(access);
+//					accessIncoming.setFlowOwner(access);
 					accessIncoming.getFlowSources().add(memberDefTyped);
 					accessIncoming.getFlowTargets().add(typedElement); // TODO Param
 				} else {
@@ -138,11 +139,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					return false;
 				}
 				accessOutgoing.setFlowOwner(typedElement);
-				accessOutgoing.getFlowSources().add(access);
+//				accessOutgoing.getFlowSources().add(access);
 				accessOutgoing.getFlowTargets().add(typedElement);
 			}
 		}
-		GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");
+		//GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");
 		sub.internalWorked(5);
 		return success;
 	}
@@ -184,7 +185,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 		// Drawing one graph per handler; comment out next line, if no graphs are needed
-		//GraphVisualizer.drawGraphs(handlers, "graphs");
+		if(GravityActivator.getDefault().isVerbose()) {
+			GraphVisualizer.drawGraphs(handlers, "graphs");
+		}
 		return handlers;
 	}
 }

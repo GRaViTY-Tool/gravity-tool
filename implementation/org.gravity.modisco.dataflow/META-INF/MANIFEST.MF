@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.modisco,
  org.eclipse.emf.ecore.xmi;bundle-version="2.15.0",
  org.apache.log4j;bundle-version="1.2.15",
- org.apache.commons.io;bundle-version="2.6.0"
+ org.apache.commons.io;bundle-version="2.6.0",
+ org.gravity.eclipse
 Bundle-ClassPath: .,
  lib/graphviz-java-0.8.7.jar,
  lib/svgSalamander-1.1.2.jar,

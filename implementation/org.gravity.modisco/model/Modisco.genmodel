@@ -4,7 +4,7 @@
     modelName="Modisco" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     runtimeVersion="2.5" usedGenPackages="../../org.eclipse.gmt.modisco.java/model/java.genmodel#//java"
-    operationReflection="false" importOrganizing="true">
+    importOrganizing="true">
   <foreignModel>Modisco.ecore</foreignModel>
   <genPackages prefix="Modisco" basePackage="org.gravity" disposableProviderFactory="true"
       ecorePackage="Modisco.ecore#/">
@@ -65,7 +65,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/mNext"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/mPrevious"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/singleVariableDeclaration"/>
     </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MGravityModel">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MGravityModel/mMethodDefinitions"/>
@@ -114,7 +113,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractFlowElement/incomingFlows"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractFlowElement/outgoingFlows"/>
     </genClasses>
-    <genClasses ecoreClass="Modisco.ecore#//MAccess"/>
     <genClasses ecoreClass="Modisco.ecore#//MSingleVariableAccess"/>
     <genClasses ecoreClass="Modisco.ecore#//MMethodInvocation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodInvocation/mStaticType"/>

@@ -2,7 +2,11 @@ package org.gravity.modisco.dataflow.tests;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -13,6 +17,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.junit.Test;
@@ -33,6 +38,8 @@ public class DataflowProcessingTest {
 	 * The logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(DataflowProcessingTest.class);
+
+	private static final boolean VERBOSE = true;
 	
 	/**
 	 * The project the tests should be performed on
@@ -47,6 +54,7 @@ public class DataflowProcessingTest {
 	 */
 	public DataflowProcessingTest(String name, IJavaProject project) {
 		this.project = project;
+		GravityActivator.getDefault().setVerbose(VERBOSE);
 	}
 	
 	/**
@@ -75,10 +83,13 @@ public class DataflowProcessingTest {
 	 * Transforms every input project and checks the created model
 	 *  
 	 * @throws DiscoveryException If the discovery failed
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
 	@Test
-	public void test() throws DiscoveryException {
+	public void test() throws DiscoveryException, FileNotFoundException, IOException {
 		MGravityModel pm = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(project, new NullProgressMonitor());
+		pm.eResource().save(new FileOutputStream("out/"+pm.getName()+".xmi"), Collections.emptyMap());
 		//TODO: Implement more tests
 		assertNotNull(pm);
 	}
