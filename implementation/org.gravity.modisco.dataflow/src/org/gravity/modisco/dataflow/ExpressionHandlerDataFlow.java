@@ -68,7 +68,6 @@ public class ExpressionHandlerDataFlow {
 	
 	public ExpressionHandlerDataFlow(StatementHandlerDataFlow parentHandler) {
 		statementHandler = parentHandler;
-		miscHandler = parentHandler.getMiscHandler();
 	}
 	
 	public FlowNode handle(Expression expression) {
@@ -91,7 +90,7 @@ public class ExpressionHandlerDataFlow {
 
 		} else if (expression instanceof StringLiteral) {
 			StringLiteral stringLiteral = (StringLiteral) expression;
-			return null;
+			return handle(stringLiteral);
 
 		} else if (expression instanceof NullLiteral) {
 			NullLiteral nullLiteral = (NullLiteral) expression;
@@ -459,17 +458,27 @@ public class ExpressionHandlerDataFlow {
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				handle(argument); // TODO: Flow back to MI
+				FlowNode argumentNode = handle(argument);
+				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
+				argumentNode.addOutRef(paramNode);
+				argumentNode.addOutRef(member);
 			}
 			statementHandler.getMemberOut().add(methodNode);
-		}
-		for (SingleVariableDeclaration param : calledMethod.getParameters()) {
-			FlowNode paramNode = statementHandler.getFlowNodeForElement(param); // Creating a FlowNode for the method's params
-			//statementHandler.getMemberOut().add(paramNode);
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberIn().add(methodNode);
 			statementHandler.getFlowNodeForElement(methodInvocation.eContainer()).addInRef(member);
+		}
+		return member;
+	}
+	
+	private FlowNode handle(StringLiteral stringLiteral) {
+		if (stringLiteral == null) {
+			return null;
+		}
+		FlowNode member = statementHandler.getFlowNodeForElement(stringLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
 		}
 		return member;
 	}
@@ -498,6 +507,10 @@ public class ExpressionHandlerDataFlow {
 	
 	public MiscHandlerDataFlow getMiscHandler() {
 		return miscHandler;
+	}
+
+	public void setMiscHandler(MiscHandlerDataFlow handler) {
+		miscHandler = handler;
 	}
 
 }

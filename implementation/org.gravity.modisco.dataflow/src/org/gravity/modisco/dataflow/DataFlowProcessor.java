@@ -143,7 +143,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOutgoing.getFlowTargets().add(typedElement);
 			}
 		}
-		//GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");
+		GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");
 		sub.internalWorked(5);
 		return success;
 	}
@@ -186,7 +186,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		// Drawing one graph per handler; comment out next line, if no graphs are needed
 		if(GravityActivator.getDefault().isVerbose()) {
-			GraphVisualizer.drawGraphs(handlers, "graphs");
+			//GraphVisualizer.drawGraphs(handlers, "graphs");
 		}
 		return handlers;
 	}

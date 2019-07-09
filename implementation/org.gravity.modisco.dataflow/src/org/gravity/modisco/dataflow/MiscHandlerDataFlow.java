@@ -20,6 +20,7 @@ public class MiscHandlerDataFlow {
 	public MiscHandlerDataFlow(StatementHandlerDataFlow parentHandler) {
 		statementHandler = parentHandler;
 		expressionHandler = parentHandler.getExpressionHandler();
+		expressionHandler.setMiscHandler(this);
 	}
 	
 	public FlowNode handle(VariableDeclarationFragment fragment) {
