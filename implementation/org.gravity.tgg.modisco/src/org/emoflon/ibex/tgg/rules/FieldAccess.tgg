@@ -9,7 +9,7 @@
 		++  -mAbstractFieldAccess -> mAccess
 	}
 
-	++mAccess:SingleVariableAccess {
+	++mAccess:MSingleVariableAccess {
 		++  -variable -> varDeclFrag
 	}
 
@@ -56,7 +56,7 @@
 		#trg->tType
 	}
 
-	++ mAccessToTAccess :SingleVariableAccessToTAccess {
+	++ mAccessToTAccess :MSingleVariableAccessToTAccess {
 		#src->mAccess
 		#trg->tAccess
 	}

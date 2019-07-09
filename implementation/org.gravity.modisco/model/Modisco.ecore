@@ -23,7 +23,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodInvocations" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess"/>
+        eType="#//MSingleVariableAccess"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"

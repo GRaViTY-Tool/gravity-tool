@@ -173,8 +173,8 @@
 		#trg->TMethodSignature
 	}
 
-	SingleVariableAccessToTAccess {
-		#src->SingleVariableAccess
+	MSingleVariableAccessToTAccess {
+		#src->MSingleVariableAccess
 		#trg->TAccess
 	}
 
