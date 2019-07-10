@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.Expression;
+import org.eclipse.gmt.modisco.java.FieldAccess;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
@@ -31,6 +32,8 @@ import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MSingleVariableAccess;
+import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
@@ -82,7 +85,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node
 				} else if (node instanceof MethodInvocation) {
 					// Keep node (and compute inter-edges?)
+				} else if (node instanceof MSingleVariableAccess) {
+					// TODO Keep node only if its a field access
 				} else if (node instanceof SingleVariableDeclaration) {
+					// Keep node
+				} else if (node instanceof FieldAccess) {
 					// Keep node
 				} else if (node instanceof IfStatement 
 						|| node instanceof WhileStatement

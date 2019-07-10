@@ -314,14 +314,7 @@ public class ExpressionHandlerDataFlow {
 				AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
 				if (variablesContainer instanceof FieldDeclaration) { // Read access of a field
 					statementHandler.getFlowNodeForElement(variablesContainer); // No handling needed; only for visualization
-					EObject fragmentContainer = variableDeclarationFragment.eContainer();
-					if (fragmentContainer instanceof Expression) {
-						statementHandler.getMemberIn().add(handle((Expression) fragmentContainer));
-					} else if (fragmentContainer instanceof Statement) {
-						statementHandler.getMemberIn().add(statementHandler.handle((Statement) fragmentContainer));
-					} else {
-						LOGGER.log(Level.INFO, "ERROR: Unknown element type " + fragmentContainer.getClass().getName() + " found in SingleVariableAccess handling.");
-					}
+					statementHandler.getMemberIn().add(varDeclNode);
 					member.addInRef(varDeclNode);
 				} else if (variablesContainer instanceof VariableDeclarationStatement) { // Read access of a local
 					member.addInRef(statementHandler.getAlreadySeen().get(variableDeclarationFragment));
@@ -498,10 +491,10 @@ public class ExpressionHandlerDataFlow {
 				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
 				argumentNode.addOutRef(paramNode);
 			}
-			statementHandler.getMemberOut().add(methodNode);
+			statementHandler.getMemberOut().add(member);
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
-			statementHandler.getMemberIn().add(methodNode);
+			statementHandler.getMemberIn().add(member);
 			EObject container = methodInvocation.eContainer();
 			if (container instanceof Expression) {
 				handle((Expression) container).addInRef(member);
