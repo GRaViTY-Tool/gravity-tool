@@ -313,7 +313,6 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	// TODO Safe reference to every created FlowNode in StatementHandler
 	private FlowNode handle(ReturnStatement returnStatement) {
 		if (returnStatement == null) {
 			return null; // assume nothing to do is success
