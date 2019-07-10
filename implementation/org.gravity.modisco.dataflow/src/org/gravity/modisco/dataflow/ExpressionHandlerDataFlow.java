@@ -461,7 +461,6 @@ public class ExpressionHandlerDataFlow {
 				FlowNode argumentNode = handle(argument);
 				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
 				argumentNode.addOutRef(paramNode);
-				argumentNode.addOutRef(member);
 			}
 			statementHandler.getMemberOut().add(methodNode);
 		}
