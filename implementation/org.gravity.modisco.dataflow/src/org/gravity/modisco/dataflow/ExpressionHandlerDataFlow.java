@@ -268,13 +268,15 @@ public class ExpressionHandlerDataFlow {
 					if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
 						member.addOutRef(varDeclNode);
 						if (variable.eContainer() instanceof MFieldDefinition) {
-							statementHandler.getMemberOut().add(varDeclNode);
+							statementHandler.getMemberOut().add(member);
 						}
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
 					} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
 						member.addInRef(varDeclNode);
 						if (variable.eContainer() instanceof MFieldDefinition) {
-							statementHandler.getMemberIn().add(varDeclNode);
+							statementHandler.getMemberIn().add(member);
+						} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
+							statementHandler.getMemberOut().add(varDeclNode);
 						}
 						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 					} else {
@@ -297,8 +299,8 @@ public class ExpressionHandlerDataFlow {
 					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 					propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
 					if (variable.eContainer() instanceof MFieldDefinition) {
-						statementHandler.getMemberOut().add(varDeclNode);
-						statementHandler.getMemberIn().add(varDeclNode);
+						statementHandler.getMemberOut().add(member);
+						statementHandler.getMemberIn().add(member);
 					}
 				break;
 				default:
@@ -327,13 +329,14 @@ public class ExpressionHandlerDataFlow {
 			member.addInRef(varDeclNode);
 			if (variablesContainer instanceof MFieldDefinition) { // Read access of a field also causes inter-procedural flow
 				statementHandler.getFlowNodeForElement(variablesContainer); // No handling needed; only for visualization
-				statementHandler.getMemberIn().add(varDeclNode);
+				statementHandler.getMemberIn().add(member);
 			}
 		// Parameter flows
 		} else if (variable instanceof SingleVariableDeclaration) { 
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
-				member.addInRef(miscHandler.handle(singleVariableDeclaration)); // Add edge from decl to access
+				member.addInRef(varDeclNode); // Add edge from decl to access
+				statementHandler.getMemberOut().add(varDeclNode);
 			} else {
 				LOGGER.log(Level.INFO, "Unhandled container type " + singleVariableDeclaration.eContainer().getClass().getName() + " for SingleVariableDeclaration");
 			}
