@@ -256,56 +256,56 @@ public class ExpressionHandlerDataFlow {
 		while (!(currentContainer instanceof Statement) && (currentContainer != null)) {
 			if (currentContainer instanceof Assignment) {
 				Assignment assignment = (Assignment) currentContainer;
-				switch (assignment.getOperator()) {
-				case ASSIGN:
-					EStructuralFeature assignmentSide;
-					int queueSize = seenContainers.size();
-					if (queueSize > 1) {
-						assignmentSide = seenContainers.get(queueSize - 2).eContainingFeature();	
-					} else {
-						assignmentSide = singleVariableAccess.eContainingFeature();
-					}
-					if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
+				EStructuralFeature assignmentSide;
+				int queueSize = seenContainers.size();
+				if (queueSize > 1) {
+					assignmentSide = seenContainers.get(queueSize - 2).eContainingFeature();	
+				} else {
+					assignmentSide = singleVariableAccess.eContainingFeature();
+				}
+				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
+					switch (assignment.getOperator()) {
+					case ASSIGN:
 						member.addOutRef(varDeclNode);
 						if (variable.eContainer() instanceof MFieldDefinition) {
 							statementHandler.getMemberOut().add(member);
 						}
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-					} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
-						member.addInRef(varDeclNode);
-						if (variable.eContainer() instanceof MFieldDefinition) {
-							statementHandler.getMemberIn().add(member);
-						} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
-							statementHandler.getMemberOut().add(varDeclNode);
-						}
+						break;
+					case BIT_AND_ASSIGN:
+					case BIT_OR_ASSIGN:
+					case BIT_XOR_ASSIGN:
+					case DIVIDE_ASSIGN:
+					case LEFT_SHIFT_ASSIGN:
+					case MINUS_ASSIGN:
+					case PLUS_ASSIGN:
+					case REMAINDER_ASSIGN:
+					case RIGHT_SHIFT_SIGNED_ASSIGN:
+					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+					case TIMES_ASSIGN:
+						member.addInRef(varDeclNode); 
+						member.addOutRef(varDeclNode);
 						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-					} else {
-						LOGGER.log(Level.INFO, "Unknown assignment side");
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						if (variable.eContainer() instanceof MFieldDefinition) {
+							statementHandler.getMemberOut().add(member);
+							statementHandler.getMemberIn().add(member);
+						}
+						break;
+					default:
+						LOGGER.log(Level.INFO, "Unknown operator used in assignment");
+						break;
 					}
-					break;
-				case BIT_AND_ASSIGN:
-				case BIT_OR_ASSIGN:
-				case BIT_XOR_ASSIGN:
-				case DIVIDE_ASSIGN:
-				case LEFT_SHIFT_ASSIGN:
-				case MINUS_ASSIGN:
-				case PLUS_ASSIGN:
-				case REMAINDER_ASSIGN:
-				case RIGHT_SHIFT_SIGNED_ASSIGN:
-				case RIGHT_SHIFT_UNSIGNED_ASSIGN:
-				case TIMES_ASSIGN:
-					member.addInRef(varDeclNode); 
-					member.addOutRef(varDeclNode);
-					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-					propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
+					member.addInRef(varDeclNode);
 					if (variable.eContainer() instanceof MFieldDefinition) {
-						statementHandler.getMemberOut().add(member);
 						statementHandler.getMemberIn().add(member);
+					} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
+						statementHandler.getMemberOut().add(varDeclNode);
 					}
-				break;
-				default:
-					LOGGER.log(Level.INFO, "Unknown operator used in assignment");
-					break;
+					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+				} else {
+					LOGGER.log(Level.INFO, "Unknown assignment side");
 				}
 				return member;
 			}
