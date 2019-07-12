@@ -12,6 +12,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
@@ -30,8 +31,10 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
+import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
@@ -76,17 +79,15 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			HashMap<EObject, FlowNode> reducedDFG = (HashMap<EObject, FlowNode>) handler.getAlreadySeen().clone(); // TODO: Shallow copy ok here?
 			for (EObject node : handler.getAlreadySeen().keySet()) {
 				if (node instanceof MAbstractMethodDefinition) {
-					// Keep node
+					// Keep node (for readability of dot graphs only)
 				} else if (node instanceof VariableDeclarationFragment && node.eContainer() instanceof MFieldDefinition) {
 					// Keep node
-				} else if (node instanceof Block) {
-					// Keep node? Flows into this node can be ignored
 				} else if (node instanceof ReturnStatement) {
 					// Keep node
 				} else if (node instanceof MethodInvocation) {
 					// Keep node (and compute inter-edges?)
 				} else if (node instanceof MSingleVariableAccess) {
-					// TODO Keep node only if its a field access
+					// Keep node only if its a field access (TODO Check, if true)
 				} else if (node instanceof SingleVariableDeclaration) {
 					// Keep node
 				} else if (node instanceof FieldAccess) {
@@ -111,7 +112,37 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			reducedHandler.setAlreadySeen(reducedDFG);
 			reducedHandlers.add(reducedHandler);
 			// Calculating out-edges sufficient, since every out-edge leads to at most one in-edge
+			List<FlowNode> alreadyProcessed = new ArrayList<>();
 			for (FlowNode node : handler.getMemberOut()) {
+				EObject element = node.getModelElement();
+				if (element instanceof MSingleVariableAccess) {
+					MSingleVariableAccess access = (MSingleVariableAccess) element;
+					for (FlowNode inNode : node.getInRef()) {
+						if (alreadyProcessed.contains(inNode)) {
+							continue;
+						}
+						EObject inElement = inNode.getModelElement();
+						if (inElement instanceof SingleVariableDeclaration) {
+							// TODO ParamFlow
+							SingleVariableDeclaration parameter = (SingleVariableDeclaration) inElement;
+							MMethodDefinition methDef = (MMethodDefinition) parameter.getMethodDeclaration();
+							MEntry sigParam = methDef.getMMethodSignature().getMParameterList().getMEntrys().get(methDef.getParameters().indexOf(parameter));
+							MFlow paramFlow = ModiscoFactory.eINSTANCE.createMParamFlow();
+							paramFlow.getFlowSources().add(sigParam); // TODO Correct use of param of sig?
+						} else if (inElement instanceof VariableDeclarationFragment) {
+							// TODO ReturnFlow from field
+						}
+					}
+				} else if (element instanceof MethodInvocation) {
+					// TODO Handle
+				} else if (element instanceof FieldAccess) {
+					// TODO Handle
+				} else {
+					// TODO Handle
+				}
+				alreadyProcessed.add(node);
+			}
+			/*for (FlowNode node : handler.getMemberOut()) {
 				EObject element = node.getModelElement();
 				MFlow accessOutgoing = ModiscoFactory.eINSTANCE.createMFieldFlow();
 //				MAccess access = ModiscoFactory.eINSTANCE.createMAccess();
@@ -148,7 +179,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOutgoing.setFlowOwner(typedElement);
 //				accessOutgoing.getFlowSources().add(access);
 				accessOutgoing.getFlowTargets().add(typedElement);
-			}
+			}*/
 		}
 		if (GravityActivator.getDefault().isVerbose()) {
 			GraphVisualizer.drawGraphs(reducedHandlers, "reducedGraphs");

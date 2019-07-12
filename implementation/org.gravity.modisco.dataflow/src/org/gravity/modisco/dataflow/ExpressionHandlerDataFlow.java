@@ -301,7 +301,7 @@ public class ExpressionHandlerDataFlow {
 					if (variable.eContainer() instanceof MFieldDefinition) {
 						statementHandler.getMemberIn().add(member);
 					} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
-						statementHandler.getMemberOut().add(varDeclNode);
+						statementHandler.getMemberOut().add(member);
 					}
 					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 				} else {
@@ -336,7 +336,7 @@ public class ExpressionHandlerDataFlow {
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
 				member.addInRef(varDeclNode); // Add edge from decl to access
-				statementHandler.getMemberOut().add(varDeclNode);
+				statementHandler.getMemberOut().add(member);
 			} else {
 				LOGGER.log(Level.INFO, "Unhandled container type " + singleVariableDeclaration.eContainer().getClass().getName() + " for SingleVariableDeclaration");
 			}
