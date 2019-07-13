@@ -28,6 +28,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MFlow;
 import org.gravity.eclipse.GravityActivator;
+import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MDefinition;
@@ -35,6 +36,7 @@ import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
+import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
@@ -61,10 +63,15 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		sub.internalWorked(50);
 		sub.beginTask("Insertion of data flow edges", 5);
+		
+		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural data flows 
 		// TODO: Extract into own method
 		// TODO: Work with alreadySeen-Sets instead of handlers?
 		List<StatementHandlerDataFlow> reducedHandlers = new ArrayList<>();
 		for (StatementHandlerDataFlow handler : handlers) {
+			
+			// Determination of member's type
+			// TODO Use below in interproc. part
 			EObject memberDef = handler.getMemberDef();
 			MDefinition memberDefTyped = null;
 			if (memberDef instanceof MAbstractMethodDefinition) {
@@ -75,6 +82,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName() + " in DataFlowProcessor");
 				return false;
 			}
+			
+			// Reduction of intra-DFGs
 			StatementHandlerDataFlow reducedHandler = new StatementHandlerDataFlow(memberDefTyped);
 			HashMap<EObject, FlowNode> reducedDFG = (HashMap<EObject, FlowNode>) handler.getAlreadySeen().clone(); // TODO: Shallow copy ok here?
 			for (EObject node : handler.getAlreadySeen().keySet()) {
@@ -111,34 +120,115 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 			reducedHandler.setAlreadySeen(reducedDFG);
 			reducedHandlers.add(reducedHandler);
-			// Calculating out-edges sufficient, since every out-edge leads to at most one in-edge
+			
+			// Insertion of inter-procedural data flows
 			List<FlowNode> alreadyProcessed = new ArrayList<>();
-			for (FlowNode node : handler.getMemberOut()) {
-				EObject element = node.getModelElement();
-				if (element instanceof MSingleVariableAccess) {
-					MSingleVariableAccess access = (MSingleVariableAccess) element;
-					for (FlowNode inNode : node.getInRef()) {
-						if (alreadyProcessed.contains(inNode)) {
-							continue;
+			for (FlowNode node : handler.getMemberOut()) { // TODO Compute union with memberIn or combine earlier into memberRef (Set)
+				if (reducedHandler.getAlreadySeen().containsKey((node.getModelElement()))) {
+					FlowNode newNode = reducedHandler.getAlreadySeen().get(node.getModelElement());
+				}
+				
+				for (FlowNode inNode : node.getInRef()) {
+					if (alreadyProcessed.contains(inNode)) {
+						continue;
+					}
+					EObject inElement = inNode.getModelElement();
+					// Checking type of incoming flow's element
+					if (inElement instanceof SingleVariableDeclaration) { // TODO Should only distinguish between direct (w/o access) and access-based flows
+						// ParamFlow
+						SingleVariableDeclaration paramSource = (SingleVariableDeclaration) inElement;
+						MMethodDefinition methDefSource = (MMethodDefinition) paramSource.getMethodDeclaration();
+						MEntry sigParamSource = methDefSource.getMMethodSignature().getMParameterList().getMEntrys().get(methDefSource.getParameters().indexOf(paramSource));
+						MFlow paramFlow = ModiscoFactory.eINSTANCE.createMParamFlow();
+						paramFlow.getFlowSources().add(sigParamSource);
+						for (FlowNode outNode : node.getOutRef()) { // TODO: Behavior in this loop independent of concrete flow type? Then: Extract out of if scope
+							// TODO alreadyProcessed?
+							EObject outElement = outNode.getModelElement();
+							// Checking type of outgoing flow's element
+							if (outElement instanceof SingleVariableDeclaration) {
+								SingleVariableDeclaration paramTarget = (SingleVariableDeclaration) outElement;
+								MMethodDefinition methDefTarget = (MMethodDefinition) paramTarget.getMethodDeclaration();
+								MEntry sigParamTarget = methDefTarget.getMMethodSignature().getMParameterList().getMEntrys().get(methDefTarget.getParameters().indexOf(paramTarget));
+								paramFlow.getFlowTargets().add(sigParamTarget);
+							} else if (outElement instanceof MSingleVariableAccess) {
+								MSingleVariableAccess variableAccess = (MSingleVariableAccess) outElement;
+								paramFlow.getFlowTargets().add(variableAccess);
+								paramFlow.setFlowOwner(variableAccess);
+							} else if (outElement instanceof MethodInvocation) {
+								// Add as FlowOwner and as FlowTarget
+								// TODO Wrong. Could be handled BEFORE actual FlowTarget was set. Same below in Access-based part.
+								MMethodInvocation invocation = (MMethodInvocation) outElement;
+								paramFlow.setFlowOwner(invocation);
+								if (paramFlow.getFlowTargets().isEmpty()) {
+									paramFlow.getFlowTargets().add(invocation);
+								}
+							} else {
+								MDefinition definition = (MDefinition) memberDef;
+								if (outElement instanceof ReturnStatement) {
+									paramFlow.getFlowTargets().add(definition);
+									paramFlow.setFlowOwner(definition);
+								}else if (outElement instanceof IfStatement
+										|| outElement instanceof WhileStatement
+										|| outElement instanceof ForStatement) { // Separate from ReturnStatement, as this could be handled differently in the future
+									paramFlow.getFlowTargets().add(definition);
+									paramFlow.setFlowOwner(definition);
+								}
+							}
+							// TODO FieldAccess? Is SVD -> MSVA VDF possible?
+							// TODO VarDeclFrag? Is SVD -> MSVA -> VDF even possible? VDF (always?) has own MSVA
 						}
-						EObject inElement = inNode.getModelElement();
-						if (inElement instanceof SingleVariableDeclaration) {
-							// TODO ParamFlow
-							SingleVariableDeclaration parameter = (SingleVariableDeclaration) inElement;
-							MMethodDefinition methDef = (MMethodDefinition) parameter.getMethodDeclaration();
-							MEntry sigParam = methDef.getMMethodSignature().getMParameterList().getMEntrys().get(methDef.getParameters().indexOf(parameter));
-							MFlow paramFlow = ModiscoFactory.eINSTANCE.createMParamFlow();
-							paramFlow.getFlowSources().add(sigParam); // TODO Correct use of param of sig?
-						} else if (inElement instanceof VariableDeclarationFragment) {
-							// TODO ReturnFlow from field
+					} else { // Access-based flow
+						// TODO: For all cases, add usage of alreadyProcessed for reduction of redundancy
+						MFlow accessIn = null;
+						MFlow accessOut = null;
+						MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
+						// Field flow for field access
+						// TODO Only read access so far?
+						if (inElement instanceof VariableDeclarationFragment) {
+							accessIn = ModiscoFactory.eINSTANCE.createMReturnFlow();
+							accessOut = ModiscoFactory.eINSTANCE.createMFieldFlow();
+							MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer();
+							accessIn.getFlowSources().add(fieldDef);
+						} else if (inElement instanceof MethodInvocation) {
+							accessIn = ModiscoFactory.eINSTANCE.createMReturnFlow();
+							accessOut = ModiscoFactory.eINSTANCE.createMReturnFlow();
+							accessIn.getFlowSources().add((MMethodInvocation) inElement);
+						} else if (inElement instanceof MSingleVariableAccess) {
+							// TODO: More concrete types here?
+							accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+							accessIn.getFlowSources().add((MSingleVariableAccess) inElement);
+						} else if (inElement instanceof FieldAccess) {
+							// TODO Handle
+						} else {
+							// TODO Handle
+							//System.out.println(inElement.getClass().getSimpleName());
+							accessIn = ModiscoFactory.eINSTANCE.createMFlow(); // TODO NOT fixed!! Why are there still actually removed elements in reduced DFG???
+							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+						}
+						accessIn.setFlowOwner(access);
+						accessIn.getFlowTargets().add(access);
+						// Set references of accessOut
+						for (FlowNode outNode : node.getOutRef()) { // TODO: Always get first (and only), only get both, when there's SVD + MethInvoc?
+							EObject outElement = outNode.getModelElement();
+							accessOut.getFlowSources().add(access);
+							if (outElement instanceof ReturnStatement) {
+								accessOut.setFlowOwner(memberDefTyped);
+								accessOut.getFlowTargets().add(memberDefTyped);
+							} else if (outElement instanceof VariableDeclarationFragment) {
+								MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
+								accessOut.setFlowOwner(fieldDef);
+								accessOut.getFlowTargets().add(fieldDef);
+							} else {
+								if (!(outElement instanceof MAbstractFlowElement)) {
+									System.out.println(outElement.getClass().getSimpleName());
+								}
+								MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
+								accessOut.setFlowOwner(outTarget);
+								accessOut.getFlowTargets().add(outTarget);
+							} // TODO: Add separate handling for outNode types: If(While...)Statement, (Param)Flow
 						}
 					}
-				} else if (element instanceof MethodInvocation) {
-					// TODO Handle
-				} else if (element instanceof FieldAccess) {
-					// TODO Handle
-				} else {
-					// TODO Handle
 				}
 				alreadyProcessed.add(node);
 			}
