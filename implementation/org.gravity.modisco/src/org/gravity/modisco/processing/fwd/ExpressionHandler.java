@@ -39,6 +39,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MDefinition;
+import org.gravity.modisco.MSingleVariableAccess;
 
 public class ExpressionHandler {
 
@@ -217,7 +218,7 @@ public class ExpressionHandler {
 				if(member.getMAbstractFieldAccess().contains(singleVariableAccess)){
 					return true;
 				}
-				if (!member.getMAbstractFieldAccess().add(singleVariableAccess)) {
+				if (!member.getMAbstractFieldAccess().add((MSingleVariableAccess) singleVariableAccess)) {
 					return false;
 				}
 			}
