@@ -21,7 +21,6 @@ import org.eclipse.gmt.modisco.java.ConditionalExpression;
 import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.InstanceofExpression;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
@@ -44,7 +43,6 @@ import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
-import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.gravity.modisco.MFieldDefinition;
 
 public class ExpressionHandlerDataFlow {
@@ -268,7 +266,7 @@ public class ExpressionHandlerDataFlow {
 					case ASSIGN:
 						member.addOutRef(varDeclNode);
 						if (variable.eContainer() instanceof MFieldDefinition) {
-							statementHandler.getMemberOut().add(member);
+							statementHandler.getMemberRef().add(member);
 						}
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
 						break;
@@ -288,8 +286,7 @@ public class ExpressionHandlerDataFlow {
 						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
 						if (variable.eContainer() instanceof MFieldDefinition) {
-							statementHandler.getMemberOut().add(member);
-							statementHandler.getMemberIn().add(member);
+							statementHandler.getMemberRef().add(member);
 						}
 						break;
 					default:
@@ -299,9 +296,9 @@ public class ExpressionHandlerDataFlow {
 				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
 					member.addInRef(varDeclNode);
 					if (variable.eContainer() instanceof MFieldDefinition) {
-						statementHandler.getMemberIn().add(member);
+						statementHandler.getMemberRef().add(member);
 					} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
-						statementHandler.getMemberOut().add(member);
+						statementHandler.getMemberRef().add(member);
 					}
 					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 				} else {
@@ -329,14 +326,14 @@ public class ExpressionHandlerDataFlow {
 			member.addInRef(varDeclNode);
 			if (variablesContainer instanceof MFieldDefinition) { // Read access of a field also causes inter-procedural flow
 				statementHandler.getFlowNodeForElement(variablesContainer); // No handling needed; only for visualization
-				statementHandler.getMemberIn().add(member);
+				statementHandler.getMemberRef().add(member);
 			}
 		// Parameter flows
 		} else if (variable instanceof SingleVariableDeclaration) { 
 			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
 			if (singleVariableDeclaration.eContainer() instanceof AbstractMethodDeclaration) { // Read access of a parameter
 				member.addInRef(varDeclNode); // Add edge from decl to access
-				statementHandler.getMemberOut().add(member);
+				statementHandler.getMemberRef().add(member);
 			} else {
 				LOGGER.log(Level.INFO, "Unhandled container type " + singleVariableDeclaration.eContainer().getClass().getName() + " for SingleVariableDeclaration");
 			}
@@ -477,7 +474,6 @@ public class ExpressionHandlerDataFlow {
 		}
 		handle(fieldAccess.getExpression());
 		handle(fieldAccess.getField());
-		statementHandler.getMemberIn().add(member);
 		return member;
 	}
 
@@ -496,10 +492,10 @@ public class ExpressionHandlerDataFlow {
 				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
 				argumentNode.addOutRef(paramNode);
 			}
-			statementHandler.getMemberOut().add(member);
+			statementHandler.getMemberRef().add(member);
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
-			statementHandler.getMemberIn().add(member);
+			statementHandler.getMemberRef().add(member);
 			EObject container = methodInvocation.eContainer();
 			if (container instanceof Expression) {
 				handle((Expression) container).addInRef(member);

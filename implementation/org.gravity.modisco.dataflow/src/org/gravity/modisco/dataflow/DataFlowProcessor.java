@@ -119,7 +119,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			
 			// Insertion of inter-procedural data flows
 			List<FlowNode> alreadyProcessed = new ArrayList<>();
-			for (FlowNode node : handler.getMemberOut()) { // TODO Compute union with memberIn or combine earlier into memberRef (Set)				
+			for (FlowNode node : handler.getMemberRef()) {				
 				for (FlowNode inNode : node.getInRef()) {
 					if (alreadyProcessed.contains(inNode)) {
 						continue;

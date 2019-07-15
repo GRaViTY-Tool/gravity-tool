@@ -2,7 +2,9 @@ package org.gravity.modisco.dataflow;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -45,14 +47,9 @@ import org.gravity.modisco.MDefinition;
 public class StatementHandlerDataFlow {
 	
 	/**
-	 * The incoming flow of the member corresponding to this handler.
+	 * The accesses observed in the member corresponding to this handler.
 	 */
-	private final List<FlowNode> memberIn = new ArrayList<>();
-	
-	/**
-	 * The outgoing flow of the member corresponding to this handler.
-	 */
-	private final List<FlowNode> memberOut = new ArrayList<>();
+	private final Set<FlowNode> memberRef = new HashSet<>();
 	
 	/**
 	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
@@ -427,9 +424,8 @@ public class StatementHandlerDataFlow {
 			for (Expression argument : arguments) {
 				expressionHandler.handle(argument);
 			}
-			memberOut.add(member);
 		}
-		memberIn.add(member);
+		memberRef.add(member);
 		member.addOutRef(getFlowNodeForElement(constructorInvocation.eContainer()));
 		return member;
 	}
@@ -481,12 +477,8 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	public List<FlowNode> getMemberIn() {
-		return memberIn;
-	}
-
-	public List<FlowNode> getMemberOut() {
-		return memberOut;
+	public Set<FlowNode> getMemberRef() {
+		return memberRef;
 	}
 	
 	public HashMap<EObject, FlowNode> getAlreadySeen() {
