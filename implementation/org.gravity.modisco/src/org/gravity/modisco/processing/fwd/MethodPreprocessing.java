@@ -14,6 +14,7 @@ import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MParameterList;
+import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
@@ -68,6 +69,12 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 				if (isParamListEqual(definition, mSig)) {
 					mSig.getMMethodDefinitions().add(definition);
 					mSig.getMDefinitions().add(definition);
+					MEntry mFirstEntry = mSig.getMParameterList().getMFirstEntry();
+					EList<SingleVariableDeclaration> defParams = definition.getParameters();
+					mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
+					for (int i = 1; i < mSig.getMParameterList().getMEntrys().size(); i++) {
+						mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
+					}
 					continue;
 				}
 

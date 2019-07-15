@@ -29,6 +29,7 @@ import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MParameterList;
+import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 
 /**
@@ -256,6 +257,7 @@ public class MoDiscoUtil {
 		MEntry prev = null;
 		for (SingleVariableDeclaration param : mDef.getParameters()) {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+			entry.getParameters().add((MSingleVariableDeclaration) param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
 			if (prev == null) {
