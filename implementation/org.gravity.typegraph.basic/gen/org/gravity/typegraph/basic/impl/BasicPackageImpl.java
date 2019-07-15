@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TCall;
@@ -23,6 +24,7 @@ import org.gravity.typegraph.basic.TConstructorSignature;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
@@ -34,6 +36,7 @@ import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TRead;
+import org.gravity.typegraph.basic.TReadWrite;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TSyntethicMethod;
 import org.gravity.typegraph.basic.TUnresolvedType;
@@ -237,6 +240,27 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	private EClass tNameEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tFlowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tAbstractFlowElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tReadWriteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1772,6 +1796,96 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getTFlow() {
+		return tFlowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTFlow_FlowSources() {
+		return (EReference)tFlowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTFlow_FlowTargets() {
+		return (EReference)tFlowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTFlow_FlowOwner() {
+		return (EReference)tFlowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTAbstractFlowElement() {
+		return tAbstractFlowElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTAbstractFlowElement_OwnedFlows() {
+		return (EReference)tAbstractFlowElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTAbstractFlowElement_IncomingFlows() {
+		return (EReference)tAbstractFlowElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTAbstractFlowElement_OutgoingFlows() {
+		return (EReference)tAbstractFlowElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTReadWrite() {
+		return tReadWriteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getTVisibility() {
 		return tVisibilityEEnum;
 	}
@@ -1976,6 +2090,18 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tNameEClass = createEClass(TNAME);
 		createEAttribute(tNameEClass, TNAME__TNAME);
 
+		tFlowEClass = createEClass(TFLOW);
+		createEReference(tFlowEClass, TFLOW__FLOW_SOURCES);
+		createEReference(tFlowEClass, TFLOW__FLOW_TARGETS);
+		createEReference(tFlowEClass, TFLOW__FLOW_OWNER);
+
+		tAbstractFlowElementEClass = createEClass(TABSTRACT_FLOW_ELEMENT);
+		createEReference(tAbstractFlowElementEClass, TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS);
+		createEReference(tAbstractFlowElementEClass, TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+		createEReference(tAbstractFlowElementEClass, TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+
+		tReadWriteEClass = createEClass(TREAD_WRITE);
+
 		// Create enums
 		tVisibilityEEnum = createEEnum(TVISIBILITY);
 	}
@@ -2022,12 +2148,15 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tFieldSignatureEClass.getESuperTypes().add(this.getTSignature());
 		tCallEClass.getESuperTypes().add(this.getTAccess());
 		tMemberEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
+		tMemberEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		tMethodEClass.getESuperTypes().add(this.getTName());
 		tMethodDefinitionEClass.getESuperTypes().add(this.getTMember());
 		tMethodSignatureEClass.getESuperTypes().add(this.getTSignature());
 		tPackageEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tParameterEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
+		tParameterEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		tSignatureEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
+		tSignatureEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		typeGraphEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tInterfaceEClass.getESuperTypes().add(this.getTAbstractType());
 		tAbstractTypeEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
@@ -2039,9 +2168,11 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tSyntethicMethodEClass.getESuperTypes().add(this.getTMember());
 		tUnresolvedTypeEClass.getESuperTypes().add(this.getTClass());
 		tUnresolvedTypeEClass.getESuperTypes().add(this.getTInterface());
+		tFlowEClass.getESuperTypes().add(this.getTAbstractFlowElement());
+		tReadWriteEClass.getESuperTypes().add(this.getTFlow());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(tAccessEClass, TAccess.class, "TAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(tAccessEClass, TAccess.class, "TAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTAccess_TTarget(), this.getTMember(), this.getTMember_AccessedBy(), "tTarget", null, 1, 1, TAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTAccess_TSource(), this.getTMember(), this.getTMember_TAccessing(), "tSource", null, 1, 1, TAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTAccess_StaticType(), this.getTAbstractType(), null, "staticType", null, 0, 1, TAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2287,6 +2418,18 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		initEClass(tNameEClass, TName.class, "TName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTName_TName(), ecorePackage.getEString(), "tName", null, 1, 1, TName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(tFlowEClass, TFlow.class, "TFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTFlow_FlowSources(), this.getTAbstractFlowElement(), null, "flowSources", null, 0, -1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTFlow_FlowTargets(), this.getTAbstractFlowElement(), null, "flowTargets", null, 0, -1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTFlow_FlowOwner(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_OwnedFlows(), "flowOwner", null, 0, 1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tAbstractFlowElementEClass, TAbstractFlowElement.class, "TAbstractFlowElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTAbstractFlowElement_OwnedFlows(), this.getTFlow(), this.getTFlow_FlowOwner(), "ownedFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTAbstractFlowElement_IncomingFlows(), this.getTFlow(), null, "incomingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTAbstractFlowElement_OutgoingFlows(), this.getTFlow(), null, "outgoingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tReadWriteEClass, TReadWrite.class, "TReadWrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(tVisibilityEEnum, TVisibility.class, "TVisibility");

@@ -229,6 +229,17 @@
     <genClasses ecoreClass="Basic.ecore#//TName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TName/tName"/>
     </genClasses>
+    <genClasses ecoreClass="Basic.ecore#//TFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFlow/flowSources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFlow/flowTargets"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TFlow/flowOwner"/>
+    </genClasses>
+    <genClasses ecoreClass="Basic.ecore#//TAbstractFlowElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractFlowElement/ownedFlows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractFlowElement/incomingFlows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractFlowElement/outgoingFlows"/>
+    </genClasses>
+    <genClasses ecoreClass="Basic.ecore#//TReadWrite"/>
     <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="Basic.ecore#//containers">
       <genClasses ecoreClass="Basic.ecore#//containers/TTypeContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

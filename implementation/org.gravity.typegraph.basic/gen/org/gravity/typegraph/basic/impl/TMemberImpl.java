@@ -17,12 +17,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TSignature;
@@ -39,6 +42,9 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getOwnedFlows <em>Owned Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessedBy <em>Accessed By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getTAccessing <em>TAccessing</em>}</li>
@@ -48,6 +54,36 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * @generated
  */
 public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
+	/**
+	 * The cached value of the '{@link #getOwnedFlows() <em>Owned Flows</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> ownedFlows;
+
+	/**
+	 * The cached value of the '{@link #getIncomingFlows() <em>Incoming Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> incomingFlows;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> outgoingFlows;
+
 	/**
 	 * The cached value of the '{@link #getDefinedBy() <em>Defined By</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -105,6 +141,45 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	protected EClass eStaticClass() {
 		return BasicPackage.Literals.TMEMBER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getOwnedFlows() {
+		if (ownedFlows == null) {
+			ownedFlows = new EObjectContainmentWithInverseEList<TFlow>(TFlow.class, this, BasicPackage.TMEMBER__OWNED_FLOWS, BasicPackage.TFLOW__FLOW_OWNER);
+		}
+		return ownedFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getIncomingFlows() {
+		if (incomingFlows == null) {
+			incomingFlows = new EObjectResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TMEMBER__INCOMING_FLOWS);
+		}
+		return incomingFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getOutgoingFlows() {
+		if (outgoingFlows == null) {
+			outgoingFlows = new EObjectResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TMEMBER__OUTGOING_FLOWS);
+		}
+		return outgoingFlows;
 	}
 
 	/**
@@ -263,6 +338,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				if (definedBy != null)
 					msgs = ((InternalEObject)definedBy).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__DEFINES, TAbstractType.class, msgs);
@@ -283,6 +360,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				return basicSetDefinedBy(null, msgs);
 			case BasicPackage.TMEMBER__ACCESSED_BY:
@@ -303,6 +382,12 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				return getOwnedFlows();
+			case BasicPackage.TMEMBER__INCOMING_FLOWS:
+				return getIncomingFlows();
+			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
+				return getOutgoingFlows();
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				if (resolve) return getDefinedBy();
 				return basicGetDefinedBy();
@@ -325,6 +410,18 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				getOwnedFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
+			case BasicPackage.TMEMBER__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				getIncomingFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
+			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				getOutgoingFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				setDefinedBy((TAbstractType)newValue);
 				return;
@@ -351,6 +448,15 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				return;
+			case BasicPackage.TMEMBER__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				return;
+			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				return;
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				setDefinedBy((TAbstractType)null);
 				return;
@@ -375,6 +481,12 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMEMBER__OWNED_FLOWS:
+				return ownedFlows != null && !ownedFlows.isEmpty();
+			case BasicPackage.TMEMBER__INCOMING_FLOWS:
+				return incomingFlows != null && !incomingFlows.isEmpty();
+			case BasicPackage.TMEMBER__OUTGOING_FLOWS:
+				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TMEMBER__DEFINED_BY:
 				return definedBy != null;
 			case BasicPackage.TMEMBER__ACCESSED_BY:
@@ -385,6 +497,42 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return tModifier != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMEMBER__OWNED_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+				case BasicPackage.TMEMBER__INCOMING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+				case BasicPackage.TMEMBER__OUTGOING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return BasicPackage.TMEMBER__OWNED_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return BasicPackage.TMEMBER__INCOMING_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return BasicPackage.TMEMBER__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

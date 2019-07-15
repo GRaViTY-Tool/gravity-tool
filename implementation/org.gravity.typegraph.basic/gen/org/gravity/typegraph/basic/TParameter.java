@@ -24,7 +24,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * @model
  * @generated
  */
-public interface TParameter extends TAnnotatable {
+public interface TParameter extends TAnnotatable, TAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Next</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TParameter#getPrevious <em>Previous</em>}'.

@@ -173,6 +173,18 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 				return createTNameAdapter();
 			}
 			@Override
+			public Adapter caseTFlow(TFlow object) {
+				return createTFlowAdapter();
+			}
+			@Override
+			public Adapter caseTAbstractFlowElement(TAbstractFlowElement object) {
+				return createTAbstractFlowElementAdapter();
+			}
+			@Override
+			public Adapter caseTReadWrite(TReadWrite object) {
+				return createTReadWriteAdapter();
+			}
+			@Override
 			public Adapter caseTAnnotatable(TAnnotatable object) {
 				return createTAnnotatableAdapter();
 			}
@@ -556,6 +568,48 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TFlow <em>TFlow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TFlow
+	 * @generated
+	 */
+	public Adapter createTFlowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TAbstractFlowElement <em>TAbstract Flow Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement
+	 * @generated
+	 */
+	public Adapter createTAbstractFlowElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TReadWrite <em>TRead Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TReadWrite
+	 * @generated
+	 */
+	public Adapter createTReadWriteAdapter() {
 		return null;
 	}
 

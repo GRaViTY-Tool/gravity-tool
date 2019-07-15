@@ -16,7 +16,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  * @model abstract="true"
  * @generated
  */
-public interface TSignature extends TAnnotatable {
+public interface TSignature extends TAnnotatable, TAbstractFlowElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

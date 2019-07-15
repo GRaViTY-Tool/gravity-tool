@@ -57,7 +57,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BasicPackage.TACCESS: return createTAccess();
 			case BasicPackage.TCLASS: return createTClass();
 			case BasicPackage.TFIELD: return createTField();
 			case BasicPackage.TFIELD_DEFINITION: return createTFieldDefinition();
@@ -80,6 +79,9 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TSYNTETHIC_METHOD: return createTSyntethicMethod();
 			case BasicPackage.TUNRESOLVED_TYPE: return createTUnresolvedType();
 			case BasicPackage.TNAME: return createTName();
+			case BasicPackage.TFLOW: return createTFlow();
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT: return createTAbstractFlowElement();
+			case BasicPackage.TREAD_WRITE: return createTReadWrite();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -113,17 +115,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TAccess createTAccess() {
-		TAccessImpl tAccess = new TAccessImpl();
-		return tAccess;
 	}
 
 	/**
@@ -366,6 +357,39 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TName createTName() {
 		TNameImpl tName = new TNameImpl();
 		return tName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TFlow createTFlow() {
+		TFlowImpl tFlow = new TFlowImpl();
+		return tFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TAbstractFlowElement createTAbstractFlowElement() {
+		TAbstractFlowElementImpl tAbstractFlowElement = new TAbstractFlowElementImpl();
+		return tAbstractFlowElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TReadWrite createTReadWrite() {
+		TReadWriteImpl tReadWrite = new TReadWriteImpl();
+		return tReadWrite;
 	}
 
 	/**

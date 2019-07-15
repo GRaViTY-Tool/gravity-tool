@@ -94,6 +94,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTFieldDefinition(tFieldDefinition);
 				if (result == null) result = caseTMember(tFieldDefinition);
 				if (result == null) result = caseTAnnotatable(tFieldDefinition);
+				if (result == null) result = caseTAbstractFlowElement(tFieldDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,6 +103,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTFieldSignature(tFieldSignature);
 				if (result == null) result = caseTSignature(tFieldSignature);
 				if (result == null) result = caseTAnnotatable(tFieldSignature);
+				if (result == null) result = caseTAbstractFlowElement(tFieldSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,6 +118,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TMember tMember = (TMember)theEObject;
 				T result = caseTMember(tMember);
 				if (result == null) result = caseTAnnotatable(tMember);
+				if (result == null) result = caseTAbstractFlowElement(tMember);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,6 +134,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTMethodDefinition(tMethodDefinition);
 				if (result == null) result = caseTMember(tMethodDefinition);
 				if (result == null) result = caseTAnnotatable(tMethodDefinition);
+				if (result == null) result = caseTAbstractFlowElement(tMethodDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -139,6 +143,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTMethodSignature(tMethodSignature);
 				if (result == null) result = caseTSignature(tMethodSignature);
 				if (result == null) result = caseTAnnotatable(tMethodSignature);
+				if (result == null) result = caseTAbstractFlowElement(tMethodSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,6 +158,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TParameter tParameter = (TParameter)theEObject;
 				T result = caseTParameter(tParameter);
 				if (result == null) result = caseTAnnotatable(tParameter);
+				if (result == null) result = caseTAbstractFlowElement(tParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -166,6 +172,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				TSignature tSignature = (TSignature)theEObject;
 				T result = caseTSignature(tSignature);
 				if (result == null) result = caseTAnnotatable(tSignature);
+				if (result == null) result = caseTAbstractFlowElement(tSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,6 +212,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTMethodSignature(tConstructorSignature);
 				if (result == null) result = caseTSignature(tConstructorSignature);
 				if (result == null) result = caseTAnnotatable(tConstructorSignature);
+				if (result == null) result = caseTAbstractFlowElement(tConstructorSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -214,6 +222,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTMethodDefinition(tConstructorDefinition);
 				if (result == null) result = caseTMember(tConstructorDefinition);
 				if (result == null) result = caseTAnnotatable(tConstructorDefinition);
+				if (result == null) result = caseTAbstractFlowElement(tConstructorDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +251,7 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTSyntethicMethod(tSyntethicMethod);
 				if (result == null) result = caseTMember(tSyntethicMethod);
 				if (result == null) result = caseTAnnotatable(tSyntethicMethod);
+				if (result == null) result = caseTAbstractFlowElement(tSyntethicMethod);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -258,6 +268,27 @@ public class BasicSwitch<T> extends Switch<T> {
 			case BasicPackage.TNAME: {
 				TName tName = (TName)theEObject;
 				T result = caseTName(tName);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TFLOW: {
+				TFlow tFlow = (TFlow)theEObject;
+				T result = caseTFlow(tFlow);
+				if (result == null) result = caseTAbstractFlowElement(tFlow);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT: {
+				TAbstractFlowElement tAbstractFlowElement = (TAbstractFlowElement)theEObject;
+				T result = caseTAbstractFlowElement(tAbstractFlowElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TREAD_WRITE: {
+				TReadWrite tReadWrite = (TReadWrite)theEObject;
+				T result = caseTReadWrite(tReadWrite);
+				if (result == null) result = caseTFlow(tReadWrite);
+				if (result == null) result = caseTAbstractFlowElement(tReadWrite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -652,6 +683,51 @@ public class BasicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTName(TName object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TFlow</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TFlow</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTFlow(TFlow object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAbstract Flow Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAbstract Flow Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAbstractFlowElement(TAbstractFlowElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TRead Write</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TRead Write</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTReadWrite(TReadWrite object) {
 		return null;
 	}
 

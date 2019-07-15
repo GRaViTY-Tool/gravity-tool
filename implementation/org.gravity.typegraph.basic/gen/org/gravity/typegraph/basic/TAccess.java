@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTAccess()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface TAccess extends EObject {

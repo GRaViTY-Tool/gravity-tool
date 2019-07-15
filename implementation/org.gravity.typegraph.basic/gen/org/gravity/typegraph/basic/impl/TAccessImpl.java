@@ -34,7 +34,7 @@ import org.gravity.typegraph.basic.TMember;
  *
  * @generated
  */
-public class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess {
+public abstract class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess {
 	/**
 	 * The cached value of the '{@link #getTTarget() <em>TTarget</em>}' reference.
 	 * <!-- begin-user-doc -->

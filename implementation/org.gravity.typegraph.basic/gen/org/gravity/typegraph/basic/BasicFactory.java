@@ -22,15 +22,6 @@ public interface BasicFactory extends EFactory {
 	BasicFactory eINSTANCE = org.gravity.typegraph.basic.impl.BasicFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>TAccess</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TAccess</em>'.
-	 * @generated
-	 */
-	TAccess createTAccess();
-
-	/**
 	 * Returns a new object of class '<em>TClass</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +218,33 @@ public interface BasicFactory extends EFactory {
 	 * @generated
 	 */
 	TName createTName();
+
+	/**
+	 * Returns a new object of class '<em>TFlow</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TFlow</em>'.
+	 * @generated
+	 */
+	TFlow createTFlow();
+
+	/**
+	 * Returns a new object of class '<em>TAbstract Flow Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TAbstract Flow Element</em>'.
+	 * @generated
+	 */
+	TAbstractFlowElement createTAbstractFlowElement();
+
+	/**
+	 * Returns a new object of class '<em>TRead Write</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TRead Write</em>'.
+	 * @generated
+	 */
+	TReadWrite createTReadWrite();
 
 	/**
 	 * Returns the package supported by this factory.

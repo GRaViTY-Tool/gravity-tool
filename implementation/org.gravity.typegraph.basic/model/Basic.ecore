@@ -304,9 +304,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
         eType="#//TFlow"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TFieldFlow" eSuperTypes="#//TFlow"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TReturnFlow" eSuperTypes="#//TFlow"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TParamFlow" eSuperTypes="#//TFlow"/>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TFlow"/>
   <eSubpackages name="containers" nsURI="http://www.gravity.org/typegraph/basic#//containers"
       nsPrefix="containers">

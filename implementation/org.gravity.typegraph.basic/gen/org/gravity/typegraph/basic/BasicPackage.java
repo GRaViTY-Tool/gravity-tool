@@ -832,13 +832,40 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
@@ -847,7 +874,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
@@ -856,7 +883,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TMEMBER__TACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -865,7 +892,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>TMember</em>' class.
@@ -874,7 +901,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -930,6 +957,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TFIELD_DEFINITION__TANNOTATION = TMEMBER__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -1059,13 +1113,40 @@ public interface BasicPackage extends EPackage {
 	int TSIGNATURE__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>TSignature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1121,6 +1202,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TFIELD_SIGNATURE__TANNOTATION = TSIGNATURE__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__OWNED_FLOWS = TSIGNATURE__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__INCOMING_FLOWS = TSIGNATURE__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__OUTGOING_FLOWS = TSIGNATURE__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
@@ -1324,6 +1432,33 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION__TANNOTATION = TMEMBER__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1494,6 +1629,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TMETHOD_SIGNATURE__TANNOTATION = TSIGNATURE__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__OWNED_FLOWS = TSIGNATURE__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__INCOMING_FLOWS = TSIGNATURE__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__OUTGOING_FLOWS = TSIGNATURE__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Method</b></em>' container reference.
@@ -1759,13 +1921,40 @@ public interface BasicPackage extends EPackage {
 	int TPARAMETER__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Next</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' reference.
@@ -1774,7 +1963,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1783,7 +1972,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>TParameter</em>' class.
@@ -1792,7 +1981,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2385,6 +2574,33 @@ public interface BasicPackage extends EPackage {
 	int TCONSTRUCTOR_SIGNATURE__TANNOTATION = TMETHOD_SIGNATURE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_SIGNATURE__OWNED_FLOWS = TMETHOD_SIGNATURE__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_SIGNATURE__INCOMING_FLOWS = TMETHOD_SIGNATURE__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_SIGNATURE__OUTGOING_FLOWS = TMETHOD_SIGNATURE__OUTGOING_FLOWS;
+
+	/**
 	 * The feature id for the '<em><b>Method</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2492,6 +2708,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCONSTRUCTOR_DEFINITION__TANNOTATION = TMETHOD_DEFINITION__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_DEFINITION__OWNED_FLOWS = TMETHOD_DEFINITION__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_DEFINITION__INCOMING_FLOWS = TMETHOD_DEFINITION__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_DEFINITION__OUTGOING_FLOWS = TMETHOD_DEFINITION__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -2820,6 +3063,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TSYNTETHIC_METHOD__TANNOTATION = TMEMBER__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -3309,6 +3579,225 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE_OPERATION_COUNT = TCLASS_OPERATION_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl <em>TAbstract Flow Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractFlowElement()
+	 * @generated
+	 */
+	int TABSTRACT_FLOW_ELEMENT = 27;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = 2;
+
+	/**
+	 * The number of structural features of the '<em>TAbstract Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>TAbstract Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFlowImpl <em>TFlow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TFlowImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFlow()
+	 * @generated
+	 */
+	int TFLOW = 26;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__OWNED_FLOWS = TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__INCOMING_FLOWS = TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Flow Sources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__FLOW_SOURCES = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Flow Targets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__FLOW_TARGETS = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__FLOW_OWNER = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>TFlow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>TFlow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW_OPERATION_COUNT = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TReadWriteImpl <em>TRead Write</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TReadWriteImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTReadWrite()
+	 * @generated
+	 */
+	int TREAD_WRITE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__OWNED_FLOWS = TFLOW__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__INCOMING_FLOWS = TFLOW__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__OUTGOING_FLOWS = TFLOW__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Flow Sources</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__FLOW_SOURCES = TFLOW__FLOW_SOURCES;
+
+	/**
+	 * The feature id for the '<em><b>Flow Targets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__FLOW_TARGETS = TFLOW__FLOW_TARGETS;
+
+	/**
+	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__FLOW_OWNER = TFLOW__FLOW_OWNER;
+
+	/**
+	 * The number of structural features of the '<em>TRead Write</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE_FEATURE_COUNT = TFLOW_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>TRead Write</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE_OPERATION_COUNT = TFLOW_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3316,7 +3805,7 @@ public interface BasicPackage extends EPackage {
 	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTVisibility()
 	 * @generated
 	 */
-	int TVISIBILITY = 26;
+	int TVISIBILITY = 29;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAccess <em>TAccess</em>}'.
@@ -4838,6 +5327,102 @@ public interface BasicPackage extends EPackage {
 	EAttribute getTName_TName();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TFlow <em>TFlow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TFlow</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow
+	 * @generated
+	 */
+	EClass getTFlow();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TFlow#getFlowSources <em>Flow Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Flow Sources</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowSources()
+	 * @see #getTFlow()
+	 * @generated
+	 */
+	EReference getTFlow_FlowSources();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TFlow#getFlowTargets <em>Flow Targets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Flow Targets</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowTargets()
+	 * @see #getTFlow()
+	 * @generated
+	 */
+	EReference getTFlow_FlowTargets();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFlow#getFlowOwner <em>Flow Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Flow Owner</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowOwner()
+	 * @see #getTFlow()
+	 * @generated
+	 */
+	EReference getTFlow_FlowOwner();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAbstractFlowElement <em>TAbstract Flow Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TAbstract Flow Element</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement
+	 * @generated
+	 */
+	EClass getTAbstractFlowElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getOwnedFlows <em>Owned Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOwnedFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_OwnedFlows();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows <em>Incoming Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incoming Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_IncomingFlows();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows <em>Outgoing Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outgoing Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_OutgoingFlows();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TReadWrite <em>TRead Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TRead Write</em>'.
+	 * @see org.gravity.typegraph.basic.TReadWrite
+	 * @generated
+	 */
+	EClass getTReadWrite();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6081,6 +6666,84 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TNAME__TNAME = eINSTANCE.getTName_TName();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TFlowImpl <em>TFlow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TFlowImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFlow()
+		 * @generated
+		 */
+		EClass TFLOW = eINSTANCE.getTFlow();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Sources</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TFLOW__FLOW_SOURCES = eINSTANCE.getTFlow_FlowSources();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Targets</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TFLOW__FLOW_TARGETS = eINSTANCE.getTFlow_FlowTargets();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Owner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TFLOW__FLOW_OWNER = eINSTANCE.getTFlow_FlowOwner();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl <em>TAbstract Flow Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractFlowElement()
+		 * @generated
+		 */
+		EClass TABSTRACT_FLOW_ELEMENT = eINSTANCE.getTAbstractFlowElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Flows</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = eINSTANCE.getTAbstractFlowElement_OwnedFlows();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Flows</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = eINSTANCE.getTAbstractFlowElement_IncomingFlows();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Flows</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = eINSTANCE.getTAbstractFlowElement_OutgoingFlows();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TReadWriteImpl <em>TRead Write</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TReadWriteImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTReadWrite()
+		 * @generated
+		 */
+		EClass TREAD_WRITE = eINSTANCE.getTReadWrite();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
