@@ -3,6 +3,7 @@ package org.gravity.modisco.dataflow;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -30,13 +31,16 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.MSingleVariableAccess;
+import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
 /**
- * A preprocessor for calculating data flow edges
+ * A preprocessor for calculating data flow edges<br/><br/>
  * 
- * TODO Add remark FieldProc + Methodprocessing need to be computed before this processing
+ * <b>IMPORTANT REMARK:</b><br/>
+ * To work properly, this processor requires FieldPreprocessing and MethodPreprocessing to be executed prior to it, 
+ * as it depends on the decomposition of statements with multiple declarations into one statement for each declaration.
  * 
  * @author speldszus
  *
@@ -88,6 +92,20 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node (and compute inter-edges?)
 				} else if (node instanceof MSingleVariableAccess) {
 					// Keep node only if its a field access (TODO Check, if true)
+					// Removing unnecessary out edges
+					Set<FlowNode> outRef = reducedDFG.get(node).getOutRef();
+					int size = outRef.size();
+					if (size > 1) {
+						Set<FlowNode> toRemove = new HashSet<>();
+						for (FlowNode flowNode : outRef) {
+							EObject modelElement = flowNode.getModelElement();
+							if (modelElement instanceof MethodInvocation || modelElement == node) {
+								toRemove.add(flowNode);
+								reducedDFG.get(modelElement).getInRef().remove(reducedDFG.get(node));
+							}
+						}
+						outRef.removeAll(toRemove);
+					}
 				} else if (node instanceof SingleVariableDeclaration) {
 					// Keep node
 				} else if (node instanceof IfStatement 
@@ -118,20 +136,23 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 			
 			// Insertion of inter-procedural data flows
-			List<FlowNode> alreadyProcessed = new ArrayList<>();
 			for (FlowNode node : handler.getMemberRef()) {				
 				for (FlowNode inNode : node.getInRef()) {
-					if (alreadyProcessed.contains(inNode)) {
+					EObject inElement = inNode.getModelElement();
+					// Checking, if incoming flow comes from an access; will be omitted then, to avoid redundant edges
+					// TODO Test!
+					if (inElement instanceof MSingleVariableAccess || inElement instanceof MethodInvocation) {
 						continue;
 					}
-					EObject inElement = inNode.getModelElement();
-					// Checking type of incoming flow's element
-					if (inElement instanceof SingleVariableDeclaration) { // TODO Should only distinguish between direct (w/o access) and access-based flows
+					// Checking, if we have a direct (parameter) flow or an indirect (access-based) flow
+					if (inElement instanceof SingleVariableDeclaration) {
 						// ParamFlow
 						SingleVariableDeclaration paramSource = (SingleVariableDeclaration) inElement;
 						MMethodDefinition methDefSource = (MMethodDefinition) paramSource.getMethodDeclaration();
 						MEntry sigParamSource = methDefSource.getMMethodSignature().getMParameterList().getMEntrys().get(methDefSource.getParameters().indexOf(paramSource));
 						MFlow paramFlow = ModiscoFactory.eINSTANCE.createMFlow();
+						paramFlow.setFlowTarget(methDefSource); // TODO Remove after testing!
+						paramFlow.setFlowOwner(sigParamSource); // TODO Remove after testing
 						paramFlow.setFlowSource(sigParamSource);
 						for (FlowNode outNode : node.getOutRef()) { // TODO: Behavior in this loop independent of concrete flow type? Then: Extract out of if scope
 							// TODO alreadyProcessed?
@@ -141,9 +162,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 								SingleVariableDeclaration paramTarget = (SingleVariableDeclaration) outElement;
 								MMethodDefinition methDefTarget = (MMethodDefinition) paramTarget.getMethodDeclaration();
 								int indexOf = methDefTarget.getParameters().indexOf(paramTarget);
+								// TODO Adjust?
 								MEntry sigParamTarget = methDefTarget.
 										getMMethodSignature().getMParameterList().getMFirstEntry();
-								while(indexOf-- > 0) {
+								while (indexOf-- > 0) {
 									sigParamTarget = sigParamTarget.getMNext();
 								}
 								paramFlow.setFlowTarget(sigParamTarget);
@@ -197,12 +219,17 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							accessIn.setFlowSource((MSingleVariableAccess) inElement);
 						} else {
 							// TODO Handle
-							//System.out.println(inElement.getClass().getSimpleName());
+							// System.out.println(inElement.getClass().getSimpleName());
 							accessIn = ModiscoFactory.eINSTANCE.createMFlow(); // TODO NOT fixed!! Why are there still actually removed elements in reduced DFG???
 							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
 						}
 						accessIn.setFlowOwner(access);
 						accessIn.setFlowTarget(access);
+						// TODO Remove after testing!
+						accessIn.setFlowSource(access);
+						accessOut.setFlowSource(access);
+						accessOut.setFlowTarget(access);
+						accessOut.setFlowOwner(access);
 						// Set references of accessOut
 						for (FlowNode outNode : node.getOutRef()) { // TODO: Always get first (and only), only get both, when there's SVD + MethInvoc?
 							EObject outElement = outNode.getModelElement();
@@ -214,6 +241,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 								MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
 								accessOut.setFlowOwner(fieldDef);
 								accessOut.setFlowTarget(fieldDef);
+							} else if (outElement instanceof MSingleVariableDeclaration) {
+								// Handle
 							} else {
 								if (!(outElement instanceof MAbstractFlowElement)) {
 									System.out.println(outElement.getClass().getSimpleName());
@@ -225,7 +254,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						}
 					}
 				}
-				alreadyProcessed.add(node);
 			}
 		}
 		if (GravityActivator.getDefault().isVerbose()) {

@@ -54,7 +54,7 @@ public class GraphVisualizer {
 	public static void drawGraphs(List<StatementHandlerDataFlow> handlers, String folderName) {
 		int i = 0;
 		String projectName = ((MGravityModel) handlers.get(0).getMemberDef().eResource().getContents().get(0))
-				.getName();// TODO getModelName(handlers.get(0).getMemberDef().eContainer());
+				.getName();
 		for (StatementHandlerDataFlow handler : handlers) {
 			EObject memberDef = handler.getMemberDef();
 			String className = "Unknown";
