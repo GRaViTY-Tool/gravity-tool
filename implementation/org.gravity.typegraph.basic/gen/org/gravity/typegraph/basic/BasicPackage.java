@@ -3726,58 +3726,31 @@ public interface BasicPackage extends EPackage {
 	int TREAD_WRITE = 28;
 
 	/**
-	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * The feature id for the '<em><b>TTarget</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE__OWNED_FLOWS = TFLOW__OWNED_FLOWS;
+	int TREAD_WRITE__TTARGET = TACCESS__TTARGET;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * The feature id for the '<em><b>TSource</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE__INCOMING_FLOWS = TFLOW__INCOMING_FLOWS;
+	int TREAD_WRITE__TSOURCE = TACCESS__TSOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * The feature id for the '<em><b>Static Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE__OUTGOING_FLOWS = TFLOW__OUTGOING_FLOWS;
-
-	/**
-	 * The feature id for the '<em><b>Flow Sources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TREAD_WRITE__FLOW_SOURCES = TFLOW__FLOW_SOURCES;
-
-	/**
-	 * The feature id for the '<em><b>Flow Targets</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TREAD_WRITE__FLOW_TARGETS = TFLOW__FLOW_TARGETS;
-
-	/**
-	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TREAD_WRITE__FLOW_OWNER = TFLOW__FLOW_OWNER;
+	int TREAD_WRITE__STATIC_TYPE = TACCESS__STATIC_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>TRead Write</em>' class.
@@ -3786,7 +3759,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE_FEATURE_COUNT = TFLOW_FEATURE_COUNT + 0;
+	int TREAD_WRITE_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>TRead Write</em>' class.
@@ -3795,7 +3768,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TREAD_WRITE_OPERATION_COUNT = TFLOW_OPERATION_COUNT + 0;
+	int TREAD_WRITE_OPERATION_COUNT = TACCESS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.

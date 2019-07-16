@@ -13,5 +13,5 @@ package org.gravity.typegraph.basic;
  * @model
  * @generated
  */
-public interface TReadWrite extends TFlow {
+public interface TReadWrite extends TAccess {
 } // TReadWrite

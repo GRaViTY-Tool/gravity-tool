@@ -287,8 +287,7 @@ public class BasicSwitch<T> extends Switch<T> {
 			case BasicPackage.TREAD_WRITE: {
 				TReadWrite tReadWrite = (TReadWrite)theEObject;
 				T result = caseTReadWrite(tReadWrite);
-				if (result == null) result = caseTFlow(tReadWrite);
-				if (result == null) result = caseTAbstractFlowElement(tReadWrite);
+				if (result == null) result = caseTAccess(tReadWrite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

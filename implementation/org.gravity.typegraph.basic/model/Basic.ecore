@@ -150,7 +150,8 @@
         eType="#//TParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//TParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
+  <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" interface="true"
+      eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="defining" eType="#//TAbstractType"/>
@@ -266,14 +267,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorDefinition" eSuperTypes="#//TMethodDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="TRead" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TWrite" eSuperTypes="#//TAccess"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="TVisibility">
-    <eLiterals name="TPrivate"/>
-    <eLiterals name="TPackage" value="1"/>
-    <eLiterals name="TProtected" value="2"/>
-    <eLiterals name="TPublic" value="3"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TModifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
@@ -304,7 +299,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
         eType="#//TFlow"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
   <eSubpackages name="containers" nsURI="http://www.gravity.org/typegraph/basic#//containers"
       nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">

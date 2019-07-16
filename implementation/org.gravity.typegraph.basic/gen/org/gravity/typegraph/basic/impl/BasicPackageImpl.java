@@ -2169,7 +2169,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tUnresolvedTypeEClass.getESuperTypes().add(this.getTClass());
 		tUnresolvedTypeEClass.getESuperTypes().add(this.getTInterface());
 		tFlowEClass.getESuperTypes().add(this.getTAbstractFlowElement());
-		tReadWriteEClass.getESuperTypes().add(this.getTFlow());
+		tReadWriteEClass.getESuperTypes().add(this.getTAccess());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tAccessEClass, TAccess.class, "TAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

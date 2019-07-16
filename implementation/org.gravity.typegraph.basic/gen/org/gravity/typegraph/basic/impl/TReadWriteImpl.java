@@ -14,7 +14,7 @@ import org.gravity.typegraph.basic.TReadWrite;
  *
  * @generated
  */
-public class TReadWriteImpl extends TFlowImpl implements TReadWrite {
+public class TReadWriteImpl extends TAccessImpl implements TReadWrite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

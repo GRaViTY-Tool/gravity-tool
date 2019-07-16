@@ -7,12 +7,6 @@
   <foreignModel>Basic.ecore</foreignModel>
   <genPackages prefix="Basic" basePackage="org.gravity.typegraph" disposableProviderFactory="true"
       ecorePackage="Basic.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Basic.ecore#//TVisibility">
-      <genEnumLiterals ecoreEnumLiteral="Basic.ecore#//TVisibility/TPrivate"/>
-      <genEnumLiterals ecoreEnumLiteral="Basic.ecore#//TVisibility/TPackage"/>
-      <genEnumLiterals ecoreEnumLiteral="Basic.ecore#//TVisibility/TProtected"/>
-      <genEnumLiterals ecoreEnumLiteral="Basic.ecore#//TVisibility/TPublic"/>
-    </genEnums>
     <genClasses ecoreClass="Basic.ecore#//TAccess">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAccess/tTarget"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TAccess/tSource"/>
