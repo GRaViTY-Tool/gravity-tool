@@ -11,5 +11,5 @@
 	<classpathentry kind="src" path="injection"/>
 	<classpathentry exported="true" kind="lib" path="lib/org.moflon.core.dfs_2.0.0.201811071039.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/hierarchical-clustering.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
