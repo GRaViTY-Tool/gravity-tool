@@ -42,7 +42,7 @@ public interface AnnotationsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.gravity.org/typegraph/basic#//annotations";
+	String eNS_URI = "http://www.gravity-tool.org/typegraph/basic#//annotations";
 
 	/**
 	 * The package namespace name.

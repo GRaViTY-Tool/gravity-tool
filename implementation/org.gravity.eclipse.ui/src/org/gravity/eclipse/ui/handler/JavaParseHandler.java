@@ -42,6 +42,10 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
+		catch(Exception e) {
+			LOGGER.log(Level.ERROR, e);
+			return false;
+		}
 	}
 
 	@Override
@@ -50,6 +54,10 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
 		} catch (NoConverterRegisteredException | CoreException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+		catch(Exception e) {
+			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
 	}

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_vniXAG2rEem0WdBjFndsOw" name="large-class">
-  <imports href="http://www.gravity.org/typegraph/basic#/"/>
-  <imports href="http://www.gravity.org/typegraph/antipatterngraph#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_wGuNYG2rEem0WdBjFndsOw" name="large-class">
     <parameters xmi:id="_sxNiwG2uEem0WdBjFndsOw" name="threshold" description="HIGH" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </parameters>
     <parameters xmi:id="_P3QlYI3uEemWBf3MiTi5eg" name="number" kind="VAR">
-      <type xsi:type="ecore:EClass" href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
     </parameters>
     <lhs xmi:id="_wHBvYG2rEem0WdBjFndsOw" name="Lhs">
       <nodes xmi:id="_C6IpEG2sEem0WdBjFndsOw" outgoing="_NdfTEG2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_IjWUUG2sEem0WdBjFndsOw" name="number" incoming="_NdfTEG2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
       </nodes>
       <edges xmi:id="_NdfTEG2sEem0WdBjFndsOw" source="_C6IpEG2sEem0WdBjFndsOw" target="_IjWUUG2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
     </lhs>
     <rhs xmi:id="_wJ_j0G2rEem0WdBjFndsOw" name="Rhs">
       <nodes xmi:id="_C6VdYG2sEem0WdBjFndsOw" outgoing="_MpRA0G2sEem0WdBjFndsOw _NdfTEW2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/basic#//TClass"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
       <nodes xmi:id="_IjW7YG2sEem0WdBjFndsOw" name="number" incoming="_NdfTEW2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HNumberOfMembersMetric"/>
       </nodes>
       <nodes xmi:id="_LF9bAG2sEem0WdBjFndsOw" incoming="_MpRA0G2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
       </nodes>
       <edges xmi:id="_MpRA0G2sEem0WdBjFndsOw" source="_C6VdYG2sEem0WdBjFndsOw" target="_LF9bAG2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_NdfTEW2sEem0WdBjFndsOw" source="_C6VdYG2sEem0WdBjFndsOw" target="_IjW7YG2sEem0WdBjFndsOw">
-        <type href="http://www.gravity.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
     </rhs>
     <attributeConditions xmi:id="_PhzUMG2sEem0WdBjFndsOw" conditionText="number.value > threshold"/>

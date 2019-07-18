@@ -24,11 +24,15 @@ public class TGGApp extends SYNC {
 	private static final String MODISCO_ECORE = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore";
 	private static final String MODISCO_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.tgg.xmi";
 
+	/**
+	 * Create a new transformation application
+	 * 
+	 * @throws IOException If one of the models cannot be loaded
+	 */
 	public TGGApp() throws IOException {
 		super(createIbexOptions());
 		registerBlackInterpreter(new DemoclesTGGEngine());
 	}
-
 	
 	@Override
 	public void loadModels() throws IOException {
@@ -41,22 +45,18 @@ public class TGGApp extends SYNC {
 	@Override
 	protected void registerUserMetamodels() throws IOException {
 		registerPackage(JavaPackage.eINSTANCE);
-		
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore", ModiscoPackage.eINSTANCE);
 		registerPackage(ModiscoPackage.eINSTANCE);
-		
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
-		registerPackage(BasicPackage.eINSTANCE);
-		
+		registerPackage(BasicPackage.eINSTANCE);		
 		EPackage tggPackage = loadMetaModelPackage(MODISCO_ECORE);
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore", tggPackage);
 		registerPackage(tggPackage);
 		options.setCorrMetamodel(tggPackage);
 		EcoreUtil.resolveAll(rs);
 	}
 
 	/**
-	 * @param ePackage
+	 * Registers the package at the resource set
+	 * 
+	 * @param ePackage The package
 	 */
 	private void registerPackage(EPackage ePackage) {
 		rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
@@ -64,10 +64,12 @@ public class TGGApp extends SYNC {
 	}
 
 	/**
-	 * @param uri
-	 * @return
-	 * @throws IOException
-	 * @throws MalformedURLException
+	 * Load the meta model package
+	 * 
+	 * @param uri The URI of the meta model
+	 * @return The EPackage of the meta model
+	 * @throws IOException If the file cannot be read
+	 * @throws MalformedURLException The URI hasn't a valid format
 	 */
 	public EPackage loadMetaModelPackage(String uri) throws IOException, MalformedURLException {
 		Resource tggResource = loadResource(uri);

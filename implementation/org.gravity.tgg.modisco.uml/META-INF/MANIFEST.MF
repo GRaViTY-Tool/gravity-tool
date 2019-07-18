@@ -16,6 +16,7 @@ Export-Package: org.emoflon.ibex.tgg,
  org.emoflon.ibex.tgg.rules.types.parameterized,
  org.emoflon.ibex.tgg.rules.types.typeparameter,
  org.emoflon.ibex.tgg.run.uml,
+ org.emoflon.ibex.tgg.run.uml.debug,
  org.gravity.tgg.uml,
  org.gravity.tgg.uml.ui
 Bundle-Name: MoDiscoTGG
@@ -36,7 +37,8 @@ Require-Bundle: org.eclipse.jdt.core,
  org.eclipse.jface,
  org.emoflon.ibex.tgg.core.runtime;visibility:=reexport,
  org.emoflon.ibex.tgg.runtime.democles,
- org.emoflon.ibex.tgg.core.language
+ org.emoflon.ibex.tgg.core.language,
+ org.emoflon.ibex.tgg.ui.debug
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

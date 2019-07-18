@@ -43,7 +43,7 @@ public interface BasicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.gravity.org/typegraph/basic";
+	String eNS_URI = "http://www.gravity-tool.org/typegraph/basic";
 
 	/**
 	 * The package namespace name.

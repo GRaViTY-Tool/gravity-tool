@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.antipatterngraph.AntipatterngraphPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity.org/typegraph/antipatterngraph"/>
+    <package class="org.gravity.hulk.antipatterngraph.AntipatterngraphPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity-tool.org/typegraph/antipatterngraph"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity.org/typegraph/antipatterngraph#//antipattern"/>
+    <package class="org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity.org/typegraph/antipatterngraph#//codesmells"/>
+    <package class="org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.antipatterngraph.metrics.MetricsPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity.org/typegraph/antipatterngraph#//metrics"/>
+    <package class="org.gravity.hulk.antipatterngraph.metrics.MetricsPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.hulk.antipatterngraph.values.ValuesPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity.org/typegraph/antipatterngraph#//values"/>
+    <package class="org.gravity.hulk.antipatterngraph.values.ValuesPackage" genModel="model/Antipatterngraph.genmodel" uri="http://www.gravity-tool.org/typegraph/antipatterngraph#//values"/>
   </extension>
 </plugin>

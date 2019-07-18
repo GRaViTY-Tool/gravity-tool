@@ -19,6 +19,7 @@
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
     <module>build/org.gravity.features.refactorings</module>
+    <module>build/org.gravity.features.security</module>
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
     <module>build/org.gravity.license.epl</module>
@@ -29,7 +30,6 @@
     <module>implementation/org.gravity.hulk.annotations</module>
     <module>implementation/org.gravity.hulk.antipatterngraph</module>
     <module>implementation/org.gravity.hulk.refactoringgraph</module>
-    <module>implementation/org.gravity.hulk.tests</module>
     <module>implementation/org.gravity.hulk.ui</module>
     <module>implementation/org.gravity.hulk.ui.visualization</module>
     <module>implementation/org.gravity.metrics.sourcemeter</module>
@@ -43,6 +43,7 @@
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>
     <module>tests/org.gravity.goblin.tests</module>
+    <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.tgg.modisco.uml.tests</module>
@@ -64,7 +65,7 @@
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <skipTests>true</skipTests>
+          <!--<skipTests>true</skipTests>-->
         </configuration>
       </plugin>
     </plugins>
@@ -139,7 +140,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>http://rgse.uni-koblenz.de/carisma/beta-updatesite/</url>
+      <url>http://carisma.umlsec.de/beta-updatesite</url>
     </repository>
   </repositories>
 </project>

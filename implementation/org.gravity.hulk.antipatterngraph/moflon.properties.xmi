@@ -7,7 +7,7 @@
   <dependencies
       value="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"/>
   <dependencies
-      value="http://www.gravity.org/typegraph/basic"/>
+      value="http://www.gravity-tool.org/typegraph/basic"/>
   <additionalDependencies
       value="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"/>
   <metaModelProject
@@ -15,7 +15,7 @@
   <replaceGenModel/>
   <sdmCodegeneratorHandlerId/>
   <importMappings
-      key="http://www.gravity.org/typegraph/basic"
+      key="http://www.gravity-tool.org/typegraph/basic"
       value="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"/>
   <additionalUsedGenPackages
       value="platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel"/>

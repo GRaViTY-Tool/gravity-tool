@@ -105,9 +105,7 @@ public class GradleImport extends ProjectImport {
 		this.gradleCache = initGradleUserHome();
 		this.gradleBuild = new GradleBuild();
 	}
-	
 
-	
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
@@ -123,7 +121,7 @@ public class GradleImport extends ProjectImport {
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
-	 * @param name the desired name of the project
+	 * @param name    the desired name of the project
 	 * @param monitor A progress monitor
 	 * @return The new eclipse java project
 	 * @throws ImportException
@@ -410,7 +408,7 @@ public class GradleImport extends ProjectImport {
 	 */
 	private Set<String> getAppliedPlugins(Path path) {
 		Set<String> appliedPlugins = new HashSet<>();
-		if(!Files.exists(path) || !Files.isReadable(path)) {
+		if (!Files.exists(path) || !Files.isReadable(path)) {
 			return Collections.emptySet();
 		}
 		try (Stream<String> lines = Files.lines(path)) {
@@ -516,13 +514,14 @@ public class GradleImport extends ProjectImport {
 	private void scanRootForSourceFiles(File rootDir, Set<Path> javaSourceFiles) throws IOException {
 		File srcFolder = new File(rootDir, "src");
 		if (srcFolder.exists()) {
-			File main = new File(srcFolder, "main");
-			if (main.exists()) {
-				srcFolder = main;
+			for (String name : new String[] { "main", "java" }) {
+				File main = new File(srcFolder, name);
+				if (main.exists()) {
+					ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
+					Files.walkFileTree(main.toPath(), extensionFileVisitor);
+					javaSourceFiles.addAll(extensionFileVisitor.getFiles());
+				}
 			}
-			ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
-			Files.walkFileTree(srcFolder.toPath(), extensionFileVisitor);
-			javaSourceFiles.addAll(extensionFileVisitor.getFiles());
 		}
 	}
 

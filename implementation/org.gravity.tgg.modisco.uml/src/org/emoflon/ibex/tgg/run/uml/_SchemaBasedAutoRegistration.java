@@ -13,7 +13,7 @@ import org.emoflon.ibex.tgg.operational.strategies.OperationalStrategy;
 public class _SchemaBasedAutoRegistration {
 	
 	public static void register(OperationalStrategy strategy) throws IOException {
-		strategy.loadAndRegisterMetamodel("Platform:/resource/org.gravity.modisco/model/Modisco.ecore");
+		strategy.loadAndRegisterMetamodel("http://www.gravity-tool.org/modisco");
 		strategy.loadAndRegisterMetamodel("http://www.eclipse.org/MoDisco/Java/0.2.incubation/java");
 		strategy.loadAndRegisterMetamodel("http://www.eclipse.org/uml2/5.0.0/UML");
 		strategy.loadAndRegisterMetamodel("http://www.eclipse.org/uml2/5.0.0/Types");

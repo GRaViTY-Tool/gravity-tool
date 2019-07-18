@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="antipatterngraph" nsURI="http://www.gravity.org/typegraph/antipatterngraph"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="antipatterngraph" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph"
     nsPrefix="org.gravity.hulk.antipatterngraph">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.hulk"/>
@@ -31,7 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentID" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eSubpackages name="antipattern" nsURI="http://www.gravity.org/typegraph/antipatterngraph#//antipattern"
+  <eSubpackages name="antipattern" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern"
       nsPrefix="antipattern">
     <eClassifiers xsi:type="ecore:EClass" name="HBlobAntiPattern" eSuperTypes="#//HAntiPattern">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClassSmells" upperBound="-1"
@@ -64,7 +64,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="hNumberOfChild" eType="#//metrics/HNumberOfChildMetric"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="codesmells" nsURI="http://www.gravity.org/typegraph/antipatterngraph#//codesmells"
+  <eSubpackages name="codesmells" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells"
       nsPrefix="codesmells">
     <eClassifiers xsi:type="ecore:EClass" name="HControllerClassSmell" eSuperTypes="#//HCodeSmell">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hInvocationRelation"
@@ -106,7 +106,7 @@
           eType="#//metrics/HLocalAccessRelationMetric"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="metrics" nsURI="http://www.gravity.org/typegraph/antipatterngraph#//metrics"
+  <eSubpackages name="metrics" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"
       nsPrefix="metrics">
     <eClassifiers xsi:type="ecore:EClass" name="HNACCMetric" eSuperTypes="#//HMetric">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hGetterSetterSmells"
@@ -166,7 +166,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="HGetterMetric" eSuperTypes="#//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HSetterMetric" eSuperTypes="#//HMetric"/>
   </eSubpackages>
-  <eSubpackages name="values" nsURI="http://www.gravity.org/typegraph/antipatterngraph#//values"
+  <eSubpackages name="values" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph#//values"
       nsPrefix="values">
     <eClassifiers xsi:type="ecore:EClass" name="HRelativeValue">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
