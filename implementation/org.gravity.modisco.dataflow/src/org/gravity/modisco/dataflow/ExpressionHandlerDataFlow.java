@@ -329,7 +329,7 @@ public class ExpressionHandlerDataFlow {
 		} else if (container instanceof Statement) {
 			statementHandler.handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in SingleVariableAccess handling.");
+			statementHandler.getFlowNodeForElement(container).addInRef(member);; // No handling; should be fine though, as container is handled first anyway 
 		}
 		// Field and (non-param) local flows
 		if (variable instanceof VariableDeclarationFragment) {

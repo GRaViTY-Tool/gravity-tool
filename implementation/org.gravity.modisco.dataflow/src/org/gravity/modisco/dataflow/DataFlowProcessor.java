@@ -67,7 +67,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		for (StatementHandlerDataFlow handler : handlers) {
 			
 			// Determination of member's type
-			// TODO Use below in interproc. part
 			EObject memberDef = handler.getMemberDef();
 			MDefinition memberDefTyped = null;
 			if (memberDef instanceof MAbstractMethodDefinition) {
@@ -170,15 +169,14 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 								paramFlow.setFlowOwner(invocation);
 								paramFlow.setFlowTarget(invocation);
 							} else {
-								MDefinition definition = (MDefinition) memberDef;
 								if (outElement instanceof ReturnStatement) {
-									paramFlow.setFlowTarget(definition);
-									paramFlow.setFlowOwner(definition);
+									paramFlow.setFlowTarget(memberDefTyped);
+									paramFlow.setFlowOwner(memberDefTyped);
 								} else if (outElement instanceof IfStatement
 										|| outElement instanceof WhileStatement
 										|| outElement instanceof ForStatement) { // Separate from ReturnStatement, as this could be handled differently in the future
-									paramFlow.setFlowTarget(definition);
-									paramFlow.setFlowOwner(definition);
+									paramFlow.setFlowTarget(memberDefTyped);
+									paramFlow.setFlowOwner(memberDefTyped);
 								} else {
 									LOGGER.log(Level.INFO, "ERROR: Type of outElement (with SingleVariableDeclaration as inElement) couldn't match!");
 								}
