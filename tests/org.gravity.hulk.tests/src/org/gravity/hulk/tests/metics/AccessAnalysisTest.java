@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+import java.util.Deque;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -140,7 +140,7 @@ public class AccessAnalysisTest {
 	 * @param accessAnalysis The result list of the AccessAnalysis tool
 	 */
 	private void compareResults(TypeGraph programModel, List<Result> accessAnalysis) {
-		Stack<Result> stack = new Stack<>();
+		Deque<Result> stack = new LinkedList<>();
 		stack.addAll(accessAnalysis);
 		while (!stack.isEmpty()) {
 			Result r = stack.pop();

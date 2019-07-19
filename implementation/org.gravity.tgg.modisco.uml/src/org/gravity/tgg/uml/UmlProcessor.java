@@ -1,7 +1,7 @@
 package org.gravity.tgg.uml;
 
 import java.lang.reflect.Field;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.emf.common.util.BasicEList;
@@ -149,10 +149,10 @@ public class UmlProcessor {
 			if (element instanceof Classifier && !(element instanceof PrimitiveType)) {
 				Classifier classifier = (Classifier) element;
 
-				Hashtable<String, Element> signatures = new Hashtable<>();
-				Hashtable<String, Comment> highComments = new Hashtable<>();
-				Hashtable<String, Comment> secrecyComments = new Hashtable<>();
-				Hashtable<String, Comment> integrityComments = new Hashtable<>();
+				HashMap<String, Element> signatures = new HashMap<>();
+				HashMap<String, Comment> highComments = new HashMap<>();
+				HashMap<String, Comment> secrecyComments = new HashMap<>();
+				HashMap<String, Comment> integrityComments = new HashMap<>();
 
 				Comment criticalComment = getComments(classifier, signatures, highComments, secrecyComments,
 						integrityComments);
@@ -195,8 +195,8 @@ public class UmlProcessor {
 		return true;
 	}
 
-	private void processBwd(Classifier classifier, Hashtable<String, Element> signatures,
-			Hashtable<String, Comment> tagComments, Comment criticalComment, List<String> tagValues,
+	private void processBwd(Classifier classifier, HashMap<String, Element> signatures,
+			HashMap<String, Comment> tagComments, Comment criticalComment, List<String> tagValues,
 			String memberAnnotationString, String tagString, Interface iface) throws ProcessingException {
 
 		Comment tagComment = null;
@@ -239,15 +239,15 @@ public class UmlProcessor {
 		}
 	}
 
-	private static Comment getComments(Classifier classifier, Hashtable<String, Element> signatures,
-			Hashtable<String, Comment> highComments, Hashtable<String, Comment> secrecyComments,
-			Hashtable<String, Comment> integrityComments) {
+	private static Comment getComments(Classifier classifier, HashMap<String, Element> signatures,
+			HashMap<String, Comment> highComments, HashMap<String, Comment> secrecyComments,
+			HashMap<String, Comment> integrityComments) {
 		Comment criticalComment = null;
 		for (Comment comment : classifier.getOwnedComments()) {
 			if (Critical.class.getSimpleName().equals(comment.getBody())) {
 				criticalComment = comment;
 				for (Comment tag : criticalComment.getOwnedComments()) {
-					Hashtable<String, Comment> addto;
+					HashMap<String, Comment> addto;
 					if (UmlsecPackage.eINSTANCE.getcritical_High().getName().equals(tag.getBody())) {
 						addto = highComments;
 					} else if (UmlsecPackage.eINSTANCE.getcritical_Integrity().getName().equals(tag.getBody())) {

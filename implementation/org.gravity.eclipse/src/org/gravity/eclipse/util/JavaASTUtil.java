@@ -2,7 +2,8 @@ package org.gravity.eclipse.util;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Deque;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -51,7 +52,7 @@ public class JavaASTUtil {
 		HashMap<String, IType> types = new HashMap<>();
 
 		for (IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
-			Stack<IJavaElement> children = new Stack<IJavaElement>();
+			Deque<IJavaElement> children = new LinkedList<IJavaElement>();
 			children.addAll(Arrays.asList(element.getChildren()));
 			while (!children.isEmpty()) {
 				IJavaElement packageFragment = children.pop();

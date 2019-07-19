@@ -4,9 +4,11 @@
 package org.gravity.modisco.util;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Stack;
+import java.util.Set;
+import java.util.Deque;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -32,19 +34,24 @@ import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.ModiscoFactory;
 
 /**
- * This class provides frequently required functionalities when working with modisco models
+ * This class provides frequently required functionalities when working with
+ * modisco models
  * 
  * @author speldszus
  *
  */
 public class MoDiscoUtil {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
+
+	private MoDiscoUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Checks if supertype is a super type of type
 	 * 
-	 * @param type The type
+	 * @param type      The type
 	 * @param supertype The potential supertype
 	 * @return true iff supertype is a supertype of type
 	 */
@@ -68,30 +75,31 @@ public class MoDiscoUtil {
 		}
 		return false;
 	}
-	
+
 	/**
-	 * Searches the most generic return type of a method overwritten by the given method
+	 * Searches the most generic return type of a method overwritten by the given
+	 * method
 	 * 
-	 * @param method The method for which the most generic return type should be searched
+	 * @param method The method for which the most generic return type should be
+	 *               searched
 	 * @return the most generic return type
 	 */
 	public static Type getMostGenericReturnType(MMethodDefinition method) {
 		Type returnType = getAndFixReturnType(method);
 		AbstractTypeDeclaration owner = method.getAbstractTypeDeclaration();
 
-		HashSet<Type> allTypes = getAllParentTypes(owner);
-		for(Type type : allTypes) {
+		Set<Type> allTypes = getAllParentTypes(owner);
+		for (Type type : allTypes) {
 			if (!(type instanceof AbstractTypeDeclaration)) {
 				continue;
 			}
-			
+
 			MethodDeclaration otherDecl = getOtherDeclarationOfMethod(method, (AbstractTypeDeclaration) type);
-			if(otherDecl != null) {
+			if (otherDecl != null) {
 				TypeAccess returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
 					LOGGER.log(Level.WARN, "Skipped return type of: " + otherDecl);
-				}
-				else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
+				} else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
 					returnType = returnTypeDecl.getType();
 				}
 			}
@@ -105,9 +113,9 @@ public class MoDiscoUtil {
 	 * @param child The given child
 	 * @return All parents
 	 */
-	public static HashSet<Type> getAllParentTypes(AbstractTypeDeclaration child) {
+	public static Set<Type> getAllParentTypes(AbstractTypeDeclaration child) {
 		HashSet<Type> allTypes = new HashSet<>();
-		Stack<Type> stack = new Stack<>();
+		Deque<Type> stack = new LinkedList<>();
 		if (child != null) {
 			stack.add(child);
 		}
@@ -121,11 +129,9 @@ public class MoDiscoUtil {
 						allTypes.add(superClass.getType());
 					}
 				}
-			}
-			else if (type instanceof ParameterizedType) {
+			} else if (type instanceof ParameterizedType) {
 				allTypes.add(((ParameterizedType) type).getType().getType());
-			}
-			else if (type instanceof ArrayType) {
+			} else if (type instanceof ArrayType) {
 				allTypes.add(((ArrayType) type).getElementType().getType());
 			}
 		}
@@ -144,8 +150,7 @@ public class MoDiscoUtil {
 			Type typeOfInterface = superInterfaceReference.getType();
 			if (typeOfInterface == null) {
 				LOGGER.log(Level.WARN, "Skipped type of: " + superInterfaceReference);
-			}
-			else {
+			} else {
 				types.add(typeOfInterface);
 			}
 		}
@@ -165,18 +170,18 @@ public class MoDiscoUtil {
 				voidType = (PrimitiveTypeVoid) type;
 			}
 		}
-		if(voidType == null) {
+		if (voidType == null) {
 			voidType = JavaFactory.eINSTANCE.createPrimitiveTypeVoid();
 			pg.getOrphanTypes().add(voidType);
 		}
 		return voidType;
 	}
-	
+
 	/**
 	 * Searches if the type declares a method with the same signature
 	 * 
 	 * @param method The method signature for which should be searched
-	 * @param type The type in which probably also implements the method
+	 * @param type   The type in which probably also implements the method
 	 * @return The method declaration object implemented in the type or null
 	 */
 	private static MethodDeclaration getOtherDeclarationOfMethod(MMethodDefinition method,
@@ -185,21 +190,21 @@ public class MoDiscoUtil {
 		for (BodyDeclaration body : type.getBodyDeclarations()) {
 			if (body instanceof MethodDeclaration) {
 				MethodDeclaration decl = (MethodDeclaration) body;
-				if (method.getName().equals(decl.getName())) {
-					if (isParamListEqual(method.getParameters(), decl.getParameters())) {
-						otherDecl = decl;
-					}
+				if (method.getName().equals(decl.getName())
+						&& isParamListEqual(method.getParameters(), decl.getParameters())) {
+					otherDecl = decl;
 				}
+
 			}
 		}
 		return otherDecl;
 	}
 
 	/**
-	 * Retrieves the return type of the given method. 
-	 * Iff the return type is null it is set to void! 
+	 * Retrieves the return type of the given method. Iff the return type is null it
+	 * is set to void!
 	 * 
-	 * @param method The method for which the return type should be retrieved 
+	 * @param method The method for which the return type should be retrieved
 	 * @return The return type of the mehtod
 	 */
 	private static Type getAndFixReturnType(MMethodDefinition method) {
@@ -210,10 +215,10 @@ public class MoDiscoUtil {
 			method.setReturnType(returnType);
 			MGravityModel pg = method.getModel();
 			returnType.setType(getVoid(pg));
-			
+
 		}
 		Type ret = returnType.getType();
-		if(ret == null) {
+		if (ret == null) {
 			LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
 			return null;
 		}
@@ -240,17 +245,17 @@ public class MoDiscoUtil {
 		return false;
 	}
 
-	
 	/**
-	 * Fills the MParameterList with MParam entries discovered from the given definition
+	 * Fills the MParameterList with MParam entries discovered from the given
+	 * definition
 	 * 
-	 * @param mDef The definiton
+	 * @param mDef    The definiton
 	 * @param mParams The empty parameter list
 	 * @return true, iff no error occured
 	 */
 	public static boolean fillParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
 		EList<MEntry> mEntrys = mParams.getMEntrys();
-		if(mEntrys.size() > 0) {
+		if (!mEntrys.isEmpty()) {
 			return false;
 		}
 		MEntry prev = null;
@@ -269,23 +274,24 @@ public class MoDiscoUtil {
 		}
 		return true;
 	}
-	
+
 	/**
-	 * Searches for the type "java.lang.Sting" and returns it.
-	 * If there is no such type in the model, it is created and returned.
+	 * Searches for the type "java.lang.Sting" and returns it. If there is no such
+	 * type in the model, it is created and returned.
+	 * 
 	 * @param model The MoDisco model
 	 * 
 	 * @return The Type representing "java.lang.String"
 	 */
 	public static Type getOrCreateJavaLangString(Model model) {
 		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
-		if(string == null) {
+		if (string == null) {
 			string = JavaFactory.eINSTANCE.createClassDeclaration();
 			string.setName("String");
-			Package lang = MoDiscoUtil.getPackage(model, new String[] {"java", "lang"});
-			if(lang == null) {
-				Package java = MoDiscoUtil.getPackage(model, new String[] {"java"});
-				if(java == null) {
+			Package lang = MoDiscoUtil.getPackage(model, new String[] { "java", "lang" });
+			if (lang == null) {
+				Package java = MoDiscoUtil.getPackage(model, new String[] { "java" });
+				if (java == null) {
 					java = JavaFactory.eINSTANCE.createPackage();
 					java.setName("java");
 					model.getOwnedElements().add(java);
@@ -298,11 +304,11 @@ public class MoDiscoUtil {
 		}
 		return string;
 	}
-	
+
 	/**
 	 * Searches for a type in a model
 	 * 
-	 * @param model The model
+	 * @param model              The model
 	 * @param fullyQualifiedName The fully qualified name of the type
 	 * @return The type or null
 	 */
@@ -323,11 +329,11 @@ public class MoDiscoUtil {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Searches for the given name space in the model
 	 * 
-	 * @param model The model
+	 * @param model     The model
 	 * @param namespace The name space
 	 * @return The last package of the namespace or null
 	 */
@@ -338,14 +344,14 @@ public class MoDiscoUtil {
 	/**
 	 * Searches for the given name space in the model
 	 * 
-	 * @param model The model
+	 * @param model     The model
 	 * @param namespace The name space
 	 * @return The last package of the namespace or null
 	 */
 	public static Package getPackage(Model model, String[] namespace) {
 		EList<Package> next = model.getOwnedElements();
-		for (int i = 0; i < namespace.length;) {
-			String name = namespace[i++];
+		for (int i = 0; i < namespace.length; i++) {
+			String name = namespace[i];
 			boolean contains = false;
 			for (Package tPackage : next) {
 				if (name.equals(tPackage.getName())) {
@@ -371,20 +377,30 @@ public class MoDiscoUtil {
 	 * @return The type
 	 */
 	public static Type getJavaLangObject(MGravityModel model) {
-		Type type;
-		Package javaLang = getPackage(model, new String[] {"java", "lang"});
-		Optional<AbstractTypeDeclaration> result = javaLang
-		.getOwnedElements().parallelStream().filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny();
-		if(result.isPresent()) {
-			type = result.get();
+		Package javaLangPackage = getPackage(model, new String[] { "java", "lang" });
+		if (javaLangPackage != null) {
+			Optional<AbstractTypeDeclaration> result = javaLangPackage.getOwnedElements().parallelStream()
+					.filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny();
+			if (result.isPresent()) {
+				return result.get();
+			}
 		}
 		else {
-			AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
-			object.setName("Object");
-			object.setProxy(true);
-			javaLang.getOwnedElements().add(object);
-			type = object;
+			Package javaPackage = getPackage(model, "java");
+			if(javaPackage == null) {
+				javaPackage = JavaFactory.eINSTANCE.createPackage();
+				javaPackage.setName("java");
+				model.getOwnedElements().add(javaPackage);
+			}
+			javaLangPackage = JavaFactory.eINSTANCE.createPackage();
+			javaLangPackage.setName("lang");
+			javaPackage.getOwnedPackages().add(javaLangPackage);
 		}
-		return type;
+		AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
+		object.setName("Object");
+		object.setProxy(true);
+		javaLangPackage.getOwnedElements().add(object);
+		return object;
+
 	}
 }

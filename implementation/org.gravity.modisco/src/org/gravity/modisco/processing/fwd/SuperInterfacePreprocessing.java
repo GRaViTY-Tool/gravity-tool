@@ -2,11 +2,12 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.Set;
-import java.util.Stack;
+import java.util.Deque;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -48,7 +49,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		Set<TypeAccess> brokenTypeAccesses = new HashSet<>();
-		Stack<Package> stack = new Stack<>();
+		Deque<Package> stack = new LinkedList<>();
 		stack.addAll(model.getOwnedElements());
 		while (!stack.isEmpty()) {
 			Package p = stack.pop();
@@ -66,7 +67,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @return
 	 */
 	private boolean process(MGravityModel model, Set<TypeAccess> brokenTypeAccesses) {
-		Hashtable<ClassDeclaration, InterfaceDeclaration> replacements = new Hashtable<>(brokenTypeAccesses.size());
+		HashMap<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
 		for (TypeAccess typeAccess : brokenTypeAccesses) {
 			Type clazz = typeAccess.getType();
 			if (clazz.isProxy()) {

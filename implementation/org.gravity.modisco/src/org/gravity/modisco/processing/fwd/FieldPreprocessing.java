@@ -21,6 +21,7 @@ import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.processing.ProcessingMessages;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
@@ -36,11 +37,11 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	@Override
 	public boolean process(MGravityModel model, Collection<MFieldDefinition> elements, IProgressMonitor monitor) {
 		Collection<MFieldDefinition> allDefinitions;
-		try{
+		try {
 			allDefinitions = resolveMultipleDeclarationsInOneStatement(elements);
 			model.getMFieldDefinitions().addAll(allDefinitions);
-		}
-		catch(ProcessingException e) {
+		} catch (ProcessingException e) {
+			LOGGER.error(e);
 			return false;
 		}
 		if (!createFieldNameNodes(allDefinitions, model)) {
@@ -57,12 +58,14 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 * @return a collection of all field definitions
 	 * @throws ProcessingException If the preprocessing failed
 	 */
-	private Collection<MFieldDefinition> resolveMultipleDeclarationsInOneStatement(Collection<MFieldDefinition> elements) throws ProcessingException {
+	private Collection<MFieldDefinition> resolveMultipleDeclarationsInOneStatement(
+			Collection<MFieldDefinition> elements) throws ProcessingException {
 		List<MFieldDefinition> allDefinitions = new LinkedList<>(elements);
 		for (MFieldDefinition mDefinition : elements) {
 			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
-			if (fragments.size() == 0) {
-				String message = "A field definition has no fragments: " + mDefinition + ".";
+			if (fragments.isEmpty()) {
+				String message = ProcessingMessages.FieldPreprocessing_the_field + mDefinition
+						+ ProcessingMessages.FieldPreprocessing_no_fragments;
 				LOGGER.log(Level.ERROR, message);
 				throw new ProcessingException(message);
 			}
@@ -103,7 +106,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			}
 
 		} else {
-			LOGGER.log(Level.WARN, "The field \"" + oldDefiniton + "\" has no type!");
+			LOGGER.log(Level.WARN, ProcessingMessages.FieldPreprocessing_the_field + oldDefiniton
+					+ ProcessingMessages.FieldPreprocessing_no_type);
 		}
 
 		Modifier modifier = oldDefiniton.getModifier();
@@ -144,12 +148,14 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	private boolean createFieldNameNodes(Collection<MFieldDefinition> mFieldDefinitions, MGravityModel model) {
 		for (MFieldDefinition mfDefinition : mFieldDefinitions) {
 			EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
-			if (fragments.size() == 0) {
-				LOGGER.log(Level.ERROR, "The field \"" + mfDefinition + "\" has no fragment!");
+			if (fragments.isEmpty()) {
+				LOGGER.log(Level.ERROR, ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
+						+ ProcessingMessages.FieldPreprocessing_no_fragments);
 				return false;
 			}
 			if (fragments.size() > 1) {
-				LOGGER.log(Level.ERROR, "The field \"" + mfDefinition + "\" has more than one fragment!");
+				LOGGER.log(Level.ERROR, ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
+						+ ProcessingMessages.FieldPreprocessing_multiple_fragments);
 				return false;
 			}
 			VariableDeclarationFragment declFragment = fragments.get(0);
@@ -189,12 +195,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 				} catch (ProcessingException e) {
 					return false;
 				}
-				if (mSig != null) {
-					mSig.getMDefinitions().add(mfDefinition);
-					mSig.getMFieldDefinitions().add(mfDefinition);
-				} else {
-					return false;
-				}
+				mSig.getMDefinitions().add(mfDefinition);
+				mSig.getMFieldDefinitions().add(mfDefinition);
 			}
 		}
 		return true;
@@ -209,8 +211,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 * @return a field signature
 	 * @throws ProcessingException If the type of the field cannot be resolved
 	 */
-	private static MFieldSignature createNewSignature(MGravityModel model, MFieldName name, MFieldDefinition definition)
-			throws ProcessingException {
+	private static MFieldSignature createNewSignature(MGravityModel model, MFieldName name,
+			MFieldDefinition definition) {
 		MFieldSignature mSig;
 		mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
 		mSig.setMFieldName(name);
@@ -220,38 +222,38 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		Type type;
 		TypeAccess typeAccess = definition.getType();
 		if (typeAccess != null) {
-			 type = typeAccess.getType();
+			type = typeAccess.getType();
 		} else {
-			String message = "The field \"" + definition + "\" has no type! Assuming \"java.lang.Object\"";
+			String message = ProcessingMessages.FieldPreprocessing_the_field + definition
+					+ ProcessingMessages.FieldPreprocessing_no_type_assume_object;
 			if (definition.isProxy()) {
 				LOGGER.log(Level.WARN, message);
 			} else {
 				LOGGER.log(Level.ERROR, message);
 			}
 			type = fixMissingFieldType(model, definition);
-			
+
 		}
 		mSig.setType(type);
 		return mSig;
 	}
 
 	/**
-	 * This method searches for a proper type of a field. 
-	 * In the worst case this is always "java.lang.Object".
+	 * This method searches for a proper type of a field. In the worst case this is
+	 * always "java.lang.Object".
 	 * 
-	 * @param model The model containing the filed
+	 * @param model      The model containing the filed
 	 * @param definition The fields definition
 	 * @return A suitable type for the field
 	 */
 	private static Type fixMissingFieldType(MGravityModel model, MFieldDefinition definition) {
 		TypeAccess typeAccess = definition.getType();
-		if(typeAccess == null) {
+		if (typeAccess == null) {
 			typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 			definition.setType(typeAccess);
-		}
-		else {
-			Type type = typeAccess.getType();	
-			if(type != null) {
+		} else {
+			Type type = typeAccess.getType();
+			if (type != null) {
 				return type;
 			}
 		}

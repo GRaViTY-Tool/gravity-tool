@@ -27,13 +27,13 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.Stack;
+import java.util.Deque;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import org.gravity.typegraph.basic.TAccess;
@@ -211,7 +211,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	}
 
 	private void bruteforceAlgo(TClass tClass, List<TMethodDefinition> tMethods) {
-		Hashtable<TMethodDefinition, List<TClass>> dataclasses = new Hashtable<>();
+		HashMap<TMethodDefinition, List<TClass>> dataclasses = new HashMap<>();
 		for (TMethodDefinition tMethod : tMethods) {
 			for (TAnnotation tAnnotation : tMethod.getTAnnotation()) {
 				if (tAnnotation instanceof HMethodToDataClassAccess) {
@@ -230,10 +230,10 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 			}
 		}
 
-		fill(dataclasses, new Hashtable<TMethodDefinition, TClass>(), tClass);
+		fill(dataclasses, new HashMap<TMethodDefinition, TClass>(), tClass);
 	}
 
-	private void fill(Hashtable<TMethodDefinition, List<TClass>> input, Hashtable<TMethodDefinition, TClass> output,
+	private void fill(HashMap<TMethodDefinition, List<TClass>> input, HashMap<TMethodDefinition, TClass> output,
 			TClass tClass) {
 		Iterator<Entry<TMethodDefinition, List<TClass>>> iterator = input.entrySet().iterator();
 		if (iterator.hasNext()) {
@@ -249,7 +249,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 			}
 		} else {
 			RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
-			Hashtable<TClass, HCluster> clusters = new Hashtable<>();
+			HashMap<TClass, HCluster> clusters = new HashMap<>();
 			for (TMethodDefinition key : output.keySet()) {
 				TClass value = output.get(key);
 				HCluster hCluster;
@@ -308,7 +308,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		}
 
 		ClusteringAlgorithm alg = new DefaultClusteringAlgorithm();
-		Stack<Cluster> stack = new Stack<>();
+		Deque<Cluster> stack = new LinkedList<>();
 		stack.add(alg.performClustering(distances, names, new CompleteLinkageStrategy()));
 
 		RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
@@ -320,7 +320,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 			if (current.getWeightValue() < 3 * treshold) {
 				List<String> leafNames = new ArrayList<>();
 
-				Stack<Cluster> collect = new Stack<Cluster>();
+				Deque<Cluster> collect = new LinkedList<Cluster>();
 				collect.add(current);
 				while (!collect.isEmpty()) {
 					Cluster next = collect.pop();

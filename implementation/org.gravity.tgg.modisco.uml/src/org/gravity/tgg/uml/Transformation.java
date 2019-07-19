@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -384,7 +384,7 @@ public class Transformation extends SYNC {
 		}
 
 		Protocol sync = (Protocol) getProtocolResource().getContents().get(0);
-		Hashtable<CompilationUnit, HashSet<NamedElement>> imports = new Hashtable<>();
+		HashMap<CompilationUnit, HashSet<NamedElement>> imports = new HashMap<>();
 //		for (EObject node : additions) {
 //			for (TripleMatch match : sync.getCreatingMatches(node)) {
 //				for (EObject eObject : match.getCreatedSrcElts().getNodes()) {

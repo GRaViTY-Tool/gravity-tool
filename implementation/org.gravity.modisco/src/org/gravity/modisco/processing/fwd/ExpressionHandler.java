@@ -173,7 +173,7 @@ public class ExpressionHandler {
 			return true; // assume nothing to do is success
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationExpression.getFragments()) {
-			if (!MiscHandler.handle(fragment, member)) {
+			if (!ExpressionHandler.handle(fragment.getInitializer(), member)) {
 				return false;
 			}
 		}

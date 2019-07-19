@@ -2,7 +2,6 @@ package org.gravity.eclipse.io;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -52,14 +52,11 @@ public class FileUtils {
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
 			// Try to recover file
-			if (tempFile != null) {
-				try {
-					Files.move(tempFile.toPath(), file.toPath());
-				} catch (IOException e2) {
-					// Iff recover wasn't possible throw original error
-					throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(),
-							e);
-				}
+			try {
+				Files.move(tempFile.toPath(), file.toPath());
+			} catch (IOException e2) {
+				// Iff recover wasn't possible throw original error
+				throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(), e);
 			}
 			return false;
 		}
@@ -86,8 +83,9 @@ public class FileUtils {
 	 *                     cannot be written
 	 */
 	public static void copy(File source, File target) throws IOException {
-		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true))) {
-			Files.lines(target.toPath()).forEach(s -> {
+		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true));
+				Stream<String> lines = Files.lines(target.toPath());) {
+			lines.forEach(s -> {
 				stream.println(s);
 			});
 		}
@@ -102,13 +100,12 @@ public class FileUtils {
 	 */
 	public static String getContentsAsString(InputStream stream) throws IOException {
 		StringBuilder noComments = new StringBuilder();
-		
+
 		int nextInt;
 		while ((nextInt = stream.read()) != -1) {
 			noComments.append((char) nextInt);
 		}
-		String contentString = noComments.toString();
-		return contentString;
+		return noComments.toString();
 	}
 
 	/**
@@ -117,9 +114,8 @@ public class FileUtils {
 	 * @param file The file containing contents
 	 * @return The content of the file
 	 * @throws IOException           If an I/O error occurs
-	 * @throws FileNotFoundException Iff the file doesn't exists
 	 */
-	public static String getContentsAsString(File file) throws IOException, FileNotFoundException {
+	public static String getContentsAsString(File file) throws IOException {
 		try (FileInputStream stream = new FileInputStream(file)) {
 			return getContentsAsString(stream);
 		}

@@ -2,7 +2,8 @@ package org.gravity.eclipse.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -105,7 +106,7 @@ public class EclipseProjectUtil {
 	 *                       boolean, IProgressMonitor)
 	 */
 	public static void createFolder(IFolder folder, IProgressMonitor monitor) throws CoreException {
-		Stack<IFolder> stack = new Stack<>();
+		Deque<IFolder> stack = new LinkedList<>();
 		IContainer parent = folder.getParent();
 		while (!parent.exists() && parent.getType() == IResource.FOLDER) {
 			stack.add((IFolder) parent);

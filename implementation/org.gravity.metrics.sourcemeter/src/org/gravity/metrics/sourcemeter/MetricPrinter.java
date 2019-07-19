@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Hashtable;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
@@ -30,8 +28,8 @@ public class MetricPrinter {
 	 * @param folder The output folder within the project
 	 * @return the average metric values
 	 */
-	public static Hashtable<String, String> printSourcemeterMetrics(IProject project, File folder) {
-		Hashtable<String, String> results = new Hashtable<String, String>();
+	public static HashMap<String, String> printSourcemeterMetrics(IProject project, File folder) {
+		HashMap<String, String> results = new HashMap<String, String>();
 		MetricCalculator metrics = new MetricCalculator();
 		SourceMeterStatus status = metrics.calculateMetrics(project.getLocation().toFile(),
 				new File(folder, "sourcemeter"));

@@ -1,8 +1,9 @@
 package org.gravity.tgg.modisco.processing.modisco;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Set;
-import java.util.Stack;
+import java.util.Deque;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
@@ -19,7 +20,7 @@ public class MoDiscoProcessorBwd implements IMoDiscoProcessor {
 
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		Stack<Package> packages = new Stack<>();
+		Deque<Package> packages = new LinkedList<>();
 		packages.addAll(model.getOwnedElements());
 
 		while (!packages.isEmpty()) {

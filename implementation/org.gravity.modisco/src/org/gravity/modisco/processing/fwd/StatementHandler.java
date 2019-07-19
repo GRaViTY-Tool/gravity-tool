@@ -154,7 +154,7 @@ public class StatementHandler {
 			return true; // assume nothing to do is success
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			if (!MiscHandler.handle(fragment, member)) {
+			if (!ExpressionHandler.handle(fragment.getInitializer(), member)) {
 				return false;
 			}
 		}
@@ -162,12 +162,7 @@ public class StatementHandler {
 	}
 
 	private static boolean handle(TypeDeclarationStatement typeDeclarationStatement, MDefinition member) {
-		if (typeDeclarationStatement == null) {
-			return true; // assume nothing to do is success
-		}
-		if (!MiscHandler.handle(typeDeclarationStatement.getDeclaration(), member)) {
-			return false;
-		}
+		// Currently no need to do anything
 		return true;
 	}
 
@@ -399,7 +394,7 @@ public class StatementHandler {
 		if (!handle(catchClause.getBody(), member)) {
 			return false;
 		}
-		if (!MiscHandler.handle(catchClause.getException(), member)) {
+		if (!ExpressionHandler.handle(catchClause.getException().getInitializer(), member)) {
 			return false;
 		}
 		return true;

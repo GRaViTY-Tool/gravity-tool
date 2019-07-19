@@ -108,7 +108,6 @@ public class ResolveResultDialog extends Dialog {
 
 		final Button saveButton = new Button(container, SWT.PUSH);
 		saveButton.setText("save");
-		;
 		saveButton.addSelectionListener(new SelectionListener() {
 
 			@Override
@@ -116,7 +115,7 @@ public class ResolveResultDialog extends Dialog {
 				FileDialog fdialog = new FileDialog(pShell, SWT.SAVE);
 				fdialog.setFilterExtensions(new String[] { "*.txt", "*" });
 				String saveFile = fdialog.open();
-				if (saveFile != "") {
+				if (!saveFile.isEmpty()) {
 					save(folder, saveFile);
 				}
 
@@ -192,26 +191,7 @@ public class ResolveResultDialog extends Dialog {
 	private void save(CTabFolder folder, String filePath) {
 		List<DetectionContent> contents = new ArrayList<DetectionContent>();
 		for (CTabItem tabItem : folder.getItems()) {
-			DetectionContent content = new DetectionContent(tabItem.getText());
-			contents.add(content);
-			Tree tree = (Tree) tabItem.getControl();
-			if (tree == null) {
-				continue;
-			}
-
-			for (TreeItem treeItem : tree.getItems()) {
-				String text = treeItem.getText();
-				content.addResult(text);
-				if (text.startsWith("Solved")) {
-					content.addResult(treeItem.getItem(0).getText());
-					for (TreeItem child : treeItem.getItem(2).getItems()) {
-						content.addResult(child.getText());
-						for (TreeItem r : child.getItems()) {
-							content.addResult("\t" + r.getText());
-						}
-					}
-				}
-			}
+			contents.add(createContent(tabItem));
 		}
 
 		StringBuilder builder = new StringBuilder();
@@ -235,6 +215,35 @@ public class ResolveResultDialog extends Dialog {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 
+	}
+
+	/**
+	 * Created a detection content object for the tab item
+	 * 
+	 * @param tabItem The tab item
+	 * @return The content object
+	 */
+	private DetectionContent createContent(CTabItem tabItem) {
+		DetectionContent content = new DetectionContent(tabItem.getText());
+		Tree tree = (Tree) tabItem.getControl();
+		if (tree == null) {
+			return content;
+		}
+
+		for (TreeItem treeItem : tree.getItems()) {
+			String text = treeItem.getText();
+			content.addResult(text);
+			if (text.startsWith("Solved")) {
+				content.addResult(treeItem.getItem(0).getText());
+				for (TreeItem child : treeItem.getItem(2).getItems()) {
+					content.addResult(child.getText());
+					for (TreeItem r : child.getItems()) {
+						content.addResult("\t" + r.getText());
+					}
+				}
+			}
+		}
+		return content;
 	}
 
 	@Override

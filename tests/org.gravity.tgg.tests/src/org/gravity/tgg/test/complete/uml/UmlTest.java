@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.uml.Transformation;
+import org.junit.After;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 
@@ -55,7 +56,7 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	 * @throws FileNotFoundException
 	 */
 	@Override
-	public void testForward() throws FileNotFoundException, DiscoveryException, CoreException, IOException {
+	public void testForward() {
 		String trg = createTrgName(name, UMLResource.FILE_EXTENSION);
 		LOGGER.log(Level.INFO, trg);
 
@@ -64,7 +65,6 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 		deleteFile(createCorrName(name, UMLResource.FILE_EXTENSION));
 		deleteFile(createProtocolName(name, UMLResource.FILE_EXTENSION));
 
-		Exception fail = null;
 		NullProgressMonitor monitor = new NullProgressMonitor();
 		try {
 			Model model = Transformation.projectToModel(project, ADD_UMLSEC, monitor);
@@ -72,11 +72,22 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 
 			model.eResource().save(new FileOutputStream(trg), Collections.EMPTY_MAP);
 
-		} catch (TransformationFailedException e) {
+		} catch (IOException | TransformationFailedException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
-			fail = e;
+			throw new AssertionError(e.getMessage(), e);
 		}
+	}
 
+	/**
+	 * Cleans up the changes
+	 * 
+	 * @param monitor A progress monitor
+	 * @throws IOException If the gravity folder of the project doesn't exists and cannot be created
+	 * @throws CoreException If the gravity folder cannot be deleted
+	 */
+	@After
+	public void clean() throws IOException, CoreException {
+		NullProgressMonitor monitor = new NullProgressMonitor();
 		IFile file = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
 				.getFile("org.gravity.annotations.jar");
 		IClasspathEntry cpe = project.getClasspathEntryFor(file.getLocation());
@@ -92,10 +103,6 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 			project.setRawClasspath(newCp, monitor);
 		}
 		file.delete(true, monitor);
-
-		if (fail != null) {
-			throw new AssertionError(fail.getMessage(), fail);
-		}
 	}
 
 }

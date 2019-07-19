@@ -76,7 +76,6 @@ public class DetectionResultDialog extends Dialog {
 		addContents(folder, this.selection);
 
 		final Button button = new Button(container, SWT.CHECK);
-		//button.setText("Show all executed detectors.");
 		button.setText("Show all executed detectors.");
 		button.addSelectionListener(new SelectionListener() {
 
@@ -94,6 +93,7 @@ public class DetectionResultDialog extends Dialog {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
+				widgetSelected(e);	
 			}
 		});
 		
@@ -106,7 +106,7 @@ public class DetectionResultDialog extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog fdialog = new FileDialog(pShell, SWT.SAVE);
 				String saveFile = fdialog.open();
-				if(saveFile != ""){
+				if(!saveFile.isEmpty()){
 					save(folder, saveFile);
 				}
 				
@@ -114,8 +114,7 @@ public class DetectionResultDialog extends Dialog {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				widgetSelected(e);
-				
+				widgetSelected(e);	
 			}
 		});
 
@@ -123,20 +122,20 @@ public class DetectionResultDialog extends Dialog {
 	}
 
 	void addContents(CTabFolder folder, Iterable<HDetector> items) {
-		for (HDetector e_class : items) {
+		for (HDetector eClass : items) {
 			CTabItem tab = new CTabItem(folder, getShellStyle());
-			tab.setText(e_class.eClass().getName());
+			tab.setText(eClass.eClass().getName());
 
 			Tree tree = new Tree(folder, SWT.V_SCROLL | SWT.H_SCROLL);
-			ScrollBar v_bar = tree.getVerticalBar();
-			v_bar.setEnabled(true);
+			ScrollBar vBar = tree.getVerticalBar();
+			vBar.setEnabled(true);
 
-			if (e_class.getHAnnotation().size() > 0) {
-				for (HAnnotation annotation : e_class.getHAnnotation()) {
+			if (eClass.getHAnnotation().size() > 0) {
+				for (HAnnotation annotation : eClass.getHAnnotation()) {
 					annotation.getTreeItem(tree, SWT.NONE);
 				}
 			} else {
-				new TreeItem(tree, SWT.NONE).setText("No " + e_class.getGuiName() + " has been found.");
+				new TreeItem(tree, SWT.NONE).setText("No " + eClass.getGuiName() + " has been found.");
 			}
 
 			folder.showItem(folder.getItems()[0]);

@@ -3,10 +3,11 @@ package org.gravity.hulk.detection;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-import java.util.Stack;
+import java.util.Deque;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -40,7 +41,7 @@ public class HulkDetector {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkDetector.class.getName());
 
-	private Hashtable<String, String> thresholds;
+	private HashMap<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
 
@@ -52,7 +53,7 @@ public class HulkDetector {
 	 * @param hulk       The detection configuration
 	 * @param thresholds The thresholds for the detection
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds) {
+	public HulkDetector(HAntiPatternHandling hulk, HashMap<String, String> thresholds) {
 		this(hulk, thresholds, false);
 	}
 
@@ -63,7 +64,7 @@ public class HulkDetector {
 	 * @param thresholds The thresholds for the detection
 	 * @param verbose    The verbose state
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, Hashtable<String, String> thresholds, boolean verbose) {
+	public HulkDetector(HAntiPatternHandling hulk, HashMap<String, String> thresholds, boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
 		this.verbose = verbose;
@@ -98,7 +99,7 @@ public class HulkDetector {
 		return sorted;
 	}
 
-	private void handleDetector(HDetector detector, Stack<HDetector> worklist, Set<HDetector> processedDetectors,
+	private void handleDetector(HDetector detector, Deque<HDetector> worklist, Set<HDetector> processedDetectors,
 			boolean verbose) throws DetectionFailedException {
 		List<HDetector> sorted = getSorted(detector);
 		for (HDetector nextDetector : sorted) {
@@ -157,7 +158,7 @@ public class HulkDetector {
 		}
 	}
 
-	private boolean detectSelectedAntiPattern(Stack<HDetector> worklist, Set<HDetector> processedDetectors,
+	private boolean detectSelectedAntiPattern(Deque<HDetector> worklist, Set<HDetector> processedDetectors,
 			boolean verbose) throws DetectionFailedException {
 		long h0 = 0;
 		if (verbose) {
@@ -190,7 +191,7 @@ public class HulkDetector {
 	 */
 	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selectedDetectors,
 			Set<HDetector> processedDetectors) {
-		Stack<HDetector> worklist = new Stack<>();
+		Deque<HDetector> worklist = new LinkedList<>();
 
 		// Fill worklist
 		for (HDetector detector : hulk.getHDetector()) {
@@ -218,8 +219,8 @@ public class HulkDetector {
 	 * 
 	 * @return The defaults
 	 */
-	public static Hashtable<String, String> getDefaultThresholds() {
-		Hashtable<String, String> thresholds = new Hashtable<String, String>();
+	public static HashMap<String, String> getDefaultThresholds() {
+		HashMap<String, String> thresholds = new HashMap<String, String>();
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HLargeClassDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HLowCohesionDetector.class.getName(), HRelativeValueConstants.HIGH.getName());

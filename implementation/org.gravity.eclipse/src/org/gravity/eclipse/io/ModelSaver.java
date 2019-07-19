@@ -26,6 +26,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 public class ModelSaver {
 	
 	private static final Logger LOGGER = Logger.getLogger(ModelSaver.class);
+	
+	private ModelSaver() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Save a emf model into an eclipse file
@@ -60,15 +64,12 @@ public class ModelSaver {
 			return false;
 		}
 		
-		try {
+		try (PipedInputStream in = new PipedInputStream();
+			PipedOutputStream out = new PipedOutputStream(in);){
 
-			PipedInputStream in = new PipedInputStream();
-			PipedOutputStream out = new PipedOutputStream(in);
-			
 			Runnable rout =  () -> {
 				try {
-					resource.save(out, Collections.EMPTY_MAP);
-					out.close();
+					resource.save(out, Collections.emptyMap());
 				} catch (IOException e) {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
@@ -86,19 +87,24 @@ public class ModelSaver {
 						}
 						file.create(in, true, monitor);
 					}
-					in.close();
 				} catch (CoreException e) {
-					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-				} catch (IOException e) {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
-			new Thread(rout).start();
-			new Thread(rin).start();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			Thread threadOut = new Thread(rout);
+			Thread threadIn = new Thread(rin);
+			threadIn.start();
+			threadOut.start();
+			threadOut.join();
+			threadIn.join();
+		} catch (InterruptedException e) {
+			LOGGER.error(e.getMessage(), e);
+		    Thread.currentThread().interrupt();
 			return false;
-		}
+		}catch(IOException e) {
+			LOGGER.error(e.getMessage(), e);
+			return false;
+		} 
 		return true;
 	}
 }

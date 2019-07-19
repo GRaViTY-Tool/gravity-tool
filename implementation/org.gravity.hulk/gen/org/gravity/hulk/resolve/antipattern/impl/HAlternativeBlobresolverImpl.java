@@ -29,7 +29,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.refactoringgraph.HCluster;
@@ -165,7 +165,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		int dataClassCoupling = 0;
 		int internalCoupling = (int) hCluster.getValue();
 
-		Hashtable<TClass, Integer> coupling = new Hashtable<>();
+		HashMap<TClass, Integer> coupling = new HashMap<>();
 		for (TMember member : tMembers) {
 
 			// Search DataClass with max coupling

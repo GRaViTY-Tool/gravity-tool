@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -34,7 +35,11 @@ import org.junit.runners.Parameterized.Parameters;
  */
 @RunWith(Parameterized.class)
 public abstract class AbstractParameterizedTransformationTest {
-	
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(AbstractParameterizedTransformationTest.class);
+
 	@Rule
 	public ToFileLogger logToFile = new ToFileLogger(Paths.get(new File("testlogs").toURI()));
 
@@ -79,7 +84,7 @@ public abstract class AbstractParameterizedTransformationTest {
 					testcases.add(new Object[] { test.getName(), JavaCore.create(test) });
 				}
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 
@@ -92,7 +97,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * @throws Exception The test might throws exceptions 
 	 */
 	@Test(timeout = 5*60*1000)
-	public abstract void testForward() throws Exception;
+	public abstract void testForward() throws AssertionError;
 
 	/**
 	 * Loads the resource located at the given URI into a new ResourceSet

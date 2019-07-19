@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -100,7 +100,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 					return false;
 				}
 				
-				Hashtable<String, IPath> libs = new Hashtable<>();
+				HashMap<String, IPath> libs = new HashMap<>();
 				
 				IExtensionRegistry registry = Platform.getExtensionRegistry();
 				IExtensionPoint point = registry.getExtensionPoint(Activator.EXTENSIONPOINT_REGISTER_PROJECT);

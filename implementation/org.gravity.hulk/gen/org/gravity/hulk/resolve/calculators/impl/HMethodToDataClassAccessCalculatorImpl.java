@@ -35,7 +35,7 @@ import org.gravity.typegraph.basic.containers.TMemberContainer;
 // <-- [user defined imports]
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Stack;
+import java.util.Deque;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSyntethicMethod;
@@ -189,7 +189,7 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 		// [user code injected with eMoflon]
 
 		Set<TMember> allMembers = new HashSet<>();
-		Stack<TClass> stack = new Stack<>();
+		Deque<TClass> stack = new LinkedList<>();
 		stack.add(tClass);
 		while (!stack.isEmpty()) {
 			TClass tNextClass = stack.pop();
