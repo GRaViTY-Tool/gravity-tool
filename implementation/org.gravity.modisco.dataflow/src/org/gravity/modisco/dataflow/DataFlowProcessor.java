@@ -122,94 +122,56 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 
 			// Insertion of inter-procedural data flows
-			for (FlowNode node : handler.getMemberRef()) {				
-				for (FlowNode inNode : node.getInRef()) {
-					EObject inElement = inNode.getModelElement();
-					// Checking, if incoming flow comes from an access (will be omitted then, to avoid redundant edges)
-					// Also checks, if access has no outgoing flows; no flow edges will be inserted then
-					// TODO Test!
-					if (inElement instanceof MSingleVariableAccess || inElement instanceof MethodInvocation || node.getOutRef().isEmpty()) {
-						continue;
+			for (FlowNode node : handler.getMemberRef()) {
+				MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
+				Set<FlowNode> inRef = node.getInRef();
+				for (FlowNode outNode : node.getOutRef()) {
+					// Set implicit inNode, if inRef is empty and access is a MethodInvocation (as we should have a return flow then!)
+					if (inRef.isEmpty() && access instanceof MethodInvocation) {
+						inRef.add(handler.getFlowNodeForElement(((MMethodDefinition)((MethodInvocation) access).getMethod()).getMMethodSignature()));
 					}
-					// Checking, if we have a direct (parameter) flow or an indirect (access-based) flow
-					if (inElement instanceof SingleVariableDeclaration) {
-						// ParamFlow
-						SingleVariableDeclaration paramSource = (SingleVariableDeclaration) inElement;
-						MMethodDefinition methDefSource = (MMethodDefinition) paramSource.getMethodDeclaration();
-						MEntry sigParamSource = methDefSource.getMMethodSignature().getMParameterList().getMEntrys().get(methDefSource.getParameters().indexOf(paramSource));
-						MFlow paramFlow = ModiscoFactory.eINSTANCE.createMFlow();
-						paramFlow.setFlowSource(sigParamSource);
-						// Set flow target and owner
-						for (FlowNode outNode : node.getOutRef()) { // TODO: Behavior in this loop independent of concrete flow type? Then: Extract out of if scope
-							EObject outElement = outNode.getModelElement();
-							// Checking type of outgoing flow's element
-							if (outElement instanceof SingleVariableDeclaration) {
-								completeFlowForSigParam(outElement, node, paramFlow);
-							// TODO The following two cases could be merged together
-							} else if (outElement instanceof MSingleVariableAccess) {
-								MSingleVariableAccess variableAccess = (MSingleVariableAccess) outElement;
-								paramFlow.setFlowTarget(variableAccess);
-								paramFlow.setFlowOwner(variableAccess);
-							} else if (outElement instanceof MethodInvocation) {
-								// Add as FlowOwner and as FlowTarget
-								MMethodInvocation invocation = (MMethodInvocation) outElement;
-								paramFlow.setFlowOwner(invocation);
-								paramFlow.setFlowTarget(invocation);
-							} else {
-								if (outElement instanceof ReturnStatement) {
-									paramFlow.setFlowTarget(memberDefTyped);
-									paramFlow.setFlowOwner(memberDefTyped);
-								} else if (outElement instanceof IfStatement
-										|| outElement instanceof WhileStatement
-										|| outElement instanceof ForStatement) { // Separate from ReturnStatement, as this could be handled differently in the future
-									paramFlow.setFlowTarget(memberDefTyped);
-									paramFlow.setFlowOwner(memberDefTyped);
-								} else {
-									LOGGER.log(Level.INFO, "ERROR: Type of outElement (with SingleVariableDeclaration as inElement) couldn't match!");
-								}
-							}
+					for (FlowNode inNode : inRef) {
+						// Checking, if inNode is access; current access will be ignored then, to avoid redundancy
+						if (inNode instanceof MSingleVariableAccess || inNode instanceof MethodInvocation) {
+							continue;
 						}
-					} else { // Access-based flow
-						MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
-						MFlow accessOut = ModiscoFactory.eINSTANCE.createMFlow();
-						MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
-						accessIn.setFlowOwner(access);
-						accessIn.setFlowTarget(access);
-						accessOut.setFlowSource(access);
-						// Field flow for field access
-						// TODO Only read access so far?
-						if (inElement instanceof VariableDeclarationFragment) {
-							MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer();
-							accessIn.setFlowSource(fieldDef);
-						// TODO Merge together the following cases
-						} else if (inElement instanceof MethodInvocation) {
-							accessIn.setFlowSource((MMethodInvocation) inElement);
-						} else if (inElement instanceof MSingleVariableAccess) {
-							accessIn.setFlowSource((MSingleVariableAccess) inElement);
+						EObject inElement = inNode.getModelElement();
+						MFlow accessOut = null;
+						if (inElement instanceof MSingleVariableDeclaration) {
+							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+							accessOut.setFlowSource(((MSingleVariableDeclaration) inElement).getMEntry());
 						} else {
-							// TODO Try this cast (+ of outElem) at the beginning; continue loop (+ log), if it fails, as the flow's invalid
-							accessIn.setFlowSource((MAbstractFlowElement) inElement);
-						}
-						// Set references of accessOut
-						for (FlowNode outNode : node.getOutRef()) {
-							EObject outElement = outNode.getModelElement();
-							if (outElement instanceof ReturnStatement) {
-								accessOut.setFlowOwner(memberDefTyped);
-								accessOut.setFlowTarget(memberDefTyped);
-							} else if (outElement instanceof VariableDeclarationFragment) {
-								MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
-								accessOut.setFlowOwner(fieldDef);
-								accessOut.setFlowTarget(fieldDef);
-							} else if (outElement instanceof MSingleVariableDeclaration) {
-								completeFlowForSigParam(outElement, node, accessOut);
-							} else if (outElement instanceof IfStatement
-									|| outElement instanceof WhileStatement
-									|| outElement instanceof ForStatement) { 
+							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+							accessOut.setFlowSource(access);
+							// Also create incoming flow here
+							MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+							if (inElement instanceof VariableDeclarationFragment) {
+								accessIn.setFlowSource(((MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer()).getMFieldSignature());
 							} else {
-								MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-								accessOut.setFlowOwner(outTarget);
-								accessOut.setFlowTarget(outTarget);
+								accessIn.setFlowSource((MAbstractFlowElement) inElement);
 							}
+							accessIn.setFlowTarget(access);
+							accessIn.setFlowOwner(access);
+						}
+						EObject outElement = outNode.getModelElement();
+						if (outElement instanceof ReturnStatement) {
+							accessOut.setFlowOwner(memberDefTyped);	
+							accessOut.setFlowTarget(memberDefTyped);
+						} else if (outElement instanceof VariableDeclarationFragment) {
+							MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
+							accessOut.setFlowOwner(fieldDef);
+							accessOut.setFlowTarget(fieldDef);
+						} else if (outElement instanceof MSingleVariableDeclaration) {
+							completeFlowForSigParam(outElement, node, accessOut);
+						} else if (outElement instanceof IfStatement
+								|| outElement instanceof WhileStatement
+								|| outElement instanceof ForStatement) {
+							accessOut.setFlowOwner(memberDefTyped);
+							accessOut.setFlowTarget(memberDefTyped);
+						} else {
+							MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
+							accessOut.setFlowOwner(outTarget);
+							accessOut.setFlowTarget(outTarget);
 						}
 					}
 				}
@@ -262,9 +224,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param flow The flow, which is supposed to be completed.
 	 */
 	private void completeFlowForSigParam(EObject defParamObj, FlowNode currentAccess, MFlow flow) {
+		// Set target
 		MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) defParamObj;
 		MEntry sigParamTarget = paramTarget.getMEntry();
 		flow.setFlowTarget(sigParamTarget);
+		
+		// Set owner
 		MMethodInvocation invocation = getMMethodInvocationForArgumentAccess(currentAccess.getModelElement());
 		if (invocation != null) {
 			flow.setFlowOwner(invocation);
