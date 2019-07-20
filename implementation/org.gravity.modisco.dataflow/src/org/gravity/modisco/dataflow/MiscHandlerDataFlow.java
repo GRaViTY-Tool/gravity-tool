@@ -2,6 +2,7 @@ package org.gravity.modisco.dataflow;
 
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 
@@ -28,7 +29,10 @@ public class MiscHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		expressionHandler.handle(fragment.getInitializer());
+		Expression initializer = fragment.getInitializer();
+		if (initializer != null) { 
+			expressionHandler.handle(initializer).addOutRef(member);
+		}
 		return member;
 	}
 

@@ -12,13 +12,13 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MFlow;
 import org.gravity.eclipse.GravityActivator;
@@ -90,7 +90,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				} else if (node instanceof MethodInvocation) {
 					// Keep node (and compute inter-edges?)
 				} else if (node instanceof MSingleVariableAccess) {
-					// Keep node only if its a field access (TODO Check, if true)
+					// Keep node only if its a field access
+					if (((MSingleVariableAccess) node).getVariable().eContainer() instanceof VariableDeclarationStatement) {
+						reduceNodeInDFG(node, reducedDFG);
+						continue;
+					}
+					
 					// Removing unnecessary out edges
 					Set<FlowNode> outRef = reducedDFG.get(node).getOutRef();
 					int size = outRef.size();
@@ -112,28 +117,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						|| node instanceof ForStatement) { // TODO: Add remaining types
 					// Keep nodes, as a flow into them indicates, that sensitive info can leak implicitly through observation of the construct's behavior
 				} else { // Everything else is reduced in the same way
-					FlowNode flowNode = reducedDFG.get(node);
-					Set<FlowNode> inRef = flowNode.getInRef();
-					Set<FlowNode> outRef = flowNode.getOutRef();
-					for (FlowNode outNode : outRef) {
-						for (FlowNode inNode : inRef) {
-							outNode.addInRef(inNode);
-							inNode.getOutRef().remove(flowNode);
-						}
-						outNode.getInRef().remove(flowNode);
-					}
-					// Making sure, that all incoming flows into terminal node are removed
-					if (outRef.isEmpty()) {
-						for (FlowNode inNode : inRef) {
-							inNode.getOutRef().remove(flowNode);
-						}
-					}
-					inRef.clear();
-					outRef.clear();
-					reducedDFG.remove(node);
+					reduceNodeInDFG(node, reducedDFG);
 				}
 			}
-			
+
 			// Insertion of inter-procedural data flows
 			for (FlowNode node : handler.getMemberRef()) {				
 				for (FlowNode inNode : node.getInRef()) {
@@ -236,6 +223,36 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	}
 
 	/**
+	 * Removes the given node (including its flows) from reducedDFG and inserts direct flows from his inNodes to his outNodes. 
+	 * 
+	 * @param node The node's key in reducedDFG.
+	 * @param reducedDFG The alreadySeen on which the reduction should be performed.
+	 */
+	private void reduceNodeInDFG(EObject node, HashMap<EObject, FlowNode> reducedDFG) {
+		FlowNode flowNode = reducedDFG.get(node);
+		Set<FlowNode> inRef = flowNode.getInRef();
+		Set<FlowNode> outRef = flowNode.getOutRef();
+		for (FlowNode outNode : outRef) {
+			for (FlowNode inNode : inRef) {
+				if (outNode != inNode) {
+					outNode.addInRef(inNode);
+				}
+				inNode.getOutRef().remove(flowNode);
+			}
+			outNode.getInRef().remove(flowNode);
+		}
+		// Making sure, that all incoming flows into terminal node are removed
+		if (outRef.isEmpty()) {
+			for (FlowNode inNode : inRef) {
+				inNode.getOutRef().remove(flowNode);
+			}
+		}
+		inRef.clear();
+		outRef.clear();
+		reducedDFG.remove(node);
+	}
+
+	/**
 	 * Completes the given flow node's entries (target and owner) 
 	 * by obtaining the signature parameter corresponding to defParamObj (and setting it as target) 
 	 * and setting the flowOwner to the MMethodInvocation in which currentAccess is contained.
@@ -246,18 +263,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 */
 	private void completeFlowForSigParam(EObject defParamObj, FlowNode currentAccess, MFlow flow) {
 		MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) defParamObj;
-		MMethodDefinition methDefTarget = (MMethodDefinition) paramTarget.getMethodDeclaration();
-		int indexOf = methDefTarget.getParameters().indexOf(paramTarget);
-		// TODO Adjust?
-		MEntry sigParamTarget = methDefTarget.getMMethodSignature().getMParameterList().getMFirstEntry();
-		while (indexOf-- > 0) {
-			sigParamTarget = sigParamTarget.getMNext();
-		}
+		MEntry sigParamTarget = paramTarget.getMEntry();
 		flow.setFlowTarget(sigParamTarget);
-		// TODO Check, if this is a proper solution
-		try {
-			flow.setFlowOwner(getMMethodInvocationForArgumentAccess(currentAccess.getModelElement()));
-		} catch (ClassCastException e) {
+		MMethodInvocation invocation = getMMethodInvocationForArgumentAccess(currentAccess.getModelElement());
+		if (invocation != null) {
+			flow.setFlowOwner(invocation);
+		} else {
 			LOGGER.log(Level.INFO, "MethodInvocation for argument access wasn't found. FlowOwner is set to default (target signature).");
 			flow.setFlowOwner(sigParamTarget);
 		}
@@ -292,10 +303,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		for (MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
 				StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
-				Expression initializer = fragment.getInitializer();
-				fieldProcessor.getFlowNodeForElement(fragment);
+				fieldProcessor.getMiscHandler().handle(fragment);
 				fieldProcessor.getFlowNodeForElement(fieldDef);
-				fieldProcessor.getExpressionHandler().handle(initializer);
 				handlers.add(fieldProcessor);
 			}
 		}
@@ -308,14 +317,16 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Returns the MMethodInvocation for a given argument access. E. g. returns invocation of method m for the access of argument a in m(a).
 	 * <br/><br/>
-	 * Throws a ClassCastException when called on anything else than an argument access. 
+	 * There's currently no guarantee, that the returned MMethodInvocation is not null:
+	 * If the access occurs in the initializer of a local variable and indirectly flows to a method invocation through that local,
+	 * there's currently no way of recovering the MethodInvocation.
 	 * 
 	 * @param accessObject The model object of the argument access.
 	 * @return The MMethodInvocation, which contains the given argument access.
 	 */
-	private MMethodInvocation getMMethodInvocationForArgumentAccess(EObject accessObject) throws ClassCastException {
+	private MMethodInvocation getMMethodInvocationForArgumentAccess(EObject accessObject) {
 		EObject container = accessObject.eContainer();
-		while (!(container instanceof MethodInvocation ) && container != null) {
+		while (!(container instanceof MethodInvocation) && container != null) {
 			container = container.eContainer();
 		}
 		return (MMethodInvocation) container;

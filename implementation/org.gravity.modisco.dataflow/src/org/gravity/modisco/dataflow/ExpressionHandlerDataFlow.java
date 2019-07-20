@@ -329,7 +329,7 @@ public class ExpressionHandlerDataFlow {
 		} else if (container instanceof Statement) {
 			statementHandler.handle((Statement) container).addInRef(member);
 		} else {
-			statementHandler.getFlowNodeForElement(container).addInRef(member);; // No handling; should be fine though, as container is handled first anyway 
+			statementHandler.getFlowNodeForElement(container).addInRef(member); // No handling; should be fine though, as container is handled first anyway 
 		}
 		// Field and (non-param) local flows
 		if (variable instanceof VariableDeclarationFragment) {
@@ -365,13 +365,14 @@ public class ExpressionHandlerDataFlow {
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
 			handle(extendedOperand);
 		}
+		// An infixExpression evaluates to a value, which should always flow back into the expression's container
 		EObject container = infixExpression.eContainer();
 		if (container instanceof Expression) {
 			handle((Expression) container).addInRef(member);
 		} else if (container instanceof Statement) {
 			statementHandler.handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in InfixExpression handling.");
+			statementHandler.getFlowNodeForElement(container).addInRef(member); // No handling; should be fine though, as container is handled first anyway
 		}
 		return member;
 	}
