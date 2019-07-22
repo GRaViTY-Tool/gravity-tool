@@ -18,8 +18,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration #//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
         upperBound="-1" eType="#//MethodInvocationStaticType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlow" eType="#//MFlow"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodInvocations" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
