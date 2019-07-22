@@ -229,15 +229,6 @@ public interface BasicFactory extends EFactory {
 	TFlow createTFlow();
 
 	/**
-	 * Returns a new object of class '<em>TAbstract Flow Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TAbstract Flow Element</em>'.
-	 * @generated
-	 */
-	TAbstractFlowElement createTAbstractFlowElement();
-
-	/**
 	 * Returns a new object of class '<em>TRead Write</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
@@ -36,7 +36,7 @@ import org.gravity.typegraph.basic.TFlow;
  *
  * @generated
  */
-public class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container implements TAbstractFlowElement {
+public abstract class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container implements TAbstractFlowElement {
 	/**
 	 * The cached value of the '{@link #getOwnedFlows() <em>Owned Flows</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -107,7 +107,7 @@ public class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public EList<TFlow> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+			incomingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS, BasicPackage.TFLOW__FLOW_TARGET);
 		}
 		return incomingFlows;
 	}
@@ -120,7 +120,7 @@ public class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public EList<TFlow> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+			outgoingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS, BasicPackage.TFLOW__FLOW_SOURCE);
 		}
 		return outgoingFlows;
 	}
@@ -136,6 +136,10 @@ public class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -150,6 +154,10 @@ public class TAbstractFlowElementImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
 				return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

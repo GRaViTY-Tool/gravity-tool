@@ -13,7 +13,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  *
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTSignature()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface TSignature extends TAnnotatable, TAbstractFlowElement {

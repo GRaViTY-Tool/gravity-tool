@@ -267,8 +267,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="TConstructorDefinition" eSuperTypes="#//TMethodDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="TRead" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TWrite" eSuperTypes="#//TAccess"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TVisibility">
+    <eLiterals name="TPrivate"/>
+    <eLiterals name="TPackage" value="1"/>
+    <eLiterals name="TProtected" value="2"/>
+    <eLiterals name="TPublic" value="3"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TModifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>

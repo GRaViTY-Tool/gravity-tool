@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface TAbstractFlowElement extends EObject {
@@ -42,11 +42,13 @@ public interface TAbstractFlowElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Incoming Flows</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TFlow}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFlow#getFlowTarget <em>Flow Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_IncomingFlows()
-	 * @model
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowTarget
+	 * @model opposite="flowTarget"
 	 * @generated
 	 */
 	EList<TFlow> getIncomingFlows();
@@ -54,11 +56,13 @@ public interface TAbstractFlowElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Outgoing Flows</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TFlow}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFlow#getFlowSource <em>Flow Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_OutgoingFlows()
-	 * @model
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowSource
+	 * @model opposite="flowSource"
 	 * @generated
 	 */
 	EList<TFlow> getOutgoingFlows();

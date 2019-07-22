@@ -80,7 +80,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TUNRESOLVED_TYPE: return createTUnresolvedType();
 			case BasicPackage.TNAME: return createTName();
 			case BasicPackage.TFLOW: return createTFlow();
-			case BasicPackage.TABSTRACT_FLOW_ELEMENT: return createTAbstractFlowElement();
 			case BasicPackage.TREAD_WRITE: return createTReadWrite();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -368,17 +367,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TFlow createTFlow() {
 		TFlowImpl tFlow = new TFlowImpl();
 		return tFlow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TAbstractFlowElement createTAbstractFlowElement() {
-		TAbstractFlowElementImpl tAbstractFlowElement = new TAbstractFlowElementImpl();
-		return tAbstractFlowElement;
 	}
 
 	/**

@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.gravity.typegraph.basic.BasicPackage;
@@ -34,7 +33,7 @@ import org.gravity.typegraph.basic.TMember;
  *
  * @generated
  */
-public abstract class TAccessImpl extends MinimalEObjectImpl.Container implements TAccess {
+public abstract class TAccessImpl extends TAbstractFlowElementImpl implements TAccess {
 	/**
 	 * The cached value of the '{@link #getTTarget() <em>TTarget</em>}' reference.
 	 * <!-- begin-user-doc -->

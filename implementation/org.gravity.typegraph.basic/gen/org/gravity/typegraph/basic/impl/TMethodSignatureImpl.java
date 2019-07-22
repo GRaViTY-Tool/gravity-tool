@@ -17,16 +17,20 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameterList;
 // <-- [user defined imports]
+import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TMember;
 // [user defined imports] -->
@@ -39,6 +43,9 @@ import org.gravity.typegraph.basic.TMember;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOwnedFlows <em>Owned Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getParamList <em>Param List</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getDefinitions <em>Definitions</em>}</li>
@@ -47,7 +54,37 @@ import org.gravity.typegraph.basic.TMember;
  *
  * @generated
  */
-public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSignature {
+public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSignature {
+	/**
+	 * The cached value of the '{@link #getOwnedFlows() <em>Owned Flows</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> ownedFlows;
+
+	/**
+	 * The cached value of the '{@link #getIncomingFlows() <em>Incoming Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> incomingFlows;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> outgoingFlows;
+
 	/**
 	 * The cached value of the '{@link #getParamList() <em>Param List</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -95,6 +132,45 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	protected EClass eStaticClass() {
 		return BasicPackage.Literals.TMETHOD_SIGNATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getOwnedFlows() {
+		if (ownedFlows == null) {
+			ownedFlows = new EObjectContainmentWithInverseEList<TFlow>(TFlow.class, this, BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS, BasicPackage.TFLOW__FLOW_OWNER);
+		}
+		return ownedFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getIncomingFlows() {
+		if (incomingFlows == null) {
+			incomingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS, BasicPackage.TFLOW__FLOW_TARGET);
+		}
+		return incomingFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TFlow> getOutgoingFlows() {
+		if (outgoingFlows == null) {
+			outgoingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS, BasicPackage.TFLOW__FLOW_SOURCE);
+		}
+		return outgoingFlows;
 	}
 
 	/**
@@ -294,6 +370,12 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -312,6 +394,12 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return basicSetMethod(null, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
@@ -344,6 +432,12 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				return getOwnedFlows();
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				return getIncomingFlows();
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				return getOutgoingFlows();
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod();
 			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
@@ -366,6 +460,18 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				getOwnedFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				getIncomingFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				getOutgoingFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)newValue);
 				return;
@@ -391,6 +497,15 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				return;
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)null);
 				return;
@@ -415,6 +530,12 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS:
+				return ownedFlows != null && !ownedFlows.isEmpty();
+			case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS:
+				return incomingFlows != null && !incomingFlows.isEmpty();
+			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
+				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod() != null;
 			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
@@ -433,8 +554,46 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+				case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+				case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case BasicPackage.TMETHOD_SIGNATURE___GET_SIGNATURE_STRING:
+				return getSignatureString();
 			case BasicPackage.TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE:
 				return getTDefinition((TAbstractType)arguments.get(0));
 			case BasicPackage.TMETHOD_SIGNATURE___TO_STRING:
