@@ -159,7 +159,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
         eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
         eType="#//MFlow" containment="true" eOpposite="#//MFlow/flowOwner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"

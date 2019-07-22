@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.typegraph"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="TAccess" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="TAccess" abstract="true" eSuperTypes="#//TAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tTarget" lowerBound="1"
         eType="#//TMember" eOpposite="#//TMember/accessedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tSource" lowerBound="1"
@@ -284,20 +284,20 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TFlow" eSuperTypes="#//TAbstractFlowElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSources" upperBound="-1"
-        eType="#//TAbstractFlowElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTargets" upperBound="-1"
-        eType="#//TAbstractFlowElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" eType="#//TAbstractFlowElement"
-        eOpposite="#//TAbstractFlowElement/ownedFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSource" lowerBound="1"
+        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/outgoingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTarget" lowerBound="1"
+        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/incomingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
+        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TAbstractFlowElement">
+  <eClassifiers xsi:type="ecore:EClass" name="TAbstractFlowElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
         eType="#//TFlow" containment="true" eOpposite="#//TFlow/flowOwner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
-        eType="#//TFlow"/>
+        eType="#//TFlow" eOpposite="#//TFlow/flowTarget"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
-        eType="#//TFlow"/>
+        eType="#//TFlow" eOpposite="#//TFlow/flowSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
   <eSubpackages name="containers" nsURI="http://www.gravity.org/typegraph/basic#//containers"
