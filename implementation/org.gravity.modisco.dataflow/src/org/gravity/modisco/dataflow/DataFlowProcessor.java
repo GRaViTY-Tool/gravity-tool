@@ -125,16 +125,31 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			for (FlowNode node : handler.getMemberRef()) {
 				MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 				Set<FlowNode> inRef = node.getInRef();
-				for (FlowNode outNode : node.getOutRef()) {
+				Set<FlowNode> outRef = node.getOutRef();
+				if (outRef.isEmpty()) {
+					for (FlowNode inNode : inRef) {
+						EObject inElement = inNode.getModelElement();
+						// Only insert flow, if inElement isn't an access (to avoid redundancy)
+						if (!(inElement instanceof MSingleVariableAccess || inElement instanceof MethodInvocation)) {
+							MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+							accessIn.setFlowOwner(access);
+							accessIn.setFlowTarget(access);
+							if (inElement instanceof MSingleVariableDeclaration) {
+								accessIn.setFlowSource(((MSingleVariableDeclaration) inElement).getMEntry());
+							} else if (inElement instanceof VariableDeclarationFragment) {
+								accessIn.setFlowSource(((MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer()).getMFieldSignature());
+							} else {
+								accessIn.setFlowSource((MAbstractFlowElement) inElement);
+							}
+						}
+					}
+				}
+				for (FlowNode outNode : outRef) {
 					// Set implicit inNode, if inRef is empty and access is a MethodInvocation (as we should have a return flow then!)
 					if (inRef.isEmpty() && access instanceof MethodInvocation) {
 						inRef.add(handler.getFlowNodeForElement(((MMethodDefinition)((MethodInvocation) access).getMethod()).getMMethodSignature()));
 					}
 					for (FlowNode inNode : inRef) {
-						// Checking, if inNode is access; current access will be ignored then, to avoid redundancy
-						if (inNode instanceof MSingleVariableAccess || inNode instanceof MethodInvocation) {
-							continue;
-						}
 						EObject inElement = inNode.getModelElement();
 						MFlow accessOut = null;
 						if (inElement instanceof MSingleVariableDeclaration) {
@@ -143,15 +158,17 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						} else {
 							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
 							accessOut.setFlowSource(access);
-							// Also create incoming flow here
-							MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
-							if (inElement instanceof VariableDeclarationFragment) {
-								accessIn.setFlowSource(((MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer()).getMFieldSignature());
-							} else {
-								accessIn.setFlowSource((MAbstractFlowElement) inElement);
+							// Also create incoming flow here, if it's not coming from an access (to avoid redundancy)
+							if (!(inElement instanceof MSingleVariableAccess || inElement instanceof MethodInvocation)) {
+								MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+								if (inElement instanceof VariableDeclarationFragment) {
+									accessIn.setFlowSource(((MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer()).getMFieldSignature());
+								} else {
+									accessIn.setFlowSource((MAbstractFlowElement) inElement);
+								}
+								accessIn.setFlowTarget(access);
+								accessIn.setFlowOwner(access);
 							}
-							accessIn.setFlowTarget(access);
-							accessIn.setFlowOwner(access);
 						}
 						EObject outElement = outNode.getModelElement();
 						if (outElement instanceof ReturnStatement) {
