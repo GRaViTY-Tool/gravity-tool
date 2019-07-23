@@ -97,15 +97,20 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					}
 					
 					// Removing unnecessary out edges
-					Set<FlowNode> outRef = reducedDFG.get(node).getOutRef();
+					FlowNode accessFlowNode = reducedDFG.get(node);
+					Set<FlowNode> outRef = accessFlowNode.getOutRef();
 					int size = outRef.size();
 					if (size > 1) {
 						Set<FlowNode> toRemove = new HashSet<>();
 						for (FlowNode flowNode : outRef) {
 							EObject modelElement = flowNode.getModelElement();
-							if (modelElement instanceof MethodInvocation || modelElement == node) {
+							if (modelElement == node) {
 								toRemove.add(flowNode);
-								reducedDFG.get(modelElement).getInRef().remove(reducedDFG.get(node));
+								reducedDFG.get(modelElement).getInRef().remove(accessFlowNode);
+							} else if (modelElement instanceof MethodInvocation) {
+								accessFlowNode.setFlowOwner((MMethodInvocation) modelElement);
+								toRemove.add(flowNode);
+								reducedDFG.get(modelElement).getInRef().remove(accessFlowNode);
 							}
 						}
 						outRef.removeAll(toRemove);
@@ -247,11 +252,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		flow.setFlowTarget(sigParamTarget);
 		
 		// Set owner
-		MMethodInvocation invocation = getMMethodInvocationForArgumentAccess(currentAccess.getModelElement());
+		MMethodInvocation invocation = currentAccess.getFlowOwner();
 		if (invocation != null) {
 			flow.setFlowOwner(invocation);
 		} else {
-			LOGGER.log(Level.INFO, "MethodInvocation for argument access wasn't found. FlowOwner is set to default (target signature).");
+			LOGGER.log(Level.INFO, "MethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
 			flow.setFlowOwner(sigParamTarget);
 		}
 	}
@@ -294,23 +299,5 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			GraphVisualizer.drawGraphs(handlers, "graphs");
 		}
 		return handlers;
-	}
-	
-	/**
-	 * Returns the MMethodInvocation for a given argument access. E. g. returns invocation of method m for the access of argument a in m(a).
-	 * <br/><br/>
-	 * There's currently no guarantee, that the returned MMethodInvocation is not null:
-	 * If the access occurs in the initializer of a local variable and indirectly flows to a method invocation through that local,
-	 * there's currently no way of recovering the MethodInvocation.
-	 * 
-	 * @param accessObject The model object of the argument access.
-	 * @return The MMethodInvocation, which contains the given argument access.
-	 */
-	private MMethodInvocation getMMethodInvocationForArgumentAccess(EObject accessObject) {
-		EObject container = accessObject.eContainer();
-		while (!(container instanceof MethodInvocation) && container != null) {
-			container = container.eContainer();
-		}
-		return (MMethodInvocation) container;
 	}
 }

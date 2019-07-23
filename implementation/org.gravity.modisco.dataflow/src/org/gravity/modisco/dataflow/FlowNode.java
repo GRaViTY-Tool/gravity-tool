@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.gravity.modisco.MMethodInvocation;
 
 /**
  * An intermediate representation of data flow elements.
@@ -33,6 +34,11 @@ public class FlowNode {
 	 * A flag to indicate, whether this FlowNode has already been processed and thus was drawn from the alreadySeen HashMap at least once.
 	 */
 	private boolean fromAlreadySeen;
+	
+	/**
+	 * A field to store a reference to the MMethodInvocation, which is a the flowOwner of the parameter flow.
+	 */
+	private MMethodInvocation flowOwner;
 	
 	public FlowNode(EObject correspondingElement) {
 		modelElement = correspondingElement;
@@ -66,5 +72,13 @@ public class FlowNode {
 	
 	public void setFromAlreadySeen() {
 		fromAlreadySeen = true;
+	}
+
+	public MMethodInvocation getFlowOwner() {
+		return flowOwner;
+	}
+
+	public void setFlowOwner(MMethodInvocation flowOwner) {
+		this.flowOwner = flowOwner;
 	}
 }
