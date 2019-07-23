@@ -12,10 +12,12 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
+import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
@@ -156,6 +158,43 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					}
 					for (FlowNode inNode : inRef) {
 						EObject inElement = inNode.getModelElement();
+						// Avoiding duplicate flows
+						// TODO Restructure
+						if (access instanceof MSingleVariableAccess) {
+							for (SingleVariableAccess accessToSameVar : ((MSingleVariableAccess) access).getVariable().getUsageInVariableAccess()) {
+								FlowNode otherAccessNode = reducedDFG.get(accessToSameVar);
+								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
+									continue;
+								}
+								Set<FlowNode> otherAccessInRef = otherAccessNode.getInRef();
+								Set<FlowNode> otherAccessOutRef = otherAccessNode.getOutRef();
+								if (!otherAccessNode.equals(node) && otherAccessInRef.equals(node.getInRef()) 
+										&& otherAccessOutRef.equals(node.getOutRef())) {
+									otherAccessInRef.remove(inNode);
+									otherAccessOutRef.remove(outNode);
+									inNode.getOutRef().remove(otherAccessNode);
+									outNode.getInRef().remove(otherAccessNode);
+								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
+							}
+						} else if (access instanceof MMethodInvocation) { // TODO Further testing! Still not working properly
+							for (AbstractMethodInvocation invocOfSameMeth : ((MMethodInvocation) access).getMethod().getUsages()) {
+								FlowNode otherAccessNode = reducedDFG.get(invocOfSameMeth);
+								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
+									continue;
+								}
+								Set<FlowNode> otherAccessInRef = otherAccessNode.getInRef();
+								Set<FlowNode> otherAccessOutRef = otherAccessNode.getOutRef();
+								if (!otherAccessNode.equals(node) && otherAccessInRef.equals(node.getInRef()) 
+										&& otherAccessOutRef.equals(node.getOutRef())
+										|| !otherAccessNode.equals(node) && otherAccessOutRef.equals(node.getOutRef())
+										&& ((MMethodInvocation) access).getMethod().getParameters().isEmpty()) {
+									otherAccessInRef.remove(inNode);
+									otherAccessOutRef.remove(outNode);
+									inNode.getOutRef().remove(otherAccessNode);
+									outNode.getInRef().remove(otherAccessNode);
+								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
+							}
+						}
 						MFlow accessOut = null;
 						if (inElement instanceof MSingleVariableDeclaration) {
 							accessOut = ModiscoFactory.eINSTANCE.createMFlow();
