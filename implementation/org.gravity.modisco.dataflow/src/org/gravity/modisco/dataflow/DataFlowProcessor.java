@@ -150,13 +150,15 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					}
 				}
 				for (FlowNode outNode : outRef) {
-					// Set implicit inNode, if inRef is empty and access is a MethodInvocation (as we should have a return flow then!)
-					if (inRef.isEmpty() && access instanceof MethodInvocation) {
-						inRef.add(handler.getFlowNodeForElement(((MMethodDefinition)((MethodInvocation) access).getMethod()).getMMethodSignature()));
+					// A method invocation with a non-empty outRef has a return value and thus should explicitly have the MethodSig set as incoming flow
+					if (access instanceof MethodInvocation) {
+						FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((MethodInvocation) access).getMethod()).getMMethodSignature());
+						inRef.add(sigNode);
+						sigNode.addOutRef(node);
 					}
 					for (FlowNode inNode : inRef) {
 						EObject inElement = inNode.getModelElement();
-						// Avoiding duplicate flows
+						// Avoiding duplicate flows, because of multiple accesses of the same var/method having the same flows
 						// TODO Restructure
 						if (access instanceof MSingleVariableAccess) {
 							for (SingleVariableAccess accessToSameVar : ((MSingleVariableAccess) access).getVariable().getUsageInVariableAccess()) {
