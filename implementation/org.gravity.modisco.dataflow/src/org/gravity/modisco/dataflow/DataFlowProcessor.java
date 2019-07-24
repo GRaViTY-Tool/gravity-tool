@@ -32,6 +32,7 @@ import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodInvocation;
+import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
@@ -89,13 +90,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node
 				} else if (node instanceof ReturnStatement) {
 					// Keep node
-				} else if (node instanceof MethodInvocation) {
-					// Keep node (and compute inter-edges?)
-				} else if (node instanceof MSingleVariableAccess) {
-					// Keep node only if its a field access
-					if (((MSingleVariableAccess) node).getVariable().eContainer() instanceof VariableDeclarationStatement) {
-						reduceNodeInDFG(node, reducedDFG);
-						continue;
+				} else if (node instanceof MSingleVariableAccess || node instanceof MethodInvocation) {
+					if (node instanceof MSingleVariableAccess) {
+						// Keep variable access node only if its a field access
+						if (((MSingleVariableAccess) node).getVariable().eContainer() instanceof VariableDeclarationStatement) {
+							reduceNodeInDFG(node, reducedDFG);
+							continue;
+						}
 					}
 					
 					// Removing unnecessary out edges
@@ -176,7 +177,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 									outNode.getInRef().remove(otherAccessNode);
 								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
 							}
-						} else if (access instanceof MMethodInvocation) { // TODO Further testing! Still not working properly
+						} else if (access instanceof MMethodInvocation) {
 							for (AbstractMethodInvocation invocOfSameMeth : ((MMethodInvocation) access).getMethod().getUsages()) {
 								FlowNode otherAccessNode = reducedDFG.get(invocOfSameMeth);
 								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
@@ -187,7 +188,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 								if (!otherAccessNode.equals(node) && otherAccessInRef.equals(node.getInRef()) 
 										&& otherAccessOutRef.equals(node.getOutRef())
 										|| !otherAccessNode.equals(node) && otherAccessOutRef.equals(node.getOutRef())
-										&& ((MMethodInvocation) access).getMethod().getParameters().isEmpty()) {
+										&& otherAccessInRef.isEmpty()
+										&& node.getInRef().iterator().next().getModelElement() instanceof MMethodSignature) {
 									otherAccessInRef.remove(inNode);
 									otherAccessOutRef.remove(outNode);
 									inNode.getOutRef().remove(otherAccessNode);
