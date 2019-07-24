@@ -98,26 +98,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							continue;
 						}
 					}
-					
-					// Removing unnecessary out edges
-					FlowNode accessFlowNode = reducedDFG.get(node);
-					Set<FlowNode> outRef = accessFlowNode.getOutRef();
-					int size = outRef.size();
-					if (size > 1) {
-						Set<FlowNode> toRemove = new HashSet<>();
-						for (FlowNode flowNode : outRef) {
-							EObject modelElement = flowNode.getModelElement();
-							if (modelElement == node) {
-								toRemove.add(flowNode);
-								reducedDFG.get(modelElement).getInRef().remove(accessFlowNode);
-							} else if (modelElement instanceof MethodInvocation) {
-								accessFlowNode.setFlowOwner((MMethodInvocation) modelElement);
-								toRemove.add(flowNode);
-								reducedDFG.get(modelElement).getInRef().remove(accessFlowNode);
-							}
-						}
-						outRef.removeAll(toRemove);
-					}
 				} else if (node instanceof SingleVariableDeclaration) {
 					// Keep node
 				} else if (node instanceof IfStatement 
@@ -131,9 +111,26 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 
 			// Insertion of inter-procedural data flows
 			for (FlowNode node : handler.getMemberRef()) {
+				// Removing unnecessary out edges
+				Set<FlowNode> outRef = node.getOutRef();
+				int size = outRef.size();
+				if (size > 1) {
+					Set<FlowNode> toRemove = new HashSet<>();
+					for (FlowNode flowNode : outRef) {
+						EObject modelElement = flowNode.getModelElement();
+						if (modelElement == node) { // Remove self-flow
+							toRemove.add(flowNode);
+							reducedDFG.get(modelElement).getInRef().remove(node);
+						} else if (modelElement instanceof MethodInvocation) { // Remove flow into call, if there's actually a paramFlow
+							node.setFlowOwner((MMethodInvocation) modelElement);
+							toRemove.add(flowNode);
+							reducedDFG.get(modelElement).getInRef().remove(node);
+						}
+					}
+					outRef.removeAll(toRemove);
+				}
 				MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 				Set<FlowNode> inRef = node.getInRef();
-				Set<FlowNode> outRef = node.getOutRef();
 				if (outRef.isEmpty()) {
 					for (FlowNode inNode : inRef) {
 						EObject inElement = inNode.getModelElement();
