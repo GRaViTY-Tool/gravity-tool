@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -32,23 +34,30 @@ import carisma.profile.umlsec.critical;
 
 public class UmlProcessor {
 
+	private static final Logger LOGGER = Logger.getLogger(UmlProcessor.class);
+
 	private Model model;
 
-	private Interface iCritical, iHigh, iIntegrity, iSecrecy;
-	
+	private Interface iCritical;
+	private Interface iHigh;
+	private Interface iIntegrity;
+	private Interface iSecrecy;
+
 	public UmlProcessor(Model model) {
 		this.model = model;
-		
+
 		for (Element element : model.allOwnedElements()) {
 			if (element instanceof Package) {
 				Package gravityPackage = (Package) element;
-				if(gravityPackage.getName().equals("gravity")) {
+				if (gravityPackage.getName().equals("gravity")) {
 					PackageableElement securitySubPackage = gravityPackage.getPackagedElement("security");
-					if(securitySubPackage != null) {
-						PackageableElement annotationsSubPackage = ((Package) securitySubPackage).getPackagedElement("annotations");
-						if(annotationsSubPackage != null) {
-							PackageableElement requirementsSubPackage = ((Package) annotationsSubPackage).getPackagedElement("requirements");
-							if(requirementsSubPackage != null) {
+					if (securitySubPackage != null) {
+						PackageableElement annotationsSubPackage = ((Package) securitySubPackage)
+								.getPackagedElement("annotations");
+						if (annotationsSubPackage != null) {
+							PackageableElement requirementsSubPackage = ((Package) annotationsSubPackage)
+									.getPackagedElement("requirements");
+							if (requirementsSubPackage != null) {
 								Package p = (Package) requirementsSubPackage;
 								iCritical = (Interface) p.getPackagedElement(Critical.class.getSimpleName());
 								iHigh = (Interface) p.getPackagedElement(High.class.getSimpleName());
@@ -62,7 +71,7 @@ public class UmlProcessor {
 			}
 		}
 	}
-	
+
 	public boolean processFwd() throws ProcessingException {
 		for (Element e : model.allOwnedElements()) {
 			if (e instanceof Comment) {
@@ -85,7 +94,7 @@ public class UmlProcessor {
 							field.setAccessible(true);
 							@SuppressWarnings("unchecked")
 							EList<String> values = (EList<String>) field.get(critical);
-							if(values == null) {
+							if (values == null) {
 								values = new BasicEList<String>();
 								field.set(critical, values);
 							}
@@ -94,7 +103,7 @@ public class UmlProcessor {
 							}
 						} catch (IllegalAccessException | IllegalArgumentException | NoSuchFieldException
 								| SecurityException e1) {
-							e1.printStackTrace();
+							LOGGER.error(e1);
 						}
 					}
 				} else {
@@ -112,12 +121,10 @@ public class UmlProcessor {
 					if (critical == null) {
 						Classifier classifier;
 						if (element instanceof Classifier) {
-							classifier = (Classifier) element;				
-						}
-						else if (element instanceof Operation || element instanceof Property) {
+							classifier = (Classifier) element;
+						} else if (element instanceof Operation || element instanceof Property) {
 							classifier = (Classifier) element.getOwner();
-						}
-						else {
+						} else {
 							throw new ProcessingException(element);
 						}
 						critical = getCriticalStereotype(classifier);
@@ -127,14 +134,14 @@ public class UmlProcessor {
 						field.setAccessible(true);
 						@SuppressWarnings("unchecked")
 						EList<String> values = (EList<String>) field.get(critical);
-						if(values == null) {
+						if (values == null) {
 							values = new BasicEList<String>();
 							field.set(critical, values);
 						}
 						values.add(getSignature(element));
 					} catch (NoSuchFieldException | SecurityException | IllegalArgumentException
 							| IllegalAccessException e1) {
-						e1.printStackTrace();
+						LOGGER.error(e1);
 					}
 				}
 			}
@@ -178,7 +185,7 @@ public class UmlProcessor {
 						String integrityMemberAnnotationString = High.class.getSimpleName();
 						processBwd(classifier, signatures, integrityComments, criticalComment, integrityValues,
 								integrityMemberAnnotationString, integrityTagString, iIntegrity);
-						
+
 						// don't continue as a classifier can only have one critical stereotype
 						break;
 					}
@@ -217,7 +224,8 @@ public class UmlProcessor {
 					} else if (Secrecy.class.getSimpleName().equals(memberAnnotationString)) {
 						comment.getAnnotatedElements().add(iSecrecy);
 					} else {
-						throw new ProcessingException("Unknown UMLsec security level: \""+memberAnnotationString+"\"");
+						throw new ProcessingException(
+								"Unknown UMLsec security level: \"" + memberAnnotationString + "\"");
 					}
 					member.getOwnedComments().add(comment);
 				} else {
@@ -276,9 +284,7 @@ public class UmlProcessor {
 					integrityComments.put(signature, comment);
 				} else if (Secrecy.class.getSimpleName().equals(body)) {
 					secrecyComments.put(signature, comment);
-				} else {
-					continue;
-				}
+				} 
 			}
 		}
 
@@ -293,8 +299,6 @@ public class UmlProcessor {
 					integrityComments.put(signature, comment);
 				} else if (Secrecy.class.getSimpleName().equals(body)) {
 					secrecyComments.put(signature, comment);
-				} else {
-					continue;
 				}
 			}
 		}
@@ -309,7 +313,7 @@ public class UmlProcessor {
 				break;
 			}
 		}
-		if(newComment == null) {
+		if (newComment == null) {
 			newComment = UMLFactory.eINSTANCE.createComment();
 			newComment.setBody(body);
 			newComment.getAnnotatedElements().add(element);
@@ -319,7 +323,7 @@ public class UmlProcessor {
 	}
 
 	private static critical getCriticalStereotype(Element element) {
-		for(EObject eObject : element.getStereotypeApplications()) {
+		for (EObject eObject : element.getStereotypeApplications()) {
 			if (eObject instanceof critical) {
 				return (critical) eObject;
 			}

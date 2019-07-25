@@ -42,7 +42,7 @@ public class CustomDominanceComperator implements DominanceComparator {
 		initialObjectives[0] = 0;
 
 		for (int i = 1; i < objectivesSize; i++) {
-			initialObjectives[i] = fitnessfunctions.get(i - 1).calculator
+			initialObjectives[i] = fitnessfunctions.get(i - 1).getCalculator()
 					.calculate(Utility.getPG(solution.getSourceGraph()));
 		}
 	}

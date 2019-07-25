@@ -21,7 +21,6 @@ Export-Package: org.emoflon.ibex.tgg,
  org.gravity.tgg.uml.ui
 Bundle-Name: MoDiscoTGG
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Require-Bundle: org.eclipse.jdt.core,
  org.eclipse.emf.compare,
  carisma.profile.umlsec,
@@ -45,3 +44,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Automatic-Module-Name: org.gravity.tgg.modisco.uml
 Bundle-Activator: org.gravity.tgg.uml.GravityUmlActivator
+Bundle-ClassPath: .

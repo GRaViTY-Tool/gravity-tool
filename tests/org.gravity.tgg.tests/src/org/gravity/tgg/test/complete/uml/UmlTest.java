@@ -4,6 +4,8 @@
 package org.gravity.tgg.test.complete.uml;
 
 import static org.junit.Assert.assertNotNull;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,6 +37,8 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
 public class UmlTest extends AbstractParameterizedTransformationTest {
 
 	private static final boolean ADD_UMLSEC = false;
+	private static final boolean SERIALIZE = false;
+	
 	private static final Logger LOGGER = Logger.getLogger(UmlTest.class);
 
 	public UmlTest(String name, IJavaProject project) {
@@ -57,22 +61,37 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	 */
 	@Override
 	public void testForward() {
-		String trg = createTrgName(name, UMLResource.FILE_EXTENSION);
+		NullProgressMonitor monitor = new NullProgressMonitor();
+		Model model;
+		try {
+			model = Transformation.projectToModel(project, ADD_UMLSEC, monitor);
+			assertNotNull(model);
+		} catch (TransformationFailedException | IOException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			throw new AssertionError(e.getMessage(), e);
+			
+		}
+		
+		if(!SERIALIZE) {
+			return;
+		}
+		
+		String trg = createTrgFile(name, UMLResource.FILE_EXTENSION);
+		File trgFile = new File(trg);
 		LOGGER.log(Level.INFO, trg);
-
-		deleteFile(createSrcName(name, UMLResource.FILE_EXTENSION));
+		
 		deleteFile(trg);
+		deleteFile(createSrcName(name, UMLResource.FILE_EXTENSION));
 		deleteFile(createCorrName(name, UMLResource.FILE_EXTENSION));
 		deleteFile(createProtocolName(name, UMLResource.FILE_EXTENSION));
 
-		NullProgressMonitor monitor = new NullProgressMonitor();
-		try {
-			Model model = Transformation.projectToModel(project, ADD_UMLSEC, monitor);
-			assertNotNull(model);
-
-			model.eResource().save(new FileOutputStream(trg), Collections.EMPTY_MAP);
-
-		} catch (IOException | TransformationFailedException e) {
+		File parentFile = trgFile.getParentFile();
+		if(!parentFile.exists() && !parentFile.mkdirs()) {
+			throw new AssertionError("Couldn't create output directory: "+parentFile.getPath());
+		}
+		try (FileOutputStream outputStream = new FileOutputStream(trgFile)){
+			model.eResource().save(outputStream, Collections.EMPTY_MAP);
+		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			throw new AssertionError(e.getMessage(), e);
 		}

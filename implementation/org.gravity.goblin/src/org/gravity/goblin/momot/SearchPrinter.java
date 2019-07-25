@@ -167,7 +167,7 @@ public class SearchPrinter {
 			l.log(Level.INFO, "-------------------------------------------------------");
 			l.log(Level.INFO, "Search");
 			l.log(Level.INFO, "-------------------------------------------------------");
-			l.log(Level.INFO, "InputModel:      " + SearchParameters.INITIAL_MODEL);
+			l.log(Level.INFO, "InputModel:      " + SearchParameters.initialModel);
 			l.log(Level.INFO, "Objectives:      " + orchestration.getFitnessFunction().getObjectiveNames());
 			l.log(Level.INFO, "NrObjectives:    " + orchestration.getNumberOfObjectives());
 			l.log(Level.INFO, "Constraints:     " + orchestration.getFitnessFunction().getConstraintNames());

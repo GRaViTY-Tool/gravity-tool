@@ -95,8 +95,8 @@ public class ModelSaver {
 			Thread threadIn = new Thread(rin);
 			threadIn.start();
 			threadOut.start();
-			threadOut.join();
 			threadIn.join();
+			threadOut.join();
 		} catch (InterruptedException e) {
 			LOGGER.error(e.getMessage(), e);
 		    Thread.currentThread().interrupt();

@@ -38,7 +38,7 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class HulkApiTest {
 
-	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class);
 
 	private IJavaProject javaProject;
 
@@ -69,7 +69,7 @@ public class HulkApiTest {
 					data.add(new Object[] { project.getName(), javaProject });
 				}
 			} catch (CoreException e) {
-				e.printStackTrace();
+				LOGGER.error(e);
 			}
 		}
 		return data;

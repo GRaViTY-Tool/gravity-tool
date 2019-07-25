@@ -21,7 +21,7 @@ Export-Package: org.gravity.modisco,
  org.gravity.modisco.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Localization: plugin
 Bundle-Activator: org.gravity.modisco.GravityMoDiscoActivator
 Automatic-Module-Name: org.gravity.modisco
+Bundle-ClassPath: .

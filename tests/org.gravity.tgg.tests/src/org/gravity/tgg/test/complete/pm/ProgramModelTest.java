@@ -13,6 +13,7 @@ import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.test.util.TimeStampUtil;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * 
@@ -47,7 +48,7 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 	public final void testForward() {
 		try {
 			deleteFile(createSrcName(name, XMI));
-			deleteFile(createTrgName(name, XMI));
+			deleteFile(createTrgFile(name, XMI));
 			deleteFile(createCorrName(name, XMI));
 			deleteFile(createProtocolName(name, XMI));
 
@@ -62,7 +63,8 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 				}
 				LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 
-				assertNotNull(conv.getPG());
+				TypeGraph pg = conv.getPG();
+				assertNotNull(pg);
 			} catch (final MalformedURLException e) {
 				throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
 			} catch (final IOException e) {

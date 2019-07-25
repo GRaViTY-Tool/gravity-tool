@@ -25,15 +25,18 @@ Export-Package: org.eclipse.draw2d,
  org.eclipse.draw2d.parts,
  org.eclipse.draw2d.text,
  org.eclipse.draw2d.widgets,
+ org.gravity.hulk.ui.visualization,
  org.gravity.hulk.ui.visualization.detection,
  org.gravity.hulk.ui.visualization.handlers;x-friends:="org.gravity.hulk.ui",
+ org.gravity.hulk.ui.visualization.handlers.views,
  org.gravity.hulk.ui.visualization.information.providers,
  org.gravity.hulk.ui.visualization.listener,
+ org.gravity.hulk.ui.visualization.markerFields,
  org.gravity.hulk.ui.visualization.markerManager,
  org.gravity.hulk.ui.visualization.util,
  org.gravity.hulk.ui.visualization.views
-Bundle-ClassPath: lib/org.eclipse.draw2d_3.10.1.201508170204.jar,
+Bundle-ClassPath: .,
+ lib/org.eclipse.draw2d_3.10.1.201508170204.jar,
  lib/org.eclipse.zest.core_1.5.201.201508170204.jar,
- lib/org.eclipse.zest.layouts_1.1.200.201508170204.jar,
- .
+ lib/org.eclipse.zest.layouts_1.1.200.201508170204.jar
 Automatic-Module-Name: org.gravity.hulk.ui.visualization

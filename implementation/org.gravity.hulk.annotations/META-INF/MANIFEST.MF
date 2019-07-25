@@ -15,3 +15,4 @@ Export-Package: org.gravity.hulk.annotations,
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.gravity.hulk.annotations.activator.AnnotationsActivator
 Automatic-Module-Name: org.gravity.hulk.annotations
+Bundle-ClassPath: .

@@ -10,13 +10,13 @@ import com.beust.jcommander.Parameter;
  *
  */
 public class SearchParameters {
-
+	
 	/**
 	 * Initial Model that will be optimized
 	 */
 	@Parameter(	names = { "-im", "--initial_model" },
 				description = "Initial Model that will be optimized")
-	public static String INITIAL_MODEL = "input/SecureMailApp.xmi";
+	public static String initialModel = "input/SecureMailApp.xmi";
 
 	/**
 	 * Displays help information
@@ -55,7 +55,7 @@ public class SearchParameters {
 	 */
 	@Parameter(	names = { "-sl", "--solution_length" }, 
 				description = "number of transformations each solution will contain")
-	public static int SOLUTION_LENGTH = 10;
+	public static int solutiionLength = 10;
 	
 	/**
 	 * Number of solutions a population contains
@@ -83,21 +83,21 @@ public class SearchParameters {
 	 */
 	@Parameter(	names = { "-pm", "--parameter_mutation_probability" }, 
 				description = "probability a solution will be mutated with a new transformation")
-	public static double TransformationParameterMutationProbability = 0.1;
+	public static double transformationParameterMutationProbability = 0.1;
 	
 	/**
 	 * Probability a solution will be mutated with a placeholder
 	 */
 	@Parameter(	names = { "-phm", "--placeholder_mutation_probability" }, 
 				description = "probability a solution will be mutated with a placeholder")
-	public static double TransformationPlaceholderMutationProbability = 0.1;
+	public static double transformationPlaceholderMutationProbability = 0.1;
 	
 	/**
 	 * Probability a crossover between two solutions will happen
 	 */
 	@Parameter(	names = { "-cop", "--crossover_probability" }, 
 				description = "probability a crossover between two solutions will happen")
-	public static double OnePointCrossoverProbability = 1;
+	public static double onePointCrossoverProbability = 1;
 	
 	/**
 	 * Modules containing transformation rules
