@@ -106,7 +106,6 @@ public abstract class AbstractParameterizedTransformationTest {
 				}
 				project.open(null);
 				projects.add(project);
-				break;
 			}
 		}
 		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
