@@ -205,4 +205,20 @@
       <url>http://carisma.umlsec.de/beta-updatesite</url>
     </repository>
   </repositories>
+
+  <!--<pluginRepositories>
+    <pluginRepository>
+      <id>mapasuta.repo</id>
+      <name>Mapasuta Project Download Repository</name>
+      <url>http://mapasuta.sf.net/maven/repo</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>-->
 </project>

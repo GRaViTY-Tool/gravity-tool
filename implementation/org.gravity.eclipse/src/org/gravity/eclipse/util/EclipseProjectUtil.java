@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -13,10 +14,13 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
@@ -136,7 +140,7 @@ public class EclipseProjectUtil {
 		}
 		return gravityFolder;
 	}
-	
+
 	/**
 	 * Creates a class path entry for the given file
 	 * 
@@ -159,12 +163,11 @@ public class EclipseProjectUtil {
 	 * Adds a library to the classpath of the project
 	 * 
 	 * @param project The Java project
-	 * @param lib The library
+	 * @param lib     The library
 	 * @return The created classpath entry
 	 * @throws JavaModelException if the classpath could not be set
 	 */
-	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib)
-			throws JavaModelException {
+	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib) throws JavaModelException {
 		IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
@@ -177,21 +180,23 @@ public class EclipseProjectUtil {
 	/**
 	 * Creates a new empty project in the current workspace
 	 * 
-	 * @param name The desired name of the project
+	 * @param name    The desired name of the project
 	 * @param monitor A progress monitor
 	 * @return The new project
-	 * @throws DuplicateProjectNameException If there is already a project with this name
-	 * @throws CoreException If there is an Exception in Eclipse
+	 * @throws DuplicateProjectNameException If there is already a project with this
+	 *                                       name
+	 * @throws CoreException                 If there is an Exception in Eclipse
 	 */
 	public static IProject createProject(String name, IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
 		IProject project = getProjectByName(name);
-	
-		if (project.exists() || new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
+
+		if (project.exists()
+				|| new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
 			throw new DuplicateProjectNameException(
 					"There is already a project with the name \"" + name + "\" in the workspace.");
 		}
-	
+
 		project.create(monitor);
 		project.open(monitor);
 		return project;
@@ -200,13 +205,51 @@ public class EclipseProjectUtil {
 	/**
 	 * Links a file to an eclipse IFile
 	 * 
-	 * @param source The source file
-	 * @param target The target file 
+	 * @param source  The source file
+	 * @param target  The target file
 	 * @param monitor A progress monitor
 	 * @throws CoreException If the link cannot be created
 	 */
 	public static void createLink(File source, IFile target, IProgressMonitor monitor) throws CoreException {
 		IPath jarPath = new org.eclipse.core.runtime.Path(source.getAbsolutePath());
 		target.createLink(jarPath, IResource.FILE, monitor);
+	}
+
+	/**
+	 * Imports all projects present at the workspace location into the workspace
+	 * 
+	 * @return The imported Eclipse projects
+	 * @throws CoreException If the import fails for a project
+	 */
+	public static List<IProject> importProjectsFromWorkspaceLocation() throws CoreException {
+		File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
+		return importProjects(src);
+	}
+
+	/**
+	 * Imports all projects present at given location into the workspace
+	 * 
+	 * @param rootFolder The folder containing the Eclipse projects
+	 * @return The imported Eclipse projects
+	 * @throws CoreException If the import fails for a project
+	 */
+	public static List<IProject> importProjects(File rootFolder) throws CoreException {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		List<IProject> projects = new LinkedList<>();
+		for (File projectFolder : rootFolder.listFiles()) {
+			File dotProject = new File(projectFolder, ".project");
+			if (dotProject.exists()) {
+				IProjectDescription description = ResourcesPlugin.getWorkspace()
+						.loadProjectDescription(new Path(dotProject.toString()));
+				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+				if (!project.exists()) {
+					project.create(description, null);
+				}
+				project.open(null);
+				projects.add(project);
+			}
+		}
+		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		return projects;
 	}
 }

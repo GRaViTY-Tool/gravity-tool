@@ -12,7 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
 import java.util.stream.Stream;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
@@ -166,5 +165,51 @@ public class FileUtils {
 			}
 		}
 		return nextRoot;
+	}
+
+	/**
+	 * Creates a directory
+	 * 
+	 * @param directoryPath - The path where the file will be created
+	 * @return - The new File with the given path
+	 */
+	public static File createDirectory(String directoryPath) {
+		try {
+			File dir = new File(directoryPath);
+			if (dir.exists()) {
+				return dir;
+			}
+			if (dir.mkdirs()) {
+				return dir;
+			}
+		} catch (Exception e) {
+			LOGGER.log(Level.ERROR, "Could not create directory " + directoryPath);
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		}
+		return null;
+	}
+
+	/**
+	 * This method recursively deletes a file
+	 * 
+	 * @param file The file
+	 * @return true, iff the file has been deleted successfully
+	 */
+	public static boolean recursiveDelete(File file) {
+		boolean success = true;
+		if (file.exists()) {
+			if (file.isDirectory()) {
+				for (File f : file.listFiles()) {
+					if (f.isDirectory()) {
+						success &= recursiveDelete(f);
+						success &= f.delete();
+					} else {
+						success &= f.delete();
+					}
+				}
+			}
+			success = file.delete();
+		}
+		return success;
 	}
 }

@@ -4,24 +4,18 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.tgg.test.activator.MoDiscoTestActivator;
 import org.gravity.tgg.test.util.ToFileLogger;
 import org.junit.Rule;
@@ -92,23 +86,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	public static final Collection<Object[]> data() throws CoreException {
 		List<Object[]> testcases = new ArrayList<>();
 
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		File src = root.getLocation().toFile();
-		List<IProject> projects = new LinkedList<>();
-		for (File projectFolder : src.listFiles()) {
-			File dotProject = new File(projectFolder, ".project");
-			if (dotProject.exists()) {
-				IProjectDescription description = ResourcesPlugin.getWorkspace()
-						.loadProjectDescription(new Path(dotProject.toString()));
-				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
-				if (!project.exists()) {
-					project.create(description, null);
-				}
-				project.open(null);
-				projects.add(project);
-			}
-		}
-		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation();
 
 		for (IProject test : projects) {
 			try {
