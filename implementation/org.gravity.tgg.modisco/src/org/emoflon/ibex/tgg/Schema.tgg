@@ -252,6 +252,16 @@
 		#src->Type
 		#trg->TCall
 	}
+	
+	MFlowToTFlow {
+		#src->MFlow
+		#trg->TFlow
+	}
+	
+	MAbstractFlowElementToTAbstractFlowElement {
+		#src->MAbstractFlowElement
+		#trg->TAbstractFlowElement
+	}
 }
 
 #attributeConditions {

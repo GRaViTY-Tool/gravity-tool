@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule FieldAccess
+#abstract #rule FieldAccess
 #with org.gravity.tgg.modisco
 
 #source {
@@ -61,3 +61,49 @@
 		#trg->tAccess
 	}
 }
+
+#abstract #rule FieldAccessRead #extends FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		++	-outgoingFlows -> outMFlow
+	}
+	
+	++outMFlow:MFlow {
+		++	-flowTarget -> mTarget
+	}
+	
+	++mTarget:MAbstractFlowElement
+}
+
+#target { 
+	++tAccess:TAccess {
+		++	-outgoingFlows -> outTFlow
+	}
+	
+
+	++outTFlow:TFlow {
+		++ -flowTarget -> tTarget
+	}
+	
+	++tTarget:TAbstractFlowElement
+
+	//TODO Change TAccess to TRead
+}
+
+#correspondence {
+	++outMFlowToOutTFlow:MFlowToTFlow {
+		#src->outMFlow
+		#trg->outTFlow
+	}
+	
+	++mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tTarget
+	}
+}
+
+
+
+
