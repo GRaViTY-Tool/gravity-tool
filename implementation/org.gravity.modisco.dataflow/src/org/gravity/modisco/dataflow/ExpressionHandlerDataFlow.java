@@ -382,10 +382,19 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
+		AbstractMethodDeclaration calledMethod = classInstanceCreation.getMethod();
+		statementHandler.getFlowNodeForElement(calledMethod); // Creating just a FlowNode for the called method; no handling needed
 		handle(classInstanceCreation.getExpression());
-		for (Expression argument : classInstanceCreation.getArguments()) {
-			handle(argument);
+		EList<Expression> arguments = classInstanceCreation.getArguments();
+		if (!arguments.isEmpty()) {
+			for (Expression argument : arguments) {
+				FlowNode argumentNode = handle(argument);
+				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
+				argumentNode.addOutRef(paramNode);
+			}
+			statementHandler.getMemberRef().add(member);
 		}
+		statementHandler.getMemberRef().add(member);
 		EObject container = classInstanceCreation.eContainer();
 		if (container instanceof Expression) {
 			handle((Expression) container).addInRef(member);

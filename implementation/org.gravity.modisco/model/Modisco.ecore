@@ -166,12 +166,16 @@
         eType="#//MFlow" eOpposite="#//MFlow/flowSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess #//MAbstractFlowElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodInvocation #//MAbstractFlowElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorInvocation #//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableDeclaration" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntry" lowerBound="1"
         eType="#//MEntry" eOpposite="#//MEntry/parameters"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation #//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSuperMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperMethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ClassInstanceCreation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSuperConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
 </ecore:EPackage>

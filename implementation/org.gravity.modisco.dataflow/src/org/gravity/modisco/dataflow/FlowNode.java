@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
-import org.gravity.modisco.MMethodInvocation;
+import org.gravity.modisco.MAbstractMethodInvocation;
 
 /**
  * An intermediate representation of data flow elements.
@@ -38,7 +38,7 @@ public class FlowNode {
 	/**
 	 * A field to store a reference to the MMethodInvocation, which is a the flowOwner of the parameter flow.
 	 */
-	private MMethodInvocation flowOwner;
+	private MAbstractMethodInvocation flowOwner;
 	
 	public FlowNode(EObject correspondingElement) {
 		modelElement = correspondingElement;
@@ -74,11 +74,11 @@ public class FlowNode {
 		fromAlreadySeen = true;
 	}
 
-	public MMethodInvocation getFlowOwner() {
+	public MAbstractMethodInvocation getFlowOwner() {
 		return flowOwner;
 	}
 
-	public void setFlowOwner(MMethodInvocation flowOwner) {
-		this.flowOwner = flowOwner;
+	public void setFlowOwner(MAbstractMethodInvocation modelElement) {
+		this.flowOwner = modelElement;
 	}
 }

@@ -1,13 +1,14 @@
 package org.gravity.modisco.dataflow;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AssertStatement;
 import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.BreakStatement;
@@ -45,6 +46,8 @@ import org.gravity.modisco.MDefinition;
  *
  */
 public class StatementHandlerDataFlow {
+	
+	private static final Logger LOGGER = Logger.getLogger(ExpressionHandlerDataFlow.class.getName());
 	
 	/**
 	 * The accesses observed in the member corresponding to this handler.
@@ -419,14 +422,26 @@ public class StatementHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
+		AbstractMethodDeclaration calledMethod = constructorInvocation.getMethod();
+		getFlowNodeForElement(calledMethod); // Creating just a FlowNode for the called method; no handling needed
 		EList<Expression> arguments = constructorInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
-				expressionHandler.handle(argument);
+				FlowNode argumentNode = expressionHandler.handle(argument);
+				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
+				argumentNode.addOutRef(paramNode);
 			}
+			getMemberRef().add(member);
 		}
-		memberRef.add(member);
-		member.addOutRef(getFlowNodeForElement(constructorInvocation.eContainer()));
+		getMemberRef().add(member);
+		EObject container = constructorInvocation.eContainer();
+		if (container instanceof Expression) {
+			expressionHandler.handle((Expression) container).addInRef(member);
+		} else if (container instanceof Statement) {
+			handle((Statement) container).addInRef(member);
+		} else {
+			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in ConstructorInvocation handling.");
+		}
 		return member;
 	}
 

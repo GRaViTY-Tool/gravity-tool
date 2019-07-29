@@ -12,10 +12,10 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
@@ -26,12 +26,13 @@ import org.gravity.modisco.MFlow;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MAbstractMethodInvocation;
+import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
-import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
@@ -90,7 +91,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node
 				} else if (node instanceof ReturnStatement) {
 					// Keep node
-				} else if (node instanceof MSingleVariableAccess || node instanceof MethodInvocation) {
+				} else if (node instanceof MSingleVariableAccess || node instanceof AbstractMethodInvocation) {
 					if (node instanceof MSingleVariableAccess) {
 						// Keep variable access node only if its a field access
 						if (((MSingleVariableAccess) node).getVariable().eContainer() instanceof VariableDeclarationStatement) {
@@ -121,8 +122,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						if (modelElement == node) { // Remove self-flow
 							toRemove.add(flowNode);
 							reducedDFG.get(modelElement).getInRef().remove(node);
-						} else if (modelElement instanceof MethodInvocation) { // Remove flow into call, if there's actually a paramFlow
-							node.setFlowOwner((MMethodInvocation) modelElement);
+						} else if (modelElement instanceof MAbstractMethodInvocation) { // Remove flow into call, if there's actually a paramFlow
+							node.setFlowOwner((MAbstractMethodInvocation) modelElement);
 							toRemove.add(flowNode);
 							reducedDFG.get(modelElement).getInRef().remove(node);
 						}
@@ -133,10 +134,17 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				// A method invocation with a non-empty outRef has a return value and thus should explicitly have the MethodSig set as incoming flow
 				MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 				Set<FlowNode> inRef = node.getInRef();
-				if (access instanceof MethodInvocation && !outRef.isEmpty()) {
-					FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((MethodInvocation) access).getMethod()).getMMethodSignature());
-					inRef.add(sigNode);
-					sigNode.addOutRef(node);
+				if (access instanceof AbstractMethodInvocation && !outRef.isEmpty()) {
+					AbstractMethodDeclaration methodDef = ((AbstractMethodInvocation) access).getMethod();
+					if (methodDef instanceof MConstructorDefinition) {
+						FlowNode defNode = handler.getFlowNodeForElement(methodDef);
+						inRef.add(defNode);
+						defNode.addOutRef(node);
+					} else {
+						FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((AbstractMethodInvocation) access).getMethod()).getMMethodSignature());
+						inRef.add(sigNode);
+						sigNode.addOutRef(node);
+					}
 				}
 				
 				// Avoiding duplicate flows, because of multiple accesses of the same var/method having the same flows
@@ -159,8 +167,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 									outNode.getInRef().remove(otherAccessNode);
 								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
 							}
-						} else if (access instanceof MMethodInvocation) {
-							for (AbstractMethodInvocation invocOfSameMeth : ((MMethodInvocation) access).getMethod().getUsages()) {
+						} else if (access instanceof MAbstractMethodInvocation) {
+							for (AbstractMethodInvocation invocOfSameMeth : ((MAbstractMethodInvocation) access).getMethod().getUsages()) {
 								FlowNode otherAccessNode = reducedDFG.get(invocOfSameMeth);
 								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
 									continue;
@@ -195,7 +203,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						}
 					} else {
 						// Also create incoming flow here, if it's not coming from an access (to avoid redundancy)
-						if (!(inElement instanceof MSingleVariableAccess || inElement instanceof MethodInvocation)) {
+						if (!(inElement instanceof MSingleVariableAccess || inElement instanceof AbstractMethodInvocation)) {
 							MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
 							if (inElement instanceof VariableDeclarationFragment) {
 								accessIn.setFlowSource(((MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer()).getMFieldSignature());
@@ -288,11 +296,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		flow.setFlowTarget(sigParamTarget);
 		
 		// Set owner
-		MMethodInvocation invocation = currentAccess.getFlowOwner();
+		MAbstractMethodInvocation invocation = currentAccess.getFlowOwner();
 		if (invocation != null) {
 			flow.setFlowOwner(invocation);
 		} else {
-			LOGGER.log(Level.INFO, "MethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
+			LOGGER.log(Level.INFO, "AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
 			flow.setFlowOwner(sigParamTarget);
 		}
 	}
