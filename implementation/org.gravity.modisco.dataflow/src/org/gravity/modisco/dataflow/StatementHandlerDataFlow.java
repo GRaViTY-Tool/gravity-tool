@@ -87,9 +87,6 @@ public class StatementHandlerDataFlow {
 	}
 	
 	public FlowNode handle(Statement statement) {
-		if (statement == null) {
-			return null; // assume nothing to do is success
-		}
 		if (statement instanceof AssertStatement) {
 			AssertStatement assertStatement = (AssertStatement) statement;
 			return handle(assertStatement);
@@ -192,9 +189,6 @@ public class StatementHandlerDataFlow {
 	}
 	
 	private FlowNode handle(WhileStatement whileStatement) {
-		if (whileStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(whileStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -205,9 +199,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement) {
-		if (variableDeclarationStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(variableDeclarationStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -219,9 +210,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(TypeDeclarationStatement typeDeclarationStatement) {
-		if (typeDeclarationStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(typeDeclarationStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -231,9 +219,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(TryStatement tryStatement) {
-		if (tryStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(tryStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -247,9 +232,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(ThrowStatement throwStatement) {
-		if (throwStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(throwStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -259,9 +241,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(SynchronizedStatement synchronizedStatement) {
-		if (synchronizedStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(synchronizedStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -272,9 +251,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(SwitchStatement switchStatement) {
-		if (switchStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(switchStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -287,9 +263,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(SwitchCase switchCase) {
-		if (switchCase == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(switchCase);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -299,9 +272,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation) {
-		if (superConstructorInvocation == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(superConstructorInvocation);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -314,9 +284,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(ReturnStatement returnStatement) {
-		if (returnStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(returnStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -326,16 +293,10 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(LabeledStatement labeledStatement) {
-		if (labeledStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		return handle(labeledStatement.getBody());
 	}
 
 	private FlowNode handle(IfStatement ifStatement) {
-		if (ifStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(ifStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -347,9 +308,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(ForStatement forStatement) {
-		if (forStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(forStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -366,9 +324,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(ExpressionStatement expressionStatement) {
-		if (expressionStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(expressionStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -378,9 +333,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(EnhancedForStatement enhancedForStatement) {
-		if (enhancedForStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(enhancedForStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -395,9 +347,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(DoStatement doStatement) {
-		if (doStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(doStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -408,16 +357,10 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(ContinueStatement continueStatement) {
-		if (continueStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		return handle(continueStatement.getLabel());
 	}
 
 	private FlowNode handle(ConstructorInvocation constructorInvocation) {
-		if (constructorInvocation == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(constructorInvocation);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -446,16 +389,10 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(BreakStatement breakStatement) {
-		if (breakStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		return handle(breakStatement.getLabel());
 	}
 
 	private FlowNode handle(CatchClause catchClause) {
-		if (catchClause == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(catchClause);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -466,9 +403,6 @@ public class StatementHandlerDataFlow {
 	}
 	
 	private FlowNode handle(AssertStatement assertStatement) {
-		if (assertStatement == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(assertStatement);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -479,9 +413,6 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(Block block) {
-		if (block == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = getFlowNodeForElement(block);
 		if (member.isFromAlreadySeen()) {
 			return member;

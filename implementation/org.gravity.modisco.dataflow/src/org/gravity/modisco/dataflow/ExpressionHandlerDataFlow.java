@@ -64,9 +64,6 @@ public class ExpressionHandlerDataFlow {
 	}
 	
 	public FlowNode handle(Expression expression) {
-		if (expression == null) {
-			return null; // assume nothing to do is success
-		}
 		if (expression instanceof ArrayLengthAccess) {
 			ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
 			return handle(arrayLengthAccess.getArray());
@@ -179,9 +176,6 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(VariableDeclarationExpression variableDeclarationExpression) {
-		if (variableDeclarationExpression == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(variableDeclarationExpression);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -205,9 +199,6 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(ArrayInitializer arrayInitializer) {
-		if (arrayInitializer == null) {
-			return null; // assume nothing to to is success
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayInitializer);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -219,9 +210,6 @@ public class ExpressionHandlerDataFlow {
 	}
 	
 	private FlowNode handle(NumberLiteral numberLiteral) {
-		if (numberLiteral == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(numberLiteral);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -452,9 +440,6 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(ConditionalExpression conditionalExpression) {
-		if (conditionalExpression == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(conditionalExpression);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -466,9 +451,6 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(ArrayAccess arrayAccess) {
-		if (arrayAccess == null) {
-			return null; // assume nothing to do is success;
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayAccess);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -487,9 +469,6 @@ public class ExpressionHandlerDataFlow {
 	}
 	
 	private FlowNode handle(FieldAccess fieldAccess) {
-		if (fieldAccess == null) {
-			return null; // assume nothing to do is success
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(fieldAccess);
 		if (member.isFromAlreadySeen()) {
 			return member;
@@ -531,9 +510,6 @@ public class ExpressionHandlerDataFlow {
 	}
 	
 	private FlowNode handle(StringLiteral stringLiteral) {
-		if (stringLiteral == null) {
-			return null;
-		}
 		FlowNode member = statementHandler.getFlowNodeForElement(stringLiteral);
 		if (member.isFromAlreadySeen()) {
 			return member;
