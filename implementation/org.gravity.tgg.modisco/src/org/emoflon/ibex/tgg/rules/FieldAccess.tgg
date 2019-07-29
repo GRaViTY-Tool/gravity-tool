@@ -62,7 +62,7 @@
 	}
 }
 
-#abstract #rule FieldAccessRead #extends FieldAccess
+#rule FieldAccessRead #extends FieldAccess
 #with org.gravity.tgg.modisco
 
 #source {
@@ -74,11 +74,11 @@
 		++	-flowTarget -> mTarget
 	}
 	
-	++mTarget:MAbstractFlowElement
+	mTarget:MAbstractFlowElement
 }
 
 #target { 
-	++tAccess:TAccess {
+	++tAccess:TRead {
 		++	-outgoingFlows -> outTFlow
 	}
 	
@@ -87,9 +87,7 @@
 		++ -flowTarget -> tTarget
 	}
 	
-	++tTarget:TAbstractFlowElement
-
-	//TODO Change TAccess to TRead
+	tTarget:TAbstractFlowElement
 }
 
 #correspondence {
@@ -98,7 +96,7 @@
 		#trg->outTFlow
 	}
 	
-	++mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
 		#src->mTarget
 		#trg->tTarget
 	}

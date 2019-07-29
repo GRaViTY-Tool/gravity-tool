@@ -5,50 +5,60 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mSignature : MFieldSignature {
-	++  -mFieldDefinitions -> mDefinition
-	++  -mDefinitions -> mDefinition
-	 -mFieldName -> mName
+	mSignature:MFieldSignature {
+		++  -mFieldDefinitions -> mDefinition
+		++  -mDefinitions -> mDefinition
+		-mFieldName -> mName
+	}
+
+	mName:MFieldName {
 }
-mName : MFieldName {
-}
-++ mDefinition : MFieldDefinition {
+
+	++mDefinition:MFieldDefinition {
 }
 }
 
 #target {
-++ tDefinition : TFieldDefinition {
+	++tDefinition:TFieldDefinition {
 }
-tField : TField {
+
+	tField:TField {
 }
-tFieldSignature : TFieldSignature {
-	++  -definitions -> tDefinition
-	 -field -> tField
-}
+
+	tFieldSignature:TFieldSignature {
+		++  -definitions -> tDefinition
+		-field -> tField
+	}
 }
 
 #correspondence {
-++ eFieldDeclarationToTFieldDefinition : MFieldDefinitionToTFieldDefinition {
-	#src->mDefinition
-	#trg->tDefinition
-}
-++ mDefinitionToTMember : MDefinitionToTMember {
-	#src->mDefinition
-	#trg->tDefinition
-}
-mSignatureToTFieldSignature : MSignatureToTSignature {
-	#src->mSignature
-	#trg->tFieldSignature
-}
-++ mBodyToTAnnotation : ASTNodeToTAnnotatable {
-	#src->mDefinition
-	#trg->tDefinition
-}
-mNameToTField : MFieldNameToTField {
-	#src->mName
-	#trg->tField
-}
-}
+	++ eFieldDeclarationToTFieldDefinition :MFieldDefinitionToTFieldDefinition {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+	
+	++mDefinitionToTDefinition:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mDefinition
+		#trg->tDefinition
+	}
 
-#attributeConditions {
+	++ mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	mSignatureToTFieldSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tFieldSignature
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	mNameToTField :MFieldNameToTField {
+		#src->mName
+		#trg->tField
+	}
 }
