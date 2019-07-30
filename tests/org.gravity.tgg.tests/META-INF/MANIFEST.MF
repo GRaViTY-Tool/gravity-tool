@@ -17,7 +17,6 @@ Require-Bundle: org.gravity.tgg.modisco;bundle-version="1.0.0",
  org.eclipse.gmt.modisco.java;bundle-version="0.13.1",
  org.gravity.typegraph.basic,
  org.eclipse.uml2.uml,
- org.gravity.tgg.modisco.uml,
  org.eclipse.modisco.infra.discovery.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
@@ -27,6 +26,5 @@ Automatic-Module-Name: org.gravity.tgg.modisco.test
 Export-Package: org.gravity.tgg.test.activator,
  org.gravity.tgg.test.complete,
  org.gravity.tgg.test.complete.pm,
- org.gravity.tgg.test.complete.uml,
  org.gravity.tgg.test.preprocessing,
  org.gravity.tgg.test.util
