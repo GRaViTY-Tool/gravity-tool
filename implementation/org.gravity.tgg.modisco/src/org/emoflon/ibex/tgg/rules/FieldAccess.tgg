@@ -102,6 +102,100 @@
 	}
 }
 
+#rule FieldAccessWrite #extends FieldAccess
+#with org.gravity.tgg.modisco
 
+#source {
+	++mAccess:MSingleVariableAccess {
+		++	-incomingFlows -> inMFlow
+	}
+	
+	++inMFlow:MFlow {
+		++	-flowSource -> mSource
+	}
+	
+	mSource:MAbstractFlowElement
+}
 
+#target { 
+	++tAccess:TWrite {
+		++	-incomingFlows -> inTFlow
+	}
+	
+	++inTFlow:TFlow {
+		++ -flowSource -> tSource
+	}
+	
+	tSource:TAbstractFlowElement
+}
+
+#correspondence {
+	++outMFlowToOutTFlow:MFlowToTFlow {
+		#src->inMFlow
+		#trg->inTFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+}
+
+#rule FieldAccessReadWrite #extends FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		++	-incomingFlows -> inMFlow
+		++	-outgoingFlows -> outMFlow
+	}
+	
+	++inMFlow:MFlow {
+		++	-flowSource -> mSource
+	}
+	
+	++outMFlow:MFlow {
+		++ -flowTarget -> mTarget
+	}
+	
+	mSource:MAbstractFlowElement
+	
+	mTarget:MAbstractFlowElement
+}
+
+#target { 
+	++tAccess:TReadWrite {
+		++	-incomingFlows -> inTFlow
+		++	-outgoingFlows -> outTFlow
+	}
+	
+	++inTFlow:TFlow {
+		++ -flowSource -> tSource
+	}
+	
+	++outTFlow:TFlow {
+		++ -flowTarget -> tTarget
+	}
+	
+	tSource:TAbstractFlowElement
+	
+	tTarget:TAbstractFlowElement
+}
+
+#correspondence {
+	++outMFlowToOutTFlow:MFlowToTFlow {
+		#src->inMFlow
+		#trg->inTFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+	
+	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tTarget
+	}
+}
 
