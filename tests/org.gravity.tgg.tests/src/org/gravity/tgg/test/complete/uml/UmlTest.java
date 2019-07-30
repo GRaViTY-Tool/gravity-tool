@@ -25,6 +25,7 @@ import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.uml.Transformation;
 import org.junit.After;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 
 /**
@@ -80,10 +81,10 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 		File trgFile = new File(trg);
 		LOGGER.log(Level.INFO, trg);
 		
-		deleteFile(trg);
-		deleteFile(createSrcName(name, UMLResource.FILE_EXTENSION));
-		deleteFile(createCorrName(name, UMLResource.FILE_EXTENSION));
-		deleteFile(createProtocolName(name, UMLResource.FILE_EXTENSION));
+		FileUtils.recursiveDelete(trg);
+		FileUtils.recursiveDelete(createSrcName(name, UMLResource.FILE_EXTENSION));
+		FileUtils.recursiveDelete(createCorrName(name, UMLResource.FILE_EXTENSION));
+		FileUtils.recursiveDelete(createProtocolName(name, UMLResource.FILE_EXTENSION));
 
 		File parentFile = trgFile.getParentFile();
 		if(!parentFile.exists() && !parentFile.mkdirs()) {

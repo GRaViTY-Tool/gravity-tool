@@ -165,8 +165,6 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 				msgs = ((InternalEObject) newHAntiPatternHandling).eInverseAdd(this,
 						HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR, HAntiPatternHandling.class, msgs);
 			msgs = basicSetHAntiPatternHandling(newHAntiPatternHandling, msgs);
-			if (msgs != null)
-				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HulkPackage.HDETECTOR__HANTI_PATTERN_HANDLING,
 					newHAntiPatternHandling, newHAntiPatternHandling));

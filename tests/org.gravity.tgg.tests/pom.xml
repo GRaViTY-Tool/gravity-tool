@@ -26,8 +26,6 @@
           <useUIThread>true</useUIThread>
           <product>org.eclipse.platform.ide</product>
           <application>org.eclipse.pde.junit.runtime.coretestapplication</application>
-          <!--<useJDK>BREE</useJDK>-->
-          <!--<testRuntime>p2Installed</testRuntime>-->
           <testRuntime>default</testRuntime>
         </configuration>
       </plugin>
@@ -36,15 +34,6 @@
         <artifactId>target-platform-configuration</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <!--<dependency-resolution>
-            <extraRequirements>
-              <requirement>
-                <type>p2-installable-unit</type>
-                <id>org.gravity.tgg.modisco</id>
-                <versionRange>0.0.0</versionRange>
-              </requirement>
-            </extraRequirements>
-          </dependency-resolution>-->
           <environments>
             <environment>
               <os>linux</os>

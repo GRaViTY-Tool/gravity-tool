@@ -2,6 +2,8 @@ package org.gravity.hulk.tests.metics;
 
 import static org.junit.Assert.fail;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -11,7 +13,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -22,9 +23,12 @@ import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.io.GitCloneException;
+import org.gravity.eclipse.io.GitTools;
+import org.gravity.eclipse.tests.TestHelper;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
@@ -70,7 +74,7 @@ public class AccessAnalysisTest {
 	/**
 	 * Creates a new test instance for the given project
 	 * 
-	 * @param name The name of the project
+	 * @param name    The name of the project
 	 * @param project The project
 	 */
 	public AccessAnalysisTest(String name, IJavaProject project) {
@@ -84,27 +88,22 @@ public class AccessAnalysisTest {
 	 * @return The test data
 	 */
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
-	public static Collection<Object[]> collectProjects() {
-		Collection<Object[]> data = new LinkedList<>();
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		for (IProject project : root.getProjects()) {
-			try {
-				if (project.hasNature(JavaCore.NATURE_ID)) {
-					IJavaProject javaProject = JavaCore.create(project);
-					data.add(new Object[] { project.getName(), javaProject });
-				}
-			} catch (CoreException e) {
-				LOGGER.log(Level.ERROR, e.toString());
-			}
-		}
-		return data;
+	public static Collection<Object[]> collectProjects() throws CoreException, GitCloneException, IOException {
+		File location = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "repository");
+		
+		new GitTools("https://github.com/GRaViTY-Tool/gravity-evaluation-data.git", location, true, false).close();
+		Collection<IProject> importProjects = EclipseProjectUtil
+				.importProjects(new File(location, "gravity-evaluation-data"));
+		return TestHelper.prepareTestData(importProjects);
+
 	}
 
 	/**
 	 * 
-	 * Calculates IGAM and IGAT on all projects with Hulk and compares the values to those of the original AccessAnalysis
+	 * Calculates IGAM and IGAT on all projects with Hulk and compares the values to
+	 * those of the original AccessAnalysis
 	 * 
-	 * @throws AnalysisException If the AccessAnalysis tool failed
+	 * @throws AnalysisException             If the AccessAnalysis tool failed
 	 * @throws TransformationFailedException If a pm cannot be created
 	 */
 	@Test
@@ -136,7 +135,7 @@ public class AccessAnalysisTest {
 	/**
 	 * Compares the results of Hulk and the AccessAnalysis tool
 	 * 
-	 * @param programModel The program model of Hulk
+	 * @param programModel   The program model of Hulk
 	 * @param accessAnalysis The result list of the AccessAnalysis tool
 	 */
 	private void compareResults(TypeGraph programModel, List<Result> accessAnalysis) {
@@ -145,9 +144,9 @@ public class AccessAnalysisTest {
 		while (!stack.isEmpty()) {
 			Result r = stack.pop();
 			stack.addAll(r.getChildren());
-			
+
 			Collection<TAnnotation> tAnnotations = getTAnnotations(programModel, r);
-			if(tAnnotations == null) {
+			if (tAnnotations == null) {
 				continue;
 			}
 			for (TAnnotation tAnnotation : tAnnotations) {
@@ -176,6 +175,7 @@ public class AccessAnalysisTest {
 	/**
 	 * 
 	 * Builds a String with the name of the annotated Element
+	 * 
 	 * @param tAnnotation The annotation
 	 * @return The String representation
 	 */
@@ -201,7 +201,7 @@ public class AccessAnalysisTest {
 	 * Searches the annotations corresponding with the AccessAnalysis result
 	 * 
 	 * @param programModel The program model
-	 * @param result The AccessAnalysis result
+	 * @param result       The AccessAnalysis result
 	 * @return The corresponding annotations
 	 */
 	private Collection<TAnnotation> getTAnnotations(TypeGraph programModel, Result result) {
@@ -227,9 +227,8 @@ public class AccessAnalysisTest {
 		} else if (javaElement instanceof IMethod) {
 			TMethodDefinition tMethodDefinition = JavaASTUtil.getTMethodDefinition((IMethod) javaElement, programModel);
 			return tMethodDefinition.getTAnnotation();
-		}
-		else {
-			String message = "Annotations cannot be retrieved for the following element: "+javaElement;
+		} else {
+			String message = "Annotations cannot be retrieved for the following element: " + javaElement;
 			LOGGER.log(Level.ERROR, message);
 			fail(message);
 			return null;

@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.io.FileUtils;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.test.util.TimeStampUtil;
@@ -47,32 +48,36 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 	@Override
 	public final void testForward() {
 		try {
-			deleteFile(createSrcName(name, XMI));
-			deleteFile(createTrgFile(name, XMI));
-			deleteFile(createCorrName(name, XMI));
-			deleteFile(createProtocolName(name, XMI));
-
-			try {
-				final IPGConverter conv = new MoDiscoTGGConverter();
-
-				conv.setDebug(DEBUG);
-
-				LOGGER.log(Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
-				if (!conv.convertProject(project, new NullProgressMonitor())) {
-					throw new AssertionError("Trafo failed");
-				}
-				LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
-
-				TypeGraph pg = conv.getPG();
-				assertNotNull(pg);
-			} catch (final MalformedURLException e) {
-				throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
-			} catch (final IOException e) {
-				throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
-			}
-
+			FileUtils.recursiveDelete(createSrcName(name, XMI));
+			FileUtils.recursiveDelete(createTrgFile(name, XMI));
+			FileUtils.recursiveDelete(createCorrName(name, XMI));
+			FileUtils.recursiveDelete(createProtocolName(name, XMI));
 		} catch (final IllegalArgumentException iae) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", project, iae.getMessage()));
+		}
+
+		IPGConverter conv = null;
+		try {
+			conv = new MoDiscoTGGConverter();
+
+			conv.setDebug(DEBUG);
+
+			LOGGER.log(Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+			if (!conv.convertProject(project, new NullProgressMonitor())) {
+				throw new AssertionError("Trafo failed");
+			}
+			LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+
+			TypeGraph pg = conv.getPG();
+			assertNotNull(pg);
+		} catch (final MalformedURLException e) {
+			throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
+		} catch (final IOException e) {
+			throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
+		} finally {
+			if (conv != null) {
+				conv.discard();
+			}
 		}
 	}
 }

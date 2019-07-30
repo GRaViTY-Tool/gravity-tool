@@ -232,7 +232,7 @@ public class GravityActivator extends Plugin {
 	public boolean discardConverter(IProject project) {
 		if (this.converters.containsKey(project.getName())) {
 			IPGConverter converter = this.converters.remove(project.getName());
-			return converter != null;
+			return converter != null && converter.discard();
 		}
 		return false;
 	}

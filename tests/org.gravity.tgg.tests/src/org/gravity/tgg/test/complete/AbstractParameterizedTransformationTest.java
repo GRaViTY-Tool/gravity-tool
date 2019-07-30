@@ -2,7 +2,6 @@ package org.gravity.tgg.test.complete;
 
 import java.io.File;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
+import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.tgg.test.activator.MoDiscoTestActivator;
 import org.gravity.tgg.test.util.ToFileLogger;
@@ -73,7 +72,7 @@ public abstract class AbstractParameterizedTransformationTest {
 //		// Set up logging
 //		BasicConfigurator.configure();
 //	}
-	
+
 	/**
 	 * The method for collecting the java projects from the workspace.
 	 * 
@@ -84,21 +83,10 @@ public abstract class AbstractParameterizedTransformationTest {
 	 */
 	@Parameters(name = "{index}: Forward Transformation From Src: {0}")
 	public static final Collection<Object[]> data() throws CoreException {
-		List<Object[]> testcases = new ArrayList<>();
-
+		LOGGER.info("Collect test data");
 		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation();
-
-		for (IProject test : projects) {
-			try {
-				if (test.getNature(JavaCore.NATURE_ID) != null) {
-					testcases.add(new Object[] { test.getName(), JavaCore.create(test) });
-				}
-			} catch (CoreException e) {
-				LOGGER.error(e.getMessage(), e);
-			}
-		}
-
-		return testcases;
+		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
+		return TestHelper.prepareTestData(projects);
 	}
 
 	/**
@@ -106,7 +94,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	 * 
 	 * @throws Exception The test might throws exceptions
 	 */
-	@Test(timeout = 10 * 60 * 1000)
+	@Test(timeout = 20 * 60 * 1000)
 	public abstract void testForward() throws AssertionError;
 
 	/**
@@ -119,21 +107,6 @@ public abstract class AbstractParameterizedTransformationTest {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResource(uri, true);
 		return resourceSet;
-	}
-
-	/**
-	 * A helper method for deleting files
-	 * 
-	 * @param filepath The path of the file
-	 * @return true, iff the file has been deleted successfully
-	 */
-	protected boolean deleteFile(final String filepath) {
-		final URI uri = URI.createFileURI(filepath);
-		final File file = new File(uri.toFileString());
-		if (file.exists()) {
-			return file.delete();
-		}
-		return true;
 	}
 
 	/**

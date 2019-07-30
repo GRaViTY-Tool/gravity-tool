@@ -203,6 +203,7 @@ public class Transformation extends SYNC {
 
 		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
 		trafo.forward();
+		trafo.terminate();
 
 		subMonitor.setTaskName("Postprocess UML Model");
 		subMonitor.setWorkRemaining(15);

@@ -70,6 +70,7 @@ public class HulkAPI {
 		}
 		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
 		TypeGraph pg = converter.getPG();
+		GravityActivator.getDefault().discardConverter(iproject);
 		if (!success || pg == null) {
 			throw new DetectionFailedException(new TransformationFailedException(
 					"Creating PG from project failed: " + project.getProject().getName()));
@@ -95,13 +96,15 @@ public class HulkAPI {
 	 */
 	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps)
 			throws DetectionFailedException {
-		ResourceSet rs = pg.eResource().getResourceSet();
+		Resource pgResource = pg.eResource();
+		ResourceSet rs = pgResource.getResourceSet();
 		// TODO: keep PG in old resource set
 
 		HAntiPatternGraph apg;
 		EObject eContainer = pg.eContainer();
 		if (eContainer == null || !(eContainer instanceof HAntiPatternGraph)) {
 			apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
+			pgResource.getContents().add(apg);
 			apg.setPg(pg);
 		} else {
 			apg = (HAntiPatternGraph) eContainer;

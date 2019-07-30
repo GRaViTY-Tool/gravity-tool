@@ -212,4 +212,15 @@ public class FileUtils {
 		}
 		return success;
 	}
+
+	/**
+	 * This method recursively deletes a file
+	 * 
+	 * @param file The file
+	 * @return 
+	 * @return true, iff the file has been deleted successfully
+	 */
+	public static boolean recursiveDelete(String file) {
+		return recursiveDelete(new File(file));
+	}
 }

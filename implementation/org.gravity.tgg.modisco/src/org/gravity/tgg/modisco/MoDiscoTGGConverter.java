@@ -70,6 +70,16 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		this.sync = new TGGApp();
 	}
 
+	public boolean discard() {
+		try {
+			this.sync.terminate();
+		} catch (IOException e) {
+			LOGGER.error(e.getMessage(), e);
+			return false;
+		}
+		return true;
+	}
+	
 	@Override
 	public boolean convertProject(IJavaProject project, IProgressMonitor monitor) {
 		libs = new HashSet<>();
