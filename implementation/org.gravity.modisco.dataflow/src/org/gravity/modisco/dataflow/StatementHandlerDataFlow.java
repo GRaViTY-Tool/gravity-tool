@@ -224,7 +224,10 @@ public class StatementHandlerDataFlow {
 			return member;
 		}
 		handle(tryStatement.getBody());
-		handle(tryStatement.getFinally());
+		Block finallyBlock = tryStatement.getFinally();
+		if (finallyBlock != null) {
+			handle(finallyBlock);
+		}
 		for (CatchClause clause : tryStatement.getCatchClauses()) {
 			handle(clause);
 		}

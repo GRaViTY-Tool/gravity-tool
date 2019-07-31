@@ -135,7 +135,7 @@ public class ExpressionHandlerDataFlow {
 			return handle(parenthesizedExpression);
 		} else if (expression instanceof BooleanLiteral) {
 			BooleanLiteral booleanLiteral = (BooleanLiteral) expression;
-			return null;
+			return handle(booleanLiteral);
 		} else if (expression instanceof CharacterLiteral) {
 			CharacterLiteral characterLiteral = (CharacterLiteral) expression;
 			return null;
@@ -191,7 +191,10 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		handle(arrayCreation.getInitializer());
+		ArrayInitializer initializer = arrayCreation.getInitializer();
+		if (initializer != null) {
+			handle(initializer);
+		}
 		for (Expression dimension : arrayCreation.getDimensions()) {
 			handle(dimension);
 		}
@@ -437,6 +440,22 @@ public class ExpressionHandlerDataFlow {
 
 	private FlowNode handle(ParenthesizedExpression parenthesizedExpression) {
 		return handle(parenthesizedExpression.getExpression());
+	}
+	
+	private FlowNode handle(BooleanLiteral booleanLiteral) {
+		FlowNode member = statementHandler.getFlowNodeForElement(booleanLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		EObject container = booleanLiteral.eContainer();
+		if (container instanceof Expression) {
+			handle((Expression) container).addInRef(member);
+		} else if (container instanceof Statement) {
+			statementHandler.handle((Statement) container).addInRef(member);
+		} else {
+			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in BooleanLiteral handling.");
+		}
+		return member;
 	}
 
 	private FlowNode handle(ConditionalExpression conditionalExpression) {
