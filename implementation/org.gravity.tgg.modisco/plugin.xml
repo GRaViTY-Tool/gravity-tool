@@ -15,4 +15,11 @@
   <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
     <processor priority="10" processor="org.gravity.tgg.modisco.processing.pg.ProgramGraphProcessorFWD"/>
   </extension>
+  <extension
+        point="org.eclipse.emf.ecore.dynamic_package">
+     <resource
+           location="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore"
+           uri="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore">
+     </resource>
+  </extension>
 </plugin>

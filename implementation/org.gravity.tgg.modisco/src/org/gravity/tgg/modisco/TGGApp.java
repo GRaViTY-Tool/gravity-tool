@@ -20,16 +20,26 @@ import org.gravity.typegraph.basic.BasicPackage;
 
 public class TGGApp extends SYNC {
 
-	private static final String MODISCO_FLATTENED_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco_flattened.tgg.xmi";
-	private static final String MODISCO_ECORE = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore";
-	private static final String MODISCO_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.tgg.xmi";
+	private static final String MODISCO_FLATTENED_TGG_XMI_LOCATION = "model/Modisco_flattened.tgg.xmi";
+	private static final String MODISCO_FLATTENED_TGG_XMI_URI = "platform:/resource/org.gravity.tgg.modisco/"
+			+ MODISCO_FLATTENED_TGG_XMI_LOCATION;
+	private static final String MODISCO_ECORE_LOCATION = "model/Modisco.ecore";
+	private static final String MODISCO_ECORE_URI = "platform:/resource/org.gravity.tgg.modisco/"
+			+ MODISCO_ECORE_LOCATION;
+	private static final String MODISCO_TGG_XMI_LOCATION = "model/Modisco.tgg.xmi";
+	private static final String MODISCO_TGG_XMI_URI = "platform:/resource/org.gravity.tgg.modisco/"
+			+ MODISCO_TGG_XMI_LOCATION;
 
+	/**
+	 * Create a new transformation application
+	 * 
+	 * @throws IOException If one of the models cannot be loaded
+	 */
 	public TGGApp() throws IOException {
 		super(createIbexOptions());
 		registerBlackInterpreter(new DemoclesTGGEngine());
 	}
 
-	
 	@Override
 	public void loadModels() throws IOException {
 		s = createResource(options.projectPath() + "/instances/src.xmi");
@@ -37,26 +47,22 @@ public class TGGApp extends SYNC {
 		c = createResource(options.projectPath() + "/instances/corr.xmi");
 		p = createResource(options.projectPath() + "/instances/protocol.xmi");
 	}
-	
+
 	@Override
 	protected void registerUserMetamodels() throws IOException {
 		registerPackage(JavaPackage.eINSTANCE);
-		
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore", ModiscoPackage.eINSTANCE);
 		registerPackage(ModiscoPackage.eINSTANCE);
-		
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore", BasicPackage.eINSTANCE);
 		registerPackage(BasicPackage.eINSTANCE);
-		
-		EPackage tggPackage = loadMetaModelPackage(MODISCO_ECORE);
-//		rs.getPackageRegistry().put("platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore", tggPackage);
+		EPackage tggPackage = loadMetaModelPackage();
 		registerPackage(tggPackage);
 		options.setCorrMetamodel(tggPackage);
 		EcoreUtil.resolveAll(rs);
 	}
 
 	/**
-	 * @param ePackage
+	 * Registers the package at the resource set
+	 * 
+	 * @param ePackage The package
 	 */
 	private void registerPackage(EPackage ePackage) {
 		rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
@@ -64,35 +70,54 @@ public class TGGApp extends SYNC {
 	}
 
 	/**
-	 * @param uri
-	 * @return
-	 * @throws IOException
-	 * @throws MalformedURLException
+	 * Load the meta model package
+	 * 
+	 * @param uri The URI of the meta model
+	 * @return The EPackage of the meta model
+	 * @throws IOException           If the file cannot be read
+	 * @throws MalformedURLException The URI hasn't a valid format
 	 */
-	public EPackage loadMetaModelPackage(String uri) throws IOException, MalformedURLException {
-		Resource tggResource = loadResource(uri);
-		EPackage tggPackage = (EPackage) tggResource.getContents().get(0);
-		return tggPackage;
+	private EPackage loadMetaModelPackage() throws IOException, MalformedURLException {
+		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_ECORE_LOCATION)) {
+			Resource resource = loadResource(MODISCO_ECORE_URI, stream);
+			return (EPackage) resource.getContents().get(0);
+		}
 	}
 
 	@Override
 	public Resource loadResource(String uri) throws IOException, MalformedURLException {
+		try (InputStream stream = new URL(uri).openConnection().getInputStream()) {
+			return loadResource(uri, stream);
+		}
+	}
+
+	/**
+	 * Loads a resource from the given input stream under the given URI
+	 * 
+	 * @param uri The URI of the resource
+	 * @param stream The stream containing the resources contents
+	 * @return The loaded resource
+	 * @throws IOException If the resource couldn't be loaded
+	 */
+	private Resource loadResource(String uri, InputStream stream) throws IOException {
 		Resource resource = rs.createResource(URI.createURI(uri));
-		InputStream tggRulesStream = new URL(uri)
-				.openConnection().getInputStream();
-		resource.load(tggRulesStream,Collections.emptyMap());
+		resource.load(stream, Collections.emptyMap());
 		EcoreUtil.resolveAll(resource);
 		return resource;
 	}
-	
+
 	@Override
 	protected Resource loadTGGResource() throws IOException {
-		return loadResource(MODISCO_TGG_XMI);
+		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_TGG_XMI_LOCATION)) {
+			return loadResource(MODISCO_TGG_XMI_URI, stream);
+		}
 	}
-	
+
 	@Override
 	protected Resource loadFlattenedTGGResource() throws IOException {
-		return loadResource(MODISCO_FLATTENED_TGG_XMI);
+		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_FLATTENED_TGG_XMI_LOCATION)) {
+			return loadResource(MODISCO_FLATTENED_TGG_XMI_URI, stream);
+		}
 	}
 
 	private static IbexOptions createIbexOptions() {
