@@ -1,5 +1,8 @@
 package org.gravity.tgg.modisco;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
@@ -68,6 +71,18 @@ public class MoDiscoTGGActivator extends Plugin {
 
 	public GravityMoDiscoModelPatcher getSelectedPatcher() {
 		return this.patcher;
+	}
+
+
+	/**
+	 * Returns a stream for the given Entry
+	 * 
+	 * @param entry The location of the entry within this plugin
+	 * @return The stream 
+	 * @throws IOException If the entry doesn't exist inside this plugin
+	 */
+	public static InputStream getEntryAsStream(String entry) throws IOException {
+		return plugin.getBundle().getEntry(entry).openStream();
 	}
 	
 }
