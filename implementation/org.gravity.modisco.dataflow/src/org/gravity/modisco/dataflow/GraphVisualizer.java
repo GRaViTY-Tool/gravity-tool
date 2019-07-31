@@ -13,12 +13,14 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MGravityModel;
 
 import guru.nidi.graphviz.attribute.Color;
@@ -60,12 +62,17 @@ public class GraphVisualizer {
 			String className = "Unknown";
 			String memberName = ((NamedElement) memberDef).getName();
 			String memberType = "Misc";
+			EObject defContainer = memberDef.eContainer();
 			if (memberDef instanceof MAbstractMethodDefinition) {
 				memberType = "Method";
-				className = ((NamedElement) memberDef.eContainer()).getName();
+				if (defContainer instanceof MAnonymous) {
+					className = "Anonymous-class";
+				} else {
+					className = ((NamedElement) defContainer).getName();
+				}
 			} else if (memberDef instanceof VariableDeclarationFragment) {
 				memberType = "Field";
-				className = ((NamedElement) memberDef.eContainer().eContainer()).getName();
+				className = ((NamedElement) defContainer.eContainer()).getName();
 			}
 			MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
 					.graphAttrs().add("dpi", 72);
