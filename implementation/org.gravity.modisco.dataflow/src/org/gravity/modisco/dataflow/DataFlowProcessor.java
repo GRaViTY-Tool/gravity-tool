@@ -16,6 +16,7 @@ import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
+import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
@@ -131,16 +132,16 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					outRef.removeAll(toRemove);
 				}
 				
-				// A method invocation with a non-empty outRef has a return value and thus should explicitly have the MethodSig set as incoming flow
+				// A constructor invocation or method invocation with a return value should explicitly have the MethodDef/MethodSig set as incoming flow
 				MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 				Set<FlowNode> inRef = node.getInRef();
-				if (access instanceof AbstractMethodInvocation && !outRef.isEmpty()) {
+				if (access instanceof AbstractMethodInvocation) {
 					AbstractMethodDeclaration methodDef = ((AbstractMethodInvocation) access).getMethod();
 					if (methodDef instanceof MConstructorDefinition) {
 						FlowNode defNode = handler.getFlowNodeForElement(methodDef);
 						inRef.add(defNode);
 						defNode.addOutRef(node);
-					} else {
+					} else if (((MethodDeclaration) methodDef).getReturnType().getType().getName() != "void") {
 						FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((AbstractMethodInvocation) access).getMethod()).getMMethodSignature());
 						inRef.add(sigNode);
 						sigNode.addOutRef(node);
