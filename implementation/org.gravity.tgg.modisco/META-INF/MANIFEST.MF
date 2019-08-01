@@ -28,3 +28,5 @@ Export-Package: org.emoflon.ibex.tgg,
  org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.processing.modisco,
  org.gravity.tgg.modisco.processing.pg
+Bundle-ClassPath: .
+Bundle-Activator: org.gravity.tgg.modisco.MoDiscoTGGActivator
