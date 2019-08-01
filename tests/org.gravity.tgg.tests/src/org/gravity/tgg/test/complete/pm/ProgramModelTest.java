@@ -2,8 +2,10 @@ package org.gravity.tgg.test.complete.pm;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.Collections;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -13,6 +15,7 @@ import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
 import org.gravity.tgg.test.complete.AbstractParameterizedTransformationTest;
 import org.gravity.tgg.test.util.TimeStampUtil;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * 
@@ -62,7 +65,10 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 				}
 				LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 
-				assertNotNull(conv.getPG());
+				TypeGraph pg = conv.getPG();
+				pg.eResource().save(new FileOutputStream("outPM/" + pg.getTName() + ".xmi"), Collections.emptyMap());
+				assertNotNull(pg);
+				
 			} catch (final MalformedURLException e) {
 				throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
 			} catch (final IOException e) {
