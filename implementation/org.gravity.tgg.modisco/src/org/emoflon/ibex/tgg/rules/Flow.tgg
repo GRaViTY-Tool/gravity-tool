@@ -1,0 +1,44 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule BinaryFlow
+#with org.gravity.tgg.modisco
+
+#source {
+	++mFlow:MFlow {
+		++-flowSource->mSource
+		++-flowTarget->mTarget
+	}
+	
+	mSource:MAbstractFlowElement
+	
+	mTarget:MAbstractFlowElement
+}
+
+#target {
+	++tFlow:TFlow {
+		++	-flowSource->tSource
+		++	-flowTarget->tTarget
+	}
+	
+	tSource:TAbstractFlowElement
+	
+	tTarget:TAbstractFlowElement
+}
+
+#correspondence {
+	++mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+	
+	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tTarget
+	}
+}

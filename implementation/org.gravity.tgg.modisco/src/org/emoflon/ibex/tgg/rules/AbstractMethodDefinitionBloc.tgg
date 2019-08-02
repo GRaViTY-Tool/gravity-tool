@@ -21,6 +21,11 @@
 		#src->mDefinition
 		#trg->tDefinition
 	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mDefinition
+		#trg->tDefinition
+	}
 
 	++ mBlockToTDefinition :BlockToTMethodDefinition {
 		#src->mBlock

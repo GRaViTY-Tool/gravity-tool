@@ -31,6 +31,12 @@
 		#src->mEntry
 		#trg->tParameter
 	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
+	}
+	
 	mParameterListToTParameterList : MParameterListToTParameterList {
 		#src->mMethodSignature
 		#trg->tParameterList

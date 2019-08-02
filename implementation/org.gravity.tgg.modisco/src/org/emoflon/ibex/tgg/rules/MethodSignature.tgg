@@ -33,6 +33,12 @@
 		#src->mSignature
 		#trg->tSignature
 	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
+	
 	++ mMethodSignatureToTMethodSignature : MMethodSignatureToTMethodSignature {
 		#src->mSignature
 		#trg->tSignature

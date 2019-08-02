@@ -26,6 +26,10 @@ tField : TField {
 	#src->mSignature
 	#trg->tSignature
 }
+++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
 eFieldDeclarationToTField : MFieldNameToTField {
 	#src->mFieldName
 	#trg->tField

@@ -66,136 +66,42 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess {
-		++	-outgoingFlows -> outMFlow
-	}
-	
-	++outMFlow:MFlow {
-		++	-flowTarget -> mTarget
-	}
-	
-	mTarget:MAbstractFlowElement
+	++mAccess:MSingleVariableAccess
 }
 
 #target { 
-	++tAccess:TRead {
-		++	-outgoingFlows -> outTFlow
-	}
-	
-
-	++outTFlow:TFlow {
-		++ -flowTarget -> tTarget
-	}
-	
-	tTarget:TAbstractFlowElement
+	++tAccess:TRead
 }
 
 #correspondence {
-	++outMFlowToOutTFlow:MFlowToTFlow {
-		#src->outMFlow
-		#trg->outTFlow
-	}
-	
-	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
-		#src->mTarget
-		#trg->tTarget
-	}
 }
 
 #rule FieldAccessWrite #extends FieldAccess
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess {
-		++	-incomingFlows -> inMFlow
-	}
-	
-	++inMFlow:MFlow {
-		++	-flowSource -> mSource
-	}
-	
-	mSource:MAbstractFlowElement
+	++mAccess:MSingleVariableAccess
 }
 
 #target { 
-	++tAccess:TWrite {
-		++	-incomingFlows -> inTFlow
-	}
-	
-	++inTFlow:TFlow {
-		++ -flowSource -> tSource
-	}
-	
-	tSource:TAbstractFlowElement
+	++tAccess:TWrite
 }
 
 #correspondence {
-	++outMFlowToOutTFlow:MFlowToTFlow {
-		#src->inMFlow
-		#trg->inTFlow
-	}
 	
-	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
-		#src->mSource
-		#trg->tSource
-	}
 }
 
 #rule FieldAccessReadWrite #extends FieldAccess
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess {
-		++	-incomingFlows -> inMFlow
-		++	-outgoingFlows -> outMFlow
-	}
-	
-	++inMFlow:MFlow {
-		++	-flowSource -> mSource
-	}
-	
-	++outMFlow:MFlow {
-		++ -flowTarget -> mTarget
-	}
-	
-	mSource:MAbstractFlowElement
-	
-	mTarget:MAbstractFlowElement
+	++mAccess:MSingleVariableAccess
 }
 
 #target { 
-	++tAccess:TReadWrite {
-		++	-incomingFlows -> inTFlow
-		++	-outgoingFlows -> outTFlow
-	}
-	
-	++inTFlow:TFlow {
-		++ -flowSource -> tSource
-	}
-	
-	++outTFlow:TFlow {
-		++ -flowTarget -> tTarget
-	}
-	
-	tSource:TAbstractFlowElement
-	
-	tTarget:TAbstractFlowElement
+	++tAccess:TReadWrite
 }
 
 #correspondence {
-	++outMFlowToOutTFlow:MFlowToTFlow {
-		#src->inMFlow
-		#trg->inTFlow
-	}
 	
-	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
-		#src->mSource
-		#trg->tSource
-	}
-	
-	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
-		#src->mTarget
-		#trg->tTarget
-	}
 }
-

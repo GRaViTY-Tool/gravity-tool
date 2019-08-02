@@ -262,6 +262,11 @@
 		#src->MAbstractFlowElement
 		#trg->TAbstractFlowElement
 	}
+	
+	MAbstractMethodInvocationToTAccess {
+		#src->MAbstractMethodInvocation
+		#trg->TAccess
+	}
 }
 
 #attributeConditions {

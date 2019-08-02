@@ -9,7 +9,7 @@
 		++  -mMethodInvocations-> invocation
 	}
 
-	++invocation:AbstractMethodInvocation {
+	++invocation:MAbstractMethodInvocation {
 		++  -method -> mMethod
 	}
 
@@ -41,7 +41,12 @@
 		#src->invocation
 		#trg->tAccess
 	}
-
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+	
 	mMethodToTMethod :MDefinitionToTMember {
 		#src->mMethod
 		#trg->tMethod
