@@ -165,7 +165,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
         eType="#//MFlow" eOpposite="#//MFlow/flowSource"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess #//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SingleVariableAccess #//MAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessKind" eType="#//AccessKind"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
@@ -178,4 +180,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="MSuperMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperMethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ClassInstanceCreation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSuperConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessKind">
+    <eLiterals name="READ"/>
+    <eLiterals name="WRITE" value="1"/>
+    <eLiterals name="READWRITE" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>

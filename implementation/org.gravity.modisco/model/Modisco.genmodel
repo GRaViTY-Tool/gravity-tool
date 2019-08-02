@@ -8,6 +8,11 @@
   <foreignModel>Modisco.ecore</foreignModel>
   <genPackages prefix="Modisco" basePackage="org.gravity" disposableProviderFactory="true"
       ecorePackage="Modisco.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Modisco.ecore#//AccessKind">
+      <genEnumLiterals ecoreEnumLiteral="Modisco.ecore#//AccessKind/READ"/>
+      <genEnumLiterals ecoreEnumLiteral="Modisco.ecore#//AccessKind/WRITE"/>
+      <genEnumLiterals ecoreEnumLiteral="Modisco.ecore#//AccessKind/READWRITE"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAbstractMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractMethodDefinition/mInnerTypes"/>
     </genClasses>
@@ -113,7 +118,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractFlowElement/incomingFlows"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractFlowElement/outgoingFlows"/>
     </genClasses>
-    <genClasses ecoreClass="Modisco.ecore#//MSingleVariableAccess"/>
+    <genClasses ecoreClass="Modisco.ecore#//MSingleVariableAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modisco.ecore#//MSingleVariableAccess/accessKind"/>
+    </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MMethodInvocation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodInvocation/mStaticType"/>
     </genClasses>
