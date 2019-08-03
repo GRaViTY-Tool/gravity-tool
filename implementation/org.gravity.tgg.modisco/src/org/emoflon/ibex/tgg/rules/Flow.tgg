@@ -42,3 +42,65 @@
 		#trg->tTarget
 	}
 }
+
+#rule IncomingFlow
+#with org.gravity.tgg.modisco
+
+#source {
+	++mFlow:MFlow {
+		++	-flowSource -> mSource
+	}
+	
+	mSource:MAbstractFlowElement
+}
+
+#target {
+	++tFlow:TFlow {
+		++	-flowSource -> tSource
+	}
+	
+	tSource:TAbstractFlowElement
+}
+
+#correspondence {
+	++mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mSourceToTSource:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSource
+		#trg->tSource
+	}
+}
+
+#rule OutgoingFlow
+#with org.gravity.tgg.modisco
+
+#source {
+	++mFlow:MFlow {
+		++	-flowTarget -> mTarget
+	}
+	
+	mTarget:MAbstractFlowElement
+}
+
+#target {
+	++tFlow:TFlow {
+		++	-flowTarget -> tTarget
+	}
+	
+	tTarget:TAbstractFlowElement
+}
+
+#correspondence {
+	++mFlowToTFlow:MFlowToTFlow {
+		#src->mFlow
+		#trg->tFlow
+	}
+	
+	mTargetToTTarget:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mTarget
+		#trg->tTarget
+	}
+}
