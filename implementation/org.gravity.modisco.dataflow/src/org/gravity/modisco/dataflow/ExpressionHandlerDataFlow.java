@@ -255,11 +255,15 @@ public class ExpressionHandlerDataFlow {
 					assignmentSide = singleVariableAccess.eContainingFeature();
 				}
 				MSingleVariableAccess mSVA = ((MSingleVariableAccess) singleVariableAccess);
+				EObject variableContainer = variable.eContainer();
 				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
 					// Handle case a.b = 1; which should (regardless of assignment operator) result in a flow to b
 					if (singleVariableAccess.eContainer() instanceof SingleVariableAccess) {
 						member.addInRef(varDeclNode);
 						mSVA.setAccessKind(AccessKind.READ);
+						if (variableContainer instanceof MFieldDefinition || variable instanceof SingleVariableDeclaration) {
+							statementHandler.getMemberRef().add(member);
+						}
 						if (container instanceof Expression) {
 							handle((Expression) container).addInRef(member);
 						} else if (container instanceof Statement) {
@@ -272,7 +276,7 @@ public class ExpressionHandlerDataFlow {
 						case ASSIGN:
 							member.addOutRef(varDeclNode);
 							mSVA.setAccessKind(AccessKind.WRITE);
-							if (variable.eContainer() instanceof MFieldDefinition) {
+							if (variableContainer instanceof MFieldDefinition) {
 								statementHandler.getMemberRef().add(member);
 							}
 							propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
@@ -293,7 +297,7 @@ public class ExpressionHandlerDataFlow {
 							mSVA.setAccessKind(AccessKind.READWRITE);
 							propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 							propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-							if (variable.eContainer() instanceof MFieldDefinition) {
+							if (variableContainer instanceof MFieldDefinition) {
 								statementHandler.getMemberRef().add(member);
 							}
 							break;
@@ -305,9 +309,9 @@ public class ExpressionHandlerDataFlow {
 				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
 					member.addInRef(varDeclNode);
 					mSVA.setAccessKind(AccessKind.READ);
-					if (variable.eContainer() instanceof MFieldDefinition) {
+					if (variableContainer instanceof MFieldDefinition) {
 						statementHandler.getMemberRef().add(member);
-					} else if (variable.eContainer() instanceof AbstractMethodDeclaration) {
+					} else if (variableContainer instanceof AbstractMethodDeclaration) {
 						statementHandler.getMemberRef().add(member);
 					}
 					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
