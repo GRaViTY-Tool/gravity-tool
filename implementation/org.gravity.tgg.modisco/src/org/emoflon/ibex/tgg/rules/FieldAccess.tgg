@@ -60,13 +60,20 @@
 		#src->mAccess
 		#trg->tAccess
 	}
+	
+	++ mFlowOwnerToTFlowOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mAccess
+		#trg->tAccess
+	}
 }
 
 #rule FieldAccessRead #extends FieldAccess
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READ
+	}
 }
 
 #target { 
@@ -80,7 +87,9 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::WRITE
+	}
 }
 
 #target { 
@@ -95,7 +104,9 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++mAccess:MSingleVariableAccess
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READWRITE
+	}
 }
 
 #target { 
