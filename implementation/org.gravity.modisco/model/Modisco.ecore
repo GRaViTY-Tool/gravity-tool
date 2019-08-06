@@ -176,7 +176,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntry" lowerBound="1"
         eType="#//MEntry" eOpposite="#//MEntry/parameters"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation #//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" abstract="true"
+      eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodInvocation #//MAbstractFlowElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSuperMethodInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperMethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//ClassInstanceCreation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
   <eClassifiers xsi:type="ecore:EClass" name="MSuperConstructorInvocation" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//SuperConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
