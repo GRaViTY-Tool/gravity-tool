@@ -67,6 +67,61 @@
 	}
 }
 
+#abstract #rule FieldAccessRecursive
+#with org.gravity.tgg.modisco
+
+#source {
+	mMember:MFieldDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+		-abstractTypeDeclaration -> mType
+	}
+
+	++mAccess:MSingleVariableAccess {
+		++  -variable -> varDeclFrag
+	}
+
+	varDeclFrag:VariableDeclarationFragment {
+		-variablesContainer -> mMember
+	}
+	
+	mType:AbstractTypeDeclaration
+}
+
+#target {
+	tMember:TFieldDefinition {
+		++  -tAccessing -> tAccess
+		-definedBy -> tType
+	}
+
+	++tAccess:TAccess {
+		++-tTarget -> tMember
+	}
+
+	tType:basic.TAbstractType
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mAccessToTAccess :MSingleVariableAccessToTAccess {
+		#src->mAccess
+		#trg->tAccess
+	}
+	
+	++ mFlowOwnerToTFlowOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mAccess
+		#trg->tAccess
+	}
+}
+
 #rule FieldAccessRead #extends FieldAccess
 #with org.gravity.tgg.modisco
 
