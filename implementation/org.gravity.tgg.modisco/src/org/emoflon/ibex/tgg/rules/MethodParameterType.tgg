@@ -30,6 +30,10 @@ mTypeToTAbstractType : TypeToTAbstractType {
 	#src->mEntry
 	#trg->tParameter
 }
+++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
+	}
 }
 
 #attributeConditions {

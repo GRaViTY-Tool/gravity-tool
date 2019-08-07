@@ -12,3 +12,46 @@
 #target {
 	++tAccess:TCall
 }
+
+#rule MethodInvocationRecursive
+#with org.gravity.tgg.modisco
+
+#source {
+	mMember:MMethodDefinition {
+		++  -mMethodInvocations-> invocation
+	}
+
+	++invocation:MMethodInvocation {
+		++  -method -> mMember
+	}
+}
+
+#target {
+	tMember:TMethodDefinition {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TCall {
+		++-tTarget -> tMember
+	}
+}
+
+#correspondence {
+	++ invocationToTAccess :MAbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMemberToTMember :MMethodDefinitionToTMethodDefinition {
+		#src->mMember
+		#trg->tMember
+	}
+}
+
+#attributeConditions {
+}

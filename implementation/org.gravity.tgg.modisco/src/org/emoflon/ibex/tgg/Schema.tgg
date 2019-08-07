@@ -83,11 +83,6 @@
 		#trg->TFieldDefinition
 	}
 
-	AbstractMethodInvocationToTAccess {
-		#src->AbstractMethodInvocation
-		#trg->TAccess
-	}
-
 	InterfaceDeclarationToTInterface {
 		#src->InterfaceDeclaration
 		#trg->TInterface
