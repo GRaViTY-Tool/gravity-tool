@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.util.Collections;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -97,11 +98,13 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 							map.put(typeName,  count.subtract(one));
 						}
 					}
-					for (Object count : map.values()) {
-						assertEquals(0, ((BigDecimal) count).intValue());
+					for (Entry<String, Object> entry : map.entrySet()) {
+						Object value = entry.getValue();
+						assertEquals(value + " elements of type " + entry.getKey() 
+						+ " could not be transformed.", 0, ((BigDecimal) value).intValue());
 					}
 				}
-				
+
 			} catch (final MalformedURLException e) {
 				throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
 			} catch (final IOException e) {
