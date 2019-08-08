@@ -30,6 +30,10 @@ public class ZipUtil {
 	 */
 	private static final Logger LOGGER = Logger.getLogger(ZipUtil.class);
 
+	private ZipUtil() {
+		// This class shouldn't be instantiated
+	}
+
 	/**
 	 * Extracts a zip stream to the given location
 	 * 
@@ -59,26 +63,28 @@ public class ZipUtil {
 	 * @param unzipLocation - The location to be unzipped
 	 */
 	public static void unzip(final String zipFilePath, final String unzipLocation) {
-		if (!(Files.exists(Paths.get(unzipLocation)))) {
+		Path destination = Paths.get(unzipLocation).normalize();
+		if (!(Files.exists(destination))) {
 			try {
-				Files.createDirectories(Paths.get(unzipLocation));
+				Files.createDirectories(destination);
 			} catch (IOException e) {
 
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
 		try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipFilePath))) {
-			ZipEntry entry = zipInputStream.getNextEntry();
-			while (entry != null) {
+			ZipEntry entry;
+			while ((entry = zipInputStream.getNextEntry()) != null) {
 				Path filePath = Paths.get(unzipLocation, entry.getName());
+				if(!filePath.normalize().startsWith(destination)) {
+					throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
+				}
 				if (!entry.isDirectory()) {
 					unzipFiles(zipInputStream, filePath);
 				} else {
 					Files.createDirectories(filePath);
 				}
-
 				zipInputStream.closeEntry();
-				entry = zipInputStream.getNextEntry();
 			}
 		} catch (Exception e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);

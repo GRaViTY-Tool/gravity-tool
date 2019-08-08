@@ -104,14 +104,14 @@ public class TestGeneratorPreprocessing {
 			this.deleteFile(this.resultXMI);
 			ResourceSet set = new ResourceSetImpl();
 			Resource res = set.createResource(URI.createFileURI(this.testcase.getSrcXMI().toString()));
-			res.load(Collections.EMPTY_MAP);
+			res.load(Collections.emptyMap());
 			
 			MGravityModel model = (MGravityModel)res.getContents().get(0);
 			
 			Assert.assertTrue(new GravityMoDiscoPreprocessing().process(model,new NullProgressMonitor()));
 			
 			res.setURI(URI.createFileURI(resultXMI.toString()));
-			res.save(Collections.EMPTY_MAP);
+			res.save(Collections.emptyMap());
 
 		} catch (final IllegalArgumentException iae) {
 			throw new AssertionError(String.format("Unable to load '%s': %s", this.testcase, iae.getMessage()));

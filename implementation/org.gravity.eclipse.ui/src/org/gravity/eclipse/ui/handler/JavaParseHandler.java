@@ -25,7 +25,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = GravityUiActivator.getSelection(event);
+		List<?> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new PGCreatorJob(selection);
 		job.setUser(true);

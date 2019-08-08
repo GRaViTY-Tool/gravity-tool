@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
@@ -367,10 +368,10 @@ public class GradleImport extends ProjectImport {
 				jarFiles.add(f);
 				EclipseProjectUtil.createLink(file, f, monitor);
 			} else if (libName.endsWith(".aar")) {
-				jarFiles = GradleLibs.extractAar(libPath, libFolder, monitor);
+				jarFiles = GradleLibsUtil.extractAar(libPath, libFolder, monitor);
 			}
 			if (jarFiles.isEmpty()) {
-				jarFiles = GradleLibs.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
+				jarFiles = GradleLibsUtil.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
 				if (jarFiles.isEmpty()) {
 					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
 					continue;
@@ -532,7 +533,7 @@ public class GradleImport extends ProjectImport {
 
 		SdkVersion sdkVersion = getDependencies(readBuildDotGradleFiles(buildDotGradleFiles), compileLibs, useLibs);
 
-		HashMap<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
+		Map<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
 				new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 

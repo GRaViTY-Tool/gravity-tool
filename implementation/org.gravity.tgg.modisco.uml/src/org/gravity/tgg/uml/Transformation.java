@@ -314,7 +314,7 @@ public class Transformation extends SYNC {
 		File oldTrgResource = gravityFolder.getFile(TRG_XMI).getLocation().toFile();
 		Resource r = trafo.rs.createResource(URI.createFileURI(oldTrgResource.getAbsolutePath()));
 		try {
-			r.load(Collections.EMPTY_MAP);
+			r.load(Collections.emptyMap());
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -324,9 +324,9 @@ public class Transformation extends SYNC {
 
 		try {
 			oldModel.eResource().save(new FileOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile()),
-					Collections.EMPTY_MAP);
+					Collections.emptyMap());
 			newModel.eResource().save(new FileOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile()),
-					Collections.EMPTY_MAP);
+					Collections.emptyMap());
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}

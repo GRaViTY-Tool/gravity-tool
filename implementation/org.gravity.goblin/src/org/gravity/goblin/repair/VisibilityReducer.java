@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.util.EList;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TClass;
@@ -44,7 +44,7 @@ public class VisibilityReducer implements ITransformationRepairer {
 
 	@Override
 	public TransformationSolution repair(TransformationSolution arg0) {
-		reduce(Utility.getPG(arg0.getResultGraph()));
+		reduce(EGraphUtil.getPG(arg0.getResultGraph()));
 		return arg0;
 	}
 }

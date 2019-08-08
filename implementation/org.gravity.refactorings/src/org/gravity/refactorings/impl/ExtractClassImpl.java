@@ -35,6 +35,15 @@ public class ExtractClassImpl extends RefactoringImpl {
 	private static final Logger LOGGER = Logger.getLogger(ExtractClassImpl.class.getName());
 	
 	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public ExtractClassImpl(TypeGraph programModel) {
+		super(programModel);
+	}
+	
+	/**
 	 * Checks if the refactoring is applicable
 	 * 
 	 * @param tRefactoringConfiguration The refactoring configuration

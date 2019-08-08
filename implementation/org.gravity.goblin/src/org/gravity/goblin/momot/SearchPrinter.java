@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.goblin.SearchParameters;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moeaframework.core.Population;
 import org.moeaframework.core.Solution;
@@ -123,7 +123,7 @@ public class SearchPrinter {
 		for (Solution solution : population) {
 			TransformationSolution transformationSolution = MomotUtil.assertTransformationSolution(solution);
 			EGraph graph = transformationSolution.execute();
-			TypeGraph pg = Utility.getPG(graph);
+			TypeGraph pg = EGraphUtil.getPG(graph);
 			EObject eContainer = pg.eContainer();
 			if (eContainer != null && eContainer.eResource() == null) {
 				LOGGER.log(Level.WARN, "There was a HAntiPatternGraph withot resource");

@@ -98,7 +98,7 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 				}
 			}
 		}
-		if (methods.size() == 0) {
+		if (methods.isEmpty()) {
 			return 0;
 		}
 		double sum = 0;

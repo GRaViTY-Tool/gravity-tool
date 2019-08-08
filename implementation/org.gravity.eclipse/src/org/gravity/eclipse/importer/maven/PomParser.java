@@ -5,9 +5,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.xml.XMLConstants;
@@ -44,7 +45,7 @@ public class PomParser {
 	 * @param results   A mapping between libs and their locations
 	 * @param newLibs   The set of newly discovered libs
 	 */
-	public static void parsePomFile(File pom, File cacheFile, HashMap<String, Path> results,
+	public static void parsePomFile(File pom, File cacheFile, Map<String, Path> results,
 			Set<String> newLibs) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -56,7 +57,7 @@ public class PomParser {
 				Set<String> libs = new HashSet<>();
 				String dependency = getDependency(deps.item(i));
 				libs.add(dependency);
-				HashMap<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
+				Map<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
 				if (subResults.isEmpty()) {
 					if (!results.containsKey(dependency)) {
 						newLibs.add(dependency);
@@ -106,9 +107,9 @@ public class PomParser {
 	 * @throws IllegalAccessError If a library string doesn't has the expected
 	 *                            amount of segments
 	 */
-	public static HashMap<String, Path> searchInCache(Set<String> libs, File cacheFile)
+	public static Map<String, Path> searchInCache(Set<String> libs, File cacheFile)
 			throws IOException, IllegalAccessError {
-		HashMap<String, Path> results = new HashMap<>();
+		Map<String, Path> results = new HashMap<>();
 		HashSet<String> newLibs = new HashSet<>();
 		for (String lib : libs) {
 			Library description = searchLibInCache(lib, cacheFile);
@@ -116,7 +117,7 @@ public class PomParser {
 				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar", "aar"));
 				Files.walkFileTree(description.getFile().toPath(), extensionFileVisitor);
 				List<Path> files = extensionFileVisitor.getFiles();
-				if (files.size() > 0) {
+				if (!files.isEmpty()) {
 					Path libJar = getBestFit(description.getName(), description.getVersion(), files);
 					results.put(lib, libJar);
 					File pom = libJar.getParent().resolve(description.getName() + ".pom").toFile();

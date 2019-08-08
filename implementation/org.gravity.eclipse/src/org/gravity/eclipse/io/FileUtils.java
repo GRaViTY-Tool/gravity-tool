@@ -26,6 +26,10 @@ import org.eclipse.core.runtime.Platform;
 public class FileUtils {
 
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class);
+	
+	private FileUtils() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Replaces the line endings with the endings of the current system

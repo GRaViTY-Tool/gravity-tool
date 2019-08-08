@@ -33,7 +33,7 @@ public class ConverterSelection extends ContributionItem {
 	public void fill(Menu menu, int index) {
 		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 
-		IConfigurationElement[] configuration_elements = extensionRegistry
+		IConfigurationElement[] configurationElements = extensionRegistry
 				.getConfigurationElementsFor("org.gravity.eclipse.converters"); //$NON-NLS-1$
 
 		IPGConverterFactory selectedConverter;
@@ -49,7 +49,7 @@ public class ConverterSelection extends ContributionItem {
 			return;
 		}
 
-		for (IConfigurationElement element : configuration_elements) {
+		for (IConfigurationElement element : configurationElements) {
 			try {
 				IPGConverterFactory converter = (IPGConverterFactory) element.createExecutableExtension("class"); //$NON-NLS-1$
 

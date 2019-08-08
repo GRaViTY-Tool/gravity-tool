@@ -30,6 +30,15 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class PullUpFieldImpl extends RefactoringImpl {
+	
+	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public PullUpFieldImpl(TypeGraph programModel) {
+		super(programModel);
+	}
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {

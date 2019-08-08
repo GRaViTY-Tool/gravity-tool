@@ -33,7 +33,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = GravityUiActivator.getSelection(event);
+		List<?> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new PGSyncFwdJob(selection);
 		job.setUser(true);
@@ -71,9 +71,9 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 	 *
 	 */
 	private final class PGSyncFwdJob extends Job {
-		private final List<Object> selection;
+		private final List<?> selection;
 
-		private PGSyncFwdJob(List<Object> selection) {
+		private PGSyncFwdJob(List<?> selection) {
 			super("GRaViTY Sync PG");
 			this.selection = selection;
 		}

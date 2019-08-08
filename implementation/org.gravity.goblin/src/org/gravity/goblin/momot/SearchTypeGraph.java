@@ -15,7 +15,7 @@ import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.SearchParameters;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
 import org.gravity.goblin.fitness.AntiPatternCalculator;
 import org.gravity.goblin.fitness.CohesionCalculator;
@@ -141,7 +141,7 @@ public class SearchTypeGraph {
 		return new AbstractEGraphFitnessDimension(function.name, function.type) {
 			@Override
 			protected double internalEvaluate(TransformationSolution solution) {
-				return function.getCalculator().calculate(Utility.getPG(solution.getResultGraph()));
+				return function.getCalculator().calculate(EGraphUtil.getPG(solution.getResultGraph()));
 			}
 		};
 	}

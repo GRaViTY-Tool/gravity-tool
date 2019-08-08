@@ -1,6 +1,8 @@
 package org.gravity.eclipse.io;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.util.Collections;
@@ -10,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -50,7 +53,7 @@ public class ModelSaver {
 		}
 		return saveModel(resource, file, monitor);
 	}
-
+	
 	/**
 	 * Save a emf model into an eclipse file
 	 * 
@@ -60,6 +63,31 @@ public class ModelSaver {
 	 * @return true, iff the model has been saved successfully
 	 */
 	public static boolean saveModel(Resource resource, IFile file, IProgressMonitor monitor) {
+		if(resource == null){
+			return false;
+		}
+		
+		try (OutputStream out = new FileOutputStream(file.getLocation().toFile())){
+			resource.save(out, Collections.emptyMap());
+			file.refreshLocal(IResource.DEPTH_ONE, monitor);
+		} catch (IOException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		} catch (CoreException e) {
+			LOGGER.log(Level.WARN, e.getMessage(), e);
+		}
+		return true;
+	}
+
+	/**
+	 * Save a emf model into an eclipse file
+	 * 
+	 * @param resource The resource containing the model
+	 * @param file An eclipse file
+	 * @param monitor A progress monitor
+	 * @return true, iff the model has been saved successfully
+	 */
+	public static boolean saveModelUsingPipedStream(Resource resource, IFile file, IProgressMonitor monitor) {
 		if(resource == null){
 			return false;
 		}

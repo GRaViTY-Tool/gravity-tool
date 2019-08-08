@@ -28,7 +28,7 @@ final class UmlCreatorJob extends ModelCreatorJob {
 	 * 
 	 * @param selection The selection from the workspace
 	 */
-	UmlCreatorJob(List<Object> selection, boolean addUmlSec) {
+	UmlCreatorJob(List<?> selection, boolean addUmlSec) {
 		super(selection, "UML Model", "uml");
 		this.addUmlSec = addUmlSec;
 	}

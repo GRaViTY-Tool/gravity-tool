@@ -15,7 +15,7 @@ import org.eclipse.emf.henshin.interpreter.impl.AssignmentImpl;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.preconditions.MoveMethodPreConditions;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
@@ -67,7 +67,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	}
 
 	private TClass getDifferentRandomClass(EGraph graph, TClass otherTClass) {
-		List<TClass> classes = Utility.getPG(graph).getDeclaredTClasses();
+		List<TClass> classes = EGraphUtil.getPG(graph).getDeclaredTClasses();
 		classes.remove(otherTClass);
 		if (classes.isEmpty()) {
 			return null;

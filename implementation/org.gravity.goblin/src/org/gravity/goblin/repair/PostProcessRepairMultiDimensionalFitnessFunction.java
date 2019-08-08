@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.EGraph;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.hulk.HulkAPI;
 import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -102,7 +102,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 		if (clazz.isInstance(solution)) {
 			// Calculate metrics
 			EGraph graph = ((TransformationSolution) solution).execute();
-			TypeGraph pg = Utility.getPG(graph);
+			TypeGraph pg = EGraphUtil.getPG(graph);
 			Resource r = pg.eResource();
 			if (r == null) {
 				ResourceSetImpl rs = new ResourceSetImpl();
@@ -113,13 +113,13 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 			try {
 				HulkAPI.detect(pg, "", BLOB, LCOM5, IGAM, TOTAL_COUPLING, TOTAL_METHOD_VISIBILITY);
 			} catch (DetectionFailedException e) {
-				throw new RuntimeException(e);
+				throw new IllegalStateException(e);
 			}
 
 			double result = delegateEvaluation(solution);
 			if (solution.violatesConstraints()) {
 				// repair
-				if (repairsSolutions() && solution != null) {
+				if (repairsSolutions()) {
 					solution = getSolutionRepairer().repair(clazz.cast(solution));
 				}
 				// re-evaluate
@@ -132,7 +132,7 @@ public class PostProcessRepairMultiDimensionalFitnessFunction
 			}
 			return result;
 		} else {
-			throw new RuntimeException("wrong solution type");
+			throw new IllegalStateException("wrong solution type");
 		}
 	}
 

@@ -39,6 +39,10 @@ public class GravityAPI {
 	 * The Logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(GravityAPI.class);
+	
+	private GravityAPI() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Discovers the Java project and creates a program model

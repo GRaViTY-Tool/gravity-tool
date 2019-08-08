@@ -37,7 +37,14 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
  */
 public class EclipseProjectUtil {
 
+	/**
+	 * The logger of this class
+	 */
 	private static final Logger LOGGER = Logger.getLogger(EclipseProjectUtil.class);
+
+	 private EclipseProjectUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Creates a copy of a eclipse project with the given name
@@ -168,12 +175,25 @@ public class EclipseProjectUtil {
 	 * @throws JavaModelException if the classpath could not be set
 	 */
 	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib) throws JavaModelException {
+		return addLibToClasspath(project, lib, new NullProgressMonitor());
+	}
+
+	/**
+	 * Adds a library to the classpath of the project
+	 * 
+	 * @param project The Java project
+	 * @param lib     The library
+	 * @param monitor A progress monitor
+	 * @return The created classpath entry
+	 * @throws JavaModelException if the classpath could not be set
+	 */
+	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib, IProgressMonitor monitor) throws JavaModelException {
 		IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 		newEntries[oldEntries.length] = relativeLibraryEntry;
-		project.setRawClasspath(newEntries, null);
+		project.setRawClasspath(newEntries, monitor);
 		return relativeLibraryEntry;
 	}
 

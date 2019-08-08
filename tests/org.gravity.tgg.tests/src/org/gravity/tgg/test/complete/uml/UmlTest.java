@@ -91,7 +91,7 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 			throw new AssertionError("Couldn't create output directory: "+parentFile.getPath());
 		}
 		try (FileOutputStream outputStream = new FileOutputStream(trgFile)){
-			model.eResource().save(outputStream, Collections.EMPTY_MAP);
+			model.eResource().save(outputStream, Collections.emptyMap());
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			throw new AssertionError(e.getMessage(), e);

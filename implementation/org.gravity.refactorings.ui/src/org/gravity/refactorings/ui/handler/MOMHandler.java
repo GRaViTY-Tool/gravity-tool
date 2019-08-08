@@ -32,11 +32,18 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 
-public class MOMHandler extends RefactoringHandler{
+/**
+ * 
+ * A Handler for move method refactorings
+ * 
+ * @author speldszus
+ *
+ */
+public class MOMHandler extends RefactoringHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		
+
 		// General decls.
 		ITextEditor editor = (ITextEditor) HandlerUtil.getActiveEditor(event);
 		ITextSelection sel = (ITextSelection) editor.getSelectionProvider().getSelection();
@@ -46,96 +53,17 @@ public class MOMHandler extends RefactoringHandler{
 		NodeFinder finder = new NodeFinder(cu, sel.getOffset(), sel.getLength());
 		ASTNode node = finder.getCoveringNode();
 		Shell shell = editor.getSite().getShell();
-		
+
 		String targetClassName = JOptionPane.showInputDialog("Enter target Class Name");
-		if(targetClassName == null){
-			return null;
-		}
-		
-		// method = MethodDecl
-		// childType = TypeDecl   ---> Type of child class (Container of method) ---> change to sourceclassType?
-		if (node instanceof MethodDeclaration) {
+		if (targetClassName != null && node instanceof MethodDeclaration) {
+			// method = MethodDecl
+			// childType = TypeDecl ---> Type of child class (Container of method) --->
+			// change to sourceclassType?
 			MethodDeclaration method = (MethodDeclaration) node;
 			ASTNode tmpASTNode1 = method.getParent();
 			if (tmpASTNode1 instanceof TypeDeclaration) {
 				TypeDeclaration sourceType = (TypeDeclaration) tmpASTNode1;
-				WorkspaceJob job = new WorkspaceJob("Move method refactoring") {			// Changed
-
-					@Override
-					public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
-						IPGConverter converter;
-						try {
-							converter = GravityActivator.getDefault()
-									.getConverter(icu.getJavaProject().getProject());
-						} catch (NoConverterRegisteredException e) {
-							return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "Please install a converter and restart the task.");
-						}
-						if (!converter.convertProject(icu.getJavaProject(), monitor)) {
-							asyncPrintError(shell, "Refactoring Error", "Creating an PG from the sourcecode failed");
-
-						}
-						TypeGraph pg = converter.getPG();
-
-						// Start here
-						// ***
-						TClass sourceClass = JavaASTUtil.getTClass(sourceType, pg);		// Gets class for child type; rpl with source class
-						if (sourceClass != null) {
-							TClass targetClass = null;
-							for(TClass tClass: pg.getClasses()){
-								if(tClass.getTName().toLowerCase().equals(targetClassName.toLowerCase())  && !tClass.isTLib()){
-									targetClass = tClass;
-									break;
-								}
-							}
-							if(targetClass == null){
-								return null;
-							}
-							
-							TClass targetClassCopy = targetClass;
-							
-							TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
-							MoveMethodImpl momRefactoring = new MoveMethodImpl();
-							momRefactoring.setPg(pg);
-
-							if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) {  // Already changed to new isApplicable
-								Display.getDefault().asyncExec(new Runnable() {
-
-									@Override
-									public void run() {
-
-											converter.syncProjectBwd(SynchronizationHelper -> {
-												momRefactoring.perform(tSignature, targetClassCopy, sourceClass);
-											}, monitor);
-										JOptionPane.showMessageDialog(null, "Moved Method from " +sourceClass.getTName() + " to " + targetClassName);
-											
-											
-									}
-
-								});
-							} else {
-								asyncPrintError(shell, "Refactoring not possible",
-										"The desired move method refactoring is not possible.");
-							}
-
-						} else {
-							asyncPrintError(shell, "Refactoring Info", "Class not found in PG.");
-						}
-						
-						//
-						// ***
-						return Status.OK_STATUS;
-					}
-
-					private void asyncPrintError(Shell shell, String title, String message) {
-						Display.getDefault().asyncExec(new Runnable() {
-							@Override
-							public void run() {
-								MessageDialog.openError(shell, title, message);
-							}
-						});
-					}
-
-				};
+				WorkspaceJob job = new MOMJob(icu, targetClassName, method, sourceType, shell);
 				job.setUser(false);
 				job.schedule();
 
@@ -145,11 +73,88 @@ public class MOMHandler extends RefactoringHandler{
 		} else {
 			MessageDialog.openWarning(shell, "Refactoring Info", "Please select a method");
 		}
+
 		return null;
 	}
 
+	private static final class MOMJob extends WorkspaceJob {
+		private final ICompilationUnit icu;
+		private final String targetClassName;
+		private final MethodDeclaration method;
+		private final TypeDeclaration sourceType;
+		private final Shell shell;
 
-	
-	
+		private MOMJob(ICompilationUnit icu, String targetClassName, MethodDeclaration method,
+				TypeDeclaration sourceType, Shell shell) {
+			super("Move method refactoring");
+			this.icu = icu;
+			this.targetClassName = targetClassName;
+			this.method = method;
+			this.sourceType = sourceType;
+			this.shell = shell;
+		}
+
+		@Override
+		public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+			IPGConverter converter;
+			try {
+				converter = GravityActivator.getDefault().getConverter(icu.getJavaProject().getProject());
+			} catch (NoConverterRegisteredException e) {
+				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+						"Please install a converter and restart the task.");
+			}
+			if (!converter.convertProject(icu.getJavaProject(), monitor)) {
+				asyncPrintError(shell, "Refactoring Error", "Creating an PG from the sourcecode failed");
+
+			}
+			TypeGraph pg = converter.getPG();
+
+			// Gets class for child type; rpl with source class
+			TClass sourceClass = JavaASTUtil.getTClass(sourceType, pg); 
+			if (sourceClass != null) {
+				final TClass targetClass = pg.getClass(targetClassName);
+				if (targetClass == null) {
+					return null;
+				}
+
+				TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
+				MoveMethodImpl momRefactoring = new MoveMethodImpl(pg);
+
+				if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) { // Already changed to new
+																							// isApplicable
+					Display.getDefault().asyncExec(new Runnable() {
+
+						@Override
+						public void run() {
+
+							converter.syncProjectBwd(SynchronizationHelper -> {
+								momRefactoring.perform(tSignature, targetClass, sourceClass);
+							}, monitor);
+							JOptionPane.showMessageDialog(null,
+									"Moved Method from " + sourceClass.getTName() + " to " + targetClassName);
+
+						}
+
+					});
+				} else {
+					asyncPrintError(shell, "Refactoring not possible",
+							"The desired move method refactoring is not possible.");
+				}
+
+			} else {
+				asyncPrintError(shell, "Refactoring Info", "Class not found in PG.");
+			}
+			return Status.OK_STATUS;
+		}
+
+		private void asyncPrintError(Shell shell, String title, String message) {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					MessageDialog.openError(shell, title, message);
+				}
+			});
+		}
+	}
 
 }

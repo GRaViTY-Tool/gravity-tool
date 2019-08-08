@@ -32,7 +32,7 @@ public abstract class ModelCreatorJob extends Job {
 
 	private static final Logger LOGGER = Logger.getLogger(ModelCreatorJob.class);
 
-	private final List<Object> selection;
+	private final List<?> selection;
 	private final String modelKind;
 	private final String fileExtension;
 
@@ -43,7 +43,7 @@ public abstract class ModelCreatorJob extends Job {
 	 * @param modelKind The name of the model kind
 	 * @param fileExtension The file extension of the file into which the model will be stored
 	 */
-	protected ModelCreatorJob(List<Object> selection, String modelKind, String fileExtension) {
+	protected ModelCreatorJob(List<?> selection, String modelKind, String fileExtension) {
 		super("GRaViTY Create " + modelKind);
 		this.fileExtension = fileExtension;
 		this.modelKind = modelKind;
@@ -68,7 +68,7 @@ public abstract class ModelCreatorJob extends Job {
 				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
 			}
 		}
-		return fails.size() == 0 ? Status.OK_STATUS
+		return fails.isEmpty() ? Status.OK_STATUS
 				: new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
 						"Creation of a" + modelKind + " failed on the follwoing Java projects: " + fails.toString());
 	}

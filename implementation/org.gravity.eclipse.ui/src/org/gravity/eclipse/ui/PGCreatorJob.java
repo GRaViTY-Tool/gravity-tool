@@ -28,7 +28,7 @@ public final class PGCreatorJob extends ModelCreatorJob {
 		 * 
 		 * @param selection A selection from the workspace
 		 */
-		public PGCreatorJob(List<Object> selection) {
+		public PGCreatorJob(List<?> selection) {
 			super(selection, "program model", "xmi");
 		}
 

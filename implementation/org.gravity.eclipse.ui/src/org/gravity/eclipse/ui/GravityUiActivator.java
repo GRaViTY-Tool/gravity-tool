@@ -1,6 +1,5 @@
 package org.gravity.eclipse.ui;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -62,15 +61,14 @@ public class GravityUiActivator extends AbstractUIPlugin {
 	 * @return The selected objects
 	 * @throws ExecutionException Iff the selection cannot be determined
 	 */
-	public static List<Object> getSelection(ExecutionEvent event) throws ExecutionException {
+	public static List<?> getSelection(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		ISelectionService service = window.getSelectionService();
 		IStructuredSelection structured = (IStructuredSelection) service.getSelection();
 		if (structured == null) {
 			throw new ExecutionException("No projects have been selected for discovery!");
 		}
-		List<Object> selection = Arrays.asList(structured.toArray());
-		return selection;
+		return structured.toList();
 	}
 
 	/**

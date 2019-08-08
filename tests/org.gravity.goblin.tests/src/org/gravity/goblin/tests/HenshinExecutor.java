@@ -69,7 +69,7 @@ public class HenshinExecutor {
 		Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
 		URL res = bundle.getResource(modulePath);
 		try (InputStream s = res.openStream()) {
-			r.load(s, Collections.EMPTY_MAP);
+			r.load(s, Collections.emptyMap());
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}

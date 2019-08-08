@@ -164,7 +164,7 @@ public class HulkAPI {
 			Resource resource = resources.remove(0);
 			if (resource != keep) {
 				try {
-					resource.delete(Collections.EMPTY_MAP);
+					resource.delete(Collections.emptyMap());
 				} catch (IOException e) {
 					LOGGER.log(Level.WARN, "Cleaninig resource failed: " + e.getMessage(), e);
 					return false;

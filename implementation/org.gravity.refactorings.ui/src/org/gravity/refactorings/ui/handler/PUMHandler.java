@@ -79,8 +79,7 @@ public class PUMHandler extends RefactoringHandler {
 							TClass tParent = tChild.getParentClass();
 							TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
 
-							PullUpMethodImpl refactoring = new PullUpMethodImpl();
-							refactoring.setPg(pg);
+							PullUpMethodImpl refactoring = new PullUpMethodImpl(pg);
 
 							if (refactoring.isApplicable(tSignature, tParent)) {
 								Display.getDefault().asyncExec(new Runnable() {

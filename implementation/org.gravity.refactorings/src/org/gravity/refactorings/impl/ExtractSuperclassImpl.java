@@ -20,6 +20,7 @@ import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Extract
@@ -35,6 +36,15 @@ import org.gravity.typegraph.basic.TSignature;
  * @generated
  */
 public class ExtractSuperclassImpl extends RefactoringImpl {
+	
+	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public ExtractSuperclassImpl(TypeGraph programModel) {
+		super(programModel);
+	}
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
@@ -57,7 +67,7 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 	public List<TClass> perform(List<TClass> children, TClass newParent, List<TSignature> signatures)
 			throws RefactoringFailedException {
 
-		CreateSuperclassImpl csc = new CreateSuperclassImpl();
+		CreateSuperclassImpl csc = new CreateSuperclassImpl(getPg());
 		HelpersImpl helpers = new HelpersImpl();
 		setHelpersImpl(helpers);
 
@@ -107,13 +117,15 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @throws RefactoringFailedException 
+	 * 
+	 * @throws RefactoringFailedException
 	 * 
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> children, TClass new_parent, List<TSignature> signatures) throws RefactoringFailedException {
+	public boolean isApplicable(List<TClass> children, TClass new_parent, List<TSignature> signatures)
+			throws RefactoringFailedException {
 
-		CreateSuperclassImpl csc = new CreateSuperclassImpl();
+		CreateSuperclassImpl csc = new CreateSuperclassImpl(getPg());
 
 		if (csc.isApplicable(children, new_parent)) {
 			// ForEach

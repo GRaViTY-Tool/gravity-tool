@@ -14,6 +14,7 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Move
@@ -25,6 +26,15 @@ import org.gravity.typegraph.basic.TMember;
  */
 public class MoveFieldImpl extends MoveMemberImpl {
 	
+	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public MoveFieldImpl(TypeGraph programModel) {
+		super(programModel);
+	}
+
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {

@@ -3,8 +3,6 @@ package org.gravity.tgg.test.complete.pm;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -59,25 +57,19 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 		IPGConverter conv = null;
 		try {
 			conv = new MoDiscoTGGConverter();
-
 			conv.setDebug(DEBUG);
-
-			LOGGER.log(Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
-			if (!conv.convertProject(project, new NullProgressMonitor())) {
-				throw new AssertionError("Trafo failed");
-			}
-			LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
-
-			TypeGraph pg = conv.getPG();
-			assertNotNull(pg);
-		} catch (final MalformedURLException e) {
-			throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
 		} catch (final IOException e) {
-			throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
-		} finally {
-			if (conv != null) {
-				conv.discard();
-			}
+			throw new AssertionError(String.format("Unable to initialize TGG: ", e.getMessage()));
+		} 
+		
+		LOGGER.log(Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+		if (!conv.convertProject(project, new NullProgressMonitor())) {
+			throw new AssertionError("Trafo failed");
 		}
+		LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
+
+		TypeGraph pg = conv.getPG();
+		assertNotNull(pg);
+		conv.discard();
 	}
 }

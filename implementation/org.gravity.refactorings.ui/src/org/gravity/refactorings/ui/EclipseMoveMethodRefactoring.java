@@ -35,7 +35,7 @@ public class EclipseMoveMethodRefactoring {
 	
 	private static final Logger LOGGER = Logger.getLogger(EclipseMoveMethodRefactoring.class.getName());
 	
-	private final HashMap<String, IType> types;
+	private final Map<String, IType> types;
 	private final IJavaProject project;
 	
 	/**

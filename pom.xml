@@ -12,8 +12,13 @@
     <jacoco.version>0.8.4</jacoco.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    
+    <jacoco.aggregate.reportPaths>${maven.multiModuleProjectDirectory}/org.gravity.coverage/target/jacoco-aggregate/</jacoco.aggregate.reportPaths>
+   
+    <sonar.language>java</sonar.language>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.coverage.jacoco.xmlReportPaths>${jacoco.aggregate.reportPaths}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.junit.reportPaths>${maven.multiModuleProjectDirectory}/target/surefire-reports</sonar.junit.reportPaths>
   </properties>
 	
   <modules>
@@ -51,6 +56,7 @@
     <module>tests/org.gravity.refactorings.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.tgg.modisco.uml.tests</module>
+    <module>org.gravity.coverage</module>
   </modules>
 
   <build>
@@ -62,6 +68,37 @@
         <extensions>true</extensions>
         <configuration>
           <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+         <executions>
+           <execution>
+             <id>pre-integration-test</id>
+             <goals>
+               <goal>prepare-agent-integration</goal>
+             </goals>
+             <configuration>
+               <propertyName>surefireArgLine</propertyName>
+             </configuration>
+           </execution>
+           <execution>
+             <id>post-integration-test</id>
+             <phase>post-integration-test</phase>
+             <goals>
+               <goal>report-integration</goal>
+             </goals>
+           </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <reportsDirectory>${sonar.junit.reportPaths}</reportsDirectory>
         </configuration>
       </plugin>
       <plugin>
@@ -88,49 +125,6 @@
           </environments>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${jacoco.version}</version>
-        <executions>
-          <execution>
-            <id>prepare-agent</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>post-unit-test</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-            <configuration>
-            <!-- Sets the path to the file which contains the execution data. -->
-              <dataFile>target/jacoco.exec</dataFile>
-              <!-- Sets the output directory for the code coverage report. -->
-              <outputDirectory>target/jacoco-ut</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <systemPropertyVariables>
-            <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
-      <!--<plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-surefire-plugin</artifactId>
-        <version>${tycho-version}</version>
-      </plugin>-->
     </plugins>
   </build>
 
@@ -206,20 +200,4 @@
       <url>http://carisma.umlsec.de/beta-updatesite</url>
     </repository>
   </repositories>
-
-  <!--<pluginRepositories>
-    <pluginRepository>
-      <id>mapasuta.repo</id>
-      <name>Mapasuta Project Download Repository</name>
-      <url>http://mapasuta.sf.net/maven/repo</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>-->
 </project>

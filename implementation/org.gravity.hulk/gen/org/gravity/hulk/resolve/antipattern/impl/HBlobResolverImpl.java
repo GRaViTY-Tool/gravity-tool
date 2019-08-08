@@ -122,7 +122,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 * @ordered
 	 */
-	protected HAntiPatternGraph copy_apg;
+	protected HAntiPatternGraph copyApg;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +202,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	public HAntiPatternGraph getCopy_apg() {
-		return copy_apg;
+		return copyApg;
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	public NotificationChain basicSetCopy_apg(HAntiPatternGraph newCopy_apg, NotificationChain msgs) {
-		HAntiPatternGraph oldCopy_apg = copy_apg;
-		copy_apg = newCopy_apg;
+		HAntiPatternGraph oldCopy_apg = copyApg;
+		copyApg = newCopy_apg;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
 					AntipatternPackage.HBLOB_RESOLVER__COPY_APG, oldCopy_apg, newCopy_apg);
@@ -230,10 +230,10 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	public void setCopy_apg(HAntiPatternGraph newCopy_apg) {
-		if (newCopy_apg != copy_apg) {
+		if (newCopy_apg != copyApg) {
 			NotificationChain msgs = null;
-			if (copy_apg != null)
-				msgs = ((InternalEObject) copy_apg).eInverseRemove(this,
+			if (copyApg != null)
+				msgs = ((InternalEObject) copyApg).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE - AntipatternPackage.HBLOB_RESOLVER__COPY_APG, null, msgs);
 			if (newCopy_apg != null)
 				msgs = ((InternalEObject) newCopy_apg).eInverseAdd(this,
@@ -448,10 +448,10 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			}
 			return true;
 		} else if (refactoring instanceof HExtractClass) {
-			HExtractClass e = (HExtractClass) refactoring;
-			ExtractClassConfiguration config = new ExtractClassConfiguration(e.getTMembers(),
+			HExtractClass extractClass = (HExtractClass) refactoring;
+			ExtractClassConfiguration config = new ExtractClassConfiguration(extractClass.getTMembers(),
 					"ExtractedClass" + System.currentTimeMillis());
-			ExtractClassImpl r = new ExtractClassImpl();
+			ExtractClassImpl r = new ExtractClassImpl(extractClass.getApg().getPg());
 			return r.isApplicable(config);
 		} else {
 			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
@@ -481,8 +481,8 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 						System.err.println("HBlobResolver: Unknown Member Tye: " + definition);
 						return null;
 					}
-					hMove.setApg(copy_apg);
-					copy_apg.getHAnnotations().add(hMove);
+					hMove.setApg(copyApg);
+					copyApg.getHAnnotations().add(hMove);
 
 					hMove.setTAnnotated(definition);
 					definition.getTAnnotation().add(hMove);
@@ -550,11 +550,11 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	public HAntiPatternGraph init(HAntiPatternGraph pg) {
 		// [user code injected with eMoflon]
 		original_apg = pg;
-		copy_apg = EcoreUtil.copy(pg);
+		copyApg = EcoreUtil.copy(pg);
 
-		move = new MoveMemberImpl();
+		move = new MoveMemberImpl(pg.getPg());
 
-		return copy_apg;
+		return copyApg;
 	}
 
 	/**
@@ -648,7 +648,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		case AntipatternPackage.HBLOB_RESOLVER__ORIGINAL_APG:
 			return original_apg != null;
 		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
-			return copy_apg != null;
+			return copyApg != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -45,11 +45,8 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		List<Object> workspaceSelection = Arrays.asList(structured.toArray());
 
 		try {
-			for (Object object : SelectionHelper.getJavaProjects(workspaceSelection)) {
-				if (object instanceof IJavaProject) {
-					IProject project = ((IJavaProject) object).getProject();
-					openProject(project);
-				}
+			for (IJavaProject project : SelectionHelper.getJavaProjects(workspaceSelection)) {
+				openProject(project.getProject());
 			}
 		} catch (IOException e) {
 			MessageBox failure = new MessageBox(window.getShell(), SWT.ICON_INFORMATION | SWT.OK);
@@ -71,7 +68,7 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		IFile antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_PG_XMI_NAME);
 		URI uri = URI.createFileURI(antiPatternXmi.getLocation().toString());
 		Resource antiPatternResource = new ResourceSetImpl().getResource(uri, true);
-		antiPatternResource.load(Collections.EMPTY_MAP);
+		antiPatternResource.load(Collections.emptyMap());
 		EList<EObject> contents = antiPatternResource.getContents();
 		EObject eObject = contents.get(0);
 		HAntiPatternGraph apg;

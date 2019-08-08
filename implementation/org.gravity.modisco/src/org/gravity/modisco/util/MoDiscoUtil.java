@@ -13,20 +13,51 @@ import java.util.Deque;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
+import org.eclipse.gmt.modisco.java.ArrayAccess;
+import org.eclipse.gmt.modisco.java.ArrayCreation;
+import org.eclipse.gmt.modisco.java.ArrayInitializer;
+import org.eclipse.gmt.modisco.java.ArrayLengthAccess;
 import org.eclipse.gmt.modisco.java.ArrayType;
+import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.gmt.modisco.java.CastExpression;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
+import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
+import org.eclipse.gmt.modisco.java.ConditionalExpression;
+import org.eclipse.gmt.modisco.java.Expression;
+import org.eclipse.gmt.modisco.java.ExpressionStatement;
+import org.eclipse.gmt.modisco.java.FieldAccess;
+import org.eclipse.gmt.modisco.java.ForStatement;
+import org.eclipse.gmt.modisco.java.IfStatement;
+import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
+import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.ParameterizedType;
+import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
+import org.eclipse.gmt.modisco.java.PrefixExpression;
+import org.eclipse.gmt.modisco.java.PrimitiveTypeBoolean;
+import org.eclipse.gmt.modisco.java.PrimitiveTypeInt;
 import org.eclipse.gmt.modisco.java.PrimitiveTypeVoid;
+import org.eclipse.gmt.modisco.java.ReturnStatement;
+import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.gmt.modisco.java.Statement;
+import org.eclipse.gmt.modisco.java.ThrowStatement;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.VariableDeclaration;
+import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MConstructorDefinition;
+import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
@@ -58,19 +89,46 @@ public class MoDiscoUtil {
 	public static boolean isSuperType(Type type, Type supertype) {
 		if (type instanceof AbstractTypeDeclaration) {
 			if (type instanceof ClassDeclaration) {
-				ClassDeclaration clazz = (ClassDeclaration) type;
-				TypeAccess superClass = clazz.getSuperClass();
-				if (superClass != null) {
-					Type parent = superClass.getType();
-					if (supertype.equals(parent) || isSuperType(parent, supertype)) {
-						return true;
-					}
-				}
-			}
-			for (TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
-				if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
+				boolean superType = isSuperType((ClassDeclaration) type, supertype);
+				if (superType) {
 					return true;
 				}
+			}
+			return isSuperInterface(type, supertype);
+		}
+		return false;
+	}
+
+	/**
+	 * Checks if supertype is a super type of type
+	 * 
+	 * @param type      The type
+	 * @param supertype The potential supertype
+	 * @return true iff supertype is a supertype of type
+	 */
+	private static boolean isSuperType(ClassDeclaration type, Type supertype) {
+		TypeAccess superClass = type.getSuperClass();
+		boolean superType = false;
+		if (superClass != null) {
+			Type parent = superClass.getType();
+			if (supertype.equals(parent) || isSuperType(parent, supertype)) {
+				superType = true;
+			}
+		}
+		return superType;
+	}
+
+	/**
+	 * Checks if supertype is a super interface of type
+	 * 
+	 * @param type      The type
+	 * @param supertype The potential super interface
+	 * @return true iff supertype is a supertype of type
+	 */
+	private static boolean isSuperInterface(Type type, Type supertype) {
+		for (TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
+			if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
+				return true;
 			}
 		}
 		return false;
@@ -144,8 +202,8 @@ public class MoDiscoUtil {
 	 * @param type The given type
 	 * @return The implemented interfaces
 	 */
-	public static HashSet<Type> getTypesOfImplementedInterface(AbstractTypeDeclaration type) {
-		HashSet<Type> types = new HashSet<Type>();
+	public static Set<Type> getTypesOfImplementedInterface(AbstractTypeDeclaration type) {
+		Set<Type> types = new HashSet<Type>();
 		for (TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
 			Type typeOfInterface = superInterfaceReference.getType();
 			if (typeOfInterface == null) {
@@ -205,24 +263,204 @@ public class MoDiscoUtil {
 	 * is set to void!
 	 * 
 	 * @param method The method for which the return type should be retrieved
-	 * @return The return type of the mehtod
+	 * @return The return type of the method
 	 */
 	private static Type getAndFixReturnType(MMethodDefinition method) {
 		TypeAccess returnType = method.getReturnType();
-		if (returnType == null) {
-			// TODO: Currently a dirty hack: assuming void
-			returnType = JavaFactory.eINSTANCE.createTypeAccess();
-			method.setReturnType(returnType);
-			MGravityModel pg = method.getModel();
-			returnType.setType(getVoid(pg));
+		if (returnType != null) {
+			return returnType.getType();
+		}
+		MGravityModel pg = method.getModel();
+		Type type = null;
+		for (AbstractMethodInvocation invocation : method.getUsages()) {
+			try {
+				Type tmpType = guessReturnTypeOfCall(pg, invocation);
+				if (tmpType != null && (type == null || isSuperType(tmpType, type))) {
+					type = tmpType;
+				}
+			} catch (IllegalStateException e) {
+				MDefinition source = getContainingMethod(invocation);
+				LOGGER.log(Level.INFO,
+						"The guess of the return type of the invocartion of \""
+								+ method.getAbstractTypeDeclaration().getName() + '.' + method.getName() + "\" in \""
+								+ source.getAbstractTypeDeclaration().getName() + '.' + source.getName()
+								+ "\" might be optimized.");
+			}
+		}
+		if (type == null) {
+			LOGGER.log(Level.WARN,
+					"Return type for method \"" + method.getName() + "\" not given assuming \"java.lang.Object\"");
+			type = getJavaLangObject(pg);
+			if (type == null) {
+				LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
+				return null;
+			}
+		}
+		returnType = JavaFactory.eINSTANCE.createTypeAccess();
+		method.setReturnType(returnType);
+		returnType.setType(type);
+		return type;
+	}
 
-		}
-		Type ret = returnType.getType();
-		if (ret == null) {
-			LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
+	/**
+	 * try to guess the return type of the called method.
+	 * 
+	 * @param pg         The model containing the invocation
+	 * @param invocation The method invocation
+	 * @return The return type of the method
+	 */
+	private static Type guessReturnTypeOfCall(MGravityModel pg, AbstractMethodInvocation invocation) {
+		EObject eContainer = invocation.eContainer();
+		if (eContainer instanceof ForStatement || eContainer instanceof ParenthesizedExpression
+				|| eContainer instanceof PrefixExpression || eContainer instanceof InfixExpression) {
+			return getJavaLangObject(pg);
+		} else if (eContainer instanceof ExpressionStatement) {
 			return null;
+			// We cannot handle infix expressions but its also no error
+		} else if (eContainer instanceof ReturnStatement) {
+			MDefinition definition = getContainingMethod((Statement) eContainer);
+			if (definition instanceof MMethodDefinition) {
+				return getAndFixReturnType(((MMethodDefinition) definition));
+			} else if (definition instanceof MConstructorDefinition) {
+				return ((MConstructorDefinition) definition).getAbstractTypeDeclaration();
+			} else if (definition instanceof AbstractVariablesContainer) {
+				return ((AbstractVariablesContainer) definition).getType().getType();
+			} else {
+				throw new IllegalStateException("Unknown MAbstractMethodDefinition: " + eContainer.eClass().getName());
+			}
+		} else if (eContainer instanceof AbstractMethodInvocation) {
+			AbstractMethodInvocation methodInvocation = (AbstractMethodInvocation) eContainer;
+			int index = methodInvocation.getArguments().indexOf(invocation);
+			if (index >= 0) {
+				return methodInvocation.getMethod().getParameters().get(index).getType().getType();
+			} else {
+				if (methodInvocation instanceof MethodInvocation) {
+					Expression expression = ((MethodInvocation) methodInvocation).getExpression();
+					if (expression.equals(invocation)) {
+						return methodInvocation.getMethod().getAbstractTypeDeclaration();
+					} else {
+						throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+					}
+				} else {
+					throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+				}
+			}
+		} else if (eContainer instanceof Assignment) {
+			return getAssignmentType(pg, (Assignment) eContainer);
+		} else if (eContainer instanceof VariableDeclarationFragment) {
+			return ((VariableDeclarationFragment) eContainer).getVariablesContainer().getType().getType();
+		} else if (eContainer instanceof ArrayInitializer) {
+			EObject initializedObject = ((ArrayInitializer) eContainer).eContainer();
+			if (initializedObject instanceof VariableDeclarationFragment) {
+				return ((VariableDeclarationFragment) initializedObject).getVariablesContainer().getType().getType();
+			} else {
+				throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
+			}
+		} else if (eContainer instanceof IfStatement || eContainer instanceof WhileStatement) {
+			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
+					.orElse(null);
+		} else if (eContainer instanceof ArrayLengthAccess) {
+			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeInt).findAny()
+					.orElse(null);
+		} else if (eContainer instanceof CastExpression) {
+			return ((CastExpression) eContainer).getType().getType();
+		} else if (eContainer instanceof FieldAccess) {
+			VariableDeclaration variable = ((FieldAccess) eContainer).getField().getVariable();
+			return getType(pg, variable);
+		} else if (eContainer instanceof ThrowStatement) {
+			// The return type is thrown
+			Type type = getType(pg, "java.lang.Throwable");
+			if (type == null) {
+				type = getType(pg, "java.lang.Exception");
+			}
+			if (type == null) {
+				type = getJavaLangObject(pg);
+			}
+			return type;
+		} else if (eContainer instanceof ArrayAccess) {
+			return getArrayType(pg, (ArrayAccess) eContainer);
+		} else if (eContainer instanceof ArrayCreation) {
+			return ((ArrayCreation) eContainer).getType().getType();
+		} else if (eContainer instanceof ConditionalExpression) {
+			if (((ConditionalExpression) eContainer).getExpression().equals(invocation)) {
+				return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
+						.orElse(null);
+			}
+			return getJavaLangObject(pg);
+		} else {
+			throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
 		}
-		return ret;
+	}
+
+	/**
+	 * @param pg
+	 * @param arrayAccess
+	 * @return
+	 */
+	private static Type getArrayType(MGravityModel pg, ArrayAccess arrayAccess) {
+		Expression expression = arrayAccess.getArray();
+		if (expression instanceof SingleVariableAccess) {
+			VariableDeclaration variable = ((SingleVariableAccess) expression).getVariable();
+			return getType(pg, variable);
+		} else if (expression instanceof AbstractMethodInvocation) {
+			return getJavaLangObject(pg);
+		} else {
+			throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
+		}
+	}
+
+	/**
+	 * Search the method or field containing the statement
+	 * 
+	 * @param statement The statement
+	 * @return The definition containing the statement
+	 */
+	private static MDefinition getContainingMethod(EObject statement) {
+		EObject eContainer = statement;
+		while (!(eContainer instanceof MDefinition)) {
+			eContainer = eContainer.eContainer();
+		}
+		return (MDefinition) eContainer;
+	}
+
+	/**
+	 * Gets the type or a possible type of the variable
+	 * 
+	 * @param pg       The program model containing the variable
+	 * @param variable The variable
+	 * @return The type of the variable
+	 */
+	private static Type getType(MGravityModel pg, VariableDeclaration variable) {
+		if (variable instanceof VariableDeclarationFragment) {
+			TypeAccess typeAccess = ((VariableDeclarationFragment) variable).getVariablesContainer().getType();
+			if (typeAccess == null) {
+				return getJavaLangObject(pg);
+			} else {
+				return typeAccess.getType();
+			}
+		} else {
+			throw new IllegalStateException("Unknown type: " + variable.eClass().getName());
+		}
+	}
+
+	/**
+	 * Get the variable of the assignment
+	 * 
+	 * @param assignment The assign statement
+	 * @param pg         The model containing the assignment
+	 * @return The variable
+	 */
+	private static Type getAssignmentType(MGravityModel pg, Assignment assignment) {
+		Expression expression = assignment.getLeftHandSide();
+		if (expression instanceof SingleVariableAccess) {
+			return getType(pg, ((SingleVariableAccess) expression).getVariable());
+		} else if (expression instanceof FieldAccess) {
+			return getType(pg, ((FieldAccess) expression).getField().getVariable());
+		} else if (expression instanceof ArrayAccess) {
+			return getArrayType(pg, (ArrayAccess) expression);
+		} else {
+			throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
+		}
 	}
 
 	/**
@@ -355,7 +593,7 @@ public class MoDiscoUtil {
 			boolean contains = false;
 			for (Package tPackage : next) {
 				if (name.equals(tPackage.getName())) {
-					if (i == namespace.length) {
+					if (i == namespace.length - 1) {
 						return tPackage;
 					}
 					next = tPackage.getOwnedPackages();
@@ -384,10 +622,9 @@ public class MoDiscoUtil {
 			if (result.isPresent()) {
 				return result.get();
 			}
-		}
-		else {
+		} else {
 			Package javaPackage = getPackage(model, "java");
-			if(javaPackage == null) {
+			if (javaPackage == null) {
 				javaPackage = JavaFactory.eINSTANCE.createPackage();
 				javaPackage.setName("java");
 				model.getOwnedElements().add(javaPackage);

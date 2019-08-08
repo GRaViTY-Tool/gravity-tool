@@ -48,9 +48,13 @@ import org.gravity.eclipse.io.FileUtils;
  *
  */
 @SuppressWarnings("restriction")
-public class JavaProjectUtil extends EclipseProjectUtil {
+public class JavaProjectUtil {
 	
 	private static final Logger LOGGER = Logger.getLogger(JavaProjectUtil.class);
+	
+	private JavaProjectUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * 
@@ -83,7 +87,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @return The copy
 	 */
 	public static IJavaProject copyJavaProject(IJavaProject project, String nameOfCopy) {
-		IProject tmp = copyProject(project.getProject(), nameOfCopy);
+		IProject tmp = EclipseProjectUtil.copyProject(project.getProject(), nameOfCopy);
 		return convertToJavaProject(tmp);
 	}
 
@@ -121,7 +125,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 		IProject project = EclipseProjectUtil.createProject(name, monitor);
 
 		// Add Java-Nature
-		addNature(project, JavaCore.NATURE_ID, monitor);
+		EclipseProjectUtil.addNature(project, JavaCore.NATURE_ID, monitor);
 
 		IJavaProject javaProject = JavaCore.create(project);
 

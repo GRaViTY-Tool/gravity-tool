@@ -23,7 +23,7 @@ public class UmlParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = GravityUiActivator.getSelection(event);
+		List<?> selection = GravityUiActivator.getSelection(event);
 
 		boolean addUmlSec = MessageDialog.openQuestion(GravityUiActivator.getShell(), "UMLsec", "Should the UMLsec profile be added to the project?");
 		Job job = new UmlCreatorJob(selection, addUmlSec);
