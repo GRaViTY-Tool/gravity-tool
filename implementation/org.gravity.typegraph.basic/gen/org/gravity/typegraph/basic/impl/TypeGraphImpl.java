@@ -36,8 +36,6 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
 
-import com.sun.xml.internal.txw2.output.StreamSerializer;
-
 // <-- [user defined imports]
 import org.eclipse.emf.common.util.BasicEList;
 
