@@ -44,7 +44,6 @@ public class TestHelper {
 				if (project.hasNature(JavaCore.NATURE_ID)) {
 					IJavaProject javaProject = JavaCore.create(project);
 					data.add(new Object[] { project.getName(), javaProject });
-					return data;
 				}
 			} catch (CoreException e) {
 				LOGGER.error(e);
