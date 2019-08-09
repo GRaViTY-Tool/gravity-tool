@@ -77,7 +77,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 					@Override
 					public void run() {
 						Dialog dialog = new RefactoringDialog(shell, Messages.executeRefactoring,
-								PUMHandler.getPUMMessage(tParent, tSignature));
+								getPUMMessage(tParent, tSignature));
 						int status = dialog.open();
 
 						if (status == 0) {
