@@ -62,7 +62,7 @@ public class EclipseMoveMethodRefactoring {
 	public boolean moveMethod(TClass tSourceClass, TClass tTargetClass, TMethodSignature tMethod,
 					IProgressMonitor monitor) throws JavaModelException {
 		if (tSourceClass.isTLib() || tTargetClass.isTLib()) {
-			LOGGER.log(Level.ERROR, "Source or target class is library.");
+			LOGGER.log(Level.ERROR, Messages.targetIsLib);
 			return false;
 		}
 
@@ -79,7 +79,7 @@ public class EclipseMoveMethodRefactoring {
 
 		MoveMethodDescriptor refactoringDescriptor = (MoveMethodDescriptor) RefactoringCore
 				.getRefactoringContribution(IJavaRefactorings.MOVE_METHOD)
-				.createDescriptor(IJavaRefactorings.MOVE_METHOD, project.getProject().getName(), "move method", "", map,
+				.createDescriptor(IJavaRefactorings.MOVE_METHOD, project.getProject().getName(), Messages.moveMethod, "", map, //$NON-NLS-2$
 						RefactoringDescriptor.MULTI_CHANGE);
 		RefactoringStatus status = new RefactoringStatus();
 		try {
@@ -119,13 +119,13 @@ public class EclipseMoveMethodRefactoring {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put(JavaRefactoringDescriptorUtil.ATTRIBUTE_INPUT, method.getHandleIdentifier());
 		map.put(JavaRefactoringDescriptorUtil.ATTRIBUTE_NAME, method.getElementName());
-		map.put("deprecate", "false");
-		map.put("remove", "true");
-		map.put("inline", "true");
-		map.put("getter", "true");
-		map.put("setter", "true");
-		map.put("targetName", trg.getElementName());
-		map.put("targetIndex", "0");
+		map.put("deprecate", "false"); //$NON-NLS-1$ //$NON-NLS-2$
+		map.put("remove", "true"); //$NON-NLS-1$ //$NON-NLS-2$
+		map.put("inline", "true"); //$NON-NLS-1$ //$NON-NLS-2$
+		map.put("getter", "true"); //$NON-NLS-1$ //$NON-NLS-2$
+		map.put("setter", "true"); //$NON-NLS-1$ //$NON-NLS-2$
+		map.put("targetName", trg.getElementName()); //$NON-NLS-1$
+		map.put("targetIndex", "0"); //$NON-NLS-1$ //$NON-NLS-2$
 		return map;
 	}
 	
