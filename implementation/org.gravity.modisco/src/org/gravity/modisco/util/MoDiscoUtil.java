@@ -26,7 +26,6 @@ import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.CastExpression;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.ConditionalExpression;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.ExpressionStatement;
@@ -311,14 +310,47 @@ public class MoDiscoUtil {
 	 */
 	private static Type guessReturnTypeOfCall(MGravityModel pg, AbstractMethodInvocation invocation) {
 		EObject eContainer = invocation.eContainer();
-		if (eContainer instanceof ForStatement || eContainer instanceof ParenthesizedExpression
-				|| eContainer instanceof PrefixExpression || eContainer instanceof InfixExpression) {
+
+		// Statement
+		if (eContainer instanceof Statement) {
+			return guessReturnTypeOfCall(pg, invocation, (Statement) eContainer);
+		}
+
+		// Expression
+		else if (eContainer instanceof Expression) {
+			return guessReturnTypeOfCall(pg, invocation, (Expression) eContainer);
+		}
+
+		// VariableDeclaration
+		else if (eContainer instanceof VariableDeclarationFragment) {
+			return ((VariableDeclarationFragment) eContainer).getVariablesContainer().getType().getType();
+		}
+
+		// AbstractMethodInvocation
+		else if (eContainer instanceof AbstractMethodInvocation) {
+			return getReturnType(invocation, (AbstractMethodInvocation) eContainer);
+		}
+
+		throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
+	}
+
+	/**
+	 * try to guess the return type of the called method.
+	 * 
+	 * @param pg         The model containing the invocation
+	 * @param invocation The method invocation
+	 * @param statement  The statement containing the invocation
+	 * @return The return type of the method
+	 */
+	private static Type guessReturnTypeOfCall(MGravityModel pg, AbstractMethodInvocation invocation,
+			Statement statement) {
+		if (statement instanceof ForStatement) {
 			return getJavaLangObject(pg);
-		} else if (eContainer instanceof ExpressionStatement) {
+		} else if (statement instanceof ExpressionStatement) {
 			return null;
 			// We cannot handle infix expressions but its also no error
-		} else if (eContainer instanceof ReturnStatement) {
-			MDefinition definition = getContainingMethod((Statement) eContainer);
+		} else if (statement instanceof ReturnStatement) {
+			MDefinition definition = getContainingMethod((Statement) statement);
 			if (definition instanceof MMethodDefinition) {
 				return getAndFixReturnType(((MMethodDefinition) definition));
 			} else if (definition instanceof MConstructorDefinition) {
@@ -326,76 +358,111 @@ public class MoDiscoUtil {
 			} else if (definition instanceof AbstractVariablesContainer) {
 				return ((AbstractVariablesContainer) definition).getType().getType();
 			} else {
-				throw new IllegalStateException("Unknown MAbstractMethodDefinition: " + eContainer.eClass().getName());
+				throw new IllegalStateException("Unknown MAbstractMethodDefinition: " + statement.eClass().getName());
 			}
-		} else if (eContainer instanceof AbstractMethodInvocation) {
-			AbstractMethodInvocation methodInvocation = (AbstractMethodInvocation) eContainer;
-			int index = methodInvocation.getArguments().indexOf(invocation);
-			if (index >= 0) {
-				return methodInvocation.getMethod().getParameters().get(index).getType().getType();
-			} else {
-				if (methodInvocation instanceof MethodInvocation) {
-					Expression expression = ((MethodInvocation) methodInvocation).getExpression();
-					if (expression.equals(invocation)) {
-						return methodInvocation.getMethod().getAbstractTypeDeclaration();
-					} else {
-						throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
-					}
-				} else {
-					throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
-				}
-			}
-		} else if (eContainer instanceof Assignment) {
-			return getAssignmentType(pg, (Assignment) eContainer);
-		} else if (eContainer instanceof VariableDeclarationFragment) {
-			return ((VariableDeclarationFragment) eContainer).getVariablesContainer().getType().getType();
-		} else if (eContainer instanceof ArrayInitializer) {
-			EObject initializedObject = ((ArrayInitializer) eContainer).eContainer();
+		} else if (statement instanceof IfStatement || statement instanceof WhileStatement) {
+			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
+					.orElse(null);
+		} else if (statement instanceof ThrowStatement) {
+			// The return type is thrown
+			return getThrowableClassOrObject(pg);
+		}
+		throw new IllegalStateException("Unhandeled epression: " + statement.eClass().getName());
+	}
+
+	/**
+	 * try to guess the return type of the called method.
+	 * 
+	 * @param pg         The model containing the invocation
+	 * @param invocation The method invocation
+	 * @param expression The expression containing the invocation
+	 * @return The return type of the method
+	 */
+	private static Type guessReturnTypeOfCall(MGravityModel pg, AbstractMethodInvocation invocation,
+			Expression expression) {
+		if (expression instanceof ParenthesizedExpression || expression instanceof PrefixExpression
+				|| expression instanceof InfixExpression) {
+			return getJavaLangObject(pg);
+		} else if (expression instanceof Assignment) {
+			return getAssignmentType(pg, (Assignment) expression);
+		} else if (expression instanceof ArrayInitializer) {
+			EObject initializedObject = ((ArrayInitializer) expression).eContainer();
 			if (initializedObject instanceof VariableDeclarationFragment) {
 				return ((VariableDeclarationFragment) initializedObject).getVariablesContainer().getType().getType();
 			} else {
-				throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
+				throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
 			}
-		} else if (eContainer instanceof IfStatement || eContainer instanceof WhileStatement) {
-			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
-					.orElse(null);
-		} else if (eContainer instanceof ArrayLengthAccess) {
+		} else if (expression instanceof ArrayLengthAccess) {
 			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeInt).findAny()
 					.orElse(null);
-		} else if (eContainer instanceof CastExpression) {
-			return ((CastExpression) eContainer).getType().getType();
-		} else if (eContainer instanceof FieldAccess) {
-			VariableDeclaration variable = ((FieldAccess) eContainer).getField().getVariable();
+		} else if (expression instanceof CastExpression) {
+			return ((CastExpression) expression).getType().getType();
+		} else if (expression instanceof FieldAccess) {
+			VariableDeclaration variable = ((FieldAccess) expression).getField().getVariable();
 			return getType(pg, variable);
-		} else if (eContainer instanceof ThrowStatement) {
-			// The return type is thrown
-			Type type = getType(pg, "java.lang.Throwable");
-			if (type == null) {
-				type = getType(pg, "java.lang.Exception");
-			}
-			if (type == null) {
-				type = getJavaLangObject(pg);
-			}
-			return type;
-		} else if (eContainer instanceof ArrayAccess) {
-			return getArrayType(pg, (ArrayAccess) eContainer);
-		} else if (eContainer instanceof ArrayCreation) {
-			return ((ArrayCreation) eContainer).getType().getType();
-		} else if (eContainer instanceof ConditionalExpression) {
-			if (((ConditionalExpression) eContainer).getExpression().equals(invocation)) {
+		} else if (expression instanceof ArrayAccess) {
+			return getArrayType(pg, (ArrayAccess) expression);
+		} else if (expression instanceof ArrayCreation) {
+			return ((ArrayCreation) expression).getType().getType();
+		} else if (expression instanceof ConditionalExpression) {
+			if (((ConditionalExpression) expression).getExpression().equals(invocation)) {
 				return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
 						.orElse(null);
 			}
 			return getJavaLangObject(pg);
+		}
+		throw new IllegalStateException("Unhandeled epression: " + expression.eClass().getName());
+	}
+
+	/**
+	 * Search in the program model for a throwable class or java.lang.Object
+	 * 
+	 * @param pg The program model
+	 * @return The type
+	 */
+	private static Type getThrowableClassOrObject(MGravityModel pg) {
+		Type type = getType(pg, "java.lang.Throwable");
+		if (type == null) {
+			type = getType(pg, "java.lang.Exception");
+		}
+		if (type == null) {
+			type = getJavaLangObject(pg);
+		}
+		return type;
+	}
+
+	/**
+	 * Guess the return type of a method invocation based on an other invocation
+	 * containing the invocation
+	 * 
+	 * @param invocation The invocation whose return type should be guessed
+	 * @param container  The invocation containing the other one
+	 * @return The guessed return type
+	 */
+	private static Type getReturnType(AbstractMethodInvocation invocation, AbstractMethodInvocation container) {
+		int index = container.getArguments().indexOf(invocation);
+		if (index >= 0) {
+			return container.getMethod().getParameters().get(index).getType().getType();
 		} else {
-			throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
+			if (container instanceof MethodInvocation) {
+				Expression expression = ((MethodInvocation) container).getExpression();
+				if (expression.equals(invocation)) {
+					return container.getMethod().getAbstractTypeDeclaration();
+				} else {
+					throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+				}
+			} else {
+				throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+			}
 		}
 	}
 
 	/**
-	 * @param pg
-	 * @param arrayAccess
-	 * @return
+	 * Guesses the type of the accessed array
+	 * 
+	 * @param pg          The program model containing the array
+	 * @param arrayAccess The access to the array
+	 * @return The type of the array
 	 */
 	private static Type getArrayType(MGravityModel pg, ArrayAccess arrayAccess) {
 		Expression expression = arrayAccess.getArray();
