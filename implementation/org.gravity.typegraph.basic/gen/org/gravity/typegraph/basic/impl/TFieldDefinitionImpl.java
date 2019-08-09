@@ -84,6 +84,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TFieldSignature getSignature() {
 		if (eContainerFeatureID() != BasicPackage.TFIELD_DEFINITION__SIGNATURE) return null;
 		return (TFieldSignature)eInternalContainer();
@@ -104,6 +105,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSignature(TFieldSignature newSignature) {
 		if (newSignature != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD_DEFINITION__SIGNATURE && newSignature != null)) {
 			if (EcoreUtil.isAncestor(this, newSignature))
@@ -125,6 +127,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TFieldDefinition getHiding() {
 		if (hiding != null && hiding.eIsProxy()) {
 			InternalEObject oldHiding = (InternalEObject)hiding;
@@ -166,6 +169,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHiding(TFieldDefinition newHiding) {
 		if (newHiding != hiding) {
 			NotificationChain msgs = null;
@@ -185,6 +189,7 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TFieldDefinition> getHiddenBy() {
 		if (hiddenBy == null) {
 			hiddenBy = new EObjectWithInverseResolvingEList<TFieldDefinition>(TFieldDefinition.class, this, BasicPackage.TFIELD_DEFINITION__HIDDEN_BY, BasicPackage.TFIELD_DEFINITION__HIDING);

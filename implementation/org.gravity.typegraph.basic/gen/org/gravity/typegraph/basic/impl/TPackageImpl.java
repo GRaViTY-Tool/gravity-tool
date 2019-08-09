@@ -150,6 +150,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getPg() {
 		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PG) return null;
 		return (TypeGraph)eInternalContainer();
@@ -170,6 +171,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPg(TypeGraph newPg) {
 		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TPACKAGE__PG && newPg != null)) {
 			if (EcoreUtil.isAncestor(this, newPg))
@@ -191,6 +193,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TPackage> getSubpackage() {
 		if (subpackage == null) {
 			subpackage = new EObjectContainmentWithInverseEList<TPackage>(TPackage.class, this, BasicPackage.TPACKAGE__SUBPACKAGE, BasicPackage.TPACKAGE__PARENT);
@@ -203,6 +206,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TPackage getParent() {
 		if (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT) return null;
 		return (TPackage)eInternalContainer();
@@ -223,6 +227,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(TPackage newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TPACKAGE__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -244,6 +249,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getClasses() {
 		if (classes == null) {
 			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TPACKAGE__CLASSES);
@@ -256,6 +262,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getInterfaces() {
 		if (interfaces == null) {
 			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this, BasicPackage.TPACKAGE__INTERFACES);
@@ -268,6 +275,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAbstractType> getOwnedTypes() {
 		if (ownedTypes == null) {
 			ownedTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TPACKAGE__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PACKAGE);
@@ -280,6 +288,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getTypeGraph() {
 		if (typeGraph != null && typeGraph.eIsProxy()) {
 			InternalEObject oldTypeGraph = (InternalEObject)typeGraph;
@@ -306,6 +315,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeGraph(TypeGraph newTypeGraph) {
 		TypeGraph oldTypeGraph = typeGraph;
 		typeGraph = newTypeGraph;
@@ -318,6 +328,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTName() {
 		return tName;
 	}
@@ -327,6 +338,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTName(String newTName) {
 		String oldTName = tName;
 		tName = newTName;
@@ -344,7 +356,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 		LinkedList<String> names = new LinkedList<>();
 		TPackage current = this;
 		while (current != null) {
-			names.add(current.getTName());
+			names.add(0, current.getTName());
 			TPackage parent = getParent();
 			if (parent == current) {
 				break;

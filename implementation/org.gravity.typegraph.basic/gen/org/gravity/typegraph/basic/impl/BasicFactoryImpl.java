@@ -120,6 +120,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAccess createTAccess() {
 		TAccessImpl tAccess = new TAccessImpl();
 		return tAccess;
@@ -130,6 +131,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass createTClass() {
 		TClassImpl tClass = new TClassImpl();
 		return tClass;
@@ -140,6 +142,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TField createTField() {
 		TFieldImpl tField = new TFieldImpl();
 		return tField;
@@ -150,6 +153,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TFieldDefinition createTFieldDefinition() {
 		TFieldDefinitionImpl tFieldDefinition = new TFieldDefinitionImpl();
 		return tFieldDefinition;
@@ -160,6 +164,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TFieldSignature createTFieldSignature() {
 		TFieldSignatureImpl tFieldSignature = new TFieldSignatureImpl();
 		return tFieldSignature;
@@ -170,6 +175,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TCall createTCall() {
 		TCallImpl tCall = new TCallImpl();
 		return tCall;
@@ -180,6 +186,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethod createTMethod() {
 		TMethodImpl tMethod = new TMethodImpl();
 		return tMethod;
@@ -190,6 +197,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodDefinition createTMethodDefinition() {
 		TMethodDefinitionImpl tMethodDefinition = new TMethodDefinitionImpl();
 		return tMethodDefinition;
@@ -200,6 +208,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodSignature createTMethodSignature() {
 		TMethodSignatureImpl tMethodSignature = new TMethodSignatureImpl();
 		return tMethodSignature;
@@ -210,6 +219,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TPackage createTPackage() {
 		TPackageImpl tPackage = new TPackageImpl();
 		return tPackage;
@@ -220,6 +230,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameter createTParameter() {
 		TParameterImpl tParameter = new TParameterImpl();
 		return tParameter;
@@ -230,6 +241,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameterList createTParameterList() {
 		TParameterListImpl tParameterList = new TParameterListImpl();
 		return tParameterList;
@@ -240,6 +252,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph createTypeGraph() {
 		TypeGraphImpl typeGraph = new TypeGraphImpl();
 		return typeGraph;
@@ -250,6 +263,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TInterface createTInterface() {
 		TInterfaceImpl tInterface = new TInterfaceImpl();
 		return tInterface;
@@ -260,6 +274,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TConstructorName createTConstructorName() {
 		TConstructorNameImpl tConstructorName = new TConstructorNameImpl();
 		return tConstructorName;
@@ -270,6 +285,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TConstructorSignature createTConstructorSignature() {
 		TConstructorSignatureImpl tConstructorSignature = new TConstructorSignatureImpl();
 		return tConstructorSignature;
@@ -280,6 +296,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TConstructorDefinition createTConstructorDefinition() {
 		TConstructorDefinitionImpl tConstructorDefinition = new TConstructorDefinitionImpl();
 		return tConstructorDefinition;
@@ -290,6 +307,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TRead createTRead() {
 		TReadImpl tRead = new TReadImpl();
 		return tRead;
@@ -300,6 +318,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TWrite createTWrite() {
 		TWriteImpl tWrite = new TWriteImpl();
 		return tWrite;
@@ -310,6 +329,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TModifier createTModifier() {
 		TModifierImpl tModifier = new TModifierImpl();
 		return tModifier;
@@ -320,6 +340,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TSyntethicMethod createTSyntethicMethod() {
 		TSyntethicMethodImpl tSyntethicMethod = new TSyntethicMethodImpl();
 		return tSyntethicMethod;
@@ -330,6 +351,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TUnresolvedType createTUnresolvedType() {
 		TUnresolvedTypeImpl tUnresolvedType = new TUnresolvedTypeImpl();
 		return tUnresolvedType;
@@ -340,6 +362,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TName createTName() {
 		TNameImpl tName = new TNameImpl();
 		return tName;
@@ -370,6 +393,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BasicPackage getBasicPackage() {
 		return (BasicPackage)getEPackage();
 	}

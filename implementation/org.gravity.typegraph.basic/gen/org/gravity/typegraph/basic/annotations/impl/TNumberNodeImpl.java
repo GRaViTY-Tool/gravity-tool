@@ -71,6 +71,7 @@ public class TNumberNodeImpl extends EObjectImpl implements TNumberNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTNumber() {
 		return tNumber;
 	}
@@ -80,6 +81,7 @@ public class TNumberNodeImpl extends EObjectImpl implements TNumberNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTNumber(String newTNumber) {
 		String oldTNumber = tNumber;
 		tNumber = newTNumber;

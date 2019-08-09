@@ -92,6 +92,7 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getImplementedBy() {
 		if (implementedBy == null) {
 			implementedBy = new EObjectWithInverseResolvingEList.ManyInverse<TClass>(TClass.class, this, BasicPackage.TINTERFACE__IMPLEMENTED_BY, BasicPackage.TCLASS__IMPLEMENTS);
@@ -104,6 +105,7 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getParentInterfaces() {
 		if (parentInterfaces == null) {
 			parentInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TINTERFACE__PARENT_INTERFACES, BasicPackage.TINTERFACE__CHILD_INTERFACES);
@@ -116,6 +118,7 @@ public class TInterfaceImpl extends TAbstractTypeImpl implements TInterface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getChildInterfaces() {
 		if (childInterfaces == null) {
 			childInterfaces = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TINTERFACE__CHILD_INTERFACES, BasicPackage.TINTERFACE__PARENT_INTERFACES);

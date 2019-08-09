@@ -73,6 +73,7 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodSignature> getSignatures() {
 		if (signatures == null) {
 			signatures = new EObjectContainmentWithInverseEList<TMethodSignature>(TMethodSignature.class, this, BasicPackage.TMETHOD__SIGNATURES, BasicPackage.TMETHOD_SIGNATURE__METHOD);
@@ -85,6 +86,7 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getPg() {
 		if (eContainerFeatureID() != BasicPackage.TMETHOD__PG) return null;
 		return (TypeGraph)eInternalContainer();
@@ -105,6 +107,7 @@ public class TMethodImpl extends TNameImpl implements TMethod {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPg(TypeGraph newPg) {
 		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMETHOD__PG && newPg != null)) {
 			if (EcoreUtil.isAncestor(this, newPg))

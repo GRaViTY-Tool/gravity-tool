@@ -71,6 +71,7 @@ public class TTextNodeImpl extends EObjectImpl implements TTextNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTText() {
 		return tText;
 	}
@@ -80,6 +81,7 @@ public class TTextNodeImpl extends EObjectImpl implements TTextNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTText(String newTText) {
 		String oldTText = tText;
 		tText = newTText;

@@ -112,6 +112,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getParentClass() {
 		if (parentClass != null && parentClass.eIsProxy()) {
 			InternalEObject oldParentClass = (InternalEObject)parentClass;
@@ -153,6 +154,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentClass(TClass newParentClass) {
 		if (newParentClass != parentClass) {
 			NotificationChain msgs = null;
@@ -172,6 +174,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getChildClasses() {
 		if (childClasses == null) {
 			childClasses = new EObjectWithInverseResolvingEList<TClass>(TClass.class, this, BasicPackage.TCLASS__CHILD_CLASSES, BasicPackage.TCLASS__PARENT_CLASS);
@@ -184,6 +187,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getImplements() {
 		if (implements_ == null) {
 			implements_ = new EObjectWithInverseResolvingEList.ManyInverse<TInterface>(TInterface.class, this, BasicPackage.TCLASS__IMPLEMENTS, BasicPackage.TINTERFACE__IMPLEMENTED_BY);

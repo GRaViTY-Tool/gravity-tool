@@ -64,6 +64,7 @@ public class TClassNodeImpl extends EObjectImpl implements TClassNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getTClass() {
 		if (tClass != null && tClass.eIsProxy()) {
 			InternalEObject oldTClass = (InternalEObject)tClass;
@@ -90,6 +91,7 @@ public class TClassNodeImpl extends EObjectImpl implements TClassNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTClass(TAbstractType newTClass) {
 		TAbstractType oldTClass = tClass;
 		tClass = newTClass;

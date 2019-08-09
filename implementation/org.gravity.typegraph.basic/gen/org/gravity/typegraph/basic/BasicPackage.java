@@ -25,7 +25,6 @@ import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
  * <!-- end-user-doc -->
  * @see org.gravity.typegraph.basic.BasicFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='org.gravity.typegraph'"
  * @generated
  */
 public interface BasicPackage extends EPackage {
@@ -307,13 +306,22 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get TDefinition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_TYPE___GET_TDEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
+
+	/**
 	 * The operation id for the '<em>Has TMember</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
+	int TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
@@ -322,7 +330,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
+	int TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Fill Same Type</em>' operation.
@@ -331,7 +339,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 10;
+	int TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Is Inner Type</em>' operation.
@@ -340,7 +348,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 11;
+	int TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Get Real Package</em>' operation.
@@ -349,7 +357,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 12;
+	int TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>TAbstract Type</em>' class.
@@ -358,7 +366,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
+	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TClassImpl <em>TClass</em>}' class.
@@ -558,6 +566,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCLASS___GET_TDEFINITION__TSIGNATURE = TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE;
+
+	/**
+	 * The operation id for the '<em>Get TDefinition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCLASS___GET_TDEFINITION__STRING = TABSTRACT_TYPE___GET_TDEFINITION__STRING;
 
 	/**
 	 * The operation id for the '<em>Has TMember</em>' operation.
@@ -2240,6 +2257,15 @@ public interface BasicPackage extends EPackage {
 	int TINTERFACE___GET_TDEFINITION__TSIGNATURE = TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE;
 
 	/**
+	 * The operation id for the '<em>Get TDefinition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TINTERFACE___GET_TDEFINITION__STRING = TABSTRACT_TYPE___GET_TDEFINITION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has TMember</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3146,6 +3172,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___GET_TDEFINITION__TSIGNATURE = TCLASS___GET_TDEFINITION__TSIGNATURE;
+
+	/**
+	 * The operation id for the '<em>Get TDefinition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TUNRESOLVED_TYPE___GET_TDEFINITION__STRING = TCLASS___GET_TDEFINITION__STRING;
 
 	/**
 	 * The operation id for the '<em>Has TMember</em>' operation.
@@ -4644,6 +4679,16 @@ public interface BasicPackage extends EPackage {
 	EOperation getTAbstractType__GetTDefinition__TSignature();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#getTDefinition(java.lang.String) <em>Get TDefinition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get TDefinition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TAbstractType#getTDefinition(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTAbstractType__GetTDefinition__String();
+
+	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TAbstractType#hasTMember(org.gravity.typegraph.basic.TMember) <em>Has TMember</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5912,6 +5957,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE = eINSTANCE.getTAbstractType__GetTDefinition__TSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Get TDefinition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TABSTRACT_TYPE___GET_TDEFINITION__STRING = eINSTANCE.getTAbstractType__GetTDefinition__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Has TMember</b></em>' operation.

@@ -102,6 +102,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethod getMethod() {
 		if (eContainerFeatureID() != BasicPackage.TMETHOD_SIGNATURE__METHOD) return null;
 		return (TMethod)eInternalContainer();
@@ -122,6 +123,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMethod(TMethod newMethod) {
 		if (newMethod != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMETHOD_SIGNATURE__METHOD && newMethod != null)) {
 			if (EcoreUtil.isAncestor(this, newMethod))
@@ -143,6 +145,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameterList getParamList() {
 		return paramList;
 	}
@@ -167,6 +170,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParamList(TParameterList newParamList) {
 		if (newParamList != paramList) {
 			NotificationChain msgs = null;
@@ -186,6 +190,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethodDefinition> getDefinitions() {
 		if (definitions == null) {
 			definitions = new EObjectContainmentWithInverseEList<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, BasicPackage.TMETHOD_DEFINITION__SIGNATURE);
@@ -198,6 +203,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TAbstractType getReturnType() {
 		if (returnType != null && returnType.eIsProxy()) {
 			InternalEObject oldReturnType = (InternalEObject)returnType;
@@ -224,6 +230,7 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReturnType(TAbstractType newReturnType) {
 		TAbstractType oldReturnType = returnType;
 		returnType = newReturnType;

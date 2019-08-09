@@ -68,6 +68,7 @@ public class TSyntethicMethodImpl extends TMemberImpl implements TSyntethicMetho
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodDefinition getOriginalMethodDefinition() {
 		if (eContainerFeatureID() != BasicPackage.TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION) return null;
 		return (TMethodDefinition)eInternalContainer();
@@ -89,6 +90,7 @@ public class TSyntethicMethodImpl extends TMemberImpl implements TSyntethicMetho
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOriginalMethodDefinition(TMethodDefinition newOriginalMethodDefinition) {
 		if (newOriginalMethodDefinition != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION && newOriginalMethodDefinition != null)) {
 			if (EcoreUtil.isAncestor(this, newOriginalMethodDefinition))
@@ -110,6 +112,7 @@ public class TSyntethicMethodImpl extends TMemberImpl implements TSyntethicMetho
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMethodSignature getSignature() {
 		if (signature != null && signature.eIsProxy()) {
 			InternalEObject oldSignature = (InternalEObject)signature;
@@ -136,6 +139,7 @@ public class TSyntethicMethodImpl extends TMemberImpl implements TSyntethicMetho
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSignature(TMethodSignature newSignature) {
 		TMethodSignature oldSignature = signature;
 		signature = newSignature;

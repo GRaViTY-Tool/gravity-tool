@@ -196,6 +196,9 @@
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getTDefinition">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getTDefinition/signature"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getTDefinition.1">
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getTDefinition.1/signatureString"/>
+      </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/hasTMember">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/hasTMember/member"/>
       </genOperations>

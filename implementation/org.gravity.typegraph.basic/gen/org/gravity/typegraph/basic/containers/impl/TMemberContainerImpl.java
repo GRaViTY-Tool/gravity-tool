@@ -65,6 +65,7 @@ public class TMemberContainerImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMember> getTMembers() {
 		if (tMembers == null) {
 			tMembers = new EObjectResolvingEList<TMember>(TMember.class, this, ContainersPackage.TMEMBER_CONTAINER__TMEMBERS);

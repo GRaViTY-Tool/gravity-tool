@@ -65,6 +65,7 @@ public class TTypeContainerImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAbstractType> getTAbstractTypes() {
 		if (tAbstractTypes == null) {
 			tAbstractTypes = new EObjectResolvingEList<TAbstractType>(TAbstractType.class, this, ContainersPackage.TTYPE_CONTAINER__TABSTRACT_TYPES);

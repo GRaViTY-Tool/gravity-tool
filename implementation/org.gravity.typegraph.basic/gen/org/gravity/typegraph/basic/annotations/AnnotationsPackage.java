@@ -723,6 +723,15 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION_TYPE___GET_TDEFINITION__TSIGNATURE = BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE;
 
 	/**
+	 * The operation id for the '<em>Get TDefinition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_TYPE___GET_TDEFINITION__STRING = BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has TMember</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

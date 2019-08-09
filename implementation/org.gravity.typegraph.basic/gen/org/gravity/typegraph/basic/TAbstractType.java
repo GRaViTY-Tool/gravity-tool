@@ -313,6 +313,14 @@ public interface TAbstractType extends TAnnotatable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @model signatureStringOrdered="false"
+	 * @generated
+	 */
+	TMember getTDefinition(String signatureString);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -350,6 +358,7 @@ public interface TAbstractType extends TAnnotatable {
 	 */
 	TPackage getRealPackage(TAbstractType type);
 	// <-- [user code injected with eMoflon]
+
 
 	// [user code injected with eMoflon] -->
 } // TAbstractType

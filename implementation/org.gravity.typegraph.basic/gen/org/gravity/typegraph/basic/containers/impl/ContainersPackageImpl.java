@@ -174,6 +174,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTTypeContainer() {
 		return tTypeContainerEClass;
 	}
@@ -183,6 +184,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTTypeContainer_TAbstractTypes() {
 		return (EReference)tTypeContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -192,6 +194,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTAccessContainer() {
 		return tAccessContainerEClass;
 	}
@@ -201,6 +204,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAccessContainer_TAccessEdges() {
 		return (EReference)tAccessContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -210,6 +214,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMemberContainer() {
 		return tMemberContainerEClass;
 	}
@@ -219,6 +224,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMemberContainer_TMembers() {
 		return (EReference)tMemberContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -228,6 +234,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTClassContainer() {
 		return tClassContainerEClass;
 	}
@@ -237,6 +244,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTClassContainer_TClass() {
 		return (EReference)tClassContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -246,6 +254,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTFieldContainer() {
 		return tFieldContainerEClass;
 	}
@@ -255,6 +264,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldContainer_TFields() {
 		return (EReference)tFieldContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -264,6 +274,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTFieldDefinitionContainer() {
 		return tFieldDefinitionContainerEClass;
 	}
@@ -273,6 +284,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldDefinitionContainer_TFieldDefinitions() {
 		return (EReference)tFieldDefinitionContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -282,6 +294,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTFieldSignatureContainer() {
 		return tFieldSignatureContainerEClass;
 	}
@@ -291,6 +304,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldSignatureContainer_TFieldSignatures() {
 		return (EReference)tFieldSignatureContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -300,6 +314,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTSignatureContainer() {
 		return tSignatureContainerEClass;
 	}
@@ -309,6 +324,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTSignatureContainer_TSignatures() {
 		return (EReference)tSignatureContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -318,6 +334,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMethodDefinitionContainer() {
 		return tMethodDefinitionContainerEClass;
 	}
@@ -327,6 +344,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinitionContainer_TMethodDefinitions() {
 		return (EReference)tMethodDefinitionContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -336,6 +354,7 @@ public class ContainersPackageImpl extends EPackageImpl implements ContainersPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ContainersFactory getContainersFactory() {
 		return (ContainersFactory)getEFactoryInstance();
 	}

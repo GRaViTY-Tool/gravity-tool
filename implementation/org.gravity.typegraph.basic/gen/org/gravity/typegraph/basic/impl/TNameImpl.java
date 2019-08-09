@@ -70,6 +70,7 @@ public class TNameImpl extends MinimalEObjectImpl.Container implements TName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTName() {
 		return tName;
 	}
@@ -79,6 +80,7 @@ public class TNameImpl extends MinimalEObjectImpl.Container implements TName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTName(String newTName) {
 		String oldTName = tName;
 		tName = newTName;

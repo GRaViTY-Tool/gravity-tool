@@ -70,6 +70,7 @@ public class TAnnotationTypeImpl extends TAbstractTypeImpl implements TAnnotatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAnnotation> getAnnotations() {
 		if (annotations == null) {
 			annotations = new EObjectWithInverseResolvingEList<TAnnotation>(TAnnotation.class, this, AnnotationsPackage.TANNOTATION_TYPE__ANNOTATIONS, AnnotationsPackage.TANNOTATION__TYPE);

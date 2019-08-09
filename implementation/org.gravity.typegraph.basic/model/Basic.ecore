@@ -227,6 +227,9 @@
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="signature" eType="#//TSignature"/>
     </eOperations>
+    <eOperations name="getTDefinition" eType="#//TMember">
+      <eParameters name="signatureString" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eOperations name="hasTMember" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="member" eType="#//TMember"/>
     </eOperations>

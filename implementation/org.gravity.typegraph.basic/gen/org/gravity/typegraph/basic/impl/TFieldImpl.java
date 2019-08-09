@@ -73,6 +73,7 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TFieldSignature> getSignatures() {
 		if (signatures == null) {
 			signatures = new EObjectContainmentWithInverseEList<TFieldSignature>(TFieldSignature.class, this, BasicPackage.TFIELD__SIGNATURES, BasicPackage.TFIELD_SIGNATURE__FIELD);
@@ -85,6 +86,7 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getPg() {
 		if (eContainerFeatureID() != BasicPackage.TFIELD__PG) return null;
 		return (TypeGraph)eInternalContainer();
@@ -105,6 +107,7 @@ public class TFieldImpl extends TNameImpl implements TField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPg(TypeGraph newPg) {
 		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD__PG && newPg != null)) {
 			if (EcoreUtil.isAncestor(this, newPg))

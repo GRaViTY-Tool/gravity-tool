@@ -321,6 +321,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTAccess() {
 		return tAccessEClass;
 	}
@@ -330,6 +331,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAccess_TTarget() {
 		return (EReference)tAccessEClass.getEStructuralFeatures().get(0);
 	}
@@ -339,6 +341,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAccess_TSource() {
 		return (EReference)tAccessEClass.getEStructuralFeatures().get(1);
 	}
@@ -348,6 +351,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAccess_StaticType() {
 		return (EReference)tAccessEClass.getEStructuralFeatures().get(2);
 	}
@@ -357,6 +361,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTClass() {
 		return tClassEClass;
 	}
@@ -366,6 +371,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTClass_ParentClass() {
 		return (EReference)tClassEClass.getEStructuralFeatures().get(0);
 	}
@@ -375,6 +381,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTClass_ChildClasses() {
 		return (EReference)tClassEClass.getEStructuralFeatures().get(1);
 	}
@@ -384,6 +391,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTClass_Implements() {
 		return (EReference)tClassEClass.getEStructuralFeatures().get(2);
 	}
@@ -393,6 +401,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetTMethodDefinitions() {
 		return tClassEClass.getEOperations().get(0);
 	}
@@ -402,6 +411,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetDeclaredTMethodDefinitions() {
 		return tClassEClass.getEOperations().get(1);
 	}
@@ -411,6 +421,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetAllTMembers() {
 		return tClassEClass.getEOperations().get(2);
 	}
@@ -420,6 +431,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetAllTMembersInContainer() {
 		return tClassEClass.getEOperations().get(3);
 	}
@@ -429,6 +441,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetAllChildren() {
 		return tClassEClass.getEOperations().get(4);
 	}
@@ -438,6 +451,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__IsSubTypeOf__TAbstractType() {
 		return tClassEClass.getEOperations().get(5);
 	}
@@ -447,6 +461,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__IsSuperTypeOf__TAbstractType() {
 		return tClassEClass.getEOperations().get(6);
 	}
@@ -456,6 +471,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetAllOutgoingAccesses__TSignature() {
 		return tClassEClass.getEOperations().get(7);
 	}
@@ -465,6 +481,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__HasAParentThisTMember__TMember() {
 		return tClassEClass.getEOperations().get(8);
 	}
@@ -474,6 +491,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetResolvedParentClass() {
 		return tClassEClass.getEOperations().get(9);
 	}
@@ -483,6 +501,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__ToString() {
 		return tClassEClass.getEOperations().get(10);
 	}
@@ -492,6 +511,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__GetParents() {
 		return tClassEClass.getEOperations().get(11);
 	}
@@ -501,6 +521,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTClass__HasCommonSuperType__TAbstractType() {
 		return tClassEClass.getEOperations().get(12);
 	}
@@ -510,6 +531,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTField() {
 		return tFieldEClass;
 	}
@@ -519,6 +541,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTField_Signatures() {
 		return (EReference)tFieldEClass.getEStructuralFeatures().get(0);
 	}
@@ -528,6 +551,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTField_Pg() {
 		return (EReference)tFieldEClass.getEStructuralFeatures().get(1);
 	}
@@ -537,6 +561,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTFieldDefinition() {
 		return tFieldDefinitionEClass;
 	}
@@ -546,6 +571,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldDefinition_Signature() {
 		return (EReference)tFieldDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -555,6 +581,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldDefinition_Hiding() {
 		return (EReference)tFieldDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -564,6 +591,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldDefinition_HiddenBy() {
 		return (EReference)tFieldDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -573,6 +601,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTFieldSignature() {
 		return tFieldSignatureEClass;
 	}
@@ -582,6 +611,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldSignature_Definitions() {
 		return (EReference)tFieldSignatureEClass.getEStructuralFeatures().get(0);
 	}
@@ -591,6 +621,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldSignature_Field() {
 		return (EReference)tFieldSignatureEClass.getEStructuralFeatures().get(1);
 	}
@@ -600,6 +631,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTFieldSignature_Type() {
 		return (EReference)tFieldSignatureEClass.getEStructuralFeatures().get(2);
 	}
@@ -609,6 +641,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTFieldSignature__GetSignatureString() {
 		return tFieldSignatureEClass.getEOperations().get(0);
 	}
@@ -618,6 +651,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTFieldSignature__GetTDefinition__TAbstractType() {
 		return tFieldSignatureEClass.getEOperations().get(1);
 	}
@@ -627,6 +661,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTCall() {
 		return tCallEClass;
 	}
@@ -636,6 +671,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMember() {
 		return tMemberEClass;
 	}
@@ -645,6 +681,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMember_DefinedBy() {
 		return (EReference)tMemberEClass.getEStructuralFeatures().get(0);
 	}
@@ -654,6 +691,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMember_AccessedBy() {
 		return (EReference)tMemberEClass.getEStructuralFeatures().get(1);
 	}
@@ -663,6 +701,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMember_TAccessing() {
 		return (EReference)tMemberEClass.getEStructuralFeatures().get(2);
 	}
@@ -672,6 +711,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMember_TModifier() {
 		return (EReference)tMemberEClass.getEStructuralFeatures().get(3);
 	}
@@ -681,6 +721,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMember__GetSignature() {
 		return tMemberEClass.getEOperations().get(0);
 	}
@@ -690,6 +731,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMember__GetSignatureString() {
 		return tMemberEClass.getEOperations().get(1);
 	}
@@ -699,6 +741,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMethod() {
 		return tMethodEClass;
 	}
@@ -708,6 +751,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethod_Signatures() {
 		return (EReference)tMethodEClass.getEStructuralFeatures().get(0);
 	}
@@ -717,6 +761,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethod_Pg() {
 		return (EReference)tMethodEClass.getEStructuralFeatures().get(1);
 	}
@@ -726,6 +771,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMethodDefinition() {
 		return tMethodDefinitionEClass;
 	}
@@ -735,6 +781,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_Signature() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -744,6 +791,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_Overriding() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -753,6 +801,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_OverriddenBy() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -762,6 +811,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_Overloading() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(3);
 	}
@@ -771,6 +821,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_OverloadedBy() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(4);
 	}
@@ -780,6 +831,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_ReturnType() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(5);
 	}
@@ -789,6 +841,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodDefinition_SyntethicMethods() {
 		return (EReference)tMethodDefinitionEClass.getEStructuralFeatures().get(6);
 	}
@@ -798,6 +851,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMethodDefinition__ToString() {
 		return tMethodDefinitionEClass.getEOperations().get(0);
 	}
@@ -807,6 +861,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTMethodSignature() {
 		return tMethodSignatureEClass;
 	}
@@ -816,6 +871,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodSignature_Method() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(0);
 	}
@@ -825,6 +881,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodSignature_ParamList() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(1);
 	}
@@ -834,6 +891,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodSignature_Definitions() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(2);
 	}
@@ -843,6 +901,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTMethodSignature_ReturnType() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(3);
 	}
@@ -852,6 +911,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMethodSignature__GetSignatureString() {
 		return tMethodSignatureEClass.getEOperations().get(0);
 	}
@@ -861,6 +921,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMethodSignature__GetTDefinition__TAbstractType() {
 		return tMethodSignatureEClass.getEOperations().get(1);
 	}
@@ -870,6 +931,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTMethodSignature__ToString() {
 		return tMethodSignatureEClass.getEOperations().get(2);
 	}
@@ -879,6 +941,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTPackage() {
 		return tPackageEClass;
 	}
@@ -888,6 +951,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_Pg() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(0);
 	}
@@ -897,6 +961,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_Subpackage() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(1);
 	}
@@ -906,6 +971,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_Parent() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(2);
 	}
@@ -915,6 +981,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_Classes() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(3);
 	}
@@ -924,6 +991,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_Interfaces() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(4);
 	}
@@ -933,6 +1001,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_OwnedTypes() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(5);
 	}
@@ -942,6 +1011,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTPackage_TypeGraph() {
 		return (EReference)tPackageEClass.getEStructuralFeatures().get(6);
 	}
@@ -951,6 +1021,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTPackage_TName() {
 		return (EAttribute)tPackageEClass.getEStructuralFeatures().get(7);
 	}
@@ -960,6 +1031,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTPackage__GetFullyQualifiedName() {
 		return tPackageEClass.getEOperations().get(0);
 	}
@@ -969,6 +1041,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTPackage__GetAllOwnedTypes() {
 		return tPackageEClass.getEOperations().get(1);
 	}
@@ -978,6 +1051,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTPackage__GetAllOwnedClasses() {
 		return tPackageEClass.getEOperations().get(2);
 	}
@@ -987,6 +1061,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTPackage__GetBasePackage() {
 		return tPackageEClass.getEOperations().get(3);
 	}
@@ -996,6 +1071,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTParameter() {
 		return tParameterEClass;
 	}
@@ -1005,6 +1081,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTParameter_Next() {
 		return (EReference)tParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -1014,6 +1091,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTParameter_Previous() {
 		return (EReference)tParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -1023,6 +1101,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTParameter_Type() {
 		return (EReference)tParameterEClass.getEStructuralFeatures().get(2);
 	}
@@ -1032,6 +1111,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTParameterList() {
 		return tParameterListEClass;
 	}
@@ -1041,6 +1121,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTParameterList_Entries() {
 		return (EReference)tParameterListEClass.getEStructuralFeatures().get(0);
 	}
@@ -1050,6 +1131,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTParameterList_First() {
 		return (EReference)tParameterListEClass.getEStructuralFeatures().get(1);
 	}
@@ -1059,6 +1141,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTSignature() {
 		return tSignatureEClass;
 	}
@@ -1068,6 +1151,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTSignature__GetSignatureString() {
 		return tSignatureEClass.getEOperations().get(0);
 	}
@@ -1077,6 +1161,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTSignature__GetTDefinition__TAbstractType() {
 		return tSignatureEClass.getEOperations().get(1);
 	}
@@ -1086,6 +1171,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTypeGraph() {
 		return typeGraphEClass;
 	}
@@ -1095,6 +1181,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_Packages() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(0);
 	}
@@ -1104,6 +1191,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_Methods() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(1);
 	}
@@ -1113,6 +1201,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_Fields() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(2);
 	}
@@ -1122,6 +1211,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_Classes() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(3);
 	}
@@ -1131,6 +1221,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_Interfaces() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(4);
 	}
@@ -1140,6 +1231,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_OwnedTypes() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(5);
 	}
@@ -1149,6 +1241,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTypeGraph_TAnnotationTypes() {
 		return (EReference)typeGraphEClass.getEStructuralFeatures().get(6);
 	}
@@ -1158,6 +1251,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTypeGraph_TName() {
 		return (EAttribute)typeGraphEClass.getEStructuralFeatures().get(7);
 	}
@@ -1167,6 +1261,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetDeclaredTClasses() {
 		return typeGraphEClass.getEOperations().get(0);
 	}
@@ -1176,6 +1271,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__ToString() {
 		return typeGraphEClass.getEOperations().get(1);
 	}
@@ -1185,6 +1281,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetPackage__String() {
 		return typeGraphEClass.getEOperations().get(2);
 	}
@@ -1194,6 +1291,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetPackage__EList() {
 		return typeGraphEClass.getEOperations().get(3);
 	}
@@ -1203,6 +1301,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetClass__String() {
 		return typeGraphEClass.getEOperations().get(4);
 	}
@@ -1212,6 +1311,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetAbstractType__String() {
 		return typeGraphEClass.getEOperations().get(5);
 	}
@@ -1221,6 +1321,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTypeGraph__GetInterface__String() {
 		return typeGraphEClass.getEOperations().get(6);
 	}
@@ -1230,6 +1331,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTInterface() {
 		return tInterfaceEClass;
 	}
@@ -1239,6 +1341,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTInterface_ImplementedBy() {
 		return (EReference)tInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1248,6 +1351,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTInterface_ParentInterfaces() {
 		return (EReference)tInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -1257,6 +1361,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTInterface_ChildInterfaces() {
 		return (EReference)tInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -1266,6 +1371,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTInterface__IsSubTypeOf__TAbstractType() {
 		return tInterfaceEClass.getEOperations().get(0);
 	}
@@ -1275,6 +1381,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTInterface__IsSuperTypeOf__TAbstractType() {
 		return tInterfaceEClass.getEOperations().get(1);
 	}
@@ -1284,6 +1391,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTInterface__HasCommonSuperType__TAbstractType() {
 		return tInterfaceEClass.getEOperations().get(2);
 	}
@@ -1293,6 +1401,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTAbstractType() {
 		return tAbstractTypeEClass;
 	}
@@ -1302,6 +1411,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_Pg() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1311,6 +1421,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_Package() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1320,6 +1431,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_Signature() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(2);
 	}
@@ -1329,6 +1441,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_Defines() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(3);
 	}
@@ -1338,6 +1451,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTAbstractType_TLib() {
 		return (EAttribute)tAbstractTypeEClass.getEStructuralFeatures().get(4);
 	}
@@ -1347,6 +1461,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTAbstractType_TName() {
 		return (EAttribute)tAbstractTypeEClass.getEStructuralFeatures().get(5);
 	}
@@ -1356,6 +1471,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_TModifier() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(6);
 	}
@@ -1365,6 +1481,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_InnerTypes() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(7);
 	}
@@ -1374,6 +1491,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTAbstractType_OuterType() {
 		return (EReference)tAbstractTypeEClass.getEStructuralFeatures().get(8);
 	}
@@ -1383,6 +1501,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__IsSuperTypeOf__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(0);
 	}
@@ -1392,6 +1511,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__IsSubTypeOf__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(1);
 	}
@@ -1401,6 +1521,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__IsDeclared() {
 		return tAbstractTypeEClass.getEOperations().get(2);
 	}
@@ -1410,6 +1531,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__GetFullyQualifiedName() {
 		return tAbstractTypeEClass.getEOperations().get(3);
 	}
@@ -1419,6 +1541,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__GetTMethodSignature__String() {
 		return tAbstractTypeEClass.getEOperations().get(4);
 	}
@@ -1428,6 +1551,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__GetTMethodDefinition__String() {
 		return tAbstractTypeEClass.getEOperations().get(5);
 	}
@@ -1437,6 +1561,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__GetBasePackage() {
 		return tAbstractTypeEClass.getEOperations().get(6);
 	}
@@ -1446,6 +1571,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getTAbstractType__GetTDefinition__TSignature() {
 		return tAbstractTypeEClass.getEOperations().get(7);
 	}
@@ -1455,7 +1581,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTAbstractType__HasTMember__TMember() {
+	@Override
+	public EOperation getTAbstractType__GetTDefinition__String() {
 		return tAbstractTypeEClass.getEOperations().get(8);
 	}
 
@@ -1464,7 +1591,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTAbstractType__HasCommonSuperType__TAbstractType() {
+	@Override
+	public EOperation getTAbstractType__HasTMember__TMember() {
 		return tAbstractTypeEClass.getEOperations().get(9);
 	}
 
@@ -1473,7 +1601,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTAbstractType__FillSameType__EList() {
+	@Override
+	public EOperation getTAbstractType__HasCommonSuperType__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(10);
 	}
 
@@ -1482,7 +1611,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTAbstractType__IsInnerType__TAbstractType() {
+	@Override
+	public EOperation getTAbstractType__FillSameType__EList() {
 		return tAbstractTypeEClass.getEOperations().get(11);
 	}
 
@@ -1491,7 +1621,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
+	@Override
+	public EOperation getTAbstractType__IsInnerType__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(12);
 	}
 
@@ -1500,6 +1631,17 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
+		return tAbstractTypeEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTConstructorName() {
 		return tConstructorNameEClass;
 	}
@@ -1509,6 +1651,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTConstructorSignature() {
 		return tConstructorSignatureEClass;
 	}
@@ -1518,6 +1661,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTConstructorDefinition() {
 		return tConstructorDefinitionEClass;
 	}
@@ -1527,6 +1671,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTRead() {
 		return tReadEClass;
 	}
@@ -1536,6 +1681,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTWrite() {
 		return tWriteEClass;
 	}
@@ -1545,6 +1691,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTModifier() {
 		return tModifierEClass;
 	}
@@ -1554,6 +1701,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTModifier_TVisibility() {
 		return (EAttribute)tModifierEClass.getEStructuralFeatures().get(0);
 	}
@@ -1563,6 +1711,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTModifier_IsStatic() {
 		return (EAttribute)tModifierEClass.getEStructuralFeatures().get(1);
 	}
@@ -1572,6 +1721,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTSyntethicMethod() {
 		return tSyntethicMethodEClass;
 	}
@@ -1581,6 +1731,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTSyntethicMethod_OriginalMethodDefinition() {
 		return (EReference)tSyntethicMethodEClass.getEStructuralFeatures().get(0);
 	}
@@ -1590,6 +1741,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTSyntethicMethod_Signature() {
 		return (EReference)tSyntethicMethodEClass.getEStructuralFeatures().get(1);
 	}
@@ -1599,6 +1751,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTUnresolvedType() {
 		return tUnresolvedTypeEClass;
 	}
@@ -1608,6 +1761,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTName() {
 		return tNameEClass;
 	}
@@ -1617,6 +1771,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTName_TName() {
 		return (EAttribute)tNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -1626,6 +1781,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTVisibility() {
 		return tVisibilityEEnum;
 	}
@@ -1635,6 +1791,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BasicFactory getBasicFactory() {
 		return (BasicFactory)getEFactoryInstance();
 	}
@@ -1800,6 +1957,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_BASE_PACKAGE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE);
+		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TDEFINITION__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST);
@@ -2102,6 +2260,9 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTAbstractType__GetTDefinition__TSignature(), this.getTMember(), "getTDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTSignature(), "signature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTAbstractType__GetTDefinition__String(), this.getTMember(), "getTDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signatureString", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getTAbstractType__HasTMember__TMember(), ecorePackage.getEBoolean(), "hasTMember", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTMember(), "member", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -65,6 +65,7 @@ public class TSignatureContainerImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TSignature> getTSignatures() {
 		if (tSignatures == null) {
 			tSignatures = new EObjectResolvingEList<TSignature>(TSignature.class, this, ContainersPackage.TSIGNATURE_CONTAINER__TSIGNATURES);

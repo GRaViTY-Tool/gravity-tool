@@ -92,6 +92,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTKey() {
 		return tKey;
 	}
@@ -101,6 +102,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTKey(String newTKey) {
 		String oldTKey = tKey;
 		tKey = newTKey;
@@ -113,6 +115,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<EObject> getTValue() {
 		if (tValue == null) {
 			tValue = new EObjectContainmentEList<EObject>(EObject.class, this, AnnotationsPackage.TANNOTATION_VALUE__TVALUE);

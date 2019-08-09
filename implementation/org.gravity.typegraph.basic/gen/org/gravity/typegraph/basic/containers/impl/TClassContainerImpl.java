@@ -65,6 +65,7 @@ public class TClassContainerImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getTClass() {
 		if (tClass == null) {
 			tClass = new EObjectResolvingEList<TClass>(TClass.class, this, ContainersPackage.TCLASS_CONTAINER__TCLASS);

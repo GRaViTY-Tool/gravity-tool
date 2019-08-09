@@ -26,7 +26,6 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TInterface;
-import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TName;
 import org.gravity.typegraph.basic.TPackage;
@@ -174,6 +173,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TPackage> getPackages() {
 		if (packages == null) {
 			packages = new EObjectContainmentWithInverseEList<TPackage>(TPackage.class, this, BasicPackage.TYPE_GRAPH__PACKAGES, BasicPackage.TPACKAGE__PG);
@@ -186,6 +186,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMethod> getMethods() {
 		if (methods == null) {
 			methods = new EObjectContainmentWithInverseEList<TMethod>(TMethod.class, this, BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__PG);
@@ -198,6 +199,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TField> getFields() {
 		if (fields == null) {
 			fields = new EObjectContainmentWithInverseEList<TField>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS, BasicPackage.TFIELD__PG);
@@ -210,6 +212,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TClass> getClasses() {
 		if (classes == null) {
 			classes = new EObjectResolvingEList<TClass>(TClass.class, this, BasicPackage.TYPE_GRAPH__CLASSES);
@@ -222,6 +225,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TInterface> getInterfaces() {
 		if (interfaces == null) {
 			interfaces = new EObjectResolvingEList<TInterface>(TInterface.class, this, BasicPackage.TYPE_GRAPH__INTERFACES);
@@ -234,6 +238,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAbstractType> getOwnedTypes() {
 		if (ownedTypes == null) {
 			ownedTypes = new EObjectContainmentWithInverseEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PG);
@@ -246,6 +251,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TAnnotationType> getTAnnotationTypes() {
 		if (tAnnotationTypes == null) {
 			tAnnotationTypes = new EObjectResolvingEList<TAnnotationType>(TAnnotationType.class, this, BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES);
@@ -258,6 +264,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTName() {
 		return tName;
 	}
@@ -267,6 +274,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTName(String newTName) {
 		String oldTName = tName;
 		tName = newTName;

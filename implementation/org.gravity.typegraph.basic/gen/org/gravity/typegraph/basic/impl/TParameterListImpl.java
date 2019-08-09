@@ -82,6 +82,7 @@ public class TParameterListImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TParameter> getEntries() {
 		if (entries == null) {
 			entries = new EObjectContainmentEList<TParameter>(TParameter.class, this, BasicPackage.TPARAMETER_LIST__ENTRIES);
@@ -94,6 +95,7 @@ public class TParameterListImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TParameter getFirst() {
 		if (first != null && first.eIsProxy()) {
 			InternalEObject oldFirst = (InternalEObject)first;
@@ -120,6 +122,7 @@ public class TParameterListImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFirst(TParameter newFirst) {
 		TParameter oldFirst = first;
 		first = newFirst;
