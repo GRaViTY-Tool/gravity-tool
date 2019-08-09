@@ -23,14 +23,14 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
 
-final class MOMJob extends WorkspaceJob {
+public final class MOMJob extends WorkspaceJob {
 	private final ICompilationUnit icu;
 	private final String targetClassName;
 	private final MethodDeclaration method;
 	private final TypeDeclaration sourceType;
 	private final Shell shell;
 
-	MOMJob(ICompilationUnit icu, String targetClassName, MethodDeclaration method,
+	public MOMJob(ICompilationUnit icu, String targetClassName, MethodDeclaration method,
 			TypeDeclaration sourceType, Shell shell) {
 		super(Messages.moveMethod);
 		this.icu = icu;
