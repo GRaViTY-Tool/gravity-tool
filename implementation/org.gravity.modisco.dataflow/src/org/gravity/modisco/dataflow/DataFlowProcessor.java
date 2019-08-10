@@ -149,49 +149,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					}
 				}
 				
-				// Avoiding duplicate flows, because of multiple accesses of the same var/method having the same flows
-				for (FlowNode outNode : outRef) {
-					for (FlowNode inNode : inRef) {
-						// TODO Restructure
-						if (access instanceof MSingleVariableAccess) {
-							for (SingleVariableAccess accessToSameVar : ((MSingleVariableAccess) access).getVariable().getUsageInVariableAccess()) {
-								FlowNode otherAccessNode = reducedDFG.get(accessToSameVar);
-								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
-									continue;
-								}
-								Set<FlowNode> otherAccessInRef = otherAccessNode.getInRef();
-								Set<FlowNode> otherAccessOutRef = otherAccessNode.getOutRef();
-								if (!otherAccessNode.equals(node) && otherAccessInRef.equals(node.getInRef()) 
-										&& otherAccessOutRef.equals(node.getOutRef())) {
-									otherAccessInRef.remove(inNode);
-									otherAccessOutRef.remove(outNode);
-									inNode.getOutRef().remove(otherAccessNode);
-									outNode.getInRef().remove(otherAccessNode);
-								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
-							}
-						} else if (access instanceof MAbstractMethodInvocation) {
-							for (AbstractMethodInvocation invocOfSameMeth : ((MAbstractMethodInvocation) access).getMethod().getUsages()) {
-								FlowNode otherAccessNode = reducedDFG.get(invocOfSameMeth);
-								if (otherAccessNode == null) { // Ignore accesses in different members (which thus are not in current reducedDFG)
-									continue;
-								}
-								Set<FlowNode> otherAccessInRef = otherAccessNode.getInRef();
-								Set<FlowNode> otherAccessOutRef = otherAccessNode.getOutRef();
-								if (!otherAccessNode.equals(node) && otherAccessInRef.equals(node.getInRef()) 
-										&& otherAccessOutRef.equals(node.getOutRef())
-										|| !otherAccessNode.equals(node) && otherAccessOutRef.equals(node.getOutRef())
-										&& otherAccessInRef.isEmpty()
-										&& node.getInRef().iterator().next().getModelElement() instanceof MMethodSignature) {
-									otherAccessInRef.remove(inNode);
-									otherAccessOutRef.remove(outNode);
-									inNode.getOutRef().remove(otherAccessNode);
-									outNode.getInRef().remove(otherAccessNode);
-								} // TODO: Case needed, where in- or outRef don't exactly match (= another incoming or outgoing flow)?
-							}
-						}
-					}
-				}
-				
 				// Setting flows
 				MFlow accessOut = null;
 				for (FlowNode inNode : inRef) { 
