@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IProject;
@@ -72,7 +73,9 @@ public abstract class AbstractParameterizedTransformationTest {
 	@BeforeClass
 	public static void initLogging() {
 		// Set up logging
-	        BasicConfigurator.configure();	
+		BasicConfigurator.configure();	
+		Logger rootLogger = Logger.getRootLogger();
+        	rootLogger.setLevel(Level.WARN);
         }
 
 	/**
