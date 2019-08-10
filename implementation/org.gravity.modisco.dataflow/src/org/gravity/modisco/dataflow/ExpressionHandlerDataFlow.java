@@ -257,54 +257,38 @@ public class ExpressionHandlerDataFlow {
 				MSingleVariableAccess mSVA = ((MSingleVariableAccess) singleVariableAccess);
 				EObject variableContainer = variable.eContainer();
 				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
-					// Handle case a.b = 1; which should (regardless of assignment operator) result in a flow to b
-					if (singleVariableAccess.eContainer() instanceof SingleVariableAccess) {
-						member.addInRef(varDeclNode);
-						mSVA.setAccessKind(AccessKind.READ);
-						if (variableContainer instanceof MFieldDefinition || variable instanceof SingleVariableDeclaration) {
+					switch (assignment.getOperator()) {
+					case ASSIGN:
+						member.addOutRef(varDeclNode);
+						mSVA.setAccessKind(AccessKind.WRITE);
+						if (variableContainer instanceof MFieldDefinition) {
 							statementHandler.getMemberRef().add(member);
 						}
-						if (container instanceof Expression) {
-							handle((Expression) container).addInRef(member);
-						} else if (container instanceof Statement) {
-							statementHandler.handle((Statement) container).addInRef(member);
-						} else {
-							LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in SingleVariableAccess handling.");
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						break;
+					case BIT_AND_ASSIGN:
+					case BIT_OR_ASSIGN:
+					case BIT_XOR_ASSIGN:
+					case DIVIDE_ASSIGN:
+					case LEFT_SHIFT_ASSIGN:
+					case MINUS_ASSIGN:
+					case PLUS_ASSIGN:
+					case REMAINDER_ASSIGN:
+					case RIGHT_SHIFT_SIGNED_ASSIGN:
+					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+					case TIMES_ASSIGN:
+						member.addInRef(varDeclNode); 
+						member.addOutRef(varDeclNode);
+						mSVA.setAccessKind(AccessKind.READWRITE);
+						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						if (variableContainer instanceof MFieldDefinition) {
+							statementHandler.getMemberRef().add(member);
 						}
-					} else {
-						switch (assignment.getOperator()) {
-						case ASSIGN:
-							member.addOutRef(varDeclNode);
-							mSVA.setAccessKind(AccessKind.WRITE);
-							if (variableContainer instanceof MFieldDefinition) {
-								statementHandler.getMemberRef().add(member);
-							}
-							propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-							break;
-						case BIT_AND_ASSIGN:
-						case BIT_OR_ASSIGN:
-						case BIT_XOR_ASSIGN:
-						case DIVIDE_ASSIGN:
-						case LEFT_SHIFT_ASSIGN:
-						case MINUS_ASSIGN:
-						case PLUS_ASSIGN:
-						case REMAINDER_ASSIGN:
-						case RIGHT_SHIFT_SIGNED_ASSIGN:
-						case RIGHT_SHIFT_UNSIGNED_ASSIGN:
-						case TIMES_ASSIGN:
-							member.addInRef(varDeclNode); 
-							member.addOutRef(varDeclNode);
-							mSVA.setAccessKind(AccessKind.READWRITE);
-							propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-							propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-							if (variableContainer instanceof MFieldDefinition) {
-								statementHandler.getMemberRef().add(member);
-							}
-							break;
-						default:
-							LOGGER.log(Level.INFO, "Unknown operator used in assignment");
-							break;
-						}
+						break;
+					default:
+						LOGGER.log(Level.INFO, "Unknown operator used in assignment");
+						break;
 					}
 				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
 					member.addInRef(varDeclNode);
