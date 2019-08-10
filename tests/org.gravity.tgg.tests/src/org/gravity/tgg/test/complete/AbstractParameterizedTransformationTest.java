@@ -18,6 +18,7 @@ import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.tgg.test.activator.MoDiscoTestActivator;
 import org.gravity.tgg.test.util.ToFileLogger;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
