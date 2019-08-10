@@ -230,12 +230,15 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		FlowNode flowNode = reducedDFG.get(node);
 		Set<FlowNode> inRef = flowNode.getInRef();
 		Set<FlowNode> outRef = flowNode.getOutRef();
+		// TODO Review this loop
 		for (FlowNode outNode : outRef) {
 			for (FlowNode inNode : inRef) {
-				if (outNode != inNode) {
-					outNode.addInRef(inNode);
+				if (inNode != flowNode) {
+					if (outNode != inNode) {
+						outNode.addInRef(inNode);
+					}
+					inNode.getOutRef().remove(flowNode);
 				}
-				inNode.getOutRef().remove(flowNode);
 			}
 			outNode.getInRef().remove(flowNode);
 		}

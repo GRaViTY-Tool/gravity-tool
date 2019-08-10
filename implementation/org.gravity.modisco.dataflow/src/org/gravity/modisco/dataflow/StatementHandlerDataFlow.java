@@ -296,7 +296,14 @@ public class StatementHandlerDataFlow {
 	}
 
 	private FlowNode handle(LabeledStatement labeledStatement) {
-		return handle(labeledStatement.getBody());
+		FlowNode member = getFlowNodeForElement(labeledStatement);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		if (labeledStatement != null) {
+			handle(labeledStatement.getBody());
+		}
+		return member;
 	}
 
 	private FlowNode handle(IfStatement ifStatement) {

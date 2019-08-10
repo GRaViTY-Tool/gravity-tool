@@ -86,7 +86,7 @@ public class ExpressionHandlerDataFlow {
 
 		} else if (expression instanceof NullLiteral) {
 			NullLiteral nullLiteral = (NullLiteral) expression;
-			return null;
+			return handle(nullLiteral);
 
 		} else if (expression instanceof ArrayCreation) {
 			ArrayCreation arrayCreation = (ArrayCreation) expression;
@@ -104,8 +104,8 @@ public class ExpressionHandlerDataFlow {
 			return handle(singleVariableAccess);
 
 		} else if (expression instanceof TypeAccess) {
-			TypeAccess typAccess = (TypeAccess) expression;
-			return null;
+			TypeAccess typeAccess = (TypeAccess) expression;
+			return handle(typeAccess);
 
 		} else if (expression instanceof InfixExpression) {
 			InfixExpression infixExpression = (InfixExpression) expression;
@@ -127,7 +127,7 @@ public class ExpressionHandlerDataFlow {
 			return handle(superMethodInvocation);
 		} else if (expression instanceof ThisExpression) {
 			ThisExpression thisExpression = (ThisExpression) expression;
-			return null;
+			return handle(thisExpression);
 
 		} else if (expression instanceof CastExpression) {
 			CastExpression castExpression = (CastExpression) expression;
@@ -140,16 +140,16 @@ public class ExpressionHandlerDataFlow {
 			return handle(booleanLiteral);
 		} else if (expression instanceof CharacterLiteral) {
 			CharacterLiteral characterLiteral = (CharacterLiteral) expression;
-			return null;
+			return handle(characterLiteral);
 		} else if (expression instanceof ConditionalExpression) {
 			ConditionalExpression conditionalExpression = (ConditionalExpression) expression;
 			return handle(conditionalExpression);
 		} else if (expression instanceof ArrayAccess) {
 			ArrayAccess arrayAccess = (ArrayAccess) expression;
-			handle(arrayAccess);
+			return handle(arrayAccess);
 		} else if (expression instanceof TypeLiteral) {
 			TypeLiteral typeLiteral = (TypeLiteral) expression;
-			return null;
+			return handle(typeLiteral);
 		} else if (expression instanceof VariableDeclarationExpression) {
 			VariableDeclarationExpression variableDeclarationExpression = (VariableDeclarationExpression) expression;
 			return handle(variableDeclarationExpression);
@@ -162,7 +162,7 @@ public class ExpressionHandlerDataFlow {
 			return handle(superFieldAccess);
 		} else if (expression instanceof UnresolvedItemAccess) {
 			UnresolvedItemAccess itemAccess = (UnresolvedItemAccess) expression;
-			return null;
+			return handle(itemAccess);
 
 		}
 		LOGGER.log( Level.INFO, "ERROR: Unknown Expression: " + expression);
@@ -219,14 +219,7 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		EObject container = numberLiteral.eContainer();
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in NumberLiteral handling.");
-		}
+		addFlowToContainer(numberLiteral, member);
 		return member;
 	}
 
@@ -261,7 +254,7 @@ public class ExpressionHandlerDataFlow {
 					case ASSIGN:
 						member.addOutRef(varDeclNode);
 						mSVA.setAccessKind(AccessKind.WRITE);
-						if (variableContainer instanceof MFieldDefinition) {
+						if (variableContainer instanceof MFieldDefinition || variableContainer instanceof SingleVariableDeclaration) {
 							statementHandler.getMemberRef().add(member);
 						}
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
@@ -282,7 +275,7 @@ public class ExpressionHandlerDataFlow {
 						mSVA.setAccessKind(AccessKind.READWRITE);
 						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-						if (variableContainer instanceof MFieldDefinition) {
+						if (variableContainer instanceof MFieldDefinition || variableContainer instanceof SingleVariableDeclaration) {
 							statementHandler.getMemberRef().add(member);
 						}
 						break;
@@ -340,6 +333,14 @@ public class ExpressionHandlerDataFlow {
 		}
 		return member;
 	}
+	
+	private FlowNode handle(TypeAccess typeAccess) {
+		FlowNode member = statementHandler.getFlowNodeForElement(typeAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		return member;
+	}
 
 	private FlowNode handle(InfixExpression infixExpression) {
 		FlowNode member = statementHandler.getFlowNodeForElement(infixExpression);
@@ -375,20 +376,17 @@ public class ExpressionHandlerDataFlow {
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
 				FlowNode argumentNode = handle(argument);
-				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
-				argumentNode.addOutRef(paramNode);
+				EList<SingleVariableDeclaration> parameters = calledMethod.getParameters();
+				int indexOf = arguments.indexOf(argument);
+				if (indexOf < parameters.size()) {
+					FlowNode paramNode = miscHandler.handle(parameters.get(indexOf));
+					argumentNode.addOutRef(paramNode);
+				}
 			}
 			statementHandler.getMemberRef().add(member);
 		}
 		statementHandler.getMemberRef().add(member);
-		EObject container = classInstanceCreation.eContainer();
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in ClassInstanceCreation handling.");
-		}
+		addFlowToContainer(classInstanceCreation, member);
 		return member;
 	}
 
@@ -403,14 +401,7 @@ public class ExpressionHandlerDataFlow {
 		}
 		handle(assignment.getLeftHandSide());
 		handle(assignment.getRightHandSide());
-		EObject container = assignment.eContainer();
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in Assignment handling.");
-		}
+		addFlowToContainer(assignment, member);
 		return member;
 	}
 
@@ -429,6 +420,14 @@ public class ExpressionHandlerDataFlow {
 		return member;
 	}
 
+	private FlowNode handle(ThisExpression thisExpression) {
+		FlowNode member = statementHandler.getFlowNodeForElement(thisExpression);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		return member;
+	}
+	
 	private FlowNode handle(CastExpression castExpression) {
 		return handle(castExpression.getExpression());
 	}
@@ -442,14 +441,16 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		EObject container = booleanLiteral.eContainer();
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in BooleanLiteral handling.");
+		addFlowToContainer(booleanLiteral, member);
+		return member;
+	}
+	
+	private FlowNode handle(CharacterLiteral characterLiteral) {
+		FlowNode member = statementHandler.getFlowNodeForElement(characterLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
 		}
+		addFlowToContainer(characterLiteral, member);
 		return member;
 	}
 
@@ -463,6 +464,14 @@ public class ExpressionHandlerDataFlow {
 		member.addInRef(handle(conditionalExpression.getElseExpression()));
 		return member;
 	}
+	
+	private FlowNode handle(TypeLiteral typeLiteral) {
+		FlowNode member = statementHandler.getFlowNodeForElement(typeLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		return member;
+	}
 
 	private FlowNode handle(ArrayAccess arrayAccess) {
 		FlowNode member = statementHandler.getFlowNodeForElement(arrayAccess);
@@ -471,14 +480,7 @@ public class ExpressionHandlerDataFlow {
 		}
 		handle(arrayAccess.getArray());
 		handle(arrayAccess.getIndex());
-		EObject container = arrayAccess.eContainer();
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in ArrayAccess handling.");
-		}
+		addFlowToContainer(arrayAccess, member);
 		return member;
 	}
 	
@@ -504,22 +506,28 @@ public class ExpressionHandlerDataFlow {
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
 				FlowNode argumentNode = handle(argument);
-				FlowNode paramNode = miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
-				argumentNode.addOutRef(paramNode);
+				EList<SingleVariableDeclaration> parameters = calledMethod.getParameters();
+				int indexOf = arguments.indexOf(argument);
+				if (indexOf < parameters.size()) {
+					FlowNode paramNode = miscHandler.handle(parameters.get(indexOf));
+					argumentNode.addOutRef(paramNode);
+				}
 			}
 			statementHandler.getMemberRef().add(member);
 		}
 		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
 			statementHandler.getMemberRef().add(member);
-			EObject container = methodInvocation.eContainer();
-			if (container instanceof Expression) {
-				handle((Expression) container).addInRef(member);
-			} else if (container instanceof Statement) {
-				statementHandler.handle((Statement) container).addInRef(member);
-			} else {
-				LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in MethodInvocation handling.");
-			}
+			addFlowToContainer(methodInvocation, member);
 		}
+		return member;
+	}
+	
+	private FlowNode handle(NullLiteral nullLiteral) {
+		FlowNode member = statementHandler.getFlowNodeForElement(nullLiteral);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		addFlowToContainer(nullLiteral, member);
 		return member;
 	}
 	
@@ -528,7 +536,27 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
+		addFlowToContainer(stringLiteral, member);
 		return member;
+	}
+	
+	private FlowNode handle(UnresolvedItemAccess itemAccess) {
+		FlowNode member = statementHandler.getFlowNodeForElement(itemAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		return member;
+	}
+
+	private void addFlowToContainer(Expression expression, FlowNode member) {
+		EObject container = expression.eContainer();
+		if (container instanceof Expression) {
+			handle((Expression) container).addInRef(member);
+		} else if (container instanceof Statement) {
+			statementHandler.handle((Statement) container).addInRef(member);
+		} else {
+			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in " + expression.getClass().getSimpleName() + " handling.");
+		}
 	}
 	
 	private void propagateBackReadAccess(LinkedList<EObject> seenContainers, FlowNode currentNode) {

@@ -71,9 +71,11 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 					mSig.getMDefinitions().add(definition);
 					MEntry mFirstEntry = mSig.getMParameterList().getMFirstEntry();
 					EList<SingleVariableDeclaration> defParams = definition.getParameters();
-					mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
-					for (int i = 1; i < mSig.getMParameterList().getMEntrys().size(); i++) {
-						mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
+					if (mFirstEntry != null) {
+						mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
+						for (int i = 1; i < mSig.getMParameterList().getMEntrys().size(); i++) {
+							mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
+						}
 					}
 					continue;
 				}
