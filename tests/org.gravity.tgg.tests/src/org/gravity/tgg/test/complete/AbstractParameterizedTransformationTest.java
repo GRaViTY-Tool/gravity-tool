@@ -67,11 +67,11 @@ public abstract class AbstractParameterizedTransformationTest {
 				.substring("platform:/base/".length());
 	}
 
-//	@BeforeClass
-//	public static void initLogging() {
-//		// Set up logging
-//		BasicConfigurator.configure();
-//	}
+	@BeforeClass
+	public static void initLogging() {
+		// Set up logging
+	        BasicConfigurator.configure();	
+        }
 
 	/**
 	 * The method for collecting the java projects from the workspace.
