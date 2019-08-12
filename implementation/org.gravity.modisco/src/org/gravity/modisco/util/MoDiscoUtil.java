@@ -210,7 +210,7 @@ public class MoDiscoUtil {
 			returnType = JavaFactory.eINSTANCE.createTypeAccess();
 			method.setReturnType(returnType);
 			MGravityModel pg = method.getModel();
-			returnType.setType(getVoid(pg));
+			returnType.setType(getJavaLangObject(pg));
 			
 		}
 		Type ret = returnType.getType();
