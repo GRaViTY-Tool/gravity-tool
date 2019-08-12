@@ -37,17 +37,16 @@ Darmstadt.
 
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.gravity.refactorings"/>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.gravity.hulk.refactoringgraph"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.emf.henshin.model"/>
       <import plugin="org.eclipse.emf.henshin.interpreter"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.apache.log4j"/>
    </requires>
 
