@@ -184,11 +184,11 @@
       <layout>p2</layout>
       <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
-    <repository>
+    <!--<repository>
       <id>AccessAnalysis</id>
       <layout>p2</layout>
       <url>http://accessanalysis.sourceforge.net/update</url>
-    </repository>
+    </repository>-->
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>
