@@ -46,7 +46,7 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 
 	@Override
 	public final void testForward() {
-		LOGGER.info("Test UML TGG for: " + project.getProject().getName());
+		LOGGER.info("Test PM TGG for: " + project.getProject().getName());
 	
 		try {
 			FileUtils.recursiveDelete(createSrcName(name, XMI));
