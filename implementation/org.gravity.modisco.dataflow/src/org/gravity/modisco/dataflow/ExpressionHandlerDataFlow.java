@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.ArrayCreation;
@@ -170,7 +171,12 @@ public class ExpressionHandlerDataFlow {
 	}
 
 	private FlowNode handle(SuperFieldAccess superFieldAccess) {
-		return handle(superFieldAccess.getField());
+		FlowNode member = statementHandler.getFlowNodeForElement(superFieldAccess);
+		if (member.isFromAlreadySeen()) {
+			return member;
+		}
+		handle(superFieldAccess.getField());
+		return member;
 	}
 
 	private FlowNode handle(PostfixExpression postfixExpression) {
@@ -369,22 +375,7 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		AbstractMethodDeclaration calledMethod = classInstanceCreation.getMethod();
-		statementHandler.getFlowNodeForElement(calledMethod); // Creating just a FlowNode for the called method; no handling needed
-		handle(classInstanceCreation.getExpression());
-		EList<Expression> arguments = classInstanceCreation.getArguments();
-		if (!arguments.isEmpty()) {
-			for (Expression argument : arguments) {
-				FlowNode argumentNode = handle(argument);
-				EList<SingleVariableDeclaration> parameters = calledMethod.getParameters();
-				int indexOf = arguments.indexOf(argument);
-				if (indexOf < parameters.size()) {
-					FlowNode paramNode = miscHandler.handle(parameters.get(indexOf));
-					argumentNode.addOutRef(paramNode);
-				}
-			}
-			statementHandler.getMemberRef().add(member);
-		}
+		handleArguments(classInstanceCreation, member);
 		statementHandler.getMemberRef().add(member);
 		addFlowToContainer(classInstanceCreation, member);
 		return member;
@@ -414,8 +405,10 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		for (Expression argument : superMethodInvocation.getArguments()) {
-			handle(argument);
+		handleArguments(superMethodInvocation, member);
+		if (((MethodDeclaration) superMethodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+			statementHandler.getMemberRef().add(member);
+			addFlowToContainer(superMethodInvocation, member);
 		}
 		return member;
 	}
@@ -499,9 +492,26 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
+		handleArguments(methodInvocation, member);
+		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+			statementHandler.getMemberRef().add(member);
+			addFlowToContainer(methodInvocation, member);
+		}
+		return member;
+	}
+
+	/**
+	 * Handling the arguments (if present) of a method invocation and adding their flows 
+	 * 
+	 * @param methodInvocation
+	 * @param member
+	 */
+	private void handleArguments(AbstractMethodInvocation methodInvocation, FlowNode member) {
 		AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
 		statementHandler.getFlowNodeForElement(calledMethod); // Creating just a FlowNode for the called method; no handling needed
-		handle(methodInvocation.getExpression());
+		if (methodInvocation instanceof MethodInvocation) {
+			handle(((MethodInvocation) methodInvocation).getExpression());
+		}
 		EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
 			for (Expression argument : arguments) {
@@ -511,15 +521,15 @@ public class ExpressionHandlerDataFlow {
 				if (indexOf < parameters.size()) {
 					FlowNode paramNode = miscHandler.handle(parameters.get(indexOf));
 					argumentNode.addOutRef(paramNode);
+				} else if (parameters.isEmpty()) {
+					LOGGER.log(Level.INFO, "Parameter list is empty, but argument list of called method is not in method " + calledMethod.getClass().getSimpleName());
+				} else {
+					FlowNode paramNode = miscHandler.handle(parameters.get(parameters.size() -1));
+					argumentNode.addOutRef(paramNode);
 				}
 			}
 			statementHandler.getMemberRef().add(member);
 		}
-		if (((MethodDeclaration) calledMethod).getReturnType().getType().getName() != "void") {
-			statementHandler.getMemberRef().add(member);
-			addFlowToContainer(methodInvocation, member);
-		}
-		return member;
 	}
 	
 	private FlowNode handle(NullLiteral nullLiteral) {
