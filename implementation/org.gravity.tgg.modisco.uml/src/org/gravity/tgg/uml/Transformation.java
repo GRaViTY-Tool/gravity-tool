@@ -220,7 +220,8 @@ public class Transformation extends SYNC {
 		if (debugging) {
 			trafo.save(gravityFolder, subMonitor);
 		}
-
+		trafo.terminate();
+		
 		return model;
 	}
 

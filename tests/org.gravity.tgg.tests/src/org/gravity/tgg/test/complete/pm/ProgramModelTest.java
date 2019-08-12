@@ -27,7 +27,7 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 
 	private static final Logger LOGGER = Logger.getLogger(ProgramModelTest.class);
 
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 	/**
 	 * The constructor invoking the given super constructor
@@ -41,10 +41,13 @@ public class ProgramModelTest extends AbstractParameterizedTransformationTest {
 	 */
 	public ProgramModelTest(String name, IJavaProject project) {
 		super(name, project);
+		LOGGER.setLevel(Level.ALL);
 	}
 
 	@Override
 	public final void testForward() {
+		LOGGER.info("Test UML TGG for: " + project.getProject().getName());
+	
 		try {
 			FileUtils.recursiveDelete(createSrcName(name, XMI));
 			FileUtils.recursiveDelete(createTrgFile(name, XMI));

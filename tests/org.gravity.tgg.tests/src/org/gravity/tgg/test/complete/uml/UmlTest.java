@@ -39,11 +39,12 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 
 	private static final boolean ADD_UMLSEC = false;
 	private static final boolean SERIALIZE = false;
-	
+
 	private static final Logger LOGGER = Logger.getLogger(UmlTest.class);
 
 	public UmlTest(String name, IJavaProject project) {
 		super(name, project);
+		LOGGER.setLevel(Level.ALL);
 	}
 
 	/**
@@ -62,6 +63,7 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	 */
 	@Override
 	public void testForward() {
+		LOGGER.info("Test UML TGG for: " + project.getProject().getName());
 		NullProgressMonitor monitor = new NullProgressMonitor();
 		Model model;
 		try {
@@ -70,27 +72,27 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 		} catch (TransformationFailedException | IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			throw new AssertionError(e.getMessage(), e);
-			
+
 		}
-		
-		if(!SERIALIZE) {
+
+		if (!SERIALIZE) {
 			return;
 		}
-		
+
 		String trg = createTrgFile(name, UMLResource.FILE_EXTENSION);
 		File trgFile = new File(trg);
 		LOGGER.log(Level.INFO, trg);
-		
+
 		FileUtils.recursiveDelete(trg);
 		FileUtils.recursiveDelete(createSrcName(name, UMLResource.FILE_EXTENSION));
 		FileUtils.recursiveDelete(createCorrName(name, UMLResource.FILE_EXTENSION));
 		FileUtils.recursiveDelete(createProtocolName(name, UMLResource.FILE_EXTENSION));
 
 		File parentFile = trgFile.getParentFile();
-		if(!parentFile.exists() && !parentFile.mkdirs()) {
-			throw new AssertionError("Couldn't create output directory: "+parentFile.getPath());
+		if (!parentFile.exists() && !parentFile.mkdirs()) {
+			throw new AssertionError("Couldn't create output directory: " + parentFile.getPath());
 		}
-		try (FileOutputStream outputStream = new FileOutputStream(trgFile)){
+		try (FileOutputStream outputStream = new FileOutputStream(trgFile)) {
 			model.eResource().save(outputStream, Collections.emptyMap());
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
@@ -102,7 +104,8 @@ public class UmlTest extends AbstractParameterizedTransformationTest {
 	 * Cleans up the changes
 	 * 
 	 * @param monitor A progress monitor
-	 * @throws IOException If the gravity folder of the project doesn't exists and cannot be created
+	 * @throws IOException   If the gravity folder of the project doesn't exists and
+	 *                       cannot be created
 	 * @throws CoreException If the gravity folder cannot be deleted
 	 */
 	@After
