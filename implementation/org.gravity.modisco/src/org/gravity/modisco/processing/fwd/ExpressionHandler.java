@@ -49,123 +49,69 @@ public class ExpressionHandler {
 			return true; // assume nothing to do is success
 		}
 		if (expression instanceof ArrayLengthAccess) {
-			ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
-			if (!handle(arrayLengthAccess.getArray(), member)) {
-				return false;
-			}
-			return true;
+			return handle(((ArrayLengthAccess) expression).getArray(), member);
 		} else if (expression instanceof FieldAccess) {
 			FieldAccess fieldAccess = (FieldAccess) expression;
 			return handle(fieldAccess, member);
 		} else if (expression instanceof MethodInvocation) {
 			MethodInvocation methodInvocation = (MethodInvocation) expression;
 			return handle(methodInvocation, member);
-
 		} else if (expression instanceof ConstructorInvocation) {
-			ConstructorInvocation constructorInvocation = (ConstructorInvocation) expression;
-			return StatementHandler.handle(constructorInvocation, member);
-
+			return StatementHandler.handle((ConstructorInvocation) expression, member);
 		} else if (expression instanceof StringLiteral) {
-			StringLiteral stringLiteral = (StringLiteral) expression;
 			return true;
-
 		} else if (expression instanceof NullLiteral) {
-			NullLiteral nullLiteral = (NullLiteral) expression;
 			return true;
-
 		} else if (expression instanceof ArrayCreation) {
-			ArrayCreation arrayCreation = (ArrayCreation) expression;
-			return handle(arrayCreation, member);
-
+			return handle((ArrayCreation) expression, member);
 		} else if (expression instanceof ArrayInitializer) {
-			ArrayInitializer arrayInitializer = (ArrayInitializer) expression;
-			return handle(arrayInitializer, member);
+			return handle((ArrayInitializer) expression, member);
 		} else if (expression instanceof NumberLiteral) {
-			NumberLiteral numberLiteral = (NumberLiteral) expression;
 			return true;
-
 		} else if (expression instanceof SingleVariableAccess) {
-			SingleVariableAccess singleVariableAccess = (SingleVariableAccess) expression;
-			return handle(singleVariableAccess, member);
-
+			return handle((SingleVariableAccess) expression, member);
 		} else if (expression instanceof TypeAccess) {
-			TypeAccess typAccess = (TypeAccess) expression;
 			return true;
-
 		} else if (expression instanceof InfixExpression) {
-			InfixExpression infixExpression = (InfixExpression) expression;
-			return handle(infixExpression, member);
+			return handle((InfixExpression) expression, member);
 		} else if (expression instanceof ClassInstanceCreation) {
-			ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) expression;
-			return handle(classInstanceCreation, member);
+			return handle((ClassInstanceCreation) expression, member);
 		} else if (expression instanceof InstanceofExpression) {
-			InstanceofExpression instanceofExpression = (InstanceofExpression) expression;
-			return handle(instanceofExpression, member);
+			return handle(((InstanceofExpression) expression).getLeftOperand(), member);
 		} else if (expression instanceof Assignment) {
-			Assignment assignment = (Assignment) expression;
-			return handle(assignment, member);
+			return handle((Assignment) expression, member);
 		} else if (expression instanceof PrefixExpression) {
-			PrefixExpression prefixExpression = (PrefixExpression) expression;
-			return handle(prefixExpression, member);
+			return handle(((PrefixExpression) expression).getOperand(), member);
 		} else if (expression instanceof SuperMethodInvocation) {
-			SuperMethodInvocation superMethodInvocation = (SuperMethodInvocation) expression;
-			return handle(superMethodInvocation, member);
+			return handle((SuperMethodInvocation) expression, member);
 		} else if (expression instanceof ThisExpression) {
-			ThisExpression thisExpression = (ThisExpression) expression;
 			return true;
-
 		} else if (expression instanceof CastExpression) {
-			CastExpression castExpression = (CastExpression) expression;
-			return handle(castExpression, member);
+			return handle(((CastExpression) expression).getExpression(), member);
 		} else if (expression instanceof ParenthesizedExpression) {
-			ParenthesizedExpression parenthesizedExpression = (ParenthesizedExpression) expression;
-			return handle(parenthesizedExpression, member);
+			return handle(((ParenthesizedExpression) expression).getExpression(), member);
 		} else if (expression instanceof BooleanLiteral) {
-			BooleanLiteral booleanLiteral = (BooleanLiteral) expression;
 			return true;
 		} else if (expression instanceof CharacterLiteral) {
-			CharacterLiteral characterLiteral = (CharacterLiteral) expression;
 			return true;
 		} else if (expression instanceof ConditionalExpression) {
-			ConditionalExpression conditionalExpression = (ConditionalExpression) expression;
-			return handle(conditionalExpression, member);
+			return handle((ConditionalExpression) expression, member);
 		} else if (expression instanceof ArrayAccess) {
 			ArrayAccess arrayAccess = (ArrayAccess) expression;
 			return handle(arrayAccess, member);
 		} else if (expression instanceof TypeLiteral) {
-			TypeLiteral typeLiteral = (TypeLiteral) expression;
 			return true;
 		} else if (expression instanceof VariableDeclarationExpression) {
-			VariableDeclarationExpression variableDeclarationExpression = (VariableDeclarationExpression) expression;
-			return handle(variableDeclarationExpression, member);
+			return handle((VariableDeclarationExpression) expression, member);
 		} else if (expression instanceof PostfixExpression) {
-			PostfixExpression postfixExpression = (PostfixExpression) expression;
-			return handle(postfixExpression, member);
-
+			return handle(((PostfixExpression) expression).getOperand(), member);
 		} else if (expression instanceof SuperFieldAccess) {
-			SuperFieldAccess superFieldAccess = (SuperFieldAccess) expression;
-			return handle(superFieldAccess, member);
+			return handle(((SuperFieldAccess) expression).getField(), member);
 		} else if (expression instanceof UnresolvedItemAccess) {
-			UnresolvedItemAccess itemAccess = (UnresolvedItemAccess) expression;
 			return true;
-
 		}
 		LOGGER.log( Level.INFO, "ERROR: Unknown Expression: " + expression);
 		return false;
-	}
-
-	private static boolean handle(SuperFieldAccess superFieldAccess, MDefinition member) {
-		if (!handle(superFieldAccess.getField(), member)) {
-			return false;
-		}
-		return true;
-	}
-
-	private static boolean handle(PostfixExpression postfixExpression, MDefinition member) {
-		if (!handle(postfixExpression.getOperand(), member)) {
-			return false;
-		}
-		return true;
 	}
 
 	private static boolean handle(VariableDeclarationExpression variableDeclarationExpression, MDefinition member) {
@@ -223,18 +169,17 @@ public class ExpressionHandler {
 			}
 		}
 		else if(variable instanceof SingleVariableDeclaration){
-			SingleVariableDeclaration singleVariableDeclaration = (SingleVariableDeclaration) variable;
-			
+			//TODO: Check what is to do here?
 		}
 		return true;
 	}
 
 	private static boolean handle(InfixExpression infixExpression, MDefinition member) {
 		if (!handle(infixExpression.getLeftOperand(), member)) {
-			return true;
+			return false;
 		}
 		if (!handle(infixExpression.getRightOperand(), member)) {
-			return true;
+			return false;
 		}
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
 			if (!handle(extendedOperand, member)) {
@@ -256,25 +201,11 @@ public class ExpressionHandler {
 		return true;
 	}
 
-	private static boolean handle(InstanceofExpression instanceofExpression, MDefinition member) {
-		if (!handle(instanceofExpression.getLeftOperand(), member)) {
-			return false;
-		}
-		return true;
-	}
-
 	private static boolean handle(Assignment assignment, MDefinition member) {
 		if (!handle(assignment.getLeftHandSide(), member)) {
 			return false;
 		}
 		if (!handle(assignment.getRightHandSide(), member)) {
-			return false;
-		}
-		return true;
-	}
-
-	private static boolean handle(PrefixExpression prefixExpression, MDefinition member) {
-		if (!handle(prefixExpression.getOperand(), member)) {
 			return false;
 		}
 		return true;
@@ -289,24 +220,7 @@ public class ExpressionHandler {
 		if(member.getMMethodInvocations().contains(superMethodInvocation)){
 			return true;
 		}
-		if (!member.getMMethodInvocations().add(superMethodInvocation)) {
-			return false;
-		}
-		return true;
-	}
-
-	private static boolean handle(CastExpression castExpression, MDefinition member) {
-		if (!handle(castExpression.getExpression(), member)) {
-			return false;
-		}
-		return true;
-	}
-
-	private static boolean handle(ParenthesizedExpression parenthesizedExpression, MDefinition member) {
-		if (!handle(parenthesizedExpression.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return member.getMMethodInvocations().add(superMethodInvocation);
 	}
 
 	private static boolean handle(ConditionalExpression conditionalExpression, MDefinition member) {
@@ -368,5 +282,4 @@ public class ExpressionHandler {
 		}
 		return true;
 	}
-
 }

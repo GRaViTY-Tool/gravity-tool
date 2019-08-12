@@ -20,7 +20,6 @@ import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.impl.PullUpMethodImpl;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
-import org.gravity.refactorings.ui.handler.PUMHandler;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
