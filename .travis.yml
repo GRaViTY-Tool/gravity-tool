@@ -1,5 +1,6 @@
 language: java
 dist: bionic
+sudo: false
 cache:
   directories:
   - $HOME/.m2
