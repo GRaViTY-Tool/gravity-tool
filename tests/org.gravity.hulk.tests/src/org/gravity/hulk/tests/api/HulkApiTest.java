@@ -88,36 +88,6 @@ public class HulkApiTest {
 	}
 
 	/**
-	 * The HulkAPI is used to calculate the IGAM metric
-	 * 
-	 * @throws DetectionFailedException If the detection failed
-	 */
-	@Test
-	public void detectIGAM() throws DetectionFailedException {
-		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAM);
-		for (HAnnotation hAnnotation : results) {
-			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				LOGGER.log(Level.INFO, "IGAM = " + ((HMetric) hAnnotation).getValue());
-			}
-		}
-	}
-
-	/**
-	 * The HulkAPI is used to calculate the IGAT metric
-	 * 
-	 * @throws DetectionFailedException If the detection failed
-	 */
-	@Test
-	public void detectIGAT() throws DetectionFailedException {
-		List<HAnnotation> results = HulkAPI.detect(javaProject, new NullProgressMonitor(), AntiPatternNames.IGAT);
-		for (HAnnotation hAnnotation : results) {
-			if (hAnnotation.getTAnnotated() instanceof TypeGraph) {
-				LOGGER.log(Level.INFO, "IGAT = " + ((HMetric) hAnnotation).getValue());
-			}
-		}
-	}
-
-	/**
 	 * The HulkAPI is used to calculate multiple metrics and anti-patterns
 	 * 
 	 * @throws DetectionFailedException If the detection failed
