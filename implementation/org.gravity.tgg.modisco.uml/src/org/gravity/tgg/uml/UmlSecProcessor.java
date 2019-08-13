@@ -35,10 +35,16 @@ import carisma.profile.umlsec.UmlsecFactory;
 import carisma.profile.umlsec.UmlsecPackage;
 import carisma.profile.umlsec.critical;
 
-public class UmlProcessor {
+/**
+ * This processor converts UMLsec stereotypes into comments to be translatable
+ * by the TGG
+ * 
+ * @author speldszus
+ *
+ */
+public class UmlSecProcessor {
 
-	
-	private static final Logger LOGGER = Logger.getLogger(UmlProcessor.class);
+	private static final Logger LOGGER = Logger.getLogger(UmlSecProcessor.class);
 
 	private Model model;
 
@@ -46,7 +52,6 @@ public class UmlProcessor {
 	private Interface iHigh;
 	private Interface iIntegrity;
 	private Interface iSecrecy;
-
 
 	private static final String ANNOTATION_CRITICAL = Critical.class.getSimpleName();
 	private static final String ANNOTATION_HIGH = High.class.getSimpleName();
@@ -57,7 +62,7 @@ public class UmlProcessor {
 	private static final String TAG_INTEGRITY = UmlsecPackage.eINSTANCE.getcritical_Integrity().getName();
 	private static final String TAG_SECRECY = UmlsecPackage.eINSTANCE.getcritical_Secrecy().getName();
 
-	public UmlProcessor(Model model) {
+	public UmlSecProcessor(Model model) {
 		this.model = model;
 
 		String[] namespace = new String[] { "org", "gravity", "security", "annotations", "requirements" };
@@ -73,10 +78,12 @@ public class UmlProcessor {
 			stack.addAll(next.getPackagedElements().parallelStream().filter(p -> p instanceof Model).map(p -> (Model) p)
 					.collect(Collectors.toSet()));
 		}
-		this.iCritical = (Interface) reqPack.getPackagedElement(ANNOTATION_CRITICAL);
-		this.iHigh = (Interface) reqPack.getPackagedElement(ANNOTATION_HIGH);
-		this.iSecrecy = (Interface) reqPack.getPackagedElement(ANNOTATION_SECRECY);
-		this.iIntegrity = (Interface) reqPack.getPackagedElement(ANNOTATION_INTEGRITY);
+		if (reqPack != null) {
+			this.iCritical = (Interface) reqPack.getPackagedElement(ANNOTATION_CRITICAL);
+			this.iHigh = (Interface) reqPack.getPackagedElement(ANNOTATION_HIGH);
+			this.iSecrecy = (Interface) reqPack.getPackagedElement(ANNOTATION_SECRECY);
+			this.iIntegrity = (Interface) reqPack.getPackagedElement(ANNOTATION_INTEGRITY);
+		}
 	}
 
 	public boolean processFwd() throws ProcessingException {
@@ -97,7 +104,7 @@ public class UmlProcessor {
 					}
 				} else {
 					String tag = annotationNameToTagName(body);
-					if(tag == null) {
+					if (tag == null) {
 						continue;
 					}
 
@@ -151,8 +158,8 @@ public class UmlProcessor {
 			if (stereotype instanceof critical) {
 				critical critical = (critical) stereotype;
 
-				processBwd(classifier, signatures, highComments, criticalComment, critical.getHigh(),
-						ANNOTATION_HIGH, TAG_HIGH);
+				processBwd(classifier, signatures, highComments, criticalComment, critical.getHigh(), ANNOTATION_HIGH,
+						TAG_HIGH);
 
 				processBwd(classifier, signatures, secrecyComments, criticalComment, critical.getSecrecy(),
 						ANNOTATION_SECRECY, TAG_SECRECY);
@@ -209,7 +216,8 @@ public class UmlProcessor {
 	 * Maps the name of a annotation to the name of the according tag
 	 * 
 	 * @param name The name of the annotation
-	 * @return the name of the according tag or null it the annotation name is unknown
+	 * @return the name of the according tag or null it the annotation name is
+	 *         unknown
 	 */
 	private String annotationNameToTagName(String name) {
 		String tag;
@@ -250,8 +258,8 @@ public class UmlProcessor {
 
 	/**
 	 * Search for the package with the given namespace in the model
-	 *  
-	 * @param model The UML model
+	 * 
+	 * @param model     The UML model
 	 * @param namespace The namespace array
 	 * @return The package or null
 	 */

@@ -211,8 +211,9 @@ public class Transformation extends SYNC {
 		if (model == null) {
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
+
 		try {
-			new UmlProcessor(model).processFwd();
+			new UmlSecProcessor(model).processFwd();
 		} catch (ProcessingException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -221,7 +222,7 @@ public class Transformation extends SYNC {
 			trafo.save(gravityFolder, subMonitor);
 		}
 		trafo.terminate();
-		
+
 		return model;
 	}
 
@@ -333,7 +334,7 @@ public class Transformation extends SYNC {
 		}
 
 		try {
-			new UmlProcessor((Model) newModel).processBwd();
+			new UmlSecProcessor((Model) newModel).processBwd();
 		} catch (ProcessingException e) {
 			throw new TransformationFailedException(e);
 		}
