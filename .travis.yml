@@ -1,6 +1,8 @@
 language: java
 dist: bionic
 sudo: false
+git:
+  depth: false
 cache:
   directories:
   - $HOME/.m2
