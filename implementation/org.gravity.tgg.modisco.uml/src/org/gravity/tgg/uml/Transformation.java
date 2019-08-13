@@ -28,8 +28,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
@@ -76,7 +74,7 @@ public class Transformation extends SYNC {
 	private static final String UML_FLATTENED_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml_flattened.tgg.xmi";
 	private static final String UML_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.tgg.xmi";
 
-	private Transformation(ResourceSet rs) throws MalformedURLException, IOException {
+	private Transformation() throws IOException {
 		super(createIbexOptions());
 		registerBlackInterpreter(new DemoclesTGGEngine());
 	}
@@ -115,14 +113,13 @@ public class Transformation extends SYNC {
 		rs.getResources().remove(ePackage.eResource());
 	}
 
-	public EPackage loadMetaModelPackage(String uri) throws IOException, MalformedURLException {
+	public EPackage loadMetaModelPackage(String uri) throws IOException {
 		Resource tggResource = loadResource(uri);
-		EPackage tggPackage = (EPackage) tggResource.getContents().get(0);
-		return tggPackage;
+		return (EPackage) tggResource.getContents().get(0);
 	}
 
 	@Override
-	public Resource loadResource(String uri) throws IOException, MalformedURLException {
+	public Resource loadResource(String uri) throws IOException {
 		Resource resource = rs.createResource(URI.createURI(uri));
 		if (uri.startsWith("/")) {
 			resource.load(Collections.emptyMap());
@@ -188,7 +185,7 @@ public class Transformation extends SYNC {
 
 		Transformation trafo;
 		try {
-			trafo = new Transformation(discoverer.getResourceSet());
+			trafo = new Transformation();
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -297,7 +294,7 @@ public class Transformation extends SYNC {
 			throws TransformationFailedException, IOException {
 		Transformation trafo;
 		try {
-			trafo = new Transformation(new ResourceSetImpl());
+			trafo = new Transformation();
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -373,7 +370,7 @@ public class Transformation extends SYNC {
 	/**
 	 * Postprocesses the transformation
 	 */
-	private void postprocessAdditionsBwd() {
+	private void postprocessAdditionsBwd() {		
 		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) getSourceResource()
 				.getContents().get(0);
 

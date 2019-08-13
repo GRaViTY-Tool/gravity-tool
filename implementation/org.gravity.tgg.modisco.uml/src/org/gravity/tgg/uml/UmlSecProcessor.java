@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -75,8 +76,11 @@ public class UmlSecProcessor {
 			if (reqPack != null) {
 				break;
 			}
-			stack.addAll(next.getPackagedElements().parallelStream().filter(p -> p instanceof Model).map(p -> (Model) p)
-					.collect(Collectors.toSet()));
+			if (next != null) {
+				Set<Model> child = next.getPackagedElements().parallelStream().filter(p -> p instanceof Model)
+						.map(p -> (Model) p).collect(Collectors.toSet());
+				stack.addAll(child);
+			}
 		}
 		if (reqPack != null) {
 			this.iCritical = (Interface) reqPack.getPackagedElement(ANNOTATION_CRITICAL);
@@ -183,8 +187,11 @@ public class UmlSecProcessor {
 	private void processBwd(Classifier classifier, HashMap<String, Element> signatures,
 			HashMap<String, Comment> tagComments, Comment criticalComment, List<String> tagValues,
 			String memberAnnotationString, String tagString) throws ProcessingException {
-
-		Comment tagComment = null;
+		if (criticalComment == null) {
+			criticalComment = getComment(classifier, ANNOTATION_CRITICAL, true);
+			criticalComment.getAnnotatedElements().add(iCritical);
+		}
+		Comment tagComment = getComment(criticalComment, tagString, true);
 		for (String value : tagValues) {
 			if (tagComments.remove(value) == null) {
 				// if the signature hasn't already a annotation
@@ -195,14 +202,7 @@ public class UmlSecProcessor {
 					createComment(memberAnnotationString, member);
 				} else {
 					// if the classifier doesn't defines a member with the signature add the
-					// signature to the high tag of the critical comment.
-					if (tagComment == null) {
-						if (criticalComment == null) {
-							criticalComment = getComment(classifier, ANNOTATION_CRITICAL);
-							criticalComment.getAnnotatedElements().add(iCritical);
-						}
-						tagComment = getComment(criticalComment, tagString);
-					}
+					// signature to the according tag of the critical comment.
 					Comment comment = UMLFactory.eINSTANCE.createComment();
 					comment.setBody(value);
 					comment.getAnnotatedElements().add(tagComment);
@@ -321,62 +321,55 @@ public class UmlSecProcessor {
 	private static Comment getComments(Classifier classifier, HashMap<String, Element> signatures,
 			HashMap<String, Comment> highComments, HashMap<String, Comment> secrecyComments,
 			HashMap<String, Comment> integrityComments) {
-		Comment criticalComment = null;
-		for (Comment comment : classifier.getOwnedComments()) {
-			if (ANNOTATION_CRITICAL.equals(comment.getBody())) {
-				criticalComment = comment;
-				for (Comment tag : criticalComment.getOwnedComments()) {
-					HashMap<String, Comment> addto;
-					if (UmlsecPackage.eINSTANCE.getcritical_High().getName().equals(tag.getBody())) {
-						addto = highComments;
-					} else if (UmlsecPackage.eINSTANCE.getcritical_Integrity().getName().equals(tag.getBody())) {
-						addto = integrityComments;
-					} else if (UmlsecPackage.eINSTANCE.getcritical_Secrecy().getName().equals(tag.getBody())) {
-						addto = secrecyComments;
-					} else {
-						continue;
-					}
-					for (Comment value : tag.getOwnedComments()) {
-						addto.put(value.getBody(), value);
-					}
-				}
-				break;
-			}
-		}
 
 		for (Operation operation : classifier.getOperations()) {
-			String signature = SignatureHelper.getSignature(operation);
-			signatures.put(signature, operation);
-			for (Comment comment : operation.getOwnedComments()) {
-				String body = comment.getBody();
-				if (High.class.getSimpleName().equals(body)) {
-					highComments.put(signature, comment);
-				} else if (Integrity.class.getSimpleName().equals(body)) {
-					integrityComments.put(signature, comment);
-				} else if (Secrecy.class.getSimpleName().equals(body)) {
-					secrecyComments.put(signature, comment);
-				}
-			}
+			getComments(signatures, highComments, secrecyComments, integrityComments, operation);
 		}
 
 		for (Property property : classifier.getAttributes()) {
-			String signature = SignatureHelper.getSignature(property);
-			signatures.put(signature, property);
-			for (Comment comment : property.getOwnedComments()) {
-				String body = comment.getBody();
-				if (High.class.getSimpleName().equals(body)) {
-					highComments.put(signature, comment);
-				} else if (Integrity.class.getSimpleName().equals(body)) {
-					integrityComments.put(signature, comment);
-				} else if (Secrecy.class.getSimpleName().equals(body)) {
-					secrecyComments.put(signature, comment);
-				}
+			getComments(signatures, highComments, secrecyComments, integrityComments, property);
+		}
+		
+		Comment criticalComment = getComment(classifier, ANNOTATION_CRITICAL, false);
+		if(criticalComment == null) {
+			return null;
+		}
+		
+		for (Comment tag : criticalComment.getOwnedComments()) {
+			HashMap<String, Comment> addto;
+			if (TAG_HIGH.equals(tag.getBody())) {
+				addto = highComments;
+			} else if (TAG_INTEGRITY.equals(tag.getBody())) {
+				addto = integrityComments;
+			} else if (TAG_SECRECY.equals(tag.getBody())) {
+				addto = secrecyComments;
+			} else {
+				continue;
+			}
+			for (Comment value : tag.getOwnedComments()) {
+				addto.put(value.getBody(), value);
 			}
 		}
 		return criticalComment;
 	}
 
-	private static Comment getComment(Element element, String body) {
+	private static void getComments(HashMap<String, Element> signatures, HashMap<String, Comment> highComments,
+			HashMap<String, Comment> secrecyComments, HashMap<String, Comment> integrityComments, Element operation) {
+		String signature = getSignature(operation);
+		signatures.put(signature, operation);
+		for (Comment comment : operation.getOwnedComments()) {
+			String body = comment.getBody();
+			if (High.class.getSimpleName().equals(body)) {
+				highComments.put(signature, comment);
+			} else if (Integrity.class.getSimpleName().equals(body)) {
+				integrityComments.put(signature, comment);
+			} else if (Secrecy.class.getSimpleName().equals(body)) {
+				secrecyComments.put(signature, comment);
+			}
+		}
+	}
+
+	private static Comment getComment(Element element, String body, boolean create) {
 		Comment newComment = null;
 		for (Comment comment : element.getOwnedComments()) {
 			if (body.equals(comment.getBody())) {
@@ -384,7 +377,7 @@ public class UmlSecProcessor {
 				break;
 			}
 		}
-		if (newComment == null) {
+		if (newComment == null && create) {
 			newComment = UMLFactory.eINSTANCE.createComment();
 			newComment.setBody(body);
 			newComment.getAnnotatedElements().add(element);

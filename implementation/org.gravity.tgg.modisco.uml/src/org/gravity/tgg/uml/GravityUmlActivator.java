@@ -16,6 +16,6 @@ public class GravityUmlActivator extends AbstractUIPlugin {
 	/**
 	 * The plugin ID of this plugin
 	 */
-	public final static String PLUGIN_ID = "org.gravity.tgg.modisco.uml";
+	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.uml";
 
 }
