@@ -237,6 +237,7 @@ public class ExpressionHandlerDataFlow {
 		handle(singleVariableAccess.getQualifier());
 		VariableDeclaration variable = singleVariableAccess.getVariable();
 		FlowNode varDeclNode = statementHandler.getFlowNodeForElement(variable); // No handling desired, as it's easier to use this SingleVariableAccess handling instead
+		MSingleVariableAccess mSVA = ((MSingleVariableAccess) singleVariableAccess);
 		
 		// Assignment flows
 		EObject container = singleVariableAccess.eContainer();
@@ -253,7 +254,6 @@ public class ExpressionHandlerDataFlow {
 				} else {
 					assignmentSide = singleVariableAccess.eContainingFeature();
 				}
-				MSingleVariableAccess mSVA = ((MSingleVariableAccess) singleVariableAccess);
 				EObject variableContainer = variable.eContainer();
 				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
 					switch (assignment.getOperator()) {
@@ -308,6 +308,8 @@ public class ExpressionHandlerDataFlow {
 		}
 		
 		// Non-assignment flows
+		// Non-assignment flows are always read accesses
+		mSVA.setAccessKind(AccessKind.READ);
 		// An access always flows back to its container
 		if (container instanceof Expression) {
 			handle((Expression) container).addInRef(member);
