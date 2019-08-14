@@ -21,6 +21,10 @@ import org.eclipse.jdt.core.dom.TypeDeclaration;
 public class AstUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(AstUtil.class);
+	
+	private AstUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	public static int findLineNumberOfTypeDeclaration(IFile iFile, String typeName) {
 		List<Integer> resultLine = new ArrayList<Integer>();
@@ -41,6 +45,7 @@ public class AstUtil {
 			CompilationUnit unit = (CompilationUnit) parser.createAST(null);
 			unit.accept(new ASTVisitor() {
 
+				@Override
 				public boolean visit(TypeDeclaration node) {
 					if (typeName.equals(node.getName().toString())) {
 						resultLine.set(0, unit.getLineNumber(node.getStartPosition()));
