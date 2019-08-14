@@ -163,6 +163,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						if (outRef.isEmpty()) { // Handling parameter flows, which end in an access (e. g. if access is in an assignment to a local)
 							accessOut.setFlowOwner(access);
 							accessOut.setFlowTarget(access);
+						} else { // Set flowOwner to parameter's member, as the access will be removed in the TGG transformation
+							accessOut.setFlowOwner((MAbstractMethodDefinition) ((MSingleVariableDeclaration) inElement).getMethodDeclaration());
 						}
 					} else {
 						// Also create incoming flow here, if it's not coming from an access (to avoid redundancy)
@@ -193,14 +195,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					if (accessOut == null || !(accessOut.getFlowSource() instanceof MEntry)) {
 						accessOut = ModiscoFactory.eINSTANCE.createMFlow();
 						accessOut.setFlowSource(access);
+						accessOut.setFlowOwner(access);
 					}
 					EObject outElement = outNode.getModelElement();
 					if (outElement instanceof ReturnStatement) {
-						accessOut.setFlowOwner(memberDefTyped);	
 						accessOut.setFlowTarget(memberDefTyped);
 					} else if (outElement instanceof VariableDeclarationFragment) {
 						MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
-						accessOut.setFlowOwner(fieldDef);
 						accessOut.setFlowTarget(fieldDef);
 					} else if (outElement instanceof MSingleVariableDeclaration) {
 						completeFlowForSigParam(outElement, node, accessOut);
@@ -210,11 +211,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							|| outElement instanceof EnhancedForStatement
 							|| outElement instanceof DoStatement
 							|| outElement instanceof SwitchStatement) {
-						accessOut.setFlowOwner(memberDefTyped);
 						accessOut.setFlowTarget(memberDefTyped);
 					} else {
 						MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-						accessOut.setFlowOwner(outTarget);
 						accessOut.setFlowTarget(outTarget);
 					}
 				}
@@ -281,7 +280,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			flow.setFlowOwner(invocation);
 		} else {
 			LOGGER.log(Level.INFO, "AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
-			flow.setFlowOwner(sigParamTarget);
+			flow.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
 		}
 	}
 
