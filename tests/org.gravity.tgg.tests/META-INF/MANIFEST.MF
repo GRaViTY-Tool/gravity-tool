@@ -28,3 +28,5 @@ Export-Package: org.gravity.tgg.test.activator,
  org.gravity.tgg.test.complete.pm,
  org.gravity.tgg.test.preprocessing,
  org.gravity.tgg.test.util
+Bundle-ClassPath: libs/json-simple-3.1.0.jar,
+ .
