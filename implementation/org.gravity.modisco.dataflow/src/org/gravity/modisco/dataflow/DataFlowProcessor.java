@@ -11,7 +11,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
@@ -23,7 +22,6 @@ import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.SwitchStatement;
-import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
@@ -187,16 +185,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							if (inElement instanceof VariableDeclarationFragment) {
 								MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer();
 								accessIn.setFlowSource(fieldDef.getMFieldSignature());
-								// Setting the type access, so that the TGG rules can be applied
-								/* TODO: Might be better to set it in a pre-processing,
-								 as it could be nice to have ALL (not only the flow-related) field accesses,
-								 which in a given member definition
-								*/
-								EList<MSingleVariableAccess> fieldAccesses = memberDefTyped.getMAbstractFieldAccess();
-								MSingleVariableAccess mSVA = (MSingleVariableAccess) access;
-								if (!fieldAccesses.contains(mSVA)) {
-									fieldAccesses.add(mSVA);
-								}
 							} else {
 								accessIn.setFlowSource((MAbstractFlowElement) inElement);
 							}
