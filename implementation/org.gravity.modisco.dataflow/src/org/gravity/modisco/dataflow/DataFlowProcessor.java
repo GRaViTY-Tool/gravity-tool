@@ -23,6 +23,9 @@ import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.SwitchStatement;
+import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
@@ -146,10 +149,21 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						FlowNode defNode = handler.getFlowNodeForElement(methodDef);
 						inRef.add(defNode);
 						defNode.addOutRef(node);
-					} else if (((MethodDeclaration) methodDef).getReturnType().getType().getName() != "void") {
-						FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((AbstractMethodInvocation) access).getMethod()).getMMethodSignature());
-						inRef.add(sigNode);
-						sigNode.addOutRef(node);
+					} else {
+						TypeAccess returnType = ((MethodDeclaration) methodDef).getReturnType();
+						if ((methodDef == null || returnType == null)) {
+							if (!(methodDef instanceof UnresolvedMethodDeclaration)) { // Ignoring UnresolvedMethodDeclarations for now
+							FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+							inRef.add(sigNode);
+							sigNode.addOutRef(node);
+							}
+						} else {
+							if (returnType.getType().getName() != "void") {
+								FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+								inRef.add(sigNode);
+								sigNode.addOutRef(node);
+							}
+						}
 					}
 				}
 				

@@ -495,9 +495,17 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		handleArguments(methodInvocation, member);
-		if (((MethodDeclaration) methodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+		MethodDeclaration method = (MethodDeclaration) methodInvocation.getMethod();
+		TypeAccess returnType = method.getReturnType();
+		// Assuming that unknown null method or type is potentially non-void
+		if (method == null || returnType == null) {
 			statementHandler.getMemberRef().add(member);
 			addFlowToContainer(methodInvocation, member);
+		} else {
+			if (returnType.getType().getName() != "void") {
+				statementHandler.getMemberRef().add(member);
+				addFlowToContainer(methodInvocation, member);
+			}
 		}
 		return member;
 	}
