@@ -15,12 +15,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
+import org.eclipse.gmt.modisco.java.DoStatement;
+import org.eclipse.gmt.modisco.java.EnhancedForStatement;
 import org.eclipse.gmt.modisco.java.ForStatement;
 import org.eclipse.gmt.modisco.java.IfStatement;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
-import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.gmt.modisco.java.SwitchStatement;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
@@ -35,7 +37,6 @@ import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
-import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
@@ -105,7 +106,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node
 				} else if (node instanceof IfStatement 
 						|| node instanceof WhileStatement
-						|| node instanceof ForStatement) { // TODO: Add remaining types
+						|| node instanceof ForStatement
+						|| node instanceof EnhancedForStatement
+						|| node instanceof DoStatement
+						|| node instanceof SwitchStatement) { 
 					// Keep nodes, as a flow into them indicates, that sensitive info can leak implicitly through observation of the construct's behavior
 				} else { // Everything else is reduced in the same way
 					reduceNodeInDFG(node, reducedDFG);
@@ -202,7 +206,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						completeFlowForSigParam(outElement, node, accessOut);
 					} else if (outElement instanceof IfStatement
 							|| outElement instanceof WhileStatement
-							|| outElement instanceof ForStatement) {
+							|| outElement instanceof ForStatement
+							|| outElement instanceof EnhancedForStatement
+							|| outElement instanceof DoStatement
+							|| outElement instanceof SwitchStatement) {
 						accessOut.setFlowOwner(memberDefTyped);
 						accessOut.setFlowTarget(memberDefTyped);
 					} else {
