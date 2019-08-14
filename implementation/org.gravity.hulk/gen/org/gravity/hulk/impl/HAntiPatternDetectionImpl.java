@@ -316,12 +316,6 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 	 */
 	public void createMetricDependencies(DFSGraph graph) {
 
-		Object[] result1_black = HAntiPatternDetectionImpl
-				.pattern_HAntiPatternDetection_2_1_numberOfMembersMetric_blackBB(graph, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[graph] = " + graph + ", "
-					+ "[this] = " + this + ".");
-		}
 		HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_2_1_numberOfMembersMetric_greenBFB(graph, this);
 		//nothing HMemberNumberCalculator nmd = (HMemberNumberCalculator) result1_green[1];
 
@@ -561,25 +555,16 @@ public class HAntiPatternDetectionImpl extends HAntiPatternHandlingImpl implemen
 		if (result1_black != null) {
 			DFSGraph graph = (DFSGraph) result1_black[1];
 			//nothing HDetector hDetector = (HDetector) result1_black[2];
-			return HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_4_2_expressionFB(graph);
+			return graph;
 		} else {
 
-			Object[] result3_black = HAntiPatternDetectionImpl
-					.pattern_HAntiPatternDetection_4_3_CreateDependencyGraph_blackB(this);
-			if (result3_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-			}
-			Object[] result3_green = HAntiPatternDetectionImpl
-					.pattern_HAntiPatternDetection_4_3_CreateDependencyGraph_greenF();
-			DFSGraph graph = (DFSGraph) result3_green[0];
+			DFSGraph graph = DfsFactory.eINSTANCE.createDFSGraph();
 
 			// 
-			HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_4_4_Callextractedmethod_expressionBB(this, graph);
-			// 
-			HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_4_5_Callextractedmethod_expressionBB(this, graph);
-			// 
-			HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_4_6_Callextractedmethod_expressionBB(this, graph);
-			return HAntiPatternDetectionImpl.pattern_HAntiPatternDetection_4_7_expressionFB(graph);
+			createMetricDependencies(graph);			// 
+			createCodeSmellDependencies(graph);			// 
+			createAntiPatternDependencies(graph);
+			return graph;
 		}
 
 	}

@@ -1,6 +1,6 @@
 package org.gravity.eclipse;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -34,10 +34,10 @@ public class GravityActivator extends Plugin {
 	private static GravityActivator plugin;
 
 	/** All known source models with project name as key. */
-	private final Hashtable<String, EObject> sources;
+	private final HashMap<String, EObject> sources;
 
 	/** All target models (PGs) with project name as key. */
-	private final Hashtable<String, EObject> targets;
+	private final HashMap<String, EObject> targets;
 
 	/** All converted projects with project name as key */
 	private final Map<String, IProject> project;
@@ -50,7 +50,7 @@ public class GravityActivator extends Plugin {
 	 */
 	
 	/** The converters for java projects (project name as key). */
-	private final Hashtable<String, IPGConverter> converters;
+	private final HashMap<String, IPGConverter> converters;
 
 	/** The selected converter factory. */
 	private IPGConverterFactory selectedConverterFactory;
@@ -63,10 +63,10 @@ public class GravityActivator extends Plugin {
 	 * loaded.
 	 */
 	public GravityActivator() {
-		this.sources = new Hashtable<String, EObject>();
-		this.targets = new Hashtable<String, EObject>();
-		this.project = new Hashtable<String, IProject>();
-		this.converters  = new Hashtable<String, IPGConverter>();
+		this.sources = new HashMap<String, EObject>();
+		this.targets = new HashMap<String, EObject>();
+		this.project = new HashMap<String, IProject>();
+		this.converters  = new HashMap<String, IPGConverter>();
 	}
 
 	/**
@@ -232,7 +232,7 @@ public class GravityActivator extends Plugin {
 	public boolean discardConverter(IProject project) {
 		if (this.converters.containsKey(project.getName())) {
 			IPGConverter converter = this.converters.remove(project.getName());
-			return converter != null;
+			return converter != null && converter.discard();
 		}
 		return false;
 	}

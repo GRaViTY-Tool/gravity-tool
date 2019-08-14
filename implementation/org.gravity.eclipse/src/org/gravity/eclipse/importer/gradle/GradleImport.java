@@ -11,9 +11,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
@@ -42,7 +42,6 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.JavaModelException;
 import org.gravity.eclipse.importer.ImportException;
 import org.gravity.eclipse.importer.NoRootFolderException;
 import org.gravity.eclipse.importer.ProjectImport;
@@ -66,8 +65,6 @@ public class GradleImport extends ProjectImport {
 
 	private final Set<Path> buildDotGradleFiles;
 	private final Set<Path> includes;
-
-	private Set<String> appliedPlugins;
 
 	private boolean androidApp;
 
@@ -105,9 +102,7 @@ public class GradleImport extends ProjectImport {
 		this.gradleCache = initGradleUserHome();
 		this.gradleBuild = new GradleBuild();
 	}
-	
 
-	
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
@@ -123,7 +118,7 @@ public class GradleImport extends ProjectImport {
 	/**
 	 * Imports the gradle project as single eclipse project
 	 * 
-	 * @param name the desired name of the project
+	 * @param name    the desired name of the project
 	 * @param monitor A progress monitor
 	 * @return The new eclipse java project
 	 * @throws ImportException
@@ -133,8 +128,7 @@ public class GradleImport extends ProjectImport {
 			monitor = new NullProgressMonitor();
 		}
 
-		appliedPlugins = getAppliedPlugins(buildDotGradleFiles);
-		androidApp = appliedPlugins.contains("com.android.application");
+		androidApp = getAppliedPlugins(buildDotGradleFiles).contains("com.android.application");
 
 		build();
 
@@ -199,8 +193,12 @@ public class GradleImport extends ProjectImport {
 			if (!ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
 			}
-		} catch (IOException | InterruptedException e) {
+		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			throw new GradleImportException(e);
+		} catch (InterruptedException e) {
+			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
+			Thread.currentThread().interrupt();
 			throw new GradleImportException(e);
 		}
 	}
@@ -220,7 +218,7 @@ public class GradleImport extends ProjectImport {
 		} catch (IOException e) {
 			throw new GradleImportException(e);
 		}
-		if (javaSourceFiles.size() == 0) {
+		if (javaSourceFiles.isEmpty()) {
 			final String message = "No Java source files found!";
 			LOGGER.log(Level.ERROR, message);
 			throw new GradleImportException(message);
@@ -252,7 +250,7 @@ public class GradleImport extends ProjectImport {
 		} catch (GradleImportException e) {
 			LOGGER.log(Level.INFO, e.getMessage(), e);
 		}
-		if (javaSourceFiles == null || javaSourceFiles.size() == 0) {
+		if (javaSourceFiles == null || javaSourceFiles.isEmpty()) {
 			LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (Path root : includes) {
@@ -293,7 +291,8 @@ public class GradleImport extends ProjectImport {
 			if (sourceFolders.containsKey(key)) {
 				files = sourceFolders.get(key);
 			} else {
-				sourceFolders.put(key, files = new HashSet<>());
+				files = new HashSet<>();
+				sourceFolders.put(key, files);
 			}
 			files.add(sourceFile);
 		}
@@ -327,11 +326,9 @@ public class GradleImport extends ProjectImport {
 	 * 
 	 * @param project The project
 	 * @param monitor A progress monitor
-	 * @throws JavaModelException
-	 * @throws CoreException
+	 * @throws CoreException If the project cannot be changed
 	 */
-	private void linkApkFolderToProject(IJavaProject project, IProgressMonitor monitor)
-			throws JavaModelException, CoreException {
+	private void linkApkFolderToProject(IJavaProject project, IProgressMonitor monitor) throws CoreException {
 		IPath outputLocation = project.getOutputLocation().removeFirstSegments(1);
 		IFolder outputLocationFolder = project.getProject().getFolder(outputLocation);
 		if (!outputLocationFolder.exists()) {
@@ -350,12 +347,11 @@ public class GradleImport extends ProjectImport {
 	 * @param project The project to which the libs should be added
 	 * @return The eclipse project with the required libs
 	 * @throws IOException
-	 * @throws FileNotFoundException
 	 * @throws CoreException
 	 * @throws GradleImportException
 	 */
 	private IJavaProject addRequiredLibsToProject(IJavaProject project, IProgressMonitor monitor)
-			throws IOException, FileNotFoundException, CoreException, GradleImportException {
+			throws IOException, CoreException, GradleImportException {
 		IFolder libFolder = project.getProject().getFolder("lib");
 		Stream<IClasspathEntry> entries = Stream.empty();
 		Collection<Path> requiredLibs = getLibs(buildDotGradleFiles);
@@ -372,11 +368,11 @@ public class GradleImport extends ProjectImport {
 				jarFiles.add(f);
 				EclipseProjectUtil.createLink(file, f, monitor);
 			} else if (libName.endsWith(".aar")) {
-				jarFiles = GradleLibs.extractAar(libPath, libFolder, monitor);
+				jarFiles = GradleLibsUtil.extractAar(libPath, libFolder, monitor);
 			}
-			if (jarFiles.size() == 0) {
-				jarFiles = GradleLibs.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
-				if (jarFiles.size() == 0) {
+			if (jarFiles.isEmpty()) {
+				jarFiles = GradleLibsUtil.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
+				if (jarFiles.isEmpty()) {
 					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
 					continue;
 				}
@@ -410,7 +406,7 @@ public class GradleImport extends ProjectImport {
 	 */
 	private Set<String> getAppliedPlugins(Path path) {
 		Set<String> appliedPlugins = new HashSet<>();
-		if(!Files.exists(path) || !Files.isReadable(path)) {
+		if (!Files.exists(path) || !Files.isReadable(path)) {
 			return Collections.emptySet();
 		}
 		try (Stream<String> lines = Files.lines(path)) {
@@ -427,19 +423,24 @@ public class GradleImport extends ProjectImport {
 	}
 
 	private Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoRootFolderException {
-		Set<Path> buildDotGradleFiles = new HashSet<Path>();
+		Set<Path> subRoots = new HashSet<Path>();
 		File buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
-			buildDotGradleFiles.add(buildFile.toPath());
+			subRoots.add(buildFile.toPath());
 		} else {
 			throw new NoRootFolderException();
 		}
 
 		File settingsFile = new File(rootDir, "settings.gradle");
-		if (settingsFile.exists() || (settingsFile = new File(rootDir, "settings.gradle.kts")).exists()) {
+		boolean exists = settingsFile.exists();
+		if (!exists) {
+			settingsFile = new File(rootDir, "settings.gradle.kts");
+			exists = settingsFile.exists();
+		}
+		if (exists) {
 			String settingsContentString = FileUtils.getContentsAsString(settingsFile);
 
-			Hashtable<String, String> defs = new Hashtable<>();
+			HashMap<String, String> defs = new HashMap<>();
 
 			// 1. get all variable definitions
 			Matcher defMatcher = GradleRegexPatterns.DEFINITION.matcher(settingsContentString);
@@ -448,10 +449,10 @@ public class GradleImport extends ProjectImport {
 			}
 
 			// 2. Search for includes
-			buildDotGradleFiles.addAll(searchIncludes(settingsContentString, rootDir, defs));
+			subRoots.addAll(searchIncludes(settingsContentString, rootDir, defs));
 
 		}
-		return buildDotGradleFiles;
+		return subRoots;
 	}
 
 	/**
@@ -462,11 +463,10 @@ public class GradleImport extends ProjectImport {
 	 * @param rootDir       The gradle root dir
 	 * @param defs          A table of defined vars
 	 * @throws IOException
-	 * @throws NoRootFolderException
 	 */
-	private Set<Path> searchIncludes(String contentString, File rootDir, Hashtable<String, String> defs)
-			throws IOException, NoRootFolderException {
-		Set<Path> buildDotGradleFiles = new HashSet<Path>();
+	private Set<Path> searchIncludes(String contentString, File rootDir, HashMap<String, String> defs)
+			throws IOException {
+		Set<Path> includedFiles = new HashSet<Path>();
 
 		Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);
 		while (includeMatcher.find()) {
@@ -477,9 +477,9 @@ public class GradleImport extends ProjectImport {
 					match = defs.get(var);
 				}
 			}
-			searchSingleInclude(match, rootDir, buildDotGradleFiles);
+			searchSingleInclude(match, rootDir, includedFiles);
 		}
-		return buildDotGradleFiles;
+		return includedFiles;
 
 	}
 
@@ -516,24 +516,24 @@ public class GradleImport extends ProjectImport {
 	private void scanRootForSourceFiles(File rootDir, Set<Path> javaSourceFiles) throws IOException {
 		File srcFolder = new File(rootDir, "src");
 		if (srcFolder.exists()) {
-			File main = new File(srcFolder, "main");
-			if (main.exists()) {
-				srcFolder = main;
+			for (String name : new String[] { "main", "java" }) {
+				File main = new File(srcFolder, name);
+				if (main.exists()) {
+					ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
+					Files.walkFileTree(main.toPath(), extensionFileVisitor);
+					javaSourceFiles.addAll(extensionFileVisitor.getFiles());
+				}
 			}
-			ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor("java");
-			Files.walkFileTree(srcFolder.toPath(), extensionFileVisitor);
-			javaSourceFiles.addAll(extensionFileVisitor.getFiles());
 		}
 	}
 
-	private Collection<Path> getLibs(Collection<Path> buildDotGradleFiles)
-			throws IOException, FileNotFoundException, GradleImportException {
+	private Collection<Path> getLibs(Collection<Path> buildDotGradleFiles) throws IOException, GradleImportException {
 		Set<String> compileLibs = new HashSet<>();
 		Set<String> useLibs = new HashSet<String>();
 
 		SdkVersion sdkVersion = getDependencies(readBuildDotGradleFiles(buildDotGradleFiles), compileLibs, useLibs);
 
-		Hashtable<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
+		Map<String, Path> pathsToLibs = PomParser.searchInCache(compileLibs,
 				new File(this.gradleCache, GRADLE_CACHE));
 		compileLibs.removeAll(pathsToLibs.keySet());
 
@@ -550,7 +550,7 @@ public class GradleImport extends ProjectImport {
 			}
 
 		}
-		if (compileLibs.size() > 0) {
+		if (!compileLibs.isEmpty()) {
 			LOGGER.log(Level.WARN, "The following libs haven't been found on the system:");
 			for (String lib : compileLibs) {
 				LOGGER.log(Level.WARN, "\t" + lib);
@@ -593,7 +593,10 @@ public class GradleImport extends ProjectImport {
 				results.add(f.get());
 			}
 			return results;
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+			throw new GradleImportException(e);
+		} catch (ExecutionException e) {
 			throw new GradleImportException(e);
 		}
 	}
@@ -608,7 +611,7 @@ public class GradleImport extends ProjectImport {
 	 *         otherwise
 	 */
 	private SdkVersion getDependencies(List<String> parsedBuildFiles, Set<String> compileDependencies,
-			Set<String> useDependencies) throws GradleImportException {
+			Set<String> useDependencies) {
 		final SdkVersion sdkVersion = new SdkVersion();
 		parsedBuildFiles.parallelStream().forEach(content -> {
 			getSingleDependencies(content, parsedBuildFiles, compileDependencies, useDependencies);
@@ -649,21 +652,6 @@ public class GradleImport extends ProjectImport {
 
 			}
 		}
-//		Matcher dependenciesMatcher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES.matcher(content);
-//		while (dependenciesMatcher.find()) {
-//			String dependencies = dependenciesMatcher.group(1);
-//			Matcher entryMatecher = GradleRegexPatterns.MULTIPLE_DEPENDENCIES_ENTRY.matcher(dependencies);
-//			while (entryMatecher.find()) {
-//				String dependency = entryMatecher.group(2);
-//				try {
-//					dependency = resolveDependencyString(dependency, content, parsedBuildFiles);
-//					dependenciesSet.add(dependency);
-//				} catch (GradleImportException e) {
-//					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-//				}
-//
-//			}
-//		}
 	}
 
 	/**

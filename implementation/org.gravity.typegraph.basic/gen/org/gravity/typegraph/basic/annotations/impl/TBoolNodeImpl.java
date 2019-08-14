@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.annotations.TBoolNode;
 // <-- [user defined imports]
@@ -26,7 +26,7 @@ import org.gravity.typegraph.basic.annotations.TBoolNode;
  *
  * @generated
  */
-public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
+public class TBoolNodeImpl extends MinimalEObjectImpl.Container implements TBoolNode {
 	/**
 	 * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

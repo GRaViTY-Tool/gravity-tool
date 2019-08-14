@@ -52,20 +52,11 @@ public class RefactoringTool {
 	private Set<String> changes;
 
 	private void initRefactorings() {
-		this.pumRefactoring = new PullUpMethodImpl();
-		this.pumRefactoring.setPg(this.toolPg);
-
-		this.pufRefactoring = new PullUpFieldImpl();
-		this.pufRefactoring.setPg(this.toolPg);
-
-		this.momRefactoring = new MoveMethodImpl();
-		this.momRefactoring.setPg(this.toolPg);
-
-		this.cscRefactoring = new CreateSuperclassImpl();
-		this.cscRefactoring.setPg(this.toolPg);
-
-		this.escRefactoring = new ExtractSuperclassImpl();
-		this.escRefactoring.setPg(this.toolPg);
+		this.pumRefactoring = new PullUpMethodImpl(this.toolPg);
+		this.pufRefactoring = new PullUpFieldImpl(this.toolPg);
+		this.momRefactoring = new MoveMethodImpl(this.toolPg);
+		this.cscRefactoring = new CreateSuperclassImpl(this.toolPg);
+		this.escRefactoring = new ExtractSuperclassImpl(this.toolPg);
 	}
 
 	/**

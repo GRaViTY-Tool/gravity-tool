@@ -106,7 +106,7 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 		for(String extension : fileExtensions) {
 			if (name.endsWith(extension)) {
 				files.add(file);
-				continue;
+				return;
 			}
 		}
 	}

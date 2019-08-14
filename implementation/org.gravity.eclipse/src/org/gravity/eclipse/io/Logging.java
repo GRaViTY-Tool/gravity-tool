@@ -12,6 +12,10 @@ import org.apache.log4j.PatternLayout;
  *
  */
 public class Logging {
+	
+	private Logging() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Inits the log4j logger to log to the console
@@ -29,8 +33,8 @@ public class Logging {
 	 */
 	public static ConsoleAppender createConsoleAppender(Level level) {
 		ConsoleAppender consoleAppender = new ConsoleAppender();
-		String PATTERN = "%d [%p|%c|%C{1}] %m%n";
-		consoleAppender.setLayout(new PatternLayout(PATTERN));
+		String pattern = "%d [%p|%c|%C{1}] %m%n";
+		consoleAppender.setLayout(new PatternLayout(pattern));
 		consoleAppender.setThreshold(level);
 		consoleAppender.activateOptions();
 		return consoleAppender;

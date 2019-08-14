@@ -7,7 +7,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Collection;
-
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -28,6 +28,7 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class TestCase {
 
+	private static final Logger LOGGER = Logger.getLogger(TestCase.class);
 	private Pair data;
 
 	public TestCase(Pair data) {
@@ -39,24 +40,24 @@ public class TestCase {
 		Collection<Pair> data = new ArrayList<>();
 
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		java.nio.file.Path test_workspace = root.getLocation().toFile().toPath();
-		java.nio.file.Path data_workspace = root.getLocation().removeLastSegments(1).append("data_workspace").toFile() //$NON-NLS-1$
+		java.nio.file.Path testWorkspace = root.getLocation().toFile().toPath();
+		java.nio.file.Path dataWorkspace = root.getLocation().removeLastSegments(1).append("data_workspace").toFile() //$NON-NLS-1$
 				.toPath();
-		Files.walkFileTree(data_workspace, new SimpleFileVisitor<java.nio.file.Path>() {
+		Files.walkFileTree(dataWorkspace, new SimpleFileVisitor<java.nio.file.Path>() {
 			@Override
 			public FileVisitResult preVisitDirectory(final java.nio.file.Path dir, final BasicFileAttributes attrs)
 					throws IOException {
 				if (dir.endsWith(".metadata")) { //$NON-NLS-1$
 					return FileVisitResult.SKIP_SUBTREE;
 				}
-				Files.createDirectories(test_workspace.resolve(data_workspace.relativize(dir)));
+				Files.createDirectories(testWorkspace.resolve(dataWorkspace.relativize(dir)));
 				return FileVisitResult.CONTINUE;
 			}
 
 			@Override
 			public FileVisitResult visitFile(final java.nio.file.Path file, final BasicFileAttributes attrs)
 					throws IOException {
-				java.nio.file.Path target = Files.copy(file, test_workspace.resolve(data_workspace.relativize(file)));
+				java.nio.file.Path target = Files.copy(file, testWorkspace.resolve(dataWorkspace.relativize(file)));
 				if (target.endsWith(".project")) { //$NON-NLS-1$
 					try {
 						IProjectDescription description = ResourcesPlugin.getWorkspace()
@@ -65,7 +66,7 @@ public class TestCase {
 						project.create(description, null);
 						project.open(null);
 					} catch (CoreException e) {
-						e.printStackTrace();
+						LOGGER.error(e);
 					}
 				}
 				return FileVisitResult.CONTINUE;
@@ -74,19 +75,19 @@ public class TestCase {
 
 		for (IProject p : root.getProjects()) {
 			if (p.getName().startsWith("__TestProject")) { //$NON-NLS-1$
-				IJavaProject java_project = JavaCore.create(p);
+				IJavaProject javaProject = JavaCore.create(p);
 
-				IFolder arte_folder = p.getFolder("arte"); //$NON-NLS-1$
+				IFolder arteFolder = p.getFolder("arte"); //$NON-NLS-1$
 				p.refreshLocal(IResource.DEPTH_INFINITE, null);
-				if (!arte_folder.exists()) {
-					arte_folder.create(true, true, null);
+				if (!arteFolder.exists()) {
+					arteFolder.create(true, true, null);
 				}
-				for (IResource res : arte_folder.members()) {
+				for (IResource res : arteFolder.members()) {
 					String file_extension = res.getFileExtension();
 					if (res.getType() == IResource.FILE
 							&& ("arte".equals(file_extension) || "ttc".equals(file_extension))) { //$NON-NLS-1$ //$NON-NLS-2$
-						//TODO: Convert to classical JUnit tests
-						
+						// TODO: Convert to classical JUnit tests
+
 //						Test_File test_file = arte.getTest_case_util().parseTestCase((IFile) res);
 //						EList<Test_Case> test_cases = test_file.getTest_cases();
 //						for (Test_Case test_case : test_cases) {
@@ -101,8 +102,8 @@ public class TestCase {
 
 	@Test
 	public void test() {
-		//TODO: Implement tests as classical JUnit tests
-		
+		// TODO: Implement tests as classical JUnit tests
+
 //		LOGGER.log( Level.INFO, "Start GRaViTY Test ***"); //$NON-NLS-1$
 //		Pair test_data = getData();
 //		boolean test_result = arte.getTest_execution().executeTestCase(test_data.getJavaProject(),
@@ -122,12 +123,12 @@ public class TestCase {
 		try {
 			workspace.delete(root.members(), true, null);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		try {
 			root.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 	}
 

@@ -25,7 +25,7 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<Object> selection = GravityUiActivator.getSelection(event);
+		List<?> selection = GravityUiActivator.getSelection(event);
 
 		Job job = new PGCreatorJob(selection);
 		job.setUser(true);
@@ -42,6 +42,10 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
+		catch(Exception e) {
+			LOGGER.log(Level.ERROR, e);
+			return false;
+		}
 	}
 
 	@Override
@@ -50,6 +54,10 @@ public class JavaParseHandler extends AbstractTransformationHandler {
 			return GravityActivator.getDefault().getSelectedConverterFactory().supportsFWDTrafo();
 		} catch (NoConverterRegisteredException | CoreException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			return false;
+		}
+		catch(Exception e) {
+			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
 	}

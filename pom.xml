@@ -9,8 +9,16 @@
   
   <properties>
     <tycho-version>1.4.0</tycho-version>
+    <jacoco.version>0.8.4</jacoco.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    
+    <jacoco.aggregate.reportPaths>${maven.multiModuleProjectDirectory}/org.gravity.coverage/target/jacoco-aggregate/</jacoco.aggregate.reportPaths>
+   
+    <sonar.language>java</sonar.language>
+    <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+    <sonar.coverage.jacoco.xmlReportPaths>${jacoco.aggregate.reportPaths}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.junit.reportPaths>${maven.multiModuleProjectDirectory}/target/surefire-reports</sonar.junit.reportPaths>
   </properties>
 	
   <modules>
@@ -19,6 +27,7 @@
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
     <module>build/org.gravity.features.refactorings</module>
+    <module>build/org.gravity.features.security</module>
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
     <module>build/org.gravity.license.epl</module>
@@ -29,11 +38,11 @@
     <module>implementation/org.gravity.hulk.annotations</module>
     <module>implementation/org.gravity.hulk.antipatterngraph</module>
     <module>implementation/org.gravity.hulk.refactoringgraph</module>
-    <module>implementation/org.gravity.hulk.tests</module>
     <module>implementation/org.gravity.hulk.ui</module>
     <module>implementation/org.gravity.hulk.ui.visualization</module>
     <module>implementation/org.gravity.metrics.sourcemeter</module>
     <module>implementation/org.gravity.modisco</module>
+    <module>implementation/org.gravity.modisco.dataflow</module>
     <module>implementation/org.gravity.refactorings</module>
     <module>implementation/org.gravity.refactorings.ui</module>
     <module>implementation/org.gravity.security.analysis</module>
@@ -42,10 +51,13 @@
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>
+    <module>tests/org.gravity.eclipse.tests</module>
     <module>tests/org.gravity.goblin.tests</module>
+    <module>tests/org.gravity.hulk.tests</module>
     <module>tests/org.gravity.refactorings.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.tgg.modisco.uml.tests</module>
+    <module>org.gravity.coverage</module>
   </modules>
 
   <build>
@@ -60,11 +72,58 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+         <executions>
+           <execution>
+             <id>pre-integration-test</id>
+             <goals>
+               <goal>prepare-agent-integration</goal>
+             </goals>
+             <configuration>
+               <propertyName>surefireArgLine</propertyName>
+             </configuration>
+           </execution>
+           <execution>
+             <id>post-integration-test</id>
+             <phase>post-integration-test</phase>
+             <goals>
+               <goal>report-integration</goal>
+             </goals>
+           </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-surefire-plugin</artifactId>
         <version>${tycho-version}</version>
         <configuration>
-          <skipTests>true</skipTests>
+          <reportsDirectory>${sonar.junit.reportPaths}</reportsDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <environments>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
         </configuration>
       </plugin>
     </plugins>
@@ -126,11 +185,11 @@
       <layout>p2</layout>
       <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
-    <repository>
+    <!--<repository>
       <id>AccessAnalysis</id>
       <layout>p2</layout>
       <url>http://accessanalysis.sourceforge.net/update</url>
-    </repository>
+    </repository>-->
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>
@@ -139,7 +198,7 @@
     <repository>
       <id>CARiSMA</id>
       <layout>p2</layout>
-      <url>http://rgse.uni-koblenz.de/carisma/beta-updatesite/</url>
+      <url>http://carisma.umlsec.de/beta-updatesite</url>
     </repository>
   </repositories>
 </project>

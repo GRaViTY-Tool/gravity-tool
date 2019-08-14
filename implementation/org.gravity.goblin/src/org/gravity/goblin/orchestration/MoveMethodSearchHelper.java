@@ -1,5 +1,6 @@
 package org.gravity.goblin.orchestration;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ import org.eclipse.emf.henshin.interpreter.impl.AssignmentImpl;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.Unit;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.preconditions.MoveMethodPreConditions;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
@@ -30,17 +31,24 @@ import at.ac.tuwien.big.momot.problem.solution.variable.RuleApplicationVariable;
 import at.ac.tuwien.big.momot.problem.solution.variable.UnitApplicationVariable;
 import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
 
+/**
+ * Applies the move method refactoring
+ * 
+ * @author speldszus
+ *
+ */
 public class MoveMethodSearchHelper extends SearchHelper {
-	Random random;
+
+	private Random random;
 
 	private Random getRandom() {
 		if (random == null) {
-			random = new Random();
+			random = new SecureRandom();
 		}
 		return random;
 	}
 
-	MoveMethodTransformationSearchOrchestration orchestration;
+	private MoveMethodTransformationSearchOrchestration orchestration;
 
 	public MoveMethodSearchHelper(MoveMethodTransformationSearchOrchestration orchestration) {
 		this.orchestration = orchestration;
@@ -55,13 +63,13 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	@Override
 	public void setSearchOrchestration(final TransformationSearchOrchestration searchOrchestration) {
 		// empty
-		throw new RuntimeException("");
+		throw new UnsupportedOperationException();
 	}
 
 	private TClass getDifferentRandomClass(EGraph graph, TClass otherTClass) {
-		List<TClass> classes = Utility.getPG(graph).getDeclaredTClasses();
+		List<TClass> classes = EGraphUtil.getPG(graph).getDeclaredTClasses();
 		classes.remove(otherTClass);
-		if (classes.size() == 0) {
+		if (classes.isEmpty()) {
 			return null;
 		}
 		if (classes.size() == 1) {
@@ -82,7 +90,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 			}
 		}
-		if (methodSigs.size() == 0) {
+		if (methodSigs.isEmpty()) {
 			return null;
 		}
 		if (methodSigs.size() == 1) {
@@ -92,27 +100,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		return methodSigs.get(index);
 	}
 
-	private TFieldSignature getRandomFieldSig(TClass sourceClass) {
-		List<TFieldSignature> fieldSigs = new ArrayList<TFieldSignature>();
-		for (TSignature sig : sourceClass.getSignature()) {
-			if (sig instanceof TFieldSignature) {
-				TFieldSignature tfieldSignature = (TFieldSignature) sig;
-				fieldSigs.add(tfieldSignature);
-
-			}
-		}
-		if (fieldSigs.size() == 0) {
-			return null;
-		}
-		if (fieldSigs.size() == 1) {
-			return fieldSigs.get(0);
-		}
-		int index = getRandom().nextInt(fieldSigs.size());
-		return fieldSigs.get(index);
-	}
-
-	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries,
-			List<? extends Unit> units, Unit chosenUnit) {
+	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries, Unit chosenUnit) {
 
 		Assignment assignment = new AssignmentImpl(chosenUnit);
 		Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
@@ -150,7 +138,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 					}
 				}
 			}
-			if (possibleTargets.size() == 0) {
+			if (possibleTargets.isEmpty()) {
 				continue;
 			}
 
@@ -161,7 +149,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 			if (application.execute(getMonitor())) {
 				application.setAssignment(application.getResultAssignment());
-				return clean(application);
+				return cleanVariable(application);
 			} else {
 				application.undo(getMonitor());
 			}
@@ -176,7 +164,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		Unit chosenUnit = CollectionUtil.getRandomElement(units);
 
 		if (chosenUnit.getName().equals("MoveMethodMain")) {
-			return moveMethodTransformationVariable(graph, maxTries, units, chosenUnit);
+			return moveMethodTransformationVariable(graph, maxTries, chosenUnit);
 		} else {
 			return findUnitApplication(graph, maxTries, units, chosenUnit);
 		}
@@ -205,7 +193,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 						for (final Parameter param : chosenUnit.getParameters()) {
 							application.setParameterValue(param, application.getResultParameterValue(param));
 						}
-						return clean(application);
+						return cleanVariable(application);
 					} else {
 						application.undo(getMonitor());
 					}
@@ -214,7 +202,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 				final UnitApplicationVariable application = createApplication(graph, partialMatch);
 				if (application.execute(getMonitor())) {
 					application.setAssignment(application.getResultAssignment());
-					return clean(application);
+					return cleanVariable(application);
 				} else {
 					application.undo(getMonitor());
 				}
@@ -232,10 +220,10 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 	@Override
 	public List<ITransformationVariable> findUnitApplications(final EGraph graph) {
-		throw new RuntimeException();
+		throw new UnsupportedOperationException();
 	}
 
-	private ITransformationVariable clean(final ITransformationVariable variable) {
+	private ITransformationVariable cleanVariable(final ITransformationVariable variable) {
 		getModuleManager().clearNonSolutionParameters(variable);
 		return variable;
 	}

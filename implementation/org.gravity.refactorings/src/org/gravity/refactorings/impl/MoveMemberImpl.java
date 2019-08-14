@@ -8,7 +8,7 @@ import org.gravity.refactorings.configuration.impl.MoveMemberConfiguration;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TSignature;
-
+import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -23,6 +23,15 @@ import org.apache.log4j.Logger;
 public class MoveMemberImpl extends RefactoringImpl {
 
 	private static final Logger LOGGER = Logger.getLogger(MoveMemberImpl.class.getName());
+	
+	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public MoveMemberImpl(TypeGraph programModel) {
+		super(programModel);
+	}
 	
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -45,11 +54,11 @@ public class MoveMemberImpl extends RefactoringImpl {
 	public boolean isApplicable(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
 			TMethodSignature method = (TMethodSignature) signature;
-			MoveMethodImpl move = new MoveMethodImpl();
+			MoveMethodImpl move = new MoveMethodImpl(getPg());
 			return move.isApplicable(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
 			TFieldSignature field = (TFieldSignature) signature;
-			MoveFieldImpl move = new MoveFieldImpl();
+			MoveFieldImpl move = new MoveFieldImpl(getPg());
 			return move.isApplicable(field, tTargetClass, tSourceClass);
 		} else {
 			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);
@@ -61,11 +70,11 @@ public class MoveMemberImpl extends RefactoringImpl {
 	public List<TClass> perform(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
 			TMethodSignature method = (TMethodSignature) signature;
-			MoveMethodImpl move = new MoveMethodImpl();
+			MoveMethodImpl move = new MoveMethodImpl(getPg());
 			return move.perform(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
 			TFieldSignature field = (TFieldSignature) signature;
-			MoveFieldImpl move = new MoveFieldImpl();
+			MoveFieldImpl move = new MoveFieldImpl(getPg());
 			return move.perform(field, tTargetClass, tSourceClass);
 		} else {
 			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);

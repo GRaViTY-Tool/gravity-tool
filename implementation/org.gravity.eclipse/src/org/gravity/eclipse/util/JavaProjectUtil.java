@@ -8,9 +8,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -47,9 +48,13 @@ import org.gravity.eclipse.io.FileUtils;
  *
  */
 @SuppressWarnings("restriction")
-public class JavaProjectUtil extends EclipseProjectUtil {
+public class JavaProjectUtil {
 	
 	private static final Logger LOGGER = Logger.getLogger(JavaProjectUtil.class);
+	
+	private JavaProjectUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * 
@@ -82,7 +87,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @return The copy
 	 */
 	public static IJavaProject copyJavaProject(IJavaProject project, String nameOfCopy) {
-		IProject tmp = copyProject(project.getProject(), nameOfCopy);
+		IProject tmp = EclipseProjectUtil.copyProject(project.getProject(), nameOfCopy);
 		return convertToJavaProject(tmp);
 	}
 
@@ -112,16 +117,15 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @param monitor A progress monitor
 	 * @return The new java project
 	 * @throws DuplicateProjectNameException If there is already a project with this name
-	 * @throws CoreException
-	 * @throws IOException
+	 * @throws CoreException If the creation fails
 	 */
 	public static IJavaProject createJavaProject(String name, Set<String> sourceFolderNames, IProgressMonitor monitor)
-			throws DuplicateProjectNameException, CoreException, IOException {
+			throws DuplicateProjectNameException, CoreException {
 		// Create new project with given name
 		IProject project = EclipseProjectUtil.createProject(name, monitor);
 
 		// Add Java-Nature
-		addNature(project, JavaCore.NATURE_ID, monitor);
+		EclipseProjectUtil.addNature(project, JavaCore.NATURE_ID, monitor);
 
 		IJavaProject javaProject = JavaCore.create(project);
 
@@ -165,7 +169,7 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 */
 	public static void addJavaSourceFilesToRoot(Collection<Path> javaSourceFiles, IPackageFragmentRoot root,
 			boolean link, IProgressMonitor monitor) throws CoreException, IOException {
-		Hashtable<String, List<Path>> packages = getPackagesOfJavaFiles(javaSourceFiles);
+		Map<String, List<Path>> packages = getPackagesOfJavaFiles(javaSourceFiles);
 
 		for (Entry<String, List<Path>> entry : packages.entrySet()) {
 			IPackageFragment packeFragment = root.createPackageFragment(entry.getKey(), false, monitor);
@@ -187,7 +191,6 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 			boolean link, IProgressMonitor monitor) throws IOException, CoreException {
 		for (Path javaFile : javaClasses) {
 			String fileName = javaFile.getFileName().toFile().getName();
-			fileName.substring(0, fileName.length() - ".java".length());
 			IPath location = new org.eclipse.core.runtime.Path(javaFile.toFile().getAbsolutePath());
 			IFile iFile = ((IFolder) packeFragment.getResource()).getFile(fileName);
 			if (iFile.getLocation().toFile().exists()) {
@@ -215,9 +218,9 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @return A mapping from packages to java source files
 	 * @throws IOException If a source file cannot be read
 	 */
-	public static Hashtable<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles)
+	public static Map<String, List<Path>> getPackagesOfJavaFiles(Collection<Path> javaSourceFiles)
 			throws IOException {
-		Hashtable<String, List<Path>> packages = new Hashtable<>();
+		HashMap<String, List<Path>> packages = new HashMap<>();
 
 		Pattern packagePattern = Pattern.compile("((package)\\s+)((\\w|(\\.\\s*))+)((\\s*);)");
 
@@ -253,9 +256,8 @@ public class JavaProjectUtil extends EclipseProjectUtil {
 	 * @param monitor A progress monitor
 	 * @return A new java project
 	 * @throws CoreException
-	 * @throws IOException
 	 */
-	public static IJavaProject createJavaProjectWithUniqueName(String name, IProgressMonitor monitor) throws CoreException, IOException {
+	public static IJavaProject createJavaProjectWithUniqueName(String name, IProgressMonitor monitor) throws CoreException {
 		int appendix = 0;
 		IJavaProject project = null;
 		do {

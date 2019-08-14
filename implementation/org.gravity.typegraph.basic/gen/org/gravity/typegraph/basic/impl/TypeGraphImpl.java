@@ -34,6 +34,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
+
 // <-- [user defined imports]
 import org.eclipse.emf.common.util.BasicEList;
 

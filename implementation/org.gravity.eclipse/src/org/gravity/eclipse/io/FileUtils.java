@@ -1,18 +1,17 @@
 package org.gravity.eclipse.io;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
-
+import java.util.stream.Stream;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
@@ -27,6 +26,10 @@ import org.eclipse.core.runtime.Platform;
 public class FileUtils {
 
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class);
+	
+	private FileUtils() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Replaces the line endings with the endings of the current system
@@ -52,14 +55,11 @@ public class FileUtils {
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
 			// Try to recover file
-			if (tempFile != null) {
-				try {
-					Files.move(tempFile.toPath(), file.toPath());
-				} catch (IOException e2) {
-					// Iff recover wasn't possible throw original error
-					throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(),
-							e);
-				}
+			try {
+				Files.move(tempFile.toPath(), file.toPath());
+			} catch (IOException e2) {
+				// Iff recover wasn't possible throw original error
+				throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(), e);
 			}
 			return false;
 		}
@@ -86,11 +86,29 @@ public class FileUtils {
 	 *                     cannot be written
 	 */
 	public static void copy(File source, File target) throws IOException {
-		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true))) {
-			Files.lines(target.toPath()).forEach(s -> {
+		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true));
+				Stream<String> lines = Files.lines(target.toPath());) {
+			lines.forEach(s -> {
 				stream.println(s);
 			});
 		}
+	}
+
+	/**
+	 * Reads the contents from the stream and returns them as single string
+	 *
+	 * @param stream
+	 * @return The contents of the stream as string
+	 * @throws IOException if an I/O error occurs.
+	 */
+	public static String getContentsAsString(InputStream stream) throws IOException {
+		StringBuilder noComments = new StringBuilder();
+
+		int nextInt;
+		while ((nextInt = stream.read()) != -1) {
+			noComments.append((char) nextInt);
+		}
+		return noComments.toString();
 	}
 
 	/**
@@ -99,21 +117,11 @@ public class FileUtils {
 	 * @param file The file containing contents
 	 * @return The content of the file
 	 * @throws IOException           If an I/O error occurs
-	 * @throws FileNotFoundException Iff the file doesn't exists
 	 */
-	public static String getContentsAsString(File file) throws IOException, FileNotFoundException {
-		String settingsContentString;
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-
-			StringBuilder contents = new StringBuilder();
-			String line;
-			while ((line = reader.readLine()) != null) {
-				contents.append(line);
-				contents.append('\n');
-			}
-			settingsContentString = contents.toString();
+	public static String getContentsAsString(File file) throws IOException {
+		try (FileInputStream stream = new FileInputStream(file)) {
+			return getContentsAsString(stream);
 		}
-		return settingsContentString;
 	}
 
 	/**
@@ -135,9 +143,10 @@ public class FileUtils {
 	}
 
 	/**
-	 * Recursively searches the folder for a file with the given name and returns the first match
+	 * Recursively searches the folder for a file with the given name and returns
+	 * the first match
 	 * 
-	 * @param folder The folder
+	 * @param folder   The folder
 	 * @param filename The file name
 	 * @return The match
 	 */
@@ -160,5 +169,62 @@ public class FileUtils {
 			}
 		}
 		return nextRoot;
+	}
+
+	/**
+	 * Creates a directory
+	 * 
+	 * @param directoryPath - The path where the file will be created
+	 * @return - The new File with the given path
+	 */
+	public static File createDirectory(String directoryPath) {
+		try {
+			File dir = new File(directoryPath);
+			if (dir.exists()) {
+				return dir;
+			}
+			if (dir.mkdirs()) {
+				return dir;
+			}
+		} catch (Exception e) {
+			LOGGER.log(Level.ERROR, "Could not create directory " + directoryPath);
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		}
+		return null;
+	}
+
+	/**
+	 * This method recursively deletes a file
+	 * 
+	 * @param file The file
+	 * @return true, iff the file has been deleted successfully
+	 */
+	public static boolean recursiveDelete(File file) {
+		boolean success = true;
+		if (file.exists()) {
+			if (file.isDirectory()) {
+				for (File f : file.listFiles()) {
+					if (f.isDirectory()) {
+						success &= recursiveDelete(f);
+						success &= f.delete();
+					} else {
+						success &= f.delete();
+					}
+				}
+			}
+			success = file.delete();
+		}
+		return success;
+	}
+
+	/**
+	 * This method recursively deletes a file
+	 * 
+	 * @param file The file
+	 * @return 
+	 * @return true, iff the file has been deleted successfully
+	 */
+	public static boolean recursiveDelete(String file) {
+		return recursiveDelete(new File(file));
 	}
 }

@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -14,12 +15,12 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
 import org.eclipse.jdt.core.JavaCore;
 import org.gravity.eclipse.converter.IPGConverter;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
 import org.gravity.tgg.modisco.MoDiscoTGGConverterFactory;
 import org.gravity.typegraph.basic.TClass;
@@ -69,6 +70,7 @@ public class GoblinTest {
 	public GoblinTest(String name, IProject project, String unitName, boolean precondition, double postcondition,
 			Map<String, Object> parameters) {
 		LOGGER.log(Level.ERROR, "Executing the GOBLIN test on: " + project);
+		this.project = project;
 		this.unitName = unitName;
 		this.precondition = precondition;
 		this.postcondition = postcondition;
@@ -134,6 +136,7 @@ public class GoblinTest {
 		assertTrue("Could not create PG", success);
 
 		TypeGraph pg = converter.getPG();
+		assertNotNull("The program model is null! The project is: "+project+", location: "+project.getLocation(), pg);
 		executor.initialize(new EGraphImpl(pg));
 		initializeParameters(pg);
 		boolean preConditionResult = executor.executeUnit(unitName, parameters);
@@ -145,18 +148,21 @@ public class GoblinTest {
 	/**
 	 * Collects the test configurations from the projects in the current workspace
 	 * 
-	 * @return
+	 * @return The test data
+	 * @throws CoreException If no project could be imported into the workspace
 	 */
 	@Parameters(name = "{0}")
-	public static Iterable<Object[]> collecTests() {
-		IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
+	public static Iterable<Object[]> collecTests() throws CoreException {
+		LOGGER.info("Collect test data");
+		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation();
+		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		ArrayList<Object[]> testConfigurations = new ArrayList<>();
-		for (IProject test : projects) {
+		for (IProject project : projects) {
 			try {
-				if (test.getNature(JavaCore.NATURE_ID) != null) {
-					test.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-					TestConfigurationVisitor visitor = new TestConfigurationVisitor(test);
-					test.accept(visitor);
+				if (project.getNature(JavaCore.NATURE_ID) != null) {
+					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+					TestConfigurationVisitor visitor = new TestConfigurationVisitor(project);
+					project.accept(visitor);
 					testConfigurations.addAll(visitor.testConfigurations);
 				}
 			} catch (CoreException e) {

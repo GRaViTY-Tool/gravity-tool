@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -28,6 +29,10 @@ import org.xml.sax.SAXException;
 public class GradleAndroid {
 
 	private static final Logger LOGGER = Logger.getLogger(GradleAndroid.class);
+	
+	private GradleAndroid() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Searches for the generated R.java class in the gradle project
@@ -61,16 +66,19 @@ public class GradleAndroid {
 	}
 
 	private static File searchRClassInAdroidMainfest(File manifestFile, File gradleRoot) throws IOException {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
-			Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(manifestFile);
+			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+			Document document = factory.newDocumentBuilder().parse(manifestFile);
 			document.getDocumentElement().normalize();
 			NodeList manifest = document.getElementsByTagName("manifest");
 			Node attribute = manifest.item(0).getAttributes().getNamedItem("package");
 			String basePackage = attribute.getNodeValue();
 			File rFolder = new File(gradleRoot, "build/generated/source/r");
-			File releaseFolder;
-			if (!(releaseFolder = new File(rFolder, "release")).exists()) {
-				if (!(releaseFolder = new File(rFolder, "debug")).exists()) {
+			File releaseFolder = new File(rFolder, "release");
+			if (!releaseFolder.exists()) {
+				releaseFolder = new File(rFolder, "debug");
+				if (!releaseFolder.exists()) {
 					LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
 					return null;
 				}
@@ -97,13 +105,13 @@ public class GradleAndroid {
 		while (matcherSdk.find()) {
 			String group = matcherSdk.group(1);
 			if ("minSdkVersion".equals(group)) {
-				int value = Integer.valueOf(matcherSdk.group(6));
+				int value = Integer.parseInt(matcherSdk.group(6));
 				double minSdk = sdkVersion.getMinSdk();
 				if (Double.isNaN(minSdk) || minSdk > value) {
 					sdkVersion.setMinSdk(value);
 				}
 			} else if ("targetSdkVersion".equals(group)) {
-				int value = Integer.valueOf(matcherSdk.group(6));
+				int value = Integer.parseInt(matcherSdk.group(6));
 				double targetSdk = sdkVersion.getTargetSdk();
 				if (Double.isNaN(targetSdk) || targetSdk < value) {
 					sdkVersion.setTargetSdk(value);

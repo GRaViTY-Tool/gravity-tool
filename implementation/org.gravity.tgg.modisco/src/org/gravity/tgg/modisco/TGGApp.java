@@ -19,15 +19,17 @@ import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
 
 public class TGGApp extends SYNC {
+	
+	private static final String PLATFORM_RESOURCE = "platform:/resource/"; //$NON-NLS-1$
 
-	private static final String MODISCO_FLATTENED_TGG_XMI_LOCATION = "model/Modisco_flattened.tgg.xmi";
-	private static final String MODISCO_FLATTENED_TGG_XMI_URI = "platform:/resource/org.gravity.tgg.modisco/"
+	private static final String MODISCO_FLATTENED_TGG_XMI_LOCATION = "model/Modisco_flattened.tgg.xmi"; //$NON-NLS-1$
+	private static final String MODISCO_FLATTENED_TGG_XMI_URI = PLATFORM_RESOURCE + MoDiscoTGGActivator.PLUGIN_ID + "/" //$NON-NLS-1$
 			+ MODISCO_FLATTENED_TGG_XMI_LOCATION;
-	private static final String MODISCO_ECORE_LOCATION = "model/Modisco.ecore";
-	private static final String MODISCO_ECORE_URI = "platform:/resource/org.gravity.tgg.modisco/"
+	private static final String MODISCO_ECORE_LOCATION = "model/Modisco.ecore"; //$NON-NLS-1$
+	private static final String MODISCO_ECORE_URI = PLATFORM_RESOURCE + MoDiscoTGGActivator.PLUGIN_ID + "/" //$NON-NLS-1$
 			+ MODISCO_ECORE_LOCATION;
-	private static final String MODISCO_TGG_XMI_LOCATION = "model/Modisco.tgg.xmi";
-	private static final String MODISCO_TGG_XMI_URI = "platform:/resource/org.gravity.tgg.modisco/"
+	private static final String MODISCO_TGG_XMI_LOCATION = "model/Modisco.tgg.xmi"; //$NON-NLS-1$
+	private static final String MODISCO_TGG_XMI_URI = PLATFORM_RESOURCE + MoDiscoTGGActivator.PLUGIN_ID + "/" //$NON-NLS-1$
 			+ MODISCO_TGG_XMI_LOCATION;
 
 	/**
@@ -42,10 +44,10 @@ public class TGGApp extends SYNC {
 
 	@Override
 	public void loadModels() throws IOException {
-		s = createResource(options.projectPath() + "/instances/src.xmi");
-		t = createResource(options.projectPath() + "/instances/trg.xmi");
-		c = createResource(options.projectPath() + "/instances/corr.xmi");
-		p = createResource(options.projectPath() + "/instances/protocol.xmi");
+		s = createResource(options.projectPath() + "/instances/src.xmi"); //$NON-NLS-1$
+		t = createResource(options.projectPath() + "/instances/trg.xmi"); //$NON-NLS-1$
+		c = createResource(options.projectPath() + "/instances/corr.xmi"); //$NON-NLS-1$
+		p = createResource(options.projectPath() + "/instances/protocol.xmi"); //$NON-NLS-1$
 	}
 
 	@Override
@@ -74,10 +76,9 @@ public class TGGApp extends SYNC {
 	 * 
 	 * @param uri The URI of the meta model
 	 * @return The EPackage of the meta model
-	 * @throws IOException           If the file cannot be read
-	 * @throws MalformedURLException The URI hasn't a valid format
+	 * @throws IOException If the file cannot be reador the URI hasn't a valid format
 	 */
-	private EPackage loadMetaModelPackage() throws IOException, MalformedURLException {
+	private EPackage loadMetaModelPackage() throws IOException {
 		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_ECORE_LOCATION)) {
 			Resource resource = loadResource(MODISCO_ECORE_URI, stream);
 			return (EPackage) resource.getContents().get(0);
@@ -85,7 +86,7 @@ public class TGGApp extends SYNC {
 	}
 
 	@Override
-	public Resource loadResource(String uri) throws IOException, MalformedURLException {
+	public Resource loadResource(String uri) throws IOException {
 		try (InputStream stream = new URL(uri).openConnection().getInputStream()) {
 			return loadResource(uri, stream);
 		}
@@ -122,8 +123,8 @@ public class TGGApp extends SYNC {
 
 	private static IbexOptions createIbexOptions() {
 		IbexOptions options = new IbexOptions();
-		options.projectName("Modisco");
-		options.projectPath("org.gravity.tgg.modisco");
+		options.projectName("Modisco"); //$NON-NLS-1$
+		options.projectPath(MoDiscoTGGActivator.PLUGIN_ID);
 		options.debug(false);
 		options.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
 		return options;

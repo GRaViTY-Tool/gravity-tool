@@ -16,6 +16,7 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.hulk.annotations.activator.AnnotationsActivator;
 
 /**
@@ -27,7 +28,14 @@ import org.gravity.hulk.annotations.activator.AnnotationsActivator;
  */
 public class AnnotationsUtil {
 
+	/**
+	 * The logger of this class
+	 */
 	private static final Logger LOGGER = Logger.getLogger(AnnotationsUtil.class);
+
+	private AnnotationsUtil() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Copies the library containing the annotation binaries into the Java project
@@ -52,11 +60,9 @@ public class AnnotationsUtil {
 		}
 		IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
 		if (!annotationsOut.exists()) {
-			InputStream in = null;
-			OutputStream out = null;
-			try {
-				in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection().getInputStream();
-				out = new FileOutputStream(annotationsOut.getLocation().toFile());
+			try (InputStream in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection()
+					.getInputStream();
+					OutputStream out = new FileOutputStream(annotationsOut.getLocation().toFile())) {
 				byte[] buffer = new byte[4096];
 				int read;
 				while ((read = in.read(buffer)) != -1) {
@@ -64,29 +70,9 @@ public class AnnotationsUtil {
 				}
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-			} finally {
-				if (in != null) {
-					try {
-						in.close();
-					} catch (IOException e) {
-						LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-					}
-				}
-				if (out != null) {
-					try {
-						out.close();
-					} catch (IOException e) {
-						LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-					}
-				}
 			}
-
 			try {
-				IClasspathEntry[] cpOld = project.getRawClasspath();
-				IClasspathEntry[] cpNew = new IClasspathEntry[cpOld.length + 1];
-				System.arraycopy(cpOld, 0, cpNew, 0, cpOld.length);
-				cpNew[cpOld.length] = JavaCore.newLibraryEntry(annotationsOut.getFullPath(), null, null);
-				project.setRawClasspath(cpNew, monitor);
+				EclipseProjectUtil.addLibToClasspath(project, annotationsOut, monitor);
 			} catch (JavaModelException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}

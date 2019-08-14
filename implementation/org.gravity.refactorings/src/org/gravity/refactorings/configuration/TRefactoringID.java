@@ -40,7 +40,7 @@ public enum TRefactoringID {
 	private static final TRefactoringID[] VALUES_ARRAY = new TRefactoringID[] {
 			TExtractClass, TMoveMember, TMoveMethod, TMoveField, TPullUpMethod};
 
-	public static final List<TRefactoringID> VALUES = Collections
+	public static final List<TRefactoringID> VALUES_LIST = Collections
 			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	public static TRefactoringID getByName(String name) {

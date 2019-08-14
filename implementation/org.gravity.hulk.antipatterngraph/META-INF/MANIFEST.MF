@@ -26,3 +26,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: TU Darmstadt
 Automatic-Module-Name: org.gravity.hulk.antipatterngraph
+Bundle-ClassPath: .

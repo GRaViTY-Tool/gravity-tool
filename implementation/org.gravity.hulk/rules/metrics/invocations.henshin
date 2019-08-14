@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_RLKU4I38EemWBf3MiTi5eg">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"/>
+  <units xsi:type="henshin:Rule" xmi:id="_U0AD0I38EemWBf3MiTi5eg" name="incomingInvocations">
+    <parameters xmi:id="_aGjikI38EemWBf3MiTi5eg" name="ii" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+    </parameters>
+    <lhs xmi:id="_U2FHcI38EemWBf3MiTi5eg" name="Lhs">
+      <nodes xmi:id="_pXjAYI38EemWBf3MiTi5eg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_U2FugI38EemWBf3MiTi5eg" name="Rhs">
+      <nodes xmi:id="_pXjAYY38EemWBf3MiTi5eg" outgoing="_RTJWwI39EemWBf3MiTi5eg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_M7uqkI39EemWBf3MiTi5eg" incoming="_RTJWwI39EemWBf3MiTi5eg">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HIncommingInvocationMetric"/>
+        <attributes xmi:id="_i3CrUI39EemWBf3MiTi5eg" value="Aggregations.COUNT(ii)">
+          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HMetric/value"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_RTJWwI39EemWBf3MiTi5eg" source="_pXjAYY38EemWBf3MiTi5eg" target="_M7uqkI39EemWBf3MiTi5eg">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_pXjAYo38EemWBf3MiTi5eg" origin="_pXjAYI38EemWBf3MiTi5eg" image="_pXjAYY38EemWBf3MiTi5eg"/>
+    <multiRules xmi:id="_1OjqoI38EemWBf3MiTi5eg">
+      <parameters xmi:id="_1OvQ0I38EemWBf3MiTi5eg" name="ii" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+      </parameters>
+      <parameters xmi:id="_1OvQ0Y38EemWBf3MiTi5eg" name="oi" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+      </parameters>
+      <lhs xmi:id="_1OkRsI38EemWBf3MiTi5eg" name="Lhs">
+        <nodes xmi:id="_jBGbsI38EemWBf3MiTi5eg" name="ii" incoming="_6fQIMI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+        </nodes>
+        <nodes xmi:id="_n4wHII38EemWBf3MiTi5eg" incoming="_0JCNAI38EemWBf3MiTi5eg" outgoing="_6fQIMI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        </nodes>
+        <nodes xmi:id="_1OmG5I38EemWBf3MiTi5eg" outgoing="_0JCNAI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <edges xmi:id="_0JCNAI38EemWBf3MiTi5eg" source="_1OmG5I38EemWBf3MiTi5eg" target="_n4wHII38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_6fQIMI38EemWBf3MiTi5eg" source="_n4wHII38EemWBf3MiTi5eg" target="_jBGbsI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessedBy"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_1Ok4wI38EemWBf3MiTi5eg" name="Rhs">
+        <nodes xmi:id="_jBHCwI38EemWBf3MiTi5eg" name="ii" incoming="_6fQvQI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+        </nodes>
+        <nodes xmi:id="_n4wuMI38EemWBf3MiTi5eg" incoming="_0JECMI38EemWBf3MiTi5eg" outgoing="_6fQvQI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        </nodes>
+        <nodes xmi:id="_1Olf2o38EemWBf3MiTi5eg" outgoing="_0JECMI38EemWBf3MiTi5eg _RTJ90o39EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <nodes xmi:id="_RTJ90I39EemWBf3MiTi5eg" incoming="_RTJ90o39EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HIncommingInvocationMetric"/>
+        </nodes>
+        <edges xmi:id="_0JECMI38EemWBf3MiTi5eg" source="_1Olf2o38EemWBf3MiTi5eg" target="_n4wuMI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_6fQvQI38EemWBf3MiTi5eg" source="_n4wuMI38EemWBf3MiTi5eg" target="_jBHCwI38EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/accessedBy"/>
+        </edges>
+        <edges xmi:id="_RTJ90o39EemWBf3MiTi5eg" source="_1Olf2o38EemWBf3MiTi5eg" target="_RTJ90I39EemWBf3MiTi5eg">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_1Omt8o38EemWBf3MiTi5eg" origin="_1OmG5I38EemWBf3MiTi5eg" image="_1Olf2o38EemWBf3MiTi5eg"/>
+      <mappings xmi:id="_n4wuMY38EemWBf3MiTi5eg" origin="_n4wHII38EemWBf3MiTi5eg" image="_n4wuMI38EemWBf3MiTi5eg"/>
+      <mappings xmi:id="_jBHp0I38EemWBf3MiTi5eg" origin="_jBGbsI38EemWBf3MiTi5eg" image="_jBHCwI38EemWBf3MiTi5eg"/>
+      <multiMappings xmi:id="_1OmG4I38EemWBf3MiTi5eg" origin="_pXjAYY38EemWBf3MiTi5eg" image="_1Olf2o38EemWBf3MiTi5eg"/>
+      <multiMappings xmi:id="_1OmG5Y38EemWBf3MiTi5eg" origin="_pXjAYI38EemWBf3MiTi5eg" image="_1OmG5I38EemWBf3MiTi5eg"/>
+      <multiMappings xmi:id="_RTJ90Y39EemWBf3MiTi5eg" origin="_M7uqkI39EemWBf3MiTi5eg" image="_RTJ90I39EemWBf3MiTi5eg"/>
+    </multiRules>
+    <javaImports>org.eclipse.emf.henshin.interpreter.util.Aggregations</javaImports>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_SeAqkI4BEemIvZtjswelKQ" name="outgoingInvocations">
+    <parameters xmi:id="_SeAqko4BEemIvZtjswelKQ" name="oi" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+    </parameters>
+    <lhs xmi:id="_SeAqk44BEemIvZtjswelKQ" name="Lhs">
+      <nodes xmi:id="_SeAqlI4BEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_SeAqlY4BEemIvZtjswelKQ" name="Rhs">
+      <nodes xmi:id="_SeAqlo4BEemIvZtjswelKQ" outgoing="_SeAqm44BEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_SeAqmY4BEemIvZtjswelKQ" incoming="_SeAqm44BEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HOutgoingInvocationMetric"/>
+        <attributes xmi:id="_SeAqmo4BEemIvZtjswelKQ" value="Aggregations.COUNT(oi)">
+          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HMetric/value"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_SeAqm44BEemIvZtjswelKQ" source="_SeAqlo4BEemIvZtjswelKQ" target="_SeAqmY4BEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_SeAqnY4BEemIvZtjswelKQ" origin="_SeAqlI4BEemIvZtjswelKQ" image="_SeAqlo4BEemIvZtjswelKQ"/>
+    <multiRules xmi:id="_SeAqno4BEemIvZtjswelKQ">
+      <parameters xmi:id="_SeAqn44BEemIvZtjswelKQ" name="ii" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+      </parameters>
+      <parameters xmi:id="_SeAqoI4BEemIvZtjswelKQ" name="oi" kind="VAR">
+        <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+      </parameters>
+      <lhs xmi:id="_SeAqoY4BEemIvZtjswelKQ" name="Lhs">
+        <nodes xmi:id="_SeAqo44BEemIvZtjswelKQ" name="oi" incoming="_SeAqp44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+        </nodes>
+        <nodes xmi:id="_SeAqpI4BEemIvZtjswelKQ" incoming="_SeAqpo4BEemIvZtjswelKQ" outgoing="_SeAqp44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        </nodes>
+        <nodes xmi:id="_SeAqpY4BEemIvZtjswelKQ" outgoing="_SeAqpo4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <edges xmi:id="_SeAqpo4BEemIvZtjswelKQ" source="_SeAqpY4BEemIvZtjswelKQ" target="_SeAqpI4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_SeAqp44BEemIvZtjswelKQ" source="_SeAqpI4BEemIvZtjswelKQ" target="_SeAqo44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_SeAqqY4BEemIvZtjswelKQ" name="Rhs">
+        <nodes xmi:id="_SeAqq44BEemIvZtjswelKQ" name="oi" incoming="_SeAqsY4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+        </nodes>
+        <nodes xmi:id="_SeAqrI4BEemIvZtjswelKQ" incoming="_SeAqsI4BEemIvZtjswelKQ" outgoing="_SeAqsY4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+        </nodes>
+        <nodes xmi:id="_SeAqrY4BEemIvZtjswelKQ" outgoing="_SeAqsI4BEemIvZtjswelKQ _SeAqs44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        </nodes>
+        <nodes xmi:id="_SeAqro4BEemIvZtjswelKQ" incoming="_SeAqs44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HOutgoingInvocationMetric"/>
+        </nodes>
+        <edges xmi:id="_SeAqsI4BEemIvZtjswelKQ" source="_SeAqrY4BEemIvZtjswelKQ" target="_SeAqrI4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+        </edges>
+        <edges xmi:id="_SeAqsY4BEemIvZtjswelKQ" source="_SeAqrI4BEemIvZtjswelKQ" target="_SeAqq44BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+        </edges>
+        <edges xmi:id="_SeAqs44BEemIvZtjswelKQ" source="_SeAqrY4BEemIvZtjswelKQ" target="_SeAqro4BEemIvZtjswelKQ">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_SeAqtY4BEemIvZtjswelKQ" origin="_SeAqpY4BEemIvZtjswelKQ" image="_SeAqrY4BEemIvZtjswelKQ"/>
+      <mappings xmi:id="_SeAqto4BEemIvZtjswelKQ" origin="_SeAqpI4BEemIvZtjswelKQ" image="_SeAqrI4BEemIvZtjswelKQ"/>
+      <mappings xmi:id="_SeAqt44BEemIvZtjswelKQ" origin="_SeAqo44BEemIvZtjswelKQ" image="_SeAqq44BEemIvZtjswelKQ"/>
+      <multiMappings xmi:id="_SeBRoI4BEemIvZtjswelKQ" origin="_SeAqlo4BEemIvZtjswelKQ" image="_SeAqrY4BEemIvZtjswelKQ"/>
+      <multiMappings xmi:id="_SeBRoY4BEemIvZtjswelKQ" origin="_SeAqlI4BEemIvZtjswelKQ" image="_SeAqpY4BEemIvZtjswelKQ"/>
+      <multiMappings xmi:id="_SeBRoo4BEemIvZtjswelKQ" origin="_SeAqmY4BEemIvZtjswelKQ" image="_SeAqro4BEemIvZtjswelKQ"/>
+    </multiRules>
+    <javaImports>org.eclipse.emf.henshin.interpreter.util.Aggregations</javaImports>
+  </units>
+</henshin:Module>

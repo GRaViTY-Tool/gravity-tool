@@ -44,9 +44,8 @@ public class AstUtil {
 				public boolean visit(TypeDeclaration node) {
 					if (typeName.equals(node.getName().toString())) {
 						resultLine.set(0, unit.getLineNumber(node.getStartPosition()));
-						return true;
+						return false;
 					}
-
 					return true;
 				}
 			});

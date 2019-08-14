@@ -13,7 +13,11 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class ChangeVisibilityPreConditions {
 	
-	private static final Logger LOGGER = Logger.getLogger(ChangeVisibilityPreConditions.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(ChangeVisibilityPreConditions.class);
+	
+	private ChangeVisibilityPreConditions() {
+		// This class shouldn't be instantiated
+	}
 	
 	// if a childClass implements an interface with the same field as the field in
 	// the violation do not change the visibility as this may introduce ambiguity
@@ -72,7 +76,7 @@ public class ChangeVisibilityPreConditions {
 		return true;
 	}
 
-	private static boolean checkSecurityPreconditions(TClass sourceClass, TMember member) {
+	private static boolean checkSecurityPreconditions(TMember member) {
 		for (TAnnotation annotation : member.getTAnnotation()) {
 			TAnnotationType type = annotation.getType();
 			if (type == null) {
@@ -92,7 +96,7 @@ public class ChangeVisibilityPreConditions {
 	public static boolean checkPreconditions(TMember member, TClass sourceClass) {
 		boolean result = checkDynPreconditions(sourceClass, member);
 		result &= checkINH2Preconditions(sourceClass, member);
-		result &= checkSecurityPreconditions(sourceClass, member);
+		result &= checkSecurityPreconditions(member);
 
 		return result;
 	}

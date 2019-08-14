@@ -9,7 +9,19 @@
     <relativePath>../../</relativePath>
   </parent>
   <groupId>org.gravity</groupId>
-  <artifactId>org.gravity.refactoring.test</artifactId>
+  <artifactId>org.gravity.refactorings.tests</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

@@ -23,3 +23,4 @@ Export-Package: org.gravity.refactorings.ui,
  org.gravity.refactorings.ui.dialogs,
  org.gravity.refactorings.ui.handler
 Automatic-Module-Name: org.gravity.refactorings.ui
+Bundle-ClassPath: .

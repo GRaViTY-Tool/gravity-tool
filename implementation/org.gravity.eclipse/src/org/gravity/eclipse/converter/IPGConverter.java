@@ -18,6 +18,13 @@ import org.gravity.typegraph.basic.TypeGraph;
 public interface IPGConverter {
 
 	/**
+	 * Discards the converter
+	 * 
+	 * @return true, if the converter has been discarded successfully
+	 */
+	public boolean discard();
+	
+	/**
 	 * Converts the given java project into an PG. The PG has to be stored local and
 	 * is accessible through the method <code>getPG():TypeGraph</code>
 	 *

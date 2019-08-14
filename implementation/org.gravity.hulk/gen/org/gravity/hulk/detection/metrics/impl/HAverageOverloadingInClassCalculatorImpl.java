@@ -23,7 +23,7 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
-import java.util.Hashtable;
+import java.util.HashMap;
 // [user defined imports] -->
 
 /**
@@ -85,7 +85,7 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
 
-		Hashtable<TMethod, Integer> methods = new Hashtable<TMethod, Integer>();
+		HashMap<TMethod, Integer> methods = new HashMap<TMethod, Integer>();
 		EList<TSignature> signatures = tClass.getSignature();
 		for (TSignature sig : signatures) {
 			if (sig instanceof TMethodSignature) {
@@ -98,7 +98,7 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 				}
 			}
 		}
-		if (methods.size() == 0) {
+		if (methods.isEmpty()) {
 			return 0;
 		}
 		double sum = 0;

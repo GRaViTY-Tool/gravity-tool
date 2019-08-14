@@ -7,7 +7,8 @@ import org.eclipse.emf.common.util.EList;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * This class provides functionalities to add classes to an existing program
@@ -73,7 +74,7 @@ public class PGAdditionHelper {
 	}
 
 	private static void setPG4Package(TPackage tPackage, TypeGraph tTypeGraph) {
-		Stack<TPackage> tPackages = new Stack<TPackage>();
+		Deque<TPackage> tPackages = new LinkedList<TPackage>();
 		tPackages.add(tPackage);
 
 		while (!tPackages.isEmpty()) {

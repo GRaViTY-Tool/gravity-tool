@@ -1,3 +1,4 @@
-/.metadata
+.metadata/
 *.class
 *.uml
+*.xmi

@@ -42,12 +42,12 @@ public abstract class RefactoringImpl implements Refactoring {
 	protected HelpersImpl helpers;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
 	 */
-	protected RefactoringImpl() {
-		super();
+	protected RefactoringImpl(TypeGraph programModel) {
+		this.pg = programModel;
 	}
 
 	/**
@@ -57,15 +57,6 @@ public abstract class RefactoringImpl implements Refactoring {
 	 */
 	public TypeGraph getPg() {
 		return pg;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPg(TypeGraph newPg) {
-		pg = newPg;
 	}
 
 	/**

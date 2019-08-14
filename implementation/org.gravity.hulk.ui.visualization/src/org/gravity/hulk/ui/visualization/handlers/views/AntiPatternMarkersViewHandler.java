@@ -9,7 +9,7 @@ public class AntiPatternMarkersViewHandler extends AbstractShowViewHandler {
 	
 	@Override
 	String getID() {
-		return AntiPatternMarkerView.ID;
+		return AntiPatternMarkerView.VIEW_ID;
 	}
 
 	@Override

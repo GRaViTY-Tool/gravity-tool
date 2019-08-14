@@ -40,9 +40,8 @@ import java.util.Collections;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>TAbstract Type</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>TAbstract Type</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -63,8 +62,7 @@ import java.util.Collections;
 public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbstractType {
 	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPackage()
 	 * @generated
 	 * @ordered
@@ -73,8 +71,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * The cached value of the '{@link #getSignature() <em>Signature</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSignature()
 	 * @generated
 	 * @ordered
@@ -83,8 +80,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * The cached value of the '{@link #getDefines() <em>Defines</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDefines()
 	 * @generated
 	 * @ordered
@@ -92,9 +88,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected EList<TMember> defines;
 
 	/**
-	 * The default value of the '{@link #isTLib() <em>TLib</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #isTLib() <em>TLib</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isTLib()
 	 * @generated
 	 * @ordered
@@ -102,9 +98,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected static final boolean TLIB_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isTLib() <em>TLib</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #isTLib() <em>TLib</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isTLib()
 	 * @generated
 	 * @ordered
@@ -112,9 +108,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected boolean tLib = TLIB_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTName() <em>TName</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getTName() <em>TName</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTName()
 	 * @generated
 	 * @ordered
@@ -122,9 +118,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected static final String TNAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTName() <em>TName</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTName() <em>TName</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTName()
 	 * @generated
 	 * @ordered
@@ -133,8 +129,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * The cached value of the '{@link #getTModifier() <em>TModifier</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTModifier()
 	 * @generated
 	 * @ordered
@@ -143,8 +138,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * The cached value of the '{@link #getInnerTypes() <em>Inner Types</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInnerTypes()
 	 * @generated
 	 * @ordered
@@ -153,8 +147,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * The cached value of the '{@link #getOuterType() <em>Outer Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOuterType()
 	 * @generated
 	 * @ordered
@@ -162,8 +155,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected TAbstractType outerType;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TAbstractTypeImpl() {
@@ -171,8 +163,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -181,8 +172,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -192,8 +182,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetPg(TypeGraph newPg, NotificationChain msgs) {
@@ -202,8 +191,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -224,8 +212,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -242,8 +229,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TPackage basicGetPackage() {
@@ -251,8 +237,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetPackage(TPackage newPackage, NotificationChain msgs) {
@@ -266,8 +251,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -286,8 +270,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -299,8 +282,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -312,8 +294,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -322,8 +303,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -335,8 +315,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -345,8 +324,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -358,8 +336,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -368,8 +345,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetTModifier(TModifier newTModifier, NotificationChain msgs) {
@@ -383,8 +359,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -403,8 +378,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -416,8 +390,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -434,8 +407,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TAbstractType basicGetOuterType() {
@@ -443,8 +415,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetOuterType(TAbstractType newOuterType, NotificationChain msgs) {
@@ -458,8 +429,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -478,15 +448,15 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public abstract boolean isSuperTypeOf(TAbstractType tType);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isSubTypeOf(TAbstractType tType) {
@@ -495,8 +465,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean isDeclared() {
@@ -511,8 +481,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String getFullyQualifiedName() {
@@ -541,8 +511,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public TMethodSignature getTMethodSignature(String signature) {
@@ -569,8 +539,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public TMethodDefinition getTMethodDefinition(String signature) {
@@ -596,8 +566,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public TPackage getBasePackage() {
@@ -610,8 +580,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public TMember getTDefinition(TSignature signature) {
@@ -620,8 +590,39 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public TMember getTDefinition(String signatureString) {
+		String voidString = ":void";
+		String searchedSignatureString = signatureString.replaceAll(" ", "");
+		for (TMember def : getDefines()) {
+			String nextSignatureString = def.getSignatureString().replaceAll(" ", "");
+			if (searchedSignatureString.equals(nextSignatureString)) {
+				return def;
+			}
+			if (def instanceof TMethodDefinition) {
+				if (nextSignatureString.endsWith(voidString)) {
+					nextSignatureString = nextSignatureString.substring(0,
+							nextSignatureString.length() - voidString.length());
+				}
+				if (searchedSignatureString.endsWith(voidString)) {
+					searchedSignatureString = searchedSignatureString.substring(0,
+							searchedSignatureString.length() - voidString.length());
+				}
+				if (nextSignatureString.equals(searchedSignatureString)) {
+					return def;
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public boolean hasTMember(TMember member) {
@@ -630,8 +631,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -659,8 +659,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -683,8 +682,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -697,8 +695,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -729,8 +726,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -772,8 +768,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -811,8 +806,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -841,8 +835,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -865,6 +858,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 				return getBasePackage();
 			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE:
 				return getTDefinition((TSignature)arguments.get(0));
+			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING:
+				return getTDefinition((String)arguments.get(0));
 			case BasicPackage.TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER:
 				return hasTMember((TMember)arguments.get(0));
 			case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
@@ -881,8 +876,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -902,8 +896,8 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	public abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void fillSameType(EList<TAbstractType> list) {
@@ -950,4 +944,4 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 
 	// [user code injected with eMoflon] -->
-} //TAbstractTypeImpl
+} // TAbstractTypeImpl

@@ -3,6 +3,7 @@ package org.gravity.security.annotations;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -38,7 +39,6 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	@Override
 	public boolean process(TypeGraph pg, IProgressMonitor monitor) {
 		rs = pg.eResource().getResourceSet();
-		
 		for(TAnnotationType tAnnotationType : pg.getTAnnotationTypes()) {
 			String tFullyQualifiedName = tAnnotationType.getFullyQualifiedName();
 			List<TAnnotation> annotations = new ArrayList<>(tAnnotationType.getAnnotations());
@@ -76,16 +76,17 @@ public class SecurityAnnotationsProcessorFwd implements IProgramGraphProcessor {
 	private void replace(TAnnotation tAnnotation, TAnnotation replacement) {
 		EcoreUtil.replace(tAnnotation, replacement);
 		for(Setting setting : EcoreUtil.UsageCrossReferencer.find(tAnnotation, rs)) {
+			EObject eObject = setting.getEObject();
+			eObject.eSetDeliver(false);
 			if (setting instanceof EList) {
 				@SuppressWarnings("unchecked") EList<TAnnotation> list = (EList<TAnnotation>) setting;
 				int index = list.indexOf(tAnnotation);
-				list.remove(index);
-				list.add(index, replacement);
+				list.set(index, replacement);
 			}
 			else {
-				EObject eObject = setting.getEObject();
 				eObject.eSet(setting.getEStructuralFeature(), replacement);
 			}
+			eObject.eSetDeliver(true);
 		}
 	}
 

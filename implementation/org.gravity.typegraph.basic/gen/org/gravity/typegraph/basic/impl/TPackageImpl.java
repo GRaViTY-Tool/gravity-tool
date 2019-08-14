@@ -356,7 +356,7 @@ public class TPackageImpl extends TAnnotatableImpl implements TPackage {
 		LinkedList<String> names = new LinkedList<>();
 		TPackage current = this;
 		while (current != null) {
-			names.add(current.getTName());
+			names.add(0, current.getTName());
 			TPackage parent = getParent();
 			if (parent == current) {
 				break;

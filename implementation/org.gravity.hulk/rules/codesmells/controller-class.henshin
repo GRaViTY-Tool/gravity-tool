@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_O7VYkI4CEemIvZtjswelKQ">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_P7TAwI4CEemIvZtjswelKQ" name="controllerClass">
+    <parameters xmi:id="_YSOPcI4CEemIvZtjswelKQ" name="oi" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HOutgoingInvocationMetric"/>
+    </parameters>
+    <parameters xmi:id="_b-oPwI4CEemIvZtjswelKQ" name="ii" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HIncommingInvocationMetric"/>
+    </parameters>
+    <parameters xmi:id="_e8FfYI4CEemIvZtjswelKQ" name="threshold" description="HIGH" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <lhs xmi:id="_P7sCUI4CEemIvZtjswelKQ" name="Lhs">
+      <nodes xmi:id="_k37LsI4CEemIvZtjswelKQ" outgoing="_wU_r8I4CEemIvZtjswelKQ _ws1kMI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_oj7jYI4CEemIvZtjswelKQ" name="ii" incoming="_ws1kMI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HIncommingInvocationMetric"/>
+      </nodes>
+      <nodes xmi:id="_qSbFgI4CEemIvZtjswelKQ" name="oi" incoming="_wU_r8I4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HOutgoingInvocationMetric"/>
+      </nodes>
+      <edges xmi:id="_wU_r8I4CEemIvZtjswelKQ" source="_k37LsI4CEemIvZtjswelKQ" target="_qSbFgI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_ws1kMI4CEemIvZtjswelKQ" source="_k37LsI4CEemIvZtjswelKQ" target="_oj7jYI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_P-PAAI4CEemIvZtjswelKQ" name="Rhs">
+      <nodes xmi:id="_k3-PAI4CEemIvZtjswelKQ" outgoing="_v5y9sI4CEemIvZtjswelKQ _wVATAI4CEemIvZtjswelKQ _ws1kMY4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_oj7jYY4CEemIvZtjswelKQ" incoming="_ws1kMY4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HIncommingInvocationMetric"/>
+      </nodes>
+      <nodes xmi:id="_qSbskI4CEemIvZtjswelKQ" incoming="_wVATAI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics/HOutgoingInvocationMetric"/>
+      </nodes>
+      <nodes xmi:id="_rwtocI4CEemIvZtjswelKQ" incoming="_v5y9sI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HControllerClassSmell"/>
+      </nodes>
+      <edges xmi:id="_v5y9sI4CEemIvZtjswelKQ" source="_k3-PAI4CEemIvZtjswelKQ" target="_rwtocI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_wVATAI4CEemIvZtjswelKQ" source="_k3-PAI4CEemIvZtjswelKQ" target="_qSbskI4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_ws1kMY4CEemIvZtjswelKQ" source="_k3-PAI4CEemIvZtjswelKQ" target="_oj7jYY4CEemIvZtjswelKQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_1tdlcI4CEemIvZtjswelKQ" name="" conditionText="threshold > (oi.value + 1) / ( ii.value + 1)"/>
+    <mappings xmi:id="_k3-PAY4CEemIvZtjswelKQ" origin="_k37LsI4CEemIvZtjswelKQ" image="_k3-PAI4CEemIvZtjswelKQ"/>
+    <mappings xmi:id="_oj7jYo4CEemIvZtjswelKQ" origin="_oj7jYI4CEemIvZtjswelKQ" image="_oj7jYY4CEemIvZtjswelKQ"/>
+    <mappings xmi:id="_qSbskY4CEemIvZtjswelKQ" origin="_qSbFgI4CEemIvZtjswelKQ" image="_qSbskI4CEemIvZtjswelKQ"/>
+  </units>
+</henshin:Module>

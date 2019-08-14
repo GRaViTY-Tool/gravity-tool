@@ -1,6 +1,7 @@
 [submodule "build"]
 	path = build
 	url = https://github.com/GRaViTY-Tool/gravity-build.git
+	branch = master
 [submodule "evaluation"]
 	path = evaluation
 	url = https://github.com/GRaViTY-Tool/gravity-evaluation.git

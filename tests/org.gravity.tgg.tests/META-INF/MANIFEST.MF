@@ -3,24 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.gravity.tgg.modisco.test
 Bundle-SymbolicName: org.gravity.tgg.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: org.gravity.tgg.modisco;bundle-version="1.0.0",
- org.apache.log4j,
+Require-Bundle: org.gravity.tgg.modisco,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
- org.eclipse.core.runtime;bundle-version="3.11.1",
  org.junit;bundle-version="4.12.0",
  org.eclipse.emf.compare;bundle-version="3.2.0",
- org.eclipse.emf.ecore.xmi;bundle-version="2.11.1",
- org.gravity.eclipse,
- org.eclipse.emf.ecore,
  org.gravity.modisco;bundle-version="1.0.0",
- org.eclipse.gmt.modisco.java;bundle-version="0.13.1",
- org.gravity.typegraph.basic,
  org.eclipse.uml2.uml,
- org.eclipse.modisco.infra.discovery.core
+ org.gravity.tgg.modisco.uml,
+ org.eclipse.modisco.infra.discovery.core,
+ org.gravity.typegraph.basic,
+ org.gravity.eclipse.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: TU Darmstadt
+Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
 Export-Package: org.gravity.tgg.test.activator,
@@ -28,5 +24,6 @@ Export-Package: org.gravity.tgg.test.activator,
  org.gravity.tgg.test.complete.pm,
  org.gravity.tgg.test.preprocessing,
  org.gravity.tgg.test.util
-Bundle-ClassPath: libs/json-simple-3.1.0.jar,
+Bundle-ClassPath: libs/json-simple-3.1.0.jar,\
  .
+

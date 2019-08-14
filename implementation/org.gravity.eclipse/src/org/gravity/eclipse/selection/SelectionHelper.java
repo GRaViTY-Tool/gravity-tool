@@ -14,6 +14,10 @@ import org.gravity.eclipse.util.JavaProjectUtil;
  * A Helper for selection java elements from eclipse
  */
 public class SelectionHelper {
+	
+	private SelectionHelper() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Get all IJavaProjects from a selection

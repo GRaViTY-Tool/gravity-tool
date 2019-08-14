@@ -64,7 +64,7 @@ public class UMLsecTest {
 
 		assertNotNull(model);
 		IFolder folder = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
-		model.eResource().save(new FileOutputStream(folder.getFile(project.getName()+".uml").getLocation().toFile()), Collections.EMPTY_MAP);
+		model.eResource().save(new FileOutputStream(folder.getFile(project.getName()+".uml").getLocation().toFile()), Collections.emptyMap());
 //		File srcFile = folder.getFile("src.xmi").getLocation().toFile();
 //		Files.copy(new FileInputStream(srcFile), folder.getFile("fwd.src.xmi").getLocation().toFile().toPath());
 
@@ -85,7 +85,7 @@ public class UMLsecTest {
 			}
 		}
 		model.eResource().getContents().addAll(add);
-		model.eResource().save(Collections.EMPTY_MAP);
+		model.eResource().save(Collections.emptyMap());
 
 		iJjavaProject.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 

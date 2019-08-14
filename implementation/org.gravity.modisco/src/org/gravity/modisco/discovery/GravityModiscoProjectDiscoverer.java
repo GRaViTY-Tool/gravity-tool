@@ -58,8 +58,12 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
 
+		/**
+		 * A public wrapper to get the resource set of the discoverer
+		 * @return The resource set
+		 */
 		public ResourceSet getRS() {
-			return getResourceSet();
+			return super.getResourceSet();
 		}
 	}
 
@@ -95,17 +99,17 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 			IClasspathEntry cpe = JavaCore.newLibraryEntry(filePath, null, null);
 			JavaProjectUtil.addToClassPath(project, Arrays.asList(cpe), progressMonitor);
-		} catch (IOException | DuplicateProjectNameException | CoreException e) {
+		} catch (DuplicateProjectNameException | CoreException e) {
 			throw new DiscoveryException(e);
 		}
 
 		IPackageFragmentRoot fragment = JavaCore.createJarPackageFragmentRootFrom(file);
-		DiscoverJavaModelFromLibrary discoverer = new DiscoverJavaModelFromLibrary();
-		if (!discoverer.isApplicableTo(fragment)) {
+		DiscoverJavaModelFromLibrary libDiscoverer = new DiscoverJavaModelFromLibrary();
+		if (!libDiscoverer.isApplicableTo(fragment)) {
 			throw new DiscoveryException("The discoverer cannot be applied to the file: " + jar.getName());
 		}
-		discoverer.discoverElement(fragment, progressMonitor);
-		MGravityModel model = (MGravityModel) discoverer.getTargetModel().getContents().get(0);
+		libDiscoverer.discoverElement(fragment, progressMonitor);
+		MGravityModel model = (MGravityModel) libDiscoverer.getTargetModel().getContents().get(0);
 
 		if (model == null) {
 			throw new DiscoveryException("An error occurred at discovery, no model has been created!");
@@ -285,7 +289,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 				}
 				EList<EObject> contents = javaResource.getContents();
 
-				if (contents.size() > 0) {
+				if (!contents.isEmpty()) {
 					EObject eobject = contents.get(0);
 
 					if (eobject instanceof Model) {
@@ -319,8 +323,8 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		MGravityModel model = discoverMGravityModelFromProject(source, monitor);
 		IProject project = source.getProject();
 		IFile file = project.getFile(project.getName() + ".xmi");
-		try {
-			model.eResource().save(new FileOutputStream(file.getLocation().toFile()), Collections.emptyMap());
+		try (FileOutputStream outputStream = new FileOutputStream(file.getLocation().toFile())){
+			model.eResource().save(outputStream, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ZERO, monitor);
 		} catch (IOException | CoreException e) {
 			throw new DiscoveryException(e);

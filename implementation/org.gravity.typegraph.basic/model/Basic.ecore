@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="basic" nsURI="http://www.gravity.org/typegraph/basic" nsPrefix="org.gravity.typegraph.basic">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="basic" nsURI="http://www.gravity-tool.org/typegraph/basic" nsPrefix="org.gravity.typegraph.basic">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.typegraph"/>
   </eAnnotations>
@@ -228,6 +228,9 @@
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="signature" eType="#//TSignature"/>
     </eOperations>
+    <eOperations name="getTDefinition" eType="#//TMember">
+      <eParameters name="signatureString" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eOperations name="hasTMember" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="member" eType="#//TMember"/>
     </eOperations>
@@ -306,8 +309,7 @@
         eType="#//TFlow" eOpposite="#//TFlow/flowSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
-  <eSubpackages name="containers" nsURI="http://www.gravity.org/typegraph/basic#//containers"
-      nsPrefix="containers">
+  <eSubpackages name="containers" nsURI="http://www.gravity-tool.org/typegraph/basic#//containers" nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAbstractTypes" upperBound="-1"
           eType="#//TAbstractType"/>
@@ -345,7 +347,7 @@
           eType="#//TMethodDefinition"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="annotations" nsURI="http://www.gravity.org/typegraph/basic#//annotations"
+  <eSubpackages name="annotations" nsURI="http://www.gravity-tool.org/typegraph/basic#//annotations"
       nsPrefix="annotations">
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotationValue">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tKey" lowerBound="1"

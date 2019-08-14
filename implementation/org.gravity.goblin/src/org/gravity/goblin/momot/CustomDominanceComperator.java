@@ -3,7 +3,7 @@ package org.gravity.goblin.momot;
 import java.util.List;
 
 import org.gravity.goblin.SearchParameters;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.momot.SearchTypeGraph.FitnessFunction;
 import org.moeaframework.core.Solution;
 import org.moeaframework.core.comparator.DominanceComparator;
@@ -42,8 +42,8 @@ public class CustomDominanceComperator implements DominanceComparator {
 		initialObjectives[0] = 0;
 
 		for (int i = 1; i < objectivesSize; i++) {
-			initialObjectives[i] = fitnessfunctions.get(i - 1).calculator
-					.calculate(Utility.getPG(solution.getSourceGraph()));
+			initialObjectives[i] = fitnessfunctions.get(i - 1).getCalculator()
+					.calculate(EGraphUtil.getPG(solution.getSourceGraph()));
 		}
 	}
 

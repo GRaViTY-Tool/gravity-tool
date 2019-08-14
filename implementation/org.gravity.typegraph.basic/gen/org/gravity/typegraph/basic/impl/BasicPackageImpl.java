@@ -1606,7 +1606,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__HasTMember__TMember() {
+	public EOperation getTAbstractType__GetTDefinition__String() {
 		return tAbstractTypeEClass.getEOperations().get(8);
 	}
 
@@ -1616,7 +1616,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__HasCommonSuperType__TAbstractType() {
+	public EOperation getTAbstractType__HasTMember__TMember() {
 		return tAbstractTypeEClass.getEOperations().get(9);
 	}
 
@@ -1626,7 +1626,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__FillSameType__EList() {
+	public EOperation getTAbstractType__HasCommonSuperType__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(10);
 	}
 
@@ -1636,7 +1636,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__IsInnerType__TAbstractType() {
+	public EOperation getTAbstractType__FillSameType__EList() {
 		return tAbstractTypeEClass.getEOperations().get(11);
 	}
 
@@ -1646,8 +1646,18 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
+	public EOperation getTAbstractType__IsInnerType__TAbstractType() {
 		return tAbstractTypeEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTAbstractType__GetRealPackage__TAbstractType() {
+		return tAbstractTypeEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -2061,6 +2071,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_BASE_PACKAGE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE);
+		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TDEFINITION__STRING);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST);
@@ -2381,6 +2392,9 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTAbstractType__GetTDefinition__TSignature(), this.getTMember(), "getTDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTSignature(), "signature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTAbstractType__GetTDefinition__String(), this.getTMember(), "getTDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signatureString", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getTAbstractType__HasTMember__TMember(), ecorePackage.getEBoolean(), "hasTMember", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTMember(), "member", 0, 1, IS_UNIQUE, IS_ORDERED);

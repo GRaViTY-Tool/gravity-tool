@@ -7,11 +7,11 @@
   </eAnnotations>
   <eSubpackages name="access" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access"
       nsPrefix="access">
-    <eClassifiers xsi:type="ecore:EClass" name="TApi" eSuperTypes="http://www.gravity.org/typegraph/basic#//annotations/TAnnotation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TApi" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eSubpackages>
   <eSubpackages name="requirements" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"
       nsPrefix="requirements">
-    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="http://www.gravity.org/typegraph/basic#//annotations/TAnnotation"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="http://www.gravity.org/typegraph/basic#//annotations/TAnnotation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eSubpackages>
 </ecore:EPackage>

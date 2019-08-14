@@ -1,7 +1,6 @@
 package org.gravity.tgg.modisco;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -57,8 +56,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 	private MGravityModel targetModel;
 
-	private String projectName;
-
 	private TGGApp sync;
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverter.class);
@@ -66,14 +63,23 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
 	 * 
-	 * @throws MalformedURLException If the eMoflon TGG rules couldn't be loaded
 	 * @throws IOException           If the eMoflon TGG rules couldn't be loaded
 	 */
-	public MoDiscoTGGConverter() throws MalformedURLException, IOException {
+	public MoDiscoTGGConverter() throws IOException {
 		this.discoverer = new GravityModiscoProjectDiscoverer();
 		this.sync = new TGGApp();
 	}
 
+	public boolean discard() {
+		try {
+			this.sync.terminate();
+		} catch (IOException e) {
+			LOGGER.error(e.getMessage(), e);
+			return false;
+		}
+		return true;
+	}
+	
 	@Override
 	public boolean convertProject(IJavaProject project, IProgressMonitor monitor) {
 		libs = new HashSet<>();
@@ -89,14 +95,13 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			progressMonitor = monitor;
 		}
 
-		this.projectName = javaProject.getProject().getName();
 		GravityActivator.getDefault().addProject(javaProject.getProject());
 		this.iJavaProject = javaProject;
 		this.modiscoFolder = javaProject.getProject().getFolder("modisco"); //$NON-NLS-1$
 		this.libs = libs;
 
 		long start = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, "GRaViTY convert project: " + this.projectName);
+		LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
 
 		try {
 			targetModel = discoverer.discoverMGravityModelFromProject(javaProject, libs, progressMonitor);
@@ -107,16 +112,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		if (this.debug) {
 			saveModel(targetModel, this.modiscoFolder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
-
-//		sync. = targetModel.eResource();
-//		setChangeSrc(null);
-//		clearChanges();
-//		setSynchronizationProtocol(null);
-
-//		if (debug) {
-//			setConfigurator(new PGSavingConfigurator(this,
-//					this.modiscoFolder.getFile("emoflon_pg.xmi").getLocation().toString()));
-//		}
 		sync.getSourceResource().getContents().add(targetModel);
 
 		long t4 = System.currentTimeMillis();
@@ -129,15 +124,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 
-//		org.moflon.tgg.runtime.PrecedenceStructure ps = null;
-//		if (this.debug) {
-//			// Create precedence structure before applying prepocessing to allow
-//			// replacements of model elements using crossreferences.
-//			ps = protocol.save();
-//			set.createResource(eMoflonEMFUtil
-//					.createFileURI(this.modiscoFolder.getFile("sync_protocol.xmi").getLocation().toString(), false)) //$NON-NLS-1$
-//					.getContents().add(ps);
-//		}
 		boolean success = sync.getTargetResource() != null && sync.getTargetResource().getContents().get(0) instanceof TypeGraph;
 		if (success) {
 			Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
@@ -151,50 +137,13 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 		if (this.debug) {
 			savePG(this.modiscoFolder.getFile("pg.xmi"), progressMonitor); //$NON-NLS-1$
-//			saveCorr(this.modiscoFolder.getFile("correspondence_model.xmi").getLocation().toString()); //$NON-NLS-1$
-//			eMoflonEMFUtil.saveModel(ps.eResource().getResourceSet(), ps, ps.eResource().getURI().path());
-		}
+	}
 
-//		if (!success) {
-//			reset();
-//		}
 
 		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
 
 		return success;
 	}
-
-//	/**
-//	 * Resets the converter to initial values
-//	 */
-//	private void reset() {
-//		if (src != null) {
-//			src.eResource().unload();
-//			src = null;
-//		}
-//		if (trg != null) {
-//			trg.eResource().unload();
-//			trg = null;
-//		}
-//		if (corr != null) {
-//			corr.eResource().unload();
-//			corr = null;
-//		}
-//		if (protocol != null) {
-//			protocol = null;
-//		}
-//		set = new ResourceSetImpl();
-//	}
-
-//	/**
-//	 * Sets the eMoflon changes to empty consumers
-//	 */
-//	private void clearChanges() {
-//		this.changeSrc = (root -> {
-//		});
-//		this.changeTrg = (root -> {
-//		});
-//	}
 
 	@Override
 	public boolean syncProjectFwd(IProgressMonitor monitor) {
@@ -212,7 +161,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		try {
 			targetModel = this.discoverer.discoverMGravityModelFromProject(iJavaProject, monitor);
 		} catch (DiscoveryException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 			return false;
 		}
 		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
@@ -239,8 +188,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
 		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
 
-//		setChangeSrc(consumer);
-
 		try {
 			sync.forward();
 		} catch (IOException e) {
@@ -254,7 +201,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			savePG(this.modiscoFolder.getFile("pg.xmi"), monitor); //$NON-NLS-1$
 		}
 		Resource trg = sync.getTargetResource();
-		return trg != null && trg.getContents().size() > 0;
+		return trg != null && !trg.getContents().isEmpty();
 	}
 
 	@Override
@@ -274,7 +221,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_BWD)) {
 			processor.process(getPG(), progressMonitor);
 		}
-//		setChangeTrg(consumer);
 		try {
 			sync.backward();
 		} catch (IOException e) {
@@ -330,7 +276,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	@Override
 	public TypeGraph getPG() {
 		Resource resource = sync.getTargetResource();
-		if (resource != null && resource.getContents().size() > 0) {
+		if (resource != null && !resource.getContents().isEmpty()) {
 			return (TypeGraph) resource.getContents().get(0);
 		}
 		LOGGER.log(Level.ERROR, "There is no program model!");

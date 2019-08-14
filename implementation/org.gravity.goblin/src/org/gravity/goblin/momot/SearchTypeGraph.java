@@ -15,7 +15,7 @@ import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.model.Unit;
 import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.SearchParameters;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
 import org.gravity.goblin.fitness.AntiPatternCalculator;
 import org.gravity.goblin.fitness.CohesionCalculator;
@@ -77,14 +77,23 @@ public class SearchTypeGraph {
 	 */
 
 	public class FitnessFunction {
-		public String Name;
-		public FunctionType type;
-		public IFitnessCalculator calculator;
+		private String name;
+		private FunctionType type;
+		private IFitnessCalculator calculator;
 
 		public FitnessFunction(String name, FunctionType type, IFitnessCalculator calc) {
-			this.Name = name;
+			this.name = name;
 			this.type = type;
 			this.calculator = calc;
+		}
+
+		/**
+		 * A getter for the calculator
+		 * 
+		 * @return the calculator
+		 */
+		public IFitnessCalculator getCalculator() {
+			return calculator;
 		}
 	}
 
@@ -120,19 +129,19 @@ public class SearchTypeGraph {
 		}
 		
 		orchestration.addAlgorithm("NSGAIII", moea.createNSGAIII(ts,
-				new OnePointCrossover(SearchParameters.OnePointCrossoverProbability),
-				new TransformationParameterMutation(SearchParameters.TransformationParameterMutationProbability,
+				new OnePointCrossover(SearchParameters.onePointCrossoverProbability),
+				new TransformationParameterMutation(SearchParameters.transformationParameterMutationProbability,
 						orchestration.getModuleManager()),
-				new TransformationPlaceholderMutation(SearchParameters.TransformationPlaceholderMutationProbability)));
+				new TransformationPlaceholderMutation(SearchParameters.transformationPlaceholderMutationProbability)));
 	}
 
 	// -----------------------------non configurable
 	// stuff-------------------------------------------
 	protected IFitnessDimension<TransformationSolution> createFitnessDimension(FitnessFunction function) {
-		return new AbstractEGraphFitnessDimension(function.Name, function.type) {
+		return new AbstractEGraphFitnessDimension(function.name, function.type) {
 			@Override
 			protected double internalEvaluate(TransformationSolution solution) {
-				return function.calculator.calculate(Utility.getPG(solution.getResultGraph()));
+				return function.getCalculator().calculate(EGraphUtil.getPG(solution.getResultGraph()));
 			}
 		};
 	}
@@ -292,7 +301,7 @@ public class SearchTypeGraph {
 
 		search.initializeFitnessFunctions();
 		search.initializeConstraints();
-		search.performSearch(SearchParameters.INITIAL_MODEL, SearchParameters.SOLUTION_LENGTH);
+		search.performSearch(SearchParameters.initialModel, SearchParameters.solutiionLength);
 		LOGGER.log( Level.INFO, "Search finished.");
 	}
 }

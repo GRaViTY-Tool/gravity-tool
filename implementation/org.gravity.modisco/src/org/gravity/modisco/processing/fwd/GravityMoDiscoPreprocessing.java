@@ -1,7 +1,7 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
@@ -60,7 +60,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 	 * @param model The model which should be preprocessed
 	 */
 	private static boolean preprocessImplementedSignatures(MGravityModel model) {
-		Hashtable<MSignature, Collection<AbstractTypeDeclaration>> mapping = new Hashtable<>();
+		HashMap<MSignature, Collection<AbstractTypeDeclaration>> mapping = new HashMap<>();
 		for (MName mName : model.getMNames()) {
 			for (MSignature mSignature : mName.getMSignatures()) {
 				List<AbstractTypeDeclaration> implementingTypes = new LinkedList<>();
@@ -99,7 +99,7 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		}
 		for (MFieldDefinition def : model.getMFieldDefinitions()) {
 			for (VariableDeclarationFragment fragment : def.getFragments()) {
-				if (!MiscHandler.handle(fragment, def)) { // TODO: Add access types here
+				if (!ExpressionHandler.handle(fragment.getInitializer(), def)) { // TODO: Add access types here
 					LOGGER.log(Level.ERROR,
 							"Couldn't handle field statement \"" + fragment + "\" at preprocessing of accesses.");
 					return false;

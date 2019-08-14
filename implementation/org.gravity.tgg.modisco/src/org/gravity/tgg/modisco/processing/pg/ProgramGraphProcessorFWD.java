@@ -1,12 +1,13 @@
 package org.gravity.tgg.modisco.processing.pg;
 
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+import java.util.Deque;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.gravity.typegraph.basic.BasicFactory;
@@ -20,7 +21,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
-	
+
 	private static final List<String> objectMethods = Arrays.asList("clone():void", "equals(Object):boolean",
 			"finalize():void", "getClass():Class", "hashCode():int", "notify():void", "notifyAll():void",
 			"toString():String", "wait():void", "wait(long):void", "wait(long,int):void");
@@ -31,17 +32,16 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 		return true;
 	}
 
-	
 	private static void createMissingOverrideEdges(TypeGraph pg) {
 		for (TClass tClass : pg.getDeclaredTClasses()) {
-			Hashtable<String, TMethodDefinition> signatures = new Hashtable<String, TMethodDefinition>();
+			HashMap<String, TMethodDefinition> signatures = new HashMap<String, TMethodDefinition>();
 			for (TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
 				if (tMethodDefinition.getOverriding() == null) {
 					signatures.put(tMethodDefinition.getSignatureString(), tMethodDefinition);
 				}
 			}
 
-			Stack<TAbstractType> parents = new Stack<>();
+			Deque<TAbstractType> parents = new LinkedList<>();
 			addParentsToStack(tClass, parents);
 
 			TClass tObject = pg.getClass("java.lang.Object");
@@ -54,9 +54,7 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 			while (!parents.isEmpty()) {
 				TAbstractType tParent = parents.pop();
 				addParentsToStack(tParent, parents);
-				Enumeration<String> keys = signatures.keys();
-				while (keys.hasMoreElements()) {
-					String tMethodSignatureString = keys.nextElement();
+				for (String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
 					TMethodDefinition tMethodDefinition = tParent.getTMethodDefinition(tMethodSignatureString);
 					if (tMethodDefinition != null) {
 						tMethodDefinition.getOverriddenBy().add(signatures.remove(tMethodSignatureString));
@@ -65,9 +63,7 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 			}
 
 			// Check if a operation defined by java.lang.Object has been overriden
-			Enumeration<String> keys = signatures.keys();
-			while (keys.hasMoreElements()) {
-				String tMethodSignatureString = keys.nextElement();
+			for (String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
 				if (objectMethods.contains(tMethodSignatureString)) {
 					TMethodDefinition tMethodDefinition = signatures.remove(tMethodSignatureString);
 					TMethodDefinition tObjectMethodDefinition = tObject.getTMethodDefinition(tMethodSignatureString);
@@ -116,7 +112,7 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 		return tObjectMethodDefinition;
 	}
 
-	private static void addParentsToStack(TAbstractType child, Stack<TAbstractType> stack) {
+	private static void addParentsToStack(TAbstractType child, Deque<TAbstractType> stack) {
 		if (child instanceof TClass) {
 			TClass tClass = (TClass) child;
 			TClass tParentClass = tClass.getParentClass();

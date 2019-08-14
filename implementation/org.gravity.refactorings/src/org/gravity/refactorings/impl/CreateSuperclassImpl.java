@@ -24,6 +24,15 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class CreateSuperclassImpl extends RefactoringImpl {
+	
+	/**
+	 * Creates a new refactoring
+	 * 
+	 * @param programModel The program model which should be refactored
+	 */
+	public CreateSuperclassImpl(TypeGraph programModel) {
+		super(programModel);
+	}
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {

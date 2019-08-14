@@ -23,6 +23,7 @@ import org.eclipse.emf.henshin.model.Module;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.gravity.goblin.fitness.CouplingCalculator;
+import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TClass;
@@ -65,10 +66,10 @@ public class HenshinExecutor {
 		resourceSet = new HenshinResourceSet("");
 
 		Resource r = resourceSet.createResource(URI.createURI(""));
-		Bundle bundle = Platform.getBundle("momot.movemethod.demo");
+		Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
 		URL res = bundle.getResource(modulePath);
 		try (InputStream s = res.openStream()) {
-			r.load(s, Collections.EMPTY_MAP);
+			r.load(s, Collections.emptyMap());
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}

@@ -30,6 +30,10 @@ import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MDefinition;
 
 public class StatementHandler {
+	
+	private StatementHandler() {
+		// This class shouldn't be instantiated
+	}
 
 	public static boolean handle(Statement statement, MDefinition member) {
 		if (statement == null) {
@@ -38,99 +42,75 @@ public class StatementHandler {
 		if (statement instanceof AssertStatement) {
 			AssertStatement assertStatement = (AssertStatement) statement;
 			return handle(assertStatement, member);
-
 		} else if (statement instanceof Block) {
 			Block block = (Block) statement;
 			return handle(block, member);
-
 		} else if (statement instanceof BreakStatement) {
 			BreakStatement breakStatement = (BreakStatement) statement;
 			return handle(breakStatement, member);
-
 		} else if (statement instanceof CatchClause) {
 			CatchClause catchClause = (CatchClause) statement;
 			return handle(catchClause, member);
-
 		} else if (statement instanceof ConstructorInvocation) {
 			ConstructorInvocation constructorInvocation = (ConstructorInvocation) statement;
 			return handle(constructorInvocation, member);
-
 		} else if (statement instanceof ContinueStatement) {
 			ContinueStatement continueStatement = (ContinueStatement) statement;
 			return handle(continueStatement, member);
-
 		} else if (statement instanceof DoStatement) {
 			DoStatement doStatement = (DoStatement) statement;
 			return handle(doStatement, member);
-
 		} else if (statement instanceof EmptyStatement) {
-			EmptyStatement emptyStatement = (EmptyStatement) statement;
-			return handle(emptyStatement, member);
-
+			// Nothing to do here
+			return true;
 		} else if (statement instanceof EnhancedForStatement) {
 			EnhancedForStatement enhancedForStetement = (EnhancedForStatement) statement;
 			return handle(enhancedForStetement, member);
-
 		} else if (statement instanceof ExpressionStatement) {
 			ExpressionStatement expressionStatement = (ExpressionStatement) statement;
 			return handle(expressionStatement, member);
-
 		} else if (statement instanceof ForStatement) {
 			ForStatement forStatement = (ForStatement) statement;
 			return handle(forStatement, member);
-
 		} else if (statement instanceof IfStatement) {
 			IfStatement ifStatement = (IfStatement) statement;
 			return handle(ifStatement, member);
-
 		} else if (statement instanceof LabeledStatement) {
 			LabeledStatement labeledStatement = (LabeledStatement) statement;
 			return handle(labeledStatement, member);
-
 		} else if (statement instanceof ReturnStatement) {
 			ReturnStatement returnStatement = (ReturnStatement) statement;
 			return handle(returnStatement, member);
-
 		} else if (statement instanceof SuperConstructorInvocation) {
 			SuperConstructorInvocation superConstructorInvocation = (SuperConstructorInvocation) statement;
 			return handle(superConstructorInvocation, member);
-
 		} else if (statement instanceof SwitchCase) {
 			SwitchCase switchCase = (SwitchCase) statement;
 			return handle(switchCase, member);
-
 		} else if (statement instanceof SwitchStatement) {
 			SwitchStatement switchStatement = (SwitchStatement) statement;
 			return handle(switchStatement, member);
-
 		} else if (statement instanceof SynchronizedStatement) {
 			SynchronizedStatement synchronizedStatement = (SynchronizedStatement) statement;
 			return handle(synchronizedStatement, member);
-
 		} else if (statement instanceof ThrowStatement) {
 			ThrowStatement throwStatement = (ThrowStatement) statement;
 			return handle(throwStatement, member);
-
 		} else if (statement instanceof TryStatement) {
 			TryStatement tryStatement = (TryStatement) statement;
 			return handle(tryStatement, member);
-
 		} else if (statement instanceof TypeDeclarationStatement) {
-			TypeDeclarationStatement typeDeclarationStatement = (TypeDeclarationStatement) statement;
-			return handle(typeDeclarationStatement, member);
-
+			// Nothing to do here
+			return true;
 		} else if (statement instanceof UnresolvedLabeledStatement) {
 			UnresolvedLabeledStatement unresolvedLabeledStatement = (UnresolvedLabeledStatement) statement;
 			return handle(unresolvedLabeledStatement, member);
-
 		} else if (statement instanceof VariableDeclarationStatement) {
 			VariableDeclarationStatement variableDeclarationStatement = (VariableDeclarationStatement) statement;
 			return handle(variableDeclarationStatement, member);
-
 		} else if (statement instanceof WhileStatement) {
 			WhileStatement whileStatement = (WhileStatement) statement;
 			return handle(whileStatement, member);
-
 		} else {
 			return false;
 		}
@@ -143,10 +123,7 @@ public class StatementHandler {
 		if (!handle(whileStatement.getBody(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(whileStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(whileStatement.getExpression(), member);
 	}
 
 	private static boolean handle(VariableDeclarationStatement variableDeclarationStatement, MDefinition member) {
@@ -154,19 +131,9 @@ public class StatementHandler {
 			return true; // assume nothing to do is success
 		}
 		for (VariableDeclarationFragment fragment : variableDeclarationStatement.getFragments()) {
-			if (!MiscHandler.handle(fragment, member)) {
+			if (!ExpressionHandler.handle(fragment.getInitializer(), member)) {
 				return false;
 			}
-		}
-		return true;
-	}
-
-	private static boolean handle(TypeDeclarationStatement typeDeclarationStatement, MDefinition member) {
-		if (typeDeclarationStatement == null) {
-			return true; // assume nothing to do is success
-		}
-		if (!MiscHandler.handle(typeDeclarationStatement.getDeclaration(), member)) {
-			return false;
 		}
 		return true;
 	}
@@ -193,10 +160,7 @@ public class StatementHandler {
 		if (throwStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!ExpressionHandler.handle(throwStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(throwStatement.getExpression(), member);
 	}
 
 	private static boolean handle(SynchronizedStatement synchronizedStatement, MDefinition member) {
@@ -206,10 +170,7 @@ public class StatementHandler {
 		if (!handle(synchronizedStatement.getBody(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(synchronizedStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(synchronizedStatement.getExpression(), member);
 	}
 
 	private static boolean handle(SwitchStatement switchStatement, MDefinition member) {
@@ -221,20 +182,14 @@ public class StatementHandler {
 				return false;
 			}
 		}
-		if (!ExpressionHandler.handle(switchStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(switchStatement.getExpression(), member);
 	}
 
 	private static boolean handle(SwitchCase switchCase, MDefinition member) {
 		if (switchCase == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!ExpressionHandler.handle(switchCase.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(switchCase.getExpression(), member);
 	}
 
 	private static boolean handle(SuperConstructorInvocation superConstructorInvocation, MDefinition member) {
@@ -256,20 +211,14 @@ public class StatementHandler {
 		if (returnStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!ExpressionHandler.handle(returnStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(returnStatement.getExpression(), member);
 	}
 
 	private static boolean handle(LabeledStatement labeledStatement, MDefinition member) {
 		if (labeledStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!handle(labeledStatement.getBody(), member)) {
-			return false;
-		}
-		return true;
+		return handle(labeledStatement.getBody(), member);
 	}
 
 	private static boolean handle(IfStatement ifStatement, MDefinition member) {
@@ -282,10 +231,7 @@ public class StatementHandler {
 		if (!handle(ifStatement.getThenStatement(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(ifStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(ifStatement.getExpression(), member);
 	}
 
 	private static boolean handle(ForStatement forStatement, MDefinition member) {
@@ -315,10 +261,7 @@ public class StatementHandler {
 		if (expressionStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!ExpressionHandler.handle(expressionStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(expressionStatement.getExpression(), member);
 	}
 
 	private static boolean handle(EnhancedForStatement enhancedForStetement, MDefinition member) {
@@ -328,17 +271,7 @@ public class StatementHandler {
 		if (!handle(enhancedForStetement.getBody(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(enhancedForStetement.getExpression(), member)) {
-			return false;
-		}
-		return true;
-	}
-
-	private static boolean handle(EmptyStatement emptyStatement, MDefinition member) {
-		if (emptyStatement == null) {
-			return true; // assume nothing to do is success
-		}
-		return true;
+		return ExpressionHandler.handle(enhancedForStetement.getExpression(), member);
 	}
 
 	private static boolean handle(DoStatement doStatement, MDefinition member) {
@@ -348,20 +281,14 @@ public class StatementHandler {
 		if (!handle(doStatement.getBody(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(doStatement.getExpression(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(doStatement.getExpression(), member);
 	}
 
 	private static boolean handle(ContinueStatement continueStatement, MDefinition member) {
 		if (continueStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!handle(continueStatement.getLabel(), member)) {
-			return false;
-		}
-		return true;
+		return handle(continueStatement.getLabel(), member);
 	}
 
 	private static boolean handle(ConstructorInvocation constructorInvocation, MDefinition member) {
@@ -376,20 +303,14 @@ public class StatementHandler {
 		if(member.getMMethodInvocations().contains(constructorInvocation)){
 			return true;
 		}
-		if (!member.getMMethodInvocations().add(constructorInvocation)) {
-			return false;
-		}
-		return true;
+		return member.getMMethodInvocations().add(constructorInvocation);
 	}
 
 	private static boolean handle(BreakStatement breakStatement, MDefinition member) {
 		if (breakStatement == null) {
 			return true; // assume nothing to do is success
 		}
-		if (!handle(breakStatement.getLabel(), member)) {
-			return false;
-		}
-		return true;
+		return handle(breakStatement.getLabel(), member);
 	}
 
 	private static boolean handle(CatchClause catchClause, MDefinition member) {
@@ -399,10 +320,7 @@ public class StatementHandler {
 		if (!handle(catchClause.getBody(), member)) {
 			return false;
 		}
-		if (!MiscHandler.handle(catchClause.getException(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(catchClause.getException().getInitializer(), member);
 	}
 
 	private static boolean handle(AssertStatement assertStatement, MDefinition member) {
@@ -412,10 +330,7 @@ public class StatementHandler {
 		if (!ExpressionHandler.handle(assertStatement.getExpression(), member)) {
 			return false;
 		}
-		if (!ExpressionHandler.handle(assertStatement.getMessage(), member)) {
-			return false;
-		}
-		return true;
+		return ExpressionHandler.handle(assertStatement.getMessage(), member);
 	}
 
 	private static boolean handle(Block block, MDefinition member) {

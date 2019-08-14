@@ -45,7 +45,7 @@ import org.moflon.core.dfs.DFSGraph;
  *
  * @generated
  */
-public class HAntiPatternHandlingImpl extends EObjectImpl implements HAntiPatternHandling {
+public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HAntiPatternHandling {
 	/**
 	 * The cached value of the '{@link #getHDetector() <em>HDetector</em>}' reference list.
 	 * <!-- begin-user-doc -->

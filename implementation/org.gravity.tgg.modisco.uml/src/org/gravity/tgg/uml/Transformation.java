@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -28,8 +28,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmt.modisco.java.ArrayType;
 import org.eclipse.gmt.modisco.java.CompilationUnit;
@@ -76,7 +74,7 @@ public class Transformation extends SYNC {
 	private static final String UML_FLATTENED_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml_flattened.tgg.xmi";
 	private static final String UML_TGG_XMI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.tgg.xmi";
 
-	private Transformation(ResourceSet rs) throws MalformedURLException, IOException {
+	private Transformation() throws IOException {
 		super(createIbexOptions());
 		registerBlackInterpreter(new DemoclesTGGEngine());
 	}
@@ -90,7 +88,6 @@ public class Transformation extends SYNC {
 		return options;
 	}
 
-
 	@Override
 	public void loadModels() throws IOException {
 		s = createResource(options.projectPath() + "/instances/src.xmi");
@@ -98,50 +95,52 @@ public class Transformation extends SYNC {
 		c = createResource(options.projectPath() + "/instances/corr.xmi");
 		p = createResource(options.projectPath() + "/instances/protocol.xmi");
 	}
-	
+
 	@Override
 	protected void registerUserMetamodels() throws IOException {
 		registerPackage(JavaPackage.eINSTANCE);
 		registerPackage(ModiscoPackage.eINSTANCE);
-		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore", ModiscoPackage.eINSTANCE);
+		rs.getPackageRegistry().put("platform:/resource/org.gravity.modisco/model/Modisco.ecore",
+				ModiscoPackage.eINSTANCE);
 		rs.getResources().remove(ModiscoPackage.eINSTANCE.eResource());
 		EPackage tggPackage = loadMetaModelPackage(UML_ECORE);
 		registerPackage(tggPackage);
 		options.setCorrMetamodel(tggPackage);
 	}
-	
+
 	private void registerPackage(EPackage ePackage) {
 		rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 		rs.getResources().remove(ePackage.eResource());
 	}
-	
-	public EPackage loadMetaModelPackage(String uri) throws IOException, MalformedURLException {
+
+	public EPackage loadMetaModelPackage(String uri) throws IOException {
 		Resource tggResource = loadResource(uri);
-		EPackage tggPackage = (EPackage) tggResource.getContents().get(0);
-		return tggPackage;
+		return (EPackage) tggResource.getContents().get(0);
 	}
 
 	@Override
-	public Resource loadResource(String uri) throws IOException, MalformedURLException {
+	public Resource loadResource(String uri) throws IOException {
 		Resource resource = rs.createResource(URI.createURI(uri));
-		InputStream tggRulesStream = new URL(uri)
-				.openConnection().getInputStream();
-		resource.load(tggRulesStream,Collections.emptyMap());
+		if (uri.startsWith("/")) {
+			resource.load(Collections.emptyMap());
+		} else {
+			InputStream stream = new URL(uri).openConnection().getInputStream();
+			resource.load(stream, Collections.emptyMap());
+		}
 		EcoreUtil.resolveAll(resource);
 		return resource;
 	}
-	
+
 	@Override
 	protected Resource loadTGGResource() throws IOException {
 		return loadResource(UML_TGG_XMI);
 	}
-	
+
 	@Override
 	protected Resource loadFlattenedTGGResource() throws IOException {
 		return loadResource(UML_FLATTENED_TGG_XMI);
 	}
 
-	
 	/**
 	 * Translates the given java project into an UML model
 	 * 
@@ -186,7 +185,7 @@ public class Transformation extends SYNC {
 
 		Transformation trafo;
 		try {
-			trafo = new Transformation(discoverer.getResourceSet());
+			trafo = new Transformation();
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -201,6 +200,7 @@ public class Transformation extends SYNC {
 
 		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
 		trafo.forward();
+		trafo.terminate();
 
 		subMonitor.setTaskName("Postprocess UML Model");
 		subMonitor.setWorkRemaining(15);
@@ -208,8 +208,9 @@ public class Transformation extends SYNC {
 		if (model == null) {
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
+
 		try {
-			new UmlProcessor(model).processFwd();
+			new UmlSecProcessor(model).processFwd();
 		} catch (ProcessingException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -217,6 +218,7 @@ public class Transformation extends SYNC {
 		if (debugging) {
 			trafo.save(gravityFolder, subMonitor);
 		}
+		trafo.terminate();
 
 		return model;
 	}
@@ -227,8 +229,8 @@ public class Transformation extends SYNC {
 	 * @param folder  A folder in the project to which the models should be saved
 	 * @param trafo   The transformation of which the models should be saved
 	 * @param monitor A progress monitor
-	 * @throws IOException 
-	 * @throws FileNotFoundException 
+	 * @throws IOException
+	 * @throws FileNotFoundException
 	 */
 	private void save(IFolder folder, IProgressMonitor monitor) throws IOException {
 		monitor.setTaskName("Save UML Model");
@@ -253,7 +255,7 @@ public class Transformation extends SYNC {
 	public void saveSrc(String absolutePath) throws IOException {
 		save(s, absolutePath);
 	}
-	
+
 	/**
 	 * Saves the target model
 	 * 
@@ -267,14 +269,14 @@ public class Transformation extends SYNC {
 	/**
 	 * Saves the resource to the location
 	 * 
-	 * @param resource The resource which should be saved
+	 * @param resource     The resource which should be saved
 	 * @param absolutePath The output location
 	 * @throws IOException If writing the resource failed
 	 */
 	private void save(Resource resource, String absolutePath) throws IOException {
 		File outFile = new File(absolutePath);
 		File parentFile = outFile.getParentFile();
-		if(!parentFile.exists()) {
+		if (!parentFile.exists()) {
 			parentFile.mkdirs();
 		}
 		resource.save(new FileOutputStream(outFile), Collections.emptyMap());
@@ -292,7 +294,7 @@ public class Transformation extends SYNC {
 			throws TransformationFailedException, IOException {
 		Transformation trafo;
 		try {
-			trafo = new Transformation(new ResourceSetImpl());
+			trafo = new Transformation();
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -311,7 +313,7 @@ public class Transformation extends SYNC {
 		File oldTrgResource = gravityFolder.getFile(TRG_XMI).getLocation().toFile();
 		Resource r = trafo.rs.createResource(URI.createFileURI(oldTrgResource.getAbsolutePath()));
 		try {
-			r.load(Collections.EMPTY_MAP);
+			r.load(Collections.emptyMap());
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -321,15 +323,15 @@ public class Transformation extends SYNC {
 
 		try {
 			oldModel.eResource().save(new FileOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile()),
-					Collections.EMPTY_MAP);
+					Collections.emptyMap());
 			newModel.eResource().save(new FileOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile()),
-					Collections.EMPTY_MAP);
+					Collections.emptyMap());
 		} catch (IOException e) {
 			throw new TransformationFailedException(e);
 		}
 
 		try {
-			new UmlProcessor((Model) newModel).processBwd();
+			new UmlSecProcessor((Model) newModel).processBwd();
 		} catch (ProcessingException e) {
 			throw new TransformationFailedException(e);
 		}
@@ -344,8 +346,8 @@ public class Transformation extends SYNC {
 
 		try {
 			IFolder outFile = iproject.getFolder("src");
-			new GenerateJavaExtended(trafo.s.getContents().get(0), outFile.getLocation().toFile(), Collections.emptyList())
-					.doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
+			new GenerateJavaExtended(trafo.s.getContents().get(0), outFile.getLocation().toFile(),
+					Collections.emptyList()).doGenerate(new BasicMonitor.EclipseSubProgress(monitor, 1));
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
@@ -368,8 +370,9 @@ public class Transformation extends SYNC {
 	/**
 	 * Postprocesses the transformation
 	 */
-	private void postprocessAdditionsBwd() {
-		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) getSourceResource().getContents().get(0);
+	private void postprocessAdditionsBwd() {		
+		org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) getSourceResource()
+				.getContents().get(0);
 
 		Type string = MoDiscoUtil.getOrCreateJavaLangString(model);
 		ArrayType array = null;
@@ -384,7 +387,7 @@ public class Transformation extends SYNC {
 		}
 
 		Protocol sync = (Protocol) getProtocolResource().getContents().get(0);
-		Hashtable<CompilationUnit, HashSet<NamedElement>> imports = new Hashtable<>();
+		HashMap<CompilationUnit, HashSet<NamedElement>> imports = new HashMap<>();
 //		for (EObject node : additions) {
 //			for (TripleMatch match : sync.getCreatingMatches(node)) {
 //				for (EObject eObject : match.getCreatedSrcElts().getNodes()) {

@@ -1,43 +1,40 @@
 package org.gravity.hulk.tests.metics;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Arrays;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.Collections;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IMethod;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
-import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.JavaCore;
-import org.gravity.eclipse.GravityAPI;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
-import org.gravity.eclipse.util.JavaASTUtil;
+import org.gravity.eclipse.io.GitCloneException;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
+import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
+import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.detection.metrics.HIGAMCalculator;
 import org.gravity.hulk.detection.metrics.HIGATCalculator;
 import org.gravity.hulk.detection.metrics.MetricsFactory;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
@@ -46,12 +43,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import de.uni_hamburg.informatik.swt.accessanalysis.Analysis;
-import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisException;
-import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory;
-import de.uni_hamburg.informatik.swt.accessanalysis.AnalysisFactory.AnalysisMode;
-import de.uni_hamburg.informatik.swt.accessanalysis.results.Result;
+import org.osgi.framework.Bundle;
 
 /**
  * A test if our implementation of the IGAM and IGAT metrics return the results
@@ -65,17 +57,38 @@ public class AccessAnalysisTest {
 
 	private static final Logger LOGGER = Logger.getLogger(AccessAnalysisTest.class.getName());
 
-	private IJavaProject javaProject;
+	private TypeGraph pmExpect;
+	private TypeGraph pmInput;
+	
+	private static final String[] projects = new String[] {"SecureMailApp"};
 
 	/**
 	 * Creates a new test instance for the given project
 	 * 
-	 * @param name The name of the project
+	 * @param name    The name of the project
 	 * @param project The project
+	 * @param The     program model containing the expected annotations
+	 * @throws IOException If the expected program model cannot be loaded
 	 */
-	public AccessAnalysisTest(String name, IJavaProject project) {
-		this.javaProject = project;
+	public AccessAnalysisTest(String name, URL pmInput, URL pmExpect) throws IOException {
+		ResourceSetImpl resourceSet = new ResourceSetImpl();
+		this.pmInput = (TypeGraph) loadModel(resourceSet, pmInput).get(0);
+		this.pmExpect = (TypeGraph) loadModel(resourceSet, pmExpect).get(0);
 		LOGGER.log(Level.INFO, "Perform test on project: " + name);
+	}
+
+	/**
+	 * Loads the model from the given URL into the reousce set
+	 * 
+	 * @param set The resource set
+	 * @param url The url to the model
+	 * @return The contents of the model
+	 * @throws IOException If reading the model failed
+	 */
+	private EList<EObject> loadModel(ResourceSetImpl set, URL url) throws IOException {
+		Resource resource = set.createResource(URI.createFileURI(url.getFile()));
+		resource.load(url.openStream(), Collections.emptyMap());
+		return resource.getContents();
 	}
 
 	/**
@@ -84,174 +97,83 @@ public class AccessAnalysisTest {
 	 * @return The test data
 	 */
 	@Parameters(name = "{index}: Test HulkAPI on \"{0}\"")
-	public static Collection<Object[]> collectProjects() {
-		Collection<Object[]> data = new LinkedList<>();
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		for (IProject project : root.getProjects()) {
-			try {
-				if (project.hasNature(JavaCore.NATURE_ID)) {
-					IJavaProject javaProject = JavaCore.create(project);
-					data.add(new Object[] { project.getName(), javaProject });
-				}
-			} catch (CoreException e) {
-				LOGGER.log(Level.ERROR, e.toString());
-			}
+	public static Collection<Object[]> collectProjects() throws CoreException, GitCloneException, IOException {
+		Bundle bundle = Platform.getBundle("org.gravity.hulk.tests");
+		Collection<Object[]> results = new ArrayList<>(projects.length);
+		for(String name : projects) {
+			URL input = bundle.getEntry("input/"+name+".xmi");
+			URL expect = bundle.getEntry("expect/"+name+".xmi");
+			results.add(new Object[] {name, input, expect});
 		}
-		return data;
+		return results;
 	}
 
 	/**
 	 * 
-	 * Calculates IGAM and IGAT on all projects with Hulk and compares the values to those of the original AccessAnalysis
+	 * Calculates IGAM and IGAT on all projects with Hulk and compares the values to
+	 * those of the original AccessAnalysis
 	 * 
-	 * @throws AnalysisException If the AccessAnalysis tool failed
+	 * @throws AnalysisException             If the AccessAnalysis tool failed
 	 * @throws TransformationFailedException If a pm cannot be created
 	 */
 	@Test
-	public void testAccessAnalysis() throws AnalysisException, TransformationFailedException {
-		IProgressMonitor monitor = new NullProgressMonitor();
-		TypeGraph pg = GravityAPI.createProgramModel(javaProject, monitor);
-
+	public void testAccessAnalysis() throws TransformationFailedException {
+		String location = pmInput.eResource().getURI().toString();
 		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
-		apg.setPg(pg);
+		apg.setPg(pmInput);
 
 		HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 		hulk.setApg(apg);
-		hulk.setProgramlocation(javaProject.getProject().getLocation().toString());
+		hulk.setProgramlocation(location);
 
 		HIGAMCalculator igam = MetricsFactory.eINSTANCE.createHIGAMCalculator();
 		igam.setHAntiPatternHandling(hulk);
-		igam.detect(apg);
-
+		assertTrue(igam.detect(apg));
+		compareResults(igam.getHAnnotation());
+		
 		HIGATCalculator igat = MetricsFactory.eINSTANCE.createHIGATCalculator();
 		igat.setHAntiPatternHandling(hulk);
-		igat.detect(apg);
-
-		Analysis accessAnalysis = AnalysisFactory.analyzer(Arrays.asList(javaProject), AnalysisMode.ACCESS_QUIET);
-		accessAnalysis.run(monitor);
-
-		compareResults(pg, accessAnalysis.getResults());
+		assertTrue(igat.detect(apg));
+		compareResults(igat.getHAnnotation());
 	}
 
 	/**
 	 * Compares the results of Hulk and the AccessAnalysis tool
 	 * 
-	 * @param programModel The program model of Hulk
-	 * @param accessAnalysis The result list of the AccessAnalysis tool
+	 * @param detector The igat calculator
 	 */
-	private void compareResults(TypeGraph programModel, List<Result> accessAnalysis) {
-		Stack<Result> stack = new Stack<>();
-		stack.addAll(accessAnalysis);
-		while (!stack.isEmpty()) {
-			Result r = stack.pop();
-			stack.addAll(r.getChildren());
-			
-			Collection<TAnnotation> tAnnotations = getTAnnotations(programModel, r);
-			if(tAnnotations == null) {
+	private void compareResults(Collection<HAnnotation> annotations) {
+		for (HAnnotation annotation : annotations) {
+			TAnnotatable expectedAnnotatedElement;
+			TAnnotatable annotated = annotation.getTAnnotated();
+			if (annotated instanceof TAbstractType) {
+				String name = ((TAbstractType) annotated).getFullyQualifiedName();
+				expectedAnnotatedElement = pmExpect.getAbstractType(name);
+			} else if (annotated instanceof TPackage) {
+				String name = ((TPackage) annotated).getFullyQualifiedName();
+				expectedAnnotatedElement = pmExpect.getPackage(name);
+			} else if (annotated instanceof TMember) {
+				TAbstractType type = pmExpect.getType(((TMember) annotated).getDefinedBy().getFullyQualifiedName());
+				assertNotNull(type);
+				expectedAnnotatedElement = type.getTDefinition(((TMember) annotated).getSignatureString());
+			} else if (annotated instanceof TypeGraph) {
+				expectedAnnotatedElement = pmExpect;
+			} else {
+				String message = "Unhandeled element: " + annotated;
+				LOGGER.error(message);
+				fail(message);
 				continue;
 			}
-			for (TAnnotation tAnnotation : tAnnotations) {
-				double hValue = -1;
-				double aValue = -1;
-				String kind = null;
-				if (tAnnotation instanceof HIGATMetric) {
-					hValue = ((HIGATMetric) tAnnotation).getValue();
-					aValue = Double.valueOf(r.getFormatter().igat());
-					kind = "IGAT";
-				} else if (tAnnotation instanceof HIGAMMetric) {
-					hValue = ((HIGAMMetric) tAnnotation).getValue();
-					aValue = Double.valueOf(r.getFormatter().igam());
-					kind = "IGAM";
-				}
-
-				if (hValue != aValue) {
-					String element = getNameOfAnnotatedElement(tAnnotation);
-					LOGGER.log(Level.ERROR,
-							kind + " not equal for " + element + ": hulk=" + hValue + "\" aa=\"" + aValue + "\"");
-				}
+			assertNotNull(expectedAnnotatedElement);
+			EClass eClass = annotation.eClass();
+			EList<TAnnotation> expectedAnnotations = expectedAnnotatedElement.getTAnnotation(eClass);
+			assertEquals(1, expectedAnnotations.size());
+			if (AntipatterngraphPackage.eINSTANCE.getHMetric().isSuperTypeOf(eClass)) {
+				assertEquals(((HMetric) expectedAnnotations.get(0)).getValue(), ((HMetric) annotation).getValue(),
+						0.001);
+			} else {
+				LOGGER.warn("No detailed comparison for: " + eClass.getName());
 			}
 		}
-	}
-
-	/**
-	 * 
-	 * Builds a String with the name of the annotated Element
-	 * @param tAnnotation The annotation
-	 * @return The String representation
-	 */
-	private String getNameOfAnnotatedElement(TAnnotation tAnnotation) {
-		String element = null;
-		TAnnotatable tAnnotated = tAnnotation.getTAnnotated();
-		if (tAnnotated instanceof TMember) {
-			TMember tMember = (TMember) tAnnotated;
-			element = "Member \"" + tMember.getDefinedBy().getFullyQualifiedName() + " -> "
-					+ tMember.getSignatureString() + '\"';
-		} else if (tAnnotated instanceof TAbstractType) {
-			element = "Type \"" + ((TAbstractType) tAnnotated).getFullyQualifiedName() + '\"';
-		} else if (tAnnotated instanceof TPackage) {
-			element = "Package \"" + ((TPackage) tAnnotated).getFullyQualifiedName();
-
-		} else if (tAnnotated instanceof TypeGraph) {
-			element = "Java Project \"" + ((TypeGraph) tAnnotated).getTName() + "\"";
-		}
-		return element;
-	}
-
-	/**
-	 * Searches the annotations corresponding with the AccessAnalysis result
-	 * 
-	 * @param programModel The program model
-	 * @param result The AccessAnalysis result
-	 * @return The corresponding annotations
-	 */
-	private Collection<TAnnotation> getTAnnotations(TypeGraph programModel, Result result) {
-		IJavaElement javaElement = result.getJavaElement();
-		if (javaElement instanceof IJavaProject) {
-			return programModel.getTAnnotation();
-		} else if (javaElement instanceof IPackageFragmentRoot) {
-			TPackage tPackage = programModel
-					.getPackage(new String[] { ((IPackageFragmentRoot) javaElement).getElementName() });
-			if (tPackage == null) {
-				return null;
-			}
-			return tPackage.getTAnnotation();
-
-		} else if (javaElement instanceof IPackageFragment) {
-			List<String> namespace = getNameSpace((IPackageFragment) javaElement);
-			TPackage tPackage = programModel.getPackage(namespace.toArray(new String[namespace.size()]));
-
-			return tPackage.getTAnnotation();
-		} else if (javaElement instanceof IType) {
-			TAbstractType tClass = programModel.getType(((IType) javaElement).getFullyQualifiedName());
-			return tClass.getTAnnotation();
-		} else if (javaElement instanceof IMethod) {
-			TMethodDefinition tMethodDefinition = JavaASTUtil.getTMethodDefinition((IMethod) javaElement, programModel);
-			return tMethodDefinition.getTAnnotation();
-		}
-		else {
-			String message = "Annotations cannot be retrieved for the following element: "+javaElement;
-			LOGGER.log(Level.ERROR, message);
-			fail(message);
-			return null;
-		}
-	}
-
-	/**
-	 * Builds a list with the name space of the package fragment
-	 * 
-	 * @param fragment A package fragment
-	 * @return A list with the name space
-	 */
-	private static List<String> getNameSpace(IPackageFragment fragment) {
-		List<String> namespace = new LinkedList<>();
-		IJavaElement tmp = fragment;
-		while (tmp != null && tmp instanceof IPackageFragment) {
-			String[] names = tmp.getElementName().split("\\.");
-			for (int i = names.length - 1; i >= 0; i--) {
-				namespace.add(0, names[i]);
-			}
-			tmp = tmp.getParent();
-		}
-		return namespace;
 	}
 }

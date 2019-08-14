@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import org.apache.log4j.Level;
@@ -136,7 +136,7 @@ public abstract class HulkHandler extends AbstractHandler {
 	}
 
 	public void SyncBWD() {
-		Hashtable<String, String> configuration = new Hashtable<String, String>();
+		HashMap<String, String> configuration = new HashMap<String, String>();
 
 		detector = new HulkDetector(hulk, configuration);
 

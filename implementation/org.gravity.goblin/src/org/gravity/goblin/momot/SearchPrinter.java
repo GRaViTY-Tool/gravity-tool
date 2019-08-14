@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.gravity.goblin.SearchParameters;
-import org.gravity.goblin.Utility;
+import org.gravity.goblin.EGraphUtil;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.moeaframework.core.Population;
 import org.moeaframework.core.Solution;
@@ -123,7 +123,7 @@ public class SearchPrinter {
 		for (Solution solution : population) {
 			TransformationSolution transformationSolution = MomotUtil.assertTransformationSolution(solution);
 			EGraph graph = transformationSolution.execute();
-			TypeGraph pg = Utility.getPG(graph);
+			TypeGraph pg = EGraphUtil.getPG(graph);
 			EObject eContainer = pg.eContainer();
 			if (eContainer != null && eContainer.eResource() == null) {
 				LOGGER.log(Level.WARN, "There was a HAntiPatternGraph withot resource");
@@ -167,7 +167,7 @@ public class SearchPrinter {
 			l.log(Level.INFO, "-------------------------------------------------------");
 			l.log(Level.INFO, "Search");
 			l.log(Level.INFO, "-------------------------------------------------------");
-			l.log(Level.INFO, "InputModel:      " + SearchParameters.INITIAL_MODEL);
+			l.log(Level.INFO, "InputModel:      " + SearchParameters.initialModel);
 			l.log(Level.INFO, "Objectives:      " + orchestration.getFitnessFunction().getObjectiveNames());
 			l.log(Level.INFO, "NrObjectives:    " + orchestration.getNumberOfObjectives());
 			l.log(Level.INFO, "Constraints:     " + orchestration.getFitnessFunction().getConstraintNames());
