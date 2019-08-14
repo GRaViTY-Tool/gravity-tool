@@ -254,6 +254,12 @@ public class ExpressionHandler {
 				return false;
 			}
 		}
+		if (member.getMMethodInvocations().contains(classInstanceCreation)) {
+			return true;
+		}
+		if (!member.getMMethodInvocations().add(classInstanceCreation)) {
+			return false;
+		}
 		return true;
 	}
 
