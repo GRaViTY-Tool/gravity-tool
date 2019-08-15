@@ -11,7 +11,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
@@ -23,6 +22,8 @@ import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.ReturnStatement;
 import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.SwitchStatement;
+import org.eclipse.gmt.modisco.java.TypeAccess;
+import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
@@ -146,10 +147,21 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						FlowNode defNode = handler.getFlowNodeForElement(methodDef);
 						inRef.add(defNode);
 						defNode.addOutRef(node);
-					} else if (((MethodDeclaration) methodDef).getReturnType().getType().getName() != "void") {
-						FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition)((AbstractMethodInvocation) access).getMethod()).getMMethodSignature());
-						inRef.add(sigNode);
-						sigNode.addOutRef(node);
+					} else {
+						TypeAccess returnType = ((MethodDeclaration) methodDef).getReturnType();
+						if ((methodDef == null || returnType == null)) {
+							if (!(methodDef instanceof UnresolvedMethodDeclaration)) { // Ignoring UnresolvedMethodDeclarations for now
+							FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+							inRef.add(sigNode);
+							sigNode.addOutRef(node);
+							}
+						} else {
+							if (returnType.getType().getName() != "void") {
+								FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+								inRef.add(sigNode);
+								sigNode.addOutRef(node);
+							}
+						}
 					}
 				}
 				
@@ -163,6 +175,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						if (outRef.isEmpty()) { // Handling parameter flows, which end in an access (e. g. if access is in an assignment to a local)
 							accessOut.setFlowOwner(access);
 							accessOut.setFlowTarget(access);
+						} else { // Set flowOwner to parameter's member, as the access will be removed in the TGG transformation
+							accessOut.setFlowOwner((MAbstractMethodDefinition) ((MSingleVariableDeclaration) inElement).getMethodDeclaration());
 						}
 					} else {
 						// Also create incoming flow here, if it's not coming from an access (to avoid redundancy)
@@ -171,16 +185,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							if (inElement instanceof VariableDeclarationFragment) {
 								MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) inElement).getVariablesContainer();
 								accessIn.setFlowSource(fieldDef.getMFieldSignature());
-								// Setting the type access, so that the TGG rules can be applied
-								/* TODO: Might be better to set it in a pre-processing,
-								 as it could be nice to have ALL (not only the flow-related) field accesses,
-								 which in a given member definition
-								*/
-								EList<MSingleVariableAccess> fieldAccesses = memberDefTyped.getMAbstractFieldAccess();
-								MSingleVariableAccess mSVA = (MSingleVariableAccess) access;
-								if (!fieldAccesses.contains(mSVA)) {
-									fieldAccesses.add(mSVA);
-								}
 							} else {
 								accessIn.setFlowSource((MAbstractFlowElement) inElement);
 							}
@@ -193,14 +197,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					if (accessOut == null || !(accessOut.getFlowSource() instanceof MEntry)) {
 						accessOut = ModiscoFactory.eINSTANCE.createMFlow();
 						accessOut.setFlowSource(access);
+						accessOut.setFlowOwner(access);
 					}
 					EObject outElement = outNode.getModelElement();
 					if (outElement instanceof ReturnStatement) {
-						accessOut.setFlowOwner(memberDefTyped);	
 						accessOut.setFlowTarget(memberDefTyped);
 					} else if (outElement instanceof VariableDeclarationFragment) {
 						MFieldDefinition fieldDef = (MFieldDefinition) ((VariableDeclarationFragment) outElement).getVariablesContainer();
-						accessOut.setFlowOwner(fieldDef);
 						accessOut.setFlowTarget(fieldDef);
 					} else if (outElement instanceof MSingleVariableDeclaration) {
 						completeFlowForSigParam(outElement, node, accessOut);
@@ -210,11 +213,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							|| outElement instanceof EnhancedForStatement
 							|| outElement instanceof DoStatement
 							|| outElement instanceof SwitchStatement) {
-						accessOut.setFlowOwner(memberDefTyped);
 						accessOut.setFlowTarget(memberDefTyped);
 					} else {
 						MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-						accessOut.setFlowOwner(outTarget);
 						accessOut.setFlowTarget(outTarget);
 					}
 				}
@@ -281,7 +282,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			flow.setFlowOwner(invocation);
 		} else {
 			LOGGER.log(Level.INFO, "AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
-			flow.setFlowOwner(sigParamTarget);
+			flow.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
 		}
 	}
 
