@@ -279,11 +279,18 @@ public class MoDiscoUtil {
 				}
 			} catch (IllegalStateException e) {
 				MDefinition source = getContainingMethod(invocation);
-				LOGGER.log(Level.INFO,
-						"The guess of the return type of the invocartion of \""
-								+ method.getAbstractTypeDeclaration().getName() + '.' + method.getName() + "\" in \""
-								+ source.getAbstractTypeDeclaration().getName() + '.' + source.getName()
-								+ "\" might be optimized.");
+				StringBuilder message = new StringBuilder("The guess of the return type of the invocartion of \"");
+				message.append(method.getAbstractTypeDeclaration().getName());
+				message.append('.');
+				message.append(method.getName());
+				if (source != null) {
+					message.append("\" in \"");
+					message.append(source.getAbstractTypeDeclaration().getName());
+					message.append('.');
+					message.append(source.getName());
+				}
+				message.append("\" might be optimized.");
+				LOGGER.log(Level.INFO, message.toString());
 			}
 		}
 		if (type == null) {
@@ -484,7 +491,7 @@ public class MoDiscoUtil {
 	 */
 	private static MDefinition getContainingMethod(EObject statement) {
 		EObject eContainer = statement;
-		while (!(eContainer instanceof MDefinition)) {
+		while (eContainer != null && !(eContainer instanceof MDefinition)) {
 			eContainer = eContainer.eContainer();
 		}
 		return (MDefinition) eContainer;
