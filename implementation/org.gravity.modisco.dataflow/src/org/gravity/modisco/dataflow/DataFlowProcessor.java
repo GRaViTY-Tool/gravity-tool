@@ -148,15 +148,16 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						inRef.add(defNode);
 						defNode.addOutRef(node);
 					} else {
-						TypeAccess returnType = ((MethodDeclaration) methodDef).getReturnType();
-						if ((methodDef == null || returnType == null)) {
-							if (!(methodDef instanceof UnresolvedMethodDeclaration)) { // Ignoring UnresolvedMethodDeclarations for now
-							FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
-							inRef.add(sigNode);
-							sigNode.addOutRef(node);
-							}
-						} else {
-							if (returnType.getType().getName() != "void") {
+						TypeAccess returnType = null;
+						if (methodDef != null) {
+							returnType = ((MethodDeclaration) methodDef).getReturnType();
+							if (returnType != null) {
+								if (returnType.getType().getName() != "void") {
+									FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+									inRef.add(sigNode);
+									sigNode.addOutRef(node);
+								}
+							} else {
 								FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
 								inRef.add(sigNode);
 								sigNode.addOutRef(node);
