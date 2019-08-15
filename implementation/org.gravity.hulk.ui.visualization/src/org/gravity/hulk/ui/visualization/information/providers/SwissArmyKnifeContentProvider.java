@@ -6,7 +6,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.zest.core.widgets.Graph;
 import org.eclipse.zest.core.widgets.GraphConnection;
 import org.eclipse.zest.core.widgets.GraphNode;
-import org.eclipse.zest.core.widgets.ZestStyles;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
@@ -41,56 +40,26 @@ public class SwissArmyKnifeContentProvider extends InformationViewContentProvide
 	protected Graph setUpGraph(Composite graphComposite) {
 		Graph graph = new Graph(graphComposite, SWT.BORDER);
 
-		GraphNode swissArmyKnife = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN);
-		swissArmyKnife.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
-		swissArmyKnife.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-		
-		GraphNode largeClass = new GraphNode(graph, ZestStyles.NODES_FISHEYE, Flaws.H_LARGE_CLASS_SMELL);
-		largeClass.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
-		largeClass.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
-		
-		GraphNode muchOverloadingSmell = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				Flaws.H_MUCH_OVERLOADING_SMELL);
-		muchOverloadingSmell.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_YELLOW));
-		muchOverloadingSmell.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_BLACK));
-		
-		GraphNode numberOfIncommingInvocations = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
-		numberOfIncommingInvocations.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
-		numberOfIncommingInvocations.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-		
-		GraphNode numberOfMembers = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				Flaws.H_NUMBER_OF_MEMBERS_METRIC);
-		numberOfMembers.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
-		numberOfMembers.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-		
-		GraphNode averageOverloadingInClassMetric = new GraphNode(graph, ZestStyles.NODES_FISHEYE,
-				Flaws.H_AVERAGE_OVERLOADING_METRIC);
-		averageOverloadingInClassMetric.setBackgroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
-		averageOverloadingInClassMetric.setForegroundColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+		GraphNode swissArmyKnife = createNode(graphComposite, graph, Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN,
+				SWT.COLOR_RED, SWT.COLOR_WHITE);
+		GraphNode largeClass = createNode(graphComposite, graph, Flaws.H_LARGE_CLASS_SMELL, SWT.COLOR_YELLOW,
+				SWT.COLOR_BLACK);
+		GraphNode muchOverloadingSmell = createNode(graphComposite, graph, Flaws.H_MUCH_OVERLOADING_SMELL,
+				SWT.COLOR_YELLOW, SWT.COLOR_BLACK);
+		GraphNode numberOfIncommingInvocations = createNode(graphComposite, graph,
+				Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC, SWT.COLOR_MAGENTA, SWT.COLOR_WHITE);
+		GraphNode numberOfMembers = createNode(graphComposite, graph, Flaws.H_NUMBER_OF_MEMBERS_METRIC,
+				SWT.COLOR_MAGENTA, SWT.COLOR_WHITE);
+		GraphNode averageOverloadingInClassMetric = createNode(graphComposite, graph,
+				Flaws.H_AVERAGE_OVERLOADING_METRIC, SWT.COLOR_MAGENTA, SWT.COLOR_WHITE);
 
-		GraphConnection connection_1 = new GraphConnection(graph, ZestStyles.CONNECTIONS_DIRECTED, swissArmyKnife,
-				largeClass);
-		connection_1.setText("exists");
-		connection_1.setLineColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_CYAN));
-		GraphConnection connection_2 = new GraphConnection(graph, ZestStyles.CONNECTIONS_DIRECTED, swissArmyKnife,
-				muchOverloadingSmell);
-		connection_2.setText("exists");
-		connection_2.setLineColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_CYAN));
-		GraphConnection connection_3 = new GraphConnection(graph, ZestStyles.CONNECTIONS_DIRECTED, swissArmyKnife,
-				numberOfIncommingInvocations);
-		connection_3.setText(">= VERY_HIGH");
-		connection_3.setLineColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_RED));
-		GraphConnection connection_4 = new GraphConnection(graph, ZestStyles.CONNECTIONS_DIRECTED, largeClass,
-				numberOfMembers);
-		connection_4.setText(">= HIGH");
-		connection_4.setLineColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
-		GraphConnection connection_5 = new GraphConnection(graph, ZestStyles.CONNECTIONS_DIRECTED, muchOverloadingSmell,
-				averageOverloadingInClassMetric);
-		connection_5.setText(">= HIGH");
-		connection_5.setLineColor(graphComposite.getDisplay().getSystemColor(SWT.COLOR_MAGENTA));
-		
+		createEdge(graphComposite, graph, swissArmyKnife, largeClass, EXISTS, SWT.COLOR_CYAN);
+		createEdge(graphComposite, graph, swissArmyKnife, muchOverloadingSmell, EXISTS, SWT.COLOR_CYAN);
+		createEdge(graphComposite, graph, swissArmyKnife, numberOfIncommingInvocations, VERY_HIGH, SWT.COLOR_RED);
+		createEdge(graphComposite, graph, largeClass, numberOfMembers, HIGH, SWT.COLOR_MAGENTA);
+		createEdge(graphComposite, graph, muchOverloadingSmell, averageOverloadingInClassMetric, HIGH,
+				SWT.COLOR_MAGENTA);
+
 		graph.setLayoutAlgorithm(new TreeLayoutAlgorithm(), true);
 
 		for (int i = 0; i < graph.getConnections().size(); i++) {

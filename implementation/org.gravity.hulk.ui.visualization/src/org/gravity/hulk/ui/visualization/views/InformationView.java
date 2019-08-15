@@ -27,12 +27,6 @@ public abstract class InformationView extends ViewPart {
 	protected Composite graphComposite;
 	protected Composite graphInformationLabelComposite;
 
-	private GridLayout gridLayout;
-
-	public InformationView() {
-		super();
-	}
-
 	@Override
 	public void createPartControl(Composite parent) {
 		this.parent = parent;
@@ -41,8 +35,7 @@ public abstract class InformationView extends ViewPart {
 		mainComposite.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 		sc.setContent(mainComposite);
 
-		gridLayout = new GridLayout();
-		gridLayout.numColumns = 2;
+		GridLayout gridLayout = new GridLayout(2, false);
 		mainComposite.setLayout(gridLayout);
 
 		informationLabelComposite = new Composite(mainComposite, SWT.NONE);
@@ -81,32 +74,27 @@ public abstract class InformationView extends ViewPart {
 		graphInformationLabelComposite.setLayoutData(graphInformationLabelCompositeGridData);
 		graphInformationLabelComposite.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 
-		
-		
 		informationProvider.setComposites(informationLabelComposite, graphComposite, graphInformationLabelComposite);
-		
+
 		informationProvider.setUpInformationViewContent();
 
 		informationLabel = informationProvider.getInformationLabel();
 		graph = informationProvider.getGraph();
 		graphInformationFolder = informationProvider.getGraphInformationTabFolder();
-		
-		//graphCompositeGridData.widthHint = graph.computeSize(SWT.DEFAULT, SWT.DEFAULT).x;
-		//graphCompositeGridData.heightHint = graph.computeSize(SWT.DEFAULT, SWT.DEFAULT).y;
-		
+
 		sc.setExpandHorizontal(true);
 		sc.setExpandVertical(true);
 		sc.setMinSize(mainComposite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 
 	}
-	
+
 	@Override
 	public void setFocus() {
-		if(informationProvider.checkLocalState()){
+		if (informationProvider.checkLocalState()) {
 			informationProvider.refreshDetectionObjects();
 			informationProvider.refreshGraphInformationTabFolder();
 		}
-		
+
 	}
 
 }
