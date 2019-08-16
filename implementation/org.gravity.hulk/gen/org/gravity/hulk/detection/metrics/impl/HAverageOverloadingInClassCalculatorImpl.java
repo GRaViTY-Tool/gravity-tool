@@ -62,25 +62,17 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HAverageOverloadingInClassCalculatorImpl
-				.pattern_HAverageOverloadingInClassCalculator_0_1_ActivityNode8_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HAverageOverloadingInClassCalculatorImpl
-				.pattern_HAverageOverloadingInClassCalculator_0_1_ActivityNode8_greenBFB(this, tClass);
-		HAverageOverloadingInClassMetric metric = (HAverageOverloadingInClassMetric) result1_green[1];
-
-		return HAverageOverloadingInClassCalculatorImpl
-				.pattern_HAverageOverloadingInClassCalculator_0_2_expressionFB(metric);
+		HAverageOverloadingInClassMetric metric = MetricsFactory.eINSTANCE.createHAverageOverloadingInClassMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -123,28 +115,6 @@ public class HAverageOverloadingInClassCalculatorImpl extends HClassBasedMetricC
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HAverageOverloadingInClassCalculator_0_1_ActivityNode8_blackBB(
-			HAverageOverloadingInClassCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HAverageOverloadingInClassCalculator_0_1_ActivityNode8_greenBFB(
-			HAverageOverloadingInClassCalculator _this, TClass tClass) {
-		HAverageOverloadingInClassMetric metric = MetricsFactory.eINSTANCE.createHAverageOverloadingInClassMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HAverageOverloadingInClassCalculator_0_2_expressionFB(
-			HAverageOverloadingInClassMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

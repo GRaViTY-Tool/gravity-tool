@@ -17,11 +17,11 @@ import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern#getHDataClassSmells <em>HData Class Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern#getHGodClassAntiPattern <em>HGod Class Anti Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHBlobAntiPattern()
  * @model

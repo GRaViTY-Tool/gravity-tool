@@ -45,9 +45,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HBlob Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HBlob
+ * Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -55,8 +54,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
  */
 public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlobDetector {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HBlobDetectorImpl() {
@@ -64,8 +63,8 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,105 +73,65 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
-		Object[] result1_black = HBlobDetectorImpl.pattern_HBlobDetector_0_1_ActivityNode10_blackFBF(tClass);
-		if (result1_black != null) {
-			//nothing HGodClassAntiPattern mainClass = (HGodClassAntiPattern) result1_black[0];
-			HDataClassAccessor nad = (HDataClassAccessor) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HBlobDetectorImpl
-					.pattern_HBlobDetector_0_2_ActivityNode64_bindingAndBlackFB(nad);
-			if (result2_bindingAndBlack != null) {
-				HRelativeValue relative = (HRelativeValue) result2_bindingAndBlack[0];
-				// 
-				Object[] result3_bindingAndBlack = HBlobDetectorImpl
-						.pattern_HBlobDetector_0_3_ActivityNode64_bindingAndBlackFB(nad);
-				if (result3_bindingAndBlack != null) {
-					relative = (HRelativeValue) result3_bindingAndBlack[0];
+	public HAnnotation calculate(TClass tClass) {//
+		HGodClassAntiPattern mainClass = null;
+		HDataClassAccessor nad = null;
+		for (TAnnotation annotation : tClass.getTAnnotation()) {
+			if (annotation instanceof HGodClassAntiPattern) {
+				mainClass = (HGodClassAntiPattern) annotation;
+			} else if (annotation instanceof HDataClassAccessor) {
+				nad = (HDataClassAccessor) annotation;
+			}
+		}
+		if (mainClass != null && nad != null) {
+			//
+			HRelativeValue relative = nad.getRelativeAmount();
+			if (relative != null && !relative.equals(HRelativeValueConstants.VERY_LOW)
+					&& !relative.equals(HRelativeValueConstants.LOW)) {
+				HBlobAntiPattern blob = createAntiPattern(tClass, mainClass, nad);
 
-					Object[] result4_black = HBlobDetectorImpl.pattern_HBlobDetector_0_4_ActivityNode9_blackBBFB(tClass,
-							this, nad);
-					if (result4_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass
-								+ ", " + "[this] = " + this + ", " + "[nad] = " + nad + ".");
-					}
-					HGodClassAntiPattern mainClassS = (HGodClassAntiPattern) result4_black[2];
-					Object[] result4_green = HBlobDetectorImpl
-							.pattern_HBlobDetector_0_4_ActivityNode9_greenBBFBB(tClass, this, mainClassS, nad);
-					HBlobAntiPattern blob = (HBlobAntiPattern) result4_green[2];
-
-					// ForEach 
-					for (Object[] result5_black : HBlobDetectorImpl
-							.pattern_HBlobDetector_0_5_ActivityNode14_blackBF(nad)) {
-						HDataClassSmell dc = (HDataClassSmell) result5_black[1];
-
-						Object[] result6_black = HBlobDetectorImpl
-								.pattern_HBlobDetector_0_6_ActivityNode15_blackBB(blob, dc);
-						if (result6_black == null) {
-							throw new RuntimeException("Pattern matching failed." + " Variables: " + "[blob] = " + blob
-									+ ", " + "[dc] = " + dc + ".");
-						}
-						HBlobDetectorImpl.pattern_HBlobDetector_0_6_ActivityNode15_greenBB(blob, dc);
-
-					}
-					// 
-					Object[] result7_black = HBlobDetectorImpl
-							.pattern_HBlobDetector_0_7_ActivityNode69_blackFBF(tClass);
-					if (result7_black != null) {
-						TAnnotationType tAnnotationType = (TAnnotationType) result7_black[0];
-						//nothing TypeGraph pg = (TypeGraph) result7_black[2];
-						HBlobDetectorImpl.pattern_HBlobDetector_0_7_ActivityNode69_greenBBF(tAnnotationType, tClass);
-						//nothing TAnnotation annotation = (TAnnotation) result7_green[2];
-
-					} else {
-					}
-					return HBlobDetectorImpl.pattern_HBlobDetector_0_8_expressionFB(blob);
-				} else {
-					return HBlobDetectorImpl.pattern_HBlobDetector_0_9_expressionF();
+				// ForEach
+				for (HDataClassSmell dc : nad.getHDataClassSmells()) {
+					blob.getHDataClassSmells().add(dc);
 				}
-
-			} else {
-				return HBlobDetectorImpl.pattern_HBlobDetector_0_10_expressionF();
+				//
+				TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "Blob");
+				if (tAnnotationType != null) {
+					TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+					annotation.setTAnnotated(tClass);
+					tAnnotationType.getAnnotations().add(annotation);
+				}
+				return blob;
 			}
-
-		} else {
-			return HBlobDetectorImpl.pattern_HBlobDetector_0_11_expressionF();
 		}
-
+		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -199,8 +158,8 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,171 +173,15 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HBlobDetector_0_1_ActivityNode10_blackFBF(TClass tClass) {
-		for (TAnnotation tmpMainClass : tClass.getTAnnotation()) {
-			if (tmpMainClass instanceof HGodClassAntiPattern) {
-				HGodClassAntiPattern mainClass = (HGodClassAntiPattern) tmpMainClass;
-				for (TAnnotation tmpNad : tClass.getTAnnotation()) {
-					if (tmpNad instanceof HDataClassAccessor) {
-						HDataClassAccessor nad = (HDataClassAccessor) tmpNad;
-						return new Object[] { mainClass, tClass, nad };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_2_ActivityNode64_bindingFB(HDataClassAccessor nad) {
-		HRelativeValue _localVariable_0 = nad.getRelativeAmount();
-		HRelativeValue relative = _localVariable_0;
-		if (relative != null) {
-			return new Object[] { relative, nad };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_2_ActivityNode64_blackB(HRelativeValue relative) {
-		HRelativeValueConstants relative_value = relative.getValue();
-		if (!relative_value.equals(HRelativeValueConstants.VERY_LOW)) {
-			return new Object[] { relative };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_2_ActivityNode64_bindingAndBlackFB(HDataClassAccessor nad) {
-		Object[] result_pattern_HBlobDetector_0_2_ActivityNode64_binding = pattern_HBlobDetector_0_2_ActivityNode64_bindingFB(
-				nad);
-		if (result_pattern_HBlobDetector_0_2_ActivityNode64_binding != null) {
-			HRelativeValue relative = (HRelativeValue) result_pattern_HBlobDetector_0_2_ActivityNode64_binding[0];
-
-			Object[] result_pattern_HBlobDetector_0_2_ActivityNode64_black = pattern_HBlobDetector_0_2_ActivityNode64_blackB(
-					relative);
-			if (result_pattern_HBlobDetector_0_2_ActivityNode64_black != null) {
-
-				return new Object[] { relative, nad };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_3_ActivityNode64_bindingFB(HDataClassAccessor nad) {
-		HRelativeValue _localVariable_1 = nad.getRelativeAmount();
-		HRelativeValue relative = _localVariable_1;
-		if (relative != null) {
-			return new Object[] { relative, nad };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_3_ActivityNode64_blackB(HRelativeValue relative) {
-		HRelativeValueConstants relative_value = relative.getValue();
-		if (!relative_value.equals(HRelativeValueConstants.LOW)) {
-			return new Object[] { relative };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_3_ActivityNode64_bindingAndBlackFB(HDataClassAccessor nad) {
-		Object[] result_pattern_HBlobDetector_0_3_ActivityNode64_binding = pattern_HBlobDetector_0_3_ActivityNode64_bindingFB(
-				nad);
-		if (result_pattern_HBlobDetector_0_3_ActivityNode64_binding != null) {
-			HRelativeValue relative = (HRelativeValue) result_pattern_HBlobDetector_0_3_ActivityNode64_binding[0];
-
-			Object[] result_pattern_HBlobDetector_0_3_ActivityNode64_black = pattern_HBlobDetector_0_3_ActivityNode64_blackB(
-					relative);
-			if (result_pattern_HBlobDetector_0_3_ActivityNode64_black != null) {
-
-				return new Object[] { relative, nad };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_4_ActivityNode9_blackBBFB(TClass tClass, HBlobDetector _this,
+	public final HBlobAntiPattern createAntiPattern(TClass tClass, HGodClassAntiPattern mainClassS,
 			HDataClassAccessor nad) {
-		for (TAnnotation tmpMainClassS : tClass.getTAnnotation()) {
-			if (tmpMainClassS instanceof HGodClassAntiPattern) {
-				HGodClassAntiPattern mainClassS = (HGodClassAntiPattern) tmpMainClassS;
-				return new Object[] { tClass, _this, mainClassS, nad };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_4_ActivityNode9_greenBBFBB(TClass tClass, HBlobDetector _this,
-			HGodClassAntiPattern mainClassS, HDataClassAccessor nad) {
 		HBlobAntiPattern blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();
 		blob.setTAnnotated(tClass);
-		_this.getHAnnotation().add(blob);
 		blob.setHGodClassAntiPattern(mainClassS);
 		mainClassS.getPartOf().add(blob);
 		nad.getPartOf().add(blob);
-		return new Object[] { tClass, _this, blob, mainClassS, nad };
-	}
-
-	public static final Iterable<Object[]> pattern_HBlobDetector_0_5_ActivityNode14_blackBF(HDataClassAccessor nad) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HDataClassSmell dc : nad.getHDataClassSmells()) {
-			_result.add(new Object[] { nad, dc });
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_6_ActivityNode15_blackBB(HBlobAntiPattern blob,
-			HDataClassSmell dc) {
-		return new Object[] { blob, dc };
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_6_ActivityNode15_greenBB(HBlobAntiPattern blob,
-			HDataClassSmell dc) {
-		blob.getHDataClassSmells().add(dc);
-		return new Object[] { blob, dc };
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_7_ActivityNode69_blackFBF(TClass tClass) {
-		TypeGraph pg = tClass.getPg();
-		if (pg != null) {
-			for (TAnnotationType tAnnotationType : pg.getTAnnotationTypes()) {
-				String tAnnotationType_tName = tAnnotationType.getTName();
-				if (tAnnotationType_tName.equals("Blob")) {
-					return new Object[] { tAnnotationType, tClass, pg };
-				}
-
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobDetector_0_7_ActivityNode69_greenBBF(TAnnotationType tAnnotationType,
-			TClass tClass) {
-		TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
-		annotation.setTAnnotated(tClass);
-		tAnnotationType.getAnnotations().add(annotation);
-		return new Object[] { tAnnotationType, tClass, annotation };
-	}
-
-	public static final HAnnotation pattern_HBlobDetector_0_8_expressionFB(HBlobAntiPattern blob) {
-		HAnnotation _result = blob;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HBlobDetector_0_9_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HBlobDetector_0_10_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HBlobDetector_0_11_expressionF() {
-		HAnnotation _result = null;
-		return _result;
+		getHAnnotation().add(blob);
+		return blob;
 	}
 
 	// <-- [user code injected with eMoflon]
@@ -389,4 +192,4 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 	}
 
 	// [user code injected with eMoflon] -->
-} //HBlobDetectorImpl
+} // HBlobDetectorImpl

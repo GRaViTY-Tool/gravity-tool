@@ -32,12 +32,12 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAnnotationImpl#getApg <em>Apg</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAnnotationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAnnotationImpl#isChanged <em>Changed</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -106,6 +106,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HAntiPatternGraph getApg() {
 		if (apg != null && apg.eIsProxy()) {
 			InternalEObject oldApg = (InternalEObject) apg;
@@ -152,6 +153,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setApg(HAntiPatternGraph newApg) {
 		if (newApg != apg) {
 			NotificationChain msgs = null;
@@ -174,6 +176,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HAnnotation> getPartOf() {
 		if (partOf == null) {
 			partOf = new EObjectResolvingEList<HAnnotation>(HAnnotation.class, this,
@@ -187,6 +190,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isChanged() {
 		return changed;
 	}
@@ -196,6 +200,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setChanged(boolean newChanged) {
 		boolean oldChanged = changed;
 		changed = newChanged;
@@ -327,7 +332,7 @@ public abstract class HAnnotationImpl extends TAnnotationImpl implements HAnnota
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (changed: ");
 		result.append(changed);
 		result.append(')');

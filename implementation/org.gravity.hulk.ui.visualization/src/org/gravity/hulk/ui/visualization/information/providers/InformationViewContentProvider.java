@@ -31,6 +31,7 @@ import org.gravity.hulk.ui.visualization.detection.DetectionObject;
 import org.gravity.hulk.ui.visualization.detection.DetectionPreprocessor;
 import org.gravity.hulk.ui.visualization.listener.DetectionLinkListener;
 import org.gravity.hulk.ui.visualization.util.Flaws;
+import org.gravity.typegraph.basic.TAbstractType;
 
 public abstract class InformationViewContentProvider {
 
@@ -161,7 +162,7 @@ public abstract class InformationViewContentProvider {
 						.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				detectionsComposite.setLayout(new FillLayout(SWT.VERTICAL));
 
-				for (Entry<String, String> detectionEntry : detectionObject.getDetections().entrySet()) {
+				for (Entry<TAbstractType, String> detectionEntry : detectionObject.getDetections().entrySet()) {
 					String value;
 					if (!detectionEntry.getValue().equals("-1")) {
 						value = "Value: " + detectionEntry.getValue();
@@ -169,7 +170,7 @@ public abstract class InformationViewContentProvider {
 						value = "Value: none";
 					}
 					Link link = new Link(detectionsComposite, SWT.NONE);
-					link.setText("<A>" + detectionEntry.getKey() + "</A>" + "\n" + value);
+					link.setText("<A>" + detectionEntry.getKey().getFullyQualifiedName() + "</A>" + "\n" + value);
 					link.addListener(SWT.Selection, new DetectionLinkListener());
 					link.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				}
@@ -290,7 +291,7 @@ public abstract class InformationViewContentProvider {
 	 * @return The new node
 	 */
 	GraphNode createNode(Composite composite, Graph graph, Object label, int backgroundColor, int foregroundColor) {
-		GraphNode node = new GraphNode(graph, ZestStyles.NODES_FISHEYE, label);
+		GraphNode node = new GraphNode(graph, ZestStyles.NODES_FISHEYE, label.toString());
 		node.setBackgroundColor(composite.getDisplay().getSystemColor(backgroundColor));
 		node.setForegroundColor(composite.getDisplay().getSystemColor(foregroundColor));
 		return node;

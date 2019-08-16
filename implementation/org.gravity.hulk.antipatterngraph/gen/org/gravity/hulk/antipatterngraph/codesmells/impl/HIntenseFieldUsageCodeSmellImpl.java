@@ -26,10 +26,10 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HIntenseFieldUsageCodeSmellImpl#getHLocalAccessRelationMetric <em>HLocal Access Relation Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -68,6 +68,7 @@ public class HIntenseFieldUsageCodeSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLocalAccessRelationMetric getHLocalAccessRelationMetric() {
 		if (hLocalAccessRelationMetric != null && hLocalAccessRelationMetric.eIsProxy()) {
 			InternalEObject oldHLocalAccessRelationMetric = (InternalEObject) hLocalAccessRelationMetric;
@@ -96,6 +97,7 @@ public class HIntenseFieldUsageCodeSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLocalAccessRelationMetric(HLocalAccessRelationMetric newHLocalAccessRelationMetric) {
 		HLocalAccessRelationMetric oldHLocalAccessRelationMetric = hLocalAccessRelationMetric;
 		hLocalAccessRelationMetric = newHLocalAccessRelationMetric;

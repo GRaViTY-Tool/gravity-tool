@@ -23,10 +23,10 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HLargeClassSmellImpl#getHNumberOfMembers <em>HNumber Of Members</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -65,6 +65,7 @@ public class HLargeClassSmellImpl extends HCodeSmellImpl implements HLargeClassS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNumberOfMembersMetric getHNumberOfMembers() {
 		if (hNumberOfMembers != null && hNumberOfMembers.eIsProxy()) {
 			InternalEObject oldHNumberOfMembers = (InternalEObject) hNumberOfMembers;
@@ -93,6 +94,7 @@ public class HLargeClassSmellImpl extends HCodeSmellImpl implements HLargeClassS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNumberOfMembers(HNumberOfMembersMetric newHNumberOfMembers) {
 		HNumberOfMembersMetric oldHNumberOfMembers = hNumberOfMembers;
 		hNumberOfMembers = newHNumberOfMembers;

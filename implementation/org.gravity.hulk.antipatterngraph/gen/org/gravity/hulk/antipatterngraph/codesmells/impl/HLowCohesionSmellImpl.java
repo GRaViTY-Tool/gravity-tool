@@ -26,10 +26,10 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HLowCohesionSmellImpl#getHLCOM5CustomMetric <em>HLCOM5 Custom Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -68,6 +68,7 @@ public class HLowCohesionSmellImpl extends HCodeSmellImpl implements HLowCohesio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLCOM5Metric getHLCOM5CustomMetric() {
 		if (hLCOM5CustomMetric != null && hLCOM5CustomMetric.eIsProxy()) {
 			InternalEObject oldHLCOM5CustomMetric = (InternalEObject) hLCOM5CustomMetric;
@@ -96,6 +97,7 @@ public class HLowCohesionSmellImpl extends HCodeSmellImpl implements HLowCohesio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLCOM5CustomMetric(HLCOM5Metric newHLCOM5CustomMetric) {
 		HLCOM5Metric oldHLCOM5CustomMetric = hLCOM5CustomMetric;
 		hLCOM5CustomMetric = newHLCOM5CustomMetric;

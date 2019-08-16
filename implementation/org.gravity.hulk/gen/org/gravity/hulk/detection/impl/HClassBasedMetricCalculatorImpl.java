@@ -54,13 +54,7 @@ public abstract class HClassBasedMetricCalculatorImpl extends HClassBasedCalcula
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {
-
-		Object[] result1_black = HClassBasedMetricCalculatorImpl
-				.pattern_HClassBasedMetricCalculator_0_1_ActivityNode8_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-		}
-		return HClassBasedMetricCalculatorImpl.pattern_HClassBasedMetricCalculator_0_2_expressionFBB(this, tClass);
+		return calculateMetric(tClass);
 	}
 
 	/**
@@ -68,12 +62,7 @@ public abstract class HClassBasedMetricCalculatorImpl extends HClassBasedCalcula
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
+	public abstract HMetric calculateMetric(TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,18 +92,6 @@ public abstract class HClassBasedMetricCalculatorImpl extends HClassBasedCalcula
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HClassBasedMetricCalculator_0_1_ActivityNode8_blackB(
-			HClassBasedMetricCalculator _this) {
-		return new Object[] { _this };
-	}
-
-	public static final HAnnotation pattern_HClassBasedMetricCalculator_0_2_expressionFBB(
-			HClassBasedMetricCalculator _this, TClass tClass) {
-		HMetric _localVariable_0 = _this.calculateMetric(tClass);
-		HAnnotation _result = _localVariable_0;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

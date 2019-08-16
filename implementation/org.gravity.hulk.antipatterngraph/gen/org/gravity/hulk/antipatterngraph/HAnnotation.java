@@ -17,12 +17,12 @@ import org.eclipse.swt.widgets.TreeItem;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HAnnotation#getApg <em>Apg</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HAnnotation#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HAnnotation#isChanged <em>Changed</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.AntipatterngraphPackage#getHAnnotation()
  * @model abstract="true"

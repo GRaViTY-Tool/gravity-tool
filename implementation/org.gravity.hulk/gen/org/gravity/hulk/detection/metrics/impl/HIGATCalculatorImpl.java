@@ -202,9 +202,9 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 
 	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
 		HIGATMetric metric = MetricsFactory.eINSTANCE.createHIGATMetric();
+		metric.setTAnnotated(annotatable);
 		metric.setValue(igam);
 		metric.setApg(apg);
-		metric.setTAnnotated(annotatable);
 		metric.setHMinVis(minVis);
 
 		getHAnnotation().add(metric);

@@ -457,7 +457,7 @@ public class AntipatterngraphPackageImpl extends EPackageImpl implements Antipat
 		initEClass(hAntiPatternGraphEClass, HAntiPatternGraph.class, "HAntiPatternGraph", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHAntiPatternGraph_Pg(), theBasicPackage.getTypeGraph(), null, "pg", null, 1, 1,
-				HAntiPatternGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				HAntiPatternGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHAntiPatternGraph_HAnnotations(), this.getHAnnotation(), this.getHAnnotation_Apg(),
 				"hAnnotations", null, 0, -1, HAntiPatternGraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,

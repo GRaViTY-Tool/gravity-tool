@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell#getHLCOM5CustomMetric <em>HLCOM5 Custom Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHLowCohesionSmell()
  * @model

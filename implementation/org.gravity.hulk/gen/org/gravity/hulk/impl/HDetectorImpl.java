@@ -34,6 +34,8 @@ import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.detection.HulkDetector;
 // [user defined imports] -->
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,6 +104,18 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 		return hAnnotation;
 	}
 
+	public final boolean hasAlreadyBeenAnnotated(TClass tClass) {
+		for (TAnnotation tmpExisting : tClass.getTAnnotation()) {
+			if (tmpExisting instanceof HAnnotation) {
+				HAnnotation existing = (HAnnotation) tmpExisting;
+				if (getHAnnotation().contains(existing)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,19 +183,7 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 			eNotify(new ENotificationImpl(this, Notification.SET, HulkPackage.HDETECTOR__HANTI_PATTERN_HANDLING,
 					newHAntiPatternHandling, newHAntiPatternHandling));
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean detect(HAntiPatternGraph apg) {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

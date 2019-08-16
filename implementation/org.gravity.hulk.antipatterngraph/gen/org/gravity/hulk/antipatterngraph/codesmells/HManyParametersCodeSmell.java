@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HManyParametersCodeSmell#getHAverageParametersMetric <em>HAverage Parameters Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHManyParametersCodeSmell()
  * @model

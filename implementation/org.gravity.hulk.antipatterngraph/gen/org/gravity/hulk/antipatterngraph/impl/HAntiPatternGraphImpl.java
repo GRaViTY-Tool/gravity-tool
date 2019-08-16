@@ -34,18 +34,18 @@ import org.gravity.typegraph.basic.TypeGraph;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getPg <em>Pg</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getHAnnotations <em>HAnnotations</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HAntiPatternGraphImpl#getCurrentID <em>Current ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGraph {
 	/**
-	 * The cached value of the '{@link #getPg() <em>Pg</em>}' containment reference.
+	 * The cached value of the '{@link #getPg() <em>Pg</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPg()
@@ -108,7 +108,17 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypeGraph getPg() {
+		if (pg != null && pg.eIsProxy()) {
+			InternalEObject oldPg = (InternalEObject) pg;
+			pg = (TypeGraph) eResolveProxy(oldPg);
+			if (pg != oldPg) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG, oldPg, pg));
+			}
+		}
 		return pg;
 	}
 
@@ -117,40 +127,22 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPg(TypeGraph newPg, NotificationChain msgs) {
+	public TypeGraph basicGetPg() {
+		return pg;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPg(TypeGraph newPg) {
 		TypeGraph oldPg = pg;
 		pg = newPg;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG, oldPg, newPg);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPg(TypeGraph newPg) {
-		if (newPg != pg) {
-			NotificationChain msgs = null;
-			if (pg != null)
-				msgs = ((InternalEObject) pg).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG, null, msgs);
-			if (newPg != null)
-				msgs = ((InternalEObject) newPg).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG, null, msgs);
-			msgs = basicSetPg(newPg, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG,
-					newPg, newPg));
+					oldPg, pg));
 	}
 
 	/**
@@ -158,6 +150,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HAnnotation> getHAnnotations() {
 		if (hAnnotations == null) {
 			hAnnotations = new EObjectWithInverseResolvingEList<HAnnotation>(HAnnotation.class, this,
@@ -172,6 +165,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getCurrentID() {
 		return currentID;
 	}
@@ -181,6 +175,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCurrentID(int newCurrentID) {
 		int oldCurrentID = currentID;
 		currentID = newCurrentID;
@@ -192,13 +187,11 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getNextID() {
 		// [user code injected with eMoflon]
-
 		return currentID++;
-
 	}
 
 	/**
@@ -224,8 +217,6 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG:
-			return basicSetPg(null, msgs);
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__HANNOTATIONS:
 			return ((InternalEList<?>) getHAnnotations()).basicRemove(otherEnd, msgs);
 		}
@@ -241,7 +232,9 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__PG:
-			return getPg();
+			if (resolve)
+				return getPg();
+			return basicGetPg();
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__HANNOTATIONS:
 			return getHAnnotations();
 		case AntipatterngraphPackage.HANTI_PATTERN_GRAPH__CURRENT_ID:
@@ -336,7 +329,7 @@ public class HAntiPatternGraphImpl extends EObjectImpl implements HAntiPatternGr
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (currentID: ");
 		result.append(currentID);
 		result.append(')');

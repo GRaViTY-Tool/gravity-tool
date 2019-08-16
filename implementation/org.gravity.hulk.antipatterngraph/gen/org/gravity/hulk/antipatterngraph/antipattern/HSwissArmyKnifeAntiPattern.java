@@ -18,12 +18,12 @@ import org.gravity.hulk.antipatterngraph.metrics.HIncommingInvocationMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern#getHIncommingInvocationCustomMetric <em>HIncomming Invocation Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern#getHLargeClassSmell <em>HLarge Class Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern#getHMuchOverloadingCodeSmell <em>HMuch Overloading Code Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHSwissArmyKnifeAntiPattern()
  * @model

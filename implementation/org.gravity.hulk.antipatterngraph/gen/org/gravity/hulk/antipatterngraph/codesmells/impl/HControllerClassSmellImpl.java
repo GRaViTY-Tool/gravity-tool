@@ -23,10 +23,10 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HControllerClassSmellImpl#getHInvocationRelation <em>HInvocation Relation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -65,6 +65,7 @@ public class HControllerClassSmellImpl extends HCodeSmellImpl implements HContro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HInvocationRelation getHInvocationRelation() {
 		if (hInvocationRelation != null && hInvocationRelation.eIsProxy()) {
 			InternalEObject oldHInvocationRelation = (InternalEObject) hInvocationRelation;
@@ -93,6 +94,7 @@ public class HControllerClassSmellImpl extends HCodeSmellImpl implements HContro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHInvocationRelation(HInvocationRelation newHInvocationRelation) {
 		HInvocationRelation oldHInvocationRelation = hInvocationRelation;
 		hInvocationRelation = newHInvocationRelation;

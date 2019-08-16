@@ -28,9 +28,8 @@ import java.util.ArrayList;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HOutgoing Invocation Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>HOutgoing Invocation Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -39,8 +38,8 @@ import java.util.ArrayList;
 public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculatorImpl
 		implements HOutgoingInvocationCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HOutgoingInvocationCalculatorImpl() {
@@ -48,9 +47,9 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	@Override
 	protected EClass eStaticClass() {
@@ -58,28 +57,21 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HOutgoingInvocationCalculatorImpl
-				.pattern_HOutgoingInvocationCalculator_0_1_ActivityNode25_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HOutgoingInvocationCalculatorImpl
-				.pattern_HOutgoingInvocationCalculator_0_1_ActivityNode25_greenBFB(this, tClass);
-		HOutgoingInvocationMetric metric = (HOutgoingInvocationMetric) result1_green[1];
-
-		return HOutgoingInvocationCalculatorImpl.pattern_HOutgoingInvocationCalculator_0_2_expressionFB(metric);
+		HOutgoingInvocationMetric metric = MetricsFactory.eINSTANCE.createHOutgoingInvocationMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateValue(TClass tClass) {
@@ -116,8 +108,8 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,28 +123,6 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HOutgoingInvocationCalculator_0_1_ActivityNode25_blackBB(
-			HOutgoingInvocationCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HOutgoingInvocationCalculator_0_1_ActivityNode25_greenBFB(
-			HOutgoingInvocationCalculator _this, TClass tClass) {
-		HOutgoingInvocationMetric metric = MetricsFactory.eINSTANCE.createHOutgoingInvocationMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HOutgoingInvocationCalculator_0_2_expressionFB(
-			HOutgoingInvocationMetric metric) {
-		HMetric _result = metric;
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -161,4 +131,4 @@ public class HOutgoingInvocationCalculatorImpl extends HClassBasedMetricCalculat
 	}
 
 	// [user code injected with eMoflon] -->
-} //HOutgoingInvocationCalculatorImpl
+} // HOutgoingInvocationCalculatorImpl

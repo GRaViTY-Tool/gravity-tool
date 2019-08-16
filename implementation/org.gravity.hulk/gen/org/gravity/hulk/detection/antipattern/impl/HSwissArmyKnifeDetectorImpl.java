@@ -12,8 +12,9 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
 
 import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HAntiPattern;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
+import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern;
 
@@ -44,9 +45,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HSwiss Army Knife Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HSwiss
+ * Army Knife Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -54,8 +54,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
  */
 public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implements HSwissArmyKnifeDetector {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HSwissArmyKnifeDetectorImpl() {
@@ -63,8 +63,8 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,91 +73,61 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
+	public HAnnotation calculate(TClass tClass) {//
 		Object[] result1_black = HSwissArmyKnifeDetectorImpl
 				.pattern_HSwissArmyKnifeDetector_0_1_ActivityNode38_blackBFFF(tClass);
 		if (result1_black != null) {
 			HMuchOverloadingCodeSmell over = (HMuchOverloadingCodeSmell) result1_black[1];
 			HLargeClassSmell large = (HLargeClassSmell) result1_black[2];
 			HIncommingInvocationMetric invoc = (HIncommingInvocationMetric) result1_black[3];
-			// 
-			Object[] result2_bindingAndBlack = HSwissArmyKnifeDetectorImpl
-					.pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_bindingAndBlackFB(invoc);
-			if (result2_bindingAndBlack != null) {
-				//nothing HRelativeValue relative = (HRelativeValue) result2_bindingAndBlack[0];
-			} else {
-				// 
-				Object[] result3_bindingAndBlack = HSwissArmyKnifeDetectorImpl
-						.pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_bindingAndBlackFB(invoc);
-				if (result3_bindingAndBlack != null) {
-					//nothing HRelativeValue relative = (HRelativeValue) result3_bindingAndBlack[0];
-				} else {
-					return HSwissArmyKnifeDetectorImpl.pattern_HSwissArmyKnifeDetector_0_4_expressionF();
-				}
+			//
+			HRelativeValue relative = invoc.getRelativeAmount();
+			if (relative == null || !(HRelativeValueConstants.HIGH.equals(relative.getValue())
+					|| HRelativeValueConstants.VERY_HIGH.equals(relative.getValue()))) {
+				return null;
 
 			}
 
-			Object[] result5_black = HSwissArmyKnifeDetectorImpl
-					.pattern_HSwissArmyKnifeDetector_0_5_ActivityNode40_blackBBBBB(tClass, this, large, invoc, over);
-			if (result5_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-						+ "[this] = " + this + ", " + "[large] = " + large + ", " + "[invoc] = " + invoc + ", "
-						+ "[over] = " + over + ".");
-			}
-			Object[] result5_green = HSwissArmyKnifeDetectorImpl
-					.pattern_HSwissArmyKnifeDetector_0_5_ActivityNode40_greenBBFBBB(tClass, this, large, invoc, over);
-			HSwissArmyKnifeAntiPattern pattern = (HSwissArmyKnifeAntiPattern) result5_green[2];
+			HSwissArmyKnifeAntiPattern pattern = createAntiPattern(tClass, large, invoc, over);
 
-			// 
-			Object[] result6_black = HSwissArmyKnifeDetectorImpl
-					.pattern_HSwissArmyKnifeDetector_0_6_ActivityNode70_blackBFF(tClass);
-			if (result6_black != null) {
-				TAnnotationType type = (TAnnotationType) result6_black[1];
-				//nothing TypeGraph pg = (TypeGraph) result6_black[2];
-				HSwissArmyKnifeDetectorImpl.pattern_HSwissArmyKnifeDetector_0_6_ActivityNode70_greenBBF(tClass, type);
-				//nothing TAnnotation tAnnotation = (TAnnotation) result6_green[2];
-
-			} else {
+			//
+			TAnnotationType type = getAnnotationType(tClass.getPg(), "SwissArmyKnife");
+			if (type != null) {
+				TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+				tAnnotation.setTAnnotated(tClass);
+				type.getAnnotations().add(tAnnotation);
 			}
-			return HSwissArmyKnifeDetectorImpl.pattern_HSwissArmyKnifeDetector_0_7_expressionFB(pattern);
-		} else {
-			return HSwissArmyKnifeDetectorImpl.pattern_HSwissArmyKnifeDetector_0_8_expressionF();
+			return pattern;
 		}
+		return null;
 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -184,8 +154,8 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -219,94 +189,9 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 		return null;
 	}
 
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_bindingFB(
-			HIncommingInvocationMetric invoc) {
-		HRelativeValue _localVariable_0 = invoc.getRelativeAmount();
-		HRelativeValue relative = _localVariable_0;
-		if (relative != null) {
-			return new Object[] { relative, invoc };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_blackB(HRelativeValue relative) {
-		HRelativeValueConstants relative_value = relative.getValue();
-		if (relative_value.equals(HRelativeValueConstants.HIGH)) {
-			return new Object[] { relative };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_bindingAndBlackFB(
-			HIncommingInvocationMetric invoc) {
-		Object[] result_pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_binding = pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_bindingFB(
-				invoc);
-		if (result_pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_binding != null) {
-			HRelativeValue relative = (HRelativeValue) result_pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_binding[0];
-
-			Object[] result_pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_black = pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_blackB(
-					relative);
-			if (result_pattern_HSwissArmyKnifeDetector_0_2_ActivityNode39_black != null) {
-
-				return new Object[] { relative, invoc };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_bindingFB(
-			HIncommingInvocationMetric invoc) {
-		HRelativeValue _localVariable_1 = invoc.getRelativeAmount();
-		HRelativeValue relative = _localVariable_1;
-		if (relative != null) {
-			return new Object[] { relative, invoc };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_blackB(HRelativeValue relative) {
-		HRelativeValueConstants relative_value = relative.getValue();
-		if (relative_value.equals(HRelativeValueConstants.VERY_HIGH)) {
-			return new Object[] { relative };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_bindingAndBlackFB(
-			HIncommingInvocationMetric invoc) {
-		Object[] result_pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_binding = pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_bindingFB(
-				invoc);
-		if (result_pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_binding != null) {
-			HRelativeValue relative = (HRelativeValue) result_pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_binding[0];
-
-			Object[] result_pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_black = pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_blackB(
-					relative);
-			if (result_pattern_HSwissArmyKnifeDetector_0_3_ActivityNode39_black != null) {
-
-				return new Object[] { relative, invoc };
-			}
-		}
-		return null;
-	}
-
-	public static final HAnnotation pattern_HSwissArmyKnifeDetector_0_4_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_5_ActivityNode40_blackBBBBB(TClass tClass,
-			HSwissArmyKnifeDetector _this, HLargeClassSmell large, HIncommingInvocationMetric invoc,
-			HMuchOverloadingCodeSmell over) {
-		return new Object[] { tClass, _this, large, invoc, over };
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_5_ActivityNode40_greenBBFBBB(TClass tClass,
-			HSwissArmyKnifeDetector _this, HLargeClassSmell large, HIncommingInvocationMetric invoc,
-			HMuchOverloadingCodeSmell over) {
+	public final HSwissArmyKnifeAntiPattern createAntiPattern(TClass tClass, HLargeClassSmell large,
+			HIncommingInvocationMetric invoc, HMuchOverloadingCodeSmell over) {
 		HSwissArmyKnifeAntiPattern pattern = AntipatternFactory.eINSTANCE.createHSwissArmyKnifeAntiPattern();
-		_this.getHAnnotation().add(pattern);
 		pattern.setTAnnotated(tClass);
 		pattern.setHLargeClassSmell(large);
 		pattern.setHMuchOverloadingCodeSmell(over);
@@ -314,41 +199,8 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 		large.getPartOf().add(pattern);
 		invoc.getPartOf().add(pattern);
 		over.getPartOf().add(pattern);
-		return new Object[] { tClass, _this, pattern, large, invoc, over };
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_6_ActivityNode70_blackBFF(TClass tClass) {
-		TypeGraph pg = tClass.getPg();
-		if (pg != null) {
-			for (TAnnotationType type : pg.getTAnnotationTypes()) {
-				String type_tName = type.getTName();
-				if (type_tName.equals("SwissArmyKnife")) {
-					return new Object[] { tClass, type, pg };
-				}
-
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HSwissArmyKnifeDetector_0_6_ActivityNode70_greenBBF(TClass tClass,
-			TAnnotationType type) {
-		TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
-		type.getAnnotations().add(tAnnotation);
-		tAnnotation.setTAnnotated(tClass);
-		return new Object[] { tClass, type, tAnnotation };
-	}
-
-	public static final HAnnotation pattern_HSwissArmyKnifeDetector_0_7_expressionFB(
-			HSwissArmyKnifeAntiPattern pattern) {
-		HAnnotation _result = pattern;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HSwissArmyKnifeDetector_0_8_expressionF() {
-		HAnnotation _result = null;
-		return _result;
+		getHAnnotation().add(pattern);
+		return pattern;
 	}
 
 	// <-- [user code injected with eMoflon]
@@ -359,4 +211,4 @@ public class HSwissArmyKnifeDetectorImpl extends HAntiPatternDetectorImpl implem
 	}
 
 	// [user code injected with eMoflon] -->
-} //HSwissArmyKnifeDetectorImpl
+} // HSwissArmyKnifeDetectorImpl

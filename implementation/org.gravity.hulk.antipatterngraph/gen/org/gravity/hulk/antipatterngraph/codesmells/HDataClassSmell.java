@@ -17,11 +17,11 @@ import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell#getGetterSetterSmells <em>Getter Setter Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell#getHNACCMetric <em>HNACC Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHDataClassSmell()
  * @model

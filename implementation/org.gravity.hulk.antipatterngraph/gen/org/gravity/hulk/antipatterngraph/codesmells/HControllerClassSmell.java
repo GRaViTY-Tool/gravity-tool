@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HInvocationRelation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell#getHInvocationRelation <em>HInvocation Relation</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHControllerClassSmell()
  * @model

@@ -1,25 +1,26 @@
 package org.gravity.hulk.ui.visualization.listener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-import org.gravity.hulk.ui.visualization.util.AstUtil;
+import org.gravity.eclipse.util.JavaProjectUtil;
 
 public class DetectionLinkListener implements Listener {
 
@@ -27,45 +28,45 @@ public class DetectionLinkListener implements Listener {
 
 	Map<String, IFile> fileMap = new HashMap<String, IFile>();
 
-	private static IProject project;
-
-	public static void setProject(IProject project) {
-		DetectionLinkListener.project = project;
-	}
-
 	@Override
 	public void handleEvent(Event event) {
 		String tempString[] = event.text.split(":");
 		tempString[0] = tempString[0].replace(".", "/");
 		String iClassString = tempString[0] + "/" + tempString[1] + ".java";
 
-		IFolder src = project.getFolder("src");
-		IFile iClass;
-
+		IJavaProject project = null;
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		Object selectedObject = window.getSelectionService().getSelection(IPageLayout.ID_PROJECT_EXPLORER);
+		if (selectedObject instanceof IStructuredSelection) {
+			selectedObject = ((IStructuredSelection) selectedObject).getFirstElement();
+		}
+		if (selectedObject instanceof IAdaptable) {
+			IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
+			project = JavaProjectUtil.convertToJavaProject(res.getProject());
+		}
+		if(project == null) {
+			LOGGER.error("Cound't determin current active project");
+			return;
+		}
+		
+		IFile file;
 		if (fileMap.containsKey(iClassString))
-			iClass = fileMap.get(iClassString);
+			file = fileMap.get(iClassString);
 		else {
-			iClass = (IFile) src.findMember(iClassString);
-			if (iClass != null) {
-				fileMap.put(iClassString, iClass);
-			} else {
-				IFolder iFolder = src.getFolder(tempString[0]);
-				List<IFile> resultList = new ArrayList<IFile>();
-				AstUtil.findFileWithTypeDeclaration(iFolder, tempString[1].trim(), resultList);
-				iClass = resultList.get(0);
-				fileMap.put(iClassString, iClass);
+			try {
+				file = (IFile) project.findType(iClassString).getResource();
+				fileMap.put(iClassString, file);
+			} catch (JavaModelException e) {
+				LOGGER.error(e.getMessage(), e);
+				return;
 			}
 		}
 
-		IEditorInput iEditorInput = new FileEditorInput(iClass);
-
-		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		IWorkbenchPage page = window.getActivePage();
-
-		IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(iClass.getName());
+		IEditorInput iEditorInput = new FileEditorInput(file);
+		IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
 
 		try {
-			page.openEditor(iEditorInput, desc.getId());
+			window.getActivePage().openEditor(iEditorInput, desc.getId());
 		} catch (PartInitException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}

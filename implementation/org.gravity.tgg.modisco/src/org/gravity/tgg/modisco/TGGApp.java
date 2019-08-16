@@ -2,10 +2,10 @@ package org.gravity.tgg.modisco;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -15,11 +15,12 @@ import org.emoflon.ibex.tgg.operational.csp.constraints.factories.modisco.UserDe
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
 import org.emoflon.ibex.tgg.runtime.engine.DemoclesTGGEngine;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
 
 public class TGGApp extends SYNC {
-	
+
 	private static final String PLATFORM_RESOURCE = "platform:/resource/"; //$NON-NLS-1$
 
 	private static final String MODISCO_FLATTENED_TGG_XMI_LOCATION = "model/Modisco_flattened.tgg.xmi"; //$NON-NLS-1$
@@ -32,22 +33,28 @@ public class TGGApp extends SYNC {
 	private static final String MODISCO_TGG_XMI_URI = PLATFORM_RESOURCE + MoDiscoTGGActivator.PLUGIN_ID + "/" //$NON-NLS-1$
 			+ MODISCO_TGG_XMI_LOCATION;
 
+	private String name;
+
 	/**
 	 * Create a new transformation application
 	 * 
+	 * @param javaProject The project which should be transformed
+	 * 
 	 * @throws IOException If one of the models cannot be loaded
 	 */
-	public TGGApp() throws IOException {
+	public TGGApp(IProject project) throws IOException {
 		super(createIbexOptions());
+		this.name = project.getName();
 		registerBlackInterpreter(new DemoclesTGGEngine());
 	}
 
 	@Override
 	public void loadModels() throws IOException {
-		s = createResource(options.projectPath() + "/instances/src.xmi"); //$NON-NLS-1$
-		t = createResource(options.projectPath() + "/instances/trg.xmi"); //$NON-NLS-1$
-		c = createResource(options.projectPath() + "/instances/corr.xmi"); //$NON-NLS-1$
-		p = createResource(options.projectPath() + "/instances/protocol.xmi"); //$NON-NLS-1$
+		String gravityFolder = PLATFORM_RESOURCE + name + '/' + GravityActivator.GRAVITY_FOLDER_NAME + '/';
+		s = createResource(gravityFolder + "src.xmi"); //$NON-NLS-1$
+		t = createResource(gravityFolder + name + ".xmi"); //$NON-NLS-1$
+		c = createResource(gravityFolder + "corr.xmi"); //$NON-NLS-1$
+		p = createResource(gravityFolder + "protocol.xmi"); //$NON-NLS-1$
 	}
 
 	@Override
@@ -76,7 +83,8 @@ public class TGGApp extends SYNC {
 	 * 
 	 * @param uri The URI of the meta model
 	 * @return The EPackage of the meta model
-	 * @throws IOException If the file cannot be reador the URI hasn't a valid format
+	 * @throws IOException If the file cannot be reador the URI hasn't a valid
+	 *                     format
 	 */
 	private EPackage loadMetaModelPackage() throws IOException {
 		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_ECORE_LOCATION)) {
@@ -95,7 +103,7 @@ public class TGGApp extends SYNC {
 	/**
 	 * Loads a resource from the given input stream under the given URI
 	 * 
-	 * @param uri The URI of the resource
+	 * @param uri    The URI of the resource
 	 * @param stream The stream containing the resources contents
 	 * @return The loaded resource
 	 * @throws IOException If the resource couldn't be loaded

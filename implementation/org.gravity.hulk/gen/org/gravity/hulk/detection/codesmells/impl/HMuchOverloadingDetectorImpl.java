@@ -167,46 +167,30 @@ public class HMuchOverloadingDetectorImpl extends HCodeSmellDetectorImpl impleme
 	 */
 	public HAnnotation calculate(TClass tClass) {
 
-		Object[] result1_black = HMuchOverloadingDetectorImpl
-				.pattern_HMuchOverloadingDetector_0_1_ActivityNode62_blackBF(tClass);
-		if (result1_black == null) {
+		HAverageOverloadingInClassMetric over = null;
+		for (TAnnotation tmpOver : tClass.getTAnnotation()) {
+			if (tmpOver instanceof HAverageOverloadingInClassMetric) {
+				 over = (HAverageOverloadingInClassMetric) tmpOver;
+				break;
+			}
+		}
+		if (over == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ".");
 		}
-		HAverageOverloadingInClassMetric over = (HAverageOverloadingInClassMetric) result1_black[1];
 		// 
-		Object[] result2_black = HMuchOverloadingDetectorImpl
-				.pattern_HMuchOverloadingDetector_0_2_ActivityNode82_blackB(this);
-		if (result2_black != null) {
-
-			Object[] result3_black = HMuchOverloadingDetectorImpl
-					.pattern_HMuchOverloadingDetector_0_3_ActivityNode63_blackB(this);
-			if (result3_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-			}
-			HMuchOverloadingDetectorImpl.pattern_HMuchOverloadingDetector_0_3_ActivityNode63_greenB(this);
-
-		} else {
-		}
+		if (isRelative()) {
+			setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
+		} 
 		// 
-		Object[] result4_black = HMuchOverloadingDetectorImpl
-				.pattern_HMuchOverloadingDetector_0_4_ActivityNode81_blackBB(this, over);
-		if (result4_black != null) {
-
-			Object[] result5_black = HMuchOverloadingDetectorImpl
-					.pattern_HMuchOverloadingDetector_0_5_ActivityNode64_blackBBB(this, tClass, over);
-			if (result5_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[tClass] = " + tClass + ", " + "[over] = " + over + ".");
-			}
-			Object[] result5_green = HMuchOverloadingDetectorImpl
-					.pattern_HMuchOverloadingDetector_0_5_ActivityNode64_greenBBFB(this, tClass, over);
-			HMuchOverloadingCodeSmell smell = (HMuchOverloadingCodeSmell) result5_green[2];
-
-			return HMuchOverloadingDetectorImpl.pattern_HMuchOverloadingDetector_0_6_expressionFB(smell);
-		} else {
-			return HMuchOverloadingDetectorImpl.pattern_HMuchOverloadingDetector_0_7_expressionF();
+		if (Double.valueOf(getThreshold()).compareTo(over.getValue()) < 0) {
+			HMuchOverloadingCodeSmell smell = CodesmellsFactory.eINSTANCE.createHMuchOverloadingCodeSmell();
+			smell.setTAnnotated(tClass);
+			smell.setHAverageOverloadingInClassMetric(over);
+			getHAnnotation().add(smell);
+			over.getPartOf().add(smell);
+			return smell;
 		}
-
+		return null;
 	}
 
 	/**
@@ -222,28 +206,21 @@ public class HMuchOverloadingDetectorImpl extends HCodeSmellDetectorImpl impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
@@ -437,75 +414,6 @@ public class HMuchOverloadingDetectorImpl extends HCodeSmellDetectorImpl impleme
 		result.append(threshold);
 		result.append(')');
 		return result.toString();
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_1_ActivityNode62_blackBF(TClass tClass) {
-		for (TAnnotation tmpOver : tClass.getTAnnotation()) {
-			if (tmpOver instanceof HAverageOverloadingInClassMetric) {
-				HAverageOverloadingInClassMetric over = (HAverageOverloadingInClassMetric) tmpOver;
-				return new Object[] { tClass, over };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_2_ActivityNode82_blackB(
-			HMuchOverloadingDetector _this) {
-		boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.valueOf(true))) {
-			return new Object[] { _this };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_3_ActivityNode63_blackB(
-			HMuchOverloadingDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_3_ActivityNode63_greenB(
-			HMuchOverloadingDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_4_ActivityNode81_blackBB(
-			HMuchOverloadingDetector _this, HAverageOverloadingInClassMetric over) {
-		double this_threshold = _this.getThreshold();
-		double over_value = over.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(over_value)) < 0) {
-			return new Object[] { _this, over };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_5_ActivityNode64_blackBBB(
-			HMuchOverloadingDetector _this, TClass tClass, HAverageOverloadingInClassMetric over) {
-		return new Object[] { _this, tClass, over };
-	}
-
-	public static final Object[] pattern_HMuchOverloadingDetector_0_5_ActivityNode64_greenBBFB(
-			HMuchOverloadingDetector _this, TClass tClass, HAverageOverloadingInClassMetric over) {
-		HMuchOverloadingCodeSmell smell = CodesmellsFactory.eINSTANCE.createHMuchOverloadingCodeSmell();
-		_this.getHAnnotation().add(smell);
-		smell.setTAnnotated(tClass);
-		smell.setHAverageOverloadingInClassMetric(over);
-		over.getPartOf().add(smell);
-		return new Object[] { _this, tClass, smell, over };
-	}
-
-	public static final HAnnotation pattern_HMuchOverloadingDetector_0_6_expressionFB(HMuchOverloadingCodeSmell smell) {
-		HAnnotation _result = smell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HMuchOverloadingDetector_0_7_expressionF() {
-		HAnnotation _result = null;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

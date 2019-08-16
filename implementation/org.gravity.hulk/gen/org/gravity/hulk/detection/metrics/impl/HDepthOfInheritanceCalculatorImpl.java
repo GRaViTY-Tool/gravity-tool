@@ -58,18 +58,11 @@ public class HDepthOfInheritanceCalculatorImpl extends HClassBasedMetricCalculat
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HDepthOfInheritanceCalculatorImpl
-				.pattern_HDepthOfInheritanceCalculator_0_1_ActivityNode26_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HDepthOfInheritanceCalculatorImpl
-				.pattern_HDepthOfInheritanceCalculator_0_1_ActivityNode26_greenBFB(this, tClass);
-		HDepthOfInheritanceMetric metric = (HDepthOfInheritanceMetric) result1_green[1];
-
-		return HDepthOfInheritanceCalculatorImpl.pattern_HDepthOfInheritanceCalculator_0_2_expressionFB(metric);
+		HDepthOfInheritanceMetric metric = MetricsFactory.eINSTANCE.createHDepthOfInheritanceMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
@@ -104,28 +97,6 @@ public class HDepthOfInheritanceCalculatorImpl extends HClassBasedMetricCalculat
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HDepthOfInheritanceCalculator_0_1_ActivityNode26_blackBB(
-			HDepthOfInheritanceCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HDepthOfInheritanceCalculator_0_1_ActivityNode26_greenBFB(
-			HDepthOfInheritanceCalculator _this, TClass tClass) {
-		HDepthOfInheritanceMetric metric = MetricsFactory.eINSTANCE.createHDepthOfInheritanceMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HDepthOfInheritanceCalculator_0_2_expressionFB(
-			HDepthOfInheritanceMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

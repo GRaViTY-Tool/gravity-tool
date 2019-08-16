@@ -20,6 +20,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern#getHDepthOfInheritanceMetric <em>HDepth Of Inheritance Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern#getHIntenseFieldUsageCodeSmell <em>HIntense Field Usage Code Smell</em>}</li>
@@ -27,7 +28,6 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern#getHAverageParametersMetric <em>HAverage Parameters Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern#getHNumberOfChild <em>HNumber Of Child</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHSpaghettiCodeAntiPattern()
  * @model

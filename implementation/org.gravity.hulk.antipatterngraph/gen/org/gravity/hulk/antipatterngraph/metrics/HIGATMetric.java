@@ -15,10 +15,10 @@ import org.gravity.typegraph.basic.TVisibility;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HIGATMetric#getHMinVis <em>HMin Vis</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.metrics.MetricsPackage#getHIGATMetric()
  * @model

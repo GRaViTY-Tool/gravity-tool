@@ -1,5 +1,6 @@
 package org.gravity.eclipse.io;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -27,9 +28,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  *
  */
 public class ModelSaver {
-	
+
 	private static final Logger LOGGER = Logger.getLogger(ModelSaver.class);
-	
+
 	private ModelSaver() {
 		// This class shouldn't be instantiated
 	}
@@ -37,8 +38,8 @@ public class ModelSaver {
 	/**
 	 * Save a emf model into an eclipse file
 	 * 
-	 * @param model The model
-	 * @param file An eclipse file
+	 * @param model   The model
+	 * @param file    An eclipse file
 	 * @param monitor A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
@@ -47,27 +48,32 @@ public class ModelSaver {
 			return false;
 		}
 		Resource resource = model.eResource();
-		if(resource == null) {
+		if (resource == null) {
 			resource = new ResourceSetImpl().createResource(URI.createURI(file.getName()));
 			resource.getContents().add(model);
 		}
 		return saveModel(resource, file, monitor);
 	}
-	
+
 	/**
 	 * Save a emf model into an eclipse file
 	 * 
 	 * @param resource The resource containing the model
-	 * @param file An eclipse file
-	 * @param monitor A progress monitor
+	 * @param file     An eclipse file
+	 * @param monitor  A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
 	public static boolean saveModel(Resource resource, IFile file, IProgressMonitor monitor) {
-		if(resource == null){
+		if (resource == null) {
 			return false;
 		}
-		
-		try (OutputStream out = new FileOutputStream(file.getLocation().toFile())){
+		File javaFile = file.getLocation().toFile();
+		File parentFile = javaFile.getParentFile();
+		if (!parentFile.exists() && !parentFile.mkdirs()) {
+			LOGGER.log(Level.WARN, "Couldn't create directory: " + parentFile.toString());
+			return false;
+		}
+		try (OutputStream out = new FileOutputStream(javaFile)) {
 			resource.save(out, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ONE, monitor);
 		} catch (IOException e) {
@@ -83,19 +89,18 @@ public class ModelSaver {
 	 * Save a emf model into an eclipse file
 	 * 
 	 * @param resource The resource containing the model
-	 * @param file An eclipse file
-	 * @param monitor A progress monitor
+	 * @param file     An eclipse file
+	 * @param monitor  A progress monitor
 	 * @return true, iff the model has been saved successfully
 	 */
 	public static boolean saveModelUsingPipedStream(Resource resource, IFile file, IProgressMonitor monitor) {
-		if(resource == null){
+		if (resource == null) {
 			return false;
 		}
-		
-		try (PipedInputStream in = new PipedInputStream();
-			PipedOutputStream out = new PipedOutputStream(in);){
 
-			Runnable rout =  () -> {
+		try (PipedInputStream in = new PipedInputStream(); PipedOutputStream out = new PipedOutputStream(in);) {
+
+			Runnable rout = () -> {
 				try {
 					resource.save(out, Collections.emptyMap());
 				} catch (IOException e) {
@@ -104,12 +109,11 @@ public class ModelSaver {
 			};
 			Runnable rin = () -> {
 				try {
-					if(file.exists()){
+					if (file.exists()) {
 						file.setContents(in, true, false, monitor);
-					}
-					else{
+					} else {
 						IContainer parent = file.getParent();
-						if(!parent.exists()){
+						if (!parent.exists()) {
 							IFolder folder = parent.getProject().getFolder(parent.getProjectRelativePath());
 							folder.create(true, true, monitor);
 						}
@@ -127,12 +131,12 @@ public class ModelSaver {
 			threadOut.join();
 		} catch (InterruptedException e) {
 			LOGGER.error(e.getMessage(), e);
-		    Thread.currentThread().interrupt();
+			Thread.currentThread().interrupt();
 			return false;
-		}catch(IOException e) {
+		} catch (IOException e) {
 			LOGGER.error(e.getMessage(), e);
 			return false;
-		} 
+		}
 		return true;
 	}
 }

@@ -28,9 +28,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HLcom5 Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HLcom5
+ * Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -38,8 +37,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  */
 public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implements HLcom5Calculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HLcom5CalculatorImpl() {
@@ -47,8 +46,8 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -57,8 +56,8 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
@@ -72,16 +71,12 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		HLocalFieldUniqueAccessMetric lfau = (HLocalFieldUniqueAccessMetric) result1_black[0];
 		HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) result1_black[2];
 		HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) result1_black[3];
-		Object[] result1_green = HLcom5CalculatorImpl.pattern_HLcom5Calculator_0_1_ActivityNode19_greenBBBBFB(lfau,
-				this, nof, nom, tClass);
-		HLCOM5Metric metric = (HLCOM5Metric) result1_green[4];
-
-		return HLcom5CalculatorImpl.pattern_HLcom5Calculator_0_2_expressionFB(metric);
+		return createMetric(lfau, nof, nom, tClass);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateValue(TClass tClass) {
@@ -95,15 +90,15 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		HNumberOfFieldsMetric nof = (HNumberOfFieldsMetric) result1_black[2];
 		HNumberOfMethodsMetric nom = (HNumberOfMethodsMetric) result1_black[3];
 		HLocalFieldUniqueAccessMetric lfa = (HLocalFieldUniqueAccessMetric) result1_black[4];
-		return HLcom5CalculatorImpl.pattern_HLcom5Calculator_1_2_expressionFBBBB(this, nof, nom, lfa);
+		return calculateLcom5Value(nof, nom, lfa);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public double CalculateLcom5Value(HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom,
+	public double calculateLcom5Value(HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom,
 			HLocalFieldUniqueAccessMetric lfa) {
 		// [user code injected with eMoflon]
 
@@ -120,8 +115,8 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,7 +127,7 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		case MetricsPackage.HLCOM5_CALCULATOR___CALCULATE_VALUE__TCLASS:
 			return calculateValue((TClass) arguments.get(0));
 		case MetricsPackage.HLCOM5_CALCULATOR___CALCULATE_LCOM5_VALUE__HNUMBEROFFIELDSMETRIC_HNUMBEROFMETHODSMETRIC_HLOCALFIELDUNIQUEACCESSMETRIC:
-			return CalculateLcom5Value((HNumberOfFieldsMetric) arguments.get(0),
+			return calculateLcom5Value((HNumberOfFieldsMetric) arguments.get(0),
 					(HNumberOfMethodsMetric) arguments.get(1), (HLocalFieldUniqueAccessMetric) arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
@@ -159,27 +154,19 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		return null;
 	}
 
-	public static final Object[] pattern_HLcom5Calculator_0_1_ActivityNode19_greenBBBBFB(
-			HLocalFieldUniqueAccessMetric lfau, HLcom5Calculator _this, HNumberOfFieldsMetric nof,
+	public final HLCOM5Metric createMetric(HLocalFieldUniqueAccessMetric lfau, HNumberOfFieldsMetric nof,
 			HNumberOfMethodsMetric nom, TClass tClass) {
 		HLCOM5Metric metric = MetricsFactory.eINSTANCE.createHLCOM5Metric();
-		double _localVariable_0 = _this.CalculateLcom5Value(nof, nom, lfau);
-		lfau.getPartOf().add(metric);
-		_this.getHAnnotation().add(metric);
-		nof.getPartOf().add(metric);
-		nom.getPartOf().add(metric);
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateLcom5Value(nof, nom, lfau));
 		metric.setHLocalFieldUniqueAccessMetric(lfau);
 		metric.setHNumberOfFieldsMetric(nof);
 		metric.setHNumberOfMethodsMetric(nom);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { lfau, _this, nof, nom, metric, tClass };
-	}
-
-	public static final HMetric pattern_HLcom5Calculator_0_2_expressionFB(HLCOM5Metric metric) {
-		HMetric _result = metric;
-		return _result;
+		lfau.getPartOf().add(metric);
+		nof.getPartOf().add(metric);
+		nom.getPartOf().add(metric);
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	public static final Object[] pattern_HLcom5Calculator_1_1_ActivityNode20_blackBBFFF(HLcom5Calculator _this,
@@ -203,13 +190,6 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 		return null;
 	}
 
-	public static final double pattern_HLcom5Calculator_1_2_expressionFBBBB(HLcom5Calculator _this,
-			HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom, HLocalFieldUniqueAccessMetric lfa) {
-		double _localVariable_0 = _this.CalculateLcom5Value(nof, nom, lfa);
-		double _result = Double.valueOf(_localVariable_0);
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -219,4 +199,4 @@ public class HLcom5CalculatorImpl extends HClassBasedMetricCalculatorImpl implem
 	}
 
 	// [user code injected with eMoflon] -->
-} //HLcom5CalculatorImpl
+} // HLcom5CalculatorImpl

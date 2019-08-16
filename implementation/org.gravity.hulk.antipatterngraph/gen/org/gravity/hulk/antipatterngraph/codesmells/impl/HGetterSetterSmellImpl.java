@@ -32,10 +32,10 @@ import org.gravity.typegraph.basic.TParameterList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HGetterSetterSmellImpl#getTFieldDefinition <em>TField Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -74,6 +74,7 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TFieldDefinition getTFieldDefinition() {
 		if (tFieldDefinition != null && tFieldDefinition.eIsProxy()) {
 			InternalEObject oldTFieldDefinition = (InternalEObject) tFieldDefinition;
@@ -102,6 +103,7 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTFieldDefinition(TFieldDefinition newTFieldDefinition) {
 		TFieldDefinition oldTFieldDefinition = tFieldDefinition;
 		tFieldDefinition = newTFieldDefinition;

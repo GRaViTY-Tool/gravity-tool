@@ -31,6 +31,7 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSpaghettiCodeAntiPatternImpl#getHDepthOfInheritanceMetric <em>HDepth Of Inheritance Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSpaghettiCodeAntiPatternImpl#getHIntenseFieldUsageCodeSmell <em>HIntense Field Usage Code Smell</em>}</li>
@@ -38,7 +39,6 @@ import org.gravity.typegraph.basic.TClass;
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSpaghettiCodeAntiPatternImpl#getHAverageParametersMetric <em>HAverage Parameters Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSpaghettiCodeAntiPatternImpl#getHNumberOfChild <em>HNumber Of Child</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -117,6 +117,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HDepthOfInheritanceMetric getHDepthOfInheritanceMetric() {
 		if (hDepthOfInheritanceMetric != null && hDepthOfInheritanceMetric.eIsProxy()) {
 			InternalEObject oldHDepthOfInheritanceMetric = (InternalEObject) hDepthOfInheritanceMetric;
@@ -145,6 +146,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHDepthOfInheritanceMetric(HDepthOfInheritanceMetric newHDepthOfInheritanceMetric) {
 		HDepthOfInheritanceMetric oldHDepthOfInheritanceMetric = hDepthOfInheritanceMetric;
 		hDepthOfInheritanceMetric = newHDepthOfInheritanceMetric;
@@ -159,6 +161,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HIntenseFieldUsageCodeSmell getHIntenseFieldUsageCodeSmell() {
 		if (hIntenseFieldUsageCodeSmell != null && hIntenseFieldUsageCodeSmell.eIsProxy()) {
 			InternalEObject oldHIntenseFieldUsageCodeSmell = (InternalEObject) hIntenseFieldUsageCodeSmell;
@@ -187,6 +190,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHIntenseFieldUsageCodeSmell(HIntenseFieldUsageCodeSmell newHIntenseFieldUsageCodeSmell) {
 		HIntenseFieldUsageCodeSmell oldHIntenseFieldUsageCodeSmell = hIntenseFieldUsageCodeSmell;
 		hIntenseFieldUsageCodeSmell = newHIntenseFieldUsageCodeSmell;
@@ -201,6 +205,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HAverageOverloadingInClassMetric getHAverageOverloadingInClassMetric() {
 		if (hAverageOverloadingInClassMetric != null && hAverageOverloadingInClassMetric.eIsProxy()) {
 			InternalEObject oldHAverageOverloadingInClassMetric = (InternalEObject) hAverageOverloadingInClassMetric;
@@ -230,6 +235,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHAverageOverloadingInClassMetric(
 			HAverageOverloadingInClassMetric newHAverageOverloadingInClassMetric) {
 		HAverageOverloadingInClassMetric oldHAverageOverloadingInClassMetric = hAverageOverloadingInClassMetric;
@@ -245,6 +251,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HAverageParametersMetric getHAverageParametersMetric() {
 		if (hAverageParametersMetric != null && hAverageParametersMetric.eIsProxy()) {
 			InternalEObject oldHAverageParametersMetric = (InternalEObject) hAverageParametersMetric;
@@ -273,6 +280,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHAverageParametersMetric(HAverageParametersMetric newHAverageParametersMetric) {
 		HAverageParametersMetric oldHAverageParametersMetric = hAverageParametersMetric;
 		hAverageParametersMetric = newHAverageParametersMetric;
@@ -287,6 +295,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNumberOfChildMetric getHNumberOfChild() {
 		if (hNumberOfChild != null && hNumberOfChild.eIsProxy()) {
 			InternalEObject oldHNumberOfChild = (InternalEObject) hNumberOfChild;
@@ -315,6 +324,7 @@ public class HSpaghettiCodeAntiPatternImpl extends HAntiPatternImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNumberOfChild(HNumberOfChildMetric newHNumberOfChild) {
 		HNumberOfChildMetric oldHNumberOfChild = hNumberOfChild;
 		hNumberOfChild = newHNumberOfChild;

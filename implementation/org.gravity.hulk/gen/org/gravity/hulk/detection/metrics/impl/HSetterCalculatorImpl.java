@@ -27,9 +27,8 @@ import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HSetter Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HSetter
+ * Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -37,8 +36,8 @@ import org.gravity.typegraph.basic.impl.TMethodDefinitionImpl;
  */
 public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl implements HSetterCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HSetterCalculatorImpl() {
@@ -46,8 +45,8 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -56,29 +55,22 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HSetterCalculatorImpl.pattern_HSetterCalculator_0_1_ActivityNode27_blackBB(this,
-				tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HSetterCalculatorImpl.pattern_HSetterCalculator_0_1_ActivityNode27_greenBFB(this,
-				tClass);
-		HSetterMetric metric = (HSetterMetric) result1_green[1];
-
-		return HSetterCalculatorImpl.pattern_HSetterCalculator_0_2_expressionFB(metric);
+		HSetterMetric metric = MetricsFactory.eINSTANCE.createHSetterMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -92,13 +84,15 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 			if (m instanceof TMethodDefinitionImpl) {
 				TMethodSignature sig = ((TMethodDefinitionImpl) m).getSignature();
 				if (sig == null) {
-					//System.out.println("Method within Class " + tClass.getTName() + " does not have a signature");
+					// System.out.println("Method within Class " + tClass.getTName() + " does not
+					// have a signature");
 					continue;
 				}
 				TMethod method = sig.getMethod();
 				if (method == null) {
-					//System.out.println(
-					//"MethodSignature of a Method in Class " + tClass.getTName() + " does not have a TMethod");
+					// System.out.println(
+					// "MethodSignature of a Method in Class " + tClass.getTName() + " does not have
+					// a TMethod");
 					continue;
 				}
 				String name = method.getTName();
@@ -114,8 +108,8 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -129,27 +123,6 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HSetterCalculator_0_1_ActivityNode27_blackBB(HSetterCalculator _this,
-			TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HSetterCalculator_0_1_ActivityNode27_greenBFB(HSetterCalculator _this,
-			TClass tClass) {
-		HSetterMetric metric = MetricsFactory.eINSTANCE.createHSetterMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HSetterCalculator_0_2_expressionFB(HSetterMetric metric) {
-		HMetric _result = metric;
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	public String getGuiName() {
@@ -157,4 +130,4 @@ public class HSetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	}
 
 	// [user code injected with eMoflon] -->
-} //HSetterCalculatorImpl
+} // HSetterCalculatorImpl

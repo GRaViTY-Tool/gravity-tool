@@ -26,10 +26,10 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HManyParametersCodeSmellImpl#getHAverageParametersMetric <em>HAverage Parameters Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -68,6 +68,7 @@ public class HManyParametersCodeSmellImpl extends HCodeSmellImpl implements HMan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HAverageParametersMetric getHAverageParametersMetric() {
 		if (hAverageParametersMetric != null && hAverageParametersMetric.eIsProxy()) {
 			InternalEObject oldHAverageParametersMetric = (InternalEObject) hAverageParametersMetric;
@@ -96,6 +97,7 @@ public class HManyParametersCodeSmellImpl extends HCodeSmellImpl implements HMan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHAverageParametersMetric(HAverageParametersMetric newHAverageParametersMetric) {
 		HAverageParametersMetric oldHAverageParametersMetric = hAverageParametersMetric;
 		hAverageParametersMetric = newHAverageParametersMetric;

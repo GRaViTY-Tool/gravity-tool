@@ -57,18 +57,11 @@ public class HNumberOfChildCalculatorImpl extends HClassBasedMetricCalculatorImp
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HNumberOfChildCalculatorImpl
-				.pattern_HNumberOfChildCalculator_0_1_ActivityNode9_blackBB(tClass, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
-		}
-		Object[] result1_green = HNumberOfChildCalculatorImpl
-				.pattern_HNumberOfChildCalculator_0_1_ActivityNode9_greenBBF(tClass, this);
-		HNumberOfChildMetric child = (HNumberOfChildMetric) result1_green[2];
-
-		return HNumberOfChildCalculatorImpl.pattern_HNumberOfChildCalculator_0_2_expressionFB(child);
+		HNumberOfChildMetric child = MetricsFactory.eINSTANCE.createHNumberOfChildMetric();
+		child.setTAnnotated(tClass);
+		child.setValue(calculateValue(tClass));
+		getHAnnotation().add(child);
+		return child;
 	}
 
 	/**
@@ -97,27 +90,6 @@ public class HNumberOfChildCalculatorImpl extends HClassBasedMetricCalculatorImp
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HNumberOfChildCalculator_0_1_ActivityNode9_blackBB(TClass tClass,
-			HNumberOfChildCalculator _this) {
-		return new Object[] { tClass, _this };
-	}
-
-	public static final Object[] pattern_HNumberOfChildCalculator_0_1_ActivityNode9_greenBBF(TClass tClass,
-			HNumberOfChildCalculator _this) {
-		HNumberOfChildMetric child = MetricsFactory.eINSTANCE.createHNumberOfChildMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(child);
-		child.setTAnnotated(tClass);
-		double child_value_prime = Double.valueOf(_localVariable_0);
-		child.setValue(Double.valueOf(child_value_prime));
-		return new Object[] { tClass, _this, child };
-	}
-
-	public static final HMetric pattern_HNumberOfChildCalculator_0_2_expressionFB(HNumberOfChildMetric child) {
-		HMetric _result = child;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

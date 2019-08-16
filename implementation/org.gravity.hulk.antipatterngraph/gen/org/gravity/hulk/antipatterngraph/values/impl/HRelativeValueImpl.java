@@ -21,10 +21,10 @@ import org.gravity.hulk.antipatterngraph.values.ValuesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.values.impl.HRelativeValueImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -73,6 +73,7 @@ public class HRelativeValueImpl extends EObjectImpl implements HRelativeValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HRelativeValueConstants getValue() {
 		return value;
 	}
@@ -82,6 +83,7 @@ public class HRelativeValueImpl extends EObjectImpl implements HRelativeValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(HRelativeValueConstants newValue) {
 		HRelativeValueConstants oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;
@@ -158,7 +160,7 @@ public class HRelativeValueImpl extends EObjectImpl implements HRelativeValue {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

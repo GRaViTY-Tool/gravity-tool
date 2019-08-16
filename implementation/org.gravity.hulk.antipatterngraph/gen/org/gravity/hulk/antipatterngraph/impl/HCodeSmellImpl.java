@@ -13,8 +13,6 @@ import org.gravity.hulk.antipatterngraph.HCodeSmell;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>HCode Smell</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

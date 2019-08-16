@@ -15,10 +15,10 @@ import org.gravity.typegraph.basic.TFieldDefinition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell#getTFieldDefinition <em>TField Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHGetterSetterSmell()
  * @model

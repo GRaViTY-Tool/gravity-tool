@@ -29,6 +29,11 @@ public class GravityActivator extends Plugin {
 
 	/** The plug-in ID. */
 	public static final String PLUGIN_ID = "org.gravity.eclipse"; //$NON-NLS-1$
+	
+	/**
+	 * The name of the gravity folder
+	 */
+	public static final String GRAVITY_FOLDER_NAME = ".gravity"; //$NON-NLS-1$
 
 	/** The shared instance. */
 	private static GravityActivator plugin;

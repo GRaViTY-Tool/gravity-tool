@@ -13,11 +13,7 @@
 		++  -method -> mMethod
 	}
 
-	mMethod:MMethodDefinition {
-		-abstractTypeDeclaration -> mType
-	}
-
-	mType:AbstractTypeDeclaration
+	mMethod:MMethodDefinition
 }
 
 #target {
@@ -29,11 +25,7 @@
 		++-tTarget -> tMethod
 	}
 
-	tMethod:TMethodDefinition {
-		-definedBy -> tType
-	}
-
-	tType:TAbstractType
+	tMethod:TMethodDefinition
 }
 
 #correspondence {
@@ -51,14 +43,6 @@
 		#src->mMember
 		#trg->tMember
 	}
-
-	mTypeToTType :TypeToTAbstractType {
-		#src->mType
-		#trg->tType
-	}
-}
-
-#attributeConditions {
 }
 
 

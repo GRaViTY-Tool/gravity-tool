@@ -26,12 +26,12 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSwissArmyKnifeAntiPatternImpl#getHIncommingInvocationCustomMetric <em>HIncomming Invocation Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSwissArmyKnifeAntiPatternImpl#getHLargeClassSmell <em>HLarge Class Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HSwissArmyKnifeAntiPatternImpl#getHMuchOverloadingCodeSmell <em>HMuch Overloading Code Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -90,6 +90,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HIncommingInvocationMetric getHIncommingInvocationCustomMetric() {
 		if (hIncommingInvocationCustomMetric != null && hIncommingInvocationCustomMetric.eIsProxy()) {
 			InternalEObject oldHIncommingInvocationCustomMetric = (InternalEObject) hIncommingInvocationCustomMetric;
@@ -119,6 +120,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHIncommingInvocationCustomMetric(HIncommingInvocationMetric newHIncommingInvocationCustomMetric) {
 		HIncommingInvocationMetric oldHIncommingInvocationCustomMetric = hIncommingInvocationCustomMetric;
 		hIncommingInvocationCustomMetric = newHIncommingInvocationCustomMetric;
@@ -133,6 +135,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLargeClassSmell getHLargeClassSmell() {
 		if (hLargeClassSmell != null && hLargeClassSmell.eIsProxy()) {
 			InternalEObject oldHLargeClassSmell = (InternalEObject) hLargeClassSmell;
@@ -161,6 +164,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLargeClassSmell(HLargeClassSmell newHLargeClassSmell) {
 		HLargeClassSmell oldHLargeClassSmell = hLargeClassSmell;
 		hLargeClassSmell = newHLargeClassSmell;
@@ -175,6 +179,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HMuchOverloadingCodeSmell getHMuchOverloadingCodeSmell() {
 		if (hMuchOverloadingCodeSmell != null && hMuchOverloadingCodeSmell.eIsProxy()) {
 			InternalEObject oldHMuchOverloadingCodeSmell = (InternalEObject) hMuchOverloadingCodeSmell;
@@ -203,6 +208,7 @@ public class HSwissArmyKnifeAntiPatternImpl extends HAntiPatternImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHMuchOverloadingCodeSmell(HMuchOverloadingCodeSmell newHMuchOverloadingCodeSmell) {
 		HMuchOverloadingCodeSmell oldHMuchOverloadingCodeSmell = hMuchOverloadingCodeSmell;
 		hMuchOverloadingCodeSmell = newHMuchOverloadingCodeSmell;

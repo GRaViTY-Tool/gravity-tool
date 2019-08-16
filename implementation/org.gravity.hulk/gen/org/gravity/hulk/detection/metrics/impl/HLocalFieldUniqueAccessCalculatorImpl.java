@@ -58,21 +58,20 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_green = HLocalFieldUniqueAccessCalculatorImpl
-				.pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_greenBBF(this, tClass);
-		HLocalFieldUniqueAccessMetric metric = (HLocalFieldUniqueAccessMetric) result1_green[2];
-
-		return HLocalFieldUniqueAccessCalculatorImpl.pattern_HLocalFieldUniqueAccessCalculator_0_2_expressionFB(metric);
+		HLocalFieldUniqueAccessMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldUniqueAccessMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -105,23 +104,6 @@ public class HLocalFieldUniqueAccessCalculatorImpl extends HClassBasedMetricCalc
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HLocalFieldUniqueAccessCalculator_0_1_ActivityNode21_greenBBF(
-			HLocalFieldUniqueAccessCalculator _this, TClass tClass) {
-		HLocalFieldUniqueAccessMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldUniqueAccessMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, tClass, metric };
-	}
-
-	public static final HMetric pattern_HLocalFieldUniqueAccessCalculator_0_2_expressionFB(
-			HLocalFieldUniqueAccessMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetri
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HMuchOverloadingCodeSmell#getHAverageOverloadingInClassMetric <em>HAverage Overloading In Class Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHMuchOverloadingCodeSmell()
  * @model

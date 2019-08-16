@@ -13,12 +13,12 @@ import org.gravity.hulk.antipatterngraph.HMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric#getHNumberOfMethodsMetric <em>HNumber Of Methods Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric#getHNumberOfFieldsMetric <em>HNumber Of Fields Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HLCOM5Metric#getHLocalFieldUniqueAccessMetric <em>HLocal Field Unique Access Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.metrics.MetricsPackage#getHLCOM5Metric()
  * @model

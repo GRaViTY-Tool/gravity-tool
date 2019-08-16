@@ -233,13 +233,11 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 
 	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
 		HIGAMMetric metric = MetricsFactory.eINSTANCE.createHIGAMMetric();
-		annotatable.getTAnnotation().add(metric);
-		getHAnnotation().add(metric);
-		
+		metric.setTAnnotated(annotatable);
 		metric.setValue(igam);
 		metric.setApg(apg);
-		metric.setTAnnotated(annotatable);
 		metric.setHMinVis(minVis);
+		getHAnnotation().add(metric);
 	}
 
 	@Override

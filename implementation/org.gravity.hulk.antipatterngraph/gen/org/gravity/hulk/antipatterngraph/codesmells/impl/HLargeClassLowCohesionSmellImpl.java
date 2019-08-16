@@ -26,11 +26,11 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HLargeClassLowCohesionSmellImpl#getHLowCohesionSmell <em>HLow Cohesion Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HLargeClassLowCohesionSmellImpl#getHLargeClassSmell <em>HLarge Class Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +79,7 @@ public class HLargeClassLowCohesionSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLowCohesionSmell getHLowCohesionSmell() {
 		if (hLowCohesionSmell != null && hLowCohesionSmell.eIsProxy()) {
 			InternalEObject oldHLowCohesionSmell = (InternalEObject) hLowCohesionSmell;
@@ -107,6 +108,7 @@ public class HLargeClassLowCohesionSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLowCohesionSmell(HLowCohesionSmell newHLowCohesionSmell) {
 		HLowCohesionSmell oldHLowCohesionSmell = hLowCohesionSmell;
 		hLowCohesionSmell = newHLowCohesionSmell;
@@ -121,6 +123,7 @@ public class HLargeClassLowCohesionSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLargeClassSmell getHLargeClassSmell() {
 		if (hLargeClassSmell != null && hLargeClassSmell.eIsProxy()) {
 			InternalEObject oldHLargeClassSmell = (InternalEObject) hLargeClassSmell;
@@ -149,6 +152,7 @@ public class HLargeClassLowCohesionSmellImpl extends HCodeSmellImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLargeClassSmell(HLargeClassSmell newHLargeClassSmell) {
 		HLargeClassSmell oldHLargeClassSmell = hLargeClassSmell;
 		hLargeClassSmell = newHLargeClassSmell;

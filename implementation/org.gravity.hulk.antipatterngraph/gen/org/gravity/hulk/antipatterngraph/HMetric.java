@@ -13,10 +13,10 @@ import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.HMetric#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.AntipatterngraphPackage#getHMetric()
  * @model abstract="true"

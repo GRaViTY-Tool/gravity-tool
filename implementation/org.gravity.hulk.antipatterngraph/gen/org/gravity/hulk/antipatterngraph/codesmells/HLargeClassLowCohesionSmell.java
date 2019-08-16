@@ -13,11 +13,11 @@ import org.gravity.hulk.antipatterngraph.HCodeSmell;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell#getHLowCohesionSmell <em>HLow Cohesion Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell#getHLargeClassSmell <em>HLarge Class Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHLargeClassLowCohesionSmell()
  * @model

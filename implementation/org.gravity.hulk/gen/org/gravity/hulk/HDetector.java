@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
+import org.gravity.typegraph.basic.TClass;
 import org.moflon.core.dfs.Node;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -85,6 +85,8 @@ public interface HDetector extends EObject, Node {
 	// <-- [user code injected with eMoflon]
 
 	String getGuiName();
+
+	boolean hasAlreadyBeenAnnotated(TClass tClass);
 
 	// [user code injected with eMoflon] -->
 } // HDetector

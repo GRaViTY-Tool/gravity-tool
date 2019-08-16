@@ -13,8 +13,6 @@ import org.gravity.hulk.antipatterngraph.HAntiPattern;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>HAnti Pattern</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

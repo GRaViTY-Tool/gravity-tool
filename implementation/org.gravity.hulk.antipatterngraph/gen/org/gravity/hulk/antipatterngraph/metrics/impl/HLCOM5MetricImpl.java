@@ -27,12 +27,12 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HLCOM5MetricImpl#getHNumberOfMethodsMetric <em>HNumber Of Methods Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HLCOM5MetricImpl#getHNumberOfFieldsMetric <em>HNumber Of Fields Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HLCOM5MetricImpl#getHLocalFieldUniqueAccessMetric <em>HLocal Field Unique Access Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -91,6 +91,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNumberOfMethodsMetric getHNumberOfMethodsMetric() {
 		if (hNumberOfMethodsMetric != null && hNumberOfMethodsMetric.eIsProxy()) {
 			InternalEObject oldHNumberOfMethodsMetric = (InternalEObject) hNumberOfMethodsMetric;
@@ -119,6 +120,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNumberOfMethodsMetric(HNumberOfMethodsMetric newHNumberOfMethodsMetric) {
 		HNumberOfMethodsMetric oldHNumberOfMethodsMetric = hNumberOfMethodsMetric;
 		hNumberOfMethodsMetric = newHNumberOfMethodsMetric;
@@ -133,6 +135,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNumberOfFieldsMetric getHNumberOfFieldsMetric() {
 		if (hNumberOfFieldsMetric != null && hNumberOfFieldsMetric.eIsProxy()) {
 			InternalEObject oldHNumberOfFieldsMetric = (InternalEObject) hNumberOfFieldsMetric;
@@ -161,6 +164,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNumberOfFieldsMetric(HNumberOfFieldsMetric newHNumberOfFieldsMetric) {
 		HNumberOfFieldsMetric oldHNumberOfFieldsMetric = hNumberOfFieldsMetric;
 		hNumberOfFieldsMetric = newHNumberOfFieldsMetric;
@@ -175,6 +179,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLocalFieldUniqueAccessMetric getHLocalFieldUniqueAccessMetric() {
 		if (hLocalFieldUniqueAccessMetric != null && hLocalFieldUniqueAccessMetric.eIsProxy()) {
 			InternalEObject oldHLocalFieldUniqueAccessMetric = (InternalEObject) hLocalFieldUniqueAccessMetric;
@@ -204,6 +209,7 @@ public class HLCOM5MetricImpl extends HMetricImpl implements HLCOM5Metric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLocalFieldUniqueAccessMetric(HLocalFieldUniqueAccessMetric newHLocalFieldUniqueAccessMetric) {
 		HLocalFieldUniqueAccessMetric oldHLocalFieldUniqueAccessMetric = hLocalFieldUniqueAccessMetric;
 		hLocalFieldUniqueAccessMetric = newHLocalFieldUniqueAccessMetric;

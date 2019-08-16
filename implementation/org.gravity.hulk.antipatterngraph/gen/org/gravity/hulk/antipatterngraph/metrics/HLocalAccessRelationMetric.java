@@ -13,11 +13,11 @@ import org.gravity.hulk.antipatterngraph.HMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric#getHLocalFieldAccesses <em>HLocal Field Accesses</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric#getHLocalMethodAccesses <em>HLocal Method Accesses</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.metrics.MetricsPackage#getHLocalAccessRelationMetric()
  * @model

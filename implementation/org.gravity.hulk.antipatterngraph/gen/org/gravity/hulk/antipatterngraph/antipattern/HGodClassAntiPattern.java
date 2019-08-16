@@ -16,11 +16,11 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassLowCohesionSmell;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern#getHControllerClassSmell <em>HController Class Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage#getHGodClassAntiPattern()
  * @model

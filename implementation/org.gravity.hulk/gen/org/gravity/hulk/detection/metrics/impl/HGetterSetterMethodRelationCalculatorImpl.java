@@ -28,9 +28,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HGetter Setter Method Relation Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGetter
+ * Setter Method Relation Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -39,8 +38,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetricCalculatorImpl
 		implements HGetterSetterMethodRelationCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HGetterSetterMethodRelationCalculatorImpl() {
@@ -48,8 +47,8 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,33 +57,42 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
+		HSetterMetric setter = null;
+		HGetterMetric getter = null;
+		HNumberOfMethodsMetric methods = null;
 
-		Object[] result1_black = HGetterSetterMethodRelationCalculatorImpl
-				.pattern_HGetterSetterMethodRelationCalculator_0_1_ActivityNode5_blackFFBBF(tClass, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
+		for (TAnnotation annotation : tClass.getTAnnotation()) {
+			if (annotation instanceof HSetterMetric) {
+				setter = (HSetterMetric) annotation;
+			} else if (annotation instanceof HGetterMetric) {
+				getter = (HGetterMetric) annotation;
+			} else if (annotation instanceof HNumberOfMethodsMetric) {
+				methods = (HNumberOfMethodsMetric) annotation;
+			}
 		}
-		HSetterMetric setter = (HSetterMetric) result1_black[0];
-		HGetterMetric getter = (HGetterMetric) result1_black[1];
-		HNumberOfMethodsMetric methods = (HNumberOfMethodsMetric) result1_black[4];
-		Object[] result1_green = HGetterSetterMethodRelationCalculatorImpl
-				.pattern_HGetterSetterMethodRelationCalculator_0_1_ActivityNode5_greenBBBFBB(setter, getter, tClass,
-						this, methods);
-		HNACCMetric metric = (HNACCMetric) result1_green[3];
 
-		return HGetterSetterMethodRelationCalculatorImpl
-				.pattern_HGetterSetterMethodRelationCalculator_0_2_expressionFB(metric);
+		HNACCMetric metric = MetricsFactory.eINSTANCE.createHNACCMetric();
+		metric.setTAnnotated(tClass);
+		metric.setHSetterCustomMetric(setter);
+		metric.setHGetterCustomMetric(getter);
+		metric.setHNumberOfMethodsMetric(methods);
+		metric.setValue(calculateValue(setter, getter, methods));
+
+		getHAnnotation().add(metric);
+		methods.getPartOf().add(metric);
+		setter.getPartOf().add(metric);
+		getter.getPartOf().add(metric);
+		return metric;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateValue(HSetterMetric setter, HGetterMetric getter, HNumberOfMethodsMetric methods) {
@@ -99,28 +107,30 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateValue(TClass tClass) {
+		HSetterMetric setter = null;
+		HGetterMetric getter = null;
+		HNumberOfMethodsMetric methods = null;
 
-		Object[] result1_black = HGetterSetterMethodRelationCalculatorImpl
-				.pattern_HGetterSetterMethodRelationCalculator_2_1_ActivityNode14_blackBFFFB(tClass, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
+		for (TAnnotation annotation : tClass.getTAnnotation()) {
+			if (annotation instanceof HSetterMetric) {
+				setter = (HSetterMetric) annotation;
+			} else if (annotation instanceof HGetterMetric) {
+				getter = (HGetterMetric) annotation;
+			} else if (annotation instanceof HNumberOfMethodsMetric) {
+				methods = (HNumberOfMethodsMetric) annotation;
+			}
 		}
-		HSetterMetric setter = (HSetterMetric) result1_black[1];
-		HGetterMetric getter = (HGetterMetric) result1_black[2];
-		HNumberOfMethodsMetric methods = (HNumberOfMethodsMetric) result1_black[3];
-		return HGetterSetterMethodRelationCalculatorImpl
-				.pattern_HGetterSetterMethodRelationCalculator_2_2_expressionFBBBB(this, setter, getter, methods);
+		return calculateValue(setter, getter, methods);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,79 +147,6 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HGetterSetterMethodRelationCalculator_0_1_ActivityNode5_blackFFBBF(
-			TClass tClass, HGetterSetterMethodRelationCalculator _this) {
-		for (TAnnotation tmpSetter : tClass.getTAnnotation()) {
-			if (tmpSetter instanceof HSetterMetric) {
-				HSetterMetric setter = (HSetterMetric) tmpSetter;
-				for (TAnnotation tmpGetter : tClass.getTAnnotation()) {
-					if (tmpGetter instanceof HGetterMetric) {
-						HGetterMetric getter = (HGetterMetric) tmpGetter;
-						for (TAnnotation tmpMethods : tClass.getTAnnotation()) {
-							if (tmpMethods instanceof HNumberOfMethodsMetric) {
-								HNumberOfMethodsMetric methods = (HNumberOfMethodsMetric) tmpMethods;
-								return new Object[] { setter, getter, tClass, _this, methods };
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HGetterSetterMethodRelationCalculator_0_1_ActivityNode5_greenBBBFBB(
-			HSetterMetric setter, HGetterMetric getter, TClass tClass, HGetterSetterMethodRelationCalculator _this,
-			HNumberOfMethodsMetric methods) {
-		HNACCMetric metric = MetricsFactory.eINSTANCE.createHNACCMetric();
-		double _localVariable_0 = _this.calculateValue(setter, getter, methods);
-		setter.getPartOf().add(metric);
-		getter.getPartOf().add(metric);
-		metric.setTAnnotated(tClass);
-		metric.setHSetterCustomMetric(setter);
-		metric.setHGetterCustomMetric(getter);
-		metric.setHNumberOfMethodsMetric(methods);
-		_this.getHAnnotation().add(metric);
-		methods.getPartOf().add(metric);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { setter, getter, tClass, metric, _this, methods };
-	}
-
-	public static final HMetric pattern_HGetterSetterMethodRelationCalculator_0_2_expressionFB(HNACCMetric metric) {
-		HMetric _result = metric;
-		return _result;
-	}
-
-	public static final Object[] pattern_HGetterSetterMethodRelationCalculator_2_1_ActivityNode14_blackBFFFB(
-			TClass tClass, HGetterSetterMethodRelationCalculator _this) {
-		for (TAnnotation tmpGetter : tClass.getTAnnotation()) {
-			if (tmpGetter instanceof HGetterMetric) {
-				HGetterMetric getter = (HGetterMetric) tmpGetter;
-				for (TAnnotation tmpMethods : tClass.getTAnnotation()) {
-					if (tmpMethods instanceof HNumberOfMethodsMetric) {
-						HNumberOfMethodsMetric methods = (HNumberOfMethodsMetric) tmpMethods;
-						for (TAnnotation tmpSetter : tClass.getTAnnotation()) {
-							if (tmpSetter instanceof HSetterMetric) {
-								HSetterMetric setter = (HSetterMetric) tmpSetter;
-								return new Object[] { tClass, setter, getter, methods, _this };
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final double pattern_HGetterSetterMethodRelationCalculator_2_2_expressionFBBBB(
-			HGetterSetterMethodRelationCalculator _this, HSetterMetric setter, HGetterMetric getter,
-			HNumberOfMethodsMetric methods) {
-		double _localVariable_0 = _this.calculateValue(setter, getter, methods);
-		double _result = Double.valueOf(_localVariable_0);
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -218,4 +155,4 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 	}
 
 	// [user code injected with eMoflon] -->
-} //HGetterSetterMethodRelationCalculatorImpl
+} // HGetterSetterMethodRelationCalculatorImpl

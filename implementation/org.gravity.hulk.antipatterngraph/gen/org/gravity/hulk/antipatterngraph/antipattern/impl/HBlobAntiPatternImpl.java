@@ -33,11 +33,11 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HBlobAntiPatternImpl#getHDataClassSmells <em>HData Class Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HBlobAntiPatternImpl#getHGodClassAntiPattern <em>HGod Class Anti Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -86,6 +86,7 @@ public class HBlobAntiPatternImpl extends HAntiPatternImpl implements HBlobAntiP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HDataClassSmell> getHDataClassSmells() {
 		if (hDataClassSmells == null) {
 			hDataClassSmells = new EObjectResolvingEList<HDataClassSmell>(HDataClassSmell.class, this,
@@ -99,6 +100,7 @@ public class HBlobAntiPatternImpl extends HAntiPatternImpl implements HBlobAntiP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HGodClassAntiPattern getHGodClassAntiPattern() {
 		if (hGodClassAntiPattern != null && hGodClassAntiPattern.eIsProxy()) {
 			InternalEObject oldHGodClassAntiPattern = (InternalEObject) hGodClassAntiPattern;
@@ -127,6 +129,7 @@ public class HBlobAntiPatternImpl extends HAntiPatternImpl implements HBlobAntiP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHGodClassAntiPattern(HGodClassAntiPattern newHGodClassAntiPattern) {
 		HGodClassAntiPattern oldHGodClassAntiPattern = hGodClassAntiPattern;
 		hGodClassAntiPattern = newHGodClassAntiPattern;

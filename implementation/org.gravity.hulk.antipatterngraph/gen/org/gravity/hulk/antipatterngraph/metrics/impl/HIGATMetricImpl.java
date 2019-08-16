@@ -25,10 +25,10 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HIGATMetricImpl#getHMinVis <em>HMin Vis</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -77,6 +77,7 @@ public class HIGATMetricImpl extends HMetricImpl implements HIGATMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TVisibility getHMinVis() {
 		return hMinVis;
 	}
@@ -86,6 +87,7 @@ public class HIGATMetricImpl extends HMetricImpl implements HIGATMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHMinVis(TVisibility newHMinVis) {
 		TVisibility oldHMinVis = hMinVis;
 		hMinVis = newHMinVis == null ? HMIN_VIS_EDEFAULT : newHMinVis;
@@ -162,7 +164,7 @@ public class HIGATMetricImpl extends HMetricImpl implements HIGATMetric {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (hMinVis: ");
 		result.append(hMinVis);
 		result.append(')');

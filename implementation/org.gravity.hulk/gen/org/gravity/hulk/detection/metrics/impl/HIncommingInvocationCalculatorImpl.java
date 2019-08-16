@@ -60,27 +60,20 @@ public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalcula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HIncommingInvocationCalculatorImpl
-				.pattern_HIncommingInvocationCalculator_0_1_ActivityNode24_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HIncommingInvocationCalculatorImpl
-				.pattern_HIncommingInvocationCalculator_0_1_ActivityNode24_greenBFB(this, tClass);
-		HIncommingInvocationMetric metric = (HIncommingInvocationMetric) result1_green[1];
-
-		return HIncommingInvocationCalculatorImpl.pattern_HIncommingInvocationCalculator_0_2_expressionFB(metric);
+		HIncommingInvocationMetric metric = MetricsFactory.eINSTANCE.createHIncommingInvocationMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -129,28 +122,6 @@ public class HIncommingInvocationCalculatorImpl extends HClassBasedMetricCalcula
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HIncommingInvocationCalculator_0_1_ActivityNode24_blackBB(
-			HIncommingInvocationCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HIncommingInvocationCalculator_0_1_ActivityNode24_greenBFB(
-			HIncommingInvocationCalculator _this, TClass tClass) {
-		HIncommingInvocationMetric metric = MetricsFactory.eINSTANCE.createHIncommingInvocationMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HIncommingInvocationCalculator_0_2_expressionFB(
-			HIncommingInvocationMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

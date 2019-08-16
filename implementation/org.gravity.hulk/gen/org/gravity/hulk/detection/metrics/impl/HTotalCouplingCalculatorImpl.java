@@ -57,27 +57,20 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HTotalCouplingCalculatorImpl
-				.pattern_HTotalCouplingCalculator_0_1_ActivityNode29_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HTotalCouplingCalculatorImpl
-				.pattern_HTotalCouplingCalculator_0_1_ActivityNode29_greenBFB(this, tClass);
-		HTotalCouplingMetric metric = (HTotalCouplingMetric) result1_green[1];
-
-		return HTotalCouplingCalculatorImpl.pattern_HTotalCouplingCalculator_0_2_expressionFB(metric);
+		HTotalCouplingMetric metric = MetricsFactory.eINSTANCE.createHTotalCouplingMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -116,27 +109,6 @@ public class HTotalCouplingCalculatorImpl extends HClassBasedMetricCalculatorImp
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HTotalCouplingCalculator_0_1_ActivityNode29_blackBB(
-			HTotalCouplingCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HTotalCouplingCalculator_0_1_ActivityNode29_greenBFB(
-			HTotalCouplingCalculator _this, TClass tClass) {
-		HTotalCouplingMetric metric = MetricsFactory.eINSTANCE.createHTotalCouplingMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HTotalCouplingCalculator_0_2_expressionFB(HTotalCouplingMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

@@ -23,10 +23,10 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HMuchOverloadingCodeSmellImpl#getHAverageOverloadingInClassMetric <em>HAverage Overloading In Class Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -65,6 +65,7 @@ public class HMuchOverloadingCodeSmellImpl extends HCodeSmellImpl implements HMu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HAverageOverloadingInClassMetric getHAverageOverloadingInClassMetric() {
 		if (hAverageOverloadingInClassMetric != null && hAverageOverloadingInClassMetric.eIsProxy()) {
 			InternalEObject oldHAverageOverloadingInClassMetric = (InternalEObject) hAverageOverloadingInClassMetric;
@@ -94,6 +95,7 @@ public class HMuchOverloadingCodeSmellImpl extends HCodeSmellImpl implements HMu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHAverageOverloadingInClassMetric(
 			HAverageOverloadingInClassMetric newHAverageOverloadingInClassMetric) {
 		HAverageOverloadingInClassMetric oldHAverageOverloadingInClassMetric = hAverageOverloadingInClassMetric;

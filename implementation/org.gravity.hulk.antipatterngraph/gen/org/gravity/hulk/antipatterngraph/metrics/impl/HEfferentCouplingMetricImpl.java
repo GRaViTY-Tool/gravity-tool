@@ -17,8 +17,6 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>HEfferent Coupling Metric</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -16,10 +16,10 @@ import org.gravity.hulk.antipatterngraph.HMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor#getHDataClassSmells <em>HData Class Smells</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHDataClassAccessor()
  * @model

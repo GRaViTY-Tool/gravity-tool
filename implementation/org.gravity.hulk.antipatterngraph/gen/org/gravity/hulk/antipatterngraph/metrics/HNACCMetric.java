@@ -17,13 +17,13 @@ import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HNACCMetric#getHGetterSetterSmells <em>HGetter Setter Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HNACCMetric#getHGetterCustomMetric <em>HGetter Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HNACCMetric#getHSetterCustomMetric <em>HSetter Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.HNACCMetric#getHNumberOfMethodsMetric <em>HNumber Of Methods Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.metrics.MetricsPackage#getHNACCMetric()
  * @model

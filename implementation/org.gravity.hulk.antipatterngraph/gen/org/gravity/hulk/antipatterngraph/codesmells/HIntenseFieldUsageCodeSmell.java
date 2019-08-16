@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HLocalAccessRelationMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HIntenseFieldUsageCodeSmell#getHLocalAccessRelationMetric <em>HLocal Access Relation Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHIntenseFieldUsageCodeSmell()
  * @model

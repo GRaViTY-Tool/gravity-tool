@@ -59,21 +59,14 @@ public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HAfferentCouplingCalculatorImpl
-				.pattern_HAfferentCouplingCalculator_0_1_ActivityNode23_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HAfferentCouplingCalculatorImpl
-				.pattern_HAfferentCouplingCalculator_0_1_ActivityNode23_greenBBF(this, tClass);
-		HAfferentCouplingMetric metric = (HAfferentCouplingMetric) result1_green[2];
-
-		return HAfferentCouplingCalculatorImpl.pattern_HAfferentCouplingCalculator_0_2_expressionFB(metric);
+		HAfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
@@ -123,27 +116,6 @@ public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HAfferentCouplingCalculator_0_1_ActivityNode23_blackBB(
-			HAfferentCouplingCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HAfferentCouplingCalculator_0_1_ActivityNode23_greenBBF(
-			HAfferentCouplingCalculator _this, TClass tClass) {
-		HAfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, tClass, metric };
-	}
-
-	public static final HMetric pattern_HAfferentCouplingCalculator_0_2_expressionFB(HAfferentCouplingMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

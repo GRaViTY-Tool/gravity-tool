@@ -56,27 +56,20 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HFieldNumberCalculatorImpl
-				.pattern_HFieldNumberCalculator_0_1_ActivityNode18_blackBB(tClass, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
-		}
-		Object[] result1_green = HFieldNumberCalculatorImpl
-				.pattern_HFieldNumberCalculator_0_1_ActivityNode18_greenBBF(tClass, this);
-		HNumberOfFieldsMetric metric = (HNumberOfFieldsMetric) result1_green[2];
-
-		return HFieldNumberCalculatorImpl.pattern_HFieldNumberCalculator_0_2_expressionFB(metric);
+		HNumberOfFieldsMetric metric = MetricsFactory.eINSTANCE.createHNumberOfFieldsMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -105,27 +98,6 @@ public class HFieldNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl 
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HFieldNumberCalculator_0_1_ActivityNode18_blackBB(TClass tClass,
-			HFieldNumberCalculator _this) {
-		return new Object[] { tClass, _this };
-	}
-
-	public static final Object[] pattern_HFieldNumberCalculator_0_1_ActivityNode18_greenBBF(TClass tClass,
-			HFieldNumberCalculator _this) {
-		HNumberOfFieldsMetric metric = MetricsFactory.eINSTANCE.createHNumberOfFieldsMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { tClass, _this, metric };
-	}
-
-	public static final HMetric pattern_HFieldNumberCalculator_0_2_expressionFB(HNumberOfFieldsMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

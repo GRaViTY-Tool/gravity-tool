@@ -12,7 +12,7 @@ public class Messages extends NLS {
 	public static String HulkScanHandler_4;
 	public static String HulkScanHandler_5;
 	public static String HulkScanHandler_6;
-	public static String HulkScanHandler_7;
+	public static String SaveAPsFailed;
 	public static String HulkScanHandler_8;
 	public static String HulkScanHandler_9;
 

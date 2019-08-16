@@ -40,9 +40,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HGetter Setter Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGetter
+ * Setter Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -50,8 +49,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  */
 public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements HGetterSetterDetector {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HGetterSetterDetectorImpl() {
@@ -59,8 +58,8 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,8 +68,8 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isGetterSetter(TMethodDefinition method) {
@@ -82,72 +81,60 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {
-
-		Object[] result1_black = HGetterSetterDetectorImpl
-				.pattern_HGetterSetterDetector_1_1_ActivityNode2_blackBFB(tClass, this);
-		if (result1_black == null) {
+		HNACCMetric nacc = null;
+		for (TAnnotation tmpNacc : tClass.getTAnnotation()) {
+			if (tmpNacc instanceof HNACCMetric) {
+				nacc = (HNACCMetric) tmpNacc;
+				break;
+			}
+		}
+		if (nacc == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
 					+ "[this] = " + this + ".");
 		}
-		HNACCMetric nacc = (HNACCMetric) result1_black[1];
-		// ForEach 
-		for (Object[] result2_black : HGetterSetterDetectorImpl
-				.pattern_HGetterSetterDetector_1_2_ActivityNode3_blackBF(tClass)) {
-			TMethodDefinition tMember = (TMethodDefinition) result2_black[1];
-			// 
-			if (HGetterSetterDetectorImpl.pattern_HGetterSetterDetector_1_3_ActivityNode44_expressionFBB(this,
-					tMember)) {
-
-				Object[] result4_black = HGetterSetterDetectorImpl
-						.pattern_HGetterSetterDetector_1_4_ActivityNode45_blackBBB(this, tMember, nacc);
-				if (result4_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[tMember] = " + tMember + ", " + "[nacc] = " + nacc + ".");
+		// ForEach
+		for (TMember tmpTMember : tClass.getDefines()) {
+			if (tmpTMember instanceof TMethodDefinition) {
+				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+				//
+				if (isGetterSetter(tMember)) {
+					HGetterSetterSmell gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
+					gs.setTAnnotated(tMember);
+					gs.getPartOf().add(nacc);
+					nacc.getHGetterSetterSmells().add(gs);
+					getHAnnotation().add(gs);
 				}
-				HGetterSetterDetectorImpl.pattern_HGetterSetterDetector_1_4_ActivityNode45_greenBBFB(this, tMember,
-						nacc);
-				//nothing HGetterSetterSmell gs = (HGetterSetterSmell) result4_green[2];
-
-			} else {
 			}
-
 		}
-		return HGetterSetterDetectorImpl.pattern_HGetterSetterDetector_1_5_expressionFB(nacc);
+		return nacc;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,8 +161,8 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,55 +178,6 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HGetterSetterDetector_1_1_ActivityNode2_blackBFB(TClass tClass,
-			HGetterSetterDetector _this) {
-		for (TAnnotation tmpNacc : tClass.getTAnnotation()) {
-			if (tmpNacc instanceof HNACCMetric) {
-				HNACCMetric nacc = (HNACCMetric) tmpNacc;
-				return new Object[] { tClass, nacc, _this };
-			}
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_HGetterSetterDetector_1_2_ActivityNode3_blackBF(TClass tClass) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TMember tmpTMember : tClass.getDefines()) {
-			if (tmpTMember instanceof TMethodDefinition) {
-				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
-				_result.add(new Object[] { tClass, tMember });
-			}
-		}
-		return _result;
-	}
-
-	public static final boolean pattern_HGetterSetterDetector_1_3_ActivityNode44_expressionFBB(
-			HGetterSetterDetector _this, TMethodDefinition tMember) {
-		boolean _localVariable_0 = _this.isGetterSetter(tMember);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final Object[] pattern_HGetterSetterDetector_1_4_ActivityNode45_blackBBB(HGetterSetterDetector _this,
-			TMethodDefinition tMember, HNACCMetric nacc) {
-		return new Object[] { _this, tMember, nacc };
-	}
-
-	public static final Object[] pattern_HGetterSetterDetector_1_4_ActivityNode45_greenBBFB(HGetterSetterDetector _this,
-			TMethodDefinition tMember, HNACCMetric nacc) {
-		HGetterSetterSmell gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
-		_this.getHAnnotation().add(gs);
-		gs.setTAnnotated(tMember);
-		gs.getPartOf().add(nacc);
-		nacc.getHGetterSetterSmells().add(gs);
-		return new Object[] { _this, tMember, gs, nacc };
-	}
-
-	public static final HAnnotation pattern_HGetterSetterDetector_1_5_expressionFB(HNACCMetric nacc) {
-		HAnnotation _result = nacc;
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -248,4 +186,4 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 	}
 
 	// [user code injected with eMoflon] -->
-} //HGetterSetterDetectorImpl
+} // HGetterSetterDetectorImpl

@@ -26,11 +26,11 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HInvocationRelationImpl#getHOutgoingInvocationCustomMetric <em>HOutgoing Invocation Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HInvocationRelationImpl#getHIncommingInvocationCustomMetric <em>HIncomming Invocation Custom Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +79,7 @@ public class HInvocationRelationImpl extends HMetricImpl implements HInvocationR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HOutgoingInvocationMetric getHOutgoingInvocationCustomMetric() {
 		if (hOutgoingInvocationCustomMetric != null && hOutgoingInvocationCustomMetric.eIsProxy()) {
 			InternalEObject oldHOutgoingInvocationCustomMetric = (InternalEObject) hOutgoingInvocationCustomMetric;
@@ -108,6 +109,7 @@ public class HInvocationRelationImpl extends HMetricImpl implements HInvocationR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHOutgoingInvocationCustomMetric(HOutgoingInvocationMetric newHOutgoingInvocationCustomMetric) {
 		HOutgoingInvocationMetric oldHOutgoingInvocationCustomMetric = hOutgoingInvocationCustomMetric;
 		hOutgoingInvocationCustomMetric = newHOutgoingInvocationCustomMetric;
@@ -122,6 +124,7 @@ public class HInvocationRelationImpl extends HMetricImpl implements HInvocationR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HIncommingInvocationMetric getHIncommingInvocationCustomMetric() {
 		if (hIncommingInvocationCustomMetric != null && hIncommingInvocationCustomMetric.eIsProxy()) {
 			InternalEObject oldHIncommingInvocationCustomMetric = (InternalEObject) hIncommingInvocationCustomMetric;
@@ -151,6 +154,7 @@ public class HInvocationRelationImpl extends HMetricImpl implements HInvocationR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHIncommingInvocationCustomMetric(HIncommingInvocationMetric newHIncommingInvocationCustomMetric) {
 		HIncommingInvocationMetric oldHIncommingInvocationCustomMetric = hIncommingInvocationCustomMetric;
 		hIncommingInvocationCustomMetric = newHIncommingInvocationCustomMetric;

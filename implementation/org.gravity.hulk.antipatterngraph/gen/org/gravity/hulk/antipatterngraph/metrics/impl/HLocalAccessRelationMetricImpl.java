@@ -26,11 +26,11 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HLocalAccessRelationMetricImpl#getHLocalFieldAccesses <em>HLocal Field Accesses</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HLocalAccessRelationMetricImpl#getHLocalMethodAccesses <em>HLocal Method Accesses</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +79,7 @@ public class HLocalAccessRelationMetricImpl extends HMetricImpl implements HLoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLocalFieldAccessesMetric getHLocalFieldAccesses() {
 		if (hLocalFieldAccesses != null && hLocalFieldAccesses.eIsProxy()) {
 			InternalEObject oldHLocalFieldAccesses = (InternalEObject) hLocalFieldAccesses;
@@ -107,6 +108,7 @@ public class HLocalAccessRelationMetricImpl extends HMetricImpl implements HLoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLocalFieldAccesses(HLocalFieldAccessesMetric newHLocalFieldAccesses) {
 		HLocalFieldAccessesMetric oldHLocalFieldAccesses = hLocalFieldAccesses;
 		hLocalFieldAccesses = newHLocalFieldAccesses;
@@ -121,6 +123,7 @@ public class HLocalAccessRelationMetricImpl extends HMetricImpl implements HLoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLocalMethodAccessesMetric getHLocalMethodAccesses() {
 		if (hLocalMethodAccesses != null && hLocalMethodAccesses.eIsProxy()) {
 			InternalEObject oldHLocalMethodAccesses = (InternalEObject) hLocalMethodAccesses;
@@ -149,6 +152,7 @@ public class HLocalAccessRelationMetricImpl extends HMetricImpl implements HLoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLocalMethodAccesses(HLocalMethodAccessesMetric newHLocalMethodAccesses) {
 		HLocalMethodAccessesMetric oldHLocalMethodAccesses = hLocalMethodAccesses;
 		hLocalMethodAccesses = newHLocalMethodAccesses;

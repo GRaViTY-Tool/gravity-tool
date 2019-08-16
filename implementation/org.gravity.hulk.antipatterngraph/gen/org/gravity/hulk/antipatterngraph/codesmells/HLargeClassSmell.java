@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell#getHNumberOfMembers <em>HNumber Of Members</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.antipatterngraph.codesmells.CodesmellsPackage#getHLargeClassSmell()
  * @model

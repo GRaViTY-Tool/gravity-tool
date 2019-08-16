@@ -27,11 +27,11 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HGodClassAntiPatternImpl#getHLargeClassLowCohesionSmell <em>HLarge Class Low Cohesion Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.antipattern.impl.HGodClassAntiPatternImpl#getHControllerClassSmell <em>HController Class Smell</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -80,6 +80,7 @@ public class HGodClassAntiPatternImpl extends HAntiPatternImpl implements HGodCl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HLargeClassLowCohesionSmell getHLargeClassLowCohesionSmell() {
 		if (hLargeClassLowCohesionSmell != null && hLargeClassLowCohesionSmell.eIsProxy()) {
 			InternalEObject oldHLargeClassLowCohesionSmell = (InternalEObject) hLargeClassLowCohesionSmell;
@@ -108,6 +109,7 @@ public class HGodClassAntiPatternImpl extends HAntiPatternImpl implements HGodCl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHLargeClassLowCohesionSmell(HLargeClassLowCohesionSmell newHLargeClassLowCohesionSmell) {
 		HLargeClassLowCohesionSmell oldHLargeClassLowCohesionSmell = hLargeClassLowCohesionSmell;
 		hLargeClassLowCohesionSmell = newHLargeClassLowCohesionSmell;
@@ -122,6 +124,7 @@ public class HGodClassAntiPatternImpl extends HAntiPatternImpl implements HGodCl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HControllerClassSmell getHControllerClassSmell() {
 		if (hControllerClassSmell != null && hControllerClassSmell.eIsProxy()) {
 			InternalEObject oldHControllerClassSmell = (InternalEObject) hControllerClassSmell;
@@ -150,6 +153,7 @@ public class HGodClassAntiPatternImpl extends HAntiPatternImpl implements HGodCl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHControllerClassSmell(HControllerClassSmell newHControllerClassSmell) {
 		HControllerClassSmell oldHControllerClassSmell = hControllerClassSmell;
 		hControllerClassSmell = newHControllerClassSmell;

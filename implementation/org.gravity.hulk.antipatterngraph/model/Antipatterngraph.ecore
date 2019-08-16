@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="antipatterngraph" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph"
     nsPrefix="org.gravity.hulk.antipatterngraph">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -17,15 +16,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="HAntiPattern" abstract="true" eSuperTypes="#//HAnnotation"/>
   <eClassifiers xsi:type="ecore:EClass" name="HCodeSmell" abstract="true" eSuperTypes="#//HAnnotation"/>
   <eClassifiers xsi:type="ecore:EClass" name="HMetric" abstract="true" eSuperTypes="#//HAnnotation">
-    <eOperations xsi:type="activities:MoflonEOperation" name="getRelativeAmount" eType="#//values/HRelativeValue"/>
-    <eOperations xsi:type="activities:MoflonEOperation" name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eOperations name="getRelativeAmount" eType="#//values/HRelativeValue"/>
+    <eOperations name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HAntiPatternGraph">
-    <eOperations xsi:type="activities:MoflonEOperation" name="getNextID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"
-        containment="true"/>
+    <eOperations name="getNextID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hAnnotations" upperBound="-1"
         eType="#//HAnnotation" eOpposite="#//HAnnotation/apg"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentID" ordered="false"

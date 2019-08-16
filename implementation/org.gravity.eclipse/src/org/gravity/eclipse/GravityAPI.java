@@ -89,7 +89,7 @@ public class GravityAPI {
 					"Creating PG from project failed: " + project.getProject().getName());
 		}
 		TypeGraph pg = converter.getPG();
-		converter.discard();
+//		converter.discard();
 		return pg;
 	}
 

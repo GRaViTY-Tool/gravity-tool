@@ -35,13 +35,13 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HNACCMetricImpl#getHGetterSetterSmells <em>HGetter Setter Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HNACCMetricImpl#getHGetterCustomMetric <em>HGetter Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HNACCMetricImpl#getHSetterCustomMetric <em>HSetter Custom Metric</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.metrics.impl.HNACCMetricImpl#getHNumberOfMethodsMetric <em>HNumber Of Methods Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -110,6 +110,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HGetterSetterSmell> getHGetterSetterSmells() {
 		if (hGetterSetterSmells == null) {
 			hGetterSetterSmells = new EObjectResolvingEList<HGetterSetterSmell>(HGetterSetterSmell.class, this,
@@ -123,6 +124,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HGetterMetric getHGetterCustomMetric() {
 		if (hGetterCustomMetric != null && hGetterCustomMetric.eIsProxy()) {
 			InternalEObject oldHGetterCustomMetric = (InternalEObject) hGetterCustomMetric;
@@ -151,6 +153,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHGetterCustomMetric(HGetterMetric newHGetterCustomMetric) {
 		HGetterMetric oldHGetterCustomMetric = hGetterCustomMetric;
 		hGetterCustomMetric = newHGetterCustomMetric;
@@ -164,6 +167,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HSetterMetric getHSetterCustomMetric() {
 		if (hSetterCustomMetric != null && hSetterCustomMetric.eIsProxy()) {
 			InternalEObject oldHSetterCustomMetric = (InternalEObject) hSetterCustomMetric;
@@ -192,6 +196,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHSetterCustomMetric(HSetterMetric newHSetterCustomMetric) {
 		HSetterMetric oldHSetterCustomMetric = hSetterCustomMetric;
 		hSetterCustomMetric = newHSetterCustomMetric;
@@ -205,6 +210,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNumberOfMethodsMetric getHNumberOfMethodsMetric() {
 		if (hNumberOfMethodsMetric != null && hNumberOfMethodsMetric.eIsProxy()) {
 			InternalEObject oldHNumberOfMethodsMetric = (InternalEObject) hNumberOfMethodsMetric;
@@ -233,6 +239,7 @@ public class HNACCMetricImpl extends HMetricImpl implements HNACCMetric {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNumberOfMethodsMetric(HNumberOfMethodsMetric newHNumberOfMethodsMetric) {
 		HNumberOfMethodsMetric oldHNumberOfMethodsMetric = hNumberOfMethodsMetric;
 		hNumberOfMethodsMetric = newHNumberOfMethodsMetric;

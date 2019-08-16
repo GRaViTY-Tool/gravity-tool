@@ -33,11 +33,11 @@ import org.gravity.typegraph.basic.TClass;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassSmellImpl#getGetterSetterSmells <em>Getter Setter Smells</em>}</li>
  *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassSmellImpl#getHNACCMetric <em>HNACC Metric</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -86,6 +86,7 @@ public class HDataClassSmellImpl extends HCodeSmellImpl implements HDataClassSme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HGetterSetterSmell> getGetterSetterSmells() {
 		if (getterSetterSmells == null) {
 			getterSetterSmells = new EObjectResolvingEList<HGetterSetterSmell>(HGetterSetterSmell.class, this,
@@ -99,6 +100,7 @@ public class HDataClassSmellImpl extends HCodeSmellImpl implements HDataClassSme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HNACCMetric getHNACCMetric() {
 		if (hNACCMetric != null && hNACCMetric.eIsProxy()) {
 			InternalEObject oldHNACCMetric = (InternalEObject) hNACCMetric;
@@ -126,6 +128,7 @@ public class HDataClassSmellImpl extends HCodeSmellImpl implements HDataClassSme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHNACCMetric(HNACCMetric newHNACCMetric) {
 		HNACCMetric oldHNACCMetric = hNACCMetric;
 		hNACCMetric = newHNACCMetric;

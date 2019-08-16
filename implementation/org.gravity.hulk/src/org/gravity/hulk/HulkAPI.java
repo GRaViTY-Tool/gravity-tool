@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
@@ -87,36 +88,41 @@ public class HulkAPI {
 	/**
 	 * Detects given anti-patterns on a program model
 	 * 
-	 * @param pg              The program model
+	 * @param pm              The program model
 	 * @param programLocation The location of the project from which the model has
 	 *                        been created
 	 * @param aps             The list of anti-patterns to detect
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
-	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps)
+	public static List<HAnnotation> detect(TypeGraph pm, String programLocation, AntiPatternNames... aps)
 			throws DetectionFailedException {
-		Resource pgResource = pg.eResource();
-		ResourceSet rs = pgResource.getResourceSet();
-		// TODO: keep PG in old resource set
+		ResourceSet rs;
+		Resource pgResource = pm.eResource();
+		if(pgResource == null) {
+			rs = new ResourceSetImpl();
+			rs.createResource(URI.createURI(pm.getTName()+".xmi")).getContents().add(pm);
+		}
+		else {
+			rs = pgResource.getResourceSet();
+		}
+		
+		HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
+		rs.createResource(URI.createURI("Hulk.xmi")).getContents().add(hulk); //$NON-NLS-1$
+		hulk.setProgramlocation(programLocation);
 
 		HAntiPatternGraph apg;
-		EObject eContainer = pg.eContainer();
+		EObject eContainer = pm.eContainer();
 		if (eContainer == null || !(eContainer instanceof HAntiPatternGraph)) {
 			apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 			pgResource.getContents().add(apg);
-			apg.setPg(pg);
+			apg.setPg(pm);
 		} else {
 			apg = (HAntiPatternGraph) eContainer;
 		}
-
-		HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
 		hulk.setApg(apg);
-		hulk.setProgramlocation(programLocation);
-
-		rs.createResource(URI.createURI("Hulk.xmi")).getContents().add(hulk); //$NON-NLS-1$
-
-		rs.createResource(URI.createURI("SmellDependencyGraph.xmi")).getContents().add(hulk.getDependencyGraph()); //$NON-NLS-1$
+		
+//		rs.createResource(URI.createURI("SmellDependencyGraph.xmi")).getContents().add(hulk.getDependencyGraph()); //$NON-NLS-1$
 
 		Set<EClass> detectors = getDetecors(aps);
 		HashSet<HDetector> detectorResults = new HashSet<>();
@@ -159,7 +165,7 @@ public class HulkAPI {
 	 */
 	private static boolean clean(IProject iproject, IPGConverter converter, TypeGraph pg) {
 		final Resource keep = pg.eResource();
-		final EList<Resource> resources = converter.getResourceSet().getResources();
+		final EList<Resource> resources = keep.getResourceSet().getResources();
 		while (!resources.isEmpty()) {
 			Resource resource = resources.remove(0);
 			if (resource != keep) {

@@ -1,11 +1,18 @@
 package org.gravity.eclipse.util;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Deque;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
@@ -14,6 +21,7 @@ import org.eclipse.jdt.core.ILocalVariable;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.ISourceReference;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
@@ -42,6 +50,8 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @author speldszus
  */
 public class JavaASTUtil {
+
+	private static final Logger LOGGER = Logger.getLogger(JavaASTUtil.class);
 
 	private JavaASTUtil() {
 		// This class shouldn't be instantiated
@@ -127,6 +137,22 @@ public class JavaASTUtil {
 
 		}
 		return null;
+	}
+
+	/**
+	 * A wrapper for
+	 * {@link org.eclipse.jdt.core.IJavaProject# findType(String fullyQualifiedName)}
+	 * using the fully qualified name of the TAbstractType as value
+	 * 
+	 * @param type    The type which should be search
+	 * @param project The Java project
+	 * @return The according IType or null if not found
+	 * @throws JavaModelException if this project does not exist or if an exception
+	 *                            occurs while accessing its corresponding
+	 *                            {@link org.eclipse.jdt.core.IJavaProject# findType(String fullyQualifiedName)}
+	 */
+	public static IType getIType(TAbstractType type, IJavaProject project) throws JavaModelException {
+		return project.findType(type.getFullyQualifiedName());
 	}
 
 	/**
@@ -227,6 +253,34 @@ public class JavaASTUtil {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Get the source code line of the given element
+	 * 
+	 * @param javaElement The element to look for
+	 * @return The source code line
+	 * @throws JavaModelException
+	 * @throws CoreException
+	 */
+	public static int getLine(IJavaElement javaElement) throws JavaModelException, CoreException {
+		IResource underlyingResource = javaElement.getUnderlyingResource();
+		int line = 1;
+		if (underlyingResource.getFileExtension().equals("java")) {
+			try (InputStream stream = ((IFile) underlyingResource).getContents()) {
+				char ch;
+				int count = ((ISourceReference) javaElement).getSourceRange().getOffset();
+				while ((ch = (char) stream.read()) != -1 && count-- > 0) {
+					if (ch == '\n') {
+						line++;
+					}
+				}
+			} catch (IOException e) {
+				LOGGER.log(Level.ERROR, e);
+				return -1;
+			}
+		}
+		return line;
 	}
 
 	/**

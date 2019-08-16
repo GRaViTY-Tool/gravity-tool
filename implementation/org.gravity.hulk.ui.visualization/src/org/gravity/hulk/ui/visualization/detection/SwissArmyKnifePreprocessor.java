@@ -17,6 +17,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 
 public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
@@ -41,7 +42,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 					HIncommingInvocationMetric numberOfIncommingInvocationsMetric = swissArmyKife
 							.getHIncommingInvocationCustomMetric();
 
-					Map<String, String> detections = new HashMap<>();
+					Map<TAbstractType, String> detections = new HashMap<>();
 					Map<String, Number> thresholds = new HashMap<>();
 
 					HNumberOfMembersMetric numberOfMembersMetric = null;
@@ -55,7 +56,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 					}
 
 					// SwissArmyKnife
-					detections.put(((TClass) swissArmyKife.getTAnnotated()).getFullyQualifiedName(), "-1");
+					detections.put(((TClass) swissArmyKife.getTAnnotated()), "-1");
 					thresholds.put(Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC + ":" + HRelativeValueConstants.HIGH,
 							(ThresholdCalculator.getThresholdValue(numberOfIncommingInvocationsMetric,
 									HRelativeValueConstants.HIGH, true)));
@@ -67,7 +68,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 					
 					// LargeClass
 					if (largeClass != null) {
-						detections.put(((TClass) largeClass.getTAnnotated()).getFullyQualifiedName(), "-1");
+						detections.put(((TClass) largeClass.getTAnnotated()), "-1");
 						thresholds.put(Flaws.H_LARGE_CLASS_SMELL + ":" + HRelativeValueConstants.HIGH, (ThresholdCalculator
 								.getThresholdValue(numberOfMembersMetric, HRelativeValueConstants.HIGH, true)));
 					}
@@ -78,7 +79,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 
 					// MuchOverloadingSmell
 					if (muchOverloadingSmell != null) {
-						detections.put(((TClass) muchOverloadingSmell.getTAnnotated()).getFullyQualifiedName(), "-1");
+						detections.put(((TClass) muchOverloadingSmell.getTAnnotated()), "-1");
 						thresholds.put(Flaws.H_AVERAGE_OVERLOADING_METRIC + ":" + HRelativeValueConstants.HIGH,
 								(ThresholdCalculator.getThresholdValue(averageOverloadingInClassMetric,
 										HRelativeValueConstants.HIGH, true)));
@@ -91,7 +92,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 
 					// NumberOfIncommingInvocationsMetric
 					if (numberOfIncommingInvocationsMetric != null) {
-						detections.put(((TClass) numberOfIncommingInvocationsMetric.getTAnnotated()).getFullyQualifiedName(),
+						detections.put(((TClass) numberOfIncommingInvocationsMetric.getTAnnotated()),
 								numberOfIncommingInvocationsMetric.getRelativeAmount().getValue().toString() + ": "
 										+ numberOfIncommingInvocationsMetric.getValue());
 						thresholds.put("none", -1);
@@ -104,7 +105,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 
 					// NumberOfMembersMetric
 					if (numberOfMembersMetric != null) {
-						detections.put(((TClass) numberOfMembersMetric.getTAnnotated()).getFullyQualifiedName(),
+						detections.put(((TClass) numberOfMembersMetric.getTAnnotated()),
 								numberOfMembersMetric.getRelativeAmount().getValue().toString() + ": "
 										+ numberOfMembersMetric.getValue());
 						thresholds.put("none", -1);
@@ -117,7 +118,7 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 
 					// AverageOverloadingInClassSmell
 					if (averageOverloadingInClassMetric != null) {
-						detections.put(((TClass) averageOverloadingInClassMetric.getTAnnotated()).getFullyQualifiedName(),
+						detections.put(((TClass) averageOverloadingInClassMetric.getTAnnotated()),
 								averageOverloadingInClassMetric.getRelativeAmount().getValue().toString() + ": "
 										+ averageOverloadingInClassMetric.getValue());
 						thresholds.put("none", -1);

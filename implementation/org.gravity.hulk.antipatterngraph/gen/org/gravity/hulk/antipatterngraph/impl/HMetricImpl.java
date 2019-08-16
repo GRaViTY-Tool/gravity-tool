@@ -21,23 +21,23 @@ import org.gravity.hulk.help.HSort;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HMetric</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>HMetric</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue <em>Value</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link org.gravity.hulk.antipatterngraph.impl.HMetricImpl#getValue
+ * <em>Value</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -45,9 +45,9 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -55,8 +55,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	protected double value = VALUE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HMetricImpl() {
@@ -64,8 +64,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,19 +74,21 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public double getValue() {
 		return value;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValue(double newValue) {
 		double oldValue = value;
 		value = newValue;
@@ -96,13 +98,13 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
+	@Override
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
-
 		EList<HAnnotation> annotations = getApg().getHAnnotations();
 
 		SortedSet<Double> keys = new TreeSet<>();
@@ -137,24 +139,23 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 		}
 
 		return value;
-
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
+	@Override
 	public double increment() {
 		// [user code injected with eMoflon]
 
 		return this.value++;
-
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,8 +168,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,8 +183,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -197,8 +198,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,8 +212,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -227,8 +228,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,7 +237,7 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');
@@ -245,4 +246,4 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //HMetricImpl
+} // HMetricImpl
