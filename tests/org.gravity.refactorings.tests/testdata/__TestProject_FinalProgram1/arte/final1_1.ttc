@@ -1,0 +1,656 @@
+TestFile final_1 {
+
+	class child1 {
+		package "program.one"
+		name	"FinalClass01"
+	}
+	
+	class child2 {
+		package "program.one"
+		name	"FinalClass02"
+	}
+	
+	class parent_to_create {
+		package "program.one.parent"
+		name "Parent"
+	}
+	
+	classes childs {
+		child1,
+		child2
+	}
+	
+	create_superclass csc1 {
+		child childs
+		target parent_to_create
+	}
+	
+	case final_1_1 {
+		description "EXS-POS: A lot of classes are not changed."
+		program "FinalProgram1"
+		
+		testflow {
+			assertTrue(csc1)
+			
+			synchronize
+			compile
+			child1 extends parent_to_create
+			child2 extends parent_to_create
+		}
+	}
+	
+	class child3 {
+		package "program.one"
+		name	"FinalClass03"
+	}
+	
+	class child4 {
+		package "program.one"
+		name	"FinalClass04"
+	}
+	
+	class child5 {
+		package "program.one"
+		name	"FinalClass05"
+	}
+	
+	class child6 {
+		package "program.one"
+		name	"FinalClass06"
+	}
+	
+	class child7 {
+		package "program.one"
+		name	"FinalClass07"
+	}
+	
+	class child8 {
+		package "program.one"
+		name	"FinalClass08"
+	}
+	
+	class child9 {
+		package "program.one"
+		name	"FinalClass09"
+	}
+	
+	class child10 {
+		package "program.one"
+		name	"FinalClass10"
+	}
+
+	class child11 {
+		package "program.one"
+		name	"FinalClass11"
+	}
+	
+	class child12 {
+		package "program.one"
+		name	"FinalClass12"
+	}
+	
+	class child13 {
+		package "program.one"
+		name	"FinalClass13"
+	}
+	
+	class child14 {
+		package "program.one"
+		name	"FinalClass14"
+	}
+	
+	class child15 {
+		package "program.one"
+		name	"FinalClass15"
+	}
+	
+	class child16 {
+		package "program.one"
+		name	"FinalClass16"
+	}
+	
+	class child17 {
+		package "program.one"
+		name	"FinalClass17"
+	}
+	
+	class child18 {
+		package "program.one"
+		name	"FinalClass18"
+	}	
+	
+	class child19 {
+		package "program.one"
+		name	"FinalClass19"
+	}
+	
+	class child20 {
+		package "program.one"
+		name	"FinalClass20"
+	}
+	
+	class child21 {
+		package "program.one"
+		name	"FinalClass21"
+	}
+	
+	class child22 {
+		package "program.one"
+		name	"FinalClass22"
+	}
+	
+	class child23 {
+		package "program.one"
+		name	"FinalClass23"
+	}
+	
+	class child24 {
+		package "program.one"
+		name	"FinalClass24"
+	}
+	
+	class child25 {
+		package "program.one"
+		name	"FinalClass25"
+	}
+	
+	class child26 {
+		package "program.one"
+		name	"FinalClass26"
+	}
+
+	class child27 {
+		package "program.one"
+		name	"FinalClass27"
+	}
+	
+	class child28 {
+		package "program.one"
+		name	"FinalClass28"
+	}
+	
+	class child29 {
+		package "program.one"
+		name	"FinalClass29"
+	}
+	
+	class child30 {
+		package "program.one"
+		name	"FinalClass30"
+	}
+	
+	class child31 {
+		package "program.one"
+		name	"FinalClass31"
+	}
+	
+	class child32 {
+		package "program.one"
+		name	"FinalClass32"
+	}
+	
+	class child33 {
+		package "program.one"
+		name	"FinalClass33"
+	}
+	
+	class child34 {
+		package "program.one"
+		name	"FinalClass34"
+	}
+	
+	class child35 {
+		package "program.one"
+		name	"FinalClass35"
+	}
+	
+	class child36 {
+		package "program.one"
+		name	"FinalClass36"
+	}
+	
+	class child37 {
+		package "program.one"
+		name	"FinalClass37"
+	}
+	
+	class child38 {
+		package "program.one"
+		name	"FinalClass38"
+	}
+	
+	class child39 {
+		package "program.one"
+		name	"FinalClass39"
+	}
+	
+	class child40 {
+		package "program.one"
+		name	"FinalClass40"
+	}
+	
+	class child41 {
+		package "program.one"
+		name	"FinalClass41"
+	}
+	
+	class child42 {
+		package "program.one"
+		name	"FinalClass42"
+	}
+
+	class child43 {
+		package "program.one"
+		name	"FinalClass43"
+	}
+	
+	class child44 {
+		package "program.one"
+		name	"FinalClass44"
+	}
+	
+	class child45 {
+		package "program.one"
+		name	"FinalClass45"
+	}
+	
+	class child46 {
+		package "program.one"
+		name	"FinalClass46"
+	}
+	
+	class child47 {
+		package "program.one"
+		name	"FinalClass47"
+	}
+	
+	class child48 {
+		package "program.one"
+		name	"FinalClass48"
+	}
+	
+	class child49 {
+		package "program.one"
+		name	"FinalClass49"
+	}
+	
+	class child50 {
+		package "program.one"
+		name	"FinalClass50"
+	}	
+	
+	class child51 {
+		package "program.one"
+		name	"FinalClass51"
+	}
+	
+	class child52 {
+		package "program.one"
+		name	"FinalClass52"
+	}
+	
+	class child53 {
+		package "program.one"
+		name	"FinalClass53"
+	}
+	
+	class child54 {
+		package "program.one"
+		name	"FinalClass54"
+	}
+	
+	class child55 {
+		package "program.one"
+		name	"FinalClass55"
+	}
+	
+	class child56 {
+		package "program.one"
+		name	"FinalClass56"
+	}
+	
+	class child57 {
+		package "program.one"
+		name	"FinalClass57"
+	}
+	
+	class child58 {
+		package "program.one"
+		name	"FinalClass58"
+	}
+
+	class child59 {
+		package "program.one"
+		name	"FinalClass59"
+	}
+	
+	class child60 {
+		package "program.one"
+		name	"FinalClass60"
+	}
+	
+	class child61 {
+		package "program.one"
+		name	"FinalClass61"
+	}
+	
+	class child62 {
+		package "program.one"
+		name	"FinalClass62"
+	}
+	
+	class child63 {
+		package "program.one"
+		name	"FinalClass63"
+	}
+	
+	class child64 {
+		package "program.one"
+		name	"FinalClass64"
+	}
+	
+	class child65 {
+		package "program.one"
+		name	"FinalClass65"
+	}
+	
+	class child66 {
+		package "program.one"
+		name	"FinalClass66"
+	}
+	
+	class child67 {
+		package "program.one"
+		name	"FinalClass67"
+	}
+	
+	class child68 {
+		package "program.one"
+		name	"FinalClass68"
+	}
+	
+	class child69 {
+		package "program.one"
+		name	"FinalClass69"
+	}
+	
+	class child70 {
+		package "program.one"
+		name	"FinalClass70"
+	}
+	
+	class child71 {
+		package "program.one"
+		name	"FinalClass71"
+	}
+	
+	class child72 {
+		package "program.one"
+		name	"FinalClass72"
+	}
+	
+	class child73 {
+		package "program.one"
+		name	"FinalClass73"
+	}
+	
+	class child74 {
+		package "program.one"
+		name	"FinalClass74"
+	}
+	
+	class child75 {
+		package "program.one"
+		name	"FinalClass75"
+	}
+	
+	class child76 {
+		package "program.one"
+		name	"FinalClass76"
+	}
+
+	class child77 {
+		package "program.one"
+		name	"FinalClass77"
+	}
+	
+	class child78 {
+		package "program.one"
+		name	"FinalClass78"
+	}
+	
+	class child79 {
+		package "program.one"
+		name	"FinalClass79"
+	}
+	
+	class child80 {
+		package "program.one"
+		name	"FinalClass80"
+	}
+	
+	class child81 {
+		package "program.one"
+		name	"FinalClass81"
+	}
+	
+	class child82 {
+		package "program.one"
+		name	"FinalClass82"
+	}
+	
+	class child83 {
+		package "program.one"
+		name	"FinalClass83"
+	}
+	
+	class child84 {
+		package "program.one"
+		name	"FinalClass84"
+	}	
+	
+	class child85 {
+		package "program.one"
+		name	"FinalClass85"
+	}
+	
+	class child86 {
+		package "program.one"
+		name	"FinalClass86"
+	}
+	
+	class child87 {
+		package "program.one"
+		name	"FinalClass87"
+	}
+	
+	class child88 {
+		package "program.one"
+		name	"FinalClass88"
+	}
+	
+	class child89 {
+		package "program.one"
+		name	"FinalClass89"
+	}
+	
+	class child90 {
+		package "program.one"
+		name	"FinalClass90"
+	}
+	
+	class child91 {
+		package "program.one"
+		name	"FinalClass91"
+	}
+	
+	class child92 {
+		package "program.one"
+		name	"FinalClass92"
+	}
+
+	class child93 {
+		package "program.one"
+		name	"FinalClass93"
+	}
+	
+	class child94 {
+		package "program.one"
+		name	"FinalClass94"
+	}
+	
+	class child95 {
+		package "program.one"
+		name	"FinalClass95"
+	}
+	
+	class child96 {
+		package "program.one"
+		name	"FinalClass96"
+	}
+	
+	class child97 {
+		package "program.one"
+		name	"FinalClass97"
+	}
+	
+	class child98 {
+		package "program.one"
+		name	"FinalClass98"
+	}
+	
+	class child99 {
+		package "program.one"
+		name	"FinalClass99"
+	}
+	
+	class child100 {
+		package "program.one"
+		name	"FinalClass100"
+	}
+	
+	classes all {
+		child1,
+		child2,
+		child3,
+		child4,
+		child5,
+		child6,
+		child7,
+		child8,
+		child9,
+		child10,
+		child11,
+		child12,
+		child13,
+		child14,
+		child15,
+		child16,
+		child17,
+		child18,
+		child19,
+		child20,
+		child21,
+		child22,
+		child23,
+		child24,
+		child25,
+		child26,
+		child27,
+		child28,
+		child29,
+		child30,
+		child31,
+		child32,
+		child33,
+		child34,
+		child35,
+		child36,
+		child37,
+		child38,
+		child39,
+		child40,
+		child41,
+		child42,
+		child43,
+		child44,
+		child45,
+		child46,
+		child47,
+		child48,
+		child49,
+		child50,
+		child51,
+		child52,
+		child53,
+		child54,
+		child55,
+		child56,
+		child57,
+		child58,
+		child59,
+		child60,
+		child61,
+		child62,
+		child63,
+		child64,
+		child65,
+		child66,
+		child67,
+		child68,
+		child69,
+		child70,
+		child71,
+		child72,
+		child73,
+		child74,
+		child75,
+		child76,
+		child77,
+		child78,
+		child79,
+		child80,
+		child81,
+		child82,
+		child83,
+		child84,
+		child85,
+		child86,
+		child87,
+		child88,
+		child89,
+		child90,
+		child91,
+		child92,
+		child93,
+		child94,
+		child95,
+		child96,
+		child97,
+		child98,
+		child99,
+		child100
+	}
+	
+	create_superclass csc2 {
+		child all
+		target parent_to_create
+	}
+	
+	case final_1_2 {
+		description "EXS-POS: A lot of classes are changed. Only one refactoring."
+		program "FinalProgram1"
+		testflow {
+			assertTrue(csc2)
+			synchronize
+			compile
+			
+			child1 extends parent_to_create
+			child2 extends parent_to_create
+			
+			child50 extends parent_to_create
+			
+			child100 extends parent_to_create
+		}
+	}
+}

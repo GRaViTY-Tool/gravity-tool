@@ -1,0 +1,219 @@
+TestFile hiddenProgram1 {
+
+	
+	class child1 {
+
+		package "hidden.program.one"
+
+		name	"ChildClass1"
+
+	}
+
+
+
+	class child2 {
+
+		package "hidden.program.one"
+
+		name	"ChildClass2"
+
+	}
+
+
+
+	class existing_parent {
+
+		package "hidden.program.one"
+
+		name "ParentClass"
+
+	}
+
+
+
+	class new_parent {
+
+		package "hidden.program.one"
+
+		name "NewParent"
+
+	}
+
+
+
+	class existing_class {
+
+		package "hidden.program.one"
+
+		name	"ExistingClass"
+
+	}
+
+	
+
+	classes childs {
+
+		child1,
+	
+		child2
+	
+	}
+
+
+
+	method child_method {
+
+		name "method"
+
+	}
+
+
+
+	class String {
+
+		package "java.lang"
+
+		name "String"
+
+	}
+
+
+
+	create_superclass executable_exs_1 {
+
+		child childs
+
+		target new_parent
+
+	}
+
+
+
+	case hidden_csc1_1 {
+
+		description "Have a look on inheritance relations."
+
+		program "hiddenProgram1"
+
+
+		testflow {
+
+			assertTrue(executable_exs_1)
+
+
+			synchronize
+			compile
+			child1 extends new_parent
+
+			child2 extends new_parent
+
+			new_parent extends existing_parent
+
+			child1 ~extends existing_parent
+
+			child2 ~extends existing_parent
+
+
+		}
+
+	}
+
+	create_superclass not_executable_exs_1 {
+		child childs
+		target existing_class
+	}
+	
+
+	case hidden_csc1_2 {
+
+		description "Check which elements already exist."
+
+		program "hiddenProgram1"
+
+		testflow {
+
+			assertFalse(not_executable_exs_1)
+
+			synchronize
+			compile
+
+			child1 ~extends existing_class
+			child2 ~extends existing_class
+	
+		}
+
+	}
+
+
+
+	pullup_method pum1 {
+
+		parent existing_parent
+
+		method child_method
+
+	}
+
+
+	case hidden_pum1_1 {
+
+		description "Have you considered all access relations?."
+
+		program "hiddenProgram1"
+
+
+		testflow {
+
+			assertFalse(pum1)
+
+
+
+			synchronize
+			compile
+			existing_parent ~contains child_method
+	
+			child1 contains child_method
+	
+			child2 contains child_method
+
+
+		}
+
+	}
+	
+	
+
+	method iDontExist {
+
+		name "iDontExist"
+
+	}
+	
+
+
+	pullup_method hidden_pum1_2 {
+
+		parent existing_parent
+
+		method iDontExist
+
+	}
+	 
+	
+
+	case hidden_pum1_2 {
+
+		description "Is every element really existent?"
+
+		program "hiddenProgram1"
+
+
+		testflow {
+
+			assertFalse(hidden_pum1_2)
+
+		}
+
+	}
+
+}

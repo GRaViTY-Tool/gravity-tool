@@ -1,0 +1,221 @@
+TestFile hiddenProgram2 {
+
+
+	class child1 {
+
+		package "hidden.program.two"
+
+		name	"ChildClass1"
+
+	}
+
+
+
+	class child2 {
+
+		package "hidden.program.two"
+
+		name	"ChildClass2"
+
+	}
+	
+
+
+	class child3 {
+	
+		package "hidden.program.two"
+
+		name	"ChildClass3"
+
+	}
+	
+
+
+	class existing_parent {
+	
+		package "hidden.program.two"
+
+		name "ParentClass"
+
+	}
+
+
+
+	class new_parent {
+
+		package "hidden.program.two"
+
+		name "NewParent"
+
+	}
+
+
+
+	classes childs {
+
+		child1,
+
+		child2
+
+	}
+
+
+	create_superclass not_executable_exs_1 {
+
+		child childs
+	
+		target new_parent
+
+	}
+	
+
+
+	case hidden_csc2_1 {
+
+		description "Have a look on inheritance relations."
+
+		program "hiddenProgram2"
+
+		
+		testflow {
+	
+			assertFalse(not_executable_exs_1)
+
+
+			synchronize
+			compile
+			child1 ~extends new_parent
+
+			child2 ~extends new_parent
+
+
+		}
+
+	}
+
+
+
+	method m {
+
+		name "method"
+
+	}
+
+
+
+	pullup_method executable_pum2_1 {
+
+		parent existing_parent
+	
+		method m
+
+	}
+
+
+
+	case hidden_pum2_1 {
+
+		description "Do field accesses confuse your solution?"
+
+		program "hiddenProgram2"
+
+
+		testflow {
+	
+			assertTrue(executable_pum2_1)
+
+
+			synchronize
+			compile
+			
+child1 ~contains m
+
+			child1 contains second
+
+			child1 ~contains third
+
+			child2 ~contains m
+
+			child2 contains second
+	
+			child2 ~contains third
+	
+			child3 ~contains m
+	
+			child3 ~contains second
+	
+			child3 contains third
+
+			existing_parent contains m
+
+			existing_parent ~contains second
+
+			existing_parent ~contains third	
+
+		}
+
+	}
+
+
+
+	method second {
+	
+		name "second"
+
+	}
+
+
+
+	method third {
+	
+		name "third"
+
+	}
+
+
+
+	pullup_method not_executable_pum2_2 {
+
+		parent existing_parent
+	
+		method second
+
+	}
+
+
+
+	case hidden_pum2_2 {
+
+		description "Do method calls confuse your solution?"
+
+		program "hiddenProgram2"
+
+
+		testflow {
+
+			assertFalse(not_executable_pum2_2)
+	
+
+			synchronize
+			compile
+			child1 contains m
+			child1 contains second
+			child1 ~contains third
+
+			child2 ~contains m
+			child2 contains second
+			child2 ~contains third
+
+			child3 contains m
+			child3 ~contains second
+			child3 contains third
+
+			existing_parent ~contains m
+			existing_parent ~contains second
+			existing_parent ~contains third
+
+		}
+
+	}
+
+}
