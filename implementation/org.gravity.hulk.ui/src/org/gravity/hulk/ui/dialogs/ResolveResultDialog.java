@@ -103,6 +103,7 @@ public class ResolveResultDialog extends Dialog {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
+				LOGGER.info("Default selected: "+e.getSource());
 			}
 		});
 

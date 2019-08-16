@@ -86,11 +86,9 @@ public class GravityAPI {
 		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
 			throw new TransformationFailedException(
-					"Creating PG from project failed: " + project.getProject().getName());
+					Messages.CreatePMFailed + project.getProject().getName());
 		}
-		TypeGraph pg = converter.getPG();
-//		converter.discard();
-		return pg;
+		return converter.getPG();
 	}
 
 	/**
@@ -104,14 +102,14 @@ public class GravityAPI {
 	private static TypeGraph loadProgramModel(IJavaProject javaProject, IProgressMonitor monitor) throws IOException {
 		try {
 			IFolder folder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor);
-			IFile file = folder.getFile(javaProject.getProject().getName() + ".xmi");
+			IFile file = folder.getFile(javaProject.getProject().getName() + '.'+GravityActivator.FILE_EXTENSION_XMI);
 			if (file.exists() && isUptoDate(file)) {
 				return loadProgramModel(file);
 			}
 		} catch (CoreException e) {
-			throw new IOException("The model couldn't be loaded!", e);
+			throw new IOException(Messages.COULDNT_LOAD_MODEL, e);
 		}
-		throw new IOException("The model couldn't be loaded!");
+		throw new IOException(Messages.COULDNT_LOAD_MODEL);
 	}
 
 	/**
@@ -151,7 +149,7 @@ public class GravityAPI {
 				return (TypeGraph) object;
 			}
 		}
-		throw new IOException("The model couldn't be loaded!");
+		throw new IOException(Messages.COULDNT_LOAD_MODEL);
 	}
 
 	/**
@@ -182,7 +180,7 @@ public class GravityAPI {
 			if (resource.getType() != IResource.FILE) {
 				return true;
 			}
-			if("java".equals(((IFile) resource).getFileExtension())) {
+			if(GravityActivator.FILE_EXTENSION_JAVA.equals(((IFile) resource).getFileExtension())) {
 				long fileTimestamp = resource.getLocalTimeStamp();
 				if(timestamp < fileTimestamp) {
 					upToDate = false;
@@ -190,7 +188,7 @@ public class GravityAPI {
 			}
 			return true;
 		}
-		
+
 		/**
 		 * The result of the check
 		 * 

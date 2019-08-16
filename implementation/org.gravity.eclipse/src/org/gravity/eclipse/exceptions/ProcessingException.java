@@ -19,7 +19,7 @@ public class ProcessingException extends Exception {
 	 */
 	private static final long serialVersionUID = 4378424824963356198L;
 
-	private final Set<Object> objects;
+	private final transient Set<Object> objects;
 	
 	/**
 	 * The default constructor

@@ -225,6 +225,7 @@ public abstract class HulkHandler extends AbstractHandler {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
+				LOGGER.info("Default selected: "+e.getSource());
 			}
 		});
 		return dialog;
