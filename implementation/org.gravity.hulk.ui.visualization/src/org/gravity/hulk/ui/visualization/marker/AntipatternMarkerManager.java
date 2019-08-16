@@ -1,7 +1,8 @@
-package org.gravity.hulk.ui.visualization.markerManager;
+package org.gravity.hulk.ui.visualization.marker;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -26,7 +27,6 @@ public class AntipatternMarkerManager {
 
 	private DetectionPreprocessor preprocessor;
 	private HAntiPatternGraph apg;
-	private Map<Flaws, List<DetectionObject>> detectionObjects;
 
 	private IJavaProject project;
 
@@ -40,10 +40,11 @@ public class AntipatternMarkerManager {
 	 * Sets the markers for the detection results
 	 */
 	public void setMarkers() {
-		detectionObjects = preprocessor.preprocessDetections(apg);
-		for (Flaws key : detectionObjects.keySet()) {
-			if (!key.toString().endsWith("Metric")) {
-				for (DetectionObject detectionObject : detectionObjects.get(key)) {
+		Map<Flaws, List<DetectionObject>> detectionObjects = preprocessor.preprocessDetections(apg);
+		for (Entry<Flaws, List<DetectionObject>> entry : detectionObjects.entrySet()) {
+			Flaws key = entry.getKey();
+			if (!key.getName().endsWith("Metric")) {
+				for (DetectionObject detectionObject : entry.getValue()) {
 					Map<TAbstractType, String> detections = detectionObject.getDetections();
 					for (TAbstractType type : detections.keySet()) {
 						try {
@@ -76,7 +77,7 @@ public class AntipatternMarkerManager {
 		IMarker[] oldMarkers = file.findMarkers(Activator.PLUGIN_ID + "." + detectionObject.getType() + "Marker", false,
 				IResource.DEPTH_ZERO);
 		for (IMarker m : oldMarkers) {
-			String markedClass = (String) m.getAttribute(CLASS_NAME, "");
+			String markedClass = m.getAttribute(CLASS_NAME, "");
 			if (markedClass.equals(className)) {
 				m.delete();
 				break;

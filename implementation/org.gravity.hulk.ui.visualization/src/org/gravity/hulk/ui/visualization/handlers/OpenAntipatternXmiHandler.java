@@ -35,7 +35,7 @@ import org.gravity.hulk.ui.visualization.detection.SpaghettiCodePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
 import org.gravity.hulk.ui.visualization.information.providers.InformationViewContentProvider;
-import org.gravity.hulk.ui.visualization.markerManager.AntipatternMarkerManager;
+import org.gravity.hulk.ui.visualization.marker.AntipatternMarkerManager;
 
 public class OpenAntipatternXmiHandler extends AbstractHandler {
 

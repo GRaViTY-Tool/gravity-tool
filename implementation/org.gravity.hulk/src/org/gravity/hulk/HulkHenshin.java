@@ -10,7 +10,6 @@
 package org.gravity.hulk;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,6 +25,7 @@ import java.util.stream.Collectors;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -51,11 +51,16 @@ import org.gravity.typegraph.basic.BasicPackage;
 
 public class HulkHenshin {
 
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(HulkHenshin.class);
+
 	private static final String THRESHOLD = "threshold";
 	private HashMap<EClass, Rule> creates;
 	private HashSet<Rule> executed;
 
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) throws IOException {
 		HenshinResourceSet resourceSet = new HenshinResourceSet();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(AntipatternPackage.eNS_URI, AntipatternPackage.eINSTANCE);
@@ -69,10 +74,10 @@ public class HulkHenshin {
 		HulkHenshin hulk = new HulkHenshin();
 		hulk.loadRules(resourceSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHBlobAntiPattern()));
-		
+
 		graph.getRoots().get(0).eResource().save(new FileOutputStream(model.replace(".xmi", ".trg.xmi")),
 				Collections.emptyMap());
-		System.out.println("done");
+		LOGGER.info("done");
 	}
 
 	private Rule getRule(EClass type) {
@@ -82,19 +87,21 @@ public class HulkHenshin {
 	private void executeAllRules(HenshinResourceSet set, Engine engine, EGraphImpl graph, File folder)
 			throws IOException {
 		Set<Rule> rules = loadRules(set, folder);
-		for(Rule rule : rules) {
-			if(!executed.contains(rule)) {
+		for (Rule rule : rules) {
+			if (!executed.contains(rule)) {
 				execute(engine, graph, rule);
 			}
 		}
-		
+
 	}
 
 	/**
-	 * @param set
-	 * @param folder
-	 * @return
-	 * @throws IOException
+	 * Loads the rules from the folder into the resource set
+	 * 
+	 * @param set    The resource set
+	 * @param folder The folder containing rules
+	 * @return The loaded rules
+	 * @throws IOException If an I/O error occurred while searching the folder
 	 */
 	private Set<Rule> loadRules(HenshinResourceSet set, File folder) throws IOException {
 		Set<Rule> rules = new HashSet<>();
@@ -119,24 +126,23 @@ public class HulkHenshin {
 	}
 
 	private void execute(Engine engine, EGraphImpl graph, Rule rule) {
-		System.out.println();
 		Set<EClass> requires = getRequires(rule);
-		if(!requires.isEmpty()) {
-			System.out.println("Execure requirements of rule: "+rule.getName());
+		if (!requires.isEmpty()) {
+			System.out.println("Execure requirements of rule: " + rule.getName());
 			System.out.println(requires.parallelStream().map(type -> type.getName()).collect(Collectors.joining(", ")));
 		}
-		for(EClass requirement : requires) {
+		for (EClass requirement : requires) {
 			Rule requiredRule = creates.get(requirement);
-			if(requiredRule == null) {
-				throw new IllegalStateException("No rule for creating the annotation \"" +requirement.getName()
-						+ "\" has been loaded");
+			if (requiredRule == null) {
+				throw new IllegalStateException(
+						"No rule for creating the annotation \"" + requirement.getName() + "\" has been loaded");
 			}
-			if(!executed.contains(requiredRule)) {
+			if (!executed.contains(requiredRule)) {
 				execute(engine, graph, requiredRule);
 			}
 		}
-		
-		System.out.println("Execute rule: " + rule.getName());
+
+		LOGGER.info("Execute rule: " + rule.getName());
 		Parameter threshold = rule.getParameter(THRESHOLD);
 		double thresholdValue = -1;
 		if (threshold != null) {
@@ -153,13 +159,13 @@ public class HulkHenshin {
 			}
 			boolean success = new RuleApplicationImpl(engine, graph, rule, match).execute(null);
 			if (!success) {
-				System.out.println("Error: " + match);
+				LOGGER.error("Error: " + match);
 			} else {
 				i++;
 			}
 		}
 		executed.add(rule);
-		System.out.println("Applications=" + i);
+		LOGGER.info("Applications=" + i);
 	}
 
 	protected static Set<EClass> getCreates(Rule rule) {
@@ -205,18 +211,7 @@ public class HulkHenshin {
 		if (constant == null) {
 			throw new IllegalStateException("Misspelled relative constant in rule \"" + rule.getName() + "\"");
 		}
-		String value = null;
-		for (AttributeCondition cond : rule.getAttributeConditions()) {
-			String conditionText = cond.getConditionText();
-			if (conditionText.contains(THRESHOLD)) {
-				value = conditionText.replaceAll(THRESHOLD + "\\s*(>|>=|=|<=|<)", "")
-						.replaceAll("(>|>=|=|<=|<)\\s*" + THRESHOLD, "");
-			}
-		}
-		if (value == null) {
-			throw new IllegalStateException(
-					"Didn't found condition containing threshold of rule \"" + rule.getName() + "\"");
-		}
+		String value = getThresholdCondition(rule);
 
 		SortedSet<Number> numbers = new TreeSet<>();
 		Iterable<Match> matches = engine.findMatches(rule, graph, null);
@@ -234,6 +229,7 @@ public class HulkHenshin {
 					numbers.add((Number) res);
 				}
 			} catch (ScriptException e) {
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 
@@ -251,6 +247,24 @@ public class HulkHenshin {
 			return (double) numbers.toArray()[size * 5 / 6];
 		}
 		throw new IllegalStateException("Unknown relative constant: " + constant.getName());
+	}
+
+	/**
+	 * Get the condition of the threshold node
+	 * 
+	 * @param rule The rule
+	 * @return The condition
+	 */
+	private static String getThresholdCondition(Rule rule) {
+		for (AttributeCondition cond : rule.getAttributeConditions()) {
+			String conditionText = cond.getConditionText();
+			if (conditionText.contains(THRESHOLD)) {
+				return conditionText.replaceAll(THRESHOLD + "\\s*(>|>=|=|<=|<)", "")
+						.replaceAll("(>|>=|=|<=|<)\\s*" + THRESHOLD, "");
+			}
+		}
+		throw new IllegalStateException(
+				"Didn't found condition containing threshold of rule \"" + rule.getName() + "\"");
 	}
 
 }

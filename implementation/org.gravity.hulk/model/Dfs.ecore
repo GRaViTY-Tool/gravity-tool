@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities" xmlns:callExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//calls/callExpressions" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//expressions" xmlns:patternExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//patterns/patternExpressions" name="dfs" nsURI="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore" nsPrefix="org.moflon.core.dfs">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="basePackage" value="org.moflon.core"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeProcessor" abstract="true">
+    <eOperations  name="processEdge">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eParameters name="edge" eType="//Edge"/>
+    </eOperations>
+    <eOperations  name="processNode">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eParameters name="node" eType="//Node"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delegate" eType="//EdgeProcessor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//Edge" eOpposite="//Edge/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" lowerBound="1" eType="//DFSGraph" eOpposite="//DFSGraph/nodes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origin" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//Edge" eOpposite="//Edge/source"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postTraversal" ordered="false" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preTraversal" ordered="false" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" lowerBound="1" eType="//DFSGraph" eOpposite="//DFSGraph/edges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//Node" eOpposite="//Node/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origin" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//Node" eOpposite="//Node/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1" eType="//EdgeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DepthFirstSearch" eSuperTypes="//EdgeProcessor">
+    <eOperations  name="incrementPostTraversalCounter">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations  name="incrementPreTraversalCounter">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations  name="processEdge">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eParameters name="edge" eType="//Edge"/>
+    </eOperations>
+    <eOperations  name="processNode">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eParameters name="node" eType="//Node"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postTraversalCounter" ordered="false" lowerBound="1" defaultValueLiteral="0">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preTraversalCounter" ordered="false" lowerBound="1" defaultValueLiteral="0">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EdgeType">
+    <eLiterals name="TREE_EDGE" value="1" literal="TREE_EDGE"/>
+    <eLiterals name="BACKWARD_EDGE" value="2" literal="BACKWARD_EDGE"/>
+    <eLiterals name="FORWARD_EDGE" value="3" literal="FORWARD_EDGE"/>
+    <eLiterals name="CROSS_EDGE" value="4" literal="CROSS_EDGE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DFSGraph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1" eType="//Edge" containment="true" eOpposite="//Edge/graph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1" eType="//Node" containment="true" eOpposite="//Node/graph"/>
+  </eClassifiers>
+</ecore:EPackage>
