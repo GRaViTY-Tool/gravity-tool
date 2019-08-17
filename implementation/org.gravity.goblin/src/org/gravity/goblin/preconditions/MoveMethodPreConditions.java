@@ -6,7 +6,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import org.gravity.goblin.SearchParameters;
-import org.gravity.refactorings.impl.MoveMethodImpl;
+import org.gravity.refactorings.impl.MoveMethod;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -67,8 +67,8 @@ public class MoveMethodPreConditions {
 			return false;
 		}
 
-		return MoveMethodImpl.getterSetterPrecondition(tMethodSignature)
-				&& MoveMethodImpl.interfacePrecondition(tMethodSignature, sourceClass)
-				&& MoveMethodImpl.overridePrecondition(tMethodSignature, sourceClass);
+		return MoveMethod.getterSetterPrecondition(tMethodSignature)
+				&& MoveMethod.interfacePrecondition(tMethodSignature, sourceClass)
+				&& MoveMethod.overridePrecondition(tMethodSignature, sourceClass);
 	}
 }

@@ -13,7 +13,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
-import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 import java.util.ArrayList;
@@ -29,16 +28,7 @@ import java.util.List;
  *
  * @generated
  */
-public class MoveMethodImpl extends MoveMemberImpl {
-
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public MoveMethodImpl(TypeGraph programModel) {
-		super(programModel);
-	}
+public class MoveMethod extends MoveMember {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -142,6 +132,6 @@ public class MoveMethodImpl extends MoveMemberImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TMoveMethod;
+		return TRefactoringID.MOVE_METHOD;
 	}
 }

@@ -1,6 +1,6 @@
 /**
  */
-package org.gravity.refactorings.impl;
+package org.gravity.refactorings.util;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,9 +25,9 @@ import org.gravity.typegraph.basic.TypeGraph;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.gravity.refactorings.impl.HelpersImpl#getTypeGraph <em>Type
+ * <li>{@link org.gravity.refactorings.util.HelpersImpl#getTypeGraph <em>Type
  * Graph</em>}</li>
- * <li>{@link org.gravity.refactorings.impl.HelpersImpl#getSearch
+ * <li>{@link org.gravity.refactorings.util.HelpersImpl#getSearch
  * <em>Search</em>}</li>
  * </ul>
  * </p>

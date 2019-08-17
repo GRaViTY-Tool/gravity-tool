@@ -17,6 +17,6 @@ public class PullUpFieldConfiguration extends PullUpMemberConfiguration {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TPullUpField;
+		return TRefactoringID.PULLUP_FIELD;
 	}
 }

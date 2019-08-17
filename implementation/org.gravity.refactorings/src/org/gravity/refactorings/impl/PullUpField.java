@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -19,7 +20,6 @@ import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TPackage;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Pull Up
@@ -29,16 +29,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class PullUpFieldImpl extends RefactoringImpl {
-	
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public PullUpFieldImpl(TypeGraph programModel) {
-		super(programModel);
-	}
+public class PullUpField implements Refactoring {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -59,12 +50,9 @@ public class PullUpFieldImpl extends RefactoringImpl {
 	}
 
 	public List<TClass> perform(TFieldSignature field, TClass parent) throws RefactoringFailedException {
-
-		TypeGraph pg = getPg();
-
 		List<TClass> classContainer = new LinkedList<TClass>();
 		//
-		Object[] result3_black = PullUpFieldImpl.pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(parent, field,
+		Object[] result3_black = PullUpField.pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(parent, field,
 				classContainer);
 		if (result3_black != null) {
 			TClass tchild = (TClass) result3_black[1];
@@ -78,20 +66,16 @@ public class PullUpFieldImpl extends RefactoringImpl {
 			classContainer.add(tchild);
 
 			// ForEach
-			for (Object[] result4_black : PullUpFieldImpl.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
+			for (Object[] result4_black : PullUpField.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
 					field, classContainer)) {
 				TClass child = (TClass) result4_black[1];
 				TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
 				classContainer.add(child);
 
 				// ForEach
-				for (Object[] result5_black : PullUpFieldImpl.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(pg,
-						fieldChildDefinition)) {
-					TAccess currentAccess = (TAccess) result5_black[1];
-					// nothing TClass accesserClass = (TClass) result5_black[3];
-					// nothing TMember tMember = (TMember) result5_black[4];
-
-					Object[] result6_black = PullUpFieldImpl.pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(
+				for (TAccess currentAccess : PullUpField
+						.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(fieldChildDefinition)) {
+					Object[] result6_black = PullUpField.pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(
 							currentAccess, fieldChildDefinition, fieldParentDefinition);
 					if (result6_black == null) {
 						throw new RefactoringFailedException(
@@ -103,7 +87,7 @@ public class PullUpFieldImpl extends RefactoringImpl {
 					fieldParentDefinition.getAccessedBy().add(currentAccess);
 				}
 
-				Object[] result7_black = PullUpFieldImpl
+				Object[] result7_black = PullUpField
 						.pattern_Pull_Up_Field_0_7_ActivityNode140_blackBBB(fieldChildDefinition, child, field);
 				if (result7_black == null) {
 					throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
@@ -112,7 +96,7 @@ public class PullUpFieldImpl extends RefactoringImpl {
 				}
 				fieldChildDefinition.setDefinedBy(null);
 				child.getSignature().remove(field);
-				
+
 				EcoreUtil.delete(fieldChildDefinition);
 				fieldChildDefinition = null;
 			}
@@ -136,7 +120,7 @@ public class PullUpFieldImpl extends RefactoringImpl {
 
 			List<TFieldDefinition> tFieldDefinitions = new LinkedList<>();
 			// ForEach
-			for (Object[] result5_black : PullUpFieldImpl.pattern_Pull_Up_Field_1_5_ActivityNode128_blackBF(parent)) {
+			for (Object[] result5_black : PullUpField.pattern_Pull_Up_Field_1_5_ActivityNode128_blackBF(parent)) {
 				TClass child = (TClass) result5_black[1];
 				//
 				if (child.getSignature().contains(field)) {
@@ -201,24 +185,19 @@ public class PullUpFieldImpl extends RefactoringImpl {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(TypeGraph pg,
+	public static final Iterable<TAccess> pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(
 			TFieldDefinition fieldChildDefinition) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TClass accesserClass : pg.getClasses()) {
-			for (TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
-				TMember tMember = currentAccess.getTSource();
-				if (tMember != null) {
-					if (!fieldChildDefinition.equals(tMember)) {
-						if (accesserClass.equals(tMember.getDefinedBy())) {
-							_result.add(
-									new Object[] { pg, currentAccess, fieldChildDefinition, accesserClass, tMember });
-						}
-					}
-				}
+		LinkedList<TAccess> result = new LinkedList<>();
+		for (TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
+			TMember tMember = currentAccess.getTSource();
+			if (tMember != null) {
+				if (!fieldChildDefinition.equals(tMember)) {
+					result.add(currentAccess);
 
+				}
 			}
 		}
-		return _result;
+		return result;
 	}
 
 	public static final Object[] pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(TAccess currentAccess,
@@ -267,6 +246,6 @@ public class PullUpFieldImpl extends RefactoringImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TPullUpField;
+		return TRefactoringID.PULLUP_FIELD;
 	}
 } // Pull_Up_FieldImpl

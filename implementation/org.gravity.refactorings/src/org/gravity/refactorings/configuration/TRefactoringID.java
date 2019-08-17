@@ -6,39 +6,48 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.gravity.refactorings.impl.CreateSuperclass;
+import org.gravity.refactorings.impl.ExtractClass;
+import org.gravity.refactorings.impl.ExtractSuperclass;
+import org.gravity.refactorings.impl.MoveField;
+import org.gravity.refactorings.impl.MoveMember;
+import org.gravity.refactorings.impl.MoveMethod;
+import org.gravity.refactorings.impl.PullUpField;
+import org.gravity.refactorings.impl.PullUpMethod;
+
 public enum TRefactoringID {
 	
-	TExtractClass(TRefactoringID.TExtractClass_VALUE, TRefactoringID.TExtractClass_NAME),
-	TMoveMember(TRefactoringID.TMoveMember_VALUE, TRefactoringID.TMoveMember_NAME),
-	TMoveMethod(TRefactoringID.TMoveMethod_VALUE, TRefactoringID.TMoveMethod_NAME),
-	TMoveField(TRefactoringID.TMoveField_VALUE, TRefactoringID.TMoveField_NAME),
-	TPullUpMethod(TRefactoringID.TPullUpMethod_VALUE, TRefactoringID.TPullUpMethod_NAME), 
-	TPullUpField(TRefactoringID.TPullUpField_VALUE, TRefactoringID.TPullUpField_NAME), 
-	TCreateSuperClass(TRefactoringID.TCreateSuperClass_VALUE, TRefactoringID.TCreateSuperClass_NAME),
-	TExtractSuperClass(TRefactoringID.TExtractSuperClass_VALUE, TRefactoringID.TExtractSuperClass_NAME);
+	EXTRACT_CLASS(TRefactoringID.EXTRACT_CLASS_VALUE, TRefactoringID.EXTRACT_CLASS_NAME),
+	MOVE_MEMBER(TRefactoringID.MOVE_MEMBER_VALUE, TRefactoringID.MOVE_MEMBER_NAME),
+	MOVE_METHOD(TRefactoringID.MOVE_METHOD_VALUE, TRefactoringID.MOVE_METHOD_NAME),
+	MOVE_FIELD(TRefactoringID.MOVE_FIELD_VALUE, TRefactoringID.MOVE_FIELD_NAME),
+	PULLUP_METHOD(TRefactoringID.PULLUP_METHOD_VALUE, TRefactoringID.PULLUP_METHOD_NAME), 
+	PULLUP_FIELD(TRefactoringID.PULLUO_FIELD_VALUE, TRefactoringID.PULLUP_FIELD_NAME), 
+	CREATE_SUPERCLASS(TRefactoringID.CREATE_SUPERCLASS_VALUE, TRefactoringID.CREATE_SUPERCLASS_NAME),
+	EXTRACT_SUPERCLASS(TRefactoringID.EXTRACT_SUPERCLASS_VALUE, TRefactoringID.EXTRACT_SUPERCLASS_NAME);
 	
 
-	public static final int TExtractClass_VALUE = 0;
-	public static final int TMoveMember_VALUE= 1;
-	public static final int TMoveMethod_VALUE= 2;
-	public static final int TMoveField_VALUE= 3;
-	public static final int TPullUpMethod_VALUE= 4;
-	public static final int TPullUpField_VALUE= 5;
-	public static final int TCreateSuperClass_VALUE = 6;
-	public static final int TExtractSuperClass_VALUE = 6;
+	public static final int EXTRACT_CLASS_VALUE = 0;
+	public static final int MOVE_MEMBER_VALUE= 1;
+	public static final int MOVE_METHOD_VALUE= 2;
+	public static final int MOVE_FIELD_VALUE= 3;
+	public static final int PULLUP_METHOD_VALUE= 4;
+	public static final int PULLUO_FIELD_VALUE= 5;
+	public static final int CREATE_SUPERCLASS_VALUE = 6;
+	public static final int EXTRACT_SUPERCLASS_VALUE = 7;
 
-	public static final String TExtractClass_NAME = "TExtractClass";
-	public static final String TMoveMember_NAME= "TMoveMember";
-	public static final String TMoveMethod_NAME= "TMoveMethod";
-	public static final String TMoveField_NAME= "TMoveField";
-	public static final String TPullUpMethod_NAME= "TPullUpMethod";
-	public static final String TPullUpField_NAME= "TPullUpField";
-	public static final String TCreateSuperClass_NAME = "TCreateSuperClass";
-	public static final String TExtractSuperClass_NAME = "TExtractSuperClass";
+	public static final String EXTRACT_CLASS_NAME = ExtractClass.class.getSimpleName();
+	public static final String MOVE_MEMBER_NAME= MoveMember.class.getSimpleName();
+	public static final String MOVE_METHOD_NAME= MoveMethod.class.getSimpleName();
+	public static final String MOVE_FIELD_NAME= MoveField.class.getSimpleName();
+	public static final String PULLUP_METHOD_NAME= PullUpMethod.class.getSimpleName();
+	public static final String PULLUP_FIELD_NAME= PullUpField.class.getSimpleName();
+	public static final String CREATE_SUPERCLASS_NAME = CreateSuperclass.class.getSimpleName();
+	public static final String EXTRACT_SUPERCLASS_NAME = ExtractSuperclass.class.getSimpleName();
 
 	
 	private static final TRefactoringID[] VALUES_ARRAY = new TRefactoringID[] {
-			TExtractClass, TMoveMember, TMoveMethod, TMoveField, TPullUpMethod};
+			EXTRACT_CLASS, MOVE_MEMBER, MOVE_METHOD, MOVE_FIELD, PULLUP_METHOD};
 
 	public static final List<TRefactoringID> VALUES_LIST = Collections
 			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -55,8 +64,8 @@ public enum TRefactoringID {
 
 	public static TRefactoringID get(int value) {
 		switch (value) {
-		case TExtractClass_VALUE:
-			return TExtractClass;
+		case EXTRACT_CLASS_VALUE:
+			return EXTRACT_CLASS;
 		}
 		return null;
 	}

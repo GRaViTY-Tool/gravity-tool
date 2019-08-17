@@ -7,10 +7,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.CreateSuperClassConfiguration;
+import org.gravity.refactorings.util.PGAdditionHelper;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -23,17 +25,8 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class CreateSuperclassImpl extends RefactoringImpl {
+public class CreateSuperclass implements Refactoring {
 	
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public CreateSuperclassImpl(TypeGraph programModel) {
-		super(programModel);
-	}
-
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
@@ -53,7 +46,10 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 	}
 
 	public List<TClass> perform(List<TClass> child, TClass newParent) throws RefactoringFailedException {
-
+		if(child.isEmpty()) {
+			throw new RefactoringFailedException("The list of child classes is empty!");
+		}
+		TypeGraph pg = child.get(0).getPg();
 		List<TClass> container = new LinkedList<TClass>();
 
 		container.add(newParent);
@@ -83,7 +79,11 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 	 * @generated
 	 */
 	public boolean isApplicable(List<TClass> child, TClass newParent) throws RefactoringFailedException {
-
+		if(child.isEmpty()) {
+			return false;
+		}
+		TypeGraph pg = child.get(0).getPg();
+		
 		TClass existingParent = getOtherTClassByName(pg, newParent);
 		if (existingParent != null) {
 			TPackage newParentsPackage = null;
@@ -167,7 +167,7 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TCreateSuperClass;
+		return TRefactoringID.CREATE_SUPERCLASS;
 	}
 
 } // Create_SuperclassImpl

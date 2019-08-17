@@ -1,6 +1,6 @@
 /**
  */
-package org.gravity.refactorings.impl;
+package org.gravity.refactorings.util;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -92,7 +92,7 @@ public class PGAdditionHelper {
 	 * @param package2 The second package
 	 * @return true, iff the packages are equivalent
 	 */
-	static boolean equivalent(TPackage package1, TPackage package2) {//
+	public static boolean equivalent(TPackage package1, TPackage package2) {//
 		if (package1.equals(package2)) {
 			return true;
 		} else {

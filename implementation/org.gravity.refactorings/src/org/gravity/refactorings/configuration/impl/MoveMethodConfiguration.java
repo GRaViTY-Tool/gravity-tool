@@ -19,6 +19,6 @@ public class MoveMethodConfiguration extends MoveMemberConfiguration {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TMoveMethod;
+		return TRefactoringID.MOVE_METHOD;
 	}
 }

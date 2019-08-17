@@ -56,14 +56,13 @@ public class RefactoringPaperExample03Test extends AbstractRefactoringTestCase {
 			assertTrue(child2.getSignature().contains(signature));
 			assertFalse(child3.getSignature().contains(signature));
 
-			// Check if the parent implements one of the definitions
 			assertFalse(parent.getDeclaredTMethodDefinitions().contains(definition1)
-					|| parent.getDeclaredTMethodDefinitions().contains(definition1));
+					|| parent.getDeclaredTMethodDefinitions().contains(definition2));
 			assertNull(signature.getTDefinition(parent));
 			assertTrue(child1.getDeclaredTMethodDefinitions().contains(definition1));
 			assertTrue(child2.getDeclaredTMethodDefinitions().contains(definition2));
 			assertFalse(child3.getDeclaredTMethodDefinitions().contains(definition1)
-					|| child3.getDeclaredTMethodDefinitions().contains(definition1));
+					|| child3.getDeclaredTMethodDefinitions().contains(definition2));
 			assertNull(signature.getTDefinition(child3));
 		} catch (RefactoringFailedException e) {
 			throw new AssertionError(e.getMessage(), e);

@@ -17,7 +17,7 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.util.JavaASTUtil;
-import org.gravity.refactorings.impl.MoveMethodImpl;
+import org.gravity.refactorings.impl.MoveMethod;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -63,7 +63,7 @@ public final class MOMJob extends WorkspaceJob {
 			}
 
 			TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
-			MoveMethodImpl momRefactoring = new MoveMethodImpl(pg);
+			MoveMethod momRefactoring = new MoveMethod(pg);
 
 			if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) { // Already changed to new
 																						// isApplicable

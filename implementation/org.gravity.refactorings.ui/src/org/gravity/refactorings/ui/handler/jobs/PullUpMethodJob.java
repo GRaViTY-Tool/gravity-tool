@@ -17,7 +17,7 @@ import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.refactorings.RefactoringFailedException;
-import org.gravity.refactorings.impl.PullUpMethodImpl;
+import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
 import org.gravity.typegraph.basic.TClass;
@@ -68,7 +68,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 			TClass tParent = tChild.getParentClass();
 			TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
 
-			PullUpMethodImpl refactoring = new PullUpMethodImpl(pg);
+			PullUpMethod refactoring = new PullUpMethod(pg);
 
 			if (refactoring.isApplicable(tSignature, tParent)) {
 				Display.getDefault().asyncExec(new Runnable() {

@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
 import org.gravity.eclipse.util.EMFUtil;
+import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -20,7 +21,6 @@ import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Pull Up
@@ -30,16 +30,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class PullUpMethodImpl extends RefactoringImpl {
-
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public PullUpMethodImpl(TypeGraph programModel) {
-		super(programModel);
-	}
+public class PullUpMethod implements Refactoring {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
@@ -68,7 +59,7 @@ public class PullUpMethodImpl extends RefactoringImpl {
 	 */
 	public List<TClass> perform(TMethodSignature method, TClass parent) throws RefactoringFailedException {
 		List<TClass> container = new LinkedList<>();
-		TMethodDefinition tMethodDefinition = PullUpMethodImpl.selectRandomDefinitionOfChild(parent, method);
+		TMethodDefinition tMethodDefinition = PullUpMethod.selectRandomDefinitionOfChild(parent, method);
 		if (tMethodDefinition != null) {
 			TClass tmpChild = (TClass) tMethodDefinition.getDefinedBy();
 			tmpChild.getSignature().remove(method);
@@ -194,6 +185,6 @@ public class PullUpMethodImpl extends RefactoringImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TPullUpMethod;
+		return TRefactoringID.PULLUP_METHOD;
 	}
 } // Pull_Up_MethodImpl

@@ -33,7 +33,7 @@ public class ExtractSuperClassConfiguration implements RefactoringConfiguration 
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TExtractSuperClass;
+		return TRefactoringID.EXTRACT_SUPERCLASS;
 	}
 
 }

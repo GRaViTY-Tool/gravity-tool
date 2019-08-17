@@ -19,11 +19,11 @@ import org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguratio
 import org.gravity.refactorings.configuration.impl.MoveMethodConfiguration;
 import org.gravity.refactorings.configuration.impl.PullUpFieldConfiguration;
 import org.gravity.refactorings.configuration.impl.PullUpMethodConfiguration;
-import org.gravity.refactorings.impl.CreateSuperclassImpl;
-import org.gravity.refactorings.impl.ExtractSuperclassImpl;
-import org.gravity.refactorings.impl.MoveMethodImpl;
-import org.gravity.refactorings.impl.PullUpFieldImpl;
-import org.gravity.refactorings.impl.PullUpMethodImpl;
+import org.gravity.refactorings.impl.CreateSuperclass;
+import org.gravity.refactorings.impl.ExtractSuperclass;
+import org.gravity.refactorings.impl.MoveMethod;
+import org.gravity.refactorings.impl.PullUpField;
+import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -41,21 +41,21 @@ public class RefactoringTool {
 
 	private TypeGraph toolPg;
 
-	private PullUpMethodImpl pumRefactoring;
-	private PullUpFieldImpl pufRefactoring;
-	private MoveMethodImpl momRefactoring;
-	private CreateSuperclassImpl cscRefactoring;
-	private ExtractSuperclassImpl escRefactoring;
+	private PullUpMethod pumRefactoring;
+	private PullUpField pufRefactoring;
+	private MoveMethod momRefactoring;
+	private CreateSuperclass cscRefactoring;
+	private ExtractSuperclass escRefactoring;
 
 	private List<RefactoringConfiguration> bookkeeping;
 	private Set<String> changes;
 
 	private void initRefactorings() {
-		this.pumRefactoring = new PullUpMethodImpl(this.toolPg);
-		this.pufRefactoring = new PullUpFieldImpl(this.toolPg);
-		this.momRefactoring = new MoveMethodImpl(this.toolPg);
-		this.cscRefactoring = new CreateSuperclassImpl(this.toolPg);
-		this.escRefactoring = new ExtractSuperclassImpl(this.toolPg);
+		this.pumRefactoring = new PullUpMethod();
+		this.pufRefactoring = new PullUpField();
+		this.momRefactoring = new MoveMethod();
+		this.cscRefactoring = new CreateSuperclass();
+		this.escRefactoring = new ExtractSuperclass();
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class RefactoringTool {
 		boolean pumIsApplicable = refactoring.isApplicable(configuration);
 		if (pumIsApplicable) {
 			this.bookkeeping.add(configuration);
-			for (TClass tClass : refactoring.perform(configuration)) {
+			for (TClass tClass : refactoring.perform(configuration)) { //TODO: Make use of the cloned pm
 				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {

@@ -8,10 +8,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
+import org.gravity.refactorings.util.HelpersImpl;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -20,7 +22,6 @@ import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Extract
@@ -28,24 +29,15 @@ import org.gravity.typegraph.basic.TypeGraph;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.gravity.refactorings.impl.ExtractSuperclassImpl#getCreate_Superclass
+ * <li>{@link org.gravity.refactorings.impl.ExtractSuperclass#getCreate_Superclass
  * <em>Create Superclass</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExtractSuperclassImpl extends RefactoringImpl {
+public class ExtractSuperclass implements Refactoring {
 	
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public ExtractSuperclassImpl(TypeGraph programModel) {
-		super(programModel);
-	}
-
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
@@ -66,16 +58,17 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 
 	public List<TClass> perform(List<TClass> children, TClass newParent, List<TSignature> signatures)
 			throws RefactoringFailedException {
-
-		CreateSuperclassImpl csc = new CreateSuperclassImpl(getPg());
+		if(children.isEmpty()) {
+			throw new RefactoringFailedException("There are no children to extract a superclass from!");
+		}
+		CreateSuperclass csc = new CreateSuperclass();
 		HelpersImpl helpers = new HelpersImpl();
-		setHelpersImpl(helpers);
-
+		
 		List<TClass> result = csc.perform(children, newParent);
 		// ForEach
 		for (TSignature tSignature : signatures) {
 
-			Object[] result5_bindingAndBlack = ExtractSuperclassImpl
+			Object[] result5_bindingAndBlack = ExtractSuperclass
 					.pattern_Extract_Superclass_0_5_ActivityNode198_bindingAndBlackFBBB(helpers, children, tSignature);
 			if (result5_bindingAndBlack == null) {
 				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[helpers] = "
@@ -83,12 +76,12 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 			}
 			TMember bestDefinition = (TMember) result5_bindingAndBlack[0];
 			//
-			Object[] result6_black = ExtractSuperclassImpl
+			Object[] result6_black = ExtractSuperclass
 					.pattern_Extract_Superclass_0_6_ActivityNode218_blackBFB(bestDefinition, tSignature);
 			if (result6_black != null) {
 				TClass tOwnerClass = (TClass) result6_black[1];
 
-				Object[] result7_black = ExtractSuperclassImpl.pattern_Extract_Superclass_0_7_ActivityNode219_blackBBB(
+				Object[] result7_black = ExtractSuperclass.pattern_Extract_Superclass_0_7_ActivityNode219_blackBBB(
 						tOwnerClass, bestDefinition, tSignature);
 				if (result7_black == null) {
 					throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
@@ -103,7 +96,7 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 			bestDefinition.setDefinedBy(newParent);
 
 			// ForEach
-			for (Object[] result9_black : ExtractSuperclassImpl
+			for (Object[] result9_black : ExtractSuperclass
 					.pattern_Extract_Superclass_0_9_ActivityNode199_blackBBF(children, tSignature)) {
 				TClass child = (TClass) result9_black[2];
 				//
@@ -125,11 +118,11 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 	public boolean isApplicable(List<TClass> children, TClass new_parent, List<TSignature> signatures)
 			throws RefactoringFailedException {
 
-		CreateSuperclassImpl csc = new CreateSuperclassImpl(getPg());
+		CreateSuperclass csc = new CreateSuperclass();
 
 		if (csc.isApplicable(children, new_parent)) {
 			// ForEach
-			for (Object[] result4_black : ExtractSuperclassImpl
+			for (Object[] result4_black : ExtractSuperclass
 					.pattern_Extract_Superclass_1_4_ActivityNode96_blackFBFB(children, signatures)) {
 				TClass child = (TClass) result4_black[0];
 				TSignature tSignature = (TSignature) result4_black[2];
@@ -138,7 +131,7 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 
 					List<TMember> allOutgoingAccesses = child.getAllOutgoingAccesses(tSignature);
 					//
-					Object[] result7_black = ExtractSuperclassImpl
+					Object[] result7_black = ExtractSuperclass
 							.pattern_Extract_Superclass_1_7_ActivityNode157_blackBBFB(allOutgoingAccesses, child,
 									signatures);
 					if (result7_black != null) {
@@ -147,7 +140,7 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 						return false;
 					} else {
 						//
-						Object[] result9_black = ExtractSuperclassImpl
+						Object[] result9_black = ExtractSuperclass
 								.pattern_Extract_Superclass_1_9_ActivityNode158_blackBBFB(child, allOutgoingAccesses,
 										signatures);
 						if (result9_black != null) {
@@ -284,6 +277,6 @@ public class ExtractSuperclassImpl extends RefactoringImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TExtractClass;
+		return TRefactoringID.EXTRACT_CLASS;
 	}
 }

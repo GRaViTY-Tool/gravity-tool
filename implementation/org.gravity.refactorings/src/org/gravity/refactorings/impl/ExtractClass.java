@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -30,18 +31,9 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class ExtractClassImpl extends RefactoringImpl {
+public class ExtractClass implements Refactoring {
 
-	private static final Logger LOGGER = Logger.getLogger(ExtractClassImpl.class.getName());
-	
-	/**
-	 * Creates a new refactoring
-	 * 
-	 * @param programModel The program model which should be refactored
-	 */
-	public ExtractClassImpl(TypeGraph programModel) {
-		super(programModel);
-	}
+	private static final Logger LOGGER = Logger.getLogger(ExtractClass.class.getName());
 	
 	/**
 	 * Checks if the refactoring is applicable
@@ -54,7 +46,7 @@ public class ExtractClassImpl extends RefactoringImpl {
 		if (tRefactoringConfiguration instanceof ExtractClassConfiguration) {
 			ExtractClassConfiguration configuration = (ExtractClassConfiguration) tRefactoringConfiguration;
 
-			List<TMember> tMembers = configuration.getTMembers();
+			Collection<TMember> tMembers = configuration.getTMembers();
 			LOGGER.log(Level.INFO, "There is no memebr which should be extracted");
 			if (tMembers.isEmpty()) {
 				return false;
@@ -213,6 +205,6 @@ public class ExtractClassImpl extends RefactoringImpl {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TExtractClass;
+		return TRefactoringID.EXTRACT_CLASS;
 	}
 } // Extract_ClassImpl
