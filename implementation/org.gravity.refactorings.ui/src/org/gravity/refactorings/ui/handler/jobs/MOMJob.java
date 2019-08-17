@@ -63,7 +63,7 @@ public final class MOMJob extends WorkspaceJob {
 			}
 
 			TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
-			MoveMethod momRefactoring = new MoveMethod(pg);
+			MoveMethod momRefactoring = new MoveMethod();
 
 			if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) { // Already changed to new
 																						// isApplicable

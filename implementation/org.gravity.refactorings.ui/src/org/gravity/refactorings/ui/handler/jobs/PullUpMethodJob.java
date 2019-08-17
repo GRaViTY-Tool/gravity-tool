@@ -68,7 +68,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 			TClass tParent = tChild.getParentClass();
 			TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
 
-			PullUpMethod refactoring = new PullUpMethod(pg);
+			PullUpMethod refactoring = new PullUpMethod();
 
 			if (refactoring.isApplicable(tSignature, tParent)) {
 				Display.getDefault().asyncExec(new Runnable() {

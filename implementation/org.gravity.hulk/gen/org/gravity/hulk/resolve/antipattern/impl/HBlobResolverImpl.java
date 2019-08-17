@@ -451,7 +451,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			HExtractClass extractClass = (HExtractClass) refactoring;
 			ExtractClassConfiguration config = new ExtractClassConfiguration(extractClass.getTMembers(),
 					"ExtractedClass" + System.currentTimeMillis());
-			ExtractClass r = new ExtractClass(extractClass.getApg().getPg());
+			ExtractClass r = new ExtractClass();
 			return r.isApplicable(config);
 		} else {
 			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
@@ -552,7 +552,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		original_apg = pg;
 		copyApg = EcoreUtil.copy(pg);
 
-		move = new MoveMember(pg.getPg());
+		move = new MoveMember();
 
 		return copyApg;
 	}
