@@ -9,7 +9,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
  org.eclipse.emf.common,
- org.apache.log4j
+ org.apache.log4j,
+ org.gravity.eclipse,
+ org.gravity.typegraph.basic,
+ org.gravity.refactorings,
+ org.gravity.tgg.modisco
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.refactoring.test

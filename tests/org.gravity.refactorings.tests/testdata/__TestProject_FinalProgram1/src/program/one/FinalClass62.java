@@ -1,6 +1,6 @@
 package program.one;
 
-public class FinalClass62 extends FinalClass00 {
+public class FinalClass62 extends FinalClass0 {
 
 	public static void main(String[] args) {
 		FinalClass62 c = new FinalClass62();

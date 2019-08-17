@@ -89,7 +89,7 @@ public class HelpersImpl {
 		for (TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
 				for (TAccess tMethodAccess : tMethodDefinition.getAccessedBy()) {
-					TMethodDefinition tMethodParentDefinition = getMethodDefinition(parent, tMethodSignature);
+					TMethodDefinition tMethodParentDefinition = tMethodSignature.getTDefinition(parent);
 					if (tMethodParentDefinition == null) {
 						throw new RefactoringFailedException(
 								"Pattern matching failed." + " Variables: " + "[parent] = " + parent + ", "
@@ -123,7 +123,7 @@ public class HelpersImpl {
 			}
 		}
 
-		TMethodDefinition tMethodDefinition = HelpersImpl.getMethodDefinition(child, tMethodSignature);
+		TMethodDefinition tMethodDefinition = tMethodSignature.getTDefinition(child);
 		if (tMethodDefinition == null) {
 			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child
 					+ ", " + "[tMethodSignature] = " + tMethodSignature + ".");
@@ -283,20 +283,6 @@ public class HelpersImpl {
 			}
 		}
 		return externalAccesses;
-	}
-
-	public static final TMethodDefinition getMethodDefinition(TClass child, TMethodSignature tMethodSignature) {
-		if (child.getSignature().contains(tMethodSignature)) {
-			for (TMember tmpTMethodDefinition : child.getDefines()) {
-				if (tmpTMethodDefinition instanceof TMethodDefinition) {
-					TMethodDefinition tMethodDefinition = (TMethodDefinition) tmpTMethodDefinition;
-					if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
-						return tMethodDefinition;
-					}
-				}
-			}
-		}
-		return null;
 	}
 
 	public static final Iterable<TMember> getAccessedMembers(TMember tMember) {

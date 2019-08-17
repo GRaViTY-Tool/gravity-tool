@@ -6,8 +6,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.gravity.eclipse.util.EMFUtil;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -29,7 +31,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class PullUpMethodImpl extends RefactoringImpl {
-	
+
 	/**
 	 * Creates a new refactoring
 	 * 
@@ -59,98 +61,50 @@ public class PullUpMethodImpl extends RefactoringImpl {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @throws RefactoringFailedException 
+	 * 
+	 * @throws RefactoringFailedException
 	 * 
 	 * @generated
 	 */
 	public List<TClass> perform(TMethodSignature method, TClass parent) throws RefactoringFailedException {
-
-		TypeGraph pg = getPg();
-		List<TClass> container = new LinkedList<TClass>();
-
-		//
+		List<TClass> container = new LinkedList<>();
 		TMethodDefinition tMethodDefinition = PullUpMethodImpl.selectRandomDefinitionOfChild(parent, method);
 		if (tMethodDefinition != null) {
 			TClass tmpChild = (TClass) tMethodDefinition.getDefinedBy();
 			tmpChild.getSignature().remove(method);
-
-			tMethodDefinition.setDefinedBy(parent);
 			parent.getSignature().add(method);
+			tMethodDefinition.setDefinedBy(parent);
 			container.add(tmpChild);
 
-			// ForEach
-			for (TMethodDefinition childsDefinition : method.getDefinitions()) {
+			List<EObject> delete = new LinkedList<>();
+			for (final TMethodDefinition childsDefinition : method.getDefinitions()) {
 				TAbstractType tmpTChild = childsDefinition.getDefinedBy();
 				if (tmpTChild instanceof TClass) {
 					TClass tChild = (TClass) tmpTChild;
-					if (!parent.equals(tChild) && parent.equals(tChild.getParentClass())
+					if (!parent.equals(tmpChild) && parent.equals(tChild.getParentClass())
 							&& tChild.getSignature().contains(method)) {
-
 						container.add(tChild);
-
-						// ForEach
-						for (TClass tClass : pg.getClasses()) {
-							for (TAccess tOldAccess : childsDefinition.getAccessedBy()) {
-								TMember accessing = tOldAccess.getTSource();
-								if (accessing != null && !accessing.equals(childsDefinition)
-										&& tClass.equals(accessing.getDefinedBy())) {
-
-									if (childsDefinition.equals(tMethodDefinition)
-											|| !childsDefinition.getAccessedBy().contains(tOldAccess)) {
-										throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
-												+ "[tMethodDefinition] = " + tMethodDefinition + ", "
-												+ "[childsDefinition] = " + childsDefinition + ", " + "[tOldAccess] = "
-												+ tOldAccess + ".");
-									}
-
-									childsDefinition.getAccessedBy().remove(tOldAccess);
-									tMethodDefinition.getAccessedBy().add(tOldAccess);
-
-								}
-							}
-						}
-						// ForEach
-						for (TAccess outgoing : childsDefinition.getTAccessing()) {
-							TMember target = outgoing.getTTarget();
-							if (target != null && !childsDefinition.equals(target)) {
-								childsDefinition.getTAccessing().remove(outgoing);
-								target.getAccessedBy().remove(outgoing);
-
-								EcoreUtil.delete(outgoing);
-								outgoing = null;
-
-							}
-						}
-
-						TAbstractType retType = childsDefinition.getReturnType();
-						if (retType == null) {
-							throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
-									+ "[childsDefinition] = " + childsDefinition + ".");
-						}
-						childsDefinition.setReturnType(null);
-
-						if (tChild.getSignature().contains(method) || tChild.equals(childsDefinition.getDefinedBy())
-								|| method.getDefinitions().contains(childsDefinition)) {
-							tChild.getSignature().remove(method);
-							childsDefinition.setDefinedBy(null);
-							method.getDefinitions().remove(childsDefinition);
-
-							EcoreUtil.delete(childsDefinition);
-							childsDefinition = null;
-						} else {
-							throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tChild] = "
-									+ tChild + ", " + "[method] = " + method + ", " + "[childsDefinition] = "
-									+ childsDefinition + ".");
-						}
-
+						delete.add(childsDefinition);
+						tChild.getSignature().remove(method);
+						updateAccesses(tMethodDefinition, childsDefinition);
 					}
 				}
 			}
-			return container;
-		} else {
-			return container;
+			EMFUtil.deleteAll(delete, method.eResource());
 		}
+		return container;
+	}
 
+	/**
+	 * Redirects all accesses to the old member to the new member
+	 * 
+	 * @param newTarget The new target of the accesses
+	 * @param oldTarget The old target of the accesses
+	 */
+	private void updateAccesses(TMember newTarget, final TMember oldTarget) {
+		List<TAccess> accesses = oldTarget.getAccessedBy().parallelStream()
+				.filter(access -> !access.getTSource().equals(oldTarget)).collect(Collectors.toList());
+		newTarget.getAccessedBy().addAll(accesses);
 	}
 
 	/**
@@ -159,7 +113,9 @@ public class PullUpMethodImpl extends RefactoringImpl {
 	 * @generated
 	 */
 	public boolean isApplicable(TMethodSignature tMethodSignatureToPullUp, TClass tParentClass) {
-		TypeGraph pg = getPg();
+		if (tParentClass.isTLib()) {
+			return false;
+		}
 
 		// Parent doesn't implement the signature yet
 		if (!tParentClass.getSignature().contains(tMethodSignatureToPullUp)) {
@@ -167,16 +123,8 @@ public class PullUpMethodImpl extends RefactoringImpl {
 			List<TMethodDefinition> tDefinitions = new LinkedList<>();
 			// ForEach
 			for (TClass tChild : tParentClass.getChildClasses()) {
-				if (tParentClass.equals(tChild)) {
-					return false;
-				}
 				if (tChild.getSignature().contains(tMethodSignatureToPullUp)) {
-					TMethodDefinition tMethodDefinition = null;
-					for (TMethodDefinition potentialDefinition : tMethodSignatureToPullUp.getDefinitions()) {
-						if (tChild.equals(potentialDefinition.getDefinedBy())) {
-							tMethodDefinition = potentialDefinition;
-						}
-					}
+					TMethodDefinition tMethodDefinition = tMethodSignatureToPullUp.getTDefinition(tChild);
 					if (tMethodDefinition == null) {
 						return false;
 					} else {
@@ -187,6 +135,10 @@ public class PullUpMethodImpl extends RefactoringImpl {
 				}
 
 			}
+			if (tDefinitions.isEmpty()) {
+				return false;
+			}
+
 			// ForEach
 			for (TClass tChild : tParentClass.getChildClasses()) {
 				if (tChild.isTLib()) {
@@ -200,22 +152,21 @@ public class PullUpMethodImpl extends RefactoringImpl {
 			for (TMethodDefinition tMethodDefinition : tDefinitions) {
 				TAbstractType tmpActiveClass = tMethodDefinition.getDefinedBy();
 				if (tmpActiveClass instanceof TClass) {
-					TClass activeClass = (TClass) tmpActiveClass;
-					if (!activeClass.equals(tParentClass) && tParentClass.getChildClasses().contains(activeClass)) {
+					TClass childClass = (TClass) tmpActiveClass;
 
-						// ForEach
-						for (TClass definingClass : pg.getClasses()) {
-							for (TAccess tAccess : tMethodDefinition.getTAccessing()) {
-								TMember accessed = tAccess.getTTarget();
-								if (accessed != null && !accessed.equals(tMethodDefinition)
-										&& definingClass.equals(accessed.getDefinedBy())) {
-									accessedMembers.add(accessed);
-									//
-									if (definingClass.isSubTypeOf(tParentClass)
-											&& !definingClass.isSubTypeOf(activeClass)) {
-										return false;
-									}
-								}
+					// ForEach
+					for (TAccess tAccess : tMethodDefinition.getTAccessing()) {
+						TMember accessed = tAccess.getTTarget();
+						TAbstractType definingClass = accessed.getDefinedBy();
+						if (!accessed.equals(tMethodDefinition)) {
+							accessedMembers.add(accessed);
+							if (definingClass.equals(childClass)) {
+								return false;
+							}
+							if (!definingClass.equals(tParentClass) 
+									&& definingClass.isSubTypeOf(tParentClass)
+									&& !definingClass.isSubTypeOf(childClass)) {
+								return false;
 							}
 						}
 					}

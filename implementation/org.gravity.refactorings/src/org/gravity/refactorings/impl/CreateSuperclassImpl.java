@@ -62,33 +62,16 @@ public class CreateSuperclassImpl extends RefactoringImpl {
 
 		PGAdditionHelper.linkClass(pg, newParent);
 
-		TClass oldParent = null;
-		for (TClass tChild : child) {
-			if (!newParent.equals(tChild)) {
-				oldParent = tChild.getParentClass();
-			}
-		}
-		if (oldParent != null && !newParent.equals(oldParent)) {
-			oldParent.getChildClasses().add(newParent);
+		TClass oldParent = child.get(0).getParentClass();
+		if (oldParent != null ) {
+			newParent.setParentClass(oldParent);
 			container.add(oldParent);
 
 		}
 
 		for (TClass tChildClass : child) {
-			if (newParent.equals(tChildClass)) {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
-						+ ", " + "[tChildClass] = " + tChildClass + ", " + "[container] = " + container + ".");
-			}
-			TClass tParent = tChildClass.getParentClass();
-			if (tParent != null && !tChildClass.equals(tParent)) {
-				tChildClass.setParentClass(null);
-			} else {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[tParent] = " + tParent + ", "
-						+ "[tChildClass] = " + tChildClass + ".");
-			}
-			newParent.getChildClasses().add(tChildClass);
+			tChildClass.setParentClass(newParent);
 			container.add(tChildClass);
-
 		}
 		return container;
 	}
