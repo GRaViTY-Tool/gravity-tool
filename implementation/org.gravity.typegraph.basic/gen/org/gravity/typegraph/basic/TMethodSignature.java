@@ -145,6 +145,14 @@ public interface TMethodSignature extends TSignature {
 	 * @generated
 	 */
 	String toString();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model parameterTypesMany="true"
+	 * @generated
+	 */
+	boolean isThisSignature(TAbstractType returnType, EList<TAbstractType> parameterTypes);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

@@ -219,6 +219,14 @@ public interface TypeGraph extends TAnnotatable {
 
 	public TInterface getInterface(String fullyQualifiedName);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TMethod getMethod(String name);
+
 	public TAbstractType getType(String fullyQualifiedName);
 
 	// [user code injected with eMoflon] -->

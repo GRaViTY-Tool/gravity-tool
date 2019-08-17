@@ -76,6 +76,10 @@
     <genClasses ecoreClass="Basic.ecore#//TMethod">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/signatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/pg"/>
+      <genOperations ecoreOperation="Basic.ecore#//TMethod/getSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getSignature/returnType"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethod/getSignature/parameterTypes"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodDefinition">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/signature"/>
@@ -97,6 +101,10 @@
         <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/getTDefinition/defining"/>
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/toString"/>
+      <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/isThisSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/returnType"/>
+        <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/parameterTypes"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TPackage">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/pg"/>
@@ -152,6 +160,9 @@
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getInterface">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getInterface/fullyQualifiedName"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getMethod">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getMethod/name"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TInterface">

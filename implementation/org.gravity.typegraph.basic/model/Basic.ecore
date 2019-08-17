@@ -81,6 +81,10 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethod" eSuperTypes="#//TName">
+    <eOperations name="getSignature" eType="#//TMethodSignature">
+      <eParameters name="returnType" eType="#//TAbstractType"/>
+      <eParameters name="parameterTypes" upperBound="-1" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
         eType="#//TMethodSignature" containment="true" eOpposite="#//TMethodSignature/method"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
@@ -108,6 +112,10 @@
       <eParameters name="defining" eType="#//TAbstractType"/>
     </eOperations>
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="isThisSignature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="returnType" eType="#//TAbstractType"/>
+      <eParameters name="parameterTypes" upperBound="-1" eType="#//TAbstractType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
         eType="#//TMethod" eOpposite="#//TMethod/signatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paramList" eType="#//TParameterList"
@@ -173,6 +181,9 @@
     </eOperations>
     <eOperations name="getInterface" eType="#//TInterface">
       <eParameters name="fullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getMethod" eType="#//TMethod">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>

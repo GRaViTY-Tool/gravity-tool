@@ -433,12 +433,15 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case BasicPackage.TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE:
 				return getTDefinition((TAbstractType)arguments.get(0));
 			case BasicPackage.TMETHOD_SIGNATURE___TO_STRING:
 				return toString();
+			case BasicPackage.TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST:
+				return isThisSignature((TAbstractType)arguments.get(0), (EList<TAbstractType>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -450,6 +453,34 @@ public class TMethodSignatureImpl extends TSignatureImpl implements TMethodSigna
 		String string = super.toString();
 		String name = getMethod().getTName();
 		return string.substring(0, string.length() - 1).concat(", name: ").concat(name).concat(")");
+	}
+
+	/**
+	 * Checks if the return type and the parameter list is equal to those of this signature
+	 * 
+	 * @param returnType The expected return type
+	 * @param parameterTypes A sorted list of parameter types
+	 * @return true, iff the values are equal
+	 */
+	public boolean isThisSignature(TAbstractType returnType,
+			EList<TAbstractType> parameterTypes) {
+		TParameterList paramList = getParamList();
+		if(paramList.getEntries().size() != parameterTypes.size()) {
+			return false;
+		}
+		TParameter param = paramList.getFirst();
+		for(TAbstractType expected : parameterTypes) {
+			if(param.getType().equals(expected)) {
+				param = param.getNext();
+			}
+			else {
+				return false;
+			}
+		}
+		if(returnType == null) {
+			return "void".equals(getReturnType().getTName());
+		}
+		return returnType.isSubTypeOf(getReturnType());
 	}
 
 	// [user code injected with eMoflon] -->
