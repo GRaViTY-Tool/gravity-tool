@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Analysis
+Bundle-Name: Public Interface Access Analysis
 Bundle-SymbolicName: org.gravity.security.analysis;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.gravity.security.analysis.Activator
@@ -17,3 +17,4 @@ Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.security.analysis
 Export-Package: org.gravity.security.analysis,
  org.gravity.security.analysis.handlers
+Bundle-ClassPath: .
