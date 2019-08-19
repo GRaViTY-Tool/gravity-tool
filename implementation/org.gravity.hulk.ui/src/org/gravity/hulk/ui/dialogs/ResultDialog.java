@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -27,19 +28,18 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 
-/**
- * A dialog for showing possible refactorings for anti-pattern elimination
- * 
- * @author speldszus
- *
- */
-public class ResolveResultDialog extends Dialog {
+public class ResultDialog extends Dialog {
 
-	private static final Logger LOGGER = Logger.getLogger(ResolveResultDialog.class);
-
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(ResultDialog.class);
+	
 	Iterable<HDetector> selection;
 	Iterable<HDetector> executed;
 	Shell pShell;
+
+	private String name;
 
 	/**
 	 * Creates a new dialog
@@ -47,13 +47,15 @@ public class ResolveResultDialog extends Dialog {
 	 * @param parentShell       The parent shell in which the dialog should be shown
 	 * @param selectedDetectors All selected detectors
 	 * @param executedDetectors All executed detectors
+	 * @param name 
 	 */
-	public ResolveResultDialog(Shell parentShell, Iterable<HDetector> selectedDetectors,
-			Iterable<HDetector> executedDetectors) {
+	public ResultDialog(Shell parentShell, Iterable<HDetector> selectedDetectors,
+			Iterable<HDetector> executedDetectors, String name) {
 		super(parentShell);
 		pShell = parentShell;
 		this.selection = selectedDetectors;
 		this.executed = executedDetectors;
+		this.name = name;
 	}
 
 	@Override
@@ -86,9 +88,9 @@ public class ResolveResultDialog extends Dialog {
 					item.dispose();
 				}
 				if (button.getSelection()) {
-					addContents(folder, ResolveResultDialog.this.executed);
+					addContents(folder, ResultDialog.this.executed);
 				} else {
-					addContents(folder, ResolveResultDialog.this.selection);
+					addContents(folder, ResultDialog.this.selection);
 				}
 				for (CTabItem item : folder.getItems()) {
 					if (item.getText().equals(selected)) {
@@ -104,6 +106,7 @@ public class ResolveResultDialog extends Dialog {
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				LOGGER.info("Default selected: "+e.getSource());
+				widgetSelected(e);
 			}
 		});
 
@@ -132,12 +135,7 @@ public class ResolveResultDialog extends Dialog {
 		return container;
 	}
 
-	/**
-	 * Modified addContents for Anti-Pattern resolving. Requires a list of executed
-	 * moves, will sort the results by source classes 
-	 */
 	void addContents(CTabFolder folder, Iterable<HDetector> items) {
-
 		for (HDetector eClass : items) {
 			CTabItem tab = new CTabItem(folder, getShellStyle());
 			tab.setText(eClass.eClass().getName());
@@ -146,7 +144,7 @@ public class ResolveResultDialog extends Dialog {
 			ScrollBar vBar = tree.getVerticalBar();
 			vBar.setEnabled(true);
 
-			if (eClass.getHAnnotation().size() > 0) {
+			if (!eClass.getHAnnotation().isEmpty()) {
 				for (HAnnotation annotation : eClass.getHAnnotation()) {
 					annotation.getTreeItem(tree, SWT.NONE);
 				}
@@ -160,40 +158,28 @@ public class ResolveResultDialog extends Dialog {
 		}
 	}
 
-	private class DetectionContent {
-
-		private String detector;
-		private List<String> results;
-
-		public DetectionContent(String detector) {
-			this.detector = detector;
-		}
-
-		public String getDetector() {
-			return detector;
-		}
-
-		public List<String> getSortedResult() {
-			if (results == null) {
-				results = new ArrayList<String>();
-			}
-			Collections.sort(results);
-			return results;
-		}
-
-		public void addResult(String result) {
-			if (results == null) {
-				results = new ArrayList<String>();
-			}
-			results.add(result);
-		}
-	}
-
 	private void save(CTabFolder folder, String filePath) {
 		List<DetectionContent> contents = new ArrayList<DetectionContent>();
 		for (CTabItem tabItem : folder.getItems()) {
-			contents.add(createContent(tabItem));
+			DetectionContent content = new DetectionContent(tabItem.getText());
+			contents.add(content);
+			Tree tree = (Tree) tabItem.getControl();
+			if (tree == null) {
+				continue;
+			}
+
+			for (TreeItem treeItem : tree.getItems()) {
+				content.addResult(treeItem.getText());
+			}
 		}
+
+		contents.sort(new Comparator<DetectionContent>() {
+
+			@Override
+			public int compare(DetectionContent o1, DetectionContent o2) {
+				return o1.getDetector().compareTo(o2.getDetector());
+			}
+		});
 
 		StringBuilder builder = new StringBuilder();
 		for (DetectionContent content : contents) {
@@ -217,39 +203,38 @@ public class ResolveResultDialog extends Dialog {
 		}
 
 	}
+	
+	private class DetectionContent {
+		private String detector;
+		private List<String> results;
 
-	/**
-	 * Created a detection content object for the tab item
-	 * 
-	 * @param tabItem The tab item
-	 * @return The content object
-	 */
-	private DetectionContent createContent(CTabItem tabItem) {
-		DetectionContent content = new DetectionContent(tabItem.getText());
-		Tree tree = (Tree) tabItem.getControl();
-		if (tree == null) {
-			return content;
+
+		public DetectionContent(String detector) {
+			this.detector = detector;
+		}
+		public String getDetector() {
+			return detector;
 		}
 
-		for (TreeItem treeItem : tree.getItems()) {
-			String text = treeItem.getText();
-			content.addResult(text);
-			if (text.startsWith("Solved")) {
-				content.addResult(treeItem.getItem(0).getText());
-				for (TreeItem child : treeItem.getItem(2).getItems()) {
-					content.addResult(child.getText());
-					for (TreeItem r : child.getItems()) {
-						content.addResult("\t" + r.getText());
-					}
-				}
+		public List<String> getSortedResult() {
+			if (results == null) {
+				results = new ArrayList<String>();
 			}
+			Collections.sort(results);
+			return results;
 		}
-		return content;
+
+		public void addResult(String result) {
+			if (results == null) {
+				results = new ArrayList<String>();
+			}
+			results.add(result);
+		}
 	}
 
 	@Override
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
-		newShell.setText("Hulk Anti-pattern Elemination Results");
+		newShell.setText(name);
 	}
 }

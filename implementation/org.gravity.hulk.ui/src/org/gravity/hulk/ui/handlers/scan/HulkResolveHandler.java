@@ -7,7 +7,7 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.resolve.ResolvePackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
-import org.gravity.hulk.ui.dialogs.ResolveResultDialog;
+import org.gravity.hulk.ui.dialogs.ResultDialog;
 
 public class HulkResolveHandler extends HulkHandler {
 
@@ -39,7 +39,8 @@ public class HulkResolveHandler extends HulkHandler {
 
 					@Override
 					public void run() {
-						(new ResolveResultDialog(window.getShell(), selectedDetectors, executedDetectors)).open();
+						(new ResultDialog(window.getShell(), selectedDetectors, executedDetectors,
+								"Hulk Anti-pattern Elemination Results")).open();
 					}
 				};
 

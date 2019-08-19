@@ -60,7 +60,7 @@ import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.ui.HulkUiActivator;
 import org.gravity.hulk.ui.Messages;
 import org.gravity.hulk.ui.dialogs.AntiPatternSelectionDialog;
-import org.gravity.hulk.ui.dialogs.DetectionResultDialog;
+import org.gravity.hulk.ui.dialogs.ResultDialog;
 import org.gravity.hulk.ui.dialogs.DetectionTreeContentProvider;
 import org.gravity.hulk.ui.dialogs.DetectionTreeLabelProvider;
 
@@ -224,7 +224,7 @@ public abstract class HulkHandler extends AbstractHandler {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				LOGGER.info("Default selected: "+e.getSource());
+				LOGGER.info("Default selected: " + e.getSource());
 			}
 		});
 		return dialog;
@@ -248,7 +248,8 @@ public abstract class HulkHandler extends AbstractHandler {
 
 			@Override
 			public void run() {
-				(new DetectionResultDialog(window.getShell(), selectedDetectors, executedDetectors)).open();
+				(new ResultDialog(window.getShell(), selectedDetectors, executedDetectors, "Hulk Detection Results"))
+						.open();
 			}
 		};
 
