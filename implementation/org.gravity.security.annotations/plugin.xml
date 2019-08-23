@@ -3,9 +3,6 @@
   <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
     <processor processor="org.gravity.security.annotations.SecurityAnnotationsProcessorFwd"/>
   </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.security.annotations.access.AccessPackage" genModel="model/Annotations.genmodel" uri="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access"/>
-  </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Annotations -->
       <package
@@ -13,8 +10,10 @@
             class="org.gravity.security.annotations.access.AccessPackage"
             genModel="model/Annotations.genmodel"/>
    </extension>
-
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.security.annotations.requirements.RequirementsPackage" genModel="model/Annotations.genmodel" uri="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"/>
+    <package 
+    		class="org.gravity.security.annotations.requirements.RequirementsPackage" 
+    		genModel="model/Annotations.genmodel" 
+    		uri="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"/>
   </extension>
 </plugin>
