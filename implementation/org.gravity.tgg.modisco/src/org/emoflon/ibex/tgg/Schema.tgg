@@ -258,8 +258,8 @@
 		#trg->TAbstractFlowElement
 	}
 	
-	MAbstractMethodInvocationToTAccess {
-		#src->MAbstractMethodInvocation
+	AbstractMethodInvocationToTAccess {
+		#src->AbstractMethodInvocation
 		#trg->TAccess
 	}
 }

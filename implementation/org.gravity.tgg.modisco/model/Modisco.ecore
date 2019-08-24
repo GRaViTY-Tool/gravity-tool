@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/org.gravity.tgg.modisco.ecore"
     nsPrefix="org.gravity.tgg.modisco">
   <eClassifiers xsi:type="ecore:EClass" name="MParameterListToTParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MParameterList"/>
@@ -53,10 +53,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationFragmentToTFieldDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractMethodInvocationToTAccess">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceDeclarationToTInterface">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
@@ -126,8 +122,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SingleVariableAccessToTAccess">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccessToTAccess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDeclarationToTMethodDefinition">
@@ -190,6 +186,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TCall"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MFlowToTFlow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElementToTAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractMethodInvocationToTAccess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinitionToTConstructorDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MConstructorDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TConstructorDefinition"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractMethodDefinitionBloc__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mBlock" lowerBound="1"
@@ -199,9 +211,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBlockToTDefinition"
-        lowerBound="1" eType="#//BlockToTMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//BlockToTMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mDefinitionToTDefinition"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotation__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -216,9 +230,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotationArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -235,9 +249,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBoolean__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -252,9 +266,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mValueToTValue"
-        lowerBound="1" eType="#//BooleanLiteralToTBoolNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//BooleanLiteralToTBoolNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBooleanArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -271,9 +285,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mValueToTValue"
-        lowerBound="1" eType="#//BooleanLiteralToTBoolNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//BooleanLiteralToTBoolNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -294,11 +308,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mValueToTValue"
-        lowerBound="1" eType="#//ClassLiteralToClassNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassLiteralToClassNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClassArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -321,11 +335,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mValueToTValue"
-        lowerBound="1" eType="#//ClassLiteralToClassNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassLiteralToClassNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueKey__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
@@ -337,9 +351,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationToTAnnotation"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumber__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -354,9 +368,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TNumberNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//NumberLiteralToTNumberNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//NumberLiteralToTNumberNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumberArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -373,9 +387,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TNumberNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//NumberLiteralToTNumberNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//NumberLiteralToTNumberNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueString__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -390,9 +404,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TTextNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//StringLiteralToTTextNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//StringLiteralToTTextNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueStringArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -409,9 +423,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TTextNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationMemberValuePairToTAnnotationValue"
-        lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationMemberValuePairToTAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//StringLiteralToTTextNode"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//StringLiteralToTTextNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationOnBodyDeclaration__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -424,9 +438,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAnnotation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__aSTNodeToTAnnotable"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAnnotationToTAnnotation"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -440,11 +454,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mPackageToTPackage"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeAccess__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
@@ -458,9 +472,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotationType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationToTAnnotation"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationTypeToTAnnotationType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
@@ -474,11 +488,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tNestedType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeNested__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
@@ -496,11 +510,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterTypeToTOuterInterface"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAnonymous"
@@ -518,9 +532,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassTypeClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnonymous"
@@ -536,9 +550,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tParent"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__parentToParent"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassTypeInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -555,9 +569,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tParent"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__parentToParent"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayInitializerIgnoreExpressionsEdge__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -580,11 +594,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eArrayTypeToTArrayClass"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eTypeToTArrayClass"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -598,13 +612,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mClassDeclarationToTClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mPackageToTPackage"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassExtendsClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eClassDeclaration"
@@ -618,9 +632,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tExtendedClass"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eClassDeclarationToTClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eExtendedClassToTExtendedClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassImplementsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eClassDeclaration"
@@ -634,9 +648,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tSuperInterface"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eClassDeclarationToTClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
@@ -650,13 +664,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tNestedType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mClassDeclarationToTClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassInnerAnonClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterClass"
@@ -676,11 +690,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterClassToTOuterClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerClassToTInnerClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerTypeToTInnerAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassInnerClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterClass"
@@ -700,11 +714,39 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterClassToTOuterClass"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerClassToTInnerClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerTypeToTInnerAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInstanceCreation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MClassInstanceCreation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMethod"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__compilationUnit"
@@ -714,9 +756,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__compilationUnitToTypeGraph"
-        lowerBound="1" eType="#//CompilationUnitToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//CompilationUnitToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constructor__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eConstructorDeclaration"
@@ -736,27 +778,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eConstructorDeclarationToTConstructorDef"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eConstructorDeclarationToTName"
-        lowerBound="1" eType="#//ConstructorDeclarationToTMethod"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ConstructorDeclarationToTMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eConstructorDeclarationToTParameterList"
-        lowerBound="1" eType="#//MConstructorDefinitionToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MConstructorDefinitionToTParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eConstructorDeclarationToTSig"
-        lowerBound="1" eType="#//ConstructorDeclarationToTMethodSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ConstructorDeclarationToTMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mParameterListToTParameterList"
-        lowerBound="1" eType="#//MParameterListToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
@@ -768,13 +810,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
-        lowerBound="1" eType="#//AbstractMethodInvocationToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -788,11 +832,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mPackageToTPackage"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
@@ -806,15 +850,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tNestedType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldAccess__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessRead__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -824,7 +868,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__varDeclFrag"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
-        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TRead"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tField" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMember"
@@ -832,13 +876,75 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAccessToTAccess"
-        lowerBound="1" eType="#//SingleVariableAccessToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSingleVariableAccessToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowOwnerToTFlowOwner"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessReadWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__varDeclFrag"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TReadWrite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tField" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAccessToTAccess"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSingleVariableAccessToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowOwnerToTFlowOwner"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__varDeclFrag"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TWrite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tField" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAccessToTAccess"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSingleVariableAccessToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowOwnerToTFlowOwner"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
@@ -854,15 +960,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tFieldSignature"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eFieldDeclarationToTFieldDefinition"
-        lowerBound="1" eType="#//MFieldDefinitionToTFieldDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldDefinitionToTFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mDefinitionToTDefinition"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mDefinitionToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mNameToTField"
-        lowerBound="1" eType="#//MFieldNameToTField"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldNameToTField"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTFieldSignature"
-        lowerBound="1" eType="#//MSignatureToTSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mFieldName"
@@ -874,9 +982,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eFieldDeclarationToTField"
-        lowerBound="1" eType="#//MFieldNameToTField"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldNameToTField"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__modelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldSignature__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFieldName"
@@ -888,11 +996,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tSignature"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eFieldDeclarationToTField"
-        lowerBound="1" eType="#//MFieldNameToTField"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldNameToTField"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFieldSignatureToTFieldSignature"
-        lowerBound="1" eType="#//MFieldSignatureToTFieldSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldSignatureToTFieldSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSignatureToTSignature"
-        lowerBound="1" eType="#//MSignatureToTSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__ePrimitiveType"
@@ -904,9 +1014,37 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tPrimitiv"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ePrimitiveTypeToTPrimitiv"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTFieldSignature"
-        lowerBound="1" eType="#//MSignatureToTSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mOwner" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tOwner" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowToTFlow"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFlowToTFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mOwnerToTOwner"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSource"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tSource"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mFlowToTFlow"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFlowToTFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSourceToTSource"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -920,13 +1058,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mInterfaceDeclarationtoTInterface"
-        lowerBound="1" eType="#//InterfaceDeclarationToTInterface"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mPackageToTPackage"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceExtendsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eInterfaceDeclaration"
@@ -940,9 +1078,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tSuperInterface"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eInterfaceDeclarationToTInterface"
-        lowerBound="1" eType="#//InterfaceDeclarationToTInterface"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface"
-        lowerBound="1" eType="#//InterfaceDeclarationToTInterface"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
@@ -956,13 +1094,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tNestedType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mInterfaceDeclarationtoTInterface"
-        lowerBound="1" eType="#//InterfaceDeclarationToTInterface"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -978,11 +1116,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tModifier"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__defToMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModifierToTModifier"
-        lowerBound="1" eType="#//MModifierToTModifier"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MModifierToTModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -998,11 +1136,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mDefinitionToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mOuterTypeToTOuterType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//AnonymousClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -1014,9 +1152,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mDefinitionToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkSignatureToType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1028,9 +1166,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTSignature"
-        lowerBound="1" eType="#//MSignatureToTSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberInAnnotationVisibility__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1047,11 +1185,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tModifier"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__defToMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModifierToTModifier"
-        lowerBound="1" eType="#//MModifierToTModifier"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MModifierToTModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberInClassVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
@@ -1067,11 +1205,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tModifier"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__defToMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModifierToTModifier"
-        lowerBound="1" eType="#//MModifierToTModifier"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MModifierToTModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberInEnumVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
@@ -1087,11 +1225,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tModifier"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__defToMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModifierToTModifier"
-        lowerBound="1" eType="#//MModifierToTModifier"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MModifierToTModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
@@ -1103,13 +1241,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMethodSignature"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mDefinitionToTDefinition"
-        lowerBound="1" eType="#//MMethodDefinitionToTMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodDefinitionToTMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mDefinitionToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTMethodSignature"
-        lowerBound="1" eType="#//MMethodSignatureToTMethodSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodSignatureToTMethodSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
@@ -1117,7 +1255,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
@@ -1129,13 +1267,31 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
-        lowerBound="1" eType="#//AbstractMethodInvocationToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationRecursive__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodInvocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TCall"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMember"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodDefinitionToTMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationStaticType__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1148,9 +1304,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tStaticType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__invocationToTAccess"
-        lowerBound="1" eType="#//AbstractMethodInvocationToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mStaticTypeTotStaticType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
@@ -1162,9 +1318,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tName" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNameToTName"
-        lowerBound="1" eType="#//MMethodNameToTMethod"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodNameToTMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__modelToPg"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodOverriding__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
@@ -1176,9 +1332,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tOverriding"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mOverridingToTOverriding"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodParameter__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mEntry" lowerBound="1"
@@ -1190,9 +1346,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tParameterList"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mEntryToTParameter"
-        lowerBound="1" eType="#//MEntryToTParameter"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mParameterListToTParameterList"
-        lowerBound="1" eType="#//MParameterListToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLink__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mEntry" lowerBound="1"
@@ -1204,9 +1362,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tPrevParameter"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter"
-        lowerBound="1" eType="#//MEntryToTParameter"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mmethodSignatureToTMethodSignature"
-        lowerBound="1" eType="#//MEntryToTParameter"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLinkFirst__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mEntry" lowerBound="1"
@@ -1218,9 +1376,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tParameterList"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSingleVariableDeclarationToTParameter"
-        lowerBound="1" eType="#//MEntryToTParameter"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mmethodSignatureToTMethodSignature"
-        lowerBound="1" eType="#//MParameterListToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodParameterType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mEntry" lowerBound="1"
@@ -1236,11 +1394,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tParameterList"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mEntryToTParameter"
-        lowerBound="1" eType="#//MEntryToTParameter"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mParameterListToTParameterList"
-        lowerBound="1" eType="#//MParameterListToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodSignature__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mName" lowerBound="1"
@@ -1255,16 +1415,18 @@
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tSignature"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mMethodSignatureToTMethodSignature"
-        lowerBound="1" eType="#//MMethodSignatureToTMethodSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodSignatureToTMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mNameToTName"
-        lowerBound="1" eType="#//MMethodNameToTMethod"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodNameToTMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mParameterListToTParameterList"
-        lowerBound="1" eType="#//MParameterListToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSignatureToTParameterList"
-        lowerBound="1" eType="#//MMethodSignatureToTParameterList"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodSignatureToTParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSignatureToTSignature"
-        lowerBound="1" eType="#//MSignatureToTSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelToPg__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mModel" lowerBound="1"
@@ -1272,7 +1434,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tPG" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModelToTPG"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NestedClassInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
@@ -1290,13 +1452,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterTypeToTOuterInterface"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedClassDeclarationToTNestedClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NestedEnum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
@@ -1314,11 +1476,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterTypeToTOuterInterface"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NestedInterfaceInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
@@ -1336,13 +1498,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eNestedTypeToTNestedType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eOuterTypeToTOuterInterface"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mInterfaceDeclarationtoTInterface"
-        lowerBound="1" eType="#//InterfaceDeclarationToTInterface"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mTarget"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tFlow" lowerBound="1"
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tTarget"
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mFlowToTFlow"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFlowToTFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTargetToTTarget"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
@@ -1354,9 +1530,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mPackageToTPackage"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedTypeToClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1372,11 +1548,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAbstractType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToPg"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eParameterizedTypeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eTypeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsBoolean__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1388,11 +1564,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsByte__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1404,11 +1580,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsChar__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1420,11 +1596,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsDouble__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1436,11 +1612,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsFloat__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1452,11 +1628,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsInt__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1468,11 +1644,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsLong__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1484,11 +1660,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsShort__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1500,11 +1676,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypesIsVoid__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1516,11 +1692,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ePrimitiveTypeToTPrimitiveClass"
-        lowerBound="1" eType="#//PrimitiveTypeToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PrimitiveTypeToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReturnType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eReturnType"
@@ -1534,9 +1710,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tMethodDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eReturnTypeToTAbstractType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodDefinitionToTMethodDefinition"
-        lowerBound="1" eType="#//MMethodDefinitionToTMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodDefinitionToTMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SignatureReturnType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1548,9 +1724,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTSignature"
-        lowerBound="1" eType="#//MMethodSignatureToTMethodSignature"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MMethodSignatureToTMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubPackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mPackage"
@@ -1564,9 +1740,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__typeGraph"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mPackageToTSub"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mParentPackageToTParent"
-        lowerBound="1" eType="#//PackageToTPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperConstructorInvocation__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1575,7 +1751,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
@@ -1587,21 +1763,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
-        lowerBound="1" eType="#//AbstractMethodInvocationToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperMethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperMethodInvocation"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAccess" lowerBound="1"
@@ -1613,13 +1791,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__invocationToTAccess"
-        lowerBound="1" eType="#//AbstractMethodInvocationToTAccess"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mFlowElementToTFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SyntethicMethod__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
@@ -1637,11 +1817,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tSyntethic"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSyntethicMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mClassDeclarationToTClass"
-        lowerBound="1" eType="#//ClassDeclarationToTClass"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mDefinitionToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSyntToTSynt"
-        lowerBound="1" eType="#//MSyntethicMethodToTSyntethicMethod"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSyntethicMethodToTSyntethicMethod"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextAnnotations__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mComment"
@@ -1653,9 +1833,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tText" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TTextAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mCommentToTText"
-        lowerBound="1" eType="#//LineCommentToTTextAnnotation"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//LineCommentToTTextAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
-        lowerBound="1" eType="#//MDefinitionToTMember"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1667,9 +1847,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tClass" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToPg"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypesOrphaned__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
@@ -1681,11 +1861,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
-        lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mModelToTypeGraph"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypesVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mModifier"
@@ -1697,9 +1877,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tType" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModifierToTModifier"
-        lowerBound="1" eType="#//MModifierToTModifier"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MModifierToTModifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -1711,9 +1891,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tClass" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TUnresolvedType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eAnonymousClassDeclarationToTClass"
-        lowerBound="1" eType="#//TypeToTAbstractType"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToPg"
-        lowerBound="1" eType="#//ModelToTypeGraph"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationFragment__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1724,8 +1904,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eFieldDeclarationToTFieldDefinition"
-        lowerBound="1" eType="#//MFieldDefinitionToTFieldDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MFieldDefinitionToTFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__varDeclFragmentToTFieldDefinition"
-        lowerBound="1" eType="#//VariableDeclarationFragmentToTFieldDefinition"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//VariableDeclarationFragmentToTFieldDefinition"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -20,7 +20,7 @@
 }
 
 #correspondence {
-	invocationToTAccess :MAbstractMethodInvocationToTAccess {
+	invocationToTAccess :AbstractMethodInvocationToTAccess {
 		#src->invocation
 		#trg->tAccess
 	}

@@ -309,7 +309,8 @@
         eType="#//TFlow" eOpposite="#//TFlow/flowSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
-  <eSubpackages name="containers" nsURI="http://www.gravity-tool.org/typegraph/basic#//containers" nsPrefix="containers">
+  <eSubpackages name="containers" nsURI="http://www.gravity-tool.org/typegraph/basic#//containers"
+      nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAbstractTypes" upperBound="-1"
           eType="#//TAbstractType"/>
@@ -359,7 +360,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TAnnotation">
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotation" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotated" lowerBound="1"
           eType="#//annotations/TAnnotatable" eOpposite="#//annotations/TAnnotatable/tAnnotation"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
@@ -384,17 +385,17 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotation" upperBound="-1"
           eType="#//annotations/TAnnotation" containment="true" eOpposite="#//annotations/TAnnotation/tAnnotated"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TTextNode">
+    <eClassifiers xsi:type="ecore:EClass" name="TTextNode" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tText" ordered="false"
           unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TNumberNode">
+    <eClassifiers xsi:type="ecore:EClass" name="TNumberNode" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="tNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TBoolNode">
+    <eClassifiers xsi:type="ecore:EClass" name="TBoolNode" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TClassNode">
+    <eClassifiers xsi:type="ecore:EClass" name="TClassNode" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" eType="#//TAbstractType"/>
     </eClassifiers>
   </eSubpackages>

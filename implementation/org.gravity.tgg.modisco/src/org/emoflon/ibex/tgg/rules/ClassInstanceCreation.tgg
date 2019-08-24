@@ -1,0 +1,22 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ClassInstanceCreation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+	++invocation:MClassInstanceCreation
+}
+
+#target {
+	++tAccess:TCall
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+}
+
+

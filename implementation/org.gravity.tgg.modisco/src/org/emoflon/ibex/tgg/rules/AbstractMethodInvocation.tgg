@@ -13,7 +13,7 @@
 		++  -method -> mMethod
 	}
 
-	mMethod:MMethodDefinition {
+	mMethod:MAbstractMethodDefinition {
 		-abstractTypeDeclaration -> mType
 	}
 
@@ -37,7 +37,7 @@
 }
 
 #correspondence {
-	++ invocationToTAccess :MAbstractMethodInvocationToTAccess {
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
 		#src->invocation
 		#trg->tAccess
 	}
