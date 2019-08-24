@@ -260,7 +260,8 @@ public class ExpressionHandlerDataFlow {
 					case ASSIGN:
 						member.addOutRef(varDeclNode);
 						mSVA.setAccessKind(AccessKind.WRITE);
-						if (variableContainer instanceof MFieldDefinition || variableContainer instanceof SingleVariableDeclaration) {
+						// TODO Might be necessary to include "|| variable instanceof MSingleVariableDeclaration" in condition here and below, to handle assignments TO parameters correctly
+						if (variableContainer instanceof MFieldDefinition) {
 							statementHandler.getMemberRef().add(member);
 						}
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
@@ -281,7 +282,7 @@ public class ExpressionHandlerDataFlow {
 						mSVA.setAccessKind(AccessKind.READWRITE);
 						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
 						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-						if (variableContainer instanceof MFieldDefinition || variableContainer instanceof SingleVariableDeclaration) {
+						if (variableContainer instanceof MFieldDefinition) {
 							statementHandler.getMemberRef().add(member);
 						}
 						break;

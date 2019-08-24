@@ -2,6 +2,7 @@ package org.gravity.modisco.discovery;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
 import org.apache.log4j.Level;
@@ -55,6 +57,12 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
 public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject> {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
+	
+	private static File f = new File("out/measuredTimes.csv");
+	
+	private static int counter = 0;
+	
+	private static Map<Integer, String> projectNames = new HashMap<>();
 
 	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
 
@@ -154,7 +162,21 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 		Model eobject = discoverProject(javaProject, libs, progressMonitor);
 
+		if (projectNames.isEmpty()) {
+			initProjectNames();
+		}
 		long t1 = System.currentTimeMillis();
+		double discoveryTime = (t1 - t0) / 1000.000;
+		try {
+			FileWriter fw = new FileWriter(f, true);
+			fw.append(counter + " " + projectNames.get(counter) + ", ");
+			counter++;
+			fw.append(String.valueOf(discoveryTime) + ", ");
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		LOGGER.log(Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
 
 		if (eobject == null) {
@@ -177,6 +199,16 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		}
 
 		long t3 = System.currentTimeMillis();
+		double processingTime = (t3 - t2) / 1000.000;
+		FileWriter fw;
+		try {
+			fw = new FileWriter(f, true);
+			fw.append(String.valueOf(processingTime) + System.getProperty("line.separator"));
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		LOGGER.log(Level.INFO, t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
 
 		return model;
@@ -329,5 +361,30 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		} catch (IOException | CoreException e) {
 			throw new DiscoveryException(e);
 		}
+	}
+	
+	private void initProjectNames() {
+		projectNames.put(0, "InitProject");
+		projectNames.put(1, "JavaSolitaire");
+		projectNames.put(2, "QuickUML");
+		projectNames.put(3, "JSciCalc");
+		projectNames.put(4, "JUnit");
+		projectNames.put(5, "Gantt");
+		projectNames.put(6, "Nutch");
+		projectNames.put(7, "Lucene");
+		projectNames.put(8, "log4j");
+		projectNames.put(9, "JHotDraw");
+		projectNames.put(10, "jEdit");
+		projectNames.put(11, "PMD");
+		projectNames.put(12, "JTransforms");
+		projectNames.put(13, "iTrust");
+		projectNames.put(14, "JabRef");
+		projectNames.put(15, "Xerces");
+		projectNames.put(16, "ArgoUML");
+		projectNames.put(17, "jfreechart");
+		projectNames.put(18, "Tomcat");
+		projectNames.put(19, "Azureus");
+		projectNames.put(20, "SvnKit");
+		projectNames.put(21, "JSSE OpenJDK 8");
 	}
 }
