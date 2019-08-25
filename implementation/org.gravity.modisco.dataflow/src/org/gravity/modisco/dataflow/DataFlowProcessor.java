@@ -176,7 +176,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						if (methodDef != null) {
 							returnType = ((MethodDeclaration) methodDef).getReturnType();
 							if (returnType != null) {
-								if (returnType.getType().getName() != "void") {
+								if (!returnType.getType().getName().equals("void")) {
 									FlowNode sigNode = handler.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
 									inRef.add(sigNode);
 									sigNode.addOutRef(node);

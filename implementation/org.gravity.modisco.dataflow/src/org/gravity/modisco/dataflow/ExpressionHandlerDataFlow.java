@@ -409,7 +409,7 @@ public class ExpressionHandlerDataFlow {
 			return member;
 		}
 		handleArguments(superMethodInvocation, member);
-		if (((MethodDeclaration) superMethodInvocation.getMethod()).getReturnType().getType().getName() != "void") {
+		if (!((MethodDeclaration) superMethodInvocation.getMethod()).getReturnType().getType().getName().equals("void")) {
 			statementHandler.getMemberRef().add(member);
 			addFlowToContainer(superMethodInvocation, member);
 		}
@@ -507,7 +507,7 @@ public class ExpressionHandlerDataFlow {
 			addFlowToContainer(methodInvocation, member);
 			return member;
 		}
-		if (returnType.getType().getName() != "void") {
+		if (!returnType.getType().getName().equals("void")) {
 			statementHandler.getMemberRef().add(member);
 			addFlowToContainer(methodInvocation, member);
 		}
