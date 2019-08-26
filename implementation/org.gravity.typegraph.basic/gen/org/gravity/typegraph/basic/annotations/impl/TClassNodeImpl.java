@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.gravity.typegraph.basic.TAbstractType;
 
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
@@ -29,7 +29,7 @@ import org.gravity.typegraph.basic.annotations.TClassNode;
  *
  * @generated
  */
-public class TClassNodeImpl extends MinimalEObjectImpl.Container implements TClassNode {
+public class TClassNodeImpl extends EObjectImpl implements TClassNode {
 	/**
 	 * The cached value of the '{@link #getTClass() <em>TClass</em>}' reference.
 	 * <!-- begin-user-doc -->
