@@ -88,23 +88,27 @@ public class GraphVisualizer {
 			// for all graph nodes
 			for (FlowNode node : alreadySeenNodes) {
 				MutableNode graphNode = graphNodes.get(node);
-				EObject eContainer = node.getModelElement().eContainer();
+				EObject modelElement = node.getModelElement();
+				if (modelElement == null) {
+					continue;
+				}
+				EObject eContainer = modelElement.eContainer();
 				FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
 				if (flowCont == null) {
 					continue;
 				}
-				if (node.getModelElement() instanceof MethodInvocation) {
+				if (modelElement instanceof MethodInvocation) {
 					graphNode.addLink(graphNode
 							.linkTo(getDotNode(handler
-									.getFlowNodeForElement(((MethodInvocation) node.getModelElement()).getMethod()))
+									.getFlowNodeForElement(((MethodInvocation) modelElement).getMethod()))
 											.add(Style.FILLED, Color.AZURE))
 							.with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
-				if (node.getModelElement() instanceof ClassInstanceCreation) {
+				if (modelElement instanceof ClassInstanceCreation) {
 					graphNode
 							.addLink(graphNode
 									.linkTo(getDotNode(handler.getFlowNodeForElement(
-											((ClassInstanceCreation) node.getModelElement()).getMethod()))
+											((ClassInstanceCreation) modelElement).getMethod()))
 													.add(Style.FILLED, Color.AZURE))
 									.with(Style.DASHED, Label.of("calls"), Color.BLUE));
 				}
@@ -144,17 +148,22 @@ public class GraphVisualizer {
 	 */
 	private static MutableNode getDotNode(FlowNode node) {
 		EObject modelElement = node.getModelElement();
-		String label = modelElement.eClass().getName();
-		if (modelElement instanceof NamedElement) {
-			String name = ((NamedElement) modelElement).getName();
-			if (name != null) {
-				label += " " + name;
+		MutableNode graphNode = null;
+		if (modelElement != null) {
+			String label = modelElement.eClass().getName();
+			if (modelElement instanceof NamedElement) {
+				String name = ((NamedElement) modelElement).getName();
+				if (name != null) {
+					label += " " + name;
+				}
 			}
+			if (modelElement instanceof Assignment) {
+				label += " " + ((Assignment) modelElement).getOperator().toString();
+			}
+			graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
+		} else {
+			graphNode = mutNode(Integer.toString(node.hashCode())).add(Label.of("null"));
 		}
-		if (modelElement instanceof Assignment) {
-			label += " " + ((Assignment) modelElement).getOperator().toString();
-		}
-		MutableNode graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
 		return graphNode;
 	}
 }
