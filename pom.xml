@@ -200,10 +200,5 @@
       <layout>p2</layout>
       <url>http://carisma.umlsec.de/beta-updatesite</url>
     </repository>
-    <repository> <!-- TODO: remove if aspectj as been removed from org.gravity.modisco.dataflow-->
-      <id>AJDT</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/tools/ajdt/43/update</url>
-    </repository>
   </repositories>
 </project>
