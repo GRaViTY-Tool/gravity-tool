@@ -287,7 +287,10 @@ public class MoDiscoUtil {
 				message.append(method.getName());
 				if (source != null) {
 					message.append("\" in \"");
-					message.append(source.getAbstractTypeDeclaration().getName());
+					AbstractTypeDeclaration abstractTypeDeclaration = source.getAbstractTypeDeclaration();
+					if (abstractTypeDeclaration != null) {
+						message.append(abstractTypeDeclaration.getName());
+					}
 					message.append('.');
 					message.append(source.getName());
 				}
