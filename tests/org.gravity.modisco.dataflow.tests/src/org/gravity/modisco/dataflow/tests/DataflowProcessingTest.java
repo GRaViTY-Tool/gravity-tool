@@ -79,27 +79,6 @@ public class DataflowProcessingTest {
 		LOGGER.setLevel(Level.ALL);
 	}
 	
-	@BeforeClass
-	public static void initTimeMeasurement() {
-		try {
-			File f = new File("out/measuredTimes.csv");
-			boolean ready = false;
-			if (f.exists()) {
-				ready = f.delete();
-			}
-			if (ready) {
-				FileWriter fw = new FileWriter(f, true);
-				fw.append("Projekt, ASTAufbau, Handling, Reduktion, AlleProcessings" + System.getProperty("line.separator"));
-				fw.close();
-			} else {
-				// TODO
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	/**
 	 * Collects the test cases from the test workspace
 	 * 
@@ -131,16 +110,8 @@ public class DataflowProcessingTest {
 	 */
 	@Test
 	public void test() throws DiscoveryException, FileNotFoundException, IOException {
-		long millisStart = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, "Started Modisco Discovery and dataflow processing at " + millisStart);
 		MGravityModel pm = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(project, new NullProgressMonitor());
-		long millisEnd = System.currentTimeMillis();
-		double discoveryTime = (millisEnd - millisStart) / 1000.000;
-		LOGGER.log(Level.INFO, "Finished Modisco Discovery and dataflow processing of " + pm.getName() + " at " + discoveryTime + " taking " + discoveryTime + " seconds");
 		pm.eResource().save(new FileOutputStream("out/"+pm.getName()+".xmi"), Collections.emptyMap());
-		long millisAfterSaving = System.currentTimeMillis();
-		double totalTime = (millisAfterSaving - millisStart) / 1000.000;
-		LOGGER.log(Level.INFO, "Finished Modisco Discovery and dataflow processing (including saving) of " + pm.getName() + " at " + totalTime + " taking " + totalTime + " seconds total");
 		
 		assertNotNull(pm);
 		

@@ -1,7 +1,5 @@
 package org.gravity.modisco.dataflow;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -63,11 +60,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
-		// Configure logger
-		BasicConfigurator.configure();
-		LOGGER.setLevel(Level.ALL);
-		
-		long t0 = System.currentTimeMillis();
 		SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
 		boolean success = true;
 		sub.beginTask("Statement pre-processing", 50);
@@ -76,27 +68,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			success = false;
 		}
 		sub.internalWorked(50);
-		long t1 = System.currentTimeMillis();
-		double handlingTime = (t1 - t0) / 1000.000;
-		try {
-			FileWriter fw = new FileWriter("out/measuredTimes.csv", true);
-			fw.append(String.valueOf(handlingTime) + ", ");
-			fw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		long red0 = System.currentTimeMillis();
 		sub.beginTask("Insertion of data flow edges", 5);
 		
-		int nodeCount = 0;
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural data flows 
 		// TODO: Extract into own method (+ submethods)
 		// TODO: Work with alreadySeen-Sets instead of handlers?
 		for (StatementHandlerDataFlow handler : handlers) {
-			
-			// Add to nodeCount
-			nodeCount += handler.getAlreadySeen().size();
 			
 			// Determination of member's type
 			EObject memberDef = handler.getMemberDef();
@@ -266,19 +243,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		if (GravityActivator.getDefault().isVerbose()) {
 			GraphVisualizer.drawGraphs(handlers, "reducedGraphs");
 		}
-		long red1 = System.currentTimeMillis();
-		double reductionTime = (red1 - red0) / 1000.000;
-		try {
-			FileWriter fw = new FileWriter("out/measuredTimes.csv", true);
-			fw.append(String.valueOf(reductionTime) + ", ");
-			fw.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		LOGGER.log(Level.INFO, "Processed nodes: " + nodeCount);
-		LOGGER.log(Level.INFO, "AspectJ says: " + NodeCounter.counter); // Should be > node count, as it counts calls of handle methods (which don't result in node creation)
-		NodeCounter.counter = 0;
 		sub.internalWorked(5);
 		return success;
 	}
