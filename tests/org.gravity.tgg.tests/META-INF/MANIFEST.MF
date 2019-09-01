@@ -13,7 +13,8 @@ Require-Bundle: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.uml,
  org.eclipse.modisco.infra.discovery.core,
  org.gravity.typegraph.basic,
- org.gravity.eclipse.tests
+ org.gravity.eclipse.tests,
+ org.gravity.modisco.dataflow;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
