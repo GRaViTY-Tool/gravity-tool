@@ -101,16 +101,16 @@ public class GraphVisualizer {
 					graphNode.addLink(graphNode
 							.linkTo(getDotNode(handler
 									.getFlowNodeForElement(((MethodInvocation) modelElement).getMethod()))
-											.add(Style.FILLED, Color.AZURE))
-							.with(Style.DASHED, Label.of("calls"), Color.BLUE));
+											.add(Style.FILLED, Color.GRAY))
+							.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 				}
 				if (modelElement instanceof ClassInstanceCreation) {
 					graphNode
 							.addLink(graphNode
 									.linkTo(getDotNode(handler.getFlowNodeForElement(
 											((ClassInstanceCreation) modelElement).getMethod()))
-													.add(Style.FILLED, Color.AZURE))
-									.with(Style.DASHED, Label.of("calls"), Color.BLUE));
+													.add(Style.FILLED, Color.GRAY))
+									.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 				}
 				// TODO: Flow from called method?
 				// TODO: "accessed" edge to field?
@@ -122,12 +122,12 @@ public class GraphVisualizer {
 				for (FlowNode out : node.getOutRef()) {
 					MutableNode outNode = graphNodes.get(out);
 					if (outNode != null) { // TODO: Check, if nothing else breaks, when this fix is used
-						graphNode.addLink(graphNode.linkTo(outNode).with(Style.DOTTED, Label.of("flows to"), Color.GRAY));
+						graphNode.addLink(graphNode.linkTo(outNode).with(Style.DASHED, Label.of("flows to"), Color.BLUE));
 					}
 				}
 			}
 			try {
-				Graphviz.fromGraph(g).width(10000).render(Format.PNG)
+				Graphviz.fromGraph(g).width(5000).render(Format.PNG)
 						.toFile(new File(folderName + File.separator + projectName + File.separator + "Class-" + className
 								+ "-" + memberType + "-" + memberName + ".png"));
 			} catch (IOException e) {

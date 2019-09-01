@@ -356,10 +356,13 @@ public class ExpressionHandlerDataFlow {
 		if (member.isFromAlreadySeen()) {
 			return member;
 		}
-		handle(infixExpression.getLeftOperand());
-		handle(infixExpression.getRightOperand());
+		FlowNode left = handle(infixExpression.getLeftOperand());
+		FlowNode right = handle(infixExpression.getRightOperand());
+		member.addInRef(left);
+		member.addInRef(right);
 		for (Expression extendedOperand : infixExpression.getExtendedOperands()) {
-			handle(extendedOperand);
+			FlowNode ext = handle(extendedOperand);
+			member.addInRef(ext);
 		}
 		// An infixExpression evaluates to a value, which should always flow back into the expression's container
 		EObject container = infixExpression.eContainer();
