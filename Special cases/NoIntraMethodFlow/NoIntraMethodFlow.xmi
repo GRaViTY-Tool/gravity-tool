@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.10 //@ownedTypes.11 //@ownedTypes.12 //@ownedTypes.14 //@ownedTypes.17 //@ownedTypes.18 //@ownedTypes.19 //@ownedTypes.20 //@ownedTypes.22" interfaces="//@ownedTypes.3 //@ownedTypes.9 //@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.21 //@ownedTypes.23" tName="NoIntraMethodFlow">
+  <packages typeGraph="/" tName="java">
+    <subpackage classes="//@ownedTypes.4 //@ownedTypes.11 //@ownedTypes.19" interfaces="//@ownedTypes.3 //@ownedTypes.9 //@ownedTypes.21 //@ownedTypes.23" ownedTypes="//@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.9 //@ownedTypes.11 //@ownedTypes.19 //@ownedTypes.21 //@ownedTypes.23" typeGraph="/" tName="lang"/>
+    <subpackage classes="//@ownedTypes.14 //@ownedTypes.17 //@ownedTypes.18" interfaces="//@ownedTypes.13 //@ownedTypes.15 //@ownedTypes.16" ownedTypes="//@ownedTypes.13 //@ownedTypes.14 //@ownedTypes.15 //@ownedTypes.16 //@ownedTypes.17 //@ownedTypes.18" typeGraph="/" tName="io"/>
+  </packages>
+  <packages classes="//@ownedTypes.12" ownedTypes="//@ownedTypes.12" typeGraph="/" tName="(default package)"/>
+  <methods tName="println">
+    <signatures outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" returnType="//@ownedTypes.4">
+      <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries incomingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" type="//@ownedTypes.0"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.17" accessedBy="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0" returnType="//@ownedTypes.4"/>
+    </signatures>
+  </methods>
+  <methods tName="m">
+    <signatures outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.2/@ownedFlows.0" returnType="//@ownedTypes.0">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.12" accessedBy="//@methods.2/@signatures.0/@definitions.0/@tAccessing.2" returnType="//@ownedTypes.0">
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods tName="main">
+    <signatures returnType="//@ownedTypes.6">
+      <paramList first="//@methods.2/@signatures.0/@paramList/@entries.0">
+        <entries type="//@ownedTypes.19"/>
+      </paramList>
+      <definitions definedBy="//@ownedTypes.12" returnType="//@ownedTypes.6">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1 //@methods.2/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0" tTarget="//@methods.0/@signatures.0/@definitions.0" staticType="//@ownedTypes.4">
+          <ownedFlows flowSource="//@methods.2/@signatures.0/@definitions.0/@tAccessing.2" flowTarget="//@methods.0/@signatures.0/@paramList/@entries.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0"/>
+        </tAccessing>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1" outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0" tTarget="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0"/>
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1"/>
+        </tAccessing>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3/@ownedFlows.0 //@methods.2/@signatures.0/@definitions.0/@tAccessing.2/@ownedFlows.0" outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" tTarget="//@methods.1/@signatures.0/@definitions.0" staticType="//@ownedTypes.12">
+          <ownedFlows flowSource="//@methods.1/@signatures.0" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.2"/>
+        </tAccessing>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TCall" incomingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3/@ownedFlows.1" outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3/@ownedFlows.0" tTarget="//@methods.3/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.2"/>
+          <ownedFlows flowSource="//@methods.3/@signatures.0/@definitions.0" flowTarget="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3"/>
+        </tAccessing>
+        <tModifier tVisibility="TPublic" isStatic="true"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="A">
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+      <paramList/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3/@ownedFlows.1" definedBy="//@ownedTypes.12" accessedBy="//@methods.2/@signatures.0/@definitions.0/@tAccessing.3"/>
+    </signatures>
+  </methods>
+  <fields tName="out">
+    <signatures outgoingFlows="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1" type="//@ownedTypes.4">
+      <definitions definedBy="//@ownedTypes.11" accessedBy="//@methods.2/@signatures.0/@definitions.0/@tAccessing.1"/>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="Comparable" implementedBy="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" tLib="true" tName="Object"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="Appendable" implementedBy="//@ownedTypes.17"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tName="T"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" signature="//@fields.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.0" tLib="true" tName="System"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.1" signature="//@methods.1/@signatures.0 //@methods.2/@signatures.0" defines="//@methods.1/@signatures.0/@definitions.0 //@methods.2/@signatures.0/@definitions.0 //@methods.3/@signatures.0/@definitions.0" tName="A">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tLib="true" tName="Closeable" implementedBy="//@ownedTypes.18 //@ownedTypes.17" parentInterfaces="//@ownedTypes.21"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.1" tLib="true" tName="FilterOutputStream" parentClass="//@ownedTypes.18" childClasses="//@ownedTypes.17"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tLib="true" tName="Flushable" implementedBy="//@ownedTypes.18"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.1" tLib="true" tName="Serializable" implementedBy="//@ownedTypes.19"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.1" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tLib="true" tName="PrintStream" parentClass="//@ownedTypes.14" implements="//@ownedTypes.9 //@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.1" tLib="true" tName="OutputStream" childClasses="//@ownedTypes.14" implements="//@ownedTypes.13 //@ownedTypes.15"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0/@subpackage.0" tLib="true" tName="String" implements="//@ownedTypes.3 //@ownedTypes.16 //@ownedTypes.23"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="AutoCloseable" childInterfaces="//@ownedTypes.13"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TInterface" package="//@packages.0/@subpackage.0" tLib="true" tName="CharSequence" implementedBy="//@ownedTypes.19"/>
+</org.gravity.typegraph.basic:TypeGraph>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:annotations="http://www.gravity-tool.org/typegraph/basic#//annotations" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9 //@ownedTypes.10 //@ownedTypes.11" tName="FieldToField">
+  <packages classes="//@ownedTypes.6 //@ownedTypes.9 //@ownedTypes.10" ownedTypes="//@ownedTypes.6 //@ownedTypes.9 //@ownedTypes.10" typeGraph="/" tName="(default package)"/>
+  <methods tName="m">
+    <signatures returnType="//@ownedTypes.4">
+      <paramList/>
+      <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.4">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" tTarget="//@fields.0/@signatures.0/@definitions.2">
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0"/>
+          <ownedFlows flowSource="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@fields.0/@signatures.0/@definitions.2"/>
+        </tAccessing>
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <fields tName="a">
+    <signatures outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0 //@fields.1/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0 //@fields.2/@signatures.0/@definitions.1/@tAccessing.0/@ownedFlows.0" type="//@ownedTypes.5">
+      <definitions definedBy="//@ownedTypes.9" accessedBy="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0">
+        <tAnnotation xsi:type="annotations:TTextAnnotation" text="// Secrecy"/>
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+      <definitions definedBy="//@ownedTypes.6" accessedBy="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1">
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" definedBy="//@ownedTypes.10" accessedBy="//@methods.0/@signatures.0/@definitions.0/@tAccessing.0">
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <fields tName="c">
+    <signatures type="//@ownedTypes.5">
+      <definitions incomingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1 //@fields.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" definedBy="//@ownedTypes.6">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" outgoingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.1" tTarget="//@fields.2/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@fields.2/@signatures.0" flowTarget="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0"/>
+          <ownedFlows flowSource="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0" flowTarget="//@fields.1/@signatures.0/@definitions.0"/>
+        </tAccessing>
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.0" outgoingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1/@ownedFlows.1" tTarget="//@fields.0/@signatures.0/@definitions.1">
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1"/>
+          <ownedFlows flowSource="//@fields.1/@signatures.0/@definitions.0/@tAccessing.1" flowTarget="//@fields.1/@signatures.0/@definitions.0"/>
+        </tAccessing>
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <fields tName="b">
+    <signatures outgoingFlows="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0/@ownedFlows.0" type="//@ownedTypes.5">
+      <definitions definedBy="//@ownedTypes.6" accessedBy="//@fields.1/@signatures.0/@definitions.0/@tAccessing.0">
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+      <definitions incomingFlows="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0/@ownedFlows.1" definedBy="//@ownedTypes.9">
+        <tAccessing xsi:type="org.gravity.typegraph.basic:TRead" incomingFlows="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0/@ownedFlows.0" outgoingFlows="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0/@ownedFlows.1" tTarget="//@fields.0/@signatures.0/@definitions.0">
+          <ownedFlows flowSource="//@fields.0/@signatures.0" flowTarget="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0"/>
+          <ownedFlows flowSource="//@fields.2/@signatures.0/@definitions.1/@tAccessing.0" flowTarget="//@fields.2/@signatures.0/@definitions.1"/>
+        </tAccessing>
+        <tModifier tVisibility="TPackage"/>
+      </definitions>
+    </signatures>
+  </fields>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@fields.0/@signatures.0 //@fields.1/@signatures.0 //@fields.2/@signatures.0" defines="//@fields.2/@signatures.0/@definitions.0 //@fields.1/@signatures.0/@definitions.0 //@fields.0/@signatures.0/@definitions.1" tName="C">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@fields.2/@signatures.0 //@fields.0/@signatures.0" defines="//@fields.2/@signatures.0/@definitions.1 //@fields.0/@signatures.0/@definitions.0" tName="A">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@fields.0/@signatures.0 //@methods.0/@signatures.0" defines="//@fields.0/@signatures.0/@definitions.2 //@methods.0/@signatures.0/@definitions.0" tName="B">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+</org.gravity.typegraph.basic:TypeGraph>
