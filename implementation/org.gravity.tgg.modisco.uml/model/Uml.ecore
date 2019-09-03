@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco.uml" nsURI="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco.uml" nsURI="platform:/resource/org.gravity.tgg.modisco.uml/model/org.gravity.tgg.modisco.uml.ecore"
     nsPrefix="org.gravity.tgg.modisco.uml">
   <eClassifiers xsi:type="ecore:EClass" name="Expression2Comment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Expression"/>
@@ -69,11 +69,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeDeclaration2Interface_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -88,13 +88,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayType2NonArrayType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__arrayType"
@@ -106,9 +106,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne1"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne2" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassDec2Class_InPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -120,11 +120,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassDecWithModifier2Class_InPackage__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -139,13 +139,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit2Artifact__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__compilationUnit"
@@ -157,9 +157,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__um" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__c2a" lowerBound="1"
-        eType="#//CompilationUnit2Artifact"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//CompilationUnit2Artifact"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2um" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4Class__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -172,11 +172,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4ClassWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -191,13 +191,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4Enum__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -210,11 +210,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4EnumWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -229,13 +229,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4Interface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -248,11 +248,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2Operation4InterfaceWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -267,26 +267,26 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2OperationAnonymous__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__classDec"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__feature" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumDec2Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -298,11 +298,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumDecWithModifier2Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -316,13 +316,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -336,11 +336,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Class_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -357,13 +357,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -377,11 +377,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Enum_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -398,13 +398,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Interface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -419,11 +419,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldDec2Property4Interface_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -440,13 +440,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uOwnerType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jo2uo" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IgnoreOrphanTypesEdge__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__model" lowerBound="1"
@@ -465,11 +465,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerClassDeclaration2InnerClass_InClass_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -484,13 +484,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerClassDeclaration2InnerClass_InInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -503,11 +503,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerClassDeclaration2InnerClass_InInterface_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -522,13 +522,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerClassDeclaration2InnerClass_InMethod__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -545,13 +545,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__me2op" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerClassDeclaration2InnerClass_InMethod_withModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -570,15 +570,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__me2op" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerEnumDeclaration2InnerEnum_InMethod__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -595,13 +595,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__me2op" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerEnumDeclaration2InnerEnumeration_InClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -614,11 +614,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -633,13 +633,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerEnumDeclaration2InnerEnumeration_InInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -652,11 +652,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -671,13 +671,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerInterfaceDeclaration2InnerInterface_InClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -690,11 +690,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -709,13 +709,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerInterfaceDeclaration2InnerInterface_InInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -728,11 +728,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -747,13 +747,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerInterfaceDeclaration2InnerInterface_InMethod__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -770,13 +770,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uContainer"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__me2op" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceDec2Interface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -788,11 +788,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceDecWithModifier2Interface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -807,13 +807,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4BodyDeclaration__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -832,11 +832,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__interf" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__a2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__type2Interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotation2Comment4SingleVariableDeclaration__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -855,11 +855,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__interf" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__a2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__type2Interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__v2p" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotationValue2Comment__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -874,9 +874,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tag" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__a2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__c2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaAnnotationValueEntry2Comment__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -895,11 +895,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tag" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__c2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__e2e" lowerBound="1"
-        eType="#//Expression2Comment"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Expression2Comment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__t2c" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaModel2UmlModelRule__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__javaModel"
@@ -915,13 +915,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__umlModel"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jm2commonTypes"
-        lowerBound="1" eType="#//JavaModel2UMLPackage"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jm2um" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jm2um2" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jm2um3" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaPackageToUMLPackage_underModel__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -934,9 +934,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2um" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JavaPackageToUMLPackage_underPackage__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -949,9 +949,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__p2p" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -963,11 +963,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4ClassWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -982,13 +982,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
@@ -1000,11 +1000,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4EnumWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1019,13 +1019,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4Interface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1038,11 +1038,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2Operation4InterfaceWithModifier__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1057,13 +1057,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__m2f" lowerBound="1"
-        eType="#//Modifier2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDec2OperationAnonymous__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1074,9 +1074,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__feature" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__bd2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrphanedClassDec2OrphanedClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1089,11 +1089,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__b2e" lowerBound="1"
-        eType="#//ASTNode2Element"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//ASTNode2Element"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__md2o" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__nonParamPackage"
@@ -1111,11 +1111,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class_InnerTypeInClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1138,13 +1138,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__c2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Class_InnerTypeInInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1167,13 +1167,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__c2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1192,11 +1192,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1219,13 +1219,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__c2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterizedType2Interface_InnerTypeInInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1248,13 +1248,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__c2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jp2up" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2neNonParam"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeBoolean__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1266,9 +1266,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeByte__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1280,9 +1280,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeChar__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1294,9 +1294,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeDouble__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1308,9 +1308,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeFloat__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1322,9 +1322,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeInt__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1336,9 +1336,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeLong__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1350,9 +1350,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeShort__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1364,9 +1364,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeVoid__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__jm" lowerBound="1"
@@ -1378,9 +1378,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__up" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__jm2up" lowerBound="1"
-        eType="#//JavaModel2UMLPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaModel2UMLPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__jpt2upt2"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2Generalization__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__classDec"
@@ -1396,11 +1396,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClassifier"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c2" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ta2g" lowerBound="1"
-        eType="#//TypeAccess2Generalization"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Generalization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceGeneralization__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1417,11 +1417,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__superInterface"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c2" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ta2g" lowerBound="1"
-        eType="#//TypeAccess2Generalization"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Generalization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2InterfaceRealization__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1438,11 +1438,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__umlClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__cd2c2" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ta2g" lowerBound="1"
-        eType="#//TypeAccess2InterfaceRealization"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2InterfaceRealization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccess2ReturnParam__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__method" lowerBound="1"
@@ -1454,9 +1454,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__returnParam"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__m2o" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ta2p" lowerBound="1"
-        eType="#//TypeAccess2Parameter"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccessType2ParameterType_Parameter__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1473,9 +1473,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ta2p" lowerBound="1"
-        eType="#//TypeAccess2Parameter"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeAccessType2ParameterType_Return__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1490,9 +1490,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__uType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ne2ne" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__ta2p" lowerBound="1"
-        eType="#//TypeAccess2Parameter"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeDependency2UsageDependency__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1511,11 +1511,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__uUsage" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Usage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__p2p" lowerBound="1"
-        eType="#//JavaPackage2UmlPackage"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//JavaPackage2UmlPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__src2Src"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__trg2Trg"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1528,9 +1528,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__uparam" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__interface2interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__param2param"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1543,9 +1543,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__uparam" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__interface2interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__param2param"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1560,9 +1560,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__uparam" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__interface2interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__param2param"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameter2Object_InMethod_InInterface__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1577,9 +1577,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__uparam" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__interface2interface"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__param2param"
-        lowerBound="1" eType="#//NamedElement2NamedElement"/>
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDec2Parameter__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__method" lowerBound="1"
@@ -1595,12 +1595,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__param" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__md2o" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__n2n" lowerBound="1"
-        eType="#//NamedElement2NamedElement"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//NamedElement2NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__ty2p" lowerBound="1"
-        eType="#//TypeAccess2Parameter"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//TypeAccess2Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__vd2p" lowerBound="1"
-        eType="#//VariableDec2Parameter"/>
+        eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//VariableDec2Parameter"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -1668,7 +1668,7 @@
     <correspondencePatterns name="mParameterListToTParameterList" type="//@schema/@correspondenceTypes.0" source="//@rules.37/@sourcePatterns.1" target="//@rules.37/@targetPatterns.3">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="mSourceToTSource" type="//@schema/@correspondenceTypes.47" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.2">
+    <correspondencePatterns name="mAbstractFlowElementToTAbstractFlowElement" type="//@schema/@correspondenceTypes.47" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.3">

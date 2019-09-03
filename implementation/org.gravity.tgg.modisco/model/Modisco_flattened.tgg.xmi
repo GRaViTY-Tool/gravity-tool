@@ -1741,13 +1741,13 @@
     <nodes name="mType" bindingType="CREATE" incomingEdges="//@rules.27/@edges.0 //@rules.27/@edges.2 //@rules.27/@edges.6 //@rules.27/@edges.8" outgoingEdges="//@rules.27/@edges.14" incomingCorrsSource="//@rules.27/@nodes.5 //@rules.27/@nodes.6 //@rules.27/@nodes.8">
       <type href="http://www.gravity-tool.org/modisco#//MClass"/>
     </nodes>
-    <nodes name="pg" domainType="TRG" incomingEdges="//@rules.27/@edges.12 //@rules.27/@edges.15" outgoingEdges="//@rules.27/@edges.9 //@rules.27/@edges.10">
+    <nodes name="pg" domainType="TRG" incomingEdges="//@rules.27/@edges.11 //@rules.27/@edges.15" outgoingEdges="//@rules.27/@edges.9 //@rules.27/@edges.10">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     </nodes>
     <nodes name="tPackage" domainType="TRG" incomingEdges="//@rules.27/@edges.5 //@rules.27/@edges.16" outgoingEdges="//@rules.27/@edges.11 //@rules.27/@edges.12 //@rules.27/@edges.13" incomingCorrsTarget="//@rules.27/@nodes.7">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
     </nodes>
-    <nodes name="tType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.27/@edges.1 //@rules.27/@edges.3 //@rules.27/@edges.7 //@rules.27/@edges.9 //@rules.27/@edges.10 //@rules.27/@edges.11 //@rules.27/@edges.13" outgoingEdges="//@rules.27/@edges.15 //@rules.27/@edges.16" incomingCorrsTarget="//@rules.27/@nodes.5 //@rules.27/@nodes.6 //@rules.27/@nodes.8">
+    <nodes name="tType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.27/@edges.1 //@rules.27/@edges.3 //@rules.27/@edges.7 //@rules.27/@edges.9 //@rules.27/@edges.10 //@rules.27/@edges.12 //@rules.27/@edges.13" outgoingEdges="//@rules.27/@edges.15 //@rules.27/@edges.16" incomingCorrsTarget="//@rules.27/@nodes.5 //@rules.27/@nodes.6 //@rules.27/@nodes.8">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="mBodyToTAnnotation" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.27/@edges.0 //@rules.27/@edges.1" source="//@rules.27/@nodes.1" target="//@rules.27/@nodes.4">
@@ -1789,20 +1789,20 @@
     <edges name="mPackage__ownedElements__mType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.27/@nodes.0" trgNode="//@rules.27/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
     </edges>
-    <edges name="pg__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.2" trgNode="//@rules.27/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-    </edges>
     <edges name="pg__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.2" trgNode="//@rules.27/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
     </edges>
-    <edges name="tPackage__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.3" trgNode="//@rules.27/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+    <edges name="pg__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.2" trgNode="//@rules.27/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
     <edges name="tPackage__typeGraph__pg_eMoflonEdge" domainType="TRG" srcNode="//@rules.27/@nodes.3" trgNode="//@rules.27/@nodes.2">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
     </edges>
     <edges name="tPackage__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.3" trgNode="//@rules.27/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+    </edges>
+    <edges name="tPackage__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.27/@nodes.3" trgNode="//@rules.27/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
     </edges>
     <edges name="mType__package__mPackage_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.27/@nodes.1" trgNode="//@rules.27/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/package"/>
@@ -2515,28 +2515,28 @@
     <attributeConditionLibrary/>
   </rules>
   <rules name="Constructor">
-    <nodes name="eConstructorDeclaration" bindingType="CREATE" incomingEdges="//@rules.36/@edges.0 //@rules.36/@edges.2 //@rules.36/@edges.4 //@rules.36/@edges.6 //@rules.36/@edges.8 //@rules.36/@edges.14 //@rules.36/@edges.17" outgoingEdges="//@rules.36/@edges.16 //@rules.36/@edges.22" incomingCorrsSource="//@rules.36/@nodes.8 //@rules.36/@nodes.9 //@rules.36/@nodes.10 //@rules.36/@nodes.11 //@rules.36/@nodes.12 //@rules.36/@nodes.15">
+    <nodes name="eConstructorDeclaration" bindingType="CREATE" incomingEdges="//@rules.36/@edges.0 //@rules.36/@edges.2 //@rules.36/@edges.4 //@rules.36/@edges.6 //@rules.36/@edges.8 //@rules.36/@edges.10 //@rules.36/@edges.17" outgoingEdges="//@rules.36/@edges.16 //@rules.36/@edges.22" incomingCorrsSource="//@rules.36/@nodes.8 //@rules.36/@nodes.9 //@rules.36/@nodes.10 //@rules.36/@nodes.11 //@rules.36/@nodes.12 //@rules.36/@nodes.13">
       <type href="http://www.gravity-tool.org/modisco#//MConstructorDefinition"/>
     </nodes>
-    <nodes name="mModel" incomingEdges="//@rules.36/@edges.10 //@rules.36/@edges.22" outgoingEdges="//@rules.36/@edges.17" incomingCorrsSource="//@rules.36/@nodes.13">
+    <nodes name="mModel" incomingEdges="//@rules.36/@edges.12 //@rules.36/@edges.22" outgoingEdges="//@rules.36/@edges.17" incomingCorrsSource="//@rules.36/@nodes.14">
       <type href="http://www.gravity-tool.org/modisco#//MGravityModel"/>
     </nodes>
-    <nodes name="mParameterList" bindingType="CREATE" incomingEdges="//@rules.36/@edges.12 //@rules.36/@edges.16" incomingCorrsSource="//@rules.36/@nodes.14">
+    <nodes name="mParameterList" bindingType="CREATE" incomingEdges="//@rules.36/@edges.14 //@rules.36/@edges.16" incomingCorrsSource="//@rules.36/@nodes.15">
       <type href="http://www.gravity-tool.org/modisco#//MParameterList"/>
     </nodes>
-    <nodes name="tConstructorDef" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.1 //@rules.36/@edges.9 //@rules.36/@edges.15 //@rules.36/@edges.19" outgoingEdges="//@rules.36/@edges.23" incomingCorrsTarget="//@rules.36/@nodes.8 //@rules.36/@nodes.12 //@rules.36/@nodes.15">
+    <nodes name="tConstructorDef" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.1 //@rules.36/@edges.9 //@rules.36/@edges.11 //@rules.36/@edges.19" outgoingEdges="//@rules.36/@edges.23" incomingCorrsTarget="//@rules.36/@nodes.8 //@rules.36/@nodes.12 //@rules.36/@nodes.13">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TConstructorDefinition"/>
     </nodes>
     <nodes name="tName" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.3 //@rules.36/@edges.20 //@rules.36/@edges.21" outgoingEdges="//@rules.36/@edges.24 //@rules.36/@edges.25" incomingCorrsTarget="//@rules.36/@nodes.9">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TConstructorName"/>
     </nodes>
-    <nodes name="tParameterList" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.5 //@rules.36/@edges.13 //@rules.36/@edges.18" incomingCorrsTarget="//@rules.36/@nodes.10 //@rules.36/@nodes.14">
+    <nodes name="tParameterList" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.5 //@rules.36/@edges.15 //@rules.36/@edges.18" incomingCorrsTarget="//@rules.36/@nodes.10 //@rules.36/@nodes.15">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TParameterList"/>
     </nodes>
     <nodes name="tSig" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.36/@edges.7 //@rules.36/@edges.23 //@rules.36/@edges.24" outgoingEdges="//@rules.36/@edges.18 //@rules.36/@edges.19 //@rules.36/@edges.20" incomingCorrsTarget="//@rules.36/@nodes.11">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TConstructorSignature"/>
     </nodes>
-    <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.36/@edges.11 //@rules.36/@edges.25" outgoingEdges="//@rules.36/@edges.21" incomingCorrsTarget="//@rules.36/@nodes.13">
+    <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.36/@edges.13 //@rules.36/@edges.25" outgoingEdges="//@rules.36/@edges.21" incomingCorrsTarget="//@rules.36/@nodes.14">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="eConstructorDeclarationToTConstructorDef" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.0 //@rules.36/@edges.1" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.3">
@@ -2551,17 +2551,17 @@
     <nodes xsi:type="language:TGGRuleCorr" name="eConstructorDeclarationToTSig" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.6 //@rules.36/@edges.7" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.6">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ConstructorDeclarationToTMethodSignature"/>
     </nodes>
-    <nodes xsi:type="language:TGGRuleCorr" name="mBodyToTAnnotation" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.8 //@rules.36/@edges.9" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.3">
+    <nodes xsi:type="language:TGGRuleCorr" name="mAbstractFlowElementToTAbstractFlowElement" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.8 //@rules.36/@edges.9" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.3">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
+    </nodes>
+    <nodes xsi:type="language:TGGRuleCorr" name="mBodyToTAnnotation" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.10 //@rules.36/@edges.11" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.3">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     </nodes>
-    <nodes xsi:type="language:TGGRuleCorr" name="mModelToTypeGraph" domainType="CORR" outgoingEdges="//@rules.36/@edges.10 //@rules.36/@edges.11" source="//@rules.36/@nodes.1" target="//@rules.36/@nodes.7">
+    <nodes xsi:type="language:TGGRuleCorr" name="mModelToTypeGraph" domainType="CORR" outgoingEdges="//@rules.36/@edges.12 //@rules.36/@edges.13" source="//@rules.36/@nodes.1" target="//@rules.36/@nodes.7">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     </nodes>
-    <nodes xsi:type="language:TGGRuleCorr" name="mParameterListToTParameterList" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.12 //@rules.36/@edges.13" source="//@rules.36/@nodes.2" target="//@rules.36/@nodes.5">
+    <nodes xsi:type="language:TGGRuleCorr" name="mParameterListToTParameterList" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.14 //@rules.36/@edges.15" source="//@rules.36/@nodes.2" target="//@rules.36/@nodes.5">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
-    </nodes>
-    <nodes xsi:type="language:TGGRuleCorr" name="mSourceToTSource" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.36/@edges.14 //@rules.36/@edges.15" source="//@rules.36/@nodes.0" target="//@rules.36/@nodes.3">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     </nodes>
     <edges name="eConstructorDeclarationToTConstructorDef__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.8" trgNode="//@rules.36/@nodes.0">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember/source"/>
@@ -2587,29 +2587,29 @@
     <edges name="eConstructorDeclarationToTSig__target__tSig_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.11" trgNode="//@rules.36/@nodes.6">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ConstructorDeclarationToTMethodSignature/target"/>
     </edges>
-    <edges name="mBodyToTAnnotation__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.12" trgNode="//@rules.36/@nodes.0">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable/source"/>
-    </edges>
-    <edges name="mBodyToTAnnotation__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.12" trgNode="//@rules.36/@nodes.3">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable/target"/>
-    </edges>
-    <edges name="mModelToTypeGraph__source__mModel_eMoflonEdge" domainType="CORR" srcNode="//@rules.36/@nodes.13" trgNode="//@rules.36/@nodes.1">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph/source"/>
-    </edges>
-    <edges name="mModelToTypeGraph__target__typeGraph_eMoflonEdge" domainType="CORR" srcNode="//@rules.36/@nodes.13" trgNode="//@rules.36/@nodes.7">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph/target"/>
-    </edges>
-    <edges name="mParameterListToTParameterList__source__mParameterList_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.14" trgNode="//@rules.36/@nodes.2">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList/source"/>
-    </edges>
-    <edges name="mParameterListToTParameterList__target__tParameterList_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.14" trgNode="//@rules.36/@nodes.5">
-      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList/target"/>
-    </edges>
-    <edges name="mSourceToTSource__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.15" trgNode="//@rules.36/@nodes.0">
+    <edges name="mAbstractFlowElementToTAbstractFlowElement__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.12" trgNode="//@rules.36/@nodes.0">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement/source"/>
     </edges>
-    <edges name="mSourceToTSource__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.15" trgNode="//@rules.36/@nodes.3">
+    <edges name="mAbstractFlowElementToTAbstractFlowElement__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.12" trgNode="//@rules.36/@nodes.3">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement/target"/>
+    </edges>
+    <edges name="mBodyToTAnnotation__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.13" trgNode="//@rules.36/@nodes.0">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable/source"/>
+    </edges>
+    <edges name="mBodyToTAnnotation__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.13" trgNode="//@rules.36/@nodes.3">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable/target"/>
+    </edges>
+    <edges name="mModelToTypeGraph__source__mModel_eMoflonEdge" domainType="CORR" srcNode="//@rules.36/@nodes.14" trgNode="//@rules.36/@nodes.1">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph/source"/>
+    </edges>
+    <edges name="mModelToTypeGraph__target__typeGraph_eMoflonEdge" domainType="CORR" srcNode="//@rules.36/@nodes.14" trgNode="//@rules.36/@nodes.7">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph/target"/>
+    </edges>
+    <edges name="mParameterListToTParameterList__source__mParameterList_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.15" trgNode="//@rules.36/@nodes.2">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList/source"/>
+    </edges>
+    <edges name="mParameterListToTParameterList__target__tParameterList_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.36/@nodes.15" trgNode="//@rules.36/@nodes.5">
+      <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList/target"/>
     </edges>
     <edges name="eConstructorDeclaration__mParameterList__mParameterList_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.36/@nodes.0" trgNode="//@rules.36/@nodes.2">
       <type href="http://www.gravity-tool.org/modisco#//MConstructorDefinition/mParameterList"/>
@@ -2653,7 +2653,7 @@
   </rules>
   <rules name="ConstructorInvocation">
     <nodes name="invocation" bindingType="CREATE" incomingEdges="//@rules.37/@edges.0 //@rules.37/@edges.2 //@rules.37/@edges.11 //@rules.37/@edges.16" outgoingEdges="//@rules.37/@edges.10" incomingCorrsSource="//@rules.37/@nodes.8 //@rules.37/@nodes.9">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation"/>
+      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     </nodes>
     <nodes name="mMember" incomingEdges="//@rules.37/@edges.4" outgoingEdges="//@rules.37/@edges.11" incomingCorrsSource="//@rules.37/@nodes.10">
       <type href="http://www.gravity-tool.org/modisco#//MDefinition"/>
@@ -2802,20 +2802,20 @@
     <edges name="mPackage__ownedElements__mType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.38/@nodes.0" trgNode="//@rules.38/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
     </edges>
-    <edges name="pg__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-    </edges>
     <edges name="pg__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+    </edges>
+    <edges name="pg__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
     <edges name="tPackage__typeGraph__pg_eMoflonEdge" domainType="TRG" srcNode="//@rules.38/@nodes.3" trgNode="//@rules.38/@nodes.2">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
     </edges>
-    <edges name="tPackage__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.3" trgNode="//@rules.38/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
-    </edges>
     <edges name="tPackage__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.3" trgNode="//@rules.38/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+    </edges>
+    <edges name="tPackage__classes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.3" trgNode="//@rules.38/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
     </edges>
     <edges name="mType__package__mPackage_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.38/@nodes.1" trgNode="//@rules.38/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/package"/>
@@ -3870,13 +3870,13 @@
     <nodes name="mType" bindingType="CREATE" incomingEdges="//@rules.51/@edges.0 //@rules.51/@edges.2 //@rules.51/@edges.6 //@rules.51/@edges.8" outgoingEdges="//@rules.51/@edges.14" incomingCorrsSource="//@rules.51/@nodes.5 //@rules.51/@nodes.6 //@rules.51/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
     </nodes>
-    <nodes name="pg" domainType="TRG" incomingEdges="//@rules.51/@edges.11 //@rules.51/@edges.15" outgoingEdges="//@rules.51/@edges.9 //@rules.51/@edges.10">
+    <nodes name="pg" domainType="TRG" incomingEdges="//@rules.51/@edges.12 //@rules.51/@edges.15" outgoingEdges="//@rules.51/@edges.9 //@rules.51/@edges.10">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     </nodes>
     <nodes name="tPackage" domainType="TRG" incomingEdges="//@rules.51/@edges.5 //@rules.51/@edges.16" outgoingEdges="//@rules.51/@edges.11 //@rules.51/@edges.12 //@rules.51/@edges.13" incomingCorrsTarget="//@rules.51/@nodes.7">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
     </nodes>
-    <nodes name="tType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.51/@edges.1 //@rules.51/@edges.3 //@rules.51/@edges.7 //@rules.51/@edges.9 //@rules.51/@edges.10 //@rules.51/@edges.12 //@rules.51/@edges.13" outgoingEdges="//@rules.51/@edges.15 //@rules.51/@edges.16" incomingCorrsTarget="//@rules.51/@nodes.5 //@rules.51/@nodes.6 //@rules.51/@nodes.8">
+    <nodes name="tType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.51/@edges.1 //@rules.51/@edges.3 //@rules.51/@edges.7 //@rules.51/@edges.9 //@rules.51/@edges.10 //@rules.51/@edges.11 //@rules.51/@edges.13" outgoingEdges="//@rules.51/@edges.15 //@rules.51/@edges.16" incomingCorrsTarget="//@rules.51/@nodes.5 //@rules.51/@nodes.6 //@rules.51/@nodes.8">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TInterface"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="mBodyToTAnnotation" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.51/@edges.0 //@rules.51/@edges.1" source="//@rules.51/@nodes.1" target="//@rules.51/@nodes.4">
@@ -3918,20 +3918,20 @@
     <edges name="mPackage__ownedElements__mType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.51/@nodes.0" trgNode="//@rules.51/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
     </edges>
+    <edges name="pg__interfaces__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.2" trgNode="//@rules.51/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+    </edges>
     <edges name="pg__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.2" trgNode="//@rules.51/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
     </edges>
-    <edges name="pg__interfaces__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.2" trgNode="//@rules.51/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+    <edges name="tPackage__interfaces__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.3" trgNode="//@rules.51/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
     </edges>
     <edges name="tPackage__typeGraph__pg_eMoflonEdge" domainType="TRG" srcNode="//@rules.51/@nodes.3" trgNode="//@rules.51/@nodes.2">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
     </edges>
     <edges name="tPackage__ownedTypes__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.3" trgNode="//@rules.51/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
-    </edges>
-    <edges name="tPackage__interfaces__tType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.3" trgNode="//@rules.51/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
     </edges>
     <edges name="mType__package__mPackage_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.51/@nodes.1" trgNode="//@rules.51/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/package"/>
@@ -6139,12 +6139,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.82/@edges.3 //@rules.82/@edges.5 //@rules.82/@edges.7 //@rules.82/@edges.8" outgoingEdges="//@rules.82/@edges.9" incomingCorrsTarget="//@rules.82/@nodes.5 //@rules.82/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;byte&quot;"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;byte&quot;"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.82/@edges.1 //@rules.82/@edges.9" outgoingEdges="//@rules.82/@edges.7 //@rules.82/@edges.8" incomingCorrsTarget="//@rules.82/@nodes.4">
@@ -6449,12 +6449,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.87/@edges.3 //@rules.87/@edges.5 //@rules.87/@edges.7 //@rules.87/@edges.8" outgoingEdges="//@rules.87/@edges.9" incomingCorrsTarget="//@rules.87/@nodes.5 //@rules.87/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;long&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.87/@edges.1 //@rules.87/@edges.9" outgoingEdges="//@rules.87/@edges.7 //@rules.87/@edges.8" incomingCorrsTarget="//@rules.87/@nodes.4">
@@ -6573,12 +6573,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.89/@edges.3 //@rules.89/@edges.5 //@rules.89/@edges.7 //@rules.89/@edges.8" outgoingEdges="//@rules.89/@edges.9" incomingCorrsTarget="//@rules.89/@nodes.5 //@rules.89/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;void&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.89/@edges.1 //@rules.89/@edges.9" outgoingEdges="//@rules.89/@edges.7 //@rules.89/@edges.8" incomingCorrsTarget="//@rules.89/@nodes.4">
@@ -6939,7 +6939,7 @@
   </rules>
   <rules name="SuperMethodInvocation">
     <nodes name="invocation" bindingType="CREATE" incomingEdges="//@rules.95/@edges.0 //@rules.95/@edges.2 //@rules.95/@edges.11 //@rules.95/@edges.16" outgoingEdges="//@rules.95/@edges.10" incomingCorrsSource="//@rules.95/@nodes.8 //@rules.95/@nodes.9">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperMethodInvocation"/>
+      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     </nodes>
     <nodes name="mMember" incomingEdges="//@rules.95/@edges.4" outgoingEdges="//@rules.95/@edges.11" incomingCorrsSource="//@rules.95/@nodes.10">
       <type href="http://www.gravity-tool.org/modisco#//MDefinition"/>

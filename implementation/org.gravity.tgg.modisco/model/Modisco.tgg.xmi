@@ -1563,7 +1563,7 @@
     <nodes xsi:type="language:TGGRuleCorr" name="mParameterListToTParameterList" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.37/@edges.12 //@rules.37/@edges.13" source="//@rules.37/@nodes.1" target="//@rules.37/@nodes.6">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
     </nodes>
-    <nodes xsi:type="language:TGGRuleCorr" name="mSourceToTSource" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.37/@edges.14 //@rules.37/@edges.15" source="//@rules.37/@nodes.0" target="//@rules.37/@nodes.5">
+    <nodes xsi:type="language:TGGRuleCorr" name="mAbstractFlowElementToTAbstractFlowElement" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.37/@edges.14 //@rules.37/@edges.15" source="//@rules.37/@nodes.0" target="//@rules.37/@nodes.5">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     </nodes>
     <edges name="mBodyToTAnnotation__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.8" trgNode="//@rules.37/@nodes.0">
@@ -1608,10 +1608,10 @@
     <edges name="mParameterListToTParameterList__target__tParameterList_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.14" trgNode="//@rules.37/@nodes.6">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList/target"/>
     </edges>
-    <edges name="mSourceToTSource__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.15" trgNode="//@rules.37/@nodes.0">
+    <edges name="mAbstractFlowElementToTAbstractFlowElement__source__eConstructorDeclaration_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.15" trgNode="//@rules.37/@nodes.0">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement/source"/>
     </edges>
-    <edges name="mSourceToTSource__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.15" trgNode="//@rules.37/@nodes.5">
+    <edges name="mAbstractFlowElementToTAbstractFlowElement__target__tConstructorDef_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.37/@nodes.15" trgNode="//@rules.37/@nodes.5">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement/target"/>
     </edges>
     <edges name="eConstructorDeclaration__mParameterList__mParameterList_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.37/@nodes.0" trgNode="//@rules.37/@nodes.1">

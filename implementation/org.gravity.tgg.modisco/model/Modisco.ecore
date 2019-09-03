@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/org.gravity.tgg.modisco.ecore"
     nsPrefix="org.gravity.tgg.modisco">
   <eClassifiers xsi:type="ecore:EClass" name="MParameterListToTParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MParameterList"/>
@@ -781,18 +781,18 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MConstructorDefinitionToTParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__eConstructorDeclarationToTSig"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ConstructorDeclarationToTMethodSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAbstractFlowElementToTAbstractFlowElement"
+        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mModelToTypeGraph"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mParameterListToTParameterList"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MParameterListToTParameterList"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSourceToTSource"
-        lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
@@ -1773,7 +1773,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperMethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperMethodInvocation"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
