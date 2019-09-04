@@ -98,8 +98,8 @@ public class HTotalVisibilityCalculatorImpl extends HMetricCalculatorImpl implem
 			}
 		}
 		HTotalVisibilityMetric metric = MetricsFactory.eINSTANCE.createHTotalVisibilityMetric();
-		metric.setValue(totalValue);
 		metric.setTAnnotated(pg);
+		metric.setValue(totalValue);
 		getHAnnotation().add(metric);
 
 		return true;

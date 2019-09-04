@@ -37,10 +37,10 @@ public class MoDiscoTGGActivator extends Plugin {
 		plugin = this;
 		
 		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] configuration_elements = extension_registry
+		IConfigurationElement[] configurationElements = extension_registry
 				.getConfigurationElementsFor("org.gravity.modisco.patcher"); //$NON-NLS-1$
-		if (configuration_elements.length > 0) {
-			setSelectedPatcher((GravityMoDiscoModelPatcher) configuration_elements[0].createExecutableExtension("class")); //$NON-NLS-1$
+		if (configurationElements.length > 0) {
+			setSelectedPatcher((GravityMoDiscoModelPatcher) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
 		}
 	}
 

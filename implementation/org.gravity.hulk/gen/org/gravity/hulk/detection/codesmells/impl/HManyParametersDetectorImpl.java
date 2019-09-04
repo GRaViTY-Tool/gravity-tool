@@ -43,14 +43,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HMany Parameters Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HMany
+ * Parameters Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HManyParametersDetectorImpl#isRelative <em>Relative</em>}</li>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HManyParametersDetectorImpl#getThreshold <em>Threshold</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HManyParametersDetectorImpl#isRelative
+ * <em>Relative</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HManyParametersDetectorImpl#getThreshold
+ * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,8 +60,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implements HManyParametersDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -69,8 +70,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -78,9 +79,9 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	protected boolean relative = RELATIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -88,9 +89,9 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	protected static final double THRESHOLD_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -98,8 +99,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	protected double threshold = THRESHOLD_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HManyParametersDetectorImpl() {
@@ -107,8 +108,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,8 +118,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isRelative() {
@@ -126,8 +127,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRelative(boolean newRelative) {
@@ -139,8 +140,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getThreshold() {
@@ -148,8 +149,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setThreshold(double newThreshold) {
@@ -161,57 +162,41 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	public HAnnotation calculate(TClass tClass) {
-
-		Object[] result1_black = HManyParametersDetectorImpl
-				.pattern_HManyParametersDetector_0_1_ActivityNode59_blackBF(tClass);
-		if (result1_black == null) {
+		HAverageParametersMetric parameters = null;
+		for (TAnnotation tmpParameters : tClass.getTAnnotation()) {
+			if (tmpParameters instanceof HAverageParametersMetric) {
+				parameters = (HAverageParametersMetric) tmpParameters;
+				break;
+			}
+		}
+		if (parameters == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ".");
 		}
-		HAverageParametersMetric parameters = (HAverageParametersMetric) result1_black[1];
-		// 
-		Object[] result2_black = HManyParametersDetectorImpl
-				.pattern_HManyParametersDetector_0_2_ActivityNode83_blackB(this);
-		if (result2_black != null) {
+		//
+		if (isRelative()) {
+			setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
 
-			Object[] result3_black = HManyParametersDetectorImpl
-					.pattern_HManyParametersDetector_0_3_ActivityNode60_blackB(this);
-			if (result3_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-			}
-			HManyParametersDetectorImpl.pattern_HManyParametersDetector_0_3_ActivityNode60_greenB(this);
-
-		} else {
+		} 
+		//
+		if (Double.valueOf(getThreshold()).compareTo(parameters.getValue()) < 0) {
+			HManyParametersCodeSmell smell = CodesmellsFactory.eINSTANCE.createHManyParametersCodeSmell();
+			smell.setTAnnotated(tClass);
+			smell.setHAverageParametersMetric(parameters);
+			getHAnnotation().add(smell);
+			parameters.getPartOf().add(smell);
+			return smell;
 		}
-		// 
-		Object[] result4_black = HManyParametersDetectorImpl
-				.pattern_HManyParametersDetector_0_4_ActivityNode84_blackBB(this, parameters);
-		if (result4_black != null) {
-
-			Object[] result5_black = HManyParametersDetectorImpl
-					.pattern_HManyParametersDetector_0_5_ActivityNode61_blackBBB(this, tClass, parameters);
-			if (result5_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[tClass] = " + tClass + ", " + "[parameters] = " + parameters + ".");
-			}
-			Object[] result5_green = HManyParametersDetectorImpl
-					.pattern_HManyParametersDetector_0_5_ActivityNode61_greenBBFB(this, tClass, parameters);
-			HManyParametersCodeSmell smell = (HManyParametersCodeSmell) result5_green[2];
-
-			return HManyParametersDetectorImpl.pattern_HManyParametersDetector_0_6_expressionFB(smell);
-		} else {
-			return HManyParametersDetectorImpl.pattern_HManyParametersDetector_0_7_expressionF();
-		}
-
+		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateRelativeThreshold(HRelativeValueConstants level) {
@@ -222,33 +207,26 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -263,8 +241,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,8 +259,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -299,8 +277,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -315,8 +293,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -341,8 +319,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -367,8 +345,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -403,8 +381,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -421,8 +399,8 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -439,75 +417,6 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 		return result.toString();
 	}
 
-	public static final Object[] pattern_HManyParametersDetector_0_1_ActivityNode59_blackBF(TClass tClass) {
-		for (TAnnotation tmpParameters : tClass.getTAnnotation()) {
-			if (tmpParameters instanceof HAverageParametersMetric) {
-				HAverageParametersMetric parameters = (HAverageParametersMetric) tmpParameters;
-				return new Object[] { tClass, parameters };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_2_ActivityNode83_blackB(
-			HManyParametersDetector _this) {
-		boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.valueOf(true))) {
-			return new Object[] { _this };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_3_ActivityNode60_blackB(
-			HManyParametersDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_3_ActivityNode60_greenB(
-			HManyParametersDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_4_ActivityNode84_blackBB(
-			HManyParametersDetector _this, HAverageParametersMetric parameters) {
-		double this_threshold = _this.getThreshold();
-		double parameters_value = parameters.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(parameters_value)) < 0) {
-			return new Object[] { _this, parameters };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_5_ActivityNode61_blackBBB(
-			HManyParametersDetector _this, TClass tClass, HAverageParametersMetric parameters) {
-		return new Object[] { _this, tClass, parameters };
-	}
-
-	public static final Object[] pattern_HManyParametersDetector_0_5_ActivityNode61_greenBBFB(
-			HManyParametersDetector _this, TClass tClass, HAverageParametersMetric parameters) {
-		HManyParametersCodeSmell smell = CodesmellsFactory.eINSTANCE.createHManyParametersCodeSmell();
-		_this.getHAnnotation().add(smell);
-		smell.setTAnnotated(tClass);
-		smell.setHAverageParametersMetric(parameters);
-		parameters.getPartOf().add(smell);
-		return new Object[] { _this, tClass, smell, parameters };
-	}
-
-	public static final HAnnotation pattern_HManyParametersDetector_0_6_expressionFB(HManyParametersCodeSmell smell) {
-		HAnnotation _result = smell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HManyParametersDetector_0_7_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -516,4 +425,4 @@ public class HManyParametersDetectorImpl extends HCodeSmellDetectorImpl implemen
 	}
 
 	// [user code injected with eMoflon] -->
-} //HManyParametersDetectorImpl
+} // HManyParametersDetectorImpl

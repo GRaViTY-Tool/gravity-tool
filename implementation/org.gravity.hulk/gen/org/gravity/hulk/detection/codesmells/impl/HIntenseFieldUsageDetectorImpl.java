@@ -170,47 +170,31 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {
-
-		Object[] result1_black = HIntenseFieldUsageDetectorImpl
-				.pattern_HIntenseFieldUsageDetector_0_1_ActivityNode67_blackBF(tClass);
-		if (result1_black == null) {
+		HLocalAccessRelationMetric hMetric = null;
+		for (TAnnotation tmpHMetric : tClass.getTAnnotation()) {
+			if (tmpHMetric instanceof HLocalAccessRelationMetric) {
+				 hMetric = (HLocalAccessRelationMetric) tmpHMetric;
+			}
+		}
+		if (hMetric == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ".");
 		}
-		HLocalAccessRelationMetric hMetric = (HLocalAccessRelationMetric) result1_black[1];
 		// 
-		Object[] result2_black = HIntenseFieldUsageDetectorImpl
-				.pattern_HIntenseFieldUsageDetector_0_2_ActivityNode89_blackB(this);
-		if (result2_black != null) {
-
-			Object[] result3_black = HIntenseFieldUsageDetectorImpl
-					.pattern_HIntenseFieldUsageDetector_0_3_ActivityNode68_blackB(this);
-			if (result3_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-			}
-			HIntenseFieldUsageDetectorImpl.pattern_HIntenseFieldUsageDetector_0_3_ActivityNode68_greenB(this);
-
-		} else {
-		}
+		if (isRelative()) {
+			setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
+		} 
 		// 
-		Object[] result4_black = HIntenseFieldUsageDetectorImpl
-				.pattern_HIntenseFieldUsageDetector_0_4_ActivityNode90_blackBB(this, hMetric);
-		if (result4_black != null) {
-
-			Object[] result5_black = HIntenseFieldUsageDetectorImpl
-					.pattern_HIntenseFieldUsageDetector_0_5_ActivityNode69_blackBBB(tClass, this, hMetric);
-			if (result5_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-						+ "[this] = " + this + ", " + "[hMetric] = " + hMetric + ".");
-			}
-			Object[] result5_green = HIntenseFieldUsageDetectorImpl
-					.pattern_HIntenseFieldUsageDetector_0_5_ActivityNode69_greenBFBB(tClass, this, hMetric);
-			HIntenseFieldUsageCodeSmell smell = (HIntenseFieldUsageCodeSmell) result5_green[1];
-
-			return HIntenseFieldUsageDetectorImpl.pattern_HIntenseFieldUsageDetector_0_6_expressionFB(smell);
-		} else {
-			return HIntenseFieldUsageDetectorImpl.pattern_HIntenseFieldUsageDetector_0_7_expressionF();
-		}
-
+		if (Double.valueOf(getThreshold()).compareTo(Double.valueOf(hMetric.getValue())) < 0) {
+			
+			HIntenseFieldUsageCodeSmell smell = CodesmellsFactory.eINSTANCE.createHIntenseFieldUsageCodeSmell();
+			smell.setTAnnotated(tClass);
+			smell.setHLocalAccessRelationMetric(hMetric);
+			getHAnnotation().add(smell);
+			hMetric.getPartOf().add(smell);
+			
+			return smell;
+		} 
+		return null;
 	}
 
 	/**
@@ -226,28 +210,21 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
@@ -441,76 +418,6 @@ public class HIntenseFieldUsageDetectorImpl extends HCodeSmellDetectorImpl imple
 		result.append(threshold);
 		result.append(')');
 		return result.toString();
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_1_ActivityNode67_blackBF(TClass tClass) {
-		for (TAnnotation tmpHMetric : tClass.getTAnnotation()) {
-			if (tmpHMetric instanceof HLocalAccessRelationMetric) {
-				HLocalAccessRelationMetric hMetric = (HLocalAccessRelationMetric) tmpHMetric;
-				return new Object[] { tClass, hMetric };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_2_ActivityNode89_blackB(
-			HIntenseFieldUsageDetector _this) {
-		boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.valueOf(true))) {
-			return new Object[] { _this };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_3_ActivityNode68_blackB(
-			HIntenseFieldUsageDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_3_ActivityNode68_greenB(
-			HIntenseFieldUsageDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_4_ActivityNode90_blackBB(
-			HIntenseFieldUsageDetector _this, HLocalAccessRelationMetric hMetric) {
-		double this_threshold = _this.getThreshold();
-		double hMetric_value = hMetric.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(hMetric_value)) < 0) {
-			return new Object[] { _this, hMetric };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_5_ActivityNode69_blackBBB(TClass tClass,
-			HIntenseFieldUsageDetector _this, HLocalAccessRelationMetric hMetric) {
-		return new Object[] { tClass, _this, hMetric };
-	}
-
-	public static final Object[] pattern_HIntenseFieldUsageDetector_0_5_ActivityNode69_greenBFBB(TClass tClass,
-			HIntenseFieldUsageDetector _this, HLocalAccessRelationMetric hMetric) {
-		HIntenseFieldUsageCodeSmell smell = CodesmellsFactory.eINSTANCE.createHIntenseFieldUsageCodeSmell();
-		smell.setHLocalAccessRelationMetric(hMetric);
-		smell.setTAnnotated(tClass);
-		_this.getHAnnotation().add(smell);
-		hMetric.getPartOf().add(smell);
-		return new Object[] { tClass, smell, _this, hMetric };
-	}
-
-	public static final HAnnotation pattern_HIntenseFieldUsageDetector_0_6_expressionFB(
-			HIntenseFieldUsageCodeSmell smell) {
-		HAnnotation _result = smell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HIntenseFieldUsageDetector_0_7_expressionF() {
-		HAnnotation _result = null;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

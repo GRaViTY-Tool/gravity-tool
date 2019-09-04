@@ -309,17 +309,18 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * @generated NOT
 	 */
 	public boolean isSuperTypeOf(TAbstractType tType) {
-		// [user code injected with eMoflon]
+		if(equals(tType)) {
+			return true;
+		}
 		if (tType instanceof TClass) {
-			TClass tClass = (TClass) tType;
-			TClass tParentClass = getParentClass();
+			TClass tParentClass = ((TClass) tType).getParentClass();
 			if (tParentClass == null) {
 				return false;
 			}
-			if (tParentClass.equals(tType)) {
+			if (tParentClass.equals(this)) {
 				return true;
 			}
-			return tParentClass.isSuperTypeOf(tType);
+			return isSuperTypeOf(tParentClass);
 		} else if (tType instanceof TInterface) {
 			EList<TInterface> tInterfaces = getImplements();
 			if (tInterfaces.contains(tType)) {

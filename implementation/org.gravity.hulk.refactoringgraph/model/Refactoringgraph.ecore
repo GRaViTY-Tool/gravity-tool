@@ -9,8 +9,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="HMethodToDataClassAccess" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
     <eOperations name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClassSmell" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClass" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClass" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HInBlobAccess" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric"/>
   <eClassifiers xsi:type="ecore:EClass" name="HBlobResolveAnnotation" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HAnnotation">
@@ -22,7 +22,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HCluster" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1"
-        eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+        eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HInBlobClusterAccess" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
     <eOperations name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
@@ -35,25 +35,25 @@
     <eClassifiers xsi:type="ecore:EClass" name="HExtractClass" eSuperTypes="#//refactorings/HRefactoring">
       <eOperations name="getAvgIba" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1"
-          eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveMember" abstract="true" eSuperTypes="#//refactorings/HRefactoring">
       <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass" lowerBound="1"
-          eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" lowerBound="1"
-          eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="m2dc" lowerBound="1"
           eType="#//HMethodToDataClassAccess"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="iba" lowerBound="1" eType="#//HInBlobAccess"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tSignature" upperBound="-1"
-          eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveField" eSuperTypes="#//refactorings/HMoveMember"/>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveMembers" eSuperTypes="#//refactorings/HRefactoring">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hMoveMembers" upperBound="-1"
           eType="#//refactorings/HMoveMember"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass" eType="ecore:EClass ../../org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

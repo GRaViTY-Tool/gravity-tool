@@ -1,0 +1,47 @@
+TestFile public_pum_2 {
+
+	class child1 {
+		package "example02"
+		name	"ChildClass1"
+	}
+	
+	class child2 {
+		package "example02"
+		name	"ChildClass2"
+	}
+	
+	class existing_parent {
+		package "example02"
+		name	"ParentClass"
+	}
+	
+	classes correct {
+		child1,
+		child2
+	}
+	
+	method method_to_pull_up {
+		name "method"
+	}
+	
+	pullup_method not_executable_pum {
+		parent existing_parent
+		method method_to_pull_up
+	}
+	
+	case pub_pum2_1 {
+		description "PUM-NEG: (paper2) Pull-up of two classes into a parent class, which already has a method with the signature."
+		program "paper-example02"
+		
+		testflow {
+			assertFalse(not_executable_pum)
+			
+			synchronize
+			compile
+			existing_parent contains method_to_pull_up
+			child1 contains method_to_pull_up
+			child2 contains method_to_pull_up
+		}
+	}
+	
+}

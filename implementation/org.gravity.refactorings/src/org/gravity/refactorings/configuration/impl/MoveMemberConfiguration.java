@@ -33,6 +33,6 @@ public class MoveMemberConfiguration implements RefactoringConfiguration {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TMoveMember;
+		return TRefactoringID.MOVE_MEMBER;
 	}
 }

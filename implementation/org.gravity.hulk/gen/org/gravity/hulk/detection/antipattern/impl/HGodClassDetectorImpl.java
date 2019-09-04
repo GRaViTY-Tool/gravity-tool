@@ -37,11 +37,11 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 // <-- [user defined imports]
 // [user defined imports] -->
+import org.osgi.service.resolver.HostedCapability;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HGod Class Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGod
+ * Class Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -49,8 +49,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
  */
 public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements HGodClassDetector {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HGodClassDetectorImpl() {
@@ -58,8 +58,8 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,74 +68,58 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
-		Object[] result1_black = HGodClassDetectorImpl.pattern_HGodClassDetector_0_1_ActivityNode36_blackFFB(tClass);
-		if (result1_black != null) {
-			HControllerClassSmell controller = (HControllerClassSmell) result1_black[0];
-			HLargeClassLowCohesionSmell lclc = (HLargeClassLowCohesionSmell) result1_black[1];
-			// 
-			Object[] result2_black = HGodClassDetectorImpl
-					.pattern_HGodClassDetector_0_2_ActivityNode37_blackBBBB(controller, lclc, tClass, this);
-			if (result2_black != null) {
-				Object[] result2_green = HGodClassDetectorImpl
-						.pattern_HGodClassDetector_0_2_ActivityNode37_greenBBFBB(controller, lclc, tClass, this);
-				HGodClassAntiPattern mc = (HGodClassAntiPattern) result2_green[2];
-
-				// 
-				Object[] result3_black = HGodClassDetectorImpl
-						.pattern_HGodClassDetector_0_3_ActivityNode68_blackFBF(tClass);
-				if (result3_black != null) {
-					TAnnotationType tAnnotationType = (TAnnotationType) result3_black[0];
-					//nothing TypeGraph pg = (TypeGraph) result3_black[2];
-					HGodClassDetectorImpl.pattern_HGodClassDetector_0_3_ActivityNode68_greenBFB(tAnnotationType,
-							tClass);
-					//nothing TAnnotation annotation = (TAnnotation) result3_green[1];
-
-				} else {
-				}
-				return HGodClassDetectorImpl.pattern_HGodClassDetector_0_4_expressionFB(mc);
-			} else {
-				return HGodClassDetectorImpl.pattern_HGodClassDetector_0_5_expressionF();
+	public HAnnotation calculate(TClass tClass) {//
+		HLargeClassLowCohesionSmell lclc = null;
+		HControllerClassSmell controller = null;
+		for (TAnnotation tmpLclc : tClass.getTAnnotation()) {
+			if (tmpLclc instanceof HLargeClassLowCohesionSmell) {
+				lclc = (HLargeClassLowCohesionSmell) tmpLclc;
+			} else if (tmpLclc instanceof HControllerClassSmell) {
+				controller = (HControllerClassSmell) tmpLclc;
 			}
-
-		} else {
-			return HGodClassDetectorImpl.pattern_HGodClassDetector_0_6_expressionF();
 		}
+		if (lclc != null && controller != null) {
+			//
+			HGodClassAntiPattern mc = createAntiPattern(controller, lclc, tClass);
+
+			//
+			TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "GodClass");
+			if (tAnnotationType != null) {
+				TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+				annotation.setTAnnotated(tClass);
+				tAnnotationType.getAnnotations().add(annotation);
+			}
+			return mc;
+		}
+		return null;
 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -162,8 +146,8 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,76 +161,16 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HGodClassDetector_0_1_ActivityNode36_blackFFB(TClass tClass) {
-		for (TAnnotation tmpLclc : tClass.getTAnnotation()) {
-			if (tmpLclc instanceof HLargeClassLowCohesionSmell) {
-				HLargeClassLowCohesionSmell lclc = (HLargeClassLowCohesionSmell) tmpLclc;
-				for (TAnnotation tmpController : tClass.getTAnnotation()) {
-					if (tmpController instanceof HControllerClassSmell) {
-						HControllerClassSmell controller = (HControllerClassSmell) tmpController;
-						return new Object[] { controller, lclc, tClass };
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HGodClassDetector_0_2_ActivityNode37_blackBBBB(
-			HControllerClassSmell controller, HLargeClassLowCohesionSmell lclc, TClass tClass,
-			HGodClassDetector _this) {
-		return new Object[] { controller, lclc, tClass, _this };
-	}
-
-	public static final Object[] pattern_HGodClassDetector_0_2_ActivityNode37_greenBBFBB(
-			HControllerClassSmell controller, HLargeClassLowCohesionSmell lclc, TClass tClass,
-			HGodClassDetector _this) {
+	public final HGodClassAntiPattern createAntiPattern(HControllerClassSmell controller,
+			HLargeClassLowCohesionSmell lclc, TClass tClass) {
 		HGodClassAntiPattern mc = AntipatternFactory.eINSTANCE.createHGodClassAntiPattern();
-		controller.getPartOf().add(mc);
-		lclc.getPartOf().add(mc);
+		mc.setTAnnotated(tClass);
 		mc.setHLargeClassLowCohesionSmell(lclc);
 		mc.setHControllerClassSmell(controller);
-		mc.setTAnnotated(tClass);
-		_this.getHAnnotation().add(mc);
-		return new Object[] { controller, lclc, mc, tClass, _this };
-	}
-
-	public static final Object[] pattern_HGodClassDetector_0_3_ActivityNode68_blackFBF(TClass tClass) {
-		TypeGraph pg = tClass.getPg();
-		if (pg != null) {
-			for (TAnnotationType tAnnotationType : pg.getTAnnotationTypes()) {
-				String tAnnotationType_tName = tAnnotationType.getTName();
-				if (tAnnotationType_tName.equals("GodClass")) {
-					return new Object[] { tAnnotationType, tClass, pg };
-				}
-
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HGodClassDetector_0_3_ActivityNode68_greenBFB(TAnnotationType tAnnotationType,
-			TClass tClass) {
-		TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
-		tAnnotationType.getAnnotations().add(annotation);
-		annotation.setTAnnotated(tClass);
-		return new Object[] { tAnnotationType, annotation, tClass };
-	}
-
-	public static final HAnnotation pattern_HGodClassDetector_0_4_expressionFB(HGodClassAntiPattern mc) {
-		HAnnotation _result = mc;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HGodClassDetector_0_5_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HGodClassDetector_0_6_expressionF() {
-		HAnnotation _result = null;
-		return _result;
+		getHAnnotation().add(mc);
+		controller.getPartOf().add(mc);
+		lclc.getPartOf().add(mc);
+		return mc;
 	}
 
 	// <-- [user code injected with eMoflon]
@@ -257,4 +181,4 @@ public class HGodClassDetectorImpl extends HAntiPatternDetectorImpl implements H
 	}
 
 	// [user code injected with eMoflon] -->
-} //HGodClassDetectorImpl
+} // HGodClassDetectorImpl

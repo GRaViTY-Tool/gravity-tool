@@ -20,6 +20,7 @@ import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 
 public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
@@ -41,55 +42,58 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HSpaghettiCodeAntiPattern spaghettiCodeAntiPattern) {
-		
+
 		// SpaghettiCode
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
-		detections.put(((TClass) spaghettiCodeAntiPattern.getTAnnotated()).getFullyQualifiedName(), "-1");	
-		
+		detections.put(((TClass) spaghettiCodeAntiPattern.getTAnnotated()), "-1");
+
 		DetectionObject spaghettiCodeDetectionObject = new DetectionObject(detections, thresholds, "",
 				Flaws.H_SPAGHETTI_CODE_ANTIPATTERN);
 		detectionObjects.get(Flaws.H_SPAGHETTI_CODE_ANTIPATTERN).add(spaghettiCodeDetectionObject);
-		
+
 		HIntenseFieldUsageCodeSmell intenseFieldUsageCodeSmell = spaghettiCodeAntiPattern
 				.getHIntenseFieldUsageCodeSmell();
 		preprocessDetections(detectionObjects, intenseFieldUsageCodeSmell);
-		
+
 		HAverageOverloadingInClassMetric averageOverloadingInClassMetric = spaghettiCodeAntiPattern
 				.getHAverageOverloadingInClassMetric();
 		if (averageOverloadingInClassMetric != null) {
-			thresholds.put(Flaws.H_AVERAGE_OVERLOADING_METRIC + ":" + HRelativeValueConstants.VERY_LOW, (ThresholdCalculator
-					.getThresholdValue(averageOverloadingInClassMetric, HRelativeValueConstants.VERY_LOW, false)));
+			thresholds.put(Flaws.H_AVERAGE_OVERLOADING_METRIC + ":" + HRelativeValueConstants.VERY_LOW,
+					(ThresholdCalculator.getThresholdValue(averageOverloadingInClassMetric,
+							HRelativeValueConstants.VERY_LOW, false)));
 		}
 		preprocessDetections(detectionObjects, averageOverloadingInClassMetric);
-		
+
 		HAverageParametersMetric averageParametersMetric = spaghettiCodeAntiPattern.getHAverageParametersMetric();
 		if (averageParametersMetric != null) {
-			thresholds.put(Flaws.H_AVERAGE_PARAMETERS_METRIC + ":" + HRelativeValueConstants.VERY_LOW, (ThresholdCalculator
-					.getThresholdValue(averageParametersMetric, HRelativeValueConstants.VERY_LOW, false)));
+			thresholds.put(Flaws.H_AVERAGE_PARAMETERS_METRIC + ":" + HRelativeValueConstants.VERY_LOW,
+					(ThresholdCalculator.getThresholdValue(averageParametersMetric, HRelativeValueConstants.VERY_LOW,
+							false)));
 		}
 		preprocessDetections(detectionObjects, averageParametersMetric);
-		
+
 		HNumberOfChildMetric numberOfChildMetric = spaghettiCodeAntiPattern.getHNumberOfChild();
 		if (numberOfChildMetric != null) {
 			thresholds.put(Flaws.H_NUMBER_OF_CHILD_METRIC + ":" + HRelativeValueConstants.VERY_LOW, (ThresholdCalculator
 					.getThresholdValue(numberOfChildMetric, HRelativeValueConstants.VERY_LOW, false)));
 		}
 		preprocessDetections(detectionObjects, numberOfChildMetric);
-		
+
 		HDepthOfInheritanceMetric depthOfInheritanceMetric = spaghettiCodeAntiPattern.getHDepthOfInheritanceMetric();
 		if (depthOfInheritanceMetric != null) {
-			thresholds.put(Flaws.H_DEPTH_OF_INHERITANCE_METRIC + ":" + HRelativeValueConstants.VERY_LOW, (ThresholdCalculator
-					.getThresholdValue(depthOfInheritanceMetric, HRelativeValueConstants.VERY_LOW, false)));
+			thresholds.put(Flaws.H_DEPTH_OF_INHERITANCE_METRIC + ":" + HRelativeValueConstants.VERY_LOW,
+					(ThresholdCalculator.getThresholdValue(depthOfInheritanceMetric, HRelativeValueConstants.VERY_LOW,
+							false)));
 		}
 		preprocessDetections(detectionObjects, depthOfInheritanceMetric);
-		
+
 		HLocalAccessRelationMetric localAccessRelationMetric = null;
 		if (intenseFieldUsageCodeSmell != null) {
 			localAccessRelationMetric = intenseFieldUsageCodeSmell.getHLocalAccessRelationMetric();
 		}
 		preprocessDetections(detectionObjects, localAccessRelationMetric);
-		
+
 		HLocalFieldAccessesMetric localFieldAccessesMetric = null;
 		HLocalMethodAccessesMetric localMethodAccessesMetric = null;
 		if (localAccessRelationMetric != null) {
@@ -106,13 +110,13 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HIntenseFieldUsageCodeSmell intenseFieldUsageCodeSmell) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// IntensiveFielsUsage
 		if (intenseFieldUsageCodeSmell != null) {
 			TClass tClass = (TClass) intenseFieldUsageCodeSmell.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(), "-1");
+			detections.put(tClass, "-1");
 			thresholds.put(Flaws.H_LOCAL_ACCESS_RELATION_METRIC + ": VERY_HIGH",
 					(ThresholdCalculator.getThresholdValue(intenseFieldUsageCodeSmell.getHLocalAccessRelationMetric(),
 							HRelativeValueConstants.VERY_HIGH, true)));
@@ -128,15 +132,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HAverageOverloadingInClassMetric averageOverloadingInClassMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// AverageOverlaoding
 		if (averageOverloadingInClassMetric != null) {
 			TClass tClass = (TClass) averageOverloadingInClassMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					averageOverloadingInClassMetric.getRelativeAmount().getValue().toString() + ": "
-							+ averageOverloadingInClassMetric.getValue());
+			detections.put(tClass, averageOverloadingInClassMetric.getRelativeAmount().getValue().toString() + ": "
+					+ averageOverloadingInClassMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject averageOverloadingDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -150,15 +153,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HAverageParametersMetric averageParametersMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// AverageParameters
 		if (averageParametersMetric != null) {
 			TClass tClass = (TClass) averageParametersMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					averageParametersMetric.getRelativeAmount().getValue().toString() + ": "
-							+ averageParametersMetric.getValue());
+			detections.put(tClass, averageParametersMetric.getRelativeAmount().getValue().toString() + ": "
+					+ averageParametersMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject averageParametersDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -172,14 +174,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HNumberOfChildMetric numberOfChildMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// NumberOfChild
 		if (numberOfChildMetric != null) {
 			TClass tClass = (TClass) numberOfChildMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(), numberOfChildMetric.getRelativeAmount().getValue().toString()
-					+ ": " + numberOfChildMetric.getValue());
+			detections.put(tClass, numberOfChildMetric.getRelativeAmount().getValue().toString() + ": "
+					+ numberOfChildMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject numberOfChildDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -193,15 +195,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HDepthOfInheritanceMetric depthOfInheritanceMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// DepthOfInheritance
 		if (depthOfInheritanceMetric != null) {
 			TClass tClass = (TClass) depthOfInheritanceMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					depthOfInheritanceMetric.getRelativeAmount().getValue().toString() + ": "
-							+ depthOfInheritanceMetric.getValue());
+			detections.put(tClass, depthOfInheritanceMetric.getRelativeAmount().getValue().toString() + ": "
+					+ depthOfInheritanceMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject depthOfInheritanceDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -215,15 +216,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HLocalAccessRelationMetric localAccessRelationMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// LocalAccessRelation
 		if (localAccessRelationMetric != null) {
 			TClass tClass = (TClass) localAccessRelationMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					localAccessRelationMetric.getRelativeAmount().getValue().toString() + ": "
-							+ localAccessRelationMetric.getValue());
+			detections.put(tClass, localAccessRelationMetric.getRelativeAmount().getValue().toString() + ": "
+					+ localAccessRelationMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject localAccessRelationDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -237,15 +237,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HLocalFieldAccessesMetric localFieldAccessesMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// LocalFieldAccess
 		if (localFieldAccessesMetric != null) {
 			TClass tClass = (TClass) localFieldAccessesMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					localFieldAccessesMetric.getRelativeAmount().getValue().toString() + ": "
-							+ localFieldAccessesMetric.getValue());
+			detections.put(tClass, localFieldAccessesMetric.getRelativeAmount().getValue().toString() + ": "
+					+ localFieldAccessesMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject localFieldAccessDetectionObject = new DetectionObject(detections, thresholds, "",
@@ -259,15 +258,14 @@ public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
 	 */
 	private void preprocessDetections(Map<Flaws, List<DetectionObject>> detectionObjects,
 			HLocalMethodAccessesMetric localMethodAccessesMetric) {
-		Map<String, String> detections = new HashMap<>();
+		Map<TAbstractType, String> detections = new HashMap<>();
 		Map<String, Number> thresholds = new HashMap<>();
 
 		// LocalMethodAccess
 		if (localMethodAccessesMetric != null) {
 			TClass tClass = (TClass) localMethodAccessesMetric.getTAnnotated();
-			detections.put(tClass.getFullyQualifiedName(),
-					localMethodAccessesMetric.getRelativeAmount().getValue().toString() + ": "
-							+ localMethodAccessesMetric.getValue());
+			detections.put(tClass, localMethodAccessesMetric.getRelativeAmount().getValue().toString() + ": "
+					+ localMethodAccessesMetric.getValue());
 			thresholds.put("none", -1);
 		}
 		DetectionObject localMethodAccessDetectionObject = new DetectionObject(detections, thresholds, "",

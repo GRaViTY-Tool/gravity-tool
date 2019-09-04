@@ -3830,11 +3830,11 @@ public interface MetricsPackage extends EPackage {
 	EOperation getHLcom5Calculator__CalculateValue__TClass();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.hulk.detection.metrics.HLcom5Calculator#CalculateLcom5Value(org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric, org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric, org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric) <em>Calculate Lcom5 Value</em>}' operation.
+	 * Returns the meta object for the '{@link org.gravity.hulk.detection.metrics.HLcom5Calculator#calculateLcom5Value(org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric, org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric, org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric) <em>Calculate Lcom5 Value</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Calculate Lcom5 Value</em>' operation.
-	 * @see org.gravity.hulk.detection.metrics.HLcom5Calculator#CalculateLcom5Value(org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric, org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric, org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric)
+	 * @see org.gravity.hulk.detection.metrics.HLcom5Calculator#calculateLcom5Value(org.gravity.hulk.antipatterngraph.metrics.HNumberOfFieldsMetric, org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric, org.gravity.hulk.antipatterngraph.metrics.HLocalFieldUniqueAccessMetric)
 	 * @generated
 	 */
 	EOperation getHLcom5Calculator__CalculateLcom5Value__HNumberOfFieldsMetric_HNumberOfMethodsMetric_HLocalFieldUniqueAccessMetric();

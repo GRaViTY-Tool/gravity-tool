@@ -3,20 +3,16 @@
  */
 package org.gravity.eclipse.util;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.ISourceReference;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.gravity.typegraph.basic.TAbstractType;
@@ -72,7 +68,7 @@ public class MarkerUtil {
 		IJavaElement javaElement = getJavaElement(astTypes, element);
 		if (javaElement != null) {
 			try {
-				int line = getLine(javaElement);
+				int line = JavaASTUtil.getLine(javaElement);
 
 				IMarker marker = javaElement.getUnderlyingResource().createMarker(IMarker.PROBLEM);
 				marker.setAttribute(IMarker.MESSAGE, message);
@@ -133,7 +129,7 @@ public class MarkerUtil {
 		IJavaElement javaElement = getJavaElement(astTypes, element);
 		if (javaElement != null) {
 			try {
-				int line = getLine(javaElement);
+				int line = JavaASTUtil.getLine(javaElement);
 				for (IMarker marker : javaElement.getUnderlyingResource().findMarkers(IMarker.PROBLEM, true,
 						IResource.DEPTH_ONE)) {
 					Object attribute = marker.getAttribute(IMarker.LINE_NUMBER);
@@ -145,32 +141,5 @@ public class MarkerUtil {
 				LOGGER.log(Level.ERROR, e);
 			}
 		}
-	}
-
-	/**
-	 * Get the source code line of the given element
-	 * 
-	 * @param javaElement The element to look for
-	 * @return The source code line
-	 * @throws JavaModelException
-	 * @throws CoreException
-	 */
-	private static int getLine(IJavaElement javaElement) throws JavaModelException, CoreException {
-		IResource underlyingResource = javaElement.getUnderlyingResource();
-		int line = 1;
-		if (underlyingResource.getFileExtension().equals("java")) {
-			try (InputStream stream = ((IFile) underlyingResource).getContents()) {
-				char ch;
-				int count = ((ISourceReference) javaElement).getSourceRange().getOffset();
-				while ((ch = (char) stream.read()) != -1 && count-- > 0) {
-					if (ch == '\n') {
-						line++;
-					}
-				}
-			} catch (IOException e) {
-				LOGGER.log(Level.ERROR, e);
-			}
-		}
-		return line;
 	}
 }

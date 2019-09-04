@@ -5,12 +5,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -24,6 +26,8 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.selection.SelectionHelper;
+import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.hulk.HAntiPatternDetection;
 import org.gravity.hulk.HulkActivator;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
@@ -31,10 +35,14 @@ import org.gravity.hulk.ui.visualization.detection.SpaghettiCodePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.SwissArmyKnifePreprocessor;
 import org.gravity.hulk.ui.visualization.detection.TheBlobPreprocessor;
 import org.gravity.hulk.ui.visualization.information.providers.InformationViewContentProvider;
-import org.gravity.hulk.ui.visualization.listener.DetectionLinkListener;
-import org.gravity.hulk.ui.visualization.markerManager.AntipatternMarkerManager;
+import org.gravity.hulk.ui.visualization.marker.AntipatternMarkerManager;
 
 public class OpenAntipatternXmiHandler extends AbstractHandler {
+
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(OpenAntipatternXmiHandler.class);
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -64,8 +72,8 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 	}
 
 	private void openProject(IProject project) throws IOException {
-		IFolder src = project.getFolder(HulkActivator.HULK_FOLDER_NAME);
-		IFile antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_PG_XMI_NAME);
+		IFolder src = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
+		IFile antiPatternXmi = src.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
 		URI uri = URI.createFileURI(antiPatternXmi.getLocation().toString());
 		Resource antiPatternResource = new ResourceSetImpl().getResource(uri, true);
 		antiPatternResource.load(Collections.emptyMap());
@@ -82,12 +90,18 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 		}
 
 		InformationViewContentProvider.setAPG(apg);
-		DetectionLinkListener.setProject(project);
-		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new TheBlobPreprocessor(), project);
+		
+		IJavaProject javaProject = JavaProjectUtil.convertToJavaProject(project);
+		if(javaProject == null) {
+			LOGGER.error("Not a Java project: "+project.getName());
+			return;
+		}
+		
+		AntipatternMarkerManager theBlobManager = new AntipatternMarkerManager(apg, new TheBlobPreprocessor(), javaProject);
 		AntipatternMarkerManager swissArmyKnifeManager = new AntipatternMarkerManager(apg,
-				new SwissArmyKnifePreprocessor(), project);
+				new SwissArmyKnifePreprocessor(), javaProject);
 		AntipatternMarkerManager spaghettiCodeManager = new AntipatternMarkerManager(apg,
-				new SpaghettiCodePreprocessor(), project);
+				new SpaghettiCodePreprocessor(), javaProject);
 		theBlobManager.setMarkers();
 		swissArmyKnifeManager.setMarkers();
 		spaghettiCodeManager.setMarkers();

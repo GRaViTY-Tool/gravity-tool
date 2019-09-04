@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="org.gravity.security.analysis" name="GRaViTY Security Project" schema="schema/org.gravity.security.analysis.exsd"/>
+   <extension-point 
+         id="org.gravity.security.analysis" 
+         name="GRaViTY Security Project" 
+         schema="schema/org.gravity.security.analysis.exsd"/>
    <extension
          point="org.eclipse.ui.commands">
       <command
@@ -9,18 +12,6 @@
             id="org.gravity.security.analysis.commands.publicinterfaces"
             name="Public Interface Access">
       </command>
-   </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="popup:org.gravity.mainmenu">
-         <command
-               commandId="org.gravity.security.analysis.commands.publicinterfaces"
-               label="Public Interface Access"
-               style="push">
-         </command>
-      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.menus">

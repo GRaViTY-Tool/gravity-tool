@@ -425,7 +425,7 @@ public interface AntipatterngraphPackage extends EPackage {
 	int HANTI_PATTERN_GRAPH = 4;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' containment reference.
+	 * The feature id for the '<em><b>Pg</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -593,10 +593,10 @@ public interface AntipatterngraphPackage extends EPackage {
 	EClass getHAntiPatternGraph();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Pg</em>'.
+	 * @return the meta object for the reference '<em>Pg</em>'.
 	 * @see org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg()
 	 * @see #getHAntiPatternGraph()
 	 * @generated
@@ -757,7 +757,7 @@ public interface AntipatterngraphPackage extends EPackage {
 		EClass HANTI_PATTERN_GRAPH = eINSTANCE.getHAntiPatternGraph();
 
 		/**
-		 * The meta object literal for the '<em><b>Pg</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Pg</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

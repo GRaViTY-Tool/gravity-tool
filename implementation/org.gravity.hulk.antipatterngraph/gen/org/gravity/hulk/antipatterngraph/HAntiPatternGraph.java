@@ -30,26 +30,26 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public interface HAntiPatternGraph extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Pg</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Pg</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pg</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pg</em>' containment reference.
+	 * @return the value of the '<em>Pg</em>' reference.
 	 * @see #setPg(TypeGraph)
 	 * @see org.gravity.hulk.antipatterngraph.AntipatterngraphPackage#getHAntiPatternGraph_Pg()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	TypeGraph getPg();
 
 	/**
-	 * Sets the value of the '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}' containment reference.
+	 * Sets the value of the '{@link org.gravity.hulk.antipatterngraph.HAntiPatternGraph#getPg <em>Pg</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pg</em>' containment reference.
+	 * @param value the new value of the '<em>Pg</em>' reference.
 	 * @see #getPg()
 	 * @generated
 	 */

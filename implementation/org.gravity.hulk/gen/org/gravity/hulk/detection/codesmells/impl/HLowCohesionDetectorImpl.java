@@ -38,14 +38,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HLow Cohesion Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HLow
+ * Cohesion Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetectorImpl#isRelative <em>Relative</em>}</li>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetectorImpl#getThreshold <em>Threshold</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetectorImpl#isRelative
+ * <em>Relative</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HLowCohesionDetectorImpl#getThreshold
+ * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,8 +55,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implements HLowCohesionDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -64,8 +65,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -73,9 +74,9 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	protected boolean relative = RELATIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -83,9 +84,9 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	protected static final double THRESHOLD_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -93,8 +94,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	protected double threshold = THRESHOLD_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HLowCohesionDetectorImpl() {
@@ -102,8 +103,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,8 +113,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isRelative() {
@@ -121,8 +122,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRelative(boolean newRelative) {
@@ -134,8 +135,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getThreshold() {
@@ -143,8 +144,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setThreshold(double newThreshold) {
@@ -156,60 +157,40 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
-		Object[] result1_black = HLowCohesionDetectorImpl
-				.pattern_HLowCohesionDetector_0_1_ActivityNode30_blackFB(tClass);
-		if (result1_black != null) {
-			HLCOM5Metric lcom = (HLCOM5Metric) result1_black[0];
-			// 
-			Object[] result2_black = HLowCohesionDetectorImpl
-					.pattern_HLowCohesionDetector_0_2_ActivityNode85_blackB(this);
-			if (result2_black != null) {
-				HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_2_ActivityNode85_greenB(this);
-
-				Object[] result3_black = HLowCohesionDetectorImpl
-						.pattern_HLowCohesionDetector_0_3_ActivityNode80_blackB(this);
-				if (result3_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-				}
-				HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_3_ActivityNode80_greenB(this);
-
-			} else {
-			}
-			// 
-			Object[] result4_black = HLowCohesionDetectorImpl
-					.pattern_HLowCohesionDetector_0_4_ActivityNode86_blackBB(this, lcom);
-			if (result4_black != null) {
-				// 
-				Object[] result5_black = HLowCohesionDetectorImpl
-						.pattern_HLowCohesionDetector_0_5_ActivityNode32_blackBBB(lcom, tClass, this);
-				if (result5_black != null) {
-					Object[] result5_green = HLowCohesionDetectorImpl
-							.pattern_HLowCohesionDetector_0_5_ActivityNode32_greenBFBB(lcom, tClass, this);
-					HLowCohesionSmell smell = (HLowCohesionSmell) result5_green[1];
-
-					return HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_6_expressionFB(smell);
-				} else {
-					return HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_7_expressionF();
-				}
-
-			} else {
-				return HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_8_expressionF();
-			}
-
-		} else {
-			return HLowCohesionDetectorImpl.pattern_HLowCohesionDetector_0_9_expressionF();
+	public HAnnotation calculate(TClass tClass) {//
+		if (tClass.isTLib()) {
+			return null;
 		}
+		for (TAnnotation tmpLcom : tClass.getTAnnotation()) {
+			if (tmpLcom instanceof HLCOM5Metric) {
+				HLCOM5Metric lcom = (HLCOM5Metric) tmpLcom;
+
+				setRelative(true);
+				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.HIGH));
+				//
+				if (Double.valueOf(getThreshold()).compareTo(lcom.getValue()) < 0) {
+					//
+					HLowCohesionSmell smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
+					smell.setTAnnotated(tClass);
+					smell.setHLCOM5CustomMetric(lcom);
+					lcom.getPartOf().add(smell);
+					getHAnnotation().add(smell);
+					return smell;
+				}
+				return null;
+			}
+		}
+		return null;
 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateRelativeThreshold(HRelativeValueConstants level) {
@@ -220,8 +201,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,8 +217,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,8 +235,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,8 +253,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -288,8 +269,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -314,8 +295,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -340,8 +321,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -372,8 +353,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -388,8 +369,8 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -406,87 +387,6 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 		return result.toString();
 	}
 
-	public static final Object[] pattern_HLowCohesionDetector_0_1_ActivityNode30_blackFB(TClass tClass) {
-		boolean tClass_tLib = tClass.isTLib();
-		if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
-			for (TAnnotation tmpLcom : tClass.getTAnnotation()) {
-				if (tmpLcom instanceof HLCOM5Metric) {
-					HLCOM5Metric lcom = (HLCOM5Metric) tmpLcom;
-					return new Object[] { lcom, tClass };
-				}
-			}
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_2_ActivityNode85_blackB(HLowCohesionDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_2_ActivityNode85_greenB(HLowCohesionDetector _this) {
-		boolean this_relative_prime = Boolean.valueOf(true);
-		_this.setRelative(Boolean.valueOf(this_relative_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_3_ActivityNode80_blackB(HLowCohesionDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_3_ActivityNode80_greenB(HLowCohesionDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_4_ActivityNode86_blackBB(HLowCohesionDetector _this,
-			HLCOM5Metric lcom) {
-		double this_threshold = _this.getThreshold();
-		double lcom_value = lcom.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(lcom_value)) < 0) {
-			return new Object[] { _this, lcom };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_5_ActivityNode32_blackBBB(HLCOM5Metric lcom,
-			TClass tClass, HLowCohesionDetector _this) {
-		return new Object[] { lcom, tClass, _this };
-	}
-
-	public static final Object[] pattern_HLowCohesionDetector_0_5_ActivityNode32_greenBFBB(HLCOM5Metric lcom,
-			TClass tClass, HLowCohesionDetector _this) {
-		HLowCohesionSmell smell = CodesmellsFactory.eINSTANCE.createHLowCohesionSmell();
-		lcom.getPartOf().add(smell);
-		smell.setTAnnotated(tClass);
-		smell.setHLCOM5CustomMetric(lcom);
-		_this.getHAnnotation().add(smell);
-		return new Object[] { lcom, smell, tClass, _this };
-	}
-
-	public static final HAnnotation pattern_HLowCohesionDetector_0_6_expressionFB(HLowCohesionSmell smell) {
-		HAnnotation _result = smell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HLowCohesionDetector_0_7_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HLowCohesionDetector_0_8_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HLowCohesionDetector_0_9_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -495,4 +395,4 @@ public class HLowCohesionDetectorImpl extends HClassBasedCalculatorImpl implemen
 	}
 
 	// [user code injected with eMoflon] -->
-} //HLowCohesionDetectorImpl
+} // HLowCohesionDetectorImpl

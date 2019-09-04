@@ -7,7 +7,7 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkFactory;
 import org.gravity.hulk.resolve.ResolvePackage;
 import org.gravity.hulk.resolve.antipattern.HBlobResolver;
-import org.gravity.hulk.ui.dialogs.ResolveResultDialog;
+import org.gravity.hulk.ui.dialogs.ResultDialog;
 
 public class HulkResolveHandler extends HulkHandler {
 
@@ -32,14 +32,15 @@ public class HulkResolveHandler extends HulkHandler {
 		// Have to leave it as instanceof right now. For further antipatterns,
 		// consider implementing a more abstract HAntiPatternResolver class
 		// that provides access to getBestMoves().
-		for (HDetector reslv : executed_detectors) {
+		for (HDetector reslv : executedDetectors) {
 			if (reslv instanceof HBlobResolver) {
 
 				Runnable runnable = new Runnable() {
 
 					@Override
 					public void run() {
-						(new ResolveResultDialog(window.getShell(), selected_detectors, executed_detectors)).open();
+						(new ResultDialog(window.getShell(), selectedDetectors, executedDetectors,
+								"Hulk Anti-pattern Elemination Results")).open();
 					}
 				};
 

@@ -10,6 +10,10 @@ public class Messages extends NLS {
 	/** The Constant BUNDLENAME. */
 	public static final String BUNDLENAME = "org.gravity.eclipse.messages"; //$NON-NLS-1$
 	
+	public static String COULDNT_LOAD_MODEL;
+
+	public static String CreatePMFailed;
+
 	/** The Java parse handler0. */
 	public static String javaParseHandler0;
 	

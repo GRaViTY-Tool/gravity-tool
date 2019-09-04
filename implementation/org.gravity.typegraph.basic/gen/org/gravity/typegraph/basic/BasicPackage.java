@@ -1681,13 +1681,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_FEATURE_COUNT = TNAME_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST = TNAME_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TMethod</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 0;
+	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1996,13 +2005,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE___TO_STRING = TSIGNATURE_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Is This Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TSIGNATURE_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>TMethod Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 3;
+	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2437,13 +2455,22 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___GET_INTERFACE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Method</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_METHOD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+
+	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2752,6 +2779,15 @@ public interface BasicPackage extends EPackage {
 	int TCONSTRUCTOR_NAME_FEATURE_COUNT = TMETHOD_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_NAME___GET_SIGNATURE__TABSTRACTTYPE_ELIST = TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST;
+
+	/**
 	 * The number of operations of the '<em>TConstructor Name</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2876,6 +2912,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCONSTRUCTOR_SIGNATURE___TO_STRING = TMETHOD_SIGNATURE___TO_STRING;
+
+	/**
+	 * The operation id for the '<em>Is This Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST;
 
 	/**
 	 * The number of operations of the '<em>TConstructor Signature</em>' class.
@@ -4422,6 +4467,16 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethod_Pg();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethod#getSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList) <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethod#getSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getTMethod__GetSignature__TAbstractType_EList();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TMethodDefinition <em>TMethod Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4601,6 +4656,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodSignature__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#isThisSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList) <em>Is This Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is This Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethodSignature#isThisSignature(org.gravity.typegraph.basic.TAbstractType, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TPackage <em>TPackage</em>}'.
@@ -5012,6 +5077,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTypeGraph__GetInterface__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getMethod(java.lang.String) <em>Get Method</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getMethod(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetMethod__String();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
@@ -5986,6 +6061,14 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD__PG = eINSTANCE.getTMethod_Pg();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethod__GetSignature__TAbstractType_EList();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl <em>TMethod Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6124,6 +6207,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_SIGNATURE___TO_STRING = eINSTANCE.getTMethodSignature__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Is This Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethodSignature__IsThisSignature__TAbstractType_EList();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TPackageImpl <em>TPackage</em>}' class.
@@ -6446,6 +6537,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TYPE_GRAPH___GET_INTERFACE__STRING = eINSTANCE.getTypeGraph__GetInterface__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Method</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_METHOD__STRING = eINSTANCE.getTypeGraph__GetMethod__String();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.

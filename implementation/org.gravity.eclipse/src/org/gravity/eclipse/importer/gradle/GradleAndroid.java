@@ -14,6 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.maven.PomParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -28,8 +29,13 @@ import org.xml.sax.SAXException;
  */
 public class GradleAndroid {
 
+	private static final String ANDROID_HOME = "ANDROID_HOME";
+	private static final String USER_HOME = "user.home";
+	private static final String EXTRAS_M2REPOSITORY = "extras/m2repository";
+	private static final String EXTRAS_GOOGLE_M2REPOSITORY = "extras/google/m2repository";
+	private static final String EXTRAS_ANDROID_M2REPOSITORY = "extras/android/m2repository";
 	private static final Logger LOGGER = Logger.getLogger(GradleAndroid.class);
-	
+
 	private GradleAndroid() {
 		// This class shouldn't be instantiated
 	}
@@ -39,26 +45,24 @@ public class GradleAndroid {
 	 * 
 	 * @param buildDotGradleFiles All build.gradle files of the gradle project
 	 * @return The R.java classes
-	 * @throws IOException If there was an error at reading one o the build.gradle files
+	 * @throws IOException If there was an error at reading one o the build.gradle
+	 *                     files
 	 */
 	static Set<Path> getRClasses(Set<Path> buildDotGradleFiles) throws IOException {
 		Set<Path> classes = new HashSet<Path>();
 		for (Path buildDotGradle : buildDotGradleFiles) {
-			File mainFolder = new File(buildDotGradle.getParent().toFile(), "src/main");
-			if (mainFolder.exists() && mainFolder.isDirectory()) {
-				File manifestFile = new File(mainFolder, "AndroidManifest.xml");
-				if (manifestFile.exists()) {
-					File rFile = GradleAndroid.searchRClassInAdroidMainfest(manifestFile, buildDotGradle.getParent().toFile());
-	
-					if (rFile != null) {
-						if (rFile.exists()) {
-							classes.add(rFile.toPath());
-						} else {
-							LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
-						}
+			File manifestFile = new File(buildDotGradle.getParent().toFile(), "src/main/AndroidManifest.xml");
+			if (manifestFile.exists()) {
+				File rFile = GradleAndroid.searchRClassInAdroidMainfest(manifestFile,
+						buildDotGradle.getParent().toFile());
+				if (rFile != null) {
+					if (rFile.exists()) {
+						classes.add(rFile.toPath());
 					} else {
-						LOGGER.log(Level.WARN, "No R.java file found");
+						LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
 					}
+				} else {
+					LOGGER.log(Level.WARN, "No R.java file found");
 				}
 			}
 		}
@@ -128,14 +132,14 @@ public class GradleAndroid {
 	 * @throws GradleImportException If the ANDROID_HOME cannot be found
 	 */
 	private static File initAndroidHome() throws GradleImportException {
-		String androidHome = System.getenv("ANDROID_HOME");
+		String androidHome = System.getenv(ANDROID_HOME);
 		if (androidHome != null) {
 			File tmpAndroidHome = new File(androidHome);
 			if (tmpAndroidHome.exists()) {
 				return tmpAndroidHome;
 			}
 		}
-		File tmpAndroidHome = new File(new File(System.getProperty("user.home")), "Android/Sdk");
+		File tmpAndroidHome = new File(new File(System.getProperty(USER_HOME)), "Android/Sdk");
 		if (tmpAndroidHome.exists()) {
 			return tmpAndroidHome;
 		} else {
@@ -143,7 +147,7 @@ public class GradleAndroid {
 			LOGGER.log(Level.WARN, message);
 			throw new GradleImportException(message);
 		}
-	
+
 	}
 
 	/**
@@ -152,7 +156,8 @@ public class GradleAndroid {
 	 * @param compileLibs The signatures of the compile libs
 	 * @param useLibs     The signatures of the use libs
 	 * @param sdkVersion  The SDK information for the project
-	 * @return A mapping between the names of libraries and the jar files of the libraries
+	 * @return A mapping between the names of libraries and the jar files of the
+	 *         libraries
 	 * @throws GradleImportException If the search for the libraries in the Android
 	 *                               SDK location failed
 	 */
@@ -162,9 +167,9 @@ public class GradleAndroid {
 		if (sdkVersion == null || Double.isNaN(sdkVersion.getTargetSdk()) || Double.isNaN(sdkVersion.getMinSdk())) {
 			throw new GradleImportException("Couldn't determine the SDK version information");
 		}
-	
+
 		File androidHome = initAndroidHome();
-	
+
 		boolean compAndroidSdk = false;
 		File platforms = new File(androidHome, ANDROID_SDK_PLATFORMS);
 		for (int i = (int) sdkVersion.getTargetSdk(); i >= (int) sdkVersion.getMinSdk(); i--) {
@@ -174,10 +179,10 @@ public class GradleAndroid {
 			if (androidJar.exists()) {
 				compAndroidSdk = true;
 				pathsToLibs.put(android, androidJar.toPath());
-	
+
 				File optional = new File(androidPlatform, "optional");
 				for (String use : useLibs) {
-					File lib = new File(optional, use + ".jar");
+					File lib = new File(optional, use + '.'+GravityActivator.FILE_EXTENSION_JAR);
 					if (lib.exists()) {
 						pathsToLibs.put(use, lib.toPath());
 					} else {
@@ -191,7 +196,7 @@ public class GradleAndroid {
 			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
 			for (File sdk : platforms.listFiles()) {
 				String name = sdk.getName();
-				int i = Integer.valueOf(name.substring("android-".length()));
+				int i = Integer.parseInt(name.substring("android-".length()));
 				if (i > sdkVersion.getTargetSdk()) {
 					pathsToLibs.put(name, new File(sdk, "android.jar").toPath());
 					break;
@@ -200,8 +205,8 @@ public class GradleAndroid {
 		}
 		boolean newLibs = false;
 		do {
-			for (String location : new String[] { "extras/android/m2repository", "extras/google/m2repository",
-					"extras/m2repository" }) {
+			for (String location : new String[] { EXTRAS_ANDROID_M2REPOSITORY, EXTRAS_GOOGLE_M2REPOSITORY,
+					EXTRAS_M2REPOSITORY }) {
 				int before = compileLibs.size();
 				try {
 					pathsToLibs.putAll(PomParser.searchInCache(compileLibs, new File(androidHome, location)));
@@ -212,7 +217,7 @@ public class GradleAndroid {
 				}
 			}
 		} while (newLibs);
-	
+
 		return pathsToLibs;
 	}
 

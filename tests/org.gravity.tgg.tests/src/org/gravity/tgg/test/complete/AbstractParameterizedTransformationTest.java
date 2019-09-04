@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -89,7 +90,7 @@ public abstract class AbstractParameterizedTransformationTest {
 	@Parameters(name = "{index}: Forward Transformation From Src: {0}")
 	public static final Collection<Object[]> data() throws CoreException {
 		LOGGER.info("Collect test data");
-		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation();
+		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
 		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		return TestHelper.prepareTestData(projects);
 	}

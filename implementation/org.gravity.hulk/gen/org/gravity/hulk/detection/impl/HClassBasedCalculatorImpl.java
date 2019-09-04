@@ -5,11 +5,12 @@ package org.gravity.hulk.detection.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
+import org.gravity.hulk.HDetector;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 
@@ -26,9 +27,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HClass Based Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HClass
+ * Based Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -36,8 +36,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  */
 public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements HClassBasedCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HClassBasedCalculatorImpl() {
@@ -45,8 +45,8 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -55,45 +55,38 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HAnnotation calculate(TClass tClass) {
 		// [user code injected with eMoflon]
 
-		// TODO: implement this method here but do not remove the injection marker 
+		// TODO: implement this method here but do not remove the injection marker
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,90 +100,22 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HClassBasedCalculator_1_1_ActivityNode6_black_nac_0BB(TClass tClass,
-			HClassBasedCalculator _this) {
-		for (TAnnotation tmpExisting : tClass.getTAnnotation()) {
-			if (tmpExisting instanceof HAnnotation) {
-				HAnnotation existing = (HAnnotation) tmpExisting;
-				if (_this.getHAnnotation().contains(existing)) {
-					return new Object[] { tClass, _this };
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(
-			HAntiPatternGraph pg, HClassBasedCalculator _this) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		TypeGraph o = pg.getPg();
-		if (o != null) {
-			for (TClass tClass : o.getClasses()) {
-				boolean tClass_tLib = tClass.isTLib();
-				if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
-					String tClass_tName = tClass.getTName();
-					if (!tClass_tName.equals("Anonymous")) {
-						if (!tClass_tName.equals("T")) {
-							if (pattern_HClassBasedCalculator_1_1_ActivityNode6_black_nac_0BB(tClass, _this) == null) {
-								_result.add(new Object[] { tClass, pg, o, _this });
-							}
-						}
-					}
+	public static final Iterable<TClass> getClassesToVisit(HAntiPatternGraph apg, HDetector detector) {
+		List<TClass> result = new LinkedList<>();
+		TypeGraph pm = apg.getPg();
+		if (pm != null) {
+			for (TClass tClass : pm.getClasses()) {
+				if (!tClass.isTLib() && !"Anonymous".equals(tClass.getTName()) && !"T".equals(tClass.getTName())
+						&& !detector.hasAlreadyBeenAnnotated(tClass)) {
+					result.add(tClass);
 
 				}
-
 			}
 		}
-
-		return _result;
-	}
-
-	public static final Object[] pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingFBB(HClassBasedCalculator _this,
-			TClass tClass) {
-		HAnnotation _localVariable_0 = _this.calculate(tClass);
-		HAnnotation metric = _localVariable_0;
-		if (metric != null) {
-			return new Object[] { metric, _this, tClass };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HClassBasedCalculator_1_2_ActivityNode7_blackBBBB(HAnnotation metric,
-			TClass tClass, HClassBasedCalculator _this, HAntiPatternGraph pg) {
-		return new Object[] { metric, tClass, _this, pg };
-	}
-
-	public static final Object[] pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(TClass tClass,
-			HClassBasedCalculator _this, HAntiPatternGraph pg) {
-		Object[] result_pattern_HClassBasedCalculator_1_2_ActivityNode7_binding = pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingFBB(
-				_this, tClass);
-		if (result_pattern_HClassBasedCalculator_1_2_ActivityNode7_binding != null) {
-			HAnnotation metric = (HAnnotation) result_pattern_HClassBasedCalculator_1_2_ActivityNode7_binding[0];
-
-			Object[] result_pattern_HClassBasedCalculator_1_2_ActivityNode7_black = pattern_HClassBasedCalculator_1_2_ActivityNode7_blackBBBB(
-					metric, tClass, _this, pg);
-			if (result_pattern_HClassBasedCalculator_1_2_ActivityNode7_black != null) {
-
-				return new Object[] { metric, tClass, _this, pg };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(HAnnotation metric,
-			TClass tClass, HClassBasedCalculator _this, HAntiPatternGraph pg) {
-		pg.getHAnnotations().add(metric);
-		metric.setTAnnotated(tClass);
-		_this.getHAnnotation().add(metric);
-		return new Object[] { metric, tClass, _this, pg };
-	}
-
-	public static final boolean pattern_HClassBasedCalculator_1_3_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
+		return result;
 	}
 
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //HClassBasedCalculatorImpl
+} // HClassBasedCalculatorImpl

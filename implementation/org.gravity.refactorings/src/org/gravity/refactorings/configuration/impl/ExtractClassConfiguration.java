@@ -2,9 +2,7 @@
  */
 package org.gravity.refactorings.configuration.impl;
 
-import java.util.List;
-
-import org.eclipse.emf.common.util.EList;
+import java.util.Collection;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.typegraph.basic.TMember;
@@ -27,16 +25,16 @@ import org.gravity.typegraph.basic.TMember;
  */
 public class ExtractClassConfiguration implements RefactoringConfiguration {
 	
-	final private List<TMember> tMembers;
+	final private Collection<TMember> tMembers;
 	final private String tNewClassName;
 
 
-	public ExtractClassConfiguration(EList<TMember> tMembers, String tNewClassName) {
+	public ExtractClassConfiguration(Collection<TMember> tMembers, String tNewClassName) {
 		this.tMembers = tMembers;
 		this.tNewClassName = tNewClassName;
 	}
 
-	public List<TMember> getTMembers() {
+	public Collection<TMember> getTMembers() {
 		return tMembers;
 	}
 	
@@ -54,6 +52,6 @@ public class ExtractClassConfiguration implements RefactoringConfiguration {
 	}
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TExtractClass;
+		return TRefactoringID.EXTRACT_CLASS;
 	}
 } //ExtractClassConfigurationImpl

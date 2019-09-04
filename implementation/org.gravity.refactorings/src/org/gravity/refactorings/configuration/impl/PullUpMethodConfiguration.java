@@ -19,6 +19,6 @@ public class PullUpMethodConfiguration extends PullUpMemberConfiguration {
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TPullUpMethod;
+		return TRefactoringID.PULLUP_METHOD;
 	}
 }

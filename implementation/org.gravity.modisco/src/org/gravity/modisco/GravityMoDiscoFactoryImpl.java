@@ -3,6 +3,7 @@ package org.gravity.modisco;
 import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
+import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
 import org.gravity.modisco.bugfixes.MAnnotationImpl_bugfix;
@@ -51,7 +52,12 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public MFieldDefinition createFieldDeclaration() {
-		return  ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		return ModiscoFactory.eINSTANCE.createMFieldDefinition();
+	}
+
+	@Override
+	public MethodInvocation createMethodInvocation() {
+		return ModiscoFactory.eINSTANCE.createMMethodInvocation();
 	}
 	
 	@Override

@@ -9,7 +9,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.gravity.hulk.antipatterngraph.HMetric;
-
+import org.gravity.hulk.antipatterngraph.metrics.HDepthOfInheritanceMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HEfferentCouplingMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 
@@ -62,18 +62,11 @@ public class HEfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HEfferentCouplingCalculatorImpl
-				.pattern_HEfferentCouplingCalculator_0_1_ActivityNode22_blackBB(this, tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HEfferentCouplingCalculatorImpl
-				.pattern_HEfferentCouplingCalculator_0_1_ActivityNode22_greenBBF(this, tClass);
-		HEfferentCouplingMetric metric = (HEfferentCouplingMetric) result1_green[2];
-
-		return HEfferentCouplingCalculatorImpl.pattern_HEfferentCouplingCalculator_0_2_expressionFB(metric);
+		HEfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHEfferentCouplingMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
@@ -122,27 +115,6 @@ public class HEfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HEfferentCouplingCalculator_0_1_ActivityNode22_blackBB(
-			HEfferentCouplingCalculator _this, TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HEfferentCouplingCalculator_0_1_ActivityNode22_greenBBF(
-			HEfferentCouplingCalculator _this, TClass tClass) {
-		HEfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHEfferentCouplingMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, tClass, metric };
-	}
-
-	public static final HMetric pattern_HEfferentCouplingCalculator_0_2_expressionFB(HEfferentCouplingMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

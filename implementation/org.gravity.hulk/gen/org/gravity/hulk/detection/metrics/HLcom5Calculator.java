@@ -47,7 +47,7 @@ public interface HLcom5Calculator extends HClassBasedMetricCalculator {
 	 * @model
 	 * @generated
 	 */
-	double CalculateLcom5Value(HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom,
+	double calculateLcom5Value(HNumberOfFieldsMetric nof, HNumberOfMethodsMetric nom,
 			HLocalFieldUniqueAccessMetric lfa);
 	// <-- [user code injected with eMoflon]
 

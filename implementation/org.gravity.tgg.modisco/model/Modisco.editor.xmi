@@ -491,13 +491,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.1/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tMember">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
@@ -516,12 +510,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.1/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.1/@sourcePatterns.1" target="//@rules.1/@targetPatterns.1">
       <op value="++"/>
@@ -531,7 +519,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.1/@sourcePatterns.2" target="//@rules.1/@targetPatterns.2"/>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.1/@sourcePatterns.0" target="//@rules.1/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.1/@sourcePatterns.3" target="//@rules.1/@targetPatterns.3"/>
   </rules>
   <rules name="Annotation" abstractRule="true" schema="//@schema">
     <sourcePatterns name="mAnnotation">

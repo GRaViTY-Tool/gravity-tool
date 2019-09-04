@@ -3,6 +3,7 @@ package org.gravity.hulk.ui.dialogs;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
@@ -12,12 +13,19 @@ import org.gravity.hulk.HDetector;
 
 public class DetectionTreeContentProvider implements ITreeContentProvider {
 
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(DetectionTreeContentProvider.class);
+
 	@Override
 	public void dispose() {
+		LOGGER.info("Dispose");
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+		LOGGER.info("Input changed from \""+oldInput+ "\" to \""+newInput+"\"");
 	}
 
 	@Override

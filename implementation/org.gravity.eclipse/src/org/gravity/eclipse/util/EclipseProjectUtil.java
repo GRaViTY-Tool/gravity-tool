@@ -26,6 +26,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
+import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 
 /**
@@ -42,7 +43,7 @@ public class EclipseProjectUtil {
 	 */
 	private static final Logger LOGGER = Logger.getLogger(EclipseProjectUtil.class);
 
-	 private EclipseProjectUtil() {
+	private EclipseProjectUtil() {
 		// This class shouldn't be instantiated
 	}
 
@@ -137,7 +138,7 @@ public class EclipseProjectUtil {
 	 *                     created
 	 */
 	public static IFolder getGravityFolder(IProject project, IProgressMonitor monitor) throws IOException {
-		IFolder gravityFolder = project.getFolder(".gravity");
+		IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
 		if (!gravityFolder.exists()) {
 			try {
 				gravityFolder.create(true, true, monitor);
@@ -187,7 +188,8 @@ public class EclipseProjectUtil {
 	 * @return The created classpath entry
 	 * @throws JavaModelException if the classpath could not be set
 	 */
-	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib, IProgressMonitor monitor) throws JavaModelException {
+	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib, IProgressMonitor monitor)
+			throws JavaModelException {
 		IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
 		IClasspathEntry[] oldEntries = project.getRawClasspath();
 		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
@@ -238,38 +240,62 @@ public class EclipseProjectUtil {
 	/**
 	 * Imports all projects present at the workspace location into the workspace
 	 * 
+	 * @param monitor A progress monitor
+	 * 
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
-	public static List<IProject> importProjectsFromWorkspaceLocation() throws CoreException {
+	public static List<IProject> importProjectsFromWorkspaceLocation(IProgressMonitor monitor) throws CoreException {
 		File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
-		return importProjects(src);
+		return importProjects(src, monitor);
 	}
 
 	/**
-	 * Imports all projects present at given location into the workspace
+	 * Imports all projects present at the given location into the workspace
 	 * 
 	 * @param rootFolder The folder containing the Eclipse projects
+	 * @param monitor    A progress monitor
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
-	public static List<IProject> importProjects(File rootFolder) throws CoreException {
+	public static List<IProject> importProjects(File rootFolder, IProgressMonitor monitor) throws CoreException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		List<IProject> projects = new LinkedList<>();
 		for (File projectFolder : rootFolder.listFiles()) {
-			File dotProject = new File(projectFolder, ".project");
-			if (dotProject.exists()) {
-				IProjectDescription description = ResourcesPlugin.getWorkspace()
-						.loadProjectDescription(new Path(dotProject.toString()));
-				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
-				if (!project.exists()) {
-					project.create(description, null);
-				}
-				project.open(null);
+			IProject project = importProject(projectFolder, monitor);
+			if (project != null) {
 				projects.add(project);
 			}
 		}
-		root.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
+		root.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		return projects;
+	}
+
+	/**
+	 * Imports the project present at the given location into the workspace
+	 * 
+	 * @param location The folder containing the Eclipse project
+	 * @param monitor  A progress monitor
+	 * @return The imported Eclipse project
+	 * @throws CoreException If the import fails
+	 */
+	public static IProject importProject(File location, IProgressMonitor monitor) throws CoreException {
+		File dotProject;
+		if (".project".equals(location.getName())) {
+			dotProject = location;
+		} else {
+			dotProject = new File(location, ".project");
+		}
+		if (!dotProject.exists()) {
+			return null;
+		}
+		IProjectDescription description = ResourcesPlugin.getWorkspace()
+				.loadProjectDescription(new Path(dotProject.toString()));
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+		if (!project.exists()) {
+			project.create(description, monitor);
+		}
+		project.open(monitor);
+		return project;
 	}
 }

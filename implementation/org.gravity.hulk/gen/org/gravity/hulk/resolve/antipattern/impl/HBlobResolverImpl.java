@@ -72,8 +72,8 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.containers.TMemberContainer;
 import org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
 import org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguration;
-import org.gravity.refactorings.impl.ExtractClassImpl;
-import org.gravity.refactorings.impl.MoveMemberImpl;
+import org.gravity.refactorings.impl.ExtractClass;
+import org.gravity.refactorings.impl.MoveMember;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 // [user defined imports] -->
@@ -451,7 +451,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			HExtractClass extractClass = (HExtractClass) refactoring;
 			ExtractClassConfiguration config = new ExtractClassConfiguration(extractClass.getTMembers(),
 					"ExtractedClass" + System.currentTimeMillis());
-			ExtractClassImpl r = new ExtractClassImpl(extractClass.getApg().getPg());
+			ExtractClass r = new ExtractClass();
 			return r.isApplicable(config);
 		} else {
 			System.err.println("HBlobResolverImpl: Unkown refactoring type: " + refactoring);
@@ -552,7 +552,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		original_apg = pg;
 		copyApg = EcoreUtil.copy(pg);
 
-		move = new MoveMemberImpl(pg.getPg());
+		move = new MoveMember();
 
 		return copyApg;
 	}
@@ -974,7 +974,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	// <-- [user code injected with eMoflon]
 
-	private MoveMemberImpl move;
+	private MoveMember move;
 
 	@Override
 	public String getGuiName() {

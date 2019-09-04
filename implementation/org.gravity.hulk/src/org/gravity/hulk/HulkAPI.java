@@ -16,9 +16,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
@@ -45,6 +45,10 @@ public class HulkAPI {
 	 * The Logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(HulkAPI.class);
+
+	private HulkAPI() {
+		// This class shouldn't be instantiated
+	}
 
 	/**
 	 * Detects given anti-patterns on an Eclipse java project
@@ -79,7 +83,7 @@ public class HulkAPI {
 
 		final List<HAnnotation> results = detect(pg, programLocation, aps);
 
-		clean(iproject, converter, pg);
+		clean(iproject, pg);
 
 		return results;
 	}
@@ -87,36 +91,34 @@ public class HulkAPI {
 	/**
 	 * Detects given anti-patterns on a program model
 	 * 
-	 * @param pg              The program model
+	 * @param pm              The program model
 	 * @param programLocation The location of the project from which the model has
 	 *                        been created
 	 * @param aps             The list of anti-patterns to detect
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
-	public static List<HAnnotation> detect(TypeGraph pg, String programLocation, AntiPatternNames... aps)
+	public static List<HAnnotation> detect(TypeGraph pm, String programLocation, AntiPatternNames... aps)
 			throws DetectionFailedException {
-		Resource pgResource = pg.eResource();
-		ResourceSet rs = pgResource.getResourceSet();
-		// TODO: keep PG in old resource set
-
-		HAntiPatternGraph apg;
-		EObject eContainer = pg.eContainer();
-		if (eContainer == null || !(eContainer instanceof HAntiPatternGraph)) {
-			apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
-			pgResource.getContents().add(apg);
-			apg.setPg(pg);
+		ResourceSet rs;
+		Resource pgResource = pm.eResource();
+		if (pgResource == null) {
+			rs = new ResourceSetImpl();
+			pgResource = rs.createResource(URI.createURI(pm.getTName() + ".xmi"));
+			pgResource.getContents().add(pm);
 		} else {
-			apg = (HAntiPatternGraph) eContainer;
+			rs = pgResource.getResourceSet();
 		}
 
 		HAntiPatternDetection hulk = HulkFactory.eINSTANCE.createHAntiPatternDetection();
-		hulk.setApg(apg);
+		Resource apgResource = rs.createResource(URI.createURI("Hulk.xmi"));
+		apgResource.getContents().add(hulk); // $NON-NLS-1$
 		hulk.setProgramlocation(programLocation);
 
-		rs.createResource(URI.createURI("Hulk.xmi")).getContents().add(hulk); //$NON-NLS-1$
-
-		rs.createResource(URI.createURI("SmellDependencyGraph.xmi")).getContents().add(hulk.getDependencyGraph()); //$NON-NLS-1$
+		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
+		hulk.setApg(apg);
+		apg.setPg(pm);
+//		apgResource.getContents().add(apg);
 
 		Set<EClass> detectors = getDetecors(aps);
 		HashSet<HDetector> detectorResults = new HashSet<>();
@@ -153,13 +155,12 @@ public class HulkAPI {
 	 * Removes all generated EMF models except for the PG
 	 * 
 	 * @param iproject  The project which has been discovered
-	 * @param converter The executed converter
 	 * @param pg        The created PG
 	 * @return true, iff the cleanup was successful
 	 */
-	private static boolean clean(IProject iproject, IPGConverter converter, TypeGraph pg) {
+	private static boolean clean(IProject iproject, TypeGraph pg) {
 		final Resource keep = pg.eResource();
-		final EList<Resource> resources = converter.getResourceSet().getResources();
+		final EList<Resource> resources = keep.getResourceSet().getResources();
 		while (!resources.isEmpty()) {
 			Resource resource = resources.remove(0);
 			if (resource != keep) {
@@ -181,21 +182,20 @@ public class HulkAPI {
 	 * @author speldszus
 	 *
 	 */
-	public static enum AntiPatternNames {
+	public enum AntiPatternNames {
 
-		BLOB(AntipatternPackageImpl.eINSTANCE.getHBlobDetector()), 
-		GOD_CLASS(AntipatternPackageImpl.eINSTANCE.getHGodClassDetector()), 
-		SPAGHETTI_CODE(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector()), 
-		SWISS_ARMY_KNIFE(AntipatternPackageImpl.eINSTANCE.getHSwissArmyKnifeDetector()), 
-		IGAM(MetricsPackage.eINSTANCE.getHIGAMCalculator()), 
-		IGAT(MetricsPackage.eINSTANCE.getHIGATCalculator()), 
-		LCOM5(MetricsPackage.eINSTANCE.getHLcom5Calculator()), 
-		TOTAL_COUPLING(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator()), 
-		TOTAL_METHOD_VISIBILITY(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator()), 
+		BLOB(AntipatternPackageImpl.eINSTANCE.getHBlobDetector()),
+		GOD_CLASS(AntipatternPackageImpl.eINSTANCE.getHGodClassDetector()),
+		SPAGHETTI_CODE(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector()),
+		SWISS_ARMY_KNIFE(AntipatternPackageImpl.eINSTANCE.getHSwissArmyKnifeDetector()),
+		IGAM(MetricsPackage.eINSTANCE.getHIGAMCalculator()), IGAT(MetricsPackage.eINSTANCE.getHIGATCalculator()),
+		LCOM5(MetricsPackage.eINSTANCE.getHLcom5Calculator()),
+		TOTAL_COUPLING(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator()),
+		TOTAL_METHOD_VISIBILITY(MetricsPackage.eINSTANCE.getHTotalVisibilityCalculator()),
 		DIT(MetricsPackage.eINSTANCE.getHDepthOfInheritanceCalculator());
-		
+
 		private final EClass eClass;
-		
+
 		private AntiPatternNames(EClass eClass) {
 			this.eClass = eClass;
 		}
@@ -208,8 +208,8 @@ public class HulkAPI {
 		 * @return The corresponding enum constant
 		 */
 		public static AntiPatternNames get(EClass metricClass) {
-			for(AntiPatternNames name : AntiPatternNames.values()) {
-				if(name.getEClass().isSuperTypeOf(metricClass)) {
+			for (AntiPatternNames name : AntiPatternNames.values()) {
+				if (name.getEClass().isSuperTypeOf(metricClass)) {
 					return name;
 				}
 			}

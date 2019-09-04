@@ -796,6 +796,16 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTMethod__GetSignature__TAbstractType_EList() {
+		return tMethodEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTMethodDefinition() {
 		return tMethodDefinitionEClass;
 	}
@@ -958,6 +968,16 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	@Override
 	public EOperation getTMethodSignature__ToString() {
 		return tMethodSignatureEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList() {
+		return tMethodSignatureEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1348,6 +1368,16 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	@Override
 	public EOperation getTypeGraph__GetInterface__String() {
 		return typeGraphEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTypeGraph__GetMethod__String() {
+		return typeGraphEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -1981,6 +2011,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tMethodEClass = createEClass(TMETHOD);
 		createEReference(tMethodEClass, TMETHOD__SIGNATURES);
 		createEReference(tMethodEClass, TMETHOD__PG);
+		createEOperation(tMethodEClass, TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST);
 
 		tMethodDefinitionEClass = createEClass(TMETHOD_DEFINITION);
 		createEReference(tMethodDefinitionEClass, TMETHOD_DEFINITION__SIGNATURE);
@@ -2000,6 +2031,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_SIGNATURE_STRING);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___TO_STRING);
+		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST);
 
 		tPackageEClass = createEClass(TPACKAGE);
 		createEReference(tPackageEClass, TPACKAGE__PG);
@@ -2044,6 +2076,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_CLASS__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_ABSTRACT_TYPE__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_INTERFACE__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_METHOD__STRING);
 
 		tInterfaceEClass = createEClass(TINTERFACE);
 		createEReference(tInterfaceEClass, TINTERFACE__IMPLEMENTED_BY);
@@ -2260,6 +2293,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEReference(getTMethod_Signatures(), this.getTMethodSignature(), this.getTMethodSignature_Method(), "signatures", null, 0, -1, TMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTMethod_Pg(), this.getTypeGraph(), this.getTypeGraph_Methods(), "pg", null, 1, 1, TMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getTMethod__GetSignature__TAbstractType_EList(), this.getTMethodSignature(), "getSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTAbstractType(), "returnType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTAbstractType(), "parameterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(tMethodDefinitionEClass, TMethodDefinition.class, "TMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTMethodDefinition_Signature(), this.getTMethodSignature(), this.getTMethodSignature_Definitions(), "signature", null, 1, 1, TMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTMethodDefinition_Overriding(), this.getTMethodDefinition(), this.getTMethodDefinition_OverriddenBy(), "overriding", null, 0, 1, TMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2283,6 +2320,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		addEParameter(op, this.getTAbstractType(), "defining", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getTMethodSignature__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTMethodSignature__IsThisSignature__TAbstractType_EList(), ecorePackage.getEBoolean(), "isThisSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTAbstractType(), "returnType", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTAbstractType(), "parameterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tPackageEClass, TPackage.class, "TPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTPackage_Pg(), this.getTypeGraph(), this.getTypeGraph_Packages(), "pg", null, 0, 1, TPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2346,6 +2387,9 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		op = initEOperation(getTypeGraph__GetInterface__String(), this.getTInterface(), "getInterface", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "fullyQualifiedName", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetMethod__String(), this.getTMethod(), "getMethod", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tInterfaceEClass, TInterface.class, "TInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTInterface_ImplementedBy(), this.getTClass(), this.getTClass_Implements(), "implementedBy", null, 0, -1, TInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

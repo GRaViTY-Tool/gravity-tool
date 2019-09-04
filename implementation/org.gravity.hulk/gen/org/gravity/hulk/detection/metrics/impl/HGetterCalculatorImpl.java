@@ -58,27 +58,20 @@ public class HGetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HGetterCalculatorImpl.pattern_HGetterCalculator_0_1_ActivityNode28_blackBB(this,
-				tClass);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[tClass] = " + tClass + ".");
-		}
-		Object[] result1_green = HGetterCalculatorImpl.pattern_HGetterCalculator_0_1_ActivityNode28_greenBFB(this,
-				tClass);
-		HGetterMetric metric = (HGetterMetric) result1_green[1];
-
-		return HGetterCalculatorImpl.pattern_HGetterCalculator_0_2_expressionFB(metric);
+		HGetterMetric metric = MetricsFactory.eINSTANCE.createHGetterMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
@@ -128,27 +121,6 @@ public class HGetterCalculatorImpl extends HClassBasedMetricCalculatorImpl imple
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HGetterCalculator_0_1_ActivityNode28_blackBB(HGetterCalculator _this,
-			TClass tClass) {
-		return new Object[] { _this, tClass };
-	}
-
-	public static final Object[] pattern_HGetterCalculator_0_1_ActivityNode28_greenBFB(HGetterCalculator _this,
-			TClass tClass) {
-		HGetterMetric metric = MetricsFactory.eINSTANCE.createHGetterMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		_this.getHAnnotation().add(metric);
-		metric.setTAnnotated(tClass);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { _this, metric, tClass };
-	}
-
-	public static final HMetric pattern_HGetterCalculator_0_2_expressionFB(HGetterMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

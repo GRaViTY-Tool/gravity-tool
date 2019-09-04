@@ -37,95 +37,95 @@
       </view>
    </extension>
    <extension
-         id="HGodClassAntiPatternMarker"
-         name="GodClassMarker"
+         id="org.gravity.hulk.ui.visualization.HGodClassAntiPatternMarker"
+         name="HGodClassAntiPatternMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HControllerClassSmellMarker"
-         name="ControllerClassSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HControllerClassSmellMarker"
+         name="HControllerClassSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HInvocationRelationSmellMarker"
-         name="InvocationRelationSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HInvocationRelationMetricMarker"
+         name="HInvocationRelationMetric"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HLargeClassLowCohesionSmellMarker"
-         name="LargeClassLowCohesionSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HLargeClassLowCohesionSmellMarker"
+         name="HLargeClassLowCohesionSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HDataClassSmellMarker"
-         name="DataClassSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HDataClassSmellMarker"
+         name="HDataClassSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HGetterSetterSmellMarker"
-         name="GetterSetterSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HGetterSetterSmellMarker"
+         name="HGetterSetterSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HLargeClassSmellMarker"
-         name="LargeClassSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HLargeClassSmellMarker"
+         name="HLargeClassSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HLowCohesionSmellMarker"
-         name="LowCohesionSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HLowCohesionSmellMarker"
+         name="HLowCohesionSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HBlobAntiPatternMarker"
-         name="TheBlobMarker"
+         id="org.gravity.hulk.ui.visualization.HBlobAntiPatternMarker"
+         name="HBlobAntiPatternMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HSwissArmyKnifeAntiPatternMarker"
-         name="Swiss"
+         id="org.gravity.hulk.ui.visualization.HSwissArmyKnifeAntiPatternMarker"
+         name="HSwissArmyKnifeAntiPatternMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HMuchOverloadingCodeSmellMarker"
-         name="MuchOverloadingCodeSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HMuchOverloadingCodeSmellMarker"
+         name="HMuchOverloadingCodeSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
             type="org.gravity.hulk.ui.visualization.DetectionMarker">
       </super>
    </extension>
    <extension
-         id="HAverageOverloadingInClassMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HAverageOverloadingInClassMetricMarker"
          name="HAverageOverloadingInClassMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -133,7 +133,7 @@
       </super>
    </extension>
    <extension
-         id="HSpaghettiCodeAntiPatternMarker"
+         id="org.gravity.hulk.ui.visualization.HSpaghettiCodeAntiPatternMarker"
          name="HSpaghettiCodeAntiPatternMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -141,7 +141,7 @@
       </super>
    </extension>
    <extension
-         id="HIntensiveFieldUsageCodeSmellMarker"
+         id="org.gravity.hulk.ui.visualization.HIntensiveFieldUsageCodeSmellMarker"
          name="HIntensiveFieldUsageCodeSmellMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -149,7 +149,7 @@
       </super>
    </extension>
    <extension
-         id="HAverageParametersMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HAverageParametersMetricMarker"
          name="HAverageParametersMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -157,7 +157,7 @@
       </super>
    </extension>
    <extension
-         id="HNumberOfChildMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HNumberOfChildMetricMarker"
          name="HNumberOfChildMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -165,7 +165,7 @@
       </super>
    </extension>
    <extension
-         id="HDepthOfInheritanceMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HDepthOfInheritanceMetricMarker"
          name="HDepthOfInheritanceMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -173,7 +173,7 @@
       </super>
    </extension>
    <extension
-         id="HLocalAccessRelationMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HLocalAccessRelationMetricMarker"
          name="HLocalAccessRelationMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super
@@ -181,7 +181,7 @@
       </super>
    </extension>
    <extension
-         id="HLocalFieldAccessesMetricMarker"
+         id="org.gravity.hulk.ui.visualization.HLocalFieldAccessesMetricMarker"
          name="HLocalFieldAccessesMetricMarker"
          point="org.eclipse.core.resources.markers">
       <super

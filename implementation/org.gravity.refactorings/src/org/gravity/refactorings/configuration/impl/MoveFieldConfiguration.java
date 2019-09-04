@@ -19,7 +19,7 @@ public class MoveFieldConfiguration extends MoveMemberConfiguration implements R
 
 	@Override
 	public TRefactoringID getRefactoringID() {
-		return TRefactoringID.TMoveField;
+		return TRefactoringID.MOVE_FIELD;
 	}
 
 }

@@ -60,18 +60,11 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 	 * @generated
 	 */
 	public HMetric calculateMetric(TClass tClass) {
-
-		Object[] result1_black = HAverageParametersCalculatorImpl
-				.pattern_HAverageParametersCalculator_0_1_ActivityNode7_blackBB(tClass, this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
-		}
-		Object[] result1_green = HAverageParametersCalculatorImpl
-				.pattern_HAverageParametersCalculator_0_1_ActivityNode7_greenBFB(tClass, this);
-		HAverageParametersMetric metric = (HAverageParametersMetric) result1_green[1];
-
-		return HAverageParametersCalculatorImpl.pattern_HAverageParametersCalculator_0_2_expressionFB(metric);
+		HAverageParametersMetric metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
+		metric.setTAnnotated(tClass);
+		metric.setValue(calculateValue(tClass));
+		getHAnnotation().add(metric);
+		return metric;
 	}
 
 	/**
@@ -109,27 +102,6 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HAverageParametersCalculator_0_1_ActivityNode7_blackBB(TClass tClass,
-			HAverageParametersCalculator _this) {
-		return new Object[] { tClass, _this };
-	}
-
-	public static final Object[] pattern_HAverageParametersCalculator_0_1_ActivityNode7_greenBFB(TClass tClass,
-			HAverageParametersCalculator _this) {
-		HAverageParametersMetric metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
-		metric.setTAnnotated(tClass);
-		_this.getHAnnotation().add(metric);
-		double metric_value_prime = Double.valueOf(_localVariable_0);
-		metric.setValue(Double.valueOf(metric_value_prime));
-		return new Object[] { tClass, metric, _this };
-	}
-
-	public static final HMetric pattern_HAverageParametersCalculator_0_2_expressionFB(HAverageParametersMetric metric) {
-		HMetric _result = metric;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

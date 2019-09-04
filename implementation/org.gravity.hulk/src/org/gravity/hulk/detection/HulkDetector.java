@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.Deque;
 import org.apache.log4j.Level;
@@ -41,7 +42,7 @@ public class HulkDetector {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkDetector.class.getName());
 
-	private HashMap<String, String> thresholds;
+	private Map<String, String> thresholds;
 	private HAntiPatternHandling hulk;
 	private Set<HDetector> initialized;
 
@@ -53,7 +54,7 @@ public class HulkDetector {
 	 * @param hulk       The detection configuration
 	 * @param thresholds The thresholds for the detection
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, HashMap<String, String> thresholds) {
+	public HulkDetector(HAntiPatternHandling hulk, Map<String, String> thresholds) {
 		this(hulk, thresholds, false);
 	}
 
@@ -64,7 +65,7 @@ public class HulkDetector {
 	 * @param thresholds The thresholds for the detection
 	 * @param verbose    The verbose state
 	 */
-	public HulkDetector(HAntiPatternHandling hulk, HashMap<String, String> thresholds, boolean verbose) {
+	public HulkDetector(HAntiPatternHandling hulk, Map<String, String> thresholds, boolean verbose) {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
 		this.verbose = verbose;
@@ -103,30 +104,23 @@ public class HulkDetector {
 			boolean verbose) throws DetectionFailedException {
 		List<HDetector> sorted = getSorted(detector);
 		for (HDetector nextDetector : sorted) {
-			long t2 = 0;
-			if (!processedDetectors.contains(nextDetector)) {
-				if (worklist.contains(nextDetector)) {
-					worklist.remove(nextDetector);
-				}
-				if (verbose) {
-					t2 = System.currentTimeMillis();
-					LOGGER.log(Level.INFO, t2 + " Hulk " + nextDetector.getGuiName());
-				}
-				if (nextDetector instanceof HRelativeDetector) {
-					initializeRelativeDetector((HRelativeDetector) nextDetector);
-				}
-				if (nextDetector.detect(hulk.getApg())) {
-					nextDetector.setPostTraversal(0);
-					nextDetector.setPreTraversal(0);
-					processedDetectors.add(nextDetector);
-				} else {
-					LOGGER.log(Level.ERROR, Messages.getString("detector.failed") + nextDetector); //$NON-NLS-1$
-				}
-				if (verbose) {
-					long t3 = System.currentTimeMillis();
-					LOGGER.log(Level.INFO, t3 + " Hulk " + nextDetector.getGuiName() + " - done " + (t3 - t2) + "ms");
-				}
+			if (processedDetectors.contains(nextDetector)) {
+				continue;
 			}
+			if (worklist.contains(nextDetector)) {
+				worklist.remove(nextDetector);
+			}
+			if (nextDetector instanceof HRelativeDetector) {
+				initializeRelativeDetector((HRelativeDetector) nextDetector);
+			}
+			if (nextDetector.detect(hulk.getApg())) {
+				nextDetector.setPostTraversal(0);
+				nextDetector.setPreTraversal(0);
+				processedDetectors.add(nextDetector);
+			} else {
+				LOGGER.log(Level.ERROR, Messages.getString("detector.failed") + nextDetector); //$NON-NLS-1$
+			}
+
 		}
 	}
 
@@ -219,8 +213,8 @@ public class HulkDetector {
 	 * 
 	 * @return The defaults
 	 */
-	public static HashMap<String, String> getDefaultThresholds() {
-		HashMap<String, String> thresholds = new HashMap<String, String>();
+	public static Map<String, String> getDefaultThresholds() {
+		Map<String, String> thresholds = new HashMap<String, String>();
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HLargeClassDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HLowCohesionDetector.class.getName(), HRelativeValueConstants.HIGH.getName());

@@ -154,7 +154,7 @@ public class GoblinTest {
 	@Parameters(name = "{0}")
 	public static Iterable<Object[]> collecTests() throws CoreException {
 		LOGGER.info("Collect test data");
-		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation();
+		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
 		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		ArrayList<Object[]> testConfigurations = new ArrayList<>();
 		for (IProject project : projects) {

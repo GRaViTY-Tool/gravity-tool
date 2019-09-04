@@ -491,13 +491,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.1/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -516,12 +510,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.1/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.1/@sourcePatterns.0" target="//@rules.1/@targetPatterns.0">
       <op value="++"/>
@@ -531,7 +519,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.1/@sourcePatterns.1" target="//@rules.1/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.1/@sourcePatterns.2" target="//@rules.1/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.1/@sourcePatterns.3" target="//@rules.1/@targetPatterns.3"/>
   </rules>
   <rules name="Annotation" abstractRule="true" schema="//@schema">
     <sourcePatterns name="astNode">
@@ -1255,11 +1242,11 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.17/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.17/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
@@ -1450,14 +1437,14 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.20/@targetPatterns.3">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.26" source="//@rules.20/@sourcePatterns.0" target="//@rules.20/@targetPatterns.1">
@@ -1898,10 +1885,6 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
-      <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.30/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -1911,6 +1894,10 @@
       <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tClass">
@@ -2231,13 +2218,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.34/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -2256,12 +2237,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.34/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.34/@sourcePatterns.0" target="//@rules.34/@targetPatterns.0">
       <op value="++"/>
@@ -2271,7 +2246,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.34/@sourcePatterns.1" target="//@rules.34/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.34/@sourcePatterns.2" target="//@rules.34/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.34/@sourcePatterns.3" target="//@rules.34/@targetPatterns.3"/>
   </rules>
   <rules name="CompilationUnit" schema="//@schema">
     <sourcePatterns name="compilationUnit">
@@ -2382,7 +2356,7 @@
   <rules name="ConstructorInvocation" schema="//@schema">
     <sourcePatterns name="invocation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation"/>
       <linkVariablePatterns target="//@rules.37/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation/method"/>
@@ -2396,13 +2370,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.37/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -2421,12 +2389,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.0">
       <op value="++"/>
@@ -2436,7 +2398,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.37/@sourcePatterns.1" target="//@rules.37/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.37/@sourcePatterns.2" target="//@rules.37/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.37/@sourcePatterns.3" target="//@rules.37/@targetPatterns.3"/>
   </rules>
   <rules name="Enum" schema="//@schema">
     <sourcePatterns name="mPackage">
@@ -2454,11 +2415,11 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
@@ -2468,11 +2429,11 @@
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -2518,6 +2479,10 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      <linkVariablePatterns target="//@rules.39/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.39/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -2527,10 +2492,6 @@
       <linkVariablePatterns target="//@rules.39/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.39/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tClass">
@@ -3131,25 +3092,25 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
-      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.0">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -3229,6 +3190,10 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.53/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -3238,10 +3203,6 @@
       <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tClass">
@@ -3650,13 +3611,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.62/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -3675,12 +3630,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.62/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.62/@sourcePatterns.0" target="//@rules.62/@targetPatterns.0">
       <op value="++"/>
@@ -3690,7 +3639,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.62/@sourcePatterns.1" target="//@rules.62/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.62/@sourcePatterns.2" target="//@rules.62/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.62/@sourcePatterns.3" target="//@rules.62/@targetPatterns.3"/>
   </rules>
   <rules name="MethodInvocationRecursive" schema="//@schema">
     <sourcePatterns name="invocation">
@@ -4809,12 +4757,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;int&quot;"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;int&quot;"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -4852,12 +4800,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;long&quot;"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;long&quot;"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -4938,12 +4886,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;void&quot;"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;void&quot;"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -5123,13 +5071,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.94/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -5148,12 +5090,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.94/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.94/@sourcePatterns.0" target="//@rules.94/@targetPatterns.0">
       <op value="++"/>
@@ -5163,12 +5099,11 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.94/@sourcePatterns.1" target="//@rules.94/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.94/@sourcePatterns.2" target="//@rules.94/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.94/@sourcePatterns.3" target="//@rules.94/@targetPatterns.3"/>
   </rules>
   <rules name="SuperMethodInvocation" schema="//@schema">
     <sourcePatterns name="invocation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperMethodInvocation"/>
       <linkVariablePatterns target="//@rules.95/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation/method"/>
@@ -5182,13 +5117,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.95/@sourcePatterns.3">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tAccess">
       <op value="++"/>
@@ -5207,12 +5136,6 @@
     </targetPatterns>
     <targetPatterns name="tMethod">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.95/@targetPatterns.3">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/definedBy"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.95/@sourcePatterns.0" target="//@rules.95/@targetPatterns.0">
       <op value="++"/>
@@ -5222,7 +5145,6 @@
     </correspondencePatterns>
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.14" source="//@rules.95/@sourcePatterns.1" target="//@rules.95/@targetPatterns.1"/>
     <correspondencePatterns name="mMethodToTMethod" type="//@schema/@correspondenceTypes.14" source="//@rules.95/@sourcePatterns.2" target="//@rules.95/@targetPatterns.2"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.26" source="//@rules.95/@sourcePatterns.3" target="//@rules.95/@targetPatterns.3"/>
   </rules>
   <rules name="SyntethicMethod" schema="//@schema">
     <sourcePatterns name="mClass">

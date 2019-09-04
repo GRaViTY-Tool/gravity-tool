@@ -46,14 +46,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HData Class Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HData
+ * Class Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HDataClassDetectorImpl#isRelative <em>Relative</em>}</li>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HDataClassDetectorImpl#getThreshold <em>Threshold</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HDataClassDetectorImpl#isRelative
+ * <em>Relative</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HDataClassDetectorImpl#getThreshold
+ * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,8 +63,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HDataClassDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -72,8 +73,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -81,9 +82,9 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	protected boolean relative = RELATIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -91,9 +92,9 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	protected static final double THRESHOLD_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -101,8 +102,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	protected double threshold = THRESHOLD_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HDataClassDetectorImpl() {
@@ -110,8 +111,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,8 +121,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isRelative() {
@@ -129,8 +130,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRelative(boolean newRelative) {
@@ -142,8 +143,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getThreshold() {
@@ -151,8 +152,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setThreshold(double newThreshold) {
@@ -164,126 +165,76 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
-		Object[] result1_black = HDataClassDetectorImpl.pattern_HDataClassDetector_0_1_ActivityNode28_blackBF(tClass);
-		if (result1_black != null) {
-			HNACCMetric nm = (HNACCMetric) result1_black[1];
-			// 
-			Object[] result2_black = HDataClassDetectorImpl
-					.pattern_HDataClassDetector_0_2_ActivityNode79_blackFB(tClass);
-			if (result2_black != null) {
-				//nothing HDataClassSmell dc = (HDataClassSmell) result2_black[0];
-				return HDataClassDetectorImpl.pattern_HDataClassDetector_0_3_expressionF();
-			} else {
-				// 
-				Object[] result4_black = HDataClassDetectorImpl
-						.pattern_HDataClassDetector_0_4_ActivityNode91_blackB(this);
-				if (result4_black != null) {
+	public HAnnotation calculate(TClass tClass) {//
+		HNACCMetric nm = null;
+		for (TAnnotation tmpNm : tClass.getTAnnotation()) {
+			if (tmpNm instanceof HNACCMetric) {
+				nm = (HNACCMetric) tmpNm;
+			} else if (tmpNm instanceof HDataClassSmell) {
+				return (HDataClassSmell) tmpNm;
+			}
+		}
+		if (nm != null) {
+			if (isRelative()) {
+				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.HIGH));
+			}
+			//
+			if (getThreshold() <= nm.getValue()) {
 
-					Object[] result5_black = HDataClassDetectorImpl
-							.pattern_HDataClassDetector_0_5_ActivityNode95_blackB(this);
-					if (result5_black == null) {
-						throw new RuntimeException(
-								"Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-					}
-					HDataClassDetectorImpl.pattern_HDataClassDetector_0_5_ActivityNode95_greenB(this);
+				HDataClassSmell dataClassSmell = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
+				dataClassSmell.setTAnnotated(tClass);
+				dataClassSmell.setHNACCMetric(nm);
+				getHAnnotation().add(dataClassSmell);
+				nm.getPartOf().add(dataClassSmell);
 
-				} else {
+				// ForEach
+				for (HGetterSetterSmell getterSetter : nm.getHGetterSetterSmells()) {
+					getterSetter.getPartOf().add(dataClassSmell);
+					dataClassSmell.getGetterSetterSmells().add(getterSetter);
 				}
-				// 
-				Object[] result6_black = HDataClassDetectorImpl
-						.pattern_HDataClassDetector_0_6_ActivityNode92_blackBB(this, nm);
-				if (result6_black != null) {
-
-					Object[] result7_black = HDataClassDetectorImpl
-							.pattern_HDataClassDetector_0_7_ActivityNode27_blackBBB(tClass, this, nm);
-					if (result7_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass
-								+ ", " + "[this] = " + this + ", " + "[nm] = " + nm + ".");
+				// ForEach
+				for (TClass tChild : tClass.getChildClasses()) {
+					if (!tChild.equals(tClass)) {
+						makeChildDC(tChild, dataClassSmell);
 					}
-					Object[] result7_green = HDataClassDetectorImpl
-							.pattern_HDataClassDetector_0_7_ActivityNode27_greenBFBB(tClass, this, nm);
-					HDataClassSmell dataClassSmell = (HDataClassSmell) result7_green[1];
-
-					// ForEach 
-					for (Object[] result8_black : HDataClassDetectorImpl
-							.pattern_HDataClassDetector_0_8_ActivityNode46_blackBF(nm)) {
-						HGetterSetterSmell getterSetter = (HGetterSetterSmell) result8_black[1];
-
-						Object[] result9_black = HDataClassDetectorImpl
-								.pattern_HDataClassDetector_0_9_ActivityNode47_blackBB(getterSetter, dataClassSmell);
-						if (result9_black == null) {
-							throw new RuntimeException("Pattern matching failed." + " Variables: " + "[getterSetter] = "
-									+ getterSetter + ", " + "[dataClassSmell] = " + dataClassSmell + ".");
-						}
-						HDataClassDetectorImpl.pattern_HDataClassDetector_0_9_ActivityNode47_greenBB(getterSetter,
-								dataClassSmell);
-
-					}
-					// ForEach 
-					for (Object[] result10_black : HDataClassDetectorImpl
-							.pattern_HDataClassDetector_0_10_ActivityNode77_blackBF(tClass)) {
-						TClass tChild = (TClass) result10_black[1];
-						// 
-						HDataClassDetectorImpl.pattern_HDataClassDetector_0_11_ActivityNode78_expressionBBB(this,
-								tChild, dataClassSmell);
-
-					}
-					return HDataClassDetectorImpl.pattern_HDataClassDetector_0_12_expressionFB(dataClassSmell);
-				} else {
-					return HDataClassDetectorImpl.pattern_HDataClassDetector_0_13_expressionF();
 				}
-
+				return dataClassSmell;
 			}
 
-		} else {
-			return HDataClassDetectorImpl.pattern_HDataClassDetector_0_14_expressionF();
 		}
-
+		return null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public void makeChildDC(TClass tChild, HDataClassSmell tSmell) {// 
-		Object[] result1_black = HDataClassDetectorImpl.pattern_HDataClassDetector_1_1_ActivityNode73_blackBB(tChild,
-				this);
-		if (result1_black != null) {
-
-			Object[] result2_black = HDataClassDetectorImpl
-					.pattern_HDataClassDetector_1_2_ActivityNode74_blackBB(tChild, tSmell);
-			if (result2_black == null) {
-				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tChild] = " + tChild + ", "
-						+ "[tSmell] = " + tSmell + ".");
+	public void makeChildDC(TClass tChild, HDataClassSmell tSmell) {//
+		for (TAnnotation tmpSmell : tChild.getTAnnotation()) {
+			if (tmpSmell instanceof HDataClassSmell) {
+				return;
 			}
-			Object[] result2_green = HDataClassDetectorImpl
-					.pattern_HDataClassDetector_1_2_ActivityNode74_greenBFB(tChild, tSmell);
-			HDataClassSmell data = (HDataClassSmell) result2_green[1];
-
-			// ForEach 
-			for (Object[] result3_black : HDataClassDetectorImpl
-					.pattern_HDataClassDetector_1_3_ActivityNode75_blackBF(tChild)) {
-				TClass next = (TClass) result3_black[1];
-				// 
-				HDataClassDetectorImpl.pattern_HDataClassDetector_1_4_ActivityNode76_expressionBBB(this, next, data);
-
-			}
-			return;
-		} else {
-			return;
 		}
+		HDataClassSmell data = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
+		data.setTAnnotated(tChild);
+		data.getPartOf().add(tSmell);
 
+		// ForEach
+		for (TClass next : tChild.getChildClasses()) {
+			if (!next.equals(tChild)) {
+				makeChildDC(next, data);
+			}
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double calculateRelativeThreshold(HRelativeValueConstants level) {
@@ -294,33 +245,26 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
-	public boolean detect(HAntiPatternGraph pg) {// ForEach 
-		for (Object[] result1_black : HClassBasedCalculatorImpl
-				.pattern_HClassBasedCalculator_1_1_ActivityNode6_blackFBFB(pg, this)) {
-			TClass tClass = (TClass) result1_black[0];
-			//nothing TypeGraph o = (TypeGraph) result1_black[2];
-			// 
-			Object[] result2_bindingAndBlack = HClassBasedCalculatorImpl
-					.pattern_HClassBasedCalculator_1_2_ActivityNode7_bindingAndBlackFBBB(tClass, this, pg);
-			if (result2_bindingAndBlack != null) {
-				HAnnotation metric = (HAnnotation) result2_bindingAndBlack[0];
-				HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_2_ActivityNode7_greenBBBB(metric, tClass,
-						this, pg);
+	public boolean detect(HAntiPatternGraph pg) {// ForEach
+		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			HAnnotation metric = calculate(tClass);
+			if (metric != null) {
+				metric.setTAnnotated(tClass);
+				pg.getHAnnotations().add(metric);
+				getHAnnotation().add(metric);
 
-			} else {
 			}
-
 		}
-		return HClassBasedCalculatorImpl.pattern_HClassBasedCalculator_1_3_expressionF();
+		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -335,8 +279,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -353,8 +297,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -371,8 +315,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -387,8 +331,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -413,8 +357,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -439,8 +383,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -475,8 +419,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -496,8 +440,8 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -514,175 +458,6 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 		return result.toString();
 	}
 
-	public static final Object[] pattern_HDataClassDetector_0_1_ActivityNode28_blackBF(TClass tClass) {
-		for (TAnnotation tmpNm : tClass.getTAnnotation()) {
-			if (tmpNm instanceof HNACCMetric) {
-				HNACCMetric nm = (HNACCMetric) tmpNm;
-				return new Object[] { tClass, nm };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_2_ActivityNode79_blackFB(TClass tClass) {
-		for (TAnnotation tmpDc : tClass.getTAnnotation()) {
-			if (tmpDc instanceof HDataClassSmell) {
-				HDataClassSmell dc = (HDataClassSmell) tmpDc;
-				return new Object[] { dc, tClass };
-			}
-		}
-		return null;
-	}
-
-	public static final HAnnotation pattern_HDataClassDetector_0_3_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_4_ActivityNode91_blackB(HDataClassDetector _this) {
-		boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.valueOf(true))) {
-			return new Object[] { _this };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_5_ActivityNode95_blackB(HDataClassDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_5_ActivityNode95_greenB(HDataClassDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_6_ActivityNode92_blackBB(HDataClassDetector _this,
-			HNACCMetric nm) {
-		double this_threshold = _this.getThreshold();
-		double nm_value = nm.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(nm_value)) < 0) {
-			return new Object[] { _this, nm };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_7_ActivityNode27_blackBBB(TClass tClass,
-			HDataClassDetector _this, HNACCMetric nm) {
-		return new Object[] { tClass, _this, nm };
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_7_ActivityNode27_greenBFBB(TClass tClass,
-			HDataClassDetector _this, HNACCMetric nm) {
-		HDataClassSmell dataClassSmell = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
-		dataClassSmell.setTAnnotated(tClass);
-		dataClassSmell.setHNACCMetric(nm);
-		_this.getHAnnotation().add(dataClassSmell);
-		nm.getPartOf().add(dataClassSmell);
-		return new Object[] { tClass, dataClassSmell, _this, nm };
-	}
-
-	public static final Iterable<Object[]> pattern_HDataClassDetector_0_8_ActivityNode46_blackBF(HNACCMetric nm) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HGetterSetterSmell getterSetter : nm.getHGetterSetterSmells()) {
-			_result.add(new Object[] { nm, getterSetter });
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_9_ActivityNode47_blackBB(HGetterSetterSmell getterSetter,
-			HDataClassSmell dataClassSmell) {
-		return new Object[] { getterSetter, dataClassSmell };
-	}
-
-	public static final Object[] pattern_HDataClassDetector_0_9_ActivityNode47_greenBB(HGetterSetterSmell getterSetter,
-			HDataClassSmell dataClassSmell) {
-		getterSetter.getPartOf().add(dataClassSmell);
-		dataClassSmell.getGetterSetterSmells().add(getterSetter);
-		return new Object[] { getterSetter, dataClassSmell };
-	}
-
-	public static final Iterable<Object[]> pattern_HDataClassDetector_0_10_ActivityNode77_blackBF(TClass tClass) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TClass tChild : tClass.getChildClasses()) {
-			if (!tChild.equals(tClass)) {
-				_result.add(new Object[] { tClass, tChild });
-			}
-		}
-		return _result;
-	}
-
-	public static final void pattern_HDataClassDetector_0_11_ActivityNode78_expressionBBB(HDataClassDetector _this,
-			TClass tChild, HDataClassSmell dataClassSmell) {
-		_this.makeChildDC(tChild, dataClassSmell);
-
-	}
-
-	public static final HAnnotation pattern_HDataClassDetector_0_12_expressionFB(HDataClassSmell dataClassSmell) {
-		HAnnotation _result = dataClassSmell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HDataClassDetector_0_13_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HDataClassDetector_0_14_expressionF() {
-		HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_1_1_ActivityNode73_black_nac_0B(TClass tChild) {
-		for (TAnnotation tmpSmell : tChild.getTAnnotation()) {
-			if (tmpSmell instanceof HDataClassSmell) {
-				HDataClassSmell smell = (HDataClassSmell) tmpSmell;
-				return new Object[] { tChild };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_1_1_ActivityNode73_blackBB(TClass tChild,
-			HDataClassDetector _this) {
-		if (pattern_HDataClassDetector_1_1_ActivityNode73_black_nac_0B(tChild) == null) {
-			return new Object[] { tChild, _this };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HDataClassDetector_1_2_ActivityNode74_blackBB(TClass tChild,
-			HDataClassSmell tSmell) {
-		return new Object[] { tChild, tSmell };
-	}
-
-	public static final Object[] pattern_HDataClassDetector_1_2_ActivityNode74_greenBFB(TClass tChild,
-			HDataClassSmell tSmell) {
-		HDataClassSmell data = CodesmellsFactory.eINSTANCE.createHDataClassSmell();
-		data.setTAnnotated(tChild);
-		data.getPartOf().add(tSmell);
-		return new Object[] { tChild, data, tSmell };
-	}
-
-	public static final Iterable<Object[]> pattern_HDataClassDetector_1_3_ActivityNode75_blackBF(TClass tChild) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TClass next : tChild.getChildClasses()) {
-			if (!next.equals(tChild)) {
-				_result.add(new Object[] { tChild, next });
-			}
-		}
-		return _result;
-	}
-
-	public static final void pattern_HDataClassDetector_1_4_ActivityNode76_expressionBBB(HDataClassDetector _this,
-			TClass next, HDataClassSmell data) {
-		_this.makeChildDC(next, data);
-
-	}
-
 	// <-- [user code injected with eMoflon]
 
 	@Override
@@ -691,4 +466,4 @@ public class HDataClassDetectorImpl extends HCodeSmellDetectorImpl implements HD
 	}
 
 	// [user code injected with eMoflon] -->
-} //HDataClassDetectorImpl
+} // HDataClassDetectorImpl

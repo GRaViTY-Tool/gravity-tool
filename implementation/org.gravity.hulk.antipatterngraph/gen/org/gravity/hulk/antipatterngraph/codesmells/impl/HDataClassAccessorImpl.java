@@ -28,24 +28,25 @@ import org.gravity.typegraph.basic.TClass;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HData Class Accessor</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HData
+ * Class Accessor</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getValue <em>Value</em>}</li>
- *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getHDataClassSmells <em>HData Class Smells</em>}</li>
+ * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getValue
+ * <em>Value</em>}</li>
+ * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getHDataClassSmells
+ * <em>HData Class Smells</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClassAccessor {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -53,9 +54,9 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -63,9 +64,9 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	protected double value = VALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHDataClassSmells() <em>HData Class Smells</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getHDataClassSmells() <em>HData Class
+	 * Smells</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getHDataClassSmells()
 	 * @generated
 	 * @ordered
@@ -73,8 +74,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	protected EList<HDataClassSmell> hDataClassSmells;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HDataClassAccessorImpl() {
@@ -82,8 +83,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -92,8 +93,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,8 +103,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,8 +117,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,6 +160,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 				double q = (index + 1) / keys.size();
 
+
 				if (q < 0.2) {
 					value.setValue(HRelativeValueConstants.VERY_LOW);
 				} else if (q < 0.4) {
@@ -187,8 +189,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,8 +205,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -223,8 +225,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -241,8 +243,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -257,8 +259,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -275,8 +277,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -293,8 +295,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -313,8 +315,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,6 +333,7 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -357,4 +360,4 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	}
 
 	// [user code injected with eMoflon] -->
-} //HDataClassAccessorImpl
+} // HDataClassAccessorImpl
