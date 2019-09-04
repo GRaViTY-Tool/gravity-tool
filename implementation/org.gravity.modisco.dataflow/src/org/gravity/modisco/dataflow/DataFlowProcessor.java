@@ -98,7 +98,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// Keep node
 				} else if (node instanceof MSingleVariableAccess) {
 					// Keep variable access node only if its a field access
-					if (((MSingleVariableAccess) node).getVariable().eContainer() instanceof VariableDeclarationStatement) {
+					VariableDeclaration variable = ((MSingleVariableAccess) node).getVariable();
+					if(variable == null) {
+						LOGGER.error("Declared variable is null");
+					}
+					else if (variable.eContainer() instanceof VariableDeclarationStatement) {
 						reduceNodeInDFG(node, reducedDFG);
 						continue;
 					}
