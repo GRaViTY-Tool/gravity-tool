@@ -65,11 +65,6 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 		return ModiscoFactory.eINSTANCE.createMSingleVariableAccess();
 	}
 	
-	@Override 
-	public MMethodInvocation createMethodInvocation() {
-		return ModiscoFactory.eINSTANCE.createMMethodInvocation();
-	}
-	
 	@Override
 	public MConstructorInvocation createConstructorInvocation() {
 		return ModiscoFactory.eINSTANCE.createMConstructorInvocation();
