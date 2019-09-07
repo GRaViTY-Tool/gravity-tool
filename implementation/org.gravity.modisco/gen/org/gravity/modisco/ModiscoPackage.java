@@ -66,7 +66,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMDefinition()
 	 * @generated
 	 */
-	int MDEFINITION = 2;
+	int MDEFINITION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -455,7 +455,99 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorDefinition()
 	 * @generated
 	 */
-	int MCONSTRUCTOR_DEFINITION = 1;
+	int MCONSTRUCTOR_DEFINITION = 2;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractFlowElementImpl <em>MAbstract Flow Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MAbstractFlowElementImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractFlowElement()
+	 * @generated
+	 */
+	int MABSTRACT_FLOW_ELEMENT = 22;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = 2;
+
+	/**
+	 * The number of structural features of the '<em>MAbstract Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MAccessImpl <em>MAccess</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MAccessImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAccess()
+	 * @generated
+	 */
+	int MACCESS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACCESS__OWNED_FLOWS = MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACCESS__INCOMING_FLOWS = MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACCESS__OUTGOING_FLOWS = MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+
+	/**
+	 * The number of structural features of the '<em>MAccess</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACCESS_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -692,52 +784,6 @@ public interface ModiscoPackage extends EPackage {
 	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractFlowElementImpl <em>MAbstract Flow Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MAbstractFlowElementImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractFlowElement()
-	 * @generated
-	 */
-	int MABSTRACT_FLOW_ELEMENT = 21;
-
-	/**
-	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = 2;
-
-	/**
-	 * The number of structural features of the '<em>MAbstract Flow Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -745,7 +791,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSignature()
 	 * @generated
 	 */
-	int MSIGNATURE = 10;
+	int MSIGNATURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -809,7 +855,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodSignature()
 	 * @generated
 	 */
-	int MMETHOD_SIGNATURE = 3;
+	int MMETHOD_SIGNATURE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -918,7 +964,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMParameterList()
 	 * @generated
 	 */
-	int MPARAMETER_LIST = 4;
+	int MPARAMETER_LIST = 5;
 
 	/**
 	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
@@ -955,7 +1001,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMName()
 	 * @generated
 	 */
-	int MNAME = 5;
+	int MNAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>MSignatures</b></em>' reference list.
@@ -992,7 +1038,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodName()
 	 * @generated
 	 */
-	int MMETHOD_NAME = 6;
+	int MMETHOD_NAME = 7;
 
 	/**
 	 * The feature id for the '<em><b>MSignatures</b></em>' reference list.
@@ -1056,7 +1102,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldName()
 	 * @generated
 	 */
-	int MFIELD_NAME = 7;
+	int MFIELD_NAME = 8;
 
 	/**
 	 * The feature id for the '<em><b>MSignatures</b></em>' reference list.
@@ -1120,7 +1166,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldDefinition()
 	 * @generated
 	 */
-	int MFIELD_DEFINITION = 8;
+	int MFIELD_DEFINITION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -1328,7 +1374,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodDefinition()
 	 * @generated
 	 */
-	int MMETHOD_DEFINITION = 9;
+	int MMETHOD_DEFINITION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -1626,7 +1672,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
 	 * @generated
 	 */
-	int MMETHOD_INVOCATION = 23;
+	int MMETHOD_INVOCATION = 24;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorInvocationImpl <em>MConstructor Invocation</em>}' class.
@@ -1636,7 +1682,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
 	 * @generated
 	 */
-	int MCONSTRUCTOR_INVOCATION = 24;
+	int MCONSTRUCTOR_INVOCATION = 25;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSingleVariableDeclarationImpl <em>MSingle Variable Declaration</em>}' class.
@@ -1646,7 +1692,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
 	 * @generated
 	 */
-	int MSINGLE_VARIABLE_DECLARATION = 25;
+	int MSINGLE_VARIABLE_DECLARATION = 26;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractMethodInvocationImpl <em>MAbstract Method Invocation</em>}' class.
@@ -1656,7 +1702,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
 	 * @generated
 	 */
-	int MABSTRACT_METHOD_INVOCATION = 26;
+	int MABSTRACT_METHOD_INVOCATION = 27;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperMethodInvocationImpl <em>MSuper Method Invocation</em>}' class.
@@ -1666,7 +1712,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
 	 * @generated
 	 */
-	int MSUPER_METHOD_INVOCATION = 27;
+	int MSUPER_METHOD_INVOCATION = 28;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MClassInstanceCreationImpl <em>MClass Instance Creation</em>}' class.
@@ -1676,7 +1722,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
 	 * @generated
 	 */
-	int MCLASS_INSTANCE_CREATION = 28;
+	int MCLASS_INSTANCE_CREATION = 29;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
@@ -1686,7 +1732,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
 	 * @generated
 	 */
-	int MSUPER_CONSTRUCTOR_INVOCATION = 29;
+	int MSUPER_CONSTRUCTOR_INVOCATION = 30;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
@@ -1696,7 +1742,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
 	 * @generated
 	 */
-	int ACCESS_KIND = 30;
+	int ACCESS_KIND = 31;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MEntryImpl <em>MEntry</em>}' class.
@@ -1706,7 +1752,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEntry()
 	 * @generated
 	 */
-	int MENTRY = 11;
+	int MENTRY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -1788,7 +1834,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMGravityModel()
 	 * @generated
 	 */
-	int MGRAVITY_MODEL = 12;
+	int MGRAVITY_MODEL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1978,7 +2024,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldSignature()
 	 * @generated
 	 */
-	int MFIELD_SIGNATURE = 13;
+	int MFIELD_SIGNATURE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -2078,7 +2124,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnnotation()
 	 * @generated
 	 */
-	int MANNOTATION = 14;
+	int MANNOTATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2151,7 +2197,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
 	 * @generated
 	 */
-	int MSYNTHETIC_METHOD_DEFINITION = 15;
+	int MSYNTHETIC_METHOD_DEFINITION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2269,7 +2315,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMethodInvocationStaticType()
 	 * @generated
 	 */
-	int METHOD_INVOCATION_STATIC_TYPE = 16;
+	int METHOD_INVOCATION_STATIC_TYPE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Method Invoc</b></em>' reference.
@@ -2306,7 +2352,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymous()
 	 * @generated
 	 */
-	int MANONYMOUS = 17;
+	int MANONYMOUS = 18;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2379,7 +2425,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClass()
 	 * @generated
 	 */
-	int MCLASS = 18;
+	int MCLASS = 19;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2569,7 +2615,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMExtension()
 	 * @generated
 	 */
-	int MEXTENSION = 19;
+	int MEXTENSION = 20;
 
 	/**
 	 * The number of structural features of the '<em>MExtension</em>' class.
@@ -2589,7 +2635,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFlow()
 	 * @generated
 	 */
-	int MFLOW = 20;
+	int MFLOW = 21;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -2662,7 +2708,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableAccess()
 	 * @generated
 	 */
-	int MSINGLE_VARIABLE_ACCESS = 22;
+	int MSINGLE_VARIABLE_ACCESS = 23;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3540,6 +3586,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMAbstractMethodDefinition_MInnerTypes();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MAccess <em>MAccess</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MAccess</em>'.
+	 * @see org.gravity.modisco.MAccess
+	 * @generated
+	 */
+	EClass getMAccess();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MConstructorDefinition <em>MConstructor Definition</em>}'.
@@ -4584,6 +4640,16 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MABSTRACT_METHOD_DEFINITION__MINNER_TYPES = eINSTANCE.getMAbstractMethodDefinition_MInnerTypes();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAccessImpl <em>MAccess</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MAccessImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAccess()
+		 * @generated
+		 */
+		EClass MACCESS = eINSTANCE.getMAccess();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MConstructorDefinitionImpl <em>MConstructor Definition</em>}' class.

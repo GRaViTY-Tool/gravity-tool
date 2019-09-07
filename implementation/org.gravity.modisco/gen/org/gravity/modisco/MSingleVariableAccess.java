@@ -20,7 +20,7 @@ import org.eclipse.gmt.modisco.java.SingleVariableAccess;
  * @model
  * @generated
  */
-public interface MSingleVariableAccess extends SingleVariableAccess, MAbstractFlowElement {
+public interface MSingleVariableAccess extends SingleVariableAccess, MAccess {
 	/**
 	 * Returns the value of the '<em><b>Access Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.gravity.modisco.AccessKind}.

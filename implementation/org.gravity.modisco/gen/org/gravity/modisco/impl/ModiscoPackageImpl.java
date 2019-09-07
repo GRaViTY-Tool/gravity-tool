@@ -16,6 +16,7 @@ import org.gravity.modisco.AccessKind;
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
+import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MAnnotation;
 import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MClass;
@@ -59,6 +60,13 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	private EClass mAbstractMethodDefinitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mAccessEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -350,6 +358,15 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 */
 	public EReference getMAbstractMethodDefinition_MInnerTypes() {
 		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMAccess() {
+		return mAccessEClass;
 	}
 
 	/**
@@ -1229,6 +1246,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mAbstractMethodDefinitionEClass = createEClass(MABSTRACT_METHOD_DEFINITION);
 		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MINNER_TYPES);
 
+		mAccessEClass = createEClass(MACCESS);
+
 		mConstructorDefinitionEClass = createEClass(MCONSTRUCTOR_DEFINITION);
 		createEReference(mConstructorDefinitionEClass, MCONSTRUCTOR_DEFINITION__MODEL);
 		createEReference(mConstructorDefinitionEClass, MCONSTRUCTOR_DEFINITION__MPARAMETER_LIST);
@@ -1388,6 +1407,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Add supertypes to classes
 		mAbstractMethodDefinitionEClass.getESuperTypes().add(this.getMDefinition());
 		mAbstractMethodDefinitionEClass.getESuperTypes().add(theJavaPackage.getAbstractMethodDeclaration());
+		mAccessEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mConstructorDefinitionEClass.getESuperTypes().add(this.getMAbstractMethodDefinition());
 		mConstructorDefinitionEClass.getESuperTypes().add(theJavaPackage.getConstructorDeclaration());
 		mDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
@@ -1409,7 +1429,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mClassEClass.getESuperTypes().add(theJavaPackage.getClassDeclaration());
 		mFlowEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mSingleVariableAccessEClass.getESuperTypes().add(theJavaPackage.getSingleVariableAccess());
-		mSingleVariableAccessEClass.getESuperTypes().add(this.getMAbstractFlowElement());
+		mSingleVariableAccessEClass.getESuperTypes().add(this.getMAccess());
 		mMethodInvocationEClass.getESuperTypes().add(theJavaPackage.getMethodInvocation());
 		mMethodInvocationEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mMethodInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
@@ -1418,20 +1438,19 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mSingleVariableDeclarationEClass.getESuperTypes().add(theJavaPackage.getSingleVariableDeclaration());
 		mAbstractMethodInvocationEClass.getESuperTypes().add(theJavaPackage.getAbstractMethodInvocation());
-		mAbstractMethodInvocationEClass.getESuperTypes().add(this.getMAbstractFlowElement());
+		mAbstractMethodInvocationEClass.getESuperTypes().add(this.getMAccess());
 		mSuperMethodInvocationEClass.getESuperTypes().add(theJavaPackage.getSuperMethodInvocation());
-		mSuperMethodInvocationEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mSuperMethodInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mClassInstanceCreationEClass.getESuperTypes().add(theJavaPackage.getClassInstanceCreation());
-		mClassInstanceCreationEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mClassInstanceCreationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(theJavaPackage.getSuperConstructorInvocation());
-		mSuperConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mSuperConstructorInvocationEClass.getESuperTypes().add(this.getMAbstractMethodInvocation());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(mAbstractMethodDefinitionEClass, MAbstractMethodDefinition.class, "MAbstractMethodDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAbstractMethodDefinition_MInnerTypes(), theJavaPackage.getAbstractTypeDeclaration(), null, "mInnerTypes", null, 0, -1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mAccessEClass, MAccess.class, "MAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mConstructorDefinitionEClass, MConstructorDefinition.class, "MConstructorDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMConstructorDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MConstructorDefinitions(), "model", null, 1, 1, MConstructorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

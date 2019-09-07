@@ -42,7 +42,6 @@
     <module>implementation/org.gravity.hulk.ui.visualization</module>
     <module>implementation/org.gravity.metrics.sourcemeter</module>
     <module>implementation/org.gravity.modisco</module>
-    <module>implementation/org.gravity.modisco.dataflow</module>
     <module>implementation/org.gravity.refactorings</module>
     <module>implementation/org.gravity.refactorings.ui</module>
     <module>implementation/org.gravity.security.analysis</module>

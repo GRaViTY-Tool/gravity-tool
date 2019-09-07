@@ -1,4 +1,4 @@
-package org.gravity.modisco.dataflow;
+package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.LinkedList;
 import org.apache.log4j.Level;

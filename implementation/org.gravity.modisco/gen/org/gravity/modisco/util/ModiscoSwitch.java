@@ -93,11 +93,13 @@ public class ModiscoSwitch<T> {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
-		List<EClass> eSuperTypes = theEClass.getESuperTypes();
-		return
-			eSuperTypes.isEmpty() ?
-				defaultCase(theEObject) :
-				doSwitch(eSuperTypes.get(0), theEObject);
+		else {
+			List<EClass> eSuperTypes = theEClass.getESuperTypes();
+			return
+				eSuperTypes.isEmpty() ?
+					defaultCase(theEObject) :
+					doSwitch(eSuperTypes.get(0), theEObject);
+		}
 	}
 
 	/**
@@ -118,6 +120,13 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractFlowElement(mAbstractMethodDefinition);
 				if (result == null) result = caseNamedElement(mAbstractMethodDefinition);
 				if (result == null) result = caseASTNode(mAbstractMethodDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MACCESS: {
+				MAccess mAccess = (MAccess)theEObject;
+				T result = caseMAccess(mAccess);
+				if (result == null) result = caseMAbstractFlowElement(mAccess);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -303,8 +312,9 @@ public class ModiscoSwitch<T> {
 				MSingleVariableAccess mSingleVariableAccess = (MSingleVariableAccess)theEObject;
 				T result = caseMSingleVariableAccess(mSingleVariableAccess);
 				if (result == null) result = caseSingleVariableAccess(mSingleVariableAccess);
-				if (result == null) result = caseMAbstractFlowElement(mSingleVariableAccess);
+				if (result == null) result = caseMAccess(mSingleVariableAccess);
 				if (result == null) result = caseExpression(mSingleVariableAccess);
+				if (result == null) result = caseMAbstractFlowElement(mSingleVariableAccess);
 				if (result == null) result = caseASTNode(mSingleVariableAccess);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -316,8 +326,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractMethodInvocation(mMethodInvocation);
 				if (result == null) result = caseExpression(mMethodInvocation);
 				if (result == null) result = caseAbstractMethodInvocation(mMethodInvocation);
-				if (result == null) result = caseMAbstractFlowElement(mMethodInvocation);
+				if (result == null) result = caseMAccess(mMethodInvocation);
 				if (result == null) result = caseASTNode(mMethodInvocation);
+				if (result == null) result = caseMAbstractFlowElement(mMethodInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -328,8 +339,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractMethodInvocation(mConstructorInvocation);
 				if (result == null) result = caseStatement(mConstructorInvocation);
 				if (result == null) result = caseAbstractMethodInvocation(mConstructorInvocation);
-				if (result == null) result = caseMAbstractFlowElement(mConstructorInvocation);
+				if (result == null) result = caseMAccess(mConstructorInvocation);
 				if (result == null) result = caseASTNode(mConstructorInvocation);
+				if (result == null) result = caseMAbstractFlowElement(mConstructorInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -347,8 +359,9 @@ public class ModiscoSwitch<T> {
 				MAbstractMethodInvocation mAbstractMethodInvocation = (MAbstractMethodInvocation)theEObject;
 				T result = caseMAbstractMethodInvocation(mAbstractMethodInvocation);
 				if (result == null) result = caseAbstractMethodInvocation(mAbstractMethodInvocation);
-				if (result == null) result = caseMAbstractFlowElement(mAbstractMethodInvocation);
+				if (result == null) result = caseMAccess(mAbstractMethodInvocation);
 				if (result == null) result = caseASTNode(mAbstractMethodInvocation);
+				if (result == null) result = caseMAbstractFlowElement(mAbstractMethodInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -359,8 +372,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractMethodInvocation(mSuperMethodInvocation);
 				if (result == null) result = caseAbstractTypeQualifiedExpression(mSuperMethodInvocation);
 				if (result == null) result = caseAbstractMethodInvocation(mSuperMethodInvocation);
-				if (result == null) result = caseMAbstractFlowElement(mSuperMethodInvocation);
+				if (result == null) result = caseMAccess(mSuperMethodInvocation);
 				if (result == null) result = caseExpression(mSuperMethodInvocation);
+				if (result == null) result = caseMAbstractFlowElement(mSuperMethodInvocation);
 				if (result == null) result = caseASTNode(mSuperMethodInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -372,8 +386,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractMethodInvocation(mClassInstanceCreation);
 				if (result == null) result = caseExpression(mClassInstanceCreation);
 				if (result == null) result = caseAbstractMethodInvocation(mClassInstanceCreation);
-				if (result == null) result = caseMAbstractFlowElement(mClassInstanceCreation);
+				if (result == null) result = caseMAccess(mClassInstanceCreation);
 				if (result == null) result = caseASTNode(mClassInstanceCreation);
+				if (result == null) result = caseMAbstractFlowElement(mClassInstanceCreation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -384,8 +399,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractMethodInvocation(mSuperConstructorInvocation);
 				if (result == null) result = caseStatement(mSuperConstructorInvocation);
 				if (result == null) result = caseAbstractMethodInvocation(mSuperConstructorInvocation);
-				if (result == null) result = caseMAbstractFlowElement(mSuperConstructorInvocation);
+				if (result == null) result = caseMAccess(mSuperConstructorInvocation);
 				if (result == null) result = caseASTNode(mSuperConstructorInvocation);
+				if (result == null) result = caseMAbstractFlowElement(mSuperConstructorInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,6 +421,21 @@ public class ModiscoSwitch<T> {
 	 * @generated
 	 */
 	public T caseMAbstractMethodDefinition(MAbstractMethodDefinition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>MAccess</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>MAccess</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMAccess(MAccess object) {
 		return null;
 	}
 

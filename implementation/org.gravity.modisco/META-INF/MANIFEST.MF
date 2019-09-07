@@ -20,10 +20,15 @@ Export-Package: org.gravity.modisco,
  org.gravity.modisco.impl,
  org.gravity.modisco.processing,
  org.gravity.modisco.processing.fwd,
+ org.gravity.modisco.processing.fwd.dataflow,
  org.gravity.modisco.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-Activator: org.gravity.modisco.GravityMoDiscoActivator
 Automatic-Module-Name: org.gravity.modisco
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/commons-exec-1.3.jar,
+ lib/graphviz-java-0.8.7.jar,
+ lib/slf4j-api-1.7.7.jar,
+ lib/svgSalamander-1.1.2.jar

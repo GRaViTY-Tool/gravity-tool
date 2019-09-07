@@ -1,4 +1,4 @@
-package org.gravity.modisco.dataflow;
+package org.gravity.modisco.processing.fwd.dataflow;
 
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;

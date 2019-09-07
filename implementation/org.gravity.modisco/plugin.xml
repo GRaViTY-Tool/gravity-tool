@@ -6,17 +6,19 @@
     <factory class="org.gravity.modisco.GravityMoDiscoFactoryImpl" uri="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"/>
   </extension>
   <extension point="org.gravity.modisco.ProcessingModiscoFwd">
-    <processor priority="0" processor="org.gravity.modisco.processing.fwd.StaticTypePreprocessing"/>
-    <processor priority="7" processor="org.gravity.modisco.processing.fwd.GravityMoDiscoPreprocessing"/>
-    <processor priority="8" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
-    <processor priority="10" processor="org.gravity.modisco.processing.fwd.AnonymousClassPreprocessing"/>
-    <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
-    <processor priority="1" processor="org.gravity.modisco.processing.fwd.TypeDeclarationStatementPreprocessor"/>
+    <processor priority="0" processor="org.gravity.modisco.processing.fwd.dataflow.DataFlowProcessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.VisibilityRepairPreprocessor"/>
-    <processor priority="9" processor="org.gravity.modisco.processing.fwd.TypeParameterPreprocessor"/>
     <processor priority="0" processor="org.gravity.modisco.processing.fwd.AnnotationPreprocessing"/>
+    <processor priority="0" processor="org.gravity.modisco.processing.fwd.StaticTypePreprocessing"/>
+    <processor priority="1" processor="org.gravity.modisco.processing.fwd.TypeDeclarationStatementPreprocessor"/>
+    <processor priority="2" processor="org.gravity.modisco.processing.fwd.SuperInterfacePreprocessing"/>
     <processor priority="2" processor="org.gravity.modisco.processing.fwd.ConstructorPreprocessor"/>
+    <processor priority="6" processor="org.gravity.modisco.processing.fwd.AccessPreprocessing"/>
+    <processor priority="7" processor="org.gravity.modisco.processing.fwd.ImplementedSignaturesPreprocessing"/>
+    <processor priority="8" processor="org.gravity.modisco.processing.fwd.FieldPreprocessing"/>
+    <processor priority="9" processor="org.gravity.modisco.processing.fwd.TypeParameterPreprocessor"/>
     <processor priority="9" processor="org.gravity.modisco.processing.fwd.MethodPreprocessing"/>
+    <processor priority="10" processor="org.gravity.modisco.processing.fwd.AnonymousClassPreprocessing"/>
   </extension>
   <extension point="org.eclipse.modisco.infra.discovery.core.discoverer">
     <discoverer class="org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer" id="org.gravity.modisco.Discoverer"/>

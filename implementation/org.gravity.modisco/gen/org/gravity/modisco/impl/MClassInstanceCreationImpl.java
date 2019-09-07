@@ -19,6 +19,7 @@ import org.eclipse.gmt.modisco.java.emf.impl.ClassInstanceCreationImpl;
 
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodInvocation;
+import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MClassInstanceCreation;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.ModiscoPackage;
@@ -258,6 +259,11 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 				default: return -1;
 			}
 		}
+		if (baseClass == MAccess.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == MAbstractMethodInvocation.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -278,6 +284,11 @@ public class MClassInstanceCreationImpl extends ClassInstanceCreationImpl implem
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return ModiscoPackage.MCLASS_INSTANCE_CREATION__OWNED_FLOWS;
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return ModiscoPackage.MCLASS_INSTANCE_CREATION__INCOMING_FLOWS;
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return ModiscoPackage.MCLASS_INSTANCE_CREATION__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		if (baseClass == MAccess.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

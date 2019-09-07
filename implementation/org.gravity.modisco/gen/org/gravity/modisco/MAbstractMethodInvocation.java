@@ -14,5 +14,5 @@ import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
  * @model abstract="true"
  * @generated
  */
-public interface MAbstractMethodInvocation extends AbstractMethodInvocation, MAbstractFlowElement {
+public interface MAbstractMethodInvocation extends AbstractMethodInvocation, MAccess {
 } // MAbstractMethodInvocation

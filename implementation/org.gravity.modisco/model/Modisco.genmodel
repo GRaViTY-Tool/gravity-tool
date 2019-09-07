@@ -16,6 +16,7 @@
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAbstractMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractMethodDefinition/mInnerTypes"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="Modisco.ecore#//MAccess"/>
     <genClasses ecoreClass="Modisco.ecore#//MConstructorDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MConstructorDefinition/model"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modisco.ecore#//MConstructorDefinition/mParameterList"/>

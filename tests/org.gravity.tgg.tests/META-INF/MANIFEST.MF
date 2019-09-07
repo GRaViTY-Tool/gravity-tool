@@ -13,17 +13,15 @@ Require-Bundle: org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.uml,
  org.eclipse.modisco.infra.discovery.core,
  org.gravity.typegraph.basic,
- org.gravity.eclipse.tests,
- org.gravity.modisco.dataflow;bundle-version="1.0.0"
+ org.gravity.eclipse.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau
 Bundle-Activator: org.gravity.tgg.test.activator.MoDiscoTestActivator
 Automatic-Module-Name: org.gravity.tgg.modisco.test
-Export-Package: org.gravity.tgg.test.activator,
+Export-Package: com.github.cliftonlabs.json_simple,
+ org.gravity.tgg.test.activator,
  org.gravity.tgg.test.complete,
- org.gravity.tgg.test.complete.pm,
- org.gravity.tgg.test.preprocessing,
  org.gravity.tgg.test.util
 Bundle-ClassPath: libs/json-simple-3.1.0.jar,
  .

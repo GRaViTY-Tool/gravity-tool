@@ -21,6 +21,7 @@ import org.eclipse.gmt.modisco.java.emf.impl.MethodInvocationImpl;
 
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodInvocation;
+import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MMethodInvocation;
 import org.gravity.modisco.ModiscoPackage;
@@ -317,6 +318,11 @@ public class MMethodInvocationImpl extends MethodInvocationImpl implements MMeth
 				default: return -1;
 			}
 		}
+		if (baseClass == MAccess.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == MAbstractMethodInvocation.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -337,6 +343,11 @@ public class MMethodInvocationImpl extends MethodInvocationImpl implements MMeth
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return ModiscoPackage.MMETHOD_INVOCATION__OWNED_FLOWS;
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return ModiscoPackage.MMETHOD_INVOCATION__INCOMING_FLOWS;
 				case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return ModiscoPackage.MMETHOD_INVOCATION__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		if (baseClass == MAccess.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

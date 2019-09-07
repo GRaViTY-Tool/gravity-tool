@@ -1,13 +1,15 @@
+/**
+ * 
+ */
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -15,7 +17,6 @@ import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.Block;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.SingleVariableAccess;
 import org.eclipse.gmt.modisco.java.Type;
@@ -24,90 +25,109 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MAbstractMethodInvocation;
+import org.gravity.modisco.MAccess;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.MName;
-import org.gravity.modisco.MSignature;
-import org.gravity.modisco.processing.IMoDiscoProcessor;
+import org.gravity.modisco.MSingleVariableAccess;
+import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 
 /**
- * This class contains preprocessings which haven't been extracted to separate preprocessors yet
+ * A processor for adding accesses to members
  * 
  * @author speldszus
  *
  */
-public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
+public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> {
 
-	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoPreprocessing.class);
+	/**
+	 * The logger of this class
+	 */
+	private static final Logger LOGGER = Logger.getLogger(AccessPreprocessing.class);
+	
+	/*
+	 * Temporal maps
+	 */
+	private volatile Map<MDefinition, List<MSingleVariableAccess>> fieldAccesses;
+	private volatile Map<MDefinition, List<MAbstractMethodInvocation>> methodAccesses;
 
-	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		if (!preprocessAccesses(model) || !preprocessImplementedSignatures(model)) {
-			return false;
+	public boolean process(MGravityModel model, Collection<MAccess> elements, IProgressMonitor monitor) {
+		fieldAccesses = new HashMap<>();
+		methodAccesses = new HashMap<>();
+		elements.stream().forEach(access -> {
+			if (access instanceof MAbstractMethodInvocation) {
+				process((MAbstractMethodInvocation) access);
+			} else if (access instanceof MSingleVariableAccess) {
+				process((MSingleVariableAccess) access);
+			}
+		});
+		fieldAccesses.entrySet().parallelStream()
+				.forEach(entry -> entry.getKey().getMAbstractFieldAccess().addAll(entry.getValue()));
+		methodAccesses.entrySet().parallelStream()
+				.forEach(entry -> entry.getKey().getMMethodInvocations().addAll(entry.getValue()));
+		
+
+		for (MFieldDefinition field : model.getMFieldDefinitions()) {
+			calculateTypeDependencies(field);
 		}
-		if (monitor.isCanceled()) {
-			return false;
+		for (MAbstractMethodDefinition method : model.getMAbstractMethodDefinitions()) {
+			calculateTypeDependencies(method);
 		}
+
 		return true;
 	}
 
 	/**
-	 * Adds implementedBy edge from Classes to Signatures if the classes contain
-	 * according definitions
+	 * Processes accesses to fields
 	 * 
-	 * @param model The model which should be preprocessed
+	 * @param access A variable access
 	 */
-	private static boolean preprocessImplementedSignatures(MGravityModel model) {
-		HashMap<MSignature, Collection<AbstractTypeDeclaration>> mapping = new HashMap<>();
-		for (MName mName : model.getMNames()) {
-			for (MSignature mSignature : mName.getMSignatures()) {
-				List<AbstractTypeDeclaration> implementingTypes = new LinkedList<>();
-				for (MDefinition mDefinition : mSignature.getMDefinitions()) {
-					AbstractTypeDeclaration mType = mDefinition.getAbstractTypeDeclaration();
-					if (mType != null) {
-						implementingTypes.add(mType);
-					} else {
-						EObject eContainer = mDefinition.eContainer();
-						if (JavaPackage.eINSTANCE.getAnonymousClassDeclaration().isSuperTypeOf(eContainer.eClass())) {
-							// Ignore this case
-						} else {
-							LOGGER.log(Level.ERROR, "Couldn't preprocess implemented siganture: " + mSignature);
-							return false;
-						}
-					}
-				}
-				mapping.put(mSignature, implementingTypes);
-			}
+	private void process(MSingleVariableAccess access) {
+		MDefinition definition = getDefiningMember(access);
+		VariableDeclaration variable = access.getVariable();
+		if(variable == null || !(variable.eContainer() instanceof FieldDeclaration)) {
+			return;
 		}
-		for (Entry<MSignature, Collection<AbstractTypeDeclaration>> entry : mapping.entrySet()) {
-			entry.getKey().getImplementedBy().addAll(entry.getValue());
+		List<MSingleVariableAccess> content = fieldAccesses.get(definition);
+		if (content == null) {
+			content = new LinkedList<>();
+			fieldAccesses.put(definition, content);
 		}
-		return true;
+		content.add(access);
 	}
 
-	private static boolean preprocessAccesses(MGravityModel model) {
-		for (MAbstractMethodDefinition def : model.getMAbstractMethodDefinitions()) {
-			Block block = def.getBody();
-			if (!StatementHandler.handle(block, def)) {
-				LOGGER.log(Level.ERROR,
-						"Couldn't handle method statement \"" + block + "\" at preprocessing of accesses.");
-				return false;
-			}
-			calculateTypeDependencies(def);
+	/**
+	 * Processes method calls
+	 * 
+	 * @param call A method call
+	 */
+	private void process(MAbstractMethodInvocation call) {
+		MDefinition definition = getDefiningMember(call);
+		List<MAbstractMethodInvocation> content = methodAccesses.get(definition);
+		if (content == null) {
+			content = new LinkedList<>();
+			methodAccesses.put(definition, content);
 		}
-		for (MFieldDefinition def : model.getMFieldDefinitions()) {
-			for (VariableDeclarationFragment fragment : def.getFragments()) {
-				if (!ExpressionHandler.handle(fragment.getInitializer(), def)) { // TODO: Add access types here
-					LOGGER.log(Level.ERROR,
-							"Couldn't handle field statement \"" + fragment + "\" at preprocessing of accesses.");
-					return false;
-				}
-			}
-			calculateTypeDependencies(def);
+		content.add(call);
+	}
+
+	/**
+	 * Searches the member defining this access
+	 * 
+	 * @param access The access
+	 * @return The member or null
+	 */
+	private MDefinition getDefiningMember(MAccess access) {
+		EObject container = access;
+		while (container != null && !(container instanceof MDefinition)) {
+			container = container.eContainer();
 		}
-		return true;
+		if (container == null) {
+			return null;
+		}
+		return ((MDefinition) container);
 	}
 
 	private static void calculateTypeDependencies(MDefinition def) {
@@ -155,13 +175,13 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 	/**
 	 * Builds an error message for an access to an unresolved field
 	 * 
-	 * @param definition The definition of the accessing member
+	 * @param definition  The definition of the accessing member
 	 * @param declaration The declaration of the unresolved field
-	 * @param container The container of the unresolved field
+	 * @param container   The container of the unresolved field
 	 * @return An error message
 	 */
-	private static String buildUnresolvedFieldAccessErrorMessage(MDefinition definition, VariableDeclaration declaration,
-			AbstractVariablesContainer container) {
+	private static String buildUnresolvedFieldAccessErrorMessage(MDefinition definition,
+			VariableDeclaration declaration, AbstractVariablesContainer container) {
 		StringBuilder messageBuilder = new StringBuilder("Access from \"");
 		messageBuilder.append(definition.getAbstractTypeDeclaration().getName());
 		messageBuilder.append('.');
@@ -177,4 +197,10 @@ public class GravityMoDiscoPreprocessing implements IMoDiscoProcessor {
 		String message = messageBuilder.toString();
 		return message;
 	}
+
+	@Override
+	public Class<MAccess> getSupportedType() {
+		return MAccess.class;
+	}
+
 }

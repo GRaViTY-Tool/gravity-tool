@@ -100,6 +100,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMAbstractMethodDefinitionAdapter();
 			}
 			@Override
+			public Adapter caseMAccess(MAccess object) {
+				return createMAccessAdapter();
+			}
+			@Override
 			public Adapter caseMConstructorDefinition(MConstructorDefinition object) {
 				return createMConstructorDefinitionAdapter();
 			}
@@ -354,6 +358,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMAbstractMethodDefinitionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAccess <em>MAccess</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MAccess
+	 * @generated
+	 */
+	public Adapter createMAccessAdapter() {
 		return null;
 	}
 

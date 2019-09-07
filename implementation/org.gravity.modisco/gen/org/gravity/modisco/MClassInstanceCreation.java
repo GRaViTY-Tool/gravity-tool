@@ -14,5 +14,5 @@ import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
  * @model
  * @generated
  */
-public interface MClassInstanceCreation extends ClassInstanceCreation, MAbstractFlowElement, MAbstractMethodInvocation {
+public interface MClassInstanceCreation extends ClassInstanceCreation, MAbstractMethodInvocation {
 } // MClassInstanceCreation

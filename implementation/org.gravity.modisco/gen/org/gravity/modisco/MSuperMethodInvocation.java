@@ -14,5 +14,5 @@ import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
  * @model
  * @generated
  */
-public interface MSuperMethodInvocation extends SuperMethodInvocation, MAbstractFlowElement, MAbstractMethodInvocation {
+public interface MSuperMethodInvocation extends SuperMethodInvocation, MAbstractMethodInvocation {
 } // MSuperMethodInvocation

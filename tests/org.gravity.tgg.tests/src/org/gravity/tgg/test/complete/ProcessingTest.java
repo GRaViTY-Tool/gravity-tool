@@ -1,4 +1,4 @@
-package org.gravity.modisco.dataflow.tests;
+package org.gravity.tgg.test.complete;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Collection;
@@ -109,11 +108,12 @@ public class DataflowProcessingTest {
 	 * @throws FileNotFoundException 
 	 */
 	@Test
-	public void test() throws DiscoveryException, FileNotFoundException, IOException {
-		MGravityModel pm = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(project, new NullProgressMonitor());
-		pm.eResource().save(new FileOutputStream("out/"+pm.getName()+".xmi"), Collections.emptyMap());
+	public void preprocessingTest() throws DiscoveryException, FileNotFoundException, IOException {
+		MGravityModel preprocessedModel = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(project, new NullProgressMonitor());
+		File outputFile = new File(project.getProject().getLocation().toFile(), "modisco.xmi");
+		preprocessedModel.eResource().save(new FileOutputStream(outputFile), Collections.emptyMap());
 		
-		assertNotNull(pm);
+		assertNotNull(preprocessedModel);
 		
 		// Check, if element counts (e. g. number of TFlows) are as expected
 		IPath path = project.getProject().getLocation().addTrailingSeparator().append("expectModisco.json");
@@ -126,7 +126,7 @@ public class DataflowProcessingTest {
 				LOGGER.error(e.getMessage(), e);
 				return;
 			}
-			TreeIterator<EObject> it = pm.eResource().getAllContents();
+			TreeIterator<EObject> it = preprocessedModel.eResource().getAllContents();
 			BigDecimal one = new BigDecimal(1);
 			while (it.hasNext()) {
 				EObject eObject = it.next();

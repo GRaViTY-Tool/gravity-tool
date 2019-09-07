@@ -14,5 +14,5 @@ import org.eclipse.gmt.modisco.java.SuperConstructorInvocation;
  * @model
  * @generated
  */
-public interface MSuperConstructorInvocation extends SuperConstructorInvocation, MAbstractFlowElement, MAbstractMethodInvocation {
+public interface MSuperConstructorInvocation extends SuperConstructorInvocation, MAbstractMethodInvocation {
 } // MSuperConstructorInvocation
