@@ -116,6 +116,21 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		if (this.debug) {
 			saveModel(targetModel, this.modiscoFolder.getFile("modisco_preprocessed.xmi"), progressMonitor); //$NON-NLS-1$
 		}
+		boolean success = convertModel(javaProject, targetModel, progressMonitor);
+		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
+
+		return success;
+	}
+
+	/**
+	 * Converts the modisco model of the given project into a program model
+	 * 
+	 * @param javaProject The Java project
+	 * @param targetModel The modisco model of the Java project
+	 * @param monitor A progress monitor
+	 * @return If the model has been converted successfully
+	 */
+	public boolean convertModel(IJavaProject javaProject, MGravityModel targetModel, IProgressMonitor monitor) {
 		try {
 			this.sync = new TGGApp(javaProject.getProject());
 		} catch (IOException e) {
@@ -127,21 +142,21 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		long t4 = System.currentTimeMillis();
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
 		try {
-			sync.forward();
+			this.sync.forward();
 		} catch (IOException e) {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
 		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
 
-		boolean success = sync.getTargetResource() != null
-				&& sync.getTargetResource().getContents().get(0) instanceof TypeGraph;
+		boolean success = this.sync.getTargetResource() != null
+				&& this.sync.getTargetResource().getContents().get(0) instanceof TypeGraph;
 		if (success) {
 			Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
 					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
 			LOGGER.log(Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
 			for (IProgramGraphProcessor processor : sortedProcessors) {
-				processor.process(getPG(), progressMonitor);
+				processor.process(getPG(), monitor);
 			}
 			LOGGER.log(Level.INFO, "Postprocessing - done ");
 		}
@@ -151,12 +166,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		} catch (IOException e) {
 			LOGGER.warn("Program model couldn't be saved!", e);
 		}
-		if (this.debug) {
-			savePG(this.modiscoFolder.getFile("GRaViTY-ProgramModel.xmi"), progressMonitor); //$NON-NLS-1$
-		}
-
-		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
-
 		return success;
 	}
 

@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -158,8 +157,6 @@ public class Transformation extends SYNC {
 
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
 
-		IProject iproject = project.getProject();
-
 		Collection<IPath> libs;
 		if (!addUMLsec) {
 			libs = new ArrayList<>();
@@ -183,6 +180,13 @@ public class Transformation extends SYNC {
 		}
 		mGravityModel.setName(mGravityModel.getName().replace('.', '-'));
 
+		return modiscoToModel(mGravityModel, project, subMonitor);
+	}
+
+	public static Model modiscoToModel(MGravityModel mGravityModel, IJavaProject iproject, 
+			IProgressMonitor monitor) throws TransformationFailedException, IOException {
+		SubMonitor subMonitor = SubMonitor.convert(monitor);
+		
 		Transformation trafo;
 		try {
 			trafo = new Transformation();
@@ -194,7 +198,7 @@ public class Transformation extends SYNC {
 		boolean debugging = GravityActivator.getDefault().isDebugging();
 		IFolder gravityFolder = null;
 		if (debugging) {
-			gravityFolder = EclipseProjectUtil.getGravityFolder(iproject, monitor);
+			gravityFolder = EclipseProjectUtil.getGravityFolder(iproject.getProject(), subMonitor);
 			trafo.saveSrc(gravityFolder.getFile(SRC_XMI).getLocation().toFile().getAbsolutePath());
 		}
 
