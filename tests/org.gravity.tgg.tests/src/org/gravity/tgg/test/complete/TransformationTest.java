@@ -52,12 +52,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
+import com.googlecode.junittoolbox.ParallelParameterized;
 
 /**
  * An abstract test template collecting test java projects and allows to test
@@ -69,7 +69,7 @@ import com.github.cliftonlabs.json_simple.Jsoner;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(Parameterized.class)
+@RunWith(ParallelParameterized.class)
 public class TransformationTest {
 
 	/**
