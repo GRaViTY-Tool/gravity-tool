@@ -99,6 +99,7 @@ public class TransformationTest {
 	public TransformationTest(String name, IJavaProject project) {
 		this.project = project;
 		this.name = name;
+                LOGGER.setLevel(Level.ALL);
 	}
 
 	@BeforeClass
