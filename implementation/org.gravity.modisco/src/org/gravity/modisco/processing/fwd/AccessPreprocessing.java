@@ -50,17 +50,21 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	/*
 	 * Temporal maps
 	 */
-	private volatile Map<MDefinition, List<MSingleVariableAccess>> fieldAccesses;
-	private volatile Map<MDefinition, List<MAbstractMethodInvocation>> methodAccesses;
+	private Map<MDefinition, List<MSingleVariableAccess>> fieldAccesses;
+	private Map<MDefinition, List<MAbstractMethodInvocation>> methodAccesses;
+	private Map<EObject, MDefinition> cache;
 
 	public boolean process(MGravityModel model, Collection<MAccess> elements, IProgressMonitor monitor) {
 		fieldAccesses = new HashMap<>();
 		methodAccesses = new HashMap<>();
+		cache = new HashMap<>();
 		elements.stream().forEach(access -> {
 			if (access instanceof MAbstractMethodInvocation) {
 				process((MAbstractMethodInvocation) access);
 			} else if (access instanceof MSingleVariableAccess) {
 				process((MSingleVariableAccess) access);
+			} else {
+				LOGGER.error("Didn't handle: "+access);
 			}
 		});
 		fieldAccesses.entrySet().parallelStream()
@@ -120,14 +124,24 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 * @return The member or null
 	 */
 	private MDefinition getDefiningMember(MAccess access) {
+		List<EObject> seen = new LinkedList<>();
+		seen.add(access);
 		EObject container = access;
 		while (container != null && !(container instanceof MDefinition)) {
 			container = container.eContainer();
+			if(cache.containsKey(container)) {
+				container = cache.get(container);
+			}
+			else {
+				seen.add(container);
+			}
 		}
 		if (container == null) {
 			return null;
 		}
-		return ((MDefinition) container);
+		MDefinition definition = (MDefinition) container;
+		seen.stream().forEach(object -> cache.put(object, definition));
+		return definition;
 	}
 
 	private static void calculateTypeDependencies(MDefinition def) {
