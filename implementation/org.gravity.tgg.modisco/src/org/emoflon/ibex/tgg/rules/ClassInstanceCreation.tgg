@@ -12,11 +12,3 @@
 #target {
 	++tAccess:TCall
 }
-
-#correspondence {
-}
-
-#attributeConditions {
-}
-
-

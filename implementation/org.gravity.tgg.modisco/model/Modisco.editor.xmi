@@ -491,7 +491,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mMethod">
-      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="tMember">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
@@ -509,7 +509,7 @@
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tMethod">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
     </targetPatterns>
     <correspondencePatterns name="invocationToTAccess" type="//@schema/@correspondenceTypes.48" source="//@rules.1/@sourcePatterns.1" target="//@rules.1/@targetPatterns.1">
       <op value="++"/>

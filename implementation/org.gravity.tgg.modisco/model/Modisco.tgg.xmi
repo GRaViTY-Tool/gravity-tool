@@ -54,7 +54,7 @@
       <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     </nodes>
     <nodes name="mMethod" incomingEdges="//@rules.1/@edges.4 //@rules.1/@edges.9" outgoingEdges="//@rules.1/@edges.12" incomingCorrsSource="//@rules.1/@nodes.8">
-      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
     </nodes>
     <nodes name="tMember" domainType="TRG" incomingEdges="//@rules.1/@edges.7 //@rules.1/@edges.13" outgoingEdges="//@rules.1/@edges.10" incomingCorrsTarget="//@rules.1/@nodes.9">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
@@ -63,7 +63,7 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TCall"/>
     </nodes>
     <nodes name="tMethod" domainType="TRG" incomingEdges="//@rules.1/@edges.5 //@rules.1/@edges.11" outgoingEdges="//@rules.1/@edges.14" incomingCorrsTarget="//@rules.1/@nodes.8">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TMember"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="invocationToTAccess" domainType="CORR" bindingType="CREATE" outgoingEdges="//@rules.1/@edges.0 //@rules.1/@edges.1" source="//@rules.1/@nodes.1" target="//@rules.1/@nodes.4">
       <type href="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AbstractMethodInvocationToTAccess"/>
