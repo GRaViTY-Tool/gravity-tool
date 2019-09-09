@@ -239,7 +239,7 @@ public class TransformationTest {
 			NullProgressMonitor monitor = new NullProgressMonitor();
 			Model model;
 			try {
-				if (!ADD_UMLSEC) {
+				if (ADD_UMLSEC) {
 					model = Transformation.projectToModel(project, ADD_UMLSEC, monitor);
 				} else {
 					MGravityModel preprocessedModel = getModiscoModel(new ResourceSetImpl());
