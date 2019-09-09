@@ -13,7 +13,7 @@ import org.osgi.framework.BundleContext;
 public class MoDiscoTGGActivator extends Plugin {
 	
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.ui"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.gravity.tgg.modisco"; //$NON-NLS-1$
 	
 	// The extension points
 	public static final String PROCESS_PG_FWD = "org.gravity.tgg.modisco.ProcessingPgFwd";
