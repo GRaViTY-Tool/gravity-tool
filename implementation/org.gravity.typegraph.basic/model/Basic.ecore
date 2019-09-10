@@ -118,11 +118,12 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
         eType="#//TMethod" eOpposite="#//TMethod/signatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paramList" eType="#//TParameterList"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
         eType="#//TMethodDefinition" containment="true" eOpposite="#//TMethodDefinition/signature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//TParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstParameter" eType="#//TParameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TPackage" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations name="getFullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -152,11 +153,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//TParameter"
         eOpposite="#//TParameter/next"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//TAbstractType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TParameterList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
-        eType="#//TParameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//TParameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TSignature" abstract="true" interface="true"
       eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">

@@ -123,7 +123,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 			assignment.setParameterValue(methodSigParam, methodSig);
 
 			Set<TClass> possibleTargets = new HashSet<TClass>();
-			for (TParameter tParam : methodSig.getParamList().getEntries()) {
+			for (TParameter tParam : methodSig.getParameters()) {
 				TAbstractType tType = tParam.getType();
 				if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
 					possibleTargets.add((TClass) tType);

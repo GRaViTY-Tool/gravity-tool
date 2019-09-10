@@ -13,7 +13,6 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
-import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
@@ -69,11 +68,11 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 				if (isParamListEqual(definition, mSig)) {
 					mSig.getMMethodDefinitions().add(definition);
 					mSig.getMDefinitions().add(definition);
-					MEntry mFirstEntry = mSig.getMParameterList().getMFirstEntry();
+					MEntry mFirstEntry = mSig.getMFirstEntry();
 					EList<SingleVariableDeclaration> defParams = definition.getParameters();
 					if (mFirstEntry != null) {
 						mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
-						for (int i = 1; i < mSig.getMParameterList().getMEntrys().size(); i++) {
+						for (int i = 1; i < mSig.getMEntrys().size(); i++) {
 							mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
 						}
 					}
@@ -84,7 +83,6 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 		}
 		MMethodSignature mOldSig = definition.getMMethodSignature();
 		if (mOldSig == null) {
-			MParameterList mParams = ModiscoFactory.eINSTANCE.createMParameterList();
 			MMethodSignature mNewSig = ModiscoFactory.eINSTANCE.createMMethodSignature();
 			name.getMSignatures().add(mNewSig);
 			mNewSig.setMMethodName(name);
@@ -92,9 +90,8 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 			mNewSig.setModel(model);
 			mNewSig.setReturnType(mSigReturnType);
 			mNewSig.getMDefinitions().add(definition);
-			mNewSig.setMParameterList(mParams);
 
-			MoDiscoUtil.fillParamList(definition, mParams);
+			MoDiscoUtil.fillParamList(definition, mNewSig);
 		}
 		return true;
 	}
@@ -135,7 +132,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MMethodDe
 	 */
 	private static boolean isParamListEqual(MMethodDefinition definition, MMethodSignature signature) {
 		EList<SingleVariableDeclaration> parameters1 = definition.getParameters();
-		EList<MEntry> parameters2 = signature.getMParameterList().getMEntrys();
+		EList<MEntry> parameters2 = signature.getMEntrys();
 		if (parameters1.size() == parameters2.size()) {
 			for (int i = 0; i < parameters1.size(); i++) {
 				if (!parameters1.get(i).getType().getType().equals(parameters2.get(i).getType())) {

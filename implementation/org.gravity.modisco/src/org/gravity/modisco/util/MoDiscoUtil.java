@@ -567,23 +567,23 @@ public class MoDiscoUtil {
 	 * Fills the MParameterList with MParam entries discovered from the given
 	 * definition
 	 * 
-	 * @param mDef    The definiton
-	 * @param mParams The empty parameter list
+	 * @param definition    The definiton
+	 * @param list The empty parameter list
 	 * @return true, iff no error occured
 	 */
-	public static boolean fillParamList(MAbstractMethodDefinition mDef, MParameterList mParams) {
-		EList<MEntry> mEntrys = mParams.getMEntrys();
+	public static boolean fillParamList(MAbstractMethodDefinition definition, MParameterList list) {
+		EList<MEntry> mEntrys = list.getMEntrys();
 		if (!mEntrys.isEmpty()) {
 			return false;
 		}
 		MEntry prev = null;
-		for (SingleVariableDeclaration param : mDef.getParameters()) {
+		for (SingleVariableDeclaration param : definition.getParameters()) {
 			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
 			entry.getParameters().add((MSingleVariableDeclaration) param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
 			if (prev == null) {
-				mParams.setMFirstEntry(entry);
+				list.setMFirstEntry(entry);
 			} else {
 				entry.setMPrevious(prev);
 				prev.setMNext(entry);

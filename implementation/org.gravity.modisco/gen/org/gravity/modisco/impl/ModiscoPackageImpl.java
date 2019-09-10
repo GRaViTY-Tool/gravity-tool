@@ -392,15 +392,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMConstructorDefinition_MParameterList() {
-		return (EReference)mConstructorDefinitionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMDefinition() {
 		return mDefinitionEClass;
 	}
@@ -475,15 +466,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 */
 	public EReference getMMethodSignature_MMethodDefinitions() {
 		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodSignature_MParameterList() {
-		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1250,7 +1232,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		mConstructorDefinitionEClass = createEClass(MCONSTRUCTOR_DEFINITION);
 		createEReference(mConstructorDefinitionEClass, MCONSTRUCTOR_DEFINITION__MODEL);
-		createEReference(mConstructorDefinitionEClass, MCONSTRUCTOR_DEFINITION__MPARAMETER_LIST);
 
 		mDefinitionEClass = createEClass(MDEFINITION);
 		createEReference(mDefinitionEClass, MDEFINITION__INVOCATION_STATIC_TYPES);
@@ -1262,7 +1243,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MMETHOD_NAME);
 		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__RETURN_TYPE);
 		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS);
-		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MPARAMETER_LIST);
 
 		mParameterListEClass = createEClass(MPARAMETER_LIST);
 		createEReference(mParameterListEClass, MPARAMETER_LIST__MFIRST_ENTRY);
@@ -1410,9 +1390,11 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mAccessEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mConstructorDefinitionEClass.getESuperTypes().add(this.getMAbstractMethodDefinition());
 		mConstructorDefinitionEClass.getESuperTypes().add(theJavaPackage.getConstructorDeclaration());
+		mConstructorDefinitionEClass.getESuperTypes().add(this.getMParameterList());
 		mDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
 		mDefinitionEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mMethodSignatureEClass.getESuperTypes().add(this.getMSignature());
+		mMethodSignatureEClass.getESuperTypes().add(this.getMParameterList());
 		mMethodNameEClass.getESuperTypes().add(this.getMName());
 		mFieldNameEClass.getESuperTypes().add(this.getMName());
 		mFieldDefinitionEClass.getESuperTypes().add(this.getMDefinition());
@@ -1454,7 +1436,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		initEClass(mConstructorDefinitionEClass, MConstructorDefinition.class, "MConstructorDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMConstructorDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MConstructorDefinitions(), "model", null, 1, 1, MConstructorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMConstructorDefinition_MParameterList(), this.getMParameterList(), null, "mParameterList", null, 0, 1, MConstructorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mDefinitionEClass, MDefinition.class, "MDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMDefinition_InvocationStaticTypes(), this.getMethodInvocationStaticType(), null, "invocationStaticTypes", null, 0, -1, MDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1466,9 +1447,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMMethodSignature_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodSignatures(), "mMethodName", null, 1, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodSignature_ReturnType(), theJavaPackage.getType(), null, "returnType", null, 0, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodSignature_MMethodDefinitions(), this.getMMethodDefinition(), this.getMMethodDefinition_MMethodSignature(), "mMethodDefinitions", null, 0, -1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodSignature_MParameterList(), this.getMParameterList(), null, "mParameterList", null, 0, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(mParameterListEClass, MParameterList.class, "MParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(mParameterListEClass, MParameterList.class, "MParameterList", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMParameterList_MFirstEntry(), this.getMEntry(), null, "mFirstEntry", null, 0, 1, MParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMParameterList_MEntrys(), this.getMEntry(), null, "mEntrys", null, 0, -1, MParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

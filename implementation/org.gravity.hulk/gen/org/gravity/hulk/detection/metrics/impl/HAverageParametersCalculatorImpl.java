@@ -79,8 +79,8 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 		int amount = 0;
 		for (TSignature sig : tClass.getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				TMethodSignature method_sig = (TMethodSignature) sig;
-				sum += method_sig.getParamList().getEntries().size();
+				TMethodSignature methodSig = (TMethodSignature) sig;
+				sum += methodSig.getParameters().size();
 				amount++;
 			}
 		}

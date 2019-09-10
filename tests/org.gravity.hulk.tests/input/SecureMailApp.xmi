@@ -42,17 +42,14 @@
     </subpackage>
   </packages>
   <methods tName="update">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.54"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.0/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.54"/>
       <definitions definedBy="//@ownedTypes.51" returnType="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.42" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getPasswordAuthentication">
     <signatures returnType="//@ownedTypes.86">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.120" returnType="//@ownedTypes.86">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.17/@signatures.0/@definitions.1"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.12/@signatures.0/@definitions.0"/>
@@ -60,60 +57,47 @@
     </signatures>
   </methods>
   <methods tName="equals">
-    <signatures returnType="//@ownedTypes.25">
-      <paramList first="//@methods.2/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.25" firstParameter="//@methods.2/@signatures.0/@parameters.0">
+      <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.101" returnType="//@ownedTypes.25"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.25"/>
     </signatures>
   </methods>
   <methods tName="getPublicKey">
     <signatures returnType="//@ownedTypes.53">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.48" returnType="//@ownedTypes.53"/>
     </signatures>
   </methods>
   <methods tName="getPublic">
     <signatures returnType="//@ownedTypes.53">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.52" returnType="//@ownedTypes.53"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RSAPublicKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.5/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.5/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.49"/>
-        <entries previous="//@methods.5/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.49"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.5/@signatures.0/@parameters.0">
+        <parameters next="//@methods.5/@signatures.0/@parameters.1" type="//@ownedTypes.49"/>
+        <parameters previous="//@methods.5/@signatures.0/@parameters.0" type="//@ownedTypes.49"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.40"/>
     </signatures>
   </methods>
   <methods tName="remove">
-    <signatures returnType="//@ownedTypes.119">
-      <paramList first="//@methods.6/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.119" firstParameter="//@methods.6/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.15" returnType="//@ownedTypes.119"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.6/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.6/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.13" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="toPath">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.59" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="setMail">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.8/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.8/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.5/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -121,33 +105,26 @@
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Scanner">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.9/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.7"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.9/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.7"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.70"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.122"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="FileOutputStream">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.11/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.59"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.11/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.59"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.32"/>
     </signatures>
   </methods>
   <methods tName="schedule">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.12/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.12/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.15"/>
-        <entries next="//@methods.12/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.12/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.12/@signatures.0/@parameters.1" type="//@ownedTypes.15"/>
+        <parameters next="//@methods.12/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.118" overriding="//@methods.12/@signatures.0/@definitions.1" returnType="//@ownedTypes.33">
         <tAnnotation type="//@ownedTypes.106"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.16/@signatures.0/@definitions.0"/>
@@ -166,28 +143,22 @@
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="PKCS8EncodedKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.13/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.54"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.13/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.54"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.39"/>
     </signatures>
   </methods>
   <methods tName="setRecipients">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.14/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.14/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.85"/>
-        <entries next="//@methods.14/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.111"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.14/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.14/@signatures.0/@parameters.1" type="//@ownedTypes.85"/>
+        <parameters next="//@methods.14/@signatures.0/@parameters.0" type="//@ownedTypes.111"/>
       <definitions definedBy="//@ownedTypes.87" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Message">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.15/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.15/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.15"/>
-        <entries next="//@methods.15/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.15/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.15/@signatures.0/@parameters.1" type="//@ownedTypes.15"/>
+        <parameters next="//@methods.15/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.119">
         <tModifier tVisibility="TPublic"/>
       </definitions>
@@ -195,13 +166,11 @@
   </methods>
   <methods tName="getEncoded">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.47" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getEncoding">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.2/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -209,10 +178,8 @@
     </signatures>
   </methods>
   <methods tName="setReceivers">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.18/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.15"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.18/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.15"/>
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.8/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -221,27 +188,21 @@
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.120"/>
     </signatures>
   </methods>
   <methods tName="trim">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.102"/>
     </signatures>
   </methods>
   <methods tName="setText">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.21/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.21/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.79" returnType="//@ownedTypes.101"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.21/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.21/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.7/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -249,56 +210,40 @@
     </signatures>
   </methods>
   <methods tName="getInstance">
-    <signatures returnType="//@ownedTypes.110">
-      <paramList first="//@methods.22/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.110" firstParameter="//@methods.22/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.110" returnType="//@ownedTypes.110"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.51">
-      <paramList first="//@methods.22/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.51" firstParameter="//@methods.22/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.51" returnType="//@ownedTypes.51"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.22">
-      <paramList first="//@methods.22/@signatures.2/@paramList/@entries.1">
-        <entries previous="//@methods.22/@signatures.2/@paramList/@entries.1" type="//@ownedTypes.102"/>
-        <entries next="//@methods.22/@signatures.2/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.22" firstParameter="//@methods.22/@signatures.2/@parameters.1">
+        <parameters previous="//@methods.22/@signatures.2/@parameters.1" type="//@ownedTypes.102"/>
+        <parameters next="//@methods.22/@signatures.2/@parameters.0" type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.22" returnType="//@ownedTypes.22"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.24">
-      <paramList first="//@methods.22/@signatures.3/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.24" firstParameter="//@methods.22/@signatures.3/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.24" returnType="//@ownedTypes.24"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.22">
-      <paramList first="//@methods.22/@signatures.4/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.22" firstParameter="//@methods.22/@signatures.4/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.22" returnType="//@ownedTypes.22"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.23">
-      <paramList first="//@methods.22/@signatures.5/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.23" firstParameter="//@methods.22/@signatures.5/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.23" returnType="//@ownedTypes.23"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.42">
-      <paramList first="//@methods.22/@signatures.6/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.42" firstParameter="//@methods.22/@signatures.6/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.42" returnType="//@ownedTypes.42"/>
     </signatures>
   </methods>
   <methods tName="encryptMessage">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.23/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.23/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.102"/>
-        <entries previous="//@methods.23/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.121"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.23/@signatures.0/@parameters.0">
+        <parameters next="//@methods.23/@signatures.0/@parameters.1" type="//@ownedTypes.102"/>
+        <parameters previous="//@methods.23/@signatures.0/@parameters.0" type="//@ownedTypes.121"/>
       <definitions definedBy="//@ownedTypes.118" returnType="//@ownedTypes.102">
         <tAnnotation type="//@ownedTypes.67"/>
         <tModifier tVisibility="TPublic"/>
@@ -307,26 +252,22 @@
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RuntimeException">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.100"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Message">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.25/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.25/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.102"/>
-        <entries previous="//@methods.25/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.25/@signatures.0/@parameters.0">
+        <parameters next="//@methods.25/@signatures.0/@parameters.1" type="//@ownedTypes.102"/>
+        <parameters previous="//@methods.25/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.119">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="removeContact">
-    <signatures returnType="//@ownedTypes.25">
-      <paramList first="//@methods.26/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.25" firstParameter="//@methods.26/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.116" returnType="//@ownedTypes.25">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.19/@signatures.0/@definitions.0"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.19/@signatures.0/@definitions.0"/>
@@ -335,44 +276,40 @@
     </signatures>
   </methods>
   <methods tName="compile">
-    <signatures returnType="//@ownedTypes.14">
-      <paramList first="//@methods.27/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.14" firstParameter="//@methods.27/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.14" returnType="//@ownedTypes.14"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Contact">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.121"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Timer">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.43"/>
     </signatures>
   </methods>
   <methods tName="getDefaultInstance">
-    <signatures returnType="//@ownedTypes.88">
-      <paramList first="//@methods.30/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.30/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.61"/>
-        <entries previous="//@methods.30/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.82"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.88" firstParameter="//@methods.30/@signatures.0/@parameters.0">
+        <parameters next="//@methods.30/@signatures.0/@parameters.1" type="//@ownedTypes.61"/>
+        <parameters previous="//@methods.30/@signatures.0/@parameters.0" type="//@ownedTypes.82"/>
       <definitions definedBy="//@ownedTypes.88" returnType="//@ownedTypes.88"/>
     </signatures>
   </methods>
   <methods tName="close">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.70" returnType="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.32" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="run">
     <signatures returnType="//@ownedTypes.33">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.122" returnType="//@ownedTypes.33">
         <tAnnotation type="//@ownedTypes.106"/>
       </definitions>
@@ -389,49 +326,39 @@
     </signatures>
   </methods>
   <methods tName="generatePublic">
-    <signatures returnType="//@ownedTypes.53">
-      <paramList first="//@methods.33/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.125"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.53" firstParameter="//@methods.33/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.125"/>
       <definitions definedBy="//@ownedTypes.22" returnType="//@ownedTypes.53"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="X509EncodedKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.34/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.54"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.34/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.54"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.50"/>
     </signatures>
   </methods>
   <methods tName="getPrivate">
     <signatures returnType="//@ownedTypes.77">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.52" returnType="//@ownedTypes.77"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RuntimeException">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.36/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.36/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.100"/>
     </signatures>
   </methods>
   <methods tName="add">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.37/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.37/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.15" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="encrypt">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.38/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.38/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.47"/>
-        <entries next="//@methods.38/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.38/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.38/@signatures.0/@parameters.1" type="//@ownedTypes.47"/>
+        <parameters next="//@methods.38/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.117" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.0/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -439,25 +366,21 @@
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="KeyPair">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.39/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.39/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.53"/>
-        <entries previous="//@methods.39/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.77"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.39/@signatures.0/@parameters.0">
+        <parameters next="//@methods.39/@signatures.0/@parameters.1" type="//@ownedTypes.53"/>
+        <parameters previous="//@methods.39/@signatures.0/@parameters.0" type="//@ownedTypes.77"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.52"/>
     </signatures>
   </methods>
   <methods tName="write">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.40/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.54"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.40/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.54"/>
       <definitions definedBy="//@ownedTypes.32" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getSurname">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.1/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -466,35 +389,31 @@
   </methods>
   <methods tName="cancel">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.43" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="size">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.15" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="MailApp">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.44/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.44/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.116">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="send">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.45/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.87"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.45/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.87"/>
       <definitions definedBy="//@ownedTypes.84" returnType="//@ownedTypes.101"/>
     </signatures>
     <signatures returnType="//@ownedTypes.33">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.116" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.3/@signatures.0/@definitions.0"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.11/@signatures.0/@definitions.0"/>
@@ -507,25 +426,25 @@
   </methods>
   <methods tName="printStackTrace">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.104" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="exists">
     <signatures returnType="//@ownedTypes.25">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.59" returnType="//@ownedTypes.25"/>
     </signatures>
   </methods>
   <methods tName="getBytes">
     <signatures returnType="//@ownedTypes.54">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.54"/>
     </signatures>
   </methods>
   <methods tName="getReceivers">
     <signatures returnType="//@ownedTypes.15">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.15">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.8/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -533,40 +452,32 @@
     </signatures>
   </methods>
   <methods tName="getCertificate">
-    <signatures returnType="//@ownedTypes.48">
-      <paramList first="//@methods.50/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.48" firstParameter="//@methods.50/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.24" returnType="//@ownedTypes.48"/>
     </signatures>
   </methods>
   <methods tName="println">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.51/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.51/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.8" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="doFinal">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.51" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="parse">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.53/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.53/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.80" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="setKey">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.54/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.52"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.54/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.52"/>
       <definitions definedBy="//@ownedTypes.117" returnType="//@ownedTypes.33">
         <tAnnotation type="//@ownedTypes.67"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.14/@signatures.0/@definitions.0"/>
@@ -575,10 +486,8 @@
     </signatures>
   </methods>
   <methods tName="setName">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.55/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.55/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.4/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -586,16 +495,14 @@
     </signatures>
   </methods>
   <methods tName="exit">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.56/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.56/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.99" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getName">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.4/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -603,28 +510,22 @@
     </signatures>
   </methods>
   <methods tName="split">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.58/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.58/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.102"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="SecureMailApp">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.59/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.59/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.118">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="addContact">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.60/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.121"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.60/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.121"/>
       <definitions definedBy="//@ownedTypes.116" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.19/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -632,61 +533,51 @@
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="MimeMessage">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.61/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.88"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.61/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.88"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.90"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RsaAdapter">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.117">
         <tModifier/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="substring">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.63/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.63/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.63"/>
-        <entries previous="//@methods.63/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.63/@signatures.0/@parameters.0">
+        <parameters next="//@methods.63/@signatures.0/@parameters.1" type="//@ownedTypes.63"/>
+        <parameters previous="//@methods.63/@signatures.0/@parameters.0" type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.102"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.63/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.63/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Hashtable">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.13"/>
     </signatures>
   </methods>
   <methods tName="setFrom">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.65/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.85"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.65/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.85"/>
       <definitions definedBy="//@ownedTypes.87" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="matches">
     <signatures returnType="//@ownedTypes.25">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.21" returnType="//@ownedTypes.25"/>
     </signatures>
   </methods>
   <methods tName="getContact">
-    <signatures returnType="//@ownedTypes.121">
-      <paramList first="//@methods.67/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.121" firstParameter="//@methods.67/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.116" returnType="//@ownedTypes.121">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.19/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -694,34 +585,28 @@
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="PasswordAuthentication">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.68/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.68/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.102"/>
-        <entries next="//@methods.68/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.68/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.68/@signatures.0/@parameters.1" type="//@ownedTypes.102"/>
+        <parameters next="//@methods.68/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.86"/>
     </signatures>
   </methods>
   <methods tName="put">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.69/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.69/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.101"/>
-        <entries next="//@methods.69/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.69/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.69/@signatures.0/@parameters.1" type="//@ownedTypes.101"/>
+        <parameters next="//@methods.69/@signatures.0/@parameters.0" type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.13" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="generateKeyPair">
     <signatures returnType="//@ownedTypes.52">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.23" returnType="//@ownedTypes.52"/>
     </signatures>
   </methods>
   <methods tName="main">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.71/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.71/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.118" overriding="//@methods.71/@signatures.0/@definitions.1" returnType="//@ownedTypes.33">
         <tModifier tVisibility="TPublic" isStatic="true"/>
       </definitions>
@@ -731,38 +616,30 @@
     </signatures>
   </methods>
   <methods tName="get">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.72/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.72/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.15" returnType="//@ownedTypes.101"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.121">
-      <paramList first="//@methods.72/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.121" firstParameter="//@methods.72/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.13" returnType="//@ownedTypes.121"/>
     </signatures>
   </methods>
   <methods tName="scheduleAtFixedRate">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.73/@signatures.0/@paramList/@entries.1">
-        <entries next="//@methods.73/@signatures.0/@paramList/@entries.2" previous="//@methods.73/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.3"/>
-        <entries next="//@methods.73/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.35"/>
-        <entries previous="//@methods.73/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.3"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.73/@signatures.0/@parameters.1">
+        <parameters next="//@methods.73/@signatures.0/@parameters.2" previous="//@methods.73/@signatures.0/@parameters.1" type="//@ownedTypes.3"/>
+        <parameters next="//@methods.73/@signatures.0/@parameters.0" type="//@ownedTypes.35"/>
+        <parameters previous="//@methods.73/@signatures.0/@parameters.0" type="//@ownedTypes.3"/>
       <definitions definedBy="//@ownedTypes.43" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="sign">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.42" returnType="//@ownedTypes.101"/>
     </signatures>
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.74/@signatures.1/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.74/@signatures.1/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.117" returnType="//@ownedTypes.102">
         <tAnnotation type="//@ownedTypes.67"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.14/@signatures.0/@definitions.0"/>
@@ -771,20 +648,16 @@
     </signatures>
   </methods>
   <methods tName="setKeyEntry">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.75/@signatures.0/@paramList/@entries.2">
-        <entries previous="//@methods.75/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.48"/>
-        <entries next="//@methods.75/@signatures.0/@paramList/@entries.0" previous="//@methods.75/@signatures.0/@paramList/@entries.2" type="//@ownedTypes.54"/>
-        <entries next="//@methods.75/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.75/@signatures.0/@parameters.2">
+        <parameters previous="//@methods.75/@signatures.0/@parameters.1" type="//@ownedTypes.48"/>
+        <parameters next="//@methods.75/@signatures.0/@parameters.0" previous="//@methods.75/@signatures.0/@parameters.2" type="//@ownedTypes.54"/>
+        <parameters next="//@methods.75/@signatures.0/@parameters.1" type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.24" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="parseArgs">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.76/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.76/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.116" accessedBy="//@methods.76/@signatures.0/@definitions.1/@tAccessing.7" overriddenBy="//@methods.76/@signatures.0/@definitions.1" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.17/@signatures.0/@definitions.1"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.17/@signatures.0/@definitions.1"/>
@@ -822,7 +695,7 @@
   </methods>
   <methods tName="findKey">
     <signatures returnType="//@ownedTypes.47">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.47">
         <tModifier tVisibility="TPublic"/>
       </definitions>
@@ -830,62 +703,56 @@
   </methods>
   <methods tName="toCharArray">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="nextLine">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.70" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="matcher">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.80/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.94"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.80/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.94"/>
       <definitions definedBy="//@ownedTypes.14" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="length">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="startsWith">
-    <signatures returnType="//@ownedTypes.25">
-      <paramList first="//@methods.82/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.25" firstParameter="//@methods.82/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.25"/>
     </signatures>
   </methods>
   <methods tName="init">
     <signatures returnType="//@ownedTypes.117">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.117" returnType="//@ownedTypes.117">
         <tModifier tVisibility="TPublic" isStatic="true"/>
       </definitions>
     </signatures>
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.83/@signatures.1/@paramList/@entries.1">
-        <entries previous="//@methods.83/@signatures.1/@paramList/@entries.1" type="//@ownedTypes.47"/>
-        <entries next="//@methods.83/@signatures.1/@paramList/@entries.0" type="//@ownedTypes.63"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.83/@signatures.1/@parameters.1">
+        <parameters previous="//@methods.83/@signatures.1/@parameters.1" type="//@ownedTypes.47"/>
+        <parameters next="//@methods.83/@signatures.1/@parameters.0" type="//@ownedTypes.63"/>
       <definitions definedBy="//@ownedTypes.51" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getProperties">
     <signatures returnType="//@ownedTypes.61">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.99" returnType="//@ownedTypes.61"/>
     </signatures>
   </methods>
   <methods tName="cleanup">
     <signatures returnType="//@ownedTypes.33">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.117" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.14/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -894,15 +761,13 @@
   </methods>
   <methods tName="getPublicExponent">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.58" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="setSurname">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.87/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.87/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.1/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -910,49 +775,39 @@
     </signatures>
   </methods>
   <methods tName="readAllBytes">
-    <signatures returnType="//@ownedTypes.54">
-      <paramList first="//@methods.88/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.124"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.54" firstParameter="//@methods.88/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.124"/>
       <definitions definedBy="//@ownedTypes.60" returnType="//@ownedTypes.54"/>
     </signatures>
   </methods>
   <methods tName="toArray">
-    <signatures returnType="//@ownedTypes.102">
-      <paramList first="//@methods.89/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.102" firstParameter="//@methods.89/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.15" returnType="//@ownedTypes.102"/>
     </signatures>
   </methods>
   <methods tName="endsWith">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.90/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.90/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.102" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="initialize">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.91/@signatures.0/@paramList/@entries.0">
-        <entries next="//@methods.91/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.63"/>
-        <entries previous="//@methods.91/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.110"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.91/@signatures.0/@parameters.0">
+        <parameters next="//@methods.91/@signatures.0/@parameters.1" type="//@ownedTypes.63"/>
+        <parameters previous="//@methods.91/@signatures.0/@parameters.0" type="//@ownedTypes.110"/>
       <definitions definedBy="//@ownedTypes.23" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="getModulus">
     <signatures returnType="//@ownedTypes.101">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.31" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods tName="setEncoding">
-    <signatures returnType="//@ownedTypes.33">
-      <paramList first="//@methods.93/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.33" firstParameter="//@methods.93/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.33">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.2/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -960,18 +815,14 @@
     </signatures>
   </methods>
   <methods tName="asList">
-    <signatures returnType="//@ownedTypes.15">
-      <paramList first="//@methods.94/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.15" firstParameter="//@methods.94/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.17" returnType="//@ownedTypes.15"/>
     </signatures>
   </methods>
   <methods tName="signMessage">
-    <signatures returnType="//@ownedTypes.119">
-      <paramList first="//@methods.95/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.119"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.119" firstParameter="//@methods.95/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.119"/>
       <definitions definedBy="//@ownedTypes.118" returnType="//@ownedTypes.119">
         <tAnnotation type="//@ownedTypes.67"/>
         <tModifier tVisibility="TPublic"/>
@@ -980,7 +831,7 @@
   </methods>
   <methods tName="getMail">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.5/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -989,7 +840,7 @@
   </methods>
   <methods tName="getPrivateKey">
     <signatures returnType="//@ownedTypes.52">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.118" returnType="//@ownedTypes.52">
         <tAnnotation type="//@ownedTypes.67"/>
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.10/@signatures.0/@definitions.0"/>
@@ -1002,55 +853,45 @@
     </signatures>
   </methods>
   <methods tName="initSign">
-    <signatures returnType="//@ownedTypes.101">
-      <paramList first="//@methods.98/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.77"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.101" firstParameter="//@methods.98/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.77"/>
       <definitions definedBy="//@ownedTypes.42" returnType="//@ownedTypes.101"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="String">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.99/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.54"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.99/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.54"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.102"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="File">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList first="//@methods.100/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.100/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.59"/>
     </signatures>
   </methods>
   <methods tName="getKey">
-    <signatures returnType="//@ownedTypes.47">
-      <paramList first="//@methods.101/@signatures.0/@paramList/@entries.1">
-        <entries previous="//@methods.101/@signatures.0/@paramList/@entries.1" type="//@ownedTypes.44"/>
-        <entries next="//@methods.101/@signatures.0/@paramList/@entries.0" type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.47" firstParameter="//@methods.101/@signatures.0/@parameters.1">
+        <parameters previous="//@methods.101/@signatures.0/@parameters.1" type="//@ownedTypes.44"/>
+        <parameters next="//@methods.101/@signatures.0/@parameters.0" type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.24" returnType="//@ownedTypes.47"/>
     </signatures>
   </methods>
   <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="LinkedList">
     <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
-      <paramList/>
+      
       <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.12"/>
     </signatures>
   </methods>
   <methods tName="generatePrivate">
-    <signatures returnType="//@ownedTypes.77">
-      <paramList first="//@methods.103/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.125"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.77" firstParameter="//@methods.103/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.125"/>
       <definitions definedBy="//@ownedTypes.22" returnType="//@ownedTypes.77"/>
     </signatures>
   </methods>
   <methods tName="getText">
     <signatures returnType="//@ownedTypes.102">
-      <paramList/>
+      
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.102">
         <tAccessing xsi:type="org.gravity.typegraph.basic:TReadWrite" tTarget="//@fields.7/@signatures.0/@definitions.0"/>
         <tModifier tVisibility="TPublic"/>
@@ -1058,20 +899,16 @@
     </signatures>
   </methods>
   <methods tName="findKeyFromServer">
-    <signatures returnType="//@ownedTypes.47">
-      <paramList first="//@methods.105/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.102"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.47" firstParameter="//@methods.105/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.102"/>
       <definitions definedBy="//@ownedTypes.121" returnType="//@ownedTypes.47">
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
   <methods tName="containsKey">
-    <signatures returnType="//@ownedTypes.25">
-      <paramList first="//@methods.106/@signatures.0/@paramList/@entries.0">
-        <entries type="//@ownedTypes.101"/>
-      </paramList>
+    <signatures returnType="//@ownedTypes.25" firstParameter="//@methods.106/@signatures.0/@parameters.0">
+        <parameters type="//@ownedTypes.101"/>
       <definitions definedBy="//@ownedTypes.13" returnType="//@ownedTypes.25"/>
     </signatures>
   </methods>

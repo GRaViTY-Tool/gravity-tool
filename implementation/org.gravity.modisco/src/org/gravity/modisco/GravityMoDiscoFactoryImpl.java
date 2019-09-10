@@ -39,10 +39,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public MConstructorDefinition createConstructorDeclaration() {
-		MConstructorDefinition decl = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
-		MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
-		decl.setMParameterList(mParameterList);
-		return decl;
+		return ModiscoFactory.eINSTANCE.createMConstructorDefinition();
 	}
 
 	@Override

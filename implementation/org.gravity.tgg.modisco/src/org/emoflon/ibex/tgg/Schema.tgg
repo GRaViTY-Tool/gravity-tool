@@ -18,9 +18,9 @@
 }
 
 #correspondence {
-	MParameterListToTParameterList {
+	MParameterListToTMethodSignature {
 		#src->MParameterList
-		#trg->TParameterList
+		#trg->TMethodSignature
 	}
 
 	BooleanLiteralToTBoolNode {
@@ -46,11 +46,6 @@
 	MFieldDefinitionToTFieldDefinition {
 		#src->MFieldDefinition
 		#trg->TFieldDefinition
-	}
-
-	MConstructorDefinitionToTParameterList {
-		#src->MConstructorDefinition
-		#trg->TParameterList
 	}
 
 	ClassDeclarationToTClass {
@@ -116,11 +111,6 @@
 	MMethodSignatureToTMethodSignature {
 		#src->MMethodSignature
 		#trg->TMethodSignature
-	}
-
-	MMethodSignatureToTParameterList {
-		#src->MMethodSignature
-		#trg->TParameterList
 	}
 
 	MEntryToTParameter {

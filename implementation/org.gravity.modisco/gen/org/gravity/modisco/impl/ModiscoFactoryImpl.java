@@ -59,7 +59,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 		switch (eClass.getClassifierID()) {
 			case ModiscoPackage.MCONSTRUCTOR_DEFINITION: return createMConstructorDefinition();
 			case ModiscoPackage.MMETHOD_SIGNATURE: return createMMethodSignature();
-			case ModiscoPackage.MPARAMETER_LIST: return createMParameterList();
 			case ModiscoPackage.MMETHOD_NAME: return createMMethodName();
 			case ModiscoPackage.MFIELD_NAME: return createMFieldName();
 			case ModiscoPackage.MFIELD_DEFINITION: return createMFieldDefinition();
@@ -133,16 +132,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public MMethodSignature createMMethodSignature() {
 		MMethodSignatureImpl mMethodSignature = new MMethodSignatureImpl();
 		return mMethodSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MParameterList createMParameterList() {
-		MParameterListImpl mParameterList = new MParameterListImpl();
-		return mParameterList;
 	}
 
 	/**

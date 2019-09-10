@@ -40,7 +40,6 @@ import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -95,12 +94,11 @@ public class JavaASTUtil {
 	 *                            the type
 	 */
 	public static IMethod getIMethod(TMethodSignature signature, IType type) throws JavaModelException {
-		TParameterList tParamList = signature.getParamList();
 		String tName = signature.getMethod().getTName();
 		for (IMethod m : type.getMethods()) {
-			if (m.getElementName().equals(tName) && m.getNumberOfParameters() == tParamList.getEntries().size()) {
+			if (m.getElementName().equals(tName) && m.getNumberOfParameters() == signature.getParameters().size()) {
 				boolean equal = true;
-				TParameter tParam = tParamList.getFirst();
+				TParameter tParam = signature.getFirstParameter();
 				for (ILocalVariable param : m.getParameters()) {
 					equal = tParam.getType().getFullyQualifiedName()
 							.endsWith(Signature.toString(param.getTypeSignature()));
@@ -243,7 +241,7 @@ public class JavaASTUtil {
 		}
 
 		for (TMethodSignature signature : tMethod.getSignatures()) {
-			if (method.parameters().size() != signature.getParamList().getEntries().size()) {
+			if (method.parameters().size() != signature.getParameters().size()) {
 				continue;
 			}
 			boolean success = hasSameSignature(method, signature);
@@ -291,7 +289,7 @@ public class JavaASTUtil {
 	 * @return true, if the signatures are equal
 	 */
 	private static boolean hasSameSignature(MethodDeclaration method, TMethodSignature signature) {
-		TParameter tParam = signature.getParamList().getFirst();
+		TParameter tParam = signature.getFirstParameter();
 		for (Object p : method.parameters()) {
 			if (p instanceof SingleVariableDeclaration) {
 				SingleVariableDeclaration var = (SingleVariableDeclaration) p;
@@ -318,30 +316,27 @@ public class JavaASTUtil {
 		TMethod tMethodName = tMethodSignature.getMethod();
 
 		String tName = tMethodName.getTName();
-		if (iMethod.getElementName().equals(tName)) {
-
-			TParameterList tParamList = tMethodSignature.getParamList();
-			if (iMethod.getNumberOfParameters() == tParamList.getEntries().size()) {
-				boolean equal = true;
-				TParameter tParam = tParamList.getFirst();
-				ILocalVariable[] parameters;
-				try {
-					parameters = iMethod.getParameters();
-				} catch (JavaModelException e) {
-					return false;
+		if (iMethod.getElementName().equals(tName)
+				&& iMethod.getNumberOfParameters() == tMethodSignature.getParameters().size()) {
+			boolean equal = true;
+			TParameter tParam = tMethodSignature.getFirstParameter();
+			ILocalVariable[] parameters;
+			try {
+				parameters = iMethod.getParameters();
+			} catch (JavaModelException e) {
+				return false;
+			}
+			for (ILocalVariable param : parameters) {
+				String iParamSignature = Signature.toString(param.getTypeSignature());
+				iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
+				equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature);
+				if (!equal) {
+					break;
 				}
-				for (ILocalVariable param : parameters) {
-					String iParamSignature = Signature.toString(param.getTypeSignature());
-					iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
-					equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature);
-					if (!equal) {
-						break;
-					}
-					tParam = tParam.getNext();
-				}
-				if (equal) {
-					return true;
-				}
+				tParam = tParam.getNext();
+			}
+			if (equal) {
+				return true;
 			}
 		}
 		return false;

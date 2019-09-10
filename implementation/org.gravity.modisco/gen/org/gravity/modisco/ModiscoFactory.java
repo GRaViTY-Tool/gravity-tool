@@ -40,15 +40,6 @@ public interface ModiscoFactory extends EFactory {
 	MMethodSignature createMMethodSignature();
 
 	/**
-	 * Returns a new object of class '<em>MParameter List</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MParameter List</em>'.
-	 * @generated
-	 */
-	MParameterList createMParameterList();
-
-	/**
 	 * Returns a new object of class '<em>MMethod Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

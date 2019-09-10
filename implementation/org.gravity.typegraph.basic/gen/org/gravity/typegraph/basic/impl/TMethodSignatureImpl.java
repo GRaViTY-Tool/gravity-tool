@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -47,9 +48,10 @@ import org.gravity.typegraph.basic.TMember;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getParamList <em>Param List</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getDefinitions <em>Definitions</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getFirstParameter <em>First Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,16 +88,6 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	protected EList<TFlow> outgoingFlows;
 
 	/**
-	 * The cached value of the '{@link #getParamList() <em>Param List</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParamList()
-	 * @generated
-	 * @ordered
-	 */
-	protected TParameterList paramList;
-
-	/**
 	 * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,6 +106,26 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * @ordered
 	 */
 	protected TAbstractType returnType;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TParameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getFirstParameter() <em>First Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected TParameter firstParameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,51 +234,6 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * @generated
 	 */
 	@Override
-	public TParameterList getParamList() {
-		return paramList;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParamList(TParameterList newParamList, NotificationChain msgs) {
-		TParameterList oldParamList = paramList;
-		paramList = newParamList;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST, oldParamList, newParamList);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setParamList(TParameterList newParamList) {
-		if (newParamList != paramList) {
-			NotificationChain msgs = null;
-			if (paramList != null)
-				msgs = ((InternalEObject)paramList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST, null, msgs);
-			if (newParamList != null)
-				msgs = ((InternalEObject)newParamList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST, null, msgs);
-			msgs = basicSetParamList(newParamList, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST, newParamList, newParamList));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<TMethodDefinition> getDefinitions() {
 		if (definitions == null) {
 			definitions = new EObjectContainmentWithInverseEList<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, BasicPackage.TMETHOD_DEFINITION__SIGNATURE);
@@ -317,13 +284,66 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TParameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<TParameter>(TParameter.class, this, BasicPackage.TMETHOD_SIGNATURE__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TParameter getFirstParameter() {
+		if (firstParameter != null && firstParameter.eIsProxy()) {
+			InternalEObject oldFirstParameter = (InternalEObject)firstParameter;
+			firstParameter = (TParameter)eResolveProxy(oldFirstParameter);
+			if (firstParameter != oldFirstParameter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER, oldFirstParameter, firstParameter));
+			}
+		}
+		return firstParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TParameter basicGetFirstParameter() {
+		return firstParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFirstParameter(TParameter newFirstParameter) {
+		TParameter oldFirstParameter = firstParameter;
+		firstParameter = newFirstParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER, oldFirstParameter, firstParameter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public String getSignatureString() {
 		// [user code injected with eMoflon]
 
 		String s = getMethod().getTName() + "(";
-		TParameter current = getParamList().getFirst();
+		TParameter current = getFirstParameter();
 		while (current != null) {
 			TAbstractType type = current.getType();
 			if (type != null) {
@@ -402,10 +422,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return basicSetMethod(null, msgs);
-			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
-				return basicSetParamList(null, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -440,13 +460,16 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return getOutgoingFlows();
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod();
-			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
-				return getParamList();
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return getDefinitions();
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				if (resolve) return getReturnType();
 				return basicGetReturnType();
+			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
+				return getParameters();
+			case BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER:
+				if (resolve) return getFirstParameter();
+				return basicGetFirstParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,15 +498,19 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)newValue);
 				return;
-			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
-				setParamList((TParameterList)newValue);
-				return;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
 				getDefinitions().addAll((Collection<? extends TMethodDefinition>)newValue);
 				return;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((TAbstractType)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends TParameter>)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER:
+				setFirstParameter((TParameter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -509,14 +536,17 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				setMethod((TMethod)null);
 				return;
-			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
-				setParamList((TParameterList)null);
-				return;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
 				return;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((TAbstractType)null);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
+				getParameters().clear();
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER:
+				setFirstParameter((TParameter)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -538,14 +568,52 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				return getMethod() != null;
-			case BasicPackage.TMETHOD_SIGNATURE__PARAM_LIST:
-				return paramList != null;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				return returnType != null;
+			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case BasicPackage.TMETHOD_SIGNATURE__FIRST_PARAMETER:
+				return firstParameter != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+				case BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+				case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__OWNED_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__INCOMING_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -587,11 +655,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 */
 	public boolean isThisSignature(TAbstractType returnType,
 			EList<TAbstractType> parameterTypes) {
-		TParameterList paramList = getParamList();
-		if(paramList.getEntries().size() != parameterTypes.size()) {
+		if(getParameters().size() != parameterTypes.size()) {
 			return false;
 		}
-		TParameter param = paramList.getFirst();
+		TParameter param = getFirstParameter();
 		for(TAbstractType expected : parameterTypes) {
 			if(param.getType().equals(expected)) {
 				param = param.getNext();

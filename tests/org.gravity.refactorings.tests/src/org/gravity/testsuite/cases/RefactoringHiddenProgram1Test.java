@@ -128,7 +128,6 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 		name.setTName("iDontExist");
 		TMethodSignature signature = BasicFactory.eINSTANCE.createTMethodSignature();
 		signature.setMethod(name);
-		signature.setParamList(BasicFactory.eINSTANCE.createTParameterList());
 		signature.getDefinitions().add(BasicFactory.eINSTANCE.createTMethodDefinition());
 		
 		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);

@@ -34,7 +34,6 @@ import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TName;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TParameterList;
 import org.gravity.typegraph.basic.TRead;
 import org.gravity.typegraph.basic.TReadWrite;
 import org.gravity.typegraph.basic.TSignature;
@@ -142,13 +141,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	private EClass tParameterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tParameterListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -916,7 +908,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTMethodSignature_ParamList() {
+	public EReference getTMethodSignature_Definitions() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -926,7 +918,7 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTMethodSignature_Definitions() {
+	public EReference getTMethodSignature_ReturnType() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -936,8 +928,18 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTMethodSignature_ReturnType() {
+	public EReference getTMethodSignature_Parameters() {
 		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTMethodSignature_FirstParameter() {
+		return (EReference)tMethodSignatureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1148,36 +1150,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	@Override
 	public EReference getTParameter_Type() {
 		return (EReference)tParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTParameterList() {
-		return tParameterListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTParameterList_Entries() {
-		return (EReference)tParameterListEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTParameterList_First() {
-		return (EReference)tParameterListEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2025,9 +1997,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		tMethodSignatureEClass = createEClass(TMETHOD_SIGNATURE);
 		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__METHOD);
-		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__PARAM_LIST);
 		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__DEFINITIONS);
 		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__RETURN_TYPE);
+		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__PARAMETERS);
+		createEReference(tMethodSignatureEClass, TMETHOD_SIGNATURE__FIRST_PARAMETER);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_SIGNATURE_STRING);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___TO_STRING);
@@ -2051,10 +2024,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEReference(tParameterEClass, TPARAMETER__NEXT);
 		createEReference(tParameterEClass, TPARAMETER__PREVIOUS);
 		createEReference(tParameterEClass, TPARAMETER__TYPE);
-
-		tParameterListEClass = createEClass(TPARAMETER_LIST);
-		createEReference(tParameterListEClass, TPARAMETER_LIST__ENTRIES);
-		createEReference(tParameterListEClass, TPARAMETER_LIST__FIRST);
 
 		tSignatureEClass = createEClass(TSIGNATURE);
 		createEOperation(tSignatureEClass, TSIGNATURE___GET_SIGNATURE_STRING);
@@ -2310,9 +2279,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 
 		initEClass(tMethodSignatureEClass, TMethodSignature.class, "TMethodSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTMethodSignature_Method(), this.getTMethod(), this.getTMethod_Signatures(), "method", null, 1, 1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTMethodSignature_ParamList(), this.getTParameterList(), null, "paramList", null, 0, 1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTMethodSignature_Definitions(), this.getTMethodDefinition(), this.getTMethodDefinition_Signature(), "definitions", null, 0, -1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTMethodSignature_ReturnType(), this.getTAbstractType(), null, "returnType", null, 0, 1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTMethodSignature_Parameters(), this.getTParameter(), null, "parameters", null, 0, -1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTMethodSignature_FirstParameter(), this.getTParameter(), null, "firstParameter", null, 0, 1, TMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTMethodSignature__GetSignatureString(), ecorePackage.getEString(), "getSignatureString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2347,10 +2317,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEReference(getTParameter_Next(), this.getTParameter(), this.getTParameter_Previous(), "next", null, 0, 1, TParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTParameter_Previous(), this.getTParameter(), this.getTParameter_Next(), "previous", null, 0, 1, TParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTParameter_Type(), this.getTAbstractType(), null, "type", null, 1, 1, TParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tParameterListEClass, TParameterList.class, "TParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTParameterList_Entries(), this.getTParameter(), null, "entries", null, 0, -1, TParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTParameterList_First(), this.getTParameter(), null, "first", null, 0, 1, TParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tSignatureEClass, TSignature.class, "TSignature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

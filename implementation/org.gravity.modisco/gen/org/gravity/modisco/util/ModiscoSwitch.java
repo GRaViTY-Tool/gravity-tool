@@ -135,6 +135,7 @@ public class ModiscoSwitch<T> {
 				T result = caseMConstructorDefinition(mConstructorDefinition);
 				if (result == null) result = caseMAbstractMethodDefinition(mConstructorDefinition);
 				if (result == null) result = caseConstructorDeclaration(mConstructorDefinition);
+				if (result == null) result = caseMParameterList(mConstructorDefinition);
 				if (result == null) result = caseMDefinition(mConstructorDefinition);
 				if (result == null) result = caseAbstractMethodDeclaration(mConstructorDefinition);
 				if (result == null) result = caseBodyDeclaration(mConstructorDefinition);
@@ -158,6 +159,7 @@ public class ModiscoSwitch<T> {
 				MMethodSignature mMethodSignature = (MMethodSignature)theEObject;
 				T result = caseMMethodSignature(mMethodSignature);
 				if (result == null) result = caseMSignature(mMethodSignature);
+				if (result == null) result = caseMParameterList(mMethodSignature);
 				if (result == null) result = caseMAbstractFlowElement(mMethodSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

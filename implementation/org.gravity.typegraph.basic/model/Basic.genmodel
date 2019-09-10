@@ -93,9 +93,10 @@
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodSignature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/method"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/paramList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/definitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/firstParameter"/>
       <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/getSignatureString"/>
       <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/getTDefinition">
         <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/getTDefinition/defining"/>
@@ -124,10 +125,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/next"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/previous"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/type"/>
-    </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameterList/entries"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameterList/first"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Basic.ecore#//TSignature">
       <genOperations ecoreOperation="Basic.ecore#//TSignature/getSignatureString"/>

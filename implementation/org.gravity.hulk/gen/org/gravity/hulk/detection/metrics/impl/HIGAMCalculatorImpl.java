@@ -209,7 +209,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 			if ("main".equals(tSignature.getMethod().getTName())) {
 				TModifier tModifier = tMethod.getTModifier();
 				if (tModifier.isIsStatic() && tModifier.getTVisibility() == TVisibility.TPUBLIC) {
-					EList<TParameter> tParams = tSignature.getParamList().getEntries();
+					EList<TParameter> tParams = tSignature.getParameters();
 					if (tParams.size() == 0) {
 						TParameter tParam = tParams.get(0);
 						if ("java.lang.String".equals(tParam.getType().getFullyQualifiedName())) {

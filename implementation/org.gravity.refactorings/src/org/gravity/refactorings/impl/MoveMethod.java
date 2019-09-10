@@ -47,7 +47,7 @@ public class MoveMethod extends MoveMember {
 				return true;
 			}
 
-			for (TParameter param : methodSig.getParamList().getEntries()) {
+			for (TParameter param : methodSig.getParameters()) {
 				if (param.getType() == targetClass) {
 					return true;
 				}

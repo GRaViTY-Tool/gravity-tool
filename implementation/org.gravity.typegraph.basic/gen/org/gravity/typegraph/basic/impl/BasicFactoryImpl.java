@@ -67,7 +67,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TMETHOD_SIGNATURE: return createTMethodSignature();
 			case BasicPackage.TPACKAGE: return createTPackage();
 			case BasicPackage.TPARAMETER: return createTParameter();
-			case BasicPackage.TPARAMETER_LIST: return createTParameterList();
 			case BasicPackage.TYPE_GRAPH: return createTypeGraph();
 			case BasicPackage.TINTERFACE: return createTInterface();
 			case BasicPackage.TCONSTRUCTOR_NAME: return createTConstructorName();
@@ -224,17 +223,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TParameter createTParameter() {
 		TParameterImpl tParameter = new TParameterImpl();
 		return tParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TParameterList createTParameterList() {
-		TParameterListImpl tParameterList = new TParameterListImpl();
-		return tParameterList;
 	}
 
 	/**

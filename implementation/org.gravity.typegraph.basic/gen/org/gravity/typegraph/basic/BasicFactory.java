@@ -112,15 +112,6 @@ public interface BasicFactory extends EFactory {
 	TParameter createTParameter();
 
 	/**
-	 * Returns a new object of class '<em>TParameter List</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TParameter List</em>'.
-	 * @generated
-	 */
-	TParameterList createTParameterList();
-
-	/**
 	 * Returns a new object of class '<em>Type Graph</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

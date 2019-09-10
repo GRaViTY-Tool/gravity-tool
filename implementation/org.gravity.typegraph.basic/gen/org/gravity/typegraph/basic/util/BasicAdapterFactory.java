@@ -117,10 +117,6 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 				return createTParameterAdapter();
 			}
 			@Override
-			public Adapter caseTParameterList(TParameterList object) {
-				return createTParameterListAdapter();
-			}
-			@Override
 			public Adapter caseTSignature(TSignature object) {
 				return createTSignatureAdapter();
 			}
@@ -372,20 +368,6 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TParameterList <em>TParameter List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.typegraph.basic.TParameterList
-	 * @generated
-	 */
-	public Adapter createTParameterListAdapter() {
 		return null;
 	}
 

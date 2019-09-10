@@ -117,7 +117,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 				"All access dependencies have been checked successfully,\nplease check if all implementations of the method\n\n\t");
 		builder.append(tSignature.getMethod().getTName());
 		builder.append('(');
-		TParameter param = tSignature.getParamList().getFirst();
+		TParameter param = tSignature.getFirstParameter();
 		while (param != null) {
 			builder.append(param.getType().getTName());
 			param = param.getNext();

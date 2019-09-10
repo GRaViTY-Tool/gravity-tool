@@ -27,7 +27,7 @@ public class ConstructorPreprocessor extends AbstractTypedModiscoProcessor<MCons
 		
 		// Add parameter lists to constructors
 		elements.parallelStream().forEach(a -> {
-			MoDiscoUtil.fillParamList(a, a.getMParameterList());
+			MoDiscoUtil.fillParamList(a, a);
 		});
 		return true;
 	}

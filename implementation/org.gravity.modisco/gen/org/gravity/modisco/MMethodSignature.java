@@ -19,14 +19,13 @@ import org.eclipse.gmt.modisco.java.Type;
  *   <li>{@link org.gravity.modisco.MMethodSignature#getMMethodName <em>MMethod Name</em>}</li>
  *   <li>{@link org.gravity.modisco.MMethodSignature#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.gravity.modisco.MMethodSignature#getMMethodDefinitions <em>MMethod Definitions</em>}</li>
- *   <li>{@link org.gravity.modisco.MMethodSignature#getMParameterList <em>MParameter List</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMMethodSignature()
  * @model
  * @generated
  */
-public interface MMethodSignature extends MSignature {
+public interface MMethodSignature extends MSignature, MParameterList {
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MGravityModel#getMMethodSignatures <em>MMethod Signatures</em>}'.
@@ -126,31 +125,5 @@ public interface MMethodSignature extends MSignature {
 	 * @generated
 	 */
 	EList<MMethodDefinition> getMMethodDefinitions();
-
-	/**
-	 * Returns the value of the '<em><b>MParameter List</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MParameter List</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>MParameter List</em>' containment reference.
-	 * @see #setMParameterList(MParameterList)
-	 * @see org.gravity.modisco.ModiscoPackage#getMMethodSignature_MParameterList()
-	 * @model containment="true"
-	 * @generated
-	 */
-	MParameterList getMParameterList();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.modisco.MMethodSignature#getMParameterList <em>MParameter List</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>MParameter List</em>' containment reference.
-	 * @see #getMParameterList()
-	 * @generated
-	 */
-	void setMParameterList(MParameterList value);
 
 } // MMethodSignature

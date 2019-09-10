@@ -757,22 +757,31 @@ public interface ModiscoPackage extends EPackage {
 	int MCONSTRUCTOR_DEFINITION__MINNER_TYPES = MABSTRACT_METHOD_DEFINITION__MINNER_TYPES;
 
 	/**
+	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONSTRUCTOR_DEFINITION__MFIRST_ENTRY = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>MEntrys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONSTRUCTOR_DEFINITION__MENTRYS = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCONSTRUCTOR_DEFINITION__MODEL = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>MParameter List</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCONSTRUCTOR_DEFINITION__MPARAMETER_LIST = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 1;
+	int MCONSTRUCTOR_DEFINITION__MODEL = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>MConstructor Definition</em>' class.
@@ -781,7 +790,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 2;
+	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
@@ -903,13 +912,31 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_SIGNATURE__IMPLEMENTED_BY = MSIGNATURE__IMPLEMENTED_BY;
 
 	/**
+	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MMETHOD_SIGNATURE__MFIRST_ENTRY = MSIGNATURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>MEntrys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MMETHOD_SIGNATURE__MENTRYS = MSIGNATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_SIGNATURE__MODEL = MSIGNATURE_FEATURE_COUNT + 0;
+	int MMETHOD_SIGNATURE__MODEL = MSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>MMethod Name</b></em>' reference.
@@ -918,7 +945,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_SIGNATURE__MMETHOD_NAME = MSIGNATURE_FEATURE_COUNT + 1;
+	int MMETHOD_SIGNATURE__MMETHOD_NAME = MSIGNATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -927,7 +954,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_SIGNATURE__RETURN_TYPE = MSIGNATURE_FEATURE_COUNT + 2;
+	int MMETHOD_SIGNATURE__RETURN_TYPE = MSIGNATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>MMethod Definitions</b></em>' reference list.
@@ -936,16 +963,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS = MSIGNATURE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>MParameter List</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MMETHOD_SIGNATURE__MPARAMETER_LIST = MSIGNATURE_FEATURE_COUNT + 4;
+	int MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS = MSIGNATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>MMethod Signature</em>' class.
@@ -954,7 +972,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MMETHOD_SIGNATURE_FEATURE_COUNT = MSIGNATURE_FEATURE_COUNT + 5;
+	int MMETHOD_SIGNATURE_FEATURE_COUNT = MSIGNATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MParameterListImpl <em>MParameter List</em>}' class.
@@ -3619,17 +3637,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMConstructorDefinition_Model();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.gravity.modisco.MConstructorDefinition#getMParameterList <em>MParameter List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MParameter List</em>'.
-	 * @see org.gravity.modisco.MConstructorDefinition#getMParameterList()
-	 * @see #getMConstructorDefinition()
-	 * @generated
-	 */
-	EReference getMConstructorDefinition_MParameterList();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MDefinition <em>MDefinition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3725,17 +3732,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMMethodSignature_MMethodDefinitions();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.gravity.modisco.MMethodSignature#getMParameterList <em>MParameter List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>MParameter List</em>'.
-	 * @see org.gravity.modisco.MMethodSignature#getMParameterList()
-	 * @see #getMMethodSignature()
-	 * @generated
-	 */
-	EReference getMMethodSignature_MParameterList();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MParameterList <em>MParameter List</em>}'.
@@ -4670,14 +4666,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MCONSTRUCTOR_DEFINITION__MODEL = eINSTANCE.getMConstructorDefinition_Model();
 
 		/**
-		 * The meta object literal for the '<em><b>MParameter List</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MCONSTRUCTOR_DEFINITION__MPARAMETER_LIST = eINSTANCE.getMConstructorDefinition_MParameterList();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MDefinitionImpl <em>MDefinition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4752,14 +4740,6 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS = eINSTANCE.getMMethodSignature_MMethodDefinitions();
-
-		/**
-		 * The meta object literal for the '<em><b>MParameter List</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MMETHOD_SIGNATURE__MPARAMETER_LIST = eINSTANCE.getMMethodSignature_MParameterList();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MParameterListImpl <em>MParameter List</em>}' class.

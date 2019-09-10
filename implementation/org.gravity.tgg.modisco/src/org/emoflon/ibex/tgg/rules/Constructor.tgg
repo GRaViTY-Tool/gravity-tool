@@ -5,15 +5,10 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++eConstructorDeclaration:MConstructorDefinition {
-		++ -mParameterList -> mParameterList
-	}
-
-	++mParameterList:MParameterList
-
 	mModel:MGravityModel {
 		++  -mConstructorDefinitions -> eConstructorDeclaration
 	}
+	++eConstructorDeclaration:MConstructorDefinition
 }
 
 #target {
@@ -25,10 +20,7 @@
 
 	++tConstructorDef:TConstructorDefinition
 
-	++tParameterList:TParameterList
-
 	++tSig:TConstructorSignature {
-		++  -paramList -> tParameterList
 		++  -definitions -> tConstructorDef
 		++  -method -> tName
 	}
@@ -55,21 +47,11 @@
 		#trg->typeGraph
 	}
 
-	++ eConstructorDeclarationToTParameterList :MConstructorDefinitionToTParameterList {
-		#src->eConstructorDeclaration
-		#trg->tParameterList
-	}
-
 	++ eConstructorDeclarationToTName :ConstructorDeclarationToTMethod {
 		#src->eConstructorDeclaration
 		#trg->tName
 	}
 
-	++ mParameterListToTParameterList :MParameterListToTParameterList {
-		#src->mParameterList
-		#trg->tParameterList
-	}
-	
 	++mAbstractFlowElementToTAbstractFlowElement:MAbstractFlowElementToTAbstractFlowElement {
 		#src->eConstructorDeclaration
 		#trg->tConstructorDef

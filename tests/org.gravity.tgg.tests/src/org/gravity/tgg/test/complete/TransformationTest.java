@@ -42,7 +42,6 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
-import org.gravity.tgg.test.util.TimeStampUtil;
 import org.gravity.tgg.test.util.ToFileLogger;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -58,6 +57,9 @@ import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
 import com.googlecode.junittoolbox.ParallelParameterized;
+
+import language.LanguagePackage;
+import runtime.RuntimePackage;
 
 /**
  * An abstract test template collecting test java projects and allows to test
@@ -99,7 +101,8 @@ public class TransformationTest {
 	public TransformationTest(String name, IJavaProject project) {
 		this.project = project;
 		this.name = name;
-                LOGGER.setLevel(Level.ALL);
+		LanguagePackage.eINSTANCE.eResource();
+		RuntimePackage.eINSTANCE.eResource();
 	}
 
 	@BeforeClass
@@ -109,6 +112,7 @@ public class TransformationTest {
 		Logger rootLogger = Logger.getRootLogger();
 		rootLogger.setLevel(Level.WARN);
 		GravityActivator.getDefault().setVerbose(DEBUG);
+		LOGGER.setLevel(Level.ALL);
 	}
 
 	/**
@@ -125,7 +129,7 @@ public class TransformationTest {
 		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
 		projects.parallelStream().forEach(project -> {
 			File file = getModiscoFile(project);
-			if(file.exists()) {
+			if (file.exists()) {
 				file.delete();
 			}
 		});
@@ -175,11 +179,9 @@ public class TransformationTest {
 			throw new AssertionError(String.format("Unable to load '%s': %s", project, e.getMessage()));
 		}
 		MGravityModel modiscoModel = getModiscoModel(conv.getResourceSet());
-		LOGGER.log(Level.INFO, "Start forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 		if (!conv.convertModel(project, modiscoModel, new NullProgressMonitor())) {
 			throw new AssertionError("Trafo failed");
 		}
-		LOGGER.log(Level.INFO, "Finished forward integration - " + TimeStampUtil.getCurrentTimeStamp());
 
 		TypeGraph pg = conv.getPG();
 		assertNotNull(pg);

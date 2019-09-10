@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMParameterList()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface MParameterList extends EObject {

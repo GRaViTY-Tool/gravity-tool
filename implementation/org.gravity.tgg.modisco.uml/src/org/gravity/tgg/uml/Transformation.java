@@ -51,7 +51,9 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.modisco.util.MoDiscoUtil;
 import org.gravity.security.annotations.AnnotationsActivator;
 
+import language.LanguagePackage;
 import runtime.Protocol;
+import runtime.RuntimePackage;
 
 /**
  * This class provides the API for transforming Java projects into UML models
@@ -132,6 +134,8 @@ public class Transformation extends SYNC {
 
 	@Override
 	protected Resource loadTGGResource() throws IOException {
+		LanguagePackage.eINSTANCE.eResource();
+		RuntimePackage.eINSTANCE.eResource();
 		return loadResource(UML_TGG_XMI);
 	}
 

@@ -10,11 +10,9 @@
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAccess" abstract="true" eSuperTypes="#//MAbstractFlowElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition ../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition ../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorDeclaration #//MParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mConstructorDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration #//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
@@ -24,7 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
         eType="#//MSingleVariableAccess"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature #//MParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mMethodSignatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodName" lowerBound="1"
@@ -32,10 +30,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
         eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodSignature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
-        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MParameterList">
+  <eClassifiers xsi:type="ecore:EClass" name="MParameterList" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFirstEntry" eType="#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntrys" upperBound="-1"
         eType="#//MEntry" containment="true"/>

@@ -7,10 +7,6 @@
 #source {
 	++ mSignature : MMethodSignature {
 		++ -mMethodName-> mName
-		++ -mParameterList-> mParameterList
-	}
-	++ mParameterList : MParameterList {
-		
 	}
 	mName : MMethodName {
 		++  -mSignatures -> mSignature
@@ -18,14 +14,10 @@
 }
 
 #target {
-	tName : TMethod {
-	}
 	++ tSignature : TMethodSignature {
-		++  -paramList -> tParameterList
 		++  -method -> tName
 	}
-	++ tParameterList : TParameterList {
-	}
+	tName : TMethod 
 }
 
 #correspondence {
@@ -43,19 +35,12 @@
 		#src->mSignature
 		#trg->tSignature
 	}
-	++ mSignatureToTParameterList : MMethodSignatureToTParameterList {
+	++mParameterListToTMethodSignature : MParameterListToTMethodSignature {
 		#src->mSignature
-		#trg->tParameterList
-	}
-	++ mParameterListToTParameterList : MParameterListToTParameterList {
-		#src->mParameterList
-		#trg->tParameterList
+		#trg->tSignature
 	}
 	mNameToTName : MMethodNameToTMethod {
 		#src->mName
 		#trg->tName
 	}
-}
-
-#attributeConditions {
 }

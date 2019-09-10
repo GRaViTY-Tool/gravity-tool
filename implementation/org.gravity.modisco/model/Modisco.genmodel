@@ -19,7 +19,6 @@
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAccess"/>
     <genClasses ecoreClass="Modisco.ecore#//MConstructorDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MConstructorDefinition/model"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modisco.ecore#//MConstructorDefinition/mParameterList"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MDefinition/invocationStaticTypes"/>
@@ -31,7 +30,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodSignature/mMethodName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodSignature/returnType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodSignature/mMethodDefinitions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodSignature/mParameterList"/>
     </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MParameterList">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MParameterList/mFirstEntry"/>
