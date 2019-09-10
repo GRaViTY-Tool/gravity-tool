@@ -2,13 +2,10 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 import java.util.Set;
-import java.util.Deque;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -18,7 +15,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.InterfaceDeclaration;
-import org.eclipse.gmt.modisco.java.Package;
 import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
@@ -43,21 +39,6 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
 				.flatMap(type -> getAccessedClassDeclarations(type.getSuperInterfaces()).parallelStream())
 				.collect(Collectors.toSet());
-		return process(model, brokenTypeAccesses);
-	}
-
-	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		Set<TypeAccess> brokenTypeAccesses = new HashSet<>();
-		Deque<Package> stack = new LinkedList<>();
-		stack.addAll(model.getOwnedElements());
-		while (!stack.isEmpty()) {
-			Package p = stack.pop();
-			stack.addAll(p.getOwnedPackages());
-			for (AbstractTypeDeclaration type : p.getOwnedElements()) {
-				brokenTypeAccesses.addAll(getAccessedClassDeclarations(type.getSuperInterfaces()));
-			}
-		}
 		return process(model, brokenTypeAccesses);
 	}
 
