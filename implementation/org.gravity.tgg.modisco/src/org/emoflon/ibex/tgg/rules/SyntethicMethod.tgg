@@ -3,52 +3,48 @@
 
 #rule SyntethicMethod #with org.gravity.tgg.modisco
 
-#source { 
+#source {
 	mClass:ClassDeclaration{
-		++-bodyDeclarations->mSyntethic
+		++-bodyDeclarations -> mSyntethic
 	}
-	mDef: MMethodDefinition{
-		++-syntheticMethodDefinitions->mSyntethic
+
+	mDef:MMethodDefinition{
+		++-syntheticMethodDefinitions -> mSyntethic
 	}
-	
-	++mSyntethic: MSyntheticMethodDefinition{
-		
-	}
-	
+
+	++mSyntethic:MSyntheticMethodDefinition
 }
 
 #target {
 	tClass:TClass{
-		++-defines->tSyntethic
+		++-defines -> tSyntethic
 	}
-	tDef: TMethodDefinition{
-		++-syntethicMethods->tSyntethic
-		-signature->tSig
+
+	tDef:TMethodDefinition{
+		++-syntethicMethods -> tSyntethic
+		-signature -> tSig
 	}
-	tSig:TMethodSignature{}
-	
+
+	tSig:TMethodSignature
+
 	++tSyntethic:TSyntethicMethod{
-		++-signature->tSig
+		++-signature -> tSig
 	}
 }
 
 #correspondence {
-	mClassDeclarationToTClass : ClassDeclarationToTClass {
-	#src->mClass
-	#trg->tClass
-}
-mDefinitionToTMember : MDefinitionToTMember {
-	#src->mDef
-	#trg->tDef
-}
-++mSyntToTSynt: MSyntethicMethodToTSyntethicMethod{
-	#src->mSyntethic
-	#trg->tSyntethic
-}
-	
-	
-}
+	mClassDeclarationToTClass :ClassDeclarationToTClass {
+		#src->mClass
+		#trg->tClass
+	}
 
-#attributeConditions {
-	
+	mDefinitionToTMember :MDefinitionToTMember {
+		#src->mDef
+		#trg->tDef
+	}
+
+	++mSyntToTSynt:MSyntethicMethodToTSyntethicMethod{
+		#src->mSyntethic
+		#trg->tSyntethic
+	}
 }

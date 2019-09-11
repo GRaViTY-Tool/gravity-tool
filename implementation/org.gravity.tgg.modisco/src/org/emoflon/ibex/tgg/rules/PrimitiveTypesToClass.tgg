@@ -5,37 +5,163 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ ePrimitiveType : PrimitiveType {
-}
-eModel : Model {
-	++  -orphanTypes -> ePrimitiveType
-}
+	++ePrimitiveType:PrimitiveType
+
+	eModel:Model {
+		++  -orphanTypes -> ePrimitiveType
+	}
 }
 
 #target {
-++ tPrimitiveClass : TClass {
-	tLib := true
-}
-typeGraph : TypeGraph {
-	++  -ownedTypes -> tPrimitiveClass
-	++  -classes -> tPrimitiveClass
-}
+	++tPrimitiveClass:TClass {
+		tLib := true
+	}
+
+	typeGraph:TypeGraph {
+		++  -ownedTypes -> tPrimitiveClass
+		++  -classes -> tPrimitiveClass
+	}
 }
 
 #correspondence {
-++ typeToTAbstractType : TypeToTAbstractType {
-	#src->ePrimitiveType
-	#trg->tPrimitiveClass
-}
-++ ePrimitiveTypeToTPrimitiveClass : PrimitiveTypeToTClass {
-	#src->ePrimitiveType
-	#trg->tPrimitiveClass
-}
-eModelToTypeGraph : ModelToTypeGraph {
-	#src->eModel
-	#trg->typeGraph
-}
+	++ typeToTAbstractType :TypeToTAbstractType {
+		#src->ePrimitiveType
+		#trg->tPrimitiveClass
+	}
+
+	++ ePrimitiveTypeToTPrimitiveClass :PrimitiveTypeToTClass {
+		#src->ePrimitiveType
+		#trg->tPrimitiveClass
+	}
+
+	eModelToTypeGraph :ModelToTypeGraph {
+		#src->eModel
+		#trg->typeGraph
+	}
 }
 
-#attributeConditions {
+#rule PrimitiveTypeIsBoolean
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeBoolean
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "boolean"
+	}
+}
+
+#rule PrimitiveTypeIsByte
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeByte
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "byte"
+	}
+}
+
+#rule PrimitiveTypeIsChar
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeChar
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "char"
+	}
+}
+
+#rule PrimitiveTypeIsDouble
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeDouble
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "double"
+	}
+}
+
+#rule PrimitiveTypeIsFloat
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeFloat
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "float"
+	}
+}
+
+#rule PrimitiveTypeIsInt
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeInt
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "int"
+	}
+}
+
+#rule PrimitiveTypeIsLong
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeLong
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "long"
+	}
+}
+
+#rule PrimitiveTypeIsShort
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeShort
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "short"
+	}
+}
+
+#rule PrimitiveTypesIsVoid
+#extends PrimitiveTypesToClass
+#with org.gravity.tgg.modisco
+
+#source {
+	++ePrimitiveType:PrimitiveTypeVoid
+}
+
+#target {
+	++tPrimitiveClass:TClass {
+		tName := "void"
+	}
 }

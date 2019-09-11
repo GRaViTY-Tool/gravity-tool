@@ -135,9 +135,6 @@
 	++tAccess:TRead
 }
 
-#correspondence {
-}
-
 #rule FieldAccessWrite #extends FieldAccess
 #with org.gravity.tgg.modisco
 
@@ -151,10 +148,6 @@
 	++tAccess:TWrite
 }
 
-#correspondence {
-	
-}
-
 #rule FieldAccessReadWrite #extends FieldAccess
 #with org.gravity.tgg.modisco
 
@@ -166,8 +159,4 @@
 
 #target { 
 	++tAccess:TReadWrite
-}
-
-#correspondence {
-	
 }

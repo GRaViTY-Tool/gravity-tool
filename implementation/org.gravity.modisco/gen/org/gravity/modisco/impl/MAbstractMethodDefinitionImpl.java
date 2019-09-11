@@ -32,6 +32,8 @@ import org.eclipse.gmt.modisco.java.TypeParameter;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 
 import org.gravity.modisco.MAbstractMethodDefinition;
+import org.gravity.modisco.MMethodName;
+import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.ModiscoPackage;
 
 /**
@@ -49,6 +51,8 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getUsagesInDocComments <em>Usages In Doc Comments</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getUsages <em>Usages</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getMInnerTypes <em>MInner Types</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getMMethodName <em>MMethod Name</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MAbstractMethodDefinitionImpl#getMMethodSignature <em>MMethod Signature</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,6 +127,26 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * @ordered
 	 */
 	protected EList<AbstractTypeDeclaration> mInnerTypes;
+
+	/**
+	 * The cached value of the '{@link #getMMethodName() <em>MMethod Name</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMMethodName()
+	 * @generated
+	 * @ordered
+	 */
+	protected MMethodName mMethodName;
+
+	/**
+	 * The cached value of the '{@link #getMMethodSignature() <em>MMethod Signature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMMethodSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected MMethodSignature mMethodSignature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,6 +287,126 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MMethodName getMMethodName() {
+		if (mMethodName != null && mMethodName.eIsProxy()) {
+			InternalEObject oldMMethodName = (InternalEObject)mMethodName;
+			mMethodName = (MMethodName)eResolveProxy(oldMMethodName);
+			if (mMethodName != oldMMethodName) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME, oldMMethodName, mMethodName));
+			}
+		}
+		return mMethodName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MMethodName basicGetMMethodName() {
+		return mMethodName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMMethodName(MMethodName newMMethodName, NotificationChain msgs) {
+		MMethodName oldMMethodName = mMethodName;
+		mMethodName = newMMethodName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME, oldMMethodName, newMMethodName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMMethodName(MMethodName newMMethodName) {
+		if (newMMethodName != mMethodName) {
+			NotificationChain msgs = null;
+			if (mMethodName != null)
+				msgs = ((InternalEObject)mMethodName).eInverseRemove(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS, MMethodName.class, msgs);
+			if (newMMethodName != null)
+				msgs = ((InternalEObject)newMMethodName).eInverseAdd(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS, MMethodName.class, msgs);
+			msgs = basicSetMMethodName(newMMethodName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME, newMMethodName, newMMethodName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MMethodSignature getMMethodSignature() {
+		if (mMethodSignature != null && mMethodSignature.eIsProxy()) {
+			InternalEObject oldMMethodSignature = (InternalEObject)mMethodSignature;
+			mMethodSignature = (MMethodSignature)eResolveProxy(oldMMethodSignature);
+			if (mMethodSignature != oldMMethodSignature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE, oldMMethodSignature, mMethodSignature));
+			}
+		}
+		return mMethodSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MMethodSignature basicGetMMethodSignature() {
+		return mMethodSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMMethodSignature(MMethodSignature newMMethodSignature, NotificationChain msgs) {
+		MMethodSignature oldMMethodSignature = mMethodSignature;
+		mMethodSignature = newMMethodSignature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE, oldMMethodSignature, newMMethodSignature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMMethodSignature(MMethodSignature newMMethodSignature) {
+		if (newMMethodSignature != mMethodSignature) {
+			NotificationChain msgs = null;
+			if (mMethodSignature != null)
+				msgs = ((InternalEObject)mMethodSignature).eInverseRemove(this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, MMethodSignature.class, msgs);
+			if (newMMethodSignature != null)
+				msgs = ((InternalEObject)newMMethodSignature).eInverseAdd(this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, MMethodSignature.class, msgs);
+			msgs = basicSetMMethodSignature(newMMethodSignature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE, newMMethodSignature, newMMethodSignature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -273,6 +417,14 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsagesInDocComments()).basicAdd(otherEnd, msgs);
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__USAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsages()).basicAdd(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				if (mMethodName != null)
+					msgs = ((InternalEObject)mMethodName).eInverseRemove(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS, MMethodName.class, msgs);
+				return basicSetMMethodName((MMethodName)otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				if (mMethodSignature != null)
+					msgs = ((InternalEObject)mMethodSignature).eInverseRemove(this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, MMethodSignature.class, msgs);
+				return basicSetMMethodSignature((MMethodSignature)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -297,6 +449,10 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return ((InternalEList<?>)getUsagesInDocComments()).basicRemove(otherEnd, msgs);
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__USAGES:
 				return ((InternalEList<?>)getUsages()).basicRemove(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				return basicSetMMethodName(null, msgs);
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				return basicSetMMethodSignature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -323,6 +479,12 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return getUsages();
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				return getMInnerTypes();
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				if (resolve) return getMMethodName();
+				return basicGetMMethodName();
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				if (resolve) return getMMethodSignature();
+				return basicGetMMethodSignature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +525,12 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				getMInnerTypes().clear();
 				getMInnerTypes().addAll((Collection<? extends AbstractTypeDeclaration>)newValue);
 				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				setMMethodName((MMethodName)newValue);
+				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				setMMethodSignature((MMethodSignature)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -396,6 +564,12 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				getMInnerTypes().clear();
 				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				setMMethodName((MMethodName)null);
+				return;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				setMMethodSignature((MMethodSignature)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -422,6 +596,10 @@ public abstract class MAbstractMethodDefinitionImpl extends MDefinitionImpl impl
 				return usages != null && !usages.isEmpty();
 			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES:
 				return mInnerTypes != null && !mInnerTypes.isEmpty();
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME:
+				return mMethodName != null;
+			case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE:
+				return mMethodSignature != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.gmt.modisco.java.Type;
 
+import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MParameterList;
@@ -96,7 +96,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MMethodDefinition> mMethodDefinitions;
+	protected EList<MAbstractMethodDefinition> mMethodDefinitions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,9 +311,9 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MMethodDefinition> getMMethodDefinitions() {
+	public EList<MAbstractMethodDefinition> getMMethodDefinitions() {
 		if (mMethodDefinitions == null) {
-			mMethodDefinitions = new EObjectWithInverseResolvingEList<MMethodDefinition>(MMethodDefinition.class, this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_SIGNATURE);
+			mMethodDefinitions = new EObjectWithInverseResolvingEList<MAbstractMethodDefinition>(MAbstractMethodDefinition.class, this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE);
 		}
 		return mMethodDefinitions;
 	}
@@ -429,7 +429,7 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 				return;
 			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
 				getMMethodDefinitions().clear();
-				getMMethodDefinitions().addAll((Collection<? extends MMethodDefinition>)newValue);
+				getMMethodDefinitions().addAll((Collection<? extends MAbstractMethodDefinition>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

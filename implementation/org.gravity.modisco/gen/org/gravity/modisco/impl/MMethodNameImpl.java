@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.ModiscoPackage;
@@ -48,7 +48,7 @@ public class MMethodNameImpl extends MNameImpl implements MMethodName {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MMethodDefinition> mMethodDefinitions;
+	protected EList<MAbstractMethodDefinition> mMethodDefinitions;
 
 	/**
 	 * The cached value of the '{@link #getMMethodSignatures() <em>MMethod Signatures</em>}' reference list.
@@ -125,9 +125,9 @@ public class MMethodNameImpl extends MNameImpl implements MMethodName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MMethodDefinition> getMMethodDefinitions() {
+	public EList<MAbstractMethodDefinition> getMMethodDefinitions() {
 		if (mMethodDefinitions == null) {
-			mMethodDefinitions = new EObjectWithInverseResolvingEList<MMethodDefinition>(MMethodDefinition.class, this, ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS, ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_NAME);
+			mMethodDefinitions = new EObjectWithInverseResolvingEList<MAbstractMethodDefinition>(MAbstractMethodDefinition.class, this, ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS, ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME);
 		}
 		return mMethodDefinitions;
 	}
@@ -229,7 +229,7 @@ public class MMethodNameImpl extends MNameImpl implements MMethodName {
 				return;
 			case ModiscoPackage.MMETHOD_NAME__MMETHOD_DEFINITIONS:
 				getMMethodDefinitions().clear();
-				getMMethodDefinitions().addAll((Collection<? extends MMethodDefinition>)newValue);
+				getMMethodDefinitions().addAll((Collection<? extends MAbstractMethodDefinition>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_NAME__MMETHOD_SIGNATURES:
 				getMMethodSignatures().clear();

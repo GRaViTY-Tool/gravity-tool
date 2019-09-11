@@ -223,9 +223,6 @@
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getRealPackage/type"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorName"/>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorSignature"/>
-    <genClasses ecoreClass="Basic.ecore#//TConstructorDefinition"/>
     <genClasses ecoreClass="Basic.ecore#//TRead"/>
     <genClasses ecoreClass="Basic.ecore#//TWrite"/>
     <genClasses ecoreClass="Basic.ecore#//TModifier">
@@ -251,6 +248,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TAbstractFlowElement/outgoingFlows"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TReadWrite"/>
+    <genClasses ecoreClass="Basic.ecore#//TConstructor"/>
+    <genClasses ecoreClass="Basic.ecore#//TEnum"/>
     <nestedGenPackages prefix="Containers" disposableProviderFactory="true" ecorePackage="Basic.ecore#//containers">
       <genClasses ecoreClass="Basic.ecore#//containers/TTypeContainer">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

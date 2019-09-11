@@ -29,7 +29,6 @@ import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TParameterList;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
 import org.gravity.typegraph.basic.TParameter;

@@ -69,9 +69,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TPARAMETER: return createTParameter();
 			case BasicPackage.TYPE_GRAPH: return createTypeGraph();
 			case BasicPackage.TINTERFACE: return createTInterface();
-			case BasicPackage.TCONSTRUCTOR_NAME: return createTConstructorName();
-			case BasicPackage.TCONSTRUCTOR_SIGNATURE: return createTConstructorSignature();
-			case BasicPackage.TCONSTRUCTOR_DEFINITION: return createTConstructorDefinition();
 			case BasicPackage.TREAD: return createTRead();
 			case BasicPackage.TWRITE: return createTWrite();
 			case BasicPackage.TMODIFIER: return createTModifier();
@@ -80,6 +77,8 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TNAME: return createTName();
 			case BasicPackage.TFLOW: return createTFlow();
 			case BasicPackage.TREAD_WRITE: return createTReadWrite();
+			case BasicPackage.TCONSTRUCTOR: return createTConstructor();
+			case BasicPackage.TENUM: return createTEnum();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -253,39 +252,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * @generated
 	 */
 	@Override
-	public TConstructorName createTConstructorName() {
-		TConstructorNameImpl tConstructorName = new TConstructorNameImpl();
-		return tConstructorName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TConstructorSignature createTConstructorSignature() {
-		TConstructorSignatureImpl tConstructorSignature = new TConstructorSignatureImpl();
-		return tConstructorSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TConstructorDefinition createTConstructorDefinition() {
-		TConstructorDefinitionImpl tConstructorDefinition = new TConstructorDefinitionImpl();
-		return tConstructorDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public TRead createTRead() {
 		TReadImpl tRead = new TReadImpl();
 		return tRead;
@@ -366,6 +332,28 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TReadWrite createTReadWrite() {
 		TReadWriteImpl tReadWrite = new TReadWriteImpl();
 		return tReadWrite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TConstructor createTConstructor() {
+		TConstructorImpl tConstructor = new TConstructorImpl();
+		return tConstructor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TEnum createTEnum() {
+		TEnumImpl tEnum = new TEnumImpl();
+		return tEnum;
 	}
 
 	/**

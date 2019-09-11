@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.gravity.typegraph.basic.*;
 
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,18 +134,6 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 				return createTAbstractTypeAdapter();
 			}
 			@Override
-			public Adapter caseTConstructorName(TConstructorName object) {
-				return createTConstructorNameAdapter();
-			}
-			@Override
-			public Adapter caseTConstructorSignature(TConstructorSignature object) {
-				return createTConstructorSignatureAdapter();
-			}
-			@Override
-			public Adapter caseTConstructorDefinition(TConstructorDefinition object) {
-				return createTConstructorDefinitionAdapter();
-			}
-			@Override
 			public Adapter caseTRead(TRead object) {
 				return createTReadAdapter();
 			}
@@ -181,8 +170,20 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 				return createTReadWriteAdapter();
 			}
 			@Override
+			public Adapter caseTConstructor(TConstructor object) {
+				return createTConstructorAdapter();
+			}
+			@Override
+			public Adapter caseTEnum(TEnum object) {
+				return createTEnumAdapter();
+			}
+			@Override
 			public Adapter caseTAnnotatable(TAnnotatable object) {
 				return createTAnnotatableAdapter();
+			}
+			@Override
+			public Adapter caseTAnnotation(TAnnotation object) {
+				return createTAnnotationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -428,48 +429,6 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TConstructorName <em>TConstructor Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.typegraph.basic.TConstructorName
-	 * @generated
-	 */
-	public Adapter createTConstructorNameAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TConstructorSignature <em>TConstructor Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.typegraph.basic.TConstructorSignature
-	 * @generated
-	 */
-	public Adapter createTConstructorSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TConstructorDefinition <em>TConstructor Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.typegraph.basic.TConstructorDefinition
-	 * @generated
-	 */
-	public Adapter createTConstructorDefinitionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TRead <em>TRead</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -596,6 +555,34 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TConstructor <em>TConstructor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TConstructor
+	 * @generated
+	 */
+	public Adapter createTConstructorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TEnum <em>TEnum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TEnum
+	 * @generated
+	 */
+	public Adapter createTEnumAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.annotations.TAnnotatable <em>TAnnotatable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -606,6 +593,20 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTAnnotatableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.annotations.TAnnotation <em>TAnnotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.annotations.TAnnotation
+	 * @generated
+	 */
+	public Adapter createTAnnotationAdapter() {
 		return null;
 	}
 

@@ -130,33 +130,6 @@ public interface BasicFactory extends EFactory {
 	TInterface createTInterface();
 
 	/**
-	 * Returns a new object of class '<em>TConstructor Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TConstructor Name</em>'.
-	 * @generated
-	 */
-	TConstructorName createTConstructorName();
-
-	/**
-	 * Returns a new object of class '<em>TConstructor Signature</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TConstructor Signature</em>'.
-	 * @generated
-	 */
-	TConstructorSignature createTConstructorSignature();
-
-	/**
-	 * Returns a new object of class '<em>TConstructor Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>TConstructor Definition</em>'.
-	 * @generated
-	 */
-	TConstructorDefinition createTConstructorDefinition();
-
-	/**
 	 * Returns a new object of class '<em>TRead</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +200,24 @@ public interface BasicFactory extends EFactory {
 	 * @generated
 	 */
 	TReadWrite createTReadWrite();
+
+	/**
+	 * Returns a new object of class '<em>TConstructor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TConstructor</em>'.
+	 * @generated
+	 */
+	TConstructor createTConstructor();
+
+	/**
+	 * Returns a new object of class '<em>TEnum</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TEnum</em>'.
+	 * @generated
+	 */
+	TEnum createTEnum();
 
 	/**
 	 * Returns the package supported by this factory.

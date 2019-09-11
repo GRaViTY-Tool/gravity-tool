@@ -50,4 +50,70 @@
 	}
 }
 
+#rule MethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
 
+#source {
+	++invocation:MMethodInvocation
+}
+
+#target {
+	++tAccess:TCall
+}
+
+#rule SuperMethodInvocation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+	++invocation:MSuperMethodInvocation
+}
+
+#rule ClassInstanceCreation
+#extends AbstractMethodInvocation
+#with org.gravity.tgg.modisco
+
+#source {
+	++invocation:MClassInstanceCreation
+}
+
+#rule MethodInvocationRecursive
+#with org.gravity.tgg.modisco
+
+#source {
+	mMember:MMethodDefinition {
+		++  -mMethodInvocations-> invocation
+	}
+
+	++invocation:MMethodInvocation {
+		++  -method -> mMember
+	}
+}
+
+#target {
+	tMember:TMethodDefinition {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TCall {
+		++-tTarget -> tMember
+	}
+}
+
+#correspondence {
+	++ invocationToTAccess :AbstractMethodInvocationToTAccess {
+		#src->invocation
+		#trg->tAccess
+	}
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->invocation
+		#trg->tAccess
+	}
+
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+}

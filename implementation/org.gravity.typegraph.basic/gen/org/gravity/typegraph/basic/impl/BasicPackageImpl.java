@@ -18,9 +18,8 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TCall;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
-import org.gravity.typegraph.basic.TConstructorName;
-import org.gravity.typegraph.basic.TConstructorSignature;
+import org.gravity.typegraph.basic.TConstructor;
+import org.gravity.typegraph.basic.TEnum;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
@@ -175,27 +174,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tConstructorNameEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tConstructorSignatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tConstructorDefinitionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass tReadEClass = null;
 
 	/**
@@ -253,6 +231,20 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	private EClass tReadWriteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tConstructorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tEnumEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1668,36 +1660,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getTConstructorName() {
-		return tConstructorNameEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTConstructorSignature() {
-		return tConstructorSignatureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTConstructorDefinition() {
-		return tConstructorDefinitionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTRead() {
 		return tReadEClass;
 	}
@@ -1898,6 +1860,26 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getTConstructor() {
+		return tConstructorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTEnum() {
+		return tEnumEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getTVisibility() {
 		return tVisibilityEEnum;
 	}
@@ -2080,12 +2062,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE);
 
-		tConstructorNameEClass = createEClass(TCONSTRUCTOR_NAME);
-
-		tConstructorSignatureEClass = createEClass(TCONSTRUCTOR_SIGNATURE);
-
-		tConstructorDefinitionEClass = createEClass(TCONSTRUCTOR_DEFINITION);
-
 		tReadEClass = createEClass(TREAD);
 
 		tWriteEClass = createEClass(TWRITE);
@@ -2114,6 +2090,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEReference(tAbstractFlowElementEClass, TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
 
 		tReadWriteEClass = createEClass(TREAD_WRITE);
+
+		tConstructorEClass = createEClass(TCONSTRUCTOR);
+
+		tEnumEClass = createEClass(TENUM);
 
 		// Create enums
 		tVisibilityEEnum = createEEnum(TVISIBILITY);
@@ -2174,9 +2154,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		typeGraphEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tInterfaceEClass.getESuperTypes().add(this.getTAbstractType());
 		tAbstractTypeEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
-		tConstructorNameEClass.getESuperTypes().add(this.getTMethod());
-		tConstructorSignatureEClass.getESuperTypes().add(this.getTMethodSignature());
-		tConstructorDefinitionEClass.getESuperTypes().add(this.getTMethodDefinition());
 		tReadEClass.getESuperTypes().add(this.getTAccess());
 		tWriteEClass.getESuperTypes().add(this.getTAccess());
 		tSyntethicMethodEClass.getESuperTypes().add(this.getTMember());
@@ -2184,6 +2161,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tUnresolvedTypeEClass.getESuperTypes().add(this.getTInterface());
 		tFlowEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		tReadWriteEClass.getESuperTypes().add(this.getTAccess());
+		tConstructorEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotation());
+		tEnumEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tAccessEClass, TAccess.class, "TAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2421,12 +2400,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		op = initEOperation(getTAbstractType__GetRealPackage__TAbstractType(), this.getTPackage(), "getRealPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(tConstructorNameEClass, TConstructorName.class, "TConstructorName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tConstructorSignatureEClass, TConstructorSignature.class, "TConstructorSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tConstructorDefinitionEClass, TConstructorDefinition.class, "TConstructorDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(tReadEClass, TRead.class, "TRead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(tWriteEClass, TWrite.class, "TWrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2455,6 +2428,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEReference(getTAbstractFlowElement_OutgoingFlows(), this.getTFlow(), this.getTFlow_FlowSource(), "outgoingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tReadWriteEClass, TReadWrite.class, "TReadWrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tConstructorEClass, TConstructor.class, "TConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tEnumEClass, TEnum.class, "TEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(tVisibilityEEnum, TVisibility.class, "TVisibility");

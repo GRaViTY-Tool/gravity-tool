@@ -439,13 +439,31 @@ public interface ModiscoPackage extends EPackage {
 	int MABSTRACT_METHOD_DEFINITION__MINNER_TYPES = MDEFINITION_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>MMethod Name</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME = MDEFINITION_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>MMethod Signature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE = MDEFINITION_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>MAbstract Method Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 7;
+	int MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorDefinitionImpl <em>MConstructor Definition</em>}' class.
@@ -755,6 +773,24 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MCONSTRUCTOR_DEFINITION__MINNER_TYPES = MABSTRACT_METHOD_DEFINITION__MINNER_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>MMethod Name</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONSTRUCTOR_DEFINITION__MMETHOD_NAME = MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME;
+
+	/**
+	 * The feature id for the '<em><b>MMethod Signature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCONSTRUCTOR_DEFINITION__MMETHOD_SIGNATURE = MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE;
 
 	/**
 	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
@@ -3606,6 +3642,28 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMAbstractMethodDefinition_MInnerTypes();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MAbstractMethodDefinition#getMMethodName <em>MMethod Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>MMethod Name</em>'.
+	 * @see org.gravity.modisco.MAbstractMethodDefinition#getMMethodName()
+	 * @see #getMAbstractMethodDefinition()
+	 * @generated
+	 */
+	EReference getMAbstractMethodDefinition_MMethodName();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MAbstractMethodDefinition#getMMethodSignature <em>MMethod Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>MMethod Signature</em>'.
+	 * @see org.gravity.modisco.MAbstractMethodDefinition#getMMethodSignature()
+	 * @see #getMAbstractMethodDefinition()
+	 * @generated
+	 */
+	EReference getMAbstractMethodDefinition_MMethodSignature();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MAccess <em>MAccess</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3935,28 +3993,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMMethodDefinition();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodDefinition#getMMethodName <em>MMethod Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>MMethod Name</em>'.
-	 * @see org.gravity.modisco.MMethodDefinition#getMMethodName()
-	 * @see #getMMethodDefinition()
-	 * @generated
-	 */
-	EReference getMMethodDefinition_MMethodName();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodDefinition#getMMethodSignature <em>MMethod Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>MMethod Signature</em>'.
-	 * @see org.gravity.modisco.MMethodDefinition#getMMethodSignature()
-	 * @see #getMMethodDefinition()
-	 * @generated
-	 */
-	EReference getMMethodDefinition_MMethodSignature();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodDefinition#getModel <em>Model</em>}'.
@@ -4638,6 +4674,22 @@ public interface ModiscoPackage extends EPackage {
 		EReference MABSTRACT_METHOD_DEFINITION__MINNER_TYPES = eINSTANCE.getMAbstractMethodDefinition_MInnerTypes();
 
 		/**
+		 * The meta object literal for the '<em><b>MMethod Name</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME = eINSTANCE.getMAbstractMethodDefinition_MMethodName();
+
+		/**
+		 * The meta object literal for the '<em><b>MMethod Signature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE = eINSTANCE.getMAbstractMethodDefinition_MMethodSignature();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAccessImpl <em>MAccess</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4904,22 +4956,6 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MMETHOD_DEFINITION = eINSTANCE.getMMethodDefinition();
-
-		/**
-		 * The meta object literal for the '<em><b>MMethod Name</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MMETHOD_DEFINITION__MMETHOD_NAME = eINSTANCE.getMMethodDefinition_MMethodName();
-
-		/**
-		 * The meta object literal for the '<em><b>MMethod Signature</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MMETHOD_DEFINITION__MMETHOD_SIGNATURE = eINSTANCE.getMMethodDefinition_MMethodSignature();
 
 		/**
 		 * The meta object literal for the '<em><b>Model</b></em>' reference feature.

@@ -17,12 +17,11 @@
 }
 
 #target {
-	tAbstractType:TAbstractType {
-}
-
 	tMethodDefinition:TMethodDefinition {
 		++  -returnType -> tAbstractType
 	}
+	
+	tAbstractType:TAbstractType 
 }
 
 #correspondence {
@@ -31,13 +30,8 @@
 		#trg->tAbstractType
 	}
 
-	mMethodDefinitionToTMethodDefinition :MMethodDefinitionToTMethodDefinition {
+	mMethodDefinitionToTMethodDefinition :MDefinitionToTMember {
 		#src->mDefinition
 		#trg->tMethodDefinition
 	}
 }
-
-#attributeConditions {
-}
-
-

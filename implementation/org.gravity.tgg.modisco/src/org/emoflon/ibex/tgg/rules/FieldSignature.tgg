@@ -5,40 +5,38 @@
 #with org.gravity.tgg.modisco
 
 #source {
-mFieldName : MFieldName {
-	++  -mSignatures -> mSignature
-}
-++ mSignature : MFieldSignature {
-	++  -mFieldName -> mFieldName
-}
+	mFieldName:MFieldName {
+		++  -mSignatures -> mSignature
+	}
+
+	++mSignature:MFieldSignature {
+		++  -mFieldName -> mFieldName
+	}
 }
 
 #target {
-tField : TField {
-}
-++ tSignature : TFieldSignature {
-	++  -field -> tField
-}
+	tField:TField
+
+	++tSignature:TFieldSignature {
+		++  -field -> tField
+	}
 }
 
 #correspondence {
-++ mSignatureToTSignature : MSignatureToTSignature {
-	#src->mSignature
-	#trg->tSignature
-}
-++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+	eFieldDeclarationToTField :MFieldNameToTField {
+		#src->mFieldName
+		#trg->tField
+	}
+	
+	++ mSignatureToTSignature :MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature
 	}
-eFieldDeclarationToTField : MFieldNameToTField {
-	#src->mFieldName
-	#trg->tField
-}
-++ mFieldSignatureToTFieldSignature : MFieldSignatureToTFieldSignature {
-	#src->mSignature
-	#trg->tSignature
-}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
 }
 
-#attributeConditions {
-}
+

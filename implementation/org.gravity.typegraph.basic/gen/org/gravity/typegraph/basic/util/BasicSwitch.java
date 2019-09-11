@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.gravity.typegraph.basic.*;
 
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
  * <!-- begin-user-doc -->
@@ -194,34 +195,6 @@ public class BasicSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasicPackage.TCONSTRUCTOR_NAME: {
-				TConstructorName tConstructorName = (TConstructorName)theEObject;
-				T result = caseTConstructorName(tConstructorName);
-				if (result == null) result = caseTMethod(tConstructorName);
-				if (result == null) result = caseTName(tConstructorName);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasicPackage.TCONSTRUCTOR_SIGNATURE: {
-				TConstructorSignature tConstructorSignature = (TConstructorSignature)theEObject;
-				T result = caseTConstructorSignature(tConstructorSignature);
-				if (result == null) result = caseTMethodSignature(tConstructorSignature);
-				if (result == null) result = caseTSignature(tConstructorSignature);
-				if (result == null) result = caseTAnnotatable(tConstructorSignature);
-				if (result == null) result = caseTAbstractFlowElement(tConstructorSignature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case BasicPackage.TCONSTRUCTOR_DEFINITION: {
-				TConstructorDefinition tConstructorDefinition = (TConstructorDefinition)theEObject;
-				T result = caseTConstructorDefinition(tConstructorDefinition);
-				if (result == null) result = caseTMethodDefinition(tConstructorDefinition);
-				if (result == null) result = caseTMember(tConstructorDefinition);
-				if (result == null) result = caseTAnnotatable(tConstructorDefinition);
-				if (result == null) result = caseTAbstractFlowElement(tConstructorDefinition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BasicPackage.TREAD: {
 				TRead tRead = (TRead)theEObject;
 				T result = caseTRead(tRead);
@@ -287,6 +260,20 @@ public class BasicSwitch<T> extends Switch<T> {
 				T result = caseTReadWrite(tReadWrite);
 				if (result == null) result = caseTAccess(tReadWrite);
 				if (result == null) result = caseTAbstractFlowElement(tReadWrite);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TCONSTRUCTOR: {
+				TConstructor tConstructor = (TConstructor)theEObject;
+				T result = caseTConstructor(tConstructor);
+				if (result == null) result = caseTAnnotation(tConstructor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.TENUM: {
+				TEnum tEnum = (TEnum)theEObject;
+				T result = caseTEnum(tEnum);
+				if (result == null) result = caseTAnnotation(tEnum);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -535,51 +522,6 @@ public class BasicSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>TConstructor Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>TConstructor Name</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTConstructorName(TConstructorName object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>TConstructor Signature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>TConstructor Signature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTConstructorSignature(TConstructorSignature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>TConstructor Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>TConstructor Definition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTConstructorDefinition(TConstructorDefinition object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>TRead</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -715,6 +657,36 @@ public class BasicSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TConstructor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TConstructor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTConstructor(TConstructor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TEnum</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TEnum</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTEnum(TEnum object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>TAnnotatable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -726,6 +698,21 @@ public class BasicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTAnnotatable(TAnnotatable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAnnotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAnnotation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAnnotation(TAnnotation object) {
 		return null;
 	}
 

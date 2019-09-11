@@ -720,6 +720,8 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 		if (baseClass == MAbstractMethodDefinition.class) {
 			switch (derivedFeatureID) {
 				case ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES: return ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES;
+				case ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_NAME: return ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME;
+				case ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_SIGNATURE: return ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE;
 				default: return -1;
 			}
 		}
@@ -752,6 +754,8 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 		if (baseClass == MAbstractMethodDefinition.class) {
 			switch (baseFeatureID) {
 				case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MINNER_TYPES: return ModiscoPackage.MMETHOD_DEFINITION__MINNER_TYPES;
+				case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME: return ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_NAME;
+				case ModiscoPackage.MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE: return ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_SIGNATURE;
 				default: return -1;
 			}
 		}

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.ArrayAccess;
 import org.eclipse.gmt.modisco.java.ArrayCreation;
 import org.eclipse.gmt.modisco.java.ArrayInitializer;
@@ -142,17 +143,26 @@ public class MoDiscoUtil {
 	 *               searched
 	 * @return the most generic return type
 	 */
-	public static Type getMostGenericReturnType(MMethodDefinition method) {
-		Type returnType = getAndFixReturnType(method);
-		AbstractTypeDeclaration owner = method.getAbstractTypeDeclaration();
-
-		Set<Type> allTypes = getAllParentTypes(owner);
+	public static Type getMostGenericReturnType(MAbstractMethodDefinition method) {
+		AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+		if (method instanceof MConstructorDefinition) {
+			if(abstractTypeDeclaration != null) {
+				return abstractTypeDeclaration;
+			}
+			AnonymousClassDeclaration anon = method.getAnonymousClassDeclarationOwner();
+			if(anon != null) {
+				return anon.getClassInstanceCreation().getType().getType();
+			}
+			return null;
+		}
+		Type returnType = getAndFixReturnType((MMethodDefinition) method);
+		Set<Type> allTypes = getAllParentTypes(abstractTypeDeclaration);
 		for (Type type : allTypes) {
 			if (!(type instanceof AbstractTypeDeclaration)) {
 				continue;
 			}
 
-			MethodDeclaration otherDecl = getOtherDeclarationOfMethod(method, (AbstractTypeDeclaration) type);
+			MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method, (AbstractTypeDeclaration) type);
 			if (otherDecl != null) {
 				TypeAccess returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {

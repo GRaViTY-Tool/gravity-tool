@@ -15,6 +15,8 @@
     </genEnums>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAbstractMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractMethodDefinition/mInnerTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractMethodDefinition/mMethodName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MAbstractMethodDefinition/mMethodSignature"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAccess"/>
     <genClasses ecoreClass="Modisco.ecore#//MConstructorDefinition">
@@ -55,8 +57,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MFieldDefinition/model"/>
     </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MMethodDefinition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodDefinition/mMethodName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodDefinition/mMethodSignature"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodDefinition/model"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MMethodDefinition/syntheticMethodDefinitions"/>
     </genClasses>

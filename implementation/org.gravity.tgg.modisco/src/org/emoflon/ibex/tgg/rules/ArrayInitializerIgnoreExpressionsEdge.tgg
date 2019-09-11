@@ -7,19 +7,5 @@
 	array : ArrayInitializer {
 		++ -expressions->	invocation
 	}
-	invocation : MethodInvocation {
-		
-	}
-}
-
-#target {
-	
-}
-
-#correspondence {
-	
-}
-
-#attributeConditions {
-	
+	invocation : MethodInvocation
 }

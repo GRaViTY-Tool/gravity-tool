@@ -110,8 +110,8 @@ public interface MMethodSignature extends MSignature, MParameterList {
 
 	/**
 	 * Returns the value of the '<em><b>MMethod Definitions</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.modisco.MMethodDefinition}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MMethodDefinition#getMMethodSignature <em>MMethod Signature</em>}'.
+	 * The list contents are of type {@link org.gravity.modisco.MAbstractMethodDefinition}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MAbstractMethodDefinition#getMMethodSignature <em>MMethod Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMethod Definitions</em>' reference list isn't clear,
@@ -120,10 +120,10 @@ public interface MMethodSignature extends MSignature, MParameterList {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MMethod Definitions</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMMethodSignature_MMethodDefinitions()
-	 * @see org.gravity.modisco.MMethodDefinition#getMMethodSignature
+	 * @see org.gravity.modisco.MAbstractMethodDefinition#getMMethodSignature
 	 * @model opposite="mMethodSignature"
 	 * @generated
 	 */
-	EList<MMethodDefinition> getMMethodDefinitions();
+	EList<MAbstractMethodDefinition> getMMethodDefinitions();
 
 } // MMethodSignature

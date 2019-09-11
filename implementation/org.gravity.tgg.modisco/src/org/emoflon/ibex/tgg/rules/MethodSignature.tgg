@@ -21,6 +21,11 @@
 }
 
 #correspondence {
+	mNameToTName : MMethodNameToTMethod {
+		#src->mName
+		#trg->tName
+	}
+	
 	++ mSignatureToTSignature : MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature
@@ -29,18 +34,5 @@
 	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
 		#src->mSignature
 		#trg->tSignature
-	}
-	
-	++ mMethodSignatureToTMethodSignature : MMethodSignatureToTMethodSignature {
-		#src->mSignature
-		#trg->tSignature
-	}
-	++mParameterListToTMethodSignature : MParameterListToTMethodSignature {
-		#src->mSignature
-		#trg->tSignature
-	}
-	mNameToTName : MMethodNameToTMethod {
-		#src->mName
-		#trg->tName
 	}
 }

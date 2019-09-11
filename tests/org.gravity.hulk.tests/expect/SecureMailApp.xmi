@@ -68,12 +68,12 @@
       <definitions definedBy="//@ownedTypes.97" returnType="//@ownedTypes.22"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="PasswordAuthentication">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.3/@signatures.0/@parameters.1">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="PasswordAuthentication">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.3/@signatures.0/@parameters.1">
         <parameters previous="//@methods.3/@signatures.0/@parameters.1" type="//@ownedTypes.97"/>
         <parameters next="//@methods.3/@signatures.0/@parameters.0" type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.15"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.15"/>
     </signatures>
   </methods>
   <methods tName="nextLine">
@@ -82,12 +82,12 @@
       <definitions definedBy="//@ownedTypes.78" returnType="//@ownedTypes.97"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="KeyPair">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.5/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="KeyPair">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.5/@signatures.0/@parameters.0">
         <parameters next="//@methods.5/@signatures.0/@parameters.1" type="//@ownedTypes.26"/>
         <parameters previous="//@methods.5/@signatures.0/@parameters.0" type="//@ownedTypes.30"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.83"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.83"/>
     </signatures>
   </methods>
   <methods tName="setName">
@@ -270,11 +270,11 @@
       <definitions definedBy="//@ownedTypes.119" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="FileOutputStream">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.22/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="FileOutputStream">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.22/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.106"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.114"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.114"/>
     </signatures>
   </methods>
   <methods tName="setKeyEntry">
@@ -355,10 +355,10 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Timer">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Timer">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.119"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.119"/>
     </signatures>
   </methods>
   <methods tName="asList">
@@ -375,10 +375,10 @@
       <definitions definedBy="//@ownedTypes.27" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Hashtable">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Hashtable">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.70"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.70"/>
     </signatures>
   </methods>
   <methods tName="generatePrivate">
@@ -388,12 +388,12 @@
       <definitions definedBy="//@ownedTypes.44" returnType="//@ownedTypes.30"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RSAPublicKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.33/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="RSAPublicKeySpec">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.33/@signatures.0/@parameters.0">
         <parameters next="//@methods.33/@signatures.0/@parameters.1" type="//@ownedTypes.74"/>
         <parameters previous="//@methods.33/@signatures.0/@parameters.0" type="//@ownedTypes.74"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.35"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.35"/>
     </signatures>
   </methods>
   <methods tName="encrypt">
@@ -444,11 +444,11 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="SecureMailApp">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.38/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="SecureMailApp">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.38/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.63">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.63">
         <tAnnotation xsi:type="metrics:HIGAMMetric" value="1.0"/>
         <tModifier tVisibility="TPublic"/>
       </definitions>
@@ -463,11 +463,11 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="PKCS8EncodedKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.40/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="PKCS8EncodedKeySpec">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.40/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.6"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.34"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.34"/>
     </signatures>
   </methods>
   <methods tName="findKeyFromServer">
@@ -497,10 +497,10 @@
       <definitions definedBy="//@ownedTypes.65" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="LinkedList">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="LinkedList">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.125"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.125"/>
     </signatures>
   </methods>
   <methods tName="exists">
@@ -529,16 +529,16 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.72"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.72"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Contact">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Contact">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.60"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.60"/>
     </signatures>
   </methods>
   <methods tName="getPublicExponent">
@@ -592,11 +592,11 @@
       <definitions definedBy="//@ownedTypes.70" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="X509EncodedKeySpec">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.56/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="X509EncodedKeySpec">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.56/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.6"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.33"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.33"/>
     </signatures>
   </methods>
   <methods tName="initialize">
@@ -642,21 +642,21 @@
       <definitions definedBy="//@ownedTypes.44" returnType="//@ownedTypes.26"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Message">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.63/@signatures.0/@parameters.1">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Message">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.63/@signatures.0/@parameters.1">
         <parameters previous="//@methods.63/@signatures.0/@parameters.1" type="//@ownedTypes.97"/>
         <parameters next="//@methods.63/@signatures.0/@parameters.0" type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.55">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.55">
         <tAnnotation xsi:type="metrics:HIGAMMetric" value="1.0"/>
         <tModifier tVisibility="TPublic"/>
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.118"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.118"/>
     </signatures>
   </methods>
   <methods tName="main">
@@ -737,11 +737,11 @@
       <definitions definedBy="//@ownedTypes.14" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="File">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.73/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="File">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.73/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.106"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.106"/>
     </signatures>
   </methods>
   <methods tName="add">
@@ -751,11 +751,11 @@
       <definitions definedBy="//@ownedTypes.100" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="String">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.75/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="String">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.75/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.6"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.97"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.97"/>
     </signatures>
   </methods>
   <methods tName="equals">
@@ -802,10 +802,10 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RsaAdapter">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="RsaAdapter">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.56">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.56">
         <tAnnotation xsi:type="metrics:HIGAMMetric"/>
         <tModifier/>
       </definitions>
@@ -829,12 +829,12 @@
       <definitions definedBy="//@ownedTypes.112" returnType="//@ownedTypes.92"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Message">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.84/@signatures.0/@parameters.1">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Message">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.84/@signatures.0/@parameters.1">
         <parameters previous="//@methods.84/@signatures.0/@parameters.1" type="//@ownedTypes.100"/>
         <parameters next="//@methods.84/@signatures.0/@parameters.0" type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.55">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.55">
         <tAnnotation xsi:type="metrics:HIGAMMetric" value="1.0"/>
         <tModifier tVisibility="TPublic"/>
       </definitions>
@@ -922,18 +922,18 @@
       </definitions>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="Scanner">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.92/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="Scanner">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.92/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.101"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.78"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.78"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="MailApp">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.93/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="MailApp">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.93/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.97"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.71">
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.71">
         <tAnnotation xsi:type="metrics:HIGAMMetric" value="1.0"/>
         <tModifier tVisibility="TPublic"/>
       </definitions>
@@ -960,11 +960,11 @@
       <definitions definedBy="//@ownedTypes.10" returnType="//@ownedTypes.10"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="MimeMessage">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.97/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="MimeMessage">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.97/@signatures.0/@parameters.0">
         <parameters type="//@ownedTypes.10"/>
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.77"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.77"/>
     </signatures>
   </methods>
   <methods tName="setMail">
@@ -1010,16 +1010,16 @@
       <definitions definedBy="//@ownedTypes.83" returnType="//@ownedTypes.26"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RuntimeException">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="RuntimeException">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature">
       
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.93"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.93"/>
     </signatures>
   </methods>
-  <methods xsi:type="org.gravity.typegraph.basic:TConstructorName" tName="RuntimeException">
-    <signatures xsi:type="org.gravity.typegraph.basic:TConstructorSignature" firstParameter="//@methods.104/@signatures.0/@parameters.0">
+  <methods xsi:type="org.gravity.typegraph.basic:TMethod" tName="RuntimeException">
+    <signatures xsi:type="org.gravity.typegraph.basic:TMethodSignature" firstParameter="//@methods.104/@signatures.0/@parameters.0">
       <parameters type="//@ownedTypes.97"/>
-      <definitions xsi:type="org.gravity.typegraph.basic:TConstructorDefinition" definedBy="//@ownedTypes.93"/>
+      <definitions xsi:type="org.gravity.typegraph.basic:TMethodDefinition" definedBy="//@ownedTypes.93"/>
     </signatures>
   </methods>
   <methods tName="getPrivate">

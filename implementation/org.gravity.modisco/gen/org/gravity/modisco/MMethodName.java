@@ -53,8 +53,8 @@ public interface MMethodName extends MName {
 
 	/**
 	 * Returns the value of the '<em><b>MMethod Definitions</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.modisco.MMethodDefinition}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MMethodDefinition#getMMethodName <em>MMethod Name</em>}'.
+	 * The list contents are of type {@link org.gravity.modisco.MAbstractMethodDefinition}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MAbstractMethodDefinition#getMMethodName <em>MMethod Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MMethod Definitions</em>' reference list isn't clear,
@@ -63,11 +63,11 @@ public interface MMethodName extends MName {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MMethod Definitions</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMMethodName_MMethodDefinitions()
-	 * @see org.gravity.modisco.MMethodDefinition#getMMethodName
+	 * @see org.gravity.modisco.MAbstractMethodDefinition#getMMethodName
 	 * @model opposite="mMethodName"
 	 * @generated
 	 */
-	EList<MMethodDefinition> getMMethodDefinitions();
+	EList<MAbstractMethodDefinition> getMMethodDefinitions();
 
 	/**
 	 * Returns the value of the '<em><b>MMethod Signatures</b></em>' reference list.

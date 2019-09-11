@@ -8,35 +8,25 @@
 	mSignature:MFieldSignature {
 		++  -mFieldDefinitions -> mDefinition
 		++  -mDefinitions -> mDefinition
-		-mFieldName -> mName
 	}
 
-	mName:MFieldName {
-}
-
-	++mDefinition:MFieldDefinition {
-}
+	++mDefinition:MFieldDefinition
 }
 
 #target {
-	++tDefinition:TFieldDefinition {
-}
-
-	tField:TField {
-}
-
 	tFieldSignature:TFieldSignature {
 		++  -definitions -> tDefinition
-		-field -> tField
 	}
+
+	++tDefinition:TFieldDefinition
 }
 
 #correspondence {
-	++ eFieldDeclarationToTFieldDefinition :MFieldDefinitionToTFieldDefinition {
-		#src->mDefinition
-		#trg->tDefinition
+	mSignatureToTFieldSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tFieldSignature
 	}
-	
+
 	++mDefinitionToTDefinition:MAbstractFlowElementToTAbstractFlowElement {
 		#src->mDefinition
 		#trg->tDefinition
@@ -47,18 +37,10 @@
 		#trg->tDefinition
 	}
 
-	mSignatureToTFieldSignature :MSignatureToTSignature {
-		#src->mSignature
-		#trg->tFieldSignature
-	}
-
 	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
 		#src->mDefinition
 		#trg->tDefinition
 	}
-
-	mNameToTField :MFieldNameToTField {
-		#src->mName
-		#trg->tField
-	}
 }
+
+

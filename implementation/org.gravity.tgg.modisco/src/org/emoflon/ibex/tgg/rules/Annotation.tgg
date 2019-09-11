@@ -40,33 +40,3 @@
 		++ -annotations-> mAnnotation
 	}
 }
-
-//#rule AnnotationOnVariableDeclarationExpression #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : VariableDeclarationExpression {
-//		++ -annotations-> mAnnotation
-//	}
-//}
-
-//#rule AnnotationOnVariableDeclarationStatement #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : VariableDeclarationStatement {
-//		++ -annotations-> mAnnotation
-//	}
-//}
-
-//#rule AnnotationOnSingleVariableDeclaration #extends Annotation #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : SingleVariableDeclaration {
-//		++ -annotations-> mAnnotation
-//	}
-//}

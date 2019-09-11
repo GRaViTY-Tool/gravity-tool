@@ -365,6 +365,24 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMAbstractMethodDefinition_MMethodName() {
+		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMAbstractMethodDefinition_MMethodSignature() {
+		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMAccess() {
 		return mAccessEClass;
 	}
@@ -644,7 +662,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMMethodDefinition_MMethodName() {
+	public EReference getMMethodDefinition_Model() {
 		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -653,26 +671,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMMethodDefinition_MMethodSignature() {
-		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodDefinition_Model() {
-		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMMethodDefinition_SyntheticMethodDefinitions() {
-		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(3);
+		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1227,6 +1227,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Create classes and their features
 		mAbstractMethodDefinitionEClass = createEClass(MABSTRACT_METHOD_DEFINITION);
 		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MINNER_TYPES);
+		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME);
+		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE);
 
 		mAccessEClass = createEClass(MACCESS);
 
@@ -1268,8 +1270,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mFieldDefinitionEClass, MFIELD_DEFINITION__MODEL);
 
 		mMethodDefinitionEClass = createEClass(MMETHOD_DEFINITION);
-		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__MMETHOD_NAME);
-		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__MMETHOD_SIGNATURE);
 		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__MODEL);
 		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS);
 
@@ -1431,6 +1431,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(mAbstractMethodDefinitionEClass, MAbstractMethodDefinition.class, "MAbstractMethodDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAbstractMethodDefinition_MInnerTypes(), theJavaPackage.getAbstractTypeDeclaration(), null, "mInnerTypes", null, 0, -1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAbstractMethodDefinition_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodDefinitions(), "mMethodName", null, 1, 1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAbstractMethodDefinition_MMethodSignature(), this.getMMethodSignature(), this.getMMethodSignature_MMethodDefinitions(), "mMethodSignature", null, 1, 1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAccessEClass, MAccess.class, "MAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1446,7 +1448,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMMethodSignature_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodSignatures(), "model", null, 1, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodSignature_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodSignatures(), "mMethodName", null, 1, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodSignature_ReturnType(), theJavaPackage.getType(), null, "returnType", null, 0, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodSignature_MMethodDefinitions(), this.getMMethodDefinition(), this.getMMethodDefinition_MMethodSignature(), "mMethodDefinitions", null, 0, -1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMethodSignature_MMethodDefinitions(), this.getMAbstractMethodDefinition(), this.getMAbstractMethodDefinition_MMethodSignature(), "mMethodDefinitions", null, 0, -1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mParameterListEClass, MParameterList.class, "MParameterList", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMParameterList_MFirstEntry(), this.getMEntry(), null, "mFirstEntry", null, 0, 1, MParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1458,7 +1460,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		initEClass(mMethodNameEClass, MMethodName.class, "MMethodName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMMethodName_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodNames(), "model", null, 1, 1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodName_MMethodDefinitions(), this.getMMethodDefinition(), this.getMMethodDefinition_MMethodName(), "mMethodDefinitions", null, 0, -1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMMethodName_MMethodDefinitions(), this.getMAbstractMethodDefinition(), this.getMAbstractMethodDefinition_MMethodName(), "mMethodDefinitions", null, 0, -1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodName_MMethodSignatures(), this.getMMethodSignature(), this.getMMethodSignature_MMethodName(), "mMethodSignatures", null, 0, -1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mFieldNameEClass, MFieldName.class, "MFieldName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1472,8 +1474,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMFieldDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MFieldDefinitions(), "model", null, 1, 1, MFieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mMethodDefinitionEClass, MMethodDefinition.class, "MMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMMethodDefinition_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodDefinitions(), "mMethodName", null, 1, 1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodDefinition_MMethodSignature(), this.getMMethodSignature(), this.getMMethodSignature_MMethodDefinitions(), "mMethodSignature", null, 0, 1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodDefinitions(), "model", null, 1, 1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodDefinition_SyntheticMethodDefinitions(), this.getMSyntheticMethodDefinition(), this.getMSyntheticMethodDefinition_OriginalMethodDefinition(), "syntheticMethodDefinitions", null, 0, -1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

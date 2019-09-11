@@ -272,17 +272,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outerType" eType="#//TAbstractType"
         eOpposite="#//TAbstractType/innerTypes"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TConstructorName" eSuperTypes="#//TMethod"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TConstructorSignature" eSuperTypes="#//TMethodSignature"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TConstructorDefinition" eSuperTypes="#//TMethodDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="TRead" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TWrite" eSuperTypes="#//TAccess"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="TVisibility">
-    <eLiterals name="TPrivate"/>
-    <eLiterals name="TPackage" value="1"/>
-    <eLiterals name="TProtected" value="2"/>
-    <eLiterals name="TPublic" value="3"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TModifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tVisibility" eType="#//TVisibility"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" lowerBound="1"
@@ -316,6 +307,14 @@
         eType="#//TFlow" eOpposite="#//TFlow/flowSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TConstructor" eSuperTypes="#//annotations/TAnnotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TEnum" eSuperTypes="#//annotations/TAnnotation"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TVisibility">
+    <eLiterals name="TPrivate"/>
+    <eLiterals name="TPackage" value="1"/>
+    <eLiterals name="TProtected" value="2"/>
+    <eLiterals name="TPublic" value="3"/>
+  </eClassifiers>
   <eSubpackages name="containers" nsURI="http://www.gravity-tool.org/typegraph/basic#//containers"
       nsPrefix="containers">
     <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">

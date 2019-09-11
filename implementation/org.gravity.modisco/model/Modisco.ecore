@@ -8,9 +8,13 @@
       eSuperTypes="#//MDefinition ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInnerTypes" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodName" lowerBound="1"
+        eType="#//MMethodName" eOpposite="#//MMethodName/mMethodDefinitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignature" lowerBound="1"
+        eType="#//MMethodSignature" eOpposite="#//MMethodSignature/mMethodDefinitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MAccess" abstract="true" eSuperTypes="#//MAbstractFlowElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition ../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorDeclaration #//MParameterList">
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition ../../org.eclipse.gmt.modisco.java/model/java.ecore#//ConstructorDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mConstructorDefinitions"/>
   </eClassifiers>
@@ -29,7 +33,7 @@
         eType="#//MMethodName" eOpposite="#//MMethodName/mMethodSignatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
-        eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodSignature"/>
+        eType="#//MAbstractMethodDefinition" eOpposite="#//MAbstractMethodDefinition/mMethodSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MParameterList" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFirstEntry" eType="#//MEntry"/>
@@ -46,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mMethodNames"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
-        eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodName"/>
+        eType="#//MAbstractMethodDefinition" eOpposite="#//MAbstractMethodDefinition/mMethodName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignatures" upperBound="-1"
         eType="#//MMethodSignature" eOpposite="#//MMethodSignature/mMethodName"/>
   </eClassifiers>
@@ -67,10 +71,6 @@
         eOpposite="#//MGravityModel/mFieldDefinitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MMethodDefinition" eSuperTypes="../../org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration #//MAbstractMethodDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodName" lowerBound="1"
-        eType="#//MMethodName" eOpposite="#//MMethodName/mMethodDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignature" eType="#//MMethodSignature"
-        eOpposite="#//MMethodSignature/mMethodDefinitions"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
         eOpposite="#//MGravityModel/mMethodDefinitions"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="syntheticMethodDefinitions"
