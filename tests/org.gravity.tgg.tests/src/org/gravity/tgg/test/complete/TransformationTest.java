@@ -2,6 +2,7 @@ package org.gravity.tgg.test.complete;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,6 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Collections;
@@ -30,6 +32,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.henshin.interpreter.Engine;
+import org.eclipse.emf.henshin.interpreter.Match;
+import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
+import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
+import org.eclipse.emf.henshin.model.Module;
+import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
@@ -37,6 +45,7 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.resource.UMLResource;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
@@ -44,6 +53,7 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
 import org.gravity.tgg.test.util.ToFileLogger;
 import org.gravity.tgg.uml.Transformation;
+import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -56,6 +66,7 @@ import org.junit.runners.Parameterized.Parameters;
 import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
+
 import com.googlecode.junittoolbox.ParallelParameterized;
 
 import language.LanguagePackage;
@@ -127,12 +138,6 @@ public class TransformationTest {
 	public static final Collection<Object[]> data() throws CoreException {
 		LOGGER.info("Collect test data");
 		List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
-		projects.parallelStream().forEach(project -> {
-			File file = getModiscoFile(project);
-			if (file.exists()) {
-				file.delete();
-			}
-		});
 		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		return TestHelper.prepareTestData(projects);
 	}
@@ -186,10 +191,38 @@ public class TransformationTest {
 		TypeGraph pg = conv.getPG();
 		assertNotNull(pg);
 		save(pg, "pm", GravityActivator.FILE_EXTENSION_XMI);
+		conv.discard();
 
 		IFile expectJsonFile = project.getProject().getFile("expect.json");
 		if (expectJsonFile.exists()) {
 			checkModel(pg, expectJsonFile);
+		}
+		checkModel(pg);
+	}
+
+	/**
+	 * Checks the model against the expected result specified in henshin rules
+	 * 
+	 * @param pm The model to ckeck
+	 */
+	private void checkModel(TypeGraph pm) {
+		ExtensionFileVisitor visitor = new ExtensionFileVisitor("henshin");
+		try {
+			project.getProject().accept(visitor);
+		} catch (CoreException e) {
+			LOGGER.error(e.getLocalizedMessage(), e);
+		}
+		EGraphImpl graph = new EGraphImpl(pm);
+		HenshinResourceSet resourceSet = new HenshinResourceSet();
+		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
+		resourceSet.getResources().add(pm.eResource());
+		Engine engine = new EngineImpl();
+		for(Path file : visitor.getFiles()) {
+			Module module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
+			for(org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()){
+				Iterable<Match> matches = engine.findMatches(rule, graph, null);
+				assertTrue(matches.iterator().hasNext());
+			}
 		}
 	}
 
