@@ -51,18 +51,18 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TField/pg"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TFieldDefinition">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/signature"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/hiding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldDefinition/hiddenBy"/>
+      <genOperations ecoreOperation="Basic.ecore#//TFieldDefinition/getSignature"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TFieldSignature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/definitions"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/field"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TFieldSignature/type"/>
       <genOperations ecoreOperation="Basic.ecore#//TFieldSignature/getSignatureString"/>
       <genOperations ecoreOperation="Basic.ecore#//TFieldSignature/getTDefinition">
         <genParameters ecoreParameter="Basic.ecore#//TFieldSignature/getTDefinition/defining"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TFieldSignature/getFieldDefinitions"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TCall"/>
     <genClasses image="false" ecoreClass="Basic.ecore#//TMember">
@@ -70,7 +70,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/accessedBy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/tAccessing"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/tModifier"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMember/getSignature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMember/signature"/>
       <genOperations ecoreOperation="Basic.ecore#//TMember/getSignatureString"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethod">
@@ -82,7 +82,6 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodDefinition">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/signature"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriddenBy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overloading"/>
@@ -90,10 +89,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/returnType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/syntethicMethods"/>
       <genOperations ecoreOperation="Basic.ecore#//TMethodDefinition/toString"/>
+      <genOperations ecoreOperation="Basic.ecore#//TMethodDefinition/getSignature"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodSignature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/method"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/definitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/returnType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodSignature/firstParameter"/>
@@ -106,6 +105,7 @@
         <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/returnType"/>
         <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/parameterTypes"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/getMethodDefinitions"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TPackage">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TPackage/pg"/>
@@ -127,6 +127,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TParameter/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Basic.ecore#//TSignature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TSignature/definitions"/>
       <genOperations ecoreOperation="Basic.ecore#//TSignature/getSignatureString"/>
       <genOperations ecoreOperation="Basic.ecore#//TSignature/getTDefinition">
         <genParameters ecoreParameter="Basic.ecore#//TSignature/getTDefinition/defining"/>
@@ -231,7 +232,7 @@
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TSyntethicMethod">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TSyntethicMethod/originalMethodDefinition"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TSyntethicMethod/signature"/>
+      <genOperations ecoreOperation="Basic.ecore#//TSyntethicMethod/getSignature"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TUnresolvedType"/>
     <genClasses ecoreClass="Basic.ecore#//TName">

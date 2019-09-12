@@ -49,8 +49,7 @@
         eOpposite="#//TypeGraph/fields"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TFieldDefinition" eSuperTypes="#//TMember">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
-        eType="#//TFieldSignature" eOpposite="#//TFieldSignature/definitions"/>
+    <eOperations name="getSignature" eType="#//TFieldSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiding" eType="#//TFieldDefinition"
         eOpposite="#//TFieldDefinition/hiddenBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenBy" upperBound="-1"
@@ -61,15 +60,13 @@
     <eOperations name="getTDefinition" eType="#//TFieldDefinition">
       <eParameters name="defining" eType="#//TAbstractType"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
-        eType="#//TFieldDefinition" containment="true" eOpposite="#//TFieldDefinition/signature"/>
+    <eOperations name="getFieldDefinitions" upperBound="-1" eType="#//TFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" lowerBound="1" eType="#//TField"
         eOpposite="#//TField/signatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TCall" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TMember" abstract="true" eSuperTypes="#//annotations/TAnnotatable #//TAbstractFlowElement">
-    <eOperations name="getSignature" eType="#//TSignature"/>
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" lowerBound="1"
         eType="#//TAbstractType" eOpposite="#//TAbstractType/defines"/>
@@ -79,6 +76,8 @@
         eType="#//TAccess" containment="true" eOpposite="#//TAccess/tSource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+        eType="#//TSignature" eOpposite="#//TSignature/definitions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethod" eSuperTypes="#//TName">
     <eOperations name="getSignature" eType="#//TMethodSignature">
@@ -92,8 +91,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodDefinition" eSuperTypes="#//TMember">
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
-        eType="#//TMethodSignature" eOpposite="#//TMethodSignature/definitions"/>
+    <eOperations name="getSignature" eType="#//TMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="overriding" eType="#//TMethodDefinition"
         eOpposite="#//TMethodDefinition/overriddenBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="overriddenBy" upperBound="-1"
@@ -104,7 +102,7 @@
         eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloading"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="syntethicMethods" upperBound="-1"
-        eType="#//TSyntethicMethod" containment="true" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
+        eType="#//TSyntethicMethod" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodSignature" eSuperTypes="#//TSignature">
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -116,10 +114,9 @@
       <eParameters name="returnType" eType="#//TAbstractType"/>
       <eParameters name="parameterTypes" upperBound="-1" eType="#//TAbstractType"/>
     </eOperations>
+    <eOperations name="getMethodDefinitions" upperBound="-1" eType="#//TMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
         eType="#//TMethod" eOpposite="#//TMethod/signatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
-        eType="#//TMethodDefinition" containment="true" eOpposite="#//TMethodDefinition/signature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//TParameter" containment="true"/>
@@ -160,6 +157,8 @@
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="defining" eType="#//TAbstractType"/>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
+        eType="#//TMember" containment="true" eOpposite="#//TMember/signature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeGraph" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations name="getDeclaredTClasses" upperBound="-1" eType="#//TClass"/>
@@ -280,10 +279,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TSyntethicMethod" eSuperTypes="#//TMember">
+    <eOperations name="getSignature" eType="#//TMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
         lowerBound="1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/syntethicMethods"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
-        eType="#//TMethodSignature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TUnresolvedType" eSuperTypes="#//TClass #//TInterface"/>
   <eClassifiers xsi:type="ecore:EClass" name="TName">

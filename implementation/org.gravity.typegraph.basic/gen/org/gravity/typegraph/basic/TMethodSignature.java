@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.gravity.typegraph.basic.TMethodSignature#getMethod <em>Method</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.TMethodSignature#getDefinitions <em>Definitions</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodSignature#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodSignature#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodSignature#getFirstParameter <em>First Parameter</em>}</li>
@@ -52,24 +51,6 @@ public interface TMethodSignature extends TSignature {
 	 * @generated
 	 */
 	void setMethod(TMethod value);
-
-	/**
-	 * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.gravity.typegraph.basic.TMethodDefinition}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Definitions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Definitions</em>' containment reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodSignature_Definitions()
-	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSignature
-	 * @model opposite="signature" containment="true"
-	 * @generated
-	 */
-	EList<TMethodDefinition> getDefinitions();
 
 	/**
 	 * Returns the value of the '<em><b>Return Type</b></em>' reference.
@@ -162,6 +143,14 @@ public interface TMethodSignature extends TSignature {
 	 * @generated
 	 */
 	boolean isThisSignature(TAbstractType returnType, EList<TAbstractType> parameterTypes);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<TMethodDefinition> getMethodDefinitions();
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

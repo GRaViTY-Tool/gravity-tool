@@ -34,6 +34,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.googlecode.junittoolbox.ParallelRunner;
 
+import language.LanguagePackage;
+import runtime.RuntimePackage;
+
 /**
  * A class for testing the HulkAPI This test should be executed as JUnit plugin
  * test. The test subjects have to be loaded in the workspace of the plugin test
@@ -41,7 +44,7 @@ import com.googlecode.junittoolbox.ParallelRunner;
  * @author speldszus
  *
  */
-@RunWith(ParallelRunner.class)
+//@RunWith(ParallelRunner.class)
 public class HulkApiTest {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class);
@@ -66,6 +69,10 @@ public class HulkApiTest {
 				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
 				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
 				.map(project -> JavaProjectUtil.convertToJavaProject(project)).findAny().orElse(null);
+		
+		// Init eMoflon for test
+		LanguagePackage.eINSTANCE.eResource();
+		RuntimePackage.eINSTANCE.eResource();
 	}
 
 	/**

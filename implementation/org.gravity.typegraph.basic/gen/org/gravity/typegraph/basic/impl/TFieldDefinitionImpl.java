@@ -2,6 +2,7 @@
  */
 package org.gravity.typegraph.basic.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,7 +16,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
@@ -32,7 +32,6 @@ import org.gravity.typegraph.basic.TFieldSignature;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl#getHiding <em>Hiding</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl#getHiddenBy <em>Hidden By</em>}</li>
  * </ul>
@@ -82,44 +81,11 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public TFieldSignature getSignature() {
-		if (eContainerFeatureID() != BasicPackage.TFIELD_DEFINITION__SIGNATURE) return null;
-		return (TFieldSignature)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSignature(TFieldSignature newSignature, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSignature, BasicPackage.TFIELD_DEFINITION__SIGNATURE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSignature(TFieldSignature newSignature) {
-		if (newSignature != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TFIELD_DEFINITION__SIGNATURE && newSignature != null)) {
-			if (EcoreUtil.isAncestor(this, newSignature))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSignature != null)
-				msgs = ((InternalEObject)newSignature).eInverseAdd(this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, TFieldSignature.class, msgs);
-			msgs = basicSetSignature(newSignature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TFIELD_DEFINITION__SIGNATURE, newSignature, newSignature));
+		return (TFieldSignature) eContainer();
 	}
 
 	/**
@@ -218,10 +184,6 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSignature((TFieldSignature)otherEnd, msgs);
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				if (hiding != null)
 					msgs = ((InternalEObject)hiding).eInverseRemove(this, BasicPackage.TFIELD_DEFINITION__HIDDEN_BY, TFieldDefinition.class, msgs);
@@ -240,8 +202,6 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				return basicSetSignature(null, msgs);
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				return basicSetHiding(null, msgs);
 			case BasicPackage.TFIELD_DEFINITION__HIDDEN_BY:
@@ -256,24 +216,8 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				return eInternalContainer().eInverseRemove(this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, TFieldSignature.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				return getSignature();
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				if (resolve) return getHiding();
 				return basicGetHiding();
@@ -292,9 +236,6 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				setSignature((TFieldSignature)newValue);
-				return;
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				setHiding((TFieldDefinition)newValue);
 				return;
@@ -314,9 +255,6 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				setSignature((TFieldSignature)null);
-				return;
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				setHiding((TFieldDefinition)null);
 				return;
@@ -335,14 +273,26 @@ public class TFieldDefinitionImpl extends TMemberImpl implements TFieldDefinitio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TFIELD_DEFINITION__SIGNATURE:
-				return getSignature() != null;
 			case BasicPackage.TFIELD_DEFINITION__HIDING:
 				return hiding != null;
 			case BasicPackage.TFIELD_DEFINITION__HIDDEN_BY:
 				return hiddenBy != null && !hiddenBy.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case BasicPackage.TFIELD_DEFINITION___GET_SIGNATURE:
+				return getSignature();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	// <-- [user code injected with eMoflon]

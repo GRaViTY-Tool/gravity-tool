@@ -13,11 +13,11 @@
 }
 
 #target {
-	++tDefinition:TMethodDefinition
-
 	tMethodSignature:TMethodSignature {
 		++  -definitions -> tDefinition
 	}
+	
+	++tDefinition:TMethodDefinition
 }
 
 #correspondence {

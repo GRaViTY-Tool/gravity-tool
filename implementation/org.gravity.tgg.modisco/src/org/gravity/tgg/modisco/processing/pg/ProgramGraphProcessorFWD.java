@@ -15,6 +15,7 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -98,17 +99,15 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 	}
 
 	private static TMethodDefinition cloneAndAddDefintion(TAbstractType tType, TMethodDefinition tMethodDefinition) {
-		TMethodDefinition tObjectMethodDefinition;
-		TModifier tModifier = tMethodDefinition.getTModifier();
-		TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
-		tObjectModifier.setTVisibility(tModifier.getTVisibility());
-		tObjectModifier.setIsStatic(tModifier.isIsStatic());
-
-		tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
-		tObjectMethodDefinition.setSignature(tMethodDefinition.getSignature());
+		TMethodDefinition tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
+		tMethodDefinition.getSignature().getDefinitions().add(tObjectMethodDefinition);
 		tObjectMethodDefinition.setDefinedBy(tType);
 		tObjectMethodDefinition.setReturnType(tMethodDefinition.getReturnType());
+		TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
 		tObjectMethodDefinition.setTModifier(tObjectModifier);
+		TModifier tModifier = tMethodDefinition.getTModifier();
+		tObjectModifier.setTVisibility(tModifier.getTVisibility());
+		tObjectModifier.setIsStatic(tModifier.isIsStatic());
 		return tObjectMethodDefinition;
 	}
 

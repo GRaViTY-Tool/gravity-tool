@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
@@ -48,6 +49,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getAccessedBy <em>Accessed By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getTAccessing <em>TAccessing</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getTModifier <em>TModifier</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMemberImpl#getSignature <em>Signature</em>}</li>
  * </ul>
  *
  * @generated
@@ -324,6 +326,38 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSignature(TSignature newSignature, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSignature, BasicPackage.TMEMBER__SIGNATURE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSignature(TSignature newSignature) {
+		if (newSignature != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMEMBER__SIGNATURE && newSignature != null)) {
+			if (EcoreUtil.isAncestor(this, newSignature))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSignature != null)
+				msgs = ((InternalEObject)newSignature).eInverseAdd(this, BasicPackage.TSIGNATURE__DEFINITIONS, TSignature.class, msgs);
+			msgs = basicSetSignature(newSignature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMEMBER__SIGNATURE, newSignature, newSignature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public abstract String getSignatureString();
@@ -351,6 +385,10 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessedBy()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMEMBER__TACCESSING:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTAccessing()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMEMBER__SIGNATURE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSignature((TSignature)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -377,8 +415,24 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return ((InternalEList<?>)getTAccessing()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return basicSetTModifier(null, msgs);
+			case BasicPackage.TMEMBER__SIGNATURE:
+				return basicSetSignature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case BasicPackage.TMEMBER__SIGNATURE:
+				return eInternalContainer().eInverseRemove(this, BasicPackage.TSIGNATURE__DEFINITIONS, TSignature.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -404,6 +458,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return getTAccessing();
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return getTModifier();
+			case BasicPackage.TMEMBER__SIGNATURE:
+				return getSignature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -443,6 +499,9 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			case BasicPackage.TMEMBER__TMODIFIER:
 				setTModifier((TModifier)newValue);
 				return;
+			case BasicPackage.TMEMBER__SIGNATURE:
+				setSignature((TSignature)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -476,6 +535,9 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 			case BasicPackage.TMEMBER__TMODIFIER:
 				setTModifier((TModifier)null);
 				return;
+			case BasicPackage.TMEMBER__SIGNATURE:
+				setSignature((TSignature)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -502,6 +564,8 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 				return tAccessing != null && !tAccessing.isEmpty();
 			case BasicPackage.TMEMBER__TMODIFIER:
 				return tModifier != null;
+			case BasicPackage.TMEMBER__SIGNATURE:
+				return getSignature() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -550,8 +614,6 @@ public abstract class TMemberImpl extends TAnnotatableImpl implements TMember {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BasicPackage.TMEMBER___GET_SIGNATURE:
-				return getSignature();
 			case BasicPackage.TMEMBER___GET_SIGNATURE_STRING:
 				return getSignatureString();
 		}

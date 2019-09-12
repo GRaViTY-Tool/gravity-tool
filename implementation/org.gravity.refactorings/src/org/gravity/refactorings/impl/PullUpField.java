@@ -157,7 +157,7 @@ public class PullUpField implements Refactoring {
 		for (TClass tchild : parent.getChildClasses()) {
 			if (!parent.equals(tchild)) {
 				if (tchild.getSignature().contains(field)) {
-					for (TFieldDefinition fieldParentDefinition : field.getDefinitions()) {
+					for (TFieldDefinition fieldParentDefinition : field.getFieldDefinitions()) {
 						if (tchild.equals(fieldParentDefinition.getDefinedBy())) {
 							return new Object[] { parent, tchild, fieldParentDefinition, field, classContainer };
 						}
@@ -174,7 +174,7 @@ public class PullUpField implements Refactoring {
 		for (TClass child : parent.getChildClasses()) {
 			if (!child.equals(parent)) {
 				if (child.getSignature().contains(field)) {
-					for (TFieldDefinition fieldChildDefinition : field.getDefinitions()) {
+					for (TFieldDefinition fieldChildDefinition : field.getFieldDefinitions()) {
 						if (child.equals(fieldChildDefinition.getDefinedBy())) {
 							_result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
 						}

@@ -33,7 +33,7 @@ public class MoveMethodPreConditions {
 	private static boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass) {
 		List<TAnnotation> annotations = new ArrayList<TAnnotation>();
 		annotations.addAll(methodSig.getTAnnotation());
-		for (TMethodDefinition methodDef : methodSig.getDefinitions()) {
+		for (TMethodDefinition methodDef : methodSig.getMethodDefinitions()) {
 			if (methodDef.getDefinedBy() == sourceClass) {
 				annotations.addAll(methodDef.getTAnnotation());
 			}

@@ -1155,13 +1155,22 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Signature</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>TMember</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
+	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1173,22 +1182,13 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER___GET_TANNOTATION__ECLASS = AnnotationsPackage.TANNOTATABLE___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMEMBER___GET_SIGNATURE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER___GET_SIGNATURE_STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 1;
+	int TMEMBER___GET_SIGNATURE_STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>TMember</em>' class.
@@ -1197,7 +1197,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 2;
+	int TMEMBER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1278,7 +1278,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__SIGNATURE = TMEMBER_FEATURE_COUNT + 0;
+	int TFIELD_DEFINITION__SIGNATURE = TMEMBER__SIGNATURE;
 
 	/**
 	 * The feature id for the '<em><b>Hiding</b></em>' reference.
@@ -1287,7 +1287,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__HIDING = TMEMBER_FEATURE_COUNT + 1;
+	int TFIELD_DEFINITION__HIDING = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hidden By</b></em>' reference list.
@@ -1296,7 +1296,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__HIDDEN_BY = TMEMBER_FEATURE_COUNT + 2;
+	int TFIELD_DEFINITION__HIDDEN_BY = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TField Definition</em>' class.
@@ -1305,7 +1305,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 3;
+	int TFIELD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1317,15 +1317,6 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_DEFINITION___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TFIELD_DEFINITION___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1335,13 +1326,22 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_DEFINITION___GET_SIGNATURE_STRING = TMEMBER___GET_SIGNATURE_STRING;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TField Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 0;
+	int TFIELD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1380,13 +1380,22 @@ public interface BasicPackage extends EPackage {
 	int TSIGNATURE__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__DEFINITIONS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>TSignature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1467,7 +1476,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__DEFINITIONS = TSIGNATURE_FEATURE_COUNT + 0;
+	int TFIELD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' container reference.
@@ -1476,7 +1485,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 1;
+	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1485,7 +1494,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 2;
+	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TField Signature</em>' class.
@@ -1494,7 +1503,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 3;
+	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1524,13 +1533,22 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Field Definitions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>TField Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 2;
+	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -1737,7 +1755,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__SIGNATURE = TMEMBER_FEATURE_COUNT + 0;
+	int TMETHOD_DEFINITION__SIGNATURE = TMEMBER__SIGNATURE;
 
 	/**
 	 * The feature id for the '<em><b>Overriding</b></em>' reference.
@@ -1746,7 +1764,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 1;
+	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Overridden By</b></em>' reference list.
@@ -1755,7 +1773,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 2;
+	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Overloading</b></em>' reference list.
@@ -1764,7 +1782,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 3;
+	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Overloaded By</b></em>' reference list.
@@ -1773,7 +1791,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 4;
+	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -1782,16 +1800,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 5;
+	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Syntethic Methods</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Syntethic Methods</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 6;
+	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Definition</em>' class.
@@ -1800,7 +1818,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 7;
+	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1810,15 +1828,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TMETHOD_DEFINITION___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
 
 	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
@@ -1839,13 +1848,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION___TO_STRING = TMEMBER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>TMethod Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
+	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1884,6 +1902,15 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE__OUTGOING_FLOWS = TSIGNATURE__OUTGOING_FLOWS;
 
 	/**
+	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
+
+	/**
 	 * The feature id for the '<em><b>Method</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1893,22 +1920,13 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE__METHOD = TSIGNATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_SIGNATURE__DEFINITIONS = TSIGNATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 2;
+	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -1917,7 +1935,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__PARAMETERS = TSIGNATURE_FEATURE_COUNT + 3;
+	int TMETHOD_SIGNATURE__PARAMETERS = TSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>First Parameter</b></em>' reference.
@@ -1926,7 +1944,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__FIRST_PARAMETER = TSIGNATURE_FEATURE_COUNT + 4;
+	int TMETHOD_SIGNATURE__FIRST_PARAMETER = TSIGNATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Signature</em>' class.
@@ -1935,7 +1953,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 5;
+	int TMETHOD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1983,13 +2001,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Method Definitions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>TMethod Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 4;
+	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2928,7 +2955,16 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__TMODIFIER = TMEMBER__TMODIFIER;
 
 	/**
-	 * The feature id for the '<em><b>Original Method Definition</b></em>' container reference.
+	 * The feature id for the '<em><b>Signature</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__SIGNATURE = TMEMBER__SIGNATURE;
+
+	/**
+	 * The feature id for the '<em><b>Original Method Definition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2937,22 +2973,13 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Signature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TSYNTETHIC_METHOD__SIGNATURE = TMEMBER_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>TSyntethic Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSYNTETHIC_METHOD_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 2;
+	int TSYNTETHIC_METHOD_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2964,15 +2991,6 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TSYNTETHIC_METHOD___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2982,13 +3000,22 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD___GET_SIGNATURE_STRING = TMEMBER___GET_SIGNATURE_STRING;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TSyntethic Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSYNTETHIC_METHOD_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 0;
+	int TSYNTETHIC_METHOD_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -4190,17 +4217,6 @@ public interface BasicPackage extends EPackage {
 	EClass getTFieldDefinition();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Signature</em>'.
-	 * @see org.gravity.typegraph.basic.TFieldDefinition#getSignature()
-	 * @see #getTFieldDefinition()
-	 * @generated
-	 */
-	EReference getTFieldDefinition_Signature();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TFieldDefinition#getHiding <em>Hiding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4223,6 +4239,16 @@ public interface BasicPackage extends EPackage {
 	EReference getTFieldDefinition_HiddenBy();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature() <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TFieldDefinition#getSignature()
+	 * @generated
+	 */
+	EOperation getTFieldDefinition__GetSignature();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TFieldSignature <em>TField Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4231,17 +4257,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTFieldSignature();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TFieldSignature#getDefinitions <em>Definitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
-	 * @see org.gravity.typegraph.basic.TFieldSignature#getDefinitions()
-	 * @see #getTFieldSignature()
-	 * @generated
-	 */
-	EReference getTFieldSignature_Definitions();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFieldSignature#getField <em>Field</em>}'.
@@ -4284,6 +4299,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTFieldSignature__GetTDefinition__TAbstractType();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TFieldSignature#getFieldDefinitions() <em>Get Field Definitions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field Definitions</em>' operation.
+	 * @see org.gravity.typegraph.basic.TFieldSignature#getFieldDefinitions()
+	 * @generated
+	 */
+	EOperation getTFieldSignature__GetFieldDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TCall <em>TCall</em>}'.
@@ -4350,14 +4375,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTMember_TModifier();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMember#getSignature() <em>Get Signature</em>}' operation.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMember#getSignature <em>Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @return the meta object for the container reference '<em>Signature</em>'.
 	 * @see org.gravity.typegraph.basic.TMember#getSignature()
+	 * @see #getTMember()
 	 * @generated
 	 */
-	EOperation getTMember__GetSignature();
+	EReference getTMember_Signature();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMember#getSignatureString() <em>Get Signature String</em>}' operation.
@@ -4422,17 +4448,6 @@ public interface BasicPackage extends EPackage {
 	EClass getTMethodDefinition();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Signature</em>'.
-	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSignature()
-	 * @see #getTMethodDefinition()
-	 * @generated
-	 */
-	EReference getTMethodDefinition_Signature();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4488,10 +4503,10 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethodDefinition_ReturnType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods <em>Syntethic Methods</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods <em>Syntethic Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Syntethic Methods</em>'.
+	 * @return the meta object for the reference list '<em>Syntethic Methods</em>'.
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods()
 	 * @see #getTMethodDefinition()
 	 * @generated
@@ -4507,6 +4522,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodDefinition__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature() <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSignature()
+	 * @generated
+	 */
+	EOperation getTMethodDefinition__GetSignature();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TMethodSignature <em>TMethod Signature</em>}'.
@@ -4528,17 +4553,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTMethodSignature_Method();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMethodSignature#getDefinitions <em>Definitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
-	 * @see org.gravity.typegraph.basic.TMethodSignature#getDefinitions()
-	 * @see #getTMethodSignature()
-	 * @generated
-	 */
-	EReference getTMethodSignature_Definitions();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodSignature#getReturnType <em>Return Type</em>}'.
@@ -4612,6 +4626,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#getMethodDefinitions() <em>Get Method Definitions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method Definitions</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethodSignature#getMethodDefinitions()
+	 * @generated
+	 */
+	EOperation getTMethodSignature__GetMethodDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TPackage <em>TPackage</em>}'.
@@ -4803,6 +4827,17 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTSignature();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TSignature#getDefinitions <em>Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
+	 * @see org.gravity.typegraph.basic.TSignature#getDefinitions()
+	 * @see #getTSignature()
+	 * @generated
+	 */
+	EReference getTSignature_Definitions();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TSignature#getSignatureString() <em>Get Signature String</em>}' operation.
@@ -5387,10 +5422,10 @@ public interface BasicPackage extends EPackage {
 	EClass getTSyntethicMethod();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Original Method Definition</em>'.
+	 * @return the meta object for the reference '<em>Original Method Definition</em>'.
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition()
 	 * @see #getTSyntethicMethod()
 	 * @generated
@@ -5398,15 +5433,14 @@ public interface BasicPackage extends EPackage {
 	EReference getTSyntethicMethod_OriginalMethodDefinition();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getSignature <em>Signature</em>}'.
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TSyntethicMethod#getSignature() <em>Get Signature</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Signature</em>'.
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getSignature()
-	 * @see #getTSyntethicMethod()
 	 * @generated
 	 */
-	EReference getTSyntethicMethod_Signature();
+	EOperation getTSyntethicMethod__GetSignature();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TUnresolvedType <em>TUnresolved Type</em>}'.
@@ -5797,14 +5831,6 @@ public interface BasicPackage extends EPackage {
 		EClass TFIELD_DEFINITION = eINSTANCE.getTFieldDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFIELD_DEFINITION__SIGNATURE = eINSTANCE.getTFieldDefinition_Signature();
-
-		/**
 		 * The meta object literal for the '<em><b>Hiding</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5821,6 +5847,14 @@ public interface BasicPackage extends EPackage {
 		EReference TFIELD_DEFINITION__HIDDEN_BY = eINSTANCE.getTFieldDefinition_HiddenBy();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TFIELD_DEFINITION___GET_SIGNATURE = eINSTANCE.getTFieldDefinition__GetSignature();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl <em>TField Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5829,14 +5863,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TFIELD_SIGNATURE = eINSTANCE.getTFieldSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFIELD_SIGNATURE__DEFINITIONS = eINSTANCE.getTFieldSignature_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Field</b></em>' container reference feature.
@@ -5869,6 +5895,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = eINSTANCE.getTFieldSignature__GetTDefinition__TAbstractType();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field Definitions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = eINSTANCE.getTFieldSignature__GetFieldDefinitions();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TCallImpl <em>TCall</em>}' class.
@@ -5923,12 +5957,12 @@ public interface BasicPackage extends EPackage {
 		EReference TMEMBER__TMODIFIER = eINSTANCE.getTMember_TModifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TMEMBER___GET_SIGNATURE = eINSTANCE.getTMember__GetSignature();
+		EReference TMEMBER__SIGNATURE = eINSTANCE.getTMember_Signature();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Signature String</b></em>' operation.
@@ -5983,14 +6017,6 @@ public interface BasicPackage extends EPackage {
 		EClass TMETHOD_DEFINITION = eINSTANCE.getTMethodDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMETHOD_DEFINITION__SIGNATURE = eINSTANCE.getTMethodDefinition_Signature();
-
-		/**
 		 * The meta object literal for the '<em><b>Overriding</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6031,7 +6057,7 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD_DEFINITION__RETURN_TYPE = eINSTANCE.getTMethodDefinition_ReturnType();
 
 		/**
-		 * The meta object literal for the '<em><b>Syntethic Methods</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Syntethic Methods</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6045,6 +6071,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_DEFINITION___TO_STRING = eINSTANCE.getTMethodDefinition__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD_DEFINITION___GET_SIGNATURE = eINSTANCE.getTMethodDefinition__GetSignature();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl <em>TMethod Signature</em>}' class.
@@ -6063,14 +6097,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TMETHOD_SIGNATURE__METHOD = eINSTANCE.getTMethodSignature_Method();
-
-		/**
-		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMETHOD_SIGNATURE__DEFINITIONS = eINSTANCE.getTMethodSignature_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
@@ -6127,6 +6153,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethodSignature__IsThisSignature__TAbstractType_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Method Definitions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS = eINSTANCE.getTMethodSignature__GetMethodDefinitions();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TPackageImpl <em>TPackage</em>}' class.
@@ -6277,6 +6311,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TSIGNATURE = eINSTANCE.getTSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TSIGNATURE__DEFINITIONS = eINSTANCE.getTSignature_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Signature String</b></em>' operation.
@@ -6741,7 +6783,7 @@ public interface BasicPackage extends EPackage {
 		EClass TSYNTETHIC_METHOD = eINSTANCE.getTSyntethicMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6749,12 +6791,12 @@ public interface BasicPackage extends EPackage {
 		EReference TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION = eINSTANCE.getTSyntethicMethod_OriginalMethodDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TSYNTETHIC_METHOD__SIGNATURE = eINSTANCE.getTSyntethicMethod_Signature();
+		EOperation TSYNTETHIC_METHOD___GET_SIGNATURE = eINSTANCE.getTSyntethicMethod__GetSignature();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl <em>TUnresolved Type</em>}' class.

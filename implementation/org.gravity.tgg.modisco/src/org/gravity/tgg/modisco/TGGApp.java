@@ -120,8 +120,8 @@ public class TGGApp extends SYNC {
 
 	@Override
 	protected Resource loadTGGResource() throws IOException {
-		LanguagePackage.eINSTANCE.eResource();
-		RuntimePackage.eINSTANCE.eResource();
+//		LanguagePackage.eINSTANCE.eResource();
+//		RuntimePackage.eINSTANCE.eResource();
 		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_TGG_XMI_LOCATION)) {
 			return loadResource(MODISCO_TGG_XMI_URI, stream);
 		}

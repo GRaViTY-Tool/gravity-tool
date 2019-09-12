@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TFieldSignature#getDefinitions <em>Definitions</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TFieldSignature#getField <em>Field</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TFieldSignature#getType <em>Type</em>}</li>
  * </ul>
@@ -23,24 +22,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface TFieldSignature extends TSignature {
-	/**
-	 * Returns the value of the '<em><b>Definitions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.gravity.typegraph.basic.TFieldDefinition}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Definitions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Definitions</em>' containment reference list.
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTFieldSignature_Definitions()
-	 * @see org.gravity.typegraph.basic.TFieldDefinition#getSignature
-	 * @model opposite="signature" containment="true"
-	 * @generated
-	 */
-	EList<TFieldDefinition> getDefinitions();
-
 	/**
 	 * Returns the value of the '<em><b>Field</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TField#getSignatures <em>Signatures</em>}'.
@@ -110,6 +91,14 @@ public interface TFieldSignature extends TSignature {
 	 * @generated
 	 */
 	TFieldDefinition getTDefinition(TAbstractType defining);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<TFieldDefinition> getFieldDefinitions();
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

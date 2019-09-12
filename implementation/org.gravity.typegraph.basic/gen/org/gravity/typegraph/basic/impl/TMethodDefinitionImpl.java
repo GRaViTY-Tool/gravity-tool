@@ -15,10 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
@@ -35,7 +32,6 @@ import org.gravity.typegraph.basic.TSyntethicMethod;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverriding <em>Overriding</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverriddenBy <em>Overridden By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl#getOverloading <em>Overloading</em>}</li>
@@ -98,7 +94,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	protected TAbstractType returnType;
 
 	/**
-	 * The cached value of the '{@link #getSyntethicMethods() <em>Syntethic Methods</em>}' containment reference list.
+	 * The cached value of the '{@link #getSyntethicMethods() <em>Syntethic Methods</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSyntethicMethods()
@@ -129,44 +125,11 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public TMethodSignature getSignature() {
-		if (eContainerFeatureID() != BasicPackage.TMETHOD_DEFINITION__SIGNATURE) return null;
-		return (TMethodSignature)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSignature(TMethodSignature newSignature, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSignature, BasicPackage.TMETHOD_DEFINITION__SIGNATURE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSignature(TMethodSignature newSignature) {
-		if (newSignature != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TMETHOD_DEFINITION__SIGNATURE && newSignature != null)) {
-			if (EcoreUtil.isAncestor(this, newSignature))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSignature != null)
-				msgs = ((InternalEObject)newSignature).eInverseAdd(this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, TMethodSignature.class, msgs);
-			msgs = basicSetSignature(newSignature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TMETHOD_DEFINITION__SIGNATURE, newSignature, newSignature));
+		return (TMethodSignature) eContainer();
 	}
 
 	/**
@@ -318,7 +281,7 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public EList<TSyntethicMethod> getSyntethicMethods() {
 		if (syntethicMethods == null) {
-			syntethicMethods = new EObjectContainmentWithInverseEList<TSyntethicMethod>(TSyntethicMethod.class, this, BasicPackage.TMETHOD_DEFINITION__SYNTETHIC_METHODS, BasicPackage.TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION);
+			syntethicMethods = new EObjectWithInverseResolvingEList<TSyntethicMethod>(TSyntethicMethod.class, this, BasicPackage.TMETHOD_DEFINITION__SYNTETHIC_METHODS, BasicPackage.TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION);
 		}
 		return syntethicMethods;
 	}
@@ -343,10 +306,6 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSignature((TMethodSignature)otherEnd, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				if (overriding != null)
 					msgs = ((InternalEObject)overriding).eInverseRemove(this, BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY, TMethodDefinition.class, msgs);
@@ -371,8 +330,6 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				return basicSetSignature(null, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				return basicSetOverriding(null, msgs);
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
@@ -393,24 +350,8 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				return eInternalContainer().eInverseRemove(this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, TMethodSignature.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				return getSignature();
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				if (resolve) return getOverriding();
 				return basicGetOverriding();
@@ -438,9 +379,6 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				setSignature((TMethodSignature)newValue);
-				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				setOverriding((TMethodDefinition)newValue);
 				return;
@@ -475,9 +413,6 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				setSignature((TMethodSignature)null);
-				return;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				setOverriding((TMethodDefinition)null);
 				return;
@@ -508,8 +443,6 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TMETHOD_DEFINITION__SIGNATURE:
-				return getSignature() != null;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDING:
 				return overriding != null;
 			case BasicPackage.TMETHOD_DEFINITION__OVERRIDDEN_BY:
@@ -536,6 +469,8 @@ public class TMethodDefinitionImpl extends TMemberImpl implements TMethodDefinit
 		switch (operationID) {
 			case BasicPackage.TMETHOD_DEFINITION___TO_STRING:
 				return toString();
+			case BasicPackage.TMETHOD_DEFINITION___GET_SIGNATURE:
+				return getSignature();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

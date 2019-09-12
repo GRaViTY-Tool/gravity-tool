@@ -90,7 +90,7 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TFieldDefinition> definitions;
+	protected EList<TMember> definitions;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -166,9 +166,9 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 */
 	@Override
-	public EList<TFieldDefinition> getDefinitions() {
+	public EList<TMember> getDefinitions() {
 		if (definitions == null) {
-			definitions = new EObjectContainmentWithInverseEList<TFieldDefinition>(TFieldDefinition.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TFIELD_DEFINITION__SIGNATURE);
+			definitions = new EObjectContainmentWithInverseEList<TMember>(TMember.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TMEMBER__SIGNATURE);
 		}
 		return definitions;
 	}
@@ -288,6 +288,16 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public EList<TFieldDefinition> getFieldDefinitions() {
+		return (EList<TFieldDefinition>) ((EList<? extends TFieldDefinition>) getDefinitions());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -394,7 +404,7 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
-				getDefinitions().addAll((Collection<? extends TFieldDefinition>)newValue);
+				getDefinitions().addAll((Collection<? extends TMember>)newValue);
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				setField((TField)newValue);
@@ -508,6 +518,8 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return getSignatureString();
 			case BasicPackage.TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE:
 				return getTDefinition((TAbstractType)arguments.get(0));
+			case BasicPackage.TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS:
+				return getFieldDefinitions();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

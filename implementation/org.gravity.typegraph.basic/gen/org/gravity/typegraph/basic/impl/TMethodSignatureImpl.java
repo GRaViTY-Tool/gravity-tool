@@ -8,7 +8,6 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -46,8 +45,8 @@ import org.gravity.typegraph.basic.TMember;
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOwnedFlows <em>Owned Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getDefinitions <em>Definitions</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl#getFirstParameter <em>First Parameter</em>}</li>
@@ -94,7 +93,7 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TMethodDefinition> definitions;
+	protected EList<TMember> definitions;
 
 	/**
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
@@ -233,9 +232,9 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 	 * @generated
 	 */
 	@Override
-	public EList<TMethodDefinition> getDefinitions() {
+	public EList<TMember> getDefinitions() {
 		if (definitions == null) {
-			definitions = new EObjectContainmentWithInverseEList<TMethodDefinition>(TMethodDefinition.class, this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, BasicPackage.TMETHOD_DEFINITION__SIGNATURE);
+			definitions = new EObjectContainmentWithInverseEList<TMember>(TMember.class, this, BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS, BasicPackage.TMEMBER__SIGNATURE);
 		}
 		return definitions;
 	}
@@ -395,12 +394,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefinitions()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetMethod((TMethod)otherEnd, msgs);
-			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefinitions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -419,10 +418,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
 				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
-				return basicSetMethod(null, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
+				return basicSetMethod(null, msgs);
 			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
@@ -457,10 +456,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return getIncomingFlows();
 			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
 				return getOutgoingFlows();
-			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
-				return getMethod();
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return getDefinitions();
+			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
+				return getMethod();
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				if (resolve) return getReturnType();
 				return basicGetReturnType();
@@ -494,12 +493,12 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				getOutgoingFlows().clear();
 				getOutgoingFlows().addAll((Collection<? extends TFlow>)newValue);
 				return;
-			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
-				setMethod((TMethod)newValue);
-				return;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
-				getDefinitions().addAll((Collection<? extends TMethodDefinition>)newValue);
+				getDefinitions().addAll((Collection<? extends TMember>)newValue);
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
+				setMethod((TMethod)newValue);
 				return;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((TAbstractType)newValue);
@@ -532,11 +531,11 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
 				return;
-			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
-				setMethod((TMethod)null);
-				return;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
+				return;
+			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
+				setMethod((TMethod)null);
 				return;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((TAbstractType)null);
@@ -565,10 +564,10 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return incomingFlows != null && !incomingFlows.isEmpty();
 			case BasicPackage.TMETHOD_SIGNATURE__OUTGOING_FLOWS:
 				return outgoingFlows != null && !outgoingFlows.isEmpty();
-			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
-				return getMethod() != null;
 			case BasicPackage.TMETHOD_SIGNATURE__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
+			case BasicPackage.TMETHOD_SIGNATURE__METHOD:
+				return getMethod() != null;
 			case BasicPackage.TMETHOD_SIGNATURE__RETURN_TYPE:
 				return returnType != null;
 			case BasicPackage.TMETHOD_SIGNATURE__PARAMETERS:
@@ -632,6 +631,8 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 				return toString();
 			case BasicPackage.TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST:
 				return isThisSignature((TAbstractType)arguments.get(0), (EList<TAbstractType>)arguments.get(1));
+			case BasicPackage.TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS:
+				return getMethodDefinitions();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -670,6 +671,16 @@ public class TMethodSignatureImpl extends TAnnotatableImpl implements TMethodSig
 			return "void".equals(getReturnType().getTName());
 		}
 		return returnType.isSubTypeOf(getReturnType());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public EList<TMethodDefinition> getMethodDefinitions() {
+		return (EList<TMethodDefinition>) ((EList<? extends TMethodDefinition>) getDefinitions());
 	}
 
 	// [user code injected with eMoflon] -->

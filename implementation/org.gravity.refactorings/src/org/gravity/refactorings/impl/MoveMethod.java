@@ -9,7 +9,6 @@ import org.gravity.refactorings.configuration.impl.MoveMethodConfiguration;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
@@ -70,7 +69,7 @@ public class MoveMethod extends MoveMember {
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
-			EList<TMethodDefinition> definitions = mm.getSignature().getDefinitions();
+			EList<TMember> definitions = mm.getSignature().getDefinitions();
 			for (TMember tMember : mm.getSourceClass().getDefines()) {
 				if (definitions.contains(tMember)) {
 					tMember.setDefinedBy(mm.getTargetClass());

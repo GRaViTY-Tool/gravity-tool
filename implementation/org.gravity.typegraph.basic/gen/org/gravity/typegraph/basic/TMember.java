@@ -20,6 +20,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
  *   <li>{@link org.gravity.typegraph.basic.TMember#getAccessedBy <em>Accessed By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getTAccessing <em>TAccessing</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMember#getTModifier <em>TModifier</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.TMember#getSignature <em>Signature</em>}</li>
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTMember()
@@ -118,12 +119,28 @@ public interface TMember extends TAnnotatable, TAbstractFlowElement {
 	void setTModifier(TModifier value);
 
 	/**
+	 * Returns the value of the '<em><b>Signature</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TSignature#getDefinitions <em>Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Signature</em>' container reference.
+	 * @see #setSignature(TSignature)
+	 * @see org.gravity.typegraph.basic.BasicPackage#getTMember_Signature()
+	 * @see org.gravity.typegraph.basic.TSignature#getDefinitions
+	 * @model opposite="definitions" required="true" transient="false"
 	 * @generated
 	 */
 	TSignature getSignature();
+
+	/**
+	 * Sets the value of the '{@link org.gravity.typegraph.basic.TMember#getSignature <em>Signature</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Signature</em>' container reference.
+	 * @see #getSignature()
+	 * @generated
+	 */
+	void setSignature(TSignature value);
 
 	/**
 	 * <!-- begin-user-doc -->
