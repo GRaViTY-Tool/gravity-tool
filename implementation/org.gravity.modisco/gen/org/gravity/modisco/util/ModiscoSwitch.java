@@ -135,7 +135,6 @@ public class ModiscoSwitch<T> {
 				T result = caseMConstructorDefinition(mConstructorDefinition);
 				if (result == null) result = caseMAbstractMethodDefinition(mConstructorDefinition);
 				if (result == null) result = caseConstructorDeclaration(mConstructorDefinition);
-				if (result == null) result = caseMParameterList(mConstructorDefinition);
 				if (result == null) result = caseMDefinition(mConstructorDefinition);
 				if (result == null) result = caseAbstractMethodDeclaration(mConstructorDefinition);
 				if (result == null) result = caseBodyDeclaration(mConstructorDefinition);

@@ -5,10 +5,7 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mOuterType:AbstractTypeDeclaration
-
 	mType:MAnonymous {
-		-mSourroundingType -> mOuterType
 		++  -bodyDeclarations -> mDefinition
 	}
 
@@ -20,19 +17,16 @@
 }
 
 #target {
+	tType:TClass {
+		++-defines -> tDefinition
+		++-signature -> tSignature
+	}
+	
 	tSignature:TSignature
 
 	tDefinition:TMember {
 		-signature -> tSignature
-		++  -definedBy -> tType
 	}
-
-	tType:TClass {
-		++-signature -> tSignature
-		-outerType -> tOuterType
-	}
-
-	tOuterType:TAbstractType
 }
 
 #correspondence {
@@ -49,11 +43,6 @@
 	mSignatureToTSignature :MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature
-	}
-
-	mOuterTypeToTOuterType :TypeToTAbstractType {
-		#src->mOuterType
-		#trg->tOuterType
 	}
 }
 

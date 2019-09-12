@@ -62,7 +62,6 @@
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MSignature">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MSignature/mDefinitions"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MSignature/implementedBy"/>
     </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MEntry">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MEntry/mNext"/>

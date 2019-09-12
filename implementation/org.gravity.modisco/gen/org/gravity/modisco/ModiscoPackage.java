@@ -793,31 +793,13 @@ public interface ModiscoPackage extends EPackage {
 	int MCONSTRUCTOR_DEFINITION__MMETHOD_SIGNATURE = MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE;
 
 	/**
-	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCONSTRUCTOR_DEFINITION__MFIRST_ENTRY = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>MEntrys</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MCONSTRUCTOR_DEFINITION__MENTRYS = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCONSTRUCTOR_DEFINITION__MODEL = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 2;
+	int MCONSTRUCTOR_DEFINITION__MODEL = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>MConstructor Definition</em>' class.
@@ -826,7 +808,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 3;
+	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
@@ -875,22 +857,13 @@ public interface ModiscoPackage extends EPackage {
 	int MSIGNATURE__MDEFINITIONS = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Implemented By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MSIGNATURE__IMPLEMENTED_BY = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>MSignature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MSIGNATURE_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
+	int MSIGNATURE_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodSignatureImpl <em>MMethod Signature</em>}' class.
@@ -937,15 +910,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MMETHOD_SIGNATURE__MDEFINITIONS = MSIGNATURE__MDEFINITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Implemented By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MMETHOD_SIGNATURE__IMPLEMENTED_BY = MSIGNATURE__IMPLEMENTED_BY;
 
 	/**
 	 * The feature id for the '<em><b>MFirst Entry</b></em>' reference.
@@ -2115,15 +2079,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MFIELD_SIGNATURE__MDEFINITIONS = MSIGNATURE__MDEFINITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Implemented By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MFIELD_SIGNATURE__IMPLEMENTED_BY = MSIGNATURE__IMPLEMENTED_BY;
 
 	/**
 	 * The feature id for the '<em><b>MField Name</b></em>' reference.
@@ -4140,17 +4095,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMSignature_MDefinitions();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.gravity.modisco.MSignature#getImplementedBy <em>Implemented By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Implemented By</em>'.
-	 * @see org.gravity.modisco.MSignature#getImplementedBy()
-	 * @see #getMSignature()
-	 * @generated
-	 */
-	EReference getMSignature_ImplementedBy();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MEntry <em>MEntry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5086,14 +5030,6 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MSIGNATURE__MDEFINITIONS = eINSTANCE.getMSignature_MDefinitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Implemented By</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MSIGNATURE__IMPLEMENTED_BY = eINSTANCE.getMSignature_ImplementedBy();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MEntryImpl <em>MEntry</em>}' class.

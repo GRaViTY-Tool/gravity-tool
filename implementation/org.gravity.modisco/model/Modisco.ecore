@@ -79,8 +79,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mDefinitions" upperBound="-1"
         eType="#//MDefinition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.gmt.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MEntry" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mNext" eType="#//MEntry"

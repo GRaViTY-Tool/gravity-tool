@@ -927,7 +927,7 @@
   </rules>
   <rules name="ConstructorDec2OperationAnonymous">
     <nodes name="bodyDeclaration" bindingType="CREATE" incomingEdges="//@rules.13/@edges.0 //@rules.13/@edges.2 //@rules.13/@edges.4" outgoingEdges="//@rules.13/@edges.5" incomingCorrsSource="//@rules.13/@nodes.3 //@rules.13/@nodes.4">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </nodes>
     <nodes name="classDec" incomingEdges="//@rules.13/@edges.5" outgoingEdges="//@rules.13/@edges.4">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>

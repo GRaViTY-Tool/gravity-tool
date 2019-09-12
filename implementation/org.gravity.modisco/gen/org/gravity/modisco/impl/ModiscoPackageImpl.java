@@ -788,15 +788,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMSignature_ImplementedBy() {
-		return (EReference)mSignatureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMEntry() {
 		return mEntryEClass;
 	}
@@ -1275,7 +1266,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		mSignatureEClass = createEClass(MSIGNATURE);
 		createEReference(mSignatureEClass, MSIGNATURE__MDEFINITIONS);
-		createEReference(mSignatureEClass, MSIGNATURE__IMPLEMENTED_BY);
 
 		mEntryEClass = createEClass(MENTRY);
 		createEReference(mEntryEClass, MENTRY__MNEXT);
@@ -1390,7 +1380,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mAccessEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mConstructorDefinitionEClass.getESuperTypes().add(this.getMAbstractMethodDefinition());
 		mConstructorDefinitionEClass.getESuperTypes().add(theJavaPackage.getConstructorDeclaration());
-		mConstructorDefinitionEClass.getESuperTypes().add(this.getMParameterList());
 		mDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
 		mDefinitionEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mMethodSignatureEClass.getESuperTypes().add(this.getMSignature());
@@ -1479,7 +1468,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		initEClass(mSignatureEClass, MSignature.class, "MSignature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMSignature_MDefinitions(), this.getMDefinition(), null, "mDefinitions", null, 0, -1, MSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMSignature_ImplementedBy(), theJavaPackage.getType(), null, "implementedBy", null, 0, -1, MSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mEntryEClass, MEntry.class, "MEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMEntry_MNext(), this.getMEntry(), this.getMEntry_MPrevious(), "mNext", null, 0, 1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
