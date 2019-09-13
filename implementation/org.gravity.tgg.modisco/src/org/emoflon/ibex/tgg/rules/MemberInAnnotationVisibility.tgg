@@ -4,7 +4,7 @@
 #rule MemberInAnnotationVisibility #with org.gravity.tgg.modisco
 
 #source {
-	mAnnotation:AnnotationTypeDeclaration {
+	Annotation:AnnotationTypeDeclaration {
 		-bodyDeclarations -> mDefinition
 	}
 
@@ -29,7 +29,7 @@
 
 #correspondence {
 	mTypeToTType :TypeToTAbstractType {
-		#src->mAnnotation
+		#src->Annotation
 		#trg->tAnnotation
 	}
 

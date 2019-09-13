@@ -46,7 +46,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 * The logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(AccessPreprocessing.class);
-	
+
 	/*
 	 * Temporal maps
 	 */
@@ -64,14 +64,13 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 			} else if (access instanceof MSingleVariableAccess) {
 				process((MSingleVariableAccess) access);
 			} else {
-				LOGGER.error("Didn't handle: "+access);
+				LOGGER.error("Didn't handle: " + access);
 			}
 		});
 		fieldAccesses.entrySet().parallelStream()
 				.forEach(entry -> entry.getKey().getMAbstractFieldAccess().addAll(entry.getValue()));
 		methodAccesses.entrySet().parallelStream()
 				.forEach(entry -> entry.getKey().getMMethodInvocations().addAll(entry.getValue()));
-		
 
 		for (MFieldDefinition field : model.getMFieldDefinitions()) {
 			calculateTypeDependencies(field);
@@ -91,7 +90,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private void process(MSingleVariableAccess access) {
 		MDefinition definition = getDefiningMember(access);
 		VariableDeclaration variable = access.getVariable();
-		if(variable == null || !(variable.eContainer() instanceof FieldDeclaration)) {
+		if (variable == null || !(variable.eContainer() instanceof FieldDeclaration)) {
 			return;
 		}
 		List<MSingleVariableAccess> content = fieldAccesses.get(definition);
@@ -129,10 +128,9 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 		EObject container = access;
 		while (container != null && !(container instanceof MDefinition)) {
 			container = container.eContainer();
-			if(cache.containsKey(container)) {
+			if (cache.containsKey(container)) {
 				container = cache.get(container);
-			}
-			else {
+			} else {
 				seen.add(container);
 			}
 		}
@@ -144,46 +142,72 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 		return definition;
 	}
 
-	private static void calculateTypeDependencies(MDefinition def) {
-		Type mType = def.getAbstractTypeDeclaration();
+	private static void calculateTypeDependencies(MDefinition definition) {
+		Type mType = definition.getAbstractTypeDeclaration();
 		if (mType instanceof MClass) {
 			EList<Type> deps = ((MClass) mType).getDependencies();
-			for (AbstractMethodInvocation methodInvocation : def.getMMethodInvocations()) {
-				AbstractMethodDeclaration method = methodInvocation.getMethod();
-				if (method == null) {
-					LOGGER.log(Level.WARN, "Empty method invocation in method \"" + def.getName() + "\" of type \""
-							+ mType.getName() + "\".");
-					continue;
-				}
-				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
-				if (abstractTypeDeclaration == null) {
-					if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
-						LOGGER.log(Level.WARN, "Skipped unresolved method: " + method.getName());
+			deps.addAll(calculateTypeDependenciesForCalls(definition));
+			deps.addAll(calculateTypeDependenciesForFieldAccesses(definition));
+		}
+	}
+
+	/**
+	 * Calculates the dependencies to other types caused by field accesses in the
+	 * given definition
+	 * 
+	 * @param definition A definition
+	 * @return The dependencies
+	 */
+	private static List<Type> calculateTypeDependenciesForFieldAccesses(MDefinition definition) {
+		List<Type> dependencies = new LinkedList<>();
+		for (SingleVariableAccess methodInvocation : definition.getMAbstractFieldAccess()) {
+			VariableDeclaration variable = methodInvocation.getVariable();
+			if (variable instanceof VariableDeclarationFragment) {
+				AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable)
+						.getVariablesContainer();
+				if (variablesContainer instanceof FieldDeclaration) {
+					final AbstractTypeDeclaration abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
+							.getAbstractTypeDeclaration();
+					if (abstractTypeDeclaration == null) {
+						String message = buildUnresolvedFieldAccessErrorMessage(definition, variable,
+								variablesContainer);
+						LOGGER.log(Level.ERROR, message);
 					} else {
-						LOGGER.log(Level.ERROR, "Skipped unresolved method: " + method.getName());
-					}
-					continue;
-				}
-				deps.add(abstractTypeDeclaration);
-			}
-			for (SingleVariableAccess methodInvocation : def.getMAbstractFieldAccess()) {
-				VariableDeclaration variable = methodInvocation.getVariable();
-				if (variable instanceof VariableDeclarationFragment) {
-					AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) variable)
-							.getVariablesContainer();
-					if (variablesContainer instanceof FieldDeclaration) {
-						final AbstractTypeDeclaration abstractTypeDeclaration = ((FieldDeclaration) variablesContainer)
-								.getAbstractTypeDeclaration();
-						if (abstractTypeDeclaration == null) {
-							String message = buildUnresolvedFieldAccessErrorMessage(def, variable, variablesContainer);
-							LOGGER.log(Level.ERROR, message);
-						} else {
-							deps.add(abstractTypeDeclaration);
-						}
+						dependencies.add(abstractTypeDeclaration);
 					}
 				}
 			}
 		}
+		return dependencies;
+	}
+
+	/**
+	 * Calculates the dependencies to other types caused by method calls in the
+	 * given definition
+	 * 
+	 * @param definition A definition
+	 * @return The dependencies
+	 */
+	private static List<Type> calculateTypeDependenciesForCalls(MDefinition definition) {
+		List<Type> dependencies = new LinkedList<>();
+		for (AbstractMethodInvocation methodInvocation : definition.getMMethodInvocations()) {
+			AbstractMethodDeclaration method = methodInvocation.getMethod();
+			if (method == null) {
+				LOGGER.log(Level.WARN, "Empty method invocation in method \"" + definition.getName() + "\" of type \""
+						+ definition.getAbstractTypeDeclaration().getName() + "\".");
+			} else {
+				AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+				if (abstractTypeDeclaration != null) {
+					dependencies.add(abstractTypeDeclaration);
+				} else if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
+					LOGGER.log(Level.WARN, "Skipped unresolved method: " + method.getName());
+				} else {
+					LOGGER.log(Level.ERROR, "Skipped unresolved method: " + method.getName());
+				}
+			}
+
+		}
+		return dependencies;
 	}
 
 	/**
@@ -208,8 +232,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 			messageBuilder.append(':');
 			messageBuilder.append(fieldTypeAccess.getType().getName());
 		}
-		String message = messageBuilder.toString();
-		return message;
+		return messageBuilder.toString();
 	}
 
 	@Override

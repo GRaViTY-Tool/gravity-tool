@@ -151,9 +151,14 @@ public class TransformationTest {
 		try {
 			preprocessedModel = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(project,
 					new NullProgressMonitor());
-			File outputFile = getModiscoFile(project.getProject());
-			preprocessedModel.eResource().save(new FileOutputStream(outputFile), Collections.emptyMap());
-		} catch (IOException | DiscoveryException e) {
+		} catch (DiscoveryException e) {
+			throw new AssertionError(e.getLocalizedMessage(), e);
+		}
+
+		File outputFile = getModiscoFile(project.getProject());
+		try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+			preprocessedModel.eResource().save(outputStream, Collections.emptyMap());
+		} catch (IOException e) {
 			throw new AssertionError(e.getLocalizedMessage(), e);
 		}
 
@@ -217,9 +222,9 @@ public class TransformationTest {
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResources().add(pm.eResource());
 		Engine engine = new EngineImpl();
-		for(Path file : visitor.getFiles()) {
+		for (Path file : visitor.getFiles()) {
 			Module module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
-			for(org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()){
+			for (org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
 				Iterable<Match> matches = engine.findMatches(rule, graph, null);
 				assertTrue(matches.iterator().hasNext());
 			}
@@ -294,7 +299,7 @@ public class TransformationTest {
 			try {
 				cleanClassPath();
 			} catch (IOException | CoreException e) {
-				throw new AssertionError(e.getLocalizedMessage(), e);
+				LOGGER.error(e.getLocalizedMessage(), e);
 			}
 		}
 	}

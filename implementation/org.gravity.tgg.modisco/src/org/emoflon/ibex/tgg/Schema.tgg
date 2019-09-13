@@ -124,7 +124,7 @@
 	}
 
 	AnnotationToTAnnotation {
-		#src->MAnnotation
+		#src->Annotation
 		#trg->TAnnotation
 	}
 

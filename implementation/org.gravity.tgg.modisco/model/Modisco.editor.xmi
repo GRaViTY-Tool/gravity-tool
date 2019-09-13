@@ -92,7 +92,7 @@
       <target href="http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
     </correspondenceTypes>
     <correspondenceTypes name="AnnotationToTAnnotation">
-      <source href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <source href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <target href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     </correspondenceTypes>
     <correspondenceTypes name="TypeParameterToTClass">
@@ -199,12 +199,12 @@
         <value>F</value>
       </allowedSyncAdornments>
     </attributeCondDefs>
-    <attributeCondDefs name="eq_boolean">
+    <attributeCondDefs name="eq_string">
       <params paramName="a">
-        <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </params>
       <params paramName="b">
-        <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </params>
       <allowedSyncAdornments>
         <value>B</value>
@@ -235,12 +235,12 @@
         <value>F</value>
       </allowedGenAdornments>
     </attributeCondDefs>
-    <attributeCondDefs name="eq_string">
+    <attributeCondDefs name="eq_boolean">
       <params paramName="a">
-        <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </params>
       <params paramName="b">
-        <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </params>
       <allowedSyncAdornments>
         <value>B</value>
@@ -446,9 +446,9 @@
     <correspondencePatterns name="mMemberToTMember" type="//@schema/@correspondenceTypes.9" source="//@rules.4/@sourcePatterns.0" target="//@rules.4/@targetPatterns.0"/>
   </rules>
   <rules name="Annotation" abstractRule="true" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
+    <sourcePatterns name="Annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <sourcePatterns name="astNode">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode"/>
@@ -465,20 +465,14 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable"/>
     </targetPatterns>
     <correspondencePatterns name="aSTNodeToTAnnotable" type="//@schema/@correspondenceTypes.16" source="//@rules.5/@sourcePatterns.1" target="//@rules.5/@targetPatterns.1"/>
-    <correspondencePatterns name="mAnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.5/@sourcePatterns.0" target="//@rules.5/@targetPatterns.0">
+    <correspondencePatterns name="AnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.5/@sourcePatterns.0" target="//@rules.5/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.5/@sourcePatterns.0">
-        <attribute href="http://www.gravity-tool.org/modisco#//MAnnotation/mRelevant"/>
-      </values>
-      <values xsi:type="tgg:LiteralExpression" value="true"/>
-    </attrConditions>
   </rules>
   <rules name="AnnotationOnBodyDeclaration" supertypes="//@rules.5" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
+    <sourcePatterns name="Annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <sourcePatterns name="astNode">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
@@ -489,13 +483,13 @@
     </sourcePatterns>
   </rules>
   <rules name="AnnotationMemberValue" abstractRule="true" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+    <sourcePatterns name="Annotation">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.7/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="mAnnotationValue">
+    <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
       <linkVariablePatterns target="//@rules.7/@sourcePatterns.2">
         <op value="++"/>
@@ -510,22 +504,16 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     </targetPatterns>
     <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.7/@sourcePatterns.1" target="//@rules.7/@targetPatterns.0"/>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.7/@sourcePatterns.0">
-        <attribute href="http://www.gravity-tool.org/modisco#//MAnnotation/mRelevant"/>
-      </values>
-      <values xsi:type="tgg:LiteralExpression" value="true"/>
-    </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueKey" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+    <sourcePatterns name="Annotation">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.8/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="mAnnotationValue">
+    <sourcePatterns name="AnnotationValue">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     </sourcePatterns>
@@ -540,17 +528,11 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     </targetPatterns>
-    <correspondencePatterns name="mAnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.8/@sourcePatterns.0" target="//@rules.8/@targetPatterns.0"/>
-    <correspondencePatterns name="mAnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.8/@sourcePatterns.1" target="//@rules.8/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.8/@sourcePatterns.0" target="//@rules.8/@targetPatterns.0"/>
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.8/@sourcePatterns.1" target="//@rules.8/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.8/@sourcePatterns.0">
-        <attribute href="http://www.gravity-tool.org/modisco#//MAnnotation/mRelevant"/>
-      </values>
-      <values xsi:type="tgg:LiteralExpression" value="true"/>
-    </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.8/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -562,7 +544,7 @@
   <rules name="AnnotationMemberValueAnnotation" supertypes="//@rules.7" schema="//@schema">
     <sourcePatterns name="mValue">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <targetPatterns name="tAnnotationValue">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
@@ -582,7 +564,7 @@
   <rules name="AnnotationMemberValueAnnotationArray" supertypes="//@rules.11" schema="//@schema">
     <sourcePatterns name="mValue">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <targetPatterns name="tAnnotationValue">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
@@ -600,13 +582,13 @@
     </correspondencePatterns>
   </rules>
   <rules name="AnnotationMemberValueArray" abstractRule="true" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+    <sourcePatterns name="Annotation">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.11/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="mAnnotationValue">
+    <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
       <linkVariablePatterns target="//@rules.11/@sourcePatterns.2">
         <op value="++"/>
@@ -629,12 +611,6 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     </targetPatterns>
     <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.11/@sourcePatterns.1" target="//@rules.11/@targetPatterns.0"/>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.11/@sourcePatterns.0">
-        <attribute href="http://www.gravity-tool.org/modisco#//MAnnotation/mRelevant"/>
-      </values>
-      <values xsi:type="tgg:LiteralExpression" value="true"/>
-    </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueBoolean" supertypes="//@rules.7" schema="//@schema">
     <sourcePatterns name="mValue">
@@ -655,7 +631,7 @@
     <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.12/@sourcePatterns.0" target="//@rules.12/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral/value"/>
       </values>
@@ -683,7 +659,7 @@
     <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.13/@sourcePatterns.0" target="//@rules.13/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral/value"/>
       </values>
@@ -797,7 +773,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.16/@sourcePatterns.0" target="//@rules.16/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.16/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NumberLiteral/tokenValue"/>
       </values>
@@ -825,7 +801,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.17/@sourcePatterns.0" target="//@rules.17/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.17/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NumberLiteral/tokenValue"/>
       </values>
@@ -853,7 +829,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.18/@sourcePatterns.0" target="//@rules.18/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.18/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//StringLiteral/escapedValue"/>
       </values>
@@ -881,7 +857,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.19/@sourcePatterns.0" target="//@rules.19/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.19/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//StringLiteral/escapedValue"/>
       </values>
@@ -921,7 +897,7 @@
     <correspondencePatterns name="mCommentToTText" type="//@schema/@correspondenceTypes.19" source="//@rules.20/@sourcePatterns.1" target="//@rules.20/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.20/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Comment/content"/>
       </values>
@@ -949,7 +925,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.21/@sourcePatterns.0" target="//@rules.21/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.21/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -959,8 +935,8 @@
     </attrConditions>
   </rules>
   <rules name="AnnotationTypeAccess" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+    <sourcePatterns name="Annotation">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.22/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/type"/>
@@ -974,7 +950,7 @@
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="mAnnotationType">
+    <sourcePatterns name="AnnotationType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="tAnnotationType">
@@ -987,14 +963,8 @@
     <targetPatterns name="tAnnotation">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     </targetPatterns>
-    <correspondencePatterns name="mAnnotationTypeToTAnnotationType" type="//@schema/@correspondenceTypes.17" source="//@rules.22/@sourcePatterns.2" target="//@rules.22/@targetPatterns.0"/>
-    <correspondencePatterns name="mAnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.22/@sourcePatterns.0" target="//@rules.22/@targetPatterns.1"/>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.22/@sourcePatterns.0">
-        <attribute href="http://www.gravity-tool.org/modisco#//MAnnotation/mRelevant"/>
-      </values>
-      <values xsi:type="tgg:LiteralExpression" value="true"/>
-    </attrConditions>
+    <correspondencePatterns name="AnnotationTypeToTAnnotationType" type="//@schema/@correspondenceTypes.17" source="//@rules.22/@sourcePatterns.2" target="//@rules.22/@targetPatterns.0"/>
+    <correspondencePatterns name="AnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.22/@sourcePatterns.0" target="//@rules.22/@targetPatterns.1"/>
   </rules>
   <rules name="AnnotationTypeInAnonymous" supertypes="//@rules.79" schema="//@schema">
     <sourcePatterns name="mNestedType">
@@ -1032,7 +1002,7 @@
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.17" source="//@rules.24/@sourcePatterns.0" target="//@rules.24/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.24/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -1270,7 +1240,7 @@
     <correspondencePatterns name="mClassDeclarationToTClass" type="//@schema/@correspondenceTypes.4" source="//@rules.31/@sourcePatterns.0" target="//@rules.31/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.31/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -1428,7 +1398,7 @@
     <correspondencePatterns name="tInnerTypeToTInnerAbstractType" type="//@schema/@correspondenceTypes.17" source="//@rules.35/@sourcePatterns.1" target="//@rules.35/@targetPatterns.3">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -1551,7 +1521,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.40/@sourcePatterns.0" target="//@rules.40/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -1831,7 +1801,7 @@
     <correspondencePatterns name="eFieldDeclarationToTField" type="//@schema/@correspondenceTypes.18" source="//@rules.48/@sourcePatterns.1" target="//@rules.48/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.48/@sourcePatterns.1">
         <attribute href="http://www.gravity-tool.org/modisco#//MName/mName"/>
       </values>
@@ -2001,7 +1971,7 @@
     <correspondencePatterns name="mInterfaceDeclarationtoTInterface" type="//@schema/@correspondenceTypes.8" source="//@rules.54/@sourcePatterns.0" target="//@rules.54/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.54/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -2145,7 +2115,7 @@
     <correspondencePatterns name="mDefinitionToTMember" type="//@schema/@correspondenceTypes.9" source="//@rules.58/@sourcePatterns.1" target="//@rules.58/@targetPatterns.1"/>
   </rules>
   <rules name="MemberInAnnotationVisibility" schema="//@schema">
-    <sourcePatterns name="mAnnotation">
+    <sourcePatterns name="Annotation">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
       <linkVariablePatterns target="//@rules.59/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
@@ -2192,7 +2162,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.59/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
@@ -2249,7 +2219,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.60/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
@@ -2306,7 +2276,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.61/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
@@ -2363,7 +2333,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.62/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
@@ -2489,7 +2459,7 @@
     <correspondencePatterns name="mNameToTName" type="//@schema/@correspondenceTypes.13" source="//@rules.67/@sourcePatterns.0" target="//@rules.67/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.67/@sourcePatterns.0">
         <attribute href="http://www.gravity-tool.org/modisco#//MName/mName"/>
       </values>
@@ -2679,7 +2649,7 @@
     <correspondencePatterns name="mModelToTPG" type="//@schema/@correspondenceTypes.7" source="//@rules.74/@sourcePatterns.0" target="//@rules.74/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.74/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/name"/>
       </values>
@@ -2715,7 +2685,7 @@
     <correspondencePatterns name="mNestedClassDeclarationToTNestedClass" type="//@schema/@correspondenceTypes.4" source="//@rules.75/@sourcePatterns.0" target="//@rules.75/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.75/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -2767,7 +2737,7 @@
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.17" source="//@rules.76/@sourcePatterns.0" target="//@rules.76/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.76/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -2803,7 +2773,7 @@
     <correspondencePatterns name="mInterfaceDeclarationtoTInterface" type="//@schema/@correspondenceTypes.8" source="//@rules.77/@sourcePatterns.0" target="//@rules.77/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.77/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -2886,7 +2856,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TPackage/tName"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.78/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
       </values>
@@ -2938,7 +2908,7 @@
     <correspondencePatterns name="mbodyToTAnnotatable" type="//@schema/@correspondenceTypes.16" source="//@rules.79/@sourcePatterns.1" target="//@rules.79/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.79/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -2946,7 +2916,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.79/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
       </values>
@@ -2986,7 +2956,7 @@
     <correspondencePatterns name="mPackageToTPackage" type="//@schema/@correspondenceTypes.6" source="//@rules.80/@sourcePatterns.1" target="//@rules.80/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.80/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -3295,7 +3265,7 @@
     <correspondencePatterns name="mPackageToTSub" type="//@schema/@correspondenceTypes.6" source="//@rules.94/@sourcePatterns.0" target="//@rules.94/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.94/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -3443,7 +3413,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.98/@sourcePatterns.1" target="//@rules.98/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.98/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
       </values>
@@ -3482,7 +3452,7 @@
     <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.99/@sourcePatterns.1" target="//@rules.99/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.99/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
       </values>
@@ -3526,7 +3496,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TModifier/tVisibility"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.100/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
@@ -3562,7 +3532,7 @@
     <correspondencePatterns name="eAnonymousClassDeclarationToTClass" type="//@schema/@correspondenceTypes.17" source="//@rules.101/@sourcePatterns.1" target="//@rules.101/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
+    <attrConditions name="//@schema/@attributeCondDefs.2">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.101/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
@@ -3570,7 +3540,7 @@
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
       </values>
     </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
+    <attrConditions name="//@schema/@attributeCondDefs.3">
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.101/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
       </values>

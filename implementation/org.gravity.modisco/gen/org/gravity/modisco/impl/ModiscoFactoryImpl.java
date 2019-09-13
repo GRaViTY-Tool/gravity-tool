@@ -66,7 +66,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 			case ModiscoPackage.MENTRY: return createMEntry();
 			case ModiscoPackage.MGRAVITY_MODEL: return createMGravityModel();
 			case ModiscoPackage.MFIELD_SIGNATURE: return createMFieldSignature();
-			case ModiscoPackage.MANNOTATION: return createMAnnotation();
 			case ModiscoPackage.MSYNTHETIC_METHOD_DEFINITION: return createMSyntheticMethodDefinition();
 			case ModiscoPackage.METHOD_INVOCATION_STATIC_TYPE: return createMethodInvocationStaticType();
 			case ModiscoPackage.MANONYMOUS: return createMAnonymous();
@@ -282,16 +281,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public MFieldSignature createMFieldSignature() {
 		MFieldSignatureImpl mFieldSignature = new MFieldSignatureImpl();
 		return mFieldSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MAnnotation createMAnnotation() {
-		MAnnotationImpl mAnnotation = new MAnnotationImpl();
-		return mAnnotation;
 	}
 
 	/**

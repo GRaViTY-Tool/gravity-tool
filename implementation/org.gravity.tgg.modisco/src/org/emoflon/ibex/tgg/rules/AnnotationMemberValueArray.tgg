@@ -5,11 +5,11 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mAnnotation:MAnnotation {
-		-values -> mAnnotationValue
+	Annotation:Annotation {
+		-values -> AnnotationValue
 	}
 
-	mAnnotationValue:AnnotationMemberValuePair {
+	AnnotationValue:AnnotationMemberValuePair {
 		++ -value -> mArray
 	}
 
@@ -26,13 +26,7 @@
 
 #correspondence {
 	AnnotationMemberValuePairToTAnnotationValue :AnnotationMemberValuePairToTAnnotationValue {
-		#src->mAnnotationValue
+		#src->AnnotationValue
 		#trg->tAnnotationValue
 	}
 }
-
-#attributeConditions {
-	eq_boolean(mAnnotation.mRelevant, true)
-}
-
-

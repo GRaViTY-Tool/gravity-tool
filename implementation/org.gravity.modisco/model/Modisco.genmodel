@@ -89,9 +89,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MFieldSignature/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MFieldSignature/mFieldDefinitions"/>
     </genClasses>
-    <genClasses ecoreClass="Modisco.ecore#//MAnnotation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Modisco.ecore#//MAnnotation/mRelevant"/>
-    </genClasses>
     <genClasses ecoreClass="Modisco.ecore#//MSyntheticMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MSyntheticMethodDefinition/originalMethodDefinition"/>
     </genClasses>

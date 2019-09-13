@@ -6,7 +6,7 @@ import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
-import org.gravity.modisco.bugfixes.MAnnotationImpl_bugfix;
+import org.gravity.modisco.bugfixes.MAnnotation;
 
 /**
  * A factory overwrite for providing GRaViTY MoDisco elements
@@ -24,7 +24,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public Annotation createAnnotation() {
-		return new MAnnotationImpl_bugfix();
+		return new MAnnotation();
 	}
 
 	@Override

@@ -87,7 +87,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TAccess"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationToTAnnotation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeParameterToTClass">
@@ -148,12 +148,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotation__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
-        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
@@ -165,14 +165,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotationArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
-        eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
+        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tValue" lowerBound="1"
@@ -184,9 +184,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBoolean__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral"/>
@@ -201,9 +201,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBooleanArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
@@ -220,12 +220,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClass__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -245,12 +245,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClassArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
@@ -271,24 +271,24 @@
         lowerBound="1" eType="#//ClassLiteralToClassNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueKey__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAnnotationMemberValuePairToTAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__AnnotationMemberValuePairToTAnnotationValue"
         lowerBound="1" eType="#//AnnotationMemberValuePairToTAnnotationValue"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationToTAnnotation"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationToTAnnotation"
         lowerBound="1" eType="#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumber__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NumberLiteral"/>
@@ -303,9 +303,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumberArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
@@ -322,9 +322,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueString__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//StringLiteral"/>
@@ -339,9 +339,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueStringArray__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
@@ -358,18 +358,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationOnBodyDeclaration__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__astNode"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotable"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tAnnotation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__AnnotationToTAnnotation"
+        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__aSTNodeToTAnnotable"
         lowerBound="1" eType="#//ASTNodeToTAnnotatable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mAnnotationToTAnnotation"
-        lowerBound="1" eType="#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -390,19 +390,19 @@
         lowerBound="1" eType="#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeAccess__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationType"
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotationType"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__TRG__tAnnotationType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationToTAnnotation"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationToTAnnotation"
         lowerBound="1" eType="#//AnnotationToTAnnotation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mAnnotationTypeToTAnnotationType"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationTypeToTAnnotationType"
         lowerBound="1" eType="#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
@@ -1063,7 +1063,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberInAnnotationVisibility__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnnotation"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>

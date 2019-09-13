@@ -15,7 +15,6 @@ import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractTypeQualifiedExpression;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
@@ -156,10 +155,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMFieldSignatureAdapter();
 			}
 			@Override
-			public Adapter caseMAnnotation(MAnnotation object) {
-				return createMAnnotationAdapter();
-			}
-			@Override
 			public Adapter caseMSyntheticMethodDefinition(MSyntheticMethodDefinition object) {
 				return createMSyntheticMethodDefinitionAdapter();
 			}
@@ -256,14 +251,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createModelAdapter();
 			}
 			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseAnnotation(Annotation object) {
-				return createAnnotationAdapter();
-			}
-			@Override
 			public Adapter caseAnonymousClassDeclaration(AnonymousClassDeclaration object) {
 				return createAnonymousClassDeclarationAdapter();
 			}
@@ -282,6 +269,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClassDeclaration(ClassDeclaration object) {
 				return createClassDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter caseSingleVariableAccess(SingleVariableAccess object) {
@@ -652,20 +643,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMFieldSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAnnotation <em>MAnnotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.modisco.MAnnotation
-	 * @generated
-	 */
-	public Adapter createMAnnotationAdapter() {
 		return null;
 	}
 
@@ -1058,20 +1035,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.Annotation <em>Annotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.Annotation
-	 * @generated
-	 */
-	public Adapter createAnnotationAdapter() {
 		return null;
 	}
 

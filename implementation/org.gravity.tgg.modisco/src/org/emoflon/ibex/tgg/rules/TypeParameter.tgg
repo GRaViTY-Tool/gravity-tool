@@ -8,8 +8,7 @@
 	eModel : MGravityModel {
 		++  -typeParameters -> typeParameter
 	}
-	++ typeParameter : TypeParameter {
-	}
+	++ typeParameter : TypeParameter
 }
 
 #target {
@@ -32,7 +31,4 @@
 		#src->typeParameter
 		#trg->tClass
 	}
-}
-
-#attributeConditions {
 }

@@ -4,7 +4,7 @@
 #rule AnnotationMemberValueAnnotation #extends AnnotationMemberValue #with org.gravity.tgg.modisco
 
 #source {
-	++ mValue: MAnnotation
+	++ mValue: Annotation
 }
 
 #target {

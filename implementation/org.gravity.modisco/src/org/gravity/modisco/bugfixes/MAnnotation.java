@@ -1,7 +1,7 @@
 package org.gravity.modisco.bugfixes;
 
 import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
-import org.gravity.modisco.impl.MAnnotationImpl;
+import org.eclipse.gmt.modisco.java.emf.impl.AnnotationImpl;
 
 /**
  * An override for the standard annotation implementation to fix an exception in
@@ -10,7 +10,8 @@ import org.gravity.modisco.impl.MAnnotationImpl;
  * @author speldszus
  *
  */
-public class MAnnotationImpl_bugfix extends MAnnotationImpl {
+@SuppressWarnings("restriction")
+public class MAnnotation extends AnnotationImpl {
 
 	@Override
 	public String toString() {

@@ -13,7 +13,6 @@ import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
 import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.AbstractTypeQualifiedExpression;
 import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.Annotation;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.BodyDeclaration;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
@@ -242,15 +241,6 @@ public class ModiscoSwitch<T> {
 				T result = caseMFieldSignature(mFieldSignature);
 				if (result == null) result = caseMSignature(mFieldSignature);
 				if (result == null) result = caseMAbstractFlowElement(mFieldSignature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModiscoPackage.MANNOTATION: {
-				MAnnotation mAnnotation = (MAnnotation)theEObject;
-				T result = caseMAnnotation(mAnnotation);
-				if (result == null) result = caseAnnotation(mAnnotation);
-				if (result == null) result = caseExpression(mAnnotation);
-				if (result == null) result = caseASTNode(mAnnotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -741,21 +731,6 @@ public class ModiscoSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>MAnnotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>MAnnotation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMAnnotation(MAnnotation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>MSynthetic Method Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1172,21 +1147,6 @@ public class ModiscoSwitch<T> {
 	 * @generated
 	 */
 	public T caseModel(Model object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAnnotation(Annotation object) {
 		return null;
 	}
 

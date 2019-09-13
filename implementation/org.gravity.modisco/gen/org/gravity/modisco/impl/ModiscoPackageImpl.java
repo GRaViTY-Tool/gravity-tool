@@ -17,7 +17,6 @@ import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MAccess;
-import org.gravity.modisco.MAnnotation;
 import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MClassInstanceCreation;
@@ -214,13 +213,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	private EClass mFieldSignatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mAnnotationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -995,24 +987,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMAnnotation() {
-		return mAnnotationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMAnnotation_MRelevant() {
-		return (EAttribute)mAnnotationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMSyntheticMethodDefinition() {
 		return mSyntheticMethodDefinitionEClass;
 	}
@@ -1293,9 +1267,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__TYPE);
 		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__MFIELD_DEFINITIONS);
 
-		mAnnotationEClass = createEClass(MANNOTATION);
-		createEAttribute(mAnnotationEClass, MANNOTATION__MRELEVANT);
-
 		mSyntheticMethodDefinitionEClass = createEClass(MSYNTHETIC_METHOD_DEFINITION);
 		createEReference(mSyntheticMethodDefinitionEClass, MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION);
 
@@ -1394,7 +1365,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mEntryEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mGravityModelEClass.getESuperTypes().add(theJavaPackage.getModel());
 		mFieldSignatureEClass.getESuperTypes().add(this.getMSignature());
-		mAnnotationEClass.getESuperTypes().add(theJavaPackage.getAnnotation());
 		mSyntheticMethodDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
 		mAnonymousEClass.getESuperTypes().add(theJavaPackage.getAnonymousClassDeclaration());
 		mClassEClass.getESuperTypes().add(theJavaPackage.getClassDeclaration());
@@ -1494,9 +1464,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMFieldSignature_Model(), this.getMGravityModel(), this.getMGravityModel_MFieldSignatures(), "model", null, 1, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMFieldSignature_Type(), theJavaPackage.getType(), null, "type", null, 0, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMFieldSignature_MFieldDefinitions(), this.getMFieldDefinition(), this.getMFieldDefinition_MFieldSignature(), "mFieldDefinitions", null, 0, -1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mAnnotationEClass, MAnnotation.class, "MAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMAnnotation_MRelevant(), ecorePackage.getEBoolean(), "mRelevant", null, 0, 1, MAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mSyntheticMethodDefinitionEClass, MSyntheticMethodDefinition.class, "MSyntheticMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMSyntheticMethodDefinition_OriginalMethodDefinition(), this.getMMethodDefinition(), this.getMMethodDefinition_SyntheticMethodDefinitions(), "originalMethodDefinition", null, 1, 1, MSyntheticMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

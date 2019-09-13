@@ -4,11 +4,11 @@
 #abstract #rule AnnotationMemberValue #with org.gravity.tgg.modisco
 
 #source {
-	mAnnotation:MAnnotation {
-		-values -> mAnnotationValue
+	Annotation:Annotation {
+		-values -> AnnotationValue
 	}
 
-	mAnnotationValue:AnnotationMemberValuePair {
+	AnnotationValue:AnnotationMemberValuePair {
 		++ -value -> mValue
 	}
 
@@ -21,22 +21,17 @@
 
 #correspondence {
 	AnnotationMemberValuePairToTAnnotationValue :AnnotationMemberValuePairToTAnnotationValue {
-		#src->mAnnotationValue
+		#src->AnnotationValue
 		#trg->tAnnotationValue
 	}
 }
-
-#attributeConditions {
-	eq_boolean(mAnnotation.mRelevant, true)
-}
-
 #rule AnnotationMemberValueKey #with org.gravity.tgg.modisco
 
 #source {
-	mAnnotation : MAnnotation {
-		++ -values-> mAnnotationValue
+	Annotation : Annotation {
+		++ -values-> AnnotationValue
 	}
-	++ mAnnotationValue : AnnotationMemberValuePair
+	++ AnnotationValue : AnnotationMemberValuePair
 }
 
 #target {
@@ -47,17 +42,16 @@
 }
 
 #correspondence {
-	mAnnotationToTAnnotation : AnnotationToTAnnotation {
-		#src->mAnnotation
+	AnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->Annotation
 		#trg->tAnnotation
 	}
-	++ mAnnotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
-		#src->mAnnotationValue
+	++ AnnotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
+		#src->AnnotationValue
 		#trg->tAnnotationValue
 	}
 }
 
 #attributeConditions {
-	eq_boolean(mAnnotation.mRelevant, true)
-	eq_string(mAnnotationValue.name, tAnnotationValue.tKey)
+	eq_string(AnnotationValue.name, tAnnotationValue.tKey)
 }

@@ -76,60 +76,6 @@ public interface ModiscoFactory extends EFactory {
 	MMethodDefinition createMMethodDefinition();
 
 	/**
-	 * Returns a new object of class '<em>MMethod Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Invocation</em>'.
-	 * @generated
-	 */
-	MMethodInvocation createMMethodInvocation();
-
-	/**
-	 * Returns a new object of class '<em>MConstructor Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MConstructor Invocation</em>'.
-	 * @generated
-	 */
-	MConstructorInvocation createMConstructorInvocation();
-
-	/**
-	 * Returns a new object of class '<em>MSingle Variable Declaration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MSingle Variable Declaration</em>'.
-	 * @generated
-	 */
-	MSingleVariableDeclaration createMSingleVariableDeclaration();
-
-	/**
-	 * Returns a new object of class '<em>MSuper Method Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MSuper Method Invocation</em>'.
-	 * @generated
-	 */
-	MSuperMethodInvocation createMSuperMethodInvocation();
-
-	/**
-	 * Returns a new object of class '<em>MClass Instance Creation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MClass Instance Creation</em>'.
-	 * @generated
-	 */
-	MClassInstanceCreation createMClassInstanceCreation();
-
-	/**
-	 * Returns a new object of class '<em>MSuper Constructor Invocation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MSuper Constructor Invocation</em>'.
-	 * @generated
-	 */
-	MSuperConstructorInvocation createMSuperConstructorInvocation();
-
-	/**
 	 * Returns a new object of class '<em>MEntry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,15 +101,6 @@ public interface ModiscoFactory extends EFactory {
 	 * @generated
 	 */
 	MFieldSignature createMFieldSignature();
-
-	/**
-	 * Returns a new object of class '<em>MAnnotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MAnnotation</em>'.
-	 * @generated
-	 */
-	MAnnotation createMAnnotation();
 
 	/**
 	 * Returns a new object of class '<em>MSynthetic Method Definition</em>'.
@@ -218,6 +155,60 @@ public interface ModiscoFactory extends EFactory {
 	 * @generated
 	 */
 	MSingleVariableAccess createMSingleVariableAccess();
+
+	/**
+	 * Returns a new object of class '<em>MMethod Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MMethod Invocation</em>'.
+	 * @generated
+	 */
+	MMethodInvocation createMMethodInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MConstructor Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MConstructor Invocation</em>'.
+	 * @generated
+	 */
+	MConstructorInvocation createMConstructorInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MSingle Variable Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSingle Variable Declaration</em>'.
+	 * @generated
+	 */
+	MSingleVariableDeclaration createMSingleVariableDeclaration();
+
+	/**
+	 * Returns a new object of class '<em>MSuper Method Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSuper Method Invocation</em>'.
+	 * @generated
+	 */
+	MSuperMethodInvocation createMSuperMethodInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MClass Instance Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MClass Instance Creation</em>'.
+	 * @generated
+	 */
+	MClassInstanceCreation createMClassInstanceCreation();
+
+	/**
+	 * Returns a new object of class '<em>MSuper Constructor Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSuper Constructor Invocation</em>'.
+	 * @generated
+	 */
+	MSuperConstructorInvocation createMSuperConstructorInvocation();
 
 	/**
 	 * Returns the package supported by this factory.

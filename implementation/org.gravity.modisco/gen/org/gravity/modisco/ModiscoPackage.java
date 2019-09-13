@@ -466,16 +466,6 @@ public interface ModiscoPackage extends EPackage {
 	int MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 9;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorDefinitionImpl <em>MConstructor Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MConstructorDefinitionImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorDefinition()
-	 * @generated
-	 */
-	int MCONSTRUCTOR_DEFINITION = 2;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractFlowElementImpl <em>MAbstract Flow Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,7 +473,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractFlowElement()
 	 * @generated
 	 */
-	int MABSTRACT_FLOW_ELEMENT = 22;
+	int MABSTRACT_FLOW_ELEMENT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -566,6 +556,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MACCESS_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorDefinitionImpl <em>MConstructor Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MConstructorDefinitionImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorDefinition()
+	 * @generated
+	 */
+	int MCONSTRUCTOR_DEFINITION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -1683,86 +1683,6 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_DEFINITION_FEATURE_COUNT = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 11;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodInvocationImpl <em>MMethod Invocation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MMethodInvocationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
-	 * @generated
-	 */
-	int MMETHOD_INVOCATION = 24;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorInvocationImpl <em>MConstructor Invocation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MConstructorInvocationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
-	 * @generated
-	 */
-	int MCONSTRUCTOR_INVOCATION = 25;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MSingleVariableDeclarationImpl <em>MSingle Variable Declaration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MSingleVariableDeclarationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
-	 * @generated
-	 */
-	int MSINGLE_VARIABLE_DECLARATION = 26;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractMethodInvocationImpl <em>MAbstract Method Invocation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MAbstractMethodInvocationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
-	 * @generated
-	 */
-	int MABSTRACT_METHOD_INVOCATION = 27;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperMethodInvocationImpl <em>MSuper Method Invocation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MSuperMethodInvocationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
-	 * @generated
-	 */
-	int MSUPER_METHOD_INVOCATION = 28;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MClassInstanceCreationImpl <em>MClass Instance Creation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MClassInstanceCreationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
-	 * @generated
-	 */
-	int MCLASS_INSTANCE_CREATION = 29;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MSuperConstructorInvocationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
-	 * @generated
-	 */
-	int MSUPER_CONSTRUCTOR_INVOCATION = 30;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.AccessKind
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
-	 * @generated
-	 */
-	int ACCESS_KIND = 31;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MEntryImpl <em>MEntry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2126,79 +2046,6 @@ public interface ModiscoPackage extends EPackage {
 	int MFIELD_SIGNATURE_FEATURE_COUNT = MSIGNATURE_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MAnnotationImpl <em>MAnnotation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MAnnotationImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnnotation()
-	 * @generated
-	 */
-	int MANNOTATION = 15;
-
-	/**
-	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__COMMENTS = JavaPackage.ANNOTATION__COMMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Original Compilation Unit</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__ORIGINAL_COMPILATION_UNIT = JavaPackage.ANNOTATION__ORIGINAL_COMPILATION_UNIT;
-
-	/**
-	 * The feature id for the '<em><b>Original Class File</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__ORIGINAL_CLASS_FILE = JavaPackage.ANNOTATION__ORIGINAL_CLASS_FILE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__TYPE = JavaPackage.ANNOTATION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__VALUES = JavaPackage.ANNOTATION__VALUES;
-
-	/**
-	 * The feature id for the '<em><b>MRelevant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION__MRELEVANT = JavaPackage.ANNOTATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>MAnnotation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANNOTATION_FEATURE_COUNT = JavaPackage.ANNOTATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2206,7 +2053,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
 	 * @generated
 	 */
-	int MSYNTHETIC_METHOD_DEFINITION = 16;
+	int MSYNTHETIC_METHOD_DEFINITION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2324,7 +2171,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMethodInvocationStaticType()
 	 * @generated
 	 */
-	int METHOD_INVOCATION_STATIC_TYPE = 17;
+	int METHOD_INVOCATION_STATIC_TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Method Invoc</b></em>' reference.
@@ -2361,7 +2208,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymous()
 	 * @generated
 	 */
-	int MANONYMOUS = 18;
+	int MANONYMOUS = 17;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2434,7 +2281,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClass()
 	 * @generated
 	 */
-	int MCLASS = 19;
+	int MCLASS = 18;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2624,7 +2471,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMExtension()
 	 * @generated
 	 */
-	int MEXTENSION = 20;
+	int MEXTENSION = 19;
 
 	/**
 	 * The number of structural features of the '<em>MExtension</em>' class.
@@ -2635,7 +2482,6 @@ public interface ModiscoPackage extends EPackage {
 	 */
 	int MEXTENSION_FEATURE_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MFlowImpl <em>MFlow</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2644,7 +2490,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFlow()
 	 * @generated
 	 */
-	int MFLOW = 21;
+	int MFLOW = 20;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -2717,7 +2563,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableAccess()
 	 * @generated
 	 */
-	int MSINGLE_VARIABLE_ACCESS = 23;
+	int MSINGLE_VARIABLE_ACCESS = 22;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2808,6 +2654,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MSINGLE_VARIABLE_ACCESS_FEATURE_COUNT = JavaPackage.SINGLE_VARIABLE_ACCESS_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodInvocationImpl <em>MMethod Invocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MMethodInvocationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
+	 * @generated
+	 */
+	int MMETHOD_INVOCATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2918,6 +2774,16 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_INVOCATION_FEATURE_COUNT = JavaPackage.METHOD_INVOCATION_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MConstructorInvocationImpl <em>MConstructor Invocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MConstructorInvocationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
+	 * @generated
+	 */
+	int MCONSTRUCTOR_INVOCATION = 24;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3006,6 +2872,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MCONSTRUCTOR_INVOCATION_FEATURE_COUNT = JavaPackage.CONSTRUCTOR_INVOCATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MSingleVariableDeclarationImpl <em>MSingle Variable Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MSingleVariableDeclarationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
+	 * @generated
+	 */
+	int MSINGLE_VARIABLE_DECLARATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3170,6 +3046,16 @@ public interface ModiscoPackage extends EPackage {
 	int MSINGLE_VARIABLE_DECLARATION_FEATURE_COUNT = JavaPackage.SINGLE_VARIABLE_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MAbstractMethodInvocationImpl <em>MAbstract Method Invocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MAbstractMethodInvocationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
+	 * @generated
+	 */
+	int MABSTRACT_METHOD_INVOCATION = 26;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3258,6 +3144,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MABSTRACT_METHOD_INVOCATION_FEATURE_COUNT = JavaPackage.ABSTRACT_METHOD_INVOCATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperMethodInvocationImpl <em>MSuper Method Invocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MSuperMethodInvocationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
+	 * @generated
+	 */
+	int MSUPER_METHOD_INVOCATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3357,6 +3253,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MSUPER_METHOD_INVOCATION_FEATURE_COUNT = JavaPackage.SUPER_METHOD_INVOCATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MClassInstanceCreationImpl <em>MClass Instance Creation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MClassInstanceCreationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
+	 * @generated
+	 */
+	int MCLASS_INSTANCE_CREATION = 28;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3476,6 +3382,16 @@ public interface ModiscoPackage extends EPackage {
 	int MCLASS_INSTANCE_CREATION_FEATURE_COUNT = JavaPackage.CLASS_INSTANCE_CREATION_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MSuperConstructorInvocationImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
+	 * @generated
+	 */
+	int MSUPER_CONSTRUCTOR_INVOCATION = 29;
+
+	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3573,6 +3489,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MSUPER_CONSTRUCTOR_INVOCATION_FEATURE_COUNT = JavaPackage.SUPER_CONSTRUCTOR_INVOCATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.AccessKind
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
+	 * @generated
+	 */
+	int ACCESS_KIND = 30;
 
 
 	/**
@@ -3972,108 +3898,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMMethodDefinition_SyntheticMethodDefinitions();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodInvocation <em>MMethod Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MMethod Invocation</em>'.
-	 * @see org.gravity.modisco.MMethodInvocation
-	 * @generated
-	 */
-	EClass getMMethodInvocation();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodInvocation#getMStaticType <em>MStatic Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>MStatic Type</em>'.
-	 * @see org.gravity.modisco.MMethodInvocation#getMStaticType()
-	 * @see #getMMethodInvocation()
-	 * @generated
-	 */
-	EReference getMMethodInvocation_MStaticType();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MConstructorInvocation <em>MConstructor Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MConstructor Invocation</em>'.
-	 * @see org.gravity.modisco.MConstructorInvocation
-	 * @generated
-	 */
-	EClass getMConstructorInvocation();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MSingleVariableDeclaration <em>MSingle Variable Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MSingle Variable Declaration</em>'.
-	 * @see org.gravity.modisco.MSingleVariableDeclaration
-	 * @generated
-	 */
-	EClass getMSingleVariableDeclaration();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MSingleVariableDeclaration#getMEntry <em>MEntry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>MEntry</em>'.
-	 * @see org.gravity.modisco.MSingleVariableDeclaration#getMEntry()
-	 * @see #getMSingleVariableDeclaration()
-	 * @generated
-	 */
-	EReference getMSingleVariableDeclaration_MEntry();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MAbstractMethodInvocation <em>MAbstract Method Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MAbstract Method Invocation</em>'.
-	 * @see org.gravity.modisco.MAbstractMethodInvocation
-	 * @generated
-	 */
-	EClass getMAbstractMethodInvocation();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperMethodInvocation <em>MSuper Method Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MSuper Method Invocation</em>'.
-	 * @see org.gravity.modisco.MSuperMethodInvocation
-	 * @generated
-	 */
-	EClass getMSuperMethodInvocation();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MClassInstanceCreation <em>MClass Instance Creation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MClass Instance Creation</em>'.
-	 * @see org.gravity.modisco.MClassInstanceCreation
-	 * @generated
-	 */
-	EClass getMClassInstanceCreation();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MSuper Constructor Invocation</em>'.
-	 * @see org.gravity.modisco.MSuperConstructorInvocation
-	 * @generated
-	 */
-	EClass getMSuperConstructorInvocation();
-
-	/**
-	 * Returns the meta object for enum '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Access Kind</em>'.
-	 * @see org.gravity.modisco.AccessKind
-	 * @generated
-	 */
-	EEnum getAccessKind();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MSignature <em>MSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4345,27 +4169,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMFieldSignature_MFieldDefinitions();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MAnnotation <em>MAnnotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MAnnotation</em>'.
-	 * @see org.gravity.modisco.MAnnotation
-	 * @generated
-	 */
-	EClass getMAnnotation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MAnnotation#isMRelevant <em>MRelevant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>MRelevant</em>'.
-	 * @see org.gravity.modisco.MAnnotation#isMRelevant()
-	 * @see #getMAnnotation()
-	 * @generated
-	 */
-	EAttribute getMAnnotation_MRelevant();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MSyntheticMethodDefinition <em>MSynthetic Method Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4576,6 +4379,108 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMSingleVariableAccess_AccessKind();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodInvocation <em>MMethod Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MMethod Invocation</em>'.
+	 * @see org.gravity.modisco.MMethodInvocation
+	 * @generated
+	 */
+	EClass getMMethodInvocation();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodInvocation#getMStaticType <em>MStatic Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>MStatic Type</em>'.
+	 * @see org.gravity.modisco.MMethodInvocation#getMStaticType()
+	 * @see #getMMethodInvocation()
+	 * @generated
+	 */
+	EReference getMMethodInvocation_MStaticType();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MConstructorInvocation <em>MConstructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MConstructor Invocation</em>'.
+	 * @see org.gravity.modisco.MConstructorInvocation
+	 * @generated
+	 */
+	EClass getMConstructorInvocation();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MSingleVariableDeclaration <em>MSingle Variable Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MSingle Variable Declaration</em>'.
+	 * @see org.gravity.modisco.MSingleVariableDeclaration
+	 * @generated
+	 */
+	EClass getMSingleVariableDeclaration();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MSingleVariableDeclaration#getMEntry <em>MEntry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>MEntry</em>'.
+	 * @see org.gravity.modisco.MSingleVariableDeclaration#getMEntry()
+	 * @see #getMSingleVariableDeclaration()
+	 * @generated
+	 */
+	EReference getMSingleVariableDeclaration_MEntry();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MAbstractMethodInvocation <em>MAbstract Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MAbstract Method Invocation</em>'.
+	 * @see org.gravity.modisco.MAbstractMethodInvocation
+	 * @generated
+	 */
+	EClass getMAbstractMethodInvocation();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperMethodInvocation <em>MSuper Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MSuper Method Invocation</em>'.
+	 * @see org.gravity.modisco.MSuperMethodInvocation
+	 * @generated
+	 */
+	EClass getMSuperMethodInvocation();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MClassInstanceCreation <em>MClass Instance Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MClass Instance Creation</em>'.
+	 * @see org.gravity.modisco.MClassInstanceCreation
+	 * @generated
+	 */
+	EClass getMClassInstanceCreation();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MSuper Constructor Invocation</em>'.
+	 * @see org.gravity.modisco.MSuperConstructorInvocation
+	 * @generated
+	 */
+	EClass getMSuperConstructorInvocation();
+
+	/**
+	 * Returns the meta object for enum '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Access Kind</em>'.
+	 * @see org.gravity.modisco.AccessKind
+	 * @generated
+	 */
+	EEnum getAccessKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4918,102 +4823,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS = eINSTANCE.getMMethodDefinition_SyntheticMethodDefinitions();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodInvocationImpl <em>MMethod Invocation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MMethodInvocationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
-		 * @generated
-		 */
-		EClass MMETHOD_INVOCATION = eINSTANCE.getMMethodInvocation();
-
-		/**
-		 * The meta object literal for the '<em><b>MStatic Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MMETHOD_INVOCATION__MSTATIC_TYPE = eINSTANCE.getMMethodInvocation_MStaticType();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MConstructorInvocationImpl <em>MConstructor Invocation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MConstructorInvocationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
-		 * @generated
-		 */
-		EClass MCONSTRUCTOR_INVOCATION = eINSTANCE.getMConstructorInvocation();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSingleVariableDeclarationImpl <em>MSingle Variable Declaration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MSingleVariableDeclarationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
-		 * @generated
-		 */
-		EClass MSINGLE_VARIABLE_DECLARATION = eINSTANCE.getMSingleVariableDeclaration();
-
-		/**
-		 * The meta object literal for the '<em><b>MEntry</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MSINGLE_VARIABLE_DECLARATION__MENTRY = eINSTANCE.getMSingleVariableDeclaration_MEntry();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAbstractMethodInvocationImpl <em>MAbstract Method Invocation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MAbstractMethodInvocationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
-		 * @generated
-		 */
-		EClass MABSTRACT_METHOD_INVOCATION = eINSTANCE.getMAbstractMethodInvocation();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperMethodInvocationImpl <em>MSuper Method Invocation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MSuperMethodInvocationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
-		 * @generated
-		 */
-		EClass MSUPER_METHOD_INVOCATION = eINSTANCE.getMSuperMethodInvocation();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MClassInstanceCreationImpl <em>MClass Instance Creation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MClassInstanceCreationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
-		 * @generated
-		 */
-		EClass MCLASS_INSTANCE_CREATION = eINSTANCE.getMClassInstanceCreation();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MSuperConstructorInvocationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
-		 * @generated
-		 */
-		EClass MSUPER_CONSTRUCTOR_INVOCATION = eINSTANCE.getMSuperConstructorInvocation();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.AccessKind
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
-		 * @generated
-		 */
-		EEnum ACCESS_KIND = eINSTANCE.getAccessKind();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5222,24 +5031,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MFIELD_SIGNATURE__MFIELD_DEFINITIONS = eINSTANCE.getMFieldSignature_MFieldDefinitions();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAnnotationImpl <em>MAnnotation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MAnnotationImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnnotation()
-		 * @generated
-		 */
-		EClass MANNOTATION = eINSTANCE.getMAnnotation();
-
-		/**
-		 * The meta object literal for the '<em><b>MRelevant</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MANNOTATION__MRELEVANT = eINSTANCE.getMAnnotation_MRelevant();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5414,6 +5205,102 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MSINGLE_VARIABLE_ACCESS__ACCESS_KIND = eINSTANCE.getMSingleVariableAccess_AccessKind();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodInvocationImpl <em>MMethod Invocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MMethodInvocationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
+		 * @generated
+		 */
+		EClass MMETHOD_INVOCATION = eINSTANCE.getMMethodInvocation();
+
+		/**
+		 * The meta object literal for the '<em><b>MStatic Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MMETHOD_INVOCATION__MSTATIC_TYPE = eINSTANCE.getMMethodInvocation_MStaticType();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MConstructorInvocationImpl <em>MConstructor Invocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MConstructorInvocationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
+		 * @generated
+		 */
+		EClass MCONSTRUCTOR_INVOCATION = eINSTANCE.getMConstructorInvocation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSingleVariableDeclarationImpl <em>MSingle Variable Declaration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MSingleVariableDeclarationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
+		 * @generated
+		 */
+		EClass MSINGLE_VARIABLE_DECLARATION = eINSTANCE.getMSingleVariableDeclaration();
+
+		/**
+		 * The meta object literal for the '<em><b>MEntry</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MSINGLE_VARIABLE_DECLARATION__MENTRY = eINSTANCE.getMSingleVariableDeclaration_MEntry();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAbstractMethodInvocationImpl <em>MAbstract Method Invocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MAbstractMethodInvocationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
+		 * @generated
+		 */
+		EClass MABSTRACT_METHOD_INVOCATION = eINSTANCE.getMAbstractMethodInvocation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperMethodInvocationImpl <em>MSuper Method Invocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MSuperMethodInvocationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
+		 * @generated
+		 */
+		EClass MSUPER_METHOD_INVOCATION = eINSTANCE.getMSuperMethodInvocation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MClassInstanceCreationImpl <em>MClass Instance Creation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MClassInstanceCreationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
+		 * @generated
+		 */
+		EClass MCLASS_INSTANCE_CREATION = eINSTANCE.getMClassInstanceCreation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSuperConstructorInvocationImpl <em>MSuper Constructor Invocation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MSuperConstructorInvocationImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
+		 * @generated
+		 */
+		EClass MSUPER_CONSTRUCTOR_INVOCATION = eINSTANCE.getMSuperConstructorInvocation();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.AccessKind <em>Access Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.AccessKind
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
+		 * @generated
+		 */
+		EEnum ACCESS_KIND = eINSTANCE.getAccessKind();
 
 	}
 
