@@ -10,7 +10,7 @@
 	++ access : TypeAccess {
 		++ -type-> type
 	}
-	++ annotation : MAnnotation {
+	++ annotation : Annotation {
 		++ -type->access	
 	}
 }

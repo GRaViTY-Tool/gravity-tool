@@ -914,7 +914,7 @@
   <rules name="ConstructorDec2OperationAnonymous" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
     </sourcePatterns>
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
@@ -2728,7 +2728,7 @@
     </sourcePatterns>
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.51/@sourcePatterns.0">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/type"/>
@@ -2791,7 +2791,7 @@
     </sourcePatterns>
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.52/@sourcePatterns.0">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/type"/>
@@ -2854,7 +2854,7 @@
     </sourcePatterns>
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.53/@sourcePatterns.0">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/type"/>
