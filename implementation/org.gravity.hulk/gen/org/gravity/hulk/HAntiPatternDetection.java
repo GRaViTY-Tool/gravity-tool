@@ -44,14 +44,6 @@ public interface HAntiPatternDetection extends HAntiPatternHandling {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	boolean execute();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */

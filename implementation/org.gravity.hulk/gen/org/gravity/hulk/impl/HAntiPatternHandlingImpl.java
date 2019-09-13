@@ -195,30 +195,6 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean execute() {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DFSGraph getDependencyGraph() {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -334,8 +310,6 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case HulkPackage.HANTI_PATTERN_HANDLING___EXECUTE:
-			return execute();
 		case HulkPackage.HANTI_PATTERN_HANDLING___GET_DEPENDENCY_GRAPH:
 			return getDependencyGraph();
 		}

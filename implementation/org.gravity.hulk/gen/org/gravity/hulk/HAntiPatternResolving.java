@@ -39,14 +39,6 @@ public interface HAntiPatternResolving extends HAntiPatternDetection {
 	 * @model
 	 * @generated
 	 */
-	boolean execute();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
 	void createResolveAntiPatternDependency(DFSGraph graph);
 
 	/**

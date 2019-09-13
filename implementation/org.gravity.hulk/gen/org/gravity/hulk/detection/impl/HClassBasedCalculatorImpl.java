@@ -59,18 +59,6 @@ public abstract class HClassBasedCalculatorImpl extends HDetectorImpl implements
 	 * 
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public boolean detect(HAntiPatternGraph pg) {// ForEach
 		for (TClass tClass : getClassesToVisit(pg, this)) {
 			HAnnotation metric = calculate(tClass);

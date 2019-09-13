@@ -144,12 +144,7 @@ public abstract class HRelativeDetectorImpl extends HDetectorImpl implements HRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double calculateRelativeThreshold(HRelativeValueConstants level) {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
+	public abstract double calculateRelativeThreshold(HRelativeValueConstants level);
 
 	/**
 	 * <!-- begin-user-doc -->

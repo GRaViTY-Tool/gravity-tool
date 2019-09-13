@@ -69,12 +69,7 @@ public abstract class HClassBasedMetricCalculatorImpl extends HClassBasedCalcula
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
-		// [user code injected with eMoflon]
-
-		// TODO: implement this method here but do not remove the injection marker 
-		throw new UnsupportedOperationException();
-	}
+	public abstract double calculateValue(TClass tClass);
 
 	/**
 	 * <!-- begin-user-doc -->
