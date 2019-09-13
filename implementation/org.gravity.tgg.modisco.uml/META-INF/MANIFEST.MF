@@ -15,8 +15,6 @@ Export-Package: org.emoflon.ibex.tgg,
  org.emoflon.ibex.tgg.rules.types.inner,
  org.emoflon.ibex.tgg.rules.types.parameterized,
  org.emoflon.ibex.tgg.rules.types.typeparameter,
- org.emoflon.ibex.tgg.run.uml,
- org.emoflon.ibex.tgg.run.uml.debug,
  org.gravity.tgg.uml,
  org.gravity.tgg.uml.ui
 Bundle-Name: MoDiscoTGG
