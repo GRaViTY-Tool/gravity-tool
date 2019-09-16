@@ -43,20 +43,26 @@ public class GraphVisualizer {
 
 	private static final Logger LOGGER = Logger.getLogger(GraphVisualizer.class);
 
+	private GraphVisualizer() {
+		// This class shouldn't be instantiated
+	}
+
 	/**
 	 * Draws the dot graphs for each StatementHandlerDataFlow instance in the given
-	 * list. The graphs are exported as PNG image files to a folder with the given folder name (inside the project folder).
+	 * list. The graphs are exported as PNG image files to a folder with the given
+	 * folder name (inside the project folder).
 	 * 
-	 * @param handlers The list of StatementHandlerDataFlow instances, for which a
-	 *                 graph is supposed to be drawn.
-	 *                 
-	 * @param folderName The name, that should be given to the output folder. If a folder with that name already exists, it is used.
+	 * @param handlers   The list of StatementHandlerDataFlow instances, for which a
+	 *                   graph is supposed to be drawn.
+	 * 
+	 * @param folderName The name, that should be given to the output folder. If a
+	 *                   folder with that name already exists, it is used.
 	 */
 	public static void drawGraphs(List<StatementHandlerDataFlow> handlers, String folderName) {
-		int i = 0;
 		String projectName = ((MGravityModel) handlers.get(0).getMemberDef().eResource().getContents().get(0))
 				.getName();
-		for (StatementHandlerDataFlow handler : handlers) {
+		for (int i = 0; i< handlers.size(); i++) {
+			StatementHandlerDataFlow handler = handlers.get(i);
 			EObject memberDef = handler.getMemberDef();
 			String className = "Unknown";
 			String memberName = ((NamedElement) memberDef).getName();
@@ -85,54 +91,73 @@ public class GraphVisualizer {
 			}
 			// Set containment edges (+ links to nodes of called/accessed methods/fields)
 			// for all graph nodes
-			for (FlowNode node : alreadySeenNodes) {
-				MutableNode graphNode = graphNodes.get(node);
-				EObject modelElement = node.getModelElement();
-				if (modelElement == null) {
-					continue;
-				}
-				EObject eContainer = modelElement.eContainer();
-				FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
-				if (flowCont == null) {
-					continue;
-				}
-				if (modelElement instanceof MethodInvocation) {
-					graphNode.addLink(graphNode
-							.linkTo(getDotNode(handler
-									.getFlowNodeForElement(((MethodInvocation) modelElement).getMethod()))
-											.add(Style.FILLED, Color.GRAY))
-							.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
-				}
-				if (modelElement instanceof ClassInstanceCreation) {
-					graphNode
-							.addLink(graphNode
-									.linkTo(getDotNode(handler.getFlowNodeForElement(
-											((ClassInstanceCreation) modelElement).getMethod()))
-													.add(Style.FILLED, Color.GRAY))
-									.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
-				}
-				// TODO: Flow from called method?
-				// TODO: "accessed" edge to field?
-				graphNodes.get(flowCont).addLink(graphNode);
-			}
+			drawContainmentEdges(handler, graphNodes, alreadySeenNodes);
 			// Set flow edges
-			for (FlowNode node : alreadySeenNodes) {
-				MutableNode graphNode = graphNodes.get(node);
-				for (FlowNode out : node.getOutRef()) {
-					MutableNode outNode = graphNodes.get(out);
-					if (outNode != null) { // TODO: Check, if nothing else breaks, when this fix is used
-						graphNode.addLink(graphNode.linkTo(outNode).with(Style.DASHED, Label.of("flows to"), Color.BLUE));
-					}
-				}
-			}
+			drawFlowEdges(graphNodes, alreadySeenNodes);
 			try {
 				Graphviz.fromGraph(g).width(5000).render(Format.PNG)
-						.toFile(new File(folderName + File.separator + projectName + File.separator + "Class-" + className
-								+ "-" + memberType + "-" + memberName + ".png"));
+						.toFile(new File(folderName + File.separator + projectName + File.separator + "Class-"
+								+ className + "-" + memberType + "-" + memberName + ".png"));
 			} catch (IOException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
-			i++;
+		}
+	}
+
+	/**
+	 * Draws the flow edges between the graph nodes
+	 * 
+	 * @param graphNodes The nodes of the graph
+	 * @param alreadySeenNodes 
+	 */
+	private static void drawFlowEdges(HashMap<FlowNode, MutableNode> graphNodes,
+			Collection<FlowNode> alreadySeenNodes) {
+		for (FlowNode node : alreadySeenNodes) {
+			MutableNode graphNode = graphNodes.get(node);
+			for (FlowNode out : node.getOutRef()) {
+				MutableNode outNode = graphNodes.get(out);
+				if (outNode != null) {
+					graphNode.addLink(
+							graphNode.linkTo(outNode).with(Style.DASHED, Label.of("flows to"), Color.BLUE));
+				}
+			}
+		}
+	}
+
+	/**
+	 * Set containment edges (+ links to nodes of called/accessed methods/fields)
+	 * for all graph nodes
+	 * 
+	 * @param handler
+	 * @param graphNodes The nodes of the graph
+	 * @param alreadySeenNodes
+	 */
+	private static void drawContainmentEdges(StatementHandlerDataFlow handler,
+			HashMap<FlowNode, MutableNode> graphNodes, Collection<FlowNode> alreadySeenNodes) {
+		for (FlowNode node : alreadySeenNodes) {
+			MutableNode graphNode = graphNodes.get(node);
+			EObject modelElement = node.getModelElement();
+			if (modelElement == null) {
+				continue;
+			}
+			EObject eContainer = modelElement.eContainer();
+			FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
+			if (flowCont == null) {
+				continue;
+			}
+			if (modelElement instanceof MethodInvocation) {
+				graphNode.addLink(graphNode
+						.linkTo(getDotNode(handler.getFlowNodeForElement(((MethodInvocation) modelElement).getMethod()))
+								.add(Style.FILLED, Color.GRAY))
+						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
+			}
+			if (modelElement instanceof ClassInstanceCreation) {
+				graphNode.addLink(graphNode.linkTo(
+						getDotNode(handler.getFlowNodeForElement(((ClassInstanceCreation) modelElement).getMethod()))
+								.add(Style.FILLED, Color.GRAY))
+						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
+			}
+			graphNodes.get(flowCont).addLink(graphNode);
 		}
 	}
 

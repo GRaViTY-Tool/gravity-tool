@@ -2,6 +2,7 @@ package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Level;
@@ -47,7 +48,7 @@ import org.gravity.modisco.MDefinition;
  */
 public class StatementHandlerDataFlow {
 	
-	private static final Logger LOGGER = Logger.getLogger(ExpressionHandlerDataFlow.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(StatementHandlerDataFlow.class);
 	
 	/**
 	 * The accesses observed in the member corresponding to this handler.
@@ -57,7 +58,7 @@ public class StatementHandlerDataFlow {
 	/**
 	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
 	 */
-	private HashMap<EObject, FlowNode> alreadySeen = new HashMap<>();
+	private Map<EObject, FlowNode> alreadySeen = new HashMap<>();
 	
 	/**
 	 * The member definition corresponding to this handler.
@@ -116,9 +117,7 @@ public class StatementHandlerDataFlow {
 			return handle(doStatement);
 
 		} else if (statement instanceof EmptyStatement) {
-			EmptyStatement emptyStatement = (EmptyStatement) statement;
-			return handle(emptyStatement);
-
+			return null;
 		} else if (statement instanceof EnhancedForStatement) {
 			EnhancedForStatement enhancedForStetement = (EnhancedForStatement) statement;
 			return handle(enhancedForStetement);
@@ -352,10 +351,6 @@ public class StatementHandlerDataFlow {
 		return member;
 	}
 
-	private FlowNode handle(EmptyStatement emptyStatement) {
-		return null;
-	}
-
 	private FlowNode handle(DoStatement doStatement) {
 		FlowNode member = getFlowNodeForElement(doStatement);
 		if (member.isFromAlreadySeen()) {
@@ -437,10 +432,14 @@ public class StatementHandlerDataFlow {
 		return memberRef;
 	}
 	
-	public HashMap<EObject, FlowNode> getAlreadySeen() {
+	public Map<EObject, FlowNode> getAlreadySeen() {
 		return alreadySeen;
 	}
 	
+	public void setAlreadySeen(Map<EObject, FlowNode> nodeMap) {
+		alreadySeen = nodeMap;
+	}
+
 	public EObject getMemberDef() {
 		return memberDef;
 	}
@@ -469,9 +468,5 @@ public class StatementHandlerDataFlow {
 		FlowNode member = new FlowNode(element);
 		alreadySeen.put(element, member);
 		return member;
-	}
-
-	public void setAlreadySeen(HashMap<EObject, FlowNode> nodeMap) {
-		alreadySeen = nodeMap;
 	}
 }

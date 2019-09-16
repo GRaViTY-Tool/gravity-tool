@@ -165,10 +165,9 @@ public class TransformationTest {
 		assertNotNull(preprocessedModel);
 
 		// Check, if element counts (e. g. number of TFlows) are as expected
-		IFile path = project.getProject().getFile("expectModisco.json");
-		File file = new File(path.toString());
+		IFile file = project.getProject().getFile("expectModisco.json");
 		if (file.exists()) {
-			checkModel(preprocessedModel, path);
+			checkModel(preprocessedModel, file);
 		}
 	}
 
@@ -252,8 +251,7 @@ public class TransformationTest {
 		if (resource == null) {
 			return null;
 		}
-		MGravityModel modiscoModel = (MGravityModel) resource.getContents().get(0);
-		return modiscoModel;
+		return (MGravityModel) resource.getContents().get(0);
 	}
 
 	private static final boolean ADD_UMLSEC = false;

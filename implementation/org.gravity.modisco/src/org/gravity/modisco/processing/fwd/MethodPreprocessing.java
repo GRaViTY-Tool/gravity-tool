@@ -72,37 +72,47 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 			LOGGER.log(Level.ERROR, "Couldn't find most geric return type for method definition:" + definition + ".");
 			return false;
 		}
-		for (MMethodSignature mSig : name.getMMethodSignatures()) {
-			if (mSigReturnType.equals(mSig.getReturnType())) {
-				if (isParamListEqual(definition, mSig)) {
-					mSig.getMMethodDefinitions().add(definition);
-					mSig.getMDefinitions().add(definition);
-					MEntry mFirstEntry = mSig.getMFirstEntry();
-					EList<SingleVariableDeclaration> defParams = definition.getParameters();
-					if (mFirstEntry != null) {
-						mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
-						for (int i = 1; i < mSig.getMEntrys().size(); i++) {
-							mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
-						}
-					}
-					continue;
+		MMethodSignature existingSignature = getExistingSignature(name, definition, mSigReturnType);
+		if (existingSignature == null) {
+			existingSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
+			name.getMSignatures().add(existingSignature);
+			existingSignature.setMMethodName(name);
+			existingSignature.setModel(model);
+			existingSignature.setReturnType(mSigReturnType);
+			MoDiscoUtil.fillParamList(definition, existingSignature);
+		}
+		else {
+			EList<SingleVariableDeclaration> defParams = definition.getParameters();
+			MEntry mFirstEntry = existingSignature.getMFirstEntry();
+			if (mFirstEntry != null) {
+				mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
+				for (int i = 1; i < existingSignature.getMEntrys().size(); i++) {
+					mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
 				}
-
 			}
 		}
-		MMethodSignature mOldSig = definition.getMMethodSignature();
-		if (mOldSig == null) {
-			MMethodSignature mNewSig = ModiscoFactory.eINSTANCE.createMMethodSignature();
-			name.getMSignatures().add(mNewSig);
-			mNewSig.setMMethodName(name);
-			mNewSig.getMMethodDefinitions().add(definition);
-			mNewSig.setModel(model);
-			mNewSig.setReturnType(mSigReturnType);
-			mNewSig.getMDefinitions().add(definition);
-
-			MoDiscoUtil.fillParamList(definition, mNewSig);
-		}
+		existingSignature.getMMethodDefinitions().add(definition);
+		existingSignature.getMDefinitions().add(definition);
 		return true;
+	}
+
+	/**
+	 * Searches if there is already a signature for the name corresponding to the given definition
+	 * 
+	 * @param name The name object of the method
+	 * @param definition The method definition
+	 * @param returnType The most generic return type
+	 * @return The signature or null
+	 */
+	private MMethodSignature getExistingSignature(MMethodName name, MAbstractMethodDefinition definition,
+			Type returnType) {
+		for (MMethodSignature existingSignature : name.getMMethodSignatures()) {
+			if (returnType.equals(existingSignature.getReturnType()) 
+					&& isParamListEqual(definition, existingSignature)) {
+				return existingSignature;
+			}
+		}
+		return null;
 	}
 
 	/**
