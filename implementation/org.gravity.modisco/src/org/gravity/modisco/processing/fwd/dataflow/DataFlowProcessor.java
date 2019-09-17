@@ -2,9 +2,9 @@ package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Level;
@@ -88,7 +88,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 			
 			// Reduction of intra-DFGs
-			HashMap<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
+			Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
 			for (EObject node : new ArrayList<>(reducedDFG.keySet())) {
 				if (node instanceof MAbstractMethodDefinition) {
 					// Keep node (for readability of dot graphs only)
@@ -257,7 +257,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param node The node's key in reducedDFG.
 	 * @param reducedDFG The alreadySeen on which the reduction should be performed.
 	 */
-	private void reduceNodeInDFG(EObject node, HashMap<EObject, FlowNode> reducedDFG) {
+	private void reduceNodeInDFG(EObject node, Map<EObject, FlowNode> reducedDFG) {
 		FlowNode flowNode = reducedDFG.get(node);
 		Set<FlowNode> inRef = flowNode.getInRef();
 		Set<FlowNode> outRef = flowNode.getOutRef();
