@@ -59,14 +59,8 @@ public class FlowNode {
 	}
 	
 	public void addInRef(FlowNode node) {
-		// TODO (null-check) Should not be necessary, if every element type is covered in the handlers. Thus, this is only treating the symptom here..
-		if (node != null) {
-			inRef.add(node);
-			node.getOutRef().add(this);
-		}
-		else {
-			LOGGER.error("Node is null");
-		}
+		inRef.add(node);
+		node.getOutRef().add(this);
 	}
 	
 	public void addOutRef(FlowNode node) {

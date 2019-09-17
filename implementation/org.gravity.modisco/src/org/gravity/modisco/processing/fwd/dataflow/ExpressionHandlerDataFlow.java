@@ -22,6 +22,7 @@ import org.eclipse.gmt.modisco.java.ConditionalExpression;
 import org.eclipse.gmt.modisco.java.ConstructorInvocation;
 import org.eclipse.gmt.modisco.java.Expression;
 import org.eclipse.gmt.modisco.java.FieldAccess;
+import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.InfixExpression;
 import org.eclipse.gmt.modisco.java.InstanceofExpression;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
@@ -239,92 +240,25 @@ public class ExpressionHandlerDataFlow {
 		FlowNode varDeclNode = statementHandler.getFlowNodeForElement(variable); // No handling desired, as it's easier
 																					// to use this SingleVariableAccess
 																					// handling instead
-		MSingleVariableAccess mSVA = ((MSingleVariableAccess) singleVariableAccess);
-
 		// Assignment flows
-		EObject container = singleVariableAccess.eContainer();
-		EObject currentContainer = container;
-		LinkedList<EObject> seenContainers = new LinkedList<>();
-		seenContainers.add(currentContainer);
-		while (!(currentContainer instanceof Statement) && (currentContainer != null)) {
-			if (currentContainer instanceof Assignment) {
-				Assignment assignment = (Assignment) currentContainer;
-				EStructuralFeature assignmentSide;
-				int queueSize = seenContainers.size();
-				if (queueSize > 1) {
-					assignmentSide = seenContainers.get(queueSize - 2).eContainingFeature();
-				} else {
-					assignmentSide = singleVariableAccess.eContainingFeature();
-				}
-				EObject variableContainer = variable.eContainer();
-				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
-					switch (assignment.getOperator()) {
-					case ASSIGN:
-						member.addOutRef(varDeclNode);
-						mSVA.setAccessKind(AccessKind.WRITE);
-						// TODO Might be necessary to include "|| variable instanceof
-						// MSingleVariableDeclaration" in condition here and below, to handle
-						// assignments TO parameters correctly
-						if (variableContainer instanceof MFieldDefinition) {
-							statementHandler.getMemberRef().add(member);
-						}
-						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-						break;
-					case BIT_AND_ASSIGN:
-					case BIT_OR_ASSIGN:
-					case BIT_XOR_ASSIGN:
-					case DIVIDE_ASSIGN:
-					case LEFT_SHIFT_ASSIGN:
-					case MINUS_ASSIGN:
-					case PLUS_ASSIGN:
-					case REMAINDER_ASSIGN:
-					case RIGHT_SHIFT_SIGNED_ASSIGN:
-					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
-					case TIMES_ASSIGN:
-						member.addInRef(varDeclNode);
-						member.addOutRef(varDeclNode);
-						mSVA.setAccessKind(AccessKind.READWRITE);
-						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
-						if (variableContainer instanceof MFieldDefinition) {
-							statementHandler.getMemberRef().add(member);
-						}
-						break;
-					default:
-						LOGGER.log(Level.INFO, "Unknown operator used in assignment");
-						break;
-					}
-				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
-					member.addInRef(varDeclNode);
-					mSVA.setAccessKind(AccessKind.READ);
-					if (variableContainer instanceof MFieldDefinition) {
-						statementHandler.getMemberRef().add(member);
-					} else if (variableContainer instanceof AbstractMethodDeclaration) {
-						statementHandler.getMemberRef().add(member);
-					}
-					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-				} else {
-					LOGGER.log(Level.INFO, "Unknown assignment side");
-				}
-				return member;
-			}
-			currentContainer = currentContainer.eContainer();
-			seenContainers.add(currentContainer);
+		if(handleAssignmentFlows((MSingleVariableAccess) singleVariableAccess, member, variable, varDeclNode)) {
+			return member;
 		}
 
 		// Non-assignment flows
-		// Non-assignment flows are always read accesses
-		mSVA.setAccessKind(AccessKind.READ);
-		// An access always flows back to its container
-		if (container instanceof Expression) {
-			handle((Expression) container).addInRef(member);
-		} else if (container instanceof Statement) {
-			statementHandler.handle((Statement) container).addInRef(member);
-		} else {
-			statementHandler.getFlowNodeForElement(container).addInRef(member); // No handling; should be fine though,
-																				// as container is handled first anyway
-		}
+		handleNonAssignmentFlows((MSingleVariableAccess) singleVariableAccess, member);
+		
 		// Field and (non-param) local flows
+		handleFieldAndLocalFlows(member, variable, varDeclNode);
+		return member;
+	}
+
+	/**
+	 * @param member
+	 * @param variable
+	 * @param varDeclNode
+	 */
+	private void handleFieldAndLocalFlows(FlowNode member, VariableDeclaration variable, FlowNode varDeclNode) {
 		if (variable instanceof VariableDeclarationFragment) {
 			VariableDeclarationFragment variableDeclarationFragment = (VariableDeclarationFragment) variable;
 			AbstractVariablesContainer variablesContainer = variableDeclarationFragment.getVariablesContainer();
@@ -354,7 +288,101 @@ public class ExpressionHandlerDataFlow {
 			}
 			LOGGER.log(Level.INFO, message);
 		}
-		return member;
+	}
+
+	/**
+	 * @param singleVariableAccess
+	 * @param member
+	 */
+	private void handleNonAssignmentFlows(MSingleVariableAccess singleVariableAccess, FlowNode member) {
+		// Non-assignment flows are always read accesses
+		singleVariableAccess.setAccessKind(AccessKind.READ);
+		// An access always flows back to its container
+		EObject container = singleVariableAccess.eContainer();
+		if (container instanceof Expression) {
+			handle((Expression) container).addInRef(member);
+		} else if (container instanceof Statement) {
+			statementHandler.handle((Statement) container).addInRef(member);
+		} else {
+			statementHandler.getFlowNodeForElement(container).addInRef(member); // No handling; should be fine though,
+																				// as container is handled first anyway
+		}
+	}
+
+	/**
+	 * @param singleVariableAccess
+	 * @param member
+	 * @param variable
+	 * @param varDeclNode
+	 * @return no work left
+	 */
+	private boolean handleAssignmentFlows(MSingleVariableAccess singleVariableAccess, FlowNode member,
+			VariableDeclaration variable, FlowNode varDeclNode) {
+		EObject currentContainer = singleVariableAccess.eContainer();
+		LinkedList<EObject> seenContainers = new LinkedList<>();
+		seenContainers.add(currentContainer);
+		while (!(currentContainer instanceof Statement) && (currentContainer != null)) {
+			if (currentContainer instanceof Assignment) {
+				Assignment assignment = (Assignment) currentContainer;
+				EStructuralFeature assignmentSide;
+				int queueSize = seenContainers.size();
+				if (queueSize > 1) {
+					assignmentSide = seenContainers.get(queueSize - 2).eContainingFeature();
+				} else {
+					assignmentSide = singleVariableAccess.eContainingFeature();
+				}
+				EObject variableContainer = variable.eContainer();
+				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
+					switch (assignment.getOperator()) {
+					case ASSIGN:
+						member.addOutRef(varDeclNode);
+						singleVariableAccess.setAccessKind(AccessKind.WRITE);
+						if (variableContainer instanceof FieldDeclaration) {
+							statementHandler.getMemberRef().add(member);
+						}
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						break;
+					case BIT_AND_ASSIGN:
+					case BIT_OR_ASSIGN:
+					case BIT_XOR_ASSIGN:
+					case DIVIDE_ASSIGN:
+					case LEFT_SHIFT_ASSIGN:
+					case MINUS_ASSIGN:
+					case PLUS_ASSIGN:
+					case REMAINDER_ASSIGN:
+					case RIGHT_SHIFT_SIGNED_ASSIGN:
+					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+					case TIMES_ASSIGN:
+						member.addInRef(varDeclNode);
+						member.addOutRef(varDeclNode);
+						singleVariableAccess.setAccessKind(AccessKind.READWRITE);
+						propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+						propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						if (variableContainer instanceof FieldDeclaration) {
+							statementHandler.getMemberRef().add(member);
+						}
+						break;
+					default:
+						LOGGER.log(Level.INFO, "Unknown operator used in assignment");
+						break;
+					}
+				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
+					member.addInRef(varDeclNode);
+					singleVariableAccess.setAccessKind(AccessKind.READ);
+					if (variableContainer instanceof FieldDeclaration
+							|| variableContainer instanceof AbstractMethodDeclaration) {
+						statementHandler.getMemberRef().add(member);
+					}
+					propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+				} else {
+					LOGGER.log(Level.INFO, "Unknown assignment side");
+				}
+				return true;
+			}
+			currentContainer = currentContainer.eContainer();
+			seenContainers.add(currentContainer);
+		}
+		return false;
 	}
 
 	private FlowNode handle(TypeAccess typeAccess) {
