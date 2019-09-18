@@ -31,8 +31,6 @@ import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import com.googlecode.junittoolbox.ParallelRunner;
 
 import language.LanguagePackage;
 import runtime.RuntimePackage;
@@ -44,7 +42,6 @@ import runtime.RuntimePackage;
  * @author speldszus
  *
  */
-//@RunWith(ParallelRunner.class)
 public class HulkApiTest {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkApiTest.class);
