@@ -1,6 +1,9 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -62,26 +65,22 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private MGravityModel model;
 
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		this.model = model;
-		for (MAbstractMethodDefinition definition : model.getMAbstractMethodDefinitions()) {
-			if (!addStaticTypeAccesses(definition)) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	@Override
 	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
 			IProgressMonitor monitor) {
 		this.model = model;
-		for (MAbstractMethodDefinition definition : elements) {
-			if (!addStaticTypeAccesses(definition)) {
-				return false;
+		List<MAbstractMethodDefinition> failed = elements.parallelStream().filter(definition -> {
+			boolean success = addStaticTypeAccesses(definition);
+			if (!success) {
+				return true;
 			}
+			return false;
+		}).collect(Collectors.toList());
+		if (failed.isEmpty()) {
+			return true;
 		}
-		return true;
+		failed.forEach(definition -> LOGGER
+				.error("Adding static type accesses failed for definition: " + definition.getName()));
+		return false;
 	}
 
 	@Override
@@ -97,7 +96,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
 		for (AbstractMethodInvocation methodInvoc : method.getMMethodInvocations()) {
-			if(!(methodInvoc instanceof MMethodInvocation)) {
+			if (!(methodInvoc instanceof MMethodInvocation)) {
 				continue;
 			}
 			Type type;
@@ -169,7 +168,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(SingleVariableAccess expression, MAbstractMethodDefinition method)
 			throws ProcessingException {
-		VariableDeclaration var = ((SingleVariableAccess) expression).getVariable();
+		VariableDeclaration var = expression.getVariable();
 		if (var == null) {
 			/*
 			 * Handling of constructs not supported by MoDisco like:
@@ -284,19 +283,18 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (expression instanceof UnresolvedItemAccess) {
 			return getStaticType((UnresolvedItemAccess) expression, method);
 		}
-		if(expression instanceof AbstractMethodInvocation) {
+		if (expression instanceof AbstractMethodInvocation) {
 			AbstractMethodDeclaration calledOn = ((AbstractMethodInvocation) expression).getMethod();
 			if (calledOn instanceof MethodDeclaration) {
 				TypeAccess returnType = ((MethodDeclaration) calledOn).getReturnType();
-				if(returnType == null) {
+				if (returnType == null) {
 					if (calledOn instanceof UnresolvedMethodDeclaration) {
 						return null;
 					}
 					throw new ProcessingException();
 				}
-				return returnType.getType();			
-			}
-			else if (calledOn instanceof ConstructorDeclaration) {
+				return returnType.getType();
+			} else if (calledOn instanceof ConstructorDeclaration) {
 				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 			}
 		}
@@ -342,8 +340,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
 		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
 				.map(body -> (FieldDeclaration) body).filter(field -> {
-					return field.getFragments().stream().filter(fragment -> fragment.getName().equals(name))
-							.findAny().isPresent();
+					return field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name));
 				}).map(field -> field.getType().getType()).findAny().orElse(null);
 	}
 
