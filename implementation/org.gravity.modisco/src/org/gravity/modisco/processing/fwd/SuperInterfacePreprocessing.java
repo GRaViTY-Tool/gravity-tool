@@ -1,7 +1,6 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
@@ -81,8 +80,6 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 
 		}
 		replacements.clear();
-		EcoreUtil.deleteAll(brokenTypeAccesses, true);
-		brokenTypeAccesses.clear();
 		return true;
 	}
 
@@ -93,14 +90,10 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @return A set of accessed class declarations
 	 */
 	private Set<TypeAccess> getAccessedClassDeclarations(Collection<TypeAccess> accesses) {
-		Set<TypeAccess> classDecls = new HashSet<>();
-		for (TypeAccess access : accesses) {
-			Type superType = access.getType();
-			if (JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(superType.eClass())) {
-				classDecls.add(access);
-			}
-		}
-		return classDecls;
+		return accesses.parallelStream()
+				.filter(access -> JavaPackage.eINSTANCE.getClassDeclaration()
+						.isSuperTypeOf(access.getType().eClass()))
+				.collect(Collectors.toSet());
 	}
 
 	/**
