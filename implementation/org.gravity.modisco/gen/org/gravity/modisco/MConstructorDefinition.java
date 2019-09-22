@@ -23,7 +23,6 @@ import org.eclipse.gmt.modisco.java.ConstructorDeclaration;
 public interface MConstructorDefinition extends MAbstractMethodDefinition, ConstructorDeclaration {
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MGravityModel#getMConstructorDefinitions <em>MConstructor Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Model</em>' reference isn't clear,
@@ -33,8 +32,7 @@ public interface MConstructorDefinition extends MAbstractMethodDefinition, Const
 	 * @return the value of the '<em>Model</em>' reference.
 	 * @see #setModel(MGravityModel)
 	 * @see org.gravity.modisco.ModiscoPackage#getMConstructorDefinition_Model()
-	 * @see org.gravity.modisco.MGravityModel#getMConstructorDefinitions
-	 * @model opposite="mConstructorDefinitions" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	MGravityModel getModel();

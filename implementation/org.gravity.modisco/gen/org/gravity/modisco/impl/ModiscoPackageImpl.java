@@ -357,24 +357,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMAbstractMethodDefinition_MMethodName() {
-		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMAbstractMethodDefinition_MMethodSignature() {
-		return (EReference)mAbstractMethodDefinitionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMAccess() {
 		return mAccessEClass;
 	}
@@ -438,6 +420,15 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMDefinition_MSignature() {
+		return (EReference)mDefinitionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMMethodSignature() {
 		return mMethodSignatureEClass;
 	}
@@ -447,35 +438,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMMethodSignature_Model() {
-		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodSignature_MMethodName() {
-		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMMethodSignature_ReturnType() {
-		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodSignature_MMethodDefinitions() {
-		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(3);
+		return (EReference)mMethodSignatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -520,7 +484,16 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	public EReference getMName_MSignatures() {
-		return (EReference)mNameEClass.getEStructuralFeatures().get(0);
+		return (EReference)mNameEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMName_MDefinitions() {
+		return (EReference)mNameEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -529,7 +502,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	public EAttribute getMName_MName() {
-		return (EAttribute)mNameEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)mNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -546,62 +519,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMMethodName_Model() {
-		return (EReference)mMethodNameEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodName_MMethodDefinitions() {
-		return (EReference)mMethodNameEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMMethodName_MMethodSignatures() {
-		return (EReference)mMethodNameEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMFieldName() {
 		return mFieldNameEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldName_Model() {
-		return (EReference)mFieldNameEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldName_MFieldSignatures() {
-		return (EReference)mFieldNameEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldName_MFieldDefinitions() {
-		return (EReference)mFieldNameEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -618,33 +537,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMFieldDefinition_MFieldSignature() {
-		return (EReference)mFieldDefinitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldDefinition_MFieldName() {
-		return (EReference)mFieldDefinitionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldDefinition_Model() {
-		return (EReference)mFieldDefinitionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMMethodDefinition() {
 		return mMethodDefinitionEClass;
 	}
@@ -654,17 +546,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMMethodDefinition_Model() {
-		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMMethodDefinition_SyntheticMethodDefinitions() {
-		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(1);
+		return (EReference)mMethodDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -834,7 +717,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MMethodDefinitions() {
+	public EReference getMGravityModel_MFieldDefinitions() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -843,7 +726,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MFieldDefinitions() {
+	public EReference getMGravityModel_AnonymousClassDeclarations() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -852,7 +735,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MConstructorDefinitions() {
+	public EReference getMGravityModel_MMethodNames() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -861,7 +744,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_AnonymousClassDeclarations() {
+	public EReference getMGravityModel_MFieldNames() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -870,7 +753,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MMethodNames() {
+	public EReference getMGravityModel_MAbstractMethodDefinitions() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -879,7 +762,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MNames() {
+	public EReference getMGravityModel_TypeParameters() {
 		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -888,53 +771,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMGravityModel_MMethodSignatures() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMGravityModel_MFieldSignatures() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMGravityModel_MFieldNames() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMGravityModel_MAbstractMethodDefinitions() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMGravityModel_TypeParameters() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMGravityModel_MExtensions() {
-		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(11);
+		return (EReference)mGravityModelEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -951,35 +789,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMFieldSignature_MFieldName() {
-		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldSignature_Model() {
-		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMFieldSignature_Type() {
-		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFieldSignature_MFieldDefinitions() {
-		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(3);
+		return (EReference)mFieldSignatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1192,8 +1003,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Create classes and their features
 		mAbstractMethodDefinitionEClass = createEClass(MABSTRACT_METHOD_DEFINITION);
 		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MINNER_TYPES);
-		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MMETHOD_NAME);
-		createEReference(mAbstractMethodDefinitionEClass, MABSTRACT_METHOD_DEFINITION__MMETHOD_SIGNATURE);
 
 		mAccessEClass = createEClass(MACCESS);
 
@@ -1204,39 +1013,31 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mDefinitionEClass, MDEFINITION__INVOCATION_STATIC_TYPES);
 		createEReference(mDefinitionEClass, MDEFINITION__MMETHOD_INVOCATIONS);
 		createEReference(mDefinitionEClass, MDEFINITION__MABSTRACT_FIELD_ACCESS);
-
-		mMethodSignatureEClass = createEClass(MMETHOD_SIGNATURE);
-		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MODEL);
-		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MMETHOD_NAME);
-		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__RETURN_TYPE);
-		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS);
+		createEReference(mDefinitionEClass, MDEFINITION__MSIGNATURE);
 
 		mParameterListEClass = createEClass(MPARAMETER_LIST);
 		createEReference(mParameterListEClass, MPARAMETER_LIST__MFIRST_ENTRY);
 		createEReference(mParameterListEClass, MPARAMETER_LIST__MENTRYS);
 
-		mNameEClass = createEClass(MNAME);
-		createEReference(mNameEClass, MNAME__MSIGNATURES);
-		createEAttribute(mNameEClass, MNAME__MNAME);
-
 		mMethodNameEClass = createEClass(MMETHOD_NAME);
-		createEReference(mMethodNameEClass, MMETHOD_NAME__MODEL);
-		createEReference(mMethodNameEClass, MMETHOD_NAME__MMETHOD_DEFINITIONS);
-		createEReference(mMethodNameEClass, MMETHOD_NAME__MMETHOD_SIGNATURES);
 
-		mFieldNameEClass = createEClass(MFIELD_NAME);
-		createEReference(mFieldNameEClass, MFIELD_NAME__MODEL);
-		createEReference(mFieldNameEClass, MFIELD_NAME__MFIELD_SIGNATURES);
-		createEReference(mFieldNameEClass, MFIELD_NAME__MFIELD_DEFINITIONS);
-
-		mFieldDefinitionEClass = createEClass(MFIELD_DEFINITION);
-		createEReference(mFieldDefinitionEClass, MFIELD_DEFINITION__MFIELD_SIGNATURE);
-		createEReference(mFieldDefinitionEClass, MFIELD_DEFINITION__MFIELD_NAME);
-		createEReference(mFieldDefinitionEClass, MFIELD_DEFINITION__MODEL);
+		mMethodSignatureEClass = createEClass(MMETHOD_SIGNATURE);
+		createEReference(mMethodSignatureEClass, MMETHOD_SIGNATURE__RETURN_TYPE);
 
 		mMethodDefinitionEClass = createEClass(MMETHOD_DEFINITION);
-		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__MODEL);
 		createEReference(mMethodDefinitionEClass, MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS);
+
+		mNameEClass = createEClass(MNAME);
+		createEAttribute(mNameEClass, MNAME__MNAME);
+		createEReference(mNameEClass, MNAME__MSIGNATURES);
+		createEReference(mNameEClass, MNAME__MDEFINITIONS);
+
+		mFieldNameEClass = createEClass(MFIELD_NAME);
+
+		mFieldSignatureEClass = createEClass(MFIELD_SIGNATURE);
+		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__TYPE);
+
+		mFieldDefinitionEClass = createEClass(MFIELD_DEFINITION);
 
 		mSignatureEClass = createEClass(MSIGNATURE);
 		createEReference(mSignatureEClass, MSIGNATURE__MDEFINITIONS);
@@ -1248,31 +1049,20 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		createEReference(mEntryEClass, MENTRY__PARAMETERS);
 
 		mGravityModelEClass = createEClass(MGRAVITY_MODEL);
-		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MMETHOD_DEFINITIONS);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MFIELD_DEFINITIONS);
-		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MCONSTRUCTOR_DEFINITIONS);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__ANONYMOUS_CLASS_DECLARATIONS);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MMETHOD_NAMES);
-		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MNAMES);
-		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MMETHOD_SIGNATURES);
-		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MFIELD_SIGNATURES);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MFIELD_NAMES);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MABSTRACT_METHOD_DEFINITIONS);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__TYPE_PARAMETERS);
 		createEReference(mGravityModelEClass, MGRAVITY_MODEL__MEXTENSIONS);
 
-		mFieldSignatureEClass = createEClass(MFIELD_SIGNATURE);
-		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__MFIELD_NAME);
-		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__MODEL);
-		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__TYPE);
-		createEReference(mFieldSignatureEClass, MFIELD_SIGNATURE__MFIELD_DEFINITIONS);
-
-		mSyntheticMethodDefinitionEClass = createEClass(MSYNTHETIC_METHOD_DEFINITION);
-		createEReference(mSyntheticMethodDefinitionEClass, MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION);
-
 		methodInvocationStaticTypeEClass = createEClass(METHOD_INVOCATION_STATIC_TYPE);
 		createEReference(methodInvocationStaticTypeEClass, METHOD_INVOCATION_STATIC_TYPE__METHOD_INVOC);
 		createEReference(methodInvocationStaticTypeEClass, METHOD_INVOCATION_STATIC_TYPE__TYPE);
+
+		mSyntheticMethodDefinitionEClass = createEClass(MSYNTHETIC_METHOD_DEFINITION);
+		createEReference(mSyntheticMethodDefinitionEClass, MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION);
 
 		mAnonymousEClass = createEClass(MANONYMOUS);
 		createEReference(mAnonymousEClass, MANONYMOUS__MSOURROUNDING_TYPE);
@@ -1353,18 +1143,18 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mConstructorDefinitionEClass.getESuperTypes().add(theJavaPackage.getConstructorDeclaration());
 		mDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
 		mDefinitionEClass.getESuperTypes().add(this.getMAbstractFlowElement());
+		mMethodNameEClass.getESuperTypes().add(this.getMName());
 		mMethodSignatureEClass.getESuperTypes().add(this.getMSignature());
 		mMethodSignatureEClass.getESuperTypes().add(this.getMParameterList());
-		mMethodNameEClass.getESuperTypes().add(this.getMName());
-		mFieldNameEClass.getESuperTypes().add(this.getMName());
-		mFieldDefinitionEClass.getESuperTypes().add(this.getMDefinition());
-		mFieldDefinitionEClass.getESuperTypes().add(theJavaPackage.getFieldDeclaration());
 		mMethodDefinitionEClass.getESuperTypes().add(theJavaPackage.getMethodDeclaration());
 		mMethodDefinitionEClass.getESuperTypes().add(this.getMAbstractMethodDefinition());
+		mFieldNameEClass.getESuperTypes().add(this.getMName());
+		mFieldSignatureEClass.getESuperTypes().add(this.getMSignature());
+		mFieldDefinitionEClass.getESuperTypes().add(this.getMDefinition());
+		mFieldDefinitionEClass.getESuperTypes().add(theJavaPackage.getFieldDeclaration());
 		mSignatureEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mEntryEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mGravityModelEClass.getESuperTypes().add(theJavaPackage.getModel());
-		mFieldSignatureEClass.getESuperTypes().add(this.getMSignature());
 		mSyntheticMethodDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
 		mAnonymousEClass.getESuperTypes().add(theJavaPackage.getAnonymousClassDeclaration());
 		mClassEClass.getESuperTypes().add(theJavaPackage.getClassDeclaration());
@@ -1390,54 +1180,44 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(mAbstractMethodDefinitionEClass, MAbstractMethodDefinition.class, "MAbstractMethodDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAbstractMethodDefinition_MInnerTypes(), theJavaPackage.getAbstractTypeDeclaration(), null, "mInnerTypes", null, 0, -1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAbstractMethodDefinition_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodDefinitions(), "mMethodName", null, 1, 1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAbstractMethodDefinition_MMethodSignature(), this.getMMethodSignature(), this.getMMethodSignature_MMethodDefinitions(), "mMethodSignature", null, 1, 1, MAbstractMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAccessEClass, MAccess.class, "MAccess", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mConstructorDefinitionEClass, MConstructorDefinition.class, "MConstructorDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMConstructorDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MConstructorDefinitions(), "model", null, 1, 1, MConstructorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMConstructorDefinition_Model(), this.getMGravityModel(), null, "model", null, 1, 1, MConstructorDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mDefinitionEClass, MDefinition.class, "MDefinition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMDefinition_InvocationStaticTypes(), this.getMethodInvocationStaticType(), null, "invocationStaticTypes", null, 0, -1, MDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDefinition_MMethodInvocations(), theJavaPackage.getAbstractMethodInvocation(), null, "mMethodInvocations", null, 0, -1, MDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMDefinition_MAbstractFieldAccess(), this.getMSingleVariableAccess(), null, "mAbstractFieldAccess", null, 0, -1, MDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mMethodSignatureEClass, MMethodSignature.class, "MMethodSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMMethodSignature_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodSignatures(), "model", null, 1, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodSignature_MMethodName(), this.getMMethodName(), this.getMMethodName_MMethodSignatures(), "mMethodName", null, 1, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodSignature_ReturnType(), theJavaPackage.getType(), null, "returnType", null, 0, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodSignature_MMethodDefinitions(), this.getMAbstractMethodDefinition(), this.getMAbstractMethodDefinition_MMethodSignature(), "mMethodDefinitions", null, 0, -1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMDefinition_MSignature(), this.getMSignature(), this.getMSignature_MDefinitions(), "mSignature", null, 0, 1, MDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mParameterListEClass, MParameterList.class, "MParameterList", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMParameterList_MFirstEntry(), this.getMEntry(), null, "mFirstEntry", null, 0, 1, MParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMParameterList_MEntrys(), this.getMEntry(), null, "mEntrys", null, 0, -1, MParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(mNameEClass, MName.class, "MName", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMName_MSignatures(), this.getMSignature(), null, "mSignatures", null, 0, -1, MName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMName_MName(), ecorePackage.getEString(), "mName", null, 1, 1, MName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(mMethodNameEClass, MMethodName.class, "MMethodName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMMethodName_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodNames(), "model", null, 1, 1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodName_MMethodDefinitions(), this.getMAbstractMethodDefinition(), this.getMAbstractMethodDefinition_MMethodName(), "mMethodDefinitions", null, 0, -1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMMethodName_MMethodSignatures(), this.getMMethodSignature(), this.getMMethodSignature_MMethodName(), "mMethodSignatures", null, 0, -1, MMethodName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(mFieldNameEClass, MFieldName.class, "MFieldName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMFieldName_Model(), this.getMGravityModel(), this.getMGravityModel_MFieldNames(), "model", null, 1, 1, MFieldName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldName_MFieldSignatures(), this.getMFieldSignature(), this.getMFieldSignature_MFieldName(), "mFieldSignatures", null, 0, -1, MFieldName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldName_MFieldDefinitions(), this.getMFieldDefinition(), this.getMFieldDefinition_MFieldName(), "mFieldDefinitions", null, 0, -1, MFieldName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mFieldDefinitionEClass, MFieldDefinition.class, "MFieldDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMFieldDefinition_MFieldSignature(), this.getMFieldSignature(), this.getMFieldSignature_MFieldDefinitions(), "mFieldSignature", null, 0, 1, MFieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldDefinition_MFieldName(), this.getMFieldName(), this.getMFieldName_MFieldDefinitions(), "mFieldName", null, 1, 1, MFieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MFieldDefinitions(), "model", null, 1, 1, MFieldDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mMethodSignatureEClass, MMethodSignature.class, "MMethodSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMMethodSignature_ReturnType(), theJavaPackage.getType(), null, "returnType", null, 0, 1, MMethodSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mMethodDefinitionEClass, MMethodDefinition.class, "MMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMMethodDefinition_Model(), this.getMGravityModel(), this.getMGravityModel_MMethodDefinitions(), "model", null, 1, 1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMMethodDefinition_SyntheticMethodDefinitions(), this.getMSyntheticMethodDefinition(), this.getMSyntheticMethodDefinition_OriginalMethodDefinition(), "syntheticMethodDefinitions", null, 0, -1, MMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(mNameEClass, MName.class, "MName", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMName_MName(), ecorePackage.getEString(), "mName", null, 1, 1, MName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMName_MSignatures(), this.getMSignature(), null, "mSignatures", null, 0, -1, MName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMName_MDefinitions(), this.getMDefinition(), null, "mDefinitions", null, 0, -1, MName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(mFieldNameEClass, MFieldName.class, "MFieldName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mFieldSignatureEClass, MFieldSignature.class, "MFieldSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMFieldSignature_Type(), theJavaPackage.getType(), null, "type", null, 0, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mFieldDefinitionEClass, MFieldDefinition.class, "MFieldDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(mSignatureEClass, MSignature.class, "MSignature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMSignature_MDefinitions(), this.getMDefinition(), null, "mDefinitions", null, 0, -1, MSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMSignature_MDefinitions(), this.getMDefinition(), this.getMDefinition_MSignature(), "mDefinitions", null, 0, -1, MSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mEntryEClass, MEntry.class, "MEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMEntry_MNext(), this.getMEntry(), this.getMEntry_MPrevious(), "mNext", null, 0, 1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1446,31 +1226,20 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEReference(getMEntry_Parameters(), this.getMSingleVariableDeclaration(), this.getMSingleVariableDeclaration_MEntry(), "parameters", null, 0, -1, MEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mGravityModelEClass, MGravityModel.class, "MGravityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMGravityModel_MMethodDefinitions(), this.getMMethodDefinition(), this.getMMethodDefinition_Model(), "mMethodDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MFieldDefinitions(), this.getMFieldDefinition(), this.getMFieldDefinition_Model(), "mFieldDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MConstructorDefinitions(), this.getMConstructorDefinition(), this.getMConstructorDefinition_Model(), "mConstructorDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMGravityModel_MFieldDefinitions(), this.getMFieldDefinition(), null, "mFieldDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMGravityModel_AnonymousClassDeclarations(), theJavaPackage.getAnonymousClassDeclaration(), null, "anonymousClassDeclarations", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MMethodNames(), this.getMMethodName(), this.getMMethodName_Model(), "mMethodNames", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MNames(), this.getMName(), null, "mNames", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MMethodSignatures(), this.getMMethodSignature(), this.getMMethodSignature_Model(), "mMethodSignatures", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MFieldSignatures(), this.getMFieldSignature(), this.getMFieldSignature_Model(), "mFieldSignatures", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMGravityModel_MFieldNames(), this.getMFieldName(), this.getMFieldName_Model(), "mFieldNames", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMGravityModel_MMethodNames(), this.getMMethodName(), null, "mMethodNames", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMGravityModel_MFieldNames(), this.getMFieldName(), null, "mFieldNames", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMGravityModel_MAbstractMethodDefinitions(), this.getMAbstractMethodDefinition(), null, "mAbstractMethodDefinitions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMGravityModel_TypeParameters(), theJavaPackage.getTypeParameter(), null, "typeParameters", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMGravityModel_MExtensions(), this.getMExtension(), null, "mExtensions", null, 0, -1, MGravityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(mFieldSignatureEClass, MFieldSignature.class, "MFieldSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMFieldSignature_MFieldName(), this.getMFieldName(), this.getMFieldName_MFieldSignatures(), "mFieldName", null, 1, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldSignature_Model(), this.getMGravityModel(), this.getMGravityModel_MFieldSignatures(), "model", null, 1, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldSignature_Type(), theJavaPackage.getType(), null, "type", null, 0, 1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFieldSignature_MFieldDefinitions(), this.getMFieldDefinition(), this.getMFieldDefinition_MFieldSignature(), "mFieldDefinitions", null, 0, -1, MFieldSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mSyntheticMethodDefinitionEClass, MSyntheticMethodDefinition.class, "MSyntheticMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMSyntheticMethodDefinition_OriginalMethodDefinition(), this.getMMethodDefinition(), this.getMMethodDefinition_SyntheticMethodDefinitions(), "originalMethodDefinition", null, 1, 1, MSyntheticMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(methodInvocationStaticTypeEClass, MethodInvocationStaticType.class, "MethodInvocationStaticType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMethodInvocationStaticType_MethodInvoc(), theJavaPackage.getAbstractMethodInvocation(), null, "methodInvoc", null, 1, 1, MethodInvocationStaticType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethodInvocationStaticType_Type(), theJavaPackage.getType(), null, "type", null, 1, 1, MethodInvocationStaticType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(mSyntheticMethodDefinitionEClass, MSyntheticMethodDefinition.class, "MSyntheticMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMSyntheticMethodDefinition_OriginalMethodDefinition(), this.getMMethodDefinition(), this.getMMethodDefinition_SyntheticMethodDefinitions(), "originalMethodDefinition", null, 1, 1, MSyntheticMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAnonymousEClass, MAnonymous.class, "MAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAnonymous_MSourroundingType(), theJavaPackage.getAbstractTypeDeclaration(), null, "mSourroundingType", null, 0, 1, MAnonymous.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

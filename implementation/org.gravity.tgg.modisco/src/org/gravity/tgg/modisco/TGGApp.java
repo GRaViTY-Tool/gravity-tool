@@ -19,9 +19,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
 
-import language.LanguagePackage;
-import runtime.RuntimePackage;
-
 public class TGGApp extends SYNC {
 
 	private static final String PLATFORM_RESOURCE = "platform:/resource/"; //$NON-NLS-1$
@@ -120,8 +117,6 @@ public class TGGApp extends SYNC {
 
 	@Override
 	protected Resource loadTGGResource() throws IOException {
-//		LanguagePackage.eINSTANCE.eResource();
-//		RuntimePackage.eINSTANCE.eResource();
 		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_TGG_XMI_LOCATION)) {
 			return loadResource(MODISCO_TGG_XMI_URI, stream);
 		}

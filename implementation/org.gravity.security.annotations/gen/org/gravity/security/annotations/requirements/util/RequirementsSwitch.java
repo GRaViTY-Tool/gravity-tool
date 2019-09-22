@@ -72,6 +72,8 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			TSecrecy tSecrecy = (TSecrecy) theEObject;
 			T result = caseTSecrecy(tSecrecy);
 			if (result == null)
+				result = caseTAnnotationWithCounterMeasure(tSecrecy);
+			if (result == null)
 				result = caseTAnnotation(tSecrecy);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -81,7 +83,38 @@ public class RequirementsSwitch<T> extends Switch<T> {
 			TIntegrity tIntegrity = (TIntegrity) theEObject;
 			T result = caseTIntegrity(tIntegrity);
 			if (result == null)
+				result = caseTAnnotationWithCounterMeasure(tIntegrity);
+			if (result == null)
 				result = caseTAnnotation(tIntegrity);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RequirementsPackage.THIGH: {
+			THigh tHigh = (THigh) theEObject;
+			T result = caseTHigh(tHigh);
+			if (result == null)
+				result = caseTAnnotationWithCounterMeasure(tHigh);
+			if (result == null)
+				result = caseTAnnotation(tHigh);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RequirementsPackage.TCRITICAL: {
+			TCritical tCritical = (TCritical) theEObject;
+			T result = caseTCritical(tCritical);
+			if (result == null)
+				result = caseTAnnotation(tCritical);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RequirementsPackage.TANNOTATION_WITH_COUNTER_MEASURE: {
+			TAnnotationWithCounterMeasure tAnnotationWithCounterMeasure = (TAnnotationWithCounterMeasure) theEObject;
+			T result = caseTAnnotationWithCounterMeasure(tAnnotationWithCounterMeasure);
+			if (result == null)
+				result = caseTAnnotation(tAnnotationWithCounterMeasure);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -118,6 +151,51 @@ public class RequirementsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTIntegrity(TIntegrity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>THigh</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>THigh</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTHigh(THigh object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TCritical</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TCritical</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTCritical(TCritical object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TAnnotation With Counter Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TAnnotation With Counter Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTAnnotationWithCounterMeasure(TAnnotationWithCounterMeasure object) {
 		return null;
 	}
 

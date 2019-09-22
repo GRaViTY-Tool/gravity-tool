@@ -3,7 +3,6 @@ package org.gravity.modisco.processing.fwd.dataflow;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 import org.gravity.modisco.MAbstractMethodInvocation;
 
@@ -15,11 +14,6 @@ import org.gravity.modisco.MAbstractMethodInvocation;
  *
  */
 public class FlowNode {
-
-	/**
-	 * The logger of this class
-	 */
-	private static final Logger LOGGER = Logger.getLogger(FlowNode.class);
 
 	/**
 	 * Collection of all statements from which a data flow goes <b>into</b> this statement.

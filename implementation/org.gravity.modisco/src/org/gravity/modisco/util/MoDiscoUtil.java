@@ -1,14 +1,14 @@
 /**
- * 
+ *
  */
 package org.gravity.modisco.util;
 
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
-import java.util.Deque;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -68,7 +68,7 @@ import org.gravity.modisco.ModiscoFactory;
 /**
  * This class provides frequently required functionalities when working with
  * modisco models
- * 
+ *
  * @author speldszus
  *
  */
@@ -82,7 +82,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Checks if supertype is a super type of type
-	 * 
+	 *
 	 * @param type      The type
 	 * @param supertype The potential supertype
 	 * @return true iff supertype is a supertype of type
@@ -90,7 +90,7 @@ public class MoDiscoUtil {
 	public static boolean isSuperType(Type type, Type supertype) {
 		if (type instanceof AbstractTypeDeclaration) {
 			if (type instanceof ClassDeclaration) {
-				boolean superType = isSuperType((ClassDeclaration) type, supertype);
+				final boolean superType = isSuperType((ClassDeclaration) type, supertype);
 				if (superType) {
 					return true;
 				}
@@ -102,16 +102,16 @@ public class MoDiscoUtil {
 
 	/**
 	 * Checks if supertype is a super type of type
-	 * 
+	 *
 	 * @param type      The type
 	 * @param supertype The potential supertype
 	 * @return true iff supertype is a supertype of type
 	 */
 	private static boolean isSuperType(ClassDeclaration type, Type supertype) {
-		TypeAccess superClass = type.getSuperClass();
+		final TypeAccess superClass = type.getSuperClass();
 		boolean superType = false;
 		if (superClass != null) {
-			Type parent = superClass.getType();
+			final Type parent = superClass.getType();
 			if (supertype.equals(parent) || isSuperType(parent, supertype)) {
 				superType = true;
 			}
@@ -121,13 +121,13 @@ public class MoDiscoUtil {
 
 	/**
 	 * Checks if supertype is a super interface of type
-	 * 
+	 *
 	 * @param type      The type
 	 * @param supertype The potential super interface
 	 * @return true iff supertype is a supertype of type
 	 */
 	private static boolean isSuperInterface(Type type, Type supertype) {
-		for (TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
+		for (final TypeAccess interf : ((AbstractTypeDeclaration) type).getSuperInterfaces()) {
 			if (interf.getType().equals(supertype) || isSuperType(interf.getType(), supertype)) {
 				return true;
 			}
@@ -138,33 +138,34 @@ public class MoDiscoUtil {
 	/**
 	 * Searches the most generic return type of a method overwritten by the given
 	 * method
-	 * 
+	 *
 	 * @param method The method for which the most generic return type should be
 	 *               searched
+	 * @param model The model of the program
 	 * @return the most generic return type
 	 */
-	public static Type getMostGenericReturnType(MAbstractMethodDefinition method) {
-		AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
+	public static Type getMostGenericReturnType(MAbstractMethodDefinition method, MGravityModel model) {
+		final AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (method instanceof MConstructorDefinition) {
 			if(abstractTypeDeclaration != null) {
 				return abstractTypeDeclaration;
 			}
-			AnonymousClassDeclaration anon = method.getAnonymousClassDeclarationOwner();
+			final AnonymousClassDeclaration anon = method.getAnonymousClassDeclarationOwner();
 			if(anon != null) {
 				return anon.getClassInstanceCreation().getType().getType();
 			}
 			return null;
 		}
-		Type returnType = getAndFixReturnType((MMethodDefinition) method);
-		Set<Type> allTypes = getAllParentTypes(abstractTypeDeclaration);
-		for (Type type : allTypes) {
+		Type returnType = getAndFixReturnType((MMethodDefinition) method, model);
+		final Set<Type> allTypes = getAllParentTypes(abstractTypeDeclaration);
+		for (final Type type : allTypes) {
 			if (!(type instanceof AbstractTypeDeclaration)) {
 				continue;
 			}
 
-			MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method, (AbstractTypeDeclaration) type);
+			final MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method, (AbstractTypeDeclaration) type);
 			if (otherDecl != null) {
-				TypeAccess returnTypeDecl = otherDecl.getReturnType();
+				final TypeAccess returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
 					LOGGER.log(Level.WARN, "Skipped return type of: " + otherDecl);
 				} else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
@@ -177,22 +178,22 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches recursively all parents (classes and interfaces) of the given child
-	 * 
+	 *
 	 * @param child The given child
 	 * @return All parents
 	 */
 	public static Set<Type> getAllParentTypes(AbstractTypeDeclaration child) {
-		HashSet<Type> allTypes = new HashSet<>();
-		Deque<Type> stack = new LinkedList<>();
+		final HashSet<Type> allTypes = new HashSet<>();
+		final Deque<Type> stack = new LinkedList<>();
 		if (child != null) {
 			stack.add(child);
 		}
 		while (!stack.isEmpty()) {
-			Type type = stack.pop();
+			final Type type = stack.pop();
 			if (type instanceof AbstractTypeDeclaration) {
 				allTypes.addAll(getTypesOfImplementedInterface(((AbstractTypeDeclaration) type)));
 				if (type instanceof ClassDeclaration) {
-					TypeAccess superClass = ((ClassDeclaration) type).getSuperClass();
+					final TypeAccess superClass = ((ClassDeclaration) type).getSuperClass();
 					if (superClass != null) {
 						allTypes.add(superClass.getType());
 					}
@@ -208,14 +209,14 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches the types of the interfaces directly implemented by the given type
-	 * 
+	 *
 	 * @param type The given type
 	 * @return The implemented interfaces
 	 */
 	public static Set<Type> getTypesOfImplementedInterface(AbstractTypeDeclaration type) {
-		Set<Type> types = new HashSet<Type>();
-		for (TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
-			Type typeOfInterface = superInterfaceReference.getType();
+		final Set<Type> types = new HashSet<>();
+		for (final TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
+			final Type typeOfInterface = superInterfaceReference.getType();
 			if (typeOfInterface == null) {
 				LOGGER.log(Level.WARN, "Skipped type of: " + superInterfaceReference);
 			} else {
@@ -227,13 +228,13 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches in the pg for the primitive void type
-	 * 
+	 *
 	 * @param pg the program model
 	 * @return The primitive void type
 	 */
 	public static PrimitiveTypeVoid getVoid(MGravityModel pg) {
 		PrimitiveTypeVoid voidType = null;
-		for (Type type : pg.getOrphanTypes()) {
+		for (final Type type : pg.getOrphanTypes()) {
 			if (type instanceof PrimitiveTypeVoid) {
 				voidType = (PrimitiveTypeVoid) type;
 			}
@@ -247,7 +248,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches if the type declares a method with the same signature
-	 * 
+	 *
 	 * @param method The method signature for which should be searched
 	 * @param type   The type in which probably also implements the method
 	 * @return The method declaration object implemented in the type or null
@@ -255,9 +256,9 @@ public class MoDiscoUtil {
 	private static MethodDeclaration getOtherDeclarationOfMethod(MMethodDefinition method,
 			AbstractTypeDeclaration type) {
 		MethodDeclaration otherDecl = null;
-		for (BodyDeclaration body : type.getBodyDeclarations()) {
+		for (final BodyDeclaration body : type.getBodyDeclarations()) {
 			if (body instanceof MethodDeclaration) {
-				MethodDeclaration decl = (MethodDeclaration) body;
+				final MethodDeclaration decl = (MethodDeclaration) body;
 				if (method.getName().equals(decl.getName())
 						&& isParamListEqual(method.getParameters(), decl.getParameters())) {
 					otherDecl = decl;
@@ -271,33 +272,33 @@ public class MoDiscoUtil {
 	/**
 	 * Retrieves the return type of the given method. Iff the return type is null it
 	 * is set to void!
-	 * 
+	 *
 	 * @param method The method for which the return type should be retrieved
+	 * @param model the model of the program
 	 * @return The return type of the method
 	 */
-	private static Type getAndFixReturnType(MMethodDefinition method) {
+	private static Type getAndFixReturnType(MMethodDefinition method, final MGravityModel model) {
 		TypeAccess returnType = method.getReturnType();
 
 		if (returnType != null) {
 			return returnType.getType();
 		}
-		MGravityModel pg = method.getModel();
 		Type type = null;
-		for (AbstractMethodInvocation invocation : method.getUsages()) {
+		for (final AbstractMethodInvocation invocation : method.getUsages()) {
 			try {
-				Type tmpType = guessReturnTypeOfCall(pg, invocation);
+				final Type tmpType = guessReturnTypeOfCall(model, invocation);
 				if (tmpType != null && (type == null || isSuperType(tmpType, type))) {
 					type = tmpType;
 				}
-			} catch (IllegalStateException e) {
-				MDefinition source = getContainingMethod(invocation);
-				StringBuilder message = new StringBuilder("The guess of the return type of the invocartion of \"");
+			} catch (final IllegalStateException e) {
+				final MDefinition source = getContainingMethod(invocation);
+				final StringBuilder message = new StringBuilder("The guess of the return type of the invocartion of \"");
 				message.append(method.getAbstractTypeDeclaration().getName());
 				message.append('.');
 				message.append(method.getName());
 				if (source != null) {
 					message.append("\" in \"");
-					AbstractTypeDeclaration abstractTypeDeclaration = source.getAbstractTypeDeclaration();
+					final AbstractTypeDeclaration abstractTypeDeclaration = source.getAbstractTypeDeclaration();
 					if (abstractTypeDeclaration != null) {
 						message.append(abstractTypeDeclaration.getName());
 					}
@@ -311,7 +312,7 @@ public class MoDiscoUtil {
 		if (type == null) {
 			LOGGER.log(Level.WARN,
 					"Return type for method \"" + method.getName() + "\" not given assuming \"java.lang.Object\"");
-			type = getJavaLangObject(pg);
+			type = getJavaLangObject(model);
 			if (type == null) {
 				LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
 				return null;
@@ -325,13 +326,13 @@ public class MoDiscoUtil {
 
 	/**
 	 * try to guess the return type of the called method.
-	 * 
+	 *
 	 * @param pg         The model containing the invocation
 	 * @param invocation The method invocation
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(MGravityModel pg, AbstractMethodInvocation invocation) {
-		EObject eContainer = invocation.eContainer();
+		final EObject eContainer = invocation.eContainer();
 
 		// Statement
 		if (eContainer instanceof Statement) {
@@ -358,7 +359,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * try to guess the return type of the called method.
-	 * 
+	 *
 	 * @param pg         The model containing the invocation
 	 * @param invocation The method invocation
 	 * @param statement  The statement containing the invocation
@@ -372,9 +373,9 @@ public class MoDiscoUtil {
 			return null;
 			// We cannot handle infix expressions but its also no error
 		} else if (statement instanceof ReturnStatement) {
-			MDefinition definition = getContainingMethod((Statement) statement);
+			final MDefinition definition = getContainingMethod(statement);
 			if (definition instanceof MMethodDefinition) {
-				return getAndFixReturnType(((MMethodDefinition) definition));
+				return getAndFixReturnType(((MMethodDefinition) definition), pg);
 			} else if (definition instanceof MConstructorDefinition) {
 				return ((MConstructorDefinition) definition).getAbstractTypeDeclaration();
 			} else if (definition instanceof AbstractVariablesContainer) {
@@ -394,7 +395,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * try to guess the return type of the called method.
-	 * 
+	 *
 	 * @param pg         The model containing the invocation
 	 * @param invocation The method invocation
 	 * @param expression The expression containing the invocation
@@ -408,7 +409,7 @@ public class MoDiscoUtil {
 		} else if (expression instanceof Assignment) {
 			return getAssignmentType(pg, (Assignment) expression);
 		} else if (expression instanceof ArrayInitializer) {
-			EObject initializedObject = ((ArrayInitializer) expression).eContainer();
+			final EObject initializedObject = ((ArrayInitializer) expression).eContainer();
 			if (initializedObject instanceof VariableDeclarationFragment) {
 				return ((VariableDeclarationFragment) initializedObject).getVariablesContainer().getType().getType();
 			} else {
@@ -420,7 +421,7 @@ public class MoDiscoUtil {
 		} else if (expression instanceof CastExpression) {
 			return ((CastExpression) expression).getType().getType();
 		} else if (expression instanceof FieldAccess) {
-			VariableDeclaration variable = ((FieldAccess) expression).getField().getVariable();
+			final VariableDeclaration variable = ((FieldAccess) expression).getField().getVariable();
 			return getType(pg, variable);
 		} else if (expression instanceof ArrayAccess) {
 			return getArrayType(pg, (ArrayAccess) expression);
@@ -438,7 +439,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Search in the program model for a throwable class or java.lang.Object
-	 * 
+	 *
 	 * @param pg The program model
 	 * @return The type
 	 */
@@ -456,18 +457,18 @@ public class MoDiscoUtil {
 	/**
 	 * Guess the return type of a method invocation based on an other invocation
 	 * containing the invocation
-	 * 
+	 *
 	 * @param invocation The invocation whose return type should be guessed
 	 * @param container  The invocation containing the other one
 	 * @return The guessed return type
 	 */
 	private static Type getReturnType(AbstractMethodInvocation invocation, AbstractMethodInvocation container) {
-		int index = container.getArguments().indexOf(invocation);
+		final int index = container.getArguments().indexOf(invocation);
 		if (index >= 0) {
 			return container.getMethod().getParameters().get(index).getType().getType();
 		} else {
 			if (container instanceof MethodInvocation) {
-				Expression expression = ((MethodInvocation) container).getExpression();
+				final Expression expression = ((MethodInvocation) container).getExpression();
 				if (expression.equals(invocation)) {
 					return container.getMethod().getAbstractTypeDeclaration();
 				} else {
@@ -481,15 +482,15 @@ public class MoDiscoUtil {
 
 	/**
 	 * Guesses the type of the accessed array
-	 * 
+	 *
 	 * @param pg          The program model containing the array
 	 * @param arrayAccess The access to the array
 	 * @return The type of the array
 	 */
 	private static Type getArrayType(MGravityModel pg, ArrayAccess arrayAccess) {
-		Expression expression = arrayAccess.getArray();
+		final Expression expression = arrayAccess.getArray();
 		if (expression instanceof SingleVariableAccess) {
-			VariableDeclaration variable = ((SingleVariableAccess) expression).getVariable();
+			final VariableDeclaration variable = ((SingleVariableAccess) expression).getVariable();
 			return getType(pg, variable);
 		} else if (expression instanceof AbstractMethodInvocation) {
 			return getJavaLangObject(pg);
@@ -501,7 +502,7 @@ public class MoDiscoUtil {
 	/**
 
 	 * Search the method or field containing the statement
-	 * 
+	 *
 	 * @param statement The statement
 	 * @return The definition containing the statement
 	 */
@@ -515,14 +516,14 @@ public class MoDiscoUtil {
 
 	/**
 	 * Gets the type or a possible type of the variable
-	 * 
+	 *
 	 * @param pg       The program model containing the variable
 	 * @param variable The variable
 	 * @return The type of the variable
 	 */
 	private static Type getType(MGravityModel pg, VariableDeclaration variable) {
 		if (variable instanceof VariableDeclarationFragment) {
-			TypeAccess typeAccess = ((VariableDeclarationFragment) variable).getVariablesContainer().getType();
+			final TypeAccess typeAccess = ((VariableDeclarationFragment) variable).getVariablesContainer().getType();
 			if (typeAccess == null) {
 				return getJavaLangObject(pg);
 			} else {
@@ -535,13 +536,13 @@ public class MoDiscoUtil {
 
 	/**
 	 * Get the variable of the assignment
-	 * 
+	 *
 	 * @param assignment The assign statement
 	 * @param pg         The model containing the assignment
 	 * @return The variable
 	 */
 	private static Type getAssignmentType(MGravityModel pg, Assignment assignment) {
-		Expression expression = assignment.getLeftHandSide();
+		final Expression expression = assignment.getLeftHandSide();
 		if (expression instanceof SingleVariableAccess) {
 			return getType(pg, ((SingleVariableAccess) expression).getVariable());
 		} else if (expression instanceof FieldAccess) {
@@ -555,7 +556,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Compares two parameter lists
-	 * 
+	 *
 	 * @param parameters1 The fist parameter list
 	 * @param parameters2 The second parameter list
 	 * @return true, iff the parameter lists are equal
@@ -576,19 +577,19 @@ public class MoDiscoUtil {
 	/**
 	 * Fills the MParameterList with MParam entries discovered from the given
 	 * definition
-	 * 
+	 *
 	 * @param definition    The definiton
 	 * @param list The empty parameter list
 	 * @return true, iff no error occured
 	 */
 	public static boolean fillParamList(MAbstractMethodDefinition definition, MParameterList list) {
-		EList<MEntry> mEntrys = list.getMEntrys();
+		final EList<MEntry> mEntrys = list.getMEntrys();
 		if (!mEntrys.isEmpty()) {
 			return false;
 		}
 		MEntry prev = null;
-		for (SingleVariableDeclaration param : definition.getParameters()) {
-			MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
+		for (final SingleVariableDeclaration param : definition.getParameters()) {
+			final MEntry entry = ModiscoFactory.eINSTANCE.createMEntry();
 			entry.getParameters().add((MSingleVariableDeclaration) param);
 			mEntrys.add(entry);
 			entry.setType(param.getType().getType());
@@ -606,9 +607,9 @@ public class MoDiscoUtil {
 	/**
 	 * Searches for the type "java.lang.Sting" and returns it. If there is no such
 	 * type in the model, it is created and returned.
-	 * 
+	 *
 	 * @param model The MoDisco model
-	 * 
+	 *
 	 * @return The Type representing "java.lang.String"
 	 */
 	public static Type getOrCreateJavaLangString(Model model) {
@@ -635,21 +636,21 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches for a type in a model
-	 * 
+	 *
 	 * @param model              The model
 	 * @param fullyQualifiedName The fully qualified name of the type
 	 * @return The type or null
 	 */
 	public static AbstractTypeDeclaration getType(Model model, String fullyQualifiedName) {
-		int index = fullyQualifiedName.lastIndexOf('.');
+		final int index = fullyQualifiedName.lastIndexOf('.');
 		String defaultPackage = "default";
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
-		Package tPackage = getPackage(model, defaultPackage);
+		final Package tPackage = getPackage(model, defaultPackage);
 		if (tPackage != null) {
-			String name = fullyQualifiedName.substring(index + 1);
-			for (AbstractTypeDeclaration tType : tPackage.getOwnedElements()) {
+			final String name = fullyQualifiedName.substring(index + 1);
+			for (final AbstractTypeDeclaration tType : tPackage.getOwnedElements()) {
 				if (tType.getName().equals(name) || tType.getName().contentEquals(fullyQualifiedName)) {
 					return tType;
 				}
@@ -660,7 +661,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches for the given name space in the model
-	 * 
+	 *
 	 * @param model     The model
 	 * @param namespace The name space
 	 * @return The last package of the namespace or null
@@ -671,7 +672,7 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches for the given name space in the model
-	 * 
+	 *
 	 * @param model     The model
 	 * @param namespace The name space
 	 * @return The last package of the namespace or null
@@ -679,9 +680,9 @@ public class MoDiscoUtil {
 	public static Package getPackage(Model model, String[] namespace) {
 		EList<Package> next = model.getOwnedElements();
 		for (int i = 0; i < namespace.length; i++) {
-			String name = namespace[i];
+			final String name = namespace[i];
 			boolean contains = false;
-			for (Package tPackage : next) {
+			for (final Package tPackage : next) {
 				if (name.equals(tPackage.getName())) {
 					if (i == namespace.length - 1) {
 						return tPackage;
@@ -700,14 +701,14 @@ public class MoDiscoUtil {
 
 	/**
 	 * Searches for the type "java.lang.Object" and creates it if not available
-	 * 
+	 *
 	 * @param model The model in which the type should be searched
 	 * @return The type
 	 */
 	public static Type getJavaLangObject(MGravityModel model) {
 		Package javaLangPackage = getPackage(model, new String[] { "java", "lang" });
 		if (javaLangPackage != null) {
-			Optional<AbstractTypeDeclaration> result = javaLangPackage.getOwnedElements().parallelStream()
+			final Optional<AbstractTypeDeclaration> result = javaLangPackage.getOwnedElements().parallelStream()
 					.filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny();
 			if (result.isPresent()) {
 				return result.get();
@@ -723,7 +724,7 @@ public class MoDiscoUtil {
 			javaLangPackage.setName("lang");
 			javaPackage.getOwnedPackages().add(javaLangPackage);
 		}
-		AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
+		final AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
 		object.setName("Object");
 		object.setProxy(true);
 		javaLangPackage.getOwnedElements().add(object);

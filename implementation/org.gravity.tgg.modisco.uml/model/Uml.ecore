@@ -278,7 +278,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConstructorDec2OperationAnonymous__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__bodyDeclaration"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__classDec"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__feature" lowerBound="1"

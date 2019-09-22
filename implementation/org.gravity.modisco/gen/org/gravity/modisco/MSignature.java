@@ -24,6 +24,7 @@ public interface MSignature extends MAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>MDefinitions</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MDefinition}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MDefinition#getMSignature <em>MSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MDefinitions</em>' reference list isn't clear,
@@ -32,7 +33,8 @@ public interface MSignature extends MAbstractFlowElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MDefinitions</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMSignature_MDefinitions()
-	 * @model
+	 * @see org.gravity.modisco.MDefinition#getMSignature
+	 * @model opposite="mSignature"
 	 * @generated
 	 */
 	EList<MDefinition> getMDefinitions();

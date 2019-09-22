@@ -2,8 +2,6 @@
  */
 package org.gravity.security.annotations.access;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**

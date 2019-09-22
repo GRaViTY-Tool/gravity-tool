@@ -4,21 +4,31 @@ package org.gravity.security.annotations.requirements.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.gravity.security.annotations.AnnotationsPackage;
 
 import org.gravity.security.annotations.access.AccessPackage;
 
 import org.gravity.security.annotations.access.impl.AccessPackageImpl;
 
+import org.gravity.security.annotations.actions.ActionsPackage;
+
+import org.gravity.security.annotations.actions.impl.ActionsPackageImpl;
+
+import org.gravity.security.annotations.impl.AnnotationsPackageImpl;
+
 import org.gravity.security.annotations.requirements.RequirementsFactory;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
+import org.gravity.security.annotations.requirements.TAnnotationWithCounterMeasure;
+import org.gravity.security.annotations.requirements.TCritical;
+import org.gravity.security.annotations.requirements.THigh;
 import org.gravity.security.annotations.requirements.TIntegrity;
 import org.gravity.security.annotations.requirements.TSecrecy;
 
 import org.gravity.typegraph.basic.BasicPackage;
-
-import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +50,27 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	private EClass tIntegrityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tHighEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tCriticalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tAnnotationWithCounterMeasureEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -95,18 +126,30 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		BasicPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccessPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AnnotationsPackage.eNS_URI);
+		AnnotationsPackageImpl theAnnotationsPackage = (AnnotationsPackageImpl) (registeredPackage instanceof AnnotationsPackageImpl
+				? registeredPackage
+				: AnnotationsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AccessPackage.eNS_URI);
 		AccessPackageImpl theAccessPackage = (AccessPackageImpl) (registeredPackage instanceof AccessPackageImpl
 				? registeredPackage
 				: AccessPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI);
+		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl) (registeredPackage instanceof ActionsPackageImpl
+				? registeredPackage
+				: ActionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRequirementsPackage.createPackageContents();
+		theAnnotationsPackage.createPackageContents();
 		theAccessPackage.createPackageContents();
+		theActionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRequirementsPackage.initializePackageContents();
+		theAnnotationsPackage.initializePackageContents();
 		theAccessPackage.initializePackageContents();
+		theActionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRequirementsPackage.freeze();
@@ -142,6 +185,76 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 	 * @generated
 	 */
 	@Override
+	public EClass getTHigh() {
+		return tHighEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTCritical() {
+		return tCriticalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTCritical_Secrecy() {
+		return (EReference) tCriticalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTCritical_Integrity() {
+		return (EReference) tCriticalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTCritical_High() {
+		return (EReference) tCriticalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTAnnotationWithCounterMeasure() {
+		return tAnnotationWithCounterMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTAnnotationWithCounterMeasure_Countermeasure() {
+		return (EReference) tAnnotationWithCounterMeasureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RequirementsFactory getRequirementsFactory() {
 		return (RequirementsFactory) getEFactoryInstance();
 	}
@@ -169,6 +282,16 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		tSecrecyEClass = createEClass(TSECRECY);
 
 		tIntegrityEClass = createEClass(TINTEGRITY);
+
+		tHighEClass = createEClass(THIGH);
+
+		tCriticalEClass = createEClass(TCRITICAL);
+		createEReference(tCriticalEClass, TCRITICAL__SECRECY);
+		createEReference(tCriticalEClass, TCRITICAL__INTEGRITY);
+		createEReference(tCriticalEClass, TCRITICAL__HIGH);
+
+		tAnnotationWithCounterMeasureEClass = createEClass(TANNOTATION_WITH_COUNTER_MEASURE);
+		createEReference(tAnnotationWithCounterMeasureEClass, TANNOTATION_WITH_COUNTER_MEASURE__COUNTERMEASURE);
 	}
 
 	/**
@@ -196,16 +319,20 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		AnnotationsPackage theAnnotationsPackage = (AnnotationsPackage) EPackage.Registry.INSTANCE
-				.getEPackage(AnnotationsPackage.eNS_URI);
+		org.gravity.typegraph.basic.annotations.AnnotationsPackage theAnnotationsPackage_1 = (org.gravity.typegraph.basic.annotations.AnnotationsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(org.gravity.typegraph.basic.annotations.AnnotationsPackage.eNS_URI);
+		BasicPackage theBasicPackage = (BasicPackage) EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		tSecrecyEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotation());
-		tIntegrityEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotation());
+		tSecrecyEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
+		tIntegrityEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
+		tHighEClass.getESuperTypes().add(this.getTAnnotationWithCounterMeasure());
+		tCriticalEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
+		tAnnotationWithCounterMeasureEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tSecrecyEClass, TSecrecy.class, "TSecrecy", !IS_ABSTRACT, !IS_INTERFACE,
@@ -214,8 +341,25 @@ public class RequirementsPackageImpl extends EPackageImpl implements Requirement
 		initEClass(tIntegrityEClass, TIntegrity.class, "TIntegrity", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		// Create resource
-		createResource(eNS_URI);
+		initEClass(tHighEClass, THigh.class, "THigh", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tCriticalEClass, TCritical.class, "TCritical", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTCritical_Secrecy(), theBasicPackage.getTSignature(), null, "secrecy", null, 0, -1,
+				TCritical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTCritical_Integrity(), theBasicPackage.getTSignature(), null, "integrity", null, 0, -1,
+				TCritical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTCritical_High(), theBasicPackage.getTSignature(), null, "high", null, 0, -1, TCritical.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tAnnotationWithCounterMeasureEClass, TAnnotationWithCounterMeasure.class,
+				"TAnnotationWithCounterMeasure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTAnnotationWithCounterMeasure_Countermeasure(), theBasicPackage.getTMethodDefinition(), null,
+				"countermeasure", null, 0, 1, TAnnotationWithCounterMeasure.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //RequirementsPackageImpl

@@ -31,7 +31,6 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
-import org.gravity.modisco.MFlow;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -40,6 +39,7 @@ import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MFieldDefinition;
+import org.gravity.modisco.MFlow;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MSingleVariableAccess;
@@ -50,13 +50,13 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 /**
  * A preprocessor for calculating data flow edges<br/>
  * <br/>
- * 
+ *
  * <b>IMPORTANT REMARK:</b><br/>
  * To work properly, this processor requires FieldPreprocessing and
  * MethodPreprocessing to be executed prior to it, as it depends on the
  * decomposition of statements with multiple declarations into one statement for
  * each declaration.
- * 
+ *
  * @author speldszus
  *
  */
@@ -66,10 +66,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
-		SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
+		final SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
 		boolean success = true;
 		sub.beginTask("Statement pre-processing", 50);
-		List<StatementHandlerDataFlow> handlers = preProcessStatements(model);
+		final List<StatementHandlerDataFlow> handlers = preProcessStatements(model);
 		if (handlers == null) {
 			success = false;
 		}
@@ -77,26 +77,26 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		sub.beginTask("Insertion of data flow edges", 5);
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural
 		// data flows
-		for (StatementHandlerDataFlow handler : handlers) {
+		for (final StatementHandlerDataFlow handler : handlers) {
 			// Determination of member's type
-			EObject memberDef = handler.getMemberDef();
+			final EObject memberDef = handler.getMemberDef();
 			MDefinition memberDefTyped = null;
 			if (memberDef instanceof MAbstractMethodDefinition) {
 				memberDefTyped = (MDefinition) memberDef;
 			} else if (memberDef instanceof VariableDeclarationFragment) {
-				memberDefTyped = (MDefinition) memberDef.eContainer();
+				memberDefTyped = (MDefinition) ((VariableDeclarationFragment) memberDef).getVariablesContainer();
 			} else {
 				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName()
 						+ " in DataFlowProcessor");
 				return false;
 			}
 			// Reduction of intra-DFGs
-			Map<EObject, FlowNode> reducedDFG = reduceIntraDFGFlows(handler);
+			final Map<EObject, FlowNode> reducedDFG = reduceIntraDFGFlows(handler);
 			// Insertion of inter-procedural data flows
-			for (FlowNode node : handler.getMemberRef()) {
+			for (final FlowNode node : handler.getMemberRef()) {
 				// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
-				Set<FlowNode> outRef = buildOutRef(reducedDFG, node);
-				Set<FlowNode> inRef = buildInRef(handler, node);
+				final Set<FlowNode> outRef = buildOutRef(reducedDFG, node);
+				final Set<FlowNode> inRef = buildInRef(handler, node);
 				// Setting flows
 				setFlows(memberDefTyped, node, outRef, inRef);
 			}
@@ -115,22 +115,22 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param inRef
 	 */
 	private void setFlows(MDefinition definition, FlowNode node, Set<FlowNode> outRef, Set<FlowNode> inRef) {
-		MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
+		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 		MFlow accessOut = null;
-		for (FlowNode inNode : inRef) {
+		for (final FlowNode inNode : inRef) {
 			if (inNode == node) {
 				continue;
 			}
-			EObject inElement = inNode.getModelElement();
+			final EObject inElement = inNode.getModelElement();
 			if (inElement instanceof SingleVariableDeclaration) {
 				accessOut = ModiscoFactory.eINSTANCE.createMFlow();
 				accessOut.setFlowSource(((MSingleVariableDeclaration) inElement).getMEntry());
 				if (outRef.isEmpty()) { // Handling parameter flows, which end in an access (e. g. if access is in an
-										// assignment to a local)
+					// assignment to a local)
 					accessOut.setFlowOwner(access);
 					accessOut.setFlowTarget(access);
 				} else { // Set flowOwner to parameter's member, as the access will be removed in the TGG
-							// transformation
+					// transformation
 					accessOut.setFlowOwner((MAbstractMethodDefinition) ((MSingleVariableDeclaration) inElement)
 							.getMethodDeclaration());
 				}
@@ -138,13 +138,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				// Also create incoming flow here, if it's not coming from an access (to avoid
 				// redundancy)
 				if (!(inElement instanceof SingleVariableAccess || inElement instanceof AbstractMethodInvocation)) {
-					MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+					final MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
 					if (inElement instanceof VariableDeclarationFragment) {
-						AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) inElement)
+						final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) inElement)
 								.getVariablesContainer();
 						if (variablesContainer instanceof FieldDeclaration) {
-							MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
-							accessIn.setFlowSource(fieldDef.getMFieldSignature());
+							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+							accessIn.setFlowSource(fieldDef.getMSignature());
 						}
 						else {
 							LOGGER.error("A variable declaration fragment hasn't been reduced: "+variablesContainer);
@@ -157,7 +157,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				}
 			}
 		}
-		for (FlowNode outNode : outRef) {
+		for (final FlowNode outNode : outRef) {
 			if (outNode == node) {
 				continue;
 			}
@@ -166,14 +166,14 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOut.setFlowSource(access);
 				accessOut.setFlowOwner(access);
 			}
-			EObject outElement = outNode.getModelElement();
+			final EObject outElement = outNode.getModelElement();
 			if (outElement instanceof ReturnStatement) {
 				accessOut.setFlowTarget(definition);
 			} else if (outElement instanceof VariableDeclarationFragment) {
-				AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) outElement)
+				final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) outElement)
 						.getVariablesContainer();
 				if (variablesContainer instanceof FieldDeclaration) {
-					MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 					accessOut.setFlowTarget(fieldDef);
 				}
 				else {
@@ -187,21 +187,20 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOut.setFlowTarget(definition);
 			} else {
 				if (outElement instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the target
-																	// is another access
-					MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
-					VariableDeclaration variable = mSVA.getVariable();
+					// is another access
+					final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
+					final VariableDeclaration variable = mSVA.getVariable();
 					if (variable instanceof MSingleVariableDeclaration) {
 						accessOut.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
 					} else if (variable.eContainer() instanceof MFieldDefinition
 							&& accessOut.getFlowSource() instanceof MEntry) {
 						accessOut.setFlowOwner(mSVA);
 						accessOut.setFlowTarget(mSVA);
-					} else { // Basically flows into field accesses without MEntry as source
-						MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-						accessOut.setFlowTarget(outTarget);
+					} else { // Basically flows into field accesses without MEntry as sourceb
+						accessOut.setFlowTarget((MAbstractFlowElement) outElement);
 					}
 				} else {
-					MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
+					final MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
 					accessOut.setFlowTarget(outTarget);
 				}
 			}
@@ -210,18 +209,18 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * A constructor invocation or method invocation with a return value should
 	 * explicitly have the MethodDef/MethodSig set as incoming flow
-	 * 
+	 *
 	 * @param handler
 	 * @param node
 	 * @return The set of incoming flows
 	 */
 	private Set<FlowNode> buildInRef(StatementHandlerDataFlow handler, FlowNode node) {
-		MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
-		Set<FlowNode> inRef = node.getInRef();
+		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
+		final Set<FlowNode> inRef = node.getInRef();
 		if (access instanceof AbstractMethodInvocation) {
-			AbstractMethodDeclaration methodDef = ((AbstractMethodInvocation) access).getMethod();
+			final AbstractMethodDeclaration methodDef = ((AbstractMethodInvocation) access).getMethod();
 			if (methodDef instanceof MConstructorDefinition) {
-				FlowNode defNode = handler.getFlowNodeForElement(methodDef);
+				final FlowNode defNode = handler.getFlowNodeForElement(methodDef);
 				inRef.add(defNode);
 				defNode.addOutRef(node);
 			} else {
@@ -230,17 +229,17 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					returnType = ((MethodDeclaration) methodDef).getReturnType();
 					if (returnType != null) {
 						if (!returnType.getType().getName().equals("void")) {
-							FlowNode sigNode = handler
-									.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+							final FlowNode sigNode = handler
+									.getFlowNodeForElement(((MMethodDefinition) methodDef).getMSignature());
 							inRef.add(sigNode);
 							sigNode.addOutRef(node);
 						}
 					} else {
 						if (!(methodDef instanceof UnresolvedMethodDeclaration)) { // Ignoring
-																					// UnresolvedMethodDeclarations for
-																					// now
-							FlowNode sigNode = handler
-									.getFlowNodeForElement(((MMethodDefinition) methodDef).getMMethodSignature());
+							// UnresolvedMethodDeclarations for
+							// now
+							final FlowNode sigNode = handler
+									.getFlowNodeForElement(((MMethodDefinition) methodDef).getMSignature());
 							inRef.add(sigNode);
 							sigNode.addOutRef(node);
 						}
@@ -256,14 +255,14 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @return
 	 */
 	private Set<FlowNode> buildOutRef(Map<EObject, FlowNode> reducedDFG, FlowNode node) {
-		Set<FlowNode> outRef = node.getOutRef();
-		int size = outRef.size();
+		final Set<FlowNode> outRef = node.getOutRef();
+		final int size = outRef.size();
 		if (size > 1) {
-			Set<FlowNode> toRemove = new HashSet<>();
-			for (FlowNode flowNode : outRef) {
-				EObject modelElement = flowNode.getModelElement();
+			final Set<FlowNode> toRemove = new HashSet<>();
+			for (final FlowNode flowNode : outRef) {
+				final EObject modelElement = flowNode.getModelElement();
 				if (modelElement instanceof MAbstractMethodInvocation) { // Remove flow into call, if there's
-																				// actually a paramFlow
+					// actually a paramFlow
 					node.setFlowOwner((MAbstractMethodInvocation) modelElement);
 					toRemove.add(flowNode);
 					reducedDFG.get(modelElement).getInRef().remove(node);
@@ -278,8 +277,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @return
 	 */
 	private Map<EObject, FlowNode> reduceIntraDFGFlows(StatementHandlerDataFlow handler) {
-		Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
-		for (EObject node : new ArrayList<>(reducedDFG.keySet())) {
+		final Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
+		for (final EObject node : new ArrayList<>(reducedDFG.keySet())) {
 			if (node instanceof VariableDeclarationFragment) {
 				if(((VariableDeclarationFragment) node).getVariablesContainer() instanceof FieldDeclaration) {
 					// Keep node
@@ -297,7 +296,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				// implicitly through observation of the construct's behavior
 			} else if (node instanceof SingleVariableAccess) {
 				// Keep variable access node only if its a field access
-				VariableDeclaration variable = ((SingleVariableAccess) node).getVariable();
+				final VariableDeclaration variable = ((SingleVariableAccess) node).getVariable();
 				if (variable == null) {
 					LOGGER.error("Declared variable is null");
 				} else if (variable.eContainer() instanceof VariableDeclarationStatement) {
@@ -312,22 +311,22 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
-	 * 
+	 *
 	 * @param node       The node's key in reducedDFG.
 	 * @param reducedDFG The alreadySeen on which the reduction should be performed.
 	 */
 	private void reduceNodeInDFG(EObject node, Map<EObject, FlowNode> reducedDFG) {
-		FlowNode flowNode = reducedDFG.get(node);
-		Set<FlowNode> inRef = flowNode.getInRef();
-		Set<FlowNode> outRef = flowNode.getOutRef();
-		for (FlowNode outNode : outRef) {
-			Set<FlowNode> nodeInRef = outNode.getInRef();
+		final FlowNode flowNode = reducedDFG.get(node);
+		final Set<FlowNode> inRef = flowNode.getInRef();
+		final Set<FlowNode> outRef = flowNode.getOutRef();
+		for (final FlowNode outNode : outRef) {
+			final Set<FlowNode> nodeInRef = outNode.getInRef();
 			nodeInRef.addAll(inRef);
 			nodeInRef.remove(flowNode);
 			nodeInRef.remove(outNode);
 		}
-		for (FlowNode inNode : inRef) {
-			Set<FlowNode> nodeOutRef = inNode.getOutRef();
+		for (final FlowNode inNode : inRef) {
+			final Set<FlowNode> nodeOutRef = inNode.getOutRef();
 			nodeOutRef.addAll(outRef);
 			nodeOutRef.remove(flowNode);
 			nodeOutRef.remove(inNode);
@@ -342,19 +341,19 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * signature parameter corresponding to defParamObj (and setting it as target)
 	 * and setting the flowOwner to the MMethodInvocation in which currentAccess is
 	 * contained.
-	 * 
+	 *
 	 * @param defParamObj   The model object of the called method's definition.
 	 * @param currentAccess The FlowNode of the currently processed access.
 	 * @param flow          The flow, which is supposed to be completed.
 	 */
 	private void completeFlowForSigParam(EObject defParamObj, FlowNode currentAccess, MFlow flow) {
 		// Set target
-		MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) defParamObj;
-		MEntry sigParamTarget = paramTarget.getMEntry();
+		final MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) defParamObj;
+		final MEntry sigParamTarget = paramTarget.getMEntry();
 		flow.setFlowTarget(sigParamTarget);
 
 		// Set owner
-		MAbstractMethodInvocation invocation = currentAccess.getFlowOwner();
+		final MAbstractMethodInvocation invocation = currentAccess.getFlowOwner();
 		if (invocation != null) {
 			flow.setFlowOwner(invocation);
 		} else {
@@ -369,7 +368,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * the data flows between statement nodes. The resulting intermediate
 	 * representation of data flow is then used to derive the data flow of each
 	 * field/method.
-	 * 
+	 *
 	 * @param model The model, whose statements are processed.
 	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
@@ -377,19 +376,19 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		if (model == null) {
 			return null;
 		}
-		List<StatementHandlerDataFlow> handlers = new ArrayList<>();
-		for (MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
-			StatementHandlerDataFlow methodProcessor = new StatementHandlerDataFlow(methodDef);
+		final List<StatementHandlerDataFlow> handlers = new ArrayList<>();
+		for (final MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
+			final StatementHandlerDataFlow methodProcessor = new StatementHandlerDataFlow(methodDef);
 			methodProcessor.getFlowNodeForElement(methodDef);
-			for (SingleVariableDeclaration param : methodDef.getParameters()) {
+			for (final SingleVariableDeclaration param : methodDef.getParameters()) {
 				methodProcessor.getFlowNodeForElement(param);
 			}
 			methodProcessor.handle(methodDef.getBody());
 			handlers.add(methodProcessor);
 		}
-		for (MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
-			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
-				StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
+		for (final MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
+			for (final VariableDeclarationFragment fragment : fieldDef.getFragments()) {
+				final StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
 				fieldProcessor.getMiscHandler().handle(fragment);
 				fieldProcessor.getFlowNodeForElement(fieldDef);
 				handlers.add(fieldProcessor);

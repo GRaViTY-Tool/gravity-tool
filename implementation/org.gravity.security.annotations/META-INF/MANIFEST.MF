@@ -3,11 +3,16 @@ Automatic-Module-Name: org.gravity.security.annotations
 Bundle-SymbolicName: org.gravity.security.annotations;singleton:=true
 Export-Package: org.gravity.security.annotations,
  org.gravity.security.annotations.access,
- org.gravity.security.annotations.requirements,
- org.gravity.security.annotations.access.util,
  org.gravity.security.annotations.access.impl,
+ org.gravity.security.annotations.access.util,
+ org.gravity.security.annotations.actions,
+ org.gravity.security.annotations.actions.impl,
+ org.gravity.security.annotations.actions.util,
+ org.gravity.security.annotations.impl,
+ org.gravity.security.annotations.requirements,
  org.gravity.security.annotations.requirements.impl,
- org.gravity.security.annotations.requirements.util
+ org.gravity.security.annotations.requirements.util,
+ org.gravity.security.annotations.util
 Bundle-Name: Security Annotations
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,

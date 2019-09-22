@@ -5,7 +5,6 @@
 
 #source {
 	mSignature:MMethodSignature {
-		++  -mMethodDefinitions -> mDefinition
 		++  -mDefinitions -> mDefinition
 	}
 

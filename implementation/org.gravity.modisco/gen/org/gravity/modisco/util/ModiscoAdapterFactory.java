@@ -111,32 +111,36 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseMMethodSignature(MMethodSignature object) {
-				return createMMethodSignatureAdapter();
-			}
-			@Override
 			public Adapter caseMParameterList(MParameterList object) {
 				return createMParameterListAdapter();
-			}
-			@Override
-			public Adapter caseMName(MName object) {
-				return createMNameAdapter();
 			}
 			@Override
 			public Adapter caseMMethodName(MMethodName object) {
 				return createMMethodNameAdapter();
 			}
 			@Override
-			public Adapter caseMFieldName(MFieldName object) {
-				return createMFieldNameAdapter();
-			}
-			@Override
-			public Adapter caseMFieldDefinition(MFieldDefinition object) {
-				return createMFieldDefinitionAdapter();
+			public Adapter caseMMethodSignature(MMethodSignature object) {
+				return createMMethodSignatureAdapter();
 			}
 			@Override
 			public Adapter caseMMethodDefinition(MMethodDefinition object) {
 				return createMMethodDefinitionAdapter();
+			}
+			@Override
+			public Adapter caseMName(MName object) {
+				return createMNameAdapter();
+			}
+			@Override
+			public Adapter caseMFieldName(MFieldName object) {
+				return createMFieldNameAdapter();
+			}
+			@Override
+			public Adapter caseMFieldSignature(MFieldSignature object) {
+				return createMFieldSignatureAdapter();
+			}
+			@Override
+			public Adapter caseMFieldDefinition(MFieldDefinition object) {
+				return createMFieldDefinitionAdapter();
 			}
 			@Override
 			public Adapter caseMSignature(MSignature object) {
@@ -151,16 +155,12 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMGravityModelAdapter();
 			}
 			@Override
-			public Adapter caseMFieldSignature(MFieldSignature object) {
-				return createMFieldSignatureAdapter();
+			public Adapter caseMethodInvocationStaticType(MethodInvocationStaticType object) {
+				return createMethodInvocationStaticTypeAdapter();
 			}
 			@Override
 			public Adapter caseMSyntheticMethodDefinition(MSyntheticMethodDefinition object) {
 				return createMSyntheticMethodDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseMethodInvocationStaticType(MethodInvocationStaticType object) {
-				return createMethodInvocationStaticTypeAdapter();
 			}
 			@Override
 			public Adapter caseMAnonymous(MAnonymous object) {
@@ -235,16 +235,16 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createConstructorDeclarationAdapter();
 			}
 			@Override
+			public Adapter caseMethodDeclaration(MethodDeclaration object) {
+				return createMethodDeclarationAdapter();
+			}
+			@Override
 			public Adapter caseAbstractVariablesContainer(AbstractVariablesContainer object) {
 				return createAbstractVariablesContainerAdapter();
 			}
 			@Override
 			public Adapter caseFieldDeclaration(FieldDeclaration object) {
 				return createFieldDeclarationAdapter();
-			}
-			@Override
-			public Adapter caseMethodDeclaration(MethodDeclaration object) {
-				return createMethodDeclarationAdapter();
 			}
 			@Override
 			public Adapter caseModel(Model object) {

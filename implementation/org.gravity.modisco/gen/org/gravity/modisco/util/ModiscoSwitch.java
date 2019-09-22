@@ -153,24 +153,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModiscoPackage.MMETHOD_SIGNATURE: {
-				MMethodSignature mMethodSignature = (MMethodSignature)theEObject;
-				T result = caseMMethodSignature(mMethodSignature);
-				if (result == null) result = caseMSignature(mMethodSignature);
-				if (result == null) result = caseMParameterList(mMethodSignature);
-				if (result == null) result = caseMAbstractFlowElement(mMethodSignature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ModiscoPackage.MPARAMETER_LIST: {
 				MParameterList mParameterList = (MParameterList)theEObject;
 				T result = caseMParameterList(mParameterList);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModiscoPackage.MNAME: {
-				MName mName = (MName)theEObject;
-				T result = caseMName(mName);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -181,23 +166,12 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModiscoPackage.MFIELD_NAME: {
-				MFieldName mFieldName = (MFieldName)theEObject;
-				T result = caseMFieldName(mFieldName);
-				if (result == null) result = caseMName(mFieldName);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModiscoPackage.MFIELD_DEFINITION: {
-				MFieldDefinition mFieldDefinition = (MFieldDefinition)theEObject;
-				T result = caseMFieldDefinition(mFieldDefinition);
-				if (result == null) result = caseMDefinition(mFieldDefinition);
-				if (result == null) result = caseFieldDeclaration(mFieldDefinition);
-				if (result == null) result = caseBodyDeclaration(mFieldDefinition);
-				if (result == null) result = caseMAbstractFlowElement(mFieldDefinition);
-				if (result == null) result = caseAbstractVariablesContainer(mFieldDefinition);
-				if (result == null) result = caseNamedElement(mFieldDefinition);
-				if (result == null) result = caseASTNode(mFieldDefinition);
+			case ModiscoPackage.MMETHOD_SIGNATURE: {
+				MMethodSignature mMethodSignature = (MMethodSignature)theEObject;
+				T result = caseMMethodSignature(mMethodSignature);
+				if (result == null) result = caseMSignature(mMethodSignature);
+				if (result == null) result = caseMParameterList(mMethodSignature);
+				if (result == null) result = caseMAbstractFlowElement(mMethodSignature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -212,6 +186,40 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseMAbstractFlowElement(mMethodDefinition);
 				if (result == null) result = caseNamedElement(mMethodDefinition);
 				if (result == null) result = caseASTNode(mMethodDefinition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MNAME: {
+				MName mName = (MName)theEObject;
+				T result = caseMName(mName);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MFIELD_NAME: {
+				MFieldName mFieldName = (MFieldName)theEObject;
+				T result = caseMFieldName(mFieldName);
+				if (result == null) result = caseMName(mFieldName);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MFIELD_SIGNATURE: {
+				MFieldSignature mFieldSignature = (MFieldSignature)theEObject;
+				T result = caseMFieldSignature(mFieldSignature);
+				if (result == null) result = caseMSignature(mFieldSignature);
+				if (result == null) result = caseMAbstractFlowElement(mFieldSignature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModiscoPackage.MFIELD_DEFINITION: {
+				MFieldDefinition mFieldDefinition = (MFieldDefinition)theEObject;
+				T result = caseMFieldDefinition(mFieldDefinition);
+				if (result == null) result = caseMDefinition(mFieldDefinition);
+				if (result == null) result = caseFieldDeclaration(mFieldDefinition);
+				if (result == null) result = caseBodyDeclaration(mFieldDefinition);
+				if (result == null) result = caseMAbstractFlowElement(mFieldDefinition);
+				if (result == null) result = caseAbstractVariablesContainer(mFieldDefinition);
+				if (result == null) result = caseNamedElement(mFieldDefinition);
+				if (result == null) result = caseASTNode(mFieldDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,11 +244,9 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModiscoPackage.MFIELD_SIGNATURE: {
-				MFieldSignature mFieldSignature = (MFieldSignature)theEObject;
-				T result = caseMFieldSignature(mFieldSignature);
-				if (result == null) result = caseMSignature(mFieldSignature);
-				if (result == null) result = caseMAbstractFlowElement(mFieldSignature);
+			case ModiscoPackage.METHOD_INVOCATION_STATIC_TYPE: {
+				MethodInvocationStaticType methodInvocationStaticType = (MethodInvocationStaticType)theEObject;
+				T result = caseMethodInvocationStaticType(methodInvocationStaticType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -250,12 +256,6 @@ public class ModiscoSwitch<T> {
 				if (result == null) result = caseBodyDeclaration(mSyntheticMethodDefinition);
 				if (result == null) result = caseNamedElement(mSyntheticMethodDefinition);
 				if (result == null) result = caseASTNode(mSyntheticMethodDefinition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModiscoPackage.METHOD_INVOCATION_STATIC_TYPE: {
-				MethodInvocationStaticType methodInvocationStaticType = (MethodInvocationStaticType)theEObject;
-				T result = caseMethodInvocationStaticType(methodInvocationStaticType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

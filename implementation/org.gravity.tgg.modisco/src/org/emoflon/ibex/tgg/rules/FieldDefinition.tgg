@@ -6,7 +6,6 @@
 
 #source {
 	mSignature:MFieldSignature {
-		++  -mFieldDefinitions -> mDefinition
 		++  -mDefinitions -> mDefinition
 	}
 

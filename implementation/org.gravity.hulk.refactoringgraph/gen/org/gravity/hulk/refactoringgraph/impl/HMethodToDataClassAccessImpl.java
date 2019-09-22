@@ -2,8 +2,6 @@
  */
 package org.gravity.hulk.refactoringgraph.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;

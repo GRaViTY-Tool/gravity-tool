@@ -58,16 +58,16 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ModiscoPackage.MCONSTRUCTOR_DEFINITION: return createMConstructorDefinition();
-			case ModiscoPackage.MMETHOD_SIGNATURE: return createMMethodSignature();
 			case ModiscoPackage.MMETHOD_NAME: return createMMethodName();
-			case ModiscoPackage.MFIELD_NAME: return createMFieldName();
-			case ModiscoPackage.MFIELD_DEFINITION: return createMFieldDefinition();
+			case ModiscoPackage.MMETHOD_SIGNATURE: return createMMethodSignature();
 			case ModiscoPackage.MMETHOD_DEFINITION: return createMMethodDefinition();
+			case ModiscoPackage.MFIELD_NAME: return createMFieldName();
+			case ModiscoPackage.MFIELD_SIGNATURE: return createMFieldSignature();
+			case ModiscoPackage.MFIELD_DEFINITION: return createMFieldDefinition();
 			case ModiscoPackage.MENTRY: return createMEntry();
 			case ModiscoPackage.MGRAVITY_MODEL: return createMGravityModel();
-			case ModiscoPackage.MFIELD_SIGNATURE: return createMFieldSignature();
-			case ModiscoPackage.MSYNTHETIC_METHOD_DEFINITION: return createMSyntheticMethodDefinition();
 			case ModiscoPackage.METHOD_INVOCATION_STATIC_TYPE: return createMethodInvocationStaticType();
+			case ModiscoPackage.MSYNTHETIC_METHOD_DEFINITION: return createMSyntheticMethodDefinition();
 			case ModiscoPackage.MANONYMOUS: return createMAnonymous();
 			case ModiscoPackage.MCLASS: return createMClass();
 			case ModiscoPackage.MFLOW: return createMFlow();

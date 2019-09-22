@@ -7,8 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.security.annotations.requirements.TSecrecy;
 
-import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>TSecrecy</b></em>'.
@@ -16,7 +14,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
  *
  * @generated
  */
-public class TSecrecyImpl extends TAnnotationImpl implements TSecrecy {
+public class TSecrecyImpl extends TAnnotationWithCounterMeasureImpl implements TSecrecy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

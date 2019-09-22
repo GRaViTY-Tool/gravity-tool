@@ -5,13 +5,11 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++mName:MMethodName {
-		++  -model -> mModel
+	mModel:MGravityModel {
+		++  -mMethodNames -> mName
 	}
 
-	mModel:MGravityModel {
-		++  -mNames -> mName
-	}
+	++mName:MMethodName
 }
 
 #target {
@@ -37,3 +35,5 @@
 #attributeConditions {
 	eq_string(mName.mName, tName.tName)
 }
+
+

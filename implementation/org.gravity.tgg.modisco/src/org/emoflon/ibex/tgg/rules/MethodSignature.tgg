@@ -5,34 +5,36 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++ mSignature : MMethodSignature {
-		++ -mMethodName-> mName
-	}
-	mName : MMethodName {
+	mName:MMethodName {
 		++  -mSignatures -> mSignature
 	}
+
+	++mSignature:MMethodSignature
 }
 
 #target {
-	++ tSignature : TMethodSignature {
+	++tSignature:TMethodSignature {
 		++  -method -> tName
 	}
-	tName : TMethod 
+
+	tName:TMethod
 }
 
 #correspondence {
-	mNameToTName : MMethodNameToTMethod {
+	mNameToTName :MMethodNameToTMethod {
 		#src->mName
 		#trg->tName
 	}
-	
-	++ mSignatureToTSignature : MSignatureToTSignature {
+
+	++ mSignatureToTSignature :MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature
 	}
-	
+
 	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
 		#src->mSignature
 		#trg->tSignature
 	}
 }
+
+

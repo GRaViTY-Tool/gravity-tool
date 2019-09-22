@@ -7,7 +7,6 @@
 #source {
 	model:MGravityModel {
 		++  -mFieldNames -> mFieldName
-		++  -mNames -> mFieldName
 	}
 
 	++mFieldName:MFieldName

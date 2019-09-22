@@ -4,10 +4,13 @@ package org.gravity.modisco.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoPackage;
@@ -62,9 +65,38 @@ public abstract class MSignatureImpl extends MAbstractFlowElementImpl implements
 	 */
 	public EList<MDefinition> getMDefinitions() {
 		if (mDefinitions == null) {
-			mDefinitions = new EObjectResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MSIGNATURE__MDEFINITIONS);
+			mDefinitions = new EObjectWithInverseResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MSIGNATURE__MDEFINITIONS, ModiscoPackage.MDEFINITION__MSIGNATURE);
 		}
 		return mDefinitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMDefinitions()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
+				return ((InternalEList<?>)getMDefinitions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

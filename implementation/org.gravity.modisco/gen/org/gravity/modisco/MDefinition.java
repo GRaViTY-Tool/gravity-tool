@@ -19,6 +19,7 @@ import org.eclipse.gmt.modisco.java.BodyDeclaration;
  *   <li>{@link org.gravity.modisco.MDefinition#getInvocationStaticTypes <em>Invocation Static Types</em>}</li>
  *   <li>{@link org.gravity.modisco.MDefinition#getMMethodInvocations <em>MMethod Invocations</em>}</li>
  *   <li>{@link org.gravity.modisco.MDefinition#getMAbstractFieldAccess <em>MAbstract Field Access</em>}</li>
+ *   <li>{@link org.gravity.modisco.MDefinition#getMSignature <em>MSignature</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMDefinition()
@@ -69,5 +70,29 @@ public interface MDefinition extends BodyDeclaration, MAbstractFlowElement {
 	 * @generated
 	 */
 	EList<MSingleVariableAccess> getMAbstractFieldAccess();
+
+	/**
+	 * Returns the value of the '<em><b>MSignature</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MSignature#getMDefinitions <em>MDefinitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MSignature</em>' reference.
+	 * @see #setMSignature(MSignature)
+	 * @see org.gravity.modisco.ModiscoPackage#getMDefinition_MSignature()
+	 * @see org.gravity.modisco.MSignature#getMDefinitions
+	 * @model opposite="mDefinitions"
+	 * @generated
+	 */
+	MSignature getMSignature();
+
+	/**
+	 * Sets the value of the '{@link org.gravity.modisco.MDefinition#getMSignature <em>MSignature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>MSignature</em>' reference.
+	 * @see #getMSignature()
+	 * @generated
+	 */
+	void setMSignature(MSignature value);
 
 } // MDefinition

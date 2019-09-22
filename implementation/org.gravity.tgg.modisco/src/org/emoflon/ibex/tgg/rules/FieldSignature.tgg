@@ -6,20 +6,18 @@
 
 #source {
 	mFieldName:MFieldName {
-		++  -mSignatures -> mSignature
+		++-mSignatures -> mSignature
 	}
 
-	++mSignature:MFieldSignature {
-		++  -mFieldName -> mFieldName
-	}
+	++mSignature:MFieldSignature
 }
 
 #target {
-	tField:TField
-
-	++tSignature:TFieldSignature {
-		++  -field -> tField
+	tField:TField {
+		++-signatures->tSignature
 	}
+
+	++tSignature:TFieldSignature
 }
 
 #correspondence {
@@ -27,7 +25,7 @@
 		#src->mFieldName
 		#trg->tField
 	}
-	
+
 	++ mSignatureToTSignature :MSignatureToTSignature {
 		#src->mSignature
 		#trg->tSignature

@@ -3,7 +3,6 @@
 package org.gravity.modisco.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -86,63 +85,11 @@ public class MConstructorDefinitionImpl extends MAbstractMethodDefinitionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetModel(MGravityModel newModel, NotificationChain msgs) {
+	public void setModel(MGravityModel newModel) {
 		MGravityModel oldModel = model;
 		model = newModel;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MCONSTRUCTOR_DEFINITION__MODEL, oldModel, newModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModel(MGravityModel newModel) {
-		if (newModel != model) {
-			NotificationChain msgs = null;
-			if (model != null)
-				msgs = ((InternalEObject)model).eInverseRemove(this, ModiscoPackage.MGRAVITY_MODEL__MCONSTRUCTOR_DEFINITIONS, MGravityModel.class, msgs);
-			if (newModel != null)
-				msgs = ((InternalEObject)newModel).eInverseAdd(this, ModiscoPackage.MGRAVITY_MODEL__MCONSTRUCTOR_DEFINITIONS, MGravityModel.class, msgs);
-			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MCONSTRUCTOR_DEFINITION__MODEL, newModel, newModel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModiscoPackage.MCONSTRUCTOR_DEFINITION__MODEL:
-				if (model != null)
-					msgs = ((InternalEObject)model).eInverseRemove(this, ModiscoPackage.MGRAVITY_MODEL__MCONSTRUCTOR_DEFINITIONS, MGravityModel.class, msgs);
-				return basicSetModel((MGravityModel)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModiscoPackage.MCONSTRUCTOR_DEFINITION__MODEL:
-				return basicSetModel(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MCONSTRUCTOR_DEFINITION__MODEL, oldModel, model));
 	}
 
 	/**

@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.modisco.MName#getMSignatures <em>MSignatures</em>}</li>
  *   <li>{@link org.gravity.modisco.MName#getMName <em>MName</em>}</li>
+ *   <li>{@link org.gravity.modisco.MName#getMSignatures <em>MSignatures</em>}</li>
+ *   <li>{@link org.gravity.modisco.MName#getMDefinitions <em>MDefinitions</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMName()
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MName extends EObject {
 	/**
-	 * Returns the value of the '<em><b>MSignatures</b></em>' reference list.
+	 * Returns the value of the '<em><b>MSignatures</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MSignature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -33,12 +34,24 @@ public interface MName extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>MSignatures</em>' reference list.
+	 * @return the value of the '<em>MSignatures</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMName_MSignatures()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<MSignature> getMSignatures();
+
+	/**
+	 * Returns the value of the '<em><b>MDefinitions</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.modisco.MDefinition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MDefinitions</em>' reference list.
+	 * @see org.gravity.modisco.ModiscoPackage#getMName_MDefinitions()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<MDefinition> getMDefinitions();
 
 	/**
 	 * Returns the value of the '<em><b>MName</b></em>' attribute.

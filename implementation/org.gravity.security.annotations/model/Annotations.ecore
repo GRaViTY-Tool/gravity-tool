@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="annotations" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="annotations" nsURI="http://gravity-tool.org/typegraph/annotations/security"
     nsPrefix="org.gravity.security.annotations">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.security"/>
   </eAnnotations>
-  <eSubpackages name="access" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access"
-      nsPrefix="access">
+  <eClassifiers xsi:type="ecore:EClass" name="TCounterMeasure" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TTainted" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+  <eSubpackages name="access" nsURI="http://gravity-tool.org/typegraph/annotations/security#/access"
+      nsPrefix="org.gravity.security.annotations.access">
     <eClassifiers xsi:type="ecore:EClass" name="TApi" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eSubpackages>
-  <eSubpackages name="requirements" nsURI="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"
-      nsPrefix="requirements">
-    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
-    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+  <eSubpackages name="requirements" nsURI="http://gravity-tool.org/typegraph/annotations/security#/requirements"
+      nsPrefix="org.gravity.security.annotations.requirements">
+    <eClassifiers xsi:type="ecore:EClass" name="TSecrecy" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TIntegrity" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="THigh" eSuperTypes="#//requirements/TAnnotationWithCounterMeasure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TCritical" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="secrecy" upperBound="-1"
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="integrity" upperBound="-1"
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="high" upperBound="-1"
+          eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TSignature"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TAnnotationWithCounterMeasure" abstract="true"
+        eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="countermeasure" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="actions" nsURI="http://gravity-tool.org/typegraph/annotations/security#/actions"
+      nsPrefix="org.gravity.security.annotations.actions">
+    <eClassifiers xsi:type="ecore:EClass" name="TSanitizing" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
   </eSubpackages>
 </ecore:EPackage>

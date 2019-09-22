@@ -60,6 +60,10 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 			return createTSecrecy();
 		case RequirementsPackage.TINTEGRITY:
 			return createTIntegrity();
+		case RequirementsPackage.THIGH:
+			return createTHigh();
+		case RequirementsPackage.TCRITICAL:
+			return createTCritical();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -85,6 +89,28 @@ public class RequirementsFactoryImpl extends EFactoryImpl implements Requirement
 	public TIntegrity createTIntegrity() {
 		TIntegrityImpl tIntegrity = new TIntegrityImpl();
 		return tIntegrity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public THigh createTHigh() {
+		THighImpl tHigh = new THighImpl();
+		return tHigh;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TCritical createTCritical() {
+		TCriticalImpl tCritical = new TCriticalImpl();
+		return tCritical;
 	}
 
 	/**

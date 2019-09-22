@@ -15,10 +15,12 @@ import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.gravity.eclipse.exceptions.ProcessingException;
+import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MFieldName;
 import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.processing.ProcessingMessages;
@@ -26,7 +28,7 @@ import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
  * Preprocessing of fields
- * 
+ *
  * @author speldszus
  *
  */
@@ -40,7 +42,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		try {
 			allDefinitions = resolveMultipleDeclarationsInOneStatement(elements);
 			model.getMFieldDefinitions().addAll(allDefinitions);
-		} catch (ProcessingException e) {
+		} catch (final ProcessingException e) {
 			LOGGER.error(e);
 			return false;
 		}
@@ -53,24 +55,24 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	/**
 	 * If multiple fields are declared in one statement a separate field is created
 	 * for every declaration
-	 * 
+	 *
 	 * @param elements The field definitions
 	 * @return a collection of all field definitions
 	 * @throws ProcessingException If the preprocessing failed
 	 */
 	private Collection<MFieldDefinition> resolveMultipleDeclarationsInOneStatement(
 			Collection<MFieldDefinition> elements) throws ProcessingException {
-		List<MFieldDefinition> allDefinitions = new LinkedList<>(elements);
-		for (MFieldDefinition mDefinition : elements) {
-			EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
+		final List<MFieldDefinition> allDefinitions = new LinkedList<>(elements);
+		for (final MFieldDefinition mDefinition : elements) {
+			final EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
 			if (fragments.isEmpty()) {
-				String message = ProcessingMessages.FieldPreprocessing_the_field + mDefinition
+				final String message = ProcessingMessages.FieldPreprocessing_the_field + mDefinition
 						+ ProcessingMessages.FieldPreprocessing_no_fragments;
 				LOGGER.log(Level.ERROR, message);
 				throw new ProcessingException(message);
 			}
-			for (VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
-				MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
+			for (final VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
+				final MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
 				allDefinitions.add(newDef);
 			}
 
@@ -80,7 +82,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	/**
 	 * Creates a new definition for the declaration fragment
-	 * 
+	 *
 	 * @param oldDefiniton The old definition containing multiple variable
 	 *                     declarations
 	 * @param declFragment The declaration fragment which should be relocated
@@ -90,17 +92,17 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			VariableDeclarationFragment declFragment) {
 		declFragment.setVariablesContainer(null);
 
-		MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
+		final MFieldDefinition newDef = ModiscoFactory.eINSTANCE.createMFieldDefinition();
 		newDef.getFragments().add(declFragment);
 		newDef.setName(oldDefiniton.getName());
 		newDef.setProxy(oldDefiniton.isProxy());
 		newDef.setAbstractTypeDeclaration(oldDefiniton.getAbstractTypeDeclaration());
 
-		TypeAccess oldTypeAccess = oldDefiniton.getType();
+		final TypeAccess oldTypeAccess = oldDefiniton.getType();
 		if (oldTypeAccess != null) {
-			Type type = oldTypeAccess.getType();
+			final Type type = oldTypeAccess.getType();
 			if (type != null) {
-				TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
+				final TypeAccess newTypeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 				newDef.setType(newTypeAccess);
 				newTypeAccess.setType(type);
 			}
@@ -110,13 +112,13 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 					+ ProcessingMessages.FieldPreprocessing_no_type);
 		}
 
-		Modifier modifier = oldDefiniton.getModifier();
-		Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
+		final Modifier modifier = oldDefiniton.getModifier();
+		final Modifier clonedModifier = JavaFactory.eINSTANCE.createModifier();
 		newDef.setModifier(clonedModifier);
 		clonedModifier.setVisibility(modifier.getVisibility());
 		clonedModifier.setInheritance(modifier.getInheritance());
 
-		AnonymousClassDeclaration anno = oldDefiniton.getAnonymousClassDeclarationOwner();
+		final AnonymousClassDeclaration anno = oldDefiniton.getAnonymousClassDeclarationOwner();
 		if (anno != null) {
 			anno.getBodyDeclarations().add(newDef);
 		}
@@ -125,9 +127,9 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	private static Iterable<VariableDeclarationFragment> getOtherFragments(MFieldDefinition mDefinition,
 			VariableDeclarationFragment fragment) {
-		LinkedList<VariableDeclarationFragment> result = new LinkedList<VariableDeclarationFragment>();
+		final LinkedList<VariableDeclarationFragment> result = new LinkedList<>();
 		if (mDefinition.getFragments().contains(fragment)) {
-			for (VariableDeclarationFragment otherFragment : mDefinition.getFragments()) {
+			for (final VariableDeclarationFragment otherFragment : mDefinition.getFragments()) {
 				if (!fragment.equals(otherFragment)) {
 					result.add(otherFragment);
 				}
@@ -138,16 +140,16 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	/**
 	 * Creates a MFieldName node for every used name
-	 * 
+	 *
 	 * The method "resolveMultipleDeclarationsInOneStatement()" should be executed
 	 * before this method!
-	 * 
+	 *
 	 * @param model The MoDisco model
 	 * @return true, iff no error occurred
 	 */
 	private boolean createFieldNameNodes(Collection<MFieldDefinition> mFieldDefinitions, MGravityModel model) {
-		for (MFieldDefinition mfDefinition : mFieldDefinitions) {
-			EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
+		for (final MFieldDefinition mfDefinition : mFieldDefinitions) {
+			final EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
 			if (fragments.isEmpty()) {
 				LOGGER.log(Level.ERROR, ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
 						+ ProcessingMessages.FieldPreprocessing_no_fragments);
@@ -158,11 +160,11 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 						+ ProcessingMessages.FieldPreprocessing_multiple_fragments);
 				return false;
 			}
-			VariableDeclarationFragment declFragment = fragments.get(0);
+			final VariableDeclarationFragment declFragment = fragments.get(0);
 			MFieldName mName = null;
-			String declFragmentName = declFragment.getName();
-			for (MFieldName m : model.getMFieldNames()) {
-				String mFieldName = m.getMName();
+			final String declFragmentName = declFragment.getName();
+			for (final MFieldName m : model.getMFieldNames()) {
+				final String mFieldName = m.getMName();
 				if (mFieldName.equals(declFragmentName)) {
 					mName = m;
 				}
@@ -170,11 +172,10 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			}
 			if (mName == null) {
 				mName = ModiscoFactory.eINSTANCE.createMFieldName();
-				model.getMNames().add(mName);
 				model.getMFieldNames().add(mName);
 				mName.setMName(declFragmentName);
 			}
-			mName.getMFieldDefinitions().add(mfDefinition);
+			mName.getMDefinitions().add(mfDefinition);
 
 		}
 		return true;
@@ -182,21 +183,16 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	/**
 	 * Creates the MFieldSignature nodes in the MoDisco model
-	 * 
+	 *
 	 * @param model The MoDisco model
 	 * @return true, iff no error occurred
 	 */
 	private boolean createFieldSignatureNodes(MGravityModel model) {
-		for (MFieldName name : model.getMFieldNames()) {
-			for (MFieldDefinition mfDefinition : name.getMFieldDefinitions()) {
+		for (final MFieldName name : model.getMFieldNames()) {
+			for (final MDefinition mfDefinition : name.getMDefinitions()) {
 				MFieldSignature mSig;
-				try {
-					mSig = getMFieldSignature(model, name, mfDefinition);
-				} catch (ProcessingException e) {
-					return false;
-				}
+				mSig = getMFieldSignature(model, name, (MFieldDefinition) mfDefinition);
 				mSig.getMDefinitions().add(mfDefinition);
-				mSig.getMFieldDefinitions().add(mfDefinition);
 			}
 		}
 		return true;
@@ -204,7 +200,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 
 	/**
 	 * Creates a new field signature between the field name and definition
-	 * 
+	 *
 	 * @param model      The model containing all elements
 	 * @param name       The field name
 	 * @param definition The field definition
@@ -213,18 +209,15 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 */
 	private static MFieldSignature createNewSignature(MGravityModel model, MFieldName name,
 			MFieldDefinition definition) {
-		MFieldSignature mSig;
-		mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
-		mSig.setMFieldName(name);
+		final MFieldSignature mSig = ModiscoFactory.eINSTANCE.createMFieldSignature();
 		name.getMSignatures().add(mSig);
-		model.getMFieldSignatures().add(mSig);
 
 		Type type;
-		TypeAccess typeAccess = definition.getType();
+		final TypeAccess typeAccess = definition.getType();
 		if (typeAccess != null) {
 			type = typeAccess.getType();
 		} else {
-			String message = ProcessingMessages.FieldPreprocessing_the_field + definition
+			final String message = ProcessingMessages.FieldPreprocessing_the_field + definition
 					+ ProcessingMessages.FieldPreprocessing_no_type_assume_object;
 			if (definition.isProxy()) {
 				LOGGER.log(Level.WARN, message);
@@ -241,7 +234,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	/**
 	 * This method searches for a proper type of a field. In the worst case this is
 	 * always "java.lang.Object".
-	 * 
+	 *
 	 * @param model      The model containing the filed
 	 * @param definition The fields definition
 	 * @return A suitable type for the field
@@ -252,12 +245,12 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			typeAccess = JavaFactory.eINSTANCE.createTypeAccess();
 			definition.setType(typeAccess);
 		} else {
-			Type type = typeAccess.getType();
+			final Type type = typeAccess.getType();
 			if (type != null) {
 				return type;
 			}
 		}
-		Type type = MoDiscoUtil.getJavaLangObject(model);
+		final Type type = MoDiscoUtil.getJavaLangObject(model);
 		typeAccess.setType(type);
 		return type;
 	}
@@ -265,23 +258,23 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	/**
 	 * Searches if there is already a signature for the field with the given name
 	 * for the given definition
-	 * 
+	 *
 	 * @param model        The model containing all elements
 	 * @param mName        The name of the field
 	 * @param mfDefinition A definition of a field with this name
 	 * @return A signature connecting the name and definition if existent, null
 	 *         otherwise
-	 * @throws ProcessingException If no signature can be found or created
 	 */
 	private static MFieldSignature getMFieldSignature(MGravityModel model, MFieldName mName,
-			MFieldDefinition mfDefinition) throws ProcessingException {
-		TypeAccess mAccess = mfDefinition.getType();
+			MFieldDefinition mfDefinition) {
+		final TypeAccess mAccess = mfDefinition.getType();
 		if (mAccess != null) {
-			Type mType = mAccess.getType();
+			final Type mType = mAccess.getType();
 			if (mType != null) {
-				for (MFieldSignature mSig : mName.getMFieldSignatures()) {
-					if (mType.equals(mSig.getType())) {
-						return mSig;
+				for (final MSignature signature : mName.getMSignatures()) {
+					final MFieldSignature fieldSignature = (MFieldSignature) signature;
+					if (mType.equals(fieldSignature.getType())) {
+						return fieldSignature;
 					}
 				}
 			}

@@ -1737,10 +1737,6 @@
       <type href="http://www.gravity-tool.org/modisco#//MFieldSignature"/>
       <linkVariablePatterns target="//@rules.47/@sourcePatterns.1">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MFieldSignature/mFieldDefinitions"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.47/@sourcePatterns.1">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MSignature/mDefinitions"/>
       </linkVariablePatterns>
     </sourcePatterns>
@@ -1776,10 +1772,6 @@
       <linkVariablePatterns target="//@rules.48/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MGravityModel/mFieldNames"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.48/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MGravityModel/mNames"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mFieldName">
@@ -1821,21 +1813,17 @@
     <sourcePatterns name="mSignature">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MFieldSignature"/>
-      <linkVariablePatterns target="//@rules.49/@sourcePatterns.0">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MFieldSignature/mFieldName"/>
-      </linkVariablePatterns>
     </sourcePatterns>
     <targetPatterns name="tField">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TField"/>
+      <linkVariablePatterns target="//@rules.49/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TField/signatures"/>
+      </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tSignature">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldSignature"/>
-      <linkVariablePatterns target="//@rules.49/@targetPatterns.0">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldSignature/field"/>
-      </linkVariablePatterns>
     </targetPatterns>
     <correspondencePatterns name="eFieldDeclarationToTField" type="//@schema/@correspondenceTypes.18" source="//@rules.49/@sourcePatterns.0" target="//@rules.49/@targetPatterns.0"/>
     <correspondencePatterns name="mSignatureToTSignature" type="//@schema/@correspondenceTypes.15" source="//@rules.49/@sourcePatterns.1" target="//@rules.49/@targetPatterns.1">
@@ -2347,10 +2335,6 @@
       <type href="http://www.gravity-tool.org/modisco#//MMethodSignature"/>
       <linkVariablePatterns target="//@rules.63/@sourcePatterns.1">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MMethodSignature/mMethodDefinitions"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.63/@sourcePatterns.1">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MSignature/mDefinitions"/>
       </linkVariablePatterns>
     </sourcePatterns>
@@ -2429,20 +2413,16 @@
     <correspondencePatterns name="mStaticTypeTotStaticType" type="//@schema/@correspondenceTypes.17" source="//@rules.66/@sourcePatterns.1" target="//@rules.66/@targetPatterns.1"/>
   </rules>
   <rules name="MethodName" schema="//@schema">
+    <sourcePatterns name="mModel">
+      <type href="http://www.gravity-tool.org/modisco#//MGravityModel"/>
+      <linkVariablePatterns target="//@rules.67/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/modisco#//MGravityModel/mMethodNames"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
     <sourcePatterns name="mName">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MMethodName"/>
-      <linkVariablePatterns target="//@rules.67/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MMethodName/model"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mModel">
-      <type href="http://www.gravity-tool.org/modisco#//MGravityModel"/>
-      <linkVariablePatterns target="//@rules.67/@sourcePatterns.0">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MGravityModel/mNames"/>
-      </linkVariablePatterns>
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
@@ -2455,12 +2435,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
     </targetPatterns>
-    <correspondencePatterns name="modelToPg" type="//@schema/@correspondenceTypes.7" source="//@rules.67/@sourcePatterns.1" target="//@rules.67/@targetPatterns.0"/>
-    <correspondencePatterns name="mNameToTName" type="//@schema/@correspondenceTypes.13" source="//@rules.67/@sourcePatterns.0" target="//@rules.67/@targetPatterns.1">
+    <correspondencePatterns name="modelToPg" type="//@schema/@correspondenceTypes.7" source="//@rules.67/@sourcePatterns.0" target="//@rules.67/@targetPatterns.0"/>
+    <correspondencePatterns name="mNameToTName" type="//@schema/@correspondenceTypes.13" source="//@rules.67/@sourcePatterns.1" target="//@rules.67/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.67/@sourcePatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.67/@sourcePatterns.1">
         <attribute href="http://www.gravity-tool.org/modisco#//MName/mName"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.67/@targetPatterns.1">
@@ -2603,20 +2583,16 @@
     </correspondencePatterns>
   </rules>
   <rules name="MethodSignature" schema="//@schema">
-    <sourcePatterns name="mSignature">
-      <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MMethodSignature"/>
-      <linkVariablePatterns target="//@rules.73/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/modisco#//MMethodSignature/mMethodName"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="mName">
       <type href="http://www.gravity-tool.org/modisco#//MMethodName"/>
-      <linkVariablePatterns target="//@rules.73/@sourcePatterns.0">
+      <linkVariablePatterns target="//@rules.73/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MName/mSignatures"/>
       </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mSignature">
+      <op value="++"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodSignature"/>
     </sourcePatterns>
     <targetPatterns name="tSignature">
       <op value="++"/>
@@ -2629,11 +2605,11 @@
     <targetPatterns name="tName">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
     </targetPatterns>
-    <correspondencePatterns name="mNameToTName" type="//@schema/@correspondenceTypes.13" source="//@rules.73/@sourcePatterns.1" target="//@rules.73/@targetPatterns.1"/>
-    <correspondencePatterns name="mSignatureToTSignature" type="//@schema/@correspondenceTypes.15" source="//@rules.73/@sourcePatterns.0" target="//@rules.73/@targetPatterns.0">
+    <correspondencePatterns name="mNameToTName" type="//@schema/@correspondenceTypes.13" source="//@rules.73/@sourcePatterns.0" target="//@rules.73/@targetPatterns.1"/>
+    <correspondencePatterns name="mSignatureToTSignature" type="//@schema/@correspondenceTypes.15" source="//@rules.73/@sourcePatterns.1" target="//@rules.73/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="mFlowElementToTFlowElement" type="//@schema/@correspondenceTypes.33" source="//@rules.73/@sourcePatterns.0" target="//@rules.73/@targetPatterns.0">
+    <correspondencePatterns name="mFlowElementToTFlowElement" type="//@schema/@correspondenceTypes.33" source="//@rules.73/@sourcePatterns.1" target="//@rules.73/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
   </rules>

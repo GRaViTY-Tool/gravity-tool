@@ -38,7 +38,7 @@ public interface AccessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access";
+	String eNS_URI = "http://gravity-tool.org/typegraph/annotations/security#/access";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +46,7 @@ public interface AccessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "access";
+	String eNS_PREFIX = "org.gravity.security.annotations.access";
 
 	/**
 	 * The singleton instance of the package.
@@ -109,7 +109,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECLASS = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
+	int TAPI___ECLASS = AnnotationsPackage.TANNOTATION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -118,7 +118,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EIS_PROXY = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 1;
+	int TAPI___EIS_PROXY = AnnotationsPackage.TANNOTATION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -127,7 +127,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ERESOURCE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 2;
+	int TAPI___ERESOURCE = AnnotationsPackage.TANNOTATION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -136,7 +136,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECONTAINER = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 3;
+	int TAPI___ECONTAINER = AnnotationsPackage.TANNOTATION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -145,7 +145,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 4;
+	int TAPI___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -154,7 +154,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 5;
+	int TAPI___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -163,7 +163,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECONTENTS = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 6;
+	int TAPI___ECONTENTS = AnnotationsPackage.TANNOTATION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -172,7 +172,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EALL_CONTENTS = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 7;
+	int TAPI___EALL_CONTENTS = AnnotationsPackage.TANNOTATION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -181,7 +181,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 8;
+	int TAPI___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -190,7 +190,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 9;
+	int TAPI___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -199,7 +199,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 10;
+	int TAPI___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -208,7 +208,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 11;
+	int TAPI___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -217,7 +217,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 12;
+	int TAPI___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -226,7 +226,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 13;
+	int TAPI___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -235,7 +235,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 14;
+	int TAPI___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The number of operations of the '<em>TApi</em>' class.
@@ -244,7 +244,7 @@ public interface AccessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAPI_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 15;
+	int TAPI_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.security.annotations.access.TApi <em>TApi</em>}'.
