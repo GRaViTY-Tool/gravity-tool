@@ -16,7 +16,8 @@ Require-Bundle: org.gravity.tgg.modisco,
  org.gravity.typegraph.basic,
  org.gravity.eclipse.tests,
  org.emoflon.ibex.tgg.core.language,
- org.eclipse.emf.henshin.interpreter
+ org.eclipse.emf.henshin.interpreter,
+ org.gravity.security.annotations
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: TU Darmstadt and University of Koblenz-Landau

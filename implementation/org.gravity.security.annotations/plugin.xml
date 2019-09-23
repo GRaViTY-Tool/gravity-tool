@@ -30,4 +30,11 @@
             class="org.gravity.security.annotations.actions.ActionsPackage"
             genModel="model/Annotations.genmodel"/>
    </extension>
+   <extension
+         point="org.gravity.tgg.modisco.ProcessingPgFwd">
+      <processor
+            priority="1"
+            processor="org.gravity.security.annotations.SecurityAnnotationsProcessorFwd">
+      </processor>
+   </extension>
 </plugin>

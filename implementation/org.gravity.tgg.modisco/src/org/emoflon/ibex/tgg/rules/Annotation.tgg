@@ -4,9 +4,9 @@
 #abstract #rule Annotation #with org.gravity.tgg.modisco
 
 #source {
-	++ Annotation : Annotation {
-	}
 	astNode : ASTNode
+	
+	++ Annotation : Annotation
 }
 
 #target {
@@ -29,10 +29,10 @@
 
 #rule AnnotationOnBodyDeclaration #extends Annotation #with org.gravity.tgg.modisco
 
-#source {
-	++ Annotation : Annotation 
-	
+#source {	
 	astNode : BodyDeclaration {
 		++ -annotations-> Annotation
 	}
+	
+	++ Annotation : Annotation 
 }

@@ -442,16 +442,46 @@
     </correspondencePatterns>
     <correspondencePatterns name="aSTNodeToTAnnotable" type="//@schema/@correspondenceTypes.16" source="//@rules.2/@sourcePatterns.1" target="//@rules.2/@targetPatterns.0"/>
   </rules>
-  <rules name="AnnotationMemberValue" abstractRule="true" schema="//@schema">
+  <rules name="AnnotationMemberKey" schema="//@schema">
     <sourcePatterns name="Annotation">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.3/@sourcePatterns.1">
+        <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
       </linkVariablePatterns>
     </sourcePatterns>
+    <sourcePatterns name="mValue">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
+    </sourcePatterns>
+    <targetPatterns name="tAnnotation">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      <linkVariablePatterns target="//@rules.3/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tValues"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="tAnnotationValue">
+      <op value="++"/>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
+    </targetPatterns>
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.3/@sourcePatterns.1" target="//@rules.3/@targetPatterns.1">
+      <op value="++"/>
+    </correspondencePatterns>
+    <correspondencePatterns name="AnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.3/@sourcePatterns.0" target="//@rules.3/@targetPatterns.0"/>
+    <attrConditions name="//@schema/@attributeCondDefs.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.3/@sourcePatterns.1">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.3/@targetPatterns.1">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tKey"/>
+      </values>
+    </attrConditions>
+  </rules>
+  <rules name="AnnotationMemberValue" abstractRule="true" schema="//@schema">
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.3/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.4/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -463,62 +493,14 @@
     <targetPatterns name="tAnnotationValue">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.3/@sourcePatterns.1" target="//@rules.3/@targetPatterns.0"/>
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.4/@sourcePatterns.0" target="//@rules.4/@targetPatterns.0"/>
   </rules>
   <rules name="AnnotationMemberValueAnnotation" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.4/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.4/@sourcePatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mValue">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-    </sourcePatterns>
-    <targetPatterns name="tAnnotationValue">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
-      <linkVariablePatterns target="//@rules.4/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tValue">
-      <op value="++"/>
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
-    </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.4/@sourcePatterns.1" target="//@rules.4/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.21" source="//@rules.4/@sourcePatterns.2" target="//@rules.4/@targetPatterns.1">
-      <op value="++"/>
-    </correspondencePatterns>
-  </rules>
-  <rules name="AnnotationMemberValueAnnotationArray" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.5/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="AnnotationValue">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.5/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mArray">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.5/@sourcePatterns.3">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mValue">
@@ -536,21 +518,15 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.5/@sourcePatterns.1" target="//@rules.5/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.21" source="//@rules.5/@sourcePatterns.3" target="//@rules.5/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.5/@sourcePatterns.0" target="//@rules.5/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.21" source="//@rules.5/@sourcePatterns.1" target="//@rules.5/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
   </rules>
-  <rules name="AnnotationMemberValueArray" abstractRule="true" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.6/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
+  <rules name="AnnotationMemberValueAnnotationArray" schema="//@schema">
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.6/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.6/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -558,7 +534,43 @@
     <sourcePatterns name="mArray">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.6/@sourcePatterns.3">
+      <linkVariablePatterns target="//@rules.6/@sourcePatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mValue">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    </sourcePatterns>
+    <targetPatterns name="tAnnotationValue">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
+      <linkVariablePatterns target="//@rules.6/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="tValue">
+      <op value="++"/>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+    </targetPatterns>
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.6/@sourcePatterns.0" target="//@rules.6/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.21" source="//@rules.6/@sourcePatterns.2" target="//@rules.6/@targetPatterns.1">
+      <op value="++"/>
+    </correspondencePatterns>
+  </rules>
+  <rules name="AnnotationMemberValueArray" abstractRule="true" schema="//@schema">
+    <sourcePatterns name="AnnotationValue">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
+      <linkVariablePatterns target="//@rules.7/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mArray">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
+      <linkVariablePatterns target="//@rules.7/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
@@ -570,70 +582,14 @@
     <targetPatterns name="tAnnotationValue">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.6/@sourcePatterns.1" target="//@rules.6/@targetPatterns.0"/>
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.7/@sourcePatterns.0" target="//@rules.7/@targetPatterns.0"/>
   </rules>
   <rules name="AnnotationMemberValueBoolean" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.7/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.7/@sourcePatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mValue">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral"/>
-    </sourcePatterns>
-    <targetPatterns name="tAnnotationValue">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
-      <linkVariablePatterns target="//@rules.7/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="tValue">
-      <op value="++"/>
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
-    </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.7/@sourcePatterns.1" target="//@rules.7/@targetPatterns.0"/>
-    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.7/@sourcePatterns.2" target="//@rules.7/@targetPatterns.1">
-      <op value="++"/>
-    </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.7/@sourcePatterns.2">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral/value"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.7/@targetPatterns.1">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode/value"/>
-      </values>
-    </attrConditions>
-  </rules>
-  <rules name="AnnotationMemberValueBooleanArray" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.8/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="AnnotationValue">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.8/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mArray">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.8/@sourcePatterns.3">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mValue">
@@ -651,12 +607,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.8/@sourcePatterns.1" target="//@rules.8/@targetPatterns.0"/>
-    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.8/@sourcePatterns.3" target="//@rules.8/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.8/@sourcePatterns.0" target="//@rules.8/@targetPatterns.0"/>
+    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.8/@sourcePatterns.1" target="//@rules.8/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.3">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.8/@sourcePatterns.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.8/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral/value"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.8/@targetPatterns.1">
@@ -664,70 +620,51 @@
       </values>
     </attrConditions>
   </rules>
-  <rules name="AnnotationMemberValueClass" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.9/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
+  <rules name="AnnotationMemberValueBooleanArray" schema="//@schema">
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.9/@sourcePatterns.4">
+      <linkVariablePatterns target="//@rules.9/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="mAccess">
+    <sourcePatterns name="mArray">
       <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.9/@sourcePatterns.3">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
+      <linkVariablePatterns target="//@rules.9/@sourcePatterns.2">
         <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     </sourcePatterns>
     <sourcePatterns name="mValue">
       <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral"/>
-      <linkVariablePatterns target="//@rules.9/@sourcePatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral/type"/>
-      </linkVariablePatterns>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral"/>
     </sourcePatterns>
     <targetPatterns name="tAnnotationValue">
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
-      <linkVariablePatterns target="//@rules.9/@targetPatterns.2">
+      <linkVariablePatterns target="//@rules.9/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
       </linkVariablePatterns>
     </targetPatterns>
-    <targetPatterns name="tType">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
-    </targetPatterns>
     <targetPatterns name="tValue">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode"/>
-      <linkVariablePatterns target="//@rules.9/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode/tClass"/>
-      </linkVariablePatterns>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.9/@sourcePatterns.1" target="//@rules.9/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.9/@sourcePatterns.3" target="//@rules.9/@targetPatterns.1"/>
-    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.3" source="//@rules.9/@sourcePatterns.4" target="//@rules.9/@targetPatterns.2">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.9/@sourcePatterns.0" target="//@rules.9/@targetPatterns.0"/>
+    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.0" source="//@rules.9/@sourcePatterns.2" target="//@rules.9/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
+    <attrConditions name="//@schema/@attributeCondDefs.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.9/@sourcePatterns.2">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral/value"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.9/@targetPatterns.1">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode/value"/>
+      </values>
+    </attrConditions>
   </rules>
-  <rules name="AnnotationMemberValueClassArray" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.10/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
+  <rules name="AnnotationMemberValueClass" schema="//@schema">
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
       <linkVariablePatterns target="//@rules.10/@sourcePatterns.3">
@@ -738,17 +675,9 @@
     <sourcePatterns name="mAccess">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.10/@sourcePatterns.4">
+      <linkVariablePatterns target="//@rules.10/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="mArray">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.10/@sourcePatterns.5">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mType">
@@ -757,7 +686,7 @@
     <sourcePatterns name="mValue">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral"/>
-      <linkVariablePatterns target="//@rules.10/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.10/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral/type"/>
       </linkVariablePatterns>
@@ -780,58 +709,75 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode/tClass"/>
       </linkVariablePatterns>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.10/@sourcePatterns.1" target="//@rules.10/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.10/@sourcePatterns.4" target="//@rules.10/@targetPatterns.1"/>
-    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.3" source="//@rules.10/@sourcePatterns.5" target="//@rules.10/@targetPatterns.2">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.10/@sourcePatterns.0" target="//@rules.10/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.10/@sourcePatterns.2" target="//@rules.10/@targetPatterns.1"/>
+    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.3" source="//@rules.10/@sourcePatterns.3" target="//@rules.10/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
   </rules>
-  <rules name="AnnotationMemberValueKey" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+  <rules name="AnnotationMemberValueClassArray" schema="//@schema">
+    <sourcePatterns name="AnnotationValue">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
+      <linkVariablePatterns target="//@rules.11/@sourcePatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mAccess">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+      <linkVariablePatterns target="//@rules.11/@sourcePatterns.3">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mArray">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
+      <linkVariablePatterns target="//@rules.11/@sourcePatterns.4">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="mType">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+    </sourcePatterns>
+    <sourcePatterns name="mValue">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral"/>
       <linkVariablePatterns target="//@rules.11/@sourcePatterns.1">
         <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeLiteral/type"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="AnnotationValue">
+    <targetPatterns name="tAnnotationValue">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
+      <linkVariablePatterns target="//@rules.11/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="tType">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType"/>
+    </targetPatterns>
+    <targetPatterns name="tValue">
       <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-    </sourcePatterns>
-    <targetPatterns name="tAnnotation">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode"/>
       <linkVariablePatterns target="//@rules.11/@targetPatterns.1">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tValues"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TClassNode/tClass"/>
       </linkVariablePatterns>
     </targetPatterns>
-    <targetPatterns name="tAnnotationValue">
-      <op value="++"/>
-      <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
-    </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.11/@sourcePatterns.1" target="//@rules.11/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.11/@sourcePatterns.0" target="//@rules.11/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.17" source="//@rules.11/@sourcePatterns.3" target="//@rules.11/@targetPatterns.1"/>
+    <correspondencePatterns name="mValueToTValue" type="//@schema/@correspondenceTypes.3" source="//@rules.11/@sourcePatterns.4" target="//@rules.11/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="AnnotationToTAnnotation" type="//@schema/@correspondenceTypes.21" source="//@rules.11/@sourcePatterns.0" target="//@rules.11/@targetPatterns.0"/>
-    <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.11/@sourcePatterns.1">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.11/@targetPatterns.1">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tKey"/>
-      </values>
-    </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueNumber" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.12/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.12/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.12/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -851,12 +797,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TNumberNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.12/@sourcePatterns.1" target="//@rules.12/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.12/@sourcePatterns.2" target="//@rules.12/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.12/@sourcePatterns.0" target="//@rules.12/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.12/@sourcePatterns.1" target="//@rules.12/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@sourcePatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NumberLiteral/tokenValue"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@targetPatterns.1">
@@ -865,15 +811,9 @@
     </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueNumberArray" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.13/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.13/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.13/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -881,7 +821,7 @@
     <sourcePatterns name="mArray">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.13/@sourcePatterns.3">
+      <linkVariablePatterns target="//@rules.13/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
@@ -901,12 +841,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TNumberNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.13/@sourcePatterns.1" target="//@rules.13/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.13/@sourcePatterns.3" target="//@rules.13/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.13/@sourcePatterns.0" target="//@rules.13/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.1" source="//@rules.13/@sourcePatterns.2" target="//@rules.13/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@sourcePatterns.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NumberLiteral/tokenValue"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@targetPatterns.1">
@@ -915,15 +855,9 @@
     </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueString" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.14/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.14/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.14/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -943,12 +877,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TTextNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.14/@sourcePatterns.1" target="//@rules.14/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.14/@sourcePatterns.2" target="//@rules.14/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.14/@sourcePatterns.0" target="//@rules.14/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.14/@sourcePatterns.1" target="//@rules.14/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.14/@sourcePatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.14/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//StringLiteral/escapedValue"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.14/@targetPatterns.1">
@@ -957,15 +891,9 @@
     </attrConditions>
   </rules>
   <rules name="AnnotationMemberValueStringArray" schema="//@schema">
-    <sourcePatterns name="Annotation">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
-      <linkVariablePatterns target="//@rules.15/@sourcePatterns.1">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/values"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
     <sourcePatterns name="AnnotationValue">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
-      <linkVariablePatterns target="//@rules.15/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.15/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair/value"/>
       </linkVariablePatterns>
@@ -973,7 +901,7 @@
     <sourcePatterns name="mArray">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
-      <linkVariablePatterns target="//@rules.15/@sourcePatterns.3">
+      <linkVariablePatterns target="//@rules.15/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer/expressions"/>
       </linkVariablePatterns>
@@ -993,12 +921,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TTextNode"/>
     </targetPatterns>
-    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.15/@sourcePatterns.1" target="//@rules.15/@targetPatterns.0"/>
-    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.15/@sourcePatterns.3" target="//@rules.15/@targetPatterns.1">
+    <correspondencePatterns name="AnnotationMemberValuePairToTAnnotationValue" type="//@schema/@correspondenceTypes.30" source="//@rules.15/@sourcePatterns.0" target="//@rules.15/@targetPatterns.0"/>
+    <correspondencePatterns name="mTypeToTType" type="//@schema/@correspondenceTypes.2" source="//@rules.15/@sourcePatterns.2" target="//@rules.15/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.15/@sourcePatterns.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.15/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//StringLiteral/escapedValue"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.15/@targetPatterns.1">
@@ -1141,14 +1069,14 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      <linkVariablePatterns target="//@rules.19/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.19/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.19/@targetPatterns.1">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.19/@targetPatterns.2">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
@@ -1557,25 +1485,25 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
-      <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.0">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -2114,7 +2042,7 @@
   <rules name="ConstructorInvocation" schema="//@schema">
     <sourcePatterns name="invocation">
       <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorInvocation"/>
+      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
       <linkVariablePatterns target="//@rules.37/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation/method"/>
@@ -2173,11 +2101,11 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tAnnotation">
@@ -2191,11 +2119,11 @@
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -2834,25 +2762,25 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
-      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.0">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -2932,6 +2860,10 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.53/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -2941,10 +2873,6 @@
       <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.53/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tClass">
@@ -4294,12 +4222,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;byte&quot;"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -4380,12 +4308,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;double&quot;"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -4466,12 +4394,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;int&quot;"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
@@ -4552,12 +4480,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;short&quot;"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
