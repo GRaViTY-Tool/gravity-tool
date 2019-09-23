@@ -32,10 +32,11 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
 /**
  * This class provides frequently used functionalities when working with eclipse
  * projects
- * 
+ *
  * @author speldszus
  *
  */
+@SuppressWarnings("restriction")
 public class EclipseProjectUtil {
 
 	/**
@@ -49,24 +50,24 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Creates a copy of a eclipse project with the given name
-	 * 
+	 *
 	 * @param project    The project to copy
 	 * @param nameOfCopy The name of the copy
 	 * @return The copy
 	 */
 	public static IProject copyProject(IProject project, String nameOfCopy) {
-		IProject tmp = getProjectByName(nameOfCopy);
+		final IProject tmp = getProjectByName(nameOfCopy);
 		if (tmp != null && tmp.exists()) {
 			try {
 				tmp.delete(true, null);
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				LOGGER.log(Level.ERROR, e);
 				return null;
 			}
 		}
 		try {
 			project.copy(new org.eclipse.core.runtime.Path(nameOfCopy), true, null); // $NON-NLS-1$
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			LOGGER.log(Level.ERROR, e);
 			return null;
 		}
@@ -75,7 +76,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Returns the eclipse project with the given name from the current workspace
-	 * 
+	 *
 	 * @param name The given name
 	 * @return The eclipse project
 	 */
@@ -85,7 +86,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Adds the given nature to an eclipse project if it hasn't this nature already
-	 * 
+	 *
 	 * @param project The eclipse project
 	 * @param nature  The nature id to add
 	 * @param monitor A progress monitor
@@ -94,14 +95,14 @@ public class EclipseProjectUtil {
 	 *                       description, IProgressMonitor monitor)
 	 */
 	public static void addNature(IProject project, String nature, IProgressMonitor monitor) throws CoreException {
-		IProjectDescription description = project.getDescription();
-		String[] oldNatures = description.getNatureIds();
-		for (String o : oldNatures) {
+		final IProjectDescription description = project.getDescription();
+		final String[] oldNatures = description.getNatureIds();
+		for (final String o : oldNatures) {
 			if (o.equals(nature)) {
 				return;
 			}
 		}
-		String[] newNatures = new String[oldNatures.length + 1];
+		final String[] newNatures = new String[oldNatures.length + 1];
 		newNatures[0] = nature;
 		System.arraycopy(oldNatures, 0, newNatures, 1, oldNatures.length);
 		description.setNatureIds(newNatures);
@@ -110,7 +111,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Creates the folder and all missing parents
-	 * 
+	 *
 	 * @param folder  The folder to create
 	 * @param monitor A progress monitor
 	 * @throws CoreException if the method fails @see
@@ -118,7 +119,7 @@ public class EclipseProjectUtil {
 	 *                       boolean, IProgressMonitor)
 	 */
 	public static void createFolder(IFolder folder, IProgressMonitor monitor) throws CoreException {
-		Deque<IFolder> stack = new LinkedList<>();
+		final Deque<IFolder> stack = new LinkedList<>();
 		IContainer parent = folder.getParent();
 		while (!parent.exists() && parent.getType() == IResource.FOLDER) {
 			stack.add((IFolder) parent);
@@ -138,11 +139,11 @@ public class EclipseProjectUtil {
 	 *                     created
 	 */
 	public static IFolder getGravityFolder(IProject project, IProgressMonitor monitor) throws IOException {
-		IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
+		final IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
 		if (!gravityFolder.exists()) {
 			try {
 				gravityFolder.create(true, true, monitor);
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				throw new IOException(e);
 			}
 		}
@@ -151,15 +152,14 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Creates a class path entry for the given file
-	 * 
+	 *
 	 * @param file The file
 	 * @return The class path entry
 	 */
-	@SuppressWarnings("restriction")
 	public static ClasspathEntry createClassPathEntry(IFile file) {
 		return new org.eclipse.jdt.internal.core.ClasspathEntry(IPackageFragmentRoot.K_BINARY,
 				IClasspathEntry.CPE_LIBRARY, file.getLocation(), ClasspathEntry.INCLUDE_ALL, // inclusion
-																								// patterns
+				// patterns
 				ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
 				null, null, null, // specific output folder
 				false, // exported
@@ -169,7 +169,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Adds a library to the classpath of the project
-	 * 
+	 *
 	 * @param project The Java project
 	 * @param lib     The library
 	 * @return The created classpath entry
@@ -181,7 +181,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Adds a library to the classpath of the project
-	 * 
+	 *
 	 * @param project The Java project
 	 * @param lib     The library
 	 * @param monitor A progress monitor
@@ -190,9 +190,9 @@ public class EclipseProjectUtil {
 	 */
 	public static IClasspathEntry addLibToClasspath(IJavaProject project, IFile lib, IProgressMonitor monitor)
 			throws JavaModelException {
-		IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
-		IClasspathEntry[] oldEntries = project.getRawClasspath();
-		IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
+		final IClasspathEntry relativeLibraryEntry = createClassPathEntry(lib);
+		final IClasspathEntry[] oldEntries = project.getRawClasspath();
+		final IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
 		System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 		newEntries[oldEntries.length] = relativeLibraryEntry;
 		project.setRawClasspath(newEntries, monitor);
@@ -201,7 +201,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Creates a new empty project in the current workspace
-	 * 
+	 *
 	 * @param name    The desired name of the project
 	 * @param monitor A progress monitor
 	 * @return The new project
@@ -211,7 +211,7 @@ public class EclipseProjectUtil {
 	 */
 	public static IProject createProject(String name, IProgressMonitor monitor)
 			throws DuplicateProjectNameException, CoreException {
-		IProject project = getProjectByName(name);
+		final IProject project = getProjectByName(name);
 
 		if (project.exists()
 				|| new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), name).exists()) {
@@ -226,43 +226,43 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Links a file to an eclipse IFile
-	 * 
+	 *
 	 * @param source  The source file
 	 * @param target  The target file
 	 * @param monitor A progress monitor
 	 * @throws CoreException If the link cannot be created
 	 */
 	public static void createLink(File source, IFile target, IProgressMonitor monitor) throws CoreException {
-		IPath jarPath = new org.eclipse.core.runtime.Path(source.getAbsolutePath());
+		final IPath jarPath = new org.eclipse.core.runtime.Path(source.getAbsolutePath());
 		target.createLink(jarPath, IResource.FILE, monitor);
 	}
 
 	/**
 	 * Imports all projects present at the workspace location into the workspace
-	 * 
+	 *
 	 * @param monitor A progress monitor
-	 * 
+	 *
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
 	public static List<IProject> importProjectsFromWorkspaceLocation(IProgressMonitor monitor) throws CoreException {
-		File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
+		final File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
 		return importProjects(src, monitor);
 	}
 
 	/**
 	 * Imports all projects present at the given location into the workspace
-	 * 
+	 *
 	 * @param rootFolder The folder containing the Eclipse projects
 	 * @param monitor    A progress monitor
 	 * @return The imported Eclipse projects
 	 * @throws CoreException If the import fails for a project
 	 */
 	public static List<IProject> importProjects(File rootFolder, IProgressMonitor monitor) throws CoreException {
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		List<IProject> projects = new LinkedList<>();
-		for (File projectFolder : rootFolder.listFiles()) {
-			IProject project = importProject(projectFolder, monitor);
+		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		final List<IProject> projects = new LinkedList<>();
+		for (final File projectFolder : rootFolder.listFiles()) {
+			final IProject project = importProject(projectFolder, monitor);
 			if (project != null) {
 				projects.add(project);
 			}
@@ -273,7 +273,7 @@ public class EclipseProjectUtil {
 
 	/**
 	 * Imports the project present at the given location into the workspace
-	 * 
+	 *
 	 * @param location The folder containing the Eclipse project
 	 * @param monitor  A progress monitor
 	 * @return The imported Eclipse project
@@ -289,9 +289,9 @@ public class EclipseProjectUtil {
 		if (!dotProject.exists()) {
 			return null;
 		}
-		IProjectDescription description = ResourcesPlugin.getWorkspace()
+		final IProjectDescription description = ResourcesPlugin.getWorkspace()
 				.loadProjectDescription(new Path(dotProject.toString()));
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+		final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
 		if (!project.exists()) {
 			project.create(description, monitor);
 		}

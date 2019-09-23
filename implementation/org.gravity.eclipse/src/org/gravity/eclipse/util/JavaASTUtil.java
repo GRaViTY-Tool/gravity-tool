@@ -3,10 +3,10 @@ package org.gravity.eclipse.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Deque;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -45,7 +45,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 /**
  * This helper class provides functionalities for mapping program models to
  * Eclipse Java projects
- * 
+ *
  * @author speldszus
  */
 public class JavaASTUtil {
@@ -58,22 +58,22 @@ public class JavaASTUtil {
 
 	/**
 	 * Builds a mapping from type names to instances for a Java project
-	 * 
+	 *
 	 * @param project The Java project
 	 * @return The mapping
 	 * @throws JavaModelException If there is an error in accessing contents from
 	 *                            the project
 	 */
 	public static Map<String, IType> getTypesForProject(IJavaProject project) throws JavaModelException {
-		Map<String, IType> types = new HashMap<>();
+		final Map<String, IType> types = new HashMap<>();
 
-		for (IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
-			Deque<IJavaElement> children = new LinkedList<IJavaElement>();
+		for (final IPackageFragmentRoot element : project.getPackageFragmentRoots()) {
+			final Deque<IJavaElement> children = new LinkedList<>();
 			children.addAll(Arrays.asList(element.getChildren()));
 			while (!children.isEmpty()) {
-				IJavaElement packageFragment = children.pop();
+				final IJavaElement packageFragment = children.pop();
 				if (packageFragment.getElementType() == IJavaElement.COMPILATION_UNIT) {
-					for (IType type : ((ICompilationUnit) packageFragment).getAllTypes()) {
+					for (final IType type : ((ICompilationUnit) packageFragment).getAllTypes()) {
 						types.put(type.getFullyQualifiedName(), type);
 					}
 				} else if (packageFragment.getElementType() == IJavaElement.PACKAGE_FRAGMENT) {
@@ -86,7 +86,7 @@ public class JavaASTUtil {
 
 	/**
 	 * Searches the method definition with the given signature
-	 * 
+	 *
 	 * @param signature The signature
 	 * @param type      The type containing the signature
 	 * @return The method
@@ -94,12 +94,12 @@ public class JavaASTUtil {
 	 *                            the type
 	 */
 	public static IMethod getIMethod(TMethodSignature signature, IType type) throws JavaModelException {
-		String tName = signature.getMethod().getTName();
-		for (IMethod m : type.getMethods()) {
+		final String tName = signature.getMethod().getTName();
+		for (final IMethod m : type.getMethods()) {
 			if (m.getElementName().equals(tName) && m.getNumberOfParameters() == signature.getParameters().size()) {
 				boolean equal = true;
 				TParameter tParam = signature.getFirstParameter();
-				for (ILocalVariable param : m.getParameters()) {
+				for (final ILocalVariable param : m.getParameters()) {
 					equal = tParam.getType().getFullyQualifiedName()
 							.endsWith(Signature.toString(param.getTypeSignature()));
 					if (!equal) {
@@ -117,17 +117,17 @@ public class JavaASTUtil {
 
 	/**
 	 * Searches in the program model for a method
-	 * 
+	 *
 	 * @param method The method
 	 * @param pm     The program model
 	 * @return The method definition
 	 */
 	public static TMethodDefinition getTMethodDefinition(IMethod method, TypeGraph pm) {
-		IType iType = method.getDeclaringType();
-		TAbstractType tType = pm.getType(iType.getFullyQualifiedName());
-		for (TMember tMember : tType.getDefines()) {
+		final IType iType = method.getDeclaringType();
+		final TAbstractType tType = pm.getType(iType.getFullyQualifiedName());
+		for (final TMember tMember : tType.getDefines()) {
 			if (tMember instanceof TMethodDefinition) {
-				TMethodDefinition tMethodDefinition = (TMethodDefinition) tMember;
+				final TMethodDefinition tMethodDefinition = (TMethodDefinition) tMember;
 				if (equivalent(tMethodDefinition, method)) {
 					return tMethodDefinition;
 				}
@@ -141,7 +141,7 @@ public class JavaASTUtil {
 	 * A wrapper for
 	 * {@link org.eclipse.jdt.core.IJavaProject# findType(String fullyQualifiedName)}
 	 * using the fully qualified name of the TAbstractType as value
-	 * 
+	 *
 	 * @param type    The type which should be search
 	 * @param project The Java project
 	 * @return The according IType or null if not found
@@ -155,7 +155,7 @@ public class JavaASTUtil {
 
 	/**
 	 * Searches for the TClass corresponding to a type declaration
-	 * 
+	 *
 	 * @param type The type declaration
 	 * @param pg   The program model in which should be searched
 	 * @return the tClass
@@ -163,17 +163,17 @@ public class JavaASTUtil {
 	public static TClass getTClass(TypeDeclaration type, TypeGraph pg) {
 		TClass tChild = null;
 
-		ASTNode tmpASTNode2 = type.getParent();
+		final ASTNode tmpASTNode2 = type.getParent();
 		if (tmpASTNode2 instanceof CompilationUnit) {
-			CompilationUnit childcu = (CompilationUnit) tmpASTNode2;
+			final CompilationUnit childcu = (CompilationUnit) tmpASTNode2;
 
-			PackageDeclaration childPackage = childcu.getPackage();
+			final PackageDeclaration childPackage = childcu.getPackage();
 
-			String[] names = childPackage.getName().getFullyQualifiedName().split("\\."); //$NON-NLS-1$
+			final String[] names = childPackage.getName().getFullyQualifiedName().split("\\."); //$NON-NLS-1$
 			EList<TPackage> packages = pg.getPackages();
 			TPackage next = null;
-			for (String name : names) {
-				for (TPackage p : packages) {
+			for (final String name : names) {
+				for (final TPackage p : packages) {
 					if (p.getTName().equals(name)) {
 						next = p;
 						break;
@@ -189,7 +189,7 @@ public class JavaASTUtil {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
 
-			for (TClass c : next.getClasses()) {
+			for (final TClass c : next.getClasses()) {
 				if (c.getTName().equals(type.getName().toString())) {
 					tChild = c;
 					break;
@@ -202,17 +202,17 @@ public class JavaASTUtil {
 	/**
 	 * Searches for the method definition in the program model corresponding to the
 	 * method declarations signature
-	 * 
+	 *
 	 * @param method The method declaration
 	 * @param pm     The program model
 	 * @return The found definition or null
 	 */
 	public static TMethodDefinition getTMethodDefinition(MethodDeclaration method, TypeGraph pm) {
-		TClass type = getTClass((TypeDeclaration) method.getParent(), pm);
+		final TClass type = getTClass((TypeDeclaration) method.getParent(), pm);
 		if (type == null) {
 			return null;
 		}
-		TMethodSignature signature = getTMethodSignature(method, pm);
+		final TMethodSignature signature = getTMethodSignature(method, pm);
 		if (signature == null) {
 			return null;
 		}
@@ -222,14 +222,14 @@ public class JavaASTUtil {
 	/**
 	 * Searches for the signature in the program model corresponding to the method
 	 * declarations signature
-	 * 
+	 *
 	 * @param method The method declaration
 	 * @param pg     The program model
 	 * @return The found signature or null
 	 */
 	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pg) {
 		TMethod tMethod = null;
-		for (TMethod m : pg.getMethods()) {
+		for (final TMethod m : pg.getMethods()) {
 			if (m.getTName().equals(method.getName().toString())) {
 				tMethod = m;
 				break;
@@ -240,11 +240,11 @@ public class JavaASTUtil {
 			return null;
 		}
 
-		for (TMethodSignature signature : tMethod.getSignatures()) {
+		for (final TMethodSignature signature : tMethod.getSignatures()) {
 			if (method.parameters().size() != signature.getParameters().size()) {
 				continue;
 			}
-			boolean success = hasSameSignature(method, signature);
+			final boolean success = hasSameSignature(method, signature);
 			if (success) {
 				return signature;
 			}
@@ -255,14 +255,13 @@ public class JavaASTUtil {
 
 	/**
 	 * Get the source code line of the given element
-	 * 
+	 *
 	 * @param javaElement The element to look for
 	 * @return The source code line
-	 * @throws JavaModelException
 	 * @throws CoreException
 	 */
-	public static int getLine(IJavaElement javaElement) throws JavaModelException, CoreException {
-		IResource underlyingResource = javaElement.getUnderlyingResource();
+	public static int getLine(IJavaElement javaElement) throws CoreException {
+		final IResource underlyingResource = javaElement.getUnderlyingResource();
 		int line = 1;
 		if (underlyingResource.getFileExtension().equals("java")) {
 			try (InputStream stream = ((IFile) underlyingResource).getContents()) {
@@ -273,7 +272,7 @@ public class JavaASTUtil {
 						line++;
 					}
 				}
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				LOGGER.log(Level.ERROR, e);
 				return -1;
 			}
@@ -283,17 +282,17 @@ public class JavaASTUtil {
 
 	/**
 	 * Checks if the signature is equivalent to the method declarations signature
-	 * 
+	 *
 	 * @param method    A method declaration
 	 * @param signature A method signature
 	 * @return true, if the signatures are equal
 	 */
 	private static boolean hasSameSignature(MethodDeclaration method, TMethodSignature signature) {
 		TParameter tParam = signature.getFirstParameter();
-		for (Object p : method.parameters()) {
+		for (final Object p : method.parameters()) {
 			if (p instanceof SingleVariableDeclaration) {
-				SingleVariableDeclaration var = (SingleVariableDeclaration) p;
-				Type vt = var.getType();
+				final SingleVariableDeclaration var = (SingleVariableDeclaration) p;
+				final Type vt = var.getType();
 				if (vt.toString().equals(tParam.getType().getTName())) {
 					tParam = tParam.getNext();
 				} else {
@@ -306,16 +305,16 @@ public class JavaASTUtil {
 
 	/**
 	 * Checks if the two methods are equivalent
-	 * 
+	 *
 	 * @param tMethod A method from a program model
 	 * @param iMethod A method from a Eclipse Java project
 	 * @return true, if the methods are equivalent
 	 */
 	private static boolean equivalent(TMethodDefinition tMethod, IMethod iMethod) {
-		TMethodSignature tMethodSignature = tMethod.getSignature();
-		TMethod tMethodName = tMethodSignature.getMethod();
+		final TMethodSignature tMethodSignature = tMethod.getSignature();
+		final TMethod tMethodName = tMethodSignature.getMethod();
 
-		String tName = tMethodName.getTName();
+		final String tName = tMethodName.getTName();
 		if (iMethod.getElementName().equals(tName)
 				&& iMethod.getNumberOfParameters() == tMethodSignature.getParameters().size()) {
 			boolean equal = true;
@@ -323,10 +322,10 @@ public class JavaASTUtil {
 			ILocalVariable[] parameters;
 			try {
 				parameters = iMethod.getParameters();
-			} catch (JavaModelException e) {
+			} catch (final JavaModelException e) {
 				return false;
 			}
-			for (ILocalVariable param : parameters) {
+			for (final ILocalVariable param : parameters) {
 				String iParamSignature = Signature.toString(param.getTypeSignature());
 				iParamSignature = iParamSignature.replaceAll("<.*>|\\[\\w*\\]", "");
 				equal = tParam.getType().getFullyQualifiedName().endsWith(iParamSignature);

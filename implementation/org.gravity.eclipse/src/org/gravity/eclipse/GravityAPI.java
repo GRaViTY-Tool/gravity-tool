@@ -86,7 +86,7 @@ public class GravityAPI {
 		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
 			throw new TransformationFailedException(
-					Messages.CreatePMFailed + project.getProject().getName());
+					Messages.createPMFailed + project.getProject().getName());
 		}
 		return converter.getPG();
 	}
@@ -107,9 +107,9 @@ public class GravityAPI {
 				return loadProgramModel(file);
 			}
 		} catch (CoreException e) {
-			throw new IOException(Messages.COULDNT_LOAD_MODEL, e);
+			throw new IOException(Messages.couldntLoadModel, e);
 		}
-		throw new IOException(Messages.COULDNT_LOAD_MODEL);
+		throw new IOException(Messages.couldntLoadModel);
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class GravityAPI {
 				return (TypeGraph) object;
 			}
 		}
-		throw new IOException(Messages.COULDNT_LOAD_MODEL);
+		throw new IOException(Messages.couldntLoadModel);
 	}
 
 	/**

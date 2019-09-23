@@ -63,16 +63,16 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition> {
 
 	private static final Logger LOGGER = Logger.getLogger(DataFlowProcessor.class.getName());
+	private MGravityModel model;
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
+		this.model = model;
 		final SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
-		boolean success = true;
+
 		sub.beginTask("Statement pre-processing", 50);
-		final List<StatementHandlerDataFlow> handlers = preProcessStatements(model);
-		if (handlers == null) {
-			success = false;
-		}
+		final List<StatementHandlerDataFlow> handlers = preProcessStatements();
+
 		sub.internalWorked(50);
 		sub.beginTask("Insertion of data flow edges", 5);
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural
@@ -105,8 +105,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			GraphVisualizer.drawGraphs(handlers, "reducedGraphs");
 		}
 		sub.internalWorked(5);
-		return success;
+		return true;
 	}
+
 	/**
 	 * @param definition
 	 * @param node
@@ -145,9 +146,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						if (variablesContainer instanceof FieldDeclaration) {
 							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 							accessIn.setFlowSource(fieldDef.getMSignature());
-						}
-						else {
-							LOGGER.error("A variable declaration fragment hasn't been reduced: "+variablesContainer);
+						} else {
+							LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
 						}
 					} else {
 						accessIn.setFlowSource((MAbstractFlowElement) inElement);
@@ -175,9 +175,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				if (variablesContainer instanceof FieldDeclaration) {
 					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 					accessOut.setFlowTarget(fieldDef);
-				}
-				else {
-					LOGGER.error("A variable declaration fragment hasn't been reduced: "+variablesContainer);
+				} else {
+					LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
 				}
 			} else if (outElement instanceof MSingleVariableDeclaration) {
 				completeFlowForSigParam(outElement, node, accessOut);
@@ -206,6 +205,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 	}
+
 	/**
 	 * A constructor invocation or method invocation with a return value should
 	 * explicitly have the MethodDef/MethodSig set as incoming flow
@@ -249,6 +249,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		return inRef;
 	}
+
 	/**
 	 * @param reducedDFG
 	 * @param node
@@ -272,6 +273,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		return outRef;
 	}
+
 	/**
 	 * @param handler
 	 * @return
@@ -280,10 +282,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		final Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
 		for (final EObject node : new ArrayList<>(reducedDFG.keySet())) {
 			if (node instanceof VariableDeclarationFragment) {
-				if(((VariableDeclarationFragment) node).getVariablesContainer() instanceof FieldDeclaration) {
+				if (((VariableDeclarationFragment) node).getVariablesContainer() instanceof FieldDeclaration) {
 					// Keep node
-				}
-				else {
+				} else {
 					reduceNodeInDFG(node, reducedDFG);
 				}
 			} else if (node instanceof MAbstractMethodDefinition || node instanceof ReturnStatement
@@ -308,6 +309,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		return reducedDFG;
 	}
+
 	/**
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
@@ -372,12 +374,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param model The model, whose statements are processed.
 	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
-	private List<StatementHandlerDataFlow> preProcessStatements(MGravityModel model) {
-		if (model == null) {
-			return null;
-		}
+	private List<StatementHandlerDataFlow> preProcessStatements() {
 		final List<StatementHandlerDataFlow> handlers = new ArrayList<>();
-		for (final MAbstractMethodDefinition methodDef : model.getMAbstractMethodDefinitions()) {
+		for (final MAbstractMethodDefinition methodDef : this.model.getMAbstractMethodDefinitions()) {
 			final StatementHandlerDataFlow methodProcessor = new StatementHandlerDataFlow(methodDef);
 			methodProcessor.getFlowNodeForElement(methodDef);
 			for (final SingleVariableDeclaration param : methodDef.getParameters()) {
@@ -386,7 +385,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			methodProcessor.handle(methodDef.getBody());
 			handlers.add(methodProcessor);
 		}
-		for (final MFieldDefinition fieldDef : model.getMFieldDefinitions()) {
+		for (final MFieldDefinition fieldDef : this.model.getMFieldDefinitions()) {
 			for (final VariableDeclarationFragment fragment : fieldDef.getFragments()) {
 				final StatementHandlerDataFlow fieldProcessor = new StatementHandlerDataFlow(fragment);
 				fieldProcessor.getMiscHandler().handle(fragment);
@@ -399,6 +398,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		return handlers;
 	}
+
 	@Override
 	public Class<MDefinition> getSupportedType() {
 		return MDefinition.class;

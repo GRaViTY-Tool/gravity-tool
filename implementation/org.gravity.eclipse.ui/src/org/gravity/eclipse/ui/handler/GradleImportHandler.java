@@ -26,14 +26,14 @@ import org.gravity.eclipse.importer.gradle.GradleImport;
 /**
  * A handler for importing gradle projects as single eclipse project into the
  * workspace
- * 
+ *
  * @author speldszus
  *
  */
 public class GradleImportHandler extends AbstractHandler {
 
 	private final class GradleImportJob extends Job {
-		
+
 		private final File parentFile;
 
 		private GradleImportJob(File parentFile) {
@@ -44,23 +44,23 @@ public class GradleImportHandler extends AbstractHandler {
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
 			try {
-				IJavaProject project = new GradleImport(parentFile, true).importProject(monitor);
+				final IJavaProject project = new GradleImport(this.parentFile, true).importProject(monitor);
 				if (project != null) {
 					project.getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				}
 				return Status.OK_STATUS;
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				LOGGER.log(Level.WARN, e);
 				return new Status(Status.WARNING, GravityActivator.PLUGIN_ID,
 						"Refreshing the workspace failed a manual refresh can be necessary!", e);
-			} catch (NoRootFolderException e) {
+			} catch (final NoRootFolderException e) {
 				LOGGER.log(Level.ERROR, e);
-				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "The import of the gradle project at \""
-						+ parentFile.getPath() + "\" failed. The root of the gradle project couldn't be found!", e);
+				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "The import of the gradle project at \""
+						+ this.parentFile.getPath() + "\" failed. The root of the gradle project couldn't be found!", e);
 			} catch (IOException | ImportException e) {
 				LOGGER.log(Level.ERROR, e);
-				return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
-						"The import of the gradle project at \"" + parentFile.getPath() + "\" failed.", e);
+				return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
+						"The import of the gradle project at \"" + this.parentFile.getPath() + "\" failed.", e);
 			}
 		}
 	}
@@ -69,14 +69,14 @@ public class GradleImportHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbench workbench = PlatformUI.getWorkbench();
-		FileDialog dialog = new FileDialog(workbench.getActiveWorkbenchWindow().getShell());
+		final IWorkbench workbench = PlatformUI.getWorkbench();
+		final FileDialog dialog = new FileDialog(workbench.getActiveWorkbenchWindow().getShell());
 		dialog.setFilterExtensions(new String[] { "*.gradle" });
-		String result = dialog.open();
+		final String result = dialog.open();
 
-		File parentFile = new File(result).getParentFile();
+		final File parentFile = new File(result).getParentFile();
 
-		Job job = new GradleImportJob(parentFile);
+		final Job job = new GradleImportJob(parentFile);
 		job.setUser(true);
 		job.schedule();
 		return null;
