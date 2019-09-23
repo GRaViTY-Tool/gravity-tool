@@ -697,7 +697,14 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		}
 		final TMethod method = getMethod(signature.substring(0, openBraceIndex).trim());
 		final int closeBraceIndex = signature.indexOf(')');
-		final String[] params = signature.substring(openBraceIndex + 1, closeBraceIndex).trim().split("\\s*,\\s*");
+		final String paramString = signature.substring(openBraceIndex + 1, closeBraceIndex).trim();
+		final String[] params;
+		if(paramString.length() > 0) {
+			params = paramString.split("\\s*,\\s*");
+		}
+		else {
+			params = new String[0];
+		}
 		for (final TMethodSignature methodSignature : method.getSignatures()) {
 			final EList<TParameter> parameterList = methodSignature.getParameters();
 			if (parameterList.size() != params.length) {
