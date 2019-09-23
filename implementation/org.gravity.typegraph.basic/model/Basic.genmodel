@@ -153,14 +153,17 @@
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getClass">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getClass/fullyQualifiedName"/>
       </genOperations>
-      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getAbstractType">
-        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getAbstractType/fullyQualifiedName"/>
-      </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getInterface">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getInterface/fullyQualifiedName"/>
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getMethod">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getMethod/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getField">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getField/fullyQualifiedName"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getSignature/signature"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TInterface">
@@ -302,6 +305,9 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Basic.ecore#//annotations/TAnnotation/type"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//annotations/TAnnotation/tValues"/>
+        <genOperations ecoreOperation="Basic.ecore#//annotations/TAnnotation/getValue">
+          <genParameters ecoreParameter="Basic.ecore#//annotations/TAnnotation/getValue/key"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="Basic.ecore#//annotations/TAnnotationType">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

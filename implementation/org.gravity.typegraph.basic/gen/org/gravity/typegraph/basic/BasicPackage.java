@@ -2397,22 +2397,13 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___GET_CLASS__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Get Abstract Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_GRAPH___GET_ABSTRACT_TYPE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
-
-	/**
 	 * The operation id for the '<em>Get Interface</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH___GET_INTERFACE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
+	int TYPE_GRAPH___GET_INTERFACE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Method</em>' operation.
@@ -2421,7 +2412,25 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH___GET_METHOD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+	int TYPE_GRAPH___GET_METHOD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Field</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_FIELD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
@@ -2430,7 +2439,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -3750,6 +3759,15 @@ public interface BasicPackage extends EPackage {
 	int TCONSTRUCTOR___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>TConstructor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3938,6 +3956,15 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TENUM___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>TEnum</em>' class.
@@ -5008,16 +5035,6 @@ public interface BasicPackage extends EPackage {
 	EOperation getTypeGraph__GetClass__String();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getAbstractType(java.lang.String) <em>Get Abstract Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Abstract Type</em>' operation.
-	 * @see org.gravity.typegraph.basic.TypeGraph#getAbstractType(java.lang.String)
-	 * @generated
-	 */
-	EOperation getTypeGraph__GetAbstractType__String();
-
-	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getInterface(java.lang.String) <em>Get Interface</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5036,6 +5053,26 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTypeGraph__GetMethod__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getField(java.lang.String) <em>Get Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getField(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetField__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getSignature(java.lang.String) <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getSignature(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetSignature__String();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
@@ -6451,14 +6488,6 @@ public interface BasicPackage extends EPackage {
 		EOperation TYPE_GRAPH___GET_CLASS__STRING = eINSTANCE.getTypeGraph__GetClass__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Abstract Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TYPE_GRAPH___GET_ABSTRACT_TYPE__STRING = eINSTANCE.getTypeGraph__GetAbstractType__String();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Interface</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6473,6 +6502,22 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TYPE_GRAPH___GET_METHOD__STRING = eINSTANCE.getTypeGraph__GetMethod__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_FIELD__STRING = eINSTANCE.getTypeGraph__GetField__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_SIGNATURE__STRING = eINSTANCE.getTypeGraph__GetSignature__String();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.

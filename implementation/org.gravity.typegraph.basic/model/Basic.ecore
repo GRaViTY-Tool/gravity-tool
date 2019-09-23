@@ -172,14 +172,17 @@
     <eOperations name="getClass" eType="#//TClass">
       <eParameters name="fullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="getAbstractType" eType="#//TAbstractType">
-      <eParameters name="fullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eOperations>
     <eOperations name="getInterface" eType="#//TInterface">
       <eParameters name="fullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="getMethod" eType="#//TMethod">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getField" eType="#//TField">
+      <eParameters name="fullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getSignature" eType="#//TSignature">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
@@ -365,12 +368,15 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotation" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject">
+      <eOperations name="getValue" eType="#//annotations/TAnnotationValue">
+        <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotated" lowerBound="1"
           eType="#//annotations/TAnnotatable" eOpposite="#//annotations/TAnnotatable/tAnnotation"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="#//annotations/TAnnotationType" eOpposite="#//annotations/TAnnotationType/annotations"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tValues" upperBound="-1"
-          eType="#//annotations/TAnnotationValue" containment="true"/>
+          eType="#//annotations/TAnnotationValue" containment="true" eKeys="#//annotations/TAnnotationValue/tKey"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotationType" eSuperTypes="#//TAbstractType">
       <eOperations name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

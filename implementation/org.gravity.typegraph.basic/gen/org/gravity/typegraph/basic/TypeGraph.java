@@ -209,14 +209,6 @@ public interface TypeGraph extends TAnnotatable {
 
 	public TClass getClass(String string);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	TAbstractType getAbstractType(String fullyQualifiedName);
-
 	public TInterface getInterface(String fullyQualifiedName);
 
 	/**
@@ -226,6 +218,22 @@ public interface TypeGraph extends TAnnotatable {
 	 * @generated
 	 */
 	TMethod getMethod(String name);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TField getField(String fullyQualifiedName);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TSignature getSignature(String signature);
 
 	public TAbstractType getType(String fullyQualifiedName);
 

@@ -3,41 +3,35 @@
 package org.gravity.typegraph.basic.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+// [user defined imports] -->
+// <-- [user defined imports]
+import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
-// <-- [user defined imports]
-import java.util.LinkedList;
-import java.util.List;
-import org.gravity.typegraph.basic.TMethodSignature;
-import java.util.ArrayList;
-import java.util.Collections;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -90,7 +84,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * The default value of the '{@link #isTLib() <em>TLib</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isTLib()
 	 * @generated
 	 * @ordered
@@ -100,7 +94,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * The cached value of the '{@link #isTLib() <em>TLib</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isTLib()
 	 * @generated
 	 * @ordered
@@ -110,7 +104,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * The default value of the '{@link #getTName() <em>TName</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTName()
 	 * @generated
 	 * @ordered
@@ -120,7 +114,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * The cached value of the '{@link #getTName() <em>TName</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTName()
 	 * @generated
 	 * @ordered
@@ -449,16 +443,18 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public abstract boolean isSuperTypeOf(TAbstractType tType);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isSubTypeOf(TAbstractType tType) {
 		// [user code injected with eMoflon]
 		return tType.isSuperTypeOf(this);
@@ -466,9 +462,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isDeclared() {
 		// [user code injected with eMoflon]
 		if (getTName().equals("T")) {
@@ -482,14 +479,15 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public String getFullyQualifiedName() {
 		// [user code injected with eMoflon]
 
-		StringBuilder builder = new StringBuilder();
-		List<String> packages = new LinkedList<>();
+		final StringBuilder builder = new StringBuilder();
+		final List<String> packages = new LinkedList<>();
 		TPackage tPackage = getPackage();
 		if (tPackage == null) {
 			return getTName();
@@ -499,7 +497,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 				packages.add(0, tPackage.getTName());
 				tPackage = tPackage.getParent();
 			}
-			for (String name : packages) {
+			for (final String name : packages) {
 				builder.append(name);
 				if (name.length() > 0 && !name.endsWith("$") && !name.endsWith("$1")) { //$NON-NLS-1$ //$NON-NLS-2$
 					builder.append('.');
@@ -512,14 +510,14 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public TMethodSignature getTMethodSignature(String signature) {
 		// [user code injected with eMoflon]
-
-		String voidString = ":void";
-		for (TSignature sig : getSignature()) {
+		final String voidString = ":void";
+		for (final TSignature sig : getSignature()) {
 			if (sig instanceof TMethodSignature) {
 				String sigString = sig.getSignatureString().replaceAll(" ", "");
 
@@ -540,13 +538,14 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public TMethodDefinition getTMethodDefinition(String signature) {
 		// [user code injected with eMoflon]
-		String voidString = ":void";
-		for (TMember def : getDefines()) {
+		final String voidString = ":void";
+		for (final TMember def : getDefines()) {
 			if (def instanceof TMethodDefinition) {
 				String sigString = def.getSignatureString().replaceAll(" ", "");
 
@@ -567,12 +566,13 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public TPackage getBasePackage() {
 		// [user code injected with eMoflon]
-		TPackage tPackage = getPackage();
+		final TPackage tPackage = getPackage();
 		if (tPackage != null) {
 			return tPackage.getBasePackage();
 		}
@@ -581,9 +581,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public TMember getTDefinition(TSignature signature) {
 		// [user code injected with eMoflon]
 		return signature.getTDefinition(this);
@@ -591,14 +592,14 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public TMember getTDefinition(String signatureString) {
-		String voidString = ":void";
+		final String voidString = ":void";
 		String searchedSignatureString = signatureString.replaceAll(" ", "");
-		for (TMember def : getDefines()) {
+		for (final TMember def : getDefines()) {
 			String nextSignatureString = def.getSignatureString().replaceAll(" ", "");
 			if (searchedSignatureString.equals(nextSignatureString)) {
 				return def;
@@ -622,9 +623,10 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean hasTMember(TMember member) {
 		// [user code injected with eMoflon]
 		return this.equals(member.getDefinedBy());
@@ -893,19 +895,21 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	}
 	// <-- [user code injected with eMoflon]
 
+	@Override
 	public abstract boolean hasCommonSuperType(TAbstractType tAbstractType);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void fillSameType(EList<TAbstractType> list) {
 		boolean changed = false;
-		ArrayList<TAbstractType> copy = new ArrayList<TAbstractType>(list);
+		final ArrayList<TAbstractType> copy = new ArrayList<>(list);
 
-		for (TAbstractType type : copy) {
-			for (TAbstractType innerType : type.getInnerTypes()) {
+		for (final TAbstractType type : copy) {
+			for (final TAbstractType innerType : type.getInnerTypes()) {
 				if (!list.contains(innerType)) {
 					list.add(innerType);
 					changed = true;
@@ -921,19 +925,21 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		}
 	}
 
+	@Override
 	public boolean isInnerType(TAbstractType tAbstractType) {
 
-		EList<TAbstractType> list = new BasicEList<>();
+		final EList<TAbstractType> list = new BasicEList<>();
 		list.add(this);
 		fillSameType(list);
 
-		EList<TAbstractType> listOther = new BasicEList<>();
+		final EList<TAbstractType> listOther = new BasicEList<>();
 		listOther.add(tAbstractType);
 		fillSameType(listOther);
 
 		return !Collections.disjoint(list, listOther);
 	}
 
+	@Override
 	public TPackage getRealPackage(TAbstractType type) {
 
 		if (type.getOuterType() != null) {

@@ -287,13 +287,22 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION___EINVOKE__EOPERATION_ELIST = EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST;
 
 	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION___GET_VALUE__STRING = EcorePackage.EOBJECT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TAnnotation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TANNOTATION_OPERATION_COUNT = EcorePackage.EOBJECT_OPERATION_COUNT + 0;
+	int TANNOTATION_OPERATION_COUNT = EcorePackage.EOBJECT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.annotations.impl.TTextAnnotationImpl <em>TText Annotation</em>}' class.
@@ -484,6 +493,15 @@ public interface AnnotationsPackage extends EPackage {
 	 * @ordered
 	 */
 	int TTEXT_ANNOTATION___EINVOKE__EOPERATION_ELIST = TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTEXT_ANNOTATION___GET_VALUE__STRING = TANNOTATION___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>TText Annotation</em>' class.
@@ -1587,6 +1605,16 @@ public interface AnnotationsPackage extends EPackage {
 	EReference getTAnnotation_TValues();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.annotations.TAnnotation#getValue(java.lang.String) <em>Get Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Value</em>' operation.
+	 * @see org.gravity.typegraph.basic.annotations.TAnnotation#getValue(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTAnnotation__GetValue__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.annotations.TAnnotationType <em>TAnnotation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1842,6 +1870,14 @@ public interface AnnotationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TANNOTATION__TVALUES = eINSTANCE.getTAnnotation_TValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TANNOTATION___GET_VALUE__STRING = eINSTANCE.getTAnnotation__GetValue__String();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.annotations.impl.TAnnotationTypeImpl <em>TAnnotation Type</em>}' class.
