@@ -43,11 +43,6 @@
 		#trg->TClass
 	}
 
-	CompilationUnitToTypeGraph {
-		#src->CompilationUnit
-		#trg->TypeGraph
-	}
-
 	PackageToTPackage {
 		#src->Package
 		#trg->TPackage
