@@ -39,31 +39,22 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getPackages
- * <em>Packages</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getMethods
- * <em>Methods</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getFields
- * <em>Fields</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getClasses
- * <em>Classes</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getInterfaces
- * <em>Interfaces</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getOwnedTypes
- * <em>Owned Types</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTAnnotationTypes
- * <em>TAnnotation Types</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTName
- * <em>TName</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getPackages <em>Packages</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getInterfaces <em>Interfaces</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getOwnedTypes <em>Owned Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTAnnotationTypes <em>TAnnotation Types</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TypeGraphImpl#getTName <em>TName</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	/**
-	 * The cached value of the '{@link #getPackages() <em>Packages</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPackages()
 	 * @generated
 	 * @ordered
@@ -71,9 +62,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TPackage> packages;
 
 	/**
-	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMethods()
 	 * @generated
 	 * @ordered
@@ -81,9 +71,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TMethod> methods;
 
 	/**
-	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -91,9 +80,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TField> fields;
 
 	/**
-	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getClasses() <em>Classes</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getClasses()
 	 * @generated
 	 * @ordered
@@ -101,9 +89,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TClass> classes;
 
 	/**
-	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}'
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInterfaces()
 	 * @generated
 	 * @ordered
@@ -111,9 +98,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TInterface> interfaces;
 
 	/**
-	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}'
-	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getOwnedTypes() <em>Owned Types</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getOwnedTypes()
 	 * @generated
 	 * @ordered
@@ -121,9 +107,8 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	protected EList<TAbstractType> ownedTypes;
 
 	/**
-	 * The cached value of the '{@link #getTAnnotationTypes() <em>TAnnotation
-	 * Types</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getTAnnotationTypes() <em>TAnnotation Types</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTAnnotationTypes()
 	 * @generated
 	 * @ordered
@@ -152,7 +137,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TypeGraphImpl() {
@@ -161,7 +145,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -171,49 +154,42 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TPackage> getPackages() {
 		if (this.packages == null) {
-			this.packages = new EObjectContainmentWithInverseEList<>(TPackage.class, this,
-					BasicPackage.TYPE_GRAPH__PACKAGES, BasicPackage.TPACKAGE__PG);
+			this.packages = new EObjectContainmentWithInverseEList<>(TPackage.class, this, BasicPackage.TYPE_GRAPH__PACKAGES, BasicPackage.TPACKAGE__PG);
 		}
 		return this.packages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TMethod> getMethods() {
 		if (this.methods == null) {
-			this.methods = new EObjectContainmentWithInverseEList<>(TMethod.class, this,
-					BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__PG);
+			this.methods = new EObjectContainmentWithInverseEList<>(TMethod.class, this, BasicPackage.TYPE_GRAPH__METHODS, BasicPackage.TMETHOD__PG);
 		}
 		return this.methods;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TField> getFields() {
 		if (this.fields == null) {
-			this.fields = new EObjectContainmentWithInverseEList<>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS,
-					BasicPackage.TFIELD__PG);
+			this.fields = new EObjectContainmentWithInverseEList<>(TField.class, this, BasicPackage.TYPE_GRAPH__FIELDS, BasicPackage.TFIELD__PG);
 		}
 		return this.fields;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -226,7 +202,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -239,35 +214,30 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAbstractType> getOwnedTypes() {
 		if (this.ownedTypes == null) {
-			this.ownedTypes = new EObjectContainmentWithInverseEList<>(TAbstractType.class, this,
-					BasicPackage.TYPE_GRAPH__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PG);
+			this.ownedTypes = new EObjectContainmentWithInverseEList<>(TAbstractType.class, this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, BasicPackage.TABSTRACT_TYPE__PG);
 		}
 		return this.ownedTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<TAnnotationType> getTAnnotationTypes() {
 		if (this.tAnnotationTypes == null) {
-			this.tAnnotationTypes = new EObjectResolvingEList<>(TAnnotationType.class, this,
-					BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES);
+			this.tAnnotationTypes = new EObjectResolvingEList<>(TAnnotationType.class, this, BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES);
 		}
 		return this.tAnnotationTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -277,7 +247,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -285,8 +254,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		final String oldTName = this.tName;
 		this.tName = newTName;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName,
-					this.tName));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TYPE_GRAPH__TNAME, oldTName, this.tName));
 		}
 	}
 
@@ -320,7 +288,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -328,40 +295,38 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPackages()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getPackages()).basicAdd(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getMethods()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getMethods()).basicAdd(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFields()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getFields()).basicAdd(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedTypes()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case BasicPackage.TYPE_GRAPH__PACKAGES:
-			return ((InternalEList<?>) getPackages()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__METHODS:
-			return ((InternalEList<?>) getMethods()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
-			return ((InternalEList<?>) getOwnedTypes()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>)getOwnedTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -389,7 +354,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -398,34 +362,34 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		switch (featureID) {
 		case BasicPackage.TYPE_GRAPH__PACKAGES:
 			getPackages().clear();
-			getPackages().addAll((Collection<? extends TPackage>) newValue);
+			getPackages().addAll((Collection<? extends TPackage>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__METHODS:
 			getMethods().clear();
-			getMethods().addAll((Collection<? extends TMethod>) newValue);
+			getMethods().addAll((Collection<? extends TMethod>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__FIELDS:
 			getFields().clear();
-			getFields().addAll((Collection<? extends TField>) newValue);
+			getFields().addAll((Collection<? extends TField>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__CLASSES:
 			getClasses().clear();
-			getClasses().addAll((Collection<? extends TClass>) newValue);
+			getClasses().addAll((Collection<? extends TClass>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__INTERFACES:
 			getInterfaces().clear();
-			getInterfaces().addAll((Collection<? extends TInterface>) newValue);
+			getInterfaces().addAll((Collection<? extends TInterface>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__OWNED_TYPES:
 			getOwnedTypes().clear();
-			getOwnedTypes().addAll((Collection<? extends TAbstractType>) newValue);
+			getOwnedTypes().addAll((Collection<? extends TAbstractType>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__TANNOTATION_TYPES:
 			getTAnnotationTypes().clear();
-			getTAnnotationTypes().addAll((Collection<? extends TAnnotationType>) newValue);
+			getTAnnotationTypes().addAll((Collection<? extends TAnnotationType>)newValue);
 			return;
 		case BasicPackage.TYPE_GRAPH__TNAME:
-			setTName((String) newValue);
+			setTName((String)newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -433,7 +397,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -469,7 +432,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -497,7 +459,6 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -509,19 +470,19 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 		case BasicPackage.TYPE_GRAPH___TO_STRING:
 			return toString();
 		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__STRING:
-			return getPackage((String) arguments.get(0));
+			return getPackage((String)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_PACKAGE__ELIST:
-			return getPackage((EList<String>) arguments.get(0));
+			return getPackage((EList<String>)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_CLASS__STRING:
-			return getClass((String) arguments.get(0));
+			return getClass((String)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_INTERFACE__STRING:
-			return getInterface((String) arguments.get(0));
+			return getInterface((String)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_METHOD__STRING:
-			return getMethod((String) arguments.get(0));
+			return getMethod((String)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_FIELD__STRING:
-			return getField((String) arguments.get(0));
+			return getField((String)arguments.get(0));
 		case BasicPackage.TYPE_GRAPH___GET_SIGNATURE__STRING:
-			return getSignature((String) arguments.get(0));
+			return getSignature((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -695,7 +656,12 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			return getField(signature.substring(0, colonIndex)).getSignatures().parallelStream()
 					.filter(element -> type.equals(element.getType())).findAny().orElse(null);
 		}
-		final TMethod method = getMethod(signature.substring(0, openBraceIndex).trim());
+		String name = signature.substring(0, openBraceIndex).trim();
+		final int dotIndex = name.lastIndexOf('.');
+		if(dotIndex >= 0) {
+			name = name.substring(dotIndex +1);
+		}
+		final TMethod method = getMethod(name);
 		final int closeBraceIndex = signature.indexOf(')');
 		final String paramString = signature.substring(openBraceIndex + 1, closeBraceIndex).trim();
 		final String[] params;
