@@ -102,7 +102,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 		if (GravityActivator.getDefault().isVerbose()) {
-			GraphVisualizer.drawGraphs(handlers, "reducedGraphs");
+			GraphVisualizer.drawGraphs(model, handlers, "reducedGraphs");
 		}
 		sub.internalWorked(5);
 		return true;
@@ -394,7 +394,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		}
 		if (GravityActivator.getDefault().isVerbose()) {
-			GraphVisualizer.drawGraphs(handlers, "graphs");
+			GraphVisualizer.drawGraphs(this.model, handlers, "graphs");
 		}
 		return handlers;
 	}
