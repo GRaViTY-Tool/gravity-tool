@@ -280,12 +280,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 */
 	private Map<EObject, FlowNode> reduceIntraDFGFlows(StatementHandlerDataFlow handler) {
 		final Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
-		for (final EObject node : new ArrayList<>(reducedDFG.keySet())) {
+		for (final FlowNode flowNode : new ArrayList<>(reducedDFG.values())) {
+			final EObject node = flowNode.getModelElement();
 			if (node instanceof VariableDeclarationFragment) {
 				if (((VariableDeclarationFragment) node).getVariablesContainer() instanceof FieldDeclaration) {
 					// Keep node
 				} else {
-					reduceNodeInDFG(node, reducedDFG);
+					reduceNodeInDFG(flowNode, reducedDFG);
 				}
 			} else if (node instanceof MAbstractMethodDefinition || node instanceof ReturnStatement
 					|| node instanceof AbstractMethodInvocation || node instanceof SingleVariableDeclaration) {
@@ -301,10 +302,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				if (variable == null) {
 					LOGGER.error("Declared variable is null");
 				} else if (variable.eContainer() instanceof VariableDeclarationStatement) {
-					reduceNodeInDFG(node, reducedDFG);
+					reduceNodeInDFG(flowNode, reducedDFG);
 				}
 			} else { // Everything else is reduced in the same way
-				reduceNodeInDFG(node, reducedDFG);
+				reduceNodeInDFG(flowNode, reducedDFG);
 			}
 		}
 		return reducedDFG;
@@ -314,11 +315,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
 	 *
-	 * @param node       The node's key in reducedDFG.
+	 * @param flowNode       The node's key in reducedDFG.
 	 * @param reducedDFG The alreadySeen on which the reduction should be performed.
 	 */
-	private void reduceNodeInDFG(EObject node, Map<EObject, FlowNode> reducedDFG) {
-		final FlowNode flowNode = reducedDFG.get(node);
+	private void reduceNodeInDFG(FlowNode flowNode, Map<EObject, FlowNode> reducedDFG) {
 		final Set<FlowNode> inRef = flowNode.getInRef();
 		final Set<FlowNode> outRef = flowNode.getOutRef();
 		for (final FlowNode outNode : outRef) {
@@ -335,7 +335,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		}
 		inRef.clear();
 		outRef.clear();
-		reducedDFG.remove(node);
+		reducedDFG.remove(flowNode.getModelElement());
 	}
 
 	/**
