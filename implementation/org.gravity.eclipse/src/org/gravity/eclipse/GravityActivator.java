@@ -193,8 +193,8 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @return true, if is verbose is enabled
 	 */
-	public boolean isVerbose() {
-		return this.verbose;
+	public static boolean isVerbose() {
+		return getDefault().verbose;
 	}
 
 	/**

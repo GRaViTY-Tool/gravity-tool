@@ -93,6 +93,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			// Reduction of intra-DFGs
 			final Map<EObject, FlowNode> reducedDFG = reduceIntraDFGFlows(handler);
 			// Insertion of inter-procedural data flows
+
 			for (final FlowNode node : handler.getMemberRef()) {
 				// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
 				final Set<FlowNode> outRef = buildOutRef(reducedDFG, node);
@@ -101,7 +102,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				setFlows(memberDefTyped, node, outRef, inRef);
 			}
 		}
-		if (GravityActivator.getDefault().isVerbose()) {
+		if (GravityActivator.isVerbose()) {
 			GraphVisualizer.drawGraphs(model, handlers, "reducedGraphs");
 		}
 		sub.internalWorked(5);
@@ -393,7 +394,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				handlers.add(fieldProcessor);
 			}
 		}
-		if (GravityActivator.getDefault().isVerbose()) {
+		if (GravityActivator.isVerbose()) {
 			GraphVisualizer.drawGraphs(this.model, handlers, "graphs");
 		}
 		return handlers;

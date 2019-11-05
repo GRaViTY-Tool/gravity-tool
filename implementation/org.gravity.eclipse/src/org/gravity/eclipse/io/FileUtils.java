@@ -12,28 +12,29 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
 import java.util.stream.Stream;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.Platform;
 
 /**
- * 
+ *
  * Helpful Utils when working with files
- * 
+ *
  * @author speldszus
  *
  */
 public class FileUtils {
 
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class);
-	
+
 	private FileUtils() {
 		// This class shouldn't be instantiated
 	}
 
 	/**
 	 * Replaces the line endings with the endings of the current system
-	 * 
+	 *
 	 * @param file - The file
 	 * @return true, if the endings have been replaced successfully
 	 * @throws IOException Iff the original file has been lost due to an error
@@ -43,7 +44,7 @@ public class FileUtils {
 		try {
 			tempFile = Files.createTempFile("gravity", null).toFile();
 			tempFile.deleteOnExit();
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, "Couldn't create temp file: " + e.getMessage(), e);
 			return false;
 		}
@@ -52,12 +53,12 @@ public class FileUtils {
 			Files.move(file.toPath(), tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			// print all lines to the original location using system encoding
 			copy(file, tempFile);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
 			// Try to recover file
 			try {
 				Files.move(tempFile.toPath(), file.toPath());
-			} catch (IOException e2) {
+			} catch (final IOException e2) {
 				// Iff recover wasn't possible throw original error
 				throw new IOException("A copy of the orgiginal file is maybe present at: " + tempFile.toString(), e);
 			}
@@ -66,7 +67,7 @@ public class FileUtils {
 		// delete the temp file
 		try {
 			Files.deleteIfExists(tempFile.toPath());
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			/*
 			 * As the temporal files will be deleted anyways we currently only log a
 			 * warning. However, sensitive data might be leaked this way!
@@ -79,13 +80,16 @@ public class FileUtils {
 	/**
 	 * Copies a file from a source location to a target location using system
 	 * specific line endings
-	 * 
+	 *
 	 * @param source The source file
 	 * @param target The target file
 	 * @throws IOException If the source file cannot be read or the target file
 	 *                     cannot be written
 	 */
 	public static void copy(File source, File target) throws IOException {
+		if (!target.exists() && !target.createNewFile()) {
+			throw new IOException("Cannot create file: " + target);
+		}
 		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true));
 				Stream<String> lines = Files.lines(target.toPath());) {
 			lines.forEach(s -> {
@@ -102,7 +106,7 @@ public class FileUtils {
 	 * @throws IOException if an I/O error occurs.
 	 */
 	public static String getContentsAsString(InputStream stream) throws IOException {
-		StringBuilder noComments = new StringBuilder();
+		final StringBuilder noComments = new StringBuilder();
 
 		int nextInt;
 		while ((nextInt = stream.read()) != -1) {
@@ -113,10 +117,10 @@ public class FileUtils {
 
 	/**
 	 * Reads the contents from the given file and returns them as single string
-	 * 
+	 *
 	 * @param file The file containing contents
 	 * @return The content of the file
-	 * @throws IOException           If an I/O error occurs
+	 * @throws IOException If an I/O error occurs
 	 */
 	public static String getContentsAsString(File file) throws IOException {
 		try (FileInputStream stream = new FileInputStream(file)) {
@@ -126,7 +130,7 @@ public class FileUtils {
 
 	/**
 	 * Extracts an file from this plugin to a temporary file
-	 * 
+	 *
 	 * @param bundle The plugin id of the bundle from which data should be extracted
 	 * @param folder The folder within this plugin
 	 * @param file   The file name
@@ -135,8 +139,8 @@ public class FileUtils {
 	 */
 	public static Path extractToTmpFile(final String bundle, final String folder, final String file)
 			throws IOException {
-		URL image = Platform.getBundle(bundle).getEntry(folder + File.separator + file);
-		Path tmp = Files.createTempFile(file, "");
+		final URL image = Platform.getBundle(bundle).getEntry(folder + File.separator + file);
+		final Path tmp = Files.createTempFile(file, "");
 		Files.copy(image.openStream(), tmp, StandardCopyOption.REPLACE_EXISTING);
 		tmp.toFile().deleteOnExit();
 		return tmp;
@@ -145,23 +149,23 @@ public class FileUtils {
 	/**
 	 * Recursively searches the folder for a file with the given name and returns
 	 * the first match
-	 * 
+	 *
 	 * @param folder   The folder
 	 * @param filename The file name
 	 * @return The match
 	 */
 	public static File findRecursive(File folder, String filename) {
 		File nextRoot = null;
-		LinkedList<File> queue = new LinkedList<>();
+		final LinkedList<File> queue = new LinkedList<>();
 		queue.add(folder);
 		while (!queue.isEmpty()) {
-			File tmp = queue.poll();
-			File tmpSubProject = new File(tmp, filename);
+			final File tmp = queue.poll();
+			final File tmpSubProject = new File(tmp, filename);
 			if (tmpSubProject.exists()) {
 				nextRoot = tmpSubProject;
 				break;
 			} else {
-				for (File f : tmp.listFiles()) {
+				for (final File f : tmp.listFiles()) {
 					if (f.isDirectory()) {
 						queue.add(f);
 					}
@@ -173,20 +177,20 @@ public class FileUtils {
 
 	/**
 	 * Creates a directory
-	 * 
+	 *
 	 * @param directoryPath - The path where the file will be created
 	 * @return - The new File with the given path
 	 */
 	public static File createDirectory(String directoryPath) {
 		try {
-			File dir = new File(directoryPath);
+			final File dir = new File(directoryPath);
 			if (dir.exists()) {
 				return dir;
 			}
 			if (dir.mkdirs()) {
 				return dir;
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			LOGGER.log(Level.ERROR, "Could not create directory " + directoryPath);
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
@@ -195,7 +199,7 @@ public class FileUtils {
 
 	/**
 	 * This method recursively deletes a file
-	 * 
+	 *
 	 * @param file The file
 	 * @return true, iff the file has been deleted successfully
 	 */
@@ -203,7 +207,7 @@ public class FileUtils {
 		boolean success = true;
 		if (file.exists()) {
 			if (file.isDirectory()) {
-				for (File f : file.listFiles()) {
+				for (final File f : file.listFiles()) {
 					if (f.isDirectory()) {
 						success &= recursiveDelete(f);
 						success &= f.delete();
@@ -219,9 +223,9 @@ public class FileUtils {
 
 	/**
 	 * This method recursively deletes a file
-	 * 
+	 *
 	 * @param file The file
-	 * @return 
+	 * @return
 	 * @return true, iff the file has been deleted successfully
 	 */
 	public static boolean recursiveDelete(String file) {
