@@ -16,6 +16,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
@@ -42,6 +43,7 @@ import guru.nidi.graphviz.model.MutableNode;
  * program representations created by the data flow handlers.
  *
  * @author dmebus
+ * @author speldszus
  *
  */
 public class GraphVisualizer {
@@ -82,7 +84,7 @@ public class GraphVisualizer {
 				}
 			} else if (memberDef instanceof VariableDeclarationFragment) {
 				memberType = "Field";
-				className = ((NamedElement) defContainer.eContainer()).getName();
+				className = getName(defContainer);
 			}
 			final MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
 					.graphAttrs().add("dpi", 72);
@@ -110,9 +112,26 @@ public class GraphVisualizer {
 	}
 
 	/**
+	 * A getter for the name of the object
+	 *
+	 * @param eObject An object
+	 * @return The name of the object
+	 */
+	private static String getName(final EObject eObject) {
+		String className;
+		final EObject eContainer = eObject.eContainer();
+		if (eContainer instanceof AnonymousClassDeclaration) {
+			className = "Anonymous-class";
+		} else {
+			className = ((NamedElement) eContainer).getName();
+		}
+		return className;
+	}
+
+	/**
 	 * Creates an output folder with the given name for the model
 	 *
-	 * @param model The model
+	 * @param model      The model
 	 * @param folderName The name of the output folder
 	 * @return The ouput folder
 	 */
@@ -126,12 +145,12 @@ public class GraphVisualizer {
 				folder = ifolder.getFolder(folderName).getLocation().toFile();
 			} catch (final IOException e) {
 				LOGGER.error(e.getMessage(), e);
-				folder = new File(folderName);
+				folder = new File(new File(folderName), projectName);
 			}
 		} else {
-			folder = new File(folderName);
+			folder = new File(new File(folderName), projectName);
 		}
-		if(!folder.exists()) {
+		if (!folder.exists()) {
 			folder.mkdirs();
 		}
 		return folder;
