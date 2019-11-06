@@ -1800,28 +1800,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTFlow_FlowSource() {
-		return (EReference)tFlowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTFlow_FlowTarget() {
-		return (EReference)tFlowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getTFlow_FlowOwner() {
-		return (EReference)tFlowEClass.getEStructuralFeatures().get(2);
+		return (EReference)tFlowEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2102,8 +2082,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEAttribute(tNameEClass, TNAME__TNAME);
 
 		tFlowEClass = createEClass(TFLOW);
-		createEReference(tFlowEClass, TFLOW__FLOW_SOURCE);
-		createEReference(tFlowEClass, TFLOW__FLOW_TARGET);
 		createEReference(tFlowEClass, TFLOW__FLOW_OWNER);
 
 		tAbstractFlowElementEClass = createEClass(TABSTRACT_FLOW_ELEMENT);
@@ -2448,14 +2426,12 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEAttribute(getTName_TName(), ecorePackage.getEString(), "tName", null, 1, 1, TName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tFlowEClass, TFlow.class, "TFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTFlow_FlowSource(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_OutgoingFlows(), "flowSource", null, 1, 1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTFlow_FlowTarget(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_IncomingFlows(), "flowTarget", null, 1, 1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTFlow_FlowOwner(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_OwnedFlows(), "flowOwner", null, 1, 1, TFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tAbstractFlowElementEClass, TAbstractFlowElement.class, "TAbstractFlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTAbstractFlowElement_OwnedFlows(), this.getTFlow(), this.getTFlow_FlowOwner(), "ownedFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTAbstractFlowElement_IncomingFlows(), this.getTFlow(), this.getTFlow_FlowTarget(), "incomingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTAbstractFlowElement_OutgoingFlows(), this.getTFlow(), this.getTFlow_FlowSource(), "outgoingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTAbstractFlowElement_IncomingFlows(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_OutgoingFlows(), "incomingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTAbstractFlowElement_OutgoingFlows(), this.getTAbstractFlowElement(), this.getTAbstractFlowElement_IncomingFlows(), "outgoingFlows", null, 0, -1, TAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tReadWriteEClass, TReadWrite.class, "TReadWrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

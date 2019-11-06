@@ -63,7 +63,7 @@ public class StatementHandlerDataFlow {
 	/**
 	 * The member definition corresponding to this handler.
 	 */
-	private final EObject memberDef;
+	private final MDefinition memberDef;
 
 	/**
 	 * The expression handler associated with this statement handler.
@@ -82,7 +82,7 @@ public class StatementHandlerDataFlow {
 	}
 
 	public StatementHandlerDataFlow(VariableDeclarationFragment correspondingMember) {
-		this.memberDef = correspondingMember;
+		this.memberDef = (MDefinition) correspondingMember.getVariablesContainer();
 		this.expressionHandler = new ExpressionHandlerDataFlow(this);
 		this.miscHandler = new MiscHandlerDataFlow(this);
 	}
@@ -436,7 +436,7 @@ public class StatementHandlerDataFlow {
 		return this.alreadySeen;
 	}
 
-	public EObject getMemberDef() {
+	public MDefinition getMemberDef() {
 		return this.memberDef;
 	}
 

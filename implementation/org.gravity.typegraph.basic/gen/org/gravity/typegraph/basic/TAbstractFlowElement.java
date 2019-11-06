@@ -41,30 +41,30 @@ public interface TAbstractFlowElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Flows</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.typegraph.basic.TFlow}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFlow#getFlowTarget <em>Flow Target</em>}'.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractFlowElement}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows <em>Outgoing Flows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_IncomingFlows()
-	 * @see org.gravity.typegraph.basic.TFlow#getFlowTarget
-	 * @model opposite="flowTarget"
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows
+	 * @model opposite="outgoingFlows"
 	 * @generated
 	 */
-	EList<TFlow> getIncomingFlows();
+	EList<TAbstractFlowElement> getIncomingFlows();
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing Flows</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.typegraph.basic.TFlow}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFlow#getFlowSource <em>Flow Source</em>}'.
+	 * The list contents are of type {@link org.gravity.typegraph.basic.TAbstractFlowElement}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows <em>Incoming Flows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_OutgoingFlows()
-	 * @see org.gravity.typegraph.basic.TFlow#getFlowSource
-	 * @model opposite="flowSource"
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows
+	 * @model opposite="incomingFlows"
 	 * @generated
 	 */
-	EList<TFlow> getOutgoingFlows();
+	EList<TAbstractFlowElement> getOutgoingFlows();
 
 } // TAbstractFlowElement

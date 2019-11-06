@@ -78,25 +78,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural
 		// data flows
 		for (final StatementHandlerDataFlow handler : handlers) {
-			// Determination of member's type
-			final EObject memberDef = handler.getMemberDef();
-			MDefinition memberDefTyped = null;
-			if (memberDef instanceof MAbstractMethodDefinition) {
-				memberDefTyped = (MDefinition) memberDef;
-			} else if (memberDef instanceof VariableDeclarationFragment) {
-				memberDefTyped = (MDefinition) ((VariableDeclarationFragment) memberDef).getVariablesContainer();
-			} else {
-				LOGGER.log(Level.INFO, "ERROR: Handler with unknown member type " + memberDef.getClass().getName()
-						+ " in DataFlowProcessor");
-				return false;
-			}
 			// Reduction of intra-DFGs
 			reduceIntraDFGFlows(handler);
 
 			// Insertion of inter-procedural data flows
 			for (final FlowNode node : handler.getMemberRef()) {
 				// Setting flows
-				setFlows(memberDefTyped, node, handler);
+				createFlows(node, handler);
 			}
 		}
 		if (GravityActivator.isVerbose()) {
@@ -109,12 +97,11 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Creates the flows
 	 *
-	 * @param definition The definition owning the flow
-	 * @param node       The node for which flows should be created
-	 * @param handler    The handler used to discover the node
+	 * @param node    The node for which flows should be created
+	 * @param handler The handler used to discover the node
 	 * @return true, if creating the flows was successful
 	 */
-	private boolean setFlows(MDefinition definition, FlowNode node, StatementHandlerDataFlow handler) {
+	private boolean createFlows(FlowNode node, StatementHandlerDataFlow handler) {
 		// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
 		for (final FlowNode inNode : buildInRef(handler, node)) {
 			if (inNode == node) {
@@ -128,7 +115,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			if (trg == node) {
 				continue;
 			}
-			if (!createOutFlow(node, trg, definition)) {
+			if (!createOutFlow(node, trg, handler.getMemberDef())) {
 				return false;
 			}
 		}
@@ -139,7 +126,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * Creates a new incoming flow
 	 *
 	 * @param inNode The source of the flow
-	 * @param trg The target of the flow
+	 * @param trg    The target of the flow
 	 * @return true, if the flow has been created successfully
 	 */
 	private boolean createInFlow(final FlowNode src, final FlowNode trg) {
@@ -174,15 +161,14 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 *
 	 * Creates a new outgoing flow
 	 *
-	 * @param src         The source of the flow
-	 * @param trg         The target of the flow
-	 * @param definition  The definition containing the reason of the flow
+	 * @param src        The source of the flow
+	 * @param trg        The target of the flow
+	 * @param definition The definition containing the reason of the flow
 	 * @return true, if the flow has been created successfully
 	 */
-	private boolean createOutFlow(FlowNode src, FlowNode trg,
-			MAbstractFlowElement definition) {
-		final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
+	private boolean createOutFlow(FlowNode src, FlowNode trg, MAbstractFlowElement definition) {
 		final MAbstractFlowElement srcObject = (MAbstractFlowElement) src.getModelElement();
+		final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
 		flow.setFlowSource(srcObject);
 		flow.setFlowOwner(srcObject);
 
@@ -211,9 +197,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				flow.setFlowOwner(
 						(MAbstractMethodDefinition) ((MSingleVariableDeclaration) trgObject).getMethodDeclaration());
 			}
-		} else if (trgObject instanceof IfStatement || trgObject instanceof WhileStatement || trgObject instanceof ForStatement
-				|| trgObject instanceof EnhancedForStatement || trgObject instanceof DoStatement
-				|| trgObject instanceof SwitchStatement) {
+		} else if (trgObject instanceof IfStatement || trgObject instanceof WhileStatement
+				|| trgObject instanceof ForStatement || trgObject instanceof EnhancedForStatement
+				|| trgObject instanceof DoStatement || trgObject instanceof SwitchStatement) {
 			flow.setFlowTarget(definition);
 		} else if (trgObject instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the
 			// target
@@ -286,20 +272,18 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	private Set<FlowNode> buildOutRef(StatementHandlerDataFlow handler, FlowNode node) {
 		final Map<EObject, FlowNode> alreadySeen = handler.getAlreadySeen();
 		final Set<FlowNode> outRef = node.getOutRef();
-		final int size = outRef.size();
-		if (size > 1) {
-			final Set<FlowNode> toRemove = new HashSet<>();
-			for (final FlowNode flowNode : outRef) {
-				final EObject modelElement = flowNode.getModelElement();
-				if (modelElement instanceof MAbstractMethodInvocation) { // Remove flow into call, if there's
-					// actually a paramFlow
-					node.setFlowOwner((MAbstractMethodInvocation) modelElement);
-					toRemove.add(flowNode);
-					alreadySeen.get(modelElement).getInRef().remove(node);
-				}
+		final Set<FlowNode> toRemove = new HashSet<>();
+		for (final FlowNode outgoingFlowTarget : outRef) {
+			final EObject modelElement = outgoingFlowTarget.getModelElement();
+			if (modelElement instanceof MAbstractMethodInvocation) {
+				// Remove flow into call, if there's actually a paramFlow
+				node.setFlowOwner((MAbstractMethodInvocation) modelElement);
+				toRemove.add(outgoingFlowTarget);
+				alreadySeen.get(modelElement).getInRef().remove(node);
 			}
-			outRef.removeAll(toRemove);
 		}
+		outRef.removeAll(toRemove);
+
 		return outRef;
 	}
 

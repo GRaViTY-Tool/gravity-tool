@@ -45,7 +45,7 @@
 
 #target {
 	tFlow:TFlow {
-		++	-flowSource -> tSource
+		++	-incomingFlows-> tSource
 	}
 	
 	tSource:TAbstractFlowElement
@@ -76,7 +76,7 @@
 
 #target {
 	tFlow:TFlow {
-		++	-flowTarget -> tTarget
+		++	-outgoingFlows-> tTarget
 	}
 	
 	tTarget:TAbstractFlowElement

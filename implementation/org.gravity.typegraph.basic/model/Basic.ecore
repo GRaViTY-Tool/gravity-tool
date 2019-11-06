@@ -292,10 +292,6 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TFlow" eSuperTypes="#//TAbstractFlowElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSource" lowerBound="1"
-        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/outgoingFlows"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTarget" lowerBound="1"
-        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/incomingFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
         eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
@@ -303,9 +299,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
         eType="#//TFlow" containment="true" eOpposite="#//TFlow/flowOwner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
-        eType="#//TFlow" eOpposite="#//TFlow/flowTarget"/>
+        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/outgoingFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
-        eType="#//TFlow" eOpposite="#//TFlow/flowSource"/>
+        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/incomingFlows"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructor" eSuperTypes="#//annotations/TAnnotation"/>

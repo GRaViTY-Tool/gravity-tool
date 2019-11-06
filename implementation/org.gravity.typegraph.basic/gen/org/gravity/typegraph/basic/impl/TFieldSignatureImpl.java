@@ -70,7 +70,7 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TFlow> incomingFlows;
+	protected EList<TAbstractFlowElement> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -80,7 +80,7 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TFlow> outgoingFlows;
+	protected EList<TAbstractFlowElement> outgoingFlows;
 
 	/**
 	 * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
@@ -140,9 +140,9 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 */
 	@Override
-	public EList<TFlow> getIncomingFlows() {
+	public EList<TAbstractFlowElement> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS, BasicPackage.TFLOW__FLOW_TARGET);
+			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<TAbstractFlowElement>(TAbstractFlowElement.class, this, BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS, BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
 		}
 		return incomingFlows;
 	}
@@ -153,9 +153,9 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 	 * @generated
 	 */
 	@Override
-	public EList<TFlow> getOutgoingFlows() {
+	public EList<TAbstractFlowElement> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList<TFlow>(TFlow.class, this, BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS, BasicPackage.TFLOW__FLOW_SOURCE);
+			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<TAbstractFlowElement>(TAbstractFlowElement.class, this, BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS, BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
 		}
 		return outgoingFlows;
 	}
@@ -396,11 +396,11 @@ public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSigna
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends TFlow>)newValue);
+				getIncomingFlows().addAll((Collection<? extends TAbstractFlowElement>)newValue);
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends TFlow>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends TAbstractFlowElement>)newValue);
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();

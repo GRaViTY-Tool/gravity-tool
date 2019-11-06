@@ -3451,31 +3451,13 @@ public interface BasicPackage extends EPackage {
 	int TFLOW__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>Flow Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TFLOW__FLOW_SOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Flow Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TFLOW__FLOW_TARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFLOW__FLOW_OWNER = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
+	int TFLOW__FLOW_OWNER = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>TFlow</em>' class.
@@ -3484,7 +3466,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFLOW_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
+	int TFLOW_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>TFlow</em>' class.
@@ -5521,28 +5503,6 @@ public interface BasicPackage extends EPackage {
 	EClass getTFlow();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TFlow#getFlowSource <em>Flow Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Flow Source</em>'.
-	 * @see org.gravity.typegraph.basic.TFlow#getFlowSource()
-	 * @see #getTFlow()
-	 * @generated
-	 */
-	EReference getTFlow_FlowSource();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TFlow#getFlowTarget <em>Flow Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Flow Target</em>'.
-	 * @see org.gravity.typegraph.basic.TFlow#getFlowTarget()
-	 * @see #getTFlow()
-	 * @generated
-	 */
-	EReference getTFlow_FlowTarget();
-
-	/**
 	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFlow#getFlowOwner <em>Flow Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6880,22 +6840,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TFLOW = eINSTANCE.getTFlow();
-
-		/**
-		 * The meta object literal for the '<em><b>Flow Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFLOW__FLOW_SOURCE = eINSTANCE.getTFlow_FlowSource();
-
-		/**
-		 * The meta object literal for the '<em><b>Flow Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFLOW__FLOW_TARGET = eINSTANCE.getTFlow_FlowTarget();
 
 		/**
 		 * The meta object literal for the '<em><b>Flow Owner</b></em>' container reference feature.
