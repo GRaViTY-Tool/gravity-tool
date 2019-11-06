@@ -91,15 +91,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				return false;
 			}
 			// Reduction of intra-DFGs
-			final Map<EObject, FlowNode> reducedDFG = reduceIntraDFGFlows(handler);
-			// Insertion of inter-procedural data flows
+			reduceIntraDFGFlows(handler);
 
+			// Insertion of inter-procedural data flows
 			for (final FlowNode node : handler.getMemberRef()) {
-				// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
-				final Set<FlowNode> outRef = buildOutRef(reducedDFG, node);
-				final Set<FlowNode> inRef = buildInRef(handler, node);
 				// Setting flows
-				setFlows(memberDefTyped, node, outRef, inRef);
+				setFlows(memberDefTyped, node, handler);
 			}
 		}
 		if (GravityActivator.isVerbose()) {
@@ -110,101 +107,131 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	}
 
 	/**
-	 * @param definition
-	 * @param node
-	 * @param access
-	 * @param outRef
-	 * @param inRef
+	 * Creates the flows
+	 *
+	 * @param definition The definition owning the flow
+	 * @param node       The node for which flows should be created
+	 * @param handler    The handler used to discover the node
+	 * @return true, if creating the flows was successful
 	 */
-	private void setFlows(MDefinition definition, FlowNode node, Set<FlowNode> outRef, Set<FlowNode> inRef) {
-		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
-		MFlow accessOut = null;
-		for (final FlowNode inNode : inRef) {
+	private boolean setFlows(MDefinition definition, FlowNode node, StatementHandlerDataFlow handler) {
+		// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
+		for (final FlowNode inNode : buildInRef(handler, node)) {
 			if (inNode == node) {
 				continue;
 			}
-			final EObject inElement = inNode.getModelElement();
-			if (inElement instanceof SingleVariableDeclaration) {
-				accessOut = ModiscoFactory.eINSTANCE.createMFlow();
-				accessOut.setFlowSource(((MSingleVariableDeclaration) inElement).getMEntry());
-				if (outRef.isEmpty()) { // Handling parameter flows, which end in an access (e. g. if access is in an
-					// assignment to a local)
-					accessOut.setFlowOwner(access);
-					accessOut.setFlowTarget(access);
-				} else { // Set flowOwner to parameter's member, as the access will be removed in the TGG
-					// transformation
-					accessOut.setFlowOwner((MAbstractMethodDefinition) ((MSingleVariableDeclaration) inElement)
-							.getMethodDeclaration());
-				}
-			} else {
-				// Also create incoming flow here, if it's not coming from an access (to avoid
-				// redundancy)
-				if (!(inElement instanceof SingleVariableAccess || inElement instanceof AbstractMethodInvocation)) {
-					final MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
-					if (inElement instanceof VariableDeclarationFragment) {
-						final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) inElement)
-								.getVariablesContainer();
-						if (variablesContainer instanceof FieldDeclaration) {
-							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
-							accessIn.setFlowSource(fieldDef.getMSignature());
-						} else {
-							LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
-						}
-					} else {
-						accessIn.setFlowSource((MAbstractFlowElement) inElement);
-					}
-					accessIn.setFlowTarget(access);
-					accessIn.setFlowOwner(access);
-				}
+			if (!createInFlow(inNode, node)) {
+				return false;
 			}
 		}
-		for (final FlowNode outNode : outRef) {
-			if (outNode == node) {
+		for (final FlowNode trg : buildOutRef(handler, node)) {
+			if (trg == node) {
 				continue;
 			}
-			if (accessOut == null || !(accessOut.getFlowSource() instanceof MEntry)) {
-				accessOut = ModiscoFactory.eINSTANCE.createMFlow();
-				accessOut.setFlowSource(access);
-				accessOut.setFlowOwner(access);
-			}
-			final EObject outElement = outNode.getModelElement();
-			if (outElement instanceof ReturnStatement) {
-				accessOut.setFlowTarget(definition);
-			} else if (outElement instanceof VariableDeclarationFragment) {
-				final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) outElement)
-						.getVariablesContainer();
-				if (variablesContainer instanceof FieldDeclaration) {
-					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
-					accessOut.setFlowTarget(fieldDef);
-				} else {
-					LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
-				}
-			} else if (outElement instanceof MSingleVariableDeclaration) {
-				completeFlowForSigParam(outElement, node, accessOut);
-			} else if (outElement instanceof IfStatement || outElement instanceof WhileStatement
-					|| outElement instanceof ForStatement || outElement instanceof EnhancedForStatement
-					|| outElement instanceof DoStatement || outElement instanceof SwitchStatement) {
-				accessOut.setFlowTarget(definition);
-			} else {
-				if (outElement instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the target
-					// is another access
-					final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
-					final VariableDeclaration variable = mSVA.getVariable();
-					if (variable instanceof MSingleVariableDeclaration) {
-						accessOut.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
-					} else if (variable.eContainer() instanceof MFieldDefinition
-							&& accessOut.getFlowSource() instanceof MEntry) {
-						accessOut.setFlowOwner(mSVA);
-						accessOut.setFlowTarget(mSVA);
-					} else { // Basically flows into field accesses without MEntry as sourceb
-						accessOut.setFlowTarget((MAbstractFlowElement) outElement);
-					}
-				} else {
-					final MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-					accessOut.setFlowTarget(outTarget);
-				}
+			if (!createOutFlow(node, trg, definition)) {
+				return false;
 			}
 		}
+		return true;
+	}
+
+	/**
+	 * Creates a new incoming flow
+	 *
+	 * @param inNode The source of the flow
+	 * @param trg The target of the flow
+	 * @return true, if the flow has been created successfully
+	 */
+	private boolean createInFlow(final FlowNode src, final FlowNode trg) {
+		final EObject srcObject = src.getModelElement();
+		if (!(srcObject instanceof SingleVariableDeclaration)) {
+			// Also create incoming flow here, if it's not coming from an access (to avoid
+			// redundancy)
+			if (!(srcObject instanceof SingleVariableAccess || srcObject instanceof AbstractMethodInvocation)) {
+				final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
+				if (srcObject instanceof VariableDeclarationFragment) {
+					final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) srcObject)
+							.getVariablesContainer();
+					if (variablesContainer instanceof FieldDeclaration) {
+						final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+						flow.setFlowSource(fieldDef.getMSignature());
+					} else {
+						LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+						return false;
+					}
+				} else {
+					flow.setFlowSource((MAbstractFlowElement) srcObject);
+				}
+				final MAbstractFlowElement trgObject = (MAbstractFlowElement) trg.getModelElement();
+				flow.setFlowTarget(trgObject);
+				flow.setFlowOwner(trgObject);
+			}
+		}
+		return true;
+	}
+
+	/**
+	 *
+	 * Creates a new outgoing flow
+	 *
+	 * @param src         The source of the flow
+	 * @param trg         The target of the flow
+	 * @param definition  The definition containing the reason of the flow
+	 * @return true, if the flow has been created successfully
+	 */
+	private boolean createOutFlow(FlowNode src, FlowNode trg,
+			MAbstractFlowElement definition) {
+		final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
+		final MAbstractFlowElement srcObject = (MAbstractFlowElement) src.getModelElement();
+		flow.setFlowSource(srcObject);
+		flow.setFlowOwner(srcObject);
+
+		final EObject trgObject = trg.getModelElement();
+		if (trgObject instanceof ReturnStatement) {
+			flow.setFlowTarget(definition);
+		} else if (trgObject instanceof VariableDeclarationFragment) {
+			final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) trgObject)
+					.getVariablesContainer();
+			if (variablesContainer instanceof FieldDeclaration) {
+				final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+				flow.setFlowTarget(fieldDef);
+			} else {
+				LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+				return false;
+			}
+		} else if (trgObject instanceof MSingleVariableDeclaration) {
+			// Set target
+			flow.setFlowTarget(((MSingleVariableDeclaration) trgObject).getMEntry());
+			final MAbstractMethodInvocation invocation = src.getFlowOwner();
+			if (invocation != null) {
+				flow.setFlowOwner(invocation);
+			} else {
+				LOGGER.log(Level.INFO, "AbstractMethodInvocation for argument access wasn't found. "
+						+ "FlowOwner is set to default (flow target).");
+				flow.setFlowOwner(
+						(MAbstractMethodDefinition) ((MSingleVariableDeclaration) trgObject).getMethodDeclaration());
+			}
+		} else if (trgObject instanceof IfStatement || trgObject instanceof WhileStatement || trgObject instanceof ForStatement
+				|| trgObject instanceof EnhancedForStatement || trgObject instanceof DoStatement
+				|| trgObject instanceof SwitchStatement) {
+			flow.setFlowTarget(definition);
+		} else if (trgObject instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the
+			// target
+			// is another access
+			final MSingleVariableAccess mSVA = (MSingleVariableAccess) trgObject;
+			final VariableDeclaration variable = mSVA.getVariable();
+			if (variable instanceof MSingleVariableDeclaration) {
+				flow.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
+			} else if (variable.eContainer() instanceof MFieldDefinition && flow.getFlowSource() instanceof MEntry) {
+				flow.setFlowOwner(mSVA);
+				flow.setFlowTarget(mSVA);
+			} else { // Basically flows into field accesses without MEntry as source
+				flow.setFlowTarget((MAbstractFlowElement) trgObject);
+			}
+		} else {
+			flow.setFlowTarget((MAbstractFlowElement) trgObject);
+		}
+		return true;
 	}
 
 	/**
@@ -252,11 +279,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	}
 
 	/**
-	 * @param reducedDFG
+	 * @param handler
 	 * @param node
 	 * @return
 	 */
-	private Set<FlowNode> buildOutRef(Map<EObject, FlowNode> reducedDFG, FlowNode node) {
+	private Set<FlowNode> buildOutRef(StatementHandlerDataFlow handler, FlowNode node) {
+		final Map<EObject, FlowNode> alreadySeen = handler.getAlreadySeen();
 		final Set<FlowNode> outRef = node.getOutRef();
 		final int size = outRef.size();
 		if (size > 1) {
@@ -267,7 +295,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					// actually a paramFlow
 					node.setFlowOwner((MAbstractMethodInvocation) modelElement);
 					toRemove.add(flowNode);
-					reducedDFG.get(modelElement).getInRef().remove(node);
+					alreadySeen.get(modelElement).getInRef().remove(node);
 				}
 			}
 			outRef.removeAll(toRemove);
@@ -279,7 +307,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param handler
 	 * @return
 	 */
-	private Map<EObject, FlowNode> reduceIntraDFGFlows(StatementHandlerDataFlow handler) {
+	private void reduceIntraDFGFlows(StatementHandlerDataFlow handler) {
 		final Map<EObject, FlowNode> reducedDFG = handler.getAlreadySeen();
 		for (final FlowNode flowNode : new ArrayList<>(reducedDFG.values())) {
 			final EObject node = flowNode.getModelElement();
@@ -309,14 +337,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				reduceNodeInDFG(flowNode, reducedDFG);
 			}
 		}
-		return reducedDFG;
 	}
 
 	/**
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
 	 *
-	 * @param flowNode       The node's key in reducedDFG.
+	 * @param flowNode   The node's key in reducedDFG.
 	 * @param reducedDFG The alreadySeen on which the reduction should be performed.
 	 */
 	private void reduceNodeInDFG(FlowNode flowNode, Map<EObject, FlowNode> reducedDFG) {
@@ -337,33 +364,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		inRef.clear();
 		outRef.clear();
 		reducedDFG.remove(flowNode.getModelElement());
-	}
-
-	/**
-	 * Completes the given flow node's entries (target and owner) by obtaining the
-	 * signature parameter corresponding to defParamObj (and setting it as target)
-	 * and setting the flowOwner to the MMethodInvocation in which currentAccess is
-	 * contained.
-	 *
-	 * @param defParamObj   The model object of the called method's definition.
-	 * @param currentAccess The FlowNode of the currently processed access.
-	 * @param flow          The flow, which is supposed to be completed.
-	 */
-	private void completeFlowForSigParam(EObject defParamObj, FlowNode currentAccess, MFlow flow) {
-		// Set target
-		final MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) defParamObj;
-		final MEntry sigParamTarget = paramTarget.getMEntry();
-		flow.setFlowTarget(sigParamTarget);
-
-		// Set owner
-		final MAbstractMethodInvocation invocation = currentAccess.getFlowOwner();
-		if (invocation != null) {
-			flow.setFlowOwner(invocation);
-		} else {
-			LOGGER.log(Level.INFO,
-					"AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
-			flow.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
-		}
 	}
 
 	/**
