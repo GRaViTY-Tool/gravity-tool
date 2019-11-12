@@ -95,6 +95,15 @@ public class SearchTypeGraph {
 		public IFitnessCalculator getCalculator() {
 			return calculator;
 		}
+
+		public IFitnessDimension<TransformationSolution> createFitnessDimension() {
+			return new AbstractEGraphFitnessDimension(this.name, this.type) {
+				@Override
+				protected double internalEvaluate(TransformationSolution solution) {
+					return getCalculator().calculate(EGraphUtil.getPG(solution.getResultGraph()));
+				}
+			};
+		}
 	}
 
 	public void initializeFitnessFunctions() {
@@ -133,17 +142,6 @@ public class SearchTypeGraph {
 				new TransformationParameterMutation(SearchParameters.transformationParameterMutationProbability,
 						orchestration.getModuleManager()),
 				new TransformationPlaceholderMutation(SearchParameters.transformationPlaceholderMutationProbability)));
-	}
-
-	// -----------------------------non configurable
-	// stuff-------------------------------------------
-	protected IFitnessDimension<TransformationSolution> createFitnessDimension(FitnessFunction function) {
-		return new AbstractEGraphFitnessDimension(function.name, function.type) {
-			@Override
-			protected double internalEvaluate(TransformationSolution solution) {
-				return function.getCalculator().calculate(EGraphUtil.getPG(solution.getResultGraph()));
-			}
-		};
 	}
 
 	protected IFitnessDimension<TransformationSolution> createSolutionLengthFitness() {
@@ -189,10 +187,10 @@ public class SearchTypeGraph {
 		function.addObjective(createSolutionLengthFitness());
 
 		for (FitnessFunction fitness : fitnessFunctions) {
-			function.addObjective(createFitnessDimension(fitness));
+			function.addObjective(fitness.createFitnessDimension());
 		}
 		for (FitnessFunction constraint : constraints) {
-			function.addConstraint(createFitnessDimension(constraint));
+			function.addConstraint(constraint.createFitnessDimension());
 		}
 		if (SearchParameters.useRepair) {
 			function.setSolutionRepairer(new VisibilityRepairer());
