@@ -48,7 +48,8 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
  org.eclipse.emf.henshin.interpreter,
- org.gravity.typegraph.basic
+ org.gravity.typegraph.basic,
+ org.gravity.security.annotations
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

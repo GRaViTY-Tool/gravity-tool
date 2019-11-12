@@ -11,7 +11,6 @@ Require-Bundle: org.junit,
  org.gravity.hulk.antipatterngraph,
  org.gravity.typegraph.basic,
  org.gravity.tgg.modisco,
- org.gravity.eclipse.tests,
  org.emoflon.ibex.tgg.core.language,
  org.emoflon.ibex.tgg.core.runtime
 Automatic-Module-Name: org.gravity.hulk.tests
