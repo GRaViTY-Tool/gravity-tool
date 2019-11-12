@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/org/gravity/eclipse/importer/gradle/GradleDependencies.java=UTF-8
+encoding//src/org/gravity/eclipse/importer/gradle/GradleIncludes.java=UTF-8
 encoding//src/org/gravity/eclipse/messages.properties=ISO-8859-1
 encoding/<project>=UTF-8
