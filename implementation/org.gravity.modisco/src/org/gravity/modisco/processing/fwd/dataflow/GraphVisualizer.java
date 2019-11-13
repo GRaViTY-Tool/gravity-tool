@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.gmt.modisco.java.Assignment;
 import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
+import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.MethodInvocation;
 import org.eclipse.gmt.modisco.java.NamedElement;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -72,18 +72,20 @@ public class GraphVisualizer {
 			final StatementHandlerDataFlow handler = handlers.get(i);
 			final EObject memberDef = handler.getMemberDef();
 			String className = "Unknown";
-			final String memberName = ((NamedElement) memberDef).getName();
+			String memberName = "Unknown";
 			String memberType = "Misc";
 			final EObject defContainer = memberDef.eContainer();
 			if (memberDef instanceof MAbstractMethodDefinition) {
+				memberName = ((NamedElement) memberDef).getName();
 				memberType = "Method";
 				if (defContainer instanceof MAnonymous) {
 					className = "Anonymous-class";
 				} else {
 					className = ((NamedElement) defContainer).getName();
 				}
-			} else if (memberDef instanceof VariableDeclarationFragment) {
+			} else if (memberDef instanceof FieldDeclaration) {
 				memberType = "Field";
+				memberName = ((FieldDeclaration) memberDef).getFragments().get(0).getName();
 				className = getName(defContainer);
 			}
 			final MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
@@ -102,9 +104,9 @@ public class GraphVisualizer {
 			// Set flow edges
 			drawFlowEdges(graphNodes, alreadySeenNodes);
 			try {
-
-				Graphviz.fromGraph(g).width(5000).render(Format.PNG)
-				.toFile(new File(folder, "Class-" + className + "-" + memberType + "-" + memberName + ".png"));
+				final File location = new File(folder,
+						"Class-" + className + "-" + memberType + "-" + memberName + ".png");
+				Graphviz.fromGraph(g).width(5000).render(Format.PNG).toFile(location);
 			} catch (final IOException e) {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
@@ -118,14 +120,10 @@ public class GraphVisualizer {
 	 * @return The name of the object
 	 */
 	private static String getName(final EObject eObject) {
-		String className;
-		final EObject eContainer = eObject.eContainer();
-		if (eContainer instanceof AnonymousClassDeclaration) {
-			className = "Anonymous-class";
-		} else {
-			className = ((NamedElement) eContainer).getName();
+		if (eObject instanceof AnonymousClassDeclaration) {
+			return "Anonymous-class";
 		}
-		return className;
+		return ((NamedElement) eObject).getName();
 	}
 
 	/**

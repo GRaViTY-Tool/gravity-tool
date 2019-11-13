@@ -40,8 +40,10 @@ import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.gravity.modisco.MDefinition;
 
 /**
- * A statement handler for all kinds of java statements, which determines the data flow between statements.
- * The inter-statement flow is used to derive inter-member flow, which is stored in the corresponding fields of each handler.
+ * A statement handler for all kinds of java statements, which determines the
+ * data flow between statements. The inter-statement flow is used to derive
+ * inter-member flow, which is stored in the corresponding fields of each
+ * handler.
  *
  * @author dmebus
  *
@@ -56,7 +58,8 @@ public class StatementHandlerDataFlow {
 	private final Set<FlowNode> memberRef = new HashSet<>();
 
 	/**
-	 * The statements and expressions, which have already been processed, associated with their FlowNode representations.
+	 * The statements and expressions, which have already been processed, associated
+	 * with their FlowNode representations.
 	 */
 	private final Map<EObject, FlowNode> alreadySeen = new HashMap<>();
 
@@ -376,7 +379,8 @@ public class StatementHandlerDataFlow {
 		if (!arguments.isEmpty()) {
 			for (final Expression argument : arguments) {
 				final FlowNode argumentNode = this.expressionHandler.handle(argument);
-				final FlowNode paramNode = this.miscHandler.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
+				final FlowNode paramNode = this.miscHandler
+						.handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
 				argumentNode.addOutRef(paramNode);
 			}
 			getMemberRef().add(member);
@@ -388,7 +392,8 @@ public class StatementHandlerDataFlow {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in ConstructorInvocation handling.");
+			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName()
+					+ " found in ConstructorInvocation handling.");
 		}
 		return member;
 	}
@@ -449,11 +454,13 @@ public class StatementHandlerDataFlow {
 	}
 
 	/**
-	 * Checks, if a (non-null) FlowNode has already been created for the given element and returns it.
-	 * Otherwise a new FlowNode is created, inserted into alreadySeen and returned.
+	 * Checks, if a (non-null) FlowNode has already been created for the given
+	 * element and returns it. Otherwise a new FlowNode is created, inserted into
+	 * alreadySeen and returned.
 	 *
 	 * @param element The element, for which the check is performed.
-	 * @return If already present, the FlowNode for the given element. A new FlowNode for the element otherwise.
+	 * @return If already present, the FlowNode for the given element. A new
+	 *         FlowNode for the element otherwise.
 	 */
 	FlowNode getFlowNodeForElement(EObject element) {
 		final FlowNode seenNode = this.alreadySeen.get(element);
@@ -464,5 +471,14 @@ public class StatementHandlerDataFlow {
 		final FlowNode member = new FlowNode(element);
 		this.alreadySeen.put(element, member);
 		return member;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + '(' + this.memberDef + ')';
+	}
+
+	public FlowNode remove(EObject key) {
+		return this.alreadySeen.remove(key);
 	}
 }
