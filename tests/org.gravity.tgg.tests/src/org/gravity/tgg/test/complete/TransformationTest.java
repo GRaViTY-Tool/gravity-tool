@@ -13,7 +13,6 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -52,22 +51,20 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
 import org.gravity.tgg.modisco.MoDiscoTGGConverter;
-import org.gravity.tgg.test.util.ToFileLogger;
 import org.gravity.tgg.uml.Transformation;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
-import com.googlecode.junittoolbox.ParallelParameterized;
 
 import language.LanguagePackage;
 import runtime.RuntimePackage;
@@ -82,7 +79,7 @@ import runtime.RuntimePackage;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(ParallelParameterized.class)
+@RunWith(Parameterized.class)
 public class TransformationTest {
 
 	/**
@@ -94,9 +91,6 @@ public class TransformationTest {
 	 * The logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(TransformationTest.class);
-
-	@Rule
-	public ToFileLogger logToFile = new ToFileLogger(Paths.get(new File("testlogs").toURI()));
 
 	protected final IJavaProject project;
 	protected final String name;
