@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -260,13 +263,14 @@ public class EclipseProjectUtil {
 	 */
 	public static List<IProject> importProjects(File rootFolder, IProgressMonitor monitor) throws CoreException {
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		final List<IProject> projects = new LinkedList<>();
-		for (final File projectFolder : rootFolder.listFiles()) {
-			final IProject project = importProject(projectFolder, monitor);
-			if (project != null) {
-				projects.add(project);
+		final List<IProject> projects = Stream.of(rootFolder.listFiles()).parallel().map(projectFolder -> {
+			try {
+				return importProject(projectFolder, monitor);
+			} catch (final CoreException e) {
+				LOGGER.error(e);
+				return null;
 			}
-		}
+		}).filter(Objects::nonNull).collect(Collectors.toList());
 		root.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		return projects;
 	}

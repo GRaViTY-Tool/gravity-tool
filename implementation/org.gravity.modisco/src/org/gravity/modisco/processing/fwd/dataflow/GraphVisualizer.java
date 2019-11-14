@@ -5,7 +5,6 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -66,10 +65,10 @@ public class GraphVisualizer {
 	 * @param folderName The name, that should be given to the output folder. If a
 	 *                   folder with that name already exists, it is used.
 	 */
-	public static void drawGraphs(MGravityModel model, List<StatementHandlerDataFlow> handlers, String folderName) {
+	public static void drawGraphs(MGravityModel model, List<MemberHandler> handlers, String folderName) {
 		final File folder = getOutputLocation(model, folderName);
 		for (int i = 0; i < handlers.size(); i++) {
-			final StatementHandlerDataFlow handler = handlers.get(i);
+			final MemberHandler handler = handlers.get(i);
 			final EObject memberDef = handler.getMemberDef();
 			String className = "Unknown";
 			String memberName = "Unknown";
@@ -92,7 +91,7 @@ public class GraphVisualizer {
 					.graphAttrs().add("dpi", 72);
 			final HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
-			final Collection<FlowNode> alreadySeenNodes = new ArrayList<>(handler.getAlreadySeen().values());
+			final Collection<FlowNode> alreadySeenNodes = handler.getAllFlowNodes();
 			for (final FlowNode node : alreadySeenNodes) {
 				final MutableNode graphNode = getDotNode(node);
 				g.add(graphNode);
@@ -100,7 +99,7 @@ public class GraphVisualizer {
 			}
 			// Set containment edges (+ links to nodes of called/accessed methods/fields)
 			// for all graph nodes
-			drawContainmentEdges(handler, graphNodes, alreadySeenNodes);
+			drawContainmentEdges(handler, graphNodes);
 			// Set flow edges
 			drawFlowEdges(graphNodes, alreadySeenNodes);
 			try {
@@ -179,30 +178,29 @@ public class GraphVisualizer {
 	 *
 	 * @param handler
 	 * @param graphNodes       The nodes of the graph
-	 * @param alreadySeenNodes
 	 */
-	private static void drawContainmentEdges(StatementHandlerDataFlow handler,
-			HashMap<FlowNode, MutableNode> graphNodes, Collection<FlowNode> alreadySeenNodes) {
-		for (final FlowNode node : alreadySeenNodes) {
+	private static void drawContainmentEdges(MemberHandler handler,
+			HashMap<FlowNode, MutableNode> graphNodes) {
+		for (final FlowNode node : handler.getAllFlowNodes()) {
 			final MutableNode graphNode = graphNodes.get(node);
 			final EObject modelElement = node.getModelElement();
 			if (modelElement == null) {
 				continue;
 			}
 			final EObject eContainer = modelElement.eContainer();
-			final FlowNode flowCont = handler.getAlreadySeen().get(eContainer);
+			final FlowNode flowCont = handler.getFlowNode(eContainer);
 			if (flowCont == null) {
 				continue;
 			}
 			if (modelElement instanceof MethodInvocation) {
 				graphNode.addLink(graphNode
-						.linkTo(getDotNode(handler.getFlowNodeForElement(((MethodInvocation) modelElement).getMethod()))
+						.linkTo(getDotNode(handler.getFlowNode(((MethodInvocation) modelElement).getMethod()))
 								.add(Style.FILLED, Color.GRAY))
 						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 			}
 			if (modelElement instanceof ClassInstanceCreation) {
 				graphNode.addLink(graphNode.linkTo(
-						getDotNode(handler.getFlowNodeForElement(((ClassInstanceCreation) modelElement).getMethod()))
+						getDotNode(handler.getFlowNode(((ClassInstanceCreation) modelElement).getMethod()))
 						.add(Style.FILLED, Color.GRAY))
 						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 			}

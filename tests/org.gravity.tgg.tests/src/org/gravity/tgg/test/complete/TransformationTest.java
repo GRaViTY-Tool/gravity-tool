@@ -16,7 +16,6 @@ import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -59,12 +58,12 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import com.github.cliftonlabs.json_simple.JsonException;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
+import com.googlecode.junittoolbox.ParallelParameterized;
 
 import language.LanguagePackage;
 import runtime.RuntimePackage;
@@ -79,7 +78,7 @@ import runtime.RuntimePackage;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(Parameterized.class)
+@RunWith(ParallelParameterized.class)
 public class TransformationTest {
 
 	/**
@@ -133,7 +132,8 @@ public class TransformationTest {
 	@Parameters(name = "{index}: Forward Transformation From Src: {0}")
 	public static final Collection<Object[]> data() throws CoreException {
 		LOGGER.info("Collect test data");
-		final List<IProject> projects = EclipseProjectUtil.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
+		final List<IProject> projects = EclipseProjectUtil
+				.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
 		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
 		return TestHelper.prepareTestData(projects);
 	}
@@ -359,10 +359,10 @@ public class TransformationTest {
 				map.put(typeName, count.subtract(one));
 			}
 		}
-		for (final Entry<String, Object> entry : map.entrySet()) {
+		map.entrySet().parallelStream().forEach(entry -> {
 			final Object value = entry.getValue();
 			assertEquals(value + " elements of type " + entry.getKey() + " could not be transformed.", 0,
 					((BigDecimal) value).intValue());
-		}
+		});
 	}
 }

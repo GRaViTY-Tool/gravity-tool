@@ -7,75 +7,78 @@ import org.eclipse.emf.ecore.EObject;
 import org.gravity.modisco.MAbstractMethodInvocation;
 
 /**
- * An intermediate representation of data flow elements.
- * It captures the flow information of a single statement node.
- * 
+ * An intermediate representation of data flow elements. It captures the flow
+ * information of a single statement node.
+ *
  * @author dmebus
  *
  */
 public class FlowNode {
 
 	/**
-	 * Collection of all statements from which a data flow goes <b>into</b> this statement.
+	 * Collection of all statements from which a data flow goes <b>into</b> this
+	 * statement.
 	 */
 	private final Set<FlowNode> inRef = new HashSet<>();
-	
+
 	/**
 	 * Collection of all statements to which data flows <b>from</b> this statement.
 	 */
 	private final Set<FlowNode> outRef = new HashSet<>();
-	
+
 	/**
 	 * The model element, which corresponds to this statement node.
 	 */
-	private EObject modelElement;
-	
+	private final EObject modelElement;
+
 	/**
-	 * A flag to indicate, whether this FlowNode has already been processed and thus was drawn from the alreadySeen HashMap at least once.
+	 * A flag to indicate, whether this FlowNode has already been processed and thus
+	 * was drawn from the alreadySeen HashMap at least once.
 	 */
-	private boolean fromAlreadySeen;
-	
+	private boolean alreadySeen;
+
 	/**
-	 * A field to store a reference to the MMethodInvocation, which is a the flowOwner of the parameter flow.
+	 * A field to store a reference to the MMethodInvocation, which is a the
+	 * flowOwner of the parameter flow.
 	 */
 	private MAbstractMethodInvocation flowOwner;
-	
+
 	public FlowNode(EObject correspondingElement) {
-		modelElement = correspondingElement;
+		this.modelElement = correspondingElement;
 	}
 
 	public Set<FlowNode> getInRef() {
-		return inRef;
+		return this.inRef;
 	}
-	
+
 	public Set<FlowNode> getOutRef() {
-		return outRef;
+		return this.outRef;
 	}
-	
+
 	public void addInRef(FlowNode node) {
-		inRef.add(node);
+		this.inRef.add(node);
 		node.getOutRef().add(this);
 	}
-	
+
 	public void addOutRef(FlowNode node) {
-		outRef.add(node);
+		this.outRef.add(node);
 		node.getInRef().add(this);
 	}
-	
+
 	public EObject getModelElement() {
-		return modelElement;
+		return this.modelElement;
 	}
-	
-	public boolean isFromAlreadySeen() {
-		return fromAlreadySeen;
+
+	public boolean alreadySeen() {
+		return this.alreadySeen;
 	}
-	
-	public void setFromAlreadySeen() {
-		fromAlreadySeen = true;
+
+	public void setToAlreadySeen() {
+		this.alreadySeen = true;
 	}
 
 	public MAbstractMethodInvocation getFlowOwner() {
-		return flowOwner;
+		return this.flowOwner;
 	}
 
 	public void setFlowOwner(MAbstractMethodInvocation modelElement) {
