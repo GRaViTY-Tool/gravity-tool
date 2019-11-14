@@ -141,7 +141,7 @@ public class TransformationTest {
 	/**
 	 * Transforms every input project and checks the created model
 	 */
-	@Test(timeout = 20 * 60 * 1000)
+	@Test
 	public void test0ModiscoPreprocessing() {
 		MGravityModel preprocessedModel;
 		try {
@@ -172,7 +172,7 @@ public class TransformationTest {
 	 *
 	 * @throws Exception The test might throws exceptions
 	 */
-	@Test(timeout = 20 * 60 * 1000)
+	@Test
 	public final void test1ProgramModelTGG() {
 		LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
 
@@ -266,7 +266,7 @@ public class TransformationTest {
 	 * @throws DiscoveryException
 	 * @throws FileNotFoundException
 	 */
-	@Test(timeout = 20 * 60 * 1000)
+	@Test
 	public void test2UmlTGG() {
 		try {
 			LOGGER.info("Test UML TGG for: " + this.project.getProject().getName());
