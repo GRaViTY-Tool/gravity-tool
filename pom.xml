@@ -23,14 +23,14 @@
 	
   <modules>
     <!--<module>build/org.gravity.updatesite</module>-->
-    <module>build/org.gravity.features.eclipse</module>
+    <!--<module>build/org.gravity.features.eclipse</module>
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
     <module>build/org.gravity.features.refactorings</module>
     <module>build/org.gravity.features.security</module>
     <module>build/org.gravity.features.typegraph.basic</module>
     <module>build/org.gravity.features.uml</module>
-    <module>build/org.gravity.license.epl</module>
+    <module>build/org.gravity.license.epl</module>-->
     <module>implementation/org.gravity.eclipse</module>
     <module>implementation/org.gravity.eclipse.ui</module>
     <module>implementation/org.gravity.goblin</module>
@@ -66,9 +66,9 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <configuration>
+        <!--<configuration>
           <pomDependencies>consider</pomDependencies>
-        </configuration>
+        </configuration>-->
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -130,9 +130,14 @@
 
   <repositories>
     <repository>
+      <id>Eclipse 2018-09</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/2018-09/</url>
+    </repository>
+    <repository>
       <id>Eclipse Latest</id>
       <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/latest</url>
+      <url>http://download.eclipse.org/releases/latest/</url>
     </repository>
     <repository>
       <id>MoDisco</id>
@@ -184,11 +189,6 @@
       <layout>p2</layout>
       <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
-    <!--<repository>
-      <id>AccessAnalysis</id>
-      <layout>p2</layout>
-      <url>http://accessanalysis.sourceforge.net/update</url>
-    </repository>-->
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>

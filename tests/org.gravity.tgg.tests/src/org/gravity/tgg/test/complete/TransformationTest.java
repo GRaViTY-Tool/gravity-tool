@@ -15,7 +15,9 @@ import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -83,286 +85,304 @@ public class TransformationTest {
 
 	/**
 	 * If the test should be executed in debug mode
-	 */
-	private static final boolean DEBUG = false;
+	 */	private static final boolean DEBUG = false;
 
-	/**
-	 * The logger of this class
-	 */
-	private static final Logger LOGGER = Logger.getLogger(TransformationTest.class);
+	 /**
+	  * If the test should serialize the modisco model
+	  */
+	 private static final boolean SERIALIZE = false;
 
-	protected final IJavaProject project;
-	protected final String name;
+	 /**
+	  * The logger of this class
+	  */
+	 private static final Logger LOGGER = Logger.getLogger(TransformationTest.class);
 
-	/**
-	 * The constructor taking the collected projects
-	 *
-	 * This constructor should be only called by junit!
-	 *
-	 * @param name    The name of the project
-	 * @param project The project
-	 */
-	public TransformationTest(String name, IJavaProject project) {
-		this.project = project;
-		this.name = name;
-		LanguagePackage.eINSTANCE.eResource();
-		RuntimePackage.eINSTANCE.eResource();
-		// Add dependency to security annotations
-		final String id = AnnotationsActivator.PLUGIN_ID;
-	}
 
-	@BeforeClass
-	public static void initLogging() {
-		// Set up logging
-		BasicConfigurator.configure();
-		final Logger rootLogger = Logger.getRootLogger();
-		rootLogger.setLevel(Level.WARN);
-		GravityActivator.getDefault().setVerbose(DEBUG);
-		LOGGER.setLevel(Level.ALL);
-	}
+	 protected final IJavaProject project;
+	 protected final String name;
 
-	/**
-	 * The method for collecting the java projects from the workspace.
-	 *
-	 * This constructor should be only called by junit!
-	 *
-	 * @return The test parameters as needed by junit paramterized tests
-	 * @throws CoreException
-	 */
-	@Parameters(name = "{index}: Forward Transformation From Src: {0}")
-	public static final Collection<Object[]> data() throws CoreException {
-		LOGGER.info("Collect test data");
-		final List<IProject> projects = EclipseProjectUtil
-				.importProjectsFromWorkspaceLocation(new NullProgressMonitor());
-		LOGGER.info("Imported " + projects.size() + "projects into workspace.");
-		return TestHelper.prepareTestData(projects);
-	}
+	 private static Map<String, MGravityModel> models = new HashMap<>();
 
-	/**
-	 * Transforms every input project and checks the created model
-	 */
-	@Test
-	public void test0ModiscoPreprocessing() {
-		MGravityModel preprocessedModel;
-		try {
-			preprocessedModel = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(this.project,
-					new NullProgressMonitor());
-		} catch (final DiscoveryException e) {
-			throw new AssertionError(e.getLocalizedMessage(), e);
-		}
+	 /**
+	  * The constructor taking the collected projects
+	  *
+	  * This constructor should be only called by junit!
+	  *
+	  * @param name    The name of the project
+	  * @param project The project
+	  */
+	 public TransformationTest(String name, IJavaProject project) {
+		 this.project = project;
+		 this.name = name;
+		 LanguagePackage.eINSTANCE.eResource();
+		 RuntimePackage.eINSTANCE.eResource();
+		 // Add dependency to security annotations
+		 final String id = AnnotationsActivator.PLUGIN_ID;
+	 }
 
-		final File outputFile = getModiscoFile(this.project.getProject());
-		try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
-			preprocessedModel.eResource().save(outputStream, Collections.emptyMap());
-		} catch (final IOException e) {
-			throw new AssertionError(e.getLocalizedMessage(), e);
-		}
+	 @BeforeClass
+	 public static void initLogging() {
+		 // Set up logging
+		 BasicConfigurator.configure();
+		 final Logger rootLogger = Logger.getRootLogger();
+		 rootLogger.setLevel(Level.WARN);
+		 GravityActivator.getDefault().setVerbose(DEBUG);
+		 LOGGER.setLevel(Level.ALL);
+	 }
 
-		assertNotNull(preprocessedModel);
+	 /**
+	  * The method for collecting the java projects from the workspace.
+	  *
+	  * This constructor should be only called by junit!
+	  *
+	  * @return The test parameters as needed by junit paramterized tests
+	  * @throws CoreException
+	  */
+	 @Parameters(name = "{index}: Forward Transformation From Src: {0}")
+	 public static final Collection<Object[]> data() throws CoreException {
+		 LOGGER.info("Collect test data");
+		 final List<IProject> projects = EclipseProjectUtil
+				 .importProjectsFromWorkspaceLocation(new NullProgressMonitor());
+		 LOGGER.info("Imported " + projects.size() + "projects into workspace.");
+		 return TestHelper.prepareTestData(projects);
+	 }
 
-		// Check, if element counts (e. g. number of TFlows) are as expected
-		final IFile file = this.project.getProject().getFile("expectModisco.json");
-		if (file.exists()) {
-			checkModel(preprocessedModel, file);
-		}
-	}
+	 /**
+	  * Transforms every input project and checks the created model
+	  */
+	 @Test
+	 public void test0ModiscoPreprocessing() {
+		 MGravityModel preprocessedModel;
+		 try {
+			 preprocessedModel = new GravityModiscoProjectDiscoverer().discoverMGravityModelFromProject(this.project,
+					 new NullProgressMonitor());
+		 } catch (final DiscoveryException e) {
+			 throw new AssertionError(e.getLocalizedMessage(), e);
+		 }
+		 assertNotNull(preprocessedModel);
 
-	/**
-	 * The method in which tests on eclipse java projects can be defined
-	 *
-	 * @throws Exception The test might throws exceptions
-	 */
-	@Test
-	public final void test1ProgramModelTGG() {
-		LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
+		 // Check, if element counts (e. g. number of TFlows) are as expected
+		 final IFile file = this.project.getProject().getFile("expectModisco.json");
+		 if (file.exists()) {
+			 checkModel(preprocessedModel, file);
+		 }
 
-		MoDiscoTGGConverter conv = null;
-		try {
-			conv = new MoDiscoTGGConverter();
-			conv.setDebug(DEBUG);
-		} catch (final IOException e) {
-			throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
-		}
-		final MGravityModel modiscoModel = getModiscoModel(conv.getResourceSet());
-		if (!conv.convertModel(this.project, modiscoModel, new NullProgressMonitor())) {
-			throw new AssertionError("Trafo failed");
-		}
+		 // Store the model
+		 if (SERIALIZE) {
+			 final File outputFile = getModiscoFile(this.project.getProject());
+			 try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+				 preprocessedModel.eResource().save(outputStream, Collections.emptyMap());
+			 } catch (final IOException e) {
+				 throw new AssertionError(e.getLocalizedMessage(), e);
+			 }
+		 }
+		 models.put(this.name, preprocessedModel);
+	 }
 
-		final TypeGraph pg = conv.getPG();
-		assertNotNull(pg);
-		save(pg, "pm", GravityActivator.FILE_EXTENSION_XMI);
-		conv.discard();
+	 /**
+	  * The method in which tests on eclipse java projects can be defined
+	  *
+	  * @throws Exception The test might throws exceptions
+	  */
+	 @Test
+	 public final void test1ProgramModelTGG() {
+		 LOGGER.info("Test PM TGG for: " + this.project.getProject().getName());
 
-		final IFile expectJsonFile = this.project.getProject().getFile("expect.json");
-		if (expectJsonFile.exists()) {
-			checkModel(pg, expectJsonFile);
-		}
-		checkModel(pg);
-	}
+		 MoDiscoTGGConverter conv = null;
+		 try {
+			 conv = new MoDiscoTGGConverter();
+			 conv.setDebug(DEBUG);
+		 } catch (final IOException e) {
+			 throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
+		 }
+		 final MGravityModel modiscoModel = getModiscoModel(conv.getResourceSet());
+		 if (!conv.convertModel(this.project, modiscoModel, new NullProgressMonitor())) {
+			 throw new AssertionError("Trafo failed");
+		 }
 
-	/**
-	 * Checks the model against the expected result specified in henshin rules
-	 *
-	 * @param pm The model to ckeck
-	 */
-	private void checkModel(TypeGraph pm) {
-		final ExtensionFileVisitor visitor = new ExtensionFileVisitor("henshin");
-		try {
-			this.project.getProject().accept(visitor);
-		} catch (final CoreException e) {
-			LOGGER.error(e.getLocalizedMessage(), e);
-		}
-		final EGraphImpl graph = new EGraphImpl(pm);
-		final HenshinResourceSet resourceSet = new HenshinResourceSet();
-		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
-		resourceSet.getResources().add(pm.eResource());
-		final Engine engine = new EngineImpl();
-		for (final Path file : visitor.getFiles()) {
-			final Module module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
-			for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
-				final Iterable<Match> matches = engine.findMatches(rule, graph, null);
-				assertTrue(matches.iterator().hasNext());
-			}
-		}
-	}
+		 final TypeGraph pg = conv.getPG();
+		 assertNotNull(pg);
+		 save(pg, "pm", GravityActivator.FILE_EXTENSION_XMI);
+		 conv.discard();
 
-	/**
-	 * A getter for the location of the preprocessed modisco model
-	 *
-	 * @return the location
-	 */
-	private static File getModiscoFile(IProject project) {
-		return new File(project.getLocation().toFile(), "modisco.xmi");
-	}
+		 final IFile expectJsonFile = this.project.getProject().getFile("expect.json");
+		 if (expectJsonFile.exists()) {
+			 checkModel(pg, expectJsonFile);
+		 }
+		 checkModel(pg);
+	 }
 
-	/**
-	 * Loads a previously discovered modisco model
-	 *
-	 * @param rs The resource set the model should be loaded into
-	 * @return The model or null
-	 */
-	private MGravityModel getModiscoModel(ResourceSet rs) {
-		final File src = getModiscoFile(this.project.getProject());
-		final Resource resource = rs.getResource(URI.createFileURI(src.getAbsolutePath()), true);
-		if (resource == null) {
-			return null;
-		}
-		return (MGravityModel) resource.getContents().get(0);
-	}
+	 /**
+	  * Checks the model against the expected result specified in henshin rules
+	  *
+	  * @param pm The model to ckeck
+	  */
+	 private void checkModel(TypeGraph pm) {
+		 final ExtensionFileVisitor visitor = new ExtensionFileVisitor("henshin");
+		 try {
+			 this.project.getProject().accept(visitor);
+		 } catch (final CoreException e) {
+			 LOGGER.error(e.getLocalizedMessage(), e);
+		 }
+		 final EGraphImpl graph = new EGraphImpl(pm);
+		 final HenshinResourceSet resourceSet = new HenshinResourceSet();
+		 resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
+		 resourceSet.getResources().add(pm.eResource());
+		 final Engine engine = new EngineImpl();
+		 for (final Path file : visitor.getFiles()) {
+			 final Module module = resourceSet.getModule(file.toAbsolutePath().toString(), false);
+			 for (final org.eclipse.emf.henshin.model.Rule rule : module.getAllRules()) {
+				 final Iterable<Match> matches = engine.findMatches(rule, graph, null);
+				 assertTrue(matches.iterator().hasNext());
+			 }
+		 }
+	 }
 
-	private static final boolean ADD_UMLSEC = false;
+	 /**
+	  * A getter for the location of the preprocessed modisco model
+	  *
+	  * @return the location
+	  */
+	 private static File getModiscoFile(IProject project) {
+		 return new File(project.getLocation().toFile(), "modisco.xmi");
+	 }
 
-	/**
-	 * The constructor taking the collected projects
-	 *
-	 * This constructor should be only called by junit!
-	 *
-	 * @see org.gravity.tgg.test.complete.TransformationTest#testProgramModelTGG()
-	 *
-	 * @param name    The project name
-	 * @param project The java project
-	 * @throws IOException           If reading or writing files failed
-	 * @throws CoreException
-	 * @throws DiscoveryException
-	 * @throws FileNotFoundException
-	 */
-	@Test
-	public void test2UmlTGG() {
-		try {
-			LOGGER.info("Test UML TGG for: " + this.project.getProject().getName());
-			final NullProgressMonitor monitor = new NullProgressMonitor();
-			Model model;
-			try {
-				if (ADD_UMLSEC) {
-					model = Transformation.projectToModel(this.project, ADD_UMLSEC, monitor);
-				} else {
-					final MGravityModel preprocessedModel = getModiscoModel(new ResourceSetImpl());
-					model = Transformation.modiscoToModel(preprocessedModel, this.project, monitor);
-				}
-				assertNotNull(model);
-			} catch (TransformationFailedException | IOException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
-				throw new AssertionError(e.getMessage(), e);
-			}
+	 /**
+	  * Loads a previously discovered modisco model
+	  *
+	  * @param rs The resource set the model should be loaded into
+	  * @return The model or null
+	  */
+	 private MGravityModel getModiscoModel(ResourceSet rs) {
+		 MGravityModel model = models.get(this.name);
+		 if (model != null) {
+			 return model;
+		 }
 
-			if (DEBUG) {
-				save(model, "uml", UMLResource.FILE_EXTENSION);
-			}
+		 final File src = getModiscoFile(this.project.getProject());
+		 final Resource resource = rs.getResource(URI.createFileURI(src.getAbsolutePath()), true);
+		 if (resource == null) {
+			 return null;
+		 }
+		 model = (MGravityModel) resource.getContents().get(0);
+		 models.put(this.name, model);
+		 return model;
+	 }
 
-		} finally {
-			try {
-				cleanClassPath();
-			} catch (IOException | CoreException e) {
-				LOGGER.error(e.getLocalizedMessage(), e);
-			}
-		}
-	}
+	 private static final boolean ADD_UMLSEC = false;
 
-	/**
-	 * Cleans up the changes of the UML test
-	 *
-	 * @param monitor A progress monitor
-	 * @throws IOException   If the gravity folder of the project doesn't exists and
-	 *                       cannot be created
-	 * @throws CoreException If the gravity folder cannot be deleted
-	 */
-	private void cleanClassPath() throws IOException, CoreException {
-		final NullProgressMonitor monitor = new NullProgressMonitor();
-		final IFile file = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor)
-				.getFile("org.gravity.annotations.jar");
-		final IClasspathEntry cpe = this.project.getClasspathEntryFor(file.getLocation());
-		if (cpe != null) {
-			final IClasspathEntry[] oldCp = this.project.getRawClasspath();
-			final IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length - 1];
-			int i = 0;
-			for (final IClasspathEntry e : oldCp) {
-				if (!e.getPath().equals(file.getLocation())) {
-					newCp[i++] = e;
-				}
-			}
-			this.project.setRawClasspath(newCp, monitor);
-		}
-		file.delete(true, monitor);
-	}
+	 /**
+	  * The constructor taking the collected projects
+	  *
+	  * This constructor should be only called by junit!
+	  *
+	  * @see org.gravity.tgg.test.complete.TransformationTest#testProgramModelTGG()
+	  *
+	  * @param name    The project name
+	  * @param project The java project
+	  * @throws IOException           If reading or writing files failed
+	  * @throws CoreException
+	  * @throws DiscoveryException
+	  * @throws FileNotFoundException
+	  */
+	 @Test
+	 public void test2UmlTGG() {
+		 try {
+			 LOGGER.info("Test UML TGG for: " + this.project.getProject().getName());
+			 final NullProgressMonitor monitor = new NullProgressMonitor();
+			 Model model;
+			 try {
+				 if (ADD_UMLSEC) {
+					 model = Transformation.projectToModel(this.project, ADD_UMLSEC, monitor);
+				 } else {
+					 final MGravityModel preprocessedModel = getModiscoModel(new ResourceSetImpl());
+					 model = Transformation.modiscoToModel(preprocessedModel, this.project, monitor);
+				 }
+				 assertNotNull(model);
+			 } catch (TransformationFailedException | IOException e) {
+				 LOGGER.log(Level.ERROR, e.getMessage(), e);
+				 throw new AssertionError(e.getMessage(), e);
+			 }
 
-	private void save(EObject eObject, String prefix, String fileExtension) {
-		final String fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
-		final IFile file = this.project.getProject().getFile(fileName);
-		try (OutputStream stream = new FileOutputStream(file.getLocation().toFile())) {
-			eObject.eResource().save(stream, Collections.emptyMap());
-		} catch (final IOException e) {
-			LOGGER.error(e.getMessage(), e);
-		}
-	}
+			 if (DEBUG) {
+				 save(model, "uml", UMLResource.FILE_EXTENSION);
+			 }
 
-	/**
-	 * Check, if element counts (e. g. number of TFlows) are as expected
-	 *
-	 * @param model          the model to check
-	 * @param expectJsonFile The JSON file containing the expectations
-	 */
-	private void checkModel(EObject model, IFile expectJsonFile) {
-		JsonObject map;
-		try (Reader fileReader = new InputStreamReader(expectJsonFile.getContents())) {
-			map = (JsonObject) Jsoner.deserialize(fileReader);
-		} catch (IOException | JsonException | CoreException e) {
-			LOGGER.error(e.getMessage(), e);
-			throw new AssertionError(e.getMessage(), e);
-		}
-		final TreeIterator<EObject> it = model.eResource().getAllContents();
-		final BigDecimal one = new BigDecimal(1);
-		while (it.hasNext()) {
-			final EObject eObject = it.next();
-			final String typeName = eObject.eClass().getName();
-			if (map.containsKey(typeName)) {
-				final BigDecimal count = (BigDecimal) map.get(typeName);
-				map.put(typeName, count.subtract(one));
-			}
-		}
-		map.entrySet().parallelStream().forEach(entry -> {
-			final Object value = entry.getValue();
-			assertEquals(value + " elements of type " + entry.getKey() + " could not be transformed.", 0,
-					((BigDecimal) value).intValue());
-		});
-	}
+		 } finally {
+			 models.remove(this.name);
+			 try {
+				 cleanClassPath();
+			 } catch (IOException | CoreException e) {
+				 LOGGER.error(e.getLocalizedMessage(), e);
+			 }
+		 }
+	 }
+
+	 /**
+	  * Cleans up the changes of the UML test
+	  *
+	  * @param monitor A progress monitor
+	  * @throws IOException   If the gravity folder of the project doesn't exists and
+	  *                       cannot be created
+	  * @throws CoreException If the gravity folder cannot be deleted
+	  */
+	 private void cleanClassPath() throws IOException, CoreException {
+		 final NullProgressMonitor monitor = new NullProgressMonitor();
+		 final IFile file = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor)
+				 .getFile("org.gravity.annotations.jar");
+		 final IClasspathEntry cpe = this.project.getClasspathEntryFor(file.getLocation());
+		 if (cpe != null) {
+			 final IClasspathEntry[] oldCp = this.project.getRawClasspath();
+			 final IClasspathEntry[] newCp = new IClasspathEntry[oldCp.length - 1];
+			 int i = 0;
+			 for (final IClasspathEntry e : oldCp) {
+				 if (!e.getPath().equals(file.getLocation())) {
+					 newCp[i++] = e;
+				 }
+			 }
+			 this.project.setRawClasspath(newCp, monitor);
+		 }
+		 file.delete(true, monitor);
+	 }
+
+	 private void save(EObject eObject, String prefix, String fileExtension) {
+		 final String fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
+		 final IFile file = this.project.getProject().getFile(fileName);
+		 try (OutputStream stream = new FileOutputStream(file.getLocation().toFile())) {
+			 eObject.eResource().save(stream, Collections.emptyMap());
+		 } catch (final IOException e) {
+			 LOGGER.error(e.getMessage(), e);
+		 }
+	 }
+
+	 /**
+	  * Check, if element counts (e. g. number of TFlows) are as expected
+	  *
+	  * @param model          the model to check
+	  * @param expectJsonFile The JSON file containing the expectations
+	  */
+	 private void checkModel(EObject model, IFile expectJsonFile) {
+		 JsonObject map;
+		 try (Reader fileReader = new InputStreamReader(expectJsonFile.getContents())) {
+			 map = (JsonObject) Jsoner.deserialize(fileReader);
+		 } catch (IOException | JsonException | CoreException e) {
+			 LOGGER.error(e.getMessage(), e);
+			 throw new AssertionError(e.getMessage(), e);
+		 }
+		 final TreeIterator<EObject> it = model.eResource().getAllContents();
+		 final BigDecimal one = new BigDecimal(1);
+		 while (it.hasNext()) {
+			 final EObject eObject = it.next();
+			 final String typeName = eObject.eClass().getName();
+			 if (map.containsKey(typeName)) {
+				 final BigDecimal count = (BigDecimal) map.get(typeName);
+				 map.put(typeName, count.subtract(one));
+			 }
+		 }
+		 map.entrySet().parallelStream().forEach(entry -> {
+			 final Object value = entry.getValue();
+			 assertEquals(value + " elements of type " + entry.getKey() + " could not be transformed.", 0,
+					 ((BigDecimal) value).intValue());
+		 });
+	 }
 }
