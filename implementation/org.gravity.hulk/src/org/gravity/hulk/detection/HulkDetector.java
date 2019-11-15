@@ -2,16 +2,16 @@ package org.gravity.hulk.detection;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Deque;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -34,7 +34,7 @@ import org.moflon.core.dfs.Node;
 
 /**
  * This class provides the functionality to execute the anti-pattern detection
- * 
+ *
  * @author speldszus
  *
  */
@@ -42,15 +42,15 @@ public class HulkDetector {
 
 	private static final Logger LOGGER = Logger.getLogger(HulkDetector.class.getName());
 
-	private Map<String, String> thresholds;
-	private HAntiPatternHandling hulk;
-	private Set<HDetector> initialized;
+	private final Map<String, String> thresholds;
+	private final HAntiPatternHandling hulk;
+	private final Set<HDetector> initialized;
 
-	private boolean verbose;
+	private final boolean verbose;
 
 	/**
 	 * Creates a new detection instance disabling verbose
-	 * 
+	 *
 	 * @param hulk       The detection configuration
 	 * @param thresholds The thresholds for the detection
 	 */
@@ -60,7 +60,7 @@ public class HulkDetector {
 
 	/**
 	 * Creates a new detection instance
-	 * 
+	 *
 	 * @param hulk       The detection configuration
 	 * @param thresholds The thresholds for the detection
 	 * @param verbose    The verbose state
@@ -69,7 +69,7 @@ public class HulkDetector {
 		this.hulk = hulk;
 		this.thresholds = thresholds;
 		this.verbose = verbose;
-		initialized = new HashSet<>();
+		this.initialized = new HashSet<>();
 		Resource eResource = hulk.eResource();
 		if (eResource == null) {
 			eResource = new ResourceSetImpl().createResource(URI.createURI("Hulk"));
@@ -81,17 +81,10 @@ public class HulkDetector {
 	private List<HDetector> getSorted(HDetector detector) {
 		initDFS().processNode(detector);
 
-		Comparator<Node> comp = new Comparator<Node>() {
+		final Comparator<Node> comp = (arg0, arg1) -> arg0.getPostTraversal() - arg1.getPostTraversal();
 
-			@Override
-			public int compare(Node arg0, Node arg1) {
-				return arg0.getPostTraversal() - arg1.getPostTraversal();
-			}
-
-		};
-
-		List<HDetector> sorted = new ArrayList<>();
-		for (HDetector n : hulk.getHDetector()) {
+		final List<HDetector> sorted = new ArrayList<>();
+		for (final HDetector n : this.hulk.getHDetector()) {
 			if (n.getPreTraversal() > 0) {
 				sorted.add(n);
 			}
@@ -102,8 +95,8 @@ public class HulkDetector {
 
 	private void handleDetector(HDetector detector, Deque<HDetector> worklist, Set<HDetector> processedDetectors,
 			boolean verbose) throws DetectionFailedException {
-		List<HDetector> sorted = getSorted(detector);
-		for (HDetector nextDetector : sorted) {
+		final List<HDetector> sorted = getSorted(detector);
+		for (final HDetector nextDetector : sorted) {
 			if (processedDetectors.contains(nextDetector)) {
 				continue;
 			}
@@ -113,7 +106,7 @@ public class HulkDetector {
 			if (nextDetector instanceof HRelativeDetector) {
 				initializeRelativeDetector((HRelativeDetector) nextDetector);
 			}
-			if (nextDetector.detect(hulk.getApg())) {
+			if (nextDetector.detect(this.hulk.getApg())) {
 				nextDetector.setPostTraversal(0);
 				nextDetector.setPreTraversal(0);
 				processedDetectors.add(nextDetector);
@@ -126,21 +119,21 @@ public class HulkDetector {
 
 	/**
 	 * Initializes the thresholds of the relative detector
-	 * 
+	 *
 	 * @param relativeDetector The detector
 	 * @throws DetectionFailedException If the stored threshold is not valid
 	 */
 	private void initializeRelativeDetector(HRelativeDetector relativeDetector) throws DetectionFailedException {
-		if (!initialized.contains(relativeDetector)) {
-			String key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");
-			if (thresholds.containsKey(key)) {
+		if (!this.initialized.contains(relativeDetector)) {
+			final String key = relativeDetector.getClass().getName().replace("Impl", "").replace(".impl", "");
+			if (this.thresholds.containsKey(key)) {
 				relativeDetector.setRelative(false);
-				String value = thresholds.get(key);
-				HRelativeValueConstants constant = HRelativeValueConstants.getByName(value);
+				final String value = this.thresholds.get(key);
+				final HRelativeValueConstants constant = HRelativeValueConstants.getByName(value);
 				if (constant != null) {
 					relativeDetector.setThreshold(relativeDetector.calculateRelativeThreshold(constant));
 				} else {
-					Double number = Double.valueOf(value);
+					final Double number = Double.valueOf(value);
 					if (number != null) {
 						relativeDetector.setThreshold(number.doubleValue());
 					} else {
@@ -148,6 +141,7 @@ public class HulkDetector {
 								"The stored threshold of the metric \"" + key + "\" is not a double!");
 					}
 				}
+				this.initialized.add(relativeDetector);
 			}
 		}
 	}
@@ -160,12 +154,12 @@ public class HulkDetector {
 			LOGGER.log(Level.INFO, h0 + " Hulk Anti-Pattern Detection");
 		}
 		while (!worklist.isEmpty()) {
-			HDetector detector = worklist.pop();
+			final HDetector detector = worklist.pop();
 
 			handleDetector(detector, worklist, processedDetectors, verbose);
 		}
 		if (verbose) {
-			long h1 = System.currentTimeMillis();
+			final long h1 = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
 		}
 
@@ -175,7 +169,7 @@ public class HulkDetector {
 	/**
 	 * Executes the anti-pattern detection with the selected detectors on the loaded
 	 * program model
-	 * 
+	 *
 	 * @param selection          The types of the selected detectors
 	 * @param selectedDetectors  This set will contain the instances of the selected
 	 *                           detectors after detection.
@@ -185,10 +179,10 @@ public class HulkDetector {
 	 */
 	public boolean detectSelectedAntiPattern(Set<EClass> selection, Set<HDetector> selectedDetectors,
 			Set<HDetector> processedDetectors) {
-		Deque<HDetector> worklist = new LinkedList<>();
+		final Deque<HDetector> worklist = new LinkedList<>();
 
 		// Fill worklist
-		for (HDetector detector : hulk.getHDetector()) {
+		for (final HDetector detector : this.hulk.getHDetector()) {
 			if (selection.contains(detector.eClass())) {
 				selectedDetectors.add(detector);
 				worklist.add(detector);
@@ -202,7 +196,7 @@ public class HulkDetector {
 
 		try {
 			return detectSelectedAntiPattern(worklist, processedDetectors, this.verbose);
-		} catch (DetectionFailedException e) {
+		} catch (final DetectionFailedException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
 		return false;
@@ -210,11 +204,11 @@ public class HulkDetector {
 
 	/**
 	 * A getter for the default detection thresholds
-	 * 
+	 *
 	 * @return The defaults
 	 */
 	public static Map<String, String> getDefaultThresholds() {
-		Map<String, String> thresholds = new HashMap<String, String>();
+		final Map<String, String> thresholds = new HashMap<>();
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HLargeClassDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HLowCohesionDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
@@ -226,8 +220,8 @@ public class HulkDetector {
 	}
 
 	private static DepthFirstSearch initDFS() {
-		DepthFirstSearch dfs = DfsFactory.eINSTANCE.createDepthFirstSearch();
-		DepthFirstSearch delegate = DfsFactory.eINSTANCE.createDepthFirstSearch();
+		final DepthFirstSearch dfs = DfsFactory.eINSTANCE.createDepthFirstSearch();
+		final DepthFirstSearch delegate = DfsFactory.eINSTANCE.createDepthFirstSearch();
 		dfs.setDelegate(delegate);
 		delegate.setDelegate(dfs);
 		return dfs;
