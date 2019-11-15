@@ -90,7 +90,7 @@ public class TransformationTest {
 	 /**
 	  * If the test should serialize the modisco model
 	  */
-	 private static final boolean SERIALIZE = false;
+	 private static final boolean SERIALIZE = true;
 
 	 /**
 	  * The logger of this class
