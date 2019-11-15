@@ -77,8 +77,9 @@ public class HulkHenshin {
 		hulk.loadRules(resourceSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHBlobAntiPattern()));
 
-		graph.getRoots().get(0).eResource().save(new FileOutputStream(model.replace(".xmi", ".trg.xmi")),
-				Collections.emptyMap());
+		try (FileOutputStream outputStream = new FileOutputStream(model.replace(".xmi", ".trg.xmi"))) {
+			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
+		}
 		LOGGER.info("done");
 	}
 
