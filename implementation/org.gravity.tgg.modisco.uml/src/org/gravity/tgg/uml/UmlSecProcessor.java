@@ -39,7 +39,7 @@ import carisma.profile.umlsec.critical;
 /**
  * This processor converts UMLsec stereotypes into comments to be translatable
  * by the TGG
- * 
+ *
  * @author speldszus
  *
  */
@@ -47,7 +47,7 @@ public class UmlSecProcessor {
 
 	private static final Logger LOGGER = Logger.getLogger(UmlSecProcessor.class);
 
-	private Model model;
+	private final Model model;
 
 	private Interface iCritical;
 	private Interface iHigh;
@@ -66,18 +66,18 @@ public class UmlSecProcessor {
 	public UmlSecProcessor(Model model) {
 		this.model = model;
 
-		String[] namespace = new String[] { "org", "gravity", "security", "annotations", "requirements" };
-		LinkedList<Model> stack = new LinkedList<>();
+		final String[] namespace = new String[] { "org", "gravity", "security", "annotations", "requirements" };
+		final LinkedList<Model> stack = new LinkedList<>();
 		stack.add(model);
 		Package reqPack = null;
 		while (!stack.isEmpty()) {
-			Model next = stack.pop();
+			final Model next = stack.pop();
 			reqPack = getPackage(next, namespace);
 			if (reqPack != null) {
 				break;
 			}
 			if (next != null) {
-				Set<Model> child = next.getPackagedElements().parallelStream().filter(p -> p instanceof Model)
+				final Set<Model> child = next.getPackagedElements().parallelStream().filter(p -> p instanceof Model)
 						.map(p -> (Model) p).collect(Collectors.toSet());
 				stack.addAll(child);
 			}
@@ -91,29 +91,29 @@ public class UmlSecProcessor {
 	}
 
 	public boolean processFwd() throws ProcessingException {
-		for (Element e : model.allOwnedElements()) {
+		for (final Element e : this.model.allOwnedElements()) {
 			if (e instanceof Comment) {
-				Comment comment = (Comment) e;
-				String body = comment.getBody();
+				final Comment comment = (Comment) e;
+				final String body = comment.getBody();
 
-				EList<Element> annotatedElements = comment.getAnnotatedElements();
-				Element element = annotatedElements.parallelStream()
+				final EList<Element> annotatedElements = comment.getAnnotatedElements();
+				final Element element = annotatedElements.parallelStream()
 						.filter(el -> el.getOwnedComments().contains(comment)).findAny()
 						.orElse(annotatedElements.get(0));
 				if (ANNOTATION_CRITICAL.equals(body)) {
-					critical critical = getCriticalStereotype((Classifier) element);
+					final critical critical = getCriticalStereotype((Classifier) element);
 					if (!addValuesToCritical(comment, critical)) {
 						LOGGER.error("Couldnt add comment to <<critical>>");
 						return false;
 					}
 				} else {
-					String tag = annotationNameToTagName(body);
+					final String tag = annotationNameToTagName(body);
 					if (tag == null) {
 						continue;
 					}
 
-					critical critical = getCriticalStereotype(element);
-					String signature = getSignature(element);
+					final critical critical = getCriticalStereotype(element);
+					final String signature = getSignature(element);
 					if (!addValuesToCritical(critical, tag, signature)) {
 						LOGGER.error("Couldn't add " + tag + " = {\"" + signature + "\"} to <<criticial>>");
 						return false;
@@ -126,41 +126,41 @@ public class UmlSecProcessor {
 
 	/**
 	 * Translates UMLsec stereotypes into comments
-	 * 
+	 *
 	 * @return true iff the processing was successful
 	 * @throws ProcessingException
 	 */
 	public boolean processBwd() throws ProcessingException {
 		Stream<EObject> delete = Stream.empty();
 
-		for (Element element : model.allOwnedElements()) {
+		for (final Element element : this.model.allOwnedElements()) {
 			if (element instanceof Classifier && !(element instanceof PrimitiveType)) {
-				Classifier classifier = (Classifier) element;
+				final Classifier classifier = (Classifier) element;
 				delete = Stream.concat(delete, processBwd(classifier));
 			}
 		}
-		EMFUtil.deleteAll(delete.collect(Collectors.toSet()), model.eResource());
+		EMFUtil.deleteAll(delete.collect(Collectors.toSet()), this.model.eResource());
 		return true;
 	}
 
 	/**
 	 * Process the classifier backwards
-	 * 
+	 *
 	 * @param classifier The classifier to process
 	 * @return
 	 * @throws ProcessingException If the processing failed
 	 */
 	private Stream<Comment> processBwd(Classifier classifier) throws ProcessingException {
-		HashMap<String, Element> signatures = new HashMap<>();
-		HashMap<String, Comment> highComments = new HashMap<>();
-		HashMap<String, Comment> secrecyComments = new HashMap<>();
-		HashMap<String, Comment> integrityComments = new HashMap<>();
+		final HashMap<String, Element> signatures = new HashMap<>();
+		final HashMap<String, Comment> highComments = new HashMap<>();
+		final HashMap<String, Comment> secrecyComments = new HashMap<>();
+		final HashMap<String, Comment> integrityComments = new HashMap<>();
 
-		Comment criticalComment = getComments(classifier, signatures, highComments, secrecyComments, integrityComments);
+		final Comment criticalComment = getComments(classifier, signatures, highComments, secrecyComments, integrityComments);
 
-		for (EObject stereotype : classifier.getStereotypeApplications()) {
+		for (final EObject stereotype : classifier.getStereotypeApplications()) {
 			if (stereotype instanceof critical) {
-				critical critical = (critical) stereotype;
+				final critical critical = (critical) stereotype;
 
 				processBwd(classifier, signatures, highComments, criticalComment, critical.getHigh(), ANNOTATION_HIGH,
 						TAG_HIGH);
@@ -189,21 +189,21 @@ public class UmlSecProcessor {
 			String memberAnnotationString, String tagString) throws ProcessingException {
 		if (criticalComment == null) {
 			criticalComment = getComment(classifier, ANNOTATION_CRITICAL, true);
-			criticalComment.getAnnotatedElements().add(iCritical);
+			criticalComment.getAnnotatedElements().add(this.iCritical);
 		}
-		Comment tagComment = getComment(criticalComment, tagString, true);
-		for (String value : tagValues) {
+		final Comment tagComment = getComment(criticalComment, tagString, true);
+		for (final String value : tagValues) {
 			if (tagComments.remove(value) == null) {
 				// if the signature hasn't already a annotation
 				if (signatures.containsKey(value)) {
 					// if the classifier defines a member with the signature add a comment to
 					// the member
-					Element member = signatures.get(value);
+					final Element member = signatures.get(value);
 					createComment(memberAnnotationString, member);
 				} else {
 					// if the classifier doesn't defines a member with the signature add the
 					// signature to the according tag of the critical comment.
-					Comment comment = UMLFactory.eINSTANCE.createComment();
+					final Comment comment = UMLFactory.eINSTANCE.createComment();
 					comment.setBody(value);
 					comment.getAnnotatedElements().add(tagComment);
 					tagComment.getOwnedComments().add(comment);
@@ -214,7 +214,7 @@ public class UmlSecProcessor {
 
 	/**
 	 * Maps the name of a annotation to the name of the according tag
-	 * 
+	 *
 	 * @param name The name of the annotation
 	 * @return the name of the according tag or null it the annotation name is
 	 *         unknown
@@ -235,21 +235,21 @@ public class UmlSecProcessor {
 
 	/**
 	 * Create a security comment on the member
-	 * 
+	 *
 	 * @param value  The value of the comment
 	 * @param member The member to be annotated
 	 * @throws ProcessingException If the comment contains an unknown security level
 	 */
 	private void createComment(String value, Element member) throws ProcessingException {
-		Comment comment = UMLFactory.eINSTANCE.createComment();
+		final Comment comment = UMLFactory.eINSTANCE.createComment();
 		comment.setBody(value);
 		comment.getAnnotatedElements().add(member);
 		if (High.class.getSimpleName().equals(value)) {
-			comment.getAnnotatedElements().add(iHigh);
+			comment.getAnnotatedElements().add(this.iHigh);
 		} else if (Integrity.class.getSimpleName().equals(value)) {
-			comment.getAnnotatedElements().add(iIntegrity);
+			comment.getAnnotatedElements().add(this.iIntegrity);
 		} else if (Secrecy.class.getSimpleName().equals(value)) {
-			comment.getAnnotatedElements().add(iSecrecy);
+			comment.getAnnotatedElements().add(this.iSecrecy);
 		} else {
 			throw new ProcessingException("Unknown UMLsec security level: \"" + value + "\"");
 		}
@@ -258,7 +258,7 @@ public class UmlSecProcessor {
 
 	/**
 	 * Search for the package with the given namespace in the model
-	 * 
+	 *
 	 * @param model     The UML model
 	 * @param namespace The namespace array
 	 * @return The package or null
@@ -266,7 +266,7 @@ public class UmlSecProcessor {
 	private static Package getPackage(Model model, String... namespace) {
 		Package current = model;
 		for (int i = 0; i < namespace.length; i++) {
-			PackageableElement next = current.getPackagedElement(namespace[i]);
+			final PackageableElement next = current.getPackagedElement(namespace[i]);
 			if (next == null || !next.eClass().equals(UMLPackage.eINSTANCE.getPackage())) {
 				return null;
 			}
@@ -277,17 +277,17 @@ public class UmlSecProcessor {
 
 	/**
 	 * Adds the values of a critical annotation to the critical stereotype
-	 * 
+	 *
 	 * @param comment  The critical comment
-	 * @param critical The critical the values should be added to
+	 * @param crit The critical the values should be added to
 	 */
 	private boolean addValuesToCritical(Comment comment, critical crit) {
 		if (!ANNOTATION_CRITICAL.equals(comment.getBody())) {
 			return false;
 		}
-		for (Comment tag : comment.getOwnedComments()) {
-			String tagName = tag.getBody();
-			String[] signatures = tag.getOwnedComments().parallelStream().map(c -> c.getBody()).toArray(String[]::new);
+		for (final Comment tag : comment.getOwnedComments()) {
+			final String tagName = tag.getBody();
+			final String[] signatures = tag.getOwnedComments().parallelStream().map(c -> c.getBody()).toArray(String[]::new);
 			addValuesToCritical(crit, tagName, signatures);
 		}
 		return true;
@@ -295,13 +295,13 @@ public class UmlSecProcessor {
 
 	/**
 	 * Adds the signatures to the critical stereotype
-	 * 
-	 * @param critical   The critical the values should be added to
+	 *
+	 * @param crit   The critical the values should be added to
 	 * @param tag        The tag of the security property
 	 * @param signatures The signatures
 	 */
 	private boolean addValuesToCritical(critical crit, String tag, String... signatures) {
-		EStructuralFeature feature = crit.eClass().getEStructuralFeature(tag);
+		final EStructuralFeature feature = crit.eClass().getEStructuralFeature(tag);
 		if (feature == null) {
 			LOGGER.error("Unknown <<critical>> tag: " + tag);
 			return false;
@@ -311,8 +311,9 @@ public class UmlSecProcessor {
 			return false;
 		}
 		@SuppressWarnings("unchecked")
+		final
 		Collection<Object> values = (Collection<Object>) crit.eGet(feature);
-		for (Object value : signatures) {
+		for (final Object value : signatures) {
 			values.add(value);
 		}
 		return true;
@@ -322,20 +323,20 @@ public class UmlSecProcessor {
 			HashMap<String, Comment> highComments, HashMap<String, Comment> secrecyComments,
 			HashMap<String, Comment> integrityComments) {
 
-		for (Operation operation : classifier.getOperations()) {
+		for (final Operation operation : classifier.getOperations()) {
 			getComments(signatures, highComments, secrecyComments, integrityComments, operation);
 		}
 
-		for (Property property : classifier.getAttributes()) {
+		for (final Property property : classifier.getAttributes()) {
 			getComments(signatures, highComments, secrecyComments, integrityComments, property);
 		}
-		
-		Comment criticalComment = getComment(classifier, ANNOTATION_CRITICAL, false);
+
+		final Comment criticalComment = getComment(classifier, ANNOTATION_CRITICAL, false);
 		if(criticalComment == null) {
 			return null;
 		}
-		
-		for (Comment tag : criticalComment.getOwnedComments()) {
+
+		for (final Comment tag : criticalComment.getOwnedComments()) {
 			HashMap<String, Comment> addto;
 			if (TAG_HIGH.equals(tag.getBody())) {
 				addto = highComments;
@@ -346,7 +347,7 @@ public class UmlSecProcessor {
 			} else {
 				continue;
 			}
-			for (Comment value : tag.getOwnedComments()) {
+			for (final Comment value : tag.getOwnedComments()) {
 				addto.put(value.getBody(), value);
 			}
 		}
@@ -355,10 +356,10 @@ public class UmlSecProcessor {
 
 	private static void getComments(HashMap<String, Element> signatures, HashMap<String, Comment> highComments,
 			HashMap<String, Comment> secrecyComments, HashMap<String, Comment> integrityComments, Element operation) {
-		String signature = getSignature(operation);
+		final String signature = getSignature(operation);
 		signatures.put(signature, operation);
-		for (Comment comment : operation.getOwnedComments()) {
-			String body = comment.getBody();
+		for (final Comment comment : operation.getOwnedComments()) {
+			final String body = comment.getBody();
 			if (High.class.getSimpleName().equals(body)) {
 				highComments.put(signature, comment);
 			} else if (Integrity.class.getSimpleName().equals(body)) {
@@ -371,7 +372,7 @@ public class UmlSecProcessor {
 
 	private static Comment getComment(Element element, String body, boolean create) {
 		Comment newComment = null;
-		for (Comment comment : element.getOwnedComments()) {
+		for (final Comment comment : element.getOwnedComments()) {
 			if (body.equals(comment.getBody())) {
 				newComment = comment;
 				break;
@@ -389,8 +390,8 @@ public class UmlSecProcessor {
 	/**
 	 * Get the critical stereotype of the classifier the element is belonging to or
 	 * create one if there is none
-	 * 
-	 * @param classifier The element
+	 *
+	 * @param element The element
 	 * @return The stereotype
 	 * @throws If there is an unsupported element
 	 */
@@ -408,17 +409,17 @@ public class UmlSecProcessor {
 
 	/**
 	 * Get the critical stereotype of the classifier or create one if there is none
-	 * 
+	 *
 	 * @param classifier The classifier
 	 * @return The stereotype
 	 */
 	private static critical getCriticalStereotype(Classifier classifier) {
-		for (EObject eObject : classifier.getStereotypeApplications()) {
+		for (final EObject eObject : classifier.getStereotypeApplications()) {
 			if (eObject instanceof critical) {
 				return (critical) eObject;
 			}
 		}
-		critical critical = UmlsecFactory.eINSTANCE.createcritical();
+		final critical critical = UmlsecFactory.eINSTANCE.createcritical();
 		critical.setBase_Classifier(classifier);
 		classifier.eResource().getContents().add(critical);
 		return critical;

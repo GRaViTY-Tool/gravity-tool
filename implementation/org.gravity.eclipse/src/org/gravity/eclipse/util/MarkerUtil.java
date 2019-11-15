@@ -43,7 +43,6 @@ public class MarkerUtil {
 	 * Creates a marker on the given program model element
 	 *
 	 * @param element  The pm element
-	 * @param kind     The marker kind
 	 * @param message  The marker message
 	 * @param priority The marker priority
 	 * @param severity The severity of the marker
@@ -57,7 +56,6 @@ public class MarkerUtil {
 	 *
 	 * @param astTypes A mapping between names and Eclipse AST types
 	 * @param element  The pm element
-	 * @param kind     The marker kind
 	 * @param message  The marker message
 	 * @param priority The marker priority
 	 * @param severity The severity of the marker

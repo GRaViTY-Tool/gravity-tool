@@ -33,13 +33,13 @@ public class TGGApp extends SYNC {
 	private static final String MODISCO_TGG_XMI_URI = PLATFORM_RESOURCE + MoDiscoTGGActivator.PLUGIN_ID + "/" //$NON-NLS-1$
 			+ MODISCO_TGG_XMI_LOCATION;
 
-	private String name;
+	private final String name;
 
 	/**
 	 * Create a new transformation application
-	 * 
-	 * @param javaProject The project which should be transformed
-	 * 
+	 *
+	 * @param project The project which should be transformed
+	 *
 	 * @throws IOException If one of the models cannot be loaded
 	 */
 	public TGGApp(IProject project) throws IOException {
@@ -50,11 +50,11 @@ public class TGGApp extends SYNC {
 
 	@Override
 	public void loadModels() throws IOException {
-		String gravityFolder = PLATFORM_RESOURCE + name + '/' + GravityActivator.GRAVITY_FOLDER_NAME + '/';
-		s = createResource(gravityFolder + "src.xmi"); //$NON-NLS-1$
-		t = createResource(gravityFolder + name + ".xmi"); //$NON-NLS-1$
-		c = createResource(gravityFolder + "corr.xmi"); //$NON-NLS-1$
-		p = createResource(gravityFolder + "protocol.xmi"); //$NON-NLS-1$
+		final String gravityFolder = PLATFORM_RESOURCE + this.name + '/' + GravityActivator.GRAVITY_FOLDER_NAME + '/';
+		this.s = createResource(gravityFolder + "src.xmi"); //$NON-NLS-1$
+		this.t = createResource(gravityFolder + this.name + ".xmi"); //$NON-NLS-1$
+		this.c = createResource(gravityFolder + "corr.xmi"); //$NON-NLS-1$
+		this.p = createResource(gravityFolder + "protocol.xmi"); //$NON-NLS-1$
 	}
 
 	@Override
@@ -62,33 +62,32 @@ public class TGGApp extends SYNC {
 		registerPackage(JavaPackage.eINSTANCE);
 		registerPackage(ModiscoPackage.eINSTANCE);
 		registerPackage(BasicPackage.eINSTANCE);
-		EPackage tggPackage = loadMetaModelPackage();
+		final EPackage tggPackage = loadMetaModelPackage();
 		registerPackage(tggPackage);
-		options.setCorrMetamodel(tggPackage);
-		EcoreUtil.resolveAll(rs);
+		this.options.setCorrMetamodel(tggPackage);
+		EcoreUtil.resolveAll(this.rs);
 	}
 
 	/**
 	 * Registers the package at the resource set
-	 * 
+	 *
 	 * @param ePackage The package
 	 */
 	private void registerPackage(EPackage ePackage) {
-		rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
-		rs.getResources().remove(ePackage.eResource());
+		this.rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
+		this.rs.getResources().remove(ePackage.eResource());
 	}
 
 	/**
 	 * Load the meta model package
-	 * 
-	 * @param uri The URI of the meta model
+	 *
 	 * @return The EPackage of the meta model
 	 * @throws IOException If the file cannot be reador the URI hasn't a valid
 	 *                     format
 	 */
 	private EPackage loadMetaModelPackage() throws IOException {
 		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_ECORE_LOCATION)) {
-			Resource resource = loadResource(MODISCO_ECORE_URI, stream);
+			final Resource resource = loadResource(MODISCO_ECORE_URI, stream);
 			return (EPackage) resource.getContents().get(0);
 		}
 	}
@@ -102,14 +101,14 @@ public class TGGApp extends SYNC {
 
 	/**
 	 * Loads a resource from the given input stream under the given URI
-	 * 
+	 *
 	 * @param uri    The URI of the resource
 	 * @param stream The stream containing the resources contents
 	 * @return The loaded resource
 	 * @throws IOException If the resource couldn't be loaded
 	 */
 	private Resource loadResource(String uri, InputStream stream) throws IOException {
-		Resource resource = rs.createResource(URI.createURI(uri));
+		final Resource resource = this.rs.createResource(URI.createURI(uri));
 		resource.load(stream, Collections.emptyMap());
 		EcoreUtil.resolveAll(resource);
 		return resource;
@@ -130,7 +129,7 @@ public class TGGApp extends SYNC {
 	}
 
 	private static IbexOptions createIbexOptions() {
-		IbexOptions options = new IbexOptions();
+		final IbexOptions options = new IbexOptions();
 		options.projectName("Modisco"); //$NON-NLS-1$
 		options.projectPath(MoDiscoTGGActivator.PLUGIN_ID);
 		options.debug(false);
