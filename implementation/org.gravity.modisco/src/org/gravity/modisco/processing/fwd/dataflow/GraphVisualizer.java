@@ -5,6 +5,7 @@ import static guru.nidi.graphviz.model.Factory.mutNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -181,8 +182,8 @@ public class GraphVisualizer {
 	 */
 	private static void drawContainmentEdges(MemberHandler handler,
 			HashMap<FlowNode, MutableNode> graphNodes) {
-		for (final FlowNode node : handler.getAllFlowNodes()) {
-			final MutableNode graphNode = graphNodes.get(node);
+		for (final FlowNode node : new ArrayList<>(handler.getAllFlowNodes())) {
+			final MutableNode target = graphNodes.get(node);
 			final EObject modelElement = node.getModelElement();
 			if (modelElement == null) {
 				continue;
@@ -193,18 +194,21 @@ public class GraphVisualizer {
 				continue;
 			}
 			if (modelElement instanceof MethodInvocation) {
-				graphNode.addLink(graphNode
+				target.addLink(target
 						.linkTo(getDotNode(handler.getFlowNode(((MethodInvocation) modelElement).getMethod()))
 								.add(Style.FILLED, Color.GRAY))
 						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 			}
 			if (modelElement instanceof ClassInstanceCreation) {
-				graphNode.addLink(graphNode.linkTo(
+				target.addLink(target.linkTo(
 						getDotNode(handler.getFlowNode(((ClassInstanceCreation) modelElement).getMethod()))
 						.add(Style.FILLED, Color.GRAY))
 						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 			}
-			graphNodes.get(flowCont).addLink(graphNode);
+			final MutableNode source = graphNodes.get(flowCont);
+			if(source != null) {
+				source.addLink(target);
+			}
 		}
 	}
 

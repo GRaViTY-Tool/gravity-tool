@@ -210,7 +210,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SuperFieldAccess superFieldAccess) {
-		final FlowNode member = this.handler.getFlowNode(superFieldAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(superFieldAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -223,7 +223,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(VariableDeclarationExpression variableDeclarationExpression) {
-		final FlowNode member = this.handler.getFlowNode(variableDeclarationExpression);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(variableDeclarationExpression);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -234,7 +234,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ArrayCreation arrayCreation) {
-		final FlowNode member = this.handler.getFlowNode(arrayCreation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(arrayCreation);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -249,7 +249,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ArrayInitializer arrayInitializer) {
-		final FlowNode member = this.handler.getFlowNode(arrayInitializer);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(arrayInitializer);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -260,7 +260,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(NumberLiteral numberLiteral) {
-		final FlowNode member = this.handler.getFlowNode(numberLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(numberLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -269,13 +269,13 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SingleVariableAccess singleVariableAccess) {
-		final FlowNode member = this.handler.getFlowNode(singleVariableAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(singleVariableAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
 		handle(singleVariableAccess.getQualifier());
 		final VariableDeclaration variable = singleVariableAccess.getVariable();
-		final FlowNode varDeclNode = this.handler.getFlowNode(variable); // No handling desired, as
+		final FlowNode varDeclNode = this.handler.getFlowNodeOrCreate(variable); // No handling desired, as
 		// it's easier
 		// to use this SingleVariableAccess
 		// handling instead
@@ -304,7 +304,7 @@ public class DataFlowVisitor {
 			member.addInRef(varDeclNode);
 			if (variablesContainer instanceof MFieldDefinition) { // Read access of a field also causes inter-procedural
 				// flow
-				this.handler.getFlowNode(variablesContainer); // No handling needed; only for
+				this.handler.getFlowNodeOrCreate(variablesContainer); // No handling needed; only for
 				// visualization
 				this.handler.addMemberRef(member);
 			}
@@ -343,7 +343,7 @@ public class DataFlowVisitor {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			this.handler.getFlowNode(container).addInRef(member); // No handling; should be fine
+			this.handler.getFlowNodeOrCreate(container).addInRef(member); // No handling; should be fine
 			// though,
 			// as container is handled first anyway
 		}
@@ -426,7 +426,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(TypeAccess typeAccess) {
-		final FlowNode member = this.handler.getFlowNode(typeAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(typeAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -434,7 +434,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(InfixExpression infixExpression) {
-		final FlowNode member = this.handler.getFlowNode(infixExpression);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(infixExpression);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -454,7 +454,7 @@ public class DataFlowVisitor {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			this.handler.getFlowNode(container).addInRef(member); // No handling; should be fine
+			this.handler.getFlowNodeOrCreate(container).addInRef(member); // No handling; should be fine
 			// though,
 			// as container is handled first anyway
 		}
@@ -462,7 +462,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ClassInstanceCreation classInstanceCreation) {
-		final FlowNode member = this.handler.getFlowNode(classInstanceCreation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(classInstanceCreation);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -477,7 +477,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(Assignment assignment) {
-		final FlowNode member = this.handler.getFlowNode(assignment);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(assignment);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -492,7 +492,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SuperMethodInvocation superMethodInvocation) {
-		final FlowNode member = this.handler.getFlowNode(superMethodInvocation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(superMethodInvocation);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -506,7 +506,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ThisExpression thisExpression) {
-		final FlowNode member = this.handler.getFlowNode(thisExpression);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(thisExpression);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -522,7 +522,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(BooleanLiteral booleanLiteral) {
-		final FlowNode member = this.handler.getFlowNode(booleanLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(booleanLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -531,7 +531,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(CharacterLiteral characterLiteral) {
-		final FlowNode member = this.handler.getFlowNode(characterLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(characterLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -540,7 +540,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ConditionalExpression conditionalExpression) {
-		final FlowNode member = this.handler.getFlowNode(conditionalExpression);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(conditionalExpression);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -551,7 +551,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(TypeLiteral typeLiteral) {
-		final FlowNode member = this.handler.getFlowNode(typeLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(typeLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -559,7 +559,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ArrayAccess arrayAccess) {
-		final FlowNode member = this.handler.getFlowNode(arrayAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(arrayAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -570,7 +570,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(FieldAccess fieldAccess) {
-		final FlowNode member = this.handler.getFlowNode(fieldAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(fieldAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -580,7 +580,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(MethodInvocation methodInvocation) {
-		final FlowNode member = this.handler.getFlowNode(methodInvocation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(methodInvocation);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -612,7 +612,7 @@ public class DataFlowVisitor {
 	 */
 	private void handleArguments(AbstractMethodInvocation methodInvocation, FlowNode member) {
 		final AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
-		this.handler.getFlowNode(calledMethod); // Creating just a FlowNode for the called method; no
+		this.handler.getFlowNodeOrCreate(calledMethod); // Creating just a FlowNode for the called method; no
 		// handling needed
 		if (methodInvocation instanceof MethodInvocation) {
 			handle(((MethodInvocation) methodInvocation).getExpression());
@@ -640,7 +640,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(NullLiteral nullLiteral) {
-		final FlowNode member = this.handler.getFlowNode(nullLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(nullLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -649,7 +649,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(StringLiteral stringLiteral) {
-		final FlowNode member = this.handler.getFlowNode(stringLiteral);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(stringLiteral);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -658,7 +658,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(UnresolvedItemAccess itemAccess) {
-		final FlowNode member = this.handler.getFlowNode(itemAccess);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(itemAccess);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -766,7 +766,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(WhileStatement whileStatement) {
-		final FlowNode member = this.handler.getFlowNode(whileStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(whileStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -776,7 +776,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(VariableDeclarationStatement variableDeclarationStatement) {
-		final FlowNode member = this.handler.getFlowNode(variableDeclarationStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(variableDeclarationStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -787,7 +787,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(TypeDeclarationStatement typeDeclarationStatement) {
-		final FlowNode member = this.handler.getFlowNode(typeDeclarationStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(typeDeclarationStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -796,7 +796,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(TryStatement tryStatement) {
-		final FlowNode member = this.handler.getFlowNode(tryStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(tryStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -812,7 +812,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ThrowStatement throwStatement) {
-		final FlowNode member = this.handler.getFlowNode(throwStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(throwStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -821,7 +821,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SynchronizedStatement synchronizedStatement) {
-		final FlowNode member = this.handler.getFlowNode(synchronizedStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(synchronizedStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -831,7 +831,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SwitchStatement switchStatement) {
-		final FlowNode member = this.handler.getFlowNode(switchStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(switchStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -843,7 +843,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SwitchCase switchCase) {
-		final FlowNode member = this.handler.getFlowNode(switchCase);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(switchCase);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -852,7 +852,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SuperConstructorInvocation superConstructorInvocation) {
-		final FlowNode member = this.handler.getFlowNode(superConstructorInvocation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(superConstructorInvocation);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -864,7 +864,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ReturnStatement returnStatement) {
-		final FlowNode member = this.handler.getFlowNode(returnStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(returnStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -873,7 +873,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(LabeledStatement labeledStatement) {
-		final FlowNode member = this.handler.getFlowNode(labeledStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(labeledStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -884,7 +884,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(IfStatement ifStatement) {
-		final FlowNode member = this.handler.getFlowNode(ifStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(ifStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -895,7 +895,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ForStatement forStatement) {
-		final FlowNode member = this.handler.getFlowNode(forStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(forStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -911,7 +911,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ExpressionStatement expressionStatement) {
-		final FlowNode member = this.handler.getFlowNode(expressionStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(expressionStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -920,7 +920,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(EnhancedForStatement enhancedForStatement) {
-		final FlowNode member = this.handler.getFlowNode(enhancedForStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(enhancedForStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -930,7 +930,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(DoStatement doStatement) {
-		final FlowNode member = this.handler.getFlowNode(doStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(doStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -944,12 +944,12 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(ConstructorInvocation constructorInvocation) {
-		final FlowNode member = this.handler.getFlowNode(constructorInvocation);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(constructorInvocation);
 		if (member.alreadySeen()) {
 			return member;
 		}
 		final AbstractMethodDeclaration calledMethod = constructorInvocation.getMethod();
-		this.handler.getFlowNode(calledMethod); // Creating just a FlowNode for the called method; no
+		this.handler.getFlowNodeOrCreate(calledMethod); // Creating just a FlowNode for the called method; no
 		// handling needed
 		final EList<Expression> arguments = constructorInvocation.getArguments();
 		if (!arguments.isEmpty()) {
@@ -978,7 +978,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(CatchClause catchClause) {
-		final FlowNode member = this.handler.getFlowNode(catchClause);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(catchClause);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -988,7 +988,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(AssertStatement assertStatement) {
-		final FlowNode member = this.handler.getFlowNode(assertStatement);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(assertStatement);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -998,7 +998,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(Block block) {
-		final FlowNode member = this.handler.getFlowNode(block);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(block);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -1009,7 +1009,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(VariableDeclarationFragment fragment) {
-		final FlowNode member = this.handler.getFlowNode(fragment);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(fragment);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -1021,7 +1021,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(AbstractTypeDeclaration declaration) {
-		final FlowNode member = this.handler.getFlowNode(declaration);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(declaration);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -1032,7 +1032,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(BodyDeclaration body) {
-		final FlowNode member = this.handler.getFlowNode(body);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(body);
 		if (member.alreadySeen()) {
 			return member;
 		}
@@ -1040,7 +1040,7 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(SingleVariableDeclaration singleVariableDeclaration) {
-		final FlowNode member = this.handler.getFlowNode(singleVariableDeclaration);
+		final FlowNode member = this.handler.getFlowNodeOrCreate(singleVariableDeclaration);
 		if (member.alreadySeen()) {
 			return member;
 		}

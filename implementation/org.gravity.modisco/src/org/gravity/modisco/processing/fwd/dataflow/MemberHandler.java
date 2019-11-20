@@ -71,8 +71,8 @@ public class MemberHandler {
 	 * @return If already present, the FlowNode for the given element. A new
 	 *         FlowNode for the element otherwise.
 	 */
-	public FlowNode getFlowNode(EObject element) {
-		final FlowNode seenNode = this.alreadySeen.get(element);
+	public FlowNode getFlowNodeOrCreate(EObject element) {
+		final FlowNode seenNode = getFlowNode(element);
 		if (seenNode != null) { // making sure, that null references lead to creation of new nodes
 			seenNode.setToAlreadySeen();
 			return seenNode;
@@ -80,6 +80,17 @@ public class MemberHandler {
 		final FlowNode member = new FlowNode(element);
 		this.alreadySeen.put(element, member);
 		return member;
+	}
+
+	/**
+	 * Checks, if a (non-null) FlowNode has already been created for the given
+	 * element and returns it.
+	 *
+	 * @param element The element, for which the check is performed.
+	 * @return If already present, the FlowNode for the given element or else null
+	 */
+	public FlowNode getFlowNode(EObject element) {
+		return this.alreadySeen.get(element);
 	}
 
 	public FlowNode removeFlowNode(EObject key) {
@@ -92,14 +103,14 @@ public class MemberHandler {
 
 	public void propagateBackReadAccess(Collection<EObject> seenContainers, FlowNode currentNode) {
 		for (final EObject currentObj : seenContainers) {
-			final FlowNode newNode = getFlowNode(currentObj);
+			final FlowNode newNode = getFlowNodeOrCreate(currentObj);
 			currentNode.addOutRef(newNode);
 		}
 	}
 
 	public void propagateBackWriteAccess(LinkedList<EObject> seenContainers, FlowNode currentNode) {
 		for (final EObject currentObj : seenContainers) {
-			final FlowNode newNode = getFlowNode(currentObj);
+			final FlowNode newNode = getFlowNodeOrCreate(currentObj);
 			currentNode.addInRef(newNode);
 		}
 	}

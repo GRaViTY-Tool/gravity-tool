@@ -321,7 +321,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		if (access instanceof AbstractMethodInvocation) {
 			final AbstractMethodDeclaration methodDef = ((AbstractMethodInvocation) access).getMethod();
 			if (methodDef instanceof MConstructorDefinition) {
-				final FlowNode defNode = handler.getFlowNode(methodDef);
+				final FlowNode defNode = handler.getFlowNodeOrCreate(methodDef);
 				inRef.add(defNode);
 				defNode.addOutRef(node);
 			} else {
@@ -331,7 +331,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					if (returnType != null) {
 						if (!returnType.getType().getName().equals("void")) {
 							final FlowNode sigNode = handler
-									.getFlowNode(((MMethodDefinition) methodDef).getMSignature());
+									.getFlowNodeOrCreate(((MMethodDefinition) methodDef).getMSignature());
 							inRef.add(sigNode);
 							sigNode.addOutRef(node);
 						}
@@ -340,7 +340,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							// UnresolvedMethodDeclarations for
 							// now
 							final FlowNode sigNode = handler
-									.getFlowNode(((MMethodDefinition) methodDef).getMSignature());
+									.getFlowNodeOrCreate(((MMethodDefinition) methodDef).getMSignature());
 							inRef.add(sigNode);
 							sigNode.addOutRef(node);
 						}
@@ -450,9 +450,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		final Stream<MemberHandler> methodProcessors = this.model.getMAbstractMethodDefinitions()
 				.parallelStream().map(methodDef -> {
 					final MemberHandler methodProcessor = new MemberHandler(methodDef);
-					methodProcessor.getFlowNode(methodDef);
+					methodProcessor.getFlowNodeOrCreate(methodDef);
 					for (final SingleVariableDeclaration param : methodDef.getParameters()) {
-						methodProcessor.getFlowNode(param);
+						methodProcessor.getFlowNodeOrCreate(param);
 					}
 					methodProcessor.handle();
 					return methodProcessor;
@@ -461,7 +461,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				.flatMap(fieldDef -> fieldDef.getFragments().parallelStream()).map(fragment -> {
 					final MemberHandler fieldProcessor = new MemberHandler(fragment);
 					fieldProcessor.handle();
-					fieldProcessor.getFlowNode(fragment.getVariablesContainer());
+					fieldProcessor.getFlowNodeOrCreate(fragment.getVariablesContainer());
 					return fieldProcessor;
 
 				});
