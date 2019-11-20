@@ -86,7 +86,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			// Insertion of inter-procedural data flows
 			for (final FlowNode node : handler.getMemberRef()) {
 				// Setting flows
-				createFlows(node, handler);
+				setFlows(node, handler);
 			}
 		});
 		if (GravityActivator.isVerbose()) {
@@ -99,26 +99,111 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Creates the flows
 	 *
-	 * @param node    The node for which flows should be created
-	 * @param handler The handler used to discover the node
+	 * @param node       The node for which flows should be created
+	 * @param handler    The handler used to discover the node
 	 * @return true, if creating the flows was successful
 	 */
-	private boolean createFlows(FlowNode node, MemberHandler handler) {
-		// Removing unnecessary out edges (self-flows and flows to calls in paramFlows)
+	private boolean setFlows(FlowNode node, MemberHandler handler) {
+		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
+		MFlow accessOut = null;
+		final Set<FlowNode> outRef = buildOutRef(node);
 		for (final FlowNode inNode : buildInRef(handler, node)) {
 			if (inNode == node) {
 				continue;
 			}
-			if (!createInFlow(inNode, node)) {
-				return false;
+			final EObject inElement = inNode.getModelElement();
+			if (inElement instanceof SingleVariableDeclaration) {
+				accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+				accessOut.setFlowSource(((MSingleVariableDeclaration) inElement).getMEntry());
+				if (outRef.isEmpty()) { // Handling parameter flows, which end in an access (e. g. if access is in an
+					// assignment to a local)
+					accessOut.setFlowOwner(access);
+					accessOut.setFlowTarget(access);
+				} else { // Set flowOwner to parameter's member, as the access will be removed in the TGG
+					// transformation
+					accessOut.setFlowOwner((MAbstractMethodDefinition) ((MSingleVariableDeclaration) inElement)
+							.getMethodDeclaration());
+				}
+			} else {
+				// Also create incoming flow here, if it's not coming from an access (to avoid
+				// redundancy)
+				if (!(inElement instanceof SingleVariableAccess || inElement instanceof AbstractMethodInvocation)) {
+					final MFlow accessIn = ModiscoFactory.eINSTANCE.createMFlow();
+					if (inElement instanceof VariableDeclarationFragment) {
+						final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) inElement)
+								.getVariablesContainer();
+						if (variablesContainer instanceof FieldDeclaration) {
+							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+							accessIn.setFlowSource(fieldDef.getMSignature());
+						} else {
+							LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+						}
+					} else {
+						accessIn.setFlowSource((MAbstractFlowElement) inElement);
+					}
+					accessIn.setFlowTarget(access);
+					accessIn.setFlowOwner(access);
+				}
 			}
 		}
-		for (final FlowNode trg : buildOutRef(node)) {
-			if (trg == node) {
+		for (final FlowNode outNode : outRef) {
+			if (outNode == node) {
 				continue;
 			}
-			if (!createOutFlow(node, trg, handler.getMemberDef())) {
-				return false;
+			if (accessOut == null || !(accessOut.getFlowSource() instanceof MEntry)) {
+				accessOut = ModiscoFactory.eINSTANCE.createMFlow();
+				accessOut.setFlowSource(access);
+				accessOut.setFlowOwner(access);
+			}
+			final EObject outElement = outNode.getModelElement();
+			if (outElement instanceof ReturnStatement) {
+				accessOut.setFlowTarget(handler.getMemberDef());
+			} else if (outElement instanceof VariableDeclarationFragment) {
+				final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) outElement)
+						.getVariablesContainer();
+				if (variablesContainer instanceof FieldDeclaration) {
+					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
+					accessOut.setFlowTarget(fieldDef);
+				} else {
+					LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+				}
+			} else if (outElement instanceof MSingleVariableDeclaration) {
+				// Set target
+				final MSingleVariableDeclaration paramTarget = (MSingleVariableDeclaration) outElement;
+				final MEntry sigParamTarget = paramTarget.getMEntry();
+				accessOut.setFlowTarget(sigParamTarget);
+
+				// Set owner
+				final MAbstractMethodInvocation invocation = node.getFlowOwner();
+				if (invocation != null) {
+					accessOut.setFlowOwner(invocation);
+				} else {
+					LOGGER.log(Level.INFO,
+							"AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
+					accessOut.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
+				}
+			} else if (outElement instanceof IfStatement || outElement instanceof WhileStatement
+					|| outElement instanceof ForStatement || outElement instanceof EnhancedForStatement
+					|| outElement instanceof DoStatement || outElement instanceof SwitchStatement) {
+				accessOut.setFlowTarget(handler.getMemberDef());
+			} else {
+				if (outElement instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the target
+					// is another access
+					final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
+					final VariableDeclaration variable = mSVA.getVariable();
+					if (variable instanceof MSingleVariableDeclaration) {
+						accessOut.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
+					} else if (variable.eContainer() instanceof MFieldDefinition
+							&& accessOut.getFlowSource() instanceof MEntry) {
+						accessOut.setFlowOwner(mSVA);
+						accessOut.setFlowTarget(mSVA);
+					} else { // Basically flows into field accesses without MEntry as sourceb
+						accessOut.setFlowTarget((MAbstractFlowElement) outElement);
+					}
+				} else {
+					final MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
+					accessOut.setFlowTarget(outTarget);
+				}
 			}
 		}
 		return true;
