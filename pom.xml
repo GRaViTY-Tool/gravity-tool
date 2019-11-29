@@ -139,7 +139,7 @@
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/latest</url>
     </repository>
-    <repository>
+    <!--<repository>
       <id>EMF</id>
       <layout>p2</layout>
       <url>http://download.eclipse.org/modeling/emf/updates/releases/</url>
@@ -148,7 +148,7 @@
       <id>EMF Facets</id>
       <layout>p2</layout>
       <url>http://download.eclipse.org/facet/updates/release/</url>
-    </repository>
+    </repository>-->
     <repository>
       <id>Papyrus</id>
       <layout>p2</layout>
