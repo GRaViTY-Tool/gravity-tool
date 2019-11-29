@@ -21,28 +21,31 @@ import org.gravity.typegraph.basic.TypeGraph;
 public abstract class AbstractRefactoringTestCase {
 
 	private static final Logger LOGGER = Logger.getLogger(AbstractRefactoringTestCase.class);
-	
+
 	protected static String projectName;
 
-	private static TypeGraph pm; 
+	private static TypeGraph pm;
 
 	public static void initialize(String projectName) throws CoreException, TransformationFailedException {
 		MoDiscoTGGActivator.getDefault();
-		if(projectName == null) {
+		if (projectName == null) {
 			fail("Project not set!");
 		}
-		File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
-		File projectLocation = new File(src, projectName);
-		if(!projectLocation.exists()) {
-			fail("Project \""+projectName+"\" doesn't exist at \""+src.toString()+"\"!");
+		final File src = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile();
+		final File projectLocation = new File(src, projectName);
+		if (!projectLocation.exists()) {
+			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
 		}
-		LOGGER.info("Importing project: "+projectName);
-		NullProgressMonitor monitor = new NullProgressMonitor();
-		IProject project = EclipseProjectUtil.importProject(projectLocation, monitor);
-		IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
+		LOGGER.info("Importing project: " + projectName);
+		final NullProgressMonitor monitor = new NullProgressMonitor();
+		final IProject project = EclipseProjectUtil.importProject(projectLocation, monitor);
+		if (project == null || !project.exists()) {
+			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
+		}
+		final IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
 		pm = GravityAPI.createProgramModel(java, monitor);
 	}
-	
+
 	protected static TypeGraph getProgramModel() {
 		return EcoreUtil.copy(pm);
 	}
