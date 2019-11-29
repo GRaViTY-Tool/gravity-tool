@@ -43,6 +43,9 @@ public abstract class AbstractRefactoringTestCase {
 			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
 		}
 		final IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
+		if (java == null || !java.exists()) {
+			fail("Project \"" + projectName + "\" couldn't be converted to a Java project!");
+		}
 		pm = GravityAPI.createProgramModel(java, monitor);
 	}
 
