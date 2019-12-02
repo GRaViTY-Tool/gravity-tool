@@ -4,40 +4,26 @@ package org.gravity.hulk.detection.antipattern.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
 import org.gravity.hulk.antipatterngraph.antipattern.HGodClassAntiPattern;
-
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassAccessor;
 import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
-
 import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
-
 import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.antipattern.HBlobDetector;
-
 import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
@@ -55,7 +41,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlobDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HBlobDetectorImpl() {
@@ -64,7 +50,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,13 +60,14 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public HAnnotation calculate(TClass tClass) {//
 		HGodClassAntiPattern mainClass = null;
 		HDataClassAccessor nad = null;
-		for (TAnnotation annotation : tClass.getTAnnotation()) {
+		for (final TAnnotation annotation : tClass.getTAnnotation()) {
 			if (annotation instanceof HGodClassAntiPattern) {
 				mainClass = (HGodClassAntiPattern) annotation;
 			} else if (annotation instanceof HDataClassAccessor) {
@@ -89,19 +76,19 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 		}
 		if (mainClass != null && nad != null) {
 			//
-			HRelativeValue relative = nad.getRelativeAmount();
-			if (relative != null && !relative.equals(HRelativeValueConstants.VERY_LOW)
-					&& !relative.equals(HRelativeValueConstants.LOW)) {
-				HBlobAntiPattern blob = createAntiPattern(tClass, mainClass, nad);
+			final HRelativeValue relative = nad.getRelativeAmount();
+			if (relative != null && !HRelativeValueConstants.VERY_LOW.equals(relative.getValue())
+					&& !HRelativeValueConstants.LOW.equals(relative.getValue())) {
+				final HBlobAntiPattern blob = createAntiPattern(tClass, mainClass, nad);
 
 				// ForEach
-				for (HDataClassSmell dc : nad.getHDataClassSmells()) {
+				for (final HDataClassSmell dc : nad.getHDataClassSmells()) {
 					blob.getHDataClassSmells().add(dc);
 				}
 				//
-				TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "Blob");
+				final TAnnotationType tAnnotationType = getAnnotationType(tClass.getPg(), "Blob");
 				if (tAnnotationType != null) {
-					TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+					final TAnnotation annotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 					annotation.setTAnnotated(tClass);
 					tAnnotationType.getAnnotations().add(annotation);
 				}
@@ -113,12 +100,13 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph pg) {// ForEach
-		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			HAnnotation metric = calculate(tClass);
+		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			final HAnnotation metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -131,7 +119,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +147,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,7 +163,7 @@ public class HBlobDetectorImpl extends HAntiPatternDetectorImpl implements HBlob
 
 	public final HBlobAntiPattern createAntiPattern(TClass tClass, HGodClassAntiPattern mainClassS,
 			HDataClassAccessor nad) {
-		HBlobAntiPattern blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();
+		final HBlobAntiPattern blob = AntipatternFactory.eINSTANCE.createHBlobAntiPattern();
 		blob.setTAnnotated(tClass);
 		blob.setHGodClassAntiPattern(mainClassS);
 		mainClassS.getPartOf().add(blob);

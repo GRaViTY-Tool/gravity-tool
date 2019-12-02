@@ -4,37 +4,24 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.codesmells.HGetterSetterSmell;
-
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
-
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HGetterSetterDetector;
-
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HCodeSmellDetectorImpl;
-
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -50,7 +37,7 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements HGetterSetterDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HGetterSetterDetectorImpl() {
@@ -59,7 +46,7 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,25 +56,27 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isGetterSetter(TMethodDefinition method) {
 		// [user code injected with eMoflon]
 
-		String tName = method.getSignature().getMethod().getTName();
-		return tName.startsWith("get") || tName.startsWith("get");
+		final String tName = method.getSignature().getMethod().getTName();
+		return tName.startsWith("get") || tName.startsWith("set");
 
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public HAnnotation calculate(TClass tClass) {
 		HNACCMetric nacc = null;
-		for (TAnnotation tmpNacc : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpNacc : tClass.getTAnnotation()) {
 			if (tmpNacc instanceof HNACCMetric) {
 				nacc = (HNACCMetric) tmpNacc;
 				break;
@@ -98,12 +87,12 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 					+ "[this] = " + this + ".");
 		}
 		// ForEach
-		for (TMember tmpTMember : tClass.getDefines()) {
+		for (final TMember tmpTMember : tClass.getDefines()) {
 			if (tmpTMember instanceof TMethodDefinition) {
-				TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
+				final TMethodDefinition tMember = (TMethodDefinition) tmpTMember;
 				//
 				if (isGetterSetter(tMember)) {
-					HGetterSetterSmell gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
+					final HGetterSetterSmell gs = CodesmellsFactory.eINSTANCE.createHGetterSetterSmell();
 					gs.setTAnnotated(tMember);
 					gs.getPartOf().add(nacc);
 					nacc.getHGetterSetterSmells().add(gs);
@@ -116,12 +105,13 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph pg) {// ForEach
-		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			HAnnotation metric = calculate(tClass);
+		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			final HAnnotation metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -134,7 +124,7 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -162,7 +152,7 @@ public class HGetterSetterDetectorImpl extends HCodeSmellDetectorImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

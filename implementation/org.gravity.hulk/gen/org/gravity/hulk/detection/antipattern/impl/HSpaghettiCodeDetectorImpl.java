@@ -3,41 +3,32 @@
 package org.gravity.hulk.detection.antipattern.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
-import org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern;
-
-import org.gravity.hulk.antipatterngraph.codesmells.HIntenseFieldUsageCodeSmell;
-
-import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HDepthOfInheritanceMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
-
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
-import org.gravity.hulk.detection.antipattern.AntipatternPackage;
-import org.gravity.hulk.detection.antipattern.HSpaghettiCodeDetector;
-import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
-import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-
-import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
-import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.annotations.TAnnotationType;
 // <-- [user defined imports]
 import java.util.ArrayList;
 import java.util.List;
 // [user defined imports] -->
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
+import org.gravity.hulk.antipatterngraph.antipattern.HSpaghettiCodeAntiPattern;
+import org.gravity.hulk.antipatterngraph.codesmells.HIntenseFieldUsageCodeSmell;
+import org.gravity.hulk.antipatterngraph.metrics.HAverageOverloadingInClassMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HDepthOfInheritanceMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HNumberOfChildMetric;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
+import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+import org.gravity.hulk.detection.antipattern.AntipatternPackage;
+import org.gravity.hulk.detection.antipattern.HSpaghettiCodeDetector;
+import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
+import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -50,7 +41,7 @@ import java.util.List;
 public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl implements HSpaghettiCodeDetector {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HSpaghettiCodeDetectorImpl() {
@@ -59,7 +50,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,12 +60,13 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph pg) {// ForEach
-		for (TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
-			HAnnotation metric = calculate(tClass);
+		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
+			final HAnnotation metric = calculate(tClass);
 			if (metric != null) {
 				metric.setTAnnotated(tClass);
 				pg.getHAnnotations().add(metric);
@@ -84,19 +76,20 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 		}
 		return true;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public HAnnotation calculate(TClass tClass) {
 		HIntenseFieldUsageCodeSmell intenseFieldUsage = null;
 		HAverageParametersMetric averageParams = null;
 		HDepthOfInheritanceMetric depthOfInheritance = null;
 		HNumberOfChildMetric numberOfChild = null;
 		HAverageOverloadingInClassMetric averageOverloading = null;
-		for (TAnnotation annotation : tClass.getTAnnotation()) {
+		for (final TAnnotation annotation : tClass.getTAnnotation()) {
 			if (annotation instanceof HAverageParametersMetric) {
 				averageParams = (HAverageParametersMetric) annotation;
 			} else if (annotation instanceof HIntenseFieldUsageCodeSmell) {
@@ -116,35 +109,35 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 		collect(intenseFieldUsage);
 
-		if (HRelativeValueConstants.VERY_LOW.equals(averageParams.getRelativeAmount())) {
+		if (HRelativeValueConstants.VERY_LOW.equals(averageParams.getRelativeAmount().getValue())) {
 
-			HRelativeValue iRelative = depthOfInheritance.getRelativeAmount();
+			final HRelativeValue iRelative = depthOfInheritance.getRelativeAmount();
 			if (iRelative != null && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
 				collect(depthOfInheritance);
 				//
-				HRelativeValue cRelative = numberOfChild.getRelativeAmount();
+				final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
 				if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
 					collect(numberOfChild);
 
 				}
 				//
-				HRelativeValue oRelative = averageOverloading.getRelativeAmount();
+				final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
 				if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 					collect(averageOverloading);
 				}
 
 			} else {
-				HRelativeValue cRelative = numberOfChild.getRelativeAmount();
+				final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
 				if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
 					collect(numberOfChild);
 					//
-					HRelativeValue oRelative = averageOverloading.getRelativeAmount();
+					final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
 					if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 						collect(averageOverloading);
 					}
 
 				} else {
-					HRelativeValue oRelative = averageOverloading.getRelativeAmount();
+					final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
 					if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
 						collect(averageOverloading);
 					} else {
@@ -154,16 +147,16 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 				}
 
 			}
-			HSpaghettiCodeAntiPattern anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
+			final HSpaghettiCodeAntiPattern anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
 			anti.setTAnnotated(tClass);
 			getHAnnotation().add(anti);
 			//
 			connect(anti);
 			//
 
-			TAnnotationType tType = getAnnotationType(tClass.getPg(), "SpaghettiCode");
+			final TAnnotationType tType = getAnnotationType(tClass.getPg(), "SpaghettiCode");
 			if (tType != null) {
-				TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+				final TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
 				tAnnotation.setTAnnotated(tClass);
 				tType.getAnnotations().add(tAnnotation);
 			}
@@ -175,25 +168,27 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean collect(HAnnotation hAnnotation) {
 		// [user code injected with eMoflon]
 
-		return annotations.add(hAnnotation);
+		return this.annotations.add(hAnnotation);
 
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean connect(HSpaghettiCodeAntiPattern hAntiPattern) {
 		// [user code injected with eMoflon]
 
-		for (HAnnotation a : annotations) {
+		for (final HAnnotation a : this.annotations) {
 			a.getPartOf().add(hAntiPattern);
 			if (a instanceof HIntenseFieldUsageCodeSmell) {
 				hAntiPattern.setHIntenseFieldUsageCodeSmell((HIntenseFieldUsageCodeSmell) a);
@@ -213,7 +208,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -230,7 +225,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	}
 
 	public static final HNumberOfChildMetric getNumberOfChildMetric(TClass tClass) {
-		for (TAnnotation tmpChild : tClass.getTAnnotation()) {
+		for (final TAnnotation tmpChild : tClass.getTAnnotation()) {
 			if (tmpChild instanceof HNumberOfChildMetric) {
 				return (HNumberOfChildMetric) tmpChild;
 			}
@@ -240,7 +235,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 	// <-- [user code injected with eMoflon]
 
-	private List<HAnnotation> annotations = new ArrayList<>();
+	private final List<HAnnotation> annotations = new ArrayList<>();
 
 	@Override
 	public String getGuiName() {
