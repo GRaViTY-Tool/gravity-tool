@@ -978,7 +978,11 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(BreakStatement breakStatement) {
-		return handle(breakStatement.getLabel());
+		final LabeledStatement label = breakStatement.getLabel();
+		if(label == null) {
+			return null;
+		}
+		return handle(label);
 	}
 
 	private FlowNode handle(CatchClause catchClause) {

@@ -176,36 +176,36 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 
 				// Set owner
 				final MAbstractMethodInvocation invocation = node.getFlowOwner();
-				if (invocation != null) {
-					accessOut.setFlowOwner(invocation);
-				} else {
-					LOGGER.log(Level.INFO,
-							ProcessingMessages.setDefaultFlowTarget);
+				if (invocation == null) {
+					if (LOGGER.isInfoEnabled()) {
+						LOGGER.log(Level.INFO, ProcessingMessages.setDefaultFlowTarget);
+					}
 					accessOut.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
+				} else {
+					accessOut.setFlowOwner(invocation);
 				}
 			} else if (outElement instanceof IfStatement || outElement instanceof WhileStatement
 					|| outElement instanceof ForStatement || outElement instanceof EnhancedForStatement
 					|| outElement instanceof DoStatement || outElement instanceof SwitchStatement) {
 				accessOut.setFlowTarget(handler.getMemberDef());
-			} else {
-				if (outElement instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the target
-					// is another access
-					final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
-					final VariableDeclaration variable = mSVA.getVariable();
-					if (variable instanceof MSingleVariableDeclaration) {
-						accessOut.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
-					} else if (variable.eContainer() instanceof MFieldDefinition
-							&& accessOut.getFlowSource() instanceof MEntry) {
-						accessOut.setFlowOwner(mSVA);
-						accessOut.setFlowTarget(mSVA);
-					} else { // Basically flows into field accesses without MEntry as sourceb
-						accessOut.setFlowTarget((MAbstractFlowElement) outElement);
-					}
-				} else {
-					final MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
-					accessOut.setFlowTarget(outTarget);
+			} else if (outElement instanceof MSingleVariableAccess) {
+				// Omitting accesses of parameters, when the target is another access
+				final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
+				final VariableDeclaration variable = mSVA.getVariable();
+				if (variable instanceof MSingleVariableDeclaration) {
+					accessOut.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
+				} else if (variable.eContainer() instanceof MFieldDefinition
+						&& accessOut.getFlowSource() instanceof MEntry) {
+					accessOut.setFlowOwner(mSVA);
+					accessOut.setFlowTarget(mSVA);
+				} else { // Basically flows into field accesses without MEntry as sourceb
+					accessOut.setFlowTarget((MAbstractFlowElement) outElement);
 				}
+			} else {
+				final MAbstractFlowElement outTarget = (MAbstractFlowElement) outElement;
+				accessOut.setFlowTarget(outTarget);
 			}
+
 		}
 		return true;
 	}
