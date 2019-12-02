@@ -22,11 +22,13 @@
           <argLine>${surefireArgLine} -Xms1g -Xmx5g</argLine>
           <deleteOsgiDataDirectory>false</deleteOsgiDataDirectory>
           <osgiDataDirectory>${project.basedir}/java_src</osgiDataDirectory>
-   	  <useUIHarness>false</useUIHarness>
+          <useUIHarness>false</useUIHarness>
           <useUIThread>true</useUIThread>
           <product>org.eclipse.platform.ide</product>
           <application>org.eclipse.pde.junit.runtime.coretestapplication</application>
           <testRuntime>default</testRuntime>
+          <parallel>methods</parallel>
+          <threadCount>5</threadCount>
         </configuration>
       </plugin> 
     </plugins>
