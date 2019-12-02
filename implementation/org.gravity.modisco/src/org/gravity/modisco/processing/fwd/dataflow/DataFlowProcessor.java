@@ -47,6 +47,7 @@ import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.processing.ProcessingMessages;
 
 /**
  * A preprocessor for calculating data flow edges<br/>
@@ -69,13 +70,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
 		this.model = model;
-		final SubMonitor sub = SubMonitor.convert(monitor, "Create model elements for data flow", elements.size());
+		final SubMonitor sub = SubMonitor.convert(monitor, ProcessingMessages.createElementForFlow, elements.size());
 
-		sub.beginTask("Statement pre-processing", 50);
+		sub.beginTask(ProcessingMessages.statementPreprocessing, 50);
 		final List<MemberHandler> handlers = preProcessStatements();
 
 		sub.internalWorked(50);
-		sub.beginTask("Insertion of data flow edges", 5);
+		sub.beginTask(ProcessingMessages.insertFlowEdges, 5);
 
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural
 		// data flows
@@ -90,7 +91,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			}
 		});
 		if (GravityActivator.isVerbose()) {
-			GraphVisualizer.drawGraphs(model, handlers, "reducedGraphs");
+			GraphVisualizer.drawGraphs(model, handlers, "reducedGraphs"); //$NON-NLS-1$
 		}
 		sub.internalWorked(5);
 		return true;
@@ -99,8 +100,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Creates the flows
 	 *
-	 * @param node       The node for which flows should be created
-	 * @param handler    The handler used to discover the node
+	 * @param node    The node for which flows should be created
+	 * @param handler The handler used to discover the node
 	 * @return true, if creating the flows was successful
 	 */
 	private boolean setFlows(FlowNode node, MemberHandler handler) {
@@ -136,7 +137,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 							accessIn.setFlowSource(fieldDef.getMSignature());
 						} else {
-							LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+							LOGGER.error(ProcessingMessages.varHasntBeenReduced + variablesContainer);
 						}
 					} else {
 						accessIn.setFlowSource((MAbstractFlowElement) inElement);
@@ -165,7 +166,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 					accessOut.setFlowTarget(fieldDef);
 				} else {
-					LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
+					LOGGER.error(ProcessingMessages.varHasntBeenReduced + variablesContainer);
 				}
 			} else if (outElement instanceof MSingleVariableDeclaration) {
 				// Set target
@@ -179,7 +180,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					accessOut.setFlowOwner(invocation);
 				} else {
 					LOGGER.log(Level.INFO,
-							"AbstractMethodInvocation for argument access wasn't found. FlowOwner is set to default (flow target).");
+							ProcessingMessages.setDefaultFlowTarget);
 					accessOut.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
 				}
 			} else if (outElement instanceof IfStatement || outElement instanceof WhileStatement
@@ -210,104 +211,6 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	}
 
 	/**
-	 * Creates a new incoming flow
-	 *
-	 * @param inNode The source of the flow
-	 * @param trg    The target of the flow
-	 * @return true, if the flow has been created successfully
-	 */
-	private boolean createInFlow(final FlowNode src, final FlowNode trg) {
-		final EObject srcObject = src.getModelElement();
-		if (!(srcObject instanceof SingleVariableDeclaration)) {
-			// Also create incoming flow here, if it's not coming from an access (to avoid
-			// redundancy)
-			if (!(srcObject instanceof SingleVariableAccess || srcObject instanceof AbstractMethodInvocation)) {
-				final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
-				if (srcObject instanceof VariableDeclarationFragment) {
-					final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) srcObject)
-							.getVariablesContainer();
-					if (variablesContainer instanceof FieldDeclaration) {
-						final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
-						flow.setFlowSource(fieldDef.getMSignature());
-					} else {
-						LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
-						return false;
-					}
-				} else {
-					flow.setFlowSource((MAbstractFlowElement) srcObject);
-				}
-				final MAbstractFlowElement trgObject = (MAbstractFlowElement) trg.getModelElement();
-				flow.setFlowTarget(trgObject);
-				flow.setFlowOwner(trgObject);
-			}
-		}
-		return true;
-	}
-
-	/**
-	 *
-	 * Creates a new outgoing flow
-	 *
-	 * @param src        The source of the flow
-	 * @param trg        The target of the flow
-	 * @param definition The definition containing the reason of the flow
-	 * @return true, if the flow has been created successfully
-	 */
-	private boolean createOutFlow(FlowNode src, FlowNode trg, MAbstractFlowElement definition) {
-		final MAbstractFlowElement srcObject = (MAbstractFlowElement) src.getModelElement();
-		final MFlow flow = ModiscoFactory.eINSTANCE.createMFlow();
-		flow.setFlowSource(srcObject);
-		flow.setFlowOwner(srcObject);
-
-		final EObject trgObject = trg.getModelElement();
-		if (trgObject instanceof ReturnStatement) {
-			flow.setFlowTarget(definition);
-		} else if (trgObject instanceof VariableDeclarationFragment) {
-			final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) trgObject)
-					.getVariablesContainer();
-			if (variablesContainer instanceof FieldDeclaration) {
-				final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
-				flow.setFlowTarget(fieldDef);
-			} else {
-				LOGGER.error("A variable declaration fragment hasn't been reduced: " + variablesContainer);
-				return false;
-			}
-		} else if (trgObject instanceof MSingleVariableDeclaration) {
-			// Set target
-			flow.setFlowTarget(((MSingleVariableDeclaration) trgObject).getMEntry());
-			final MAbstractMethodInvocation invocation = src.getFlowOwner();
-			if (invocation != null) {
-				flow.setFlowOwner(invocation);
-			} else {
-				LOGGER.log(Level.INFO, "AbstractMethodInvocation for argument access wasn't found. "
-						+ "FlowOwner is set to default (flow target).");
-				flow.setFlowOwner(
-						(MAbstractMethodDefinition) ((MSingleVariableDeclaration) trgObject).getMethodDeclaration());
-			}
-		} else if (trgObject instanceof IfStatement || trgObject instanceof WhileStatement
-				|| trgObject instanceof ForStatement || trgObject instanceof EnhancedForStatement
-				|| trgObject instanceof DoStatement || trgObject instanceof SwitchStatement) {
-			flow.setFlowTarget(definition);
-		} else if (trgObject instanceof MSingleVariableAccess) { // Omitting accesses of parameters, when the
-			// target
-			// is another access
-			final MSingleVariableAccess mSVA = (MSingleVariableAccess) trgObject;
-			final VariableDeclaration variable = mSVA.getVariable();
-			if (variable instanceof MSingleVariableDeclaration) {
-				flow.setFlowTarget(((MSingleVariableDeclaration) variable).getMEntry());
-			} else if (variable.eContainer() instanceof MFieldDefinition && flow.getFlowSource() instanceof MEntry) {
-				flow.setFlowOwner(mSVA);
-				flow.setFlowTarget(mSVA);
-			} else { // Basically flows into field accesses without MEntry as source
-				flow.setFlowTarget((MAbstractFlowElement) trgObject);
-			}
-		} else {
-			flow.setFlowTarget((MAbstractFlowElement) trgObject);
-		}
-		return true;
-	}
-
-	/**
 	 * A constructor invocation or method invocation with a return value should
 	 * explicitly have the MethodDef/MethodSig set as incoming flow
 	 *
@@ -329,7 +232,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				if (methodDef != null) {
 					returnType = ((MethodDeclaration) methodDef).getReturnType();
 					if (returnType != null) {
-						if (!returnType.getType().getName().equals("void")) {
+						if (!returnType.getType().getName().equals("void")) { //$NON-NLS-1$
 							final FlowNode sigNode = handler
 									.getFlowNodeOrCreate(((MMethodDefinition) methodDef).getMSignature());
 							inRef.add(sigNode);
@@ -358,8 +261,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 */
 	private Set<FlowNode> buildOutRef(FlowNode node) {
 		final Set<FlowNode> outRef = node.getOutRef();
-		final int size = outRef.size();
-		if (size > 1) {
+		if (outRef.size() > 1) {
 			final Set<FlowNode> toRemove = new HashSet<>();
 			for (final FlowNode flowNode : outRef) {
 				final EObject modelElement = flowNode.getModelElement();
@@ -400,7 +302,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				// Keep variable access node only if its a field access
 				final VariableDeclaration variable = ((SingleVariableAccess) node).getVariable();
 				if (variable == null) {
-					LOGGER.error("Declared variable is null");
+					LOGGER.error(ProcessingMessages.variableIsNull);
 				} else if (variable.eContainer() instanceof VariableDeclarationStatement) {
 					reduceNodeInDFG(flowNode, handler);
 				}
@@ -414,8 +316,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
 	 *
-	 * @param flowNode   The node's key in reducedDFG.
-	 * @param handler The alreadySeen on which the reduction should be performed.
+	 * @param flowNode The node's key in reducedDFG.
+	 * @param handler  The alreadySeen on which the reduction should be performed.
 	 */
 	private void reduceNodeInDFG(FlowNode flowNode, MemberHandler handler) {
 		final Set<FlowNode> inRef = flowNode.getInRef();
@@ -447,8 +349,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
 	private List<MemberHandler> preProcessStatements() {
-		final Stream<MemberHandler> methodProcessors = this.model.getMAbstractMethodDefinitions()
-				.parallelStream().map(methodDef -> {
+		final Stream<MemberHandler> methodProcessors = this.model.getMAbstractMethodDefinitions().parallelStream()
+				.map(methodDef -> {
 					final MemberHandler methodProcessor = new MemberHandler(methodDef);
 					methodProcessor.getFlowNodeOrCreate(methodDef);
 					for (final SingleVariableDeclaration param : methodDef.getParameters()) {
@@ -469,7 +371,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 		final List<MemberHandler> handlers = Stream.concat(fieldProcessors, methodProcessors)
 				.collect(Collectors.toList());
 		if (GravityActivator.isVerbose()) {
-			GraphVisualizer.drawGraphs(this.model, handlers, "graphs");
+			GraphVisualizer.drawGraphs(this.model, handlers, "graphs"); //$NON-NLS-1$
 		}
 		return handlers;
 	}

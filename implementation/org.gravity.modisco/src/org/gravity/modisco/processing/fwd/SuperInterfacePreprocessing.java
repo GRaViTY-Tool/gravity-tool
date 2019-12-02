@@ -3,8 +3,9 @@ package org.gravity.modisco.processing.fwd;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -24,7 +25,7 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 /**
  * This preprocessor replaces MClasses with Interfaces if they have falsely been
  * discovered as classes
- * 
+ *
  * @author speldszus
  *
  */
@@ -35,7 +36,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	@Override
 	public boolean process(MGravityModel model, Collection<AbstractTypeDeclaration> elements,
 			IProgressMonitor monitor) {
-		Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
+		final Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
 				.flatMap(type -> getAccessedClassDeclarations(type.getSuperInterfaces()).parallelStream())
 				.collect(Collectors.toSet());
 		return process(model, brokenTypeAccesses);
@@ -47,35 +48,39 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @return
 	 */
 	private boolean process(MGravityModel model, Set<TypeAccess> brokenTypeAccesses) {
-		HashMap<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
-		for (TypeAccess typeAccess : brokenTypeAccesses) {
-			Type clazz = typeAccess.getType();
+		final HashMap<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
+		for (final TypeAccess typeAccess : brokenTypeAccesses) {
+			final Type clazz = typeAccess.getType();
 			if (clazz.isProxy()) {
 				replacements.put((ClassDeclaration) clazz, replaceWithInterface((ClassDeclaration) clazz));
-				LOGGER.log(Level.INFO, "Replaced class with interface: " + clazz);
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info("Replaced class with interface: " + clazz);
+				}
 			} else {
-				LOGGER.log(Level.ERROR, "Broken class is not a proxy!");
-				ClassDeclaration child = (ClassDeclaration) typeAccess.eContainer();
+				LOGGER.error("Broken class is not a proxy!");
+				final ClassDeclaration child = (ClassDeclaration) typeAccess.eContainer();
 				if (child.getSuperClass() != null) {
-					LOGGER.log(Level.ERROR, child + " has alread a super class!");
+					LOGGER.error(child + " has alread a super class!");
 					return false;
 				}
-				LOGGER.log(Level.WARN, "Replaced interface implementation with super class: " + child.getName() + " -> "
-						+ clazz.getName());
+				if (LOGGER.isEnabledFor(Level.WARN)) {
+					LOGGER.warn("Replaced interface implementation with super class: " + child.getName() + " -> "
+							+ clazz.getName());
+				}
 				child.setSuperClass(typeAccess);
 			}
 		}
-		for (Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
+		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
 				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
-			EObject key = entry.getKey();
+			final EObject key = entry.getKey();
 			if (key instanceof ClassDeclaration) {
-				ClassDeclaration replacedClass = (ClassDeclaration) key;
-				Collection<Setting> references = entry.getValue();
-				for (Setting s : references) {
+				final ClassDeclaration replacedClass = (ClassDeclaration) key;
+				final Collection<Setting> references = entry.getValue();
+				for (final Setting s : references) {
 					s.getEObject().eSet(s.getEStructuralFeature(), replacements.get(replacedClass));
 				}
 			} else {
-				LOGGER.log(Level.ERROR, "Cannot handle crossreference to: " + key);
+				LOGGER.error("Cannot handle crossreference to: " + key);
 			}
 
 		}
@@ -85,25 +90,24 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 
 	/**
 	 * Searches all types which are class declarations
-	 * 
+	 *
 	 * @param accesses A collection of accesses
 	 * @return A set of accessed class declarations
 	 */
 	private Set<TypeAccess> getAccessedClassDeclarations(Collection<TypeAccess> accesses) {
 		return accesses.parallelStream()
-				.filter(access -> JavaPackage.eINSTANCE.getClassDeclaration()
-						.isSuperTypeOf(access.getType().eClass()))
+				.filter(access -> JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(access.getType().eClass()))
 				.collect(Collectors.toSet());
 	}
 
 	/**
 	 * Replaces the class with an new interface
-	 * 
+	 *
 	 * @param clazz The class
 	 * @return the interface
 	 */
 	private InterfaceDeclaration replaceWithInterface(ClassDeclaration clazz) {
-		InterfaceDeclaration iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
+		final InterfaceDeclaration iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		iface.setName(clazz.getName());
 		iface.setAbstractTypeDeclaration(clazz.getAbstractTypeDeclaration());
 		iface.getAnnotations().addAll(clazz.getAnnotations());
@@ -116,7 +120,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		iface.setOriginalClassFile(clazz.getOriginalClassFile());
 		iface.setOriginalCompilationUnit(clazz.getOriginalCompilationUnit());
 		iface.setPackage(clazz.getPackage());
-		TypeAccess superClazz = clazz.getSuperClass();
+		final TypeAccess superClazz = clazz.getSuperClass();
 		if (superClazz != null) {
 			iface.getSuperInterfaces().add(superClazz);
 		}

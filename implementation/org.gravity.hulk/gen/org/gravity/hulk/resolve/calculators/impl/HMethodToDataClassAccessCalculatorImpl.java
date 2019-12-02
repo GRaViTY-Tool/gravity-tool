@@ -410,7 +410,7 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final boolean pattern_HMethodToDataClassAccessCalculator_0_14_expressionF() {
-		boolean _result = Boolean.valueOf(true);
+		boolean _result = Boolean.TRUE;
 		return _result;
 	}
 

@@ -193,7 +193,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	}
 
 	public static final boolean pattern_HClusterCalculator_1_4_expressionF() {
-		boolean _result = Boolean.valueOf(true);
+		boolean _result = Boolean.TRUE;
 		return _result;
 	}
 

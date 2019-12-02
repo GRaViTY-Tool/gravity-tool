@@ -56,7 +56,7 @@ public class GravityActivator extends Plugin {
 	private final Map<String, IProject> project;
 
 	/** The verbose state (not only for this plugin). */
-	private boolean verbose = false;
+	private boolean verbose;
 
 	/*
 	 * Handling of SRC to PG converters

@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Level;
@@ -34,25 +33,25 @@ public class ResultDialog extends Dialog {
 	 * The logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(ResultDialog.class);
-	
+
 	Iterable<HDetector> selection;
 	Iterable<HDetector> executed;
 	Shell pShell;
 
-	private String name;
+	private final String name;
 
 	/**
 	 * Creates a new dialog
-	 * 
+	 *
 	 * @param parentShell       The parent shell in which the dialog should be shown
 	 * @param selectedDetectors All selected detectors
 	 * @param executedDetectors All executed detectors
-	 * @param name 
+	 * @param name
 	 */
 	public ResultDialog(Shell parentShell, Iterable<HDetector> selectedDetectors,
 			Iterable<HDetector> executedDetectors, String name) {
 		super(parentShell);
-		pShell = parentShell;
+		this.pShell = parentShell;
 		this.selection = selectedDetectors;
 		this.executed = executedDetectors;
 		this.name = name;
@@ -70,9 +69,9 @@ public class ResultDialog extends Dialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite container = (Composite) super.createDialogArea(parent);
+		final Composite container = (Composite) super.createDialogArea(parent);
 
-		CTabFolder folder = new CTabFolder(container, SWT.TOP);
+		final CTabFolder folder = new CTabFolder(container, SWT.TOP);
 		folder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 		addContents(folder, this.selection);
 
@@ -82,9 +81,9 @@ public class ResultDialog extends Dialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				CTabItem selectedItem = folder.getSelection();
-				String selected = selectedItem.getText();
-				for (CTabItem item : folder.getItems()) {
+				final CTabItem selectedItem = folder.getSelection();
+				final String selected = selectedItem.getText();
+				for (final CTabItem item : folder.getItems()) {
 					item.dispose();
 				}
 				if (button.getSelection()) {
@@ -92,7 +91,7 @@ public class ResultDialog extends Dialog {
 				} else {
 					addContents(folder, ResultDialog.this.selection);
 				}
-				for (CTabItem item : folder.getItems()) {
+				for (final CTabItem item : folder.getItems()) {
 					if (item.getText().equals(selected)) {
 						folder.setSelection(item);
 						break;
@@ -116,9 +115,9 @@ public class ResultDialog extends Dialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				FileDialog fdialog = new FileDialog(pShell, SWT.SAVE);
+				final FileDialog fdialog = new FileDialog(ResultDialog.this.pShell, SWT.SAVE);
 				fdialog.setFilterExtensions(new String[] { "*.txt", "*" });
-				String saveFile = fdialog.open();
+				final String saveFile = fdialog.open();
 				if (!saveFile.isEmpty()) {
 					save(folder, saveFile);
 				}
@@ -136,16 +135,16 @@ public class ResultDialog extends Dialog {
 	}
 
 	void addContents(CTabFolder folder, Iterable<HDetector> items) {
-		for (HDetector eClass : items) {
-			CTabItem tab = new CTabItem(folder, getShellStyle());
+		for (final HDetector eClass : items) {
+			final CTabItem tab = new CTabItem(folder, getShellStyle());
 			tab.setText(eClass.eClass().getName());
 
-			Tree tree = new Tree(folder, SWT.V_SCROLL | SWT.H_SCROLL);
-			ScrollBar vBar = tree.getVerticalBar();
+			final Tree tree = new Tree(folder, SWT.V_SCROLL | SWT.H_SCROLL);
+			final ScrollBar vBar = tree.getVerticalBar();
 			vBar.setEnabled(true);
 
 			if (!eClass.getHAnnotation().isEmpty()) {
-				for (HAnnotation annotation : eClass.getHAnnotation()) {
+				for (final HAnnotation annotation : eClass.getHAnnotation()) {
 					annotation.getTreeItem(tree, SWT.NONE);
 				}
 			} else {
@@ -159,32 +158,26 @@ public class ResultDialog extends Dialog {
 	}
 
 	private void save(CTabFolder folder, String filePath) {
-		List<DetectionContent> contents = new ArrayList<DetectionContent>();
-		for (CTabItem tabItem : folder.getItems()) {
-			DetectionContent content = new DetectionContent(tabItem.getText());
+		final List<DetectionContent> contents = new ArrayList<>();
+		for (final CTabItem tabItem : folder.getItems()) {
+			final DetectionContent content = new DetectionContent(tabItem.getText());
 			contents.add(content);
-			Tree tree = (Tree) tabItem.getControl();
+			final Tree tree = (Tree) tabItem.getControl();
 			if (tree == null) {
 				continue;
 			}
 
-			for (TreeItem treeItem : tree.getItems()) {
+			for (final TreeItem treeItem : tree.getItems()) {
 				content.addResult(treeItem.getText());
 			}
 		}
 
-		contents.sort(new Comparator<DetectionContent>() {
+		contents.sort((o1, o2) -> o1.getDetector().compareTo(o2.getDetector()));
 
-			@Override
-			public int compare(DetectionContent o1, DetectionContent o2) {
-				return o1.getDetector().compareTo(o2.getDetector());
-			}
-		});
-
-		StringBuilder builder = new StringBuilder();
-		for (DetectionContent content : contents) {
+		final StringBuilder builder = new StringBuilder(100);
+		for (final DetectionContent content : contents) {
 			builder.append(content.getDetector());
-			for (String result : content.getSortedResult()) {
+			for (final String result : content.getSortedResult()) {
 				builder.append(System.lineSeparator());
 				builder.append(result);
 			}
@@ -193,19 +186,16 @@ public class ResultDialog extends Dialog {
 			builder.append(System.lineSeparator());
 		}
 
-		try {
-			PrintWriter out = new PrintWriter(filePath);
+		try (PrintWriter out = new PrintWriter(filePath)){
 			out.print(builder);
-			out.flush();
-			out.close();
-		} catch (FileNotFoundException e) {
+		} catch (final FileNotFoundException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 
 	}
-	
+
 	private class DetectionContent {
-		private String detector;
+		private final String detector;
 		private List<String> results;
 
 
@@ -213,28 +203,28 @@ public class ResultDialog extends Dialog {
 			this.detector = detector;
 		}
 		public String getDetector() {
-			return detector;
+			return this.detector;
 		}
 
 		public List<String> getSortedResult() {
-			if (results == null) {
-				results = new ArrayList<String>();
+			if (this.results == null) {
+				this.results = new ArrayList<>();
 			}
-			Collections.sort(results);
-			return results;
+			Collections.sort(this.results);
+			return this.results;
 		}
 
 		public void addResult(String result) {
-			if (results == null) {
-				results = new ArrayList<String>();
+			if (this.results == null) {
+				this.results = new ArrayList<>();
 			}
-			results.add(result);
+			this.results.add(result);
 		}
 	}
 
 	@Override
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
-		newShell.setText(name);
+		newShell.setText(this.name);
 	}
 }

@@ -188,12 +188,12 @@ public abstract class InformationViewContentProvider {
 				thresholdsComposite.setLayout(new FillLayout(SWT.VERTICAL));
 
 				for (final Entry<String, Number> thresholdEntry : detectionObject.getThresholds().entrySet()) {
-					String value = "";
+					StringBuilder value = new StringBuilder(thresholdEntry.getValue().toString());
 					if (!thresholdEntry.getValue().equals(-1)) {
-						value = value + "\n Value: " + thresholdEntry.getValue();
+						value = value.append("\n Value: ").append(thresholdEntry.getValue());
 					}
 					final Label label = new Label(thresholdsComposite, SWT.NONE);
-					label.setText(thresholdEntry.getValue() + " " + value);
+					label.setText(value.toString());
 					label.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				}
 

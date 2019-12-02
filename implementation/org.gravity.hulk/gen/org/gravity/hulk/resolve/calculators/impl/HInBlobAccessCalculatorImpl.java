@@ -218,7 +218,7 @@ public class HInBlobAccessCalculatorImpl extends HMetricCalculatorImpl implement
 	}
 
 	public static final boolean pattern_HInBlobAccessCalculator_0_7_expressionF() {
-		boolean _result = Boolean.valueOf(true);
+		boolean _result = Boolean.TRUE;
 		return _result;
 	}
 

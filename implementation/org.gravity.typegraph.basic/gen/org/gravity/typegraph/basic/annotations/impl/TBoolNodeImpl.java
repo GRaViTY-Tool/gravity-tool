@@ -3,9 +3,7 @@
 package org.gravity.typegraph.basic.annotations.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
@@ -73,7 +71,7 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	 */
 	@Override
 	public boolean isValue() {
-		return value;
+		return this.value;
 	}
 
 	/**
@@ -83,10 +81,11 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	 */
 	@Override
 	public void setValue(boolean newValue) {
-		boolean oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TBOOL_NODE__VALUE, oldValue, value));
+		final boolean oldValue = this.value;
+		this.value = newValue;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TBOOL_NODE__VALUE, oldValue, this.value));
+		}
 	}
 
 	/**
@@ -97,8 +96,8 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AnnotationsPackage.TBOOL_NODE__VALUE:
-				return isValue();
+		case AnnotationsPackage.TBOOL_NODE__VALUE:
+			return isValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,9 +110,9 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AnnotationsPackage.TBOOL_NODE__VALUE:
-				setValue((Boolean)newValue);
-				return;
+		case AnnotationsPackage.TBOOL_NODE__VALUE:
+			setValue((Boolean)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -126,9 +125,9 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AnnotationsPackage.TBOOL_NODE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case AnnotationsPackage.TBOOL_NODE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -141,8 +140,8 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AnnotationsPackage.TBOOL_NODE__VALUE:
-				return value != VALUE_EDEFAULT;
+		case AnnotationsPackage.TBOOL_NODE__VALUE:
+			return this.value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,13 +153,11 @@ public class TBoolNodeImpl extends EObjectImpl implements TBoolNode {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
+		return new StringBuilder(super.toString()).append(" (value: ").append(this.value).append(')').toString();
 	}
 	// <-- [user code injected with eMoflon]
 

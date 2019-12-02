@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.CoreException;
 
 /**
  * A visitor collecting all classes with the given file extension
- * 
+ *
  * @author speldszus
  *
  */
@@ -28,55 +28,51 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 
 	/**
 	 * Creates a new file visitor collecting files with one of the given file extensions
-	 * 
+	 *
 	 * @param fileExtensions The extensions of the files
 	 */
 	public ExtensionFileVisitor(Collection<String> fileExtensions) {
 		this.fileExtensions = new ArrayList<>(fileExtensions.size());
-		for(String f : fileExtensions) {
+		for(final String f : fileExtensions) {
 			this.fileExtensions.add(addPrefix(f));
 		}
-		this.files = new LinkedList<Path>();
+		this.files = new LinkedList<>();
 	}
 
 	/**
 	 * Creates a new file visitor collecting files with a given file extensions
-	 * 
+	 *
 	 * @param fileExtensions The extensions of the files
 	 */
 	public ExtensionFileVisitor(String... fileExtensions) {
 		this.fileExtensions = new ArrayList<>(fileExtensions.length);
-		for(String f : fileExtensions) {
+		for(final String f : fileExtensions) {
 			this.fileExtensions.add(addPrefix(f));
 		}
-		this.files = new LinkedList<Path>();
+		this.files = new LinkedList<>();
 	}
-	
+
 	/**
 	 * Creates a new file visitor collecting files with a given file extension
-	 * 
+	 *
 	 * @param fileExtension The extension of the files
 	 */
 	public ExtensionFileVisitor(String fileExtension) {
 		this.fileExtensions = Arrays.asList(addPrefix(fileExtension));
-		this.files = new LinkedList<Path>();
+		this.files = new LinkedList<>();
 	}
 
 	/**
 	 * Adds a dot as prefix if the extension hasn't it already
-	 * 
+	 *
 	 * @param fileExtension The file extension
 	 * @return The file extension with prefix
 	 */
 	private String addPrefix(String fileExtension) {
-		String tmpExtension;
-		if(fileExtension.startsWith(".")) {
-			tmpExtension = fileExtension;
+		if(fileExtension.charAt(0) == '.') {
+			return fileExtension;
 		}
-		else {
-			tmpExtension = "." + fileExtension;
-		}
-		return tmpExtension;
+		return "." + fileExtension;
 	}
 
 	@Override
@@ -90,7 +86,7 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 	@Override
 	public boolean visit(IResource resource) throws CoreException {
 		if(resource.getType() == IResource.FILE) {
-			Path path = resource.getLocation().toFile().toPath();
+			final Path path = resource.getLocation().toFile().toPath();
 			checkAndAdd(path);
 		}
 		return true;
@@ -98,14 +94,14 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 
 	/**
 	 * Checks if the file has the searched extension and adds it to the list of matching files if yes.
-	 * 
+	 *
 	 * @param file The file
 	 */
 	private void checkAndAdd(Path file) {
-		String name = file.toString();
-		for(String extension : fileExtensions) {
+		final String name = file.toString();
+		for(final String extension : this.fileExtensions) {
 			if (name.endsWith(extension)) {
-				files.add(file);
+				this.files.add(file);
 				return;
 			}
 		}
@@ -113,7 +109,7 @@ public final class ExtensionFileVisitor extends SimpleFileVisitor<Path> implemen
 
 	/**
 	 * Returns the found files with the given file extension
-	 * 
+	 *
 	 * @return A collection of files
 	 */
 	public List<Path> getFiles() {

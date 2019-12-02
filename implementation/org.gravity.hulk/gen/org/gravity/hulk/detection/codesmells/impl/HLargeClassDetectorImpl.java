@@ -5,34 +5,22 @@ package org.gravity.hulk.detection.codesmells.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-
 import org.gravity.hulk.antipatterngraph.codesmells.CodesmellsFactory;
 import org.gravity.hulk.antipatterngraph.codesmells.HLargeClassSmell;
-
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMembersMetric;
-
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
-
 import org.gravity.hulk.detection.DetectionPackage;
 import org.gravity.hulk.detection.HClassBasedCalculator;
 import org.gravity.hulk.detection.HCodeSmellDetector;
 import org.gravity.hulk.detection.HRelativeDetector;
-
 import org.gravity.hulk.detection.codesmells.CodesmellsPackage;
 import org.gravity.hulk.detection.codesmells.HLargeClassDetector;
-
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -116,8 +104,9 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isRelative() {
-		return relative;
+		return this.relative;
 	}
 
 	/**
@@ -125,12 +114,14 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelative(boolean newRelative) {
-		boolean oldRelative = relative;
-		relative = newRelative;
-		if (eNotificationRequired())
+		final boolean oldRelative = this.relative;
+		this.relative = newRelative;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE,
-					oldRelative, relative));
+					oldRelative, this.relative));
+		}
 	}
 
 	/**
@@ -138,8 +129,9 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getThreshold() {
-		return threshold;
+		return this.threshold;
 	}
 
 	/**
@@ -147,12 +139,14 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThreshold(double newThreshold) {
-		double oldThreshold = threshold;
-		threshold = newThreshold;
-		if (eNotificationRequired())
+		final double oldThreshold = this.threshold;
+		this.threshold = newThreshold;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CodesmellsPackage.HLARGE_CLASS_DETECTOR__THRESHOLD,
-					oldThreshold, threshold));
+					oldThreshold, this.threshold));
+		}
 	}
 
 	/**
@@ -160,16 +154,17 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HAnnotation calculate(TClass tClass) {// 
-		Object[] result1_black = HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_1_ActivityNode28_blackFB(tClass);
+	@Override
+	public HAnnotation calculate(TClass tClass) {//
+		final Object[] result1_black = HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_1_ActivityNode28_blackFB(tClass);
 		if (result1_black != null) {
-			HNumberOfMembersMetric nm = (HNumberOfMembersMetric) result1_black[0];
-			// 
-			Object[] result2_black = HLargeClassDetectorImpl
+			final HNumberOfMembersMetric nm = (HNumberOfMembersMetric) result1_black[0];
+			//
+			final Object[] result2_black = HLargeClassDetectorImpl
 					.pattern_HLargeClassDetector_0_2_ActivityNode87_blackB(this);
 			if (result2_black != null) {
 
-				Object[] result3_black = HLargeClassDetectorImpl
+				final Object[] result3_black = HLargeClassDetectorImpl
 						.pattern_HLargeClassDetector_0_3_ActivityNode71_blackB(this);
 				if (result3_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
@@ -178,20 +173,20 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 
 			} else {
 			}
-			// 
-			Object[] result4_black = HLargeClassDetectorImpl
+			//
+			final Object[] result4_black = HLargeClassDetectorImpl
 					.pattern_HLargeClassDetector_0_4_ActivityNode88_blackBB(this, nm);
 			if (result4_black != null) {
 
-				Object[] result5_black = HLargeClassDetectorImpl
+				final Object[] result5_black = HLargeClassDetectorImpl
 						.pattern_HLargeClassDetector_0_5_ActivityNode27_blackBBB(nm, tClass, this);
 				if (result5_black == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[nm] = " + nm + ", "
 							+ "[tClass] = " + tClass + ", " + "[this] = " + this + ".");
 				}
-				Object[] result5_green = HLargeClassDetectorImpl
+				final Object[] result5_green = HLargeClassDetectorImpl
 						.pattern_HLargeClassDetector_0_5_ActivityNode27_greenFBBB(nm, tClass, this);
-				HLargeClassSmell largeClassSmell = (HLargeClassSmell) result5_green[0];
+				final HLargeClassSmell largeClassSmell = (HLargeClassSmell) result5_green[0];
 
 				return HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_6_expressionFB(largeClassSmell);
 			} else {
@@ -209,6 +204,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double calculateRelativeThreshold(HRelativeValueConstants level) {
 		// [user code injected with eMoflon]
 
@@ -277,9 +273,9 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE:
-			return relative != RELATIVE_EDEFAULT;
+			return this.relative != RELATIVE_EDEFAULT;
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__THRESHOLD:
-			return threshold != THRESHOLD_EDEFAULT;
+			return this.threshold != THRESHOLD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,24 +387,24 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (relative: ");
-		result.append(relative);
+		result.append(this.relative);
 		result.append(", threshold: ");
-		result.append(threshold);
+		result.append(this.threshold);
 		result.append(')');
 		return result.toString();
 	}
 
 	public static final Object[] pattern_HLargeClassDetector_0_1_ActivityNode28_blackFB(TClass tClass) {
-		boolean tClass_tLib = tClass.isTLib();
-		if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
-			for (TAnnotation tmpNm : tClass.getTAnnotation()) {
+		if (!tClass.isTLib()) {
+			for (final TAnnotation tmpNm : tClass.getTAnnotation()) {
 				if (tmpNm instanceof HNumberOfMembersMetric) {
-					HNumberOfMembersMetric nm = (HNumberOfMembersMetric) tmpNm;
+					final HNumberOfMembersMetric nm = (HNumberOfMembersMetric) tmpNm;
 					return new Object[] { nm, tClass };
 				}
 			}
@@ -418,8 +414,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	public static final Object[] pattern_HLargeClassDetector_0_2_ActivityNode87_blackB(HLargeClassDetector _this) {
-		boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.valueOf(true))) {
+		final boolean this_relative = _this.isRelative();
+		if (Boolean.valueOf(this_relative).equals(Boolean.TRUE)) {
 			return new Object[] { _this };
 		}
 
@@ -431,16 +427,16 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	public static final Object[] pattern_HLargeClassDetector_0_3_ActivityNode71_greenB(HLargeClassDetector _this) {
-		double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
-		double this_threshold_prime = Double.valueOf(_localVariable_0);
+		final double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
+		final double this_threshold_prime = Double.valueOf(_localVariable_0);
 		_this.setThreshold(Double.valueOf(this_threshold_prime));
 		return new Object[] { _this };
 	}
 
 	public static final Object[] pattern_HLargeClassDetector_0_4_ActivityNode88_blackBB(HLargeClassDetector _this,
 			HNumberOfMembersMetric nm) {
-		double this_threshold = _this.getThreshold();
-		double nm_value = nm.getValue();
+		final double this_threshold = _this.getThreshold();
+		final double nm_value = nm.getValue();
 		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(nm_value)) < 0) {
 			return new Object[] { _this, nm };
 		}
@@ -455,7 +451,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 
 	public static final Object[] pattern_HLargeClassDetector_0_5_ActivityNode27_greenFBBB(HNumberOfMembersMetric nm,
 			TClass tClass, HLargeClassDetector _this) {
-		HLargeClassSmell largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
+		final HLargeClassSmell largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
 		largeClassSmell.setTAnnotated(tClass);
 		largeClassSmell.setHNumberOfMembers(nm);
 		nm.getPartOf().add(largeClassSmell);
@@ -464,17 +460,17 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	public static final HAnnotation pattern_HLargeClassDetector_0_6_expressionFB(HLargeClassSmell largeClassSmell) {
-		HAnnotation _result = largeClassSmell;
+		final HAnnotation _result = largeClassSmell;
 		return _result;
 	}
 
 	public static final HAnnotation pattern_HLargeClassDetector_0_7_expressionF() {
-		HAnnotation _result = null;
+		final HAnnotation _result = null;
 		return _result;
 	}
 
 	public static final HAnnotation pattern_HLargeClassDetector_0_8_expressionF() {
-		HAnnotation _result = null;
+		final HAnnotation _result = null;
 		return _result;
 	}
 

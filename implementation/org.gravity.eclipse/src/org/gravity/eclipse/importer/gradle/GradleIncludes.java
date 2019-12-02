@@ -76,7 +76,7 @@ public class GradleIncludes {
 			GradleImport.LOGGER.log(Level.INFO, e.getMessage(), e);
 		}
 		if (javaSourceFiles == null || javaSourceFiles.isEmpty()) {
-			GradleImport.LOGGER.log(Level.WARN, "Falling back to manual analysis of build.gradle files!");
+			GradleImport.LOGGER.warn("Falling back to manual analysis of build.gradle files!");
 			javaSourceFiles = new HashSet<>();
 			for (final Path root : this.includes) {
 				scanRootForSourceFiles(root.toFile(), javaSourceFiles);

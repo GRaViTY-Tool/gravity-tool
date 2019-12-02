@@ -35,13 +35,13 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 
 	private static void addSyntethicMembers(MMethodDefinition mDef) {
 		final AbstractTypeDeclaration abstractTypeDeclaration = mDef.getAbstractTypeDeclaration();
-		if (abstractTypeDeclaration != null && abstractTypeDeclaration instanceof ClassDeclaration) {
+		if (abstractTypeDeclaration instanceof ClassDeclaration) {
 			final ClassDeclaration mClass = (ClassDeclaration) abstractTypeDeclaration;
 
 			final TypeAccess superClassAccess = mClass.getSuperClass();
 			if (superClassAccess != null) {
 				final Type superClassType = superClassAccess.getType();
-				if (superClassType != null && superClassType instanceof ClassDeclaration) {
+				if (superClassType instanceof ClassDeclaration) {
 					final ClassDeclaration superClass = (ClassDeclaration) superClassType;
 					if (!superClass.eIsProxy()) {
 						boolean needsSynt = true;
@@ -56,7 +56,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 						}
 
 						if (needsSynt) {
-							//TODO Implement this preprocessing
+							// TODO Implement this preprocessing
 						}
 
 					}
@@ -69,7 +69,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 		final TypeAccess superAccess = mClass.getSuperClass();
 		if (superAccess != null) {
 			final Type superType = superAccess.getType();
-			if (superType != null && superType instanceof ClassDeclaration) {
+			if (superType instanceof ClassDeclaration) {
 				return (ClassDeclaration) superType;
 			}
 		}
@@ -78,11 +78,11 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 
 	private boolean definesWithEqualSignatureMethod(ClassDeclaration mClass, MMethodDefinition methodDef) {
 		for (final BodyDeclaration declaration : mClass.getBodyDeclarations()) {
-			if (declaration instanceof MMethodDefinition) {
-				if (((MMethodDefinition) declaration).getMSignature() == methodDef.getMSignature()) {
-					return true;
-				}
+			if (declaration instanceof MMethodDefinition
+					&& ((MMethodDefinition) declaration).getMSignature() == methodDef.getMSignature()) {
+				return true;
 			}
+
 		}
 		return false;
 	}
@@ -92,10 +92,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 		if (vis == VisibilityKind.PUBLIC || vis == VisibilityKind.PROTECTED) {
 			return true;
 		}
-		if (vis == VisibilityKind.NONE && superClass.getPackage() == mClass.getPackage()) {
-			return true;
-		}
-		return false;
+		return (vis == VisibilityKind.NONE && superClass.getPackage() == mClass.getPackage());
 	}
 
 	private void addSyntethicMethodsForClass(ClassDeclaration mClass, ClassDeclaration superClass) {
@@ -108,14 +105,13 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 				superMethod = ((MSyntheticMethodDefinition) declaration).getOriginalMethodDefinition();
 			}
 
-			if (superMethod != null && !definesWithEqualSignatureMethod(mClass, superMethod)) {
-				if (hasVisibility(mClass, superClass, superMethod)) {
-					final MSyntheticMethodDefinition synt = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
-					synt.setOriginalMethodDefinition(superMethod);
-					synt.setName(superMethod.getName());
-					mClass.getBodyDeclarations().add(synt);
-					superMethod.getSyntheticMethodDefinitions().add(synt);
-				}
+			if (superMethod != null && !definesWithEqualSignatureMethod(mClass, superMethod)
+					&& hasVisibility(mClass, superClass, superMethod)) {
+				final MSyntheticMethodDefinition synt = ModiscoFactory.eINSTANCE.createMSyntheticMethodDefinition();
+				synt.setOriginalMethodDefinition(superMethod);
+				synt.setName(superMethod.getName());
+				mClass.getBodyDeclarations().add(synt);
+				superMethod.getSyntheticMethodDefinitions().add(synt);
 			}
 		}
 	}
@@ -147,8 +143,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 				}
 			}
 		}
-		if (newPackages.size() > 0) {
-
+		if (!newPackages.isEmpty()) {
 			newPackages.addAll(getAllPackages(newPackages));
 			return newPackages;
 		}
@@ -176,7 +171,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 	@Override
 	public boolean process(MGravityModel model, IProgressMonitor monitor) {
 		final ArrayList<ClassDeclaration> classes = getAllClasses(model);
-		if (classes.size() > 0) {
+		if (!classes.isEmpty()) {
 			final ClassDeclaration mClass = classes.get(0);
 			classes.remove(mClass);
 			addSyntethicMethods(mClass, classes);

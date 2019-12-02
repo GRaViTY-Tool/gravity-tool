@@ -162,7 +162,7 @@ public class GradleImport extends ProjectImport {
 					project.getProject().delete(true, true, monitor);
 				}
 			} catch (final CoreException e1) {
-				LOGGER.log(Level.WARN, e1.getLocalizedMessage(), e1);
+				LOGGER.warn(e1.getLocalizedMessage(), e1);
 			}
 			throw new GradleImportException(e);
 		}
@@ -181,7 +181,7 @@ public class GradleImport extends ProjectImport {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!");
 			}
 		} catch (final UnsupportedOperationSystemException e) {
-			LOGGER.log(Level.WARN, "WARNING: Build of gradle project failed, some lib imports might be missing.");
+			LOGGER.warn("WARNING: Build of gradle project failed, some lib imports might be missing.");
 			if (!ignoreBuildErrors()) {
 				throw new GradleImportException("Building the gradle project failed and errors aren't ignored!", e);
 			}
@@ -220,7 +220,7 @@ public class GradleImport extends ProjectImport {
 				final Set<Path> rClasses = GradleAndroid.getRClasses(this.includes.getBuildDotGradleFiles());
 				javaSourceFiles.addAll(rClasses);
 			} catch (final IOException e) {
-				LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+				LOGGER.warn(e.getLocalizedMessage(), e);
 			}
 		}
 		return javaSourceFiles;
@@ -241,7 +241,8 @@ public class GradleImport extends ProjectImport {
 				relativize = path.relativize(sourceFile).toString();
 			} catch (final IllegalArgumentException e) {
 				relativize = sourceFile.toString().replaceFirst(new File("").getAbsolutePath(), "");
-				if (relativize.startsWith("/") || relativize.startsWith("\\")) {
+				final char charAt0 = relativize.charAt(0);
+				if (charAt0 =='/' || charAt0 == '\\') {
 					relativize = relativize.substring(1);
 				}
 			}
@@ -250,7 +251,7 @@ public class GradleImport extends ProjectImport {
 			if (split.length == 2) {
 				key = split[0];
 			} else {
-				LOGGER.log(Level.WARN, "Couldn't determine source folder of file, using \"src\": " + relativize);
+				LOGGER.warn("Couldn't determine source folder of file, using \"src\": " + relativize);
 				key = "src";
 			}
 			Set<Path> files;
@@ -328,7 +329,7 @@ public class GradleImport extends ProjectImport {
 			if (libName.endsWith(".jar")) {
 				final IFile f = libFolder.getFile(libPath.getFileName().toString());
 				if (f.exists()) {
-					LOGGER.log(Level.WARN, "Lib is already existent: " + jarFiles);
+					LOGGER.warn("Lib is already existent: " + jarFiles);
 					continue;
 				}
 				jarFiles.add(f);
@@ -339,7 +340,7 @@ public class GradleImport extends ProjectImport {
 			if (jarFiles.isEmpty()) {
 				jarFiles = GradleLibsUtil.searchOtherVersionOfAarLib(libName, libFolder, libPath, jarFiles, monitor);
 				if (jarFiles.isEmpty()) {
-					LOGGER.log(Level.WARN, "No jar found in aar file: " + libPath);
+					LOGGER.warn("No jar found in aar file: " + libPath);
 					continue;
 				}
 			}
@@ -403,7 +404,7 @@ public class GradleImport extends ProjectImport {
 				libsAsJar.addAll(GradleAndroid.getAndroidLibs(gradleDependencies).values());
 			} catch (final GradleImportException e) {
 				if (ignoreBuildErrors()) {
-					LOGGER.log(Level.WARN, e.getLocalizedMessage(), e);
+					LOGGER.warn(e.getLocalizedMessage(), e);
 				} else {
 					throw e;
 				}
@@ -411,9 +412,9 @@ public class GradleImport extends ProjectImport {
 
 		}
 		if (!compileLibs.isEmpty()) {
-			LOGGER.log(Level.WARN, "The following libs haven't been found on the system:");
+			LOGGER.warn("The following libs haven't been found on the system:");
 			for (final String lib : compileLibs) {
-				LOGGER.log(Level.WARN, "\t" + lib);
+				LOGGER.warn("\t" + lib);
 			}
 		}
 		return libsAsJar;

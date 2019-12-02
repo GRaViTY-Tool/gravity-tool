@@ -3,43 +3,34 @@
 package org.gravity.hulk.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.hulk.HAntiPatternHandling;
 import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
-
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 
-import org.moflon.core.dfs.DFSGraph;
-// <-- [user defined imports]
-// [user defined imports] -->
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HAnti Pattern Handling</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HAnti
+ * Pattern Handling</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getHDetector <em>HDetector</em>}</li>
- *   <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getApg <em>Apg</em>}</li>
- *   <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getProgramlocation <em>Programlocation</em>}</li>
+ * <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getHDetector
+ * <em>HDetector</em>}</li>
+ * <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getApg
+ * <em>Apg</em>}</li>
+ * <li>{@link org.gravity.hulk.impl.HAntiPatternHandlingImpl#getProgramlocation
+ * <em>Programlocation</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,9 +38,9 @@ import org.moflon.core.dfs.DFSGraph;
  */
 public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HAntiPatternHandling {
 	/**
-	 * The cached value of the '{@link #getHDetector() <em>HDetector</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getHDetector() <em>HDetector</em>}'
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getHDetector()
 	 * @generated
 	 * @ordered
@@ -57,9 +48,9 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	protected EList<HDetector> hDetector;
 
 	/**
-	 * The cached value of the '{@link #getApg() <em>Apg</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getApg() <em>Apg</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getApg()
 	 * @generated
 	 * @ordered
@@ -67,9 +58,10 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	protected HAntiPatternGraph apg;
 
 	/**
-	 * The default value of the '{@link #getProgramlocation() <em>Programlocation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getProgramlocation()
+	 * <em>Programlocation</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @see #getProgramlocation()
 	 * @generated
 	 * @ordered
@@ -77,9 +69,10 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	protected static final String PROGRAMLOCATION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getProgramlocation() <em>Programlocation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getProgramlocation()
+	 * <em>Programlocation</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @see #getProgramlocation()
 	 * @generated
 	 * @ordered
@@ -87,8 +80,8 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	protected String programlocation = PROGRAMLOCATION_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HAntiPatternHandlingImpl() {
@@ -96,8 +89,8 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -106,124 +99,133 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<HDetector> getHDetector() {
-		if (hDetector == null) {
-			hDetector = new EObjectWithInverseResolvingEList<HDetector>(HDetector.class, this,
+		if (this.hDetector == null) {
+			this.hDetector = new EObjectWithInverseResolvingEList<>(HDetector.class, this,
 					HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR, HulkPackage.HDETECTOR__HANTI_PATTERN_HANDLING);
 		}
-		return hDetector;
+		return this.hDetector;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public HAntiPatternGraph getApg() {
-		return apg;
+		return this.apg;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetApg(HAntiPatternGraph newApg, NotificationChain msgs) {
-		HAntiPatternGraph oldApg = apg;
-		apg = newApg;
+		final HAntiPatternGraph oldApg = this.apg;
+		this.apg = newApg;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+			final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
 					HulkPackage.HANTI_PATTERN_HANDLING__APG, oldApg, newApg);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setApg(HAntiPatternGraph newApg) {
-		if (newApg != apg) {
+		if (newApg != this.apg) {
 			NotificationChain msgs = null;
-			if (apg != null)
-				msgs = ((InternalEObject) apg).eInverseRemove(this,
+			if (this.apg != null) {
+				msgs = ((InternalEObject) this.apg).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE - HulkPackage.HANTI_PATTERN_HANDLING__APG, null, msgs);
-			if (newApg != null)
+			}
+			if (newApg != null) {
 				msgs = ((InternalEObject) newApg).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE - HulkPackage.HANTI_PATTERN_HANDLING__APG, null, msgs);
+			}
 			msgs = basicSetApg(newApg, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HulkPackage.HANTI_PATTERN_HANDLING__APG, newApg,
 					newApg));
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getProgramlocation() {
-		return programlocation;
+		return this.programlocation;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setProgramlocation(String newProgramlocation) {
-		String oldProgramlocation = programlocation;
-		programlocation = newProgramlocation;
-		if (eNotificationRequired())
+		final String oldProgramlocation = this.programlocation;
+		this.programlocation = newProgramlocation;
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, HulkPackage.HANTI_PATTERN_HANDLING__PROGRAMLOCATION,
-					oldProgramlocation, programlocation));
+					oldProgramlocation, this.programlocation));
+		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR:
+		if (featureID == HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR) {
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getHDetector()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR:
+		if (featureID == HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR) {
 			return ((InternalEList<?>) getHDetector()).basicRemove(otherEnd, msgs);
-		case HulkPackage.HANTI_PATTERN_HANDLING__APG:
+		} else if (featureID == HulkPackage.HANTI_PATTERN_HANDLING__APG) {
 			return basicSetApg(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,8 +242,8 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -263,8 +265,8 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -284,27 +286,27 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case HulkPackage.HANTI_PATTERN_HANDLING__HDETECTOR:
-			return hDetector != null && !hDetector.isEmpty();
+			return this.hDetector != null && !this.hDetector.isEmpty();
 		case HulkPackage.HANTI_PATTERN_HANDLING__APG:
-			return apg != null;
+			return this.apg != null;
 		case HulkPackage.HANTI_PATTERN_HANDLING__PROGRAMLOCATION:
-			return PROGRAMLOCATION_EDEFAULT == null ? programlocation != null
-					: !PROGRAMLOCATION_EDEFAULT.equals(programlocation);
+			return PROGRAMLOCATION_EDEFAULT == null ? this.programlocation != null
+			: !PROGRAMLOCATION_EDEFAULT.equals(this.programlocation);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -317,22 +319,20 @@ public abstract class HAntiPatternHandlingImpl extends EObjectImpl implements HA
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (programlocation: ");
-		result.append(programlocation);
-		result.append(')');
-		return result.toString();
+		return new StringBuffer(super.toString()).append(" (programlocation: ").append(this.programlocation).append(')')
+				.toString();
 	}
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //HAntiPatternHandlingImpl
+} // HAntiPatternHandlingImpl

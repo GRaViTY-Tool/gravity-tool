@@ -3,50 +3,35 @@
 package org.gravity.hulk.resolve.antipattern.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-
-import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
-
-import org.gravity.hulk.resolve.antipattern.AntipatternPackage;
-import org.gravity.hulk.resolve.antipattern.HAlternativeBlobresolver;
-
-import org.gravity.typegraph.basic.TClass;
-
-import org.gravity.typegraph.basic.annotations.TAnnotatable;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.HashSet;
-import java.util.HashMap;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
-import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
+import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
 import org.gravity.hulk.refactoringgraph.HCluster;
-import org.gravity.hulk.refactoringgraph.HInBlobAccess;
 import org.gravity.hulk.refactoringgraph.HInBlobClusterAccess;
 import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
 import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
-import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TConstructorDefinition;
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
-import org.gravity.typegraph.basic.containers.TMemberContainer;
-import org.gravity.hulk.refactoringgraph.refactorings.HExtractClass;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMember;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
-import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsFactory;
-// [user defined imports] -->
+import org.gravity.hulk.resolve.antipattern.AntipatternPackage;
+import org.gravity.hulk.resolve.antipattern.HAlternativeBlobresolver;
+import org.gravity.typegraph.basic.TClass;
+import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.gravity.typegraph.basic.containers.ContainersFactory;
+import org.gravity.typegraph.basic.containers.TMemberContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,38 +67,39 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph apg) {
 
-		Object[] result1_black = HAlternativeBlobresolverImpl
+		final Object[] result1_black = HAlternativeBlobresolverImpl
 				.pattern_HAlternativeBlobresolver_0_1_ActivityNode30_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
 		}
 
-		Object[] result2_bindingAndBlack = HAlternativeBlobresolverImpl
+		final Object[] result2_bindingAndBlack = HAlternativeBlobresolverImpl
 				.pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingAndBlackFBB(this, apg);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[apg] = " + apg + ".");
 		}
-		HAntiPatternGraph newApg = (HAntiPatternGraph) result2_bindingAndBlack[0];
-		// ForEach 
-		for (Object[] result3_black : HAlternativeBlobresolverImpl
+		final HAntiPatternGraph newApg = (HAntiPatternGraph) result2_bindingAndBlack[0];
+		// ForEach
+		for (final Object[] result3_black : HAlternativeBlobresolverImpl
 				.pattern_HAlternativeBlobresolver_0_3_ActivityNode32_blackBFFB(newApg, this)) {
-			HBlobAntiPattern hBlob = (HBlobAntiPattern) result3_black[1];
-			TClass tClass = (TClass) result3_black[2];
-			Object[] result3_green = HAlternativeBlobresolverImpl
+			final HBlobAntiPattern hBlob = (HBlobAntiPattern) result3_black[1];
+			final TClass tClass = (TClass) result3_black[2];
+			final Object[] result3_green = HAlternativeBlobresolverImpl
 					.pattern_HAlternativeBlobresolver_0_3_ActivityNode32_greenBBBBF(newApg, hBlob, tClass, this);
-			HBlobResolveAnnotation hResolve = (HBlobResolveAnnotation) result3_green[4];
+			final HBlobResolveAnnotation hResolve = (HBlobResolveAnnotation) result3_green[4];
 
-			// 
+			//
 			if (HAlternativeBlobresolverImpl.pattern_HAlternativeBlobresolver_0_4_ActivityNode34_expressionFBB(this,
 					tClass)) {
-				// ForEach 
-				for (Object[] result5_black : HAlternativeBlobresolverImpl
+				// ForEach
+				for (final Object[] result5_black : HAlternativeBlobresolverImpl
 						.pattern_HAlternativeBlobresolver_0_5_ActivityNode35_blackBF(tClass)) {
-					HInBlobClusterAccess hCluster = (HInBlobClusterAccess) result5_black[1];
-					// 
+					final HInBlobClusterAccess hCluster = (HInBlobClusterAccess) result5_black[1];
+					//
 					HAlternativeBlobresolverImpl.pattern_HAlternativeBlobresolver_0_6_ActivityNode37_expressionFBBBB(
 							this, hCluster, tClass, hResolve);
 
@@ -123,7 +109,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			}
 
 		}
-		return HAlternativeBlobresolverImpl.pattern_HAlternativeBlobresolver_0_7_expressionF();
+		return true;
 	}
 
 	/**
@@ -131,6 +117,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean process(HInBlobClusterAccess hCluster, TClass tClass, HBlobResolveAnnotation hParent) {
 		// [user code injected with eMoflon]
 
@@ -139,8 +126,8 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		//		boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
 		//				|| hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue == HRelativeValueConstants.MEDIUM;
 
-		EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
-		for (TMember member : tMembers) {
+		final EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
+		for (final TMember member : tMembers) {
 			if (!allowedToTouch(member)) {
 				return false;
 			}
@@ -150,11 +137,11 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		}
 
 		// Keep the biggest cluster in the class
-		int size = hCluster.getHCluster().getTMembers().size();
-		SortedSet<Integer> sizes = new TreeSet<>();
-		for (TAnnotation tAnnotation : tClass.getTAnnotation()) {
+		final int size = hCluster.getHCluster().getTMembers().size();
+		final SortedSet<Integer> sizes = new TreeSet<>();
+		for (final TAnnotation tAnnotation : tClass.getTAnnotation()) {
 			if (tAnnotation instanceof HCluster) {
-				HCluster otherCluster = (HCluster) tAnnotation;
+				final HCluster otherCluster = (HCluster) tAnnotation;
 				sizes.add(otherCluster.getTMembers().size());
 			}
 		}
@@ -162,18 +149,18 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			return false;
 		}
 
-		int dataClassCoupling = 0;
-		int internalCoupling = (int) hCluster.getValue();
+		final int dataClassCoupling = 0;
+		final int internalCoupling = (int) hCluster.getValue();
 
-		HashMap<TClass, Integer> coupling = new HashMap<>();
-		for (TMember member : tMembers) {
+		final HashMap<TClass, Integer> coupling = new HashMap<>();
+		for (final TMember member : tMembers) {
 
 			// Search DataClass with max coupling
-			for (TAnnotation tAnnotations : member.getTAnnotation()) {
+			for (final TAnnotation tAnnotations : member.getTAnnotation()) {
 				if (tAnnotations instanceof HMethodToDataClassAccess) {
-					HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tAnnotations;
+					final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tAnnotations;
 					int value = (int) m2dc.getValue();
-					TClass key = m2dc.getHDataClass();
+					final TClass key = m2dc.getHDataClass();
 					if (coupling.containsKey(key)) {
 						value += coupling.get(key);
 					}
@@ -198,15 +185,15 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			return true;
 		}
 
-		TMemberContainer tContainer = ContainersFactory.eINSTANCE.createTMemberContainer();
+		final TMemberContainer tContainer = ContainersFactory.eINSTANCE.createTMemberContainer();
 		tContainer.getTMembers().addAll(tMembers);
 
-		Set<HMoveMembers> possibleMoves = new HashSet<>();
-		for (TClass tDataClass : coupling.keySet()) {
-			HMoveMembers hMoveMembers = createMove(tContainer, tClass, tDataClass, hParent);
+		final Set<HMoveMembers> possibleMoves = new HashSet<>();
+		for (final TClass tDataClass : coupling.keySet()) {
+			final HMoveMembers hMoveMembers = createMove(tContainer, tClass, tDataClass, hParent);
 			if (hMoveMembers != null) {
-				for (HMoveMember hMove : hMoveMembers.getHMoveMembers()) {
-					TMember member = (TMember) hMove.getTAnnotated();
+				for (final HMoveMember hMove : hMoveMembers.getHMoveMembers()) {
+					final TMember member = (TMember) hMove.getTAnnotated();
 
 				}
 				hMoveMembers.setValue(internalCoupling - coupling.get(tDataClass));
@@ -253,8 +240,8 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 	public static final Object[] pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingFBB(
 			HAlternativeBlobresolver _this, HAntiPatternGraph apg) {
-		HAntiPatternGraph _localVariable_0 = _this.init(apg);
-		HAntiPatternGraph newApg = _localVariable_0;
+		final HAntiPatternGraph _localVariable_0 = _this.init(apg);
+		final HAntiPatternGraph newApg = _localVariable_0;
 		if (newApg != null) {
 			return new Object[] { newApg, _this, apg };
 		}
@@ -267,12 +254,12 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 	public static final Object[] pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingAndBlackFBB(
 			HAlternativeBlobresolver _this, HAntiPatternGraph apg) {
-		Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingFBB(
+		final Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingFBB(
 				_this, apg);
 		if (result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding != null) {
-			HAntiPatternGraph newApg = (HAntiPatternGraph) result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding[0];
+			final HAntiPatternGraph newApg = (HAntiPatternGraph) result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding[0];
 
-			Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_black = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_blackB(
+			final Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_black = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_blackB(
 					newApg);
 			if (result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_black != null) {
 
@@ -284,13 +271,13 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 	public static final Iterable<Object[]> pattern_HAlternativeBlobresolver_0_3_ActivityNode32_blackBFFB(
 			HAntiPatternGraph newApg, HAlternativeBlobresolver _this) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HAnnotation tmpHBlob : newApg.getHAnnotations()) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final HAnnotation tmpHBlob : newApg.getHAnnotations()) {
 			if (tmpHBlob instanceof HBlobAntiPattern) {
-				HBlobAntiPattern hBlob = (HBlobAntiPattern) tmpHBlob;
-				TAnnotatable tmpTClass = hBlob.getTAnnotated();
+				final HBlobAntiPattern hBlob = (HBlobAntiPattern) tmpHBlob;
+				final TAnnotatable tmpTClass = hBlob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
-					TClass tClass = (TClass) tmpTClass;
+					final TClass tClass = (TClass) tmpTClass;
 					_result.add(new Object[] { newApg, hBlob, tClass, _this });
 				}
 
@@ -301,7 +288,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 	public static final Object[] pattern_HAlternativeBlobresolver_0_3_ActivityNode32_greenBBBBF(
 			HAntiPatternGraph newApg, HBlobAntiPattern hBlob, TClass tClass, HAlternativeBlobresolver _this) {
-		HBlobResolveAnnotation hResolve = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
+		final HBlobResolveAnnotation hResolve = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
 		hBlob.getPartOf().add(hResolve);
 		_this.getHAnnotation().add(hResolve);
 		hResolve.setHBlobAntiPattern(hBlob);
@@ -312,16 +299,16 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 
 	public static final boolean pattern_HAlternativeBlobresolver_0_4_ActivityNode34_expressionFBB(
 			HAlternativeBlobresolver _this, TClass tClass) {
-		boolean _localVariable_0 = _this.allowedToTouch(tClass);
-		boolean _result = Boolean.valueOf(_localVariable_0);
+		final boolean _localVariable_0 = _this.allowedToTouch(tClass);
+		final boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 
 	public static final Iterable<Object[]> pattern_HAlternativeBlobresolver_0_5_ActivityNode35_blackBF(TClass tClass) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TAnnotation tmpHCluster : tClass.getTAnnotation()) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final TAnnotation tmpHCluster : tClass.getTAnnotation()) {
 			if (tmpHCluster instanceof HInBlobClusterAccess) {
-				HInBlobClusterAccess hCluster = (HInBlobClusterAccess) tmpHCluster;
+				final HInBlobClusterAccess hCluster = (HInBlobClusterAccess) tmpHCluster;
 				_result.add(new Object[] { tClass, hCluster });
 			}
 		}
@@ -331,13 +318,8 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	public static final boolean pattern_HAlternativeBlobresolver_0_6_ActivityNode37_expressionFBBBB(
 			HAlternativeBlobresolver _this, HInBlobClusterAccess hCluster, TClass tClass,
 			HBlobResolveAnnotation hResolve) {
-		boolean _localVariable_0 = _this.process(hCluster, tClass, hResolve);
-		boolean _result = Boolean.valueOf(_localVariable_0);
-		return _result;
-	}
-
-	public static final boolean pattern_HAlternativeBlobresolver_0_7_expressionF() {
-		boolean _result = Boolean.valueOf(true);
+		final boolean _localVariable_0 = _this.process(hCluster, tClass, hResolve);
+		final boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 

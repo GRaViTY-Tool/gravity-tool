@@ -2,9 +2,10 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: org.gravity.refactorings;singleton:=true
 Export-Package: org.gravity.refactorings,
  org.gravity.refactorings.application,
- org.gravity.refactorings.impl,
  org.gravity.refactorings.configuration,
- org.gravity.refactorings.configuration.impl
+ org.gravity.refactorings.configuration.impl,
+ org.gravity.refactorings.impl,
+ org.gravity.refactorings.util
 Bundle-Name: Refactorings
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.gravity.typegraph.basic,

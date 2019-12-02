@@ -1,8 +1,9 @@
 package org.gravity.modisco.discovery;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -150,17 +151,23 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			final IProject iproject = javaProject.getProject();
 			iproject.refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (final CoreException e) {
-			LOGGER.log(Level.WARN, "The project couldn't be refreshed before discovery: " + e.getMessage(), e);
+			if (LOGGER.isEnabledFor(Level.WARN)) {
+				LOGGER.warn("The project couldn't be refreshed before discovery: " + e.getMessage(), e);
+			}
 		}
 
-		final long t0 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t0 + " MoDisco discover project: " + javaProject.getProject().getName());
+		long t0 = 0;
+		if (LOGGER.isInfoEnabled()) {
+			t0 = System.currentTimeMillis();
+			LOGGER.info(t0 + " MoDisco discover project: " + javaProject.getProject().getName());
+		}
 
 		final Model eobject = discoverProject(javaProject, libs, progressMonitor);
 
-		final long t1 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
-
+		if (LOGGER.isInfoEnabled()) {
+			final long t1 = System.currentTimeMillis();
+			LOGGER.info(t1 + " MoDisco discover project - done " + (t1 - t0) + "ms");
+		}
 		if (eobject == null) {
 			throw new DiscoveryException("Discovered modisco model is null");
 		}
@@ -169,8 +176,11 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			throw new CancellationException();
 		}
 
-		final long t2 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t2 + " MoDisco preprocessing");
+		long t2 = 0;
+		if (LOGGER.isInfoEnabled()) {
+			t2 = System.currentTimeMillis();
+			LOGGER.info(t2 + " MoDisco preprocessing");
+		}
 
 		MGravityModel model;
 		if (eobject instanceof MGravityModel) {
@@ -180,8 +190,10 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 			throw new DiscoveryException("Discovered modisco model is not of type MGravityModel");
 		}
 
-		final long t3 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
+		if (LOGGER.isInfoEnabled()) {
+			final long t3 = System.currentTimeMillis();
+			LOGGER.info(t3 + " MoDisco preprocessing - done " + (t3 - t2) + "ms");
+		}
 
 		return model;
 	}
@@ -198,7 +210,9 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	private MGravityModel processFwd(MGravityModel model, IProgressMonitor monitor) throws DiscoveryException {
 		final Collection<IMoDiscoProcessor> sortedPreProcessors = GravityMoDiscoProcessorUtil
 				.getSortedProcessors(GravityMoDiscoActivator.PROCESS_MODISCO_FWD);
-		LOGGER.log(Level.INFO, "Starting MoDisco preprocessing with " + sortedPreProcessors.size() + " pre-processors");
+		if (LOGGER.isInfoEnabled()) {
+			LOGGER.info("Starting MoDisco preprocessing with " + sortedPreProcessors.size() + " pre-processors");
+		}
 
 		final Map<Class<?>, List<? extends EObject>> elements = getElementsForProcessing(sortedPreProcessors, model);
 
@@ -213,7 +227,9 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 				success = processor.process(model, monitor);
 			}
 			if (!success) {
-				LOGGER.log(Level.INFO, "ERROR: Preprocessing failed");
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info("ERROR: Preprocessing failed");
+				}
 				throw new DiscoveryException(
 						new ProcessingException("Preprocessing failed for " + processor.getClass().getName()));
 			}
@@ -235,7 +251,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 				.map(processor -> ((AbstractTypedModiscoProcessor<?>) processor).getSupportedType()).distinct()
 				.collect(Collectors.toMap(processor -> processor, processor -> new LinkedList<>()));
 
-		if (elements.size() > 0) {
+		if (!elements.isEmpty()) {
 			final Set<Class<?>> keys = elements.keySet();
 			final TreeIterator<EObject> iterator = model.eAllContents();
 			while (iterator.hasNext()) {
@@ -251,8 +267,6 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	private Model discoverProject(IJavaProject javaProject, Collection<IPath> libs, IProgressMonitor monitor)
 			throws DiscoveryException {
 
-		Model model = null;
-
 		if (this.discoverer.isApplicableTo(javaProject)) {
 
 			final ElementsToAnalyze analyze = new ElementsToAnalyze(javaProject);
@@ -260,20 +274,20 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 					.computeDiscoverableElements(javaProject);
 
 			for (final Object discoverableObject : discoverableElements) {
-				IPath path = null;
+				IPath path;
 				if (discoverableObject instanceof IJavaProject) {
 					final IJavaProject proj = (IJavaProject) discoverableObject;
 					path = proj.getProject().getLocation();
 				} else if (discoverableObject instanceof IPackageFragmentRoot) {
 					final IPackageFragmentRoot root = (IPackageFragmentRoot) discoverableObject;
 					path = root.getPath();
+				} else {
+					continue;
 				}
 
-				if (path != null) {
-					for (final IPath libPath : libs) {
-						if (libPath.isPrefixOf(path)) {
-							analyze.addElementToDiscover(discoverableObject);
-						}
+				for (final IPath libPath : libs) {
+					if (libPath.isPrefixOf(path)) {
+						analyze.addElementToDiscover(discoverableObject);
 					}
 				}
 			}
@@ -292,15 +306,14 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 					final EObject eobject = contents.get(0);
 
 					if (eobject instanceof Model) {
-						model = (Model) eobject;
+						return (Model) eobject;
 
 					}
 				}
 			}
 
 		}
-
-		return model;
+		return null;
 	}
 
 	/**
@@ -322,7 +335,7 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		final MGravityModel model = discoverMGravityModelFromProject(source, monitor);
 		final IProject project = source.getProject();
 		final IFile file = project.getFile(project.getName() + ".xmi");
-		try (FileOutputStream outputStream = new FileOutputStream(file.getLocation().toFile())) {
+		try (OutputStream outputStream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
 			model.eResource().save(outputStream, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ZERO, monitor);
 		} catch (IOException | CoreException e) {

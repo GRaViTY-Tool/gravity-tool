@@ -2,10 +2,13 @@ package org.gravity.tgg.uml;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -123,7 +126,7 @@ public class Transformation extends SYNC {
 	@Override
 	public Resource loadResource(String uri) throws IOException {
 		final Resource resource = this.rs.createResource(URI.createURI(uri));
-		if (uri.startsWith("/")) {
+		if (uri.charAt(0) == '/') {
 			resource.load(Collections.emptyMap());
 		} else {
 			final InputStream stream = new URL(uri).openConnection().getInputStream();
@@ -282,12 +285,12 @@ public class Transformation extends SYNC {
 	 * @throws IOException If writing the resource failed
 	 */
 	private void save(Resource resource, String absolutePath) throws IOException {
-		final File outFile = new File(absolutePath);
-		final File parentFile = outFile.getParentFile();
-		if (!parentFile.exists()) {
-			parentFile.mkdirs();
+		final Path outFile = Paths.get(absolutePath);
+		final Path parentFile = outFile.getParent();
+		if (!parentFile.toFile().exists()) {
+			Files.createDirectories(parentFile);
 		}
-		try (FileOutputStream outputStream = new FileOutputStream(outFile)) {
+		try (OutputStream outputStream = Files.newOutputStream(outFile)) {
 			resource.save(outputStream, Collections.emptyMap());
 		}
 	}
@@ -331,10 +334,10 @@ public class Transformation extends SYNC {
 		final EObject oldModel = r.getContents().get(0);
 		final EObject newModel = trafo.getTargetResource().getContents().get(0);
 
-		try (FileOutputStream outputStreamOld = new FileOutputStream(
-				gravityFolder.getFile("old.xmi").getLocation().toFile());
-				FileOutputStream outputStreamNew = new FileOutputStream(
-						gravityFolder.getFile("new.xmi").getLocation().toFile());) {
+		try (OutputStream outputStreamOld = Files
+				.newOutputStream(gravityFolder.getFile("old.xmi").getLocation().toFile().toPath());
+				OutputStream outputStreamNew = Files
+						.newOutputStream(gravityFolder.getFile("new.xmi").getLocation().toFile().toPath());) {
 			oldModel.eResource().save(outputStreamOld, Collections.emptyMap());
 			newModel.eResource().save(outputStreamNew, Collections.emptyMap());
 		} catch (final IOException e) {

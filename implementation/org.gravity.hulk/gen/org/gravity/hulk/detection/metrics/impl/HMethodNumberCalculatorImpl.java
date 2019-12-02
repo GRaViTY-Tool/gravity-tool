@@ -5,19 +5,13 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HMethodNumberCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TMember;
@@ -58,17 +52,16 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HMetric calculateMetric(TClass tClass) {
 
-		Object[] result1_black = HMethodNumberCalculatorImpl
-				.pattern_HMethodNumberCalculator_0_1_ActivityNode2_blackBB(tClass, this);
-		if (result1_black == null) {
+		if(tClass.isTLib()) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
 					+ "[this] = " + this + ".");
 		}
-		Object[] result1_green = HMethodNumberCalculatorImpl
+		final Object[] result1_green = HMethodNumberCalculatorImpl
 				.pattern_HMethodNumberCalculator_0_1_ActivityNode2_greenFBB(tClass, this);
-		HNumberOfMethodsMetric nm = (HNumberOfMethodsMetric) result1_green[0];
+		final HNumberOfMethodsMetric nm = (HNumberOfMethodsMetric) result1_green[0];
 
 		return HMethodNumberCalculatorImpl.pattern_HMethodNumberCalculator_0_2_expressionFB(nm);
 	}
@@ -78,11 +71,12 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double calculateValue(TClass tClass) {
 		// [user code injected with eMoflon]
 
 		int i = 0;
-		for (TMember m : tClass.getDefines()) {
+		for (final TMember m : tClass.getDefines()) {
 			if (m instanceof TMethodDefinition) {
 				i++;
 			}
@@ -107,29 +101,19 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HMethodNumberCalculator_0_1_ActivityNode2_blackBB(TClass tClass,
-			HMethodNumberCalculator _this) {
-		boolean tClass_tLib = tClass.isTLib();
-		if (Boolean.valueOf(tClass_tLib).equals(Boolean.valueOf(false))) {
-			return new Object[] { tClass, _this };
-		}
-
-		return null;
-	}
-
 	public static final Object[] pattern_HMethodNumberCalculator_0_1_ActivityNode2_greenFBB(TClass tClass,
 			HMethodNumberCalculator _this) {
-		HNumberOfMethodsMetric nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
-		double _localVariable_0 = _this.calculateValue(tClass);
+		final HNumberOfMethodsMetric nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
+		final double _localVariable_0 = _this.calculateValue(tClass);
 		nm.setTAnnotated(tClass);
 		_this.getHAnnotation().add(nm);
-		double nm_value_prime = Double.valueOf(_localVariable_0);
+		final double nm_value_prime = Double.valueOf(_localVariable_0);
 		nm.setValue(Double.valueOf(nm_value_prime));
 		return new Object[] { nm, tClass, _this };
 	}
 
 	public static final HMetric pattern_HMethodNumberCalculator_0_2_expressionFB(HNumberOfMethodsMetric nm) {
-		HMetric _result = nm;
+		final HMetric _result = nm;
 		return _result;
 	}
 

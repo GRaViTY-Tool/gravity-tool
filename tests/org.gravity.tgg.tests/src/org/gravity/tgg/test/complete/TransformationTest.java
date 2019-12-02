@@ -6,18 +6,18 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -101,7 +101,7 @@ public class TransformationTest {
 	 protected final IJavaProject project;
 	 protected final String name;
 
-	 private static Map<String, MGravityModel> models = new HashMap<>();
+	 private static Map<String, MGravityModel> models = new ConcurrentHashMap<>();
 
 	 /**
 	  * The constructor taking the collected projects
@@ -170,7 +170,7 @@ public class TransformationTest {
 		 // Store the model
 		 if (SERIALIZE) {
 			 final File outputFile = getModiscoFile(this.project.getProject());
-			 try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+			 try (OutputStream outputStream = Files.newOutputStream(outputFile.toPath())) {
 				 preprocessedModel.eResource().save(outputStream, Collections.emptyMap());
 			 } catch (final IOException e) {
 				 throw new AssertionError(e.getLocalizedMessage(), e);
@@ -348,7 +348,7 @@ public class TransformationTest {
 	 private void save(EObject eObject, String prefix, String fileExtension) {
 		 final String fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
 		 final IFile file = this.project.getProject().getFile(fileName);
-		 try (OutputStream stream = new FileOutputStream(file.getLocation().toFile())) {
+		 try (OutputStream stream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
 			 eObject.eResource().save(stream, Collections.emptyMap());
 		 } catch (final IOException e) {
 			 LOGGER.error(e.getMessage(), e);
@@ -370,13 +370,12 @@ public class TransformationTest {
 			 throw new AssertionError(e.getMessage(), e);
 		 }
 		 final TreeIterator<EObject> it = model.eResource().getAllContents();
-		 final BigDecimal one = new BigDecimal(1);
 		 while (it.hasNext()) {
 			 final EObject eObject = it.next();
 			 final String typeName = eObject.eClass().getName();
 			 if (map.containsKey(typeName)) {
 				 final BigDecimal count = (BigDecimal) map.get(typeName);
-				 map.put(typeName, count.subtract(one));
+				 map.put(typeName, count.subtract(BigDecimal.ONE));
 			 }
 		 }
 		 map.entrySet().parallelStream().forEach(entry -> {

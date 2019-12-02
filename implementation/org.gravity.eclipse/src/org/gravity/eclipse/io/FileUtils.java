@@ -1,8 +1,6 @@
 package org.gravity.eclipse.io;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -10,6 +8,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 import java.util.LinkedList;
 import java.util.stream.Stream;
 
@@ -72,7 +71,7 @@ public class FileUtils {
 			 * As the temporal files will be deleted anyways we currently only log a
 			 * warning. However, sensitive data might be leaked this way!
 			 */
-			LOGGER.log(Level.WARN, "The temporal copy of a file couldn't be deleted: " + e.getMessage(), e);
+			LOGGER.warn("The temporal copy of a file couldn't be deleted: " + e.getMessage(), e);
 		}
 		return true;
 	}
@@ -90,11 +89,9 @@ public class FileUtils {
 		if (!target.exists() && !target.createNewFile()) {
 			throw new IOException("Cannot create file: " + target);
 		}
-		try (PrintWriter stream = new PrintWriter(new FileWriter(source, true));
+		try (PrintWriter stream = new PrintWriter(Files.newBufferedWriter(source.toPath(), StandardOpenOption.APPEND));
 				Stream<String> lines = Files.lines(target.toPath());) {
-			lines.forEach(s -> {
-				stream.println(s);
-			});
+			lines.forEach(stream::println);
 		}
 	}
 
@@ -123,7 +120,7 @@ public class FileUtils {
 	 * @throws IOException If an I/O error occurs
 	 */
 	public static String getContentsAsString(File file) throws IOException {
-		try (FileInputStream stream = new FileInputStream(file)) {
+		try (InputStream stream = Files.newInputStream(file.toPath())) {
 			return getContentsAsString(stream);
 		}
 	}

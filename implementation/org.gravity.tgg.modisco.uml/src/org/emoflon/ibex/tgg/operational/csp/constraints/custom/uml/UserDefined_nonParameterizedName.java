@@ -7,22 +7,21 @@ public class UserDefined_nonParameterizedName extends RuntimeTGGAttributeConstra
 
 	/**
 	 * Constraint nonParameterizedName(v0)
-	 * 
+	 *
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	@Override
 	public void solve() {
-		if (variables.size() != 1)
+		if (this.variables.size() != 1) {
 			throw new RuntimeException("The CSP -NONPARAMETERIZEDNAME- needs exactly 1 variables");
+		}
 
-		RuntimeTGGAttributeConstraintVariable v0 = variables.get(0);
-		String bindingStates = getBindingStates(v0);
+		final RuntimeTGGAttributeConstraintVariable v0 = this.variables.get(0);
+		final String bindingStates = getBindingStates(v0);
 
-		switch (bindingStates) {
-		case "B":
+		if ("B".equals(bindingStates)) {
 			setSatisfied(!((String) v0.getValue()).contains("<"));
-			break;
-		default:
+		} else {
 			throw new UnsupportedOperationException(
 					"This case in the constraint has not been implemented yet: " + bindingStates);
 		}

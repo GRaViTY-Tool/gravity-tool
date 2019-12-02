@@ -59,10 +59,10 @@ public class GradleAndroid {
 					if (rFile.exists()) {
 						classes.add(rFile.toPath());
 					} else {
-						LOGGER.log(Level.WARN, "The R.java does not exist: " + rFile.getAbsolutePath());
+						LOGGER.warn("The R.java does not exist: " + rFile.getAbsolutePath());
 					}
 				} else {
-					LOGGER.log(Level.WARN, "No R.java file found");
+					LOGGER.warn("No R.java file found");
 				}
 			}
 		}
@@ -83,7 +83,7 @@ public class GradleAndroid {
 			if (!releaseFolder.exists()) {
 				releaseFolder = new File(rFolder, "debug");
 				if (!releaseFolder.exists()) {
-					LOGGER.log(Level.WARN, "No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
+					LOGGER.warn("No \"release\" or \"debug\" folder in \"" + rFolder + "\"");
 					return null;
 				}
 			}
@@ -144,7 +144,7 @@ public class GradleAndroid {
 			return tmpAndroidHome;
 		} else {
 			final String message = "Adroid home not specified.";
-			LOGGER.log(Level.WARN, message);
+			LOGGER.warn(message);
 			throw new GradleImportException(message);
 		}
 
@@ -185,14 +185,14 @@ public class GradleAndroid {
 					if (lib.exists()) {
 						pathsToLibs.put(use, lib.toPath());
 					} else {
-						LOGGER.log(Level.WARN, "UseLib dependency not resolved: " + use);
+						LOGGER.warn("UseLib dependency not resolved: " + use);
 					}
 				}
 				break;
 			}
 		}
 		if (!compAndroidSdk) {
-			LOGGER.log(Level.WARN, "WARNING: Install android SDK " + sdkVersion.getTargetSdk());
+			LOGGER.warn("WARNING: Install android SDK " + sdkVersion.getTargetSdk());
 			for (final File sdk : platforms.listFiles()) {
 				final String name = sdk.getName();
 				final int i = Integer.parseInt(name.substring("android-".length()));

@@ -50,7 +50,7 @@ public class GradleImportHandler extends AbstractHandler {
 				}
 				return Status.OK_STATUS;
 			} catch (final CoreException e) {
-				LOGGER.log(Level.WARN, e);
+				LOGGER.warn(e);
 				return new Status(Status.WARNING, GravityActivator.PLUGIN_ID,
 						"Refreshing the workspace failed a manual refresh can be necessary!", e);
 			} catch (final NoRootFolderException e) {

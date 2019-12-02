@@ -2,7 +2,6 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
@@ -64,7 +63,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	private boolean createMethodSignature(MGravityModel model, MMethodName name, MAbstractMethodDefinition definition) {
 		final Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(definition, model);
 		if (mSigReturnType == null) {
-			LOGGER.log(Level.ERROR, "Couldn't find most geric return type for method definition:" + definition + ".");
+			LOGGER.error("Couldn't find most geric return type for method definition:" + definition + ".");
 			return false;
 		}
 		MMethodSignature existingSignature = getExistingSignature(name, definition, mSigReturnType);

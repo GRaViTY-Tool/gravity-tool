@@ -3,12 +3,12 @@ package org.gravity.hulk.detection;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -93,8 +93,7 @@ public class HulkDetector {
 		return sorted;
 	}
 
-	private void handleDetector(HDetector detector, Deque<HDetector> worklist, Set<HDetector> processedDetectors,
-			boolean verbose) throws DetectionFailedException {
+	private void handleDetector(HDetector detector, Deque<HDetector> worklist, Set<HDetector> processedDetectors) throws DetectionFailedException {
 		final List<HDetector> sorted = getSorted(detector);
 		for (final HDetector nextDetector : sorted) {
 			if (processedDetectors.contains(nextDetector)) {
@@ -156,7 +155,7 @@ public class HulkDetector {
 		while (!worklist.isEmpty()) {
 			final HDetector detector = worklist.pop();
 
-			handleDetector(detector, worklist, processedDetectors, verbose);
+			handleDetector(detector, worklist, processedDetectors);
 		}
 		if (verbose) {
 			final long h1 = System.currentTimeMillis();
@@ -208,7 +207,7 @@ public class HulkDetector {
 	 * @return The defaults
 	 */
 	public static Map<String, String> getDefaultThresholds() {
-		final Map<String, String> thresholds = new HashMap<>();
+		final Map<String, String> thresholds = new ConcurrentHashMap<>();
 		thresholds.put(HDataClassDetector.class.getName(), HRelativeValueConstants.HIGH.getName());
 		thresholds.put(HLargeClassDetector.class.getName(), HRelativeValueConstants.VERY_HIGH.getName());
 		thresholds.put(HLowCohesionDetector.class.getName(), HRelativeValueConstants.HIGH.getName());

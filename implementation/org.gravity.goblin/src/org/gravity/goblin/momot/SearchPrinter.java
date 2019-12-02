@@ -72,7 +72,7 @@ public class SearchPrinter {
 			LOGGER.log(Level.INFO, "- Save Analysis to '" + analysisFolderTxt + "'");
 			searchAnalyzer.saveAnalysis(analysisFolderTxt);
 		} catch (IOException e) {
-			LOGGER.log(Level.WARN, e.getMessage(), e);
+			LOGGER.warn(e.getMessage(), e);
 		}
 		LOGGER.log(Level.INFO, "- Save Indicator BoxPlots to '" + analysisFolder + "'");
 		searchAnalyzer.saveIndicatorBoxPlots(analysisFolder.getAbsolutePath(), baseName);
@@ -126,7 +126,7 @@ public class SearchPrinter {
 			TypeGraph pg = EGraphUtil.getPG(graph);
 			EObject eContainer = pg.eContainer();
 			if (eContainer != null && eContainer.eResource() == null) {
-				LOGGER.log(Level.WARN, "There was a HAntiPatternGraph withot resource");
+				LOGGER.warn("There was a HAntiPatternGraph withot resource");
 				pg.eResource().getContents().add(eContainer);
 			}
 		}

@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -46,7 +46,7 @@ import guru.nidi.graphviz.model.MutableNode;
  * @author speldszus
  *
  */
-public class GraphVisualizer {
+public final class GraphVisualizer {
 
 	private static final Logger LOGGER = Logger.getLogger(GraphVisualizer.class);
 
@@ -88,14 +88,14 @@ public class GraphVisualizer {
 				memberName = ((FieldDeclaration) memberDef).getFragments().get(0).getName();
 				className = getName(defContainer);
 			}
-			final MutableGraph g = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
+			final MutableGraph graph = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
 					.graphAttrs().add("dpi", 72);
 			final HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
 			final Collection<FlowNode> alreadySeenNodes = handler.getAllFlowNodes();
 			for (final FlowNode node : alreadySeenNodes) {
 				final MutableNode graphNode = getDotNode(node);
-				g.add(graphNode);
+				graph.add(graphNode);
 				graphNodes.put(node, graphNode);
 			}
 			// Set containment edges (+ links to nodes of called/accessed methods/fields)
@@ -106,9 +106,9 @@ public class GraphVisualizer {
 			try {
 				final File location = new File(folder,
 						"Class-" + className + "-" + memberType + "-" + memberName + ".png");
-				Graphviz.fromGraph(g).width(5000).render(Format.PNG).toFile(location);
+				Graphviz.fromGraph(graph).width(5000).render(Format.PNG).toFile(location);
 			} catch (final IOException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 	}
@@ -160,8 +160,8 @@ public class GraphVisualizer {
 	 * @param graphNodes       The nodes of the graph
 	 * @param alreadySeenNodes
 	 */
-	private static void drawFlowEdges(HashMap<FlowNode, MutableNode> graphNodes,
-			Collection<FlowNode> alreadySeenNodes) {
+	private static void drawFlowEdges(final Map<FlowNode, MutableNode> graphNodes,
+			final Collection<FlowNode> alreadySeenNodes) {
 		for (final FlowNode node : alreadySeenNodes) {
 			final MutableNode graphNode = graphNodes.get(node);
 			for (final FlowNode out : node.getOutRef()) {
@@ -178,10 +178,9 @@ public class GraphVisualizer {
 	 * for all graph nodes
 	 *
 	 * @param handler
-	 * @param graphNodes       The nodes of the graph
+	 * @param graphNodes The nodes of the graph
 	 */
-	private static void drawContainmentEdges(MemberHandler handler,
-			HashMap<FlowNode, MutableNode> graphNodes) {
+	private static void drawContainmentEdges(MemberHandler handler, Map<FlowNode, MutableNode> graphNodes) {
 		for (final FlowNode node : new ArrayList<>(handler.getAllFlowNodes())) {
 			final MutableNode target = graphNodes.get(node);
 			final EObject modelElement = node.getModelElement();
@@ -194,19 +193,18 @@ public class GraphVisualizer {
 				continue;
 			}
 			if (modelElement instanceof MethodInvocation) {
+				target.addLink(
+						target.linkTo(getDotNode(handler.getFlowNode(((MethodInvocation) modelElement).getMethod()))
+								.add(Style.FILLED, Color.GRAY)).with(Style.DOTTED, Label.of("calls"), Color.GRAY));
+			}
+			if (modelElement instanceof ClassInstanceCreation) {
 				target.addLink(target
-						.linkTo(getDotNode(handler.getFlowNode(((MethodInvocation) modelElement).getMethod()))
+						.linkTo(getDotNode(handler.getFlowNode(((ClassInstanceCreation) modelElement).getMethod()))
 								.add(Style.FILLED, Color.GRAY))
 						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
 			}
-			if (modelElement instanceof ClassInstanceCreation) {
-				target.addLink(target.linkTo(
-						getDotNode(handler.getFlowNode(((ClassInstanceCreation) modelElement).getMethod()))
-						.add(Style.FILLED, Color.GRAY))
-						.with(Style.DOTTED, Label.of("calls"), Color.GRAY));
-			}
 			final MutableNode source = graphNodes.get(flowCont);
-			if(source != null) {
+			if (source != null) {
 				source.addLink(target);
 			}
 		}
@@ -225,17 +223,17 @@ public class GraphVisualizer {
 		final EObject modelElement = node.getModelElement();
 		MutableNode graphNode = null;
 		if (modelElement != null) {
-			String label = modelElement.eClass().getName();
+			final StringBuilder label = new StringBuilder(modelElement.eClass().getName());
 			if (modelElement instanceof NamedElement) {
 				final String name = ((NamedElement) modelElement).getName();
 				if (name != null) {
-					label += " " + name;
+					label.append(' ').append(name);
 				}
 			}
 			if (modelElement instanceof Assignment) {
-				label += " " + ((Assignment) modelElement).getOperator().toString();
+				label.append(' ').append(((Assignment) modelElement).getOperator().toString());
 			}
-			graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label));
+			graphNode = mutNode(Integer.toString(modelElement.hashCode())).add(Label.of(label.toString()));
 		} else {
 			graphNode = mutNode(Integer.toString(node.hashCode())).add(Label.of("null"));
 		}

@@ -1,11 +1,11 @@
 package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
@@ -31,7 +31,7 @@ public class MemberHandler {
 	 * The statements and expressions, which have already been processed, associated
 	 * with their FlowNode representations.
 	 */
-	private final Map<EObject, FlowNode> alreadySeen = new HashMap<>();
+	private final Map<EObject, FlowNode> alreadySeen = new ConcurrentHashMap<>();
 
 	/**
 	 * The member definition corresponding to this handler.
@@ -108,8 +108,8 @@ public class MemberHandler {
 		}
 	}
 
-	public void propagateBackWriteAccess(LinkedList<EObject> seenContainers, FlowNode currentNode) {
-		for (final EObject currentObj : seenContainers) {
+	public void propagateBackWriteAccess(Collection<EObject> seenContainers, FlowNode currentNode) {
+		for (final EObject currentObj : Collections.unmodifiableCollection(seenContainers)) {
 			final FlowNode newNode = getFlowNodeOrCreate(currentObj);
 			currentNode.addInRef(newNode);
 		}

@@ -31,7 +31,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 /**
  * This class provides the functionality to execute refactorings on a duplicate
  * of a program model and to re-execute them later on the real instance
- * 
+ *
  * @author speldszus
  *
  */
@@ -47,8 +47,8 @@ public class RefactoringTool {
 	private CreateSuperclass cscRefactoring;
 	private ExtractSuperclass escRefactoring;
 
-	private List<RefactoringConfiguration> bookkeeping;
-	private Set<String> changes;
+	private final List<RefactoringConfiguration> bookkeeping;
+	private final Set<String> changes;
 
 	private void initRefactorings() {
 		this.pumRefactoring = new PullUpMethod();
@@ -62,7 +62,7 @@ public class RefactoringTool {
 	 * Creates a new instance of the refactoring application tool. Optionally a copy
 	 * of the program model can be created for testing refactoring result before
 	 * applying them to the real program model.
-	 * 
+	 *
 	 * @param pg The program model which should be refactored
 	 * @param copy If a copy should be created
 	 */
@@ -79,14 +79,14 @@ public class RefactoringTool {
 
 	/**
 	 * Executes the tested refactorings on the given program model
-	 * 
+	 *
 	 * @param pg The program model on which the refactorings should be executed
 	 * @return The changes of the refactoring execution
 	 */
 	public Changes executePlannedRefactorings(TypeGraph pg) {
-		Changes changeContainer = new Changes();
-		Consumer<EObject> changes = SynchronizationHelper -> {
-			RefactoringTool tool = new RefactoringTool(pg, false);
+		final Changes changeContainer = new Changes();
+		final Consumer<EObject> changes = SynchronizationHelper -> {
+			final RefactoringTool tool = new RefactoringTool(pg, false);
 			tool.applyBookkeeping(this.bookkeeping);
 			changeContainer.addChangedClassfiles(tool.getChanges());
 		};
@@ -96,7 +96,7 @@ public class RefactoringTool {
 
 	/**
 	 * Returns a list of all refactorings successfully applied to the program model
-	 * 
+	 *
 	 * @return the configurations of the applied refactorings
 	 */
 	public List<RefactoringConfiguration> getBookkeeping() {
@@ -114,22 +114,23 @@ public class RefactoringTool {
 		} else if (configuration instanceof ExtractSuperClassConfiguration) {
 			refactoring = this.escRefactoring;
 		} else if (configuration instanceof MoveMethodConfiguration) {
-			refactoring = this.momRefactoring;		
+			refactoring = this.momRefactoring;
 		} else {
 			throw new RefactoringFailedException("Unknown Refactoring Kind");
 		}
-		boolean pumIsApplicable = refactoring.isApplicable(configuration);
+		final boolean pumIsApplicable = refactoring.isApplicable(configuration);
 		if (pumIsApplicable) {
 			this.bookkeeping.add(configuration);
-			for (TClass tClass : refactoring.perform(configuration)) { //TODO: Make use of the cloned pm
-				String classname = tClass.getTName() + ".java"; //$NON-NLS-1$
+			for (final TClass tClass : refactoring.perform(configuration)) { //TODO: Make use of the cloned pm
+				StringBuilder classname = new StringBuilder(tClass.getTName()).append(".java"); //$NON-NLS-1$
 				TPackage p = tClass.getPackage();
 				while (p != null) {
-					classname = p.getTName() + "." + classname; //$NON-NLS-1$
+					classname = classname.append(p.getTName()).append('.').append(classname);
 					p = p.getParent();
 				}
-				if (!this.changes.contains(classname)) {
-					this.changes.add(classname);
+				final String classNameString = classname.toString();
+				if (!this.changes.contains(classNameString)) {
+					this.changes.add(classNameString);
 				}
 			}
 		}
@@ -138,16 +139,16 @@ public class RefactoringTool {
 
 	/**
 	 * Applies all stored refactoring to the program model
-	 * 
+	 *
 	 * @param bookkeeping The refactoring configurations
 	 * @return true, if all refactorings have been applied successfully
 	 */
 	public boolean applyBookkeeping(List<RefactoringConfiguration> bookkeeping) {
 		boolean success = true;
-		for (RefactoringConfiguration r : bookkeeping) {
+		for (final RefactoringConfiguration r : bookkeeping) {
 			try {
 				success &= applyRefactoring(r);
-			} catch (RefactoringFailedException e) {
+			} catch (final RefactoringFailedException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				return false;
 			}
@@ -160,7 +161,7 @@ public class RefactoringTool {
 
 	/**
 	 * Get all changes performed by this instance
-	 * 
+	 *
 	 * @return The changes
 	 */
 	public Set<String> getChanges() {

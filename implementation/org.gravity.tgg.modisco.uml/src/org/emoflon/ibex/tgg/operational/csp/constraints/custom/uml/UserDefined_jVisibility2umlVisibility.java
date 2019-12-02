@@ -1,8 +1,8 @@
 package org.emoflon.ibex.tgg.operational.csp.constraints.custom.uml;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraint;
@@ -10,9 +10,9 @@ import org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariabl
 
 public class UserDefined_jVisibility2umlVisibility extends RuntimeTGGAttributeConstraint {
 
-	private static final Map<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind> jToU = new HashMap<>(
+	private static final Map<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind> jToU = new ConcurrentHashMap<>(
 			4);
-	private static final Map<org.eclipse.uml2.uml.VisibilityKind, org.eclipse.gmt.modisco.java.VisibilityKind> uToJ = new HashMap<>(
+	private static final Map<org.eclipse.uml2.uml.VisibilityKind, org.eclipse.gmt.modisco.java.VisibilityKind> uToJ = new ConcurrentHashMap<>(
 			4);
 
 	static {
@@ -35,17 +35,18 @@ public class UserDefined_jVisibility2umlVisibility extends RuntimeTGGAttributeCo
 
 	/**
 	 * Constraint jVisibility2umlVisibility(v0, v1)
-	 * 
+	 *
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	@Override
 	public void solve() {
-		if (variables.size() != 2)
+		if (this.variables.size() != 2) {
 			throw new RuntimeException("The CSP -JVISIBILITY2UMLVISIBILITY- needs exactly 2 variables");
+		}
 
-		RuntimeTGGAttributeConstraintVariable v0 = variables.get(0);
-		RuntimeTGGAttributeConstraintVariable v1 = variables.get(1);
-		String bindingStates = getBindingStates(v0, v1);
+		final RuntimeTGGAttributeConstraintVariable v0 = this.variables.get(0);
+		final RuntimeTGGAttributeConstraintVariable v1 = this.variables.get(1);
+		final String bindingStates = getBindingStates(v0, v1);
 
 		switch (bindingStates) {
 		case "BB":
@@ -60,10 +61,10 @@ public class UserDefined_jVisibility2umlVisibility extends RuntimeTGGAttributeCo
 			setSatisfied(true);
 			break;
 		case "FF":
-			@SuppressWarnings("unchecked")
+			@SuppressWarnings("unchecked") final
 			Entry<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind>[] entries = jToU
-					.entrySet().toArray(new Map.Entry[jToU.size()]);
-			int selection = ThreadLocalRandom.current().nextInt(entries.length);
+			.entrySet().toArray(new Map.Entry[jToU.size()]);
+			final int selection = ThreadLocalRandom.current().nextInt(entries.length);
 			v0.bindToValue(entries[selection].getKey());
 			v1.bindToValue(entries[selection].getValue());
 			setSatisfied(true);

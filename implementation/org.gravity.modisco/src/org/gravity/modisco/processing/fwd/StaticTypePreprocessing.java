@@ -68,9 +68,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
 			IProgressMonitor monitor) {
 		this.model = model;
-		final List<MAbstractMethodDefinition> failed = elements.parallelStream().filter(definition -> {
-			return !addStaticTypeAccesses(definition);
-		}).collect(Collectors.toList());
+		final List<MAbstractMethodDefinition> failed = elements.parallelStream()
+				.filter(definition -> !addStaticTypeAccesses(definition)).collect(Collectors.toList());
 		if (failed.isEmpty()) {
 			return true;
 		}
@@ -99,7 +98,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			try {
 				type = getStaticType(methodInvoc, method);
 			} catch (final ProcessingException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
+				LOGGER.error(e.getMessage(), e);
 				return false;
 			}
 			if (type == null && !methodInvoc.getMethod().isProxy()) {
@@ -125,8 +124,10 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (methodInvoc instanceof MethodInvocation) {
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
-				LOGGER.log(Level.WARN, "Cannot find static type of invocation of \"" + methodInvoc.getMethod()
-				+ "\" in " + method.getAbstractTypeDeclaration() + "." + method.getName());
+				if (LOGGER.isEnabledFor(Level.WARN)) {
+					LOGGER.warn("Cannot find static type of invocation of \"" + methodInvoc.getMethod() + "\" in "
+							+ method.getAbstractTypeDeclaration() + "." + method.getName());
+				}
 				// If we cannot find the static type assume the declaring type
 				type = getDeclaringType(methodInvoc.getMethod());
 			}
@@ -148,7 +149,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 					"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
 			throw new ProcessingException(methodInvoc);
 		} else {
-			LOGGER.log(Level.ERROR, "Unknown invocation type : " + methodInvoc.getClass().getName());
+			LOGGER.error("Unknown invocation type : " + methodInvoc.getClass().getName());
 			throw new ProcessingException(methodInvoc);
 		}
 		return type;
@@ -189,8 +190,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			}
 		} else if (var instanceof EnumConstantDeclaration) {
 			return getStaticType(expression.getQualifier(), method);
-		} else {
-			LOGGER.log(Level.WARN, "Unknown variable declaration: " + var.getClass().getName());
+		} else if (LOGGER.isEnabledFor(Level.WARN)) {
+			LOGGER.warn("Unknown variable declaration: " + var.getClass().getName());
 		}
 		return getStaticTypeFromInitializer(var.getInitializer());
 	}
@@ -294,7 +295,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 			}
 		}
-		LOGGER.log(Level.ERROR, "Calculating static types from \"" + expression.getClass().getSimpleName()
+		LOGGER.error("Calculating static types from \"" + expression.getClass().getSimpleName()
 				+ "\" expressions is not supported");
 		return null;
 	}
@@ -322,7 +323,9 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return type;
 			}
 		}
-		LOGGER.log(Level.WARN, "Couldn't resolve the static type of an access to an unresolved item: " + expression);
+		if (LOGGER.isEnabledFor(Level.WARN)) {
+			LOGGER.warn("Couldn't resolve the static type of an access to an unresolved item: " + expression);
+		}
 		return null;
 	}
 
@@ -335,9 +338,9 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
 		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
-				.map(body -> (FieldDeclaration) body).filter(field -> {
-					return field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name));
-				}).map(field -> field.getType().getType()).findAny().orElse(null);
+				.map(body -> (FieldDeclaration) body)
+				.filter(field -> field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name)))
+				.map(field -> field.getType().getType()).findAny().orElse(null);
 	}
 
 	/**
@@ -400,7 +403,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			} else if (container instanceof AbstractTypeDeclaration) {
 				type = (AbstractTypeDeclaration) container;
 			} else {
-				LOGGER.log(Level.ERROR, "Unknown deklaring type of: " + body);
+				LOGGER.error("Unknown deklaring type of: " + body);
 			}
 		}
 		return type;
@@ -418,7 +421,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			final ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
 			final TypeAccess typeAccess = classInstanceCreation.getType();
 			if (typeAccess == null) {
-				LOGGER.log(Level.ERROR, "Class instance has not type: " + classInstanceCreation);
+				LOGGER.error("Class instance has not type: " + classInstanceCreation);
 				return null;
 			}
 			return typeAccess.getType();
@@ -426,7 +429,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			final EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
 			return enumConst.getAbstractTypeDeclaration();
 		}
-		LOGGER.log(Level.ERROR, "Unknown container of anon class: " + container.eClass().getName());
+		LOGGER.error("Unknown container of anon class: " + container.eClass().getName());
 		return null;
 	}
 }

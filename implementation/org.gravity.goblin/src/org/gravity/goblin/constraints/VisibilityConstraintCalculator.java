@@ -1,7 +1,6 @@
 package org.gravity.goblin.constraints;
 
 import java.util.List;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import org.gravity.goblin.fitness.IFitnessCalculator;
@@ -23,7 +22,7 @@ public class VisibilityConstraintCalculator implements IFitnessCalculator {
 			for (TMethodDefinition tDef : tClass.getDeclaredTMethodDefinitions()) {
 				List<TAnnotation> metrics = tDef.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());
 				if (metrics.size() != 1) {
-					LOGGER.log(Level.WARN, "Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
+					LOGGER.warn("Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName() + "->"
 							+ tDef.getSignatureString() + "\".");
 				} else {
 					HIGAMMetric igam = (HIGAMMetric) metrics.get(0);

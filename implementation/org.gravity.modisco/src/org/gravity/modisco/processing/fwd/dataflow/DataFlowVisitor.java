@@ -2,7 +2,6 @@ package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.LinkedList;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -93,11 +92,11 @@ public class DataFlowVisitor {
 	public void handle(MDefinition definition) {
 		if (definition instanceof MAbstractMethodDefinition) {
 			final Block body = ((MAbstractMethodDefinition) definition).getBody();
-			if(body != null) {
+			if (body != null) {
 				handle(body);
 			}
 		} else if (definition instanceof MFieldDefinition) {
-			for(final VariableDeclarationFragment fragment : ((MFieldDefinition) definition).getFragments()) {
+			for (final VariableDeclarationFragment fragment : ((MFieldDefinition) definition).getFragments()) {
 				handle(fragment);
 			}
 		} else {
@@ -205,7 +204,9 @@ public class DataFlowVisitor {
 			return handle(itemAccess);
 
 		}
-		LOGGER.log(Level.INFO, "ERROR: Unknown Expression: " + expression);
+		if (LOGGER.isInfoEnabled()) {
+			LOGGER.info("ERROR: Unknown Expression: " + expression);
+		}
 		return null;
 	}
 
@@ -315,17 +316,16 @@ public class DataFlowVisitor {
 				// parameter
 				member.addInRef(varDeclNode); // Add edge from decl to access
 				this.handler.addMemberRef(member);
-			} else {
-				LOGGER.log(Level.INFO,
-						"Unhandled container type " + singleVariableDeclaration.eContainer().getClass().getName()
+			} else if (LOGGER.isInfoEnabled()) {
+				LOGGER.info("Unhandled container type " + singleVariableDeclaration.eContainer().getClass().getName()
 						+ " for SingleVariableDeclaration");
 			}
-		} else {
-			String message = "Unknown VariableDeclaration";
+		} else if(LOGGER.isInfoEnabled()){
+			final StringBuilder message = new StringBuilder("Unknown VariableDeclaration");
 			if (variable != null) {
-				message += " of type " + variable.getClass().getName();
+				message.append(" of type ").append(variable.getClass().getName());
 			}
-			LOGGER.log(Level.INFO, message);
+			LOGGER.info(message);
 		}
 	}
 
@@ -361,7 +361,7 @@ public class DataFlowVisitor {
 		EObject currentContainer = singleVariableAccess.eContainer();
 		final LinkedList<EObject> seenContainers = new LinkedList<>();
 		seenContainers.add(currentContainer);
-		while (!(currentContainer instanceof Statement) && (currentContainer != null)) {
+		while (!(currentContainer instanceof Statement) && currentContainer != null) {
 			if (currentContainer instanceof Assignment) {
 				final Assignment assignment = (Assignment) currentContainer;
 				EStructuralFeature assignmentSide;
@@ -380,7 +380,7 @@ public class DataFlowVisitor {
 						if (variableContainer instanceof FieldDeclaration) {
 							this.handler.addMemberRef(member);
 						}
-						this.handler.propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						this.handler.propagateBackWriteAccess(seenContainers, member);
 						break;
 					case BIT_AND_ASSIGN:
 					case BIT_OR_ASSIGN:
@@ -396,14 +396,14 @@ public class DataFlowVisitor {
 						member.addInRef(varDeclNode);
 						member.addOutRef(varDeclNode);
 						singleVariableAccess.setAccessKind(AccessKind.READWRITE);
-						this.handler.propagateBackReadAccess(new LinkedList<>(seenContainers), member);
-						this.handler.propagateBackWriteAccess(new LinkedList<>(seenContainers), member);
+						this.handler.propagateBackReadAccess(seenContainers, member);
+						this.handler.propagateBackWriteAccess(seenContainers, member);
 						if (variableContainer instanceof FieldDeclaration) {
 							this.handler.addMemberRef(member);
 						}
 						break;
 					default:
-						LOGGER.log(Level.INFO, "Unknown operator used in assignment");
+						LOGGER.info("Unknown operator used in assignment");
 						break;
 					}
 				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
@@ -413,9 +413,9 @@ public class DataFlowVisitor {
 							|| variableContainer instanceof AbstractMethodDeclaration) {
 						this.handler.addMemberRef(member);
 					}
-					this.handler.propagateBackReadAccess(new LinkedList<>(seenContainers), member);
+					this.handler.propagateBackReadAccess(seenContainers, member);
 				} else {
-					LOGGER.log(Level.INFO, "Unknown assignment side");
+					LOGGER.info("Unknown assignment side");
 				}
 				return true;
 			}
@@ -627,9 +627,11 @@ public class DataFlowVisitor {
 					final FlowNode paramNode = handle(parameters.get(indexOf));
 					argumentNode.addOutRef(paramNode);
 				} else if (parameters.isEmpty()) {
-					LOGGER.log(Level.INFO,
-							"Parameter list is empty, but argument list of called method is not in method "
-									+ calledMethod.getClass().getSimpleName());
+					if (LOGGER.isInfoEnabled()) {
+						LOGGER.info(
+								"Parameter list is empty, but argument list of called method is not in method "
+										+ calledMethod.getClass().getSimpleName());
+					}
 				} else {
 					final FlowNode paramNode = handle(parameters.get(parameters.size() - 1));
 					argumentNode.addOutRef(paramNode);
@@ -967,8 +969,10 @@ public class DataFlowVisitor {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName()
-					+ " found in ConstructorInvocation handling.");
+			if (LOGGER.isInfoEnabled()) {
+				LOGGER.info("ERROR: Unknown element type " + container.getClass().getName()
+						+ " found in ConstructorInvocation handling.");
+			}
 		}
 		return member;
 	}
@@ -1055,8 +1059,10 @@ public class DataFlowVisitor {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			LOGGER.log(Level.INFO, "ERROR: Unknown element type " + container.getClass().getName() + " found in "
-					+ expression.getClass().getSimpleName() + " handling.");
+			if (LOGGER.isInfoEnabled()) {
+				LOGGER.info("ERROR: Unknown element type " + container.getClass().getName() + " found in "
+						+ expression.getClass().getSimpleName() + " handling.");
+			}
 		}
 	}
 }

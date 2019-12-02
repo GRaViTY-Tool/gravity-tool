@@ -2069,10 +2069,10 @@
     <nodes name="mSource" incomingEdges="//@rules.51/@edges.2 //@rules.51/@edges.4" outgoingEdges="//@rules.51/@edges.6" incomingCorrsSource="//@rules.51/@nodes.5">
       <type href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
     </nodes>
-    <nodes name="tFlow" domainType="TRG" incomingEdges="//@rules.51/@edges.1" outgoingEdges="//@rules.51/@edges.5" incomingCorrsTarget="//@rules.51/@nodes.4">
+    <nodes name="tFlow" domainType="TRG" incomingEdges="//@rules.51/@edges.1 //@rules.51/@edges.7" outgoingEdges="//@rules.51/@edges.5" incomingCorrsTarget="//@rules.51/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
     </nodes>
-    <nodes name="tSource" domainType="TRG" incomingEdges="//@rules.51/@edges.3 //@rules.51/@edges.5" incomingCorrsTarget="//@rules.51/@nodes.5">
+    <nodes name="tSource" domainType="TRG" incomingEdges="//@rules.51/@edges.3 //@rules.51/@edges.5" outgoingEdges="//@rules.51/@edges.7" incomingCorrsTarget="//@rules.51/@nodes.5">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="mFlowToTFlow" domainType="CORR" outgoingEdges="//@rules.51/@edges.0 //@rules.51/@edges.1" source="//@rules.51/@nodes.0" target="//@rules.51/@nodes.2">
@@ -2102,6 +2102,9 @@
     <edges name="mSource__outgoingFlows__mFlow_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.51/@nodes.1" trgNode="//@rules.51/@nodes.0">
       <type href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement/outgoingFlows"/>
     </edges>
+    <edges name="tSource__outgoingFlows__tFlow_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.51/@nodes.3" trgNode="//@rules.51/@nodes.2">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement/outgoingFlows"/>
+    </edges>
     <attributeConditionLibrary/>
   </rules>
   <rules name="OutgoingFlow">
@@ -2111,10 +2114,10 @@
     <nodes name="mTarget" incomingEdges="//@rules.52/@edges.2 //@rules.52/@edges.4" outgoingEdges="//@rules.52/@edges.6" incomingCorrsSource="//@rules.52/@nodes.5">
       <type href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement"/>
     </nodes>
-    <nodes name="tFlow" domainType="TRG" incomingEdges="//@rules.52/@edges.1" outgoingEdges="//@rules.52/@edges.5" incomingCorrsTarget="//@rules.52/@nodes.4">
+    <nodes name="tFlow" domainType="TRG" incomingEdges="//@rules.52/@edges.1 //@rules.52/@edges.7" outgoingEdges="//@rules.52/@edges.5" incomingCorrsTarget="//@rules.52/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
     </nodes>
-    <nodes name="tTarget" domainType="TRG" incomingEdges="//@rules.52/@edges.3 //@rules.52/@edges.5" incomingCorrsTarget="//@rules.52/@nodes.5">
+    <nodes name="tTarget" domainType="TRG" incomingEdges="//@rules.52/@edges.3 //@rules.52/@edges.5" outgoingEdges="//@rules.52/@edges.7" incomingCorrsTarget="//@rules.52/@nodes.5">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="mFlowToTFlow" domainType="CORR" outgoingEdges="//@rules.52/@edges.0 //@rules.52/@edges.1" source="//@rules.52/@nodes.0" target="//@rules.52/@nodes.2">
@@ -2143,6 +2146,9 @@
     </edges>
     <edges name="mTarget__incomingFlows__mFlow_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.52/@nodes.1" trgNode="//@rules.52/@nodes.0">
       <type href="http://www.gravity-tool.org/modisco#//MAbstractFlowElement/incomingFlows"/>
+    </edges>
+    <edges name="tTarget__incomingFlows__tFlow_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.52/@nodes.3" trgNode="//@rules.52/@nodes.2">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractFlowElement/incomingFlows"/>
     </edges>
     <attributeConditionLibrary/>
   </rules>

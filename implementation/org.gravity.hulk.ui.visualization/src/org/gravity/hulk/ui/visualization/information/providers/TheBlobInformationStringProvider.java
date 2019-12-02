@@ -19,9 +19,9 @@ import org.gravity.hulk.antipatterngraph.metrics.HOutgoingInvocationMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.hulk.ui.visualization.util.Flaws;
 import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodDefinition;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 public class TheBlobInformationStringProvider implements InformationStringProvider {
 
@@ -29,7 +29,7 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 
 	@Override
 	public String getInformationString(HAnnotation annotation, boolean printHeader, Flaws annotationID) {
-		
+
 		switch (annotationID) {
 		case H_BLOB_ANTIPATTERN:
 			return buildTheBlobString(annotation, printHeader);
@@ -65,15 +65,15 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 	}
 
 	private String buildTheBlobString(HAnnotation annotation, boolean printHeader) {
-		HBlobAntiPattern blob = (HBlobAntiPattern) annotation;
-		
-		TClass tClass = (TClass) blob.getTAnnotated();
+		final HBlobAntiPattern blob = (HBlobAntiPattern) annotation;
+
+		final TClass tClass = (TClass) blob.getTAnnotated();
 
 		HDataClassAccessor hDataClassAccessor = null;
 		double hDataClassAccessorThresholdValue = -1;
 		double hDataClassAccessorValue = -1;
 		String hDataClassAccessorRelativeAmount = "-1";
-		for (TAnnotation tAnnotation : tClass.getTAnnotation()) {
+		for (final TAnnotation tAnnotation : tClass.getTAnnotation()) {
 			if (tAnnotation instanceof HDataClassAccessor) {
 				hDataClassAccessor = (HDataClassAccessor) tAnnotation;
 				hDataClassAccessorValue = hDataClassAccessor.getValue();
@@ -81,196 +81,189 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 			}
 		}
 
-		String theBlobInfo = "";
+		StringBuilder theBlobInfo = new StringBuilder();
 		if (printHeader && hDataClassAccessor != null) {
 			hDataClassAccessorThresholdValue = ThresholdCalculator.getThresholdValue(hDataClassAccessor,
 					HRelativeValueConstants.MEDIUM, true);
-			theBlobInfo = theBlobInfo + "HBlobAntiPattern" + EOL;
-			theBlobInfo = theBlobInfo + "Thresholds: " + EOL;
-			theBlobInfo = theBlobInfo + " HDataClassAccessor: at least HRelativeValueConstnats.MEDIUM" + EOL;
-			theBlobInfo = theBlobInfo + "  Threshold for HDataClassAccessor(MEDIUM) > "
-					+ hDataClassAccessorThresholdValue + EOL + EOL;
+			theBlobInfo = theBlobInfo.append("HBlobAntiPattern").append(EOL).append("Thresholds: ").append(EOL)
+					.append(" HDataClassAccessor: at least HRelativeValueConstnats.MEDIUM").append(EOL)
+					.append("  Threshold for HDataClassAccessor(MEDIUM) > ").append(hDataClassAccessorThresholdValue)
+					.append(EOL).append(EOL);
 		}
 
-		theBlobInfo = theBlobInfo + "Detected in: " + tClass.getTName() + EOL;
-		theBlobInfo = theBlobInfo + "Number of data class accesses: " + hDataClassAccessorValue + EOL;
-		theBlobInfo = theBlobInfo + "Value of HDataClassAccessor: " + hDataClassAccessorValue + EOL;
-		theBlobInfo = theBlobInfo + "Relative amount of HDataClassAccessor: " + hDataClassAccessorRelativeAmount
-				+ EOL + EOL;
+		theBlobInfo = theBlobInfo.append("Detected in: ").append(tClass.getTName()).append(EOL)
+				.append("Number of data class accesses: ").append(hDataClassAccessorValue).append(EOL)
+				.append("Value of HDataClassAccessor: ").append(hDataClassAccessorValue).append(EOL)
+				.append("Relative amount of HDataClassAccessor: ").append(hDataClassAccessorRelativeAmount).append(EOL)
+				.append(EOL);
 
-		return theBlobInfo;
+		return theBlobInfo.toString();
 	}
 
 	private String buildGodClassString(HAnnotation annotation, boolean printHeader) {
-		String godClassInfo = "";
-		HGodClassAntiPattern godClass = (HGodClassAntiPattern) annotation;
+		StringBuilder godClassInfo = new StringBuilder();
+		final HGodClassAntiPattern godClass = (HGodClassAntiPattern) annotation;
 		TClass tClass;
 
 		tClass = (TClass) godClass.getTAnnotated();
 
 		if (printHeader) {
-			godClassInfo = godClassInfo + "HGodClassAntiPattern" + EOL;
-			godClassInfo = godClassInfo + "Thresholds: " + EOL;
-			godClassInfo = godClassInfo + " none" + EOL + EOL;
+			godClassInfo = godClassInfo.append("HGodClassAntiPattern").append(EOL).append("Thresholds: ").append(EOL)
+					.append(" none").append(EOL).append(EOL);
 		}
 
-		godClassInfo = godClassInfo + "Detected in: " + tClass.getTName() + EOL + EOL;
+		godClassInfo = godClassInfo.append("Detected in: ").append(tClass.getTName()).append(EOL).append(EOL);
 
-		return godClassInfo;
+		return godClassInfo.toString();
 	}
 
 	private String buildControllerClassString(HAnnotation annotation, boolean printHeader) {
-		HControllerClassSmell controllerClass = (HControllerClassSmell) annotation;
+		final HControllerClassSmell controllerClass = (HControllerClassSmell) annotation;
 
-		String controllerClassInfo = "";
+		StringBuilder controllerClassInfo = new StringBuilder();
 
-		HInvocationRelation hInvocationRelation = controllerClass.getHInvocationRelation();
+		final HInvocationRelation hInvocationRelation = controllerClass.getHInvocationRelation();
 		double hInvocationRelationThresholdValue = -1;
 
-		TClass tClass = (TClass) controllerClass.getTAnnotated();
+		final TClass tClass = (TClass) controllerClass.getTAnnotated();
 
 		if (printHeader) {
 			hInvocationRelationThresholdValue = ThresholdCalculator.getThresholdValue(hInvocationRelation,
 					HRelativeValueConstants.MEDIUM, true);
-			controllerClassInfo = controllerClassInfo + "ControllerClass" + EOL;
-			controllerClassInfo = controllerClassInfo + "Thresholds: " + EOL;
-			controllerClassInfo = controllerClassInfo
-					+ " HInvocationRelationMetric: at least HRelativeValueConstants.MEDIUM" + EOL;
-			controllerClassInfo = controllerClassInfo
-					+ "  Threshold for HInvocationRelation(MEDIUM): (outgoing invocations / incomming invocations) > "
-					+ hInvocationRelationThresholdValue + EOL + EOL;
+			controllerClassInfo = controllerClassInfo.append("ControllerClass").append(EOL).append("Thresholds: ")
+					.append(EOL).append(" HInvocationRelationMetric: at least HRelativeValueConstants.MEDIUM")
+					.append(EOL)
+					.append("  Threshold for HInvocationRelation(MEDIUM): (outgoing invocations / incomming invocations) > ")
+					.append(hInvocationRelationThresholdValue).append(EOL).append(EOL);
 		}
 
-		controllerClassInfo = controllerClassInfo + "Detected in: " + tClass.getTName() + EOL + EOL;
+		controllerClassInfo = controllerClassInfo.append("Detected in: ").append(tClass.getTName()).append(EOL)
+				.append(EOL);
 
-		return controllerClassInfo;
+		return controllerClassInfo.toString();
 	}
 
 	private String buildDataClassString(HAnnotation annotation, boolean printHeader) {
-		String dataClassInfo = "";
-		HDataClassSmell dataClassSmell = (HDataClassSmell) annotation;
+		StringBuilder dataClassInfo = new StringBuilder();
+		final HDataClassSmell dataClassSmell = (HDataClassSmell) annotation;
 
 		TClass tClass;
-		HNACCMetric hnacc = dataClassSmell.getHNACCMetric();
+		final HNACCMetric hnacc = dataClassSmell.getHNACCMetric();
 		double hnaccThresholdValue = -1;
 
 		tClass = (TClass) dataClassSmell.getTAnnotated();
 
 		if (printHeader) {
 			hnaccThresholdValue = ThresholdCalculator.getThresholdValue(hnacc, HRelativeValueConstants.HIGH, true);
-			dataClassInfo = dataClassInfo + "HDataClassSmell" + EOL;
-			dataClassInfo = dataClassInfo + "Thresholds: " + EOL;
-			dataClassInfo = dataClassInfo + " HNACCMetric: at least HRelativeValueConstants.HIGH" + EOL;
-			dataClassInfo = dataClassInfo + "  Threshold for HNACCMetric(HIGH): (getters+setters)/methods > "
-					+ hnaccThresholdValue + EOL + EOL;
+			dataClassInfo = dataClassInfo.append("HDataClassSmell").append(EOL).append("Thresholds: ").append(EOL)
+					.append(" HNACCMetric: at least HRelativeValueConstants.HIGH").append(EOL)
+					.append("  Threshold for HNACCMetric(HIGH): (getters+setters)/methods > ")
+					.append(hnaccThresholdValue).append(EOL).append(EOL);
 		}
 
-		dataClassInfo = dataClassInfo + "Detetcted in: " + tClass.getTName() + EOL + EOL;
+		dataClassInfo = dataClassInfo.append("Detetcted in: ").append(tClass.getTName()).append(EOL).append(EOL);
 
-		return dataClassInfo;
+		return dataClassInfo.toString();
 	}
 
 	private String buildGetterSetterString(HAnnotation annotation, boolean printHeader) {
-		HGetterSetterSmell getterSetterSmell = (HGetterSetterSmell) annotation;
+		final HGetterSetterSmell getterSetterSmell = (HGetterSetterSmell) annotation;
 
-		String getterSetterInfo = "";
+		StringBuilder getterSetterInfo = new StringBuilder();
 
-		TMethodDefinition tMethodDefinition = (TMethodDefinition) getterSetterSmell.getTAnnotated();
+		final TMethodDefinition tMethodDefinition = (TMethodDefinition) getterSetterSmell.getTAnnotated();
 
 		if (printHeader) {
-			getterSetterInfo = getterSetterInfo + "HGetterSetterSmell" + EOL;
-			getterSetterInfo = getterSetterInfo + "Thresholds: " + EOL;
-			getterSetterInfo = getterSetterInfo + " none" + EOL + EOL;
+			getterSetterInfo = getterSetterInfo.append("HGetterSetterSmell").append(EOL).append("Thresholds: ")
+					.append(EOL).append(" none").append(EOL).append(EOL);
 		}
 
-		getterSetterInfo = getterSetterInfo + "Detected in: " + tMethodDefinition.getSignature().getMethod().getTName()
-				+ EOL;
-		getterSetterInfo = getterSetterInfo + " in Class: " + tMethodDefinition.getDefinedBy().getTName() + EOL + EOL;
+		getterSetterInfo = getterSetterInfo.append("Detected in: ")
+				.append(tMethodDefinition.getSignature().getMethod().getTName()).append(EOL).append(" in Class: ")
+				.append(tMethodDefinition.getDefinedBy().getTName()).append(EOL).append(EOL);
 
-		return getterSetterInfo;
+		return getterSetterInfo.toString();
 	}
 
 	private String buildInvocationRelationString(HAnnotation annotation, boolean printHeader) {
-		HInvocationRelation invocationRelation = (HInvocationRelation) annotation;
+		final HInvocationRelation invocationRelation = (HInvocationRelation) annotation;
 
-		String invocationRelationInfo = "";
+		StringBuilder invocationRelationInfo = new StringBuilder();
 
-		TClass tClass = (TClass) invocationRelation.getTAnnotated();
+		final TClass tClass = (TClass) invocationRelation.getTAnnotated();
 
 		if (printHeader) {
-			invocationRelationInfo = invocationRelationInfo + "HInvocationRelation" + EOL + EOL;
+			invocationRelationInfo = invocationRelationInfo.append("HInvocationRelation").append(EOL).append(EOL);
 		}
 
-		invocationRelationInfo = invocationRelationInfo + "Detected in: " + tClass.getTName() + EOL;
-		invocationRelationInfo = invocationRelationInfo + "Value: " + invocationRelation.getValue() + EOL;
-		invocationRelationInfo = invocationRelationInfo + "Relative amount: "
-				+ invocationRelation.getRelativeAmount().getValue().toString() + EOL + EOL;
+		invocationRelationInfo = invocationRelationInfo.append("Detected in: ").append(tClass.getTName()).append(EOL)
+				.append("Value: ").append(invocationRelation.getValue()).append(EOL).append("Relative amount: ")
+				.append(invocationRelation.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return invocationRelationInfo;
+		return invocationRelationInfo.toString();
 	}
 
 	private String buildLargeClassLowCohesionString(HAnnotation annotation, boolean printHeader) {
-		HLargeClassLowCohesionSmell largeClassLowCohesionSmell = (HLargeClassLowCohesionSmell) annotation;
+		final HLargeClassLowCohesionSmell largeClassLowCohesionSmell = (HLargeClassLowCohesionSmell) annotation;
 
-		String largeClassLowCohesionInfo = "";
+		StringBuilder largeClassLowCohesionInfo = new StringBuilder();
 
-		TClass tClass = (TClass) largeClassLowCohesionSmell.getTAnnotated();
+		final TClass tClass = (TClass) largeClassLowCohesionSmell.getTAnnotated();
 
 		if (printHeader) {
-			largeClassLowCohesionInfo = largeClassLowCohesionInfo + "HLargeClassLowCohesionSmell" + EOL;
-			largeClassLowCohesionInfo = largeClassLowCohesionInfo + "Thresholds: " + EOL;
-			largeClassLowCohesionInfo = largeClassLowCohesionInfo + " none" + EOL + EOL;
+			largeClassLowCohesionInfo = largeClassLowCohesionInfo.append("HLargeClassLowCohesionSmell").append(EOL)
+					.append("Thresholds: ").append(EOL).append(" none").append(EOL).append(EOL);
 		}
 
-		largeClassLowCohesionInfo = largeClassLowCohesionInfo + "Detected in: " + tClass.getTName() + EOL + EOL;
+		largeClassLowCohesionInfo = largeClassLowCohesionInfo.append("Detected in: ").append(tClass.getTName())
+				.append(EOL).append(EOL);
 
-		return largeClassLowCohesionInfo;
+		return largeClassLowCohesionInfo.toString();
 	}
 
 	private String buildLargeClassString(HAnnotation annotation, boolean printHeader) {
-		HLargeClassSmell largeClass = (HLargeClassSmell) annotation;
+		final HLargeClassSmell largeClass = (HLargeClassSmell) annotation;
 
-		String largeClassInfo = "";
-		TClass tClass = (TClass) largeClass.getTAnnotated();
-		HNumberOfMembersMetric numberOfMemberic = largeClass.getHNumberOfMembers();
+		StringBuilder largeClassInfo = new StringBuilder();
+		final TClass tClass = (TClass) largeClass.getTAnnotated();
+		final HNumberOfMembersMetric numberOfMemberic = largeClass.getHNumberOfMembers();
 		double numberOfMembersThresholdValue = -1;
 
 		if (printHeader) {
 			numberOfMembersThresholdValue = ThresholdCalculator.getThresholdValue(numberOfMemberic,
 					HRelativeValueConstants.HIGH, true);
-			largeClassInfo = largeClassInfo + "HLargeClassSmell" + EOL;
-			largeClassInfo = largeClassInfo + "Thresholds: " + EOL;
-			largeClassInfo = largeClassInfo + " HNumberOfMembersMetric: at least HRelativeValueConstants.HIGH" + EOL;
-			largeClassInfo = largeClassInfo + "  Threshold for HNumberOfMembersMetric(HIGH): number of members > "
-					+ numberOfMembersThresholdValue + EOL + EOL;
+			largeClassInfo = largeClassInfo.append("HLargeClassSmell").append(EOL).append("Thresholds: ").append(EOL)
+					.append(" HNumberOfMembersMetric: at least HRelativeValueConstants.HIGH").append(EOL)
+					.append("  Threshold for HNumberOfMembersMetric(HIGH): number of members > ")
+					.append(numberOfMembersThresholdValue).append(EOL).append(EOL);
 		}
 
-		largeClassInfo = largeClassInfo + "Detected in: " + tClass.getTName() + EOL + EOL;
+		largeClassInfo = largeClassInfo.append("Detected in: ").append(tClass.getTName()).append(EOL).append(EOL);
 
-		return largeClassInfo;
+		return largeClassInfo.toString();
 	}
 
 	private String buildLCOM5String(HAnnotation annotation, boolean printHeader) {
-		HLCOM5Metric hlcom5 = (HLCOM5Metric) annotation;
+		final HLCOM5Metric hlcom5 = (HLCOM5Metric) annotation;
 
-		String hlcom5Info = "";
-		TClass tClass = (TClass) hlcom5.getTAnnotated();
+		StringBuilder hlcom5Info = new StringBuilder();
+		final TClass tClass = (TClass) hlcom5.getTAnnotated();
 
 		if (printHeader) {
-			hlcom5Info = hlcom5Info + "HLCOM5Metric" + EOL + EOL;
+			hlcom5Info = hlcom5Info.append("HLCOM5Metric").append(EOL).append(EOL);
 		}
 
-		hlcom5Info = hlcom5Info + "Detected in: " + tClass.getTName() + EOL;
-		hlcom5Info = hlcom5Info + "Value: " + hlcom5.getValue() + EOL;
-		hlcom5Info = hlcom5Info + "Relative amount: " + hlcom5.getRelativeAmount().getValue().toString() + EOL + EOL;
+		hlcom5Info = hlcom5Info.append("Detected in: ").append(tClass.getTName()).append(EOL).append("Value: ")
+				.append(hlcom5.getValue()).append(EOL).append("Relative amount: ")
+				.append(hlcom5.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return hlcom5Info;
+		return hlcom5Info.toString();
 	}
 
 	private String buildLowCohesionString(HAnnotation annotation, boolean printHeader) {
-		HLowCohesionSmell lowCohesionSmell = (HLowCohesionSmell) annotation;
+		final HLowCohesionSmell lowCohesionSmell = (HLowCohesionSmell) annotation;
 
-		String lowCohesionInfo = "";
+		StringBuilder lowCohesionInfo = new StringBuilder();
 		TClass tClass;
 		HLCOM5Metric hlcom5;
 		double hlcom5ThresholdValue = -1;
@@ -280,94 +273,90 @@ public class TheBlobInformationStringProvider implements InformationStringProvid
 
 		if (printHeader) {
 			hlcom5ThresholdValue = ThresholdCalculator.getThresholdValue(hlcom5, HRelativeValueConstants.HIGH, true);
-			lowCohesionInfo = lowCohesionInfo + "HLowCohesionSmell" + EOL;
-			lowCohesionInfo = lowCohesionInfo + "Thresholds: " + EOL;
-			lowCohesionInfo = lowCohesionInfo + " HLCOM5Metric: at least HRelativeValueConstants.HIGH" + EOL;
-			lowCohesionInfo = lowCohesionInfo + "  Threshold for HLCOM5Metric(HIGH) > " + hlcom5ThresholdValue + EOL + EOL;
+			lowCohesionInfo = lowCohesionInfo.append("HLowCohesionSmell").append(EOL).append("Thresholds: ").append(EOL)
+					.append(" HLCOM5Metric: at least HRelativeValueConstants.HIGH").append(EOL)
+					.append("  Threshold for HLCOM5Metric(HIGH) > ").append(hlcom5ThresholdValue).append(EOL)
+					.append(EOL);
 		}
 
-		lowCohesionInfo = lowCohesionInfo + "Detected in: " + tClass.getTName() + EOL + EOL;
+		lowCohesionInfo = lowCohesionInfo.append("Detected in: ").append(tClass.getTName()).append(EOL).append(EOL);
 
-		return lowCohesionInfo;
+		return lowCohesionInfo.toString();
 	}
 
 	private String buildNACCString(HAnnotation annotation, boolean printHeader) {
-		HNACCMetric hNACCMetric = (HNACCMetric) annotation;
+		final HNACCMetric hNACCMetric = (HNACCMetric) annotation;
 
-		String hNACCMetricInfo = "";
+		StringBuilder hNACCMetricInfo = new StringBuilder();
 
-		TClass tClass = (TClass) hNACCMetric.getTAnnotated();
+		final TClass tClass = (TClass) hNACCMetric.getTAnnotated();
 
 		if (printHeader) {
-			hNACCMetricInfo = hNACCMetricInfo + "HNACCMetric" + EOL + EOL;
+			hNACCMetricInfo = hNACCMetricInfo.append("HNACCMetric").append(EOL).append(EOL);
 		}
 
-		hNACCMetricInfo = hNACCMetricInfo + "Detected in: " + tClass.getTName() + EOL;
-		hNACCMetricInfo = hNACCMetricInfo + "Value: " + hNACCMetric.getValue() + EOL;
-		hNACCMetricInfo = hNACCMetricInfo + "Relative amount: " + hNACCMetric.getRelativeAmount().getValue().toString()
-				+ EOL + EOL;
+		hNACCMetricInfo = hNACCMetricInfo.append("Detected in: ").append(tClass.getTName()).append(EOL)
+				.append("Value: ").append(hNACCMetric.getValue()).append(EOL).append("Relative amount: ")
+				.append(hNACCMetric.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return hNACCMetricInfo;
+		return hNACCMetricInfo.toString();
 	}
 
 	private String buildNumberOfIncommingInvocationsString(HAnnotation annotation, boolean printHeader) {
-		HIncommingInvocationMetric numberOfIncommingInvocations = (HIncommingInvocationMetric) annotation;
+		final HIncommingInvocationMetric numberOfIncommingInvocations = (HIncommingInvocationMetric) annotation;
 
-		String numberOfIncommingInvocationsInfo = "";
+		StringBuilder numberOfIncommingInvocationsInfo = new StringBuilder();
 
-		TClass tClass = (TClass) numberOfIncommingInvocations.getTAnnotated();
+		final TClass tClass = (TClass) numberOfIncommingInvocations.getTAnnotated();
 
 		if (printHeader) {
-			numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo + "HNumberOfIncommingInvocations"
-					+ EOL + EOL;
+			numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo.append("HNumberOfIncommingInvocations")
+					.append(EOL).append(EOL);
 		}
 
-		numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo + "Detected in: " + tClass.getTName()
-				+ EOL;
-		numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo + "Value: "
-				+ numberOfIncommingInvocations.getValue() + EOL;
-		numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo + "Relative amount: "
-				+ numberOfIncommingInvocations.getRelativeAmount().getValue().toString() + EOL + EOL;
+		numberOfIncommingInvocationsInfo = numberOfIncommingInvocationsInfo.append("Detected in: ")
+				.append(tClass.getTName()).append(EOL).append("Value: ").append(numberOfIncommingInvocations.getValue())
+				.append(EOL).append("Relative amount: ")
+				.append(numberOfIncommingInvocations.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return numberOfIncommingInvocationsInfo;
+		return numberOfIncommingInvocationsInfo.toString();
 	}
 
 	private String buildNumberOfMembersString(HAnnotation annotation, boolean printHeader) {
-		HNumberOfMembersMetric numberOfMembers = (HNumberOfMembersMetric) annotation;
+		final HNumberOfMembersMetric numberOfMembers = (HNumberOfMembersMetric) annotation;
 
-		String numberOfMembersInfo = "";
-		TClass tClass = (TClass) numberOfMembers.getTAnnotated();
+		StringBuilder numberOfMembersInfo = new StringBuilder();
+		final TClass tClass = (TClass) numberOfMembers.getTAnnotated();
 
 		if (printHeader) {
-			numberOfMembersInfo = numberOfMembersInfo + "HNumberOfMembersMetric" + EOL + EOL;
+			numberOfMembersInfo = numberOfMembersInfo.append("HNumberOfMembersMetric").append(EOL).append(EOL);
 		}
 
-		numberOfMembersInfo = numberOfMembersInfo + "Detected in: " + tClass.getTName() + EOL;
-		numberOfMembersInfo = numberOfMembersInfo + "Value: " + numberOfMembers.getValue() + EOL;
-		numberOfMembersInfo = numberOfMembersInfo + "Relative amount: "
-				+ numberOfMembers.getRelativeAmount().getValue().toString() + EOL + EOL;
+		numberOfMembersInfo = numberOfMembersInfo.append("Detected in: ").append(tClass.getTName()).append(EOL)
+				.append("Value: ").append(numberOfMembers.getValue()).append(EOL).append("Relative amount: ")
+				.append(numberOfMembers.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return numberOfMembersInfo;
+		return numberOfMembersInfo.toString();
 	}
 
 	private String buildNumberOfOutgoingInvocationsString(HAnnotation annotation, boolean printHeader) {
-		HOutgoingInvocationMetric numberOfOutgoingInvocations = (HOutgoingInvocationMetric) annotation;
+		final HOutgoingInvocationMetric numberOfOutgoingInvocations = (HOutgoingInvocationMetric) annotation;
 
-		String numberOfOutgoingInvocationsInfo = "";
+		StringBuilder numberOfOutgoingInvocationsInfo = new StringBuilder();
 
-		TClass tClass = (TClass) numberOfOutgoingInvocations.getTAnnotated();
+		final TClass tClass = (TClass) numberOfOutgoingInvocations.getTAnnotated();
 
 		if (printHeader) {
-			numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo + "HNumberOfOutgoingInvocations" + EOL + EOL;
+			numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo.append("HNumberOfOutgoingInvocations")
+					.append(EOL).append(EOL);
 		}
 
-		numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo + "Detected in: " + tClass.getTName() + EOL;
-		numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo + "Value: "
-				+ numberOfOutgoingInvocations.getValue() + EOL;
-		numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo + "Relative amount: "
-				+ numberOfOutgoingInvocations.getRelativeAmount().getValue().toString() + EOL + EOL;
+		numberOfOutgoingInvocationsInfo = numberOfOutgoingInvocationsInfo.append("Detected in: ")
+				.append(tClass.getTName()).append(EOL).append("Value: ").append(numberOfOutgoingInvocations.getValue())
+				.append(EOL).append("Relative amount: ")
+				.append(numberOfOutgoingInvocations.getRelativeAmount().getValue().toString()).append(EOL).append(EOL);
 
-		return numberOfOutgoingInvocationsInfo;
+		return numberOfOutgoingInvocationsInfo.toString();
 	}
 
 }

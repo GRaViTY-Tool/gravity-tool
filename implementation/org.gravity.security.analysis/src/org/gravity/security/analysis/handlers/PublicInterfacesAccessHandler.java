@@ -96,7 +96,7 @@ public class PublicInterfacesAccessHandler extends AbstractHandler {
 		TAbstractType api = pg.getType("org.gravity.security.annotations.access.Api");
 		Set<TAnnotationType> allowed = new HashSet<>();
 		if (api == null) {
-			LOGGER.log(Level.WARN, "Warning no API specified");
+			LOGGER.warn("Warning no API specified");
 		} else {
 			allowed.add((TAnnotationType) api);
 		}

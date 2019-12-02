@@ -2,8 +2,6 @@ package org.gravity.eclipse.io;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,7 +17,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 
 /**
  * Helpful functionality when working with zip archives
- * 
+ *
  * @author speldszus
  *
  */
@@ -36,7 +34,7 @@ public class ZipUtil {
 
 	/**
 	 * Extracts a zip stream to the given location
-	 * 
+	 *
 	 * @param stream      The zip stream
 	 * @param destination The destination
 	 * @param monitor     A progress monitor
@@ -58,24 +56,24 @@ public class ZipUtil {
 
 	/**
 	 * Unzips a zip file to a given location
-	 * 
+	 *
 	 * @param zipFilePath   - The path of the ZIP file
 	 * @param unzipLocation - The location to be unzipped
 	 */
 	public static void unzip(final String zipFilePath, final String unzipLocation) {
-		Path destination = Paths.get(unzipLocation).normalize();
-		if (!(Files.exists(destination))) {
+		final Path destination = Paths.get(unzipLocation).normalize();
+		if (!destination.toFile().exists()) {
 			try {
 				Files.createDirectories(destination);
-			} catch (IOException e) {
+			} catch (final IOException e) {
 
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
-		try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipFilePath))) {
+		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(destination))) {
 			ZipEntry entry;
 			while ((entry = zipInputStream.getNextEntry()) != null) {
-				Path filePath = Paths.get(unzipLocation, entry.getName());
+				final Path filePath = Paths.get(unzipLocation, entry.getName());
 				if(!filePath.normalize().startsWith(destination)) {
 					throw new SecurityException("Entry is trying to leave the target dir: " + entry.getName());
 				}
@@ -86,20 +84,19 @@ public class ZipUtil {
 				}
 				zipInputStream.closeEntry();
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
 	}
 
 	public static void unzipFiles(final ZipInputStream zipInputStream, final Path unzipFilePath) {
-		try (BufferedOutputStream bos = new BufferedOutputStream(
-				new FileOutputStream(unzipFilePath.toAbsolutePath().toString()))) {
-			byte[] bytesIn = new byte[1024];
+		try (BufferedOutputStream bos = new BufferedOutputStream(Files.newOutputStream(unzipFilePath))) {
+			final byte[] bytesIn = new byte[1024];
 			int read = 0;
 			while ((read = zipInputStream.read(bytesIn)) != -1) {
 				bos.write(bytesIn, 0, read);
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 		}
 	}

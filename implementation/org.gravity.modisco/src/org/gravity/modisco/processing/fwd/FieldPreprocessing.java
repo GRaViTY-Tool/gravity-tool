@@ -68,7 +68,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			if (fragments.isEmpty()) {
 				final String message = ProcessingMessages.FieldPreprocessing_the_field + mDefinition
 						+ ProcessingMessages.FieldPreprocessing_no_fragments;
-				LOGGER.log(Level.ERROR, message);
+				LOGGER.error(message);
 				throw new ProcessingException(message);
 			}
 			for (final VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
@@ -107,8 +107,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 				newTypeAccess.setType(type);
 			}
 
-		} else {
-			LOGGER.log(Level.WARN, ProcessingMessages.FieldPreprocessing_the_field + oldDefiniton
+		} else if(LOGGER.isEnabledFor(Level.WARN)){
+			LOGGER.warn(ProcessingMessages.FieldPreprocessing_the_field + oldDefiniton
 					+ ProcessingMessages.FieldPreprocessing_no_type);
 		}
 
@@ -151,12 +151,12 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		for (final MFieldDefinition mfDefinition : mFieldDefinitions) {
 			final EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
 			if (fragments.isEmpty()) {
-				LOGGER.log(Level.ERROR, ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
+				LOGGER.error(ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
 						+ ProcessingMessages.FieldPreprocessing_no_fragments);
 				return false;
 			}
 			if (fragments.size() > 1) {
-				LOGGER.log(Level.ERROR, ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
+				LOGGER.error(ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
 						+ ProcessingMessages.FieldPreprocessing_multiple_fragments);
 				return false;
 			}
@@ -220,9 +220,9 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 			final String message = ProcessingMessages.FieldPreprocessing_the_field + definition
 					+ ProcessingMessages.FieldPreprocessing_no_type_assume_object;
 			if (definition.isProxy()) {
-				LOGGER.log(Level.WARN, message);
+				LOGGER.warn(message);
 			} else {
-				LOGGER.log(Level.ERROR, message);
+				LOGGER.error(message);
 			}
 			type = fixMissingFieldType(model, definition);
 

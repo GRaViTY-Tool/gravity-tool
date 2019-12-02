@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
@@ -167,7 +166,7 @@ public class HulkAPI {
 				try {
 					resource.delete(Collections.emptyMap());
 				} catch (IOException e) {
-					LOGGER.log(Level.WARN, "Cleaninig resource failed: " + e.getMessage(), e);
+					LOGGER.warn("Cleaninig resource failed: " + e.getMessage(), e);
 					return false;
 				}
 			}

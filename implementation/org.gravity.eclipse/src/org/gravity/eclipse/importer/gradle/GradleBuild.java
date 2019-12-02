@@ -139,7 +139,7 @@ class GradleBuild {
 			process = Runtime.getRuntime().exec(new String[] {"./gradlew " , buildTarget}, null, path);
 			break;
 		default:
-			LOGGER.log(Level.WARN, "Unsupported OS");
+			LOGGER.warn("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 		return process;
@@ -218,7 +218,7 @@ class GradleBuild {
 			while ((line = stream.readLine()) != null) {
 				message.append(line);
 				message.append('\n');
-				LOGGER.log(Level.WARN, "GRADLE: " + line);
+				LOGGER.warn("GRADLE: " + line);
 			}
 		}
 		return message;

@@ -96,7 +96,7 @@ public class MarkerUtil {
 			final String fullyQualifiedName = member.getDefinedBy().getFullyQualifiedName();
 			final IType iType = astTypes.get(fullyQualifiedName);
 			if(iType == null) {
-				LOGGER.log(Level.WARN, "Type not found in AST: " + fullyQualifiedName);
+				LOGGER.warn("Type not found in AST: " + fullyQualifiedName);
 				return null;
 			}
 			try {

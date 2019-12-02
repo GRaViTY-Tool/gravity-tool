@@ -7,7 +7,6 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -18,57 +17,56 @@ import org.eclipse.core.runtime.Platform;
 
 /**
  * Functionality to get processors from an extension point
- * 
+ *
  * @author speldszus
  *
  */
-public class GravityMoDiscoProcessorUtil {
+public final class GravityMoDiscoProcessorUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoProcessorUtil.class);
 
 	private GravityMoDiscoProcessorUtil() {
 		// As this class only holds static methods we don't want instances
 	}
-	
+
 	/**
 	 * Created a sorted collection of processors regitstered at the given extension point
-	 * 
+	 *
 	 * @param extensionPoint The id of the extension point
 	 * @return The soreted collection
 	 */
 	public static Collection<IMoDiscoProcessor> getSortedProcessors(String extensionPoint) {
-		IExtensionPoint pointPgFwd = Platform.getExtensionRegistry()
+		final IExtensionPoint pointPgFwd = Platform.getExtensionRegistry()
 				.getExtensionPoint(extensionPoint);
-		IExtension[] extensionsPgFwd = pointPgFwd.getExtensions();
-	
-		SortedMap<Integer, Set<IMoDiscoProcessor>> modiscoProcessorsFwd = new TreeMap<>();
-		for (IExtension extension : extensionsPgFwd) {
+		final IExtension[] extensionsPgFwd = pointPgFwd.getExtensions();
+
+		final SortedMap<Integer, Set<IMoDiscoProcessor>> modiscoProcessorsFwd = new TreeMap<>();
+		for (final IExtension extension : extensionsPgFwd) {
 			try {
-				IConfigurationElement[] configurationElements = extension.getConfigurationElements();
-				for (IConfigurationElement configurationElement : configurationElements) {
+				final IConfigurationElement[] configurationElements = extension.getConfigurationElements();
+				for (final IConfigurationElement configurationElement : configurationElements) {
 					addProcessor(modiscoProcessorsFwd, configurationElement);
 				}
 			} catch (InvalidRegistryObjectException | CoreException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
-		Collection<IMoDiscoProcessor> values = modiscoProcessorsFwd.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
-		return values;
+		return modiscoProcessorsFwd.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
 	}
 
 	/**
-	 * Adds a new processor instance for the element to the map of processors 
-	 * 
+	 * Adds a new processor instance for the element to the map of processors
+	 *
 	 * @param processors The map of processors
 	 * @param element The configuration element describing the processor
 	 * @throws CoreException If an instance of the executable extension could not be created for any reason
 	 */
 	private static void addProcessor(SortedMap<Integer, Set<IMoDiscoProcessor>> processors,
 			IConfigurationElement element) throws CoreException {
-		IMoDiscoProcessor processor = (IMoDiscoProcessor) element
+		final IMoDiscoProcessor processor = (IMoDiscoProcessor) element
 				.createExecutableExtension("processor");
 		int key;
-		String priority = element.getAttribute("priority");
+		final String priority = element.getAttribute("priority");
 		if (priority != null) {
 			key = -1*Integer.valueOf(priority);
 		} else {

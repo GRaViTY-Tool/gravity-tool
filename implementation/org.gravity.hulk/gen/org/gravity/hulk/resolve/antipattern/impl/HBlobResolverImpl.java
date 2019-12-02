@@ -968,7 +968,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	}
 
 	public static final boolean pattern_HBlobResolver_0_23_expressionF() {
-		boolean _result = Boolean.valueOf(true);
+		boolean _result = Boolean.TRUE;
 		return _result;
 	}
 

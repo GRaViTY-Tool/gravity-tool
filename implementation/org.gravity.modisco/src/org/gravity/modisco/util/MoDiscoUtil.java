@@ -72,7 +72,7 @@ import org.gravity.modisco.ModiscoFactory;
  * @author speldszus
  *
  */
-public class MoDiscoUtil {
+public final class MoDiscoUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoUtil.class);
 
@@ -141,17 +141,17 @@ public class MoDiscoUtil {
 	 *
 	 * @param method The method for which the most generic return type should be
 	 *               searched
-	 * @param model The model of the program
+	 * @param model  The model of the program
 	 * @return the most generic return type
 	 */
 	public static Type getMostGenericReturnType(MAbstractMethodDefinition method, MGravityModel model) {
 		final AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (method instanceof MConstructorDefinition) {
-			if(abstractTypeDeclaration != null) {
+			if (abstractTypeDeclaration != null) {
 				return abstractTypeDeclaration;
 			}
 			final AnonymousClassDeclaration anon = method.getAnonymousClassDeclarationOwner();
-			if(anon != null) {
+			if (anon != null) {
 				return anon.getClassInstanceCreation().getType().getType();
 			}
 			return null;
@@ -163,11 +163,14 @@ public class MoDiscoUtil {
 				continue;
 			}
 
-			final MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method, (AbstractTypeDeclaration) type);
+			final MethodDeclaration otherDecl = getOtherDeclarationOfMethod((MMethodDefinition) method,
+					(AbstractTypeDeclaration) type);
 			if (otherDecl != null) {
 				final TypeAccess returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
-					LOGGER.log(Level.WARN, "Skipped return type of: " + otherDecl);
+					if (LOGGER.isEnabledFor(Level.WARN)) {
+						LOGGER.warn("Skipped return type of: " + otherDecl);
+					}
 				} else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
 					returnType = returnTypeDecl.getType();
 				}
@@ -217,10 +220,10 @@ public class MoDiscoUtil {
 		final Set<Type> types = new HashSet<>();
 		for (final TypeAccess superInterfaceReference : type.getSuperInterfaces()) {
 			final Type typeOfInterface = superInterfaceReference.getType();
-			if (typeOfInterface == null) {
-				LOGGER.log(Level.WARN, "Skipped type of: " + superInterfaceReference);
-			} else {
+			if (typeOfInterface != null) {
 				types.add(typeOfInterface);
+			} else if (LOGGER.isEnabledFor(Level.WARN)) {
+				LOGGER.warn("Skipped type of: " + superInterfaceReference);
 			}
 		}
 		return types;
@@ -274,7 +277,7 @@ public class MoDiscoUtil {
 	 * is set to void!
 	 *
 	 * @param method The method for which the return type should be retrieved
-	 * @param model the model of the program
+	 * @param model  the model of the program
 	 * @return The return type of the method
 	 */
 	private static Type getAndFixReturnType(MMethodDefinition method, final MGravityModel model) {
@@ -292,29 +295,29 @@ public class MoDiscoUtil {
 				}
 			} catch (final IllegalStateException e) {
 				final MDefinition source = getContainingMethod(invocation);
-				final StringBuilder message = new StringBuilder("The guess of the return type of the invocartion of \"");
-				message.append(method.getAbstractTypeDeclaration().getName());
-				message.append('.');
-				message.append(method.getName());
+				final StringBuilder message = new StringBuilder(150)
+						.append("The guess of the return type of the invocartion of \"")
+						.append(method.getAbstractTypeDeclaration().getName()).append('.').append(method.getName());
 				if (source != null) {
 					message.append("\" in \"");
 					final AbstractTypeDeclaration abstractTypeDeclaration = source.getAbstractTypeDeclaration();
 					if (abstractTypeDeclaration != null) {
 						message.append(abstractTypeDeclaration.getName());
 					}
-					message.append('.');
-					message.append(source.getName());
+					message.append('.').append(source.getName());
 				}
 				message.append("\" might be optimized.");
-				LOGGER.log(Level.INFO, message.toString());
+				LOGGER.info(message.toString());
 			}
 		}
 		if (type == null) {
-			LOGGER.log(Level.WARN,
-					"Return type for method \"" + method.getName() + "\" not given assuming \"java.lang.Object\"");
+			if (LOGGER.isEnabledFor(Level.WARN)) {
+				LOGGER.warn(
+						"Return type for method \"" + method.getName() + "\" not given assuming \"java.lang.Object\"");
+			}
 			type = getJavaLangObject(model);
 			if (type == null) {
-				LOGGER.log(Level.ERROR, "The return type of the method \"" + method.getName() + "\" is null!");
+				LOGGER.error("The return type of the method \"" + method.getName() + "\" is null!");
 				return null;
 			}
 		}
@@ -500,7 +503,7 @@ public class MoDiscoUtil {
 	}
 
 	/**
-
+	 *
 	 * Search the method or field containing the statement
 	 *
 	 * @param statement The statement
@@ -578,8 +581,8 @@ public class MoDiscoUtil {
 	 * Fills the MParameterList with MParam entries discovered from the given
 	 * definition
 	 *
-	 * @param definition    The definiton
-	 * @param list The empty parameter list
+	 * @param definition The definiton
+	 * @param list       The empty parameter list
 	 * @return true, iff no error occured
 	 */
 	public static boolean fillParamList(MAbstractMethodDefinition definition, MParameterList list) {

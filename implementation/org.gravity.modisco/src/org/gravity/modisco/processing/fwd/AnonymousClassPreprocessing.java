@@ -5,7 +5,6 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +33,7 @@ public class AnonymousClassPreprocessing extends AbstractTypedModiscoProcessor<A
 				owner = owner.eContainer();
 			}
 			if (owner == null) {
-				LOGGER.log(Level.ERROR, "Cannot find owner of anonymous class declaration: " + anonymous);
+				LOGGER.error("Cannot find owner of anonymous class declaration: " + anonymous);
 				return false;
 			}
 			((MAnonymous) anonymous).setMSourroundingType((AbstractTypeDeclaration) owner);

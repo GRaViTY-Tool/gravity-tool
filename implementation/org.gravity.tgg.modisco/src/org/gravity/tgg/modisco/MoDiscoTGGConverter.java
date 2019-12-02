@@ -44,11 +44,11 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public class MoDiscoTGGConverter implements IPGConverter {
 
-	private IJavaProject iJavaProject = null;
+	private IJavaProject iJavaProject;
 
 	private Collection<IPath> libs;
 
-	private boolean debug = false;
+	private boolean debug;
 
 	private final GravityModiscoProjectDiscoverer discoverer;
 

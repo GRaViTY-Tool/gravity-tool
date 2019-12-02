@@ -165,7 +165,7 @@ public class SearchTypeGraph {
 					Files.copy(entry.openStream(), file.toPath());
 					manager.addModule(file.getAbsolutePath());
 				} catch (IOException e) {
-					LOGGER.log(Level.WARN, e.getMessage(), e);
+					LOGGER.warn(e.getMessage(), e);
 				}
 			}
 		}
@@ -260,7 +260,7 @@ public class SearchTypeGraph {
 		try {
 			Files.write(new File(folder, "durationGoblinInMs.txt").toPath(), Long.toString(duration).getBytes());
 		} catch (IOException e) {
-			LOGGER.log(Level.WARN, e.getMessage(), e);
+			LOGGER.warn(e.getMessage(), e);
 		}
 		return printer.printResults(experiment, folder);
 	}

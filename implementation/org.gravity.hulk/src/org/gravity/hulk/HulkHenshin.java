@@ -10,10 +10,11 @@
 package org.gravity.hulk;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -77,7 +78,7 @@ public class HulkHenshin {
 		hulk.loadRules(resourceSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHBlobAntiPattern()));
 
-		try (FileOutputStream outputStream = new FileOutputStream(model.replace(".xmi", ".trg.xmi"))) {
+		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
 		LOGGER.info("done");
