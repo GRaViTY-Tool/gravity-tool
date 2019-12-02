@@ -263,11 +263,11 @@ public final class JavaASTUtil {
 	public static int getLine(IJavaElement javaElement) throws CoreException {
 		final IResource underlyingResource = javaElement.getUnderlyingResource();
 		int line = 1;
-		if (underlyingResource.getFileExtension().equals("java")) {
+		if ("java".equals(underlyingResource.getFileExtension())) {
 			try (InputStream stream = ((IFile) underlyingResource).getContents()) {
-				char ch;
+				int ch;
 				int count = ((ISourceReference) javaElement).getSourceRange().getOffset();
-				while ((ch = (char) stream.read()) != -1 && count-- > 0) {
+				while ((ch = stream.read()) != -1 && count-- > 0) {
 					if (ch == '\n') {
 						line++;
 					}
