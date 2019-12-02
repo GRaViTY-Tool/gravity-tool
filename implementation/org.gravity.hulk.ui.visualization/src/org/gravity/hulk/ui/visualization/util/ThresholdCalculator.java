@@ -13,7 +13,7 @@ import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
  * A class for calculating thresholds
  *
  */
-public class ThresholdCalculator {
+public final class ThresholdCalculator {
 
 	private ThresholdCalculator() {
 		// This class shouldn't be instantiated

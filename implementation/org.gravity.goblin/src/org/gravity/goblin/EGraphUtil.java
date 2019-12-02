@@ -8,11 +8,11 @@ import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
- * 
+ *
  * Frequently used helpers for Henshin EGraphs
  *
  */
-public class EGraphUtil {
+public final class EGraphUtil {
 
 	private EGraphUtil() {
 		// This class shouldn't be instantiated
@@ -20,13 +20,13 @@ public class EGraphUtil {
 
 	/**
 	 * Searches the TypeGraph in an Henshin egraph
-	 * 
+	 *
 	 * @param graph The egraph
 	 * @return The program model
 	 */
 	public static TypeGraph getPG(EGraph graph) {
 		TypeGraph pg = null;
-		EObject root = graph.getRoots().get(0);
+		final EObject root = graph.getRoots().get(0);
 		if (root instanceof TypeGraph) {
 			pg = (TypeGraph) root;
 		}

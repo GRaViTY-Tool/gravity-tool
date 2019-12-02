@@ -109,14 +109,11 @@ public final class MoDiscoUtil {
 	 */
 	private static boolean isSuperType(ClassDeclaration type, Type supertype) {
 		final TypeAccess superClass = type.getSuperClass();
-		boolean superType = false;
-		if (superClass != null) {
-			final Type parent = superClass.getType();
-			if (supertype.equals(parent) || isSuperType(parent, supertype)) {
-				superType = true;
-			}
+		if (superClass == null) {
+			return false;
 		}
-		return superType;
+		final Type parent = superClass.getType();
+		return supertype.equals(parent) || isSuperType(parent, supertype);
 	}
 
 	/**
@@ -378,7 +375,7 @@ public final class MoDiscoUtil {
 		} else if (statement instanceof ReturnStatement) {
 			final MDefinition definition = getContainingMethod(statement);
 			if (definition instanceof MMethodDefinition) {
-				return getAndFixReturnType(((MMethodDefinition) definition), pg);
+				return getAndFixReturnType((MMethodDefinition) definition, pg);
 			} else if (definition instanceof MConstructorDefinition) {
 				return ((MConstructorDefinition) definition).getAbstractTypeDeclaration();
 			} else if (definition instanceof AbstractVariablesContainer) {

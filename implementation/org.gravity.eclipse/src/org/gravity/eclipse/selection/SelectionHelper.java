@@ -13,8 +13,8 @@ import org.gravity.eclipse.util.JavaProjectUtil;
 /**
  * A Helper for selection java elements from eclipse
  */
-public class SelectionHelper {
-	
+public final class SelectionHelper {
+
 	private SelectionHelper() {
 		// This class shouldn't be instantiated
 	}
@@ -26,13 +26,13 @@ public class SelectionHelper {
 	 * @return the java projects
 	 */
 	public static Set<IJavaProject> getJavaProjects(Iterable<Object> selection) {
-		Set<IJavaProject> projects = new HashSet<>();
-		for (Object entry : selection) {
+		final Set<IJavaProject> projects = new HashSet<>();
+		for (final Object entry : selection) {
 			if (entry instanceof IJavaProject) {
 				projects.add((IJavaProject) entry);
 			} else if (entry instanceof IProject) {
-				IProject project = (IProject) entry;
-				IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
+				final IProject project = (IProject) entry;
+				final IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
 				if(java == null) {
 					throw new IllegalStateException("Project " + project.getName() + " has no Java nature");
 				}

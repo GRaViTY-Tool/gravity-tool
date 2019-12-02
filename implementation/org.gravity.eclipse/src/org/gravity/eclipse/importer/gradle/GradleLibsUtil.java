@@ -24,7 +24,7 @@ import org.gravity.eclipse.io.ZipUtil;
  * @author speldszus
  *
  */
-public class GradleLibsUtil {
+public final class GradleLibsUtil {
 
 	private GradleLibsUtil() {
 		// This class shouldn't be instantiated

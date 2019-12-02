@@ -27,7 +27,7 @@ import org.xml.sax.SAXException;
  * @author speldszus
  *
  */
-public class GradleAndroid {
+public final class GradleAndroid {
 
 	private static final String ANDROID_HOME = "ANDROID_HOME";
 	private static final String USER_HOME = "user.home";

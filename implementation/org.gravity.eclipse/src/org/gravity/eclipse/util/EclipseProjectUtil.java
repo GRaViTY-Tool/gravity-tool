@@ -40,7 +40,7 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
  *
  */
 @SuppressWarnings("restriction")
-public class EclipseProjectUtil {
+public final class EclipseProjectUtil {
 
 	/**
 	 * The logger of this class

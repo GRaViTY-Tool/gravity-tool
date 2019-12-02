@@ -100,24 +100,33 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		this.iJavaProject = javaProject;
 		this.libs = libs;
 
-		final long start = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
+		long start = 0;
+		if (LOGGER.isInfoEnabled()) {
+			start = System.currentTimeMillis();
+			LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
+		}
 
 		try {
-			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(javaProject, libs, progressMonitor);
+			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(javaProject, libs,
+					progressMonitor);
 		} catch (final DiscoveryException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
 		}
 		try {
-			saveModel(this.preprocessedModiscoModel, EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor)
-					.getFile("modisco_preprocessed.xmi"), progressMonitor);
+			saveModel(
+					this.preprocessedModiscoModel, EclipseProjectUtil
+					.getGravityFolder(javaProject.getProject(), monitor).getFile("modisco_preprocessed.xmi"),
+					progressMonitor);
 		} catch (final IOException e) {
 			LOGGER.error("Couldn't save intermediate model!", e);
 		}
 
 		final boolean success = convertModel(javaProject, this.preprocessedModiscoModel, progressMonitor);
-		LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
+
+		if (LOGGER.isInfoEnabled()) {
+			LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
+		}
 
 		return success;
 	}
@@ -139,50 +148,73 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 		this.sync.getSourceResource().getContents().add(targetModel);
 
-		final long t4 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
+		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		long start = 0;
+		if (infoEnabled) {
+			start = System.currentTimeMillis();
+			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo");
+		}
+
 		try {
 			this.sync.forward();
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
-		LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - t4) + "ms");
+		if (infoEnabled) {
+			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
+		}
 
 		final boolean success = this.sync.getTargetResource() != null
 				&& this.sync.getTargetResource().getContents().get(0) instanceof TypeGraph;
 		if (success) {
 			final Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
 					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
-			LOGGER.log(Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
+			if (infoEnabled) {
+				LOGGER.log(Level.INFO, "Start postprocessing with " + sortedProcessors.size() + " post-processors");
+			}
 			for (final IProgramGraphProcessor processor : sortedProcessors) {
 				processor.process(getPG(), monitor);
 			}
-			LOGGER.log(Level.INFO, "Postprocessing - done ");
+			if (infoEnabled) {
+				LOGGER.log(Level.INFO, "Postprocessing - done ");
+			}
 		}
 		return success;
 	}
 
 	@Override
 	public boolean syncProjectFwd(IProgressMonitor monitor) {
-		final long start = System.currentTimeMillis();
 		if (this.discoverer == null || this.iJavaProject == null) {
 			return false;
 		}
-		LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName());
+		long start = 0;
+		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		if (infoEnabled) {
+			start = System.currentTimeMillis();
+			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName());
+		}
 
 		if (this.preprocessedModiscoModel == null) {
 			return convertProject(this.iJavaProject, monitor);
 		}
+
 		final MGravityModel oldProject = this.preprocessedModiscoModel;
-		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project");
+
+		if (infoEnabled) {
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project");
+		}
+
 		try {
-			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(this.iJavaProject, monitor);
+			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(this.iJavaProject,
+					monitor);
 		} catch (final DiscoveryException e) {
 			LOGGER.error(e);
 			return false;
 		}
-		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
+		if (infoEnabled) {
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
+		}
 
 		final GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
 
@@ -196,8 +228,10 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 		final boolean success = syncProjectFwd(changes, monitor);
 
-		final long stop = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, stop + "MoDisco sync project -done: " + (stop - start) + "ms");
+		if (infoEnabled) {
+			final long stop = System.currentTimeMillis();
+			LOGGER.log(Level.INFO, stop + "MoDisco sync project -done: " + (stop - start) + "ms");
+		}
 
 		return success;
 	}
@@ -208,14 +242,19 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.error("No initial transformation has been performed!");
 			return false;
 		}
-		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
+		final boolean infoEnabled = LOGGER.isInfoEnabled();
+		if(infoEnabled) {
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
+		}
 		try {
 			this.sync.forward();
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
-		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD - Done");
+		if(infoEnabled) {
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD - Done");
+		}
 
 		if (this.debug) {
 			save(Direction.FWD, monitor);
@@ -342,7 +381,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	enum Direction {
 		FWD("fwd"), BWD("bwd");
 
-		final private String name;
+		private final String name;
 
 		private Direction(String name) {
 			this.name = name;

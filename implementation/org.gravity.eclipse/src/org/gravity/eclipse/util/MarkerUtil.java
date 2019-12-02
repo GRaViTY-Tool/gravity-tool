@@ -102,7 +102,7 @@ public class MarkerUtil {
 			try {
 				javaElement = JavaASTUtil.getIMethod(member.getSignature(), iType);
 			} catch (final JavaModelException e) {
-				LOGGER.log(Level.ERROR, e);
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 		return javaElement;

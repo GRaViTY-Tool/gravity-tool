@@ -29,7 +29,7 @@ import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
  */
 public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
-	protected static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
+	private static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -94,7 +94,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 					}
 				} else if (entry instanceof IPackageFragment) {
-					throw new RuntimeException(Messages.unhandledPackageFagment + entry);
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.unhandledPackageFagment + entry);
 				} else {
 					final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage());

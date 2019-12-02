@@ -1,7 +1,6 @@
 package org.gravity.goblin.preconditions;
 
 import org.apache.log4j.Logger;
-
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TInterface;
@@ -10,14 +9,14 @@ import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
-public class ChangeVisibilityPreConditions {
-	
+public final class ChangeVisibilityPreConditions {
+
 	private static final Logger LOGGER = Logger.getLogger(ChangeVisibilityPreConditions.class);
-	
+
 	private ChangeVisibilityPreConditions() {
 		// This class shouldn't be instantiated
 	}
-	
+
 	// if a childClass implements an interface with the same field as the field in
 	// the violation do not change the visibility as this may introduce ambiguity
 	private static boolean checkINH2Preconditions(TClass sourceClass, TMember member) {
@@ -28,10 +27,10 @@ public class ChangeVisibilityPreConditions {
 			return true;
 		}
 
-		for (TClass child : sourceClass.getChildClasses()) {
-			for (TInterface tInterface : child.getImplements()) {
+		for (final TClass child : sourceClass.getChildClasses()) {
+			for (final TInterface tInterface : child.getImplements()) {
 
-				for (TMember interfaceMember : tInterface.getDefines()) {
+				for (final TMember interfaceMember : tInterface.getDefines()) {
 					if (interfaceMember.getTModifier() == null) {
 						LOGGER.warn("Can't move " + interfaceMember.getDefinedBy().getFullyQualifiedName() + "."
 								+ interfaceMember.getSignatureString() + ", REASON INH2-1");
@@ -54,7 +53,7 @@ public class ChangeVisibilityPreConditions {
 	private static boolean checkDynPreconditions(TClass sourceClass, TMember member) {
 
 		TClass parent = sourceClass.getParentClass();
-		TSignature sig = member.getSignature();
+		final TSignature sig = member.getSignature();
 		while (parent != null) {
 			if (parent.getSignature().contains(sig)) {
 				LOGGER.warn("Can't move " + member.getDefinedBy().getFullyQualifiedName() + "."
@@ -64,7 +63,7 @@ public class ChangeVisibilityPreConditions {
 			parent = parent.getParentClass();
 		}
 
-		for (TClass child : sourceClass.getAllChildren()) {
+		for (final TClass child : sourceClass.getAllChildren()) {
 			if (child.getSignature().contains(sig)) {
 				LOGGER.warn("Can't move " + member.getDefinedBy().getFullyQualifiedName() + "."
 						+ member.getSignatureString() + ", REASON Dyn");
@@ -76,12 +75,12 @@ public class ChangeVisibilityPreConditions {
 	}
 
 	private static boolean checkSecurityPreconditions(TMember member) {
-		for (TAnnotation annotation : member.getTAnnotation()) {
-			TAnnotationType type = annotation.getType();
+		for (final TAnnotation annotation : member.getTAnnotation()) {
+			final TAnnotationType type = annotation.getType();
 			if (type == null) {
 				continue;
 			}
-			String tName = annotation.getType().getTName();
+			final String tName = annotation.getType().getTName();
 			if (tName.equals("High") || tName.equals("Critical") || tName.equals("Secrecy")
 					|| tName.equals("Integrity")) {
 				LOGGER.warn("Can't move " + member.getDefinedBy().getFullyQualifiedName() + "."

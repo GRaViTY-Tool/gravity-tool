@@ -18,7 +18,7 @@ import org.eclipse.jdt.core.JavaCore;
  * @author speldszus
  *
  */
-public class TestHelper {
+public final class TestHelper {
 
 	/**
 	 * The logger of this class

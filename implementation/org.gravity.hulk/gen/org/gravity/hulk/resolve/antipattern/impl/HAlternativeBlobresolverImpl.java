@@ -34,9 +34,8 @@ import org.gravity.typegraph.basic.containers.ContainersFactory;
 import org.gravity.typegraph.basic.containers.TMemberContainer;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HAlternative Blobresolver</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>HAlternative Blobresolver</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -44,8 +43,8 @@ import org.gravity.typegraph.basic.containers.TMemberContainer;
  */
 public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements HAlternativeBlobresolver {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HAlternativeBlobresolverImpl() {
@@ -53,8 +52,8 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,26 +62,19 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean detect(HAntiPatternGraph apg) {
 
-		final Object[] result1_black = HAlternativeBlobresolverImpl
-				.pattern_HAlternativeBlobresolver_0_1_ActivityNode30_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-		}
-
-		final Object[] result2_bindingAndBlack = HAlternativeBlobresolverImpl
-				.pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingAndBlackFBB(this, apg);
-		if (result2_bindingAndBlack == null) {
+		final HAntiPatternGraph newApg = init(apg);
+		if (newApg == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[apg] = " + apg + ".");
 		}
-		final HAntiPatternGraph newApg = (HAntiPatternGraph) result2_bindingAndBlack[0];
+
 		// ForEach
 		for (final Object[] result3_black : HAlternativeBlobresolverImpl
 				.pattern_HAlternativeBlobresolver_0_3_ActivityNode32_blackBFFB(newApg, this)) {
@@ -113,18 +105,19 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean process(HInBlobClusterAccess hCluster, TClass tClass, HBlobResolveAnnotation hParent) {
 		// [user code injected with eMoflon]
 
-		//		HRelativeValue relativeAmount = hCluster.getRelativeAmount();
-		//		HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
-		//		boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
-		//				|| hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue == HRelativeValueConstants.MEDIUM;
+		// HRelativeValue relativeAmount = hCluster.getRelativeAmount();
+		// HRelativeValueConstants hRelativeValue = relativeAmount.getValue();
+		// boolean lowCohesion = hRelativeValue == HRelativeValueConstants.VERY_LOW
+		// || hRelativeValue == HRelativeValueConstants.LOW || hRelativeValue ==
+		// HRelativeValueConstants.MEDIUM;
 
 		final EList<TMember> tMembers = hCluster.getHCluster().getTMembers();
 		for (final TMember member : tMembers) {
@@ -169,19 +162,19 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			}
 		}
 		if (coupling.size() == 0) {
-			//			if (!lowCohesion || tMembers.size() <= 2) {
-			//				return false;
-			//			}
-			//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
-			//			extract.getTMembers().addAll(tMembers);
-			//			if (!isRefactoringPossible(extract)) {
-			//				return false;
-			//			}
+			// if (!lowCohesion || tMembers.size() <= 2) {
+			// return false;
+			// }
+			// HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+			// extract.getTMembers().addAll(tMembers);
+			// if (!isRefactoringPossible(extract)) {
+			// return false;
+			// }
 			//
-			//			hParent.getHRefactorings().add(extract);
-			//			tClass.getTAnnotation().add(extract);
-			//			extract.setTAnnotated(tClass);
-			//			extract.setValue(internalCoupling + 1);
+			// hParent.getHRefactorings().add(extract);
+			// tClass.getTAnnotation().add(extract);
+			// extract.setTAnnotated(tClass);
+			// extract.setValue(internalCoupling + 1);
 			return true;
 		}
 
@@ -201,24 +194,24 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			}
 		}
 		if (possibleMoves.size() == 0) {
-			//			if (!lowCohesion || tMembers.size() <= 2) {
-			//				return false;
-			//			}
-			//			HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
-			//			extract.getTMembers().addAll(tMembers);
-			//			if (isRefactoringPossible(extract)) {
-			//				hParent.getHRefactorings().add(extract);
-			//				extract.getPartOf().add(hParent);
-			//				extract.setValue(internalCoupling + 1);
-			//				return true;
-			//			}
+			// if (!lowCohesion || tMembers.size() <= 2) {
+			// return false;
+			// }
+			// HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
+			// extract.getTMembers().addAll(tMembers);
+			// if (isRefactoringPossible(extract)) {
+			// hParent.getHRefactorings().add(extract);
+			// extract.getPartOf().add(hParent);
+			// extract.setValue(internalCoupling + 1);
+			// return true;
+			// }
 		}
 		return true;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,42 +224,6 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 					(HBlobResolveAnnotation) arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HAlternativeBlobresolver_0_1_ActivityNode30_blackB(
-			HAlternativeBlobresolver _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingFBB(
-			HAlternativeBlobresolver _this, HAntiPatternGraph apg) {
-		final HAntiPatternGraph _localVariable_0 = _this.init(apg);
-		final HAntiPatternGraph newApg = _localVariable_0;
-		if (newApg != null) {
-			return new Object[] { newApg, _this, apg };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HAlternativeBlobresolver_0_2_ActivityNode31_blackB(HAntiPatternGraph newApg) {
-		return new Object[] { newApg };
-	}
-
-	public static final Object[] pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingAndBlackFBB(
-			HAlternativeBlobresolver _this, HAntiPatternGraph apg) {
-		final Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_bindingFBB(
-				_this, apg);
-		if (result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding != null) {
-			final HAntiPatternGraph newApg = (HAntiPatternGraph) result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_binding[0];
-
-			final Object[] result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_black = pattern_HAlternativeBlobresolver_0_2_ActivityNode31_blackB(
-					newApg);
-			if (result_pattern_HAlternativeBlobresolver_0_2_ActivityNode31_black != null) {
-
-				return new Object[] { newApg, _this, apg };
-			}
-		}
-		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_HAlternativeBlobresolver_0_3_ActivityNode32_blackBFFB(
@@ -331,4 +288,4 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 	}
 
 	// [user code injected with eMoflon] -->
-} //HAlternativeBlobresolverImpl
+} // HAlternativeBlobresolverImpl

@@ -66,7 +66,7 @@ import runtime.RuntimePackage;
  * @author speldszus
  *
  */
-public class Transformation extends SYNC {
+public final class Transformation extends SYNC {
 
 	private static final Logger LOGGER = Logger.getLogger(Transformation.class);
 

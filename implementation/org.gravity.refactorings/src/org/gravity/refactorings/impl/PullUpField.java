@@ -68,15 +68,14 @@ public class PullUpField implements Refactoring {
 			for (final Object[] result4_black : PullUpField.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
 					field, classContainer)) {
 				final TClass child = (TClass) result4_black[1];
-				TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
+				final TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
 				classContainer.add(child);
 
 				// ForEach
 				for (final TAccess currentAccess : PullUpField
 						.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(fieldChildDefinition)) {
-					final Object[] result6_black = PullUpField.pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(
-							currentAccess, fieldChildDefinition, fieldParentDefinition);
-					if (result6_black == null) {
+					if (fieldChildDefinition.equals(fieldParentDefinition)
+							|| !fieldChildDefinition.getAccessedBy().contains(currentAccess)) {
 						throw new RefactoringFailedException(
 								"Pattern matching failed." + " Variables: " + "[currentAccess] = " + currentAccess
 								+ ", " + "[fieldChildDefinition] = " + fieldChildDefinition + ", "
@@ -97,7 +96,6 @@ public class PullUpField implements Refactoring {
 				child.getSignature().remove(field);
 
 				EcoreUtil.delete(fieldChildDefinition);
-				fieldChildDefinition = null;
 			}
 			return classContainer;
 		} else {
@@ -160,14 +158,13 @@ public class PullUpField implements Refactoring {
 			TFieldSignature field, List<TClass> classContainer) {
 		final LinkedList<Object[]> _result = new LinkedList<>();
 		for (final TClass child : parent.getChildClasses()) {
-			if (!child.equals(parent)) {
-				if (child.getSignature().contains(field)) {
-					for (final TFieldDefinition fieldChildDefinition : field.getFieldDefinitions()) {
-						if (child.equals(fieldChildDefinition.getDefinedBy())) {
-							_result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
-						}
+			if (!child.equals(parent)&&child.getSignature().contains(field)) {
+				for (final TFieldDefinition fieldChildDefinition : field.getFieldDefinitions()) {
+					if (child.equals(fieldChildDefinition.getDefinedBy())) {
+						_result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
 					}
 				}
+
 			}
 		}
 		return _result;
@@ -186,16 +183,6 @@ public class PullUpField implements Refactoring {
 			}
 		}
 		return result;
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_0_6_ActivityNode139_blackBBB(TAccess currentAccess,
-			TFieldDefinition fieldChildDefinition, TFieldDefinition fieldParentDefinition) {
-		if (!fieldChildDefinition.equals(fieldParentDefinition)) {
-			if (fieldChildDefinition.getAccessedBy().contains(currentAccess)) {
-				return new Object[] { currentAccess, fieldChildDefinition, fieldParentDefinition };
-			}
-		}
-		return null;
 	}
 
 	public static final TFieldDefinition getTFieldDefinition(TClass child, TFieldSignature field) {

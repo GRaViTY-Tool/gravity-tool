@@ -3,33 +3,22 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
-
-import org.gravity.hulk.detection.metrics.HIGAMCalculator;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
-// <-- [user defined imports]
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.Map.Entry;
+
+import org.apache.log4j.Logger;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
+import org.gravity.hulk.detection.metrics.HIGAMCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TConstructorDefinition;
-import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
@@ -37,17 +26,13 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TParameter;
-import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TVisibility;
 import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-// [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HIGAM Calculator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HIGAM
+ * Calculator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -55,8 +40,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  */
 public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMCalculator {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HIGAMCalculatorImpl() {
@@ -64,8 +49,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,20 +59,21 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph apg) {
 		// [user code injected with eMoflon]
 
-		TypeGraph pg = apg.getPg();
+		final TypeGraph pg = apg.getPg();
 
 		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		List<Double> methods = new LinkedList<>();
-		for (TPackage tPackage : pg.getPackages()) {
+		final List<Double> methods = new LinkedList<>();
+		for (final TPackage tPackage : pg.getPackages()) {
 			if (tPackage.getParent() == null) {
-				TVisibility tVisibility = process(apg, tPackage, methods);
+				final TVisibility tVisibility = process(apg, tPackage, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -101,8 +87,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,16 +103,16 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 
 	private TVisibility process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
 		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		int start = methods.size();
-		for (TPackage tSubPackage : tPackage.getSubpackage()) {
-			TVisibility tVisibility = process(apg, tSubPackage, methods);
+		final int start = methods.size();
+		for (final TPackage tSubPackage : tPackage.getSubpackage()) {
+			final TVisibility tVisibility = process(apg, tSubPackage, methods);
 			if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 				requiredTVisibility = tVisibility;
 			}
 		}
-		for (TClass tType : tPackage.getClasses()) {
+		for (final TClass tType : tPackage.getClasses()) {
 			if (!tType.isTLib()) {
-				TVisibility tVisibility = process(apg, tType, methods);
+				final TVisibility tVisibility = process(apg, tType, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -140,10 +126,10 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 
 	private TVisibility process(HAntiPatternGraph apg, TClass tType, List<Double> methods) {
 		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		int start = methods.size();
-		for (TMember tMember : tType.getDefines()) {
+		final int start = methods.size();
+		for (final TMember tMember : tType.getDefines()) {
 			if (tMember instanceof TMethodDefinition) {
-				TVisibility tVisibility = process(apg, tMember, methods);
+				final TVisibility tVisibility = process(apg, tMember, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -156,43 +142,46 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility process(HAntiPatternGraph apg, TMember tMember, List<Double> methods) {
-		TModifier tModifier = tMember.getTModifier();
-		TAbstractType tType = tMember.getDefinedBy();
+		final TModifier tModifier = tMember.getTModifier();
+		final TAbstractType tType = tMember.getDefinedBy();
 		if (tModifier == null) {
 			if (tMember instanceof TConstructorDefinition) {
-				LOGGER.log(Level.INFO, "Skipped constructor \"" + tMember.getSignatureString()
-						+ "\" it is probably a default constructor and has no modifer.");
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info("Skipped constructor \"" + tMember.getSignatureString()
+					+ "\" it is probably a default constructor and has no modifer.");
+				}
 			} else if (tType.getTName().startsWith("%ENUM%")) {
-				LOGGER.log(Level.INFO, "Skipped member in enum \"" + tMember.getSignatureString() + "\".");
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info("Skipped member in enum \"" + tMember.getSignatureString() + "\".");
+				}
 			} else {
-				LOGGER.log(Level.ERROR,
-						"The member \"" + tMember.getSignatureString() + "\" has no modifer, assuming PUBLIC!");
+				LOGGER.error("The member \"" + tMember.getSignatureString() + "\" has no modifer, assuming PUBLIC!");
 			}
 		} else {
-			TVisibility tCurVis = tModifier.getTVisibility();
+			final TVisibility tCurVis = tModifier.getTVisibility();
 			int tMinVis = TVisibility.TPRIVATE_VALUE;
 			if (isMainMethod(tMember) || tMember.getDefinedBy() instanceof TInterface) {
 				tMinVis = TVisibility.TPUBLIC_VALUE;
 			} else {
 				if (tMember instanceof TMethodDefinition) {
-					TVisibility sub1sub2 = sub1sub2((TMethodDefinition) tMember);
+					final TVisibility sub1sub2 = sub1sub2((TMethodDefinition) tMember);
 					tMinVis = sub1sub2.ordinal() > tMinVis ? sub1sub2.ordinal() : tMinVis;
 				}
 
-				for (TAccess tAccess : tMember.getAccessedBy()) {
-					TVisibility acc1acc2 = acc1acc2(tAccess);
+				for (final TAccess tAccess : tMember.getAccessedBy()) {
+					final TVisibility acc1acc2 = acc1acc2(tAccess);
 					tMinVis = acc1acc2.ordinal() > tMinVis ? acc1acc2.ordinal() : tMinVis;
 
-					TVisibility inh1 = inh1(tAccess);
+					final TVisibility inh1 = inh1(tAccess);
 					tMinVis = inh1.ordinal() > tMinVis ? inh1.ordinal() : tMinVis;
 
-					TVisibility inh2 = inh2(tAccess);
+					final TVisibility inh2 = inh2(tAccess);
 					tMinVis = inh2.ordinal() > tMinVis ? inh2.ordinal() : tMinVis;
 				}
 			}
-			double igam = tCurVis.getValue() == tMinVis ? 0 : 1;// ((double) (tCurVis.getValue() - tMinVis)) / 3;
+			final double igam = tCurVis.getValue() == tMinVis ? 0 : 1;// ((double) (tCurVis.getValue() - tMinVis)) / 3;
 
-			TVisibility minVis = TVisibility.get(tMinVis);
+			final TVisibility minVis = TVisibility.get(tMinVis);
 			createMetric(apg, tMember, igam, minVis);
 
 			methods.add(igam);
@@ -204,14 +193,14 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 
 	private boolean isMainMethod(TMember tMember) {
 		if (tMember instanceof TMethodDefinition) {
-			TMethodDefinition tMethod = (TMethodDefinition) tMember;
-			TMethodSignature tSignature = tMethod.getSignature();
+			final TMethodDefinition tMethod = (TMethodDefinition) tMember;
+			final TMethodSignature tSignature = tMethod.getSignature();
 			if ("main".equals(tSignature.getMethod().getTName())) {
-				TModifier tModifier = tMethod.getTModifier();
+				final TModifier tModifier = tMethod.getTModifier();
 				if (tModifier.isIsStatic() && tModifier.getTVisibility() == TVisibility.TPUBLIC) {
-					EList<TParameter> tParams = tSignature.getParameters();
+					final EList<TParameter> tParams = tSignature.getParameters();
 					if (tParams.size() == 0) {
-						TParameter tParam = tParams.get(0);
+						final TParameter tParam = tParams.get(0);
 						if ("java.lang.String".equals(tParam.getType().getFullyQualifiedName())) {
 							return true;
 						}
@@ -232,7 +221,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
-		HIGAMMetric metric = MetricsFactory.eINSTANCE.createHIGAMMetric();
+		final HIGAMMetric metric = MetricsFactory.eINSTANCE.createHIGAMMetric();
 		metric.setTAnnotated(annotatable);
 		metric.setValue(igam);
 		metric.setApg(apg);
@@ -250,14 +239,14 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	private static final Logger LOGGER = Logger.getLogger(HIGAMCalculator.class);
 
 	private TVisibility acc1acc2(TAccess tAccess) {
-		TAbstractType tType = tAccess.getTTarget().getDefinedBy();
-		TAbstractType tAccessingType = tAccess.getTSource().getDefinedBy();
+		final TAbstractType tType = tAccess.getTTarget().getDefinedBy();
+		final TAbstractType tAccessingType = tAccess.getTSource().getDefinedBy();
 
-		//acc1
-		TVisibility tVisibility = access(tAccessingType, tType);
+		// acc1
+		final TVisibility tVisibility = access(tAccessingType, tType);
 
-		//acc2
-		TAbstractType sourceClass = (TAbstractType) tAccess.getTSource().getDefinedBy();
+		// acc2
+		final TAbstractType sourceClass = tAccess.getTSource().getDefinedBy();
 		if (tVisibility == TVisibility.TPROTECTED && tAccess.getStaticType() != null
 				&& tAccess.getStaticType() instanceof TClass
 				&& !(((TClass) tAccess.getStaticType()).isSubTypeOf(sourceClass))
@@ -268,7 +257,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility acc2(TAccess access) {
-		TModifier targetMod = access.getTTarget().getTModifier();
+		final TModifier targetMod = access.getTTarget().getTModifier();
 		if (targetMod.isIsStatic()) {
 			return TVisibility.TPRIVATE;
 		}
@@ -277,14 +266,14 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility inh1(TAccess tAccess) {
-		TAbstractType tStaticType = tAccess.getStaticType();
-		TMember tMember = tAccess.getTTarget();
-		TAbstractType tTarget = tMember.getDefinedBy();
+		final TAbstractType tStaticType = tAccess.getStaticType();
+		final TMember tMember = tAccess.getTTarget();
+		final TAbstractType tTarget = tMember.getDefinedBy();
 		if (tStaticType == null || tStaticType.getTName().equals("Void")) {
-			LOGGER.log(Level.ERROR,
+			LOGGER.error(
 					"No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
-							+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
-							+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
+					+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
+					+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
 			return TVisibility.TPUBLIC;
 		}
 		return access(tStaticType, tTarget);
@@ -298,15 +287,15 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	private TVisibility sub1sub2(TMethodDefinition member) {
-		TMethodDefinition tOverriddenDef = member.getOverriding();
+		final TMethodDefinition tOverriddenDef = member.getOverriding();
 		if (tOverriddenDef != null) {
 
-			TVisibility tOverriddenVis;
-			TModifier tOverriddenMod = tOverriddenDef.getTModifier();
+			final TVisibility tOverriddenVis;
+			final TModifier tOverriddenMod = tOverriddenDef.getTModifier();
 			if (tOverriddenMod != null) {
 				return tOverriddenMod.getTVisibility();
 			} else {
-				LOGGER.log(Level.ERROR, "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName()
+				LOGGER.error( "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName()
 						+ "->" + tOverriddenDef.getSignatureString() + "\" is null.");
 				return TVisibility.TPUBLIC;
 			}
@@ -318,14 +307,14 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	private TVisibility access(TAbstractType tSource, TAbstractType tTarget) {
 		if (!tTarget.equals(tSource) && !tTarget.getInnerTypes().contains(tSource)
 				&& !tSource.equals(tTarget.getOuterType())) {
-			TPackage tPackage = tTarget.getPackage();
+			final TPackage tPackage = tTarget.getPackage();
 			if (tPackage.equals(tSource.getPackage())) {
 				return TVisibility.TPACKAGE;
 			}
 
 			boolean isSubClass = true;
 			if (tSource instanceof TClass) {
-				TClass tClass = (TClass) tSource;
+				final TClass tClass = (TClass) tSource;
 				isSubClass &= tTarget.equals(tClass.getParentClass()) || tClass.getImplements().contains(tTarget);
 			} else if (tSource instanceof TInterface) {
 				isSubClass &= ((TInterface) tSource).getParentInterfaces().contains(tTarget);
@@ -340,4 +329,4 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 	}
 
 	// [user code injected with eMoflon] -->
-} //HIGAMCalculatorImpl
+} // HIGAMCalculatorImpl

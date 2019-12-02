@@ -23,7 +23,7 @@ import org.eclipse.core.runtime.Platform;
  * @author speldszus
  *
  */
-public class FileUtils {
+public final class FileUtils {
 
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class);
 

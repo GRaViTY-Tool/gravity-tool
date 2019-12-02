@@ -6,13 +6,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -44,8 +44,6 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
-import org.gravity.typegraph.basic.TypeGraph;
-import org.moflon.core.dfs.DFSGraph;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.io.ModelSaver;
 import org.gravity.eclipse.selection.SelectionHelper;
@@ -60,9 +58,11 @@ import org.gravity.hulk.detection.HulkDetector;
 import org.gravity.hulk.ui.HulkUiActivator;
 import org.gravity.hulk.ui.Messages;
 import org.gravity.hulk.ui.dialogs.AntiPatternSelectionDialog;
-import org.gravity.hulk.ui.dialogs.ResultDialog;
 import org.gravity.hulk.ui.dialogs.DetectionTreeContentProvider;
 import org.gravity.hulk.ui.dialogs.DetectionTreeLabelProvider;
+import org.gravity.hulk.ui.dialogs.ResultDialog;
+import org.gravity.typegraph.basic.TypeGraph;
+import org.moflon.core.dfs.DFSGraph;
 
 public abstract class HulkHandler extends AbstractHandler {
 
@@ -107,70 +107,60 @@ public abstract class HulkHandler extends AbstractHandler {
 	}
 
 	public void initHulk() {
-		HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
-		TypeGraph pg = converter.getPG();
+		final HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
+		final TypeGraph pg = this.converter.getPG();
 		apg.setPg(pg);
 
-		hulk.setApg(apg);
-		hulk.setProgramlocation(project.getProject().getLocation().toString());
+		this.hulk.setApg(apg);
+		this.hulk.setProgramlocation(this.project.getProject().getLocation().toString());
 
-		Resource pmResource = pg.eResource();
-		ResourceSet rs = pmResource.getResourceSet();
-		Resource antiPatternResource = rs.createResource(URI.createURI("platform:/resource/" + pg.getTName() + '/' //$NON-NLS-1$
+		final Resource pmResource = pg.eResource();
+		final ResourceSet rs = pmResource.getResourceSet();
+		final Resource antiPatternResource = rs.createResource(URI.createURI("platform:/resource/" + pg.getTName() + '/' //$NON-NLS-1$
 				+ GravityActivator.GRAVITY_FOLDER_NAME + '/' + HulkActivator.ANTI_PATTERN_XMI_NAME));
-		antiPatternResource.getContents().add(hulk);
+		antiPatternResource.getContents().add(this.hulk);
 
-		hHmonitor.worked(1);
-		hHmonitor.setTaskName(Messages.HulkScanHandler_10);
+		this.hHmonitor.worked(1);
+		this.hHmonitor.setTaskName(Messages.HulkScanHandler_10);
 
-		DFSGraph dependencies = hulk.getDependencyGraph();
+		final DFSGraph dependencies = this.hulk.getDependencyGraph();
 
-		Resource res = rs.createResource(URI.createURI("SmellDependencyGraph.xmi")); //$NON-NLS-1$
+		final Resource res = rs.createResource(URI.createURI("SmellDependencyGraph.xmi")); //$NON-NLS-1$
 		res.getContents().add(dependencies);
 	}
 
-	public void initHulkWithStatusOutput() {
-		long t1 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t1 + " Init Hulk");
-
-		initHulk();
-
-		long t2 = System.currentTimeMillis();
-		LOGGER.log(Level.INFO, t2 + " Init Hulk - done " + (t2 - t1) + "ms");
-	}
-
 	public void syncBWD() {
-		HashMap<String, String> configuration = new HashMap<String, String>();
+		final HashMap<String, String> configuration = new HashMap<>();
 
-		detector = new HulkDetector(hulk, configuration);
+		this.detector = new HulkDetector(this.hulk, configuration);
 
-		if (javaAnnotationsEnabled) {
-			converter.syncProjectBwd(IPGConverter -> {
+		if (this.javaAnnotationsEnabled) {
+			this.converter.syncProjectBwd(IPGConverter -> {
 
 				LOGGER.log(Level.INFO, System.currentTimeMillis() + " Hulk Detect AP");
-				detector.detectSelectedAntiPattern(selection, selectedDetectors, executedDetectors);
+				this.detector.detectSelectedAntiPattern(this.selection, this.selectedDetectors, this.executedDetectors);
 				LOGGER.log(Level.INFO, System.currentTimeMillis() + " Hulk Detect AP - done");
 
-			}, hHmonitor);
-			IFolder folder = project.getProject().getFolder("src/org/gravity/hulk/annotations"); //$NON-NLS-1$
+			}, this.hHmonitor);
+			final IFolder folder = this.project.getProject().getFolder("src/org/gravity/hulk/annotations"); //$NON-NLS-1$
 			if (folder.exists()) {
 				try {
-					folder.delete(true, hHmonitor);
-				} catch (CoreException e) {
+					folder.delete(true, this.hHmonitor);
+				} catch (final CoreException e) {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			}
 		} else {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Hulk Detect AP");
-			detector.detectSelectedAntiPattern(selection, selectedDetectors, executedDetectors);
+			this.detector.detectSelectedAntiPattern(this.selection, this.selectedDetectors, this.executedDetectors);
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Hulk Detect AP - done");
 		}
 
 	}
 
 	public IFile getAnnotationsOut(IProgressMonitor monitor) throws IOException {
-		IFolder folder = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor);
-		IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
+		final IFolder folder = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor);
+		final IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
 		if (!annotationsOut.exists()) {
 			try (InputStream in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection()
 					.getInputStream()) {
@@ -179,21 +169,21 @@ public abstract class HulkHandler extends AbstractHandler {
 				} else {
 					annotationsOut.create(in, true, monitor);
 				}
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-			} catch (MalformedURLException e) {
+			} catch (final MalformedURLException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 
 			try {
-				IClasspathEntry[] cp = project.getRawClasspath();
-				IClasspathEntry[] cpNew = new IClasspathEntry[cp.length + 1];
+				final IClasspathEntry[] cp = this.project.getRawClasspath();
+				final IClasspathEntry[] cpNew = new IClasspathEntry[cp.length + 1];
 				System.arraycopy(cp, 0, cpNew, 0, cp.length);
 				cpNew[cp.length] = JavaCore.newLibraryEntry(annotationsOut.getFullPath(), null, null);
-				project.setRawClasspath(cpNew, hHmonitor);
-			} catch (JavaModelException e) {
+				this.project.setRawClasspath(cpNew, this.hHmonitor);
+			} catch (final JavaModelException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
@@ -201,25 +191,25 @@ public abstract class HulkHandler extends AbstractHandler {
 	}
 
 	public IPath copyAnnotationsJar() throws IOException {
-		IFile annotations = getAnnotationsOut(hHmonitor);
+		final IFile annotations = getAnnotationsOut(this.hHmonitor);
 		return annotations.getFullPath();
 	}
 
 	public AntiPatternSelectionDialog createDialog(String title, String message) throws ExecutionException {
 
-		final AntiPatternSelectionDialog dialog = new AntiPatternSelectionDialog(window.getShell(),
+		final AntiPatternSelectionDialog dialog = new AntiPatternSelectionDialog(this.window.getShell(),
 				new DetectionTreeLabelProvider(), new DetectionTreeContentProvider(), SWT.None);
 
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 		dialog.setContainerMode(true);
-		dialog.setInput(selectionDialogInput);
+		dialog.setInput(this.selectionDialogInput);
 		dialog.addJavaAnnotationsSelectedListener(new SelectionListener() {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				Button button = (Button) e.widget;
-				javaAnnotationsEnabled = button.getSelection();
+				final Button button = (Button) e.widget;
+				HulkHandler.this.javaAnnotationsEnabled = button.getSelection();
 			}
 
 			@Override
@@ -231,39 +221,33 @@ public abstract class HulkHandler extends AbstractHandler {
 	}
 
 	public void initializeSelection(AntiPatternSelectionDialog dialog) {
-		selection = new HashSet<>();
-		for (Object selected : dialog.getResult()) {
+		this.selection = new HashSet<>();
+		for (final Object selected : dialog.getResult()) {
 			if (selected instanceof EClass) {
-				EClass e_class = (EClass) selected;
-				Class<?> instance_class = e_class.getInstanceClass();
+				final EClass e_class = (EClass) selected;
+				final Class<?> instance_class = e_class.getInstanceClass();
 				if (HDetector.class.isAssignableFrom(instance_class)) {
-					selection.add(e_class);
+					this.selection.add(e_class);
 				}
 			}
 		}
 	}
 
 	public void displayResults() {
-		Runnable runnable = new Runnable() {
-
-			@Override
-			public void run() {
-				(new ResultDialog(window.getShell(), selectedDetectors, executedDetectors, "Hulk Detection Results"))
-						.open();
-			}
-		};
+		final Runnable runnable = () -> (new ResultDialog(HulkHandler.this.window.getShell(), HulkHandler.this.selectedDetectors, HulkHandler.this.executedDetectors, "Hulk Detection Results"))
+				.open();
 
 		Display.getDefault().asyncExec(runnable);
 	}
 
 	/**
 	 * Initializes a scan.
-	 * 
+	 *
 	 * First calls a selection dialog for selecting the anti-patterns to scan for
 	 * Then runs the scan and calls the abstract setHulk method implemented by
 	 * subclasses, such as HulkResolveHandler and HulkScanHandler. If this returns
 	 * true, then runJOb() is executed next
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -271,10 +255,10 @@ public abstract class HulkHandler extends AbstractHandler {
 	public boolean initialize(ExecutionEvent event) throws ExecutionException {
 		LOGGER.log(Level.INFO, Messages.HulkScanHandler_0);
 
-		window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+		this.window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 
 		// Open the Anti-Pattern Selection dialog
-		AntiPatternSelectionDialog dialog = createDialog(Messages.HulkScanHandler_1, Messages.HulkScanHandler_2);
+		final AntiPatternSelectionDialog dialog = createDialog(Messages.HulkScanHandler_1, Messages.HulkScanHandler_2);
 		dialog.open();
 
 		if (dialog.getReturnCode() == Window.CANCEL) {
@@ -283,17 +267,17 @@ public abstract class HulkHandler extends AbstractHandler {
 
 		initializeSelection(dialog);
 
-		if (selection.size() > 0) {
+		if (this.selection.size() > 0) {
 
 			// Start Hulk, details implemented by subclasses
 			setHulk();
-			selectedDetectors = new HashSet<>();
-			executedDetectors = new HashSet<>();
+			this.selectedDetectors = new HashSet<>();
+			this.executedDetectors = new HashSet<>();
 
-			ISelectionService service = window.getSelectionService();
-			IStructuredSelection structured = (IStructuredSelection) service.getSelection();
-			firstSelectionElement = structured.getFirstElement();
-			workspaceSelection = Arrays.asList(structured.toArray());
+			final ISelectionService service = this.window.getSelectionService();
+			final IStructuredSelection structured = (IStructuredSelection) service.getSelection();
+			this.firstSelectionElement = structured.getFirstElement();
+			this.workspaceSelection = Arrays.asList(structured.toArray());
 			return true;
 		}
 		return false;
@@ -301,70 +285,70 @@ public abstract class HulkHandler extends AbstractHandler {
 
 	public void runJob() {
 
-		job = new Job(JobName) { // $NON-NLS-1$
+		this.job = new Job(this.JobName) { // $NON-NLS-1$
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				hHmonitor = monitor;
+				HulkHandler.this.hHmonitor = monitor;
 				monitor.beginTask(Messages.HulkScanHandler_9, 3);
 
-				Set<IJavaProject> projects = SelectionHelper.getJavaProjects(workspaceSelection);
-				ArrayList<String> fails = new ArrayList<>();
-				for (IJavaProject javaProject : projects) {
-					project = javaProject;
-					long t0 = System.currentTimeMillis();
+				final Set<IJavaProject> projects = SelectionHelper.getJavaProjects(HulkHandler.this.workspaceSelection);
+				final ArrayList<String> fails = new ArrayList<>();
+				for (final IJavaProject javaProject : projects) {
+					HulkHandler.this.project = javaProject;
+					final long t0 = System.currentTimeMillis();
 					LOGGER.log(Level.INFO, t0 + " Hulk Anti-Pattern Detection");
 
-					Set<IPath> libs = new HashSet<>();
-					if (javaAnnotationsEnabled) {
+					final Set<IPath> libs = new HashSet<>();
+					if (HulkHandler.this.javaAnnotationsEnabled) {
 						IPath annotations;
 						try {
 							annotations = copyAnnotationsJar();
 							libs.add(annotations);
-						} catch (IOException e) {
+						} catch (final IOException e) {
 							LOGGER.warn("Couldn't copy annotations to project! Disabled generation Java annotations.");
-							javaAnnotationsEnabled = false;
+							HulkHandler.this.javaAnnotationsEnabled = false;
 						}
 					}
 
 					try {
-						converter = GravityActivator.getDefault().getNewConverter(project.getProject());
-					} catch (NoConverterRegisteredException e) {
+						HulkHandler.this.converter = GravityActivator.getDefault().getNewConverter(HulkHandler.this.project.getProject());
+					} catch (final NoConverterRegisteredException e) {
 						return new Status(Status.ERROR, HulkUiActivator.PLUGIN_ID,
 								"Please install a converter and restart the task.");
-					} catch (CoreException e) {
+					} catch (final CoreException e) {
 						return new Status(Status.ERROR, HulkUiActivator.PLUGIN_ID,
 								"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 					}
 
-					boolean success = converter.convertProject(project, libs, monitor);
-					if (!success || converter.getPG() == null) {
-						LOGGER.log(Level.ERROR, "Creating PG from project failed: " + project.getProject().getName());
+					final boolean success = HulkHandler.this.converter.convertProject(HulkHandler.this.project, libs, monitor);
+					if (!success || HulkHandler.this.converter.getPG() == null) {
+						LOGGER.log(Level.ERROR, "Creating PG from project failed: " + HulkHandler.this.project.getProject().getName());
 						fails.add(javaProject.getProject().getName());
 						continue;
 					}
 
-					initHulkWithStatusOutput();
+					initHulk();
 
-					long t3 = System.currentTimeMillis();
+					final long t3 = System.currentTimeMillis();
 					LOGGER.log(Level.INFO, t3 + " Sync Bwd");
 
 					syncBWD();
 
 					IFolder hulkFolder;
 					try {
-						hulkFolder = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor);
-					} catch (IOException e) {
+						hulkFolder = EclipseProjectUtil.getGravityFolder(HulkHandler.this.project.getProject(), monitor);
+					} catch (final IOException e) {
 						return new Status(IStatus.WARNING, HulkUiActivator.PLUGIN_ID, Messages.SaveAPsFailed);
 					}
-					IFile apgXmi = hulkFolder.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
-					IFile pmXmi = hulkFolder.getFile(project.getProject().getName() + ".xmi");
-					if (!ModelSaver.saveModel(hulk.getApg(), apgXmi, monitor)
-							|| !ModelSaver.saveModel(hulk.getApg().getPg(), pmXmi, monitor)) {
+					final IFile apgXmi = hulkFolder.getFile(HulkActivator.ANTI_PATTERN_XMI_NAME);
+					final IFile pmXmi = hulkFolder.getFile(HulkHandler.this.project.getProject().getName() + ".xmi");
+					if (!ModelSaver.saveModel(HulkHandler.this.hulk.getApg(), apgXmi, monitor)
+							|| !ModelSaver.saveModel(HulkHandler.this.hulk.getApg().getPg(), pmXmi, monitor)) {
 						return new Status(IStatus.WARNING, HulkUiActivator.PLUGIN_ID, Messages.SaveAPsFailed);
 					}
 
-					long t4 = System.currentTimeMillis();
+					final long t4 = System.currentTimeMillis();
 					LOGGER.log(Level.INFO, t4 + " Sync Bwd - Done " + (t4 - t3) + "ms");
 					LOGGER.log(Level.INFO, t4 + " Hulk Anti-Pattern Detection - Done " + (t4 - t0) + "ms");
 
@@ -379,8 +363,8 @@ public abstract class HulkHandler extends AbstractHandler {
 			}
 
 		};
-		job.setUser(true);
-		job.schedule();
+		this.job.setUser(true);
+		this.job.schedule();
 	}
 
 	@Override

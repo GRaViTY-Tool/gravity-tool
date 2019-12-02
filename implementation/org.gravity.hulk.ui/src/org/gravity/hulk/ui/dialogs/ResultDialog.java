@@ -104,7 +104,9 @@ public class ResultDialog extends Dialog {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
-				LOGGER.info("Default selected: "+e.getSource());
+				if(LOGGER.isInfoEnabled()) {
+					LOGGER.info("Default selected: "+e.getSource());
+				}
 				widgetSelected(e);
 			}
 		});

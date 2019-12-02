@@ -5,7 +5,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * The Class Messages.
  */
-public class Messages extends NLS {
+public final class Messages extends NLS {
 
 	/** The Constant BUNDLENAME. */
 	public static final String BUNDLENAME = "org.gravity.eclipse.messages"; //$NON-NLS-1$

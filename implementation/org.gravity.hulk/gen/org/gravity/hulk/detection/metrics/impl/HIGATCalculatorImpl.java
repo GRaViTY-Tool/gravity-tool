@@ -3,32 +3,26 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
-
-import org.gravity.hulk.detection.metrics.HIGATCalculator;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
+import java.util.HashSet;
 // <-- [user defined imports]
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
+
+import org.apache.log4j.Logger;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.antipatterngraph.metrics.HIGATMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
+import org.gravity.hulk.detection.metrics.HIGATCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TVisibility;
@@ -70,15 +64,16 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean detect(HAntiPatternGraph apg) {
 		// [user code injected with eMoflon]
 
-		TypeGraph pg = apg.getPg();
+		final TypeGraph pg = apg.getPg();
 		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		List<Double> methods = new LinkedList<>();
-		for (TPackage tPackage : pg.getPackages()) {
+		final List<Double> methods = new LinkedList<>();
+		for (final TPackage tPackage : pg.getPackages()) {
 			if (tPackage.getParent() == null) {
-				TVisibility tVisibility = process(apg, tPackage, methods);
+				final TVisibility tVisibility = process(apg, tPackage, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -109,17 +104,17 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 
 
 	private TVisibility process(HAntiPatternGraph apg, TPackage tPackage, List<Double> methods) {
-		int start = methods.size();
+		final int start = methods.size();
 		TVisibility requiredTVisibility = TVisibility.TPRIVATE;
-		for (TPackage tSubPackage : tPackage.getSubpackage()) {
-			TVisibility tVisibility = process(apg, tSubPackage, methods);
+		for (final TPackage tSubPackage : tPackage.getSubpackage()) {
+			final TVisibility tVisibility = process(apg, tSubPackage, methods);
 			if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 				requiredTVisibility = tVisibility;
 			}
 		}
-		for (TAbstractType tType : tPackage.getOwnedTypes()) {
+		for (final TAbstractType tType : tPackage.getOwnedTypes()) {
 			if (tType.isDeclared()) {
-				TVisibility tVisibility = process(apg, tType, methods);
+				final TVisibility tVisibility = process(apg, tType, methods);
 				if (tVisibility.ordinal() < requiredTVisibility.ordinal()) {
 					requiredTVisibility = tVisibility;
 				}
@@ -133,19 +128,19 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 
 	private TVisibility process(HAntiPatternGraph apg, TAbstractType tType, List<Double> methods) {
 		TVisibility tMinVis = TVisibility.TPUBLIC;
-		TModifier tModifier = tType.getTModifier();
+		final TModifier tModifier = tType.getTModifier();
 		if(tModifier == null) {
-			LOGGER.log(Level.ERROR, "Type has no modifier: "+tType.getFullyQualifiedName());
+			LOGGER.error("Type has no modifier: "+tType.getFullyQualifiedName());
 			return tMinVis;
 		}
-		TVisibility tCurVis = tModifier.getTVisibility();
+		final TVisibility tCurVis = tModifier.getTVisibility();
 
 		if (!(tType instanceof TInterface) || tType.getOuterType() != null) {
 
-			Set<TAbstractType> accessedBy = new HashSet<>();
-			for (TMember tMember : tType.getDefines()) {
-				for (TAccess tAccess : tMember.getAccessedBy()) {
-					TAbstractType definedBy = tAccess.getTSource().getDefinedBy();
+			final Set<TAbstractType> accessedBy = new HashSet<>();
+			for (final TMember tMember : tType.getDefines()) {
+				for (final TAccess tAccess : tMember.getAccessedBy()) {
+					final TAbstractType definedBy = tAccess.getTSource().getDefinedBy();
 					if (!tType.equals(definedBy) && !tType.getInnerTypes().contains(definedBy)
 							&& !definedBy.equals(tType.getOuterType())) {
 						accessedBy.add(definedBy);
@@ -156,15 +151,15 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 
 			if (accessedBy.size() > 0) {
 				boolean onlySubClasses = true;
-				TPackage tPackage = tType.getPackage();
-				Set<TPackage> otherPackages = new HashSet<>();
-				for (TAbstractType tAccessingType : accessedBy) {
-					TPackage tOtherPackage = tAccessingType.getPackage();
+				final TPackage tPackage = tType.getPackage();
+				final Set<TPackage> otherPackages = new HashSet<>();
+				for (final TAbstractType tAccessingType : accessedBy) {
+					final TPackage tOtherPackage = tAccessingType.getPackage();
 					if (!tPackage.equals(tOtherPackage)) {
 						otherPackages.add(tOtherPackage);
 					}
 					if (tAccessingType instanceof TClass) {
-						TClass tClass = (TClass) tAccessingType;
+						final TClass tClass = (TClass) tAccessingType;
 						onlySubClasses &= tType.equals(tClass.getParentClass())
 								|| tClass.getImplements().contains(tType);
 					} else if (tAccessingType instanceof TInterface) {
@@ -183,7 +178,7 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 			}
 		}
 
-		double igat = tCurVis.equals(tMinVis) ? 0 : 1;
+		final double igat = tCurVis.equals(tMinVis) ? 0 : 1;
 
 		createMetric(apg, tType, igat, tMinVis);
 
@@ -201,7 +196,7 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 	}
 
 	private void createMetric(HAntiPatternGraph apg, TAnnotatable annotatable, double igam, TVisibility minVis) {
-		HIGATMetric metric = MetricsFactory.eINSTANCE.createHIGATMetric();
+		final HIGATMetric metric = MetricsFactory.eINSTANCE.createHIGATMetric();
 		metric.setTAnnotated(annotatable);
 		metric.setValue(igam);
 		metric.setApg(apg);

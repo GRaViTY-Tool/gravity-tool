@@ -85,7 +85,7 @@ public class GradleIncludes {
 		return javaSourceFiles;
 	}
 
-	public Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoRootFolderException {
+	public final Set<Path> scanDirectoryForSubRoots(File rootDir) throws IOException, NoRootFolderException {
 		final Set<Path> subRoots = new HashSet<>();
 		final File buildFile = new File(rootDir, "build.gradle");
 		if (buildFile.exists()) {
@@ -153,6 +153,6 @@ public class GradleIncludes {
 	 * @return the buildDotGradleFiles
 	 */
 	public Set<Path> getBuildDotGradleFiles() {
-		return buildDotGradleFiles;
+		return this.buildDotGradleFiles;
 	}
 }

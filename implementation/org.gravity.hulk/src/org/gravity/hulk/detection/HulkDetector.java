@@ -110,7 +110,7 @@ public class HulkDetector {
 				nextDetector.setPreTraversal(0);
 				processedDetectors.add(nextDetector);
 			} else {
-				LOGGER.log(Level.ERROR, Messages.getString("detector.failed") + nextDetector); //$NON-NLS-1$
+				LOGGER.error(Messages.getString("detector.failed") + nextDetector); //$NON-NLS-1$
 			}
 
 		}
@@ -150,7 +150,7 @@ public class HulkDetector {
 		long h0 = 0;
 		if (verbose) {
 			h0 = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, h0 + " Hulk Anti-Pattern Detection");
+			LOGGER.info(h0 + " Hulk Anti-Pattern Detection");
 		}
 		while (!worklist.isEmpty()) {
 			final HDetector detector = worklist.pop();
@@ -159,7 +159,7 @@ public class HulkDetector {
 		}
 		if (verbose) {
 			final long h1 = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
+			LOGGER.info(h1 + " Hulk Anti-Pattern Detection - done " + (h1 - h0) + "ms");
 		}
 
 		return true;

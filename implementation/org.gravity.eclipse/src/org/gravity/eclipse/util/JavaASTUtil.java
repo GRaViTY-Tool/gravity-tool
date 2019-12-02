@@ -48,7 +48,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @author speldszus
  */
-public class JavaASTUtil {
+public final class JavaASTUtil {
 
 	private static final Logger LOGGER = Logger.getLogger(JavaASTUtil.class);
 

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gravity.eclipse.util;
 
@@ -16,32 +16,32 @@ import org.eclipse.emf.ecore.util.EcoreUtil.UsageCrossReferencer;
 
 /**
  * Helpers for dealing with EMF Resources
- * 
+ *
  * @author speldszus
  *
  */
-public class EMFUtil {
-	
+public final class EMFUtil {
+
 	private EMFUtil() {
 		// As this class only has static methods we don't want instances
 	}
 
 	/**
 	 * Efficiently deletes all Objects from the resource
-	 * 
+	 *
 	 * @param objects The EObjects which should be deleted
 	 * @param resource The containing resource
 	 */
 	public static void deleteAll(Collection<EObject> objects, Resource resource) {
-		Map<EObject, Collection<Setting>> usages = UsageCrossReferencer.findAll(objects, resource);
-		for (EObject eObject : objects) {
+		final Map<EObject, Collection<Setting>> usages = UsageCrossReferencer.findAll(objects, resource);
+		for (final EObject eObject : objects) {
 			if (eObject!= null && !usages.containsKey(eObject)) {
 				EcoreUtil.delete(eObject);
 			}
 		}
-		for (Entry<EObject, Collection<Setting>> entry : usages.entrySet()) {
-			EObject eObject = entry.getKey();
-			for (EStructuralFeature.Setting setting : entry.getValue()) {
+		for (final Entry<EObject, Collection<Setting>> entry : usages.entrySet()) {
+			final EObject eObject = entry.getKey();
+			for (final EStructuralFeature.Setting setting : entry.getValue()) {
 				if (setting.getEStructuralFeature().isChangeable()) {
 					EcoreUtil.remove(setting, eObject);
 				}

@@ -21,7 +21,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
  * @author speldszus
  *
  */
-public class ZipUtil {
+public final class ZipUtil {
 
 	/**
 	 * The logger of this class
@@ -70,7 +70,7 @@ public class ZipUtil {
 				LOGGER.log(Level.ERROR, e.getMessage(), e);
 			}
 		}
-		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(destination))) {
+		try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(Paths.get(zipFilePath)))) {
 			ZipEntry entry;
 			while ((entry = zipInputStream.getNextEntry()) != null) {
 				final Path filePath = Paths.get(unzipLocation, entry.getName());

@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * @author speldszus
  *
  */
-public class ModelSaver {
+public final class ModelSaver {
 
 	private static final Logger LOGGER = Logger.getLogger(ModelSaver.class);
 
@@ -77,7 +77,7 @@ public class ModelSaver {
 			resource.save(out, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ONE, monitor);
 		} catch (final IOException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			LOGGER.error(e.getMessage(), e);
 			return false;
 		} catch (final CoreException e) {
 			LOGGER.warn(e.getMessage(), e);
