@@ -71,10 +71,9 @@ public class PullUpField implements Refactoring {
 				final TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
 				classContainer.add(child);
 
-				// ForEach
-				for (final TAccess currentAccess : PullUpField
-						.pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(fieldChildDefinition)) {
-					if (fieldChildDefinition.equals(fieldParentDefinition)
+				for (final TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
+					if (!fieldChildDefinition.equals(currentAccess.getTSource())
+							&& fieldChildDefinition.equals(fieldParentDefinition)
 							|| !fieldChildDefinition.getAccessedBy().contains(currentAccess)) {
 						throw new RefactoringFailedException(
 								"Pattern matching failed." + " Variables: " + "[currentAccess] = " + currentAccess
@@ -85,9 +84,8 @@ public class PullUpField implements Refactoring {
 					fieldParentDefinition.getAccessedBy().add(currentAccess);
 				}
 
-				if (child.equals(fieldChildDefinition.getDefinedBy()) && child.getSignature().contains(field)
-						&& field.getDefinitions().contains(fieldChildDefinition)) {
-				} else {
+				if (!child.equals(fieldChildDefinition.getDefinedBy()) || !child.getSignature().contains(field)
+						|| !field.getDefinitions().contains(fieldChildDefinition)) {
 					throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
 							+ "[fieldChildDefinition] = " + fieldChildDefinition + ", " + "[child] = " + child + ", "
 							+ "[field] = " + field + ".");
@@ -156,30 +154,15 @@ public class PullUpField implements Refactoring {
 
 	public static final Iterable<Object[]> pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(TClass parent,
 			TFieldSignature field, List<TClass> classContainer) {
-		final LinkedList<Object[]> _result = new LinkedList<>();
+		final LinkedList<Object[]> result = new LinkedList<>();
 		for (final TClass child : parent.getChildClasses()) {
-			if (!child.equals(parent)&&child.getSignature().contains(field)) {
+			if (!child.equals(parent) && child.getSignature().contains(field)) {
 				for (final TFieldDefinition fieldChildDefinition : field.getFieldDefinitions()) {
 					if (child.equals(fieldChildDefinition.getDefinedBy())) {
-						_result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
+						result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
 					}
 				}
 
-			}
-		}
-		return _result;
-	}
-
-	public static final Iterable<TAccess> pattern_Pull_Up_Field_0_5_ActivityNode138_blackBFBFF(
-			TFieldDefinition fieldChildDefinition) {
-		final LinkedList<TAccess> result = new LinkedList<>();
-		for (final TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
-			final TMember tMember = currentAccess.getTSource();
-			if (tMember != null) {
-				if (!fieldChildDefinition.equals(tMember)) {
-					result.add(currentAccess);
-
-				}
 			}
 		}
 		return result;

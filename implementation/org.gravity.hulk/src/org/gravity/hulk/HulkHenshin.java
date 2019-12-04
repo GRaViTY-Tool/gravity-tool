@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.henshin.interpreter.Engine;
@@ -133,7 +134,7 @@ public class HulkHenshin {
 		final Set<EClass> requires = getRequires(rule);
 		if (!requires.isEmpty()) {
 			System.out.println("Execure requirements of rule: " + rule.getName());
-			System.out.println(requires.parallelStream().map(type -> type.getName()).collect(Collectors.joining(", ")));
+			System.out.println(requires.parallelStream().map(ENamedElement::getName).collect(Collectors.joining(", ")));
 		}
 		for (final EClass requirement : requires) {
 			final Rule requiredRule = this.creates.get(requirement);

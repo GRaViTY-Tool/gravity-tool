@@ -26,7 +26,7 @@ import org.gravity.hulk.antipatterngraph.AntipatterngraphFactory;
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.detection.HulkDetector;
-import org.gravity.hulk.detection.antipattern.impl.AntipatternPackageImpl;
+import org.gravity.hulk.detection.antipattern.AntipatternPackage;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.hulk.exceptions.DetectionFailedException;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -112,7 +112,6 @@ public final class HulkAPI {
 		final HAntiPatternGraph apg = AntipatterngraphFactory.eINSTANCE.createHAntiPatternGraph();
 		hulk.setApg(apg);
 		apg.setPg(pm);
-		//		apgResource.getContents().add(apg);
 
 		final Set<EClass> detectors = getDetecors(aps);
 		final HashSet<HDetector> detectorResults = new HashSet<>();
@@ -178,10 +177,10 @@ public final class HulkAPI {
 	 */
 	public enum AntiPatternNames {
 
-		BLOB(AntipatternPackageImpl.eINSTANCE.getHBlobDetector()),
-		GOD_CLASS(AntipatternPackageImpl.eINSTANCE.getHGodClassDetector()),
-		SPAGHETTI_CODE(AntipatternPackageImpl.eINSTANCE.getHSpaghettiCodeDetector()),
-		SWISS_ARMY_KNIFE(AntipatternPackageImpl.eINSTANCE.getHSwissArmyKnifeDetector()),
+		BLOB(AntipatternPackage.eINSTANCE.getHBlobDetector()),
+		GOD_CLASS(AntipatternPackage.eINSTANCE.getHGodClassDetector()),
+		SPAGHETTI_CODE(AntipatternPackage.eINSTANCE.getHSpaghettiCodeDetector()),
+		SWISS_ARMY_KNIFE(AntipatternPackage.eINSTANCE.getHSwissArmyKnifeDetector()),
 		IGAM(MetricsPackage.eINSTANCE.getHIGAMCalculator()), IGAT(MetricsPackage.eINSTANCE.getHIGATCalculator()),
 		LCOM5(MetricsPackage.eINSTANCE.getHLcom5Calculator()),
 		TOTAL_COUPLING(MetricsPackage.eINSTANCE.getHTotalCouplingCalculator()),

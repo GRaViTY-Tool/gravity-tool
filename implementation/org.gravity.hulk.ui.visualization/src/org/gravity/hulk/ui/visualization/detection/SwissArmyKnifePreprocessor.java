@@ -20,7 +20,7 @@ import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 
-public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
+public class SwissArmyKnifePreprocessor implements DetectionPreprocessor {
 
 	@Override
 	public Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {

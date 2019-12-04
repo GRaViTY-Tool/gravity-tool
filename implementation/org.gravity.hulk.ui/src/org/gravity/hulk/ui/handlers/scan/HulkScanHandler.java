@@ -8,7 +8,7 @@ public class HulkScanHandler extends HulkHandler {
 	
 	@Override
 	protected void setJobName() {
-		JobName = "Anti-Pattern detection";
+		jobName = "Anti-Pattern detection";
 		
 	}
 	

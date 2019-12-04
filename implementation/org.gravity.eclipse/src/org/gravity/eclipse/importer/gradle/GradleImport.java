@@ -373,7 +373,7 @@ public class GradleImport extends ProjectImport {
 	 */
 	private Set<String> getAppliedPlugins(Path path) {
 		final Set<String> appliedPlugins = new HashSet<>();
-		if (!Files.exists(path) || !Files.isReadable(path)) {
+		if (!path.toFile().exists() || !Files.isReadable(path)) {
 			return Collections.emptySet();
 		}
 		try (Stream<String> lines = Files.lines(path)) {

@@ -20,7 +20,7 @@ public class DetectionTreeLabelProvider extends LabelProvider {
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
 			if (eClass.isAbstract() || eClass.isInterface()) {
-				return Messages.HulkScanHandler_5;
+				return Messages.error;
 			}
 			if (HulkPackage.eINSTANCE.getHDetector().isSuperTypeOf(eClass)) {
 				EPackage ePackage = eClass.getEPackage();

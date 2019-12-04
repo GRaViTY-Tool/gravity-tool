@@ -4,7 +4,6 @@ package org.gravity.refactorings.impl;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.gravity.refactorings.Refactoring;
@@ -15,11 +14,8 @@ import org.gravity.refactorings.configuration.impl.ExtractSuperClassConfiguratio
 import org.gravity.refactorings.util.HelpersImpl;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TFieldDefinition;
-import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
 
 /**
@@ -61,22 +57,18 @@ public class ExtractSuperclass implements Refactoring {
 			throw new RefactoringFailedException("There are no children to extract a superclass from!");
 		}
 		final CreateSuperclass csc = new CreateSuperclass();
-		final HelpersImpl helpers = new HelpersImpl();
 
 		final List<TClass> result = csc.perform(children, newParent);
 		// ForEach
 		for (final TSignature tSignature : signatures) {
 
-			final TMember bestDefinition = helpers.getBestTMember(children, tSignature);
+			final TMember bestDefinition = HelpersImpl.getBestTMember(children, tSignature);
 			if (bestDefinition == null) {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[helpers] = "
-						+ helpers + ", " + "[children] = " + children + ", " + "[tSignature] = " + tSignature + ".");
+				throw new RefactoringFailedException("Unable to find a member definition to extract.");
 			}
 			//
-			final Object[] result6_black = ExtractSuperclass
-					.pattern_Extract_Superclass_0_6_ActivityNode218_blackBFB(bestDefinition, tSignature);
-			if (result6_black != null) {
-				final TClass tOwnerClass = (TClass) result6_black[1];
+			final TClass tOwnerClass = ExtractSuperclass.getDefiningClass(bestDefinition, tSignature);
+			if (tOwnerClass != null) {
 
 				if (!tOwnerClass.getSignature().contains(tSignature)
 						|| !tOwnerClass.equals(bestDefinition.getDefinedBy())) {
@@ -95,7 +87,7 @@ public class ExtractSuperclass implements Refactoring {
 			for (final TClass child : children) {
 				if (child.getSignature().contains(tSignature)) {
 					//
-					helpers.mountAccesses(child, newParent, tSignature);
+					HelpersImpl.mountAccesses(child, newParent, tSignature);
 				}
 			}
 
@@ -110,108 +102,52 @@ public class ExtractSuperclass implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> children, TClass new_parent, List<TSignature> signatures)
+	public boolean isApplicable(List<TClass> children, TClass newParent, List<TSignature> signatures)
 			throws RefactoringFailedException {
 
 		final CreateSuperclass csc = new CreateSuperclass();
 
-		if (csc.isApplicable(children, new_parent)) {
-			// ForEach
-			for (final Object[] result4_black : ExtractSuperclass
-					.pattern_Extract_Superclass_1_4_ActivityNode96_blackFBFB(children, signatures)) {
-				final TClass child = (TClass) result4_black[0];
-				final TSignature tSignature = (TSignature) result4_black[2];
+		if (!csc.isApplicable(children, newParent)) {
+			return false;
+		}
+		// ForEach
+		for (final TClass child : children) {
+			for (final TSignature tSignature : signatures) {
 				//
-				if (child.getSignature().contains(tSignature)) {
+				if (!child.getSignature().contains(tSignature)) {
+					return false;
+				}
 
-					final List<TMember> allOutgoingAccesses = child.getAllOutgoingAccesses(tSignature);
-					//
-					final Object[] result7_black = ExtractSuperclass
-							.pattern_Extract_Superclass_1_7_ActivityNode157_blackBBFB(allOutgoingAccesses, child,
-									signatures);
-					if (result7_black != null) {
-						// nothing TFieldDefinition tChildFieldDefinition = (TFieldDefinition)
-						// result7_black[2];
-						return false;
-					} else {
-						//
-						final Object[] result9_black = ExtractSuperclass
-								.pattern_Extract_Superclass_1_9_ActivityNode158_blackBBFB(child, allOutgoingAccesses,
-										signatures);
-						if (result9_black != null) {
-							// nothing TMethodDefinition tChildmethodDefinition = (TMethodDefinition)
-							// result9_black[2];
-							return false;
-						}
-
-					}
-
-				} else {
+				final List<TMember> allOutgoingAccesses = child.getAllOutgoingAccesses(tSignature);
+				if (ExtractSuperclass.isMemberAccessed(child, allOutgoingAccesses, signatures)) {
 					return false;
 				}
 
 			}
-			return true;
-		} else {
-			return false;
 		}
+		return true;
 
 	}
 
-	public static final Object[] pattern_Extract_Superclass_0_6_ActivityNode218_blackBFB(TMember bestDefinition,
-			TSignature tSignature) {
+	private static final TClass getDefiningClass(TMember bestDefinition, TSignature tSignature) {
 		final TAbstractType tmpTOwnerClass = bestDefinition.getDefinedBy();
 		if (tmpTOwnerClass instanceof TClass) {
 			final TClass tOwnerClass = (TClass) tmpTOwnerClass;
 			if (tOwnerClass.getSignature().contains(tSignature)) {
-				return new Object[] { bestDefinition, tOwnerClass, tSignature };
-			}
-		}
-
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_Extract_Superclass_1_4_ActivityNode96_blackFBFB(
-			List<TClass> children, List<TSignature> signatures) {
-		final LinkedList<Object[]> _result = new LinkedList<>();
-		for (final TClass child : children) {
-			for (final TSignature tSignature : signatures) {
-				_result.add(new Object[] { child, children, tSignature, signatures });
-			}
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_Extract_Superclass_1_7_ActivityNode157_blackBBFB(
-			List<TMember> allOutgoingAccesses, TClass child, List<TSignature> signatures) {
-		for (final TMember tmpTChildFieldDefinition : allOutgoingAccesses) {
-			if (tmpTChildFieldDefinition instanceof TFieldDefinition) {
-				final TFieldDefinition tChildFieldDefinition = (TFieldDefinition) tmpTChildFieldDefinition;
-				if (child.equals(tChildFieldDefinition.getDefinedBy())) {
-					final TFieldSignature tFieldSignatureFromContainer = tChildFieldDefinition.getSignature();
-					if (tFieldSignatureFromContainer == null || !signatures.contains(tFieldSignatureFromContainer)) {
-						return new Object[] { allOutgoingAccesses, child, tChildFieldDefinition, signatures };
-					}
-				}
+				return tOwnerClass;
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_Extract_Superclass_1_9_ActivityNode158_blackBBFB(TClass child,
-			List<TMember> allOutgoingAccesses, List<TSignature> signatures) {
-		for (final TMember tmpTChildmethodDefinition : child.getDefines()) {
-			if (tmpTChildmethodDefinition instanceof TMethodDefinition) {
-				final TMethodDefinition tChildmethodDefinition = (TMethodDefinition) tmpTChildmethodDefinition;
-				if (allOutgoingAccesses.contains(tChildmethodDefinition)) {
-					final TMethodSignature tMethodSignatureFromContainer = tChildmethodDefinition.getSignature();
-					if (tMethodSignatureFromContainer != null && signatures.contains(tMethodSignatureFromContainer)) {
-						return new Object[] { child, allOutgoingAccesses, tChildmethodDefinition, signatures };
-					}
-				}
+	public static final boolean isMemberAccessed(TClass child, List<TMember> accessed, List<TSignature> signatures) {
+		for (final TMethodDefinition tChildmethodDefinition : child.getDeclaredTMethodDefinitions()) {
+			if (accessed.contains(tChildmethodDefinition)
+					&& signatures.contains(tChildmethodDefinition.getSignature())) {
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	@Override

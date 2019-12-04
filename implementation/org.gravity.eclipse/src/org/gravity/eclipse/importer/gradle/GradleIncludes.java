@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 
@@ -15,7 +16,7 @@ import org.gravity.eclipse.importer.NoRootFolderException;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.io.FileUtils;
 
-public class GradleIncludes {
+public final class GradleIncludes {
 	private final Set<Path> includes;
 	private final Set<Path> buildDotGradleFiles;
 
@@ -118,7 +119,7 @@ public class GradleIncludes {
 	 * @param defs           A table of defined vars
 	 * @throws IOException
 	 */
-	public Set<Path> searchIncludes(String contentString, File rootDir, HashMap<String, String> defs)
+	public final Set<Path> searchIncludes(String contentString, File rootDir, Map<String, String> defs)
 			throws IOException {
 		final Set<Path> includedFiles = new HashSet<>();
 		final Matcher includeMatcher = GradleRegexPatterns.INCLUDE.matcher(contentString);

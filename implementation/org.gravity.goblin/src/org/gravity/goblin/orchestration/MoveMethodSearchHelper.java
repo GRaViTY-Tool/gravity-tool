@@ -33,7 +33,7 @@ import at.ac.tuwien.big.momot.search.solution.executor.SearchHelper;
 
 /**
  * Applies the move method refactoring
- * 
+ *
  * @author speldszus
  *
  */
@@ -42,13 +42,13 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	private Random random;
 
 	private Random getRandom() {
-		if (random == null) {
-			random = new SecureRandom();
+		if (this.random == null) {
+			this.random = new SecureRandom();
 		}
-		return random;
+		return this.random;
 	}
 
-	private MoveMethodTransformationSearchOrchestration orchestration;
+	private final MoveMethodTransformationSearchOrchestration orchestration;
 
 	public MoveMethodSearchHelper(MoveMethodTransformationSearchOrchestration orchestration) {
 		this.orchestration = orchestration;
@@ -57,7 +57,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 
 	@Override
 	public TransformationSearchOrchestration getSearchOrchestration() {
-		return orchestration;
+		return this.orchestration;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	}
 
 	private TClass getDifferentRandomClass(EGraph graph, TClass otherTClass) {
-		List<TClass> classes = EGraphUtil.getPG(graph).getDeclaredTClasses();
+		final List<TClass> classes = EGraphUtil.getPG(graph).getDeclaredTClasses();
 		classes.remove(otherTClass);
 		if (classes.isEmpty()) {
 			return null;
@@ -75,15 +75,15 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		if (classes.size() == 1) {
 			return classes.get(0);
 		}
-		int index = getRandom().nextInt(classes.size());
+		final int index = getRandom().nextInt(classes.size());
 		return classes.get(index);
 	}
 
 	private TMethodSignature getRandomMethodSig(TClass sourceClass) {
-		List<TMethodSignature> methodSigs = new ArrayList<TMethodSignature>();
-		for (TSignature sig : sourceClass.getSignature()) {
+		final List<TMethodSignature> methodSigs = new ArrayList<>();
+		for (final TSignature sig : sourceClass.getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				TMethodSignature tMethodSignature = (TMethodSignature) sig;
+				final TMethodSignature tMethodSignature = (TMethodSignature) sig;
 				if (MoveMethodPreConditions.methodPreconditions(tMethodSignature, sourceClass)) {
 					methodSigs.add(tMethodSignature);
 				}
@@ -96,16 +96,16 @@ public class MoveMethodSearchHelper extends SearchHelper {
 		if (methodSigs.size() == 1) {
 			return methodSigs.get(0);
 		}
-		int index = getRandom().nextInt(methodSigs.size());
+		final int index = getRandom().nextInt(methodSigs.size());
 		return methodSigs.get(index);
 	}
 
 	private ITransformationVariable moveMethodTransformationVariable(EGraph graph, int maxTries, Unit chosenUnit) {
 
-		Assignment assignment = new AssignmentImpl(chosenUnit);
-		Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
-		Parameter targetClassParam = chosenUnit.getParameter("targetClass");
-		Parameter methodSigParam = chosenUnit.getParameter("methodSig");
+		final Assignment assignment = new AssignmentImpl(chosenUnit);
+		final Parameter sourceClassParam = chosenUnit.getParameter("sourceClass");
+		final Parameter targetClassParam = chosenUnit.getParameter("targetClass");
+		final Parameter methodSigParam = chosenUnit.getParameter("methodSig");
 
 		return getMove(graph, maxTries, assignment, sourceClassParam, targetClassParam, methodSigParam);
 	}
@@ -113,25 +113,25 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	private ITransformationVariable getMove(EGraph graph, int maxTries, Assignment assignment,
 			Parameter sourceClassParam, Parameter targetClassParam, Parameter methodSigParam) {
 		for (int i = 0; i < 10 * maxTries; i++) {
-			TClass sourceClass = getDifferentRandomClass(graph, null);
+			final TClass sourceClass = getDifferentRandomClass(graph, null);
 			assignment.setParameterValue(sourceClassParam, sourceClass);
 
-			TMethodSignature methodSig = getRandomMethodSig(sourceClass);
+			final TMethodSignature methodSig = getRandomMethodSig(sourceClass);
 			if (methodSig == null) {
 				continue;
 			}
 			assignment.setParameterValue(methodSigParam, methodSig);
 
-			Set<TClass> possibleTargets = new HashSet<TClass>();
-			for (TParameter tParam : methodSig.getParameters()) {
-				TAbstractType tType = tParam.getType();
+			final Set<TClass> possibleTargets = new HashSet<>();
+			for (final TParameter tParam : methodSig.getParameters()) {
+				final TAbstractType tType = tParam.getType();
 				if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
 					possibleTargets.add((TClass) tType);
 				}
 			}
-			for (TSignature tSig : sourceClass.getSignature()) {
+			for (final TSignature tSig : sourceClass.getSignature()) {
 				if (tSig instanceof TFieldSignature) {
-					TAbstractType tType = ((TFieldSignature) tSig).getType();
+					final TAbstractType tType = ((TFieldSignature) tSig).getType();
 					if (tType instanceof TClass && !tType.getSignature().contains(methodSig)) {
 						possibleTargets.add(((TClass) tType));
 
@@ -142,10 +142,10 @@ public class MoveMethodSearchHelper extends SearchHelper {
 				continue;
 			}
 
-			TClass targetClass = (TClass) possibleTargets.toArray()[random.nextInt(possibleTargets.size())];
+			final TClass targetClass = (TClass) possibleTargets.toArray()[this.random.nextInt(possibleTargets.size())];
 			assignment.setParameterValue(targetClassParam, targetClass);
 
-			UnitApplicationVariable application = createApplication(graph, assignment);
+			final UnitApplicationVariable application = createApplication(graph, assignment);
 
 			if (application.execute(getMonitor())) {
 				application.setAssignment(application.getResultAssignment());
@@ -161,7 +161,7 @@ public class MoveMethodSearchHelper extends SearchHelper {
 	public ITransformationVariable findUnitApplication(final EGraph graph, final int maxTries) {
 		// choose a unit randomly
 		final List<? extends Unit> units = new ArrayList<>(getUnits());
-		Unit chosenUnit = CollectionUtil.getRandomElement(units);
+		final Unit chosenUnit = CollectionUtil.getRandomElement(units);
 
 		if (chosenUnit.getName().equals("MoveMethodMain")) {
 			return moveMethodTransformationVariable(graph, maxTries, chosenUnit);

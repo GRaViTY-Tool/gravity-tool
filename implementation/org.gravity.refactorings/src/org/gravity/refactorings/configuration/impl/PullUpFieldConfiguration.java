@@ -11,6 +11,7 @@ public class PullUpFieldConfiguration extends PullUpMemberConfiguration {
 		super(signature, sourceClass);
 	}
 
+	@Override
 	public TFieldSignature getSignature() {
 		return (TFieldSignature) super.getSignature();
 	}

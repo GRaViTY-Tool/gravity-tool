@@ -26,11 +26,11 @@ import org.gravity.typegraph.basic.TypeGraph;
  * @generated
  */
 public class CreateSuperclass implements Refactoring {
-	
+
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
-			CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
+			final CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
 			return isApplicable(csc.getChildren(), csc.getNewParent());
 		}
 		return false;
@@ -39,18 +39,18 @@ public class CreateSuperclass implements Refactoring {
 	@Override
 	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
-			CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
+			final CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
 			return perform(csc.getChildren(), csc.getNewParent());
 		}
 		return Collections.emptyList();
 	}
 
 	public List<TClass> perform(List<TClass> child, TClass newParent) throws RefactoringFailedException {
-		if(child.isEmpty()) {
+		if (child.isEmpty()) {
 			throw new RefactoringFailedException("The list of child classes is empty!");
 		}
-		TypeGraph pg = child.get(0).getPg();
-		List<TClass> container = new LinkedList<TClass>();
+		final TypeGraph pg = child.get(0).getPg();
+		final List<TClass> container = new LinkedList<>();
 
 		container.add(newParent);
 		pg.getOwnedTypes().add(newParent);
@@ -58,14 +58,14 @@ public class CreateSuperclass implements Refactoring {
 
 		PGAdditionHelper.linkClass(pg, newParent);
 
-		TClass oldParent = child.get(0).getParentClass();
-		if (oldParent != null ) {
+		final TClass oldParent = child.get(0).getParentClass();
+		if (oldParent != null) {
 			newParent.setParentClass(oldParent);
 			container.add(oldParent);
 
 		}
 
-		for (TClass tChildClass : child) {
+		for (final TClass tChildClass : child) {
 			tChildClass.setParentClass(newParent);
 			container.add(tChildClass);
 		}
@@ -74,35 +74,31 @@ public class CreateSuperclass implements Refactoring {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @throws RefactoringFailedException 
-	 * 
+	 *
+	 * @throws RefactoringFailedException
+	 *
 	 * @generated
 	 */
 	public boolean isApplicable(List<TClass> child, TClass newParent) throws RefactoringFailedException {
-		if(child.isEmpty()) {
+		if (child.isEmpty()) {
 			return false;
 		}
-		TypeGraph pg = child.get(0).getPg();
-		
-		TClass existingParent = getOtherTClassByName(pg, newParent);
+		final TypeGraph pg = child.get(0).getPg();
+
+		final TClass existingParent = getOtherTClassByName(pg, newParent);
 		if (existingParent != null) {
 			TPackage newParentsPackage = null;
-			TPackage existingParentsPackage = null;
+			final TPackage existingParentsPackage = null;
 			if (!existingParent.equals(newParent)) {
 				newParentsPackage = newParent.getPackage();
-				if (newParentsPackage != null) {
-					existingParentsPackage = existingParent.getPackage();
-					if (existingParentsPackage != null) {
-						if (!existingParentsPackage.equals(newParentsPackage)) {
-
-						}
-					}
+				if (newParentsPackage != null && !newParentsPackage.equals(existingParent.getPackage())) {
+					//TODO: Implement this refactoring
 				}
 			}
 
 			if (newParentsPackage == null || existingParentsPackage == null) {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = " + newParent
-						+ ", " + "[existingParent] = " + existingParent + ".");
+				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = "
+						+ newParent + ", " + "[existingParent] = " + existingParent + ".");
 			}
 			//
 			if (PGAdditionHelper.equivalent(existingParentsPackage, newParentsPackage)) {
@@ -112,19 +108,19 @@ public class CreateSuperclass implements Refactoring {
 		}
 		//
 		boolean classesAreEqual = false;
-		for (TClass one : child) {
-			for (TClass two : child) {
+		for (final TClass one : child) {
+			for (final TClass two : child) {
 				if (!one.equals(two)) {
 					classesAreEqual = true;
 				}
 			}
 		}
 		if (classesAreEqual) {
-			for (TClass b : child) {
-				for (TClass a : child) {
+			for (final TClass b : child) {
+				for (final TClass a : child) {
 					//
-					TPackage basePackageOne = a.getBasePackage();
-					TPackage basePackageTwo = b.getBasePackage();
+					final TPackage basePackageOne = a.getBasePackage();
+					final TPackage basePackageTwo = b.getBasePackage();
 					if (basePackageOne != basePackageTwo) {
 						return false;
 					}
@@ -132,12 +128,12 @@ public class CreateSuperclass implements Refactoring {
 				}
 			}
 			// ForEach pair of children
-			for (TClass tChildOne : child) {
-				TClass parentOne = tChildOne.getResolvedParentClass();
-				for (TClass tChildTwo : child) {
+			for (final TClass tChildOne : child) {
+				final TClass parentOne = tChildOne.getResolvedParentClass();
+				for (final TClass tChildTwo : child) {
 					if (!tChildOne.equals(tChildTwo)) {
-						TClass parentTwo = tChildTwo.getResolvedParentClass();
-						if(!parentOne.equals(parentTwo)) {
+						final TClass parentTwo = tChildTwo.getResolvedParentClass();
+						if (!parentOne.equals(parentTwo)) {
 							return false;
 						}
 					}
@@ -151,10 +147,10 @@ public class CreateSuperclass implements Refactoring {
 	}
 
 	public static final TClass getOtherTClassByName(TypeGraph pg, TClass exclude) {
-		String newParentName = exclude.getTName();
-		for (TClass existingParent : pg.getClasses()) {
+		final String newParentName = exclude.getTName();
+		for (final TClass existingParent : pg.getClasses()) {
 			if (!existingParent.equals(exclude)) {
-				String existingParentName = existingParent.getTName();
+				final String existingParentName = existingParent.getTName();
 				if (existingParentName.equals(newParentName)) {
 					return existingParent;
 				}

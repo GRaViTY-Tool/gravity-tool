@@ -4,10 +4,11 @@ import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Deque;
+import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.gravity.typegraph.basic.BasicFactory;
@@ -33,18 +34,18 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 	}
 
 	private static void createMissingOverrideEdges(TypeGraph pg) {
-		for (TClass tClass : pg.getDeclaredTClasses()) {
-			HashMap<String, TMethodDefinition> signatures = new HashMap<String, TMethodDefinition>();
-			for (TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
+		for (final TClass tClass : pg.getDeclaredTClasses()) {
+			final Map<String, TMethodDefinition> signatures = new HashMap<>();
+			for (final TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
 				if (tMethodDefinition.getOverriding() == null) {
 					signatures.put(tMethodDefinition.getSignatureString(), tMethodDefinition);
 				}
 			}
 
-			Deque<TAbstractType> parents = new LinkedList<>();
+			final Deque<TAbstractType> parents = new LinkedList<>();
 			addParentsToStack(tClass, parents);
 
-			TClass tObject = pg.getClass("java.lang.Object");
+			final TClass tObject = pg.getClass("java.lang.Object");
 			int stackInitialSize = parents.size();
 			if (parents.contains(tObject)) {
 				stackInitialSize--;
@@ -52,10 +53,10 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 
 			// Search if a parent defines a method which has been overridden
 			while (!parents.isEmpty()) {
-				TAbstractType tParent = parents.pop();
+				final TAbstractType tParent = parents.pop();
 				addParentsToStack(tParent, parents);
-				for (String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
-					TMethodDefinition tMethodDefinition = tParent.getTMethodDefinition(tMethodSignatureString);
+				for (final String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
+					final TMethodDefinition tMethodDefinition = tParent.getTMethodDefinition(tMethodSignatureString);
 					if (tMethodDefinition != null) {
 						tMethodDefinition.getOverriddenBy().add(signatures.remove(tMethodSignatureString));
 					}
@@ -63,9 +64,9 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 			}
 
 			// Check if a operation defined by java.lang.Object has been overriden
-			for (String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
+			for (final String tMethodSignatureString : new ArrayList<>(signatures.keySet())) {
 				if (objectMethods.contains(tMethodSignatureString)) {
-					TMethodDefinition tMethodDefinition = signatures.remove(tMethodSignatureString);
+					final TMethodDefinition tMethodDefinition = signatures.remove(tMethodSignatureString);
 					TMethodDefinition tObjectMethodDefinition = tObject.getTMethodDefinition(tMethodSignatureString);
 					if (tObjectMethodDefinition == null) {
 						tObjectMethodDefinition = cloneAndAddDefintion(tObject, tMethodDefinition);
@@ -78,16 +79,16 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 			// inheritance tree we can add an according method definition and overriding
 			// edge to this parent
 			if (stackInitialSize == 1) {
-				Collection<TMethodDefinition> values = signatures.values();
-				for (TMethodDefinition tMethodDefinition : values) {
-					for (TAnnotation tAnnotation : tMethodDefinition.getTAnnotation()) {
-						TAnnotationType tAnnotatiopnType = tAnnotation.getType();
+				final Collection<TMethodDefinition> values = signatures.values();
+				for (final TMethodDefinition tMethodDefinition : values) {
+					for (final TAnnotation tAnnotation : tMethodDefinition.getTAnnotation()) {
+						final TAnnotationType tAnnotatiopnType = tAnnotation.getType();
 						if (tAnnotatiopnType != null && "Override".equals(tAnnotatiopnType.getTName())) {
 							TAbstractType parent = tClass.getParentClass();
 							if (parent == null || parent.equals(tObject)) {
 								parent = tClass.getImplements().get(0);
 							}
-							TMethodDefinition tObjectMethodDefinition = cloneAndAddDefintion(tObject,
+							final TMethodDefinition tObjectMethodDefinition = cloneAndAddDefintion(tObject,
 									tMethodDefinition);
 							tMethodDefinition.setOverriding(tObjectMethodDefinition);
 						}
@@ -98,13 +99,13 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 	}
 
 	private static TMethodDefinition cloneAndAddDefintion(TAbstractType tType, TMethodDefinition tMethodDefinition) {
-		TMethodDefinition tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
+		final TMethodDefinition tObjectMethodDefinition = BasicFactory.eINSTANCE.createTMethodDefinition();
 		tMethodDefinition.getSignature().getDefinitions().add(tObjectMethodDefinition);
 		tObjectMethodDefinition.setDefinedBy(tType);
 		tObjectMethodDefinition.setReturnType(tMethodDefinition.getReturnType());
-		TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
+		final TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
 		tObjectMethodDefinition.setTModifier(tObjectModifier);
-		TModifier tModifier = tMethodDefinition.getTModifier();
+		final TModifier tModifier = tMethodDefinition.getTModifier();
 		tObjectModifier.setTVisibility(tModifier.getTVisibility());
 		tObjectModifier.setIsStatic(tModifier.isIsStatic());
 		return tObjectMethodDefinition;
@@ -112,18 +113,17 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 
 	private static void addParentsToStack(TAbstractType child, Deque<TAbstractType> stack) {
 		if (child instanceof TClass) {
-			TClass tClass = (TClass) child;
-			TClass tParentClass = tClass.getParentClass();
+			final TClass tClass = (TClass) child;
+			final TClass tParentClass = tClass.getParentClass();
 			if (tParentClass != null) {
 				stack.add(tParentClass);
 			}
 			stack.addAll(tClass.getImplements());
 
 		} else if (child instanceof TInterface) {
-			TInterface tInterface = (TInterface) child;
+			final TInterface tInterface = (TInterface) child;
 			stack.addAll(tInterface.getParentInterfaces());
 		} else if (child instanceof TAnnotationType) {
-			// TAnnotationType tAnnotationType = (TAnnotationType) child;
 			// Nothing to do for AnnotationTypes
 		} else {
 			throw new InvalidParameterException();

@@ -29,7 +29,7 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 
 	@Override
 	public boolean process(MGravityModel model, Collection<MMethodDefinition> elements, IProgressMonitor monitor) {
-		elements.forEach(m -> addSyntethicMembers(m));
+		elements.forEach(SyntethicMethodsPreprocessor::addSyntethicMembers);
 		return true;
 	}
 

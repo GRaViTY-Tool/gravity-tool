@@ -16,7 +16,6 @@ import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object
@@ -33,37 +32,14 @@ import org.gravity.typegraph.basic.TypeGraph;
  *
  * @generated
  */
-public class HelpersImpl {
+public final class HelpersImpl {
 
 	private static final Logger LOGGER = Logger.getLogger(HelpersImpl.class.getName());
 
-	/**
-	 * The cached value of the '{@link #getTypeGraph() <em>Type Graph</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getTypeGraph()
-	 * @generated
-	 * @ordered
-	 */
-	protected TypeGraph typeGraph;
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public TypeGraph getTypeGraph() {
-		return this.typeGraph;
+	private HelpersImpl() {
+		// This class shouldn't be instantiated
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public void setTypeGraph(TypeGraph newTypeGraph) {
-		this.typeGraph = newTypeGraph;
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -72,7 +48,8 @@ public class HelpersImpl {
 	 *
 	 * @generated
 	 */
-	public boolean mountAccesses(TClass child, TClass parent, TSignature tSignature) throws RefactoringFailedException {
+	public static boolean mountAccesses(TClass child, TClass parent, TSignature tSignature)
+			throws RefactoringFailedException {
 
 		if (tSignature instanceof TFieldSignature) {
 			return mountAccesses(child, parent, (TFieldSignature) tSignature);
@@ -83,7 +60,7 @@ public class HelpersImpl {
 
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature)
+	private static boolean mountAccesses(TClass child, TClass parent, TMethodSignature tMethodSignature)
 			throws RefactoringFailedException {
 		for (final TMember tMethodDefinition : child.getDefines()) {
 			if (tMethodSignature.getDefinitions().contains(tMethodDefinition)) {
@@ -122,7 +99,7 @@ public class HelpersImpl {
 			}
 		}
 
-		TMethodDefinition tMethodDefinition = tMethodSignature.getTDefinition(child);
+		final TMethodDefinition tMethodDefinition = tMethodSignature.getTDefinition(child);
 		if (tMethodDefinition == null) {
 			throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[child] = " + child
 					+ ", " + "[tMethodSignature] = " + tMethodSignature + ".");
@@ -132,53 +109,49 @@ public class HelpersImpl {
 		tMethodSignature.getDefinitions().remove(tMethodDefinition);
 
 		EcoreUtil.delete(tMethodDefinition);
-		tMethodDefinition = null;
 
 		return true;
 	}
 
-	public boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature)
+	private static boolean mountAccesses(TClass child, TClass parent, TFieldSignature tFieldSignature)
 			throws RefactoringFailedException {
 		for (final TMember tmpTFieldDefinition : child.getDefines()) {
-			if (tmpTFieldDefinition instanceof TFieldDefinition) {
-				if (tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
-					for (final TAccess tFieldAccess : tmpTFieldDefinition.getAccessedBy()) {
-						TFieldDefinition tFieldParentDefinition = null;
-						if (tmpTFieldDefinition.getAccessedBy().contains(tFieldAccess)) {
-							for (final TMember tmpTFieldParentDefinition : parent.getDefines()) {
-								if (tmpTFieldParentDefinition instanceof TFieldDefinition) {
-									if (!tmpTFieldDefinition.equals(tmpTFieldParentDefinition)) {
-										if (tFieldSignature.getDefinitions().contains(tmpTFieldParentDefinition)) {
-											tFieldParentDefinition = (TFieldDefinition) tmpTFieldParentDefinition;
-										}
-									}
-								}
+			if (tmpTFieldDefinition instanceof TFieldDefinition
+					&& tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
+				for (final TAccess tFieldAccess : tmpTFieldDefinition.getAccessedBy()) {
+					TFieldDefinition tFieldParentDefinition = null;
+					if (tmpTFieldDefinition.getAccessedBy().contains(tFieldAccess)) {
+						for (final TMember tmpTFieldParentDefinition : parent.getDefines()) {
+							if (tmpTFieldParentDefinition instanceof TFieldDefinition
+									&& !tmpTFieldDefinition.equals(tmpTFieldParentDefinition)
+									&& tFieldSignature.getDefinitions().contains(tmpTFieldParentDefinition)) {
+								tFieldParentDefinition = (TFieldDefinition) tmpTFieldParentDefinition;
+
 							}
 						}
-						if (tFieldParentDefinition == null) {
-							throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
-									+ "[tFieldAccess] = " + tFieldAccess + ", " + "[tFieldDefinition] = "
-									+ tmpTFieldDefinition + ", " + "[parent] = " + parent + ", "
-									+ "[tFieldSignature] = " + tFieldSignature + ".");
-						}
-						tmpTFieldDefinition.getAccessedBy().remove(tFieldAccess);
-						tFieldParentDefinition.getAccessedBy().add(tFieldAccess);
-
 					}
+					if (tFieldParentDefinition == null) {
+						throw new RefactoringFailedException(
+								"Pattern matching failed." + " Variables: " + "[tFieldAccess] = " + tFieldAccess + ", "
+										+ "[tFieldDefinition] = " + tmpTFieldDefinition + ", " + "[parent] = " + parent
+										+ ", " + "[tFieldSignature] = " + tFieldSignature + ".");
+					}
+					tmpTFieldDefinition.getAccessedBy().remove(tFieldAccess);
+					tFieldParentDefinition.getAccessedBy().add(tFieldAccess);
+
 				}
+
 			}
 		}
 
 		for (final TMember tmpTFieldDefinition : child.getDefines()) {
-			if (tmpTFieldDefinition instanceof TFieldDefinition) {
-				if (tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
-					for (TAccess tFieldAccess : tmpTFieldDefinition.getTAccessing()) {
-						final TMember tFieldAccessTarget = tFieldAccess.getTTarget();
-						if (!tFieldAccessTarget.equals(tmpTFieldDefinition)) {
-							tFieldAccessTarget.getAccessedBy().remove(tFieldAccess);
-							EcoreUtil.delete(tFieldAccess);
-							tFieldAccess = null;
-						}
+			if (tmpTFieldDefinition instanceof TFieldDefinition
+					&& tFieldSignature.getDefinitions().contains(tmpTFieldDefinition)) {
+				for (final TAccess tFieldAccess : tmpTFieldDefinition.getTAccessing()) {
+					final TMember tFieldAccessTarget = tFieldAccess.getTTarget();
+					if (!tFieldAccessTarget.equals(tmpTFieldDefinition)) {
+						tFieldAccessTarget.getAccessedBy().remove(tFieldAccess);
+						EcoreUtil.delete(tFieldAccess);
 					}
 				}
 			}
@@ -203,7 +176,6 @@ public class HelpersImpl {
 		tFieldDefinition.setDefinedBy(null);
 		tFieldSignature.getDefinitions().remove(tFieldDefinition);
 		EcoreUtil.delete(tFieldDefinition);
-		tFieldDefinition = null;
 
 		return true;
 	}
@@ -218,7 +190,7 @@ public class HelpersImpl {
 	 *                    searched
 	 * @return The best implementation within the pool
 	 */
-	public TMember getBestTMember(List<TClass> tMemberPool, TSignature signature) {
+	public static TMember getBestTMember(List<TClass> tMemberPool, TSignature signature) {
 		TMember returnMember = null;
 		int bestTMemberWeight = Integer.MIN_VALUE;
 		for (final TClass tClass : tMemberPool) {
@@ -246,9 +218,9 @@ public class HelpersImpl {
 		}
 
 		if (LOGGER.isInfoEnabled()) {
-			LOGGER.info("Best-GetBestTMember: tWeight=" + bestTMemberWeight + "; tMember=" + returnMember.getSignatureString());
+			LOGGER.info("Best-GetBestTMember: tWeight=" + bestTMemberWeight + "; tMember="
+					+ returnMember.getSignatureString());
 		}
-
 
 		return returnMember;
 
@@ -261,14 +233,13 @@ public class HelpersImpl {
 	 * @param member The member with outgoing accesses
 	 * @return the amount of accesses
 	 */
-	private int getInternalAccesses(TClass type, TMember member) {
+	private static int getInternalAccesses(TClass type, TMember member) {
 		int internalAccesses = 0;
 		for (final TAccess tAccess : member.getTAccessing()) {
 			final TMember accessedTMember = tAccess.getTTarget();
-			if (accessedTMember != null && !accessedTMember.equals(member)) {
-				if (type.hasTMember(accessedTMember) || type.hasAParentThisTMember(accessedTMember)) {
-					internalAccesses++;
-				}
+			if (accessedTMember != null && !accessedTMember.equals(member)
+					&& (type.hasTMember(accessedTMember) || type.hasAParentThisTMember(accessedTMember))) {
+				internalAccesses++;
 			}
 		}
 		return internalAccesses;
@@ -281,7 +252,7 @@ public class HelpersImpl {
 	 * @param member The member with outgoing accesses
 	 * @return the amount of accesses
 	 */
-	private int getExternalAcesses(TClass type, TMember member) {
+	private static int getExternalAcesses(TClass type, TMember member) {
 		int externalAccesses = 0;
 		for (final TMember accessedTMember : HelpersImpl.getAccessedMembers(member)) {
 			if (!type.hasTMember(accessedTMember) && !type.hasAParentThisTMember(accessedTMember)) {
@@ -291,14 +262,12 @@ public class HelpersImpl {
 		return externalAccesses;
 	}
 
-	public static final Iterable<TMember> getAccessedMembers(TMember tMember) {
+	private static final Iterable<TMember> getAccessedMembers(TMember tMember) {
 		final LinkedList<TMember> result = new LinkedList<>();
 		for (final TAccess tAccess : tMember.getTAccessing()) {
 			final TMember accessedTMember = tAccess.getTTarget();
-			if (accessedTMember != null) {
-				if (!accessedTMember.equals(tMember)) {
-					result.add(accessedTMember);
-				}
+			if (accessedTMember != null && !accessedTMember.equals(tMember)) {
+				result.add(accessedTMember);
 			}
 		}
 		return result;

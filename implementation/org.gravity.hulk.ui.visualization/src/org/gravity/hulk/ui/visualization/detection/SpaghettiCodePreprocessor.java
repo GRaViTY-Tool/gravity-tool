@@ -23,7 +23,7 @@ import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 
-public class SpaghettiCodePreprocessor extends DetectionPreprocessor {
+public class SpaghettiCodePreprocessor implements DetectionPreprocessor {
 
 	@Override
 	public Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {

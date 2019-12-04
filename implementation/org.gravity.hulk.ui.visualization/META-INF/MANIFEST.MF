@@ -32,7 +32,7 @@ Export-Package: org.eclipse.draw2d,
  org.gravity.hulk.ui.visualization.information.providers,
  org.gravity.hulk.ui.visualization.listener,
  org.gravity.hulk.ui.visualization.marker,
- org.gravity.hulk.ui.visualization.markerFields,
+ org.gravity.hulk.ui.visualization.markerfields,
  org.gravity.hulk.ui.visualization.util,
  org.gravity.hulk.ui.visualization.views
 Bundle-ClassPath: .,

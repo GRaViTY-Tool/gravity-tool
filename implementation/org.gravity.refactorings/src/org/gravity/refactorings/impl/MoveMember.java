@@ -2,54 +2,54 @@
  */
 package org.gravity.refactorings.impl;
 
+import java.util.Collection;
+import java.util.Collections;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.refactorings.Refactoring;
+import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.MoveMemberConfiguration;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodSignature;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-
+import org.gravity.typegraph.basic.TSignature;
 
 public class MoveMember implements Refactoring {
 
 	private static final Logger LOGGER = Logger.getLogger(MoveMember.class.getName());
-	
+
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
+			final MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
 			return isApplicable(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
 		}
 		return false;
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) {
+	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
+			final MoveMemberConfiguration esc = (MoveMemberConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
 		}
 		return Collections.emptyList();
 	}
-	
+
 	public boolean isApplicable(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
 		if (signature instanceof TMethodSignature) {
-			TMethodSignature method = (TMethodSignature) signature;
-			MoveMethod move = new MoveMethod();
+			final TMethodSignature method = (TMethodSignature) signature;
+			final MoveMethod move = new MoveMethod();
 			return move.isApplicable(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
-			TFieldSignature field = (TFieldSignature) signature;
-			MoveField move = new MoveField();
+			final TFieldSignature field = (TFieldSignature) signature;
+			final MoveField move = new MoveField();
 			return move.isApplicable(field, tTargetClass, tSourceClass);
 		} else {
 			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);
@@ -58,27 +58,27 @@ public class MoveMember implements Refactoring {
 
 	}
 
-	public List<TClass> perform(TSignature signature, TClass tTargetClass, TClass tSourceClass) {
+	public Collection<TClass> perform(TSignature signature, TClass tTargetClass, TClass tSourceClass)
+			throws RefactoringFailedException {
 		if (signature instanceof TMethodSignature) {
-			TMethodSignature method = (TMethodSignature) signature;
-			MoveMethod move = new MoveMethod();
+			final TMethodSignature method = (TMethodSignature) signature;
+			final MoveMethod move = new MoveMethod();
 			return move.perform(method, tTargetClass, tSourceClass);
 		} else if (signature instanceof TFieldSignature) {
-			TFieldSignature field = (TFieldSignature) signature;
-			MoveField move = new MoveField();
+			final TFieldSignature field = (TFieldSignature) signature;
+			final MoveField move = new MoveField();
 			return move.perform(field, tTargetClass, tSourceClass);
-		} else {
-			LOGGER.log(Level.ERROR, "MoveMemberImpl: Unknown TSignature: " + signature);
-			return null;
 		}
-
+		final String message = NLS.bind("MoveMemberImpl: Unknown TSignature: {0}", signature);
+		LOGGER.error(message);
+		throw new RefactoringFailedException(message);
 	}
 
 	public boolean noCallToAnyChildMember(TMember member, TClass clazz) {
 
-		for (TClass child : clazz.getAllChildren()) {
-			for (TMember childMember : child.getDefines()) {
-				for (TAccess tAccess : member.getTAccessing()) {
+		for (final TClass child : clazz.getAllChildren()) {
+			for (final TMember childMember : child.getDefines()) {
+				for (final TAccess tAccess : member.getTAccessing()) {
 					if (childMember.getAccessedBy().contains(tAccess)) {
 						return false;
 					}
@@ -88,7 +88,7 @@ public class MoveMember implements Refactoring {
 		return true;
 
 	}
-	
+
 	@Override
 	public TRefactoringID getRefactoringID() {
 		return TRefactoringID.MOVE_MEMBER;

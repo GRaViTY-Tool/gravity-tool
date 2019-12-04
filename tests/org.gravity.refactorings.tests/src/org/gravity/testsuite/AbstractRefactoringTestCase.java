@@ -36,7 +36,7 @@ public abstract class AbstractRefactoringTestCase {
 		if (!projectLocation.exists()) {
 			fail("Project \"" + projectName + "\" doesn't exist at \"" + src.toString() + "\"!");
 		}
-		LOGGER.info("Importing project: " + projectName);
+		LOGGER.info("Import project: " + projectName);
 		final NullProgressMonitor monitor = new NullProgressMonitor();
 		final IProject project = EclipseProjectUtil.importProject(projectLocation, monitor);
 		if (project == null || !project.exists()) {

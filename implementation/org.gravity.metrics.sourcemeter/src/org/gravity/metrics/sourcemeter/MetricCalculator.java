@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.swing.JOptionPane;
@@ -109,15 +110,13 @@ public class MetricCalculator {
 					LOGGER.log(Level.INFO, "> " + line); //$NON-NLS-1$
 				}
 			}
-			try {
-				process.waitFor();
-			} catch (final InterruptedException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
-				Thread.currentThread().interrupt();
-			}
+			process.waitFor();
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return SourceMeterStatus.ERROR;
+		} catch (final InterruptedException e) {
+			LOGGER.log(Level.ERROR, e.getMessage(), e);
+			Thread.currentThread().interrupt();
 		}
 		return SourceMeterStatus.OK;
 	}
@@ -129,8 +128,8 @@ public class MetricCalculator {
 	 * @return A mapping between the class names and the according values of the
 	 *         requested metric
 	 */
-	public HashMap<String, String> getMetrics(int index) {
-		final HashMap<String, String> table = new HashMap<>();
+	public Map<String, String> getMetrics(int index) {
+		final Map<String, String> table = new HashMap<>();
 		for (final Entry<String, String[]> entry : this.results.entrySet()) {
 			table.put(entry.getKey(), entry.getValue()[index]);
 		}
@@ -144,7 +143,7 @@ public class MetricCalculator {
 	 * @return A mapping between the class names and the according values of the
 	 *         requested metric
 	 */
-	public HashMap<String, String> getMetrics(SourcemeterMetricKeys key) {
+	public Map<String, String> getMetrics(SourcemeterMetricKeys key) {
 		return getMetrics(key.getRow());
 	}
 
@@ -171,7 +170,7 @@ public class MetricCalculator {
 					j += 2;
 				}
 			} else {
-				builder = builder.append( split[i]);
+				builder = builder.append(split[i]);
 			}
 			if (i < split.length - 1) {
 				builder = builder.append('.');

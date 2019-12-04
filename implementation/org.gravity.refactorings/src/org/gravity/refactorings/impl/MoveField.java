@@ -24,11 +24,11 @@ import org.gravity.typegraph.basic.TMember;
  * @generated
  */
 public class MoveField extends MoveMember {
-	
+
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveFieldConfiguration esc = (MoveFieldConfiguration) configuration;
+			final MoveFieldConfiguration esc = (MoveFieldConfiguration) configuration;
 			return isApplicable(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
 		}
 		return false;
@@ -37,15 +37,15 @@ public class MoveField extends MoveMember {
 	@Override
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveFieldConfiguration esc = (MoveFieldConfiguration) configuration;
+			final MoveFieldConfiguration esc = (MoveFieldConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getSourceClass(), esc.getTargetClass());
 		}
 		return Collections.emptyList();
 	}
-	
+
 	public boolean isApplicable(TFieldSignature method, TClass tSourceClass, TClass tTargetClass) {
 
-		TFieldDefinition definition = getTFieldDefinition(tSourceClass, method);
+		final TFieldDefinition definition = getTFieldDefinition(tSourceClass, method);
 		if (definition != null) {
 			if (tTargetClass.getSignature().contains(method)) {
 				return false;
@@ -58,33 +58,33 @@ public class MoveField extends MoveMember {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public List<TClass> perform(TFieldSignature method, TClass tTargetClass, TClass tSourceClass) {//
+	public Collection<TClass> perform(TFieldSignature method, TClass tTargetClass, TClass tSourceClass) {//
 		if (tSourceClass.equals(tTargetClass)) {
-			return null;
+			return Collections.emptyList();
 		}
-		TFieldDefinition definition = getTFieldDefinition(tSourceClass, method);
+		final TFieldDefinition definition = getTFieldDefinition(tSourceClass, method);
 		if (definition != null) {
-			List<TClass> container = new LinkedList<TClass>();
+			final List<TClass> container = new LinkedList<>();
 			container.add(tTargetClass);
 			container.add(tSourceClass);
-			
+
 			tSourceClass.getSignature().remove(method);
 			tTargetClass.getSignature().add(method);
 			definition.setDefinedBy(tTargetClass);
 
 			return container;
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	public static final TFieldDefinition getTFieldDefinition(TClass tSourceClass, TFieldSignature method) {
 		if (tSourceClass.getSignature().contains(method)) {
-			for (TMember tmpDefinition : tSourceClass.getDefines()) {
+			for (final TMember tmpDefinition : tSourceClass.getDefines()) {
 				if (tmpDefinition instanceof TFieldDefinition) {
-					TFieldDefinition definition = (TFieldDefinition) tmpDefinition;
+					final TFieldDefinition definition = (TFieldDefinition) tmpDefinition;
 					if (method.getDefinitions().contains(definition)) {
 						return definition;
 					}

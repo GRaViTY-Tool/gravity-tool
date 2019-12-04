@@ -6,20 +6,20 @@ import org.gravity.typegraph.basic.TSignature;
 
 public abstract class PullUpMemberConfiguration implements RefactoringConfiguration {
 
-	final private TSignature signature;
-	final private TClass sourceClass;
+	private final TSignature signature;
+	private final TClass sourceClass;
 
 	public PullUpMemberConfiguration(TSignature signature, TClass sourceClass) {
 		this.signature = signature;
 		this.sourceClass = sourceClass;
 	}
-	
+
 	public TSignature getSignature() {
-		return signature;
+		return this.signature;
 	}
-	
+
 	public TClass getTargetClass() {
-		return sourceClass;
+		return this.sourceClass;
 	}
 
 }

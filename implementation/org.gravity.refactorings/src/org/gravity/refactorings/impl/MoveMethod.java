@@ -2,6 +2,11 @@
  */
 package org.gravity.refactorings.impl;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
@@ -13,11 +18,6 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Move
@@ -31,46 +31,44 @@ public class MoveMethod extends MoveMember {
 
 	@Override
 	public boolean isApplicable(RefactoringConfiguration configuration) {
-		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
+		if (getRefactoringID() != configuration.getRefactoringID()) {
+			return false;
+		}
+		final MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
 
-			TMethodSignature methodSig = mm.getSignature();
-			TClass sourceClass = mm.getSourceClass();
-			TClass targetClass = mm.getTargetClass();
-			
-			if (!getterSetterPrecondition(methodSig)) {
-				return false;
-			}
+		final TMethodSignature methodSig = mm.getSignature();
+		final TClass sourceClass = mm.getSourceClass();
+		final TClass targetClass = mm.getTargetClass();
 
-			if (methodSig.getReturnType() == targetClass) {
+		if (!getterSetterPrecondition(methodSig)) {
+			return false;
+		}
+
+		if (methodSig.getReturnType() == targetClass) {
+			return true;
+		}
+
+		for (final TParameter param : methodSig.getParameters()) {
+			if (param.getType() == targetClass) {
 				return true;
 			}
-
-			for (TParameter param : methodSig.getParameters()) {
-				if (param.getType() == targetClass) {
-					return true;
-				}
-			}
-
-			if (!interfacePrecondition(methodSig, sourceClass)) {
-				return false;
-			}
-			if (!overridePrecondition(methodSig, sourceClass)) {
-				return false;
-			}
-			if (targetClass.getSignature().contains(methodSig)) {
-				return false;
-			}
 		}
-		return false;
+
+		if (!interfacePrecondition(methodSig, sourceClass)) {
+			return false;
+		}
+		if (!overridePrecondition(methodSig, sourceClass)) {
+			return false;
+		}
+		return !targetClass.getSignature().contains(methodSig);
 	}
 
 	@Override
 	public Collection<TClass> perform(RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
-			MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
-			EList<TMember> definitions = mm.getSignature().getDefinitions();
-			for (TMember tMember : mm.getSourceClass().getDefines()) {
+			final MoveMethodConfiguration mm = (MoveMethodConfiguration) configuration;
+			final EList<TMember> definitions = mm.getSignature().getDefinitions();
+			for (final TMember tMember : mm.getSourceClass().getDefines()) {
 				if (definitions.contains(tMember)) {
 					tMember.setDefinedBy(mm.getTargetClass());
 					mm.getSourceClass().getSignature().remove(mm.getSignature());
@@ -82,29 +80,21 @@ public class MoveMethod extends MoveMember {
 	}
 
 	public static boolean getterSetterPrecondition(TMethodSignature methodSig) {
-		if (methodSig.getSignatureString().toLowerCase().startsWith("set")) {
-			return false;
-		}
-		if (methodSig.getSignatureString().toLowerCase().startsWith("get")) {
-			return false;
-		}
-		return true;
+		final String signature = methodSig.getMethod().getTName().toLowerCase();
+		return !signature.startsWith("set") && !signature.startsWith("get");
 	}
 
 	public static boolean interfacePrecondition(TMethodSignature methodSig, TClass sourceClass) {
-		List<TInterface> interfaces = new ArrayList<TInterface>();
+		final List<TInterface> interfaces = new ArrayList<>();
 		TClass parent = sourceClass;
 		while (parent != null) {
 			interfaces.addAll(parent.getImplements());
 			parent = parent.getParentClass();
 		}
 
-		for (TInterface tInterface : interfaces) {
-			for (TSignature interfaceSig : tInterface.getSignature()) {
+		for (final TInterface tInterface : interfaces) {
+			for (final TSignature interfaceSig : tInterface.getSignature()) {
 				if (interfaceSig == methodSig) {
-					// LOGGER.log(Level.WARNING, "Can't move
-					// "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+",
-					// REASON interface");
 					return false;
 				}
 			}
@@ -114,13 +104,10 @@ public class MoveMethod extends MoveMember {
 	}
 
 	public static boolean overridePrecondition(TMethodSignature methodSig, TClass sourceClass) {
-		for (TMember member : sourceClass.getDefines()) {
+		for (final TMember member : sourceClass.getDefines()) {
 			if (member.getSignature() == methodSig) {
-				for (TAnnotation annotation : member.getTAnnotation()) {
+				for (final TAnnotation annotation : member.getTAnnotation()) {
 					if (annotation.getType() != null && annotation.getType().getTName().equalsIgnoreCase("override")) {
-						// LOGGER.log(Level.WARNING, "Can't move
-						// "+sourceClass.getFullyQualifiedName()+"."+methodSig.getSignatureString()+",
-						// REASON override");
 						return false;
 					}
 				}

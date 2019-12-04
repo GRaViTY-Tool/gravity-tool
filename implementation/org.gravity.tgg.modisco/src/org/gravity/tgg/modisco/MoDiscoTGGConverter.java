@@ -100,7 +100,8 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		this.libs = libs;
 
 		long start = 0;
-		if (LOGGER.isInfoEnabled()) {
+		boolean infoEnabled = LOGGER.isInfoEnabled();
+		if (infoEnabled) {
 			start = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
 		}
@@ -115,7 +116,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 		final boolean success = convertModel(javaProject, this.preprocessedModiscoModel, progressMonitor);
 
-		if (LOGGER.isInfoEnabled()) {
+		if (infoEnabled) {
 			LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
@@ -183,7 +184,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			start = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName());
+			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName()); // NOPMD by speldszus on 12/4/19, 9:09 PM
 		}
 
 		if (this.preprocessedModiscoModel == null) {
@@ -204,7 +205,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			return false;
 		}
 		if (infoEnabled) {
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done");
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done"); // NOPMD by speldszus on 12/4/19, 9:09 PM
 		}
 
 		final GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
@@ -235,7 +236,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD"); // NOPMD by speldszus on 12/4/19, 9:08 PM
 		}
 		try {
 			this.sync.forward();

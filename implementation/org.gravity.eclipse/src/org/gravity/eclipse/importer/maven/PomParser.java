@@ -15,6 +15,7 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.w3c.dom.Document;
@@ -152,7 +153,7 @@ public class PomParser {
 			libFile = createNextFileSegment(libFile, segments[1]);
 			if (segments.length > 2) {
 				version = segments[2];
-				if (segments.length > 3) {
+				if (segments.length > 3 && LOGGER.isEnabledFor(Level.WARN)) {
 					LOGGER.warn("Unhandeled segments: " + lib);
 				}
 			}

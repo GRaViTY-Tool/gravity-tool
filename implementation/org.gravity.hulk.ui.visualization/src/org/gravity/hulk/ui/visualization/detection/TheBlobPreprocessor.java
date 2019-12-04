@@ -32,7 +32,7 @@ import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
-public class TheBlobPreprocessor extends DetectionPreprocessor {
+public class TheBlobPreprocessor implements DetectionPreprocessor {
 
 	private static final Logger LOGGER = Logger.getLogger(TheBlobPreprocessor.class.getName());
 

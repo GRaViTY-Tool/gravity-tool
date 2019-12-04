@@ -30,9 +30,8 @@ public class DetectionLinkListener implements Listener {
 
 	@Override
 	public void handleEvent(Event event) {
-		final String tempString[] = event.text.split(":");
-		tempString[0] = tempString[0].replace(".", "/");
-		final String iClassString = tempString[0] + "/" + tempString[1] + ".java";
+		final String[] tempString = event.text.split(":");
+		final String iClassString = tempString[0].replace(".", "/") + '/' + tempString[1] + ".java";
 
 		IJavaProject project = null;
 		final IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();

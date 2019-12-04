@@ -1,6 +1,7 @@
 package org.gravity.tgg.uml;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -287,7 +288,7 @@ public class UmlSecProcessor {
 		}
 		for (final Comment tag : comment.getOwnedComments()) {
 			final String tagName = tag.getBody();
-			final String[] signatures = tag.getOwnedComments().parallelStream().map(c -> c.getBody()).toArray(String[]::new);
+			final String[] signatures = tag.getOwnedComments().parallelStream().map(Comment::getBody).toArray(String[]::new);
 			addValuesToCritical(crit, tagName, signatures);
 		}
 		return true;
@@ -313,9 +314,7 @@ public class UmlSecProcessor {
 		@SuppressWarnings("unchecked")
 		final
 		Collection<Object> values = (Collection<Object>) crit.eGet(feature);
-		for (final Object value : signatures) {
-			values.add(value);
-		}
+		Collections.addAll(values, signatures);
 		return true;
 	}
 

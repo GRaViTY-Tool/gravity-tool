@@ -16,7 +16,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.util.JavaASTUtil;
-import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
@@ -53,7 +52,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 		try {
 			converter = GravityActivator.getDefault().getConverter(this.icu.getJavaProject().getProject());
 		} catch (final NoConverterRegisteredException e) {
-			return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
+			return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
 		}
 		if (!converter.convertProject(this.icu.getJavaProject(), monitor)) {
 			asyncPrintError(this.shell, Messages.refactoringError, Messages.createPMFailed);
@@ -75,14 +74,8 @@ public final class PullUpMethodJob extends WorkspaceJob {
 					final int status = dialog.open();
 
 					if (status == 0) {
-						converter.syncProjectBwd(SynchronizationHelper -> {
-							try {
-								refactoring.perform(tSignature, tParent);
-							} catch (final RefactoringFailedException e) {
-								asyncPrintError(PullUpMethodJob.this.shell, Messages.refactoringNotPossible,
-										Messages.pullUpMethodFailed);
-							}
-						}, monitor);
+						converter.syncProjectBwd(synchronizationHelper -> refactoring.perform(tSignature, tParent),
+								monitor);
 					}
 				});
 			} else {
