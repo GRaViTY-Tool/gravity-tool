@@ -55,6 +55,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.WhileStatement;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MDefinition;
@@ -63,6 +64,7 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.MSingleVariableDeclaration;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.ModiscoFactory;
 
 /**
@@ -166,7 +168,7 @@ public final class MoDiscoUtil {
 				final TypeAccess returnTypeDecl = otherDecl.getReturnType();
 				if (returnTypeDecl == null) {
 					if (LOGGER.isEnabledFor(Level.WARN)) {
-						LOGGER.warn("Skipped return type of: " + otherDecl);
+						LOGGER.warn(NLS.bind(Messages.skippedReturnType, otherDecl));
 					}
 				} else if (MoDiscoUtil.isSuperType(returnType, returnTypeDecl.getType())) {
 					returnType = returnTypeDecl.getType();
@@ -220,7 +222,7 @@ public final class MoDiscoUtil {
 			if (typeOfInterface != null) {
 				types.add(typeOfInterface);
 			} else if (LOGGER.isEnabledFor(Level.WARN)) {
-				LOGGER.warn("Skipped type of: " + superInterfaceReference);
+				LOGGER.warn(NLS.bind(Messages.skippedType, superInterfaceReference));
 			}
 		}
 		return types;
@@ -291,30 +293,16 @@ public final class MoDiscoUtil {
 					type = tmpType;
 				}
 			} catch (final IllegalStateException e) {
-				final MDefinition source = getContainingMethod(invocation);
-				final StringBuilder message = new StringBuilder(150)
-						.append("The guess of the return type of the invocartion of \"")
-						.append(method.getAbstractTypeDeclaration().getName()).append('.').append(method.getName());
-				if (source != null) {
-					message.append("\" in \"");
-					final AbstractTypeDeclaration abstractTypeDeclaration = source.getAbstractTypeDeclaration();
-					if (abstractTypeDeclaration != null) {
-						message.append(abstractTypeDeclaration.getName());
-					}
-					message.append('.').append(source.getName());
-				}
-				message.append("\" might be optimized.");
-				LOGGER.info(message.toString());
+				logInfoOptimizeGuess(invocation, method);
 			}
 		}
 		if (type == null) {
 			if (LOGGER.isEnabledFor(Level.WARN)) {
-				LOGGER.warn(
-						"Return type for method \"" + method.getName() + "\" not given assuming \"java.lang.Object\"");
+				LOGGER.warn(NLS.bind(Messages.returnTypeNotSetAssumeObject, method.getName()));
 			}
 			type = getJavaLangObject(model);
 			if (type == null) {
-				LOGGER.error("The return type of the method \"" + method.getName() + "\" is null!");
+				LOGGER.error(NLS.bind(Messages.returnTypeIsNull, method.getName()));
 				return null;
 			}
 		}
@@ -322,6 +310,26 @@ public final class MoDiscoUtil {
 		method.setReturnType(returnType);
 		returnType.setType(type);
 		return type;
+	}
+
+	/**
+	 * Logs a possible optimization of a return type guess if logging is enabled
+	 *
+	 * @param invocation An invocation
+	 * @param target     The target of the invocation
+	 */
+	private static void logInfoOptimizeGuess(final AbstractMethodInvocation invocation, MMethodDefinition target) {
+		if (LOGGER.isInfoEnabled()) {
+			final MDefinition source = getContainingMethod(invocation);
+			final String targetName = NameUtil.getFullyQualifiedName(target);
+			if (source != null) {
+				final String sourceName = NameUtil.getFullyQualifiedName(source);
+				LOGGER.info(NLS.bind(Messages.warnGuessMightBeOptimizedDetailed,
+						new String[] { targetName, sourceName }));
+			} else {
+				LOGGER.info(NLS.bind(Messages.warnGuessMightBeOptimized, targetName));
+			}
+		}
 	}
 
 	/**
@@ -354,7 +362,7 @@ public final class MoDiscoUtil {
 			return getReturnType(invocation, (AbstractMethodInvocation) eContainer);
 		}
 
-		throw new IllegalStateException("Unknown type: " + eContainer.eClass().getName());
+		throw new IllegalStateException(NLS.bind(Messages.unknownType, eContainer.eClass().getName()));
 	}
 
 	/**
@@ -381,7 +389,8 @@ public final class MoDiscoUtil {
 			} else if (definition instanceof AbstractVariablesContainer) {
 				return ((AbstractVariablesContainer) definition).getType().getType();
 			} else {
-				throw new IllegalStateException("Unknown MAbstractMethodDefinition: " + statement.eClass().getName());
+				throw new IllegalStateException(
+						NLS.bind(Messages.unknownMethodDef, statement.eClass().getName()));
 			}
 		} else if (statement instanceof IfStatement || statement instanceof WhileStatement) {
 			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeBoolean).findAny()
@@ -390,7 +399,8 @@ public final class MoDiscoUtil {
 			// The return type is thrown
 			return getThrowableClassOrObject(pg);
 		}
-		throw new IllegalStateException("Unhandeled epression: " + statement.eClass().getName());
+		throw new IllegalStateException(
+				NLS.bind(Messages.unhandeledExpression, statement.eClass().getName()));
 	}
 
 	/**
@@ -413,7 +423,8 @@ public final class MoDiscoUtil {
 			if (initializedObject instanceof VariableDeclarationFragment) {
 				return ((VariableDeclarationFragment) initializedObject).getVariablesContainer().getType().getType();
 			} else {
-				throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
+				throw new IllegalStateException(
+						NLS.bind(Messages.unknownType, expression.eClass().getName()));
 			}
 		} else if (expression instanceof ArrayLengthAccess) {
 			return pg.getOrphanTypes().parallelStream().filter(t -> t instanceof PrimitiveTypeInt).findAny()
@@ -434,7 +445,8 @@ public final class MoDiscoUtil {
 			}
 			return getJavaLangObject(pg);
 		}
-		throw new IllegalStateException("Unhandeled epression: " + expression.eClass().getName());
+		throw new IllegalStateException(
+				NLS.bind(Messages.unhandeledExpression, expression.eClass().getName()));
 	}
 
 	/**
@@ -444,9 +456,9 @@ public final class MoDiscoUtil {
 	 * @return The type
 	 */
 	private static Type getThrowableClassOrObject(MGravityModel pg) {
-		Type type = getType(pg, "java.lang.Throwable");
+		Type type = getType(pg, "java.lang.Throwable"); //$NON-NLS-1$
 		if (type == null) {
-			type = getType(pg, "java.lang.Exception");
+			type = getType(pg, "java.lang.Exception"); //$NON-NLS-1$
 		}
 		if (type == null) {
 			type = getJavaLangObject(pg);
@@ -472,10 +484,12 @@ public final class MoDiscoUtil {
 				if (expression.equals(invocation)) {
 					return container.getMethod().getAbstractTypeDeclaration();
 				} else {
-					throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+					throw new IllegalStateException(
+							NLS.bind(Messages.unknownType, invocation.eClass().getName()));
 				}
 			} else {
-				throw new IllegalStateException("Unknown type: " + invocation.eClass().getName());
+				throw new IllegalStateException(
+						NLS.bind(Messages.unknownType, invocation.eClass().getName()));
 			}
 		}
 	}
@@ -495,7 +509,7 @@ public final class MoDiscoUtil {
 		} else if (expression instanceof AbstractMethodInvocation) {
 			return getJavaLangObject(pg);
 		} else {
-			throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
+			throw new IllegalStateException(NLS.bind(Messages.unknownType, expression.eClass().getName()));
 		}
 	}
 
@@ -530,7 +544,7 @@ public final class MoDiscoUtil {
 				return typeAccess.getType();
 			}
 		} else {
-			throw new IllegalStateException("Unknown type: " + variable.eClass().getName());
+			throw new IllegalStateException(NLS.bind(Messages.unknownType, variable.eClass().getName()));
 		}
 	}
 
@@ -550,7 +564,7 @@ public final class MoDiscoUtil {
 		} else if (expression instanceof ArrayAccess) {
 			return getArrayType(pg, (ArrayAccess) expression);
 		} else {
-			throw new IllegalStateException("Unknown type: " + expression.eClass().getName());
+			throw new IllegalStateException(NLS.bind(Messages.unknownType, expression.eClass().getName()));
 		}
 	}
 
@@ -613,20 +627,20 @@ public final class MoDiscoUtil {
 	 * @return The Type representing "java.lang.String"
 	 */
 	public static Type getOrCreateJavaLangString(Model model) {
-		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String");
+		AbstractTypeDeclaration string = MoDiscoUtil.getType(model, "java.lang.String"); //$NON-NLS-1$
 		if (string == null) {
 			string = JavaFactory.eINSTANCE.createClassDeclaration();
-			string.setName("String");
-			Package lang = MoDiscoUtil.getPackage(model, new String[] { "java", "lang" });
+			string.setName("String"); //$NON-NLS-1$
+			Package lang = MoDiscoUtil.getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 			if (lang == null) {
-				Package java = MoDiscoUtil.getPackage(model, new String[] { "java" });
+				Package java = MoDiscoUtil.getPackage(model, new String[] { "java" }); //$NON-NLS-1$
 				if (java == null) {
 					java = JavaFactory.eINSTANCE.createPackage();
-					java.setName("java");
+					java.setName("java"); //$NON-NLS-1$
 					model.getOwnedElements().add(java);
 				}
 				lang = JavaFactory.eINSTANCE.createPackage();
-				lang.setName("lang");
+				lang.setName("lang"); //$NON-NLS-1$
 				java.getOwnedPackages().add(java);
 			}
 			lang.getOwnedElements().add(string);
@@ -643,7 +657,7 @@ public final class MoDiscoUtil {
 	 */
 	public static AbstractTypeDeclaration getType(Model model, String fullyQualifiedName) {
 		final int index = fullyQualifiedName.lastIndexOf('.');
-		String defaultPackage = "default";
+		String defaultPackage = "default"; //$NON-NLS-1$
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
@@ -667,7 +681,7 @@ public final class MoDiscoUtil {
 	 * @return The last package of the namespace or null
 	 */
 	public static Package getPackage(Model model, String namespace) {
-		return getPackage(model, namespace.split("\\."));
+		return getPackage(model, namespace.split("\\.")); //$NON-NLS-1$
 	}
 
 	/**
@@ -706,26 +720,26 @@ public final class MoDiscoUtil {
 	 * @return The type
 	 */
 	public static Type getJavaLangObject(MGravityModel model) {
-		Package javaLangPackage = getPackage(model, new String[] { "java", "lang" });
+		Package javaLangPackage = getPackage(model, new String[] { "java", "lang" }); //$NON-NLS-1$ //$NON-NLS-2$
 		if (javaLangPackage != null) {
 			final Optional<AbstractTypeDeclaration> result = javaLangPackage.getOwnedElements().parallelStream()
-					.filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny();
+					.filter(Objects::nonNull).filter(c -> c.getName().equals("Object")).findAny(); //$NON-NLS-1$
 			if (result.isPresent()) {
 				return result.get();
 			}
 		} else {
-			Package javaPackage = getPackage(model, "java");
+			Package javaPackage = getPackage(model, "java"); //$NON-NLS-1$
 			if (javaPackage == null) {
 				javaPackage = JavaFactory.eINSTANCE.createPackage();
-				javaPackage.setName("java");
+				javaPackage.setName("java"); //$NON-NLS-1$
 				model.getOwnedElements().add(javaPackage);
 			}
 			javaLangPackage = JavaFactory.eINSTANCE.createPackage();
-			javaLangPackage.setName("lang");
+			javaLangPackage.setName("lang"); //$NON-NLS-1$
 			javaPackage.getOwnedPackages().add(javaLangPackage);
 		}
 		final AbstractTypeDeclaration object = ModiscoFactory.eINSTANCE.createMClass();
-		object.setName("Object");
+		object.setName("Object"); //$NON-NLS-1$
 		object.setProxy(true);
 		javaLangPackage.getOwnedElements().add(object);
 		return object;

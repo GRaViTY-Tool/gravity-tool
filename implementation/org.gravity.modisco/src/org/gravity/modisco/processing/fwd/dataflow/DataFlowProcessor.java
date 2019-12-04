@@ -32,6 +32,7 @@ import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
 import org.eclipse.gmt.modisco.java.WhileStatement;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -45,9 +46,9 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MSingleVariableAccess;
 import org.gravity.modisco.MSingleVariableDeclaration;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
-import org.gravity.modisco.processing.ProcessingMessages;
 
 /**
  * A preprocessor for calculating data flow edges<br/>
@@ -70,13 +71,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	@Override
 	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
 		this.model = model;
-		final SubMonitor sub = SubMonitor.convert(monitor, ProcessingMessages.createElementForFlow, elements.size());
+		final SubMonitor sub = SubMonitor.convert(monitor, Messages.infoCreateElementForFlow, elements.size());
 
-		sub.beginTask(ProcessingMessages.statementPreprocessing, 50);
+		sub.beginTask(Messages.infoStatementPreprocessing, 50);
 		final List<MemberHandler> handlers = preProcessStatements();
 
 		sub.internalWorked(50);
-		sub.beginTask(ProcessingMessages.insertFlowEdges, 5);
+		sub.beginTask(Messages.infoInsertFlowEdges, 5);
 
 		// Per handler: Reduction of intra-DFGs and then insertion of inter-procedural
 		// data flows
@@ -90,7 +91,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				setFlows(node, handler);
 			}
 		});
-		if (GravityActivator.isVerbose()) {
+		if (GravityActivator.getDefault().isVerbose()) {
 			GraphVisualizer.drawGraphs(model, handlers, "reducedGraphs"); //$NON-NLS-1$
 		}
 		sub.internalWorked(5);
@@ -137,7 +138,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 							final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 							accessIn.setFlowSource(fieldDef.getMSignature());
 						} else {
-							LOGGER.error(ProcessingMessages.varHasntBeenReduced + variablesContainer);
+							LOGGER.error(NLS.bind(Messages.varHasntBeenReduced, variablesContainer));
 						}
 					} else {
 						accessIn.setFlowSource((MAbstractFlowElement) inElement);
@@ -166,7 +167,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					final MFieldDefinition fieldDef = (MFieldDefinition) variablesContainer;
 					accessOut.setFlowTarget(fieldDef);
 				} else {
-					LOGGER.error(ProcessingMessages.varHasntBeenReduced + variablesContainer);
+					LOGGER.error(Messages.varHasntBeenReduced + variablesContainer);
 				}
 			} else if (outElement instanceof MSingleVariableDeclaration) {
 				// Set target
@@ -178,7 +179,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				final MAbstractMethodInvocation invocation = node.getFlowOwner();
 				if (invocation == null) {
 					if (LOGGER.isInfoEnabled()) {
-						LOGGER.log(Level.INFO, ProcessingMessages.setDefaultFlowTarget);
+						LOGGER.log(Level.INFO, Messages.infoSetDefaultFlowTarget);
 					}
 					accessOut.setFlowOwner((MAbstractMethodDefinition) paramTarget.getMethodDeclaration());
 				} else {
@@ -302,7 +303,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				// Keep variable access node only if its a field access
 				final VariableDeclaration variable = ((SingleVariableAccess) node).getVariable();
 				if (variable == null) {
-					LOGGER.error(ProcessingMessages.variableIsNull);
+					LOGGER.error(Messages.variableIsNull);
 				} else if (variable.eContainer() instanceof VariableDeclarationStatement) {
 					reduceNodeInDFG(flowNode, handler);
 				}
@@ -370,7 +371,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 
 		final List<MemberHandler> handlers = Stream.concat(fieldProcessors, methodProcessors)
 				.collect(Collectors.toList());
-		if (GravityActivator.isVerbose()) {
+		if (GravityActivator.getDefault().isVerbose()) {
 			GraphVisualizer.drawGraphs(this.model, handlers, "graphs"); //$NON-NLS-1$
 		}
 		return handlers;

@@ -7,7 +7,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.typegraph.basic.TypeGraph;
 
@@ -19,11 +18,11 @@ public interface IPGConverter {
 
 	/**
 	 * Discards the converter
-	 * 
+	 *
 	 * @return true, if the converter has been discarded successfully
 	 */
 	public boolean discard();
-	
+
 	/**
 	 * Converts the given java project into an PG. The PG has to be stored local and
 	 * is accessible through the method <code>getPG():TypeGraph</code>
@@ -93,13 +92,6 @@ public interface IPGConverter {
 	 * @return the PG
 	 */
 	TypeGraph getPG();
-
-	/**
-	 * Returns the resource set used for conversion.
-	 *
-	 * @return the resource set
-	 */
-	ResourceSet getResourceSet();
 
 	/**
 	 * Checks if is debug is enabled.

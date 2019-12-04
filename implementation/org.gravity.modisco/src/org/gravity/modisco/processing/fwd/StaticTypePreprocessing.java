@@ -44,14 +44,17 @@ import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
 import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodInvocation;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
+import org.gravity.modisco.util.NameUtil;
 
 /**
  *
@@ -74,7 +77,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			return true;
 		}
 		failed.forEach(definition -> LOGGER
-				.error("Adding static type accesses failed for definition: " + definition.getName()));
+				.error(NLS.bind(Messages.errorStaticTypeFailed, definition.getName())));
 		return false;
 	}
 
@@ -125,8 +128,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
 				if (LOGGER.isEnabledFor(Level.WARN)) {
-					LOGGER.warn("Cannot find static type of invocation of \"" + methodInvoc.getMethod() + "\" in "
-							+ method.getAbstractTypeDeclaration() + "." + method.getName());
+					LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {NameUtil.getFullyQualifiedName(methodInvoc.getMethod()), NameUtil.getFullyQualifiedName(method)}));
 				}
 				// If we cannot find the static type assume the declaring type
 				type = getDeclaringType(methodInvoc.getMethod());
@@ -146,10 +148,10 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
 			LOGGER.log(Level.ERROR,
-					"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+					Messages.unsupportedSuperConstructorInvocation);
 			throw new ProcessingException(methodInvoc);
 		} else {
-			LOGGER.error("Unknown invocation type : " + methodInvoc.getClass().getName());
+			LOGGER.error(NLS.bind(Messages.unknownInvocationType, methodInvoc.getClass().getName()));
 			throw new ProcessingException(methodInvoc);
 		}
 		return type;
@@ -178,7 +180,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			if (container instanceof MethodInvocation) {
 				return ((MethodInvocation) container).getMethod().getAbstractTypeDeclaration();
 			} else {
-				throw new ProcessingException("Preprocessing of unknown construct.");
+				throw new ProcessingException(Messages.preprocessingOfUnknown);
 			}
 		} else if (var instanceof SingleVariableDeclaration) {
 			return ((SingleVariableDeclaration) var).getType().getType();
@@ -191,7 +193,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else if (var instanceof EnumConstantDeclaration) {
 			return getStaticType(expression.getQualifier(), method);
 		} else if (LOGGER.isEnabledFor(Level.WARN)) {
-			LOGGER.warn("Unknown variable declaration: " + var.getClass().getName());
+			LOGGER.warn(NLS.bind(Messages.unknownVarDecl, var.getClass().getName()));
 		}
 		return getStaticTypeFromInitializer(var.getInitializer());
 	}
@@ -295,8 +297,8 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 			}
 		}
-		LOGGER.error("Calculating static types from \"" + expression.getClass().getSimpleName()
-				+ "\" expressions is not supported");
+		LOGGER.error(NLS.bind(Messages.unsupportedStaticTypeFromExpressionKind,
+				expression.getClass().getSimpleName()));
 		return null;
 	}
 
@@ -324,7 +326,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			}
 		}
 		if (LOGGER.isEnabledFor(Level.WARN)) {
-			LOGGER.warn("Couldn't resolve the static type of an access to an unresolved item: " + expression);
+			LOGGER.warn(NLS.bind(Messages.errorResolveStaticTypeOfAccessedUnresolved, expression));
 		}
 		return null;
 	}
@@ -383,7 +385,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return (Type) ((MDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
 						.eContainer();
 			}
-			throw new ProcessingException("Not suported expression: " + expression.eClass().getName());
+			throw new ProcessingException(NLS.bind(Messages.unsupportedExpression, expression.eClass().getName()) );
 		}
 		return qualifier.getType();
 	}
@@ -403,7 +405,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			} else if (container instanceof AbstractTypeDeclaration) {
 				type = (AbstractTypeDeclaration) container;
 			} else {
-				LOGGER.error("Unknown deklaring type of: " + body);
+				LOGGER.error(NLS.bind(Messages.unknownDeclaringType, body));
 			}
 		}
 		return type;
@@ -421,7 +423,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			final ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
 			final TypeAccess typeAccess = classInstanceCreation.getType();
 			if (typeAccess == null) {
-				LOGGER.error("Class instance has not type: " + classInstanceCreation);
+				LOGGER.error(NLS.bind(Messages.errorClassInstanceCreationNoType, classInstanceCreation));
 				return null;
 			}
 			return typeAccess.getType();
@@ -429,7 +431,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			final EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
 			return enumConst.getAbstractTypeDeclaration();
 		}
-		LOGGER.error("Unknown container of anon class: " + container.eClass().getName());
+		LOGGER.error(NLS.bind(Messages.unknownContainerAnon, container.eClass().getName()));
 		return null;
 	}
 }

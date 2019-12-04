@@ -63,7 +63,7 @@ public class GravityActivator extends Plugin {
 	 */
 
 	/** The converters for java projects (project name as key). */
-	private final HashMap<String, IPGConverter> converters;
+	private final Map<String, IPGConverter> converters;
 
 	/** The selected converter factory. */
 	private IPGConverterFactory selectedConverterFactory;
@@ -134,8 +134,8 @@ public class GravityActivator extends Plugin {
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		plugin = null;
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this.listener);
+		plugin = null;
 		super.stop(context);
 	}
 
@@ -193,8 +193,8 @@ public class GravityActivator extends Plugin {
 	 *
 	 * @return true, if is verbose is enabled
 	 */
-	public static boolean isVerbose() {
-		return getDefault().verbose;
+	public boolean isVerbose() {
+		return this.verbose;
 	}
 
 	/**

@@ -12,7 +12,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -20,7 +20,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
@@ -112,14 +111,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		} catch (final DiscoveryException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
-		}
-		try {
-			saveModel(
-					this.preprocessedModiscoModel, EclipseProjectUtil
-					.getGravityFolder(javaProject.getProject(), monitor).getFile("modisco_preprocessed.xmi"),
-					progressMonitor);
-		} catch (final IOException e) {
-			LOGGER.error("Couldn't save intermediate model!", e);
 		}
 
 		final boolean success = convertModel(javaProject, this.preprocessedModiscoModel, progressMonitor);
@@ -243,7 +234,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			return false;
 		}
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
-		if(infoEnabled) {
+		if (infoEnabled) {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD");
 		}
 		try {
@@ -252,12 +243,12 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
-		if(infoEnabled) {
+		if (infoEnabled) {
 			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD - Done");
 		}
 
 		if (this.debug) {
-			save(Direction.FWD, monitor);
+			save(monitor);
 		}
 		final Resource trg = this.sync.getTargetResource();
 		return trg != null && !trg.getContents().isEmpty();
@@ -288,7 +279,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 
 		if (this.debug) {
-			save(Direction.BWD, progressMonitor);
+			save(progressMonitor);
 
 		}
 
@@ -302,7 +293,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			final IFolder srcFile = this.iJavaProject.getProject().getFolder("src");
 			new GenerateJavaExtended(src, srcFile.getLocation().toFile(), Collections.emptyList())
 			.doGenerate(new BasicMonitor.EclipseSubProgress(progressMonitor, 1));
-			this.iJavaProject.getProject().refreshLocal(IProject.DEPTH_INFINITE, progressMonitor);
+			this.iJavaProject.getProject().refreshLocal(IResource.DEPTH_INFINITE, progressMonitor);
 		} catch (IOException | CoreException e) {
 			return false;
 		}
@@ -318,7 +309,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	 * @param progressMonitor a progress monitor return false if the models couldn't
 	 *                        be saved, true otherwise
 	 */
-	private boolean save(Direction direction, IProgressMonitor progressMonitor) {
+	boolean save(IProgressMonitor progressMonitor) {
 		IFolder folder;
 		try {
 			folder = EclipseProjectUtil.getGravityFolder(this.iJavaProject.getProject(), progressMonitor);
@@ -326,19 +317,18 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.error(e);
 			return false;
 		}
-		final String name = direction.getName();
-		if (!savePG(folder.getFile("sync_" + name + "_pg.xmi"), progressMonitor)) { //$NON-NLS-1$
+		if (!savePG(folder.getFile("sync_pm.xmi"), progressMonitor)) { //$NON-NLS-1$
 			return false;
 		}
-		if (!saveModel(this.sync.getSourceResource(), folder.getFile("sync_" + name + "_modisco.xmi"), //$NON-NLS-1$
+		if (!saveModel(this.sync.getSourceResource(), folder.getFile("sync__modisco.xmi"), //$NON-NLS-1$
 				progressMonitor)) {
 			return false;
 		}
-		if (!saveModel(this.sync.getCorrResource(), folder.getFile("sync_" + name + "_correspondence_model.xmi"), //$NON-NLS-1$
+		if (!saveModel(this.sync.getCorrResource(), folder.getFile("sync_correspondence_model.xmi"), //$NON-NLS-1$
 				progressMonitor)) {
 			return false;
 		}
-		return saveModel(this.sync.getProtocolResource(), folder.getFile("sync_" + name + "bwd_sync_protocol.xmi"), //$NON-NLS-1$
+		return saveModel(this.sync.getProtocolResource(), folder.getFile("sync__protocol.xmi"), //$NON-NLS-1$
 				progressMonitor);
 	}
 
@@ -365,35 +355,5 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	@Override
 	public void setDebug(boolean debug) {
 		this.debug = debug;
-	}
-
-	@Override
-	public ResourceSet getResourceSet() {
-		return this.discoverer.getResourceSet();
-	}
-
-	/**
-	 * A enum giving possible directions of transformation
-	 *
-	 * @author speldszus
-	 *
-	 */
-	enum Direction {
-		FWD("fwd"), BWD("bwd");
-
-		private final String name;
-
-		private Direction(String name) {
-			this.name = name;
-		}
-
-		/**
-		 * A getter for the human readable name
-		 *
-		 * @return The name
-		 */
-		String getName() {
-			return this.name;
-		}
 	}
 }

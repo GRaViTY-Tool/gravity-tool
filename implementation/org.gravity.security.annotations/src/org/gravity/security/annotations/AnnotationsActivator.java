@@ -2,7 +2,6 @@ package org.gravity.security.annotations;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,7 +13,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaModelException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 
 
@@ -24,7 +22,7 @@ import org.gravity.eclipse.util.EclipseProjectUtil;
  *
  */
 public class AnnotationsActivator extends Plugin {
-	
+
 	/**
 	 * The id of this plugin
 	 */
@@ -32,7 +30,7 @@ public class AnnotationsActivator extends Plugin {
 
 	/**
 	 * Stores the GRaViTY UMLsec security annotations to a file
-	 * 
+	 *
 	 * @param file    The file
 	 * @param monitor A progress monitor
 	 * @throws IOException If the annotations can not be saved
@@ -40,38 +38,36 @@ public class AnnotationsActivator extends Plugin {
 	public static void storeAnnotationsToFile(IFile file, IProgressMonitor monitor) throws IOException {
 		try (InputStream annotations = new URL(
 				"platform:/plugin/org.gravity.security.annotations/org.gravity.annotations.jar") //$NON-NLS-1$
-						.openConnection().getInputStream()) {
+				.openConnection().getInputStream()) {
 			file.create(annotations, true, monitor);
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			throw new IOException(e);
 		}
 	}
 
 	/**
 	 * Adds the UMLsec Java-Annotations library to the project
-	 * 
+	 *
 	 * @param project The Java project
 	 * @param monitor A progress monitor
 	 * @return The libs of the project
 	 * @throws CoreException
 	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws JavaModelException
 	 */
 	public static Collection<IPath> applyUMLsecLib(IJavaProject project, IProgressMonitor monitor)
-			throws CoreException, IOException, MalformedURLException, JavaModelException {
+			throws CoreException, IOException {
 		Collection<IPath> libs;
 		monitor.setTaskName("Prepare Java Project");
-	
+
 		IClasspathEntry relativeLibraryEntry = null;
-		IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
+		final IFile annotationsFile = EclipseProjectUtil.getGravityFolder(project.getProject(), monitor)
 				.getFile("org.gravity.annotations.jar");
 		if (!annotationsFile.exists()) {
 			storeAnnotationsToFile(annotationsFile, monitor);
 			relativeLibraryEntry = EclipseProjectUtil.addLibToClasspath(project, annotationsFile);
-	
+
 		} else {
-			for (IClasspathEntry entry : project.getRawClasspath()) {
+			for (final IClasspathEntry entry : project.getRawClasspath()) {
 				if (entry.getPath().makeAbsolute().equals(annotationsFile.getLocation())) {
 					relativeLibraryEntry = entry;
 				}

@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
@@ -195,7 +194,7 @@ public class TransformationTest {
 		 } catch (final IOException e) {
 			 throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		 }
-		 final MGravityModel modiscoModel = getModiscoModel(conv.getResourceSet());
+		 final MGravityModel modiscoModel = getModiscoModel();
 		 if (!conv.convertModel(this.project, modiscoModel, new NullProgressMonitor())) {
 			 throw new AssertionError("Trafo failed");
 		 }
@@ -250,17 +249,16 @@ public class TransformationTest {
 	 /**
 	  * Loads a previously discovered modisco model
 	  *
-	  * @param rs The resource set the model should be loaded into
 	  * @return The model or null
 	  */
-	 private MGravityModel getModiscoModel(ResourceSet rs) {
+	 private MGravityModel getModiscoModel() {
 		 MGravityModel model = models.get(this.name);
 		 if (model != null) {
 			 return model;
 		 }
 
 		 final File src = getModiscoFile(this.project.getProject());
-		 final Resource resource = rs.getResource(URI.createFileURI(src.getAbsolutePath()), true);
+		 final Resource resource = new ResourceSetImpl().getResource(URI.createFileURI(src.getAbsolutePath()), true);
 		 if (resource == null) {
 			 return null;
 		 }
@@ -295,7 +293,7 @@ public class TransformationTest {
 				 if (ADD_UMLSEC) {
 					 model = Transformation.projectToModel(this.project, ADD_UMLSEC, monitor);
 				 } else {
-					 final MGravityModel preprocessedModel = getModiscoModel(new ResourceSetImpl());
+					 final MGravityModel preprocessedModel = getModiscoModel();
 					 model = Transformation.modiscoToModel(preprocessedModel, this.project, monitor);
 				 }
 				 assertNotNull(model);

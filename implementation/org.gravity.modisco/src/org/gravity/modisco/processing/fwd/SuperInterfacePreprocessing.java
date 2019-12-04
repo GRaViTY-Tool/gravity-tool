@@ -2,6 +2,7 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,8 +20,12 @@ import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.eclipse.osgi.util.NLS;
+import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.util.NameUtil;
 
 /**
  * This preprocessor replaces MClasses with Interfaces if they have falsely been
@@ -42,33 +47,12 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		return process(model, brokenTypeAccesses);
 	}
 
-	/**
-	 * @param model
-	 * @param brokenTypeAccesses
-	 * @return
-	 */
 	private boolean process(MGravityModel model, Set<TypeAccess> brokenTypeAccesses) {
-		final HashMap<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
-		for (final TypeAccess typeAccess : brokenTypeAccesses) {
-			final Type clazz = typeAccess.getType();
-			if (clazz.isProxy()) {
-				replacements.put((ClassDeclaration) clazz, replaceWithInterface((ClassDeclaration) clazz));
-				if (LOGGER.isInfoEnabled()) {
-					LOGGER.info("Replaced class with interface: " + clazz);
-				}
-			} else {
-				LOGGER.error("Broken class is not a proxy!");
-				final ClassDeclaration child = (ClassDeclaration) typeAccess.eContainer();
-				if (child.getSuperClass() != null) {
-					LOGGER.error(child + " has alread a super class!");
-					return false;
-				}
-				if (LOGGER.isEnabledFor(Level.WARN)) {
-					LOGGER.warn("Replaced interface implementation with super class: " + child.getName() + " -> "
-							+ clazz.getName());
-				}
-				child.setSuperClass(typeAccess);
-			}
+		Map<ClassDeclaration, InterfaceDeclaration> replacements;
+		try {
+			replacements = calculateReplacements(brokenTypeAccesses);
+		} catch (final ProcessingException e) {
+			return false;
 		}
 		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
 				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
@@ -76,16 +60,41 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 			if (key instanceof ClassDeclaration) {
 				final ClassDeclaration replacedClass = (ClassDeclaration) key;
 				final Collection<Setting> references = entry.getValue();
-				for (final Setting s : references) {
-					s.getEObject().eSet(s.getEStructuralFeature(), replacements.get(replacedClass));
+				for (final Setting setting : references) {
+					setting.getEObject().eSet(setting.getEStructuralFeature(), replacements.get(replacedClass));
 				}
 			} else {
-				LOGGER.error("Cannot handle crossreference to: " + key);
+				LOGGER.error(NLS.bind(Messages.errorUnhandeldedCrossref , key));
 			}
 
 		}
 		replacements.clear();
 		return true;
+	}
+
+	private Map<ClassDeclaration, InterfaceDeclaration> calculateReplacements(Set<TypeAccess> brokenTypeAccesses) throws ProcessingException {
+		final Map<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
+		for (final TypeAccess typeAccess : brokenTypeAccesses) {
+			final Type clazz = typeAccess.getType();
+			if (clazz.isProxy()) {
+				replacements.put((ClassDeclaration) clazz, replaceWithInterface((ClassDeclaration) clazz));
+				if (LOGGER.isInfoEnabled()) {
+					LOGGER.info(NLS.bind(Messages.infoReplacedClassWithInterface, clazz));
+				}
+			} else {
+				LOGGER.warn(Messages.errorClassNoProxy);
+				final ClassDeclaration child = (ClassDeclaration) typeAccess.eContainer();
+				if (child.getSuperClass() != null) {
+					LOGGER.error(NLS.bind(Messages.errorClassAlreadyHasSuperType, NameUtil.getFullyQualifiedName(child)));
+					throw new ProcessingException();
+				}
+				if (LOGGER.isEnabledFor(Level.WARN)) {
+					LOGGER.warn(NLS.bind(Messages.warnReplacedInterfaceWithClass, new String[] {child.getName(), clazz.getName()}));
+				}
+				child.setSuperClass(typeAccess);
+			}
+		}
+		return replacements;
 	}
 
 	/**

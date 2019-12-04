@@ -9,8 +9,11 @@ import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.gmt.modisco.java.Modifier;
 import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
 import org.eclipse.gmt.modisco.java.VisibilityKind;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.modisco.MGravityModel;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.util.NameUtil;
 
 /**
  * Checks and repairs all modifiers of the model
@@ -50,7 +53,7 @@ public class VisibilityRepairPreprocessor extends AbstractTypedModiscoProcessor<
 				modifier.setVisibility(VisibilityKind.PRIVATE);
 			} else {
 				if (LOGGER.isEnabledFor(Level.WARN)) {
-					LOGGER.warn("Type \"" + typeDecl.getName() + "\" has no visibility.");
+					LOGGER.warn(NLS.bind(Messages.errorTypeNoVisibility, NameUtil.getFullyQualifiedName(typeDecl)));
 				}
 				return false;
 			}

@@ -70,7 +70,7 @@ public final class ModelSaver {
 		final File javaFile = file.getLocation().toFile();
 		final File parentFile = javaFile.getParentFile();
 		if (!parentFile.exists() && !parentFile.mkdirs()) {
-			LOGGER.warn("Couldn't create directory: " + parentFile.toString());
+			LOGGER.warn("Couldn't create parent directory of: " + javaFile.toString());
 			return false;
 		}
 		try (OutputStream out = Files.newOutputStream(javaFile.toPath())) {

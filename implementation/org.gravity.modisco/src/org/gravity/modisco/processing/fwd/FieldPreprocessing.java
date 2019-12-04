@@ -14,6 +14,7 @@ import org.eclipse.gmt.modisco.java.Type;
 import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
@@ -21,9 +22,9 @@ import org.gravity.modisco.MFieldName;
 import org.gravity.modisco.MFieldSignature;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MSignature;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
-import org.gravity.modisco.processing.ProcessingMessages;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
@@ -66,12 +67,12 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		for (final MFieldDefinition mDefinition : elements) {
 			final EList<VariableDeclarationFragment> fragments = mDefinition.getFragments();
 			if (fragments.isEmpty()) {
-				final String message = ProcessingMessages.FieldPreprocessing_the_field + mDefinition
-						+ ProcessingMessages.FieldPreprocessing_no_fragments;
+				final String message = NLS.bind(Messages.errorFieldNoFragments, mDefinition);
 				LOGGER.error(message);
 				throw new ProcessingException(message);
 			}
-			for (final VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition, fragments.get(0))) {
+			for (final VariableDeclarationFragment scndDeclFragment : getOtherFragments(mDefinition,
+					fragments.get(0))) {
 				final MFieldDefinition newDef = createNewDefinitionForFragment(mDefinition, scndDeclFragment);
 				allDefinitions.add(newDef);
 			}
@@ -107,9 +108,8 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 				newTypeAccess.setType(type);
 			}
 
-		} else if(LOGGER.isEnabledFor(Level.WARN)){
-			LOGGER.warn(ProcessingMessages.FieldPreprocessing_the_field + oldDefiniton
-					+ ProcessingMessages.FieldPreprocessing_no_type);
+		} else if (LOGGER.isEnabledFor(Level.WARN)) {
+			LOGGER.warn(NLS.bind(Messages.errorFieldNoType, oldDefiniton));
 		}
 
 		final Modifier modifier = oldDefiniton.getModifier();
@@ -151,13 +151,11 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		for (final MFieldDefinition mfDefinition : mFieldDefinitions) {
 			final EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
 			if (fragments.isEmpty()) {
-				LOGGER.error(ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
-						+ ProcessingMessages.FieldPreprocessing_no_fragments);
+				LOGGER.error(NLS.bind(Messages.errorFieldNoFragments, mfDefinition));
 				return false;
 			}
 			if (fragments.size() > 1) {
-				LOGGER.error(ProcessingMessages.FieldPreprocessing_the_field + mfDefinition
-						+ ProcessingMessages.FieldPreprocessing_multiple_fragments);
+				LOGGER.error(NLS.bind(Messages.warnFieldMultipleFragments, mfDefinition));
 				return false;
 			}
 			final VariableDeclarationFragment declFragment = fragments.get(0);
@@ -217,8 +215,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 		if (typeAccess != null) {
 			type = typeAccess.getType();
 		} else {
-			final String message = ProcessingMessages.FieldPreprocessing_the_field + definition
-					+ ProcessingMessages.FieldPreprocessing_no_type_assume_object;
+			final String message = NLS.bind(Messages.warnFieldNoTypeAssumeObject, definition);
 			if (definition.isProxy()) {
 				LOGGER.warn(message);
 			} else {

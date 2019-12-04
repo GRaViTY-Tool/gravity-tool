@@ -28,7 +28,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmt.modisco.java.Model;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -59,25 +58,16 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 	private static final Logger LOGGER = Logger.getLogger(GravityModiscoProjectDiscoverer.class.getName());
 
-	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
-
-		/**
-		 * A public wrapper to get the resource set of the discoverer
-		 *
-		 * @return The resource set
-		 */
-		public ResourceSet getRS() {
-			return super.getResourceSet();
-		}
-	}
-
-	private final MyDiscoverJavaModelFromJavaProject discoverer;
+	/**
+	 * The MoDisco Discoverer of this class
+	 */
+	private final DiscoverJavaModelFromJavaProject discoverer;
 
 	/**
 	 * The default constructor
 	 */
 	public GravityModiscoProjectDiscoverer() {
-		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
+		this.discoverer = new DiscoverJavaModelFromJavaProject();
 	}
 
 	/**
@@ -314,15 +304,6 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 
 		}
 		return null;
-	}
-
-	/**
-	 * A getter for the resource set used at discovery by MoDisco
-	 *
-	 * @return the resource set
-	 */
-	public ResourceSet getResourceSet() {
-		return this.discoverer.getRS();
 	}
 
 	@Override

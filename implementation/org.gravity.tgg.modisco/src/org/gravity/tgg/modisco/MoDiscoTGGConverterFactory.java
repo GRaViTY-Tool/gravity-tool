@@ -1,7 +1,6 @@
 package org.gravity.tgg.modisco;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -11,7 +10,7 @@ import org.gravity.eclipse.converter.IPGConverterFactory;
 
 /**
  * The factory for creating MoDisco TGG converters for projects.
- * 
+ *
  * @author speldszus
  *
  */
@@ -25,11 +24,11 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	@Override
 	public IPGConverter createConverter(IProject project) {
 		try {
-			return new MoDiscoTGGConverter();
-		} catch (MalformedURLException e) {
-			LOGGER.log(Level.ERROR, e);
-		} catch (IOException e) {
-			LOGGER.log(Level.ERROR, e);
+			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter();
+			MoDiscoTGGActivator.getDefault().addConverter(converter);
+			return converter;
+		} catch (final IOException e) {
+			LOGGER.error(e);
 		}
 		return null;
 	}
@@ -61,7 +60,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public boolean supportsFWDSync() {
-		MoDiscoTGGActivator activator = MoDiscoTGGActivator.getDefault();
+		final MoDiscoTGGActivator activator = MoDiscoTGGActivator.getDefault();
 		if (activator == null) {
 			LOGGER.log(Level.ERROR, "The modisco TGG activator is null");
 			return false;

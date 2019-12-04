@@ -25,6 +25,7 @@ import org.eclipse.gmt.modisco.java.TypeAccess;
 import org.eclipse.gmt.modisco.java.VariableDeclaration;
 import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MAccess;
@@ -33,7 +34,9 @@ import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MFieldDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MSingleVariableAccess;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.util.NameUtil;
 
 /**
  * A processor for adding accesses to members
@@ -66,7 +69,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 			} else if (access instanceof MSingleVariableAccess) {
 				process((MSingleVariableAccess) access);
 			} else {
-				LOGGER.error("Didn't handle: " + access);
+				LOGGER.error(NLS.bind(Messages.errorUnhandled, access));
 			}
 		});
 		this.fieldAccesses.entrySet().parallelStream()
@@ -190,15 +193,15 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 					dependencies.add(abstractTypeDeclaration);
 				} else if (JavaPackage.eINSTANCE.getUnresolvedMethodDeclaration().isSuperTypeOf(method.eClass())) {
 					if (LOGGER.isEnabledFor(Level.WARN)) {
-						LOGGER.warn("Skipped unresolved method: " + method.getName());
+						LOGGER.warn(NLS.bind(Messages.skippedUnresolvedMethod, method.getName()));
 					}
 				} else {
-					LOGGER.error("Skipped unresolved method: " + method.getName());
+					LOGGER.error(NLS.bind(Messages.skippedUnresolvedMethod, method.getName()));
 				}
 
 			} else if (LOGGER.isEnabledFor(Level.WARN)) {
-				LOGGER.warn("Empty method invocation in method \"" + definition.getName() + "\" of type \""
-						+ definition.getAbstractTypeDeclaration().getName() + "\".");
+				LOGGER.warn(NLS.bind(Messages.errorEmptyMethodInvoc,
+						new String[] { definition.getName(), definition.getAbstractTypeDeclaration().getName() }));
 			}
 
 		}
@@ -215,15 +218,13 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	 */
 	private static String buildUnresolvedFieldAccessErrorMessage(MDefinition definition,
 			VariableDeclaration declaration, AbstractVariablesContainer container) {
-		final StringBuilder messageBuilder = new StringBuilder(80).append("Access from \"")
-				.append(definition.getAbstractTypeDeclaration().getName()).append('.').append(definition.getName())
-				.append("\" to unresolved field: ").append(declaration.getName());
-
+		final StringBuilder messageBuilder = new StringBuilder(declaration.getName());
 		final TypeAccess fieldTypeAccess = container.getType();
 		if (fieldTypeAccess != null) {
 			messageBuilder.append(':').append(fieldTypeAccess.getType().getName());
 		}
-		return messageBuilder.toString();
+		return NLS.bind(Messages.errorAccessToUnresolvedField,
+				new String[] { NameUtil.getFullyQualifiedName(definition), messageBuilder.toString() });
 	}
 
 	@Override
