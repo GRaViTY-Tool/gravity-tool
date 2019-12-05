@@ -45,7 +45,7 @@ public class TGGApp extends SYNC {
 	public TGGApp(IProject project) throws IOException {
 		super(createIbexOptions());
 		this.name = project.getName();
-		registerBlackInterpreter(new DemoclesTGGEngine());
+		registerBlackInterpreter(this.options.getBlackInterpreter());
 	}
 
 	@Override
@@ -133,8 +133,9 @@ public class TGGApp extends SYNC {
 		IbexOptions options = new IbexOptions();
 		options.projectName("Modisco"); //$NON-NLS-1$
 		options.projectPath(MoDiscoTGGActivator.PLUGIN_ID);
-		options.debug(false);
+		options.debug(GravityActivator.getDefault().isVerbose());
 		options.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
+		options.setBlackInterpreter(new DemoclesTGGEngine());
 		return options;
 	}
 }

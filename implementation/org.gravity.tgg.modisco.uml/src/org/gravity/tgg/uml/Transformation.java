@@ -76,15 +76,16 @@ public class Transformation extends SYNC {
 
 	private Transformation() throws IOException {
 		super(createIbexOptions());
-		registerBlackInterpreter(new DemoclesTGGEngine());
+		registerBlackInterpreter(this.options.getBlackInterpreter());
 	}
 
 	private static IbexOptions createIbexOptions() {
 		IbexOptions options = new IbexOptions();
 		options.projectName("Uml");
 		options.projectPath("org.gravity.tgg.modisco.uml");
-		options.debug(false);
+		options.debug(GravityActivator.getDefault().isVerbose());
 		options.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
+		options.setBlackInterpreter(new DemoclesTGGEngine());
 		return options;
 	}
 
