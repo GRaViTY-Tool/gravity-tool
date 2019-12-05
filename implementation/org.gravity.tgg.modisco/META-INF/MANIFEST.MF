@@ -12,9 +12,7 @@ Require-Bundle: org.gravity.typegraph.basic,
  org.gravity.modisco,
  org.eclipse.gmt.modisco.java.generation,
  org.emoflon.ibex.tgg.core.runtime,
- org.emoflon.ibex.tgg.ui.debug,
- org.emoflon.ibex.tgg.core.language,
- org.emoflon.ibex.tgg.ui.debug.adapter
+ org.emoflon.ibex.tgg.ui.debug
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

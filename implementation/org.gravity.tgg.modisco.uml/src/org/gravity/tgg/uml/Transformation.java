@@ -44,7 +44,7 @@ import org.eclipse.uml2.uml.Model;
 import org.emoflon.ibex.tgg.operational.csp.constraints.factories.uml.UserDefinedRuntimeTGGAttrConstraintFactory;
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
-import org.emoflon.ibex.tgg.runtime.engine.DemoclesTGGEngine;
+import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
@@ -113,18 +113,18 @@ public final class Transformation extends SYNC {
 		this.options.setCorrMetamodel(tggPackage);
 	}
 
-	private void registerPackage(EPackage ePackage) {
+	private void registerPackage(final EPackage ePackage) {
 		this.rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 		this.rs.getResources().remove(ePackage.eResource());
 	}
 
-	public EPackage loadMetaModelPackage(String uri) throws IOException {
+	public EPackage loadMetaModelPackage(final String uri) throws IOException {
 		final Resource tggResource = loadResource(uri);
 		return (EPackage) tggResource.getContents().get(0);
 	}
 
 	@Override
-	public Resource loadResource(String uri) throws IOException {
+	public Resource loadResource(final String uri) throws IOException {
 		final Resource resource = this.rs.createResource(URI.createURI(uri));
 		if (uri.charAt(0) == '/') {
 			resource.load(Collections.emptyMap());
@@ -160,7 +160,7 @@ public final class Transformation extends SYNC {
 	 *                                       due to a transformation error
 	 * @throws IOException                   If writing files failed
 	 */
-	public static Model projectToModel(IJavaProject project, boolean addUMLsec, IProgressMonitor monitor)
+	public static Model projectToModel(final IJavaProject project, final boolean addUMLsec, final IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
 
 		final SubMonitor subMonitor = SubMonitor.convert(monitor, 100);
@@ -191,7 +191,7 @@ public final class Transformation extends SYNC {
 		return modiscoToModel(mGravityModel, project, subMonitor);
 	}
 
-	public static Model modiscoToModel(MGravityModel mGravityModel, IJavaProject iproject, IProgressMonitor monitor)
+	public static Model modiscoToModel(final MGravityModel mGravityModel, final IJavaProject iproject, final IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
 		final SubMonitor subMonitor = SubMonitor.convert(monitor);
 
@@ -243,7 +243,7 @@ public final class Transformation extends SYNC {
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
-	private void save(IFolder folder, IProgressMonitor monitor) throws IOException {
+	private void save(final IFolder folder, final IProgressMonitor monitor) throws IOException {
 		monitor.setTaskName("Save UML Model");
 		save(this.t, folder.getFile(TRG_XMI).getLocation().toFile().getAbsolutePath());
 		save(this.t, folder.getProject().getFile(folder.getProject().getName() + ".uml").getLocation().toFile()
@@ -263,7 +263,7 @@ public final class Transformation extends SYNC {
 	 * @param absolutePath The location to which the model should be saved
 	 * @throws IOException If the file cannot be saved
 	 */
-	public void saveSrc(String absolutePath) throws IOException {
+	public void saveSrc(final String absolutePath) throws IOException {
 		save(this.s, absolutePath);
 	}
 
@@ -273,7 +273,7 @@ public final class Transformation extends SYNC {
 	 * @param absolutePath The location to which the model should be saved
 	 * @throws IOException If the file cannot be saved
 	 */
-	public void saveTrg(String absolutePath) throws IOException {
+	public void saveTrg(final String absolutePath) throws IOException {
 		save(this.t, absolutePath);
 	}
 
@@ -284,7 +284,7 @@ public final class Transformation extends SYNC {
 	 * @param absolutePath The output location
 	 * @throws IOException If writing the resource failed
 	 */
-	private void save(Resource resource, String absolutePath) throws IOException {
+	private void save(final Resource resource, final String absolutePath) throws IOException {
 		final Path outFile = Paths.get(absolutePath);
 		final Path parentFile = outFile.getParent();
 		if (!parentFile.toFile().exists()) {
@@ -303,7 +303,7 @@ public final class Transformation extends SYNC {
 	 * @throws TransformationFailedException If the transformation wasn't successful
 	 * @throws IOException                   If writing files failed
 	 */
-	public static void umlToProject(IJavaProject project, IProgressMonitor monitor)
+	public static void umlToProject(final IJavaProject project, final IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
 		Transformation trafo;
 		try {
@@ -373,11 +373,11 @@ public final class Transformation extends SYNC {
 		}
 	}
 
-	private void saveProtocol(String absolutePath) throws IOException {
+	private void saveProtocol(final String absolutePath) throws IOException {
 		save(this.p, absolutePath);
 	}
 
-	private void saveCorr(String absolutePath) throws IOException {
+	private void saveCorr(final String absolutePath) throws IOException {
 		save(this.c, absolutePath);
 	}
 

@@ -14,7 +14,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.emoflon.ibex.tgg.operational.csp.constraints.factories.modisco.UserDefinedRuntimeTGGAttrConstraintFactory;
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
-import org.emoflon.ibex.tgg.runtime.engine.DemoclesTGGEngine;
+import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
@@ -42,7 +42,7 @@ public class TGGApp extends SYNC {
 	 *
 	 * @throws IOException If one of the models cannot be loaded
 	 */
-	public TGGApp(IProject project) throws IOException {
+	public TGGApp(final IProject project) throws IOException {
 		super(createIbexOptions());
 		this.name = project.getName();
 		registerBlackInterpreter(new DemoclesTGGEngine());
@@ -73,7 +73,7 @@ public class TGGApp extends SYNC {
 	 *
 	 * @param ePackage The package
 	 */
-	private void registerPackage(EPackage ePackage) {
+	private void registerPackage(final EPackage ePackage) {
 		this.rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
 		this.rs.getResources().remove(ePackage.eResource());
 	}
@@ -93,7 +93,7 @@ public class TGGApp extends SYNC {
 	}
 
 	@Override
-	public Resource loadResource(String uri) throws IOException {
+	public Resource loadResource(final String uri) throws IOException {
 		try (InputStream stream = new URL(uri).openConnection().getInputStream()) {
 			return loadResource(uri, stream);
 		}
@@ -107,7 +107,7 @@ public class TGGApp extends SYNC {
 	 * @return The loaded resource
 	 * @throws IOException If the resource couldn't be loaded
 	 */
-	private Resource loadResource(String uri, InputStream stream) throws IOException {
+	private Resource loadResource(final String uri, final InputStream stream) throws IOException {
 		final Resource resource = this.rs.createResource(URI.createURI(uri));
 		resource.load(stream, Collections.emptyMap());
 		EcoreUtil.resolveAll(resource);

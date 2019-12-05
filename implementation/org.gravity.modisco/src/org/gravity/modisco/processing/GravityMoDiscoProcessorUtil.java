@@ -23,6 +23,9 @@ import org.eclipse.core.runtime.Platform;
  */
 public final class GravityMoDiscoProcessorUtil {
 
+	/**
+	 * The logger of this class
+	 */
 	private static final Logger LOGGER = Logger.getLogger(GravityMoDiscoProcessorUtil.class);
 
 	private GravityMoDiscoProcessorUtil() {
@@ -30,14 +33,14 @@ public final class GravityMoDiscoProcessorUtil {
 	}
 
 	/**
-	 * Created a sorted collection of processors regitstered at the given extension point
+	 * Created a sorted collection of processors registered at the given extension
+	 * point
 	 *
 	 * @param extensionPoint The id of the extension point
-	 * @return The soreted collection
+	 * @return The sorted collection
 	 */
-	public static Collection<IMoDiscoProcessor> getSortedProcessors(String extensionPoint) {
-		final IExtensionPoint pointPgFwd = Platform.getExtensionRegistry()
-				.getExtensionPoint(extensionPoint);
+	public static Collection<IMoDiscoProcessor> getSortedProcessors(final String extensionPoint) {
+		final IExtensionPoint pointPgFwd = Platform.getExtensionRegistry().getExtensionPoint(extensionPoint);
 		final IExtension[] extensionsPgFwd = pointPgFwd.getExtensions();
 
 		final SortedMap<Integer, Set<IMoDiscoProcessor>> modiscoProcessorsFwd = new TreeMap<>();
@@ -58,25 +61,24 @@ public final class GravityMoDiscoProcessorUtil {
 	 * Adds a new processor instance for the element to the map of processors
 	 *
 	 * @param processors The map of processors
-	 * @param element The configuration element describing the processor
-	 * @throws CoreException If an instance of the executable extension could not be created for any reason
+	 * @param element    The configuration element describing the processor
+	 * @throws CoreException If an instance of the executable extension could not be
+	 *                       created for any reason
 	 */
-	private static void addProcessor(SortedMap<Integer, Set<IMoDiscoProcessor>> processors,
-			IConfigurationElement element) throws CoreException {
-		final IMoDiscoProcessor processor = (IMoDiscoProcessor) element
-				.createExecutableExtension("processor");
+	private static void addProcessor(final SortedMap<Integer, Set<IMoDiscoProcessor>> processors,
+			final IConfigurationElement element) throws CoreException {
+		final IMoDiscoProcessor processor = (IMoDiscoProcessor) element.createExecutableExtension("processor");
 		int key;
 		final String priority = element.getAttribute("priority");
-		if (priority != null) {
-			key = -1*Integer.valueOf(priority);
-		} else {
+		if (priority == null) {
 			key = 1;
+		} else {
+			key = -1 * Integer.valueOf(priority);
 		}
 		Set<IMoDiscoProcessor> values;
-		if(processors.containsKey(key)) {
+		if (processors.containsKey(key)) {
 			values = processors.get(key);
-		}
-		else {
+		} else {
 			values = new HashSet<>();
 			processors.put(key, values);
 		}
