@@ -13,6 +13,7 @@ import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.CreateSuperClassConfiguration;
 import org.gravity.refactorings.util.PGAdditionHelper;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -28,16 +29,16 @@ import org.gravity.typegraph.basic.TypeGraph;
 public class CreateSuperclass implements Refactoring {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public boolean isApplicable(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
 			final CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
-			return isApplicable(csc.getChildren(), csc.getNewParent());
+			return isApplicable(csc.getChildren(), csc.getNewParent().getFullyQualifiedName());
 		}
 		return false;
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (configuration instanceof CreateSuperClassConfiguration) {
 			final CreateSuperClassConfiguration csc = (CreateSuperClassConfiguration) configuration;
 			return perform(csc.getChildren(), csc.getNewParent());
@@ -45,7 +46,7 @@ public class CreateSuperclass implements Refactoring {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(List<TClass> child, TClass newParent) throws RefactoringFailedException {
+	public List<TClass> perform(final List<TClass> child, final TClass newParent) throws RefactoringFailedException {
 		if (child.isEmpty()) {
 			throw new RefactoringFailedException("The list of child classes is empty!");
 		}
@@ -79,86 +80,43 @@ public class CreateSuperclass implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> child, TClass newParent) throws RefactoringFailedException {
+	public boolean isApplicable(final List<TClass> child, final String newParentName) {
 		if (child.isEmpty()) {
 			return false;
 		}
-		final TypeGraph pg = child.get(0).getPg();
 
-		final TClass existingParent = getOtherTClassByName(pg, newParent);
-		if (existingParent != null) {
-			TPackage newParentsPackage = null;
-			final TPackage existingParentsPackage = null;
-			if (!existingParent.equals(newParent)) {
-				newParentsPackage = newParent.getPackage();
-				if (newParentsPackage != null && !newParentsPackage.equals(existingParent.getPackage())) {
-					//TODO: Implement this refactoring
-				}
-			}
-
-			if (newParentsPackage == null || existingParentsPackage == null) {
-				throw new RefactoringFailedException("Pattern matching failed." + " Variables: " + "[new_parent] = "
-						+ newParent + ", " + "[existingParent] = " + existingParent + ".");
-			}
-			//
-			if (PGAdditionHelper.equivalent(existingParentsPackage, newParentsPackage)) {
-				return false;
-			}
-
-		}
-		//
-		boolean classesAreEqual = false;
-		for (final TClass one : child) {
-			for (final TClass two : child) {
-				if (!one.equals(two)) {
-					classesAreEqual = true;
-				}
-			}
-		}
-		if (classesAreEqual) {
-			for (final TClass b : child) {
-				for (final TClass a : child) {
-					//
-					final TPackage basePackageOne = a.getBasePackage();
-					final TPackage basePackageTwo = b.getBasePackage();
-					if (basePackageOne != basePackageTwo) {
-						return false;
-					}
-
-				}
-			}
-			// ForEach pair of children
-			for (final TClass tChildOne : child) {
-				final TClass parentOne = tChildOne.getResolvedParentClass();
-				for (final TClass tChildTwo : child) {
-					if (!tChildOne.equals(tChildTwo)) {
-						final TClass parentTwo = tChildTwo.getResolvedParentClass();
-						if (!parentOne.equals(parentTwo)) {
-							return false;
-						}
-					}
-				}
-			}
-			return true;
-		} else {
+		// All children have to be editable
+		if (child.parallelStream().anyMatch(TAbstractType::isTLib)) {
 			return false;
 		}
 
-	}
+		final TClass firstChild = child.get(0);
+		// There is not already a class with this name
+		final TypeGraph programModel = firstChild.getPg();
+		if (programModel.getType(newParentName) != null) {
+			return false;
+		}
 
-	public static final TClass getOtherTClassByName(TypeGraph pg, TClass exclude) {
-		final String newParentName = exclude.getTName();
-		for (final TClass existingParent : pg.getClasses()) {
-			if (!existingParent.equals(exclude)) {
-				final String existingParentName = existingParent.getTName();
-				if (existingParentName.equals(newParentName)) {
-					return existingParent;
+		// All child need the same base package and parent
+		final TPackage basePackage = firstChild.getBasePackage();
+		final TClass parent = firstChild.getParentClass();
+		final TClass object = programModel.getClass("java.lang.Object");
+		for (int i = 1; i < child.size(); i++) {
+			final TClass nextChild = child.get(i);
+			if (!basePackage.equals(nextChild.getBasePackage())) {
+				return false;
+			}
+			final TClass parentClass = nextChild.getParentClass();
+			if (parent == null) {
+				if (parentClass != null && !parentClass.equals(object)) {
+					return false;
 				}
-
+			} else if (!parent.equals(parentClass)) {
+				return false;
 			}
 		}
 
-		return null;
+		return true;
 	}
 
 	@Override

@@ -25,7 +25,6 @@ import org.gravity.refactorings.impl.MoveMethod;
 import org.gravity.refactorings.impl.PullUpField;
 import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TPackage;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -66,7 +65,7 @@ public class RefactoringTool {
 	 * @param pg The program model which should be refactored
 	 * @param copy If a copy should be created
 	 */
-	public RefactoringTool(TypeGraph pg, boolean copy) {
+	public RefactoringTool(final TypeGraph pg, final boolean copy) {
 		if (copy) {
 			this.toolPg = EcoreUtil.copy(pg);
 		} else {
@@ -83,7 +82,7 @@ public class RefactoringTool {
 	 * @param pg The program model on which the refactorings should be executed
 	 * @return The changes of the refactoring execution
 	 */
-	public Changes executePlannedRefactorings(TypeGraph pg) {
+	public Changes executePlannedRefactorings(final TypeGraph pg) {
 		final Changes changeContainer = new Changes();
 		final Consumer<EObject> changes = SynchronizationHelper -> {
 			final RefactoringTool tool = new RefactoringTool(pg, false);
@@ -103,7 +102,7 @@ public class RefactoringTool {
 		return this.bookkeeping;
 	}
 
-	public boolean applyRefactoring(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public boolean applyRefactoring(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		Refactoring refactoring;
 		if (configuration instanceof PullUpMethodConfiguration) {
 			refactoring = this.pumRefactoring;
@@ -122,13 +121,7 @@ public class RefactoringTool {
 		if (pumIsApplicable) {
 			this.bookkeeping.add(configuration);
 			for (final TClass tClass : refactoring.perform(configuration)) { //TODO: Make use of the cloned pm
-				StringBuilder classname = new StringBuilder(tClass.getTName()).append(".java"); //$NON-NLS-1$
-				TPackage p = tClass.getPackage();
-				while (p != null) {
-					classname = classname.append(p.getTName()).append('.').append(classname);
-					p = p.getParent();
-				}
-				final String classNameString = classname.toString();
+				final String classNameString = tClass.getFullyQualifiedName() + ".java";
 				if (!this.changes.contains(classNameString)) {
 					this.changes.add(classNameString);
 				}
@@ -143,7 +136,7 @@ public class RefactoringTool {
 	 * @param bookkeeping The refactoring configurations
 	 * @return true, if all refactorings have been applied successfully
 	 */
-	public boolean applyBookkeeping(List<RefactoringConfiguration> bookkeeping) {
+	public boolean applyBookkeeping(final List<RefactoringConfiguration> bookkeeping) {
 		boolean success = true;
 		for (final RefactoringConfiguration r : bookkeeping) {
 			try {

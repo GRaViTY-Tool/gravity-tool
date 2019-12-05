@@ -13,12 +13,14 @@ import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
 import org.gravity.refactorings.configuration.TRefactoringID;
 import org.gravity.refactorings.configuration.impl.PullUpFieldConfiguration;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TPackage;
+import org.gravity.typegraph.basic.TSignature;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Pull Up
@@ -31,7 +33,7 @@ import org.gravity.typegraph.basic.TPackage;
 public class PullUpField implements Refactoring {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) {
+	public boolean isApplicable(final RefactoringConfiguration configuration) {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final PullUpFieldConfiguration esc = (PullUpFieldConfiguration) configuration;
 			return isApplicable(esc.getSignature(), esc.getTargetClass());
@@ -40,7 +42,7 @@ public class PullUpField implements Refactoring {
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final PullUpFieldConfiguration esc = (PullUpFieldConfiguration) configuration;
 			return perform(esc.getSignature(), esc.getTargetClass());
@@ -48,58 +50,56 @@ public class PullUpField implements Refactoring {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(TFieldSignature field, TClass parent) throws RefactoringFailedException {
+	public List<TClass> perform(final TFieldSignature field, final TClass parent) throws RefactoringFailedException {
+		final List<TClass> parentsChild = parent.getChildClasses();
+		if (parentsChild.isEmpty()) {
+			return Collections.emptyList();
+		}
 		final List<TClass> classContainer = new LinkedList<>();
-		//
-		final Object[] result3_black = PullUpField.pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(parent, field,
-				classContainer);
-		if (result3_black != null) {
-			final TClass tchild = (TClass) result3_black[1];
-			final TFieldDefinition fieldParentDefinition = (TFieldDefinition) result3_black[2];
 
-			tchild.getSignature().remove(field);
-			fieldParentDefinition.setDefinedBy(null);
-
-			parent.getSignature().add(field);
-			fieldParentDefinition.setDefinedBy(parent);
-			classContainer.add(tchild);
-
-			// ForEach
-			for (final Object[] result4_black : PullUpField.pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(parent,
-					field, classContainer)) {
-				final TClass child = (TClass) result4_black[1];
-				final TFieldDefinition fieldChildDefinition = (TFieldDefinition) result4_black[3];
-				classContainer.add(child);
-
-				for (final TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
-					if (!fieldChildDefinition.equals(currentAccess.getTSource())
-							&& fieldChildDefinition.equals(fieldParentDefinition)
-							|| !fieldChildDefinition.getAccessedBy().contains(currentAccess)) {
-						throw new RefactoringFailedException(
-								"Pattern matching failed." + " Variables: " + "[currentAccess] = " + currentAccess
-								+ ", " + "[fieldChildDefinition] = " + fieldChildDefinition + ", "
-								+ "[fieldParentDefinition] = " + fieldParentDefinition + ".");
-					}
-					fieldChildDefinition.getAccessedBy().remove(currentAccess);
-					fieldParentDefinition.getAccessedBy().add(currentAccess);
-				}
-
-				if (!child.equals(fieldChildDefinition.getDefinedBy()) || !child.getSignature().contains(field)
-						|| !field.getDefinitions().contains(fieldChildDefinition)) {
-					throw new RefactoringFailedException("Pattern matching failed." + " Variables: "
-							+ "[fieldChildDefinition] = " + fieldChildDefinition + ", " + "[child] = " + child + ", "
-							+ "[field] = " + field + ".");
-				}
-				fieldChildDefinition.setDefinedBy(null);
-				child.getSignature().remove(field);
-
-				EcoreUtil.delete(fieldChildDefinition);
-			}
-			return classContainer;
-		} else {
-			return classContainer;
+		final TClass tchild = parentsChild.get(0);
+		final TFieldDefinition fieldParentDefinition = field.getTDefinition(tchild);
+		if (fieldParentDefinition == null) {
+			throw new RefactoringFailedException("Couldn't find field to keep!");
 		}
 
+		move(tchild, parent, field, fieldParentDefinition);
+		classContainer.add(tchild);
+
+		// ForEach
+		for (int i = 1; i < parentsChild.size(); i++) {
+			final TClass child = parentsChild.get(i);
+			final TFieldDefinition fieldChildDefinition = field.getTDefinition(child);
+			if (fieldChildDefinition == null) {
+				throw new RefactoringFailedException("Child has no definition of the field");
+			}
+			classContainer.add(child);
+
+			for (final TAccess currentAccess : fieldChildDefinition.getAccessedBy()) {
+				currentAccess.setTTarget(fieldParentDefinition);
+			}
+			fieldChildDefinition.setDefinedBy(null);
+			child.getSignature().remove(field);
+
+			EcoreUtil.delete(fieldChildDefinition);
+		}
+		return classContainer;
+
+	}
+
+	/**
+	 * Moves a member to a other type
+	 *
+	 * @param source     The source containing the member definition
+	 * @param target     The new target
+	 * @param signature  The signature of the member
+	 * @param definition The member definition
+	 */
+	private void move(final TAbstractType source, final TAbstractType target, final TSignature signature,
+			final TMember definition) {
+		source.getSignature().remove(signature);
+		target.getSignature().add(signature);
+		definition.setDefinedBy(target);
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class PullUpField implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(TFieldSignature field, TClass parent) {
+	public boolean isApplicable(final TFieldSignature field, final TClass parent) {
 		// The parent istn't allowed to implement the field signature itself
 		if (parent.getSignature().contains(field)) {
 			return false;
@@ -116,7 +116,7 @@ public class PullUpField implements Refactoring {
 		// All child have to implement the signature
 		for (final TClass child : parent.getChildClasses()) {
 			if (child.getSignature().contains(field)) {
-				final TFieldDefinition fieldDefinition = getTFieldDefinition(child, field);
+				final TFieldDefinition fieldDefinition = field.getTDefinition(child);
 				if (fieldDefinition == null) {
 					return false;
 				}
@@ -135,49 +135,6 @@ public class PullUpField implements Refactoring {
 			}
 		}
 		return true;
-	}
-
-	public static final Object[] pattern_Pull_Up_Field_0_3_ActivityNode135_blackBFFBB(TClass parent,
-			TFieldSignature field, List<TClass> classContainer) {
-		for (final TClass tchild : parent.getChildClasses()) {
-			if (!parent.equals(tchild) && tchild.getSignature().contains(field)) {
-				for (final TFieldDefinition fieldParentDefinition : field.getFieldDefinitions()) {
-					if (tchild.equals(fieldParentDefinition.getDefinedBy())) {
-						return new Object[] { parent, tchild, fieldParentDefinition, field, classContainer };
-					}
-
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Iterable<Object[]> pattern_Pull_Up_Field_0_4_ActivityNode137_blackBFBFB(TClass parent,
-			TFieldSignature field, List<TClass> classContainer) {
-		final LinkedList<Object[]> result = new LinkedList<>();
-		for (final TClass child : parent.getChildClasses()) {
-			if (!child.equals(parent) && child.getSignature().contains(field)) {
-				for (final TFieldDefinition fieldChildDefinition : field.getFieldDefinitions()) {
-					if (child.equals(fieldChildDefinition.getDefinedBy())) {
-						result.add(new Object[] { parent, child, field, fieldChildDefinition, classContainer });
-					}
-				}
-
-			}
-		}
-		return result;
-	}
-
-	public static final TFieldDefinition getTFieldDefinition(TClass child, TFieldSignature field) {
-		for (final TMember tmpFieldDefinition : child.getDefines()) {
-			if (tmpFieldDefinition instanceof TFieldDefinition) {
-				final TFieldDefinition fieldDefinition = (TFieldDefinition) tmpFieldDefinition;
-				if (field.getDefinitions().contains(fieldDefinition)) {
-					return fieldDefinition;
-				}
-			}
-		}
-		return null;
 	}
 
 	@Override

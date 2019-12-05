@@ -34,16 +34,16 @@ import org.gravity.typegraph.basic.TSignature;
 public class ExtractSuperclass implements Refactoring {
 
 	@Override
-	public boolean isApplicable(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public boolean isApplicable(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final ExtractSuperClassConfiguration esc = (ExtractSuperClassConfiguration) configuration;
-			return isApplicable(esc.getChildren(), esc.getNewParent(), esc.getSignatures());
+			return isApplicable(esc.getChildren(), esc.getNewParent().getFullyQualifiedName(), esc.getSignatures());
 		}
 		return false;
 	}
 
 	@Override
-	public Collection<TClass> perform(RefactoringConfiguration configuration) throws RefactoringFailedException {
+	public Collection<TClass> perform(final RefactoringConfiguration configuration) throws RefactoringFailedException {
 		if (getRefactoringID() == configuration.getRefactoringID()) {
 			final ExtractSuperClassConfiguration esc = (ExtractSuperClassConfiguration) configuration;
 			return perform(esc.getChildren(), esc.getNewParent(), esc.getSignatures());
@@ -51,7 +51,7 @@ public class ExtractSuperclass implements Refactoring {
 		return Collections.emptyList();
 	}
 
-	public List<TClass> perform(List<TClass> children, TClass newParent, List<TSignature> signatures)
+	public List<TClass> perform(final List<TClass> children, final TClass newParent, final List<TSignature> signatures)
 			throws RefactoringFailedException {
 		if (children.isEmpty()) {
 			throw new RefactoringFailedException("There are no children to extract a superclass from!");
@@ -102,7 +102,7 @@ public class ExtractSuperclass implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(List<TClass> children, TClass newParent, List<TSignature> signatures)
+	public boolean isApplicable(final List<TClass> children, final String newParent, final List<TSignature> signatures)
 			throws RefactoringFailedException {
 
 		final CreateSuperclass csc = new CreateSuperclass();
@@ -129,7 +129,7 @@ public class ExtractSuperclass implements Refactoring {
 
 	}
 
-	private static final TClass getDefiningClass(TMember bestDefinition, TSignature tSignature) {
+	private static final TClass getDefiningClass(final TMember bestDefinition, final TSignature tSignature) {
 		final TAbstractType tmpTOwnerClass = bestDefinition.getDefinedBy();
 		if (tmpTOwnerClass instanceof TClass) {
 			final TClass tOwnerClass = (TClass) tmpTOwnerClass;
@@ -140,7 +140,7 @@ public class ExtractSuperclass implements Refactoring {
 		return null;
 	}
 
-	public static final boolean isMemberAccessed(TClass child, List<TMember> accessed, List<TSignature> signatures) {
+	public static final boolean isMemberAccessed(final TClass child, final List<TMember> accessed, final List<TSignature> signatures) {
 		for (final TMethodDefinition tChildmethodDefinition : child.getDeclaredTMethodDefinitions()) {
 			if (accessed.contains(tChildmethodDefinition)
 					&& signatures.contains(tChildmethodDefinition.getSignature())) {
