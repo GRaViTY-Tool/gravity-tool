@@ -1,10 +1,10 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Level;
@@ -39,15 +39,15 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	private static final Logger LOGGER = Logger.getLogger(SuperInterfacePreprocessing.class);
 
 	@Override
-	public boolean process(MGravityModel model, Collection<AbstractTypeDeclaration> elements,
-			IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<AbstractTypeDeclaration> elements,
+			final IProgressMonitor monitor) {
 		final Set<TypeAccess> brokenTypeAccesses = elements.parallelStream()
 				.flatMap(type -> getAccessedClassDeclarations(type.getSuperInterfaces()).parallelStream())
 				.collect(Collectors.toSet());
 		return process(model, brokenTypeAccesses);
 	}
 
-	private boolean process(MGravityModel model, Set<TypeAccess> brokenTypeAccesses) {
+	private boolean process(final MGravityModel model, final Set<TypeAccess> brokenTypeAccesses) {
 		Map<ClassDeclaration, InterfaceDeclaration> replacements;
 		try {
 			replacements = calculateReplacements(brokenTypeAccesses);
@@ -72,8 +72,9 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		return true;
 	}
 
-	private Map<ClassDeclaration, InterfaceDeclaration> calculateReplacements(Set<TypeAccess> brokenTypeAccesses) throws ProcessingException {
-		final Map<ClassDeclaration, InterfaceDeclaration> replacements = new HashMap<>(brokenTypeAccesses.size());
+	private Map<ClassDeclaration, InterfaceDeclaration> calculateReplacements(final Set<TypeAccess> brokenTypeAccesses) throws ProcessingException {
+		final Map<ClassDeclaration, InterfaceDeclaration> replacements = new ConcurrentHashMap<>(
+				brokenTypeAccesses.size());
 		for (final TypeAccess typeAccess : brokenTypeAccesses) {
 			final Type clazz = typeAccess.getType();
 			if (clazz.isProxy()) {
@@ -103,7 +104,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @param accesses A collection of accesses
 	 * @return A set of accessed class declarations
 	 */
-	private Set<TypeAccess> getAccessedClassDeclarations(Collection<TypeAccess> accesses) {
+	private Set<TypeAccess> getAccessedClassDeclarations(final Collection<TypeAccess> accesses) {
 		return accesses.parallelStream()
 				.filter(access -> JavaPackage.eINSTANCE.getClassDeclaration().isSuperTypeOf(access.getType().eClass()))
 				.collect(Collectors.toSet());
@@ -115,7 +116,7 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 	 * @param clazz The class
 	 * @return the interface
 	 */
-	private InterfaceDeclaration replaceWithInterface(ClassDeclaration clazz) {
+	private InterfaceDeclaration replaceWithInterface(final ClassDeclaration clazz) {
 		final InterfaceDeclaration iface = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		iface.setName(clazz.getName());
 		iface.setAbstractTypeDeclaration(clazz.getAbstractTypeDeclaration());

@@ -69,7 +69,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	private MGravityModel model;
 
 	@Override
-	public boolean process(MGravityModel model, Collection<MDefinition> elements, IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<MDefinition> elements, final IProgressMonitor monitor) {
 		this.model = model;
 		final SubMonitor sub = SubMonitor.convert(monitor, Messages.infoCreateElementForFlow, elements.size());
 
@@ -105,7 +105,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param handler The handler used to discover the node
 	 * @return true, if creating the flows was successful
 	 */
-	private boolean setFlows(FlowNode node, MemberHandler handler) {
+	private boolean setFlows(final FlowNode node, final MemberHandler handler) {
 		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 		MFlow accessOut = null;
 		final Set<FlowNode> outRef = buildOutRef(node);
@@ -219,7 +219,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param node
 	 * @return The set of incoming flows
 	 */
-	private Set<FlowNode> buildInRef(MemberHandler handler, FlowNode node) {
+	private Set<FlowNode> buildInRef(final MemberHandler handler, final FlowNode node) {
 		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 		final Set<FlowNode> inRef = node.getInRef();
 		if (access instanceof AbstractMethodInvocation) {
@@ -260,7 +260,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param node
 	 * @return
 	 */
-	private Set<FlowNode> buildOutRef(FlowNode node) {
+	private Set<FlowNode> buildOutRef(final FlowNode node) {
 		final Set<FlowNode> outRef = node.getOutRef();
 		if (outRef.size() > 1) {
 			final Set<FlowNode> toRemove = new HashSet<>();
@@ -282,7 +282,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param handler
 	 * @return
 	 */
-	private void reduceIntraDFGFlows(MemberHandler handler) {
+	private void reduceIntraDFGFlows(final MemberHandler handler) {
 		for (final FlowNode flowNode : new ArrayList<>(handler.getAllFlowNodes())) {
 			final EObject node = flowNode.getModelElement();
 			if (node instanceof VariableDeclarationFragment) {
@@ -320,7 +320,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * @param flowNode The node's key in reducedDFG.
 	 * @param handler  The alreadySeen on which the reduction should be performed.
 	 */
-	private void reduceNodeInDFG(FlowNode flowNode, MemberHandler handler) {
+	private void reduceNodeInDFG(final FlowNode flowNode, final MemberHandler handler) {
 		final Set<FlowNode> inRef = flowNode.getInRef();
 		final Set<FlowNode> outRef = flowNode.getOutRef();
 		for (final FlowNode outNode : outRef) {
@@ -357,13 +357,13 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 					for (final SingleVariableDeclaration param : methodDef.getParameters()) {
 						methodProcessor.getFlowNodeOrCreate(param);
 					}
-					methodProcessor.handle();
+					new DataFlowVisitor(methodProcessor).handle();
 					return methodProcessor;
 				});
 		final Stream<MemberHandler> fieldProcessors = this.model.getMFieldDefinitions().parallelStream()
 				.flatMap(fieldDef -> fieldDef.getFragments().parallelStream()).map(fragment -> {
 					final MemberHandler fieldProcessor = new MemberHandler(fragment);
-					fieldProcessor.handle();
+					new DataFlowVisitor(fieldProcessor).handle();
 					fieldProcessor.getFlowNodeOrCreate(fragment.getVariablesContainer());
 					return fieldProcessor;
 

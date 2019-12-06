@@ -38,16 +38,12 @@ public class MemberHandler {
 	 */
 	private final MDefinition memberDef;
 
-	public MemberHandler(MDefinition correspondingMember) {
+	public MemberHandler(final MDefinition correspondingMember) {
 		this.memberDef = correspondingMember;
 	}
 
-	public MemberHandler(VariableDeclarationFragment correspondingMember) {
+	public MemberHandler(final VariableDeclarationFragment correspondingMember) {
 		this.memberDef = (MDefinition) correspondingMember.getVariablesContainer();
-	}
-
-	public void handle() {
-		new DataFlowVisitor(this).handle(this.memberDef);
 	}
 
 	public MDefinition getMemberDef() {
@@ -58,7 +54,7 @@ public class MemberHandler {
 		return this.memberRef;
 	}
 
-	public boolean addMemberRef(FlowNode member) {
+	public boolean addMemberRef(final FlowNode member) {
 		return this.memberRef.add(member);
 	}
 
@@ -71,7 +67,7 @@ public class MemberHandler {
 	 * @return If already present, the FlowNode for the given element. A new
 	 *         FlowNode for the element otherwise.
 	 */
-	public FlowNode getFlowNodeOrCreate(EObject element) {
+	public FlowNode getFlowNodeOrCreate(final EObject element) {
 		final FlowNode seenNode = getFlowNode(element);
 		if (seenNode != null) { // making sure, that null references lead to creation of new nodes
 			seenNode.setToAlreadySeen();
@@ -89,11 +85,11 @@ public class MemberHandler {
 	 * @param element The element, for which the check is performed.
 	 * @return If already present, the FlowNode for the given element or else null
 	 */
-	public FlowNode getFlowNode(EObject element) {
+	public FlowNode getFlowNode(final EObject element) {
 		return this.alreadySeen.get(element);
 	}
 
-	public FlowNode removeFlowNode(EObject key) {
+	public FlowNode removeFlowNode(final EObject key) {
 		return this.alreadySeen.remove(key);
 	}
 
@@ -101,14 +97,14 @@ public class MemberHandler {
 		return this.alreadySeen.values();
 	}
 
-	public void propagateBackReadAccess(Collection<EObject> seenContainers, FlowNode currentNode) {
+	public void propagateBackReadAccess(final Collection<EObject> seenContainers, final FlowNode currentNode) {
 		for (final EObject currentObj : seenContainers) {
 			final FlowNode newNode = getFlowNodeOrCreate(currentObj);
 			currentNode.addOutRef(newNode);
 		}
 	}
 
-	public void propagateBackWriteAccess(Collection<EObject> seenContainers, FlowNode currentNode) {
+	public void propagateBackWriteAccess(final Collection<EObject> seenContainers, final FlowNode currentNode) {
 		for (final EObject currentObj : Collections.unmodifiableCollection(seenContainers)) {
 			final FlowNode newNode = getFlowNodeOrCreate(currentObj);
 			currentNode.addInRef(newNode);

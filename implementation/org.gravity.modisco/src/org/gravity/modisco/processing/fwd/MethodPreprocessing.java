@@ -1,6 +1,8 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -21,7 +23,8 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
- * Preprocessing of methods
+ * Preprocessing of methods for creating the name -> signature -> definition
+ * structure
  *
  * @author speldszus
  *
@@ -30,22 +33,60 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 
 	private static final Logger LOGGER = Logger.getLogger(MethodPreprocessing.class);
 
+	private Map<String, MMethodName> names;
+
 	@Override
-	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
-			IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements,
+			final IProgressMonitor monitor) {
 		// Make all definitions directly accessible from the model
 		model.getMAbstractMethodDefinitions().addAll(elements);
 
 		// Create MMethodNames for MMethodDefinitions
-		for (final MAbstractMethodDefinition mDef : elements) {
-			createMethodName(model, mDef);
-		}
+		this.names = new ConcurrentHashMap<>();
+		model.getMMethodNames().addAll(createMethodNames(elements));
+
 		// Create MMethodSignatures for MMethodNames
-		for (final MMethodName mName : model.getMMethodNames()) {
-			for (final MDefinition mDef : mName.getMDefinitions()) {
-				if (!createMethodSignature(model, mName, (MAbstractMethodDefinition) mDef)) {
-					return false;
-				}
+		return model.getMMethodNames().parallelStream().allMatch(mName -> createMethodSignatures(mName, model));
+	}
+
+	/**
+	 * Creates a new method name elements for the method definitions in the model
+	 *
+	 * @param definition The method definition
+	 * @return
+	 */
+	private Collection<MMethodName> createMethodNames(final Collection<MAbstractMethodDefinition> definitions) {
+		definitions.parallelStream().forEach(definition -> {
+			String name;
+			if (definition instanceof MConstructorDefinition
+					&& definition.getAnonymousClassDeclarationOwner() != null) {
+				name = definition.getAnonymousClassDeclarationOwner().getClassInstanceCreation().getType().getType()
+						.getName();
+			} else {
+				name = definition.getName();
+			}
+			MMethodName mName = this.names.get(name);
+			if (mName == null) {
+				mName = ModiscoFactory.eINSTANCE.createMMethodName();
+				mName.setMName(name);
+				this.names.put(name, mName);
+			}
+			mName.getMDefinitions().add(definition);
+		});
+		return this.names.values();
+	}
+
+	/**
+	 * Creates the method signature for the given method name
+	 *
+	 * @param name  A method name
+	 * @param model The model containing the name and according definitions
+	 * @return true, iff the signatures have been created successfully
+	 */
+	private boolean createMethodSignatures(final MMethodName name, final MGravityModel model) {
+		for (final MDefinition mDef : name.getMDefinitions()) {
+			if (!createMethodSignature(model, name, (MAbstractMethodDefinition) mDef)) {
+				return false;
 			}
 		}
 		return true;
@@ -60,29 +101,30 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * @param definition The method definition
 	 * @return true, if the creation was successful
 	 */
-	private boolean createMethodSignature(MGravityModel model, MMethodName name, MAbstractMethodDefinition definition) {
+	private boolean createMethodSignature(final MGravityModel model, final MMethodName name,
+			final MAbstractMethodDefinition definition) {
 		final Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(definition, model);
 		if (mSigReturnType == null) {
 			LOGGER.error("Couldn't find most geric return type for method definition:" + definition + ".");
 			return false;
 		}
-		MMethodSignature existingSignature = getExistingSignature(name, definition, mSigReturnType);
-		if (existingSignature == null) {
-			existingSignature = ModiscoFactory.eINSTANCE.createMMethodSignature();
-			name.getMSignatures().add(existingSignature);
-			existingSignature.setReturnType(mSigReturnType);
-			MoDiscoUtil.fillParamList(definition, existingSignature);
+		MMethodSignature signature = getExistingSignature(name, definition, mSigReturnType);
+		if (signature == null) {
+			signature = ModiscoFactory.eINSTANCE.createMMethodSignature();
+			name.getMSignatures().add(signature);
+			signature.setReturnType(mSigReturnType);
+			MoDiscoUtil.fillParamList(definition, signature);
 		} else {
 			final EList<SingleVariableDeclaration> defParams = definition.getParameters();
-			final MEntry mFirstEntry = existingSignature.getMFirstEntry();
+			final MEntry mFirstEntry = signature.getMFirstEntry();
 			if (mFirstEntry != null) {
 				mFirstEntry.getParameters().add((MSingleVariableDeclaration) defParams.get(0));
-				for (int i = 1; i < existingSignature.getMEntrys().size(); i++) {
+				for (int i = 1; i < signature.getMEntrys().size(); i++) {
 					mFirstEntry.getMNext().getParameters().add((MSingleVariableDeclaration) defParams.get(i));
 				}
 			}
 		}
-		existingSignature.getMDefinitions().add(definition);
+		definition.setMSignature(signature);
 		return true;
 	}
 
@@ -95,8 +137,8 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * @param returnType The most generic return type
 	 * @return The signature or null
 	 */
-	private MMethodSignature getExistingSignature(MMethodName name, MAbstractMethodDefinition definition,
-			Type returnType) {
+	private MMethodSignature getExistingSignature(final MMethodName name, final MAbstractMethodDefinition definition,
+			final Type returnType) {
 		for (final MSignature signature : name.getMSignatures()) {
 			final MMethodSignature methodSignature = (MMethodSignature) signature;
 			if (returnType.equals(methodSignature.getReturnType()) && isParamListEqual(definition, methodSignature)) {
@@ -107,49 +149,14 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	}
 
 	/**
-	 * Creates a new method name element for the method definition in the model if
-	 * there isn't already one
-	 *
-	 * @param model      The modisco model
-	 * @param definition The method definition
-	 */
-	private void createMethodName(MGravityModel model, MAbstractMethodDefinition definition) {
-		String name;
-		if (definition instanceof MConstructorDefinition && definition.getAnonymousClassDeclarationOwner() != null) {
-			name = definition.getAnonymousClassDeclarationOwner().getClassInstanceCreation().getType().getType()
-					.getName();
-		} else {
-			name = definition.getName();
-		}
-		MMethodName mName = getMethodName(model, name);
-		if (mName == null) {
-			mName = ModiscoFactory.eINSTANCE.createMMethodName();
-			model.getMMethodNames().add(mName);
-			mName.setMName(name);
-		}
-		mName.getMDefinitions().add(definition);
-	}
-
-	/**
-	 * Searches the model for a method with the given name
-	 *
-	 * @param model The model
-	 * @param name  The name
-	 * @return the found element or null
-	 */
-	private MMethodName getMethodName(MGravityModel model, String name) {
-		return model.getMMethodNames().parallelStream().filter(element -> element.getMName().equals(name)).findAny()
-				.orElse(null);
-	}
-
-	/**
 	 * Checks if the parameter list of the method definition and signature are equal
 	 *
 	 * @param definition The method definition
 	 * @param signature  The method signature
 	 * @return true, if the parameter lists are equal
 	 */
-	private static boolean isParamListEqual(MAbstractMethodDefinition definition, MMethodSignature signature) {
+	private static boolean isParamListEqual(final MAbstractMethodDefinition definition,
+			final MMethodSignature signature) {
 		final EList<SingleVariableDeclaration> parameters1 = definition.getParameters();
 		final EList<MEntry> parameters2 = signature.getMEntrys();
 		if (parameters1.size() == parameters2.size()) {
