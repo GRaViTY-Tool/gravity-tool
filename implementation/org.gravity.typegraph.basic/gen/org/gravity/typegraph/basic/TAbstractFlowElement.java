@@ -34,7 +34,7 @@ public interface TAbstractFlowElement extends EObject {
 	 * @return the value of the '<em>Owned Flows</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_OwnedFlows()
 	 * @see org.gravity.typegraph.basic.TFlow#getFlowOwner
-	 * @model opposite="flowOwner" containment="true"
+	 * @model opposite="flowOwner" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TFlow> getOwnedFlows();
@@ -48,7 +48,7 @@ public interface TAbstractFlowElement extends EObject {
 	 * @return the value of the '<em>Incoming Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_IncomingFlows()
 	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows
-	 * @model opposite="outgoingFlows"
+	 * @model opposite="outgoingFlows" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractFlowElement> getIncomingFlows();
@@ -62,7 +62,7 @@ public interface TAbstractFlowElement extends EObject {
 	 * @return the value of the '<em>Outgoing Flows</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractFlowElement_OutgoingFlows()
 	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows
-	 * @model opposite="incomingFlows"
+	 * @model opposite="incomingFlows" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractFlowElement> getOutgoingFlows();

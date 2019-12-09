@@ -75,7 +75,7 @@ public interface TFieldDefinition extends TMember {
 	 * @return the value of the '<em>Hidden By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTFieldDefinition_HiddenBy()
 	 * @see org.gravity.typegraph.basic.TFieldDefinition#getHiding
-	 * @model opposite="hiding"
+	 * @model opposite="hiding" ordered="false"
 	 * @generated
 	 */
 	EList<TFieldDefinition> getHiddenBy();

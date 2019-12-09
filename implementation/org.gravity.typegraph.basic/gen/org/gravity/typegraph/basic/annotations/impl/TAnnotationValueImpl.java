@@ -26,10 +26,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationValue;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.typegraph.basic.annotations.impl.TAnnotationValueImpl#getTKey
- * <em>TKey</em>}</li>
- * <li>{@link org.gravity.typegraph.basic.annotations.impl.TAnnotationValueImpl#getTValue
- * <em>TValue</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.annotations.impl.TAnnotationValueImpl#getTKey <em>TKey</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.annotations.impl.TAnnotationValueImpl#getTValue <em>TValue</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,9 +54,8 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	protected String tKey = TKEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTValue() <em>TValue</em>}' containment
-	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getTValue() <em>TValue</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTValue()
 	 * @generated
 	 * @ordered
@@ -67,7 +64,6 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected TAnnotationValueImpl() {
@@ -76,7 +72,6 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -86,123 +81,112 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String getTKey() {
-		return this.tKey;
+		return tKey;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setTKey(String newTKey) {
-		final String oldTKey = this.tKey;
-		this.tKey = newTKey;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION_VALUE__TKEY, oldTKey,
-					this.tKey));
-		}
+		String oldTKey = tKey;
+		tKey = newTKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AnnotationsPackage.TANNOTATION_VALUE__TKEY, oldTKey, tKey));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<EObject> getTValue() {
-		if (this.tValue == null) {
-			this.tValue = new EObjectContainmentEList<>(EObject.class, this,
-					AnnotationsPackage.TANNOTATION_VALUE__TVALUE);
+		if (tValue == null) {
+			tValue = new EObjectContainmentEList<EObject>(EObject.class, this, AnnotationsPackage.TANNOTATION_VALUE__TVALUE);
 		}
-		return this.tValue;
+		return tValue;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
-			return ((InternalEList<?>) getTValue()).basicRemove(otherEnd, msgs);
+			case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
+				return ((InternalEList<?>)getTValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
-			return getTKey();
-		case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
-			return getTValue();
+			case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
+				return getTKey();
+			case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
+				return getTValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
-			setTKey((String) newValue);
-			return;
-		case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
-			getTValue().clear();
-			getTValue().addAll((Collection<? extends EObject>) newValue);
-			return;
+			case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
+				setTKey((String)newValue);
+				return;
+			case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
+				getTValue().clear();
+				getTValue().addAll((Collection<? extends EObject>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
-			setTKey(TKEY_EDEFAULT);
-			return;
-		case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
-			getTValue().clear();
-			return;
+			case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
+				setTKey(TKEY_EDEFAULT);
+				return;
+			case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
+				getTValue().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
-			return TKEY_EDEFAULT == null ? this.tKey != null : !TKEY_EDEFAULT.equals(this.tKey);
-		case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
-			return this.tValue != null && !this.tValue.isEmpty();
+			case AnnotationsPackage.TANNOTATION_VALUE__TKEY:
+				return TKEY_EDEFAULT == null ? tKey != null : !TKEY_EDEFAULT.equals(tKey);
+			case AnnotationsPackage.TANNOTATION_VALUE__TVALUE:
+				return tValue != null && !tValue.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,11 +198,13 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		return new StringBuilder(super.toString()).append(" (tKey: ").append(this.tKey).append(')').toString();
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (tKey: ");
+		result.append(tKey);
+		result.append(')');
+		return result.toString();
 	}
 	// <-- [user code injected with eMoflon]
 

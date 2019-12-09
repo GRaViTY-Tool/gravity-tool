@@ -45,7 +45,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * @return the value of the '<em>Packages</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Packages()
 	 * @see org.gravity.typegraph.basic.TPackage#getPg
-	 * @model opposite="pg" containment="true"
+	 * @model opposite="pg" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TPackage> getPackages();
@@ -63,7 +63,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * @return the value of the '<em>Methods</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Methods()
 	 * @see org.gravity.typegraph.basic.TMethod#getPg
-	 * @model opposite="pg" containment="true"
+	 * @model opposite="pg" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TMethod> getMethods();
@@ -81,7 +81,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Fields()
 	 * @see org.gravity.typegraph.basic.TField#getPg
-	 * @model opposite="pg" containment="true"
+	 * @model opposite="pg" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TField> getFields();
@@ -97,7 +97,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Classes</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Classes()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TClass> getClasses();
@@ -113,7 +113,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interfaces</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_Interfaces()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TInterface> getInterfaces();
@@ -131,7 +131,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * @return the value of the '<em>Owned Types</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_OwnedTypes()
 	 * @see org.gravity.typegraph.basic.TAbstractType#getPg
-	 * @model opposite="pg" containment="true"
+	 * @model opposite="pg" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractType> getOwnedTypes();
@@ -147,7 +147,7 @@ public interface TypeGraph extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>TAnnotation Types</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTypeGraph_TAnnotationTypes()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TAnnotationType> getTAnnotationTypes();

@@ -23,11 +23,6 @@ import org.gravity.typegraph.basic.annotations.TClassNode;
 import org.gravity.typegraph.basic.annotations.TNumberNode;
 import org.gravity.typegraph.basic.annotations.TTextAnnotation;
 import org.gravity.typegraph.basic.annotations.TTextNode;
-
-import org.gravity.typegraph.basic.containers.ContainersPackage;
-
-import org.gravity.typegraph.basic.containers.impl.ContainersPackageImpl;
-
 import org.gravity.typegraph.basic.impl.BasicPackageImpl;
 
 /**
@@ -150,18 +145,14 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 		BasicPackageImpl theBasicPackage = (BasicPackageImpl)(registeredPackage instanceof BasicPackageImpl ? registeredPackage : BasicPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContainersPackage.eNS_URI);
-		ContainersPackageImpl theContainersPackage = (ContainersPackageImpl)(registeredPackage instanceof ContainersPackageImpl ? registeredPackage : ContainersPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAnnotationsPackage.createPackageContents();
 		theBasicPackage.createPackageContents();
-		theContainersPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAnnotationsPackage.initializePackageContents();
 		theBasicPackage.initializePackageContents();
-		theContainersPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAnnotationsPackage.freeze();

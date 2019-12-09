@@ -69,7 +69,7 @@ public interface TMember extends TAnnotatable, TAbstractFlowElement {
 	 * @return the value of the '<em>Accessed By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMember_AccessedBy()
 	 * @see org.gravity.typegraph.basic.TAccess#getTTarget
-	 * @model opposite="tTarget"
+	 * @model opposite="tTarget" ordered="false"
 	 * @generated
 	 */
 	EList<TAccess> getAccessedBy();

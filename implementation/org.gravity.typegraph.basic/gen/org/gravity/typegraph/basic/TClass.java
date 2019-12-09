@@ -3,10 +3,6 @@
 package org.gravity.typegraph.basic;
 
 import org.eclipse.emf.common.util.EList;
-import org.gravity.typegraph.basic.containers.TMemberContainer;
-import org.gravity.typegraph.basic.containers.TMethodDefinitionContainer;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +64,7 @@ public interface TClass extends TAbstractType {
 	 * @return the value of the '<em>Child Classes</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTClass_ChildClasses()
 	 * @see org.gravity.typegraph.basic.TClass#getParentClass
-	 * @model opposite="parentClass"
+	 * @model opposite="parentClass" ordered="false"
 	 * @generated
 	 */
 	EList<TClass> getChildClasses();
@@ -86,18 +82,10 @@ public interface TClass extends TAbstractType {
 	 * @return the value of the '<em>Implements</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTClass_Implements()
 	 * @see org.gravity.typegraph.basic.TInterface#getImplementedBy
-	 * @model opposite="implementedBy"
+	 * @model opposite="implementedBy" ordered="false"
 	 * @generated
 	 */
 	EList<TInterface> getImplements();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	TMethodDefinitionContainer getTMethodDefinitions();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,14 +102,6 @@ public interface TClass extends TAbstractType {
 	 * @generated
 	 */
 	EList<TMember> getAllTMembers();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	TMemberContainer getAllTMembersInContainer();
 
 	/**
 	 * <!-- begin-user-doc -->

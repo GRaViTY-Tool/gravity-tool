@@ -36,7 +36,7 @@ public interface TInterface extends TAbstractType {
 	 * @return the value of the '<em>Implemented By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTInterface_ImplementedBy()
 	 * @see org.gravity.typegraph.basic.TClass#getImplements
-	 * @model opposite="implements"
+	 * @model opposite="implements" ordered="false"
 	 * @generated
 	 */
 	EList<TClass> getImplementedBy();
@@ -54,7 +54,7 @@ public interface TInterface extends TAbstractType {
 	 * @return the value of the '<em>Parent Interfaces</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTInterface_ParentInterfaces()
 	 * @see org.gravity.typegraph.basic.TInterface#getChildInterfaces
-	 * @model opposite="childInterfaces"
+	 * @model opposite="childInterfaces" ordered="false"
 	 * @generated
 	 */
 	EList<TInterface> getParentInterfaces();
@@ -72,7 +72,7 @@ public interface TInterface extends TAbstractType {
 	 * @return the value of the '<em>Child Interfaces</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTInterface_ChildInterfaces()
 	 * @see org.gravity.typegraph.basic.TInterface#getParentInterfaces
-	 * @model opposite="parentInterfaces"
+	 * @model opposite="parentInterfaces" ordered="false"
 	 * @generated
 	 */
 	EList<TInterface> getChildInterfaces();

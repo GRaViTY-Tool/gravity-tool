@@ -3,44 +3,32 @@
 package org.gravity.hulk.resolve.calculators.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.LinkedList;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-
-import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
-
-import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
-
-import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
-import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
-
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
-import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
-
-import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TMember;
-
-import org.gravity.typegraph.basic.annotations.TAnnotatable;
-
-import org.gravity.typegraph.basic.containers.TMemberContainer;
+import java.util.Deque;
 // <-- [user defined imports]
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Set;
-import java.util.Deque;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
+import org.gravity.hulk.antipatterngraph.codesmells.HDataClassSmell;
+import org.gravity.hulk.detection.impl.HMetricCalculatorImpl;
+import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
+import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
+import org.gravity.hulk.resolve.calculators.HMethodToDataClassAccessCalculator;
+import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSyntethicMethod;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
 // [user defined imports] -->
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +40,7 @@ import org.gravity.typegraph.basic.containers.ContainersFactory;
  * @generated
  */
 public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImpl
-		implements HMethodToDataClassAccessCalculator {
+implements HMethodToDataClassAccessCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -77,46 +65,47 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean detect(HAntiPatternGraph apg) {
+	@Override
+	public boolean detect(final HAntiPatternGraph apg) {
 
-		Object[] result1_black = HMethodToDataClassAccessCalculatorImpl
+		final Object[] result1_black = HMethodToDataClassAccessCalculatorImpl
 				.pattern_HMethodToDataClassAccessCalculator_0_1_ActivityNode1_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
 		}
-		// ForEach 
-		for (Object[] result2_black : HMethodToDataClassAccessCalculatorImpl
+		// ForEach
+		for (final Object[] result2_black : HMethodToDataClassAccessCalculatorImpl
 				.pattern_HMethodToDataClassAccessCalculator_0_2_ActivityNode2_blackBFF(apg)) {
-			HBlobAntiPattern blob = (HBlobAntiPattern) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
-			// ForEach 
-			for (Object[] result3_black : HMethodToDataClassAccessCalculatorImpl
+			final HBlobAntiPattern blob = (HBlobAntiPattern) result2_black[1];
+			final TClass tClass = (TClass) result2_black[2];
+			// ForEach
+			for (final Object[] result3_black : HMethodToDataClassAccessCalculatorImpl
 					.pattern_HMethodToDataClassAccessCalculator_0_3_ActivityNode3_blackBF(tClass)) {
-				TMember tMember = (TMember) result3_black[1];
-				// ForEach 
-				for (Object[] result4_black : HMethodToDataClassAccessCalculatorImpl
+				final TMember tMember = (TMember) result3_black[1];
+				// ForEach
+				for (final Object[] result4_black : HMethodToDataClassAccessCalculatorImpl
 						.pattern_HMethodToDataClassAccessCalculator_0_4_ActivityNode18_blackBFF(blob)) {
-					HDataClassSmell dataclass = (HDataClassSmell) result4_black[1];
-					TClass tdataClass = (TClass) result4_black[2];
+					final HDataClassSmell dataclass = (HDataClassSmell) result4_black[1];
+					final TClass tdataClass = (TClass) result4_black[2];
 
-					Object[] result5_bindingAndBlack = HMethodToDataClassAccessCalculatorImpl
+					final Object[] result5_bindingAndBlack = HMethodToDataClassAccessCalculatorImpl
 							.pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_bindingAndBlackFFBB(this,
 									tdataClass);
 					if (result5_bindingAndBlack == null) {
 						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this
 								+ ", " + "[tdataClass] = " + tdataClass + ".");
 					}
-					TMemberContainer tAllEffectedMembers = (TMemberContainer) result5_bindingAndBlack[0];
-					TMemberContainer tAllMembers = (TMemberContainer) result5_bindingAndBlack[1];
-					// 
-					Object[] result6_black = HMethodToDataClassAccessCalculatorImpl
+					final EList<TMember> tAllEffectedMembers = (EList<TMember>) result5_bindingAndBlack[0];
+					final EList<TMember> tAllMembers = (EList<TMember>) result5_bindingAndBlack[1];
+					//
+					final Object[] result6_black = HMethodToDataClassAccessCalculatorImpl
 							.pattern_HMethodToDataClassAccessCalculator_0_6_ActivityNode17_blackBBFF(tAllMembers,
 									tMember);
 					if (result6_black != null) {
 						//nothing TMember someMember = (TMember) result6_black[2];
 						//nothing TAccess someAccess = (TAccess) result6_black[3];
 
-						Object[] result7_black = HMethodToDataClassAccessCalculatorImpl
+						final Object[] result7_black = HMethodToDataClassAccessCalculatorImpl
 								.pattern_HMethodToDataClassAccessCalculator_0_7_ActivityNode4_blackBBBBB(apg, this,
 										dataclass, tdataClass, tMember);
 						if (result7_black == null) {
@@ -124,45 +113,45 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 									+ ", " + "[this] = " + this + ", " + "[dataclass] = " + dataclass + ", "
 									+ "[tdataClass] = " + tdataClass + ", " + "[tMember] = " + tMember + ".");
 						}
-						Object[] result7_green = HMethodToDataClassAccessCalculatorImpl
+						final Object[] result7_green = HMethodToDataClassAccessCalculatorImpl
 								.pattern_HMethodToDataClassAccessCalculator_0_7_ActivityNode4_greenBBFBBB(apg, this,
 										dataclass, tdataClass, tMember);
-						HMethodToDataClassAccess metric = (HMethodToDataClassAccess) result7_green[2];
+						final HMethodToDataClassAccess metric = (HMethodToDataClassAccess) result7_green[2];
 
-						// ForEach 
-						for (Object[] result8_black : HMethodToDataClassAccessCalculatorImpl
+						// ForEach
+						for (final Object[] result8_black : HMethodToDataClassAccessCalculatorImpl
 								.pattern_HMethodToDataClassAccessCalculator_0_8_ActivityNode5_blackFB(tAllMembers)) {
-							TMember dcMember = (TMember) result8_black[0];
-							// 
-							Object[] result9_black = HMethodToDataClassAccessCalculatorImpl
+							final TMember dcMember = (TMember) result8_black[0];
+							//
+							final Object[] result9_black = HMethodToDataClassAccessCalculatorImpl
 									.pattern_HMethodToDataClassAccessCalculator_0_9_ActivityNode25_blackFBB(tMember,
 											dcMember);
 							if (result9_black != null) {
 								//nothing TAccess calling = (TAccess) result9_black[0];
-								// 
+								//
 								HMethodToDataClassAccessCalculatorImpl
-										.pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
-												metric);
+								.pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
+										metric);
 
 							} else {
 							}
 
 						}
-						// ForEach 
-						for (Object[] result11_black : HMethodToDataClassAccessCalculatorImpl
+						// ForEach
+						for (final Object[] result11_black : HMethodToDataClassAccessCalculatorImpl
 								.pattern_HMethodToDataClassAccessCalculator_0_11_ActivityNode21_blackFB(
 										tAllEffectedMembers)) {
-							TMember dcMember2 = (TMember) result11_black[0];
-							// 
-							Object[] result12_black = HMethodToDataClassAccessCalculatorImpl
+							final TMember dcMember2 = (TMember) result11_black[0];
+							//
+							final Object[] result12_black = HMethodToDataClassAccessCalculatorImpl
 									.pattern_HMethodToDataClassAccessCalculator_0_12_ActivityNode26_blackBFB(tMember,
 											dcMember2);
 							if (result12_black != null) {
 								//nothing TAccess access = (TAccess) result12_black[1];
-								// 
+								//
 								HMethodToDataClassAccessCalculatorImpl
-										.pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
-												metric);
+								.pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
+										metric);
 
 							} else {
 							}
@@ -185,21 +174,22 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TMemberContainer getAllAffectedMembers(TClass tClass) {
+	@Override
+	public EList<TMember> getAllAffectedMembers(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		Set<TMember> allMembers = new HashSet<>();
-		Deque<TClass> stack = new LinkedList<>();
+		final Set<TMember> allMembers = new HashSet<>();
+		final Deque<TClass> stack = new LinkedList<>();
 		stack.add(tClass);
 		while (!stack.isEmpty()) {
-			TClass tNextClass = stack.pop();
-			for (TMember member : tNextClass.getDefines()) {
+			final TClass tNextClass = stack.pop();
+			for (final TMember member : tNextClass.getDefines()) {
 				TMember redefined;
 				if (member instanceof TMethodDefinition) {
-					TMethodDefinition method = (TMethodDefinition) member;
+					final TMethodDefinition method = (TMethodDefinition) member;
 					redefined = method.getOverriding();
 				} else if (member instanceof TFieldDefinition) {
-					TFieldDefinition field = (TFieldDefinition) member;
+					final TFieldDefinition field = (TFieldDefinition) member;
 					redefined = field.getHiding();
 				} else if (member instanceof TSyntethicMethod) {
 					// Ignore synthetic methods
@@ -213,8 +203,8 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 			}
 			stack.addAll(tNextClass.getChildClasses());
 		}
-		TMemberContainer container = ContainersFactory.eINSTANCE.createTMemberContainer();
-		container.getTMembers().addAll(allMembers);
+		final EList<TMember> container = new BasicEList<>();
+		container.addAll(allMembers);
 		return container;
 
 	}
@@ -225,7 +215,7 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CalculatorsPackage.HMETHOD_TO_DATA_CLASS_ACCESS_CALCULATOR___DETECT__HANTIPATTERNGRAPH:
 			return detect((HAntiPatternGraph) arguments.get(0));
@@ -236,19 +226,19 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_1_ActivityNode1_blackB(
-			HMethodToDataClassAccessCalculator _this) {
+			final HMethodToDataClassAccessCalculator _this) {
 		return new Object[] { _this };
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_2_ActivityNode2_blackBFF(
-			HAntiPatternGraph apg) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HAnnotation tmpBlob : apg.getHAnnotations()) {
+			final HAntiPatternGraph apg) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final HAnnotation tmpBlob : apg.getHAnnotations()) {
 			if (tmpBlob instanceof HBlobAntiPattern) {
-				HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
-				TAnnotatable tmpTClass = blob.getTAnnotated();
+				final HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
+				final TAnnotatable tmpTClass = blob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
-					TClass tClass = (TClass) tmpTClass;
+					final TClass tClass = (TClass) tmpTClass;
 					_result.add(new Object[] { apg, blob, tClass });
 				}
 
@@ -258,21 +248,21 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_3_ActivityNode3_blackBF(
-			TClass tClass) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TMember tMember : tClass.getDefines()) {
+			final TClass tClass) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final TMember tMember : tClass.getDefines()) {
 			_result.add(new Object[] { tClass, tMember });
 		}
 		return _result;
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_4_ActivityNode18_blackBFF(
-			HBlobAntiPattern blob) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HDataClassSmell dataclass : blob.getHDataClassSmells()) {
-			TAnnotatable tmpTdataClass = dataclass.getTAnnotated();
+			final HBlobAntiPattern blob) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final HDataClassSmell dataclass : blob.getHDataClassSmells()) {
+			final TAnnotatable tmpTdataClass = dataclass.getTAnnotated();
 			if (tmpTdataClass instanceof TClass) {
-				TClass tdataClass = (TClass) tmpTdataClass;
+				final TClass tdataClass = (TClass) tmpTdataClass;
 				_result.add(new Object[] { blob, dataclass, tdataClass });
 			}
 
@@ -281,12 +271,10 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_bindingFFBB(
-			HMethodToDataClassAccessCalculator _this, TClass tdataClass) {
-		TMemberContainer _localVariable_0 = _this.getAllAffectedMembers(tdataClass);
-		TMemberContainer _localVariable_1 = tdataClass.getAllTMembersInContainer();
-		TMemberContainer tAllEffectedMembers = _localVariable_0;
+			final HMethodToDataClassAccessCalculator _this, final TClass tdataClass) {
+		final EList<TMember> tAllEffectedMembers = _this.getAllAffectedMembers(tdataClass);
 		if (tAllEffectedMembers != null) {
-			TMemberContainer tAllMembers = _localVariable_1;
+			final EList<TMember> tAllMembers = tdataClass.getAllTMembers();
 			if (tAllMembers != null) {
 				return new Object[] { tAllEffectedMembers, tAllMembers, _this, tdataClass };
 			}
@@ -294,26 +282,15 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 		return null;
 	}
 
-	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_blackBB(
-			TMemberContainer tAllEffectedMembers, TMemberContainer tAllMembers) {
-		if (!tAllEffectedMembers.equals(tAllMembers)) {
-			return new Object[] { tAllEffectedMembers, tAllMembers };
-		}
-		return null;
-	}
-
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_bindingAndBlackFFBB(
-			HMethodToDataClassAccessCalculator _this, TClass tdataClass) {
-		Object[] result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding = pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_bindingFFBB(
+			final HMethodToDataClassAccessCalculator _this, final TClass tdataClass) {
+		final Object[] result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding = pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_bindingFFBB(
 				_this, tdataClass);
 		if (result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding != null) {
-			TMemberContainer tAllEffectedMembers = (TMemberContainer) result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding[0];
-			TMemberContainer tAllMembers = (TMemberContainer) result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding[1];
+			final EList<TMember> tAllEffectedMembers = (EList<TMember>) result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding[0];
+			final EList<TMember> tAllMembers = (EList<TMember>) result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_binding[1];
 
-			Object[] result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_black = pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_blackBB(
-					tAllEffectedMembers, tAllMembers);
-			if (result_pattern_HMethodToDataClassAccessCalculator_0_5_ActivityNode13_black != null) {
-
+			if (!tAllEffectedMembers.equals(tAllMembers)) {
 				return new Object[] { tAllEffectedMembers, tAllMembers, _this, tdataClass };
 			}
 		}
@@ -321,10 +298,10 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_6_ActivityNode17_blackBBFF(
-			TMemberContainer tAllMembers, TMember tMember) {
-		for (TMember someMember : tAllMembers.getTMembers()) {
+			final EList<TMember> tAllMembers, final TMember tMember) {
+		for (final TMember someMember : tAllMembers) {
 			if (!someMember.equals(tMember)) {
-				for (TAccess someAccess : tMember.getTAccessing()) {
+				for (final TAccess someAccess : tMember.getTAccessing()) {
 					if (someMember.getAccessedBy().contains(someAccess)) {
 						return new Object[] { tAllMembers, tMember, someMember, someAccess };
 					}
@@ -335,15 +312,15 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_7_ActivityNode4_blackBBBBB(
-			HAntiPatternGraph apg, HMethodToDataClassAccessCalculator _this, HDataClassSmell dataclass,
-			TClass tdataClass, TMember tMember) {
+			final HAntiPatternGraph apg, final HMethodToDataClassAccessCalculator _this, final HDataClassSmell dataclass,
+			final TClass tdataClass, final TMember tMember) {
 		return new Object[] { apg, _this, dataclass, tdataClass, tMember };
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_7_ActivityNode4_greenBBFBBB(
-			HAntiPatternGraph apg, HMethodToDataClassAccessCalculator _this, HDataClassSmell dataclass,
-			TClass tdataClass, TMember tMember) {
-		HMethodToDataClassAccess metric = RefactoringgraphFactory.eINSTANCE.createHMethodToDataClassAccess();
+			final HAntiPatternGraph apg, final HMethodToDataClassAccessCalculator _this, final HDataClassSmell dataclass,
+			final TClass tdataClass, final TMember tMember) {
+		final HMethodToDataClassAccess metric = RefactoringgraphFactory.eINSTANCE.createHMethodToDataClassAccess();
 		apg.getHAnnotations().add(metric);
 		_this.getHAnnotation().add(metric);
 		metric.setTAnnotated(tMember);
@@ -354,18 +331,18 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_8_ActivityNode5_blackFB(
-			TMemberContainer tAllMembers) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TMember dcMember : tAllMembers.getTMembers()) {
+			final EList<TMember> tAllMembers) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final TMember dcMember : tAllMembers) {
 			_result.add(new Object[] { dcMember, tAllMembers });
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_9_ActivityNode25_blackFBB(TMember tMember,
-			TMember dcMember) {
+	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_9_ActivityNode25_blackFBB(final TMember tMember,
+			final TMember dcMember) {
 		if (!dcMember.equals(tMember)) {
-			for (TAccess calling : tMember.getTAccessing()) {
+			for (final TAccess calling : tMember.getTAccessing()) {
 				if (dcMember.getAccessedBy().contains(calling)) {
 					return new Object[] { calling, tMember, dcMember };
 				}
@@ -375,25 +352,25 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final double pattern_HMethodToDataClassAccessCalculator_0_10_ActivityNode20_expressionFB(
-			HMethodToDataClassAccess metric) {
-		double _localVariable_0 = metric.increment();
-		double _result = Double.valueOf(_localVariable_0);
+			final HMethodToDataClassAccess metric) {
+		final double _localVariable_0 = metric.increment();
+		final double _result = _localVariable_0;
 		return _result;
 	}
 
 	public static final Iterable<Object[]> pattern_HMethodToDataClassAccessCalculator_0_11_ActivityNode21_blackFB(
-			TMemberContainer tAllEffectedMembers) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (TMember dcMember2 : tAllEffectedMembers.getTMembers()) {
+			final EList<TMember> tAllEffectedMembers) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final TMember dcMember2 : tAllEffectedMembers) {
 			_result.add(new Object[] { dcMember2, tAllEffectedMembers });
 		}
 		return _result;
 	}
 
 	public static final Object[] pattern_HMethodToDataClassAccessCalculator_0_12_ActivityNode26_blackBFB(
-			TMember tMember, TMember dcMember2) {
+			final TMember tMember, final TMember dcMember2) {
 		if (!dcMember2.equals(tMember)) {
-			for (TAccess access : tMember.getAccessedBy()) {
+			for (final TAccess access : tMember.getAccessedBy()) {
 				if (dcMember2.getTAccessing().contains(access)) {
 					return new Object[] { tMember, access, dcMember2 };
 				}
@@ -403,14 +380,14 @@ public class HMethodToDataClassAccessCalculatorImpl extends HMetricCalculatorImp
 	}
 
 	public static final double pattern_HMethodToDataClassAccessCalculator_0_13_ActivityNode6_expressionFB(
-			HMethodToDataClassAccess metric) {
-		double _localVariable_0 = metric.increment();
-		double _result = Double.valueOf(_localVariable_0);
+			final HMethodToDataClassAccess metric) {
+		final double _localVariable_0 = metric.increment();
+		final double _result = _localVariable_0;
 		return _result;
 	}
 
 	public static final boolean pattern_HMethodToDataClassAccessCalculator_0_14_expressionF() {
-		boolean _result = Boolean.TRUE;
+		final boolean _result = Boolean.TRUE;
 		return _result;
 	}
 

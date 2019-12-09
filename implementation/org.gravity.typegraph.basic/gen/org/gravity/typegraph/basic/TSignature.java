@@ -33,7 +33,7 @@ public interface TSignature extends TAnnotatable, TAbstractFlowElement {
 	 * @return the value of the '<em>Definitions</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTSignature_Definitions()
 	 * @see org.gravity.typegraph.basic.TMember#getSignature
-	 * @model opposite="signature" containment="true"
+	 * @model opposite="signature" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TMember> getDefinitions();

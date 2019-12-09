@@ -116,7 +116,7 @@ public interface TPackage extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Classes</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Classes()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TClass> getClasses();
@@ -132,7 +132,7 @@ public interface TPackage extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interfaces</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_Interfaces()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TInterface> getInterfaces();
@@ -150,7 +150,7 @@ public interface TPackage extends TAnnotatable {
 	 * @return the value of the '<em>Owned Types</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTPackage_OwnedTypes()
 	 * @see org.gravity.typegraph.basic.TAbstractType#getPackage
-	 * @model opposite="package"
+	 * @model opposite="package" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractType> getOwnedTypes();

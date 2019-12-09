@@ -885,22 +885,13 @@ public interface BasicPackage extends EPackage {
 	int TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE = TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE;
 
 	/**
-	 * The operation id for the '<em>Get TMethod Definitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___GET_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 1;
+	int TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get All TMembers</em>' operation.
@@ -909,16 +900,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_TMEMBERS = TABSTRACT_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get All TMembers In Container</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER = TABSTRACT_TYPE_OPERATION_COUNT + 3;
+	int TCLASS___GET_ALL_TMEMBERS = TABSTRACT_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get All Children</em>' operation.
@@ -927,7 +909,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_CHILDREN = TABSTRACT_TYPE_OPERATION_COUNT + 4;
+	int TCLASS___GET_ALL_CHILDREN = TABSTRACT_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
@@ -936,7 +918,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___IS_SUB_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 5;
+	int TCLASS___IS_SUB_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Is Super Type Of</em>' operation.
@@ -945,7 +927,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 6;
+	int TCLASS___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get All Outgoing Accesses</em>' operation.
@@ -954,7 +936,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE = TABSTRACT_TYPE_OPERATION_COUNT + 7;
+	int TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE = TABSTRACT_TYPE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Has AParent This TMember</em>' operation.
@@ -963,7 +945,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = TABSTRACT_TYPE_OPERATION_COUNT + 8;
+	int TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = TABSTRACT_TYPE_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Resolved Parent Class</em>' operation.
@@ -972,7 +954,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_RESOLVED_PARENT_CLASS = TABSTRACT_TYPE_OPERATION_COUNT + 9;
+	int TCLASS___GET_RESOLVED_PARENT_CLASS = TABSTRACT_TYPE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -981,7 +963,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 10;
+	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get Parents</em>' operation.
@@ -990,7 +972,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 11;
+	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
@@ -999,7 +981,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 12;
+	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>TClass</em>' class.
@@ -1008,7 +990,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 13;
+	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -3288,15 +3270,6 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE;
 
 	/**
-	 * The operation id for the '<em>Get TMethod Definitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___GET_TMETHOD_DEFINITIONS = TCLASS___GET_TMETHOD_DEFINITIONS;
-
-	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3313,15 +3286,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___GET_ALL_TMEMBERS = TCLASS___GET_ALL_TMEMBERS;
-
-	/**
-	 * The operation id for the '<em>Get All TMembers In Container</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___GET_ALL_TMEMBERS_IN_CONTAINER = TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER;
 
 	/**
 	 * The operation id for the '<em>Get All Children</em>' operation.
@@ -4054,16 +4018,6 @@ public interface BasicPackage extends EPackage {
 	EReference getTClass_Implements();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getTMethodDefinitions() <em>Get TMethod Definitions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get TMethod Definitions</em>' operation.
-	 * @see org.gravity.typegraph.basic.TClass#getTMethodDefinitions()
-	 * @generated
-	 */
-	EOperation getTClass__GetTMethodDefinitions();
-
-	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getDeclaredTMethodDefinitions() <em>Get Declared TMethod Definitions</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4082,16 +4036,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTClass__GetAllTMembers();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getAllTMembersInContainer() <em>Get All TMembers In Container</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All TMembers In Container</em>' operation.
-	 * @see org.gravity.typegraph.basic.TClass#getAllTMembersInContainer()
-	 * @generated
-	 */
-	EOperation getTClass__GetAllTMembersInContainer();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getAllChildren() <em>Get All Children</em>}' operation.
@@ -5688,14 +5632,6 @@ public interface BasicPackage extends EPackage {
 		EReference TCLASS__IMPLEMENTS = eINSTANCE.getTClass_Implements();
 
 		/**
-		 * The meta object literal for the '<em><b>Get TMethod Definitions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TCLASS___GET_TMETHOD_DEFINITIONS = eINSTANCE.getTClass__GetTMethodDefinitions();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Declared TMethod Definitions</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5710,14 +5646,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TCLASS___GET_ALL_TMEMBERS = eINSTANCE.getTClass__GetAllTMembers();
-
-		/**
-		 * The meta object literal for the '<em><b>Get All TMembers In Container</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER = eINSTANCE.getTClass__GetAllTMembersInContainer();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Children</b></em>' operation.

@@ -99,7 +99,7 @@ public interface TAbstractType extends TAnnotatable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Signature</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Signature()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<TSignature> getSignature();
@@ -117,7 +117,7 @@ public interface TAbstractType extends TAnnotatable {
 	 * @return the value of the '<em>Defines</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_Defines()
 	 * @see org.gravity.typegraph.basic.TMember#getDefinedBy
-	 * @model opposite="definedBy"
+	 * @model opposite="definedBy" ordered="false"
 	 * @generated
 	 */
 	EList<TMember> getDefines();
@@ -213,7 +213,7 @@ public interface TAbstractType extends TAnnotatable {
 	 * @return the value of the '<em>Inner Types</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTAbstractType_InnerTypes()
 	 * @see org.gravity.typegraph.basic.TAbstractType#getOuterType
-	 * @model opposite="outerType"
+	 * @model opposite="outerType" ordered="false"
 	 * @generated
 	 */
 	EList<TAbstractType> getInnerTypes();

@@ -12,10 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="staticType" eType="#//TAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TClass" eSuperTypes="#//TAbstractType">
-    <eOperations name="getTMethodDefinitions" eType="#//containers/TMethodDefinitionContainer"/>
     <eOperations name="getDeclaredTMethodDefinitions" upperBound="-1" eType="#//TMethodDefinition"/>
     <eOperations name="getAllTMembers" upperBound="-1" eType="#//TMember"/>
-    <eOperations name="getAllTMembersInContainer" eType="#//containers/TMemberContainer"/>
     <eOperations name="getAllChildren" upperBound="-1" eType="#//TClass"/>
     <eOperations name="isSubTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="tType" eType="#//TAbstractType"/>
@@ -37,14 +35,14 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentClass" eType="#//TClass"
         eOpposite="#//TClass/childClasses"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childClasses" upperBound="-1"
-        eType="#//TClass" eOpposite="#//TClass/parentClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
-        eType="#//TInterface" eOpposite="#//TInterface/implementedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childClasses" ordered="false"
+        upperBound="-1" eType="#//TClass" eOpposite="#//TClass/parentClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" ordered="false"
+        upperBound="-1" eType="#//TInterface" eOpposite="#//TInterface/implementedBy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TField" eSuperTypes="#//TName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
-        eType="#//TFieldSignature" containment="true" eOpposite="#//TFieldSignature/field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" ordered="false"
+        upperBound="-1" eType="#//TFieldSignature" containment="true" eOpposite="#//TFieldSignature/field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/fields"/>
   </eClassifiers>
@@ -52,8 +50,8 @@
     <eOperations name="getSignature" eType="#//TFieldSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hiding" eType="#//TFieldDefinition"
         eOpposite="#//TFieldDefinition/hiddenBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenBy" upperBound="-1"
-        eType="#//TFieldDefinition" eOpposite="#//TFieldDefinition/hiding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenBy" ordered="false"
+        upperBound="-1" eType="#//TFieldDefinition" eOpposite="#//TFieldDefinition/hiding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TFieldSignature" eSuperTypes="#//TSignature">
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -70,8 +68,8 @@
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" lowerBound="1"
         eType="#//TAbstractType" eOpposite="#//TAbstractType/defines"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="accessedBy" upperBound="-1"
-        eType="#//TAccess" eOpposite="#//TAccess/tTarget"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accessedBy" ordered="false"
+        upperBound="-1" eType="#//TAccess" eOpposite="#//TAccess/tTarget"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tAccessing" upperBound="-1"
         eType="#//TAccess" containment="true" eOpposite="#//TAccess/tSource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
@@ -84,8 +82,8 @@
       <eParameters name="returnType" eType="#//TAbstractType"/>
       <eParameters name="parameterTypes" upperBound="-1" eType="#//TAbstractType"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
-        eType="#//TMethodSignature" containment="true" eOpposite="#//TMethodSignature/method"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" ordered="false"
+        upperBound="-1" eType="#//TMethodSignature" containment="true" eOpposite="#//TMethodSignature/method"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pg" lowerBound="1" eType="#//TypeGraph"
         eOpposite="#//TypeGraph/methods"/>
   </eClassifiers>
@@ -94,15 +92,15 @@
     <eOperations name="getSignature" eType="#//TMethodSignature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="overriding" eType="#//TMethodDefinition"
         eOpposite="#//TMethodDefinition/overriddenBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="overriddenBy" upperBound="-1"
-        eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overriding"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="overloading" upperBound="-1"
-        eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloadedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="overloadedBy" upperBound="-1"
-        eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloading"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="overriddenBy" ordered="false"
+        upperBound="-1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overriding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="overloading" ordered="false"
+        upperBound="-1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloadedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="overloadedBy" ordered="false"
+        upperBound="-1" eType="#//TMethodDefinition" eOpposite="#//TMethodDefinition/overloading"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//TAbstractType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="syntethicMethods" upperBound="-1"
-        eType="#//TSyntethicMethod" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntethicMethods" ordered="false"
+        upperBound="-1" eType="#//TSyntethicMethod" eOpposite="#//TSyntethicMethod/originalMethodDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TMethodSignature" eSuperTypes="#//TSignature">
     <eOperations name="getSignatureString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -133,12 +131,12 @@
         eType="#//TPackage" containment="true" eOpposite="#//TPackage/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//TPackage"
         eOpposite="#//TPackage/subpackage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
-        eType="#//TClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="#//TInterface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTypes" upperBound="-1"
-        eType="#//TAbstractType" eOpposite="#//TAbstractType/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" ordered="false"
+        upperBound="-1" eType="#//TClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" ordered="false"
+        upperBound="-1" eType="#//TInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTypes" ordered="false"
+        upperBound="-1" eType="#//TAbstractType" eOpposite="#//TAbstractType/package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeGraph" lowerBound="1"
         eType="#//TypeGraph"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
@@ -157,8 +155,8 @@
     <eOperations name="getTDefinition" eType="#//TMember">
       <eParameters name="defining" eType="#//TAbstractType"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
-        eType="#//TMember" containment="true" eOpposite="#//TMember/signature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" ordered="false"
+        upperBound="-1" eType="#//TMember" containment="true" eOpposite="#//TMember/signature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeGraph" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations name="getDeclaredTClasses" upperBound="-1" eType="#//TClass"/>
@@ -184,20 +182,20 @@
     <eOperations name="getSignature" eType="#//TSignature">
       <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
-        eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
-        eType="#//TMethod" containment="true" eOpposite="#//TMethod/pg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//TField" containment="true" eOpposite="#//TField/pg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
-        eType="#//TClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="#//TInterface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTypes" upperBound="-1"
-        eType="#//TAbstractType" containment="true" eOpposite="#//TAbstractType/pg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotationTypes" upperBound="-1"
-        eType="#//annotations/TAnnotationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" ordered="false"
+        upperBound="-1" eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" ordered="false"
+        upperBound="-1" eType="#//TMethod" containment="true" eOpposite="#//TMethod/pg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" ordered="false"
+        upperBound="-1" eType="#//TField" containment="true" eOpposite="#//TField/pg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" ordered="false"
+        upperBound="-1" eType="#//TClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" ordered="false"
+        upperBound="-1" eType="#//TInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTypes" ordered="false"
+        upperBound="-1" eType="#//TAbstractType" containment="true" eOpposite="#//TAbstractType/pg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotationTypes" ordered="false"
+        upperBound="-1" eType="#//annotations/TAnnotationType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -211,12 +209,12 @@
     <eOperations name="hasCommonSuperType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="tType" eType="#//TAbstractType"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
-        eType="#//TClass" eOpposite="#//TClass/implements"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parentInterfaces" upperBound="-1"
-        eType="#//TInterface" eOpposite="#//TInterface/childInterfaces"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childInterfaces" upperBound="-1"
-        eType="#//TInterface" eOpposite="#//TInterface/parentInterfaces"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" ordered="false"
+        upperBound="-1" eType="#//TClass" eOpposite="#//TClass/implements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentInterfaces" ordered="false"
+        upperBound="-1" eType="#//TInterface" eOpposite="#//TInterface/childInterfaces"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childInterfaces" ordered="false"
+        upperBound="-1" eType="#//TInterface" eOpposite="#//TInterface/parentInterfaces"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TAbstractType" abstract="true" eSuperTypes="#//annotations/TAnnotatable">
     <eOperations name="isSuperTypeOf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -259,18 +257,18 @@
         eOpposite="#//TypeGraph/ownedTypes"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//TPackage"
         eOpposite="#//TPackage/ownedTypes"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" upperBound="-1"
-        eType="#//TSignature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defines" upperBound="-1"
-        eType="#//TMember" eOpposite="#//TMember/definedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" ordered="false"
+        upperBound="-1" eType="#//TSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defines" ordered="false"
+        upperBound="-1" eType="#//TMember" eOpposite="#//TMember/definedBy"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tLib" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tName" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tModifier" eType="#//TModifier"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="innerTypes" upperBound="-1"
-        eType="#//TAbstractType" eOpposite="#//TAbstractType/outerType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerTypes" ordered="false"
+        upperBound="-1" eType="#//TAbstractType" eOpposite="#//TAbstractType/outerType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outerType" eType="#//TAbstractType"
         eOpposite="#//TAbstractType/innerTypes"/>
   </eClassifiers>
@@ -296,12 +294,12 @@
         eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TAbstractFlowElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
-        eType="#//TFlow" containment="true" eOpposite="#//TFlow/flowOwner"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
-        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/outgoingFlows"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
-        eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/incomingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" ordered="false"
+        upperBound="-1" eType="#//TFlow" containment="true" eOpposite="#//TFlow/flowOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" ordered="false"
+        upperBound="-1" eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/outgoingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" ordered="false"
+        upperBound="-1" eType="#//TAbstractFlowElement" eOpposite="#//TAbstractFlowElement/incomingFlows"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TReadWrite" eSuperTypes="#//TAccess"/>
   <eClassifiers xsi:type="ecore:EClass" name="TConstructor" eSuperTypes="#//annotations/TAnnotation"/>
@@ -312,45 +310,6 @@
     <eLiterals name="TProtected" value="2"/>
     <eLiterals name="TPublic" value="3"/>
   </eClassifiers>
-  <eSubpackages name="containers" nsURI="http://www.gravity-tool.org/typegraph/basic#//containers"
-      nsPrefix="containers">
-    <eClassifiers xsi:type="ecore:EClass" name="TTypeContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tAbstractTypes" upperBound="-1"
-          eType="#//TAbstractType"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TAccessContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tAccessEdges" upperBound="-1"
-          eType="#//TAccess"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TMemberContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1"
-          eType="#//TMember"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TClassContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tClass" upperBound="-1"
-          eType="#//TClass"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TFieldContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tFields" upperBound="-1"
-          eType="#//TField"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TFieldDefinitionContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldDefinitions" upperBound="-1"
-          eType="#//TFieldDefinition"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TFieldSignatureContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tFieldSignatures" upperBound="-1"
-          eType="#//TFieldSignature"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TSignatureContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tSignatures" upperBound="-1"
-          eType="#//TSignature"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TMethodDefinitionContainer">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinitions" upperBound="-1"
-          eType="#//TMethodDefinition"/>
-    </eClassifiers>
-  </eSubpackages>
   <eSubpackages name="annotations" nsURI="http://www.gravity-tool.org/typegraph/basic#//annotations"
       nsPrefix="annotations">
     <eClassifiers xsi:type="ecore:EClass" name="TAnnotationValue">

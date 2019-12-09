@@ -79,7 +79,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overridden By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_OverriddenBy()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverriding
-	 * @model opposite="overriding"
+	 * @model opposite="overriding" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverriddenBy();
@@ -97,7 +97,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overloading</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_Overloading()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverloadedBy
-	 * @model opposite="overloadedBy"
+	 * @model opposite="overloadedBy" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverloading();
@@ -115,7 +115,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overloaded By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_OverloadedBy()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverloading
-	 * @model opposite="overloading"
+	 * @model opposite="overloading" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverloadedBy();
@@ -159,7 +159,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Syntethic Methods</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_SyntethicMethods()
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition
-	 * @model opposite="originalMethodDefinition"
+	 * @model opposite="originalMethodDefinition" ordered="false"
 	 * @generated
 	 */
 	EList<TSyntethicMethod> getSyntethicMethods();

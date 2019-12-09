@@ -3,27 +3,16 @@
 package org.gravity.hulk.resolve.antipattern;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
 import org.gravity.hulk.detection.HAntiPatternDetector;
-
 import org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation;
-
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import org.gravity.hulk.refactoringgraph.refactorings.HMoveMethod;
 import org.gravity.hulk.refactoringgraph.refactorings.HRefactoring;
-
 import org.gravity.hulk.resolve.HAntiPatternResolver;
-
 import org.gravity.typegraph.basic.TClass;
-
+import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
-
-import org.gravity.typegraph.basic.containers.TMemberContainer;
-// <-- [user defined imports]
-import java.util.List;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -118,6 +107,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	 * @model
 	 * @generated
 	 */
+	@Override
 	boolean detect(HAntiPatternGraph apg);
 
 	/**
@@ -134,7 +124,7 @@ public interface HBlobResolver extends HAntiPatternDetector, HAntiPatternResolve
 	 * @model
 	 * @generated
 	 */
-	HMoveMembers createMove(TMemberContainer members, TClass source, TClass target, HBlobResolveAnnotation parent);
+	HMoveMembers createMove(EList<TMember> members, TClass source, TClass target, HBlobResolveAnnotation parent);
 
 	/**
 	 * <!-- begin-user-doc -->

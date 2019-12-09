@@ -35,7 +35,7 @@ public interface TField extends TName {
 	 * @return the value of the '<em>Signatures</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTField_Signatures()
 	 * @see org.gravity.typegraph.basic.TFieldSignature#getField
-	 * @model opposite="field" containment="true"
+	 * @model opposite="field" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TFieldSignature> getSignatures();
