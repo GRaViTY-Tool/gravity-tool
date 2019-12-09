@@ -41,7 +41,7 @@ import org.eclipse.uml2.uml.Model;
 import org.emoflon.ibex.tgg.operational.csp.constraints.factories.uml.UserDefinedRuntimeTGGAttrConstraintFactory;
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
-import org.emoflon.ibex.tgg.runtime.engine.DemoclesTGGEngine;
+import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;

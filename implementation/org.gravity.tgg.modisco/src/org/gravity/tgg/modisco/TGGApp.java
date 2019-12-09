@@ -14,7 +14,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 import org.emoflon.ibex.tgg.operational.csp.constraints.factories.modisco.UserDefinedRuntimeTGGAttrConstraintFactory;
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
 import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
-import org.emoflon.ibex.tgg.runtime.engine.DemoclesTGGEngine;
+import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
