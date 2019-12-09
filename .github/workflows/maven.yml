@@ -16,4 +16,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.organization=svenpeldszus-github -Dsoanr.login=${{secrets.SONAR_LOGIN}}  --file pom.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}} --file pom.xml
