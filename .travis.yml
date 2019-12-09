@@ -13,4 +13,4 @@ addons:
       secure: "9c75ddd11f39346d74371f7b96dc44d0524cd614" # encrypted value of your token
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dmaven.javadoc.skip=true 
+  - mvn clean verify -e sonar:sonar -Pcoverage -Dmaven.javadoc.skip=true 
