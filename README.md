@@ -1,5 +1,8 @@
 
 # GRaViTY-Tool
+
+ ![GitHub](https://img.shields.io/github/license/GRaViTY-Tool/gravity-tool)  [![Build Status](https://travis-ci.com/GRaViTY-Tool/gravity-tool.svg?branch=master)](https://travis-ci.com/GRaViTY-Tool/gravity-tool) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gravity&metric=alert_status)](https://sonarcloud.io/dashboard?id=gravity) 
+
 The GRaViTY tool is a research prototype for the analysis of software design and security, evaluation and execution of refactorings and automated software optimization.
 
 - Sebastian Ruland, Géza Kulcsár, Erhan Leblebici, Sven Peldszus, Malte Lochau: Controlling the Attack Surface of Object-Oriented Refactorings. In: Proceedings of the 21st International Conference on Fundamental Approaches in Software Engineering (FASE), pp. 38-55, April 2018 - [paper - open access](http://dx.doi.org/10.1007/978-3-319-89363-1_3)
