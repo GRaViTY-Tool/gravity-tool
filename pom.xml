@@ -185,7 +185,7 @@
     <repository>
       <id>MoMOT</id>
       <layout>p2</layout>
-      <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
+      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
     <repository>
       <id>plantuml</id>
