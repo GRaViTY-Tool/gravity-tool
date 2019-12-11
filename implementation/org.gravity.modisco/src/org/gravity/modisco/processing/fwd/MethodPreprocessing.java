@@ -46,7 +46,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 		model.getMMethodNames().addAll(createMethodNames(elements));
 
 		// Create MMethodSignatures for MMethodNames
-		return model.getMMethodNames().parallelStream().allMatch(mName -> createMethodSignatures(mName, model));
+		return model.getMMethodNames().stream().allMatch(mName -> createMethodSignatures(mName, model));
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * @return
 	 */
 	private Collection<MMethodName> createMethodNames(final Collection<MAbstractMethodDefinition> definitions) {
-		definitions.parallelStream().forEach(definition -> {
+		definitions.stream().forEach(definition -> {
 			String name;
 			if (definition instanceof MConstructorDefinition
 					&& definition.getAnonymousClassDeclarationOwner() != null) {
