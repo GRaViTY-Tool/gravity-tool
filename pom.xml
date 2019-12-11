@@ -25,7 +25,7 @@
   </properties>
 	
   <modules>
-    <module>build/org.gravity.updatesite</module>
+    <!--<module>build/org.gravity.updatesite</module>-->
     <module>build/org.gravity.features.eclipse</module>
     <module>build/org.gravity.features.hulk</module>
     <module>build/org.gravity.features.modisco</module>
