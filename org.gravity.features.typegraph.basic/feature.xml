@@ -24,6 +24,8 @@ Darmstadt.
    <requires>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
    </requires>
 
    <plugin

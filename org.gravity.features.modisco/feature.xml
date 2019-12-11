@@ -22,7 +22,7 @@ Darmstadt.
    </license>
 
    <url>
-      <discovery label="eMoflon" url="https://emoflon.org/emoflon-ibex-democles-updatesite/snapshot/updatesite/"/>
+      <discovery label="eMoflon" url="https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/modeling/gmt/modisco/updates/release/"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
    </url>
@@ -41,12 +41,15 @@ Darmstadt.
       <import plugin="org.eclipse.modisco.java.discoverer" version="0.13.1" match="greaterOrEqual"/>
       <import plugin="org.gravity.eclipse"/>
       <import plugin="org.gravity.typegraph.basic" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmt.modisco.java.generation" version="0.13.1" match="greaterOrEqual"/>
-      <import feature="org.eclipse.modisco.eclipse.feature" version="1.2.0.201805182005" match="greaterOrEqual"/>
       <import plugin="org.emoflon.ibex.tgg.runtime.democles"/>
       <import plugin="org.emoflon.ibex.tgg.core.runtime"/>
+      <import plugin="org.eclipse.gmt.modisco.java.generation" version="0.13.1" match="greaterOrEqual"/>
+      <import feature="org.eclipse.modisco.eclipse.feature" version="1.2.0.201805182005" match="greaterOrEqual"/>
       <import feature="org.emoflon.ibex.tgg.editor.feature" version="1.0.0.201905212027"/>
       <import feature="org.emoflon.ibex.tgg.ide.democles.feature" version="1.0.0.201905212027"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.emoflon.ibex.tgg.ui.debug"/>
    </requires>
 
    <plugin

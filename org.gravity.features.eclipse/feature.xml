@@ -28,15 +28,14 @@ Darmstadt.
    <requires>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jdt.core"/>
-      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.jdt.launching"/>
       <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.jgit"/>
    </requires>
 
    <plugin

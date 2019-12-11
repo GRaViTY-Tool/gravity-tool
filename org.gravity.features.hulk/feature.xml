@@ -21,6 +21,10 @@ Darmstadt.
       [Enter License Description here.]
    </license>
 
+   <url>
+      <discovery label="Henshin" url="http://download.eclipse.org/modeling/emft/henshin/updates/nightly"/>
+   </url>
+
    <includes
          id="org.gravity.features.typegraph.basic"
          version="0.0.0"
@@ -43,11 +47,11 @@ Darmstadt.
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.henshin.interpreter"/>
+      <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.apache.log4j"/>
+      <import plugin="org.gravity.security.annotations"/>
    </requires>
 
    <plugin

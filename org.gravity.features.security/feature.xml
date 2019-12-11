@@ -19,15 +19,12 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.gravity.typegraph.basic"/>
       <import plugin="org.gravity.tgg.modisco"/>
+      <import plugin="org.eclipse.jdt.core"/>
       <import feature="org.gravity.features.modisco" version="1.0.0.qualifier"/>
       <import feature="org.gravity.features.typegraph.basic" version="1.0.0.qualifier"/>
-      <import plugin="org.eclipse.jdt.core"/>
-      <import plugin="org.gravity.eclipse"/>
    </requires>
 
    <plugin
