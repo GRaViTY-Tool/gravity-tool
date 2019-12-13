@@ -142,16 +142,6 @@
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/latest</url>
     </repository>
-    <!--<repository>
-      <id>EMF</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/modeling/emf/updates/releases/</url>
-    </repository>
-    <repository>
-      <id>EMF Facets</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/facet/updates/release/</url>
-    </repository>-->
     <repository>
       <id>Papyrus</id>
       <layout>p2</layout>
@@ -162,7 +152,7 @@
       <layout>p2</layout>
       <url>https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/</url>
     </repository>
-    <repository>
+<!--<repository>
       <id>eMoflon Core</id>
       <layout>p2</layout>
       <url>https://emoflon.org/emoflon-core-updatesite/snapshot/updatesite/</url>
@@ -176,7 +166,7 @@
       <id>eMoflon Democles Advanced</id>
       <layout>p2</layout>
       <url>http://gervarro.org/democles/advanced/integration-0.5.0/</url>
-    </repository>
+    </repository>-->
     <repository>
       <id>Henshin</id>
       <layout>p2</layout>
