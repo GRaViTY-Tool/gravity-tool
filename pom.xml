@@ -133,14 +133,14 @@
 
   <repositories>
     <repository>
-      <id>Eclipse 2018-09 for MoDisco</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/2018-09</url>
-    </repository>
-    <repository>
       <id>Eclipse Latest</id>
       <layout>p2</layout>
       <url>http://download.eclipse.org/releases/latest</url>
+    </repository>
+    <repository>
+      <id>Eclipse 2018-09 for MoDisco</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/2018-09</url>
     </repository>
     <repository>
       <id>Papyrus</id>
@@ -152,21 +152,6 @@
       <layout>p2</layout>
       <url>https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/</url>
     </repository>
-<!--<repository>
-      <id>eMoflon Core</id>
-      <layout>p2</layout>
-      <url>https://emoflon.org/emoflon-core-updatesite/snapshot/updatesite/</url>
-    </repository>
-    <repository>
-      <id>eMoflon Democles</id>
-      <layout>p2</layout>
-      <url>http://gervarro.org/democles/integration-0.5.0/</url>
-    </repository>
-    <repository>
-      <id>eMoflon Democles Advanced</id>
-      <layout>p2</layout>
-      <url>http://gervarro.org/democles/advanced/integration-0.5.0/</url>
-    </repository>-->
     <repository>
       <id>Henshin</id>
       <layout>p2</layout>
@@ -175,7 +160,7 @@
     <repository>
       <id>MoMOT</id>
       <layout>p2</layout>
-      <url>https://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
+      <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
     <repository>
       <id>plantuml</id>
