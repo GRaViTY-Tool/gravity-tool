@@ -34,7 +34,7 @@
       <import plugin="org.eclipse.modisco.infra.discovery.core"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.gravity.eclipse"/>
-      <import plugin="org.eclipse.gmt.modisco.java.generation"/>
+      <import plugin="org.eclipse.modisco.java.generation"/>
       <import plugin="org.gravity.modisco"/>
       <import plugin="org.gravity.security.annotations"/>
       <import plugin="org.gravity.eclipse.ui"/>
