@@ -6,9 +6,9 @@ package org.gravity.modisco.util;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.Package;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.Package;
 
 /**
  * This class contains methods for generating names form MoDisco elements

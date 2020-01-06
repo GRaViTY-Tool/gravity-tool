@@ -4,8 +4,8 @@ package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.BodyDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,12 +41,8 @@ public interface MDefinition extends BodyDeclaration, MAbstractFlowElement {
 
 	/**
 	 * Returns the value of the '<em><b>MMethod Invocations</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.gmt.modisco.java.AbstractMethodInvocation}.
+	 * The list contents are of type {@link org.eclipse.modisco.java.AbstractMethodInvocation}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MMethod Invocations</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MMethod Invocations</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMDefinition_MMethodInvocations()
@@ -59,10 +55,6 @@ public interface MDefinition extends BodyDeclaration, MAbstractFlowElement {
 	 * Returns the value of the '<em><b>MAbstract Field Access</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MSingleVariableAccess}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MAbstract Field Access</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MAbstract Field Access</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMDefinition_MAbstractFieldAccess()

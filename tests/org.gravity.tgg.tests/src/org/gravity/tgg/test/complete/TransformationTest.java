@@ -110,12 +110,12 @@ public class TransformationTest {
 	  * @param name    The name of the project
 	  * @param project The project
 	  */
-	 public TransformationTest(String name, IJavaProject project) {
+	 public TransformationTest(final String name, final IJavaProject project) {
 		 this.project = project;
 		 this.name = name;
-		 LanguagePackage.eINSTANCE.eResource();
-		 RuntimePackage.eINSTANCE.eResource();
 		 // Add dependency to security annotations
+		LanguagePackage.eINSTANCE.getNsURI();
+		RuntimePackage.eINSTANCE.getNsURI();
 		 final String id = AnnotationsActivator.PLUGIN_ID;
 	 }
 
@@ -216,7 +216,7 @@ public class TransformationTest {
 	  *
 	  * @param pm The model to ckeck
 	  */
-	 private void checkModel(TypeGraph pm) {
+	 private void checkModel(final TypeGraph pm) {
 		 final ExtensionFileVisitor visitor = new ExtensionFileVisitor("henshin");
 		 try {
 			 this.project.getProject().accept(visitor);
@@ -242,7 +242,7 @@ public class TransformationTest {
 	  *
 	  * @return the location
 	  */
-	 private static File getModiscoFile(IProject project) {
+	 private static File getModiscoFile(final IProject project) {
 		 return new File(project.getLocation().toFile(), "modisco.xmi");
 	 }
 
@@ -343,7 +343,7 @@ public class TransformationTest {
 		 file.delete(true, monitor);
 	 }
 
-	 private void save(EObject eObject, String prefix, String fileExtension) {
+	 private void save(final EObject eObject, final String prefix, final String fileExtension) {
 		 final String fileName = prefix + '_' + this.project.getProject().getName() + "." + fileExtension;
 		 final IFile file = this.project.getProject().getFile(fileName);
 		 try (OutputStream stream = Files.newOutputStream(file.getLocation().toFile().toPath())) {
@@ -359,7 +359,7 @@ public class TransformationTest {
 	  * @param model          the model to check
 	  * @param expectJsonFile The JSON file containing the expectations
 	  */
-	 private void checkModel(EObject model, IFile expectJsonFile) {
+	 private void checkModel(final EObject model, final IFile expectJsonFile) {
 		 JsonObject map;
 		 try (Reader fileReader = new InputStreamReader(expectJsonFile.getContents())) {
 			 map = (JsonObject) Jsoner.deserialize(fileReader);

@@ -128,6 +128,16 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MMethodName createMMethodName() {
+		MMethodNameImpl mMethodName = new MMethodNameImpl();
+		return mMethodName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MMethodSignature createMMethodSignature() {
 		MMethodSignatureImpl mMethodSignature = new MMethodSignatureImpl();
 		return mMethodSignature;
@@ -138,9 +148,9 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MMethodName createMMethodName() {
-		MMethodNameImpl mMethodName = new MMethodNameImpl();
-		return mMethodName;
+	public MMethodDefinition createMMethodDefinition() {
+		MMethodDefinitionImpl mMethodDefinition = new MMethodDefinitionImpl();
+		return mMethodDefinition;
 	}
 
 	/**
@@ -158,6 +168,16 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MFieldSignature createMFieldSignature() {
+		MFieldSignatureImpl mFieldSignature = new MFieldSignatureImpl();
+		return mFieldSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MFieldDefinition createMFieldDefinition() {
 		MFieldDefinitionImpl mFieldDefinition = new MFieldDefinitionImpl();
 		return mFieldDefinition;
@@ -168,9 +188,79 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MMethodDefinition createMMethodDefinition() {
-		MMethodDefinitionImpl mMethodDefinition = new MMethodDefinitionImpl();
-		return mMethodDefinition;
+	public MEntry createMEntry() {
+		MEntryImpl mEntry = new MEntryImpl();
+		return mEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MGravityModel createMGravityModel() {
+		MGravityModelImpl mGravityModel = new MGravityModelImpl();
+		return mGravityModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MethodInvocationStaticType createMethodInvocationStaticType() {
+		MethodInvocationStaticTypeImpl methodInvocationStaticType = new MethodInvocationStaticTypeImpl();
+		return methodInvocationStaticType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MSyntheticMethodDefinition createMSyntheticMethodDefinition() {
+		MSyntheticMethodDefinitionImpl mSyntheticMethodDefinition = new MSyntheticMethodDefinitionImpl();
+		return mSyntheticMethodDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MAnonymous createMAnonymous() {
+		MAnonymousImpl mAnonymous = new MAnonymousImpl();
+		return mAnonymous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MClass createMClass() {
+		MClassImpl mClass = new MClassImpl();
+		return mClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MFlow createMFlow() {
+		MFlowImpl mFlow = new MFlowImpl();
+		return mFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MSingleVariableAccess createMSingleVariableAccess() {
+		MSingleVariableAccessImpl mSingleVariableAccess = new MSingleVariableAccessImpl();
+		return mSingleVariableAccess;
 	}
 
 	/**
@@ -251,96 +341,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	 */
 	public String convertAccessKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MEntry createMEntry() {
-		MEntryImpl mEntry = new MEntryImpl();
-		return mEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MGravityModel createMGravityModel() {
-		MGravityModelImpl mGravityModel = new MGravityModelImpl();
-		return mGravityModel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFieldSignature createMFieldSignature() {
-		MFieldSignatureImpl mFieldSignature = new MFieldSignatureImpl();
-		return mFieldSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MSyntheticMethodDefinition createMSyntheticMethodDefinition() {
-		MSyntheticMethodDefinitionImpl mSyntheticMethodDefinition = new MSyntheticMethodDefinitionImpl();
-		return mSyntheticMethodDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MethodInvocationStaticType createMethodInvocationStaticType() {
-		MethodInvocationStaticTypeImpl methodInvocationStaticType = new MethodInvocationStaticTypeImpl();
-		return methodInvocationStaticType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MAnonymous createMAnonymous() {
-		MAnonymousImpl mAnonymous = new MAnonymousImpl();
-		return mAnonymous;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MClass createMClass() {
-		MClassImpl mClass = new MClassImpl();
-		return mClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFlow createMFlow() {
-		MFlowImpl mFlow = new MFlowImpl();
-		return mFlow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MSingleVariableAccess createMSingleVariableAccess() {
-		MSingleVariableAccessImpl mSingleVariableAccess = new MSingleVariableAccessImpl();
-		return mSingleVariableAccess;
 	}
 
 	/**

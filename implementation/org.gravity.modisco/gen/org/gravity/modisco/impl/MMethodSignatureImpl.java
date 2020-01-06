@@ -17,7 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.Type;
+
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MParameterList;

@@ -12,9 +12,7 @@ import org.gravity.hulk.HDetector;
 import org.gravity.hulk.HulkPackage;
 
 import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPattern;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternFactory;
 import org.gravity.hulk.antipatterngraph.antipattern.HSwissArmyKnifeAntiPattern;
 
@@ -36,8 +34,6 @@ import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;

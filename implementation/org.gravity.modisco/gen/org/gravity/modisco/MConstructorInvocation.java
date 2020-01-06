@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.ConstructorInvocation;
 
 /**
  * <!-- begin-user-doc -->

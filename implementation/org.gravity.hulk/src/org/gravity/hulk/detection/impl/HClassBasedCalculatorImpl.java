@@ -22,10 +22,6 @@ import org.gravity.hulk.impl.HDetectorImpl;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TypeGraph;
 
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-// <-- [user defined imports]
-// [user defined imports] -->
-
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HClass
  * Based Calculator</b></em>'. <!-- end-user-doc -->

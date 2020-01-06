@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.ConstructorDeclaration;
+import org.eclipse.modisco.java.ConstructorDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,10 +24,6 @@ public interface MConstructorDefinition extends MAbstractMethodDefinition, Const
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Model</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Model</em>' reference.
 	 * @see #setModel(MGravityModel)

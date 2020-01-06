@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.gmt.modisco.java.emf.impl.SingleVariableDeclarationImpl;
+import org.eclipse.modisco.java.emf.impl.SingleVariableDeclarationImpl;
 
 import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MSingleVariableDeclaration;

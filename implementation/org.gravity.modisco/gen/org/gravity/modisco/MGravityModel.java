@@ -4,9 +4,9 @@ package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.Model;
-import org.eclipse.gmt.modisco.java.TypeParameter;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.Model;
+import org.eclipse.modisco.java.TypeParameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,10 +35,6 @@ public interface MGravityModel extends Model {
 	 * Returns the value of the '<em><b>MField Definitions</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MFieldDefinition}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MField Definitions</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MField Definitions</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_MFieldDefinitions()
@@ -49,7 +45,7 @@ public interface MGravityModel extends Model {
 
 	/**
 	 * Returns the value of the '<em><b>Anonymous Class Declarations</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.gmt.modisco.java.AnonymousClassDeclaration}.
+	 * The list contents are of type {@link org.eclipse.modisco.java.AnonymousClassDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Anonymous Class Declarations</em>' reference list.
@@ -63,10 +59,6 @@ public interface MGravityModel extends Model {
 	 * Returns the value of the '<em><b>MMethod Names</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MMethodName}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MMethod Names</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MMethod Names</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_MMethodNames()
@@ -79,10 +71,6 @@ public interface MGravityModel extends Model {
 	 * Returns the value of the '<em><b>MField Names</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MFieldName}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MField Names</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MField Names</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_MFieldNames()
@@ -95,10 +83,6 @@ public interface MGravityModel extends Model {
 	 * Returns the value of the '<em><b>MAbstract Method Definitions</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MAbstractMethodDefinition}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MAbstract Method Definitions</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MAbstract Method Definitions</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_MAbstractMethodDefinitions()
@@ -109,12 +93,8 @@ public interface MGravityModel extends Model {
 
 	/**
 	 * Returns the value of the '<em><b>Type Parameters</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.gmt.modisco.java.TypeParameter}.
+	 * The list contents are of type {@link org.eclipse.modisco.java.TypeParameter}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type Parameters</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type Parameters</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_TypeParameters()
@@ -127,10 +107,6 @@ public interface MGravityModel extends Model {
 	 * Returns the value of the '<em><b>MExtensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MExtension}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MExtensions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MExtensions</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMGravityModel_MExtensions()

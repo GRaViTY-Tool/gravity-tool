@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.eclipse.modisco.java.emf.JavaPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +17,7 @@ import org.eclipse.gmt.modisco.java.emf.JavaPackage;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -802,26 +803,6 @@ public interface ModiscoPackage extends EPackage {
 	int MCONSTRUCTOR_DEFINITION_FEATURE_COUNT = MABSTRACT_METHOD_DEFINITION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MSignatureImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSignature()
-	 * @generated
-	 */
-	int MSIGNATURE = 12;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodSignatureImpl <em>MMethod Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MMethodSignatureImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodSignature()
-	 * @generated
-	 */
-	int MMETHOD_SIGNATURE = 6;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MParameterListImpl <em>MParameter List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -951,6 +932,16 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_NAME_FEATURE_COUNT = MNAME_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MSignatureImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSignature()
+	 * @generated
+	 */
+	int MSIGNATURE = 12;
+
+	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -994,6 +985,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MSIGNATURE_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodSignatureImpl <em>MMethod Signature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MMethodSignatureImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodSignature()
+	 * @generated
+	 */
+	int MMETHOD_SIGNATURE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -1066,26 +1067,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MMETHOD_SIGNATURE_FEATURE_COUNT = MSIGNATURE_FEATURE_COUNT + 3;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldNameImpl <em>MField Name</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MFieldNameImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldName()
-	 * @generated
-	 */
-	int MFIELD_NAME = 9;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldDefinitionImpl <em>MField Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MFieldDefinitionImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldDefinition()
-	 * @generated
-	 */
-	int MFIELD_DEFINITION = 11;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MMethodDefinitionImpl <em>MMethod Definition</em>}' class.
@@ -1368,6 +1349,16 @@ public interface ModiscoPackage extends EPackage {
 	int MMETHOD_DEFINITION_FEATURE_COUNT = JavaPackage.METHOD_DECLARATION_FEATURE_COUNT + 9;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldNameImpl <em>MField Name</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MFieldNameImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldName()
+	 * @generated
+	 */
+	int MFIELD_NAME = 9;
+
+	/**
 	 * The feature id for the '<em><b>MName</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1402,26 +1393,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MFIELD_NAME_FEATURE_COUNT = MNAME_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MEntryImpl <em>MEntry</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MEntryImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEntry()
-	 * @generated
-	 */
-	int MENTRY = 13;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MGravityModelImpl <em>MGravity Model</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MGravityModelImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMGravityModel()
-	 * @generated
-	 */
-	int MGRAVITY_MODEL = 14;
 
 	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldSignatureImpl <em>MField Signature</em>}' class.
@@ -1486,6 +1457,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MFIELD_SIGNATURE_FEATURE_COUNT = MSIGNATURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MFieldDefinitionImpl <em>MField Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MFieldDefinitionImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldDefinition()
+	 * @generated
+	 */
+	int MFIELD_DEFINITION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -1668,6 +1649,16 @@ public interface ModiscoPackage extends EPackage {
 	int MFIELD_DEFINITION_FEATURE_COUNT = MDEFINITION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MEntryImpl <em>MEntry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MEntryImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMEntry()
+	 * @generated
+	 */
+	int MENTRY = 13;
+
+	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1738,6 +1729,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int MENTRY_FEATURE_COUNT = MABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MGravityModelImpl <em>MGravity Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MGravityModelImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMGravityModel()
+	 * @generated
+	 */
+	int MGRAVITY_MODEL = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1875,16 +1876,6 @@ public interface ModiscoPackage extends EPackage {
 	int MGRAVITY_MODEL_FEATURE_COUNT = JavaPackage.MODEL_FEATURE_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
-	 * @generated
-	 */
-	int MSYNTHETIC_METHOD_DEFINITION = 16;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MethodInvocationStaticTypeImpl <em>Method Invocation Static Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1920,6 +1911,16 @@ public interface ModiscoPackage extends EPackage {
 	 * @ordered
 	 */
 	int METHOD_INVOCATION_STATIC_TYPE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl
+	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
+	 * @generated
+	 */
+	int MSYNTHETIC_METHOD_DEFINITION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3437,27 +3438,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMDefinition_MSignature();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodSignature <em>MMethod Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MMethod Signature</em>'.
-	 * @see org.gravity.modisco.MMethodSignature
-	 * @generated
-	 */
-	EClass getMMethodSignature();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodSignature#getReturnType <em>Return Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Return Type</em>'.
-	 * @see org.gravity.modisco.MMethodSignature#getReturnType()
-	 * @see #getMMethodSignature()
-	 * @generated
-	 */
-	EReference getMMethodSignature_ReturnType();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MParameterList <em>MParameter List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3490,6 +3470,58 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMParameterList_MEntrys();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodName <em>MMethod Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MMethod Name</em>'.
+	 * @see org.gravity.modisco.MMethodName
+	 * @generated
+	 */
+	EClass getMMethodName();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodSignature <em>MMethod Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MMethod Signature</em>'.
+	 * @see org.gravity.modisco.MMethodSignature
+	 * @generated
+	 */
+	EClass getMMethodSignature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MMethodSignature#getReturnType <em>Return Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Return Type</em>'.
+	 * @see org.gravity.modisco.MMethodSignature#getReturnType()
+	 * @see #getMMethodSignature()
+	 * @generated
+	 */
+	EReference getMMethodSignature_ReturnType();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodDefinition <em>MMethod Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MMethod Definition</em>'.
+	 * @see org.gravity.modisco.MMethodDefinition
+	 * @generated
+	 */
+	EClass getMMethodDefinition();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.modisco.MMethodDefinition#getSyntheticMethodDefinitions <em>Synthetic Method Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Synthetic Method Definitions</em>'.
+	 * @see org.gravity.modisco.MMethodDefinition#getSyntheticMethodDefinitions()
+	 * @see #getMMethodDefinition()
+	 * @generated
+	 */
+	EReference getMMethodDefinition_SyntheticMethodDefinitions();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MName <em>MName</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3498,6 +3530,17 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MName#getMName <em>MName</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>MName</em>'.
+	 * @see org.gravity.modisco.MName#getMName()
+	 * @see #getMName()
+	 * @generated
+	 */
+	EAttribute getMName_MName();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.gravity.modisco.MName#getMSignatures <em>MSignatures</em>}'.
@@ -3522,27 +3565,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMName_MDefinitions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.gravity.modisco.MName#getMName <em>MName</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>MName</em>'.
-	 * @see org.gravity.modisco.MName#getMName()
-	 * @see #getMName()
-	 * @generated
-	 */
-	EAttribute getMName_MName();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodName <em>MMethod Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MMethod Name</em>'.
-	 * @see org.gravity.modisco.MMethodName
-	 * @generated
-	 */
-	EClass getMMethodName();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MFieldName <em>MField Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3553,6 +3575,27 @@ public interface ModiscoPackage extends EPackage {
 	EClass getMFieldName();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MFieldSignature <em>MField Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MField Signature</em>'.
+	 * @see org.gravity.modisco.MFieldSignature
+	 * @generated
+	 */
+	EClass getMFieldSignature();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MFieldSignature#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.gravity.modisco.MFieldSignature#getType()
+	 * @see #getMFieldSignature()
+	 * @generated
+	 */
+	EReference getMFieldSignature_Type();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MFieldDefinition <em>MField Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3561,27 +3604,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMFieldDefinition();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MMethodDefinition <em>MMethod Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MMethod Definition</em>'.
-	 * @see org.gravity.modisco.MMethodDefinition
-	 * @generated
-	 */
-	EClass getMMethodDefinition();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.gravity.modisco.MMethodDefinition#getSyntheticMethodDefinitions <em>Synthetic Method Definitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Synthetic Method Definitions</em>'.
-	 * @see org.gravity.modisco.MMethodDefinition#getSyntheticMethodDefinitions()
-	 * @see #getMMethodDefinition()
-	 * @generated
-	 */
-	EReference getMMethodDefinition_SyntheticMethodDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MSignature <em>MSignature</em>}'.
@@ -3746,48 +3768,6 @@ public interface ModiscoPackage extends EPackage {
 	EReference getMGravityModel_MExtensions();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MFieldSignature <em>MField Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MField Signature</em>'.
-	 * @see org.gravity.modisco.MFieldSignature
-	 * @generated
-	 */
-	EClass getMFieldSignature();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MFieldSignature#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.gravity.modisco.MFieldSignature#getType()
-	 * @see #getMFieldSignature()
-	 * @generated
-	 */
-	EReference getMFieldSignature_Type();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MSyntheticMethodDefinition <em>MSynthetic Method Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MSynthetic Method Definition</em>'.
-	 * @see org.gravity.modisco.MSyntheticMethodDefinition
-	 * @generated
-	 */
-	EClass getMSyntheticMethodDefinition();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MSyntheticMethodDefinition#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Method Definition</em>'.
-	 * @see org.gravity.modisco.MSyntheticMethodDefinition#getOriginalMethodDefinition()
-	 * @see #getMSyntheticMethodDefinition()
-	 * @generated
-	 */
-	EReference getMSyntheticMethodDefinition_OriginalMethodDefinition();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MethodInvocationStaticType <em>Method Invocation Static Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3818,6 +3798,27 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMethodInvocationStaticType_Type();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.modisco.MSyntheticMethodDefinition <em>MSynthetic Method Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>MSynthetic Method Definition</em>'.
+	 * @see org.gravity.modisco.MSyntheticMethodDefinition
+	 * @generated
+	 */
+	EClass getMSyntheticMethodDefinition();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.modisco.MSyntheticMethodDefinition#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Original Method Definition</em>'.
+	 * @see org.gravity.modisco.MSyntheticMethodDefinition#getOriginalMethodDefinition()
+	 * @see #getMSyntheticMethodDefinition()
+	 * @generated
+	 */
+	EReference getMSyntheticMethodDefinition_OriginalMethodDefinition();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MAnonymous <em>MAnonymous</em>}'.
@@ -4095,6 +4096,7 @@ public interface ModiscoPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -4191,24 +4193,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MDEFINITION__MSIGNATURE = eINSTANCE.getMDefinition_MSignature();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodSignatureImpl <em>MMethod Signature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MMethodSignatureImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodSignature()
-		 * @generated
-		 */
-		EClass MMETHOD_SIGNATURE = eINSTANCE.getMMethodSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MMETHOD_SIGNATURE__RETURN_TYPE = eINSTANCE.getMMethodSignature_ReturnType();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MParameterListImpl <em>MParameter List</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4235,40 +4219,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MPARAMETER_LIST__MENTRYS = eINSTANCE.getMParameterList_MEntrys();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MNameImpl <em>MName</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MNameImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMName()
-		 * @generated
-		 */
-		EClass MNAME = eINSTANCE.getMName();
-
-		/**
-		 * The meta object literal for the '<em><b>MSignatures</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MNAME__MSIGNATURES = eINSTANCE.getMName_MSignatures();
-
-		/**
-		 * The meta object literal for the '<em><b>MDefinitions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MNAME__MDEFINITIONS = eINSTANCE.getMName_MDefinitions();
-
-		/**
-		 * The meta object literal for the '<em><b>MName</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MNAME__MNAME = eINSTANCE.getMName_MName();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodNameImpl <em>MMethod Name</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4279,24 +4229,22 @@ public interface ModiscoPackage extends EPackage {
 		EClass MMETHOD_NAME = eINSTANCE.getMMethodName();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldNameImpl <em>MField Name</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodSignatureImpl <em>MMethod Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MFieldNameImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldName()
+		 * @see org.gravity.modisco.impl.MMethodSignatureImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodSignature()
 		 * @generated
 		 */
-		EClass MFIELD_NAME = eINSTANCE.getMFieldName();
+		EClass MMETHOD_SIGNATURE = eINSTANCE.getMMethodSignature();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldDefinitionImpl <em>MField Definition</em>}' class.
+		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MFieldDefinitionImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldDefinition()
 		 * @generated
 		 */
-		EClass MFIELD_DEFINITION = eINSTANCE.getMFieldDefinition();
+		EReference MMETHOD_SIGNATURE__RETURN_TYPE = eINSTANCE.getMMethodSignature_ReturnType();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MMethodDefinitionImpl <em>MMethod Definition</em>}' class.
@@ -4315,6 +4263,78 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MMETHOD_DEFINITION__SYNTHETIC_METHOD_DEFINITIONS = eINSTANCE.getMMethodDefinition_SyntheticMethodDefinitions();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MNameImpl <em>MName</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MNameImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMName()
+		 * @generated
+		 */
+		EClass MNAME = eINSTANCE.getMName();
+
+		/**
+		 * The meta object literal for the '<em><b>MName</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MNAME__MNAME = eINSTANCE.getMName_MName();
+
+		/**
+		 * The meta object literal for the '<em><b>MSignatures</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MNAME__MSIGNATURES = eINSTANCE.getMName_MSignatures();
+
+		/**
+		 * The meta object literal for the '<em><b>MDefinitions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MNAME__MDEFINITIONS = eINSTANCE.getMName_MDefinitions();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldNameImpl <em>MField Name</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MFieldNameImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldName()
+		 * @generated
+		 */
+		EClass MFIELD_NAME = eINSTANCE.getMFieldName();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldSignatureImpl <em>MField Signature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MFieldSignatureImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldSignature()
+		 * @generated
+		 */
+		EClass MFIELD_SIGNATURE = eINSTANCE.getMFieldSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MFIELD_SIGNATURE__TYPE = eINSTANCE.getMFieldSignature_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldDefinitionImpl <em>MField Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MFieldDefinitionImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldDefinition()
+		 * @generated
+		 */
+		EClass MFIELD_DEFINITION = eINSTANCE.getMFieldDefinition();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSignatureImpl <em>MSignature</em>}' class.
@@ -4443,42 +4463,6 @@ public interface ModiscoPackage extends EPackage {
 		EReference MGRAVITY_MODEL__MEXTENSIONS = eINSTANCE.getMGravityModel_MExtensions();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MFieldSignatureImpl <em>MField Signature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MFieldSignatureImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFieldSignature()
-		 * @generated
-		 */
-		EClass MFIELD_SIGNATURE = eINSTANCE.getMFieldSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MFIELD_SIGNATURE__TYPE = eINSTANCE.getMFieldSignature_Type();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
-		 * @generated
-		 */
-		EClass MSYNTHETIC_METHOD_DEFINITION = eINSTANCE.getMSyntheticMethodDefinition();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION = eINSTANCE.getMSyntheticMethodDefinition_OriginalMethodDefinition();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MethodInvocationStaticTypeImpl <em>Method Invocation Static Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4503,6 +4487,24 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference METHOD_INVOCATION_STATIC_TYPE__TYPE = eINSTANCE.getMethodInvocationStaticType_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl <em>MSynthetic Method Definition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.modisco.impl.MSyntheticMethodDefinitionImpl
+		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSyntheticMethodDefinition()
+		 * @generated
+		 */
+		EClass MSYNTHETIC_METHOD_DEFINITION = eINSTANCE.getMSyntheticMethodDefinition();
+
+		/**
+		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION = eINSTANCE.getMSyntheticMethodDefinition_OriginalMethodDefinition();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAnonymousImpl <em>MAnonymous</em>}' class.

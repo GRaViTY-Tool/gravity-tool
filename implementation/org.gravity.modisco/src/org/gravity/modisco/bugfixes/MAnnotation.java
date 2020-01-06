@@ -1,7 +1,7 @@
 package org.gravity.modisco.bugfixes;
 
-import org.eclipse.gmt.modisco.java.AnnotationMemberValuePair;
-import org.eclipse.gmt.modisco.java.emf.impl.AnnotationImpl;
+import org.eclipse.modisco.java.AnnotationMemberValuePair;
+import org.eclipse.modisco.java.emf.impl.AnnotationImpl;
 
 /**
  * An override for the standard annotation implementation to fix an exception in

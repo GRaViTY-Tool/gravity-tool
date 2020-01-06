@@ -6,70 +6,70 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.ArrayAccess;
-import org.eclipse.gmt.modisco.java.ArrayCreation;
-import org.eclipse.gmt.modisco.java.ArrayInitializer;
-import org.eclipse.gmt.modisco.java.ArrayLengthAccess;
-import org.eclipse.gmt.modisco.java.AssertStatement;
-import org.eclipse.gmt.modisco.java.Assignment;
-import org.eclipse.gmt.modisco.java.Block;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.BooleanLiteral;
-import org.eclipse.gmt.modisco.java.BreakStatement;
-import org.eclipse.gmt.modisco.java.CastExpression;
-import org.eclipse.gmt.modisco.java.CatchClause;
-import org.eclipse.gmt.modisco.java.CharacterLiteral;
-import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
-import org.eclipse.gmt.modisco.java.ConditionalExpression;
-import org.eclipse.gmt.modisco.java.ConstructorInvocation;
-import org.eclipse.gmt.modisco.java.ContinueStatement;
-import org.eclipse.gmt.modisco.java.DoStatement;
-import org.eclipse.gmt.modisco.java.EmptyStatement;
-import org.eclipse.gmt.modisco.java.EnhancedForStatement;
-import org.eclipse.gmt.modisco.java.Expression;
-import org.eclipse.gmt.modisco.java.ExpressionStatement;
-import org.eclipse.gmt.modisco.java.FieldAccess;
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.ForStatement;
-import org.eclipse.gmt.modisco.java.IfStatement;
-import org.eclipse.gmt.modisco.java.InfixExpression;
-import org.eclipse.gmt.modisco.java.InstanceofExpression;
-import org.eclipse.gmt.modisco.java.LabeledStatement;
-import org.eclipse.gmt.modisco.java.MethodDeclaration;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.NullLiteral;
-import org.eclipse.gmt.modisco.java.NumberLiteral;
-import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
-import org.eclipse.gmt.modisco.java.PostfixExpression;
-import org.eclipse.gmt.modisco.java.PrefixExpression;
-import org.eclipse.gmt.modisco.java.ReturnStatement;
-import org.eclipse.gmt.modisco.java.SingleVariableAccess;
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.Statement;
-import org.eclipse.gmt.modisco.java.StringLiteral;
-import org.eclipse.gmt.modisco.java.SuperConstructorInvocation;
-import org.eclipse.gmt.modisco.java.SuperFieldAccess;
-import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
-import org.eclipse.gmt.modisco.java.SwitchCase;
-import org.eclipse.gmt.modisco.java.SwitchStatement;
-import org.eclipse.gmt.modisco.java.SynchronizedStatement;
-import org.eclipse.gmt.modisco.java.ThisExpression;
-import org.eclipse.gmt.modisco.java.ThrowStatement;
-import org.eclipse.gmt.modisco.java.TryStatement;
-import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
-import org.eclipse.gmt.modisco.java.TypeLiteral;
-import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
-import org.eclipse.gmt.modisco.java.UnresolvedLabeledStatement;
-import org.eclipse.gmt.modisco.java.VariableDeclaration;
-import org.eclipse.gmt.modisco.java.VariableDeclarationExpression;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
-import org.eclipse.gmt.modisco.java.VariableDeclarationStatement;
-import org.eclipse.gmt.modisco.java.WhileStatement;
+import org.eclipse.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.ArrayAccess;
+import org.eclipse.modisco.java.ArrayCreation;
+import org.eclipse.modisco.java.ArrayInitializer;
+import org.eclipse.modisco.java.ArrayLengthAccess;
+import org.eclipse.modisco.java.AssertStatement;
+import org.eclipse.modisco.java.Assignment;
+import org.eclipse.modisco.java.Block;
+import org.eclipse.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.BooleanLiteral;
+import org.eclipse.modisco.java.BreakStatement;
+import org.eclipse.modisco.java.CastExpression;
+import org.eclipse.modisco.java.CatchClause;
+import org.eclipse.modisco.java.CharacterLiteral;
+import org.eclipse.modisco.java.ClassInstanceCreation;
+import org.eclipse.modisco.java.ConditionalExpression;
+import org.eclipse.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.ContinueStatement;
+import org.eclipse.modisco.java.DoStatement;
+import org.eclipse.modisco.java.EmptyStatement;
+import org.eclipse.modisco.java.EnhancedForStatement;
+import org.eclipse.modisco.java.Expression;
+import org.eclipse.modisco.java.ExpressionStatement;
+import org.eclipse.modisco.java.FieldAccess;
+import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.ForStatement;
+import org.eclipse.modisco.java.IfStatement;
+import org.eclipse.modisco.java.InfixExpression;
+import org.eclipse.modisco.java.InstanceofExpression;
+import org.eclipse.modisco.java.LabeledStatement;
+import org.eclipse.modisco.java.MethodDeclaration;
+import org.eclipse.modisco.java.MethodInvocation;
+import org.eclipse.modisco.java.NullLiteral;
+import org.eclipse.modisco.java.NumberLiteral;
+import org.eclipse.modisco.java.ParenthesizedExpression;
+import org.eclipse.modisco.java.PostfixExpression;
+import org.eclipse.modisco.java.PrefixExpression;
+import org.eclipse.modisco.java.ReturnStatement;
+import org.eclipse.modisco.java.SingleVariableAccess;
+import org.eclipse.modisco.java.SingleVariableDeclaration;
+import org.eclipse.modisco.java.Statement;
+import org.eclipse.modisco.java.StringLiteral;
+import org.eclipse.modisco.java.SuperConstructorInvocation;
+import org.eclipse.modisco.java.SuperFieldAccess;
+import org.eclipse.modisco.java.SuperMethodInvocation;
+import org.eclipse.modisco.java.SwitchCase;
+import org.eclipse.modisco.java.SwitchStatement;
+import org.eclipse.modisco.java.SynchronizedStatement;
+import org.eclipse.modisco.java.ThisExpression;
+import org.eclipse.modisco.java.ThrowStatement;
+import org.eclipse.modisco.java.TryStatement;
+import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.TypeDeclarationStatement;
+import org.eclipse.modisco.java.TypeLiteral;
+import org.eclipse.modisco.java.UnresolvedItemAccess;
+import org.eclipse.modisco.java.UnresolvedLabeledStatement;
+import org.eclipse.modisco.java.VariableDeclaration;
+import org.eclipse.modisco.java.VariableDeclarationExpression;
+import org.eclipse.modisco.java.VariableDeclarationFragment;
+import org.eclipse.modisco.java.VariableDeclarationStatement;
+import org.eclipse.modisco.java.WhileStatement;
 import org.eclipse.osgi.util.NLS;
 import org.gravity.modisco.AccessKind;
 import org.gravity.modisco.MAbstractMethodDefinition;
@@ -277,7 +277,11 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		handle(singleVariableAccess.getQualifier());
+
+		final Expression qualifier = singleVariableAccess.getQualifier();
+		if (qualifier != null) {
+			handle(qualifier);
+		}
 		final VariableDeclaration variable = singleVariableAccess.getVariable();
 		if (variable == null) {
 			LOGGER.error(NLS.bind("Variable of variable access in {0} is null!",
@@ -857,7 +861,11 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		member.addInRef(handle(switchCase.getExpression()));
+		final Expression expression = switchCase.getExpression();
+		final FlowNode expressionNode = handle(expression);
+		if (expressionNode != null) {
+			member.addInRef(expressionNode);
+		}
 		return member;
 	}
 
@@ -910,7 +918,10 @@ public class DataFlowVisitor {
 			return member;
 		}
 		handle(forStatement.getBody());
-		member.addInRef(handle(forStatement.getExpression()));
+		final FlowNode expressionNode = handle(forStatement.getExpression());
+		if (expressionNode != null) {
+			member.addInRef(expressionNode);
+		}
 		for (final Expression initializer : forStatement.getInitializers()) {
 			handle(initializer);
 		}
@@ -950,7 +961,11 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final ContinueStatement continueStatement) {
-		return handle(continueStatement.getLabel());
+		final LabeledStatement label = continueStatement.getLabel();
+		if (label == null) {
+			return null;
+		}
+		return handle(label);
 	}
 
 	private FlowNode handle(final ConstructorInvocation constructorInvocation) {
@@ -1060,7 +1075,10 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		handle(singleVariableDeclaration.getInitializer());
+		final Expression initializer = singleVariableDeclaration.getInitializer();
+		if (initializer != null) {
+			handle(initializer);
+		}
 		return member;
 	}
 

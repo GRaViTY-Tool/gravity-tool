@@ -30,14 +30,9 @@ import org.gravity.hulk.detection.impl.HAntiPatternDetectorImpl;
 import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.AnnotationsFactory;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
-// <-- [user defined imports]
-// [user defined imports] -->
-import org.osgi.service.resolver.HostedCapability;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGod

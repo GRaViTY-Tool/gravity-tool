@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
+import org.eclipse.modisco.java.ClassInstanceCreation;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.BodyDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,10 +25,6 @@ public interface MSyntheticMethodDefinition extends BodyDeclaration {
 	 * Returns the value of the '<em><b>Original Method Definition</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MMethodDefinition#getSyntheticMethodDefinitions <em>Synthetic Method Definitions</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Method Definition</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Original Method Definition</em>' reference.
 	 * @see #setOriginalMethodDefinition(MMethodDefinition)

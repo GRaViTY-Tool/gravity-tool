@@ -4,8 +4,6 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -39,8 +37,6 @@ import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HCodeSmellDetectorImpl;
 
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->

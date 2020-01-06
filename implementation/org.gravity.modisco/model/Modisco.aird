@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_CxbHIGWXEemLQqzkUGNMjQ" selectedViews="_E0PTcGWXEemLQqzkUGNMjQ" version="14.1.0.201810161215">
     <semanticResources>Modisco.ecore</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.modisco.java/model/java.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_E0PTcGWXEemLQqzkUGNMjQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
@@ -1304,8 +1304,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9cB4GWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9cB4WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1313,8 +1313,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9cB4mWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9cB42WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1322,8 +1322,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9cB5GWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9cB5WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1331,8 +1331,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9cB5mWXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9cB52WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1340,8 +1340,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9cB6GWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly4GWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1349,8 +1349,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly4WWXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly4mWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1358,8 +1358,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly42WXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly5GWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1367,8 +1367,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly5WWXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly5mWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1376,8 +1376,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly52WXEemLQqzkUGNMjQ" name=" body : Block" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly6GWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1385,8 +1385,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly6WWXEemLQqzkUGNMjQ" name=" parameters : SingleVariableDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly6mWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1394,8 +1394,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly62WXEemLQqzkUGNMjQ" name=" thrownExceptions : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly7GWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1403,8 +1403,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9ly7WWXEemLQqzkUGNMjQ" name=" typeParameters : TypeParameter" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9ly7mWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1412,8 +1412,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9vj4GWXEemLQqzkUGNMjQ" name=" usagesInDocComments : MethodRef" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9vj4WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1421,8 +1421,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9vj4mWXEemLQqzkUGNMjQ" name=" usages : AbstractMethodInvocation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9vj42WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1446,8 +1446,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9vj5mWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9vj52WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1455,8 +1455,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J9vj6GWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J9vj6WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1464,8 +1464,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t0GWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t0WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1473,8 +1473,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t0mWXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t02WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1482,8 +1482,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t1GWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t1WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1491,8 +1491,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t1mWXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t12WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1500,8 +1500,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t2GWXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t2WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1509,8 +1509,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t2mWXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t22WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1518,8 +1518,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t3GWXEemLQqzkUGNMjQ" name=" body : Block" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t3WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1527,8 +1527,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J94t3mWXEemLQqzkUGNMjQ" name=" parameters : SingleVariableDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J94t32WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1536,8 +1536,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce0GWXEemLQqzkUGNMjQ" name=" thrownExceptions : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce0WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1545,8 +1545,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce0mWXEemLQqzkUGNMjQ" name=" typeParameters : TypeParameter" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce02WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1554,8 +1554,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce1GWXEemLQqzkUGNMjQ" name=" usagesInDocComments : MethodRef" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce1WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1563,8 +1563,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce1mWXEemLQqzkUGNMjQ" name=" usages : AbstractMethodInvocation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce12WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1581,8 +1581,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce2GWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce2WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1590,8 +1590,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce2mWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce22WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1599,8 +1599,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce3GWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-Ce3WWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1608,8 +1608,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Ce3mWXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-LowGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1617,8 +1617,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-LowWWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-LowmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1626,8 +1626,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Low2WXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-LoxGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1635,8 +1635,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-LoxWWXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-LoxmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1644,8 +1644,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-Lox2WXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-LoyGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1734,8 +1734,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKwGWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKwWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1743,8 +1743,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKwmWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKw2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1752,8 +1752,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKxGWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKxWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1761,8 +1761,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKxmWXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKx2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1770,8 +1770,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKyGWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKyWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1779,8 +1779,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKymWXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKy2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1788,8 +1788,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKzGWXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-fKzWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1797,8 +1797,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-fKzmWXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUsGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1806,8 +1806,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUsWWXEemLQqzkUGNMjQ" name=" type : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractVariablesContainer/type"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractVariablesContainer/type"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractVariablesContainer/type"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractVariablesContainer/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUsmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1815,8 +1815,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUs2WXEemLQqzkUGNMjQ" name=" fragments : VariableDeclarationFragment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractVariablesContainer/fragments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractVariablesContainer/fragments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractVariablesContainer/fragments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractVariablesContainer/fragments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUtGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1832,8 +1832,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUtWWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUtmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1841,8 +1841,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUt2WXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUuGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1850,8 +1850,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUuWWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUumWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1859,8 +1859,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUu2WXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-oUvGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1868,8 +1868,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-oUvWWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFsGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1877,8 +1877,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFsWWXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFsmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1886,8 +1886,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFs2WXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFtGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1895,8 +1895,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFtWWXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFtmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1904,8 +1904,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFt2WXEemLQqzkUGNMjQ" name=" body : Block" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/body"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFuGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1913,8 +1913,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFuWWXEemLQqzkUGNMjQ" name=" parameters : SingleVariableDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/parameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFumWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1922,8 +1922,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFu2WXEemLQqzkUGNMjQ" name=" thrownExceptions : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/thrownExceptions"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFvGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1931,8 +1931,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFvWWXEemLQqzkUGNMjQ" name=" typeParameters : TypeParameter" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/typeParameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFvmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1940,8 +1940,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-yFv2WXEemLQqzkUGNMjQ" name=" usagesInDocComments : MethodRef" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usagesInDocComments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-yFwGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1949,8 +1949,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-7PoGWXEemLQqzkUGNMjQ" name=" usages : AbstractMethodInvocation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration/usages"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-7PoWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1958,8 +1958,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-7PomWXEemLQqzkUGNMjQ" name=" returnType : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/returnType"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/returnType"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/returnType"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/returnType"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-7Po2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1967,8 +1967,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-7PpGWXEemLQqzkUGNMjQ" name=" redefinedMethodDeclaration : MethodDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/redefinedMethodDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/redefinedMethodDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/redefinedMethodDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/redefinedMethodDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-7PpWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -1976,8 +1976,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J-7PpmWXEemLQqzkUGNMjQ" name=" redefinitions : MethodDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/redefinitions"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//MethodDeclaration/redefinitions"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/redefinitions"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration/redefinitions"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J-7Pp2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2034,8 +2034,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FAoWWXEemLQqzkUGNMjQ" name=" ownedElements : Package" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/ownedElements"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/ownedElements"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/ownedElements"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/ownedElements"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FAomWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2043,8 +2043,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FAo2WXEemLQqzkUGNMjQ" name=" orphanTypes : Type" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/orphanTypes"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/orphanTypes"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/orphanTypes"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/orphanTypes"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FApGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2052,8 +2052,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FApWWXEemLQqzkUGNMjQ" name=" unresolvedItems : UnresolvedItem" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/unresolvedItems"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/unresolvedItems"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/unresolvedItems"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/unresolvedItems"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FApmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2061,8 +2061,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FAp2WXEemLQqzkUGNMjQ" name=" compilationUnits : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/compilationUnits"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/compilationUnits"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/compilationUnits"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/compilationUnits"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FAqGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2070,8 +2070,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FAqWWXEemLQqzkUGNMjQ" name=" classFiles : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/classFiles"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/classFiles"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/classFiles"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/classFiles"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FAqmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2079,8 +2079,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_FAq2WXEemLQqzkUGNMjQ" name=" archives : Archive" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/archives"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Model/archives"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/archives"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Model/archives"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_FArGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2136,8 +2136,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_OxqGWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_OxqWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2145,8 +2145,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7kGWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_X7kWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2154,8 +2154,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7kmWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_X7k2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2163,16 +2163,16 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7lGWXEemLQqzkUGNMjQ" name=" type : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Annotation/type"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Annotation/type"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Annotation/type"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Annotation/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_X7lmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT" description="_J_X7lWWXEemLQqzkUGNMjQ">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7l2WXEemLQqzkUGNMjQ" name=" values : AnnotationMemberValuePair" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Annotation/values"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Annotation/values"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Annotation/values"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Annotation/values"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_X7mGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2188,8 +2188,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7mWWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_X7mmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2197,8 +2197,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_X7m2WXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hskGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2206,8 +2206,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hskWWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hskmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2215,8 +2215,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hsk2WXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hslGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2224,8 +2224,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hslWWXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hslmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2233,8 +2233,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hsl2WXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hsmGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2242,8 +2242,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hsmWWXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hsmmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2251,8 +2251,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_hsm2WXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_hsnGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2292,8 +2292,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_q2hGWXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_q2hWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2301,8 +2301,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_q2hmWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_q2h2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2310,8 +2310,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_q2iGWXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_q2iWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2319,8 +2319,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_0ngGWXEemLQqzkUGNMjQ" name=" bodyDeclarations : BodyDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AnonymousClassDeclaration/bodyDeclarations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AnonymousClassDeclaration/bodyDeclarations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration/bodyDeclarations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration/bodyDeclarations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_0ngWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2328,8 +2328,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_0ngmWXEemLQqzkUGNMjQ" name=" classInstanceCreation : ClassInstanceCreation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AnonymousClassDeclaration/classInstanceCreation"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AnonymousClassDeclaration/classInstanceCreation"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration/classInstanceCreation"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration/classInstanceCreation"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_-YgGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2353,8 +2353,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_-Yg2WXEemLQqzkUGNMjQ" name=" comments : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/comments"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_-YhGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2362,8 +2362,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_-YhWWXEemLQqzkUGNMjQ" name=" originalCompilationUnit : CompilationUnit" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalCompilationUnit"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_-YhmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2371,8 +2371,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_-Yh2WXEemLQqzkUGNMjQ" name=" originalClassFile : ClassFile" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ASTNode/originalClassFile"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_-YiGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2380,8 +2380,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_-YiWWXEemLQqzkUGNMjQ" name=" usagesInImports : ImportDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//NamedElement/usagesInImports"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_J_-YimWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2389,8 +2389,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_J_-Yi2WXEemLQqzkUGNMjQ" name=" abstractTypeDeclaration : AbstractTypeDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/abstractTypeDeclaration"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHicGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2398,8 +2398,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHicWWXEemLQqzkUGNMjQ" name=" annotations : Annotation" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/annotations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHicmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2407,8 +2407,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHic2WXEemLQqzkUGNMjQ" name=" anonymousClassDeclarationOwner : AnonymousClassDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/anonymousClassDeclarationOwner"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHidGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2416,8 +2416,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHidWWXEemLQqzkUGNMjQ" name=" modifier : Modifier" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration/modifier"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHidmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2425,8 +2425,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHid2WXEemLQqzkUGNMjQ" name=" usagesInTypeAccess : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Type/usagesInTypeAccess"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//Type/usagesInTypeAccess"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Type/usagesInTypeAccess"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//Type/usagesInTypeAccess"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHieGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2434,8 +2434,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHieWWXEemLQqzkUGNMjQ" name=" bodyDeclarations : BodyDeclaration" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/bodyDeclarations"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/bodyDeclarations"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/bodyDeclarations"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/bodyDeclarations"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHiemWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2443,8 +2443,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHie2WXEemLQqzkUGNMjQ" name=" commentsBeforeBody : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsBeforeBody"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsBeforeBody"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsBeforeBody"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsBeforeBody"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHifGWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2452,8 +2452,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KAHifWWXEemLQqzkUGNMjQ" name=" commentsAfterBody : Comment" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsAfterBody"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsAfterBody"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsAfterBody"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/commentsAfterBody"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KAHifmWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2461,8 +2461,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KARTcGWXEemLQqzkUGNMjQ" name=" package : Package" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/package"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/package"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/package"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/package"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KARTcWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2470,8 +2470,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KARTcmWXEemLQqzkUGNMjQ" name=" superInterfaces : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/superInterfaces"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//AbstractTypeDeclaration/superInterfaces"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/superInterfaces"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration/superInterfaces"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KARTc2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2479,8 +2479,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KARTdGWXEemLQqzkUGNMjQ" name=" typeParameters : TypeParameter" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//TypeDeclaration/typeParameters"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//TypeDeclaration/typeParameters"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//TypeDeclaration/typeParameters"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//TypeDeclaration/typeParameters"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KARTdWWXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
@@ -2488,8 +2488,8 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_KARTdmWXEemLQqzkUGNMjQ" name=" superClass : TypeAccess" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ClassDeclaration/superClass"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.gmt.modisco.java/model/java.ecore#//ClassDeclaration/superClass"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ClassDeclaration/superClass"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.modisco.java/model/java.ecore#//ClassDeclaration/superClass"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_KARTd2WXEemLQqzkUGNMjQ" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>

@@ -10,12 +10,12 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.Modifier;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
-import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.Modifier;
+import org.eclipse.modisco.java.Type;
+import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.VariableDeclarationFragment;
+import org.eclipse.modisco.java.emf.JavaFactory;
 import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MDefinition;
@@ -155,7 +155,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	 */
 	private boolean createFieldNameNodes(final Collection<MFieldDefinition> mFieldDefinitions,
 			final MGravityModel model) {
-		final boolean success = mFieldDefinitions.parallelStream().allMatch(mfDefinition -> {
+		final boolean success = mFieldDefinitions.stream().allMatch(mfDefinition -> {
 			final EList<VariableDeclarationFragment> fragments = mfDefinition.getFragments();
 			if (fragments.isEmpty()) {
 				LOGGER.error(NLS.bind(Messages.errorFieldNoFragments, mfDefinition));

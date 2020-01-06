@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.FieldDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +15,4 @@ import org.eclipse.gmt.modisco.java.FieldDeclaration;
  * @generated
  */
 public interface MFieldDefinition extends MDefinition, FieldDeclaration {
-
 } // MFieldDefinition

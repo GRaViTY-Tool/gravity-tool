@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
+import org.eclipse.modisco.java.SingleVariableDeclaration;
 
 /**
  * <!-- begin-user-doc -->

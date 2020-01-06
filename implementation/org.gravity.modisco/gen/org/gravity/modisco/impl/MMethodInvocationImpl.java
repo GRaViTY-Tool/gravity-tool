@@ -3,10 +3,12 @@
 package org.gravity.modisco.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -15,9 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.gmt.modisco.java.Type;
 
-import org.eclipse.gmt.modisco.java.emf.impl.MethodInvocationImpl;
+import org.eclipse.modisco.java.Type;
+
+import org.eclipse.modisco.java.emf.impl.MethodInvocationImpl;
 
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodInvocation;
@@ -52,6 +55,7 @@ public class MMethodInvocationImpl extends MethodInvocationImpl implements MMeth
 	 * @ordered
 	 */
 	protected EList<MFlow> ownedFlows;
+
 	/**
 	 * The cached value of the '{@link #getIncomingFlows() <em>Incoming Flows</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -61,6 +65,7 @@ public class MMethodInvocationImpl extends MethodInvocationImpl implements MMeth
 	 * @ordered
 	 */
 	protected EList<MFlow> incomingFlows;
+
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -70,6 +75,7 @@ public class MMethodInvocationImpl extends MethodInvocationImpl implements MMeth
 	 * @ordered
 	 */
 	protected EList<MFlow> outgoingFlows;
+
 	/**
 	 * The cached value of the '{@link #getMStaticType() <em>MStatic Type</em>}' reference.
 	 * <!-- begin-user-doc -->

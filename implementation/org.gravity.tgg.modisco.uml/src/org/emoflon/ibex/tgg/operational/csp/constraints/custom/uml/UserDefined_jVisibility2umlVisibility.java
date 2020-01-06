@@ -10,27 +10,27 @@ import org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariabl
 
 public class UserDefined_jVisibility2umlVisibility extends RuntimeTGGAttributeConstraint {
 
-	private static final Map<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind> jToU = new ConcurrentHashMap<>(
+	private static final Map<org.eclipse.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind> jToU = new ConcurrentHashMap<>(
 			4);
-	private static final Map<org.eclipse.uml2.uml.VisibilityKind, org.eclipse.gmt.modisco.java.VisibilityKind> uToJ = new ConcurrentHashMap<>(
+	private static final Map<org.eclipse.uml2.uml.VisibilityKind, org.eclipse.modisco.java.VisibilityKind> uToJ = new ConcurrentHashMap<>(
 			4);
 
 	static {
-		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.PRIVATE,
+		jToU.put(org.eclipse.modisco.java.VisibilityKind.PRIVATE,
 				org.eclipse.uml2.uml.VisibilityKind.PRIVATE_LITERAL);
-		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.PROTECTED,
+		jToU.put(org.eclipse.modisco.java.VisibilityKind.PROTECTED,
 				org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL);
-		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.NONE, org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL);
-		jToU.put(org.eclipse.gmt.modisco.java.VisibilityKind.PUBLIC,
+		jToU.put(org.eclipse.modisco.java.VisibilityKind.NONE, org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL);
+		jToU.put(org.eclipse.modisco.java.VisibilityKind.PUBLIC,
 				org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL);
 
 		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PRIVATE_LITERAL,
-				org.eclipse.gmt.modisco.java.VisibilityKind.PRIVATE);
+				org.eclipse.modisco.java.VisibilityKind.PRIVATE);
 		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PROTECTED_LITERAL,
-				org.eclipse.gmt.modisco.java.VisibilityKind.PROTECTED);
-		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL, org.eclipse.gmt.modisco.java.VisibilityKind.NONE);
+				org.eclipse.modisco.java.VisibilityKind.PROTECTED);
+		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PACKAGE_LITERAL, org.eclipse.modisco.java.VisibilityKind.NONE);
 		uToJ.put(org.eclipse.uml2.uml.VisibilityKind.PUBLIC_LITERAL,
-				org.eclipse.gmt.modisco.java.VisibilityKind.PUBLIC);
+				org.eclipse.modisco.java.VisibilityKind.PUBLIC);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class UserDefined_jVisibility2umlVisibility extends RuntimeTGGAttributeCo
 			break;
 		case "FF":
 			@SuppressWarnings("unchecked") final
-			Entry<org.eclipse.gmt.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind>[] entries = jToU
+			Entry<org.eclipse.modisco.java.VisibilityKind, org.eclipse.uml2.uml.VisibilityKind>[] entries = jToU
 			.entrySet().toArray(new Map.Entry[jToU.size()]);
 			final int selection = ThreadLocalRandom.current().nextInt(entries.length);
 			v0.bindToValue(entries[selection].getKey());

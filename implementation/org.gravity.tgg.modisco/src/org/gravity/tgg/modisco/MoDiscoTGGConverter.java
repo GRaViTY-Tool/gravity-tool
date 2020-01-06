@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.function.Consumer;
 
 import org.apache.log4j.Level;
@@ -20,9 +21,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
+import org.eclipse.modisco.java.generation.files.GenerateJavaExtended;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.util.EclipseProjectUtil;
@@ -81,13 +82,14 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean convertProject(IJavaProject project, IProgressMonitor monitor) {
+	public boolean convertProject(final IJavaProject project, final IProgressMonitor monitor) {
 		this.libs = new HashSet<>();
 		return convertProject(project, this.libs, monitor);
 	}
 
 	@Override
-	public boolean convertProject(IJavaProject javaProject, Collection<IPath> libs, IProgressMonitor monitor) {
+	public boolean convertProject(final IJavaProject javaProject, final Collection<IPath> libs,
+			final IProgressMonitor monitor) {
 		IProgressMonitor progressMonitor;
 		if (monitor == null) {
 			progressMonitor = new NullProgressMonitor();
@@ -100,7 +102,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		this.libs = libs;
 
 		long start = 0;
-		boolean infoEnabled = LOGGER.isInfoEnabled();
+		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			start = System.currentTimeMillis();
 			LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
@@ -112,6 +114,13 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		} catch (final DiscoveryException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
 			return false;
+		}
+
+		try {
+			final IFile file = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), progressMonitor).getFile("modisco"+System.currentTimeMillis()+".xmi");
+			saveModel(this.preprocessedModiscoModel.eResource(), file, progressMonitor);
+		} catch (final IOException e) {
+
 		}
 
 		final boolean success = convertModel(javaProject, this.preprocessedModiscoModel, progressMonitor);
@@ -131,7 +140,8 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	 * @param monitor     A progress monitor
 	 * @return If the model has been converted successfully
 	 */
-	public boolean convertModel(IJavaProject javaProject, MGravityModel targetModel, IProgressMonitor monitor) {
+	public boolean convertModel(final IJavaProject javaProject, final MGravityModel targetModel,
+			final IProgressMonitor monitor) {
 		try {
 			this.sync = new TGGApp(javaProject.getProject());
 		} catch (final IOException e) {
@@ -157,8 +167,11 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
-		final boolean success = this.sync.getTargetResource() != null
-				&& this.sync.getTargetResource().getContents().get(0) instanceof TypeGraph;
+		boolean success = this.sync.getTargetResource() != null;
+		if (success) {
+			final List<EObject> contents = this.sync.getTargetResource().getContents();
+			success = !contents.isEmpty() && contents.get(0) instanceof TypeGraph;
+		}
 		if (success) {
 			final Collection<IProgramGraphProcessor> sortedProcessors = ProgramGraphProcesorUtil
 					.getSortedProcessors(MoDiscoTGGActivator.PROCESS_PG_FWD);
@@ -176,7 +189,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean syncProjectFwd(IProgressMonitor monitor) {
+	public boolean syncProjectFwd(final IProgressMonitor monitor) {
 		if (this.discoverer == null || this.iJavaProject == null) {
 			return false;
 		}
@@ -184,7 +197,13 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			start = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName()); // NOPMD by speldszus on 12/4/19, 9:09 PM
+			LOGGER.log(Level.INFO, start + " MoDisco sync project: " + this.iJavaProject.getProject().getName()); // NOPMD
+			// by
+			// speldszus
+			// on
+			// 12/4/19,
+			// 9:09
+			// PM
 		}
 
 		if (this.preprocessedModiscoModel == null) {
@@ -205,20 +224,21 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			return false;
 		}
 		if (infoEnabled) {
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done"); // NOPMD by speldszus on 12/4/19, 9:09 PM
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Discover Project - Done"); // NOPMD by speldszus on
+			// 12/4/19, 9:09 PM
 		}
 
 		final GravityMoDiscoModelPatcher patcher = MoDiscoTGGActivator.getDefault().getSelectedPatcher();
 
-		final Consumer<EObject> changes = SynchronizationHelper -> {
+		// final Consumer<EObject> changes = SynchronizationHelper -> {
 
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch");
-			patcher.update(oldProject, this.preprocessedModiscoModel);
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch - Done");
+		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch");
+		patcher.update(oldProject, this.preprocessedModiscoModel);
+		LOGGER.log(Level.INFO, System.currentTimeMillis() + " Calculate Patch - Done");
 
-		};
+		// };
 
-		final boolean success = syncProjectFwd(changes, monitor);
+		final boolean success = syncProjectFwd(null, monitor);
 
 		if (infoEnabled) {
 			final long stop = System.currentTimeMillis();
@@ -229,14 +249,15 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean syncProjectFwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
+	public boolean syncProjectFwd(final Consumer<EObject> consumer, final IProgressMonitor monitor) {
 		if (this.sync == null) {
 			LOGGER.error("No initial transformation has been performed!");
 			return false;
 		}
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
-			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD"); // NOPMD by speldszus on 12/4/19, 9:08 PM
+			LOGGER.log(Level.INFO, System.currentTimeMillis() + " Integrate FWD"); // NOPMD by speldszus on 12/4/19,
+			// 9:08 PM
 		}
 		try {
 			this.sync.forward();
@@ -256,7 +277,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean syncProjectBwd(Consumer<EObject> consumer, IProgressMonitor monitor) {
+	public boolean syncProjectBwd(final Consumer<EObject> consumer, final IProgressMonitor monitor) {
 		if (this.discoverer == null || this.sync == null) {
 			return false;
 		}
@@ -310,7 +331,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	 * @param progressMonitor a progress monitor return false if the models couldn't
 	 *                        be saved, true otherwise
 	 */
-	boolean save(IProgressMonitor progressMonitor) {
+	boolean save(final IProgressMonitor progressMonitor) {
 		IFolder folder;
 		try {
 			folder = EclipseProjectUtil.getGravityFolder(this.iJavaProject.getProject(), progressMonitor);
@@ -334,7 +355,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean savePG(IFile file, IProgressMonitor monitor) {
+	public boolean savePG(final IFile file, final IProgressMonitor monitor) {
 		return saveModel(this.sync.getTargetResource(), file, monitor);
 	}
 
@@ -354,7 +375,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public void setDebug(boolean debug) {
+	public void setDebug(final boolean debug) {
 		this.debug = debug;
 	}
 }

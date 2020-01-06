@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
+import org.eclipse.modisco.java.SuperMethodInvocation;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,6 +1,6 @@
 package org.emoflon.ibex.tgg.operational.csp.constraints.custom.modisco;
 
-import org.eclipse.gmt.modisco.java.VisibilityKind;
+import org.eclipse.modisco.java.VisibilityKind;
 import org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraint;
 import org.emoflon.ibex.tgg.operational.csp.RuntimeTGGAttributeConstraintVariable;
 import org.gravity.typegraph.basic.TVisibility;

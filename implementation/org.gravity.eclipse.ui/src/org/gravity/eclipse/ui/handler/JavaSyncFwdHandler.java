@@ -32,7 +32,7 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 	private static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
 		final List<?> selection = GravityUiActivator.getSelection(event);
 
 		final Job job = new PGSyncFwdJob(selection);
@@ -73,13 +73,13 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 	private final class PGSyncFwdJob extends Job {
 		private final List<?> selection;
 
-		private PGSyncFwdJob(List<?> selection) {
-			super("GRaViTY Sync PG");
+		private PGSyncFwdJob(final List<?> selection) {
+			super("GRaViTY Sync Program Model");
 			this.selection = selection;
 		}
 
 		@Override
-		protected IStatus run(IProgressMonitor monitor) {
+		protected IStatus run(final IProgressMonitor monitor) {
 			for (final Object entry : this.selection) {
 				if (entry instanceof IJavaProject) {
 					final IJavaProject iJavaProject = (IJavaProject) entry;
@@ -91,7 +91,8 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 								"Please install a converter and restart the task.");
 					}
 					if (!converter.syncProjectFwd(monitor)) {
-						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
+						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
+								"No program model has been created");
 					}
 				} else if (entry instanceof IPackageFragment) {
 					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.unhandledPackageFagment + entry);

@@ -4,8 +4,8 @@ package org.gravity.modisco;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.Type;
 
 /**
  * <!-- begin-user-doc -->

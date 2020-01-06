@@ -1,6 +1,6 @@
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.Model;
+import org.eclipse.modisco.java.Model;
 
 /**
  * This interface is used to patch an existing modisco model to be equal to 

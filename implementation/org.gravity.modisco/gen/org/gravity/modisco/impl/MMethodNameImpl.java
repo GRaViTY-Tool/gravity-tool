@@ -3,6 +3,7 @@
 package org.gravity.modisco.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.gravity.modisco.MMethodName;
 import org.gravity.modisco.ModiscoPackage;
 

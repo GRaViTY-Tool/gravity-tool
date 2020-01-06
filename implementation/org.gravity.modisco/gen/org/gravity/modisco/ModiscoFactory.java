@@ -31,6 +31,15 @@ public interface ModiscoFactory extends EFactory {
 	MConstructorDefinition createMConstructorDefinition();
 
 	/**
+	 * Returns a new object of class '<em>MMethod Name</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MMethod Name</em>'.
+	 * @generated
+	 */
+	MMethodName createMMethodName();
+
+	/**
 	 * Returns a new object of class '<em>MMethod Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,13 +49,13 @@ public interface ModiscoFactory extends EFactory {
 	MMethodSignature createMMethodSignature();
 
 	/**
-	 * Returns a new object of class '<em>MMethod Name</em>'.
+	 * Returns a new object of class '<em>MMethod Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Name</em>'.
+	 * @return a new object of class '<em>MMethod Definition</em>'.
 	 * @generated
 	 */
-	MMethodName createMMethodName();
+	MMethodDefinition createMMethodDefinition();
 
 	/**
 	 * Returns a new object of class '<em>MField Name</em>'.
@@ -58,6 +67,15 @@ public interface ModiscoFactory extends EFactory {
 	MFieldName createMFieldName();
 
 	/**
+	 * Returns a new object of class '<em>MField Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MField Signature</em>'.
+	 * @generated
+	 */
+	MFieldSignature createMFieldSignature();
+
+	/**
 	 * Returns a new object of class '<em>MField Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +83,6 @@ public interface ModiscoFactory extends EFactory {
 	 * @generated
 	 */
 	MFieldDefinition createMFieldDefinition();
-
-	/**
-	 * Returns a new object of class '<em>MMethod Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Definition</em>'.
-	 * @generated
-	 */
-	MMethodDefinition createMMethodDefinition();
 
 	/**
 	 * Returns a new object of class '<em>MEntry</em>'.
@@ -94,13 +103,13 @@ public interface ModiscoFactory extends EFactory {
 	MGravityModel createMGravityModel();
 
 	/**
-	 * Returns a new object of class '<em>MField Signature</em>'.
+	 * Returns a new object of class '<em>Method Invocation Static Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MField Signature</em>'.
+	 * @return a new object of class '<em>Method Invocation Static Type</em>'.
 	 * @generated
 	 */
-	MFieldSignature createMFieldSignature();
+	MethodInvocationStaticType createMethodInvocationStaticType();
 
 	/**
 	 * Returns a new object of class '<em>MSynthetic Method Definition</em>'.
@@ -110,15 +119,6 @@ public interface ModiscoFactory extends EFactory {
 	 * @generated
 	 */
 	MSyntheticMethodDefinition createMSyntheticMethodDefinition();
-
-	/**
-	 * Returns a new object of class '<em>Method Invocation Static Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Method Invocation Static Type</em>'.
-	 * @generated
-	 */
-	MethodInvocationStaticType createMethodInvocationStaticType();
 
 	/**
 	 * Returns a new object of class '<em>MAnonymous</em>'.

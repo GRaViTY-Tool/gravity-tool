@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.modisco.java.VariableDeclarationFragment;
 import org.gravity.modisco.MDefinition;
 
 /**

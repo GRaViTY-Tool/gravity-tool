@@ -36,15 +36,7 @@ import org.gravity.hulk.detection.impl.HClassBasedCalculatorImpl;
 import org.gravity.hulk.detection.impl.HCodeSmellDetectorImpl;
 
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TypeGraph;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
-// <-- [user defined imports]
-import org.gravity.hulk.antipatterngraph.HMetric;
-import java.util.Collections;
-import java.util.List;
-import java.util.LinkedList;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->

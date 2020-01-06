@@ -9,7 +9,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.gravity.hulk.antipatterngraph.HMetric;
-import org.gravity.hulk.antipatterngraph.metrics.HDepthOfInheritanceMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HEfferentCouplingMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
 

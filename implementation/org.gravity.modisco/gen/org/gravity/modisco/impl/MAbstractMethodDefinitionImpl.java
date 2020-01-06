@@ -20,16 +20,16 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.Block;
-import org.eclipse.gmt.modisco.java.MethodRef;
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.TypeParameter;
+import org.eclipse.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.Block;
+import org.eclipse.modisco.java.MethodRef;
+import org.eclipse.modisco.java.SingleVariableDeclaration;
+import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.TypeParameter;
 
-import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.eclipse.modisco.java.emf.JavaPackage;
 
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.ModiscoPackage;

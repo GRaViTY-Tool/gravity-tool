@@ -3,10 +3,12 @@
 package org.gravity.modisco.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.gravity.modisco.MConstructorDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.ModiscoPackage;
@@ -112,7 +114,6 @@ public class MConstructorDefinitionImpl extends MAbstractMethodDefinitionImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

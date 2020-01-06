@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.TypeParameter;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.TypeParameter;
 
-import org.eclipse.gmt.modisco.java.emf.impl.ModelImpl;
+import org.eclipse.modisco.java.emf.impl.ModelImpl;
 
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MExtension;

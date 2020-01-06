@@ -26,13 +26,31 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MName extends EObject {
 	/**
+	 * Returns the value of the '<em><b>MName</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>MName</em>' attribute.
+	 * @see #setMName(String)
+	 * @see org.gravity.modisco.ModiscoPackage#getMName_MName()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getMName();
+
+	/**
+	 * Sets the value of the '{@link org.gravity.modisco.MName#getMName <em>MName</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>MName</em>' attribute.
+	 * @see #getMName()
+	 * @generated
+	 */
+	void setMName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>MSignatures</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MSignature}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MSignatures</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MSignatures</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMName_MSignatures()
@@ -52,31 +70,5 @@ public interface MName extends EObject {
 	 * @generated
 	 */
 	EList<MDefinition> getMDefinitions();
-
-	/**
-	 * Returns the value of the '<em><b>MName</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MName</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>MName</em>' attribute.
-	 * @see #setMName(String)
-	 * @see org.gravity.modisco.ModiscoPackage#getMName_MName()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String getMName();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.modisco.MName#getMName <em>MName</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>MName</em>' attribute.
-	 * @see #getMName()
-	 * @generated
-	 */
-	void setMName(String value);
 
 } // MName

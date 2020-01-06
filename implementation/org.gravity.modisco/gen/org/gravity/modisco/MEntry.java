@@ -3,7 +3,8 @@
 package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.gmt.modisco.java.Type;
+
+import org.eclipse.modisco.java.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,10 +30,6 @@ public interface MEntry extends MAbstractFlowElement {
 	 * Returns the value of the '<em><b>MNext</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getMPrevious <em>MPrevious</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MNext</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MNext</em>' reference.
 	 * @see #setMNext(MEntry)
@@ -57,10 +54,6 @@ public interface MEntry extends MAbstractFlowElement {
 	 * Returns the value of the '<em><b>MPrevious</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getMNext <em>MNext</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MPrevious</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MPrevious</em>' reference.
 	 * @see #setMPrevious(MEntry)
@@ -84,10 +77,6 @@ public interface MEntry extends MAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Type)

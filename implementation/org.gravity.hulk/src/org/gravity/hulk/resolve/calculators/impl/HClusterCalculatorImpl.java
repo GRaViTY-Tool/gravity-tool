@@ -3,54 +3,38 @@
 package org.gravity.hulk.resolve.calculators.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.LinkedList;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HAnnotation;
-import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
-
-import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
-
-import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
-import org.gravity.hulk.resolve.calculators.HClusterCalculator;
-
-import org.gravity.hulk.resolve.impl.HResolverImpl;
-
-import org.gravity.typegraph.basic.TClass;
-
-import org.gravity.typegraph.basic.annotations.TAnnotatable;
-// <-- [user defined imports]
-import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
-import java.util.Deque;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HAnnotation;
+import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
+import org.gravity.hulk.antipatterngraph.antipattern.HBlobAntiPattern;
+import org.gravity.hulk.refactoringgraph.HCluster;
+import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
+// [user defined imports] -->
+// <-- [user defined imports]
+import org.gravity.hulk.refactoringgraph.RefactoringgraphFactory;
+import org.gravity.hulk.resolve.calculators.CalculatorsPackage;
+import org.gravity.hulk.resolve.calculators.HClusterCalculator;
+import org.gravity.hulk.resolve.impl.HResolverImpl;
 import org.gravity.typegraph.basic.TAccess;
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
-import com.apporiented.algorithm.clustering.AverageLinkageStrategy;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
+
 import com.apporiented.algorithm.clustering.Cluster;
 import com.apporiented.algorithm.clustering.ClusteringAlgorithm;
 import com.apporiented.algorithm.clustering.CompleteLinkageStrategy;
 import com.apporiented.algorithm.clustering.DefaultClusteringAlgorithm;
-import com.apporiented.algorithm.clustering.SingleLinkageStrategy;
-import com.apporiented.algorithm.clustering.visualization.DendrogramPanel;
-import org.gravity.hulk.refactoringgraph.HCluster;
-import org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -86,13 +70,14 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean detect(TClass tClass) {
+	@Override
+	public boolean detect(final TClass tClass) {
 		// [user code injected with eMoflon]
 
 		final EList<TMember> defines = tClass.getDefines();
-		List<TMethodDefinition> tMethods = new ArrayList<>();
+		final List<TMethodDefinition> tMethods = new ArrayList<>();
 		int size = 0;
-		for (TMember tMember : defines) {
+		for (final TMember tMember : defines) {
 			if (tMember instanceof TMethodDefinition) {
 				if (tMethods.add((TMethodDefinition) tMember)) {
 					size++;
@@ -110,11 +95,11 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		} else if (CLUSTER == CLUSTERING.CLUSTER) {
 			clusterAlgo(tClass, tMethods, size);
 		} else {
-			RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
-			List<HCluster> clusters = new ArrayList<HCluster>();
+			final RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
+			final List<HCluster> clusters = new ArrayList<>();
 
-			for (TMethodDefinition tMethod : tMethods) {
-				HCluster cluster = factory.createHCluster();
+			for (final TMethodDefinition tMethod : tMethods) {
+				final HCluster cluster = factory.createHCluster();
 				cluster.setValue(1);
 				cluster.getTMembers().add(tMethod);
 				tClass.getTAnnotation().add(cluster);
@@ -130,17 +115,18 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean detect(HAntiPatternGraph apg) {
+	@Override
+	public boolean detect(final HAntiPatternGraph apg) {
 
-		Object[] result1_black = HClusterCalculatorImpl.pattern_HClusterCalculator_1_1_ActivityNode22_blackB(this);
+		final Object[] result1_black = HClusterCalculatorImpl.pattern_HClusterCalculator_1_1_ActivityNode22_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
 		}
 		// ForEach 
-		for (Object[] result2_black : HClusterCalculatorImpl
+		for (final Object[] result2_black : HClusterCalculatorImpl
 				.pattern_HClusterCalculator_1_2_ActivityNode23_blackBFF(apg)) {
 			//nothing HBlobAntiPattern blob = (HBlobAntiPattern) result2_black[1];
-			TClass tClass = (TClass) result2_black[2];
+			final TClass tClass = (TClass) result2_black[2];
 			// 
 			HClusterCalculatorImpl.pattern_HClusterCalculator_1_3_ActivityNode24_expressionFBB(this, tClass);
 
@@ -154,7 +140,7 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CalculatorsPackage.HCLUSTER_CALCULATOR___DETECT__TCLASS:
 			return detect((TClass) arguments.get(0));
@@ -164,19 +150,19 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Object[] pattern_HClusterCalculator_1_1_ActivityNode22_blackB(HClusterCalculator _this) {
+	public static final Object[] pattern_HClusterCalculator_1_1_ActivityNode22_blackB(final HClusterCalculator _this) {
 		return new Object[] { _this };
 	}
 
 	public static final Iterable<Object[]> pattern_HClusterCalculator_1_2_ActivityNode23_blackBFF(
-			HAntiPatternGraph apg) {
-		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		for (HAnnotation tmpBlob : apg.getHAnnotations()) {
+			final HAntiPatternGraph apg) {
+		final LinkedList<Object[]> _result = new LinkedList<>();
+		for (final HAnnotation tmpBlob : apg.getHAnnotations()) {
 			if (tmpBlob instanceof HBlobAntiPattern) {
-				HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
-				TAnnotatable tmpTClass = blob.getTAnnotated();
+				final HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
+				final TAnnotatable tmpTClass = blob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
-					TClass tClass = (TClass) tmpTClass;
+					final TClass tClass = (TClass) tmpTClass;
 					_result.add(new Object[] { apg, blob, tClass });
 				}
 
@@ -185,15 +171,15 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		return _result;
 	}
 
-	public static final boolean pattern_HClusterCalculator_1_3_ActivityNode24_expressionFBB(HClusterCalculator _this,
-			TClass tClass) {
-		boolean _localVariable_0 = _this.detect(tClass);
-		boolean _result = Boolean.valueOf(_localVariable_0);
+	public static final boolean pattern_HClusterCalculator_1_3_ActivityNode24_expressionFBB(final HClusterCalculator _this,
+			final TClass tClass) {
+		final boolean _localVariable_0 = _this.detect(tClass);
+		final boolean _result = _localVariable_0;
 		return _result;
 	}
 
 	public static final boolean pattern_HClusterCalculator_1_4_expressionF() {
-		boolean _result = Boolean.TRUE;
+		final boolean _result = Boolean.TRUE;
 		return _result;
 	}
 
@@ -210,12 +196,12 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		return "Connected Members";
 	}
 
-	private void bruteforceAlgo(TClass tClass, List<TMethodDefinition> tMethods) {
-		HashMap<TMethodDefinition, List<TClass>> dataclasses = new HashMap<>();
-		for (TMethodDefinition tMethod : tMethods) {
-			for (TAnnotation tAnnotation : tMethod.getTAnnotation()) {
+	private void bruteforceAlgo(final TClass tClass, final List<TMethodDefinition> tMethods) {
+		final HashMap<TMethodDefinition, List<TClass>> dataclasses = new HashMap<>();
+		for (final TMethodDefinition tMethod : tMethods) {
+			for (final TAnnotation tAnnotation : tMethod.getTAnnotation()) {
 				if (tAnnotation instanceof HMethodToDataClassAccess) {
-					HMethodToDataClassAccess dca = (HMethodToDataClassAccess) tAnnotation;
+					final HMethodToDataClassAccess dca = (HMethodToDataClassAccess) tAnnotation;
 					List<TClass> dc;
 					if (dataclasses.containsKey(tMethod)) {
 						dc = dataclasses.get(tMethod);
@@ -233,25 +219,25 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		fill(dataclasses, new HashMap<TMethodDefinition, TClass>(), tClass);
 	}
 
-	private void fill(HashMap<TMethodDefinition, List<TClass>> input, HashMap<TMethodDefinition, TClass> output,
-			TClass tClass) {
-		Iterator<Entry<TMethodDefinition, List<TClass>>> iterator = input.entrySet().iterator();
+	private void fill(final HashMap<TMethodDefinition, List<TClass>> input, final HashMap<TMethodDefinition, TClass> output,
+			final TClass tClass) {
+		final Iterator<Entry<TMethodDefinition, List<TClass>>> iterator = input.entrySet().iterator();
 		if (iterator.hasNext()) {
-			Entry<TMethodDefinition, List<TClass>> entry = iterator.next();
-			TMethodDefinition key = entry.getKey();
-			List<TClass> values = input.remove(key);
-			;
-			for (TClass value : values) {
-				List<TMethodDefinition> list;
+			final Entry<TMethodDefinition, List<TClass>> entry = iterator.next();
+			final TMethodDefinition key = entry.getKey();
+			final List<TClass> values = input.remove(key);
+			
+			for (final TClass value : values) {
+				final List<TMethodDefinition> list;
 				output.put(key, value);
 				fill(input, output, tClass);
 				output.remove(key);
 			}
 		} else {
-			RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
-			HashMap<TClass, HCluster> clusters = new HashMap<>();
-			for (TMethodDefinition key : output.keySet()) {
-				TClass value = output.get(key);
+			final RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
+			final HashMap<TClass, HCluster> clusters = new HashMap<>();
+			for (final TMethodDefinition key : output.keySet()) {
+				final TClass value = output.get(key);
 				HCluster hCluster;
 				if (clusters.containsKey(value)) {
 					hCluster = clusters.get(value);
@@ -263,10 +249,10 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 				}
 				hCluster.getTMembers().add(key);
 			}
-			for (TClass tData : clusters.keySet()) {
+			for (final TClass tData : clusters.keySet()) {
 				System.out.println("Next Cluster (" + tData + "):");
-				HCluster hCluster = clusters.get(tData);
-				for (TMember m : hCluster.getTMembers()) {
+				final HCluster hCluster = clusters.get(tData);
+				for (final TMember m : hCluster.getTMembers()) {
 					System.out.println(m.getSignatureString() + "->" + tData.getFullyQualifiedName());
 				}
 			}
@@ -274,11 +260,11 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		}
 	}
 
-	private void clusterAlgo(TClass tClass, List<TMethodDefinition> tMethods, int size) {
-		Double treshold = Math.sqrt(size);
+	private void clusterAlgo(final TClass tClass, final List<TMethodDefinition> tMethods, final int size) {
+		final Double treshold = Math.sqrt(size);
 
-		String[] names = new String[size];
-		double[][] distances = new double[size][size];
+		final String[] names = new String[size];
+		final double[][] distances = new double[size][size];
 		for (int i = 0; i < size; i++) {
 			names[i] = Integer.toString(i);
 			for (int j = 0; j < size; j++) {
@@ -288,10 +274,10 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 
 		double max = 0;
 		for (int i = 0; i < size; i++) {
-			for (TAccess tAccess : tMethods.get(i).getTAccessing()) {
-				int j = tMethods.indexOf(tAccess.getTTarget());
+			for (final TAccess tAccess : tMethods.get(i).getTAccessing()) {
+				final int j = tMethods.indexOf(tAccess.getTTarget());
 				if (j >= 0) {
-					double distance = distances[i][j]++;
+					final double distance = distances[i][j]++;
 					if (distance > max) {
 						max = distance;
 					}
@@ -302,38 +288,38 @@ public class HClusterCalculatorImpl extends HResolverImpl implements HClusterCal
 		max++;
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				double distance = distances[i][j];
+				final double distance = distances[i][j];
 				distances[i][j] = max - distance;
 			}
 		}
 
-		ClusteringAlgorithm alg = new DefaultClusteringAlgorithm();
-		Deque<Cluster> stack = new LinkedList<>();
+		final ClusteringAlgorithm alg = new DefaultClusteringAlgorithm();
+		final Deque<Cluster> stack = new LinkedList<>();
 		stack.add(alg.performClustering(distances, names, new CompleteLinkageStrategy()));
 
-		RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
-		List<HCluster> clusters = new ArrayList<HCluster>();
+		final RefactoringgraphFactory factory = RefactoringgraphFactory.eINSTANCE;
+		final List<HCluster> clusters = new ArrayList<>();
 
 		while (!stack.isEmpty()) {
-			Cluster current = stack.pop();
+			final Cluster current = stack.pop();
 			stack.addAll(current.getChildren());
 			if (current.getWeightValue() < 3 * treshold) {
-				List<String> leafNames = new ArrayList<>();
+				final List<String> leafNames = new ArrayList<>();
 
-				Deque<Cluster> collect = new LinkedList<Cluster>();
+				final Deque<Cluster> collect = new LinkedList<>();
 				collect.add(current);
 				while (!collect.isEmpty()) {
-					Cluster next = collect.pop();
-					String name = next.getName();
+					final Cluster next = collect.pop();
+					final String name = next.getName();
 					if (!name.startsWith("clstr")) {
 						leafNames.add(name);
 					}
 					collect.addAll(next.getChildren());
 				}
 
-				HCluster cluster = factory.createHCluster();
+				final HCluster cluster = factory.createHCluster();
 				cluster.setValue(leafNames.size());
-				for (String name : leafNames) {
+				for (final String name : leafNames) {
 					cluster.getTMembers().add(tMethods.get(Integer.parseInt(name)));
 				}
 				tClass.getTAnnotation().add(cluster);

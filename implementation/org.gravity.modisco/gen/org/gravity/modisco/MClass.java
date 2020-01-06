@@ -4,8 +4,8 @@ package org.gravity.modisco;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +26,8 @@ import org.eclipse.gmt.modisco.java.Type;
 public interface MClass extends ClassDeclaration {
 	/**
 	 * Returns the value of the '<em><b>Dependencies</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.gmt.modisco.java.Type}.
+	 * The list contents are of type {@link org.eclipse.modisco.java.Type}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dependencies</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dependencies</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMClass_Dependencies()

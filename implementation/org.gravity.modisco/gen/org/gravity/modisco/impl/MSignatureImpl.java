@@ -5,12 +5,15 @@ package org.gravity.modisco.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MSignature;
 import org.gravity.modisco.ModiscoPackage;

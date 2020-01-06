@@ -4,8 +4,6 @@ package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,9 +22,6 @@ import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
-// <-- [user defined imports]
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>HLocal

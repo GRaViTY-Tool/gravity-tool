@@ -5,14 +5,15 @@ Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.gravity.typegraph.basic,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse;visibility:=reexport,
- org.emoflon.ibex.tgg.runtime.democles,
- org.emoflon.ibex.tgg.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.gravity.modisco,
- org.eclipse.gmt.modisco.java.generation,
- org.emoflon.ibex.tgg.core.runtime,
- org.emoflon.ibex.tgg.ui.debug
+ org.emoflon.ibex.tgg.core.runtime;visibility:=reexport,
+ org.emoflon.ibex.tgg.runtime.democles;visibility:=reexport,
+ org.emoflon.ibex.tgg.core.language;visibility:=reexport,
+ org.emoflon.ibex.tgg.ui.debug.adapter;visibility:=reexport,
+ org.emoflon.ibex.tgg.ui.debug;visibility:=reexport,
+ org.eclipse.modisco.java.generation
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

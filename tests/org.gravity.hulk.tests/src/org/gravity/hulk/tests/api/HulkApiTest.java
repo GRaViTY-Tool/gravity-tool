@@ -32,9 +32,6 @@ import org.gravity.typegraph.basic.TypeGraph;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import language.LanguagePackage;
-import runtime.RuntimePackage;
-
 /**
  * A class for testing the HulkAPI This test should be executed as JUnit plugin
  * test. The test subjects have to be loaded in the workspace of the plugin test
@@ -66,10 +63,6 @@ public class HulkApiTest {
 				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
 				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
 				.map(project -> JavaProjectUtil.convertToJavaProject(project)).findAny().orElse(null);
-
-		// Init eMoflon for test
-		LanguagePackage.eINSTANCE.eResource();
-		RuntimePackage.eINSTANCE.eResource();
 	}
 
 	/**

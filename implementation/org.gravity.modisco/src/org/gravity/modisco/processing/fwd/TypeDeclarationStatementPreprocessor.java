@@ -7,8 +7,8 @@ import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.TypeDeclarationStatement;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.TypeDeclarationStatement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;

@@ -2,7 +2,7 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
 
 /**
  * <!-- begin-user-doc -->

@@ -32,14 +32,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gmt.modisco.java.ArrayType;
-import org.eclipse.gmt.modisco.java.CompilationUnit;
-import org.eclipse.gmt.modisco.java.NamedElement;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.emf.JavaPackage;
-import org.eclipse.gmt.modisco.java.generation.files.GenerateJavaExtended;
+import org.eclipse.modisco.java.ArrayType;
+import org.eclipse.modisco.java.CompilationUnit;
+import org.eclipse.modisco.java.NamedElement;
+import org.eclipse.modisco.java.Type;
+import org.eclipse.modisco.java.emf.JavaPackage;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
+import org.eclipse.modisco.java.generation.files.GenerateJavaExtended;
 import org.eclipse.uml2.uml.Model;
 import org.emoflon.ibex.tgg.operational.csp.constraints.factories.uml.UserDefinedRuntimeTGGAttrConstraintFactory;
 import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
@@ -55,7 +55,6 @@ import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.modisco.util.MoDiscoUtil;
 import org.gravity.security.annotations.AnnotationsActivator;
 
-import language.LanguagePackage;
 import runtime.Protocol;
 import runtime.RuntimePackage;
 
@@ -139,7 +138,6 @@ public final class Transformation extends SYNC {
 
 	@Override
 	protected Resource loadTGGResource() throws IOException {
-		LanguagePackage.eINSTANCE.eResource();
 		RuntimePackage.eINSTANCE.eResource();
 		return loadResource(UML_TGG_XMI);
 	}
@@ -386,7 +384,7 @@ public final class Transformation extends SYNC {
 	 * Postprocesses the transformation
 	 */
 	private void postprocessAdditionsBwd() {
-		final org.eclipse.gmt.modisco.java.Model model = (org.eclipse.gmt.modisco.java.Model) getSourceResource()
+		final org.eclipse.modisco.java.Model model = (org.eclipse.modisco.java.Model) getSourceResource()
 				.getContents().get(0);
 
 		final Type string = MoDiscoUtil.getOrCreateJavaLangString(model);

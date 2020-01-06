@@ -6,13 +6,13 @@ import java.util.Set;
 import java.util.Deque;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.CompilationUnit;
-import org.eclipse.gmt.modisco.java.ImportDeclaration;
-import org.eclipse.gmt.modisco.java.NamedElement;
-import org.eclipse.gmt.modisco.java.Package;
-import org.eclipse.gmt.modisco.java.emf.JavaFactory;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.Annotation;
+import org.eclipse.modisco.java.CompilationUnit;
+import org.eclipse.modisco.java.ImportDeclaration;
+import org.eclipse.modisco.java.NamedElement;
+import org.eclipse.modisco.java.Package;
+import org.eclipse.modisco.java.emf.JavaFactory;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.IMoDiscoProcessor;
 
@@ -42,7 +42,7 @@ public class MoDiscoProcessorBwd implements IMoDiscoProcessor {
 						types.add(i.getImportedElement());
 					}
 					for (Annotation a : t.getAnnotations()) {
-						org.eclipse.gmt.modisco.java.Type type = a.getType().getType();
+						org.eclipse.modisco.java.Type type = a.getType().getType();
 						if (!types.contains(type)) {
 							ImportDeclaration imp = JavaFactory.eINSTANCE.createImportDeclaration();
 							imp.setImportedElement(type);

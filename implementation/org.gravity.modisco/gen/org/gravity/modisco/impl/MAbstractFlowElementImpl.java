@@ -5,13 +5,18 @@ package org.gravity.modisco.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MFlow;
 import org.gravity.modisco.ModiscoPackage;
@@ -86,12 +91,11 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<MFlow> getOwnedFlows() {
-		if (this.ownedFlows == null) {
-			this.ownedFlows = new EObjectContainmentWithInverseEList<>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS, ModiscoPackage.MFLOW__FLOW_OWNER);
+		if (ownedFlows == null) {
+			ownedFlows = new EObjectContainmentWithInverseEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS, ModiscoPackage.MFLOW__FLOW_OWNER);
 		}
-		return this.ownedFlows;
+		return ownedFlows;
 	}
 
 	/**
@@ -99,12 +103,11 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<MFlow> getIncomingFlows() {
-		if (this.incomingFlows == null) {
-			this.incomingFlows = new EObjectWithInverseResolvingEList<>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
+		if (incomingFlows == null) {
+			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
 		}
-		return this.incomingFlows;
+		return incomingFlows;
 	}
 
 	/**
@@ -112,12 +115,11 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<MFlow> getOutgoingFlows() {
-		if (this.outgoingFlows == null) {
-			this.outgoingFlows = new EObjectWithInverseResolvingEList<>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
+		if (outgoingFlows == null) {
+			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
 		}
-		return this.outgoingFlows;
+		return outgoingFlows;
 	}
 
 	/**
@@ -129,12 +131,12 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -147,12 +149,12 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -165,12 +167,12 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			return getOwnedFlows();
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			return getIncomingFlows();
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			return getOutgoingFlows();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				return getOwnedFlows();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return getIncomingFlows();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return getOutgoingFlows();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,18 +186,18 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			getOwnedFlows().clear();
-			getOwnedFlows().addAll((Collection<? extends MFlow>)newValue);
-			return;
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			getIncomingFlows().clear();
-			getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
-			return;
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			getOutgoingFlows().clear();
-			getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
-			return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				getOwnedFlows().addAll((Collection<? extends MFlow>)newValue);
+				return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
+				return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -208,15 +210,15 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			getOwnedFlows().clear();
-			return;
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			getIncomingFlows().clear();
-			return;
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			getOutgoingFlows().clear();
-			return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				return;
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -229,12 +231,12 @@ public abstract class MAbstractFlowElementImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
-			return this.ownedFlows != null && !this.ownedFlows.isEmpty();
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
-			return this.incomingFlows != null && !this.incomingFlows.isEmpty();
-		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
-			return this.outgoingFlows != null && !this.outgoingFlows.isEmpty();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OWNED_FLOWS:
+				return ownedFlows != null && !ownedFlows.isEmpty();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS:
+				return incomingFlows != null && !incomingFlows.isEmpty();
+			case ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS:
+				return outgoingFlows != null && !outgoingFlows.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

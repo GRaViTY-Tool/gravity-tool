@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.emf.impl.ConstructorInvocationImpl;
+import org.eclipse.modisco.java.emf.impl.ConstructorInvocationImpl;
 
 import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodInvocation;

@@ -1,5 +1,5 @@
 // Add imports here
-//#import "platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"
+//#import "platform:/plugin/org.eclipse.modisco.java/model/java.ecore"
 //#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
 //#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
 #import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"

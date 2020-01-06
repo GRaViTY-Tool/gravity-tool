@@ -2,6 +2,7 @@
  */
 package org.gravity.modisco;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>MField Name</b></em>'.
@@ -13,5 +14,4 @@ package org.gravity.modisco;
  * @generated
  */
 public interface MFieldName extends MName {
-
 } // MFieldName

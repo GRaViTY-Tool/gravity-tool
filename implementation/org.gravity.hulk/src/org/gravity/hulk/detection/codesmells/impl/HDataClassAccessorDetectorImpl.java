@@ -4,8 +4,6 @@ package org.gravity.hulk.detection.codesmells.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;

@@ -1588,7 +1588,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SuperConstructorInvocation__Marker"
       eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperConstructorInvocation"/>
+        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
