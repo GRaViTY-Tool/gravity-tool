@@ -66,7 +66,7 @@ public final class HulkAPI {
 		} catch (NoConverterRegisteredException | CoreException e) {
 			throw new DetectionFailedException(e);
 		}
-		final boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
+		final boolean success = converter.convertProject(Collections.emptySet(), monitor);
 		final TypeGraph pg = converter.getPG();
 		GravityActivator.getDefault().discardConverter(iproject);
 		if (!success || pg == null) {
@@ -92,7 +92,7 @@ public final class HulkAPI {
 	 * @return a list of all detected anti-pattern instances
 	 * @throws DetectionFailedException If the anti-pattern detection failed
 	 */
-	public static List<HAnnotation> detect(TypeGraph pm, String programLocation, AntiPatternNames... aps)
+	public static List<HAnnotation> detect(final TypeGraph pm, final String programLocation, final AntiPatternNames... aps)
 			throws DetectionFailedException {
 		ResourceSet rs;
 		Resource pgResource = pm.eResource();
@@ -136,7 +136,7 @@ public final class HulkAPI {
 	 * @param aps The anti-patterns
 	 * @return The list of detectors
 	 */
-	private static Set<EClass> getDetecors(AntiPatternNames... aps) {
+	private static Set<EClass> getDetecors(final AntiPatternNames... aps) {
 		final Set<EClass> detectors = new HashSet<>();
 		for (final AntiPatternNames name : aps) {
 			detectors.add(name.getEClass());
@@ -151,7 +151,7 @@ public final class HulkAPI {
 	 * @param pg        The created PG
 	 * @return true, iff the cleanup was successful
 	 */
-	private static boolean clean(IProject iproject, TypeGraph pg) {
+	private static boolean clean(final IProject iproject, final TypeGraph pg) {
 		final Resource keep = pg.eResource();
 		final EList<Resource> resources = keep.getResourceSet().getResources();
 		while (!resources.isEmpty()) {
@@ -189,7 +189,7 @@ public final class HulkAPI {
 
 		private final EClass eClass;
 
-		private AntiPatternNames(EClass eClass) {
+		private AntiPatternNames(final EClass eClass) {
 			this.eClass = eClass;
 		}
 
@@ -200,7 +200,7 @@ public final class HulkAPI {
 		 * @param metricClass The EClass of the anti-pattern annotation
 		 * @return The corresponding enum constant
 		 */
-		public static AntiPatternNames get(EClass metricClass) {
+		public static AntiPatternNames get(final EClass metricClass) {
 			for (final AntiPatternNames name : AntiPatternNames.values()) {
 				if (name.getEClass().isSuperTypeOf(metricClass)) {
 					return name;

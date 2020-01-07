@@ -38,7 +38,7 @@ public final class PullUpMethodJob extends WorkspaceJob {
 	private final MethodDeclaration method;
 	private final ICompilationUnit icu;
 
-	public PullUpMethodJob(MethodDeclaration method, TypeDeclaration childType, ICompilationUnit icu, Shell shell) {
+	public PullUpMethodJob(final MethodDeclaration method, final TypeDeclaration childType, final ICompilationUnit icu, final Shell shell) {
 		super(Messages.pullUpUMethod);
 		this.childType = childType;
 		this.shell = shell;
@@ -47,14 +47,14 @@ public final class PullUpMethodJob extends WorkspaceJob {
 	}
 
 	@Override
-	public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+	public IStatus runInWorkspace(final IProgressMonitor monitor) throws CoreException {
 		IPGConverter converter;
 		try {
 			converter = GravityActivator.getDefault().getConverter(this.icu.getJavaProject().getProject());
 		} catch (final NoConverterRegisteredException e) {
 			return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
 		}
-		if (!converter.convertProject(this.icu.getJavaProject(), monitor)) {
+		if (!converter.convertProject(monitor)) {
 			asyncPrintError(this.shell, Messages.refactoringError, Messages.createPMFailed);
 
 		}
@@ -88,11 +88,11 @@ public final class PullUpMethodJob extends WorkspaceJob {
 		return Status.OK_STATUS;
 	}
 
-	private void asyncPrintError(Shell shell, String title, String message) {
+	private void asyncPrintError(final Shell shell, final String title, final String message) {
 		Display.getDefault().asyncExec(() -> MessageDialog.openError(shell, title, message));
 	}
 
-	static String getPUMMessage(TClass tParent, TMethodSignature tSignature) {
+	static String getPUMMessage(final TClass tParent, final TMethodSignature tSignature) {
 		StringBuilder builder = new StringBuilder(200).append(
 				"All access dependencies have been checked successfully,\nplease check if all implementations of the method\n\n\t")
 				.append(tSignature.getMethod().getTName()).append('(');

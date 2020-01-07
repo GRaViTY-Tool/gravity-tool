@@ -42,13 +42,13 @@ import org.osgi.framework.Bundle;
 final class CreateProgramModelJob extends Job {
 	private final List<Object> selection;
 
-	CreateProgramModelJob(String name, List<Object> selection) {
+	CreateProgramModelJob(final String name, final List<Object> selection) {
 		super(name);
 		this.selection = selection;
 	}
 
 	@Override
-	protected IStatus run(IProgressMonitor monitor) {
+	protected IStatus run(final IProgressMonitor monitor) {
 		for (final Object entry : this.selection) {
 			if (monitor.isCanceled()) {
 				return Status.CANCEL_STATUS;
@@ -65,7 +65,7 @@ final class CreateProgramModelJob extends Job {
 		return Status.OK_STATUS;
 	}
 
-	private boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
+	private boolean process(final IJavaProject iJavaProject, final IProgressMonitor monitor) {
 		final IProject iProject = iJavaProject.getProject();
 
 		final GravityActivator gravityActivator = GravityActivator.getDefault();
@@ -95,7 +95,7 @@ final class CreateProgramModelJob extends Job {
 			}
 		}
 
-		final boolean success = converter.convertProject(iJavaProject, libs.values(), monitor);
+		final boolean success = converter.convertProject(libs.values(), monitor);
 		gravityActivator.discardConverter(iProject);
 		if (!success) {
 			PublicInterfacesAccessHandler.LOGGER.log(Level.ERROR, "No PG has been created for " + iProject.getName());
@@ -119,7 +119,7 @@ final class CreateProgramModelJob extends Job {
 		return inspect(pg, names);
 	}
 
-	private static boolean inspect(TypeGraph pg, Set<String> names) {
+	private static boolean inspect(final TypeGraph pg, final Set<String> names) {
 		final TAbstractType high = pg.getType("org.gravity.security.annotations.requirements.High");
 		if (high == null) {
 			PublicInterfacesAccessHandler.LOGGER.log(Level.INFO, "Nothing to check!");
@@ -141,8 +141,8 @@ final class CreateProgramModelJob extends Job {
 		return false;
 	}
 
-	private static void searchViolations(Set<TAnnotationType> protectors, Set<TAnnotationType> allowed,
-			Set<String> names) {
+	private static void searchViolations(final Set<TAnnotationType> protectors, final Set<TAnnotationType> allowed,
+			final Set<String> names) {
 		for (final TAnnotationType req : protectors) {
 			for (final TAnnotation annotation : req.getAnnotations()) {
 				final TAnnotatable annotated = annotation.getTAnnotated();

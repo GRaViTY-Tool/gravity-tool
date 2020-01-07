@@ -114,8 +114,8 @@ public class TransformationTest {
 		 this.project = project;
 		 this.name = name;
 		 // Add dependency to security annotations
-		LanguagePackage.eINSTANCE.getNsURI();
-		RuntimePackage.eINSTANCE.getNsURI();
+		 LanguagePackage.eINSTANCE.getNsURI();
+		 RuntimePackage.eINSTANCE.getNsURI();
 		 final String id = AnnotationsActivator.PLUGIN_ID;
 	 }
 
@@ -189,13 +189,13 @@ public class TransformationTest {
 
 		 MoDiscoTGGConverter conv = null;
 		 try {
-			 conv = new MoDiscoTGGConverter();
+			conv = new MoDiscoTGGConverter(this.project);
 			 conv.setDebug(DEBUG);
 		 } catch (final IOException e) {
 			 throw new AssertionError(String.format("Unable to load '%s': %s", this.project, e.getMessage()));
 		 }
 		 final MGravityModel modiscoModel = getModiscoModel();
-		 if (!conv.convertModel(this.project, modiscoModel, new NullProgressMonitor())) {
+		if (!conv.convertModel(modiscoModel, new NullProgressMonitor())) {
 			 throw new AssertionError("Trafo failed");
 		 }
 

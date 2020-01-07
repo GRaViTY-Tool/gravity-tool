@@ -157,7 +157,7 @@ public abstract class HulkHandler extends AbstractHandler {
 
 	}
 
-	public IFile getAnnotationsOut(IProgressMonitor monitor) throws IOException {
+	public IFile getAnnotationsOut(final IProgressMonitor monitor) throws IOException {
 		final IFolder folder = EclipseProjectUtil.getGravityFolder(this.project.getProject(), monitor);
 		final IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
 		if (!annotationsOut.exists()) {
@@ -190,7 +190,7 @@ public abstract class HulkHandler extends AbstractHandler {
 		return annotations.getFullPath();
 	}
 
-	public AntiPatternSelectionDialog createDialog(String title, String message) {
+	public AntiPatternSelectionDialog createDialog(final String title, final String message) {
 
 		final AntiPatternSelectionDialog dialog = new AntiPatternSelectionDialog(this.window.getShell(),
 				new DetectionTreeLabelProvider(), new DetectionTreeContentProvider(), SWT.None);
@@ -202,20 +202,20 @@ public abstract class HulkHandler extends AbstractHandler {
 		dialog.addJavaAnnotationsSelectedListener(new SelectionListener() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void widgetSelected(final SelectionEvent e) {
 				final Button button = (Button) e.widget;
 				HulkHandler.this.javaAnnotationsEnabled = button.getSelection();
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
+			public void widgetDefaultSelected(final SelectionEvent e) {
 				LOGGER.info("Default selected: " + e.getSource());
 			}
 		});
 		return dialog;
 	}
 
-	public void initializeSelection(AntiPatternSelectionDialog dialog) {
+	public void initializeSelection(final AntiPatternSelectionDialog dialog) {
 		this.selection = new HashSet<>();
 		for (final Object selected : dialog.getResult()) {
 			if (selected instanceof EClass) {
@@ -247,7 +247,7 @@ public abstract class HulkHandler extends AbstractHandler {
 	 * @return
 	 * @throws ExecutionException
 	 */
-	public boolean initialize(ExecutionEvent event) throws ExecutionException {
+	public boolean initialize(final ExecutionEvent event) throws ExecutionException {
 		LOGGER.log(Level.INFO, Messages.scan);
 
 		this.window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
@@ -283,7 +283,7 @@ public abstract class HulkHandler extends AbstractHandler {
 		this.job = new Job(this.jobName) { // $NON-NLS-1$
 
 			@Override
-			protected IStatus run(IProgressMonitor monitor) {
+			protected IStatus run(final IProgressMonitor monitor) {
 				HulkHandler.this.hHmonitor = monitor;
 				monitor.beginTask(Messages.hulkAPDetection, 3);
 
@@ -316,7 +316,7 @@ public abstract class HulkHandler extends AbstractHandler {
 								"The converter extensionpoint cannot be accessed, pleade contact the GRaViTY developers.");
 					}
 
-					final boolean success = HulkHandler.this.converter.convertProject(HulkHandler.this.project, libs, monitor);
+					final boolean success = HulkHandler.this.converter.convertProject(libs, monitor);
 					if (!success || HulkHandler.this.converter.getPG() == null) {
 						LOGGER.log(Level.ERROR, "Creating PG from project failed: " + HulkHandler.this.project.getProject().getName());
 						fails.add(javaProject.getProject().getName());
@@ -363,7 +363,7 @@ public abstract class HulkHandler extends AbstractHandler {
 	}
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
 
 		if (initialize(event)) {
 

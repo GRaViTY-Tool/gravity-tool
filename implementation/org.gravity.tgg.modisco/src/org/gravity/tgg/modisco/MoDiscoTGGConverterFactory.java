@@ -5,8 +5,10 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
+import org.gravity.eclipse.util.JavaProjectUtil;
 
 /**
  * The factory for creating MoDisco TGG converters for projects.
@@ -22,9 +24,10 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverterFactory.class);
 
 	@Override
-	public IPGConverter createConverter(IProject project) {
+	public IPGConverter createConverter(final IProject project) {
+		final IJavaProject javaProject = JavaProjectUtil.convertToJavaProject(project);
 		try {
-			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter();
+			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject);
 			MoDiscoTGGActivator.getDefault().addConverter(converter);
 			return converter;
 		} catch (final IOException e) {
@@ -44,7 +47,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	}
 
 	@Override
-	public boolean belongsToFactory(IPGConverter converter) {
+	public boolean belongsToFactory(final IPGConverter converter) {
 		return MoDiscoTGGConverter.class.isInstance(converter);
 	}
 

@@ -27,12 +27,12 @@ public final class PGCreatorJob extends ModelCreatorJob {
 	 *
 	 * @param selection A selection from the workspace
 	 */
-	public PGCreatorJob(List<?> selection) {
+	public PGCreatorJob(final List<?> selection) {
 		super(selection, "program model", "xmi");
 	}
 
 	@Override
-	public boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
+	public boolean process(final IJavaProject iJavaProject, final IProgressMonitor monitor) {
 		final IProject iProject = iJavaProject.getProject();
 
 		final GravityActivator gravityActivator = GravityActivator.getDefault();
@@ -44,7 +44,7 @@ public final class PGCreatorJob extends ModelCreatorJob {
 			return false;
 		}
 
-		final boolean success = converter.convertProject(iJavaProject, monitor);
+		final boolean success = converter.convertProject(monitor);
 		if (!success) {
 			LOGGER.log(Level.ERROR, "No program model has been created for " + iProject.getName());
 			return false;

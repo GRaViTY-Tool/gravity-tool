@@ -39,8 +39,8 @@ public final class MOMJob extends WorkspaceJob {
 	private final TypeDeclaration sourceType;
 	private final Shell shell;
 
-	public MOMJob(ICompilationUnit icu, String targetClassName, MethodDeclaration method,
-			TypeDeclaration sourceType, Shell shell) {
+	public MOMJob(final ICompilationUnit icu, final String targetClassName, final MethodDeclaration method,
+			final TypeDeclaration sourceType, final Shell shell) {
 		super(Messages.moveMethod);
 		this.icu = icu;
 		this.targetClassName = targetClassName;
@@ -50,14 +50,14 @@ public final class MOMJob extends WorkspaceJob {
 	}
 
 	@Override
-	public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+	public IStatus runInWorkspace(final IProgressMonitor monitor) throws CoreException {
 		IPGConverter converter;
 		try {
 			converter = GravityActivator.getDefault().getConverter(this.icu.getJavaProject().getProject());
 		} catch (final NoConverterRegisteredException e) {
 			return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
 		}
-		if (!converter.convertProject(this.icu.getJavaProject(), monitor)) {
+		if (!converter.convertProject(monitor)) {
 			asyncPrintError(this.shell, Messages.refactoringError, Messages.createPMFailed);
 
 		}
@@ -98,7 +98,7 @@ public final class MOMJob extends WorkspaceJob {
 		return Status.OK_STATUS;
 	}
 
-	private void asyncPrintError(Shell shell, String title, String message) {
+	private void asyncPrintError(final Shell shell, final String title, final String message) {
 		Display.getDefault().asyncExec(() -> MessageDialog.openError(shell, title, message));
 	}
 }

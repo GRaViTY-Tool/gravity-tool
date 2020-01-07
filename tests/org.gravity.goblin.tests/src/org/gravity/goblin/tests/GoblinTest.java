@@ -71,8 +71,8 @@ public class GoblinTest {
 	 * @param postcondition The expected outcome of the postconditions
 	 * @param parameters    The parameters describing the refactoring
 	 */
-	public GoblinTest(String name, IProject project, String unitName, boolean precondition, double postcondition,
-			Map<String, Object> parameters) {
+	public GoblinTest(final String name, final IProject project, final String unitName, final boolean precondition, final double postcondition,
+			final Map<String, Object> parameters) {
 		LOGGER.log(Level.ERROR, "Executing the GOBLIN test on: " + project);
 		this.project = project;
 		this.unitName = unitName;
@@ -82,7 +82,7 @@ public class GoblinTest {
 
 	}
 
-	private void initializeParameters(TypeGraph pg) {
+	private void initializeParameters(final TypeGraph pg) {
 		final Map<String, TClass> classes = new HashMap<>();
 		final Map<String, Object> methods = new HashMap<>();
 		final Map<String, Object> other = new HashMap<>();
@@ -135,7 +135,7 @@ public class GoblinTest {
 		final MoDiscoTGGConverterFactory modisco = new MoDiscoTGGConverterFactory();
 
 		final IPGConverter converter = modisco.createConverter(this.project);
-		final boolean success = converter.convertProject(JavaCore.create(this.project), new NullProgressMonitor());
+		final boolean success = converter.convertProject(new NullProgressMonitor());
 		assertTrue("Could not create PG", success);
 
 		final TypeGraph pg = converter.getPG();
@@ -187,14 +187,14 @@ public class GoblinTest {
 		private final IProject project;
 		private final String name;
 
-		private TestConfigurationVisitor(IProject project) {
+		private TestConfigurationVisitor(final IProject project) {
 			this.testConfigurations = new ArrayList<>();
 			this.project = project;
 			this.name = project.getName();
 		}
 
 		@Override
-		public boolean visit(IResource resource) throws CoreException {
+		public boolean visit(final IResource resource) throws CoreException {
 			if (resource.getFileExtension() != null && resource.getFileExtension().equalsIgnoreCase("JSON")) {
 				final JSONParser parser = new JSONParser();
 				final IFile resourceFile = (IFile) resource;

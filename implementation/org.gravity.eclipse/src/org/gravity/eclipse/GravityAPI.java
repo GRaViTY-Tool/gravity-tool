@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gravity.eclipse;
 
@@ -29,7 +29,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * A simple class for generating program models from Java projects
- * 
+ *
  * @author speldszus
  *
  */
@@ -39,43 +39,43 @@ public class GravityAPI {
 	 * The Logger of this class
 	 */
 	private static final Logger LOGGER = Logger.getLogger(GravityAPI.class);
-	
+
 	private GravityAPI() {
 		// This class shouldn't be instantiated
 	}
 
 	/**
 	 * Discovers the Java project and creates a program model
-	 * 
+	 *
 	 * @param project A Java project
 	 * @param monitor A progress monitor
 	 * @return The program model
 	 * @throws TransformationFailedException If the program model cannot be created
 	 */
-	public static TypeGraph createProgramModel(IJavaProject project, IProgressMonitor monitor)
+	public static TypeGraph createProgramModel(final IJavaProject project, final IProgressMonitor monitor)
 			throws TransformationFailedException {
 		return createProgramModel(project, false, monitor);
 	}
 
 	/**
 	 * Discovers the Java project and creates a program model
-	 * 
+	 *
 	 * @param project A Java project
 	 * @param monitor A progress monitor
 	 * @param force   I the creation of a new model instance should be enforced
 	 * @return The program model
 	 * @throws TransformationFailedException If the program model cannot be created
 	 */
-	public static TypeGraph createProgramModel(IJavaProject project, boolean force, IProgressMonitor monitor)
+	public static TypeGraph createProgramModel(final IJavaProject project, final boolean force, final IProgressMonitor monitor)
 			throws TransformationFailedException {
 		if (!force) {
 			try {
 				loadProgramModel(project, monitor);
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				LOGGER.log(Level.ERROR, e);
 			}
 		}
-		IProject iproject = project.getProject();
+		final IProject iproject = project.getProject();
 		IPGConverter converter;
 		try {
 			converter = GravityActivator.getDefault().getNewConverter(iproject);
@@ -83,7 +83,7 @@ public class GravityAPI {
 			throw new TransformationFailedException(e);
 		}
 
-		boolean success = converter.convertProject(project, Collections.emptySet(), monitor);
+		final boolean success = converter.convertProject(Collections.emptySet(), monitor);
 		if (!success || converter.getPG() == null) {
 			throw new TransformationFailedException(
 					Messages.createPMFailed + project.getProject().getName());
@@ -93,20 +93,20 @@ public class GravityAPI {
 
 	/**
 	 * Tries to load an existing program model from the project
-	 * 
+	 *
 	 * @param javaProject The Java project
 	 * @param monitor     A progress monitor
 	 * @return The loaded program model
 	 * @throws IOException If the model couldn't be loaded
 	 */
-	private static TypeGraph loadProgramModel(IJavaProject javaProject, IProgressMonitor monitor) throws IOException {
+	private static TypeGraph loadProgramModel(final IJavaProject javaProject, final IProgressMonitor monitor) throws IOException {
 		try {
-			IFolder folder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor);
-			IFile file = folder.getFile(javaProject.getProject().getName() + '.'+GravityActivator.FILE_EXTENSION_XMI);
+			final IFolder folder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), monitor);
+			final IFile file = folder.getFile(javaProject.getProject().getName() + '.'+GravityActivator.FILE_EXTENSION_XMI);
 			if (file.exists() && isUptoDate(file)) {
 				return loadProgramModel(file);
 			}
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			throw new IOException(Messages.couldntLoadModel, e);
 		}
 		throw new IOException(Messages.couldntLoadModel);
@@ -119,12 +119,12 @@ public class GravityAPI {
 	 * @param file The file
 	 * @return true, if the file is up to date
 	 */
-	private static boolean isUptoDate(IFile file) {
-		long timestamp = file.getLocalTimeStamp();
-		UptodateVisitor visitor = new UptodateVisitor(timestamp);
+	private static boolean isUptoDate(final IFile file) {
+		final long timestamp = file.getLocalTimeStamp();
+		final UptodateVisitor visitor = new UptodateVisitor(timestamp);
 		try {
 			file.getProject().accept(visitor);
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			LOGGER.log(Level.ERROR, e);
 			return false;
 		}
@@ -133,18 +133,18 @@ public class GravityAPI {
 
 	/**
 	 * Tries to load an existing program model from the given file
-	 * 
+	 *
 	 * @param file The file
 	 * @return The loaded program model
 	 * @throws IOException If the model couldn't be loaded
 	 */
-	private static TypeGraph loadProgramModel(IFile file) throws IOException, CoreException {
-		Resource resource = new ResourceSetImpl()
+	private static TypeGraph loadProgramModel(final IFile file) throws IOException, CoreException {
+		final Resource resource = new ResourceSetImpl()
 				.createResource(URI.createURI(file.getProjectRelativePath().toString()));
 		resource.load(file.getContents(), Collections.emptyMap());
-		EList<EObject> contents = resource.getContents();
+		final EList<EObject> contents = resource.getContents();
 		if (contents.size() == 1) {
-			EObject object = contents.get(0);
+			final EObject object = contents.get(0);
 			if (object instanceof TypeGraph) {
 				return (TypeGraph) object;
 			}
@@ -154,36 +154,36 @@ public class GravityAPI {
 
 	/**
 	 * A visitor for visiting all Java files and checking if their time stamp is older than the given one.
-	 * 
+	 *
 	 * @author speldszus
 	 *
 	 */
 	private static final class UptodateVisitor implements IResourceVisitor {
 		private final long timestamp;
-		
+
 		private boolean upToDate = true;
-	
+
 		/**
 		 * Creates a new visitor
-		 * 
+		 *
 		 * @param timestamp The time stamp to check against
 		 */
-		private UptodateVisitor(long timestamp) {
+		private UptodateVisitor(final long timestamp) {
 			this.timestamp = timestamp;
 		}
-	
+
 		@Override
-		public boolean visit(IResource resource) throws CoreException {
-			if (!upToDate) {
+		public boolean visit(final IResource resource) throws CoreException {
+			if (!this.upToDate) {
 				return false;
 			}
 			if (resource.getType() != IResource.FILE) {
 				return true;
 			}
 			if(GravityActivator.FILE_EXTENSION_JAVA.equals(((IFile) resource).getFileExtension())) {
-				long fileTimestamp = resource.getLocalTimeStamp();
-				if(timestamp < fileTimestamp) {
-					upToDate = false;
+				final long fileTimestamp = resource.getLocalTimeStamp();
+				if(this.timestamp < fileTimestamp) {
+					this.upToDate = false;
 				}
 			}
 			return true;
@@ -191,11 +191,11 @@ public class GravityAPI {
 
 		/**
 		 * The result of the check
-		 * 
+		 *
 		 * @return true, if no Java file is newer than the time stamp
 		 */
 		public boolean isUptoDate() {
-			return upToDate;
+			return this.upToDate;
 		}
 	}
 

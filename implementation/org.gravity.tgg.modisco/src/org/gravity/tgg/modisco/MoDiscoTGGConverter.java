@@ -44,7 +44,7 @@ import org.gravity.typegraph.basic.TypeGraph;
  */
 public class MoDiscoTGGConverter implements IPGConverter {
 
-	private IJavaProject iJavaProject;
+	private final IJavaProject iJavaProject;
 
 	private Collection<IPath> libs;
 
@@ -61,10 +61,14 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	/**
 	 * Initializes ResourceSet for EMF and eMoflon
 	 *
+	 * @param project The project this converter is created for
+	 *
 	 * @throws IOException If the eMoflon TGG rules couldn't be loaded
 	 */
-	public MoDiscoTGGConverter() throws IOException {
+	public MoDiscoTGGConverter(final IJavaProject project) throws IOException {
 		this.discoverer = new GravityModiscoProjectDiscoverer();
+		this.iJavaProject = project;
+		GravityActivator.getDefault().addProject(project.getProject());
 	}
 
 	@Override
@@ -82,14 +86,12 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	}
 
 	@Override
-	public boolean convertProject(final IJavaProject project, final IProgressMonitor monitor) {
-		this.libs = new HashSet<>();
-		return convertProject(project, this.libs, monitor);
+	public boolean convertProject(final IProgressMonitor monitor) {
+		return convertProject(new HashSet<>(), monitor);
 	}
 
 	@Override
-	public boolean convertProject(final IJavaProject javaProject, final Collection<IPath> libs,
-			final IProgressMonitor monitor) {
+	public boolean convertProject(final Collection<IPath> libs, final IProgressMonitor monitor) {
 		IProgressMonitor progressMonitor;
 		if (monitor == null) {
 			progressMonitor = new NullProgressMonitor();
@@ -97,19 +99,17 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			progressMonitor = monitor;
 		}
 
-		GravityActivator.getDefault().addProject(javaProject.getProject());
-		this.iJavaProject = javaProject;
 		this.libs = libs;
 
 		long start = 0;
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
 			start = System.currentTimeMillis();
-			LOGGER.log(Level.INFO, "GRaViTY convert project: " + javaProject.getProject().getName());
+			LOGGER.log(Level.INFO, "GRaViTY convert project: " + this.iJavaProject.getProject().getName());
 		}
 
 		try {
-			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(javaProject, libs,
+			this.preprocessedModiscoModel = this.discoverer.discoverMGravityModelFromProject(this.iJavaProject, libs,
 					progressMonitor);
 		} catch (final DiscoveryException e) {
 			LOGGER.log(Level.ERROR, e.getMessage(), e);
@@ -117,13 +117,14 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 
 		try {
-			final IFile file = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), progressMonitor).getFile("modisco"+System.currentTimeMillis()+".xmi");
+			final IFile file = EclipseProjectUtil.getGravityFolder(this.iJavaProject.getProject(), progressMonitor)
+					.getFile("modisco" + System.currentTimeMillis() + ".xmi");
 			saveModel(this.preprocessedModiscoModel.eResource(), file, progressMonitor);
 		} catch (final IOException e) {
 
 		}
 
-		final boolean success = convertModel(javaProject, this.preprocessedModiscoModel, progressMonitor);
+		final boolean success = convertModel(this.preprocessedModiscoModel, progressMonitor);
 
 		if (infoEnabled) {
 			LOGGER.log(Level.INFO, "GRaViTY convert project - done " + (System.currentTimeMillis() - start) + "ms");
@@ -135,15 +136,14 @@ public class MoDiscoTGGConverter implements IPGConverter {
 	/**
 	 * Converts the modisco model of the given project into a program model
 	 *
-	 * @param javaProject The Java project
 	 * @param targetModel The modisco model of the Java project
 	 * @param monitor     A progress monitor
 	 * @return If the model has been converted successfully
 	 */
-	public boolean convertModel(final IJavaProject javaProject, final MGravityModel targetModel,
+	public boolean convertModel(final MGravityModel targetModel,
 			final IProgressMonitor monitor) {
 		try {
-			this.sync = new TGGApp(javaProject.getProject());
+			this.sync = new TGGApp(this.iJavaProject.getProject());
 		} catch (final IOException e) {
 			LOGGER.error(e.getMessage(), e);
 			return false;
@@ -207,7 +207,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		}
 
 		if (this.preprocessedModiscoModel == null) {
-			return convertProject(this.iJavaProject, monitor);
+			return convertProject(monitor);
 		}
 
 		final MGravityModel oldProject = this.preprocessedModiscoModel;

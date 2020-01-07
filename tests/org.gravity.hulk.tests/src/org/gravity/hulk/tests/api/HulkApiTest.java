@@ -106,7 +106,7 @@ public class HulkApiTest {
 	@Test
 	public void detectAllWithSync() throws NoConverterRegisteredException, CoreException, DetectionFailedException {
 		final IPGConverter converter = GravityActivator.getDefault().getNewConverter(javaProject.getProject());
-		final boolean success = converter.convertProject(javaProject, new NullProgressMonitor());
+		final boolean success = converter.convertProject(new NullProgressMonitor());
 		assertTrue(success);
 		final TypeGraph pm = converter.getPG();
 		assertNotNull(pm);
