@@ -74,7 +74,7 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	boolean buildGradleProject(File gradleRootFolder, Iterable<Path> buildDotGradleFiles, boolean androidApp)
+	boolean buildGradleProject(final File gradleRootFolder, final Iterable<Path> buildDotGradleFiles, final boolean androidApp)
 			throws IOException, InterruptedException, UnsupportedOperationSystemException {
 		File gradlew = new File(gradleRootFolder, "gradlew");
 		if (!gradlew.exists()) {
@@ -128,7 +128,7 @@ class GradleBuild {
 	 * @throws IOException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	private static Process createBuildProcess(File path, String buildTarget)
+	private static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
 		Process process = null;
 		switch (OperationSystem.os) {
@@ -153,16 +153,13 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @return true, iff the project has been build successfully
 	 */
-	public static boolean build(File location, String target) {
+	public static boolean build(final File location, final String target) {
 		try {
 			final Process process = createBuildProcess(location, target);
 			GradleBuild.collectMessages(process);
 			process.waitFor();
 			return process.exitValue() == 0;
-		} catch (IOException | UnsupportedOperationSystemException e) {
-			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-			Thread.currentThread().interrupt();
-		} catch (final InterruptedException e) {
+		} catch (InterruptedException | IOException | UnsupportedOperationSystemException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			Thread.currentThread().interrupt();
 		}
@@ -178,7 +175,7 @@ class GradleBuild {
 	 * @throws IOException- if an I/O error occurs writing to or creating the build
 	 *                      file, or the text cannot be encoded as UTF-8
 	 */
-	private static boolean replaceGoogleServices(Path buildFile) throws IOException {
+	private static boolean replaceGoogleServices(final Path buildFile) throws IOException {
 		boolean change = false;
 		final List<String> content = Files.readAllLines(buildFile);
 		for (int i = 0; i < content.size(); i++) {
@@ -203,7 +200,7 @@ class GradleBuild {
 	 * @return the string builder
 	 * @throws IOException
 	 */
-	static StringBuilder collectMessages(Process process) throws IOException {
+	static StringBuilder collectMessages(final Process process) throws IOException {
 		final StringBuilder message = new StringBuilder();
 		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;

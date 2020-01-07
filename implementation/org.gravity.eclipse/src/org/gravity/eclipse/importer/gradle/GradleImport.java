@@ -85,7 +85,7 @@ public class GradleImport extends ProjectImport {
 	 *                          there are build errors
 	 * @throws ImportException
 	 */
-	public GradleImport(File rootDir, boolean ignoreBuildErrors) throws IOException, ImportException {
+	public GradleImport(final File rootDir, final boolean ignoreBuildErrors) throws IOException, ImportException {
 		super(rootDir, "build.gradle", ignoreBuildErrors);
 		this.buildSuccess = false;
 		this.gradleCache = initGradleUserHome();
@@ -101,7 +101,7 @@ public class GradleImport extends ProjectImport {
 	 * @throws ImportException
 	 */
 	@Override
-	public IJavaProject importProject(IProgressMonitor monitor) throws ImportException {
+	public IJavaProject importProject(final IProgressMonitor monitor) throws ImportException {
 		return importProject(getRootDir().getName(), monitor);
 	}
 
@@ -113,13 +113,12 @@ public class GradleImport extends ProjectImport {
 	 * @return The new eclipse java project
 	 * @throws ImportException
 	 */
-	public IJavaProject importProject(String name, IProgressMonitor monitor) throws ImportException {
+	public IJavaProject importProject(final String name, IProgressMonitor monitor) throws ImportException {
 		if (monitor == null) {
 			monitor = new NullProgressMonitor();
 		}
 
-		this.androidApp = getAppliedPlugins(this.includes.getBuildDotGradleFiles())
-				.contains("com.android.application");
+		this.androidApp = getAppliedPlugins(this.includes.getBuildDotGradleFiles()).contains("com.android.application");
 
 		build();
 
@@ -135,7 +134,7 @@ public class GradleImport extends ProjectImport {
 	 * @return The new Java project
 	 * @throws GradleImportException If the project cannot be created
 	 */
-	private IJavaProject createJavaProject(String name, Set<Path> javaSourceFiles, IProgressMonitor monitor)
+	private IJavaProject createJavaProject(final String name, final Set<Path> javaSourceFiles, final IProgressMonitor monitor)
 			throws GradleImportException {
 		IJavaProject project = null;
 		try {
@@ -203,7 +202,7 @@ public class GradleImport extends ProjectImport {
 	 * @return A set of all java source files
 	 * @throws GradleImportException If the source files cannot be found
 	 */
-	private Set<Path> getAllJavaSourceFiles(Path buildDotGradle) throws GradleImportException {
+	private Set<Path> getAllJavaSourceFiles(final Path buildDotGradle) throws GradleImportException {
 		Set<Path> javaSourceFiles;
 		try {
 			javaSourceFiles = this.includes.getJavaSourceFiles(buildDotGradle);
@@ -232,7 +231,7 @@ public class GradleImport extends ProjectImport {
 	 * @param javaSourceFiles A set of java files
 	 * @return the mapping
 	 */
-	private HashMap<String, Set<Path>> getSourceFolderMapping(Set<Path> javaSourceFiles) {
+	private HashMap<String, Set<Path>> getSourceFolderMapping(final Set<Path> javaSourceFiles) {
 		final HashMap<String, Set<Path>> sourceFolders = new HashMap<>();
 		for (final Path sourceFile : javaSourceFiles) {
 			final Path path = getRootDir().toPath();
@@ -242,7 +241,7 @@ public class GradleImport extends ProjectImport {
 			} catch (final IllegalArgumentException e) {
 				relativize = sourceFile.toString().replaceFirst(new File("").getAbsolutePath(), "");
 				final char charAt0 = relativize.charAt(0);
-				if (charAt0 =='/' || charAt0 == '\\') {
+				if (charAt0 == '/' || charAt0 == '\\') {
 					relativize = relativize.substring(1);
 				}
 			}
@@ -295,7 +294,7 @@ public class GradleImport extends ProjectImport {
 	 * @param monitor A progress monitor
 	 * @throws CoreException If the project cannot be changed
 	 */
-	private void linkApkFolderToProject(IJavaProject project, IProgressMonitor monitor) throws CoreException {
+	private void linkApkFolderToProject(final IJavaProject project, final IProgressMonitor monitor) throws CoreException {
 		final IPath outputLocation = project.getOutputLocation().removeFirstSegments(1);
 		final IFolder outputLocationFolder = project.getProject().getFolder(outputLocation);
 		if (!outputLocationFolder.exists()) {
@@ -317,7 +316,7 @@ public class GradleImport extends ProjectImport {
 	 * @throws CoreException
 	 * @throws GradleImportException
 	 */
-	private IJavaProject addRequiredLibsToProject(IJavaProject project, IProgressMonitor monitor)
+	private IJavaProject addRequiredLibsToProject(final IJavaProject project, final IProgressMonitor monitor)
 			throws IOException, CoreException, GradleImportException {
 		final IFolder libFolder = project.getProject().getFolder("lib");
 		Stream<IClasspathEntry> entries = Stream.empty();
@@ -357,7 +356,7 @@ public class GradleImport extends ProjectImport {
 	 * @param buildDotGradleFiles The paths of all build.gradle files of the project
 	 * @return A set of the applied plugins
 	 */
-	private Set<String> getAppliedPlugins(Set<Path> buildDotGradleFiles) {
+	private Set<String> getAppliedPlugins(final Set<Path> buildDotGradleFiles) {
 		final Set<String> appliedPlugins = new HashSet<>();
 		for (final Path path : buildDotGradleFiles) {
 			appliedPlugins.addAll(getAppliedPlugins(path));
@@ -371,7 +370,7 @@ public class GradleImport extends ProjectImport {
 	 * @param path The path to the build.gradle file
 	 * @return A set of the applied plugins
 	 */
-	private Set<String> getAppliedPlugins(Path path) {
+	private Set<String> getAppliedPlugins(final Path path) {
 		final Set<String> appliedPlugins = new HashSet<>();
 		if (!path.toFile().exists() || !Files.isReadable(path)) {
 			return Collections.emptySet();
@@ -389,7 +388,7 @@ public class GradleImport extends ProjectImport {
 		return appliedPlugins;
 	}
 
-	private Collection<Path> getLibs(Collection<Path> buildDotGradleFiles) throws IOException, GradleImportException {
+	private Collection<Path> getLibs(final Collection<Path> buildDotGradleFiles) throws IOException, GradleImportException {
 		final GradleDependencies gradleDependencies = new GradleDependencies(
 				readBuildDotGradleFiles(buildDotGradleFiles), this.androidApp);
 		final Set<String> compileLibs = gradleDependencies.getCompileDependencies();
@@ -427,11 +426,11 @@ public class GradleImport extends ProjectImport {
 	 * @return The files contents
 	 * @throws GradleImportException
 	 */
-	private List<String> readBuildDotGradleFiles(Collection<Path> buildDotGradleFiles) throws GradleImportException {
+	private List<String> readBuildDotGradleFiles(final Collection<Path> buildDotGradleFiles) throws GradleImportException {
 		final ExecutorService pool = Executors.newCachedThreadPool();
-		final Collection<Callable<String>> tasks = buildDotGradleFiles.parallelStream().map(path -> {
-			return (Callable<String>) () -> FileUtils.getContentsAsString(path.toFile());
-		}).collect(Collectors.toList());
+		final Collection<Callable<String>> tasks = buildDotGradleFiles.parallelStream()
+				.map(path -> (Callable<String>) () -> FileUtils.getContentsAsString(path.toFile()))
+				.collect(Collectors.toList());
 		List<Future<String>> futures;
 		try {
 			futures = pool.invokeAll(tasks);

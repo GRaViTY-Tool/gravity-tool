@@ -3,26 +3,21 @@
 package org.gravity.hulk.detection.metrics.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.gravity.hulk.antipatterngraph.HMetric;
-
-import org.gravity.hulk.antipatterngraph.metrics.HAfferentCouplingMetric;
-import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
-import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
-import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
-import org.gravity.hulk.detection.metrics.MetricsPackage;
-
-import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.gravity.hulk.antipatterngraph.HMetric;
+import org.gravity.hulk.antipatterngraph.metrics.HAfferentCouplingMetric;
+import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
+import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
+import org.gravity.hulk.detection.metrics.HAfferentCouplingCalculator;
+import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
+import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 // [user defined imports] -->
 
@@ -36,7 +31,9 @@ import org.gravity.typegraph.basic.TMember;
  * @generated
  */
 public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HAfferentCouplingCalculator {
+implements HAfferentCouplingCalculator {
+	private static final Logger LOGGER = Logger.getLogger(HAfferentCouplingCalculatorImpl.class);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,8 +58,9 @@ public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HAfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final HAfferentCouplingMetric metric = MetricsFactory.eINSTANCE.createHAfferentCouplingMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -74,22 +72,23 @@ public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
-		ArrayList<TAbstractType> accessingClasses = new ArrayList<TAbstractType>();
-		for (TMember m : tClass.getDefines()) {
-			for (TAccess t : m.getAccessedBy()) {
-				TMember tSource = t.getTSource();
+		final ArrayList<TAbstractType> accessingClasses = new ArrayList<>();
+		for (final TMember m : tClass.getDefines()) {
+			for (final TAccess t : m.getAccessedBy()) {
+				final TMember tSource = t.getTSource();
 				if (tSource == null) {
-					System.out.println(
+					LOGGER.warn(
 							"Member within Class " + tClass.getTName() + " was accessed without an TAccess Source");
 					continue;
 				}
-				TAbstractType definingClass = tSource.getDefinedBy();
+				final TAbstractType definingClass = tSource.getDefinedBy();
 				if (definingClass == null) {
-					System.out.println("Member within Class " + tClass.getTName()
-							+ " was accessed by a Source without defining Class");
+					LOGGER.warn("Member within Class " + tClass.getTName()
+					+ " was accessed by a Source without defining Class");
 					continue;
 				}
 				if (!tSource.getDefinedBy().equals(tClass) && !accessingClasses.contains(tSource.getDefinedBy())) {
@@ -108,7 +107,7 @@ public class HAfferentCouplingCalculatorImpl extends HClassBasedMetricCalculator
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HAFFERENT_COUPLING_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));

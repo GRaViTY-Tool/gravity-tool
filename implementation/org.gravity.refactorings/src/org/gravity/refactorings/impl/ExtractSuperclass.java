@@ -102,8 +102,8 @@ public class ExtractSuperclass implements Refactoring {
 	 *
 	 * @generated
 	 */
-	public boolean isApplicable(final List<TClass> children, final String newParent, final List<TSignature> signatures)
-			throws RefactoringFailedException {
+	public boolean isApplicable(final List<TClass> children, final String newParent,
+			final List<TSignature> signatures) {
 
 		final CreateSuperclass csc = new CreateSuperclass();
 

@@ -64,7 +64,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated NOT
 	 */
 	@Override
-	public boolean detect(HAntiPatternGraph pg) {// ForEach
+	public boolean detect(final HAntiPatternGraph pg) {// ForEach
 		for (final TClass tClass : HClassBasedCalculatorImpl.getClassesToVisit(pg, this)) {
 			final HAnnotation metric = calculate(tClass);
 			if (metric != null) {
@@ -83,7 +83,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated
 	 */
 	@Override
-	public HAnnotation calculate(TClass tClass) {
+	public HAnnotation calculate(final TClass tClass) {
 		HIntenseFieldUsageCodeSmell intenseFieldUsage = null;
 		HAverageParametersMetric averageParams = null;
 		HDepthOfInheritanceMetric depthOfInheritance = null;
@@ -109,17 +109,35 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 
 		collect(intenseFieldUsage);
 
-		if (HRelativeValueConstants.VERY_LOW.equals(averageParams.getRelativeAmount().getValue())) {
+		return calculate(tClass, averageParams, depthOfInheritance, numberOfChild, averageOverloading);
+	}
 
-			final HRelativeValue iRelative = depthOfInheritance.getRelativeAmount();
-			if (iRelative != null && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
-				collect(depthOfInheritance);
-				//
-				final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
-				if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
-					collect(numberOfChild);
+	private HAnnotation calculate(final TClass tClass, final HAverageParametersMetric averageParams,
+			final HDepthOfInheritanceMetric depthOfInheritance, final HNumberOfChildMetric numberOfChild,
+			final HAverageOverloadingInClassMetric averageOverloading) {
+		if (!HRelativeValueConstants.VERY_LOW.equals(averageParams.getRelativeAmount().getValue())) {
+			return null;
+		}
 
-				}
+		final HRelativeValue iRelative = depthOfInheritance.getRelativeAmount();
+		if (iRelative != null && HRelativeValueConstants.VERY_LOW.equals(iRelative.getValue())) {
+			collect(depthOfInheritance);
+			//
+			final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
+			if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
+				collect(numberOfChild);
+
+			}
+			//
+			final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
+			if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
+				collect(averageOverloading);
+			}
+
+		} else {
+			final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
+			if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
+				collect(numberOfChild);
 				//
 				final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
 				if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
@@ -127,43 +145,39 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 				}
 
 			} else {
-				final HRelativeValue cRelative = numberOfChild.getRelativeAmount();
-				if (cRelative != null && HRelativeValueConstants.VERY_LOW.equals(cRelative.getValue())) {
-					collect(numberOfChild);
-					//
-					final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
-					if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
-						collect(averageOverloading);
-					}
-
+				final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
+				if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
+					collect(averageOverloading);
 				} else {
-					final HRelativeValue oRelative = averageOverloading.getRelativeAmount();
-					if (oRelative != null && HRelativeValueConstants.VERY_LOW.equals(oRelative.getValue())) {
-						collect(averageOverloading);
-					} else {
-						return null;
-					}
-
+					return null;
 				}
 
 			}
-			final HSpaghettiCodeAntiPattern anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
-			anti.setTAnnotated(tClass);
-			getHAnnotation().add(anti);
-			//
-			connect(anti);
-			//
 
-			final TAnnotationType tType = getAnnotationType(tClass.getPg(), "SpaghettiCode");
-			if (tType != null) {
-				final TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
-				tAnnotation.setTAnnotated(tClass);
-				tType.getAnnotations().add(tAnnotation);
-			}
-			return anti;
 		}
+		return createSpaghettiCodeAnnotation(tClass);
 
-		return null;
+	}
+
+	/**
+	 * @param tClass
+	 * @return
+	 */
+	private HAnnotation createSpaghettiCodeAnnotation(final TClass tClass) {
+		final HSpaghettiCodeAntiPattern anti = AntipatternFactory.eINSTANCE.createHSpaghettiCodeAntiPattern();
+		anti.setTAnnotated(tClass);
+		getHAnnotation().add(anti);
+		//
+		connect(anti);
+		//
+
+		final TAnnotationType tType = getAnnotationType(tClass.getPg(), "SpaghettiCode");
+		if (tType != null) {
+			final TAnnotation tAnnotation = AnnotationsFactory.eINSTANCE.createTAnnotation();
+			tAnnotation.setTAnnotated(tClass);
+			tType.getAnnotations().add(tAnnotation);
+		}
+		return anti;
 	}
 
 	/**
@@ -172,7 +186,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated
 	 */
 	@Override
-	public boolean collect(HAnnotation hAnnotation) {
+	public boolean collect(final HAnnotation hAnnotation) {
 		// [user code injected with eMoflon]
 
 		return this.annotations.add(hAnnotation);
@@ -185,7 +199,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated
 	 */
 	@Override
-	public boolean connect(HSpaghettiCodeAntiPattern hAntiPattern) {
+	public boolean connect(final HSpaghettiCodeAntiPattern hAntiPattern) {
 		// [user code injected with eMoflon]
 
 		for (final HAnnotation a : this.annotations) {
@@ -212,7 +226,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case AntipatternPackage.HSPAGHETTI_CODE_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -224,7 +238,7 @@ public class HSpaghettiCodeDetectorImpl extends HAntiPatternDetectorImpl impleme
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final HNumberOfChildMetric getNumberOfChildMetric(TClass tClass) {
+	public static final HNumberOfChildMetric getNumberOfChildMetric(final TClass tClass) {
 		for (final TAnnotation tmpChild : tClass.getTAnnotation()) {
 			if (tmpChild instanceof HNumberOfChildMetric) {
 				return (HNumberOfChildMetric) tmpChild;
