@@ -26,14 +26,15 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HLarge Class Detector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HLarge
+ * Class Detector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl#isRelative <em>Relative</em>}</li>
- *   <li>{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl#getThreshold <em>Threshold</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl#isRelative
+ * <em>Relative</em>}</li>
+ * <li>{@link org.gravity.hulk.detection.codesmells.impl.HLargeClassDetectorImpl#getThreshold
+ * <em>Threshold</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,8 +43,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implements HLargeClassDetector {
 	/**
 	 * The default value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -52,8 +53,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 
 	/**
 	 * The cached value of the '{@link #isRelative() <em>Relative</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #isRelative()
 	 * @generated
 	 * @ordered
@@ -61,9 +62,9 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	protected boolean relative = RELATIVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -71,9 +72,9 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	protected static final double THRESHOLD_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getThreshold() <em>Threshold</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getThreshold()
 	 * @generated
 	 * @ordered
@@ -81,8 +82,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	protected double threshold = THRESHOLD_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected HLargeClassDetectorImpl() {
@@ -90,8 +91,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,8 +101,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,12 +111,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setRelative(boolean newRelative) {
+	public void setRelative(final boolean newRelative) {
 		final boolean oldRelative = this.relative;
 		this.relative = newRelative;
 		if (eNotificationRequired()) {
@@ -125,8 +126,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,12 +136,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setThreshold(double newThreshold) {
+	public void setThreshold(final double newThreshold) {
 		final double oldThreshold = this.threshold;
 		this.threshold = newThreshold;
 		if (eNotificationRequired()) {
@@ -150,62 +151,40 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public HAnnotation calculate(TClass tClass) {//
-		final Object[] result1_black = HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_1_ActivityNode28_blackFB(tClass);
-		if (result1_black != null) {
-			final HNumberOfMembersMetric nm = (HNumberOfMembersMetric) result1_black[0];
-			//
-			final Object[] result2_black = HLargeClassDetectorImpl
-					.pattern_HLargeClassDetector_0_2_ActivityNode87_blackB(this);
-			if (result2_black != null) {
-
-				final Object[] result3_black = HLargeClassDetectorImpl
-						.pattern_HLargeClassDetector_0_3_ActivityNode71_blackB(this);
-				if (result3_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ".");
-				}
-				HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_3_ActivityNode71_greenB(this);
-
-			} else {
+	public HAnnotation calculate(final TClass tClass) {//
+		final HNumberOfMembersMetric nm = HLargeClassDetectorImpl
+				.getHNumberOfMembersMetric(tClass);
+		if (nm != null) {
+			if (isRelative()) {
+				setThreshold(calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH));
 			}
-			//
-			final Object[] result4_black = HLargeClassDetectorImpl
-					.pattern_HLargeClassDetector_0_4_ActivityNode88_blackBB(this, nm);
-			if (result4_black != null) {
+			if (Double.valueOf(getThreshold()).compareTo(nm.getValue()) < 0) {
 
-				final Object[] result5_black = HLargeClassDetectorImpl
-						.pattern_HLargeClassDetector_0_5_ActivityNode27_blackBBB(nm, tClass, this);
-				if (result5_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[nm] = " + nm + ", "
-							+ "[tClass] = " + tClass + ", " + "[this] = " + this + ".");
-				}
-				final Object[] result5_green = HLargeClassDetectorImpl
-						.pattern_HLargeClassDetector_0_5_ActivityNode27_greenFBBB(nm, tClass, this);
-				final HLargeClassSmell largeClassSmell = (HLargeClassSmell) result5_green[0];
-
-				return HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_6_expressionFB(largeClassSmell);
-			} else {
-				return HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_7_expressionF();
+				final HLargeClassSmell largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
+				largeClassSmell.setTAnnotated(tClass);
+				largeClassSmell.setHNumberOfMembers(nm);
+				nm.getPartOf().add(largeClassSmell);
+				getHAnnotation().add(largeClassSmell);
+				return largeClassSmell;
 			}
 
-		} else {
-			return HLargeClassDetectorImpl.pattern_HLargeClassDetector_0_8_expressionF();
 		}
+		return null;
 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public double calculateRelativeThreshold(HRelativeValueConstants level) {
+	public double calculateRelativeThreshold(final HRelativeValueConstants level) {
 		// [user code injected with eMoflon]
 
 		return calculateRelativeThreshold(HRelativeValueConstants.HIGH, HNumberOfMembersMetric.class);
@@ -213,12 +192,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE:
 			return isRelative();
@@ -229,12 +208,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE:
 			setRelative((Boolean) newValue);
@@ -247,12 +226,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE:
 			setRelative(RELATIVE_EDEFAULT);
@@ -265,12 +244,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR__RELATIVE:
 			return this.relative != RELATIVE_EDEFAULT;
@@ -281,12 +260,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
 		if (baseClass == HCodeSmellDetector.class) {
 			switch (derivedFeatureID) {
 			default:
@@ -307,12 +286,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+	public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
 		if (baseClass == HCodeSmellDetector.class) {
 			switch (baseFeatureID) {
 			default:
@@ -333,12 +312,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+	public int eDerivedOperationID(final int baseOperationID, final Class<?> baseClass) {
 		if (baseClass == HClassBasedCalculator.class) {
 			switch (baseOperationID) {
 			case DetectionPackage.HCLASS_BASED_CALCULATOR___CALCULATE__TCLASS:
@@ -365,12 +344,12 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case CodesmellsPackage.HLARGE_CLASS_DETECTOR___CALCULATE__TCLASS:
 			return calculate((TClass) arguments.get(0));
@@ -381,8 +360,8 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -391,7 +370,7 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 			return super.toString();
 		}
 
-		final StringBuffer result = new StringBuffer(super.toString());
+		final StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (relative: ");
 		result.append(this.relative);
 		result.append(", threshold: ");
@@ -400,78 +379,16 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 		return result.toString();
 	}
 
-	public static final Object[] pattern_HLargeClassDetector_0_1_ActivityNode28_blackFB(TClass tClass) {
+	public static final HNumberOfMembersMetric getHNumberOfMembersMetric(final TClass tClass) {
 		if (!tClass.isTLib()) {
 			for (final TAnnotation tmpNm : tClass.getTAnnotation()) {
 				if (tmpNm instanceof HNumberOfMembersMetric) {
-					final HNumberOfMembersMetric nm = (HNumberOfMembersMetric) tmpNm;
-					return new Object[] { nm, tClass };
+					return (HNumberOfMembersMetric) tmpNm;
 				}
 			}
 		}
 
 		return null;
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_2_ActivityNode87_blackB(HLargeClassDetector _this) {
-		final boolean this_relative = _this.isRelative();
-		if (Boolean.valueOf(this_relative).equals(Boolean.TRUE)) {
-			return new Object[] { _this };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_3_ActivityNode71_blackB(HLargeClassDetector _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_3_ActivityNode71_greenB(HLargeClassDetector _this) {
-		final double _localVariable_0 = _this.calculateRelativeThreshold(HRelativeValueConstants.VERY_HIGH);
-		final double this_threshold_prime = Double.valueOf(_localVariable_0);
-		_this.setThreshold(Double.valueOf(this_threshold_prime));
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_4_ActivityNode88_blackBB(HLargeClassDetector _this,
-			HNumberOfMembersMetric nm) {
-		final double this_threshold = _this.getThreshold();
-		final double nm_value = nm.getValue();
-		if (Double.valueOf(this_threshold).compareTo(Double.valueOf(nm_value)) < 0) {
-			return new Object[] { _this, nm };
-		}
-
-		return null;
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_5_ActivityNode27_blackBBB(HNumberOfMembersMetric nm,
-			TClass tClass, HLargeClassDetector _this) {
-		return new Object[] { nm, tClass, _this };
-	}
-
-	public static final Object[] pattern_HLargeClassDetector_0_5_ActivityNode27_greenFBBB(HNumberOfMembersMetric nm,
-			TClass tClass, HLargeClassDetector _this) {
-		final HLargeClassSmell largeClassSmell = CodesmellsFactory.eINSTANCE.createHLargeClassSmell();
-		largeClassSmell.setTAnnotated(tClass);
-		largeClassSmell.setHNumberOfMembers(nm);
-		nm.getPartOf().add(largeClassSmell);
-		_this.getHAnnotation().add(largeClassSmell);
-		return new Object[] { largeClassSmell, nm, tClass, _this };
-	}
-
-	public static final HAnnotation pattern_HLargeClassDetector_0_6_expressionFB(HLargeClassSmell largeClassSmell) {
-		final HAnnotation _result = largeClassSmell;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HLargeClassDetector_0_7_expressionF() {
-		final HAnnotation _result = null;
-		return _result;
-	}
-
-	public static final HAnnotation pattern_HLargeClassDetector_0_8_expressionF() {
-		final HAnnotation _result = null;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]
@@ -482,4 +399,4 @@ public class HLargeClassDetectorImpl extends HClassBasedCalculatorImpl implement
 	}
 
 	// [user code injected with eMoflon] -->
-} //HLargeClassDetectorImpl
+} // HLargeClassDetectorImpl

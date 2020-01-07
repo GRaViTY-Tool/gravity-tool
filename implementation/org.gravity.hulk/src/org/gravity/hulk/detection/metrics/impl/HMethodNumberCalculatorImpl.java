@@ -13,10 +13,6 @@ import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
 import org.gravity.hulk.detection.metrics.HMethodNumberCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TClass;
-// <-- [user defined imports]
-import org.gravity.typegraph.basic.TMember;
-import org.gravity.typegraph.basic.TMethodDefinition;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -53,17 +49,15 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * @generated
 	 */
 	@Override
-	public HMetric calculateMetric(TClass tClass) {
-
+	public HMetric calculateMetric(final TClass tClass) {
 		if(tClass.isTLib()) {
-			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[tClass] = " + tClass + ", "
-					+ "[this] = " + this + ".");
+			throw new IllegalArgumentException("Class is defined in a library " + tClass.getFullyQualifiedName() + ".");
 		}
-		final Object[] result1_green = HMethodNumberCalculatorImpl
-				.pattern_HMethodNumberCalculator_0_1_ActivityNode2_greenFBB(tClass, this);
-		final HNumberOfMethodsMetric nm = (HNumberOfMethodsMetric) result1_green[0];
-
-		return HMethodNumberCalculatorImpl.pattern_HMethodNumberCalculator_0_2_expressionFB(nm);
+		final HNumberOfMethodsMetric nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
+		nm.setTAnnotated(tClass);
+		getHAnnotation().add(nm);
+		nm.setValue(calculateValue(tClass));
+		return nm;
 	}
 
 	/**
@@ -72,17 +66,8 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * @generated
 	 */
 	@Override
-	public double calculateValue(TClass tClass) {
-		// [user code injected with eMoflon]
-
-		int i = 0;
-		for (final TMember m : tClass.getDefines()) {
-			if (m instanceof TMethodDefinition) {
-				i++;
-			}
-		}
-		return i;
-
+	public double calculateValue(final TClass tClass) {
+		return tClass.getDeclaredTMethodDefinitions().size();
 	}
 
 	/**
@@ -91,7 +76,7 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HMETHOD_NUMBER_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));
@@ -99,22 +84,6 @@ public class HMethodNumberCalculatorImpl extends HClassBasedMetricCalculatorImpl
 			return calculateValue((TClass) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public static final Object[] pattern_HMethodNumberCalculator_0_1_ActivityNode2_greenFBB(TClass tClass,
-			HMethodNumberCalculator _this) {
-		final HNumberOfMethodsMetric nm = MetricsFactory.eINSTANCE.createHNumberOfMethodsMetric();
-		final double _localVariable_0 = _this.calculateValue(tClass);
-		nm.setTAnnotated(tClass);
-		_this.getHAnnotation().add(nm);
-		final double nm_value_prime = Double.valueOf(_localVariable_0);
-		nm.setValue(Double.valueOf(nm_value_prime));
-		return new Object[] { nm, tClass, _this };
-	}
-
-	public static final HMetric pattern_HMethodNumberCalculator_0_2_expressionFB(HNumberOfMethodsMetric nm) {
-		final HMetric _result = nm;
-		return _result;
 	}
 
 	// <-- [user code injected with eMoflon]

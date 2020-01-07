@@ -5,19 +5,13 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HLocalFieldAccessesMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HLocalFieldsAccessCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
@@ -32,10 +26,10 @@ import org.gravity.typegraph.basic.TMember;
  * @generated
  */
 public class HLocalFieldsAccessCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HLocalFieldsAccessCalculator {
+implements HLocalFieldsAccessCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HLocalFieldsAccessCalculatorImpl() {
@@ -44,7 +38,7 @@ public class HLocalFieldsAccessCalculatorImpl extends HClassBasedMetricCalculato
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,19 +48,20 @@ public class HLocalFieldsAccessCalculatorImpl extends HClassBasedMetricCalculato
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HLocalFieldAccessesMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldAccessesMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final HLocalFieldAccessesMetric metric = MetricsFactory.eINSTANCE.createHLocalFieldAccessesMetric();
 		metric.setTAnnotated(tClass);
 		getHAnnotation().add(metric);
-		metric.setValue(Double.valueOf(0.0));
+		metric.setValue(0);
 
-		for (TMember tMember : tClass.getDefines()) {
-			for (TMember tAnyAccessedField : tClass.getDefines()) {
+		for (final TMember tMember : tClass.getDefines()) {
+			for (final TMember tAnyAccessedField : tClass.getDefines()) {
 				if (tAnyAccessedField instanceof TFieldDefinition) {
-					for (TAccess tAnyAccess : tMember.getTAccessing()) {
+					for (final TAccess tAnyAccess : tMember.getTAccessing()) {
 						if (tAnyAccessedField.getAccessedBy().contains(tAnyAccess)) {
 							metric.increment();
 						}
@@ -79,16 +74,17 @@ public class HLocalFieldsAccessCalculatorImpl extends HClassBasedMetricCalculato
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
 		int i = 0;
-		for (TMember m : tClass.getDefines()) {
-			for (TAccess t : m.getTAccessing()) {
-				TMember tTarget = t.getTTarget();
+		for (final TMember m : tClass.getDefines()) {
+			for (final TAccess t : m.getTAccessing()) {
+				final TMember tTarget = t.getTTarget();
 				if (tTarget instanceof TFieldDefinition && tTarget.getDefinedBy().equals(tClass)) {
 					i++;
 				}
@@ -100,11 +96,11 @@ public class HLocalFieldsAccessCalculatorImpl extends HClassBasedMetricCalculato
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HLOCAL_FIELDS_ACCESS_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));

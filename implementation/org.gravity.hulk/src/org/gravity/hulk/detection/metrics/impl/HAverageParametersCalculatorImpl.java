@@ -5,19 +5,13 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HAverageParametersMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HAverageParametersCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
 // <-- [user defined imports]
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -34,7 +28,7 @@ import org.gravity.typegraph.basic.TSignature;
  * @generated
  */
 public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HAverageParametersCalculator {
+implements HAverageParametersCalculator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,8 +53,9 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
-		HAverageParametersMetric metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
+		final HAverageParametersMetric metric = MetricsFactory.eINSTANCE.createHAverageParametersMetric();
 		metric.setTAnnotated(tClass);
 		metric.setValue(calculateValue(tClass));
 		getHAnnotation().add(metric);
@@ -72,17 +67,24 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		// [user code injected with eMoflon]
 
 		double sum = 0;
 		int amount = 0;
-		for (TSignature sig : tClass.getSignature()) {
+		for (final TSignature sig : tClass.getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				TMethodSignature methodSig = (TMethodSignature) sig;
+				final TMethodSignature methodSig = (TMethodSignature) sig;
 				sum += methodSig.getParameters().size();
 				amount++;
 			}
+		}
+		if (amount == 0) {
+			if (sum == 0) {
+				throw new IllegalStateException();
+			}
+			return 0;
 		}
 		return sum / amount;
 
@@ -94,7 +96,7 @@ public class HAverageParametersCalculatorImpl extends HClassBasedMetricCalculato
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HAVERAGE_PARAMETERS_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));

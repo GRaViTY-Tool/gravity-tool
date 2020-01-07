@@ -5,24 +5,17 @@ package org.gravity.hulk.detection.metrics.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.gravity.hulk.antipatterngraph.HMetric;
-
 import org.gravity.hulk.antipatterngraph.metrics.HGetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNACCMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HNumberOfMethodsMetric;
 import org.gravity.hulk.antipatterngraph.metrics.HSetterMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsFactory;
-
 import org.gravity.hulk.detection.impl.HClassBasedMetricCalculatorImpl;
-
 import org.gravity.hulk.detection.metrics.HGetterSetterMethodRelationCalculator;
 import org.gravity.hulk.detection.metrics.MetricsPackage;
-
 import org.gravity.typegraph.basic.TClass;
-
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -36,10 +29,10 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @generated
  */
 public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetricCalculatorImpl
-		implements HGetterSetterMethodRelationCalculator {
+implements HGetterSetterMethodRelationCalculator {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected HGetterSetterMethodRelationCalculatorImpl() {
@@ -48,7 +41,7 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,15 +51,16 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public HMetric calculateMetric(TClass tClass) {
+	@Override
+	public HMetric calculateMetric(final TClass tClass) {
 		HSetterMetric setter = null;
 		HGetterMetric getter = null;
 		HNumberOfMethodsMetric methods = null;
 
-		for (TAnnotation annotation : tClass.getTAnnotation()) {
+		for (final TAnnotation annotation : tClass.getTAnnotation()) {
 			if (annotation instanceof HSetterMetric) {
 				setter = (HSetterMetric) annotation;
 			} else if (annotation instanceof HGetterMetric) {
@@ -75,8 +69,11 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 				methods = (HNumberOfMethodsMetric) annotation;
 			}
 		}
+		if (methods == null || setter == null || getter == null) {
+			throw new IllegalStateException();
+		}
 
-		HNACCMetric metric = MetricsFactory.eINSTANCE.createHNACCMetric();
+		final HNACCMetric metric = MetricsFactory.eINSTANCE.createHNACCMetric();
 		metric.setTAnnotated(tClass);
 		metric.setHSetterCustomMetric(setter);
 		metric.setHGetterCustomMetric(getter);
@@ -92,13 +89,14 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(HSetterMetric setter, HGetterMetric getter, HNumberOfMethodsMetric methods) {
+	@Override
+	public double calculateValue(final HSetterMetric setter, final HGetterMetric getter, final HNumberOfMethodsMetric methods) {
 		// [user code injected with eMoflon]
 
-		double methods_value = methods.getValue();
+		final double methods_value = methods.getValue();
 		if (methods_value == 0) {
 			return 0;
 		}
@@ -108,15 +106,16 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public double calculateValue(TClass tClass) {
+	@Override
+	public double calculateValue(final TClass tClass) {
 		HSetterMetric setter = null;
 		HGetterMetric getter = null;
 		HNumberOfMethodsMetric methods = null;
 
-		for (TAnnotation annotation : tClass.getTAnnotation()) {
+		for (final TAnnotation annotation : tClass.getTAnnotation()) {
 			if (annotation instanceof HSetterMetric) {
 				setter = (HSetterMetric) annotation;
 			} else if (annotation instanceof HGetterMetric) {
@@ -130,11 +129,11 @@ public class HGetterSetterMethodRelationCalculatorImpl extends HClassBasedMetric
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(final int operationID, final EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case MetricsPackage.HGETTER_SETTER_METHOD_RELATION_CALCULATOR___CALCULATE_METRIC__TCLASS:
 			return calculateMetric((TClass) arguments.get(0));

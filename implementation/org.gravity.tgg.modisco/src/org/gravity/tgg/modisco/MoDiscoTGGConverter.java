@@ -46,8 +46,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 	private final IJavaProject iJavaProject;
 
-	private Collection<IPath> libs;
-
 	private boolean debug;
 
 	private final GravityModiscoProjectDiscoverer discoverer;
@@ -99,8 +97,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			progressMonitor = monitor;
 		}
 
-		this.libs = libs;
-
 		long start = 0;
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		if (infoEnabled) {
@@ -121,7 +117,9 @@ public class MoDiscoTGGConverter implements IPGConverter {
 					.getFile("modisco" + System.currentTimeMillis() + ".xmi");
 			saveModel(this.preprocessedModiscoModel.eResource(), file, progressMonitor);
 		} catch (final IOException e) {
-
+			if (LOGGER.isEnabledFor(Level.WARN)) {
+				LOGGER.warn(e);
+			}
 		}
 
 		final boolean success = convertModel(this.preprocessedModiscoModel, progressMonitor);
