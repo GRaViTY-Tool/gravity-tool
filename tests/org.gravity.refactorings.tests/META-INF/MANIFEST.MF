@@ -13,9 +13,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.eclipse,
  org.gravity.typegraph.basic,
  org.gravity.refactorings,
- org.gravity.tgg.modisco
+ org.gravity.tgg.modisco,
+ org.gravity.eclipse.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.gravity.refactoring.test
 Export-Package: org.gravity.testsuite,
  org.gravity.testsuite.cases
+Bundle-ClassPath: .

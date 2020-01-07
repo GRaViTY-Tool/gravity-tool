@@ -26,7 +26,7 @@ import org.gravity.typegraph.basic.TypeGraph;
 /**
  * A handler for triggering the synchronization of changes on the pm into the
  * source code
- * 
+ *
  * @author speldszus
  *
  */
@@ -36,15 +36,15 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<?> selection = GravityUiActivator.getSelection(event);
+		final List<?> selection = GravityUiActivator.getSelection(event);
 
-		Job job = new SyncPGJob(selection);
+		final Job job = new SyncPGJob(selection);
 		job.setUser(true);
 		job.schedule();
 
 		return null;
 	}
-	
+
 	@Override
 	public boolean isEnabled() {
 		try {
@@ -68,7 +68,7 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 	/**
 	 * An implementation of java.lang.Job for synchronizing changes on a PG to the
 	 * according java projects from a selection in an eclipse workspace
-	 * 
+	 *
 	 * @author speldszus
 	 *
 	 */
@@ -82,30 +82,30 @@ public class JavaSyncBwdHandler extends AbstractTransformationHandler {
 
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
-			for (Object entry : selection) {
+			for (final Object entry : this.selection) {
 				if (entry instanceof IJavaProject) {
-					IJavaProject iJavaProject = (IJavaProject) entry;
+					final IJavaProject iJavaProject = (IJavaProject) entry;
 					IPGConverter converter;
 					try {
 						converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
 					} catch (NoConverterRegisteredException | CoreException e) {
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
 								"Please install a converter and restart the task.");
 					}
-					Consumer<EObject> consumer = IPGConverter -> {
-						TypeGraph pg = converter.getPG();
-						TPackage createTPackage = BasicFactory.eINSTANCE.createTPackage();
+					final Consumer<EObject> consumer = IPGConverter -> {
+						final TypeGraph pg = converter.getPG();
+						final TPackage createTPackage = BasicFactory.eINSTANCE.createTPackage();
 						createTPackage.setTName("NEW");
 						createTPackage.setPg(pg);
 						pg.getPackages().add(createTPackage);
 					};
 					if (!converter.syncProjectBwd(consumer, monitor)) {
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
+						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
 					}
 				} else {
-					UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+					final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage(), exception);
-					return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
 				}
 			}
 			return Status.OK_STATUS;

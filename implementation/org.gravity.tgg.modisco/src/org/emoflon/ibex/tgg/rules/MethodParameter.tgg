@@ -5,37 +5,32 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mMethodSignature : MParameterList {
+	mSignature : MMethodSignature {
 		++  -mEntrys -> mEntry
 	}
-	++ mEntry : MEntry {
-//		++ -singleVariableDeclaration -> mVar
-	}
-//	++ mVar : SingleVariableDeclaration
+	++ mEntry : MEntry
 }
 
 #target {
-	++ tParameter : TParameter {
+	tSiganture : TMethodSignature {
+		++  -parameters -> tParameter
 	}
-	tParameterList : TParameterList {
-		++  -entries -> tParameter
-	}
+	++ tParameter : TParameter
 }
 
 #correspondence {
-//	++ singleVariableDeclarationToTAnnotatable : ASTNodeToTAnnotatable {
-//		#src->mVar
-//		#trg->tParameter
-//	}
 	++ mEntryToTParameter : MEntryToTParameter {
 		#src->mEntry
 		#trg->tParameter
 	}
-	mParameterListToTParameterList : MParameterListToTParameterList {
-		#src->mMethodSignature
-		#trg->tParameterList
+	
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mEntry
+		#trg->tParameter
 	}
-}
-
-#attributeConditions {
+	
+	mSignatureToTSignature : MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSiganture
+	}
 }

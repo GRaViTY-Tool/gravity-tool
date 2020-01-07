@@ -3,7 +3,7 @@ package org.gravity.modisco.processing.fwd;
 import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.gmt.modisco.java.TypeParameter;
+import org.eclipse.modisco.java.TypeParameter;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 

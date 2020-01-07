@@ -8,8 +8,8 @@
   <packaging>pom</packaging>
   
   <properties>
-    <tycho-version>1.4.0</tycho-version>
-    <jacoco.version>0.8.4</jacoco.version>
+    <tycho-version>1.5.1</tycho-version>
+    <jacoco.version>0.8.5</jacoco.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
@@ -69,9 +69,9 @@
         <artifactId>tycho-maven-plugin</artifactId>
         <version>${tycho-version}</version>
         <extensions>true</extensions>
-        <configuration>
+        <!--<configuration>
           <pomDependencies>consider</pomDependencies>
-        </configuration>
+        </configuration>-->
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -138,49 +138,9 @@
       <url>http://download.eclipse.org/releases/latest</url>
     </repository>
     <repository>
-      <id>MoDisco</id>
-      <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/modisco/updates/release/</url>
-    </repository>
-    <repository>
-      <id>EMF</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/modeling/emf/updates/releases/</url>
-    </repository>
-    <repository>
-      <id>EMF Facets</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/facet/updates/release/</url>
-    </repository>
-    <repository>
-      <id>Papyrus</id>
-      <layout>p2</layout>
-      <url>https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2019-03/</url>
-    </repository>
-    <repository>
-      <id>eMoflon IBEX Stable</id>
-      <layout>p2</layout>
-      <url>https://emoflon.org/emoflon-ibex-updatesite/stable/updatesite/</url>
-    </repository>
-    <repository>
       <id>eMoflon IBEX</id>
       <layout>p2</layout>
       <url>https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/</url>
-    </repository>
-    <repository>
-      <id>eMoflon Core</id>
-      <layout>p2</layout>
-      <url>https://emoflon.org/emoflon-core-updatesite/snapshot/updatesite/</url>
-    </repository>
-    <repository>
-      <id>eMoflon Democles</id>
-      <layout>p2</layout>
-      <url>http://gervarro.org/democles/integration-0.5.0/</url>
-    </repository>
-    <repository>
-      <id>eMoflon Democles Advanced</id>
-      <layout>p2</layout>
-      <url>http://gervarro.org/democles/advanced/integration-0.5.0/</url>
     </repository>
     <repository>
       <id>Henshin</id>
@@ -192,11 +152,6 @@
       <layout>p2</layout>
       <url>http://martin-fleck.github.io/momot/eclipse/updates/latest/develop/</url>
     </repository>
-    <!--<repository>
-      <id>AccessAnalysis</id>
-      <layout>p2</layout>
-      <url>http://accessanalysis.sourceforge.net/update</url>
-    </repository>-->
     <repository>
       <id>plantuml</id>
       <layout>p2</layout>

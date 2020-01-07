@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature <em>Signature</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TFieldDefinition#getHiding <em>Hiding</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TFieldDefinition#getHiddenBy <em>Hidden By</em>}</li>
  * </ul>
@@ -24,32 +23,16 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TFieldDefinition extends TMember {
 	/**
-	 * Returns the value of the '<em><b>Signature</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TFieldSignature#getDefinitions <em>Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Signature</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Signature</em>' container reference.
-	 * @see #setSignature(TFieldSignature)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTFieldDefinition_Signature()
-	 * @see org.gravity.typegraph.basic.TFieldSignature#getDefinitions
-	 * @model opposite="definitions" required="true" transient="false"
+	 * @model kind="operation"
 	 * @generated
 	 */
 	TFieldSignature getSignature();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature <em>Signature</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Signature</em>' container reference.
-	 * @see #getSignature()
-	 * @generated
-	 */
-	void setSignature(TFieldSignature value);
 
 	/**
 	 * Returns the value of the '<em><b>Hiding</b></em>' reference.
@@ -92,7 +75,7 @@ public interface TFieldDefinition extends TMember {
 	 * @return the value of the '<em>Hidden By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTFieldDefinition_HiddenBy()
 	 * @see org.gravity.typegraph.basic.TFieldDefinition#getHiding
-	 * @model opposite="hiding"
+	 * @model opposite="hiding" ordered="false"
 	 * @generated
 	 */
 	EList<TFieldDefinition> getHiddenBy();

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
-  <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
-    <processor processor="org.gravity.security.annotations.SecurityAnnotationsProcessorFwd"/>
-  </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Annotations -->
       <package
-            uri="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access"
+            uri="http://gravity-tool.org/typegraph/annotations/security"
+            class="org.gravity.security.annotations.AnnotationsPackage"
+            genModel="model/Annotations.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Annotations -->
+      <package
+            uri="http://gravity-tool.org/typegraph/annotations/security#/access"
             class="org.gravity.security.annotations.access.AccessPackage"
             genModel="model/Annotations.genmodel"/>
    </extension>
@@ -16,4 +22,19 @@
     		genModel="model/Annotations.genmodel" 
     		uri="platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/requirements"/>
   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Annotations -->
+      <package
+            uri="http://gravity-tool.org/typegraph/annotations/security#/actions"
+            class="org.gravity.security.annotations.actions.ActionsPackage"
+            genModel="model/Annotations.genmodel"/>
+   </extension>
+   <extension
+         point="org.gravity.tgg.modisco.ProcessingPgFwd">
+      <processor
+            priority="1"
+            processor="org.gravity.security.annotations.SecurityAnnotationsProcessorFwd">
+      </processor>
+   </extension>
 </plugin>

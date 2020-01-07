@@ -9,9 +9,9 @@ import org.gravity.typegraph.basic.TSignature;
 
 public class MoveMemberConfiguration implements RefactoringConfiguration {
 
-	final private TClass source;
-	final private TClass target;
-	final private TSignature member;
+	private final TClass source;
+	private final TClass target;
+	private final TSignature member;
 
 	public MoveMemberConfiguration(TSignature member, TClass source, TClass target) {
 		this.member = member;
@@ -20,15 +20,15 @@ public class MoveMemberConfiguration implements RefactoringConfiguration {
 	}
 
 	public TSignature getSignature() {
-		return member;
+		return this.member;
 	}
-	
+
 	public TClass getSourceClass() {
-		return source;
+		return this.source;
 	}
 
 	public TClass getTargetClass() {
-		return target;
+		return this.target;
 	}
 
 	@Override

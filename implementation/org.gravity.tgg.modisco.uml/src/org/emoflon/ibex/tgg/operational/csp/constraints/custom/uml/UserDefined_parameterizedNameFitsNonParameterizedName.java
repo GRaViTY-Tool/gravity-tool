@@ -7,27 +7,27 @@ public class UserDefined_parameterizedNameFitsNonParameterizedName extends Runti
 
 	/**
 	 * Constraint parameterizedNameFitsNonParameterizedName(v0, v1)
-	 * 
+	 *
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	@Override
 	public void solve() {
-		if (variables.size() != 2)
+		if (this.variables.size() != 2) {
 			throw new RuntimeException("The CSP -PARAMETERIZEDNAMEFITSNONPARAMETERIZEDNAME- needs exactly 2 variables");
+		}
 
-		RuntimeTGGAttributeConstraintVariable v0 = variables.get(0);
-		RuntimeTGGAttributeConstraintVariable v1 = variables.get(1);
-		String bindingStates = getBindingStates(v0, v1);
+		final RuntimeTGGAttributeConstraintVariable v0 = this.variables.get(0);
+		final RuntimeTGGAttributeConstraintVariable v1 = this.variables.get(1);
+		final String bindingStates = getBindingStates(v0, v1);
 
-		switch (bindingStates) {
-		case "BB":
-			String parameterizedName = (String) v0.getValue();
-			String nonParameterizedName = (String) v1.getValue();
+		if ("BB".equals(bindingStates)) {
+			final String parameterizedName = (String) v0.getValue();
+			final String nonParameterizedName = (String) v1.getValue();
 			int lastOuterDot = -1;
 			int bracketCount = 0;
-			char[] chars = parameterizedName.toCharArray();
+			final char[] chars = parameterizedName.toCharArray();
 			for (int i = 0; i < chars.length; i++) {
-				char c = chars[i];
+				final char c = chars[i];
 				if (c == '.' && bracketCount == 0) {
 					lastOuterDot = i;
 				} else if (c == '<') {
@@ -37,8 +37,7 @@ public class UserDefined_parameterizedNameFitsNonParameterizedName extends Runti
 				}
 			}
 			setSatisfied(parameterizedName.startsWith(nonParameterizedName, lastOuterDot + 1));
-			return;
-		default:
+		} else {
 			throw new UnsupportedOperationException(
 					"This case in the constraint has not been implemented yet: " + bindingStates);
 		}

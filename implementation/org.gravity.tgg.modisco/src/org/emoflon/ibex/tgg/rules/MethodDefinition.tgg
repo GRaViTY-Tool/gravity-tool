@@ -1,24 +1,22 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule MethodDefinition
-#with org.gravity.tgg.modisco
+#abstract #rule AbstractMethodDefinition #with org.gravity.tgg.modisco
 
 #source {
 	mSignature:MMethodSignature {
-		++  -mMethodDefinitions -> mDefinition
 		++  -mDefinitions -> mDefinition
 	}
 
-	++mDefinition:MMethodDefinition
+	++mDefinition:MAbstractMethodDefinition
 }
 
 #target {
-	++tDefinition:TMethodDefinition
-
 	tMethodSignature:TMethodSignature {
 		++  -definitions -> tDefinition
 	}
+	
+	++tDefinition:TMethodDefinition
 }
 
 #correspondence {
@@ -27,14 +25,14 @@
 		#trg->tDefinition
 	}
 
-	mSignatureToTMethodSignature :MMethodSignatureToTMethodSignature {
-		#src->mSignature
-		#trg->tMethodSignature
-	}
-
-	++ mDefinitionToTDefinition :MMethodDefinitionToTMethodDefinition {
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
 		#src->mDefinition
 		#trg->tDefinition
+	}
+
+	mSignatureToTMethodSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tMethodSignature
 	}
 
 	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
@@ -42,3 +40,27 @@
 		#trg->tDefinition
 	}
 }
+
+#rule MethodDefinition #extends AbstractMethodDefinition
+#with org.gravity.tgg.modisco
+
+#source {
+	++mDefinition:MMethodDefinition
+}
+
+#rule ConstructorDefinition #extends AbstractMethodDefinition
+#with org.gravity.tgg.modisco
+
+#source {
+	++mDefinition:MConstructorDefinition
+}
+
+#target {
+	++tDefinition:TMethodDefinition {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TConstructor
+}
+
+

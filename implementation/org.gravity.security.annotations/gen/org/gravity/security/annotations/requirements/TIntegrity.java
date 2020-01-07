@@ -2,10 +2,6 @@
  */
 package org.gravity.security.annotations.requirements;
 
-import org.eclipse.emf.ecore.EObject;
-
-import org.gravity.typegraph.basic.annotations.TAnnotation;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>TIntegrity</b></em>'.
@@ -16,5 +12,5 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @model
  * @generated
  */
-public interface TIntegrity extends EObject, TAnnotation {
+public interface TIntegrity extends TAnnotationWithCounterMeasure {
 } // TIntegrity

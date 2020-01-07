@@ -1,10 +1,11 @@
 package org.gravity.hulk.annotations.util;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.Files;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -12,9 +13,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.hulk.annotations.activator.AnnotationsActivator;
@@ -22,7 +21,7 @@ import org.gravity.hulk.annotations.activator.AnnotationsActivator;
 /**
  * This class contains the functionality for adding the annotations binary to a
  * Java project
- * 
+ *
  * @author speldszus
  *
  */
@@ -40,7 +39,7 @@ public class AnnotationsUtil {
 	/**
 	 * Copies the library containing the annotation binaries into the Java project
 	 * and adds it to the build path
-	 * 
+	 *
 	 * @param project The Java project
 	 * @param folder  The folder within the project, where the binary should be
 	 *                stored
@@ -54,26 +53,26 @@ public class AnnotationsUtil {
 		if (!folder.exists()) {
 			try {
 				folder.create(true, true, monitor);
-			} catch (CoreException e) {
+			} catch (final CoreException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}
-		IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
+		final IFile annotationsOut = folder.getFile(AnnotationsActivator.ANNOTATIONS_JAR);
 		if (!annotationsOut.exists()) {
 			try (InputStream in = new URL(AnnotationsActivator.ANNOTATIONS_JAR_PLATFORM).openConnection()
 					.getInputStream();
-					OutputStream out = new FileOutputStream(annotationsOut.getLocation().toFile())) {
-				byte[] buffer = new byte[4096];
+					OutputStream out = Files.newOutputStream(annotationsOut.getLocation().toFile().toPath())) {
+				final byte[] buffer = new byte[4096];
 				int read;
 				while ((read = in.read(buffer)) != -1) {
 					out.write(buffer, 0, read);
 				}
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 			try {
 				EclipseProjectUtil.addLibToClasspath(project, annotationsOut, monitor);
-			} catch (JavaModelException e) {
+			} catch (final JavaModelException e) {
 				LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			}
 		}

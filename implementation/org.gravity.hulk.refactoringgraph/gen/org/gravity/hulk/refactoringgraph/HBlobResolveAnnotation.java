@@ -20,12 +20,12 @@ import org.gravity.hulk.refactoringgraph.refactorings.HRefactoring;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation#getHBlobAntiPattern <em>HBlob Anti Pattern</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation#getHMoves <em>HMoves</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HBlobResolveAnnotation#getHRefactorings <em>HRefactorings</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.RefactoringgraphPackage#getHBlobResolveAnnotation()
  * @model

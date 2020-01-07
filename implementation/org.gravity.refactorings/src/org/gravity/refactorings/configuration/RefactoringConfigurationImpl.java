@@ -12,8 +12,8 @@ package org.gravity.refactorings.configuration;
  * @generated
  */
 public abstract class RefactoringConfigurationImpl implements RefactoringConfiguration {
-	
-	private long ID;
+
+	private final long id;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,7 +21,7 @@ public abstract class RefactoringConfigurationImpl implements RefactoringConfigu
 	 * @generated
 	 */
 	public RefactoringConfigurationImpl() {
-		ID = System.currentTimeMillis();
+		this.id = System.currentTimeMillis();
 	}
 
 	/**
@@ -30,7 +30,7 @@ public abstract class RefactoringConfigurationImpl implements RefactoringConfigu
 	 * @generated
 	 */
 	public long getID() {
-		return this.ID;
+		return this.id;
 	}
 	// <-- [user code injected with eMoflon]
 

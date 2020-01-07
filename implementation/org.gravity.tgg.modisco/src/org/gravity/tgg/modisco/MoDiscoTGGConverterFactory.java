@@ -1,17 +1,18 @@
 package org.gravity.tgg.modisco;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.converter.IPGConverterFactory;
+import org.gravity.eclipse.util.JavaProjectUtil;
 
 /**
  * The factory for creating MoDisco TGG converters for projects.
- * 
+ *
  * @author speldszus
  *
  */
@@ -23,13 +24,14 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	private static final Logger LOGGER = Logger.getLogger(MoDiscoTGGConverterFactory.class);
 
 	@Override
-	public IPGConverter createConverter(IProject project) {
+	public IPGConverter createConverter(final IProject project) {
+		final IJavaProject javaProject = JavaProjectUtil.convertToJavaProject(project);
 		try {
-			return new MoDiscoTGGConverter();
-		} catch (MalformedURLException e) {
-			LOGGER.log(Level.ERROR, e);
-		} catch (IOException e) {
-			LOGGER.log(Level.ERROR, e);
+			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject);
+			MoDiscoTGGActivator.getDefault().addConverter(converter);
+			return converter;
+		} catch (final IOException e) {
+			LOGGER.error(e);
 		}
 		return null;
 	}
@@ -45,7 +47,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 	}
 
 	@Override
-	public boolean belongsToFactory(IPGConverter converter) {
+	public boolean belongsToFactory(final IPGConverter converter) {
 		return MoDiscoTGGConverter.class.isInstance(converter);
 	}
 
@@ -61,7 +63,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public boolean supportsFWDSync() {
-		MoDiscoTGGActivator activator = MoDiscoTGGActivator.getDefault();
+		final MoDiscoTGGActivator activator = MoDiscoTGGActivator.getDefault();
 		if (activator == null) {
 			LOGGER.log(Level.ERROR, "The modisco TGG activator is null");
 			return false;

@@ -1,7 +1,7 @@
 package org.gravity.hulk.ui.visualization.listener;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -26,48 +26,47 @@ public class DetectionLinkListener implements Listener {
 
 	private static final Logger LOGGER = Logger.getLogger(DetectionLinkListener.class);
 
-	Map<String, IFile> fileMap = new HashMap<String, IFile>();
+	private final Map<String, IFile> fileMap = new ConcurrentHashMap<>();
 
 	@Override
 	public void handleEvent(Event event) {
-		String tempString[] = event.text.split(":");
-		tempString[0] = tempString[0].replace(".", "/");
-		String iClassString = tempString[0] + "/" + tempString[1] + ".java";
+		final String[] tempString = event.text.split(":");
+		final String iClassString = tempString[0].replace(".", "/") + '/' + tempString[1] + ".java";
 
 		IJavaProject project = null;
-		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		final IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		Object selectedObject = window.getSelectionService().getSelection(IPageLayout.ID_PROJECT_EXPLORER);
 		if (selectedObject instanceof IStructuredSelection) {
 			selectedObject = ((IStructuredSelection) selectedObject).getFirstElement();
 		}
 		if (selectedObject instanceof IAdaptable) {
-			IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
+			final IResource res = ((IAdaptable) selectedObject).getAdapter(IResource.class);
 			project = JavaProjectUtil.convertToJavaProject(res.getProject());
 		}
 		if(project == null) {
 			LOGGER.error("Cound't determin current active project");
 			return;
 		}
-		
+
 		IFile file;
-		if (fileMap.containsKey(iClassString))
-			file = fileMap.get(iClassString);
-		else {
+		if (this.fileMap.containsKey(iClassString)) {
+			file = this.fileMap.get(iClassString);
+		} else {
 			try {
 				file = (IFile) project.findType(iClassString).getResource();
-				fileMap.put(iClassString, file);
-			} catch (JavaModelException e) {
+				this.fileMap.put(iClassString, file);
+			} catch (final JavaModelException e) {
 				LOGGER.error(e.getMessage(), e);
 				return;
 			}
 		}
 
-		IEditorInput iEditorInput = new FileEditorInput(file);
-		IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
+		final IEditorInput iEditorInput = new FileEditorInput(file);
+		final IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
 
 		try {
 			window.getActivePage().openEditor(iEditorInput, desc.getId());
-		} catch (PartInitException e) {
+		} catch (final PartInitException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
 	}

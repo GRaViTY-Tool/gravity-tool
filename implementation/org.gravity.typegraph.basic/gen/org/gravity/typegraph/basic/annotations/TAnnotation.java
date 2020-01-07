@@ -94,10 +94,18 @@ public interface TAnnotation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>TValues</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.annotations.AnnotationsPackage#getTAnnotation_TValues()
-	 * @model containment="true"
+	 * @model containment="true" keys="tKey"
 	 * @generated
 	 */
 	EList<TAnnotationValue> getTValues();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TAnnotationValue getValue(String key);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

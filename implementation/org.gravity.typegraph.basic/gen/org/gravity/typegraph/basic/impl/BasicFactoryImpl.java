@@ -57,7 +57,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BasicPackage.TACCESS: return createTAccess();
 			case BasicPackage.TCLASS: return createTClass();
 			case BasicPackage.TFIELD: return createTField();
 			case BasicPackage.TFIELD_DEFINITION: return createTFieldDefinition();
@@ -68,18 +67,18 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			case BasicPackage.TMETHOD_SIGNATURE: return createTMethodSignature();
 			case BasicPackage.TPACKAGE: return createTPackage();
 			case BasicPackage.TPARAMETER: return createTParameter();
-			case BasicPackage.TPARAMETER_LIST: return createTParameterList();
 			case BasicPackage.TYPE_GRAPH: return createTypeGraph();
 			case BasicPackage.TINTERFACE: return createTInterface();
-			case BasicPackage.TCONSTRUCTOR_NAME: return createTConstructorName();
-			case BasicPackage.TCONSTRUCTOR_SIGNATURE: return createTConstructorSignature();
-			case BasicPackage.TCONSTRUCTOR_DEFINITION: return createTConstructorDefinition();
 			case BasicPackage.TREAD: return createTRead();
 			case BasicPackage.TWRITE: return createTWrite();
 			case BasicPackage.TMODIFIER: return createTModifier();
 			case BasicPackage.TSYNTETHIC_METHOD: return createTSyntethicMethod();
 			case BasicPackage.TUNRESOLVED_TYPE: return createTUnresolvedType();
 			case BasicPackage.TNAME: return createTName();
+			case BasicPackage.TFLOW: return createTFlow();
+			case BasicPackage.TREAD_WRITE: return createTReadWrite();
+			case BasicPackage.TCONSTRUCTOR: return createTConstructor();
+			case BasicPackage.TENUM: return createTEnum();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -113,17 +112,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TAccess createTAccess() {
-		TAccessImpl tAccess = new TAccessImpl();
-		return tAccess;
 	}
 
 	/**
@@ -242,17 +230,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	 * @generated
 	 */
 	@Override
-	public TParameterList createTParameterList() {
-		TParameterListImpl tParameterList = new TParameterListImpl();
-		return tParameterList;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public TypeGraph createTypeGraph() {
 		TypeGraphImpl typeGraph = new TypeGraphImpl();
 		return typeGraph;
@@ -267,39 +244,6 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TInterface createTInterface() {
 		TInterfaceImpl tInterface = new TInterfaceImpl();
 		return tInterface;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TConstructorName createTConstructorName() {
-		TConstructorNameImpl tConstructorName = new TConstructorNameImpl();
-		return tConstructorName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TConstructorSignature createTConstructorSignature() {
-		TConstructorSignatureImpl tConstructorSignature = new TConstructorSignatureImpl();
-		return tConstructorSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TConstructorDefinition createTConstructorDefinition() {
-		TConstructorDefinitionImpl tConstructorDefinition = new TConstructorDefinitionImpl();
-		return tConstructorDefinition;
 	}
 
 	/**
@@ -366,6 +310,50 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory {
 	public TName createTName() {
 		TNameImpl tName = new TNameImpl();
 		return tName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TFlow createTFlow() {
+		TFlowImpl tFlow = new TFlowImpl();
+		return tFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TReadWrite createTReadWrite() {
+		TReadWriteImpl tReadWrite = new TReadWriteImpl();
+		return tReadWrite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TConstructor createTConstructor() {
+		TConstructorImpl tConstructor = new TConstructorImpl();
+		return tConstructor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TEnum createTEnum() {
+		TEnumImpl tEnum = new TEnumImpl();
+		return tEnum;
 	}
 
 	/**

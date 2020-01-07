@@ -1,11 +1,11 @@
 package org.gravity.eclipse.io;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
+import java.nio.file.Files;
 import java.util.Collections;
 
 import org.apache.log4j.Level;
@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * This class provides the functionality to save a model into an eclipse file
- * 
+ *
  * @author speldszus
  *
  */
-public class ModelSaver {
+public final class ModelSaver {
 
 	private static final Logger LOGGER = Logger.getLogger(ModelSaver.class);
 
@@ -37,7 +37,7 @@ public class ModelSaver {
 
 	/**
 	 * Save a emf model into an eclipse file
-	 * 
+	 *
 	 * @param model   The model
 	 * @param file    An eclipse file
 	 * @param monitor A progress monitor
@@ -57,7 +57,7 @@ public class ModelSaver {
 
 	/**
 	 * Save a emf model into an eclipse file
-	 * 
+	 *
 	 * @param resource The resource containing the model
 	 * @param file     An eclipse file
 	 * @param monitor  A progress monitor
@@ -67,27 +67,27 @@ public class ModelSaver {
 		if (resource == null) {
 			return false;
 		}
-		File javaFile = file.getLocation().toFile();
-		File parentFile = javaFile.getParentFile();
+		final File javaFile = file.getLocation().toFile();
+		final File parentFile = javaFile.getParentFile();
 		if (!parentFile.exists() && !parentFile.mkdirs()) {
-			LOGGER.log(Level.WARN, "Couldn't create directory: " + parentFile.toString());
+			LOGGER.warn("Couldn't create parent directory of: " + javaFile.toString());
 			return false;
 		}
-		try (OutputStream out = new FileOutputStream(javaFile)) {
+		try (OutputStream out = Files.newOutputStream(javaFile.toPath())) {
 			resource.save(out, Collections.emptyMap());
 			file.refreshLocal(IResource.DEPTH_ONE, monitor);
-		} catch (IOException e) {
-			LOGGER.log(Level.ERROR, e.getMessage(), e);
+		} catch (final IOException e) {
+			LOGGER.error(e.getMessage(), e);
 			return false;
-		} catch (CoreException e) {
-			LOGGER.log(Level.WARN, e.getMessage(), e);
+		} catch (final CoreException e) {
+			LOGGER.warn(e.getMessage(), e);
 		}
 		return true;
 	}
 
 	/**
 	 * Save a emf model into an eclipse file
-	 * 
+	 *
 	 * @param resource The resource containing the model
 	 * @param file     An eclipse file
 	 * @param monitor  A progress monitor
@@ -100,40 +100,40 @@ public class ModelSaver {
 
 		try (PipedInputStream in = new PipedInputStream(); PipedOutputStream out = new PipedOutputStream(in);) {
 
-			Runnable rout = () -> {
+			final Runnable rout = () -> {
 				try {
 					resource.save(out, Collections.emptyMap());
-				} catch (IOException e) {
+				} catch (final IOException e) {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
-			Runnable rin = () -> {
+			final Runnable rin = () -> {
 				try {
 					if (file.exists()) {
 						file.setContents(in, true, false, monitor);
 					} else {
-						IContainer parent = file.getParent();
+						final IContainer parent = file.getParent();
 						if (!parent.exists()) {
-							IFolder folder = parent.getProject().getFolder(parent.getProjectRelativePath());
+							final IFolder folder = parent.getProject().getFolder(parent.getProjectRelativePath());
 							folder.create(true, true, monitor);
 						}
 						file.create(in, true, monitor);
 					}
-				} catch (CoreException e) {
+				} catch (final CoreException e) {
 					LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 				}
 			};
-			Thread threadOut = new Thread(rout);
-			Thread threadIn = new Thread(rin);
+			final Thread threadOut = new Thread(rout);
+			final Thread threadIn = new Thread(rin);
 			threadIn.start();
 			threadOut.start();
 			threadIn.join();
 			threadOut.join();
-		} catch (InterruptedException e) {
+		} catch (final InterruptedException e) {
 			LOGGER.error(e.getMessage(), e);
 			Thread.currentThread().interrupt();
 			return false;
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			LOGGER.error(e.getMessage(), e);
 			return false;
 		}

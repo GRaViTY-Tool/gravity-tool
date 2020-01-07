@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -32,14 +32,14 @@ import org.xml.sax.SAXException;
 public class PomParser {
 
 	private static final Logger LOGGER = Logger.getLogger(PomParser.class);
-	
+
 	private PomParser() {
 		// This class shouldn't be instantiated
 	}
 
 	/**
 	 * Discovers new libs from the given pom file
-	 * 
+	 *
 	 * @param pom       The pom file
 	 * @param cacheFile A cache of already discovered libs
 	 * @param results   A mapping between libs and their locations
@@ -48,16 +48,16 @@ public class PomParser {
 	public static void parsePomFile(File pom, File cacheFile, Map<String, Path> results,
 			Set<String> newLibs) {
 		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-			Document document = factory.newDocumentBuilder().parse(pom);
+			final Document document = factory.newDocumentBuilder().parse(pom);
 			document.getDocumentElement().normalize();
-			NodeList deps = document.getElementsByTagName("dependency");
+			final NodeList deps = document.getElementsByTagName("dependency");
 			for (int i = 0; i < deps.getLength(); i++) {
-				Set<String> libs = new HashSet<>();
-				String dependency = getDependency(deps.item(i));
+				final Set<String> libs = new HashSet<>();
+				final String dependency = getDependency(deps.item(i));
 				libs.add(dependency);
-				Map<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
+				final Map<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
 				if (subResults.isEmpty()) {
 					if (!results.containsKey(dependency)) {
 						newLibs.add(dependency);
@@ -67,13 +67,13 @@ public class PomParser {
 				}
 			}
 		} catch (SAXException | IOException | ParserConfigurationException e) {
-			LOGGER.log(Level.WARN, e);
+			LOGGER.warn(e);
 		}
 	}
 
 	/**
 	 * Creates a dependency string from a pom dependency node
-	 * 
+	 *
 	 * @param dependency The dependency node
 	 * @return The string representation
 	 */
@@ -81,10 +81,10 @@ public class PomParser {
 		String group = null;
 		String artifact = null;
 		String version = null;
-		NodeList childNodes = dependency.getChildNodes();
+		final NodeList childNodes = dependency.getChildNodes();
 		for (int j = 0; j < childNodes.getLength(); j++) {
-			Node child = childNodes.item(j);
-			String nodeName = child.getNodeName();
+			final Node child = childNodes.item(j);
+			final String nodeName = child.getNodeName();
 			if ("groupId".equals(nodeName)) {
 				group = child.getChildNodes().item(0).getNodeValue();
 			} else if ("artifactId".equals(nodeName)) {
@@ -98,7 +98,7 @@ public class PomParser {
 
 	/**
 	 * Searches the given libs in the maven cache
-	 * 
+	 *
 	 * @param libs      The names of the libs
 	 * @param cacheFile The location of the maven cache
 	 * @return A mapping to the binaries in the cache
@@ -109,18 +109,18 @@ public class PomParser {
 	 */
 	public static Map<String, Path> searchInCache(Set<String> libs, File cacheFile)
 			throws IOException, IllegalAccessError {
-		Map<String, Path> results = new HashMap<>();
-		HashSet<String> newLibs = new HashSet<>();
-		for (String lib : libs) {
-			Library description = searchLibInCache(lib, cacheFile);
+		final Map<String, Path> results = new ConcurrentHashMap<>();
+		final HashSet<String> newLibs = new HashSet<>();
+		for (final String lib : libs) {
+			final Library description = searchLibInCache(lib, cacheFile);
 			if (description.getFile().exists()) {
-				ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar", "aar"));
+				final ExtensionFileVisitor extensionFileVisitor = new ExtensionFileVisitor(Arrays.asList("jar", "aar"));
 				Files.walkFileTree(description.getFile().toPath(), extensionFileVisitor);
-				List<Path> files = extensionFileVisitor.getFiles();
+				final List<Path> files = extensionFileVisitor.getFiles();
 				if (!files.isEmpty()) {
-					Path libJar = getBestFit(description.getName(), description.getVersion(), files);
+					final Path libJar = getBestFit(description.getName(), description.getVersion(), files);
 					results.put(lib, libJar);
-					File pom = libJar.getParent().resolve(description.getName() + ".pom").toFile();
+					final File pom = libJar.getParent().resolve(description.getName() + ".pom").toFile();
 					if (pom.exists()) {
 						parsePomFile(pom, cacheFile, results, newLibs);
 					}
@@ -135,13 +135,13 @@ public class PomParser {
 
 	/**
 	 * Searches a lib in the cache
-	 * 
+	 *
 	 * @param lib A string representing the lib
 	 * @param cache The cache in which the lib should be searched
 	 * @return The lib
 	 */
 	private static Library searchLibInCache(String lib, File cache) {
-		String[] segments = lib.split(":");
+		final String[] segments = lib.split(":");
 		File libFile = null;
 		String version = null;
 		String name = null;
@@ -153,8 +153,8 @@ public class PomParser {
 			libFile = createNextFileSegment(libFile, segments[1]);
 			if (segments.length > 2) {
 				version = segments[2];
-				if (segments.length > 3) {
-					LOGGER.log(Level.WARN, "Unhandeled segments: " + lib);
+				if (segments.length > 3 && LOGGER.isEnabledFor(Level.WARN)) {
+					LOGGER.warn("Unhandeled segments: " + lib);
 				}
 			}
 		}
@@ -163,7 +163,7 @@ public class PomParser {
 
 	/**
 	 * Searches for the best fitting file based on the name and version
-	 * 
+	 *
 	 * @param name The name of the lib
 	 * @param version The desired version
 	 * @param files The available files
@@ -171,9 +171,9 @@ public class PomParser {
 	 */
 	private static Path getBestFit(String name, String version, List<Path> files) {
 		Path libJar = null;
-		for (Path p : files) {
-			String string = p.getFileName().toString();
-			String fileVersion = string.substring(name.length() + 1, string.length() - 4);
+		for (final Path p : files) {
+			final String string = p.getFileName().toString();
+			final String fileVersion = string.substring(name.length() + 1, string.length() - 4);
 			if (fileVersion.equals(version)) {
 				libJar = p;
 				break;
@@ -187,13 +187,13 @@ public class PomParser {
 
 	/**
 	 * Adds the segment to the location
-	 * 
+	 *
 	 * @param file The known parent
 	 * @param next The next segment
 	 * @return The resulting location
 	 */
 	private static File createNextFileSegment(File file, String next) {
-		File tmpLibFile = new File(file, next);
+		final File tmpLibFile = new File(file, next);
 		if (tmpLibFile.exists()) {
 			file = tmpLibFile;
 		} else {
@@ -201,22 +201,22 @@ public class PomParser {
 		}
 		return file;
 	}
-	
+
 	/**
 	 * This class is used to store information about libs
-	 * 
+	 *
 	 * @author speldszus
 	 *
 	 */
 	private static final class Library {
-		
+
 		private final File file;
 		private final String version;
 		private final String name;
-		
+
 		/**
 		 * Creates a new final instance
-		 * 
+		 *
 		 * @param name The name of the lib
 		 * @param version The version of the lib
 		 * @param file The file containing the lib
@@ -229,29 +229,29 @@ public class PomParser {
 
 		/**
 		 * A getter for a file containing the lib
-		 * 
+		 *
 		 * @return the file
 		 */
 		public File getFile() {
-			return file;
+			return this.file;
 		}
 
 		/**
 		 * A getter for the version of the lib
-		 * 
+		 *
 		 * @return the version
 		 */
 		public String getVersion() {
-			return version;
+			return this.version;
 		}
 
 		/**
 		 * A getter for the name of the lib
-		 * 
+		 *
 		 * @return the name
 		 */
 		public String getName() {
-			return name;
+			return this.name;
 		}
 	}
 }

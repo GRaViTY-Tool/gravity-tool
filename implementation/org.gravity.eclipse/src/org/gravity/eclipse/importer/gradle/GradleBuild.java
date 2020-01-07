@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gravity.eclipse.importer.gradle;
 
@@ -22,7 +22,7 @@ import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 /**
  * A class providing functionality to build gradle projects using the gradle
  * wrapper
- * 
+ *
  * @author speldszus
  *
  */
@@ -30,7 +30,7 @@ class GradleBuild {
 
 	private static final Logger LOGGER = Logger.getLogger(GradleBuild.class);
 
-	private static final Pattern GOOGLE_SERVIES_PATTERN = Pattern
+	private static final Pattern GOOGLE_SERVICES_PATTERN = Pattern
 			.compile("apply\\s+plugin:\\s+'com.google.gms.google-services'");
 
 	/**
@@ -39,12 +39,12 @@ class GradleBuild {
 	private final File gradleBin;
 
 	/**
-	 * 
+	 *
 	 */
 	public GradleBuild() {
-		String env = System.getenv("GRADLE_HOME");
+		final String env = System.getenv("GRADLE_HOME");
 		if (env != null) {
-			File gradleHome = new File(env);
+			final File gradleHome = new File(env);
 			if (gradleHome.exists()) {
 				final File bin = new File(gradleHome, "bin/gradle");
 				if (bin.exists() && bin.isFile()) {
@@ -65,7 +65,7 @@ class GradleBuild {
 
 	/**
 	 * Builds the gradle project
-	 * 
+	 *
 	 * @param gradleRootFolder    The root of the project
 	 * @param buildDotGradleFiles All build.gradle files of the gradle project
 	 * @param androidApp          If the project is an android application
@@ -74,14 +74,14 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	boolean buildGradleProject(File gradleRootFolder, Iterable<Path> buildDotGradleFiles, boolean androidApp)
+	boolean buildGradleProject(final File gradleRootFolder, final Iterable<Path> buildDotGradleFiles, final boolean androidApp)
 			throws IOException, InterruptedException, UnsupportedOperationSystemException {
 		File gradlew = new File(gradleRootFolder, "gradlew");
 		if (!gradlew.exists()) {
-			if (gradleBin == null) {
+			if (this.gradleBin == null) {
 				return false;
 			}
-			gradlew = gradleBin;
+			gradlew = this.gradleBin;
 		}
 
 		FileUtils.changeToOSEncoding(gradlew);
@@ -89,14 +89,14 @@ class GradleBuild {
 			return false;
 		}
 
-		File localProperties = new File(gradleRootFolder, "local.properties");
+		final File localProperties = new File(gradleRootFolder, "local.properties");
 		if (localProperties.exists() && !localProperties.delete()) {
 			return false;
 
 		}
 
 		Process process = createBuildProcess(gradleRootFolder, "assemble");
-		StringBuilder message = collectMessages(process);
+		final StringBuilder message = collectMessages(process);
 		process.waitFor();
 		process.destroy();
 
@@ -104,7 +104,7 @@ class GradleBuild {
 
 		if (!success && androidApp && message.toString().contains("File google-services.json is missing")) {
 			boolean fix = false;
-			for (Path buildFile : buildDotGradleFiles) {
+			for (final Path buildFile : buildDotGradleFiles) {
 				fix |= replaceGoogleServices(buildFile);
 			}
 			if (fix) {
@@ -121,25 +121,25 @@ class GradleBuild {
 
 	/**
 	 * Executed the gradle wrapper located in the given gradle Root folder
-	 * 
+	 *
 	 * @param path        The root folder
 	 * @param buildTarget
 	 * @return The running build process
 	 * @throws IOException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	private static Process createBuildProcess(File path, String buildTarget)
+	private static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
 		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			process = Runtime.getRuntime().exec("cmd /c \"" + "gradlew " + buildTarget, null, path);
+			process = Runtime.getRuntime().exec(new String[] {"cmd /c gradlew " , buildTarget}, null, path);
 			break;
 		case LINUX:
-			process = Runtime.getRuntime().exec("./gradlew " + buildTarget, null, path);
+			process = Runtime.getRuntime().exec(new String[] {"./gradlew " , buildTarget}, null, path);
 			break;
 		default:
-			LOGGER.log(Level.WARN, "Unsupported OS");
+			LOGGER.warn("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 		return process;
@@ -153,16 +153,13 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @return true, iff the project has been build successfully
 	 */
-	public static boolean build(File location, String target) {
+	public static boolean build(final File location, final String target) {
 		try {
-			Process process = createBuildProcess(location, target);
+			final Process process = createBuildProcess(location, target);
 			GradleBuild.collectMessages(process);
 			process.waitFor();
 			return process.exitValue() == 0;
-		} catch (IOException | UnsupportedOperationSystemException e) {
-			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-		    Thread.currentThread().interrupt();
-		} catch (InterruptedException e) {
+		} catch (InterruptedException | IOException | UnsupportedOperationSystemException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 			Thread.currentThread().interrupt();
 		}
@@ -172,18 +169,18 @@ class GradleBuild {
 	/**
 	 * Removes the google services from the list of applied plugins in the given
 	 * gradle build file
-	 * 
+	 *
 	 * @param buildFile The build file
 	 * @return true, if the build file has been changed
 	 * @throws IOException- if an I/O error occurs writing to or creating the build
 	 *                      file, or the text cannot be encoded as UTF-8
 	 */
-	private static boolean replaceGoogleServices(Path buildFile) throws IOException {
+	private static boolean replaceGoogleServices(final Path buildFile) throws IOException {
 		boolean change = false;
-		List<String> content = Files.readAllLines(buildFile);
+		final List<String> content = Files.readAllLines(buildFile);
 		for (int i = 0; i < content.size(); i++) {
-			String l = content.get(i);
-			Matcher matcher = GOOGLE_SERVIES_PATTERN.matcher(l);
+			final String l = content.get(i);
+			final Matcher matcher = GOOGLE_SERVICES_PATTERN.matcher(l);
 			while (matcher.find()) {
 				change = true;
 				content.set(i, l.substring(0, matcher.regionStart()) + l.substring(matcher.regionEnd()));
@@ -198,13 +195,13 @@ class GradleBuild {
 
 	/**
 	 * Collects content of error and output stream in a single string builder
-	 * 
+	 *
 	 * @param process the process to monitor
 	 * @return the string builder
 	 * @throws IOException
 	 */
-	static StringBuilder collectMessages(Process process) throws IOException {
-		StringBuilder message = new StringBuilder();
+	static StringBuilder collectMessages(final Process process) throws IOException {
+		final StringBuilder message = new StringBuilder();
 		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
 			String line;
 			while ((line = stream.readLine()) != null) {
@@ -218,7 +215,7 @@ class GradleBuild {
 			while ((line = stream.readLine()) != null) {
 				message.append(line);
 				message.append('\n');
-				LOGGER.log(Level.WARN, "GRADLE: " + line);
+				LOGGER.warn("GRADLE: " + line);
 			}
 		}
 		return message;

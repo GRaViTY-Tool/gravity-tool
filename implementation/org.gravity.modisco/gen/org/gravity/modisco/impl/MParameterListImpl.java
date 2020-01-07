@@ -36,7 +36,7 @@ import org.gravity.modisco.ModiscoPackage;
  *
  * @generated
  */
-public class MParameterListImpl extends MinimalEObjectImpl.Container implements MParameterList {
+public abstract class MParameterListImpl extends MinimalEObjectImpl.Container implements MParameterList {
 	/**
 	 * The cached value of the '{@link #getMFirstEntry() <em>MFirst Entry</em>}' reference.
 	 * <!-- begin-user-doc -->

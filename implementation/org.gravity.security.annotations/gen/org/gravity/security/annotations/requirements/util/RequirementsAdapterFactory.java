@@ -79,6 +79,21 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTHigh(THigh object) {
+			return createTHighAdapter();
+		}
+
+		@Override
+		public Adapter caseTCritical(TCritical object) {
+			return createTCriticalAdapter();
+		}
+
+		@Override
+		public Adapter caseTAnnotationWithCounterMeasure(TAnnotationWithCounterMeasure object) {
+			return createTAnnotationWithCounterMeasureAdapter();
+		}
+
+		@Override
 		public Adapter caseTAnnotation(TAnnotation object) {
 			return createTAnnotationAdapter();
 		}
@@ -127,6 +142,48 @@ public class RequirementsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTIntegrityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.security.annotations.requirements.THigh <em>THigh</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.security.annotations.requirements.THigh
+	 * @generated
+	 */
+	public Adapter createTHighAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.security.annotations.requirements.TCritical <em>TCritical</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.security.annotations.requirements.TCritical
+	 * @generated
+	 */
+	public Adapter createTCriticalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.security.annotations.requirements.TAnnotationWithCounterMeasure <em>TAnnotation With Counter Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.security.annotations.requirements.TAnnotationWithCounterMeasure
+	 * @generated
+	 */
+	public Adapter createTAnnotationWithCounterMeasureAdapter() {
 		return null;
 	}
 

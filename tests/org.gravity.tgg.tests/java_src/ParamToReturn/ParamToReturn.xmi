@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.gravity.typegraph.basic:TypeGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gravity.typegraph.basic="http://www.gravity-tool.org/typegraph/basic" classes="//@ownedTypes.0 //@ownedTypes.1 //@ownedTypes.2 //@ownedTypes.3 //@ownedTypes.4 //@ownedTypes.5 //@ownedTypes.6 //@ownedTypes.7 //@ownedTypes.8 //@ownedTypes.9" tName="ParamToReturn">
+  <packages classes="//@ownedTypes.5" ownedTypes="//@ownedTypes.5" typeGraph="/" tName="(default package)"/>
+  <methods tName="m">
+    <signatures returnType="//@ownedTypes.7">
+      <paramList first="//@methods.0/@signatures.0/@paramList/@entries.0">
+        <entries outgoingFlows="//@methods.0/@signatures.0/@definitions.0/@ownedFlows.0" type="//@ownedTypes.7"/>
+      </paramList>
+      <definitions incomingFlows="//@methods.0/@signatures.0/@definitions.0/@ownedFlows.0" definedBy="//@ownedTypes.5" returnType="//@ownedTypes.7">
+        <ownedFlows flowSource="//@methods.0/@signatures.0/@paramList/@entries.0" flowTarget="//@methods.0/@signatures.0/@definitions.0"/>
+        <tModifier tVisibility="TPublic"/>
+      </definitions>
+    </signatures>
+  </methods>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="boolean"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="void"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="double"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="byte"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="float"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" package="//@packages.0" signature="//@methods.0/@signatures.0" defines="//@methods.0/@signatures.0/@definitions.0" tName="A">
+    <tModifier tVisibility="TPublic"/>
+  </ownedTypes>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="long"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="int"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="char"/>
+  <ownedTypes xsi:type="org.gravity.typegraph.basic:TClass" tLib="true" tName="short"/>
+</org.gravity.typegraph.basic:TypeGraph>

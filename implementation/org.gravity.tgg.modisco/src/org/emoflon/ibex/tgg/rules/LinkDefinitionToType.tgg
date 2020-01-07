@@ -5,19 +5,28 @@
 #with org.gravity.tgg.modisco
 
 #source {
+	mSignature:MSignature {
+		-mDefinitions -> mDefinition
+	}
+
 	mDefinition:MDefinition
-	
+
 	mType:AbstractTypeDeclaration {
 		++  -bodyDeclarations -> mDefinition
 	}
 }
 
 #target {
-	tDefinition:TMember {
-		++  -definedBy -> tType
+	tSignature:TSignature {
+		-definitions -> tDefinition
 	}
 
-	tType:TAbstractType
+	tDefinition:TMember
+
+	tType:TAbstractType {
+		++-defines -> tDefinition
+		++-signature -> tSignature
+	}
 }
 
 #correspondence {
@@ -26,8 +35,15 @@
 		#trg->tType
 	}
 
+	mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
 	mDefinitionToTMember :MDefinitionToTMember {
 		#src->mDefinition
 		#trg->tDefinition
 	}
 }
+
+

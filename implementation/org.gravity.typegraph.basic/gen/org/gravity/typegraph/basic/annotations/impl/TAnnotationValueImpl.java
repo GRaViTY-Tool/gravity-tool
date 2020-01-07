@@ -6,27 +6,22 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.annotations.TAnnotationValue;
 // <-- [user defined imports]
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>TAnnotation Value</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>TAnnotation Value</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -39,9 +34,9 @@ import org.gravity.typegraph.basic.annotations.TAnnotationValue;
  */
 public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implements TAnnotationValue {
 	/**
-	 * The default value of the '{@link #getTKey() <em>TKey</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getTKey() <em>TKey</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getTKey()
 	 * @generated
 	 * @ordered
@@ -49,9 +44,9 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	protected static final String TKEY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTKey() <em>TKey</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTKey() <em>TKey</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getTKey()
 	 * @generated
 	 * @ordered
@@ -60,8 +55,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * The cached value of the '{@link #getTValue() <em>TValue</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTValue()
 	 * @generated
 	 * @ordered
@@ -69,8 +63,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	protected EList<EObject> tValue;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TAnnotationValueImpl() {
@@ -78,8 +71,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +80,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -98,8 +89,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,8 +101,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -124,8 +113,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,8 +126,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -154,8 +141,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -174,8 +160,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -192,8 +177,7 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -225,4 +209,4 @@ public class TAnnotationValueImpl extends MinimalEObjectImpl.Container implement
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //TAnnotationValueImpl
+} // TAnnotationValueImpl

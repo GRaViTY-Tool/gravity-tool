@@ -820,7 +820,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__access" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__annotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__body" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__type" lowerBound="1"
@@ -843,7 +843,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__access" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__annotation"
-        lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnnotation"/>
+        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__type" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__variable"

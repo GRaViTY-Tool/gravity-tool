@@ -25,20 +25,22 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		LOGGER.info("Input changed from \""+oldInput+ "\" to \""+newInput+"\"");
+		if(LOGGER.isInfoEnabled()) {
+			LOGGER.info("Input changed from \""+oldInput+ "\" to \""+newInput+"\"");
+		}
 	}
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		List<Object> elements = new ArrayList<>();
+		final List<Object> elements = new ArrayList<>();
 		if (inputElement instanceof EPackage) {
-			EPackage epackage = (EPackage) inputElement;
-			for (EPackage esubpackage : epackage.getESubpackages()) {
+			final EPackage epackage = (EPackage) inputElement;
+			for (final EPackage esubpackage : epackage.getESubpackages()) {
 				if (epackage.equals(esubpackage.getESuperPackage())) {
 					elements.add(esubpackage);
 				}
 			}
-			for (EClassifier eclassifier : epackage.getEClassifiers()) {
+			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
 				if (epackage.equals(eclassifier.getEPackage()) && !eclassifier.getInstanceClass().isInterface()) {
 					elements.add(eclassifier);
 				}
@@ -49,19 +51,18 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		List<Object> elements = new ArrayList<>();
+		final List<Object> elements = new ArrayList<>();
 		if (parentElement instanceof EPackage) {
-			EPackage epackage = (EPackage) parentElement;
-			for (EPackage esubpackage : epackage.getESubpackages()) {
+			final EPackage epackage = (EPackage) parentElement;
+			for (final EPackage esubpackage : epackage.getESubpackages()) {
 				if (epackage.equals(esubpackage.getESuperPackage())) {
 					elements.add(esubpackage);
 				}
 			}
-			for (EClassifier eclassifier : epackage.getEClassifiers()) {
-				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())) {
-					if (!((EClass) eclassifier).isAbstract()) {
-						elements.add(eclassifier);
-					}
+			for (final EClassifier eclassifier : epackage.getEClassifiers()) {
+				if (HDetector.class.isAssignableFrom(eclassifier.getInstanceClass())&&!((EClass) eclassifier).isAbstract()) {
+					elements.add(eclassifier);
+
 				}
 			}
 		}
@@ -81,8 +82,8 @@ public class DetectionTreeContentProvider implements ITreeContentProvider {
 	@Override
 	public boolean hasChildren(Object element) {
 		if (element instanceof EPackage) {
-			EPackage ePackage = (EPackage) element;
-			return ePackage.getESubpackages().size() > 0 || ePackage.getEClassifiers().size() > 0;
+			final EPackage ePackage = (EPackage) element;
+			return !ePackage.getESubpackages().isEmpty() || !ePackage.getEClassifiers().isEmpty();
 		}
 		return false;
 	}

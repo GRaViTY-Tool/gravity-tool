@@ -27,7 +27,7 @@ public class SearchParameters {
 	 * Flag to toggle usage of visibility constraints
 	 */
 	@Parameter(names = { "-c",
-			"--use_constraints" }, arity = 1, description = "flag to toggle usage of visibility constraints")
+	"--use_constraints" }, arity = 1, description = "flag to toggle usage of visibility constraints")
 	public static boolean useConstraints = true;
 
 	/**
@@ -40,14 +40,14 @@ public class SearchParameters {
 	 * Flag to toggle usage of security constraints
 	 */
 	@Parameter(names = { "-s",
-			"--use_Security" }, arity = 1, description = "flag to toggle usage of security constraints")
+	"--use_Security" }, arity = 1, description = "flag to toggle usage of security constraints")
 	public static boolean useSecurity = true;
 
 	/**
 	 * Number of transformations each solution will contain
 	 */
 	@Parameter(names = { "-sl",
-			"--solution_length" }, description = "number of transformations each solution will contain")
+	"--solution_length" }, description = "number of transformations each solution will contain")
 	public static int solutiionLength = 10;
 
 	/**
@@ -72,21 +72,21 @@ public class SearchParameters {
 	 * Probability a solution will be mutated with a new transformation
 	 */
 	@Parameter(names = { "-pm",
-			"--parameter_mutation_probability" }, description = "probability a solution will be mutated with a new transformation")
+	"--parameter_mutation_probability" }, description = "probability a solution will be mutated with a new transformation")
 	public static double transformationParameterMutationProbability = 0.1;
 
 	/**
 	 * Probability a solution will be mutated with a placeholder
 	 */
 	@Parameter(names = { "-phm",
-			"--placeholder_mutation_probability" }, description = "probability a solution will be mutated with a placeholder")
+	"--placeholder_mutation_probability" }, description = "probability a solution will be mutated with a placeholder")
 	public static double transformationPlaceholderMutationProbability = 0.1;
 
 	/**
 	 * Probability a crossover between two solutions will happen
 	 */
 	@Parameter(names = { "-cop",
-			"--crossover_probability" }, description = "probability a crossover between two solutions will happen")
+	"--crossover_probability" }, description = "probability a crossover between two solutions will happen")
 	public static double onePointCrossoverProbability = 1;
 
 	/**
@@ -106,14 +106,14 @@ public class SearchParameters {
 	 * Flag to toggle usage of custom DominanceComperator
 	 */
 	@Parameter(names = { "-cdc",
-			"--use_customDominanceComperator" }, arity = 1, description = "flag to toggle usage of custom DominanceComperator")
+	"--use_customDominanceComperator" }, arity = 1, description = "flag to toggle usage of custom DominanceComperator")
 	public static boolean useCustomDominanceComperator = true;
 
 	/**
 	 * Flag to toggle to reduce visibilities in every step.
 	 */
 	@Parameter(names = { "-rv",
-			"--reduce_visibilities" }, arity = 1, description = "flag to toggle to reduce visibilities in every step")
+	"--reduce_visibilities" }, arity = 1, description = "flag to toggle to reduce visibilities in every step")
 	public static boolean useOptimizationRepair = false;
 
 	/**
@@ -126,28 +126,28 @@ public class SearchParameters {
 	 * Value for public access modifier used in metric calculation
 	 */
 	@Parameter(names = { "-puv",
-			"--public_value" }, description = "value for public access modifier used in metric calculation")
+	"--public_value" }, description = "value for public access modifier used in metric calculation")
 	public static int publicValue = 3;
 
 	/**
 	 * Value for protected access modifier used in metric calculation
 	 */
 	@Parameter(names = { "-prv",
-			"--protected_value" }, description = "Value for protected access modifier used in metric calculation")
+	"--protected_value" }, description = "Value for protected access modifier used in metric calculation")
 	public static int protectedValue = 2;
 
 	/**
 	 * Value for public access modifier used in metric calculation
 	 */
 	@Parameter(names = { "-pav",
-			"--package_value" }, description = "Value for public access modifier used in metric calculation")
+	"--package_value" }, description = "Value for public access modifier used in metric calculation")
 	public static int packageValue = 1;
 
 	/**
 	 * Value for private access modifier used in metric calculation
 	 */
 	@Parameter(names = { "-priv",
-			"--private_value" }, description = "Value for private access modifier used in metric calculation")
+	"--private_value" }, description = "Value for private access modifier used in metric calculation")
 	public static int privateValue = 0;
 
 }

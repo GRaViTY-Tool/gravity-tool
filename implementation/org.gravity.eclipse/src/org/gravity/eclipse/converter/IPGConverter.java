@@ -7,8 +7,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**
@@ -19,32 +17,30 @@ public interface IPGConverter {
 
 	/**
 	 * Discards the converter
-	 * 
+	 *
 	 * @return true, if the converter has been discarded successfully
 	 */
-	public boolean discard();
-	
+	boolean discard();
+
 	/**
 	 * Converts the given java project into an PG. The PG has to be stored local and
 	 * is accessible through the method <code>getPG():TypeGraph</code>
 	 *
-	 * @param project the java project
 	 * @param monitor a monitor for the progress, this might be <code>null</code>
 	 * @return true, if the conversion was successful
 	 */
-	boolean convertProject(IJavaProject project, IProgressMonitor monitor);
+	boolean convertProject(IProgressMonitor monitor);
 
 	/**
 	 * Converts the given java project into an PG taking a collection of libraries
 	 * detailed into account. The PG has to be stored local and is accessible
 	 * through the method <code>getPG():TypeGraph</code>
 	 *
-	 * @param project the java project
 	 * @param libs The locations of the libraries
 	 * @param monitor a monitor for the progress, this might be <code>null</code>
 	 * @return true, if the conversion was successful
 	 */
-	boolean convertProject(IJavaProject project, Collection<IPath> libs, IProgressMonitor monitor);
+	boolean convertProject(Collection<IPath> libs, IProgressMonitor monitor);
 
 	/**
 	 * Synchronizes changes made on the PG and described in the consumer into the
@@ -93,13 +89,6 @@ public interface IPGConverter {
 	 * @return the PG
 	 */
 	TypeGraph getPG();
-
-	/**
-	 * Returns the resource set used for conversion.
-	 *
-	 * @return the resource set
-	 */
-	ResourceSet getResourceSet();
 
 	/**
 	 * Checks if is debug is enabled.

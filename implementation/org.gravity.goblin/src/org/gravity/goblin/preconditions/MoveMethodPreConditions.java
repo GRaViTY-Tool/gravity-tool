@@ -2,9 +2,8 @@ package org.gravity.goblin.preconditions;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 
+import org.apache.log4j.Logger;
 import org.gravity.goblin.SearchParameters;
 import org.gravity.refactorings.impl.MoveMethod;
 import org.gravity.typegraph.basic.TClass;
@@ -15,11 +14,11 @@ import org.gravity.typegraph.basic.annotations.TAnnotationType;
 
 /**
  * Checks for the preconditions of a move method refactoring
- * 
+ *
  * @author speldszus
  *
  */
-public class MoveMethodPreConditions {
+public final class MoveMethodPreConditions {
 
 	/**
 	 * The logger of this class
@@ -31,22 +30,22 @@ public class MoveMethodPreConditions {
 	}
 
 	private static boolean securityPrecondition(TMethodSignature methodSig, TClass sourceClass) {
-		List<TAnnotation> annotations = new ArrayList<TAnnotation>();
+		final List<TAnnotation> annotations = new ArrayList<>();
 		annotations.addAll(methodSig.getTAnnotation());
-		for (TMethodDefinition methodDef : methodSig.getDefinitions()) {
+		for (final TMethodDefinition methodDef : methodSig.getMethodDefinitions()) {
 			if (methodDef.getDefinedBy() == sourceClass) {
 				annotations.addAll(methodDef.getTAnnotation());
 			}
 		}
-		for (TAnnotation annotation : annotations) {
-			TAnnotationType type = annotation.getType();
+		for (final TAnnotation annotation : annotations) {
+			final TAnnotationType type = annotation.getType();
 			if (type == null) {
 				continue;
 			}
-			String tName = annotation.getType().getTName();
+			final String tName = annotation.getType().getTName();
 			if (tName.equals("High") || tName.equals("Critical") || tName.equals("Secrecy")
 					|| tName.equals("Integrity")) {
-				LOGGER.log(Level.WARN, "Can't move " + sourceClass.getFullyQualifiedName() + "."
+				LOGGER.warn("Can't move " + sourceClass.getFullyQualifiedName() + "."
 						+ methodSig.getSignatureString() + ", REASON security");
 				return false;
 			}
@@ -56,7 +55,7 @@ public class MoveMethodPreConditions {
 
 	/**
 	 * Checks is the mehtod with the given signature can be moved from the source class to an other class
-	 * 
+	 *
 	 * @param tMethodSignature The signature of the method
 	 * @param sourceClass The class defining the method
 	 * @return true, iff the method can be moved to another class

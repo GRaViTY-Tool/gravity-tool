@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature <em>Signature</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriddenBy <em>Overridden By</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.TMethodDefinition#getOverloading <em>Overloading</em>}</li>
@@ -28,32 +27,16 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TMethodDefinition extends TMember {
 	/**
-	 * Returns the value of the '<em><b>Signature</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethodSignature#getDefinitions <em>Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Signature</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Signature</em>' container reference.
-	 * @see #setSignature(TMethodSignature)
-	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_Signature()
-	 * @see org.gravity.typegraph.basic.TMethodSignature#getDefinitions
-	 * @model opposite="definitions" required="true" transient="false"
+	 * @model kind="operation"
 	 * @generated
 	 */
 	TMethodSignature getSignature();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature <em>Signature</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Signature</em>' container reference.
-	 * @see #getSignature()
-	 * @generated
-	 */
-	void setSignature(TMethodSignature value);
 
 	/**
 	 * Returns the value of the '<em><b>Overriding</b></em>' reference.
@@ -96,7 +79,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overridden By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_OverriddenBy()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverriding
-	 * @model opposite="overriding"
+	 * @model opposite="overriding" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverriddenBy();
@@ -114,7 +97,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overloading</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_Overloading()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverloadedBy
-	 * @model opposite="overloadedBy"
+	 * @model opposite="overloadedBy" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverloading();
@@ -132,7 +115,7 @@ public interface TMethodDefinition extends TMember {
 	 * @return the value of the '<em>Overloaded By</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_OverloadedBy()
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getOverloading
-	 * @model opposite="overloading"
+	 * @model opposite="overloading" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodDefinition> getOverloadedBy();
@@ -164,7 +147,7 @@ public interface TMethodDefinition extends TMember {
 	void setReturnType(TAbstractType value);
 
 	/**
-	 * Returns the value of the '<em><b>Syntethic Methods</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Syntethic Methods</b></em>' reference list.
 	 * The list contents are of type {@link org.gravity.typegraph.basic.TSyntethicMethod}.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
 	 * <!-- begin-user-doc -->
@@ -173,10 +156,10 @@ public interface TMethodDefinition extends TMember {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Syntethic Methods</em>' containment reference list.
+	 * @return the value of the '<em>Syntethic Methods</em>' reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethodDefinition_SyntethicMethods()
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition
-	 * @model opposite="originalMethodDefinition" containment="true"
+	 * @model opposite="originalMethodDefinition" ordered="false"
 	 * @generated
 	 */
 	EList<TSyntethicMethod> getSyntethicMethods();

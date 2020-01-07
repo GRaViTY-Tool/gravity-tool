@@ -15,12 +15,12 @@ import org.gravity.typegraph.basic.TClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers#getHMoveMembers <em>HMove Members</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers#getSourceClass <em>Source Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage#getHMoveMembers()
  * @model

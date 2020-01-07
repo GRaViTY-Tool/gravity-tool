@@ -5,28 +5,27 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ varDeclFragment : VariableDeclarationFragment {
-	++  -variablesContainer -> mDefinition
-}
-mDefinition : MFieldDefinition {
-}
+	++varDeclFragment:VariableDeclarationFragment {
+		++  -variablesContainer -> mDefinition
+	}
+
+	mDefinition:MFieldDefinition
 }
 
 #target {
-tDefinition : TFieldDefinition {
-}
+	tDefinition:TFieldDefinition
 }
 
 #correspondence {
-eFieldDeclarationToTFieldDefinition : MFieldDefinitionToTFieldDefinition {
-	#src->mDefinition
-	#trg->tDefinition
-}
-++ varDeclFragmentToTFieldDefinition : VariableDeclarationFragmentToTFieldDefinition {
-	#src->varDeclFragment
-	#trg->tDefinition
-}
+	eFieldDeclarationToTFieldDefinition :MDefinitionToTMember {
+		#src->mDefinition
+		#trg->tDefinition
+	}
+
+	++ varDeclFragmentToTFieldDefinition :VariableDeclarationFragmentToTFieldDefinition {
+		#src->varDeclFragment
+		#trg->tDefinition
+	}
 }
 
-#attributeConditions {
-}
+

@@ -2,19 +2,25 @@
  */
 package org.gravity.modisco.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.modisco.java.Type;
 
 import org.gravity.modisco.MEntry;
+import org.gravity.modisco.MSingleVariableDeclaration;
 import org.gravity.modisco.ModiscoPackage;
 
 /**
@@ -28,12 +34,12 @@ import org.gravity.modisco.ModiscoPackage;
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getMNext <em>MNext</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getMPrevious <em>MPrevious</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getSingleVariableDeclaration <em>Single Variable Declaration</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MEntryImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
+public class MEntryImpl extends MAbstractFlowElementImpl implements MEntry {
 	/**
 	 * The cached value of the '{@link #getMNext() <em>MNext</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -65,14 +71,14 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 	protected Type type;
 
 	/**
-	 * The cached value of the '{@link #getSingleVariableDeclaration() <em>Single Variable Declaration</em>}' reference.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSingleVariableDeclaration()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected SingleVariableDeclaration singleVariableDeclaration;
+	protected EList<MSingleVariableDeclaration> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,16 +262,11 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingleVariableDeclaration getSingleVariableDeclaration() {
-		if (singleVariableDeclaration != null && singleVariableDeclaration.eIsProxy()) {
-			InternalEObject oldSingleVariableDeclaration = (InternalEObject)singleVariableDeclaration;
-			singleVariableDeclaration = (SingleVariableDeclaration)eResolveProxy(oldSingleVariableDeclaration);
-			if (singleVariableDeclaration != oldSingleVariableDeclaration) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION, oldSingleVariableDeclaration, singleVariableDeclaration));
-			}
+	public EList<MSingleVariableDeclaration> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectWithInverseResolvingEList<MSingleVariableDeclaration>(MSingleVariableDeclaration.class, this, ModiscoPackage.MENTRY__PARAMETERS, ModiscoPackage.MSINGLE_VARIABLE_DECLARATION__MENTRY);
 		}
-		return singleVariableDeclaration;
+		return parameters;
 	}
 
 	/**
@@ -273,27 +274,7 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingleVariableDeclaration basicGetSingleVariableDeclaration() {
-		return singleVariableDeclaration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSingleVariableDeclaration(SingleVariableDeclaration newSingleVariableDeclaration) {
-		SingleVariableDeclaration oldSingleVariableDeclaration = singleVariableDeclaration;
-		singleVariableDeclaration = newSingleVariableDeclaration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION, oldSingleVariableDeclaration, singleVariableDeclaration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -305,6 +286,8 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 				if (mPrevious != null)
 					msgs = ((InternalEObject)mPrevious).eInverseRemove(this, ModiscoPackage.MENTRY__MNEXT, MEntry.class, msgs);
 				return basicSetMPrevious((MEntry)otherEnd, msgs);
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -321,6 +304,8 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 				return basicSetMNext(null, msgs);
 			case ModiscoPackage.MENTRY__MPREVIOUS:
 				return basicSetMPrevious(null, msgs);
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -342,9 +327,8 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION:
-				if (resolve) return getSingleVariableDeclaration();
-				return basicGetSingleVariableDeclaration();
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,6 +338,7 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -366,8 +351,9 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				setType((Type)newValue);
 				return;
-			case ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION:
-				setSingleVariableDeclaration((SingleVariableDeclaration)newValue);
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends MSingleVariableDeclaration>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -390,8 +376,8 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 			case ModiscoPackage.MENTRY__TYPE:
 				setType((Type)null);
 				return;
-			case ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION:
-				setSingleVariableDeclaration((SingleVariableDeclaration)null);
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -411,8 +397,8 @@ public class MEntryImpl extends MinimalEObjectImpl.Container implements MEntry {
 				return mPrevious != null;
 			case ModiscoPackage.MENTRY__TYPE:
 				return type != null;
-			case ModiscoPackage.MENTRY__SINGLE_VARIABLE_DECLARATION:
-				return singleVariableDeclaration != null;
+			case ModiscoPackage.MENTRY__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

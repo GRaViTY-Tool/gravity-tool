@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -22,9 +23,9 @@ import org.eclipse.emf.henshin.interpreter.impl.UnitApplicationImpl;
 import org.eclipse.emf.henshin.model.Module;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
-import org.gravity.goblin.fitness.CouplingCalculator;
 import org.gravity.goblin.GoblinActivator;
 import org.gravity.goblin.constraints.VisibilityConstraintCalculator;
+import org.gravity.goblin.fitness.CouplingCalculator;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -40,19 +41,19 @@ import at.ac.tuwien.big.momot.problem.unit.parameter.comparator.IEObjectEquality
 public class HenshinExecutor {
 
 	private static final Logger LOGGER = Logger.getLogger(HenshinExecutor.class);
-	
+
 	HenshinResourceSet resourceSet;
 	Module module;
 	EGraph graph;
 	String modulePath = "transformations/MoveMethod.henshin";
 
-	public HashMap<String, Object> getMoveMethodParameter(TypeGraph pg, String methodName, String sourceClassName,
+	public Map<String, Object> getMoveMethodParameter(TypeGraph pg, String methodName, String sourceClassName,
 			String targetClassName) {
-		HashMap<String, Object> parameters = new HashMap<String, Object>();
+		final HashMap<String, Object> parameters = new HashMap<>();
 
-		TClass sourceClass = pg.getClass(sourceClassName);
-		TClass targetClass = pg.getClass(targetClassName);
-		TMethodSignature methodSig = sourceClass.getTMethodSignature(methodName);
+		final TClass sourceClass = pg.getClass(sourceClassName);
+		final TClass targetClass = pg.getClass(targetClassName);
+		final TMethodSignature methodSig = sourceClass.getTMethodSignature(methodName);
 
 		parameters.put("methodSig", methodSig);
 		parameters.put("targetClass", targetClass);
@@ -62,30 +63,30 @@ public class HenshinExecutor {
 
 	public void initialize(EGraph egraph) {
 		// Create a resource set with a base directory:
-		graph = egraph;
-		resourceSet = new HenshinResourceSet("");
+		this.graph = egraph;
+		this.resourceSet = new HenshinResourceSet("");
 
-		Resource r = resourceSet.createResource(URI.createURI(""));
-		Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
-		URL res = bundle.getResource(modulePath);
+		final Resource r = this.resourceSet.createResource(URI.createURI(""));
+		final Bundle bundle = Platform.getBundle(GoblinActivator.PLUGIN_ID);
+		final URL res = bundle.getResource(this.modulePath);
 		try (InputStream s = res.openStream()) {
 			r.load(s, Collections.emptyMap());
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
 		}
-		module = (Module) r.getContents().get(0);
+		this.module = (Module) r.getContents().get(0);
 	}
 
 	public void run() {
 		// register
 		BasicPackage.eINSTANCE.eClass();
 
-		boolean saveResult = true;
+		final boolean saveResult = true;
 
-		String graphPath =
-		//"input/dyn1_Test";
-		//"input/03_JUnit3.8.2";
-		 "input/SecureMailApp";
+		final String graphPath =
+				//"input/dyn1_Test";
+				//"input/03_JUnit3.8.2";
+				"input/SecureMailApp";
 		//"input/00_JavaSolitaire1.3";
 		//"input/01_QuickUML2001";
 		//"input/02_JsciCalc2.1.0";
@@ -100,20 +101,20 @@ public class HenshinExecutor {
 		//"input/11_JTransform3.1";
 		//"input/12_iTrust21.0";
 
-		resourceSet = new HenshinResourceSet("");
-		module = resourceSet.getModule(modulePath);
-		graph = new EGraphImpl(resourceSet.getResource(graphPath + ".xmi"));
+		this.resourceSet = new HenshinResourceSet("");
+		this.module = this.resourceSet.getModule(this.modulePath);
+		this.graph = new EGraphImpl(this.resourceSet.getResource(graphPath + ".xmi"));
 		// Load the module:
 		// module = resourceSet.getModule(modulePath+".henshin", false);
 
-		TypeGraph pg = (TypeGraph) graph.getRoots().get(0);
+		final TypeGraph pg = (TypeGraph) this.graph.getRoots().get(0);
 		double fitness = new CouplingCalculator().calculate(pg);
-		double violations = new VisibilityConstraintCalculator().calculate(pg);
+		final double violations = new VisibilityConstraintCalculator().calculate(pg);
 		// violations += new InheritanceConstraintCalculator().calculate(pg);
 
-		String sourceClass = "example.mailapp.SecureMailApp";
-		String targetClass = "example.mailapp.Contact";
-		String method = "encryptMessage(String, Contact):String";
+		final String sourceClass = "example.mailapp.SecureMailApp";
+		final String targetClass = "example.mailapp.Contact";
+		final String method = "encryptMessage(String, Contact):String";
 
 		// HashMap<String, Object> parameters = new HashMap<String, Object>();
 
@@ -122,9 +123,9 @@ public class HenshinExecutor {
 
 		// boolean success = executeUnit("libCheck", parameters);
 
-		HashMap<String, Object> parameters = getMoveMethodParameter(pg, method, sourceClass, targetClass);
+		final Map<String, Object> parameters = getMoveMethodParameter(pg, method, sourceClass, targetClass);
 		// boolean success = executeMain(parameters);
-		boolean success = executeMoveMethod(parameters);
+		final boolean success = executeMoveMethod(parameters);
 		// HashMap<String, Object> parameters = getDynParameter("n()", "dyn1_Test.B",
 		// (TypeGraph)graph.getRoots().get(0));
 		// boolean success = executeDyn(parameters);
@@ -132,7 +133,7 @@ public class HenshinExecutor {
 		// Saving the result:
 		fitness = new CouplingCalculator().calculate(pg);
 		if (saveResult) {
-			resourceSet.saveEObject(graph.getRoots().get(0), graphPath + "_result.xmi");
+			this.resourceSet.saveEObject(this.graph.getRoots().get(0), graphPath + "_result.xmi");
 		}
 
 	}
@@ -170,46 +171,46 @@ public class HenshinExecutor {
 		new HenshinExecutor().run();
 	}
 
-	public HashMap<String, Object> getDynParameter(String methodName, String sourceClassName, TypeGraph graph) {
-		HashMap<String, Object> parameters = new HashMap<String, Object>();
-		TClass sourceClass = graph.getClass(sourceClassName);
-		TMethodSignature methodSig = sourceClass.getTMethodSignature(methodName);
+	public Map<String, Object> getDynParameter(String methodName, String sourceClassName, TypeGraph graph) {
+		final Map<String, Object> parameters = new HashMap<>();
+		final TClass sourceClass = graph.getClass(sourceClassName);
+		final TMethodSignature methodSig = sourceClass.getTMethodSignature(methodName);
 		parameters.put("methodSig", methodSig);
 		parameters.put("sourceClass", sourceClass);
 		return parameters;
 	}
 
-	public boolean executeDyn(HashMap<String, Object> parameters) {
+	public boolean executeDyn(Map<String, Object> parameters) {
 		return executeUnit("dynMoveMethod", parameters);
 	}
 
-	public boolean executeMain(HashMap<String, Object> parameters) {
+	public boolean executeMain(Map<String, Object> parameters) {
 		return executeUnit("MoveMethodMain", parameters);
 	}
 
-	public boolean executeMoveMethod(HashMap<String, Object> parameters) {
+	public boolean executeMoveMethod(Map<String, Object> parameters) {
 		return executeUnit("MoveMethod", parameters);
 	}
 
-	public boolean executeCheckPreconditions(HashMap<String, Object> parameters) {
+	public boolean executeCheckPreconditions(Map<String, Object> parameters) {
 		return executeUnit("checkPreconditions", parameters);
 	}
 
-	public boolean executepreconditions(HashMap<String, Object> parameters) {
+	public boolean executepreconditions(Map<String, Object> parameters) {
 		return executeUnit("preconditions", parameters);
 	}
 
 	public boolean executeUnit(String unitName, Map<String, Object> parameters) {
 		// Create an engine and a rule application:
-		Engine engine = new EngineImpl();
-		UnitApplication unit = new UnitApplicationImpl(engine);
-		unit.setEGraph(graph);
+		final Engine engine = new EngineImpl();
+		final UnitApplication unit = new UnitApplicationImpl(engine);
+		unit.setEGraph(this.graph);
 
 		// Creating unit
-		unit.setUnit(module.getUnit(unitName));
+		unit.setUnit(this.module.getUnit(unitName));
 
-		for (String key : parameters.keySet()) {
-			unit.setParameterValue(key, parameters.get(key));
+		for ( final Entry<String, Object> entry : parameters.entrySet()) {
+			unit.setParameterValue(entry.getKey(), entry.getValue());
 		}
 		return unit.execute(null);
 

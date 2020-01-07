@@ -4,7 +4,7 @@
 #rule JavaAnnotation2Comment4SingleVariableDeclaration #extends JavaAnnotation2Comment_Abstract #with org.gravity.tgg.modisco.uml
 
 #source { 
-	++ annotation : MAnnotation {
+	++ annotation : Annotation {
 	}
 	variable : SingleVariableDeclaration {
 		++ -annotations-> annotation

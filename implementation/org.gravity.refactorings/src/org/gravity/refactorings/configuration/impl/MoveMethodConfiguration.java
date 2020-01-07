@@ -12,7 +12,8 @@ public class MoveMethodConfiguration extends MoveMemberConfiguration {
 	public MoveMethodConfiguration(TSignature member, TClass source, TClass target) {
 		super(member, source, target);
 	}
-	
+
+	@Override
 	public TMethodSignature getSignature() {
 		return (TMethodSignature) super.getSignature();
 	}

@@ -8,11 +8,12 @@ import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TSignature;
 
 public class PullUpMethodConfiguration extends PullUpMemberConfiguration {
-	
+
 	public PullUpMethodConfiguration(TSignature signature, TClass sourceClass) {
 		super(signature, sourceClass);
 	}
-	
+
+	@Override
 	public TMethodSignature getSignature() {
 		return (TMethodSignature) super.getSignature();
 	}

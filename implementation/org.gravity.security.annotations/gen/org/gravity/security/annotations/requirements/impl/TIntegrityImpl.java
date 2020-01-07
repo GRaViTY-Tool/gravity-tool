@@ -7,8 +7,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 import org.gravity.security.annotations.requirements.TIntegrity;
 
-import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>TIntegrity</b></em>'.
@@ -16,7 +14,7 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotationImpl;
  *
  * @generated
  */
-public class TIntegrityImpl extends TAnnotationImpl implements TIntegrity {
+public class TIntegrityImpl extends TAnnotationWithCounterMeasureImpl implements TIntegrity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

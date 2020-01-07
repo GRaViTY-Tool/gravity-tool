@@ -13,8 +13,6 @@ import org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>HMove Method</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

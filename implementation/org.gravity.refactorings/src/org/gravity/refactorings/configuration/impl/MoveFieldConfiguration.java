@@ -13,6 +13,7 @@ public class MoveFieldConfiguration extends MoveMemberConfiguration implements R
 		super(signature, source, target);
 	}
 
+	@Override
 	public TFieldSignature getSignature() {
 		return (TFieldSignature) super.getSignature();
 	}

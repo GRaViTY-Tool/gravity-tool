@@ -28,10 +28,10 @@ import org.gravity.hulk.refactoringgraph.HInBlobAccess;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HExtractClassImpl#getTMembers <em>TMembers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -70,6 +70,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMember> getTMembers() {
 		if (tMembers == null) {
 			tMembers = new EObjectResolvingEList<TMember>(TMember.class, this,
@@ -81,7 +82,7 @@ public class HExtractClassImpl extends HRefactoringImpl implements HExtractClass
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getAvgIba() {
 		// [user code injected with eMoflon]

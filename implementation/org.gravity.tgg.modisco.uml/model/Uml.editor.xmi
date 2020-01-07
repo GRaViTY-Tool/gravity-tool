@@ -240,7 +240,7 @@
     </sourcePatterns>
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <targetPatterns name="element">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
@@ -250,7 +250,7 @@
   <rules name="JavaAnnotation2Comment4SingleVariableDeclaration" supertypes="//@rules.2" schema="//@schema">
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </sourcePatterns>
     <sourcePatterns name="variable">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
@@ -278,7 +278,7 @@
     </sourcePatterns>
     <sourcePatterns name="annotation">
       <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
       <linkVariablePatterns target="//@rules.2/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation/type"/>

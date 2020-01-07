@@ -2,19 +2,19 @@ package org.gravity.hulk.ui;
 
 import org.eclipse.osgi.util.NLS;
 
-public class Messages extends NLS {
+public final class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.gravity.hulk.ui.messages"; //$NON-NLS-1$
-	public static String HulkScanHandler_0;
-	public static String HulkScanHandler_1;
-	public static String HulkScanHandler_10;
-	public static String HulkScanHandler_2;
-	public static String HulkScanHandler_3;
-	public static String HulkScanHandler_4;
-	public static String HulkScanHandler_5;
-	public static String HulkScanHandler_6;
-	public static String SaveAPsFailed;
-	public static String HulkScanHandler_8;
-	public static String HulkScanHandler_9;
+	public static String scan;
+	public static String apSelection;
+	public static String detect;
+	public static String select;
+	public static String noPM;
+	public static String unknownSelection;
+	public static String error;
+	public static String foundSmell;
+	public static String saveAPsFailed;
+	public static String nothingSelected;
+	public static String hulkAPDetection;
 
 	static {
 		// initialize resource bundle
@@ -22,5 +22,6 @@ public class Messages extends NLS {
 	}
 
 	private Messages() {
+		// This class shouldn't be instantiated
 	}
 }

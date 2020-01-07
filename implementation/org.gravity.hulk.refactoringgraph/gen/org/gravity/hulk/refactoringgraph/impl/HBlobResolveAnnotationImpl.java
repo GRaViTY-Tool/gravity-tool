@@ -36,12 +36,12 @@ import org.gravity.hulk.refactoringgraph.RefactoringgraphPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HBlobResolveAnnotationImpl#getHBlobAntiPattern <em>HBlob Anti Pattern</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HBlobResolveAnnotationImpl#getHMoves <em>HMoves</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HBlobResolveAnnotationImpl#getHRefactorings <em>HRefactorings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -100,6 +100,7 @@ public class HBlobResolveAnnotationImpl extends HAnnotationImpl implements HBlob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HBlobAntiPattern getHBlobAntiPattern() {
 		if (hBlobAntiPattern != null && hBlobAntiPattern.eIsProxy()) {
 			InternalEObject oldHBlobAntiPattern = (InternalEObject) hBlobAntiPattern;
@@ -128,6 +129,7 @@ public class HBlobResolveAnnotationImpl extends HAnnotationImpl implements HBlob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHBlobAntiPattern(HBlobAntiPattern newHBlobAntiPattern) {
 		HBlobAntiPattern oldHBlobAntiPattern = hBlobAntiPattern;
 		hBlobAntiPattern = newHBlobAntiPattern;
@@ -142,6 +144,7 @@ public class HBlobResolveAnnotationImpl extends HAnnotationImpl implements HBlob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HMoveMember> getHMoves() {
 		if (hMoves == null) {
 			hMoves = new EObjectResolvingEList<HMoveMember>(HMoveMember.class, this,
@@ -155,6 +158,7 @@ public class HBlobResolveAnnotationImpl extends HAnnotationImpl implements HBlob
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HRefactoring> getHRefactorings() {
 		if (hRefactorings == null) {
 			hRefactorings = new EObjectResolvingEList<HRefactoring>(HRefactoring.class, this,

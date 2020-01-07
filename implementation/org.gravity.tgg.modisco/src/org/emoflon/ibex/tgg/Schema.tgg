@@ -1,5 +1,5 @@
 // Add imports here
-//#import "platform:/plugin/org.eclipse.gmt.modisco.java/model/java.ecore"
+//#import "platform:/plugin/org.eclipse.modisco.java/model/java.ecore"
 //#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
 //#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
 #import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
@@ -18,11 +18,6 @@
 }
 
 #correspondence {
-	MParameterListToTParameterList {
-		#src->MParameterList
-		#trg->TParameterList
-	}
-
 	BooleanLiteralToTBoolNode {
 		#src->BooleanLiteral
 		#trg->TBoolNode
@@ -43,24 +38,9 @@
 		#trg->TClassNode
 	}
 
-	MFieldDefinitionToTFieldDefinition {
-		#src->MFieldDefinition
-		#trg->TFieldDefinition
-	}
-
-	MConstructorDefinitionToTParameterList {
-		#src->MConstructorDefinition
-		#trg->TParameterList
-	}
-
 	ClassDeclarationToTClass {
 		#src->ClassDeclaration
 		#trg->TClass
-	}
-
-	CompilationUnitToTypeGraph {
-		#src->CompilationUnit
-		#trg->TypeGraph
 	}
 
 	PackageToTPackage {
@@ -71,21 +51,6 @@
 	ModelToTypeGraph {
 		#src->Model
 		#trg->TypeGraph
-	}
-
-	MMethodDefinitionToTMethodDefinition {
-		#src->MMethodDefinition
-		#trg->TMethodDefinition
-	}
-
-	VariableDeclarationFragmentToTFieldDefinition {
-		#src->VariableDeclarationFragment
-		#trg->TFieldDefinition
-	}
-
-	AbstractMethodInvocationToTAccess {
-		#src->AbstractMethodInvocation
-		#trg->TAccess
 	}
 
 	InterfaceDeclarationToTInterface {
@@ -118,34 +83,14 @@
 		#trg->TMethod
 	}
 
-	MMethodSignatureToTMethodSignature {
-		#src->MMethodSignature
-		#trg->TMethodSignature
-	}
-
-	MMethodSignatureToTParameterList {
-		#src->MMethodSignature
-		#trg->TParameterList
-	}
-
 	MEntryToTParameter {
 		#src->MEntry
 		#trg->TParameter
 	}
 
-	BlockToTMethodDefinition {
-		#src->Block
-		#trg->TMethodDefinition
-	}
-
 	MSignatureToTSignature {
 		#src->MSignature
 		#trg->TSignature
-	}
-
-	MFieldSignatureToTFieldSignature {
-		#src->MFieldSignature
-		#trg->TFieldSignature
 	}
 
 	ASTNodeToTAnnotatable {
@@ -168,34 +113,14 @@
 		#trg->TTextAnnotation
 	}
 
-	MSignatureToTMethodSignature {
-		#src->MSignature
-		#trg->TMethodSignature
-	}
-
-	SingleVariableAccessToTAccess {
-		#src->SingleVariableAccess
+	MSingleVariableAccessToTAccess {
+		#src->MSingleVariableAccess
 		#trg->TAccess
 	}
 
-	ConstructorDeclarationToTMethodDefinition {
-		#src->ConstructorDeclaration
-		#trg->TMethodDefinition
-	}
-
 	AnnotationToTAnnotation {
-		#src->MAnnotation
+		#src->Annotation
 		#trg->TAnnotation
-	}
-
-	ConstructorDeclarationToTMethod {
-		#src->ConstructorDeclaration
-		#trg->TMethod
-	}
-
-	ConstructorDeclarationToTMethodSignature {
-		#src->ConstructorDeclaration
-		#trg->TMethodSignature
 	}
 
 	TypeParameterToTClass {
@@ -228,11 +153,6 @@
 		#trg->TAbstractType
 	}
 
-	ModifierToConstructorVisibility{
-		#src->Modifier
-		#trg->TConstructorDefinition
-	}
-
 	MModifierToTModifier{
 		#src->Modifier
 		#trg->TModifier
@@ -251,6 +171,26 @@
 	StaticTypeToAccessStaticType {
 		#src->Type
 		#trg->TCall
+	}
+	
+	MFlowToTFlow {
+		#src->MFlow
+		#trg->TFlow
+	}
+	
+	MAbstractFlowElementToTAbstractFlowElement {
+		#src->MAbstractFlowElement
+		#trg->TAbstractFlowElement
+	}
+	
+	AbstractMethodInvocationToTAccess {
+		#src->AbstractMethodInvocation
+		#trg->TAccess
+	}
+	
+	VariableDeclarationFragmentToTFieldDefinition {
+		#src->VariableDeclarationFragment
+		#trg->TFieldDefinition
 	}
 }
 

@@ -9,24 +9,32 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.gmt.modisco.java.ASTNode;
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.ConstructorDeclaration;
-import org.eclipse.gmt.modisco.java.Expression;
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.MethodDeclaration;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.Model;
-import org.eclipse.gmt.modisco.java.NamedElement;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeDeclaration;
+import org.eclipse.modisco.java.ASTNode;
+import org.eclipse.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AbstractTypeQualifiedExpression;
+import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.ClassInstanceCreation;
+import org.eclipse.modisco.java.ConstructorDeclaration;
+import org.eclipse.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.Expression;
+import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.MethodDeclaration;
+import org.eclipse.modisco.java.MethodInvocation;
+import org.eclipse.modisco.java.Model;
+import org.eclipse.modisco.java.NamedElement;
+import org.eclipse.modisco.java.SingleVariableAccess;
+import org.eclipse.modisco.java.SingleVariableDeclaration;
+import org.eclipse.modisco.java.Statement;
+import org.eclipse.modisco.java.SuperConstructorInvocation;
+import org.eclipse.modisco.java.SuperMethodInvocation;
+import org.eclipse.modisco.java.Type;
+import org.eclipse.modisco.java.TypeDeclaration;
+import org.eclipse.modisco.java.VariableDeclaration;
 
 import org.gravity.modisco.*;
 
@@ -91,6 +99,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMAbstractMethodDefinitionAdapter();
 			}
 			@Override
+			public Adapter caseMAccess(MAccess object) {
+				return createMAccessAdapter();
+			}
+			@Override
 			public Adapter caseMConstructorDefinition(MConstructorDefinition object) {
 				return createMConstructorDefinitionAdapter();
 			}
@@ -99,36 +111,36 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseMMethodSignature(MMethodSignature object) {
-				return createMMethodSignatureAdapter();
-			}
-			@Override
 			public Adapter caseMParameterList(MParameterList object) {
 				return createMParameterListAdapter();
-			}
-			@Override
-			public Adapter caseMName(MName object) {
-				return createMNameAdapter();
 			}
 			@Override
 			public Adapter caseMMethodName(MMethodName object) {
 				return createMMethodNameAdapter();
 			}
 			@Override
-			public Adapter caseMFieldName(MFieldName object) {
-				return createMFieldNameAdapter();
-			}
-			@Override
-			public Adapter caseMFieldDefinition(MFieldDefinition object) {
-				return createMFieldDefinitionAdapter();
+			public Adapter caseMMethodSignature(MMethodSignature object) {
+				return createMMethodSignatureAdapter();
 			}
 			@Override
 			public Adapter caseMMethodDefinition(MMethodDefinition object) {
 				return createMMethodDefinitionAdapter();
 			}
 			@Override
-			public Adapter caseMMethodInvocation(MMethodInvocation object) {
-				return createMMethodInvocationAdapter();
+			public Adapter caseMName(MName object) {
+				return createMNameAdapter();
+			}
+			@Override
+			public Adapter caseMFieldName(MFieldName object) {
+				return createMFieldNameAdapter();
+			}
+			@Override
+			public Adapter caseMFieldSignature(MFieldSignature object) {
+				return createMFieldSignatureAdapter();
+			}
+			@Override
+			public Adapter caseMFieldDefinition(MFieldDefinition object) {
+				return createMFieldDefinitionAdapter();
 			}
 			@Override
 			public Adapter caseMSignature(MSignature object) {
@@ -143,12 +155,8 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createMGravityModelAdapter();
 			}
 			@Override
-			public Adapter caseMFieldSignature(MFieldSignature object) {
-				return createMFieldSignatureAdapter();
-			}
-			@Override
-			public Adapter caseMAnnotation(MAnnotation object) {
-				return createMAnnotationAdapter();
+			public Adapter caseMethodInvocationStaticType(MethodInvocationStaticType object) {
+				return createMethodInvocationStaticTypeAdapter();
 			}
 			@Override
 			public Adapter caseMSyntheticMethodDefinition(MSyntheticMethodDefinition object) {
@@ -165,6 +173,46 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMExtension(MExtension object) {
 				return createMExtensionAdapter();
+			}
+			@Override
+			public Adapter caseMFlow(MFlow object) {
+				return createMFlowAdapter();
+			}
+			@Override
+			public Adapter caseMAbstractFlowElement(MAbstractFlowElement object) {
+				return createMAbstractFlowElementAdapter();
+			}
+			@Override
+			public Adapter caseMSingleVariableAccess(MSingleVariableAccess object) {
+				return createMSingleVariableAccessAdapter();
+			}
+			@Override
+			public Adapter caseMMethodInvocation(MMethodInvocation object) {
+				return createMMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseMConstructorInvocation(MConstructorInvocation object) {
+				return createMConstructorInvocationAdapter();
+			}
+			@Override
+			public Adapter caseMSingleVariableDeclaration(MSingleVariableDeclaration object) {
+				return createMSingleVariableDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseMAbstractMethodInvocation(MAbstractMethodInvocation object) {
+				return createMAbstractMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseMSuperMethodInvocation(MSuperMethodInvocation object) {
+				return createMSuperMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseMClassInstanceCreation(MClassInstanceCreation object) {
+				return createMClassInstanceCreationAdapter();
+			}
+			@Override
+			public Adapter caseMSuperConstructorInvocation(MSuperConstructorInvocation object) {
+				return createMSuperConstructorInvocationAdapter();
 			}
 			@Override
 			public Adapter caseASTNode(ASTNode object) {
@@ -187,6 +235,10 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createConstructorDeclarationAdapter();
 			}
 			@Override
+			public Adapter caseMethodDeclaration(MethodDeclaration object) {
+				return createMethodDeclarationAdapter();
+			}
+			@Override
 			public Adapter caseAbstractVariablesContainer(AbstractVariablesContainer object) {
 				return createAbstractVariablesContainerAdapter();
 			}
@@ -195,28 +247,8 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 				return createFieldDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseMethodDeclaration(MethodDeclaration object) {
-				return createMethodDeclarationAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseAbstractMethodInvocation(AbstractMethodInvocation object) {
-				return createAbstractMethodInvocationAdapter();
-			}
-			@Override
-			public Adapter caseMethodInvocation(MethodInvocation object) {
-				return createMethodInvocationAdapter();
-			}
-			@Override
 			public Adapter caseModel(Model object) {
 				return createModelAdapter();
-			}
-			@Override
-			public Adapter caseAnnotation(Annotation object) {
-				return createAnnotationAdapter();
 			}
 			@Override
 			public Adapter caseAnonymousClassDeclaration(AnonymousClassDeclaration object) {
@@ -237,6 +269,54 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClassDeclaration(ClassDeclaration object) {
 				return createClassDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseSingleVariableAccess(SingleVariableAccess object) {
+				return createSingleVariableAccessAdapter();
+			}
+			@Override
+			public Adapter caseAbstractMethodInvocation(AbstractMethodInvocation object) {
+				return createAbstractMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseMethodInvocation(MethodInvocation object) {
+				return createMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseStatement(Statement object) {
+				return createStatementAdapter();
+			}
+			@Override
+			public Adapter caseConstructorInvocation(ConstructorInvocation object) {
+				return createConstructorInvocationAdapter();
+			}
+			@Override
+			public Adapter caseVariableDeclaration(VariableDeclaration object) {
+				return createVariableDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseSingleVariableDeclaration(SingleVariableDeclaration object) {
+				return createSingleVariableDeclarationAdapter();
+			}
+			@Override
+			public Adapter caseAbstractTypeQualifiedExpression(AbstractTypeQualifiedExpression object) {
+				return createAbstractTypeQualifiedExpressionAdapter();
+			}
+			@Override
+			public Adapter caseSuperMethodInvocation(SuperMethodInvocation object) {
+				return createSuperMethodInvocationAdapter();
+			}
+			@Override
+			public Adapter caseClassInstanceCreation(ClassInstanceCreation object) {
+				return createClassInstanceCreationAdapter();
+			}
+			@Override
+			public Adapter caseSuperConstructorInvocation(SuperConstructorInvocation object) {
+				return createSuperConstructorInvocationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -273,6 +353,20 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAccess <em>MAccess</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MAccess
+	 * @generated
+	 */
+	public Adapter createMAccessAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MConstructorDefinition <em>MConstructor Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -301,20 +395,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MMethodSignature <em>MMethod Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.modisco.MMethodSignature
-	 * @generated
-	 */
-	public Adapter createMMethodSignatureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MParameterList <em>MParameter List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -325,20 +405,6 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMParameterListAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MName <em>MName</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.modisco.MName
-	 * @generated
-	 */
-	public Adapter createMNameAdapter() {
 		return null;
 	}
 
@@ -357,30 +423,16 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldName <em>MField Name</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MMethodSignature <em>MMethod Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.modisco.MFieldName
+	 * @see org.gravity.modisco.MMethodSignature
 	 * @generated
 	 */
-	public Adapter createMFieldNameAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldDefinition <em>MField Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.modisco.MFieldDefinition
-	 * @generated
-	 */
-	public Adapter createMFieldDefinitionAdapter() {
+	public Adapter createMMethodSignatureAdapter() {
 		return null;
 	}
 
@@ -399,16 +451,58 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MMethodInvocation <em>MMethod Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MName <em>MName</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.modisco.MMethodInvocation
+	 * @see org.gravity.modisco.MName
 	 * @generated
 	 */
-	public Adapter createMMethodInvocationAdapter() {
+	public Adapter createMNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldName <em>MField Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MFieldName
+	 * @generated
+	 */
+	public Adapter createMFieldNameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldSignature <em>MField Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MFieldSignature
+	 * @generated
+	 */
+	public Adapter createMFieldSignatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldDefinition <em>MField Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MFieldDefinition
+	 * @generated
+	 */
+	public Adapter createMFieldDefinitionAdapter() {
 		return null;
 	}
 
@@ -455,30 +549,16 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFieldSignature <em>MField Signature</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MethodInvocationStaticType <em>Method Invocation Static Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gravity.modisco.MFieldSignature
+	 * @see org.gravity.modisco.MethodInvocationStaticType
 	 * @generated
 	 */
-	public Adapter createMFieldSignatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAnnotation <em>MAnnotation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gravity.modisco.MAnnotation
-	 * @generated
-	 */
-	public Adapter createMAnnotationAdapter() {
+	public Adapter createMethodInvocationStaticTypeAdapter() {
 		return null;
 	}
 
@@ -539,13 +619,153 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.ASTNode <em>AST Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MFlow <em>MFlow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.ASTNode
+	 * @see org.gravity.modisco.MFlow
+	 * @generated
+	 */
+	public Adapter createMFlowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAbstractFlowElement <em>MAbstract Flow Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MAbstractFlowElement
+	 * @generated
+	 */
+	public Adapter createMAbstractFlowElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MSingleVariableAccess <em>MSingle Variable Access</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MSingleVariableAccess
+	 * @generated
+	 */
+	public Adapter createMSingleVariableAccessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MMethodInvocation <em>MMethod Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MMethodInvocation
+	 * @generated
+	 */
+	public Adapter createMMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MConstructorInvocation <em>MConstructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MConstructorInvocation
+	 * @generated
+	 */
+	public Adapter createMConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MSingleVariableDeclaration <em>MSingle Variable Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MSingleVariableDeclaration
+	 * @generated
+	 */
+	public Adapter createMSingleVariableDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MAbstractMethodInvocation <em>MAbstract Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MAbstractMethodInvocation
+	 * @generated
+	 */
+	public Adapter createMAbstractMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MSuperMethodInvocation <em>MSuper Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MSuperMethodInvocation
+	 * @generated
+	 */
+	public Adapter createMSuperMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MClassInstanceCreation <em>MClass Instance Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MClassInstanceCreation
+	 * @generated
+	 */
+	public Adapter createMClassInstanceCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.modisco.MSuperConstructorInvocation <em>MSuper Constructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.modisco.MSuperConstructorInvocation
+	 * @generated
+	 */
+	public Adapter createMSuperConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ASTNode <em>AST Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.ASTNode
 	 * @generated
 	 */
 	public Adapter createASTNodeAdapter() {
@@ -553,13 +773,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.NamedElement
+	 * @see org.eclipse.modisco.java.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -567,13 +787,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.BodyDeclaration <em>Body Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.BodyDeclaration <em>Body Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.BodyDeclaration
+	 * @see org.eclipse.modisco.java.BodyDeclaration
 	 * @generated
 	 */
 	public Adapter createBodyDeclarationAdapter() {
@@ -581,13 +801,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.AbstractMethodDeclaration <em>Abstract Method Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AbstractMethodDeclaration <em>Abstract Method Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.AbstractMethodDeclaration
+	 * @see org.eclipse.modisco.java.AbstractMethodDeclaration
 	 * @generated
 	 */
 	public Adapter createAbstractMethodDeclarationAdapter() {
@@ -595,13 +815,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.ConstructorDeclaration <em>Constructor Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ConstructorDeclaration <em>Constructor Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.ConstructorDeclaration
+	 * @see org.eclipse.modisco.java.ConstructorDeclaration
 	 * @generated
 	 */
 	public Adapter createConstructorDeclarationAdapter() {
@@ -609,41 +829,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.AbstractVariablesContainer <em>Abstract Variables Container</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.MethodDeclaration <em>Method Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.AbstractVariablesContainer
-	 * @generated
-	 */
-	public Adapter createAbstractVariablesContainerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.FieldDeclaration <em>Field Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.FieldDeclaration
-	 * @generated
-	 */
-	public Adapter createFieldDeclarationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.MethodDeclaration <em>Method Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.MethodDeclaration
+	 * @see org.eclipse.modisco.java.MethodDeclaration
 	 * @generated
 	 */
 	public Adapter createMethodDeclarationAdapter() {
@@ -651,55 +843,41 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.Expression <em>Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AbstractVariablesContainer <em>Abstract Variables Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.Expression
+	 * @see org.eclipse.modisco.java.AbstractVariablesContainer
 	 * @generated
 	 */
-	public Adapter createExpressionAdapter() {
+	public Adapter createAbstractVariablesContainerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.AbstractMethodInvocation <em>Abstract Method Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.FieldDeclaration <em>Field Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.AbstractMethodInvocation
+	 * @see org.eclipse.modisco.java.FieldDeclaration
 	 * @generated
 	 */
-	public Adapter createAbstractMethodInvocationAdapter() {
+	public Adapter createFieldDeclarationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.MethodInvocation <em>Method Invocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.MethodInvocation
-	 * @generated
-	 */
-	public Adapter createMethodInvocationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.Model <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.Model
+	 * @see org.eclipse.modisco.java.Model
 	 * @generated
 	 */
 	public Adapter createModelAdapter() {
@@ -707,27 +885,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.Annotation <em>Annotation</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AnonymousClassDeclaration <em>Anonymous Class Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.Annotation
-	 * @generated
-	 */
-	public Adapter createAnnotationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.AnonymousClassDeclaration <em>Anonymous Class Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.AnonymousClassDeclaration
+	 * @see org.eclipse.modisco.java.AnonymousClassDeclaration
 	 * @generated
 	 */
 	public Adapter createAnonymousClassDeclarationAdapter() {
@@ -735,13 +899,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.Type <em>Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.Type
+	 * @see org.eclipse.modisco.java.Type
 	 * @generated
 	 */
 	public Adapter createTypeAdapter() {
@@ -749,13 +913,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.AbstractTypeDeclaration <em>Abstract Type Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AbstractTypeDeclaration <em>Abstract Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.AbstractTypeDeclaration
+	 * @see org.eclipse.modisco.java.AbstractTypeDeclaration
 	 * @generated
 	 */
 	public Adapter createAbstractTypeDeclarationAdapter() {
@@ -763,13 +927,13 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.TypeDeclaration <em>Type Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.TypeDeclaration <em>Type Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.TypeDeclaration
+	 * @see org.eclipse.modisco.java.TypeDeclaration
 	 * @generated
 	 */
 	public Adapter createTypeDeclarationAdapter() {
@@ -777,16 +941,184 @@ public class ModiscoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmt.modisco.java.ClassDeclaration <em>Class Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ClassDeclaration <em>Class Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gmt.modisco.java.ClassDeclaration
+	 * @see org.eclipse.modisco.java.ClassDeclaration
 	 * @generated
 	 */
 	public Adapter createClassDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.SingleVariableAccess <em>Single Variable Access</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.SingleVariableAccess
+	 * @generated
+	 */
+	public Adapter createSingleVariableAccessAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AbstractMethodInvocation <em>Abstract Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.AbstractMethodInvocation
+	 * @generated
+	 */
+	public Adapter createAbstractMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.MethodInvocation <em>Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.MethodInvocation
+	 * @generated
+	 */
+	public Adapter createMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.Statement
+	 * @generated
+	 */
+	public Adapter createStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ConstructorInvocation <em>Constructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.ConstructorInvocation
+	 * @generated
+	 */
+	public Adapter createConstructorInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.VariableDeclaration <em>Variable Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.VariableDeclaration
+	 * @generated
+	 */
+	public Adapter createVariableDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.SingleVariableDeclaration <em>Single Variable Declaration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.SingleVariableDeclaration
+	 * @generated
+	 */
+	public Adapter createSingleVariableDeclarationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.AbstractTypeQualifiedExpression <em>Abstract Type Qualified Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.AbstractTypeQualifiedExpression
+	 * @generated
+	 */
+	public Adapter createAbstractTypeQualifiedExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.SuperMethodInvocation <em>Super Method Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.SuperMethodInvocation
+	 * @generated
+	 */
+	public Adapter createSuperMethodInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.ClassInstanceCreation <em>Class Instance Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.ClassInstanceCreation
+	 * @generated
+	 */
+	public Adapter createClassInstanceCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.modisco.java.SuperConstructorInvocation <em>Super Constructor Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.modisco.java.SuperConstructorInvocation
+	 * @generated
+	 */
+	public Adapter createSuperConstructorInvocationAdapter() {
 		return null;
 	}
 

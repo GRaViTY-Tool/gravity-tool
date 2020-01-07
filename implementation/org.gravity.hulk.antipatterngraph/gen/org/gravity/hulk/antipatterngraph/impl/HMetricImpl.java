@@ -98,7 +98,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
@@ -142,7 +143,8 @@ public abstract class HMetricImpl extends HAnnotationImpl implements HMetric {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */

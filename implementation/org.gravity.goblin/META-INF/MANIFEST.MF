@@ -26,7 +26,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gravity.hulk.annotations,
  org.gravity.hulk,
  org.eclipse.emf.henshin.interpreter,
- org.eclipse.emf.henshin.interpreter.ui
+ org.eclipse.emf.henshin.interpreter.ui,
+ org.gravity.security.annotations
 Bundle-ActivationPolicy: lazy
 Export-Package: com.beust.jcommander;uses:="com.beust.jcommander.internal",
  com.beust.jcommander.converters,

@@ -5,15 +5,15 @@ Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.gravity.typegraph.basic,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse;visibility:=reexport,
- org.emoflon.ibex.tgg.runtime.democles,
- org.emoflon.ibex.tgg.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.gravity.modisco,
- org.eclipse.modisco.infra.discovery.core,
- org.eclipse.gmt.modisco.java.generation,
- org.emoflon.ibex.tgg.core.language,
- org.emoflon.ibex.tgg.ui.debug
+ org.emoflon.ibex.tgg.core.runtime;visibility:=reexport,
+ org.emoflon.ibex.tgg.runtime.democles;visibility:=reexport,
+ org.emoflon.ibex.tgg.core.language;visibility:=reexport,
+ org.emoflon.ibex.tgg.ui.debug.adapter;visibility:=reexport,
+ org.emoflon.ibex.tgg.ui.debug;visibility:=reexport,
+ org.eclipse.modisco.java.generation
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
@@ -24,8 +24,6 @@ Export-Package: org.emoflon.ibex.tgg,
  org.emoflon.ibex.tgg.operational.csp.constraints.custom.modisco,
  org.emoflon.ibex.tgg.operational.csp.constraints.factories.modisco,
  org.emoflon.ibex.tgg.rules,
- org.emoflon.ibex.tgg.run.modisco,
- org.emoflon.ibex.tgg.run.modisco.debug,
  org.gravity.tgg.modisco,
  org.gravity.tgg.modisco.processing.modisco,
  org.gravity.tgg.modisco.processing.pg

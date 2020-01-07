@@ -2,8 +2,6 @@
  */
 package org.gravity.hulk.refactoringgraph.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -39,12 +37,12 @@ import org.gravity.hulk.antipatterngraph.values.ValuesFactory;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HMethodToDataClassAccessImpl#getHDataClassSmell <em>HData Class Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HMethodToDataClassAccessImpl#getHDataClass <em>HData Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HMethodToDataClassAccessImpl#getTMethodDefinition <em>TMethod Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -103,6 +101,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HDataClassSmell getHDataClassSmell() {
 		if (hDataClassSmell != null && hDataClassSmell.eIsProxy()) {
 			InternalEObject oldHDataClassSmell = (InternalEObject) hDataClassSmell;
@@ -131,6 +130,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHDataClassSmell(HDataClassSmell newHDataClassSmell) {
 		HDataClassSmell oldHDataClassSmell = hDataClassSmell;
 		hDataClassSmell = newHDataClassSmell;
@@ -145,6 +145,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getHDataClass() {
 		if (hDataClass != null && hDataClass.eIsProxy()) {
 			InternalEObject oldHDataClass = (InternalEObject) hDataClass;
@@ -173,6 +174,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHDataClass(TClass newHDataClass) {
 		TClass oldHDataClass = hDataClass;
 		hDataClass = newHDataClass;
@@ -186,6 +188,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TMember getTMethodDefinition() {
 		if (tMethodDefinition != null && tMethodDefinition.eIsProxy()) {
 			InternalEObject oldTMethodDefinition = (InternalEObject) tMethodDefinition;
@@ -214,6 +217,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTMethodDefinition(TMember newTMethodDefinition) {
 		TMember oldTMethodDefinition = tMethodDefinition;
 		tMethodDefinition = newTMethodDefinition;
@@ -226,7 +230,7 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
@@ -350,19 +354,6 @@ public class HMethodToDataClassAccessImpl extends HMetricImpl implements HMethod
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case RefactoringgraphPackage.HMETHOD_TO_DATA_CLASS_ACCESS___GET_RELATIVE_AMOUNT:
-			return getRelativeAmount();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
 	// <-- [user code injected with eMoflon]
 
 	@Override

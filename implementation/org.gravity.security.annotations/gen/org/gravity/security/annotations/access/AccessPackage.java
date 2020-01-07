@@ -38,7 +38,7 @@ public interface AccessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/org.gravity.security.annotations/model/Annotations.ecore#/access";
+	String eNS_URI = "http://gravity-tool.org/typegraph/annotations/security#/access";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +46,7 @@ public interface AccessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "access";
+	String eNS_PREFIX = "org.gravity.security.annotations.access";
 
 	/**
 	 * The singleton instance of the package.

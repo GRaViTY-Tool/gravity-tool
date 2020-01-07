@@ -6,30 +6,34 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ eNestedType : EnumDeclaration {
-}
+	++eNestedType:EnumDeclaration
 }
 
 #target {
-typeGraph : TypeGraph {
-	++  -ownedTypes -> tNestedType
-	++  -classes -> tNestedType
-}
-++ tNestedType : TClass {
-}
-++ tNestedPackage : TPackage {
-	++  -ownedTypes -> tNestedType
-	++  -classes -> tNestedType
-}
+	typeGraph:TypeGraph {
+		++  -ownedTypes -> tNestedType
+		++  -classes -> tNestedType
+	}
+
+	++tNestedType:TClass {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TEnum
+
+	++tNestedPackage:TPackage {
+		++  -ownedTypes -> tNestedType
+		++  -classes -> tNestedType
+	}
 }
 
 #correspondence {
-++ eNestedTypeToTNestedType : TypeToTAbstractType {
-	#src->eNestedType
-	#trg->tNestedType
-}
+	++ eNestedTypeToTNestedType :TypeToTAbstractType {
+		#src->eNestedType
+		#trg->tNestedType
+	}
 }
 
 #attributeConditions {
-	addPrefix("%ENUM%", eNestedType.name, tNestedType.tName)
+	eq_string(eNestedType.name, tNestedType.tName)
 }

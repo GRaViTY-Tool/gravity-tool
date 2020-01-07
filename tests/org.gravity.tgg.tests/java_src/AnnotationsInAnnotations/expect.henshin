@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_k4omwNYWEemun7zQRodfyA">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_lqBAYNYWEemun7zQRodfyA" name="expect">
+    <lhs xmi:id="_lqObwNYWEemun7zQRodfyA" name="Lhs">
+      <nodes xmi:id="_nzPWsNYWEemun7zQRodfyA" incoming="_x6SfMNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
+        <attributes xmi:id="_rG_mcNYWEemun7zQRodfyA" value="&quot;OuterAnnotation&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_n6DwYNYWEemun7zQRodfyA" incoming="_20z4cNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
+        <attributes xmi:id="_pqVbMNYWEemun7zQRodfyA" value="&quot;InnerAnnotation&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_o1IRgNYWEemun7zQRodfyA" outgoing="_xlLx4NYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_tTViMNYWEemun7zQRodfyA" value="&quot;Clazz&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_wjBxUNYWEemun7zQRodfyA" incoming="_xlLx4NYWEemun7zQRodfyA" outgoing="_x6SfMNYWEemun7zQRodfyA _9CXm4NYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      </nodes>
+      <nodes xmi:id="_wtKkwNYWEemun7zQRodfyA" incoming="_8aaPANYWEemun7zQRodfyA" outgoing="_20z4cNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      </nodes>
+      <nodes xmi:id="_5qcBwNYWEemun7zQRodfyA" incoming="_9CXm4NYWEemun7zQRodfyA" outgoing="_8aaPANYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
+      </nodes>
+      <edges xmi:id="_xlLx4NYWEemun7zQRodfyA" source="_o1IRgNYWEemun7zQRodfyA" target="_wjBxUNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_x6SfMNYWEemun7zQRodfyA" source="_wjBxUNYWEemun7zQRodfyA" target="_nzPWsNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/type"/>
+      </edges>
+      <edges xmi:id="_20z4cNYWEemun7zQRodfyA" source="_wtKkwNYWEemun7zQRodfyA" target="_n6DwYNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/type"/>
+      </edges>
+      <edges xmi:id="_8aaPANYWEemun7zQRodfyA" source="_5qcBwNYWEemun7zQRodfyA" target="_wtKkwNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
+      </edges>
+      <edges xmi:id="_9CXm4NYWEemun7zQRodfyA" source="_wjBxUNYWEemun7zQRodfyA" target="_5qcBwNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tValues"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_lqPC0NYWEemun7zQRodfyA" name="Rhs">
+      <nodes xmi:id="_nzPWsdYWEemun7zQRodfyA" incoming="_x6TGQNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
+        <attributes xmi:id="_rHANgNYWEemun7zQRodfyA" value="&quot;OuterAnnotation&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_n6EXcNYWEemun7zQRodfyA" incoming="_20z4cdYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationType"/>
+        <attributes xmi:id="_pqWCQNYWEemun7zQRodfyA" value="&quot;InnerAnnotation&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_o1IRgdYWEemun7zQRodfyA" outgoing="_xlMY8NYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_tTViMdYWEemun7zQRodfyA" value="&quot;Clazz&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_wjCYYNYWEemun7zQRodfyA" incoming="_xlMY8NYWEemun7zQRodfyA" outgoing="_x6TGQNYWEemun7zQRodfyA _9CYN8NYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      </nodes>
+      <nodes xmi:id="_wtKkwdYWEemun7zQRodfyA" incoming="_8aa2ENYWEemun7zQRodfyA" outgoing="_20z4cdYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation"/>
+      </nodes>
+      <nodes xmi:id="_5qcBwdYWEemun7zQRodfyA" incoming="_9CYN8NYWEemun7zQRodfyA" outgoing="_8aa2ENYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue"/>
+      </nodes>
+      <edges xmi:id="_xlMY8NYWEemun7zQRodfyA" source="_o1IRgdYWEemun7zQRodfyA" target="_wjCYYNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_x6TGQNYWEemun7zQRodfyA" source="_wjCYYNYWEemun7zQRodfyA" target="_nzPWsdYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/type"/>
+      </edges>
+      <edges xmi:id="_20z4cdYWEemun7zQRodfyA" source="_wtKkwdYWEemun7zQRodfyA" target="_n6EXcNYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/type"/>
+      </edges>
+      <edges xmi:id="_8aa2ENYWEemun7zQRodfyA" source="_5qcBwdYWEemun7zQRodfyA" target="_wtKkwdYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotationValue/tValue"/>
+      </edges>
+      <edges xmi:id="_9CYN8NYWEemun7zQRodfyA" source="_wjCYYNYWEemun7zQRodfyA" target="_5qcBwdYWEemun7zQRodfyA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tValues"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_nzPWstYWEemun7zQRodfyA" origin="_nzPWsNYWEemun7zQRodfyA" image="_nzPWsdYWEemun7zQRodfyA"/>
+    <mappings xmi:id="_n6EXcdYWEemun7zQRodfyA" origin="_n6DwYNYWEemun7zQRodfyA" image="_n6EXcNYWEemun7zQRodfyA"/>
+    <mappings xmi:id="_o1IRgtYWEemun7zQRodfyA" origin="_o1IRgNYWEemun7zQRodfyA" image="_o1IRgdYWEemun7zQRodfyA"/>
+    <mappings xmi:id="_wjCYYdYWEemun7zQRodfyA" origin="_wjBxUNYWEemun7zQRodfyA" image="_wjCYYNYWEemun7zQRodfyA"/>
+    <mappings xmi:id="_wtKkwtYWEemun7zQRodfyA" origin="_wtKkwNYWEemun7zQRodfyA" image="_wtKkwdYWEemun7zQRodfyA"/>
+    <mappings xmi:id="_5qco0NYWEemun7zQRodfyA" origin="_5qcBwNYWEemun7zQRodfyA" image="_5qcBwdYWEemun7zQRodfyA"/>
+  </units>
+</henshin:Module>

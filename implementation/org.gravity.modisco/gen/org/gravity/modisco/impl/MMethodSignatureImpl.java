@@ -14,15 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.Type;
 
-import org.gravity.modisco.MGravityModel;
-import org.gravity.modisco.MMethodDefinition;
-import org.gravity.modisco.MMethodName;
+import org.gravity.modisco.MEntry;
 import org.gravity.modisco.MMethodSignature;
 import org.gravity.modisco.MParameterList;
 import org.gravity.modisco.ModiscoPackage;
@@ -35,25 +32,33 @@ import org.gravity.modisco.ModiscoPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getModel <em>Model</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getMMethodName <em>MMethod Name</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getMFirstEntry <em>MFirst Entry</em>}</li>
+ *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getMEntrys <em>MEntrys</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getMMethodDefinitions <em>MMethod Definitions</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MMethodSignatureImpl#getMParameterList <em>MParameter List</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSignature {
 	/**
-	 * The cached value of the '{@link #getMMethodName() <em>MMethod Name</em>}' reference.
+	 * The cached value of the '{@link #getMFirstEntry() <em>MFirst Entry</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMMethodName()
+	 * @see #getMFirstEntry()
 	 * @generated
 	 * @ordered
 	 */
-	protected MMethodName mMethodName;
+	protected MEntry mFirstEntry;
+
+	/**
+	 * The cached value of the '{@link #getMEntrys() <em>MEntrys</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMEntrys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MEntry> mEntrys;
 
 	/**
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
@@ -64,26 +69,6 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * @ordered
 	 */
 	protected Type returnType;
-
-	/**
-	 * The cached value of the '{@link #getMMethodDefinitions() <em>MMethod Definitions</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMMethodDefinitions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MMethodDefinition> mMethodDefinitions;
-
-	/**
-	 * The cached value of the '{@link #getMParameterList() <em>MParameter List</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMParameterList()
-	 * @generated
-	 * @ordered
-	 */
-	protected MParameterList mParameterList;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,57 +94,16 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MGravityModel getModel() {
-		if (eContainerFeatureID() != ModiscoPackage.MMETHOD_SIGNATURE__MODEL) return null;
-		return (MGravityModel)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetModel(MGravityModel newModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newModel, ModiscoPackage.MMETHOD_SIGNATURE__MODEL, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModel(MGravityModel newModel) {
-		if (newModel != eInternalContainer() || (eContainerFeatureID() != ModiscoPackage.MMETHOD_SIGNATURE__MODEL && newModel != null)) {
-			if (EcoreUtil.isAncestor(this, newModel))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newModel != null)
-				msgs = ((InternalEObject)newModel).eInverseAdd(this, ModiscoPackage.MGRAVITY_MODEL__MMETHOD_SIGNATURES, MGravityModel.class, msgs);
-			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MODEL, newModel, newModel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MMethodName getMMethodName() {
-		if (mMethodName != null && mMethodName.eIsProxy()) {
-			InternalEObject oldMMethodName = (InternalEObject)mMethodName;
-			mMethodName = (MMethodName)eResolveProxy(oldMMethodName);
-			if (mMethodName != oldMMethodName) {
+	public MEntry getMFirstEntry() {
+		if (mFirstEntry != null && mFirstEntry.eIsProxy()) {
+			InternalEObject oldMFirstEntry = (InternalEObject)mFirstEntry;
+			mFirstEntry = (MEntry)eResolveProxy(oldMFirstEntry);
+			if (mFirstEntry != oldMFirstEntry) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME, oldMMethodName, mMethodName));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY, oldMFirstEntry, mFirstEntry));
 			}
 		}
-		return mMethodName;
+		return mFirstEntry;
 	}
 
 	/**
@@ -167,8 +111,8 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MMethodName basicGetMMethodName() {
-		return mMethodName;
+	public MEntry basicGetMFirstEntry() {
+		return mFirstEntry;
 	}
 
 	/**
@@ -176,33 +120,23 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMMethodName(MMethodName newMMethodName, NotificationChain msgs) {
-		MMethodName oldMMethodName = mMethodName;
-		mMethodName = newMMethodName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME, oldMMethodName, newMMethodName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public void setMFirstEntry(MEntry newMFirstEntry) {
+		MEntry oldMFirstEntry = mFirstEntry;
+		mFirstEntry = newMFirstEntry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY, oldMFirstEntry, mFirstEntry));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MEntry> getMEntrys() {
+		if (mEntrys == null) {
+			mEntrys = new EObjectContainmentEList<MEntry>(MEntry.class, this, ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMMethodName(MMethodName newMMethodName) {
-		if (newMMethodName != mMethodName) {
-			NotificationChain msgs = null;
-			if (mMethodName != null)
-				msgs = ((InternalEObject)mMethodName).eInverseRemove(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_SIGNATURES, MMethodName.class, msgs);
-			if (newMMethodName != null)
-				msgs = ((InternalEObject)newMMethodName).eInverseAdd(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_SIGNATURES, MMethodName.class, msgs);
-			msgs = basicSetMMethodName(newMMethodName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME, newMMethodName, newMMethodName));
+		return mEntrys;
 	}
 
 	/**
@@ -248,95 +182,11 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MMethodDefinition> getMMethodDefinitions() {
-		if (mMethodDefinitions == null) {
-			mMethodDefinitions = new EObjectWithInverseResolvingEList<MMethodDefinition>(MMethodDefinition.class, this, ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS, ModiscoPackage.MMETHOD_DEFINITION__MMETHOD_SIGNATURE);
-		}
-		return mMethodDefinitions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MParameterList getMParameterList() {
-		return mParameterList;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMParameterList(MParameterList newMParameterList, NotificationChain msgs) {
-		MParameterList oldMParameterList = mParameterList;
-		mParameterList = newMParameterList;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST, oldMParameterList, newMParameterList);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMParameterList(MParameterList newMParameterList) {
-		if (newMParameterList != mParameterList) {
-			NotificationChain msgs = null;
-			if (mParameterList != null)
-				msgs = ((InternalEObject)mParameterList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST, null, msgs);
-			if (newMParameterList != null)
-				msgs = ((InternalEObject)newMParameterList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST, null, msgs);
-			msgs = basicSetMParameterList(newMParameterList, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST, newMParameterList, newMParameterList));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetModel((MGravityModel)otherEnd, msgs);
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				if (mMethodName != null)
-					msgs = ((InternalEObject)mMethodName).eInverseRemove(this, ModiscoPackage.MMETHOD_NAME__MMETHOD_SIGNATURES, MMethodName.class, msgs);
-				return basicSetMMethodName((MMethodName)otherEnd, msgs);
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMMethodDefinitions()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				return basicSetModel(null, msgs);
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				return basicSetMMethodName(null, msgs);
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				return ((InternalEList<?>)getMMethodDefinitions()).basicRemove(otherEnd, msgs);
-			case ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST:
-				return basicSetMParameterList(null, msgs);
+			case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS:
+				return ((InternalEList<?>)getMEntrys()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -347,34 +197,16 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				return eInternalContainer().eInverseRemove(this, ModiscoPackage.MGRAVITY_MODEL__MMETHOD_SIGNATURES, MGravityModel.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				return getModel();
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				if (resolve) return getMMethodName();
-				return basicGetMMethodName();
+			case ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY:
+				if (resolve) return getMFirstEntry();
+				return basicGetMFirstEntry();
+			case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS:
+				return getMEntrys();
 			case ModiscoPackage.MMETHOD_SIGNATURE__RETURN_TYPE:
 				if (resolve) return getReturnType();
 				return basicGetReturnType();
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				return getMMethodDefinitions();
-			case ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST:
-				return getMParameterList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -388,21 +220,15 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				setModel((MGravityModel)newValue);
+			case ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY:
+				setMFirstEntry((MEntry)newValue);
 				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				setMMethodName((MMethodName)newValue);
+			case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS:
+				getMEntrys().clear();
+				getMEntrys().addAll((Collection<? extends MEntry>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((Type)newValue);
-				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				getMMethodDefinitions().clear();
-				getMMethodDefinitions().addAll((Collection<? extends MMethodDefinition>)newValue);
-				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST:
-				setMParameterList((MParameterList)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -416,20 +242,14 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				setModel((MGravityModel)null);
+			case ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY:
+				setMFirstEntry((MEntry)null);
 				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				setMMethodName((MMethodName)null);
+			case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS:
+				getMEntrys().clear();
 				return;
 			case ModiscoPackage.MMETHOD_SIGNATURE__RETURN_TYPE:
 				setReturnType((Type)null);
-				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				getMMethodDefinitions().clear();
-				return;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST:
-				setMParameterList((MParameterList)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -443,18 +263,48 @@ public class MMethodSignatureImpl extends MSignatureImpl implements MMethodSigna
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModiscoPackage.MMETHOD_SIGNATURE__MODEL:
-				return getModel() != null;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_NAME:
-				return mMethodName != null;
+			case ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY:
+				return mFirstEntry != null;
+			case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS:
+				return mEntrys != null && !mEntrys.isEmpty();
 			case ModiscoPackage.MMETHOD_SIGNATURE__RETURN_TYPE:
 				return returnType != null;
-			case ModiscoPackage.MMETHOD_SIGNATURE__MMETHOD_DEFINITIONS:
-				return mMethodDefinitions != null && !mMethodDefinitions.isEmpty();
-			case ModiscoPackage.MMETHOD_SIGNATURE__MPARAMETER_LIST:
-				return mParameterList != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == MParameterList.class) {
+			switch (derivedFeatureID) {
+				case ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY: return ModiscoPackage.MPARAMETER_LIST__MFIRST_ENTRY;
+				case ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS: return ModiscoPackage.MPARAMETER_LIST__MENTRYS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == MParameterList.class) {
+			switch (baseFeatureID) {
+				case ModiscoPackage.MPARAMETER_LIST__MFIRST_ENTRY: return ModiscoPackage.MMETHOD_SIGNATURE__MFIRST_ENTRY;
+				case ModiscoPackage.MPARAMETER_LIST__MENTRYS: return ModiscoPackage.MMETHOD_SIGNATURE__MENTRYS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //MMethodSignatureImpl

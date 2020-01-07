@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="refactoringgraph" nsURI="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore"
     nsPrefix="org.gravity.hulk.refactoringgraph">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity.hulk"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="HMethodToDataClassAccess" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
-    <eOperations  name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
+    <eOperations name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClassSmell" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HDataClassSmell"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hDataClass" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tMethodDefinition" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
@@ -25,7 +24,7 @@
         eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HInBlobClusterAccess" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric">
-    <eOperations  name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
+    <eOperations name="getRelativeAmount" eType="ecore:EClass ../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//values/HRelativeValue"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hCluster" eType="#//HCluster"/>
   </eClassifiers>
   <eSubpackages name="refactorings" nsURI="platform:/plugin/org.gravity.hulk.refactoringgraph/model/Refactoringgraph.ecore#//refactorings"
@@ -33,7 +32,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="HRefactoring" abstract="true" eSuperTypes="../../org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//HMetric"/>
     <eClassifiers xsi:type="ecore:EClass" name="HMoveMethod" eSuperTypes="#//refactorings/HMoveMember"/>
     <eClassifiers xsi:type="ecore:EClass" name="HExtractClass" eSuperTypes="#//refactorings/HRefactoring">
-      <eOperations  name="getAvgIba" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eOperations name="getAvgIba" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tMembers" upperBound="-1"
           eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TMember"/>
     </eClassifiers>

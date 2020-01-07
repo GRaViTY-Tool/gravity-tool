@@ -23,11 +23,6 @@ import org.gravity.typegraph.basic.annotations.TClassNode;
 import org.gravity.typegraph.basic.annotations.TNumberNode;
 import org.gravity.typegraph.basic.annotations.TTextAnnotation;
 import org.gravity.typegraph.basic.annotations.TTextNode;
-
-import org.gravity.typegraph.basic.containers.ContainersPackage;
-
-import org.gravity.typegraph.basic.containers.impl.ContainersPackageImpl;
-
 import org.gravity.typegraph.basic.impl.BasicPackageImpl;
 
 /**
@@ -150,18 +145,14 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 		BasicPackageImpl theBasicPackage = (BasicPackageImpl)(registeredPackage instanceof BasicPackageImpl ? registeredPackage : BasicPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContainersPackage.eNS_URI);
-		ContainersPackageImpl theContainersPackage = (ContainersPackageImpl)(registeredPackage instanceof ContainersPackageImpl ? registeredPackage : ContainersPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAnnotationsPackage.createPackageContents();
 		theBasicPackage.createPackageContents();
-		theContainersPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAnnotationsPackage.initializePackageContents();
 		theBasicPackage.initializePackageContents();
-		theContainersPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAnnotationsPackage.freeze();
@@ -259,6 +250,16 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 	@Override
 	public EReference getTAnnotation_TValues() {
 		return (EReference)tAnnotationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTAnnotation__GetValue__String() {
+		return tAnnotationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -451,6 +452,7 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 		createEReference(tAnnotationEClass, TANNOTATION__TANNOTATED);
 		createEReference(tAnnotationEClass, TANNOTATION__TYPE);
 		createEReference(tAnnotationEClass, TANNOTATION__TVALUES);
+		createEOperation(tAnnotationEClass, TANNOTATION___GET_VALUE__STRING);
 
 		tAnnotationTypeEClass = createEClass(TANNOTATION_TYPE);
 		createEReference(tAnnotationTypeEClass, TANNOTATION_TYPE__ANNOTATIONS);
@@ -525,11 +527,15 @@ public class AnnotationsPackageImpl extends EPackageImpl implements AnnotationsP
 		initEReference(getTAnnotation_TAnnotated(), this.getTAnnotatable(), this.getTAnnotatable_TAnnotation(), "tAnnotated", null, 1, 1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTAnnotation_Type(), this.getTAnnotationType(), this.getTAnnotationType_Annotations(), "type", null, 1, 1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTAnnotation_TValues(), this.getTAnnotationValue(), null, "tValues", null, 0, -1, TAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTAnnotation_TValues().getEKeys().add(this.getTAnnotationValue_TKey());
+
+		EOperation op = initEOperation(getTAnnotation__GetValue__String(), this.getTAnnotationValue(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "key", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(tAnnotationTypeEClass, TAnnotationType.class, "TAnnotationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTAnnotationType_Annotations(), this.getTAnnotation(), this.getTAnnotation_Type(), "annotations", null, 0, -1, TAnnotationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getTAnnotationType__IsSubTypeOf__TAbstractType(), ecorePackage.getEBoolean(), "isSubTypeOf", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTAnnotationType__IsSubTypeOf__TAbstractType(), ecorePackage.getEBoolean(), "isSubTypeOf", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theBasicPackage.getTAbstractType(), "tType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getTAnnotationType__IsSuperTypeOf__TAbstractType(), ecorePackage.getEBoolean(), "isSuperTypeOf", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -2,10 +2,9 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,22 +18,18 @@ import org.eclipse.gmt.modisco.java.Type;
  *   <li>{@link org.gravity.modisco.MEntry#getMNext <em>MNext</em>}</li>
  *   <li>{@link org.gravity.modisco.MEntry#getMPrevious <em>MPrevious</em>}</li>
  *   <li>{@link org.gravity.modisco.MEntry#getType <em>Type</em>}</li>
- *   <li>{@link org.gravity.modisco.MEntry#getSingleVariableDeclaration <em>Single Variable Declaration</em>}</li>
+ *   <li>{@link org.gravity.modisco.MEntry#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMEntry()
  * @model
  * @generated
  */
-public interface MEntry extends EObject {
+public interface MEntry extends MAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>MNext</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getMPrevious <em>MPrevious</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MNext</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MNext</em>' reference.
 	 * @see #setMNext(MEntry)
@@ -59,10 +54,6 @@ public interface MEntry extends EObject {
 	 * Returns the value of the '<em><b>MPrevious</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MEntry#getMNext <em>MNext</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MPrevious</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MPrevious</em>' reference.
 	 * @see #setMPrevious(MEntry)
@@ -86,10 +77,6 @@ public interface MEntry extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Type)
@@ -110,29 +97,17 @@ public interface MEntry extends EObject {
 	void setType(Type value);
 
 	/**
-	 * Returns the value of the '<em><b>Single Variable Declaration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Single Variable Declaration</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Single Variable Declaration</em>' reference.
-	 * @see #setSingleVariableDeclaration(SingleVariableDeclaration)
-	 * @see org.gravity.modisco.ModiscoPackage#getMEntry_SingleVariableDeclaration()
-	 * @model required="true"
-	 * @generated
-	 */
-	SingleVariableDeclaration getSingleVariableDeclaration();
-
-	/**
-	 * Sets the value of the '{@link org.gravity.modisco.MEntry#getSingleVariableDeclaration <em>Single Variable Declaration</em>}' reference.
+	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * The list contents are of type {@link org.gravity.modisco.MSingleVariableDeclaration}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MSingleVariableDeclaration#getMEntry <em>MEntry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Single Variable Declaration</em>' reference.
-	 * @see #getSingleVariableDeclaration()
+	 * @return the value of the '<em>Parameters</em>' reference list.
+	 * @see org.gravity.modisco.ModiscoPackage#getMEntry_Parameters()
+	 * @see org.gravity.modisco.MSingleVariableDeclaration#getMEntry
+	 * @model opposite="mEntry"
 	 * @generated
 	 */
-	void setSingleVariableDeclaration(SingleVariableDeclaration value);
+	EList<MSingleVariableDeclaration> getParameters();
 
 } // MEntry

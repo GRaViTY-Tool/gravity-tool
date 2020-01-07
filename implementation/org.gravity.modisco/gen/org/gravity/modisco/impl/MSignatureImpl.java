@@ -4,15 +4,15 @@ package org.gravity.modisco.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MSignature;
@@ -27,12 +27,11 @@ import org.gravity.modisco.ModiscoPackage;
  * </p>
  * <ul>
  *   <li>{@link org.gravity.modisco.impl.MSignatureImpl#getMDefinitions <em>MDefinitions</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MSignatureImpl#getImplementedBy <em>Implemented By</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implements MSignature {
+public abstract class MSignatureImpl extends MAbstractFlowElementImpl implements MSignature {
 	/**
 	 * The cached value of the '{@link #getMDefinitions() <em>MDefinitions</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -42,16 +41,6 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected EList<MDefinition> mDefinitions;
-
-	/**
-	 * The cached value of the '{@link #getImplementedBy() <em>Implemented By</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImplementedBy()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Type> implementedBy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +68,7 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public EList<MDefinition> getMDefinitions() {
 		if (mDefinitions == null) {
-			mDefinitions = new EObjectResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MSIGNATURE__MDEFINITIONS);
+			mDefinitions = new EObjectWithInverseResolvingEList<MDefinition>(MDefinition.class, this, ModiscoPackage.MSIGNATURE__MDEFINITIONS, ModiscoPackage.MDEFINITION__MSIGNATURE);
 		}
 		return mDefinitions;
 	}
@@ -89,11 +78,28 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Type> getImplementedBy() {
-		if (implementedBy == null) {
-			implementedBy = new EObjectResolvingEList<Type>(Type.class, this, ModiscoPackage.MSIGNATURE__IMPLEMENTED_BY);
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMDefinitions()).basicAdd(otherEnd, msgs);
 		}
-		return implementedBy;
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
+				return ((InternalEList<?>)getMDefinitions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -106,8 +112,6 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
 				return getMDefinitions();
-			case ModiscoPackage.MSIGNATURE__IMPLEMENTED_BY:
-				return getImplementedBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,10 +129,6 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 				getMDefinitions().clear();
 				getMDefinitions().addAll((Collection<? extends MDefinition>)newValue);
 				return;
-			case ModiscoPackage.MSIGNATURE__IMPLEMENTED_BY:
-				getImplementedBy().clear();
-				getImplementedBy().addAll((Collection<? extends Type>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,9 +144,6 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
 				getMDefinitions().clear();
 				return;
-			case ModiscoPackage.MSIGNATURE__IMPLEMENTED_BY:
-				getImplementedBy().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -161,8 +158,6 @@ public abstract class MSignatureImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case ModiscoPackage.MSIGNATURE__MDEFINITIONS:
 				return mDefinitions != null && !mDefinitions.isEmpty();
-			case ModiscoPackage.MSIGNATURE__IMPLEMENTED_BY:
-				return implementedBy != null && !implementedBy.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

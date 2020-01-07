@@ -2,8 +2,8 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,10 +25,6 @@ public interface MAnonymous extends AnonymousClassDeclaration {
 	/**
 	 * Returns the value of the '<em><b>MSourrounding Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MSourrounding Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MSourrounding Type</em>' reference.
 	 * @see #setMSourroundingType(AbstractTypeDeclaration)

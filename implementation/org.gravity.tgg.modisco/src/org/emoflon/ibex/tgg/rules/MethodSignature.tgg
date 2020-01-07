@@ -5,51 +5,36 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++ mSignature : MMethodSignature {
-		++ -mMethodName-> mName
-		++ -mParameterList-> mParameterList
-	}
-	++ mParameterList : MParameterList {
-		
-	}
-	mName : MMethodName {
+	mName:MMethodName {
 		++  -mSignatures -> mSignature
 	}
+
+	++mSignature:MMethodSignature
 }
 
 #target {
-	tName : TMethod {
-	}
-	++ tSignature : TMethodSignature {
-		++  -paramList -> tParameterList
+	++tSignature:TMethodSignature {
 		++  -method -> tName
 	}
-	++ tParameterList : TParameterList {
-	}
+
+	tName:TMethod
 }
 
 #correspondence {
-	++ mSignatureToTSignature : MSignatureToTSignature {
-		#src->mSignature
-		#trg->tSignature
-	}
-	++ mMethodSignatureToTMethodSignature : MMethodSignatureToTMethodSignature {
-		#src->mSignature
-		#trg->tSignature
-	}
-	++ mSignatureToTParameterList : MMethodSignatureToTParameterList {
-		#src->mSignature
-		#trg->tParameterList
-	}
-	++ mParameterListToTParameterList : MParameterListToTParameterList {
-		#src->mParameterList
-		#trg->tParameterList
-	}
-	mNameToTName : MMethodNameToTMethod {
+	mNameToTName :MMethodNameToTMethod {
 		#src->mName
 		#trg->tName
 	}
+
+	++ mSignatureToTSignature :MSignatureToTSignature {
+		#src->mSignature
+		#trg->tSignature
+	}
+
+	++mFlowElementToTFlowElement:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mSignature
+		#trg->tSignature
+	}
 }
 
-#attributeConditions {
-}
+

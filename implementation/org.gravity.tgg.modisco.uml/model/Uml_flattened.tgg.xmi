@@ -1235,10 +1235,10 @@
     <nodes name="jOwnerType" incomingEdges="//@rules.18/@edges.4 //@rules.18/@edges.14" outgoingEdges="//@rules.18/@edges.10" incomingCorrsSource="//@rules.18/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </nodes>
-    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.18/@edges.6 //@rules.18/@edges.8" outgoingEdges="//@rules.18/@edges.12" incomingCorrsSource="//@rules.18/@nodes.9">
+    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.18/@edges.6 //@rules.18/@edges.9" outgoingEdges="//@rules.18/@edges.13" incomingCorrsSource="//@rules.18/@nodes.9">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
     </nodes>
-    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.18/@edges.9" outgoingEdges="//@rules.18/@edges.13">
+    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.18/@edges.8" outgoingEdges="//@rules.18/@edges.12">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     </nodes>
     <nodes name="feature" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.18/@edges.1 //@rules.18/@edges.3 //@rules.18/@edges.7 //@rules.18/@edges.11" incomingCorrsTarget="//@rules.18/@nodes.6 //@rules.18/@nodes.7 //@rules.18/@nodes.9">
@@ -1283,11 +1283,11 @@
     <edges name="m2f__target__feature_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.18/@nodes.9" trgNode="//@rules.18/@nodes.4">
       <type href="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement/target"/>
     </edges>
-    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.0" trgNode="//@rules.18/@nodes.2">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
-    </edges>
     <edges name="bodyDeclaration__fragments__vdf_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.0" trgNode="//@rules.18/@nodes.3">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractVariablesContainer/fragments"/>
+    </edges>
+    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.0" trgNode="//@rules.18/@nodes.2">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
     </edges>
     <edges name="jOwnerType__bodyDeclarations__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.1" trgNode="//@rules.18/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
@@ -1295,11 +1295,11 @@
     <edges name="uOwnerType__ownedAttribute__feature_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.18/@nodes.5" trgNode="//@rules.18/@nodes.4">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
     </edges>
-    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.2" trgNode="//@rules.18/@nodes.0">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
-    </edges>
     <edges name="vdf__variablesContainer__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.3" trgNode="//@rules.18/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment/variablesContainer"/>
+    </edges>
+    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.2" trgNode="//@rules.18/@nodes.0">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
     </edges>
     <edges name="bodyDeclaration__abstractTypeDeclaration__jOwnerType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.18/@nodes.0" trgNode="//@rules.18/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
@@ -1406,10 +1406,10 @@
     <nodes name="jOwnerType" incomingEdges="//@rules.20/@edges.4 //@rules.20/@edges.14" outgoingEdges="//@rules.20/@edges.10" incomingCorrsSource="//@rules.20/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </nodes>
-    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.20/@edges.6 //@rules.20/@edges.8" outgoingEdges="//@rules.20/@edges.12" incomingCorrsSource="//@rules.20/@nodes.9">
+    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.20/@edges.6 //@rules.20/@edges.9" outgoingEdges="//@rules.20/@edges.13" incomingCorrsSource="//@rules.20/@nodes.9">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
     </nodes>
-    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.20/@edges.9" outgoingEdges="//@rules.20/@edges.13">
+    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.20/@edges.8" outgoingEdges="//@rules.20/@edges.12">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     </nodes>
     <nodes name="feature" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.20/@edges.1 //@rules.20/@edges.3 //@rules.20/@edges.7 //@rules.20/@edges.11" outgoingEdges="//@rules.20/@edges.15" incomingCorrsTarget="//@rules.20/@nodes.6 //@rules.20/@nodes.7 //@rules.20/@nodes.9">
@@ -1454,11 +1454,11 @@
     <edges name="m2f__target__feature_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.20/@nodes.9" trgNode="//@rules.20/@nodes.4">
       <type href="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement/target"/>
     </edges>
-    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.0" trgNode="//@rules.20/@nodes.2">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
-    </edges>
     <edges name="bodyDeclaration__fragments__vdf_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.0" trgNode="//@rules.20/@nodes.3">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractVariablesContainer/fragments"/>
+    </edges>
+    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.0" trgNode="//@rules.20/@nodes.2">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
     </edges>
     <edges name="jOwnerType__bodyDeclarations__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.1" trgNode="//@rules.20/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
@@ -1466,11 +1466,11 @@
     <edges name="uOwnerType__ownedAttribute__feature_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.20/@nodes.5" trgNode="//@rules.20/@nodes.4">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType/ownedAttribute"/>
     </edges>
-    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.2" trgNode="//@rules.20/@nodes.0">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
-    </edges>
     <edges name="vdf__variablesContainer__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.3" trgNode="//@rules.20/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment/variablesContainer"/>
+    </edges>
+    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.2" trgNode="//@rules.20/@nodes.0">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
     </edges>
     <edges name="bodyDeclaration__abstractTypeDeclaration__jOwnerType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.20/@nodes.0" trgNode="//@rules.20/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
@@ -1580,10 +1580,10 @@
     <nodes name="jOwnerType" incomingEdges="//@rules.22/@edges.4 //@rules.22/@edges.14" outgoingEdges="//@rules.22/@edges.10" incomingCorrsSource="//@rules.22/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </nodes>
-    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.22/@edges.6 //@rules.22/@edges.8" outgoingEdges="//@rules.22/@edges.12" incomingCorrsSource="//@rules.22/@nodes.9">
+    <nodes name="modifier" bindingType="CREATE" incomingEdges="//@rules.22/@edges.6 //@rules.22/@edges.9" outgoingEdges="//@rules.22/@edges.13" incomingCorrsSource="//@rules.22/@nodes.9">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
     </nodes>
-    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.22/@edges.9" outgoingEdges="//@rules.22/@edges.13">
+    <nodes name="vdf" bindingType="CREATE" incomingEdges="//@rules.22/@edges.8" outgoingEdges="//@rules.22/@edges.12">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     </nodes>
     <nodes name="feature" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.22/@edges.1 //@rules.22/@edges.3 //@rules.22/@edges.7 //@rules.22/@edges.11" outgoingEdges="//@rules.22/@edges.15" incomingCorrsTarget="//@rules.22/@nodes.6 //@rules.22/@nodes.7 //@rules.22/@nodes.9">
@@ -1628,11 +1628,11 @@
     <edges name="m2f__target__feature_eMoflonEdge" domainType="CORR" bindingType="CREATE" srcNode="//@rules.22/@nodes.9" trgNode="//@rules.22/@nodes.4">
       <type href="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Modifier2NamedElement/target"/>
     </edges>
-    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.0" trgNode="//@rules.22/@nodes.2">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
-    </edges>
     <edges name="bodyDeclaration__fragments__vdf_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.0" trgNode="//@rules.22/@nodes.3">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractVariablesContainer/fragments"/>
+    </edges>
+    <edges name="bodyDeclaration__modifier__modifier_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.0" trgNode="//@rules.22/@nodes.2">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
     </edges>
     <edges name="jOwnerType__bodyDeclarations__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.1" trgNode="//@rules.22/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
@@ -1640,11 +1640,11 @@
     <edges name="uOwnerType__ownedAttribute__feature_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.22/@nodes.5" trgNode="//@rules.22/@nodes.4">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/ownedAttribute"/>
     </edges>
-    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.2" trgNode="//@rules.22/@nodes.0">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
-    </edges>
     <edges name="vdf__variablesContainer__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.3" trgNode="//@rules.22/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment/variablesContainer"/>
+    </edges>
+    <edges name="modifier__bodyDeclaration__bodyDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.2" trgNode="//@rules.22/@nodes.0">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/bodyDeclaration"/>
     </edges>
     <edges name="bodyDeclaration__abstractTypeDeclaration__jOwnerType_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.22/@nodes.0" trgNode="//@rules.22/@nodes.1">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
@@ -3600,7 +3600,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     </nodes>
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.51/@edges.0 //@rules.51/@edges.8" outgoingEdges="//@rules.51/@edges.7" incomingCorrsSource="//@rules.51/@nodes.7">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="body" incomingEdges="//@rules.51/@edges.2" outgoingEdges="//@rules.51/@edges.8" incomingCorrsSource="//@rules.51/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
@@ -3680,7 +3680,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     </nodes>
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.52/@edges.0 //@rules.52/@edges.8" outgoingEdges="//@rules.52/@edges.7" incomingCorrsSource="//@rules.52/@nodes.7">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="type" incomingEdges="//@rules.52/@edges.2 //@rules.52/@edges.6" outgoingEdges="//@rules.52/@edges.12" incomingCorrsSource="//@rules.52/@nodes.8">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
@@ -3760,7 +3760,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     </nodes>
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.53/@edges.0" outgoingEdges="//@rules.53/@edges.5" incomingCorrsSource="//@rules.53/@nodes.6">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="type" incomingEdges="//@rules.53/@edges.2 //@rules.53/@edges.4" outgoingEdges="//@rules.53/@edges.9" incomingCorrsSource="//@rules.53/@nodes.7">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>

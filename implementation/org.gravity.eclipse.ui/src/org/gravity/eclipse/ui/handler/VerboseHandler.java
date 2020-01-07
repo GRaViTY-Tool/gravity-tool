@@ -11,7 +11,7 @@ import org.gravity.eclipse.GravityActivator;
 
 /**
  * A handler for switching the verbose state of GRaViTY
- * 
+ *
  * @author speldszus
  *
  */
@@ -19,8 +19,8 @@ public class VerboseHandler extends AbstractHandler implements IElementUpdater {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		GravityActivator activator = GravityActivator.getDefault();
-		boolean verbose = activator.isVerbose();
+		final GravityActivator activator = GravityActivator.getDefault();
+		final boolean verbose = activator.isVerbose();
 		activator.setVerbose(!verbose);
 
 		return null;

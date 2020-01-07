@@ -17,16 +17,20 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gravity.typegraph.basic.BasicPackage;
+import org.gravity.typegraph.basic.TAbstractFlowElement;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TField;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
 // <-- [user defined imports]
+import org.gravity.typegraph.basic.TFlow;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
 // [user defined imports] -->
 
 /**
@@ -37,6 +41,9 @@ import org.gravity.typegraph.basic.TMember;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getOwnedFlows <em>Owned Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getIncomingFlows <em>Incoming Flows</em>}</li>
+ *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getOutgoingFlows <em>Outgoing Flows</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getDefinitions <em>Definitions</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getField <em>Field</em>}</li>
  *   <li>{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl#getType <em>Type</em>}</li>
@@ -44,7 +51,37 @@ import org.gravity.typegraph.basic.TMember;
  *
  * @generated
  */
-public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignature {
+public class TFieldSignatureImpl extends TAnnotatableImpl implements TFieldSignature {
+	/**
+	 * The cached value of the '{@link #getOwnedFlows() <em>Owned Flows</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TFlow> ownedFlows;
+
+	/**
+	 * The cached value of the '{@link #getIncomingFlows() <em>Incoming Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TAbstractFlowElement> incomingFlows;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingFlows()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TAbstractFlowElement> outgoingFlows;
+
 	/**
 	 * The cached value of the '{@link #getDefinitions() <em>Definitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -53,7 +90,7 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TFieldDefinition> definitions;
+	protected EList<TMember> definitions;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -90,9 +127,48 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * @generated
 	 */
 	@Override
-	public EList<TFieldDefinition> getDefinitions() {
+	public EList<TFlow> getOwnedFlows() {
+		if (ownedFlows == null) {
+			ownedFlows = new EObjectContainmentWithInverseEList<TFlow>(TFlow.class, this, BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS, BasicPackage.TFLOW__FLOW_OWNER);
+		}
+		return ownedFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TAbstractFlowElement> getIncomingFlows() {
+		if (incomingFlows == null) {
+			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<TAbstractFlowElement>(TAbstractFlowElement.class, this, BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS, BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
+		}
+		return incomingFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TAbstractFlowElement> getOutgoingFlows() {
+		if (outgoingFlows == null) {
+			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<TAbstractFlowElement>(TAbstractFlowElement.class, this, BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS, BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
+		}
+		return outgoingFlows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<TMember> getDefinitions() {
 		if (definitions == null) {
-			definitions = new EObjectContainmentWithInverseEList<TFieldDefinition>(TFieldDefinition.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TFIELD_DEFINITION__SIGNATURE);
+			definitions = new EObjectContainmentWithInverseEList<TMember>(TMember.class, this, BasicPackage.TFIELD_SIGNATURE__DEFINITIONS, BasicPackage.TMEMBER__SIGNATURE);
 		}
 		return definitions;
 	}
@@ -212,12 +288,28 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public EList<TFieldDefinition> getFieldDefinitions() {
+		return (EList<TFieldDefinition>) ((EList<? extends TFieldDefinition>) getDefinitions());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingFlows()).basicAdd(otherEnd, msgs);
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingFlows()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefinitions()).basicAdd(otherEnd, msgs);
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
@@ -236,6 +328,12 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				return ((InternalEList<?>)getOwnedFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				return ((InternalEList<?>)getIncomingFlows()).basicRemove(otherEnd, msgs);
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				return ((InternalEList<?>)getOutgoingFlows()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return ((InternalEList<?>)getDefinitions()).basicRemove(otherEnd, msgs);
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
@@ -266,6 +364,12 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				return getOwnedFlows();
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				return getIncomingFlows();
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				return getOutgoingFlows();
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return getDefinitions();
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
@@ -286,9 +390,21 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				getOwnedFlows().addAll((Collection<? extends TFlow>)newValue);
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				getIncomingFlows().addAll((Collection<? extends TAbstractFlowElement>)newValue);
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				getOutgoingFlows().addAll((Collection<? extends TAbstractFlowElement>)newValue);
+				return;
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
-				getDefinitions().addAll((Collection<? extends TFieldDefinition>)newValue);
+				getDefinitions().addAll((Collection<? extends TMember>)newValue);
 				return;
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
 				setField((TField)newValue);
@@ -308,6 +424,15 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				getOwnedFlows().clear();
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				getIncomingFlows().clear();
+				return;
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				getOutgoingFlows().clear();
+				return;
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				getDefinitions().clear();
 				return;
@@ -329,6 +454,12 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS:
+				return ownedFlows != null && !ownedFlows.isEmpty();
+			case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS:
+				return incomingFlows != null && !incomingFlows.isEmpty();
+			case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS:
+				return outgoingFlows != null && !outgoingFlows.isEmpty();
 			case BasicPackage.TFIELD_SIGNATURE__DEFINITIONS:
 				return definitions != null && !definitions.isEmpty();
 			case BasicPackage.TFIELD_SIGNATURE__FIELD:
@@ -345,10 +476,50 @@ public class TFieldSignatureImpl extends TSignatureImpl implements TFieldSignatu
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (derivedFeatureID) {
+				case BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+				case BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+				case BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS: return BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TAbstractFlowElement.class) {
+			switch (baseFeatureID) {
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS: return BasicPackage.TFIELD_SIGNATURE__OWNED_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS: return BasicPackage.TFIELD_SIGNATURE__INCOMING_FLOWS;
+				case BasicPackage.TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS: return BasicPackage.TFIELD_SIGNATURE__OUTGOING_FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case BasicPackage.TFIELD_SIGNATURE___GET_SIGNATURE_STRING:
+				return getSignatureString();
 			case BasicPackage.TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE:
 				return getTDefinition((TAbstractType)arguments.get(0));
+			case BasicPackage.TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS:
+				return getFieldDefinitions();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

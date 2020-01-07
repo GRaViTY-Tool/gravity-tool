@@ -26,10 +26,10 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HClusterImpl#getTMembers <em>TMembers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -68,6 +68,7 @@ public class HClusterImpl extends HMetricImpl implements HCluster {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TMember> getTMembers() {
 		if (tMembers == null) {
 			tMembers = new EObjectResolvingEList<TMember>(TMember.class, this,

@@ -4,9 +4,9 @@
 #abstract #rule Annotation #with org.gravity.tgg.modisco
 
 #source {
-	++ mAnnotation : MAnnotation {
-	}
 	astNode : ASTNode
+	
+	++ Annotation : Annotation
 }
 
 #target {
@@ -21,52 +21,18 @@
 		#src->astNode
 		#trg->tAnnotable
 	}
-	++ mAnnotationToTAnnotation : AnnotationToTAnnotation {
-		#src->mAnnotation
+	++ AnnotationToTAnnotation : AnnotationToTAnnotation {
+		#src->Annotation
 		#trg->tAnnotation
 	}
 }
 
-#attributeConditions {
-	eq_boolean(mAnnotation.mRelevant, true)
-}
-
 #rule AnnotationOnBodyDeclaration #extends Annotation #with org.gravity.tgg.modisco
 
-#source {
-	++ mAnnotation : MAnnotation 
-	
+#source {	
 	astNode : BodyDeclaration {
-		++ -annotations-> mAnnotation
+		++ -annotations-> Annotation
 	}
+	
+	++ Annotation : Annotation 
 }
-
-//#rule AnnotationOnVariableDeclarationExpression #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : VariableDeclarationExpression {
-//		++ -annotations-> mAnnotation
-//	}
-//}
-
-//#rule AnnotationOnVariableDeclarationStatement #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : VariableDeclarationStatement {
-//		++ -annotations-> mAnnotation
-//	}
-//}
-
-//#rule AnnotationOnSingleVariableDeclaration #extends Annotation #with org.gravity.tgg.modisco
-//
-//#source {
-//	++ mAnnotation : MAnnotation
-//	
-//	astNode : SingleVariableDeclaration {
-//		++ -annotations-> mAnnotation
-//	}
-//}

@@ -5,15 +5,15 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mAnnotation:MAnnotation {
+	Annotation:Annotation {
 		++  -type -> mAccess
 	}
 
 	++mAccess:TypeAccess {
-		++ -type -> mAnnotationType
+		++ -type -> AnnotationType
 	}
 
-	mAnnotationType:AnnotationTypeDeclaration
+	AnnotationType:AnnotationTypeDeclaration
 }
 
 #target {
@@ -25,19 +25,13 @@
 }
 
 #correspondence {
-	mAnnotationTypeToTAnnotationType :TypeToTAbstractType {
-		#src->mAnnotationType
+	AnnotationTypeToTAnnotationType :TypeToTAbstractType {
+		#src->AnnotationType
 		#trg->tAnnotationType
 	}
 
-	mAnnotationToTAnnotation :AnnotationToTAnnotation {
-		#src->mAnnotation
+	AnnotationToTAnnotation :AnnotationToTAnnotation {
+		#src->Annotation
 		#trg->tAnnotation
 	}
 }
-
-#attributeConditions {
-	eq_boolean(mAnnotation.mRelevant, true)
-}
-
-

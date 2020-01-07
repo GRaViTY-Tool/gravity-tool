@@ -35,7 +35,7 @@ public interface TMethod extends TName {
 	 * @return the value of the '<em>Signatures</em>' containment reference list.
 	 * @see org.gravity.typegraph.basic.BasicPackage#getTMethod_Signatures()
 	 * @see org.gravity.typegraph.basic.TMethodSignature#getMethod
-	 * @model opposite="method" containment="true"
+	 * @model opposite="method" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<TMethodSignature> getSignatures();

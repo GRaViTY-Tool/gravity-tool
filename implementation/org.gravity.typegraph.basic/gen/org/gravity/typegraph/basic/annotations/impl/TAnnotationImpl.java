@@ -2,22 +2,19 @@
  */
 package org.gravity.typegraph.basic.annotations.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
@@ -27,9 +24,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotationValue;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>TAnnotation</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>TAnnotation</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -43,9 +39,9 @@ import org.gravity.typegraph.basic.annotations.TAnnotationValue;
  */
 public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -54,8 +50,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 
 	/**
 	 * The cached value of the '{@link #getTValues() <em>TValues</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTValues()
 	 * @generated
 	 * @ordered
@@ -63,8 +58,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	protected EList<TAnnotationValue> tValues;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TAnnotationImpl() {
@@ -72,8 +66,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -82,8 +75,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -93,8 +85,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetTAnnotated(TAnnotatable newTAnnotated, NotificationChain msgs) {
@@ -103,8 +94,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -125,8 +115,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -143,8 +132,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TAnnotationType basicGetType() {
@@ -152,8 +140,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetType(TAnnotationType newType, NotificationChain msgs) {
@@ -167,8 +154,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -187,8 +173,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -200,8 +185,17 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated NOT
+	 */
+	@Override
+	public TAnnotationValue getValue(String key) {
+		return getTValues().parallelStream().filter(value -> value.getTKey().equals(key)).findAny().orElse(null);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -220,8 +214,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -238,8 +231,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -252,8 +244,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -271,8 +262,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -294,8 +284,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -315,8 +304,7 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -331,7 +319,20 @@ public class TAnnotationImpl extends EObjectImpl implements TAnnotation {
 		}
 		return super.eIsSet(featureID);
 	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case AnnotationsPackage.TANNOTATION___GET_VALUE__STRING:
+				return getValue((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->
-} //TAnnotationImpl
+} // TAnnotationImpl

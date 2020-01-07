@@ -6,6 +6,6 @@ import java.util.Map;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
 import org.gravity.hulk.ui.visualization.util.Flaws;
 
-public abstract class DetectionPreprocessor {
+public interface DetectionPreprocessor {
 	public abstract Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg);
 }

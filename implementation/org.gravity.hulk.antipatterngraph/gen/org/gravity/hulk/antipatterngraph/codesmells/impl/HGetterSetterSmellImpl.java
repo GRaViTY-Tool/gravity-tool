@@ -27,23 +27,23 @@ import org.gravity.typegraph.basic.TParameterList;
 // [user defined imports] -->
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HGetter Setter Smell</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HGetter
+ * Setter Smell</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HGetterSetterSmellImpl#getTFieldDefinition <em>TField Definition</em>}</li>
+ * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HGetterSetterSmellImpl#getTFieldDefinition
+ * <em>TField Definition</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSetterSmell {
 	/**
-	 * The cached value of the '{@link #getTFieldDefinition() <em>TField Definition</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTFieldDefinition() <em>TField
+	 * Definition</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTFieldDefinition()
 	 * @generated
 	 * @ordered
@@ -51,8 +51,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	protected TFieldDefinition tFieldDefinition;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected HGetterSetterSmellImpl() {
@@ -60,8 +60,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,8 +70,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,8 +90,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TFieldDefinition basicGetTFieldDefinition() {
@@ -99,8 +99,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,8 +113,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -129,8 +129,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,8 +144,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,8 +159,8 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,21 +182,16 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 		StringBuilder builder = new StringBuilder(method.getTName());
 		builder.append('(');
-		TParameterList paramlist = signature.getParamList();
-		if (paramlist != null) {
-			List<TParameter> paramlist_entries = paramlist.getEntries();
-			if (paramlist_entries != null && paramlist_entries.size() > 0) {
-				for (TParameter p : paramlist_entries) {
-					TAbstractType tClass = p.getType();
-					if (tClass != null) {
-						builder.append(tClass.getTName());
-						builder.append(", ");
-					}
+		List<TParameter> paramlist_entries = signature.getParameters();
+		if (paramlist_entries != null && paramlist_entries.size() > 0) {
+			for (TParameter p : paramlist_entries) {
+				TAbstractType tClass = p.getType();
+				if (tClass != null) {
+					builder.append(tClass.getTName());
+					builder.append(", ");
 				}
-				builder.replace(builder.length() - 2, builder.length(), "):");
-			} else {
-				builder.append("):");
 			}
+			builder.replace(builder.length() - 2, builder.length(), "):");
 		} else {
 			builder.append("):");
 		}
@@ -211,4 +206,4 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 	}
 
 	// [user code injected with eMoflon] -->
-} //HGetterSetterSmellImpl
+} // HGetterSetterSmellImpl

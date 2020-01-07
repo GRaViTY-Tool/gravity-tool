@@ -23,19 +23,19 @@ import org.gravity.eclipse.ui.exceptions.UnsupportedSelectionException;
 /**
  * A handler for triggering the synchronization of changes on the source code
  * into the pm
- * 
+ *
  * @author speldszus
  *
  */
 public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 
-	protected static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
+	private static final Logger LOGGER = Logger.getLogger(JavaSyncFwdHandler.class);
 
 	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		List<?> selection = GravityUiActivator.getSelection(event);
+	public Object execute(final ExecutionEvent event) throws ExecutionException {
+		final List<?> selection = GravityUiActivator.getSelection(event);
 
-		Job job = new PGSyncFwdJob(selection);
+		final Job job = new PGSyncFwdJob(selection);
 		job.setUser(true);
 		job.schedule();
 
@@ -62,43 +62,44 @@ public class JavaSyncFwdHandler extends AbstractTransformationHandler {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * An implementation of java.lang.Job for synchronizing changes on java projects
 	 * to the according PGs from a selection in an eclipse workspace
-	 * 
+	 *
 	 * @author speldszus
 	 *
 	 */
 	private final class PGSyncFwdJob extends Job {
 		private final List<?> selection;
 
-		private PGSyncFwdJob(List<?> selection) {
-			super("GRaViTY Sync PG");
+		private PGSyncFwdJob(final List<?> selection) {
+			super("GRaViTY Sync Program Model");
 			this.selection = selection;
 		}
 
 		@Override
-		protected IStatus run(IProgressMonitor monitor) {
-			for (Object entry : selection) {
+		protected IStatus run(final IProgressMonitor monitor) {
+			for (final Object entry : this.selection) {
 				if (entry instanceof IJavaProject) {
-					IJavaProject iJavaProject = (IJavaProject) entry;
+					final IJavaProject iJavaProject = (IJavaProject) entry;
 					IPGConverter converter;
 					try {
 						converter = GravityActivator.getDefault().getConverter(iJavaProject.getProject());
 					} catch (NoConverterRegisteredException | CoreException e) {
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID,
+						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
 								"Please install a converter and restart the task.");
 					}
 					if (!converter.syncProjectFwd(monitor)) {
-						return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, "No PG has been created");
+						return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID,
+								"No program model has been created");
 					}
 				} else if (entry instanceof IPackageFragment) {
-					throw new RuntimeException(Messages.javaParseHandler1 + entry);
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.unhandledPackageFagment + entry);
 				} else {
-					UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
+					final UnsupportedSelectionException exception = new UnsupportedSelectionException(entry.getClass());
 					LOGGER.log(Level.ERROR, exception.getMessage());
-					return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
+					return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, exception.getMessage(), exception);
 				}
 			}
 			return Status.OK_STATUS;

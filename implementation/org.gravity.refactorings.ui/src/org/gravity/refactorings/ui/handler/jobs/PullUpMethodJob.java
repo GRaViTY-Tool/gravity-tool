@@ -16,7 +16,6 @@ import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.converter.IPGConverter;
 import org.gravity.eclipse.exceptions.NoConverterRegisteredException;
 import org.gravity.eclipse.util.JavaASTUtil;
-import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
@@ -27,20 +26,19 @@ import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * A job for executing a pull up method refactoring
- * 
+ *
  * @author speldszus
  *
  */
 public final class PullUpMethodJob extends WorkspaceJob {
-	
+
 	private final Shell shell;
-	
+
 	private final TypeDeclaration childType;
 	private final MethodDeclaration method;
 	private final ICompilationUnit icu;
 
-	public PullUpMethodJob(MethodDeclaration method, TypeDeclaration childType, 
-			ICompilationUnit icu, Shell shell) {
+	public PullUpMethodJob(final MethodDeclaration method, final TypeDeclaration childType, final ICompilationUnit icu, final Shell shell) {
 		super(Messages.pullUpUMethod);
 		this.childType = childType;
 		this.shell = shell;
@@ -49,75 +47,56 @@ public final class PullUpMethodJob extends WorkspaceJob {
 	}
 
 	@Override
-	public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+	public IStatus runInWorkspace(final IProgressMonitor monitor) throws CoreException {
 		IPGConverter converter;
 		try {
-			converter = GravityActivator.getDefault()
-					.getConverter(icu.getJavaProject().getProject());
-		} catch (NoConverterRegisteredException e) {
-			return new Status(Status.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
+			converter = GravityActivator.getDefault().getConverter(this.icu.getJavaProject().getProject());
+		} catch (final NoConverterRegisteredException e) {
+			return new Status(IStatus.ERROR, GravityActivator.PLUGIN_ID, Messages.installConverter);
 		}
-		if (!converter.convertProject(icu.getJavaProject(), monitor)) {
-			asyncPrintError(shell, Messages.refactoringError, Messages.createPMFailed);
+		if (!converter.convertProject(monitor)) {
+			asyncPrintError(this.shell, Messages.refactoringError, Messages.createPMFailed);
 
 		}
-		TypeGraph pg = converter.getPG();
+		final TypeGraph pg = converter.getPG();
 
-		TClass tChild = JavaASTUtil.getTClass(childType, pg);
+		final TClass tChild = JavaASTUtil.getTClass(this.childType, pg);
 		if (tChild != null) {
-			TClass tParent = tChild.getParentClass();
-			TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(method, pg);
+			final TClass tParent = tChild.getParentClass();
+			final TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(this.method, pg);
 
-			PullUpMethod refactoring = new PullUpMethod();
+			final PullUpMethod refactoring = new PullUpMethod();
 
 			if (refactoring.isApplicable(tSignature, tParent)) {
-				Display.getDefault().asyncExec(new Runnable() {
+				Display.getDefault().asyncExec(() -> {
+					final Dialog dialog = new RefactoringDialog(PullUpMethodJob.this.shell, Messages.executeRefactoring,
+							getPUMMessage(tParent, tSignature));
+					final int status = dialog.open();
 
-					@Override
-					public void run() {
-						Dialog dialog = new RefactoringDialog(shell, Messages.executeRefactoring,
-								getPUMMessage(tParent, tSignature));
-						int status = dialog.open();
-
-						if (status == 0) {
-							converter.syncProjectBwd(SynchronizationHelper -> {
-								try {
-									refactoring.perform(tSignature, tParent);
-								} catch (RefactoringFailedException e) {
-									asyncPrintError(shell, Messages.refactoringNotPossible,
-											Messages.pullUpMethodFailed);
-								}
-							}, monitor);
-						}
+					if (status == 0) {
+						converter.syncProjectBwd(synchronizationHelper -> refactoring.perform(tSignature, tParent),
+								monitor);
 					}
-
 				});
 			} else {
-				asyncPrintError(shell, Messages.refactoringNotPossible,
-						Messages.pullUpMethodNotPossible);
+				asyncPrintError(this.shell, Messages.refactoringNotPossible, Messages.pullUpMethodNotPossible);
 			}
 
 		} else {
-			asyncPrintError(shell, Messages.refactoringInfo, Messages.classNotFound);
+			asyncPrintError(this.shell, Messages.refactoringInfo, Messages.classNotFound);
 		}
 		return Status.OK_STATUS;
 	}
 
-	private void asyncPrintError(Shell shell, String title, String message) {
-		Display.getDefault().asyncExec(new Runnable() {
-			@Override
-			public void run() {
-				MessageDialog.openError(shell, title, message);
-			}
-		});
+	private void asyncPrintError(final Shell shell, final String title, final String message) {
+		Display.getDefault().asyncExec(() -> MessageDialog.openError(shell, title, message));
 	}
-	
-	static String getPUMMessage(TClass tParent, TMethodSignature tSignature) {
-		StringBuilder builder = new StringBuilder(
-				"All access dependencies have been checked successfully,\nplease check if all implementations of the method\n\n\t");
-		builder.append(tSignature.getMethod().getTName());
-		builder.append('(');
-		TParameter param = tSignature.getParamList().getFirst();
+
+	static String getPUMMessage(final TClass tParent, final TMethodSignature tSignature) {
+		StringBuilder builder = new StringBuilder(200).append(
+				"All access dependencies have been checked successfully,\nplease check if all implementations of the method\n\n\t")
+				.append(tSignature.getMethod().getTName()).append('(');
+		TParameter param = tSignature.getFirstParameter();
 		while (param != null) {
 			builder.append(param.getType().getTName());
 			param = param.getNext();
@@ -125,16 +104,12 @@ public final class PullUpMethodJob extends WorkspaceJob {
 				builder.append(", ");
 			}
 		}
-		builder.append(")\n\n");
-		builder.append("in the classes\n\n");
-		for (TClass c : tParent.getChildClasses()) {
-			builder.append('\t');
-			builder.append(c.getFullyQualifiedName());
-			builder.append('\n');
+		builder = builder.append(")\n\n").append("in the classes\n\n");
+		for (final TClass c : tParent.getChildClasses()) {
+			builder = builder.append('\t').append(c.getFullyQualifiedName()).append('\n');
 		}
 		builder.append("\nhave an equivalent implementation.");
 		return builder.toString();
 	}
 
-	
 }

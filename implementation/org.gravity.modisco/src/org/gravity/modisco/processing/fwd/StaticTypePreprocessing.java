@@ -1,57 +1,63 @@
 package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmt.modisco.java.AbstractMethodDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractMethodInvocation;
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
-import org.eclipse.gmt.modisco.java.AbstractTypeQualifiedExpression;
-import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.ArrayAccess;
-import org.eclipse.gmt.modisco.java.Assignment;
-import org.eclipse.gmt.modisco.java.BodyDeclaration;
-import org.eclipse.gmt.modisco.java.CastExpression;
-import org.eclipse.gmt.modisco.java.ClassInstanceCreation;
-import org.eclipse.gmt.modisco.java.ConditionalExpression;
-import org.eclipse.gmt.modisco.java.ConstructorDeclaration;
-import org.eclipse.gmt.modisco.java.ConstructorInvocation;
-import org.eclipse.gmt.modisco.java.EnumConstantDeclaration;
-import org.eclipse.gmt.modisco.java.Expression;
-import org.eclipse.gmt.modisco.java.FieldAccess;
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.InfixExpression;
-import org.eclipse.gmt.modisco.java.MethodDeclaration;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.ParenthesizedExpression;
-import org.eclipse.gmt.modisco.java.SingleVariableAccess;
-import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
-import org.eclipse.gmt.modisco.java.StringLiteral;
-import org.eclipse.gmt.modisco.java.SuperConstructorInvocation;
-import org.eclipse.gmt.modisco.java.SuperFieldAccess;
-import org.eclipse.gmt.modisco.java.SuperMethodInvocation;
-import org.eclipse.gmt.modisco.java.ThisExpression;
-import org.eclipse.gmt.modisco.java.Type;
-import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.TypeLiteral;
-import org.eclipse.gmt.modisco.java.UnresolvedItemAccess;
-import org.eclipse.gmt.modisco.java.UnresolvedMethodDeclaration;
-import org.eclipse.gmt.modisco.java.VariableDeclaration;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.modisco.java.AbstractMethodDeclaration;
+import org.eclipse.modisco.java.AbstractMethodInvocation;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AbstractTypeQualifiedExpression;
+import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.ArrayAccess;
+import org.eclipse.modisco.java.Assignment;
+import org.eclipse.modisco.java.BodyDeclaration;
+import org.eclipse.modisco.java.CastExpression;
+import org.eclipse.modisco.java.ClassInstanceCreation;
+import org.eclipse.modisco.java.ConditionalExpression;
+import org.eclipse.modisco.java.ConstructorDeclaration;
+import org.eclipse.modisco.java.ConstructorInvocation;
+import org.eclipse.modisco.java.EnumConstantDeclaration;
+import org.eclipse.modisco.java.Expression;
+import org.eclipse.modisco.java.FieldAccess;
+import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.InfixExpression;
+import org.eclipse.modisco.java.MethodDeclaration;
+import org.eclipse.modisco.java.MethodInvocation;
+import org.eclipse.modisco.java.ParenthesizedExpression;
+import org.eclipse.modisco.java.SingleVariableAccess;
+import org.eclipse.modisco.java.SingleVariableDeclaration;
+import org.eclipse.modisco.java.StringLiteral;
+import org.eclipse.modisco.java.SuperConstructorInvocation;
+import org.eclipse.modisco.java.SuperFieldAccess;
+import org.eclipse.modisco.java.SuperMethodInvocation;
+import org.eclipse.modisco.java.ThisExpression;
+import org.eclipse.modisco.java.Type;
+import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.TypeLiteral;
+import org.eclipse.modisco.java.UnresolvedItemAccess;
+import org.eclipse.modisco.java.UnresolvedMethodDeclaration;
+import org.eclipse.modisco.java.VariableDeclaration;
+import org.eclipse.modisco.java.VariableDeclarationFragment;
+import org.eclipse.osgi.util.NLS;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MDefinition;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MMethodInvocation;
+import org.gravity.modisco.Messages;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 import org.gravity.modisco.util.MoDiscoUtil;
+import org.gravity.modisco.util.NameUtil;
 
 /**
- * 
+ *
  * A Preprocessor for resolving the static type on an access
  *
  */
@@ -62,26 +68,17 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private MGravityModel model;
 
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		this.model = model;
-		for (MAbstractMethodDefinition definition : model.getMAbstractMethodDefinitions()) {
-			if (!addStaticTypeAccesses(definition)) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	@Override
 	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
 			IProgressMonitor monitor) {
 		this.model = model;
-		for (MAbstractMethodDefinition definition : elements) {
-			if (!addStaticTypeAccesses(definition)) {
-				return false;
-			}
+		final List<MAbstractMethodDefinition> failed = elements.parallelStream()
+				.filter(definition -> !addStaticTypeAccesses(definition)).collect(Collectors.toList());
+		if (failed.isEmpty()) {
+			return true;
 		}
-		return true;
+		failed.forEach(definition -> LOGGER
+				.error(NLS.bind(Messages.errorStaticTypeFailed, definition.getName())));
+		return false;
 	}
 
 	@Override
@@ -91,20 +88,20 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 
 	/**
 	 * adds static invocation types to all accesses in the method
-	 * 
+	 *
 	 * @param method The method
 	 * @return if the method has been processed sucessfully
 	 */
 	private boolean addStaticTypeAccesses(MAbstractMethodDefinition method) {
-		for (AbstractMethodInvocation methodInvoc : method.getMMethodInvocations()) {
-			if(!(methodInvoc instanceof MMethodInvocation)) {
+		for (final AbstractMethodInvocation methodInvoc : method.getMMethodInvocations()) {
+			if (!(methodInvoc instanceof MMethodInvocation)) {
 				continue;
 			}
 			Type type;
 			try {
 				type = getStaticType(methodInvoc, method);
-			} catch (ProcessingException e) {
-				LOGGER.log(Level.ERROR, e.getMessage(), e);
+			} catch (final ProcessingException e) {
+				LOGGER.error(e.getMessage(), e);
 				return false;
 			}
 			if (type == null && !methodInvoc.getMethod().isProxy()) {
@@ -118,7 +115,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	/**
 	 * Searches the static type of the object used in a method invocation in a
 	 * calling method
-	 * 
+	 *
 	 * @param methodInvoc The method invocation
 	 * @param method      The calling method
 	 * @return The static type of the object on which the invoked method is called
@@ -130,8 +127,9 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (methodInvoc instanceof MethodInvocation) {
 			type = getStaticType(((MethodInvocation) methodInvoc).getExpression(), method);
 			if (type == null) {
-				LOGGER.log(Level.WARN, "Cannot find static type of invocation of \"" + methodInvoc.getMethod()
-						+ "\" in " + method.getAbstractTypeDeclaration() + "." + method.getName());
+				if (LOGGER.isEnabledFor(Level.WARN)) {
+					LOGGER.warn(NLS.bind(Messages.errorFindStaticType, new String[] {NameUtil.getFullyQualifiedName(methodInvoc.getMethod()), NameUtil.getFullyQualifiedName(method)}));
+				}
 				// If we cannot find the static type assume the declaring type
 				type = getDeclaringType(methodInvoc.getMethod());
 			}
@@ -150,10 +148,10 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		} else if (methodInvoc instanceof SuperConstructorInvocation) {
 			// seems to never happen?..
 			LOGGER.log(Level.ERROR,
-					"Method invocates SuperConstructor, this is not handled by StaticTypePreprocessing!");
+					Messages.unsupportedSuperConstructorInvocation);
 			throw new ProcessingException(methodInvoc);
 		} else {
-			LOGGER.log(Level.ERROR, "Unknown invocation type : " + methodInvoc.getClass().getName());
+			LOGGER.error(NLS.bind(Messages.unknownInvocationType, methodInvoc.getClass().getName()));
 			throw new ProcessingException(methodInvoc);
 		}
 		return type;
@@ -161,7 +159,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 
 	/**
 	 * Tries to resolve the static type of an access to a variable
-	 * 
+	 *
 	 * @param expression The variable access expression
 	 * @param method     The method containing the access
 	 * @return The static type
@@ -169,47 +167,47 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(SingleVariableAccess expression, MAbstractMethodDefinition method)
 			throws ProcessingException {
-		VariableDeclaration var = ((SingleVariableAccess) expression).getVariable();
+		final VariableDeclaration var = expression.getVariable();
 		if (var == null) {
 			/*
 			 * Handling of constructs not supported by MoDisco like:
-			 * 
+			 *
 			 * try(Scanner s = new Scanner("")){ ... s.nextInt(); ... }
 			 *
 			 * Assume static type to be type in which a called method has been defined.
 			 */
-			EObject container = expression.eContainer();
+			final EObject container = expression.eContainer();
 			if (container instanceof MethodInvocation) {
 				return ((MethodInvocation) container).getMethod().getAbstractTypeDeclaration();
 			} else {
-				throw new ProcessingException("Preprocessing of unknown construct.");
+				throw new ProcessingException(Messages.preprocessingOfUnknown);
 			}
 		} else if (var instanceof SingleVariableDeclaration) {
 			return ((SingleVariableDeclaration) var).getType().getType();
 		} else if (var instanceof VariableDeclarationFragment) {
-			AbstractVariablesContainer container = ((VariableDeclarationFragment) var).getVariablesContainer();
-			TypeAccess access = container.getType();
+			final AbstractVariablesContainer container = ((VariableDeclarationFragment) var).getVariablesContainer();
+			final TypeAccess access = container.getType();
 			if (access != null) {
 				return access.getType();
 			}
 		} else if (var instanceof EnumConstantDeclaration) {
 			return getStaticType(expression.getQualifier(), method);
-		} else {
-			LOGGER.log(Level.WARN, "Unknown variable declaration: " + var.getClass().getName());
+		} else if (LOGGER.isEnabledFor(Level.WARN)) {
+			LOGGER.warn(NLS.bind(Messages.unknownVarDecl, var.getClass().getName()));
 		}
 		return getStaticTypeFromInitializer(var.getInitializer());
 	}
 
 	/**
 	 * Tries to guess the static type of a variable from the initializer
-	 * 
+	 *
 	 * @param initializer The expression used as initializer
 	 * @return The possible static type of the variable
 	 */
 	private Type getStaticTypeFromInitializer(Expression initializer) {
 		if (initializer != null) {
 			if (initializer instanceof MethodInvocation) {
-				AbstractMethodDeclaration targetMethod = ((MethodInvocation) initializer).getMethod();
+				final AbstractMethodDeclaration targetMethod = ((MethodInvocation) initializer).getMethod();
 				if (targetMethod instanceof MMethodDefinition) {
 					return ((MMethodDefinition) targetMethod).getReturnType().getType();
 				}
@@ -227,7 +225,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 
 	/**
 	 * Tries to resolve the static type of an access contained in an expression
-	 * 
+	 *
 	 * @param expression The expression
 	 * @param method     The method containing the access
 	 * @return The static type
@@ -258,7 +256,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			return ((ClassInstanceCreation) expression).getType().getType();
 		}
 		if (expression instanceof StringLiteral) {
-			return MoDiscoUtil.getOrCreateJavaLangString(model);
+			return MoDiscoUtil.getOrCreateJavaLangString(this.model);
 		}
 		if (expression instanceof Assignment) {
 			return getStaticType(((Assignment) expression).getLeftHandSide(), method);
@@ -284,72 +282,72 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 		if (expression instanceof UnresolvedItemAccess) {
 			return getStaticType((UnresolvedItemAccess) expression, method);
 		}
-		if(expression instanceof AbstractMethodInvocation) {
-			AbstractMethodDeclaration calledOn = ((AbstractMethodInvocation) expression).getMethod();
+		if (expression instanceof AbstractMethodInvocation) {
+			final AbstractMethodDeclaration calledOn = ((AbstractMethodInvocation) expression).getMethod();
 			if (calledOn instanceof MethodDeclaration) {
-				TypeAccess returnType = ((MethodDeclaration) calledOn).getReturnType();
-				if(returnType == null) {
+				final TypeAccess returnType = ((MethodDeclaration) calledOn).getReturnType();
+				if (returnType == null) {
 					if (calledOn instanceof UnresolvedMethodDeclaration) {
 						return null;
 					}
 					throw new ProcessingException();
 				}
-				return returnType.getType();			
-			}
-			else if (calledOn instanceof ConstructorDeclaration) {
+				return returnType.getType();
+			} else if (calledOn instanceof ConstructorDeclaration) {
 				return ((ConstructorDeclaration) calledOn).getAbstractTypeDeclaration();
 			}
 		}
-		LOGGER.log(Level.ERROR, "Calculating static types from \"" + expression.getClass().getSimpleName()
-				+ "\" expressions is not supported");
+		LOGGER.error(NLS.bind(Messages.unsupportedStaticTypeFromExpressionKind,
+				expression.getClass().getSimpleName()));
 		return null;
 	}
 
 	/**
 	 * Tries to resolve the static call type of an unresolved item access
-	 * 
+	 *
 	 * @param expression The access expression
 	 * @param method     The method containing the access
 	 * @return The static type
 	 */
 	private Type getStaticType(UnresolvedItemAccess expression, MAbstractMethodDefinition method) {
-		String nameOfAccessedElement = expression.getElement().getName();
+		final String nameOfAccessedElement = expression.getElement().getName();
 		// Check if the item is a parameter
-		for (SingleVariableDeclaration parameter : method.getParameters()) {
+		for (final SingleVariableDeclaration parameter : method.getParameters()) {
 			if (nameOfAccessedElement.equals(parameter.getName())) {
 				return parameter.getType().getType();
 			}
 		}
 		// Check is the accessed item is a field
-		Type declaringType = getDeclaringType(method);
+		final Type declaringType = getDeclaringType(method);
 		if (declaringType instanceof AbstractTypeDeclaration) {
-			Type type = searchTypeOfFieldWithName(nameOfAccessedElement, (AbstractTypeDeclaration) declaringType);
+			final Type type = searchTypeOfFieldWithName(nameOfAccessedElement, (AbstractTypeDeclaration) declaringType);
 			if (type != null) {
 				return type;
 			}
 		}
-		LOGGER.log(Level.WARN, "Couldn't resolve the static type of an access to an unresolved item: " + expression);
+		if (LOGGER.isEnabledFor(Level.WARN)) {
+			LOGGER.warn(NLS.bind(Messages.errorResolveStaticTypeOfAccessedUnresolved, expression));
+		}
 		return null;
 	}
 
 	/**
 	 * Searches if a type declares a field with a given name and returns its type
-	 * 
+	 *
 	 * @param name The name of the field
 	 * @param type The type containing the field
 	 * @return The type of the field or null if there is no field with this name
 	 */
 	private Type searchTypeOfFieldWithName(String name, AbstractTypeDeclaration type) {
 		return type.getBodyDeclarations().parallelStream().filter(body -> body instanceof FieldDeclaration)
-				.map(body -> (FieldDeclaration) body).filter(field -> {
-					return field.getFragments().stream().filter(fragment -> fragment.getName().equals(name))
-							.findAny().isPresent();
-				}).map(field -> field.getType().getType()).findAny().orElse(null);
+				.map(body -> (FieldDeclaration) body)
+				.filter(field -> field.getFragments().stream().anyMatch(fragment -> fragment.getName().equals(name)))
+				.map(field -> field.getType().getType()).findAny().orElse(null);
 	}
 
 	/**
 	 * Tries to get the static type of an access contained in an infix expression
-	 * 
+	 *
 	 * @param expression The infix expression
 	 * @param method     The method containing the access
 	 * @return The static type
@@ -366,7 +364,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 
 	/**
 	 * Tries to get the static type of an super or this access
-	 * 
+	 *
 	 * @param expression The access
 	 * @param method     The method containing the access
 	 * @return The static type
@@ -374,7 +372,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	 */
 	private Type getStaticType(AbstractTypeQualifiedExpression expression, MAbstractMethodDefinition method)
 			throws ProcessingException {
-		TypeAccess qualifier = expression.getQualifier();
+		final TypeAccess qualifier = expression.getQualifier();
 		if (qualifier == null) {
 			if (expression instanceof ThisExpression) {
 				return getDeclaringType(method);
@@ -387,14 +385,14 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 				return (Type) ((MDefinition) ((SuperFieldAccess) expression).getField().getVariable().eContainer())
 						.eContainer();
 			}
-			throw new ProcessingException("Not suported expression: " + expression.eClass().getName());
+			throw new ProcessingException(NLS.bind(Messages.unsupportedExpression, expression.eClass().getName()) );
 		}
 		return qualifier.getType();
 	}
 
 	/**
 	 * Searches the type declaring this method definition
-	 * 
+	 *
 	 * @param body The method definition
 	 * @return the declaring type
 	 */
@@ -407,7 +405,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 			} else if (container instanceof AbstractTypeDeclaration) {
 				type = (AbstractTypeDeclaration) container;
 			} else {
-				LOGGER.log(Level.ERROR, "Unknown deklaring type of: " + body);
+				LOGGER.error(NLS.bind(Messages.unknownDeclaringType, body));
 			}
 		}
 		return type;
@@ -415,25 +413,25 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 
 	/**
 	 * Searches the type declaring this anonymous class
-	 * 
+	 *
 	 * @param anon The anonymous class
 	 * @return the declaring type
 	 */
 	private Type getDeclaringType(AnonymousClassDeclaration anon) {
-		EObject container = anon.eContainer();
+		final EObject container = anon.eContainer();
 		if (container instanceof ClassInstanceCreation) {
-			ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
-			TypeAccess typeAccess = classInstanceCreation.getType();
+			final ClassInstanceCreation classInstanceCreation = (ClassInstanceCreation) container;
+			final TypeAccess typeAccess = classInstanceCreation.getType();
 			if (typeAccess == null) {
-				LOGGER.log(Level.ERROR, "Class instance has not type: " + classInstanceCreation);
+				LOGGER.error(NLS.bind(Messages.errorClassInstanceCreationNoType, classInstanceCreation));
 				return null;
 			}
 			return typeAccess.getType();
 		} else if (container instanceof EnumConstantDeclaration) {
-			EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
+			final EnumConstantDeclaration enumConst = (EnumConstantDeclaration) container;
 			return enumConst.getAbstractTypeDeclaration();
 		}
-		LOGGER.log(Level.ERROR, "Unknown container of anon class: " + container.eClass().getName());
+		LOGGER.error(NLS.bind(Messages.unknownContainerAnon, container.eClass().getName()));
 		return null;
 	}
 }

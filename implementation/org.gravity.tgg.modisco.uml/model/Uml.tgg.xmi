@@ -9,7 +9,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
     </nodes>
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.0/@edges.2">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="element" domainType="TRG" incomingEdges="//@rules.0/@edges.1" incomingCorrsTarget="//@rules.0/@nodes.3">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
@@ -30,7 +30,7 @@
   </rules>
   <rules name="JavaAnnotation2Comment4SingleVariableDeclaration" refines="//@rules.2">
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.1/@edges.2">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="variable" incomingEdges="//@rules.1/@edges.0" outgoingEdges="//@rules.1/@edges.2" incomingCorrsSource="//@rules.1/@nodes.3">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
@@ -60,7 +60,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     </nodes>
     <nodes name="annotation" bindingType="CREATE" incomingEdges="//@rules.2/@edges.2" outgoingEdges="//@rules.2/@edges.5" incomingCorrsSource="//@rules.2/@nodes.7">
-      <type href="http://www.gravity-tool.org/modisco#//MAnnotation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     </nodes>
     <nodes name="interf" domainType="TRG" incomingEdges="//@rules.2/@edges.1 //@rules.2/@edges.6" incomingCorrsTarget="//@rules.2/@nodes.6">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>

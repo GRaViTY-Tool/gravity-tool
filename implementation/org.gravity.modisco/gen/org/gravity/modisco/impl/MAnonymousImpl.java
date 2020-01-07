@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.gmt.modisco.java.AbstractTypeDeclaration;
+import org.eclipse.modisco.java.AbstractTypeDeclaration;
 
-import org.eclipse.gmt.modisco.java.emf.impl.AnonymousClassDeclarationImpl;
+import org.eclipse.modisco.java.emf.impl.AnonymousClassDeclarationImpl;
 
 import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.ModiscoPackage;

@@ -71,13 +71,305 @@ public interface BasicPackage extends EPackage {
 	int TACCESS = 0;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl <em>TAbstract Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TAbstractTypeImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractType()
+	 * @generated
+	 */
+	int TABSTRACT_TYPE = 15;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TClassImpl <em>TClass</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TClassImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTClass()
+	 * @generated
+	 */
+	int TCLASS = 1;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TNameImpl <em>TName</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TNameImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTName()
+	 * @generated
+	 */
+	int TNAME = 21;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldImpl <em>TField</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TFieldImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTField()
+	 * @generated
+	 */
+	int TFIELD = 2;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMemberImpl <em>TMember</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TMemberImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMember()
+	 * @generated
+	 */
+	int TMEMBER = 6;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl <em>TField Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TFieldDefinitionImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFieldDefinition()
+	 * @generated
+	 */
+	int TFIELD_DEFINITION = 3;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.TSignature <em>TSignature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.TSignature
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTSignature()
+	 * @generated
+	 */
+	int TSIGNATURE = 12;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl <em>TField Signature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TFieldSignatureImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFieldSignature()
+	 * @generated
+	 */
+	int TFIELD_SIGNATURE = 4;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TCallImpl <em>TCall</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TCallImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTCall()
+	 * @generated
+	 */
+	int TCALL = 5;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodImpl <em>TMethod</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TMethodImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethod()
+	 * @generated
+	 */
+	int TMETHOD = 7;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl <em>TMethod Definition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TMethodDefinitionImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethodDefinition()
+	 * @generated
+	 */
+	int TMETHOD_DEFINITION = 8;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl <em>TMethod Signature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TMethodSignatureImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethodSignature()
+	 * @generated
+	 */
+	int TMETHOD_SIGNATURE = 9;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TPackageImpl <em>TPackage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TPackageImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTPackage()
+	 * @generated
+	 */
+	int TPACKAGE = 10;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TParameterImpl <em>TParameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TParameterImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTParameter()
+	 * @generated
+	 */
+	int TPARAMETER = 11;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TypeGraphImpl <em>Type Graph</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TypeGraphImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTypeGraph()
+	 * @generated
+	 */
+	int TYPE_GRAPH = 13;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TInterfaceImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTInterface()
+	 * @generated
+	 */
+	int TINTERFACE = 14;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TReadImpl <em>TRead</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TReadImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTRead()
+	 * @generated
+	 */
+	int TREAD = 16;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TWriteImpl <em>TWrite</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TWriteImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTWrite()
+	 * @generated
+	 */
+	int TWRITE = 17;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TModifierImpl <em>TModifier</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TModifierImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTModifier()
+	 * @generated
+	 */
+	int TMODIFIER = 18;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TSyntethicMethodImpl <em>TSyntethic Method</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TSyntethicMethodImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTSyntethicMethod()
+	 * @generated
+	 */
+	int TSYNTETHIC_METHOD = 19;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl <em>TUnresolved Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTUnresolvedType()
+	 * @generated
+	 */
+	int TUNRESOLVED_TYPE = 20;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl <em>TAbstract Flow Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractFlowElement()
+	 * @generated
+	 */
+	int TABSTRACT_FLOW_ELEMENT = 23;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = 2;
+
+	/**
+	 * The number of structural features of the '<em>TAbstract Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>TAbstract Flow Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TACCESS__OWNED_FLOWS = TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TACCESS__INCOMING_FLOWS = TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TACCESS__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+
+	/**
 	 * The feature id for the '<em><b>TTarget</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__TTARGET = 0;
+	int TACCESS__TTARGET = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>TSource</b></em>' container reference.
@@ -86,7 +378,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__TSOURCE = 1;
+	int TACCESS__TSOURCE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Static Type</b></em>' reference.
@@ -95,7 +387,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS__STATIC_TYPE = 2;
+	int TACCESS__STATIC_TYPE = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>TAccess</em>' class.
@@ -104,7 +396,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS_FEATURE_COUNT = 3;
+	int TACCESS_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>TAccess</em>' class.
@@ -113,17 +405,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TACCESS_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl <em>TAbstract Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TAbstractTypeImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractType()
-	 * @generated
-	 */
-	int TABSTRACT_TYPE = 16;
+	int TACCESS_OPERATION_COUNT = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -369,16 +651,6 @@ public interface BasicPackage extends EPackage {
 	int TABSTRACT_TYPE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TClassImpl <em>TClass</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TClassImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTClass()
-	 * @generated
-	 */
-	int TCLASS = 1;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,22 +885,13 @@ public interface BasicPackage extends EPackage {
 	int TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE = TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE;
 
 	/**
-	 * The operation id for the '<em>Get TMethod Definitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___GET_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 1;
+	int TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS = TABSTRACT_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get All TMembers</em>' operation.
@@ -637,16 +900,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_TMEMBERS = TABSTRACT_TYPE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get All TMembers In Container</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER = TABSTRACT_TYPE_OPERATION_COUNT + 3;
+	int TCLASS___GET_ALL_TMEMBERS = TABSTRACT_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get All Children</em>' operation.
@@ -655,7 +909,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_CHILDREN = TABSTRACT_TYPE_OPERATION_COUNT + 4;
+	int TCLASS___GET_ALL_CHILDREN = TABSTRACT_TYPE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
@@ -664,7 +918,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___IS_SUB_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 5;
+	int TCLASS___IS_SUB_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Is Super Type Of</em>' operation.
@@ -673,7 +927,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 6;
+	int TCLASS___IS_SUPER_TYPE_OF__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get All Outgoing Accesses</em>' operation.
@@ -682,7 +936,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE = TABSTRACT_TYPE_OPERATION_COUNT + 7;
+	int TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE = TABSTRACT_TYPE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Has AParent This TMember</em>' operation.
@@ -691,7 +945,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = TABSTRACT_TYPE_OPERATION_COUNT + 8;
+	int TCLASS___HAS_APARENT_THIS_TMEMBER__TMEMBER = TABSTRACT_TYPE_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Resolved Parent Class</em>' operation.
@@ -700,7 +954,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_RESOLVED_PARENT_CLASS = TABSTRACT_TYPE_OPERATION_COUNT + 9;
+	int TCLASS___GET_RESOLVED_PARENT_CLASS = TABSTRACT_TYPE_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -709,7 +963,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 10;
+	int TCLASS___TO_STRING = TABSTRACT_TYPE_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get Parents</em>' operation.
@@ -718,7 +972,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 11;
+	int TCLASS___GET_PARENTS = TABSTRACT_TYPE_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Has Common Super Type</em>' operation.
@@ -727,7 +981,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 12;
+	int TCLASS___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE = TABSTRACT_TYPE_OPERATION_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>TClass</em>' class.
@@ -736,17 +990,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 13;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TNameImpl <em>TName</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TNameImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTName()
-	 * @generated
-	 */
-	int TNAME = 25;
+	int TCLASS_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -774,16 +1018,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TNAME_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldImpl <em>TField</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TFieldImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTField()
-	 * @generated
-	 */
-	int TFIELD = 2;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -831,16 +1065,6 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMemberImpl <em>TMember</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TMemberImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMember()
-	 * @generated
-	 */
-	int TMEMBER = 6;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -850,13 +1074,40 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TMEMBER__DEFINED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
@@ -865,7 +1116,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TMEMBER__ACCESSED_BY = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
@@ -874,7 +1125,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TMEMBER__TACCESSING = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
@@ -883,7 +1134,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TMEMBER__TMODIFIER = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Signature</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMEMBER__SIGNATURE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>TMember</em>' class.
@@ -892,7 +1152,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
+	int TMEMBER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -904,22 +1164,13 @@ public interface BasicPackage extends EPackage {
 	int TMEMBER___GET_TANNOTATION__ECLASS = AnnotationsPackage.TANNOTATABLE___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMEMBER___GET_SIGNATURE = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER___GET_SIGNATURE_STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 1;
+	int TMEMBER___GET_SIGNATURE_STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>TMember</em>' class.
@@ -928,17 +1179,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMEMBER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldDefinitionImpl <em>TField Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TFieldDefinitionImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFieldDefinition()
-	 * @generated
-	 */
-	int TFIELD_DEFINITION = 3;
+	int TMEMBER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -948,6 +1189,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TFIELD_DEFINITION__TANNOTATION = TMEMBER__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -992,7 +1260,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__SIGNATURE = TMEMBER_FEATURE_COUNT + 0;
+	int TFIELD_DEFINITION__SIGNATURE = TMEMBER__SIGNATURE;
 
 	/**
 	 * The feature id for the '<em><b>Hiding</b></em>' reference.
@@ -1001,7 +1269,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__HIDING = TMEMBER_FEATURE_COUNT + 1;
+	int TFIELD_DEFINITION__HIDING = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hidden By</b></em>' reference list.
@@ -1010,7 +1278,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION__HIDDEN_BY = TMEMBER_FEATURE_COUNT + 2;
+	int TFIELD_DEFINITION__HIDDEN_BY = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TField Definition</em>' class.
@@ -1019,7 +1287,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 3;
+	int TFIELD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1031,15 +1299,6 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_DEFINITION___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TFIELD_DEFINITION___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1049,23 +1308,22 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_DEFINITION___GET_SIGNATURE_STRING = TMEMBER___GET_SIGNATURE_STRING;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TField Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TSignatureImpl <em>TSignature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TSignatureImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTSignature()
-	 * @generated
-	 */
-	int TSIGNATURE = 13;
+	int TFIELD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1077,13 +1335,49 @@ public interface BasicPackage extends EPackage {
 	int TSIGNATURE__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSIGNATURE__DEFINITIONS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>TSignature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TSIGNATURE_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1122,16 +1416,6 @@ public interface BasicPackage extends EPackage {
 	int TSIGNATURE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl <em>TField Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TFieldSignatureImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFieldSignature()
-	 * @generated
-	 */
-	int TFIELD_SIGNATURE = 4;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1141,13 +1425,40 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_SIGNATURE__TANNOTATION = TSIGNATURE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__OWNED_FLOWS = TSIGNATURE__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__INCOMING_FLOWS = TSIGNATURE__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE__OUTGOING_FLOWS = TSIGNATURE__OUTGOING_FLOWS;
+
+	/**
 	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__DEFINITIONS = TSIGNATURE_FEATURE_COUNT + 0;
+	int TFIELD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' container reference.
@@ -1156,7 +1467,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 1;
+	int TFIELD_SIGNATURE__FIELD = TSIGNATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1165,7 +1476,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 2;
+	int TFIELD_SIGNATURE__TYPE = TSIGNATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>TField Signature</em>' class.
@@ -1174,7 +1485,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 3;
+	int TFIELD_SIGNATURE_FEATURE_COUNT = TSIGNATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1204,23 +1515,49 @@ public interface BasicPackage extends EPackage {
 	int TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TSIGNATURE_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Field Definitions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>TField Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 2;
+	int TFIELD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TCallImpl <em>TCall</em>}' class.
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TCallImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTCall()
 	 * @generated
+	 * @ordered
 	 */
-	int TCALL = 5;
+	int TCALL__OWNED_FLOWS = TACCESS__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCALL__INCOMING_FLOWS = TACCESS__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCALL__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>TTarget</b></em>' reference.
@@ -1266,16 +1603,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TCALL_OPERATION_COUNT = TACCESS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodImpl <em>TMethod</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TMethodImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethod()
-	 * @generated
-	 */
-	int TMETHOD = 7;
 
 	/**
 	 * The feature id for the '<em><b>TName</b></em>' attribute.
@@ -1332,16 +1659,6 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_OPERATION_COUNT = TNAME_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodDefinitionImpl <em>TMethod Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TMethodDefinitionImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethodDefinition()
-	 * @generated
-	 */
-	int TMETHOD_DEFINITION = 8;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1349,6 +1666,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TMETHOD_DEFINITION__TANNOTATION = TMEMBER__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -1393,7 +1737,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__SIGNATURE = TMEMBER_FEATURE_COUNT + 0;
+	int TMETHOD_DEFINITION__SIGNATURE = TMEMBER__SIGNATURE;
 
 	/**
 	 * The feature id for the '<em><b>Overriding</b></em>' reference.
@@ -1402,7 +1746,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 1;
+	int TMETHOD_DEFINITION__OVERRIDING = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Overridden By</b></em>' reference list.
@@ -1411,7 +1755,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 2;
+	int TMETHOD_DEFINITION__OVERRIDDEN_BY = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Overloading</b></em>' reference list.
@@ -1420,7 +1764,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 3;
+	int TMETHOD_DEFINITION__OVERLOADING = TMEMBER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Overloaded By</b></em>' reference list.
@@ -1429,7 +1773,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 4;
+	int TMETHOD_DEFINITION__OVERLOADED_BY = TMEMBER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
@@ -1438,16 +1782,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 5;
+	int TMETHOD_DEFINITION__RETURN_TYPE = TMEMBER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Syntethic Methods</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Syntethic Methods</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 6;
+	int TMETHOD_DEFINITION__SYNTETHIC_METHODS = TMEMBER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Definition</em>' class.
@@ -1456,7 +1800,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 7;
+	int TMETHOD_DEFINITION_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1466,15 +1810,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TMETHOD_DEFINITION___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
 
 	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
@@ -1495,23 +1830,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_DEFINITION___TO_STRING = TMEMBER_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_DEFINITION___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>TMethod Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl <em>TMethod Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TMethodSignatureImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTMethodSignature()
-	 * @generated
-	 */
-	int TMETHOD_SIGNATURE = 9;
+	int TMETHOD_DEFINITION_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1523,6 +1857,42 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE__TANNOTATION = TSIGNATURE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__OWNED_FLOWS = TSIGNATURE__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__INCOMING_FLOWS = TSIGNATURE__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__OUTGOING_FLOWS = TSIGNATURE__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__DEFINITIONS = TSIGNATURE__DEFINITIONS;
+
+	/**
 	 * The feature id for the '<em><b>Method</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1532,31 +1902,31 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE__METHOD = TSIGNATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Param List</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_SIGNATURE__PARAM_LIST = TSIGNATURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMETHOD_SIGNATURE__DEFINITIONS = TSIGNATURE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 3;
+	int TMETHOD_SIGNATURE__RETURN_TYPE = TSIGNATURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__PARAMETERS = TSIGNATURE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>First Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE__FIRST_PARAMETER = TSIGNATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>TMethod Signature</em>' class.
@@ -1613,23 +1983,22 @@ public interface BasicPackage extends EPackage {
 	int TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TSIGNATURE_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Method Definitions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS = TSIGNATURE_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>TMethod Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TPackageImpl <em>TPackage</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TPackageImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTPackage()
-	 * @generated
-	 */
-	int TPACKAGE = 10;
+	int TMETHOD_SIGNATURE_OPERATION_COUNT = TSIGNATURE_OPERATION_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -1776,16 +2145,6 @@ public interface BasicPackage extends EPackage {
 	int TPACKAGE_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TParameterImpl <em>TParameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TParameterImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTParameter()
-	 * @generated
-	 */
-	int TPARAMETER = 11;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1795,13 +2154,40 @@ public interface BasicPackage extends EPackage {
 	int TPARAMETER__TANNOTATION = AnnotationsPackage.TANNOTATABLE__TANNOTATION;
 
 	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__OWNED_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__INCOMING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TPARAMETER__OUTGOING_FLOWS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Next</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 0;
+	int TPARAMETER__NEXT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Previous</b></em>' reference.
@@ -1810,7 +2196,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 1;
+	int TPARAMETER__PREVIOUS = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1819,7 +2205,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 2;
+	int TPARAMETER__TYPE = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>TParameter</em>' class.
@@ -1828,7 +2214,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 3;
+	int TPARAMETER_FEATURE_COUNT = AnnotationsPackage.TANNOTATABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -1847,62 +2233,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TPARAMETER_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TParameterListImpl <em>TParameter List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TParameterListImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTParameterList()
-	 * @generated
-	 */
-	int TPARAMETER_LIST = 12;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TPARAMETER_LIST__ENTRIES = 0;
-
-	/**
-	 * The feature id for the '<em><b>First</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TPARAMETER_LIST__FIRST = 1;
-
-	/**
-	 * The number of structural features of the '<em>TParameter List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TPARAMETER_LIST_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>TParameter List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TPARAMETER_LIST_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TypeGraphImpl <em>Type Graph</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TypeGraphImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTypeGraph()
-	 * @generated
-	 */
-	int TYPE_GRAPH = 14;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2049,22 +2379,13 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___GET_CLASS__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Get Abstract Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_GRAPH___GET_ABSTRACT_TYPE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
-
-	/**
 	 * The operation id for the '<em>Get Interface</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH___GET_INTERFACE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
+	int TYPE_GRAPH___GET_INTERFACE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Method</em>' operation.
@@ -2073,7 +2394,25 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH___GET_METHOD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+	int TYPE_GRAPH___GET_METHOD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Field</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_FIELD__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
@@ -2082,17 +2421,7 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TInterfaceImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTInterface()
-	 * @generated
-	 */
-	int TINTERFACE = 15;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -2365,368 +2694,31 @@ public interface BasicPackage extends EPackage {
 	int TINTERFACE_OPERATION_COUNT = TABSTRACT_TYPE_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TConstructorNameImpl <em>TConstructor Name</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TConstructorNameImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorName()
-	 * @generated
-	 */
-	int TCONSTRUCTOR_NAME = 17;
-
-	/**
-	 * The feature id for the '<em><b>TName</b></em>' attribute.
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCONSTRUCTOR_NAME__TNAME = TMETHOD__TNAME;
+	int TREAD__OWNED_FLOWS = TACCESS__OWNED_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>Signatures</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCONSTRUCTOR_NAME__SIGNATURES = TMETHOD__SIGNATURES;
+	int TREAD__INCOMING_FLOWS = TACCESS__INCOMING_FLOWS;
 
 	/**
-	 * The feature id for the '<em><b>Pg</b></em>' container reference.
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCONSTRUCTOR_NAME__PG = TMETHOD__PG;
-
-	/**
-	 * The number of structural features of the '<em>TConstructor Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_NAME_FEATURE_COUNT = TMETHOD_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_NAME___GET_SIGNATURE__TABSTRACTTYPE_ELIST = TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST;
-
-	/**
-	 * The number of operations of the '<em>TConstructor Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_NAME_OPERATION_COUNT = TMETHOD_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TConstructorSignatureImpl <em>TConstructor Signature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TConstructorSignatureImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorSignature()
-	 * @generated
-	 */
-	int TCONSTRUCTOR_SIGNATURE = 18;
-
-	/**
-	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE__TANNOTATION = TMETHOD_SIGNATURE__TANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Method</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE__METHOD = TMETHOD_SIGNATURE__METHOD;
-
-	/**
-	 * The feature id for the '<em><b>Param List</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE__PARAM_LIST = TMETHOD_SIGNATURE__PARAM_LIST;
-
-	/**
-	 * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE__DEFINITIONS = TMETHOD_SIGNATURE__DEFINITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE__RETURN_TYPE = TMETHOD_SIGNATURE__RETURN_TYPE;
-
-	/**
-	 * The number of structural features of the '<em>TConstructor Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE_FEATURE_COUNT = TMETHOD_SIGNATURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get TAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE___GET_TANNOTATION__ECLASS = TMETHOD_SIGNATURE___GET_TANNOTATION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Signature String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE___GET_SIGNATURE_STRING = TMETHOD_SIGNATURE___GET_SIGNATURE_STRING;
-
-	/**
-	 * The operation id for the '<em>Get TDefinition</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE___TO_STRING = TMETHOD_SIGNATURE___TO_STRING;
-
-	/**
-	 * The operation id for the '<em>Is This Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST;
-
-	/**
-	 * The number of operations of the '<em>TConstructor Signature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_SIGNATURE_OPERATION_COUNT = TMETHOD_SIGNATURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TConstructorDefinitionImpl <em>TConstructor Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TConstructorDefinitionImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorDefinition()
-	 * @generated
-	 */
-	int TCONSTRUCTOR_DEFINITION = 19;
-
-	/**
-	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__TANNOTATION = TMETHOD_DEFINITION__TANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Defined By</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__DEFINED_BY = TMETHOD_DEFINITION__DEFINED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__ACCESSED_BY = TMETHOD_DEFINITION__ACCESSED_BY;
-
-	/**
-	 * The feature id for the '<em><b>TAccessing</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__TACCESSING = TMETHOD_DEFINITION__TACCESSING;
-
-	/**
-	 * The feature id for the '<em><b>TModifier</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__TMODIFIER = TMETHOD_DEFINITION__TMODIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Signature</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__SIGNATURE = TMETHOD_DEFINITION__SIGNATURE;
-
-	/**
-	 * The feature id for the '<em><b>Overriding</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__OVERRIDING = TMETHOD_DEFINITION__OVERRIDING;
-
-	/**
-	 * The feature id for the '<em><b>Overridden By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__OVERRIDDEN_BY = TMETHOD_DEFINITION__OVERRIDDEN_BY;
-
-	/**
-	 * The feature id for the '<em><b>Overloading</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__OVERLOADING = TMETHOD_DEFINITION__OVERLOADING;
-
-	/**
-	 * The feature id for the '<em><b>Overloaded By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__OVERLOADED_BY = TMETHOD_DEFINITION__OVERLOADED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__RETURN_TYPE = TMETHOD_DEFINITION__RETURN_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Syntethic Methods</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION__SYNTETHIC_METHODS = TMETHOD_DEFINITION__SYNTETHIC_METHODS;
-
-	/**
-	 * The number of structural features of the '<em>TConstructor Definition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION_FEATURE_COUNT = TMETHOD_DEFINITION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Get TAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION___GET_TANNOTATION__ECLASS = TMETHOD_DEFINITION___GET_TANNOTATION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION___GET_SIGNATURE = TMETHOD_DEFINITION___GET_SIGNATURE;
-
-	/**
-	 * The operation id for the '<em>Get Signature String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION___GET_SIGNATURE_STRING = TMETHOD_DEFINITION___GET_SIGNATURE_STRING;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION___TO_STRING = TMETHOD_DEFINITION___TO_STRING;
-
-	/**
-	 * The number of operations of the '<em>TConstructor Definition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCONSTRUCTOR_DEFINITION_OPERATION_COUNT = TMETHOD_DEFINITION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TReadImpl <em>TRead</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TReadImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTRead()
-	 * @generated
-	 */
-	int TREAD = 20;
+	int TREAD__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>TTarget</b></em>' reference.
@@ -2774,14 +2766,31 @@ public interface BasicPackage extends EPackage {
 	int TREAD_OPERATION_COUNT = TACCESS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TWriteImpl <em>TWrite</em>}' class.
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TWriteImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTWrite()
 	 * @generated
+	 * @ordered
 	 */
-	int TWRITE = 21;
+	int TWRITE__OWNED_FLOWS = TACCESS__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWRITE__INCOMING_FLOWS = TACCESS__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TWRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>TTarget</b></em>' reference.
@@ -2829,16 +2838,6 @@ public interface BasicPackage extends EPackage {
 	int TWRITE_OPERATION_COUNT = TACCESS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TModifierImpl <em>TModifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TModifierImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTModifier()
-	 * @generated
-	 */
-	int TMODIFIER = 22;
-
-	/**
 	 * The feature id for the '<em><b>TVisibility</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2875,16 +2874,6 @@ public interface BasicPackage extends EPackage {
 	int TMODIFIER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TSyntethicMethodImpl <em>TSyntethic Method</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TSyntethicMethodImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTSyntethicMethod()
-	 * @generated
-	 */
-	int TSYNTETHIC_METHOD = 23;
-
-	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2892,6 +2881,33 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TSYNTETHIC_METHOD__TANNOTATION = TMEMBER__TANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__OWNED_FLOWS = TMEMBER__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__INCOMING_FLOWS = TMEMBER__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__OUTGOING_FLOWS = TMEMBER__OUTGOING_FLOWS;
 
 	/**
 	 * The feature id for the '<em><b>Defined By</b></em>' reference.
@@ -2930,7 +2946,16 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__TMODIFIER = TMEMBER__TMODIFIER;
 
 	/**
-	 * The feature id for the '<em><b>Original Method Definition</b></em>' container reference.
+	 * The feature id for the '<em><b>Signature</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD__SIGNATURE = TMEMBER__SIGNATURE;
+
+	/**
+	 * The feature id for the '<em><b>Original Method Definition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2939,22 +2964,13 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION = TMEMBER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Signature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TSYNTETHIC_METHOD__SIGNATURE = TMEMBER_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>TSyntethic Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSYNTETHIC_METHOD_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 2;
+	int TSYNTETHIC_METHOD_FEATURE_COUNT = TMEMBER_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get TAnnotation</em>' operation.
@@ -2966,15 +2982,6 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD___GET_TANNOTATION__ECLASS = TMEMBER___GET_TANNOTATION__ECLASS;
 
 	/**
-	 * The operation id for the '<em>Get Signature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TSYNTETHIC_METHOD___GET_SIGNATURE = TMEMBER___GET_SIGNATURE;
-
-	/**
 	 * The operation id for the '<em>Get Signature String</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2984,23 +2991,22 @@ public interface BasicPackage extends EPackage {
 	int TSYNTETHIC_METHOD___GET_SIGNATURE_STRING = TMEMBER___GET_SIGNATURE_STRING;
 
 	/**
+	 * The operation id for the '<em>Get Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSYNTETHIC_METHOD___GET_SIGNATURE = TMEMBER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>TSyntethic Method</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSYNTETHIC_METHOD_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl <em>TUnresolved Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl
-	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTUnresolvedType()
-	 * @generated
-	 */
-	int TUNRESOLVED_TYPE = 24;
+	int TSYNTETHIC_METHOD_OPERATION_COUNT = TMEMBER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -3264,15 +3270,6 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = TCLASS___GET_REAL_PACKAGE__TABSTRACTTYPE;
 
 	/**
-	 * The operation id for the '<em>Get TMethod Definitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___GET_TMETHOD_DEFINITIONS = TCLASS___GET_TMETHOD_DEFINITIONS;
-
-	/**
 	 * The operation id for the '<em>Get Declared TMethod Definitions</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3289,15 +3286,6 @@ public interface BasicPackage extends EPackage {
 	 * @ordered
 	 */
 	int TUNRESOLVED_TYPE___GET_ALL_TMEMBERS = TCLASS___GET_ALL_TMEMBERS;
-
-	/**
-	 * The operation id for the '<em>Get All TMembers In Container</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TUNRESOLVED_TYPE___GET_ALL_TMEMBERS_IN_CONTAINER = TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER;
 
 	/**
 	 * The operation id for the '<em>Get All Children</em>' operation.
@@ -3390,6 +3378,550 @@ public interface BasicPackage extends EPackage {
 	int TUNRESOLVED_TYPE_OPERATION_COUNT = TCLASS_OPERATION_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TFlowImpl <em>TFlow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TFlowImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFlow()
+	 * @generated
+	 */
+	int TFLOW = 22;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__OWNED_FLOWS = TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__INCOMING_FLOWS = TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__OUTGOING_FLOWS = TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Flow Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW__FLOW_OWNER = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>TFlow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW_FEATURE_COUNT = TABSTRACT_FLOW_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>TFlow</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TFLOW_OPERATION_COUNT = TABSTRACT_FLOW_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TReadWriteImpl <em>TRead Write</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TReadWriteImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTReadWrite()
+	 * @generated
+	 */
+	int TREAD_WRITE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__OWNED_FLOWS = TACCESS__OWNED_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__INCOMING_FLOWS = TACCESS__INCOMING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__OUTGOING_FLOWS = TACCESS__OUTGOING_FLOWS;
+
+	/**
+	 * The feature id for the '<em><b>TTarget</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__TTARGET = TACCESS__TTARGET;
+
+	/**
+	 * The feature id for the '<em><b>TSource</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__TSOURCE = TACCESS__TSOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Static Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE__STATIC_TYPE = TACCESS__STATIC_TYPE;
+
+	/**
+	 * The number of structural features of the '<em>TRead Write</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE_FEATURE_COUNT = TACCESS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>TRead Write</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TREAD_WRITE_OPERATION_COUNT = TACCESS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TConstructorImpl <em>TConstructor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TConstructorImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructor()
+	 * @generated
+	 */
+	int TCONSTRUCTOR = 25;
+
+	/**
+	 * The feature id for the '<em><b>TAnnotated</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR__TANNOTATED = AnnotationsPackage.TANNOTATION__TANNOTATED;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR__TYPE = AnnotationsPackage.TANNOTATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>TValues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR__TVALUES = AnnotationsPackage.TANNOTATION__TVALUES;
+
+	/**
+	 * The number of structural features of the '<em>TConstructor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_FEATURE_COUNT = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECLASS = AnnotationsPackage.TANNOTATION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EIS_PROXY = AnnotationsPackage.TANNOTATION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ERESOURCE = AnnotationsPackage.TANNOTATION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECONTAINER = AnnotationsPackage.TANNOTATION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECONTENTS = AnnotationsPackage.TANNOTATION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EALL_CONTENTS = AnnotationsPackage.TANNOTATION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>TConstructor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TCONSTRUCTOR_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.typegraph.basic.impl.TEnumImpl <em>TEnum</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.typegraph.basic.impl.TEnumImpl
+	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTEnum()
+	 * @generated
+	 */
+	int TENUM = 26;
+
+	/**
+	 * The feature id for the '<em><b>TAnnotated</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM__TANNOTATED = AnnotationsPackage.TANNOTATION__TANNOTATED;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM__TYPE = AnnotationsPackage.TANNOTATION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>TValues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM__TVALUES = AnnotationsPackage.TANNOTATION__TVALUES;
+
+	/**
+	 * The number of structural features of the '<em>TEnum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM_FEATURE_COUNT = AnnotationsPackage.TANNOTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECLASS = AnnotationsPackage.TANNOTATION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EIS_PROXY = AnnotationsPackage.TANNOTATION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ERESOURCE = AnnotationsPackage.TANNOTATION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECONTAINER = AnnotationsPackage.TANNOTATION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECONTAINING_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECONTAINMENT_FEATURE = AnnotationsPackage.TANNOTATION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECONTENTS = AnnotationsPackage.TANNOTATION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EALL_CONTENTS = AnnotationsPackage.TANNOTATION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ECROSS_REFERENCES = AnnotationsPackage.TANNOTATION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EGET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EGET__ESTRUCTURALFEATURE_BOOLEAN = AnnotationsPackage.TANNOTATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___ESET__ESTRUCTURALFEATURE_OBJECT = AnnotationsPackage.TANNOTATION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EIS_SET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EUNSET__ESTRUCTURALFEATURE = AnnotationsPackage.TANNOTATION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___EINVOKE__EOPERATION_ELIST = AnnotationsPackage.TANNOTATION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM___GET_VALUE__STRING = AnnotationsPackage.TANNOTATION___GET_VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>TEnum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TENUM_OPERATION_COUNT = AnnotationsPackage.TANNOTATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3397,7 +3929,7 @@ public interface BasicPackage extends EPackage {
 	 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTVisibility()
 	 * @generated
 	 */
-	int TVISIBILITY = 26;
+	int TVISIBILITY = 27;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAccess <em>TAccess</em>}'.
@@ -3486,16 +4018,6 @@ public interface BasicPackage extends EPackage {
 	EReference getTClass_Implements();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getTMethodDefinitions() <em>Get TMethod Definitions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get TMethod Definitions</em>' operation.
-	 * @see org.gravity.typegraph.basic.TClass#getTMethodDefinitions()
-	 * @generated
-	 */
-	EOperation getTClass__GetTMethodDefinitions();
-
-	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getDeclaredTMethodDefinitions() <em>Get Declared TMethod Definitions</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3514,16 +4036,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTClass__GetAllTMembers();
-
-	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getAllTMembersInContainer() <em>Get All TMembers In Container</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get All TMembers In Container</em>' operation.
-	 * @see org.gravity.typegraph.basic.TClass#getAllTMembersInContainer()
-	 * @generated
-	 */
-	EOperation getTClass__GetAllTMembersInContainer();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TClass#getAllChildren() <em>Get All Children</em>}' operation.
@@ -3658,17 +4170,6 @@ public interface BasicPackage extends EPackage {
 	EClass getTFieldDefinition();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Signature</em>'.
-	 * @see org.gravity.typegraph.basic.TFieldDefinition#getSignature()
-	 * @see #getTFieldDefinition()
-	 * @generated
-	 */
-	EReference getTFieldDefinition_Signature();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TFieldDefinition#getHiding <em>Hiding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3691,6 +4192,16 @@ public interface BasicPackage extends EPackage {
 	EReference getTFieldDefinition_HiddenBy();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TFieldDefinition#getSignature() <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TFieldDefinition#getSignature()
+	 * @generated
+	 */
+	EOperation getTFieldDefinition__GetSignature();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TFieldSignature <em>TField Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3699,17 +4210,6 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTFieldSignature();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TFieldSignature#getDefinitions <em>Definitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
-	 * @see org.gravity.typegraph.basic.TFieldSignature#getDefinitions()
-	 * @see #getTFieldSignature()
-	 * @generated
-	 */
-	EReference getTFieldSignature_Definitions();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFieldSignature#getField <em>Field</em>}'.
@@ -3752,6 +4252,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTFieldSignature__GetTDefinition__TAbstractType();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TFieldSignature#getFieldDefinitions() <em>Get Field Definitions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field Definitions</em>' operation.
+	 * @see org.gravity.typegraph.basic.TFieldSignature#getFieldDefinitions()
+	 * @generated
+	 */
+	EOperation getTFieldSignature__GetFieldDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TCall <em>TCall</em>}'.
@@ -3818,14 +4328,15 @@ public interface BasicPackage extends EPackage {
 	EReference getTMember_TModifier();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMember#getSignature() <em>Get Signature</em>}' operation.
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMember#getSignature <em>Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @return the meta object for the container reference '<em>Signature</em>'.
 	 * @see org.gravity.typegraph.basic.TMember#getSignature()
+	 * @see #getTMember()
 	 * @generated
 	 */
-	EOperation getTMember__GetSignature();
+	EReference getTMember_Signature();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMember#getSignatureString() <em>Get Signature String</em>}' operation.
@@ -3890,17 +4401,6 @@ public interface BasicPackage extends EPackage {
 	EClass getTMethodDefinition();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature <em>Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Signature</em>'.
-	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSignature()
-	 * @see #getTMethodDefinition()
-	 * @generated
-	 */
-	EReference getTMethodDefinition_Signature();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodDefinition#getOverriding <em>Overriding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3956,10 +4456,10 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethodDefinition_ReturnType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods <em>Syntethic Methods</em>}'.
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods <em>Syntethic Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Syntethic Methods</em>'.
+	 * @return the meta object for the reference list '<em>Syntethic Methods</em>'.
 	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSyntethicMethods()
 	 * @see #getTMethodDefinition()
 	 * @generated
@@ -3975,6 +4475,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodDefinition__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodDefinition#getSignature() <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethodDefinition#getSignature()
+	 * @generated
+	 */
+	EOperation getTMethodDefinition__GetSignature();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TMethodSignature <em>TMethod Signature</em>}'.
@@ -3998,28 +4508,6 @@ public interface BasicPackage extends EPackage {
 	EReference getTMethodSignature_Method();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.gravity.typegraph.basic.TMethodSignature#getParamList <em>Param List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Param List</em>'.
-	 * @see org.gravity.typegraph.basic.TMethodSignature#getParamList()
-	 * @see #getTMethodSignature()
-	 * @generated
-	 */
-	EReference getTMethodSignature_ParamList();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMethodSignature#getDefinitions <em>Definitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
-	 * @see org.gravity.typegraph.basic.TMethodSignature#getDefinitions()
-	 * @see #getTMethodSignature()
-	 * @generated
-	 */
-	EReference getTMethodSignature_Definitions();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodSignature#getReturnType <em>Return Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4029,6 +4517,28 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTMethodSignature_ReturnType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TMethodSignature#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see org.gravity.typegraph.basic.TMethodSignature#getParameters()
+	 * @see #getTMethodSignature()
+	 * @generated
+	 */
+	EReference getTMethodSignature_Parameters();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TMethodSignature#getFirstParameter <em>First Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>First Parameter</em>'.
+	 * @see org.gravity.typegraph.basic.TMethodSignature#getFirstParameter()
+	 * @see #getTMethodSignature()
+	 * @generated
+	 */
+	EReference getTMethodSignature_FirstParameter();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#getSignatureString() <em>Get Signature String</em>}' operation.
@@ -4069,6 +4579,16 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TMethodSignature#getMethodDefinitions() <em>Get Method Definitions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method Definitions</em>' operation.
+	 * @see org.gravity.typegraph.basic.TMethodSignature#getMethodDefinitions()
+	 * @generated
+	 */
+	EOperation getTMethodSignature__GetMethodDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TPackage <em>TPackage</em>}'.
@@ -4252,38 +4772,6 @@ public interface BasicPackage extends EPackage {
 	EReference getTParameter_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TParameterList <em>TParameter List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TParameter List</em>'.
-	 * @see org.gravity.typegraph.basic.TParameterList
-	 * @generated
-	 */
-	EClass getTParameterList();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TParameterList#getEntries <em>Entries</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Entries</em>'.
-	 * @see org.gravity.typegraph.basic.TParameterList#getEntries()
-	 * @see #getTParameterList()
-	 * @generated
-	 */
-	EReference getTParameterList_Entries();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TParameterList#getFirst <em>First</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>First</em>'.
-	 * @see org.gravity.typegraph.basic.TParameterList#getFirst()
-	 * @see #getTParameterList()
-	 * @generated
-	 */
-	EReference getTParameterList_First();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TSignature <em>TSignature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4292,6 +4780,17 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTSignature();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TSignature#getDefinitions <em>Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Definitions</em>'.
+	 * @see org.gravity.typegraph.basic.TSignature#getDefinitions()
+	 * @see #getTSignature()
+	 * @generated
+	 */
+	EReference getTSignature_Definitions();
 
 	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TSignature#getSignatureString() <em>Get Signature String</em>}' operation.
@@ -4462,16 +4961,6 @@ public interface BasicPackage extends EPackage {
 	EOperation getTypeGraph__GetClass__String();
 
 	/**
-	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getAbstractType(java.lang.String) <em>Get Abstract Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Abstract Type</em>' operation.
-	 * @see org.gravity.typegraph.basic.TypeGraph#getAbstractType(java.lang.String)
-	 * @generated
-	 */
-	EOperation getTypeGraph__GetAbstractType__String();
-
-	/**
 	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getInterface(java.lang.String) <em>Get Interface</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4490,6 +4979,26 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTypeGraph__GetMethod__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getField(java.lang.String) <em>Get Field</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getField(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetField__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getSignature(java.lang.String) <em>Get Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getSignature(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetSignature__String();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
@@ -4814,36 +5323,6 @@ public interface BasicPackage extends EPackage {
 	EOperation getTAbstractType__GetRealPackage__TAbstractType();
 
 	/**
-	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TConstructorName <em>TConstructor Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TConstructor Name</em>'.
-	 * @see org.gravity.typegraph.basic.TConstructorName
-	 * @generated
-	 */
-	EClass getTConstructorName();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TConstructorSignature <em>TConstructor Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TConstructor Signature</em>'.
-	 * @see org.gravity.typegraph.basic.TConstructorSignature
-	 * @generated
-	 */
-	EClass getTConstructorSignature();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TConstructorDefinition <em>TConstructor Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TConstructor Definition</em>'.
-	 * @see org.gravity.typegraph.basic.TConstructorDefinition
-	 * @generated
-	 */
-	EClass getTConstructorDefinition();
-
-	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TRead <em>TRead</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4906,10 +5385,10 @@ public interface BasicPackage extends EPackage {
 	EClass getTSyntethicMethod();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
+	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition <em>Original Method Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Original Method Definition</em>'.
+	 * @return the meta object for the reference '<em>Original Method Definition</em>'.
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getOriginalMethodDefinition()
 	 * @see #getTSyntethicMethod()
 	 * @generated
@@ -4917,15 +5396,14 @@ public interface BasicPackage extends EPackage {
 	EReference getTSyntethicMethod_OriginalMethodDefinition();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gravity.typegraph.basic.TSyntethicMethod#getSignature <em>Signature</em>}'.
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TSyntethicMethod#getSignature() <em>Get Signature</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Signature</em>'.
+	 * @return the meta object for the '<em>Get Signature</em>' operation.
 	 * @see org.gravity.typegraph.basic.TSyntethicMethod#getSignature()
-	 * @see #getTSyntethicMethod()
 	 * @generated
 	 */
-	EReference getTSyntethicMethod_Signature();
+	EOperation getTSyntethicMethod__GetSignature();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TUnresolvedType <em>TUnresolved Type</em>}'.
@@ -4957,6 +5435,100 @@ public interface BasicPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTName_TName();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TFlow <em>TFlow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TFlow</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow
+	 * @generated
+	 */
+	EClass getTFlow();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.gravity.typegraph.basic.TFlow#getFlowOwner <em>Flow Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Flow Owner</em>'.
+	 * @see org.gravity.typegraph.basic.TFlow#getFlowOwner()
+	 * @see #getTFlow()
+	 * @generated
+	 */
+	EReference getTFlow_FlowOwner();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TAbstractFlowElement <em>TAbstract Flow Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TAbstract Flow Element</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement
+	 * @generated
+	 */
+	EClass getTAbstractFlowElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getOwnedFlows <em>Owned Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOwnedFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_OwnedFlows();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows <em>Incoming Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incoming Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getIncomingFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_IncomingFlows();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows <em>Outgoing Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outgoing Flows</em>'.
+	 * @see org.gravity.typegraph.basic.TAbstractFlowElement#getOutgoingFlows()
+	 * @see #getTAbstractFlowElement()
+	 * @generated
+	 */
+	EReference getTAbstractFlowElement_OutgoingFlows();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TReadWrite <em>TRead Write</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TRead Write</em>'.
+	 * @see org.gravity.typegraph.basic.TReadWrite
+	 * @generated
+	 */
+	EClass getTReadWrite();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TConstructor <em>TConstructor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TConstructor</em>'.
+	 * @see org.gravity.typegraph.basic.TConstructor
+	 * @generated
+	 */
+	EClass getTConstructor();
+
+	/**
+	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TEnum <em>TEnum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TEnum</em>'.
+	 * @see org.gravity.typegraph.basic.TEnum
+	 * @generated
+	 */
+	EClass getTEnum();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}'.
@@ -5060,14 +5632,6 @@ public interface BasicPackage extends EPackage {
 		EReference TCLASS__IMPLEMENTS = eINSTANCE.getTClass_Implements();
 
 		/**
-		 * The meta object literal for the '<em><b>Get TMethod Definitions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TCLASS___GET_TMETHOD_DEFINITIONS = eINSTANCE.getTClass__GetTMethodDefinitions();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Declared TMethod Definitions</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5082,14 +5646,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TCLASS___GET_ALL_TMEMBERS = eINSTANCE.getTClass__GetAllTMembers();
-
-		/**
-		 * The meta object literal for the '<em><b>Get All TMembers In Container</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER = eINSTANCE.getTClass__GetAllTMembersInContainer();
 
 		/**
 		 * The meta object literal for the '<em><b>Get All Children</b></em>' operation.
@@ -5200,14 +5756,6 @@ public interface BasicPackage extends EPackage {
 		EClass TFIELD_DEFINITION = eINSTANCE.getTFieldDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFIELD_DEFINITION__SIGNATURE = eINSTANCE.getTFieldDefinition_Signature();
-
-		/**
 		 * The meta object literal for the '<em><b>Hiding</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5224,6 +5772,14 @@ public interface BasicPackage extends EPackage {
 		EReference TFIELD_DEFINITION__HIDDEN_BY = eINSTANCE.getTFieldDefinition_HiddenBy();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TFIELD_DEFINITION___GET_SIGNATURE = eINSTANCE.getTFieldDefinition__GetSignature();
+
+		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TFieldSignatureImpl <em>TField Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5232,14 +5788,6 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TFIELD_SIGNATURE = eINSTANCE.getTFieldSignature();
-
-		/**
-		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TFIELD_SIGNATURE__DEFINITIONS = eINSTANCE.getTFieldSignature_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Field</b></em>' container reference feature.
@@ -5272,6 +5820,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TFIELD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE = eINSTANCE.getTFieldSignature__GetTDefinition__TAbstractType();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field Definitions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TFIELD_SIGNATURE___GET_FIELD_DEFINITIONS = eINSTANCE.getTFieldSignature__GetFieldDefinitions();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TCallImpl <em>TCall</em>}' class.
@@ -5326,12 +5882,12 @@ public interface BasicPackage extends EPackage {
 		EReference TMEMBER__TMODIFIER = eINSTANCE.getTMember_TModifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TMEMBER___GET_SIGNATURE = eINSTANCE.getTMember__GetSignature();
+		EReference TMEMBER__SIGNATURE = eINSTANCE.getTMember_Signature();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Signature String</b></em>' operation.
@@ -5386,14 +5942,6 @@ public interface BasicPackage extends EPackage {
 		EClass TMETHOD_DEFINITION = eINSTANCE.getTMethodDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMETHOD_DEFINITION__SIGNATURE = eINSTANCE.getTMethodDefinition_Signature();
-
-		/**
 		 * The meta object literal for the '<em><b>Overriding</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5434,7 +5982,7 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD_DEFINITION__RETURN_TYPE = eINSTANCE.getTMethodDefinition_ReturnType();
 
 		/**
-		 * The meta object literal for the '<em><b>Syntethic Methods</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Syntethic Methods</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5448,6 +5996,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_DEFINITION___TO_STRING = eINSTANCE.getTMethodDefinition__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD_DEFINITION___GET_SIGNATURE = eINSTANCE.getTMethodDefinition__GetSignature();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TMethodSignatureImpl <em>TMethod Signature</em>}' class.
@@ -5468,28 +6024,28 @@ public interface BasicPackage extends EPackage {
 		EReference TMETHOD_SIGNATURE__METHOD = eINSTANCE.getTMethodSignature_Method();
 
 		/**
-		 * The meta object literal for the '<em><b>Param List</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMETHOD_SIGNATURE__PARAM_LIST = eINSTANCE.getTMethodSignature_ParamList();
-
-		/**
-		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMETHOD_SIGNATURE__DEFINITIONS = eINSTANCE.getTMethodSignature_Definitions();
-
-		/**
 		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TMETHOD_SIGNATURE__RETURN_TYPE = eINSTANCE.getTMethodSignature_ReturnType();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TMETHOD_SIGNATURE__PARAMETERS = eINSTANCE.getTMethodSignature_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>First Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TMETHOD_SIGNATURE__FIRST_PARAMETER = eINSTANCE.getTMethodSignature_FirstParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Signature String</b></em>' operation.
@@ -5522,6 +6078,14 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST = eINSTANCE.getTMethodSignature__IsThisSignature__TAbstractType_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Method Definitions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS = eINSTANCE.getTMethodSignature__GetMethodDefinitions();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TPackageImpl <em>TPackage</em>}' class.
@@ -5664,40 +6228,22 @@ public interface BasicPackage extends EPackage {
 		EReference TPARAMETER__TYPE = eINSTANCE.getTParameter_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TParameterListImpl <em>TParameter List</em>}' class.
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.TSignature <em>TSignature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gravity.typegraph.basic.impl.TParameterListImpl
-		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTParameterList()
-		 * @generated
-		 */
-		EClass TPARAMETER_LIST = eINSTANCE.getTParameterList();
-
-		/**
-		 * The meta object literal for the '<em><b>Entries</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TPARAMETER_LIST__ENTRIES = eINSTANCE.getTParameterList_Entries();
-
-		/**
-		 * The meta object literal for the '<em><b>First</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TPARAMETER_LIST__FIRST = eINSTANCE.getTParameterList_First();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TSignatureImpl <em>TSignature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.typegraph.basic.impl.TSignatureImpl
+		 * @see org.gravity.typegraph.basic.TSignature
 		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTSignature()
 		 * @generated
 		 */
 		EClass TSIGNATURE = eINSTANCE.getTSignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TSIGNATURE__DEFINITIONS = eINSTANCE.getTSignature_Definitions();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Signature String</b></em>' operation.
@@ -5830,14 +6376,6 @@ public interface BasicPackage extends EPackage {
 		EOperation TYPE_GRAPH___GET_CLASS__STRING = eINSTANCE.getTypeGraph__GetClass__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Abstract Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TYPE_GRAPH___GET_ABSTRACT_TYPE__STRING = eINSTANCE.getTypeGraph__GetAbstractType__String();
-
-		/**
 		 * The meta object literal for the '<em><b>Get Interface</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5852,6 +6390,22 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TYPE_GRAPH___GET_METHOD__STRING = eINSTANCE.getTypeGraph__GetMethod__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_FIELD__STRING = eINSTANCE.getTypeGraph__GetField__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_SIGNATURE__STRING = eINSTANCE.getTypeGraph__GetSignature__String();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.
@@ -6106,36 +6660,6 @@ public interface BasicPackage extends EPackage {
 		EOperation TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = eINSTANCE.getTAbstractType__GetRealPackage__TAbstractType();
 
 		/**
-		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TConstructorNameImpl <em>TConstructor Name</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.typegraph.basic.impl.TConstructorNameImpl
-		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorName()
-		 * @generated
-		 */
-		EClass TCONSTRUCTOR_NAME = eINSTANCE.getTConstructorName();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TConstructorSignatureImpl <em>TConstructor Signature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.typegraph.basic.impl.TConstructorSignatureImpl
-		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorSignature()
-		 * @generated
-		 */
-		EClass TCONSTRUCTOR_SIGNATURE = eINSTANCE.getTConstructorSignature();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TConstructorDefinitionImpl <em>TConstructor Definition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.typegraph.basic.impl.TConstructorDefinitionImpl
-		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructorDefinition()
-		 * @generated
-		 */
-		EClass TCONSTRUCTOR_DEFINITION = eINSTANCE.getTConstructorDefinition();
-
-		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TReadImpl <em>TRead</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6192,7 +6716,7 @@ public interface BasicPackage extends EPackage {
 		EClass TSYNTETHIC_METHOD = eINSTANCE.getTSyntethicMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Original Method Definition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6200,12 +6724,12 @@ public interface BasicPackage extends EPackage {
 		EReference TSYNTETHIC_METHOD__ORIGINAL_METHOD_DEFINITION = eINSTANCE.getTSyntethicMethod_OriginalMethodDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Signature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Signature</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TSYNTETHIC_METHOD__SIGNATURE = eINSTANCE.getTSyntethicMethod_Signature();
+		EOperation TSYNTETHIC_METHOD___GET_SIGNATURE = eINSTANCE.getTSyntethicMethod__GetSignature();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TUnresolvedTypeImpl <em>TUnresolved Type</em>}' class.
@@ -6234,6 +6758,88 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TNAME__TNAME = eINSTANCE.getTName_TName();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TFlowImpl <em>TFlow</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TFlowImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTFlow()
+		 * @generated
+		 */
+		EClass TFLOW = eINSTANCE.getTFlow();
+
+		/**
+		 * The meta object literal for the '<em><b>Flow Owner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TFLOW__FLOW_OWNER = eINSTANCE.getTFlow_FlowOwner();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl <em>TAbstract Flow Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TAbstractFlowElementImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTAbstractFlowElement()
+		 * @generated
+		 */
+		EClass TABSTRACT_FLOW_ELEMENT = eINSTANCE.getTAbstractFlowElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Flows</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__OWNED_FLOWS = eINSTANCE.getTAbstractFlowElement_OwnedFlows();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Flows</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS = eINSTANCE.getTAbstractFlowElement_IncomingFlows();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Flows</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS = eINSTANCE.getTAbstractFlowElement_OutgoingFlows();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TReadWriteImpl <em>TRead Write</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TReadWriteImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTReadWrite()
+		 * @generated
+		 */
+		EClass TREAD_WRITE = eINSTANCE.getTReadWrite();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TConstructorImpl <em>TConstructor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TConstructorImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTConstructor()
+		 * @generated
+		 */
+		EClass TCONSTRUCTOR = eINSTANCE.getTConstructor();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TEnumImpl <em>TEnum</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.typegraph.basic.impl.TEnumImpl
+		 * @see org.gravity.typegraph.basic.impl.BasicPackageImpl#getTEnum()
+		 * @generated
+		 */
+		EClass TENUM = eINSTANCE.getTEnum();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.TVisibility <em>TVisibility</em>}' enum.

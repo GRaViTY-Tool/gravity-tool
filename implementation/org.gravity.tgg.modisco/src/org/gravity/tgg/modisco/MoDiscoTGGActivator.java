@@ -2,19 +2,22 @@ package org.gravity.tgg.modisco;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Plugin;
 import org.gravity.modisco.GravityMoDiscoModelPatcher;
 import org.osgi.framework.BundleContext;
 
 public class MoDiscoTGGActivator extends Plugin {
-	
+
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.ui"; //$NON-NLS-1$
-	
+	public static final String PLUGIN_ID = "org.gravity.tgg.modisco"; //$NON-NLS-1$
+
 	// The extension points
 	public static final String PROCESS_PG_FWD = "org.gravity.tgg.modisco.ProcessingPgFwd";
 	public static final String PROCESS_PG_BWD = "org.gravity.tgg.modisco.ProcessingPgBwd";
@@ -24,10 +27,12 @@ public class MoDiscoTGGActivator extends Plugin {
 	private static MoDiscoTGGActivator plugin;
 
 	private GravityMoDiscoModelPatcher patcher;
-	
+
+	private final Set<MoDiscoTGGConverter> converters = new HashSet<>();
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.
 	 * BundleContext)
 	 */
@@ -35,9 +40,8 @@ public class MoDiscoTGGActivator extends Plugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		
-		IExtensionRegistry extension_registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] configurationElements = extension_registry
+
+		final IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
 				.getConfigurationElementsFor("org.gravity.modisco.patcher"); //$NON-NLS-1$
 		if (configurationElements.length > 0) {
 			setSelectedPatcher((GravityMoDiscoModelPatcher) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
@@ -46,12 +50,17 @@ public class MoDiscoTGGActivator extends Plugin {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
 	 * BundleContext)
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
+		final IProgressMonitor monitor = new NullProgressMonitor();
+		for(final MoDiscoTGGConverter converter : this.converters) {
+			converter.save(monitor);
+			converter.discard();
+		}
 		plugin = null;
 		super.stop(context);
 	}
@@ -66,7 +75,7 @@ public class MoDiscoTGGActivator extends Plugin {
 	}
 
 	public void setSelectedPatcher(GravityMoDiscoModelPatcher patcher) {
-		this.patcher = patcher;		
+		this.patcher = patcher;
 	}
 
 	public GravityMoDiscoModelPatcher getSelectedPatcher() {
@@ -76,13 +85,17 @@ public class MoDiscoTGGActivator extends Plugin {
 
 	/**
 	 * Returns a stream for the given Entry
-	 * 
+	 *
 	 * @param entry The location of the entry within this plugin
-	 * @return The stream 
+	 * @return The stream
 	 * @throws IOException If the entry doesn't exist inside this plugin
 	 */
 	public static InputStream getEntryAsStream(String entry) throws IOException {
 		return plugin.getBundle().getEntry(entry).openStream();
 	}
-	
+
+	public void addConverter(MoDiscoTGGConverter converter) {
+		this.converters.add(converter);
+	}
+
 }

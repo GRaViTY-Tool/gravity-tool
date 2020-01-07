@@ -3,44 +3,31 @@
 package org.gravity.typegraph.basic.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TInterface;
-import org.gravity.typegraph.basic.TSignature;
-
-import org.gravity.typegraph.basic.containers.TMemberContainer;
-import org.gravity.typegraph.basic.containers.TMethodDefinitionContainer;
-import java.util.Collections;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import org.eclipse.emf.common.util.BasicEList;
+import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TFieldSignature;
+import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
+import org.gravity.typegraph.basic.TSignature;
 import org.gravity.typegraph.basic.TSyntethicMethod;
-import org.gravity.typegraph.basic.containers.ContainersFactory;
-// [user defined imports] -->
 
 /**
  * <!-- begin-user-doc -->
@@ -200,37 +187,11 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public TMethodDefinitionContainer getTMethodDefinitions() {
-		// [user code injected with eMoflon]
-		Set<TMethodSignature> tMethodSignatures = new HashSet<>();
-		TMethodDefinitionContainer methods = ContainersFactory.eINSTANCE.createTMethodDefinitionContainer();
-		EList<TMethodDefinition> tMethodDefinitions = methods.getTMethodDefinitions();
-		TClass current = this;
-		while (current != null) {
-			for (TMember member : current.getDefines()) {
-				if (member instanceof TMethodDefinition) {
-					TMethodDefinition tMethodDefinition = (TMethodDefinition) member;
-					TMethodSignature tMethodSignature = tMethodDefinition.getSignature();
-					if (!tMethodSignatures.contains(tMethodSignature)) {
-						tMethodSignatures.add(tMethodSignature);
-						tMethodDefinitions.add(tMethodDefinition);
-					}
-				}
-			}
-			current = current.getParentClass();
-		}
-		return methods;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
+	@Override
 	public EList<TMethodDefinition> getDeclaredTMethodDefinitions() {
 		// [user code injected with eMoflon]
-		EList<TMethodDefinition> tMethodDefinitions = new BasicEList<TMethodDefinition>();
-		for (TMember member : getDefines()) {
+		final EList<TMethodDefinition> tMethodDefinitions = new BasicEList<>();
+		for (final TMember member : getDefines()) {
 			if (member instanceof TMethodDefinition) {
 				tMethodDefinitions.add((TMethodDefinition) member);
 			}
@@ -243,19 +204,20 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public EList<TMember> getAllTMembers() {
 		// [user code injected with eMoflon]
 
-		EList<TMember> allMembers = new BasicEList<>();
+		final EList<TMember> allMembers = new BasicEList<>();
 		TClass current = this;
 		while (current != null) {
-			for (TMember member : current.getDefines()) {
+			for (final TMember member : current.getDefines()) {
 				EList<?> redefinedBy;
 				if (member instanceof TMethodDefinition) {
-					TMethodDefinition method = (TMethodDefinition) member;
+					final TMethodDefinition method = (TMethodDefinition) member;
 					redefinedBy = method.getOverriddenBy();
 				} else if (member instanceof TFieldDefinition) {
-					TFieldDefinition field = (TFieldDefinition) member;
+					final TFieldDefinition field = (TFieldDefinition) member;
 					redefinedBy = field.getHiddenBy();
 				} else if (member instanceof TSyntethicMethod) {
 					// Ignore synthetic methods
@@ -264,7 +226,7 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 					throw new RuntimeException("Unknown TMember subtype.");
 				}
 				boolean contained = false;
-				for (Object o : redefinedBy) {
+				for (final Object o : redefinedBy) {
 					contained |= allMembers.contains(o);
 				}
 				if (!contained) {
@@ -281,22 +243,11 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public TMemberContainer getAllTMembersInContainer() {
-		// [user code injected with eMoflon]
-		TMemberContainer container = ContainersFactory.eINSTANCE.createTMemberContainer();
-		container.getTMembers().addAll(getAllTMembers());
-		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
+	@Override
 	public EList<TClass> getAllChildren() {
 		// [user code injected with eMoflon]
-		EList<TClass> children = new BasicEList<>();
-		for (TClass child : getChildClasses()) {
+		final EList<TClass> children = new BasicEList<>();
+		for (final TClass child : getChildClasses()) {
 			children.add(child);
 			children.addAll(child.getChildClasses());
 		}
@@ -308,12 +259,13 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isSuperTypeOf(TAbstractType tType) {
+	@Override
+	public boolean isSuperTypeOf(final TAbstractType tType) {
 		if(equals(tType)) {
 			return true;
 		}
 		if (tType instanceof TClass) {
-			TClass tParentClass = ((TClass) tType).getParentClass();
+			final TClass tParentClass = ((TClass) tType).getParentClass();
 			if (tParentClass == null) {
 				return false;
 			}
@@ -322,11 +274,11 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 			}
 			return isSuperTypeOf(tParentClass);
 		} else if (tType instanceof TInterface) {
-			EList<TInterface> tInterfaces = getImplements();
+			final EList<TInterface> tInterfaces = getImplements();
 			if (tInterfaces.contains(tType)) {
 				return true;
 			} else {
-				for (TInterface tInterface : tInterfaces) {
+				for (final TInterface tInterface : tInterfaces) {
 					if (tInterface.isSuperTypeOf(tType)) {
 						return true;
 					}
@@ -341,22 +293,23 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<TMember> getAllOutgoingAccesses(TSignature signature) {
+	@Override
+	public EList<TMember> getAllOutgoingAccesses(final TSignature signature) {
 		// [user code injected with eMoflon]
 
 		EList<? extends TMember> definitions = null;
 		if (signature instanceof TFieldSignature) {
-			TFieldSignature tFieldSignature = (TFieldSignature) signature;
+			final TFieldSignature tFieldSignature = (TFieldSignature) signature;
 			definitions = tFieldSignature.getDefinitions();
 		} else if (signature instanceof TMethodSignature) {
-			TMethodSignature tMethodSignature = (TMethodSignature) signature;
+			final TMethodSignature tMethodSignature = (TMethodSignature) signature;
 			definitions = tMethodSignature.getDefinitions();
 		}
 
-		EList<TMember> returnList = new BasicEList<TMember>();
-		for (TMember tDefinition : definitions) {
+		final EList<TMember> returnList = new BasicEList<>();
+		for (final TMember tDefinition : definitions) {
 			if (this.equals(tDefinition.getDefinedBy())) {
-				for (TAccess tAccess : tDefinition.getTAccessing()) {
+				for (final TAccess tAccess : tDefinition.getTAccessing()) {
 					returnList.add(tAccess.getTTarget());
 				}
 			}
@@ -370,9 +323,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean hasAParentThisTMember(TMember member) {
+	@Override
+	public boolean hasAParentThisTMember(final TMember member) {
 		// [user code injected with eMoflon]
-		TClass parent = getParentClass();
+		final TClass parent = getParentClass();
 		if (parent != null && !parent.equals(this)) {
 			if (parent.hasTMember(member)) {
 				return true;
@@ -387,12 +341,13 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public TClass getResolvedParentClass() {
 		// [user code injected with eMoflon]
-		if (parentClass != null) {
-			return parentClass;
+		if (this.parentClass != null) {
+			return this.parentClass;
 		}
-		TAbstractType object = getPg().getType("java.lang.Object");
+		final TAbstractType object = getPg().getType("java.lang.Object");
 		if (object != null) {
 			return (TClass) object;
 		}
@@ -528,14 +483,10 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BasicPackage.TCLASS___GET_TMETHOD_DEFINITIONS:
-				return getTMethodDefinitions();
 			case BasicPackage.TCLASS___GET_DECLARED_TMETHOD_DEFINITIONS:
 				return getDeclaredTMethodDefinitions();
 			case BasicPackage.TCLASS___GET_ALL_TMEMBERS:
 				return getAllTMembers();
-			case BasicPackage.TCLASS___GET_ALL_TMEMBERS_IN_CONTAINER:
-				return getAllTMembersInContainer();
 			case BasicPackage.TCLASS___GET_ALL_CHILDREN:
 				return getAllChildren();
 			case BasicPackage.TCLASS___GET_ALL_OUTGOING_ACCESSES__TSIGNATURE:
@@ -555,12 +506,13 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 
 	@Override
 	public String toString() {
-		String string = super.toString();
-		return string.substring(0, string.length() - 1).concat(", name: ").concat(tName).concat(")");
+		final String string = super.toString();
+		return string.substring(0, string.length() - 1).concat(", name: ").concat(this.tName).concat(")");
 	}
 
+	@Override
 	public EList<TClass> getParents() {
-		EList<TClass> parents = new BasicEList<TClass>();
+		final EList<TClass> parents = new BasicEList<>();
 		TClass parent = this.getParentClass();
 		while (parent != null) {
 			parents.add(parent);
@@ -569,15 +521,16 @@ public class TClassImpl extends TAbstractTypeImpl implements TClass {
 		return parents;
 	}
 
-	public boolean hasCommonSuperType(TAbstractType tAbstractType) {
+	@Override
+	public boolean hasCommonSuperType(final TAbstractType tAbstractType) {
 		if (!(tAbstractType instanceof TClassImpl)) {
 			return false;
 		}
-		TClassImpl tClass = (TClassImpl) tAbstractType;
+		final TClassImpl tClass = (TClassImpl) tAbstractType;
 
-		List<TClass> parents = this.getParents();
+		final List<TClass> parents = this.getParents();
 		parents.add(this);
-		List<TClass> otherParents = tClass.getParents();
+		final List<TClass> otherParents = tClass.getParents();
 		otherParents.add(tClass);
 
 		return (!Collections.disjoint(parents, otherParents));

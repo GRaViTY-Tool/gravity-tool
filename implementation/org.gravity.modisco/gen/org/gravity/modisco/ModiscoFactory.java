@@ -31,24 +31,6 @@ public interface ModiscoFactory extends EFactory {
 	MConstructorDefinition createMConstructorDefinition();
 
 	/**
-	 * Returns a new object of class '<em>MMethod Signature</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Signature</em>'.
-	 * @generated
-	 */
-	MMethodSignature createMMethodSignature();
-
-	/**
-	 * Returns a new object of class '<em>MParameter List</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MParameter List</em>'.
-	 * @generated
-	 */
-	MParameterList createMParameterList();
-
-	/**
 	 * Returns a new object of class '<em>MMethod Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,22 +40,13 @@ public interface ModiscoFactory extends EFactory {
 	MMethodName createMMethodName();
 
 	/**
-	 * Returns a new object of class '<em>MField Name</em>'.
+	 * Returns a new object of class '<em>MMethod Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MField Name</em>'.
+	 * @return a new object of class '<em>MMethod Signature</em>'.
 	 * @generated
 	 */
-	MFieldName createMFieldName();
-
-	/**
-	 * Returns a new object of class '<em>MField Definition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MField Definition</em>'.
-	 * @generated
-	 */
-	MFieldDefinition createMFieldDefinition();
+	MMethodSignature createMMethodSignature();
 
 	/**
 	 * Returns a new object of class '<em>MMethod Definition</em>'.
@@ -85,13 +58,31 @@ public interface ModiscoFactory extends EFactory {
 	MMethodDefinition createMMethodDefinition();
 
 	/**
-	 * Returns a new object of class '<em>MMethod Invocation</em>'.
+	 * Returns a new object of class '<em>MField Name</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MMethod Invocation</em>'.
+	 * @return a new object of class '<em>MField Name</em>'.
 	 * @generated
 	 */
-	MMethodInvocation createMMethodInvocation();
+	MFieldName createMFieldName();
+
+	/**
+	 * Returns a new object of class '<em>MField Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MField Signature</em>'.
+	 * @generated
+	 */
+	MFieldSignature createMFieldSignature();
+
+	/**
+	 * Returns a new object of class '<em>MField Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MField Definition</em>'.
+	 * @generated
+	 */
+	MFieldDefinition createMFieldDefinition();
 
 	/**
 	 * Returns a new object of class '<em>MEntry</em>'.
@@ -112,22 +103,13 @@ public interface ModiscoFactory extends EFactory {
 	MGravityModel createMGravityModel();
 
 	/**
-	 * Returns a new object of class '<em>MField Signature</em>'.
+	 * Returns a new object of class '<em>Method Invocation Static Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MField Signature</em>'.
+	 * @return a new object of class '<em>Method Invocation Static Type</em>'.
 	 * @generated
 	 */
-	MFieldSignature createMFieldSignature();
-
-	/**
-	 * Returns a new object of class '<em>MAnnotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MAnnotation</em>'.
-	 * @generated
-	 */
-	MAnnotation createMAnnotation();
+	MethodInvocationStaticType createMethodInvocationStaticType();
 
 	/**
 	 * Returns a new object of class '<em>MSynthetic Method Definition</em>'.
@@ -155,6 +137,78 @@ public interface ModiscoFactory extends EFactory {
 	 * @generated
 	 */
 	MClass createMClass();
+
+	/**
+	 * Returns a new object of class '<em>MFlow</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MFlow</em>'.
+	 * @generated
+	 */
+	MFlow createMFlow();
+
+	/**
+	 * Returns a new object of class '<em>MSingle Variable Access</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSingle Variable Access</em>'.
+	 * @generated
+	 */
+	MSingleVariableAccess createMSingleVariableAccess();
+
+	/**
+	 * Returns a new object of class '<em>MMethod Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MMethod Invocation</em>'.
+	 * @generated
+	 */
+	MMethodInvocation createMMethodInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MConstructor Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MConstructor Invocation</em>'.
+	 * @generated
+	 */
+	MConstructorInvocation createMConstructorInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MSingle Variable Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSingle Variable Declaration</em>'.
+	 * @generated
+	 */
+	MSingleVariableDeclaration createMSingleVariableDeclaration();
+
+	/**
+	 * Returns a new object of class '<em>MSuper Method Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSuper Method Invocation</em>'.
+	 * @generated
+	 */
+	MSuperMethodInvocation createMSuperMethodInvocation();
+
+	/**
+	 * Returns a new object of class '<em>MClass Instance Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MClass Instance Creation</em>'.
+	 * @generated
+	 */
+	MClassInstanceCreation createMClassInstanceCreation();
+
+	/**
+	 * Returns a new object of class '<em>MSuper Constructor Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>MSuper Constructor Invocation</em>'.
+	 * @generated
+	 */
+	MSuperConstructorInvocation createMSuperConstructorInvocation();
 
 	/**
 	 * Returns the package supported by this factory.

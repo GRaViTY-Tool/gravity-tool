@@ -68,6 +68,7 @@ public class AccessFactoryImpl extends EFactoryImpl implements AccessFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TApi createTApi() {
 		TApiImpl tApi = new TApiImpl();
 		return tApi;
@@ -78,6 +79,7 @@ public class AccessFactoryImpl extends EFactoryImpl implements AccessFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AccessPackage getAccessPackage() {
 		return (AccessPackage) getEPackage();
 	}

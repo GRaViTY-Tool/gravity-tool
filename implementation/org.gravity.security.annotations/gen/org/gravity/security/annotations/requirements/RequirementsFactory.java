@@ -40,6 +40,24 @@ public interface RequirementsFactory extends EFactory {
 	TIntegrity createTIntegrity();
 
 	/**
+	 * Returns a new object of class '<em>THigh</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>THigh</em>'.
+	 * @generated
+	 */
+	THigh createTHigh();
+
+	/**
+	 * Returns a new object of class '<em>TCritical</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TCritical</em>'.
+	 * @generated
+	 */
+	TCritical createTCritical();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

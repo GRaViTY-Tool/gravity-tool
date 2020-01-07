@@ -18,8 +18,6 @@ import org.gravity.typegraph.basic.TMember;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>HIn Blob Access</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

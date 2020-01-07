@@ -57,7 +57,7 @@ public abstract class InformationViewContentProvider {
 	protected DetectionPreprocessor detectionPreprocesser;
 	private String localScanID;
 
-	private EnumMap<Flaws, TabItem> tabItems;
+	private final EnumMap<Flaws, TabItem> tabItems;
 
 	protected abstract Browser setUpInformationBrowser(Composite informationLabelComposite);
 
@@ -66,15 +66,15 @@ public abstract class InformationViewContentProvider {
 	protected abstract DetectionPreprocessor setUpDetectionPreprocesser();
 
 	public InformationViewContentProvider() {
-		detectionPreprocesser = setUpDetectionPreprocesser();
-		detectionObjects = detectionPreprocesser.preprocessDetections(null);
-		tabItems = new EnumMap<Flaws, TabItem>(Flaws.class);
-		localScanID = "";
+		this.detectionPreprocesser = setUpDetectionPreprocesser();
+		this.detectionObjects = this.detectionPreprocesser.preprocessDetections(null);
+		this.tabItems = new EnumMap<>(Flaws.class);
+		this.localScanID = "";
 	}
 
 	public boolean checkLocalState() {
-		if (!globalScanID.equals(localScanID)) {
-			localScanID = globalScanID;
+		if (!globalScanID.equals(this.localScanID)) {
+			this.localScanID = globalScanID;
 			return true;
 		}
 		return false;
@@ -89,19 +89,19 @@ public abstract class InformationViewContentProvider {
 
 	public void setUpInformationViewContent() {
 
-		informationBrowser = setUpInformationBrowser(informationLabelComposite);
+		this.informationBrowser = setUpInformationBrowser(this.informationLabelComposite);
 
-		graph = setUpGraph(graphComposite);
+		this.graph = setUpGraph(this.graphComposite);
 
 		refreshDetectionObjects();
 
 		refreshGraphInformationTabFolder();
 
-		graph.addSelectionListener(setUpSelectionAdapter());
+		this.graph.addSelectionListener(setUpSelectionAdapter());
 	}
 
 	public void refreshDetectionObjects() {
-		detectionObjects = detectionPreprocesser.preprocessDetections(apg);
+		this.detectionObjects = this.detectionPreprocesser.preprocessDetections(apg);
 	}
 
 	public static void setAPG(HAntiPatternGraph apg) {
@@ -111,102 +111,102 @@ public abstract class InformationViewContentProvider {
 
 	public void refreshGraphInformationTabFolder() {
 
-		tabItems.clear();
+		this.tabItems.clear();
 
-		if (graphInformationTabFolder != null) {
-			graphInformationTabFolder.dispose();
+		if (this.graphInformationTabFolder != null) {
+			this.graphInformationTabFolder.dispose();
 		}
 
-		graphInformationTabFolder = new TabFolder(graphInformationLabelComposite, SWT.BORDER);
-		graphInformationTabFolder
-				.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
-		graphInformationTabFolder.setLayout(new FillLayout());
+		this.graphInformationTabFolder = new TabFolder(this.graphInformationLabelComposite, SWT.BORDER);
+		this.graphInformationTabFolder
+		.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+		this.graphInformationTabFolder.setLayout(new FillLayout());
 
-		for (Entry<Flaws, List<DetectionObject>> entry : detectionObjects.entrySet()) {
-			TabItem item = new TabItem(graphInformationTabFolder, SWT.V_SCROLL);
-			Flaws smell = entry.getKey();
+		for (final Entry<Flaws, List<DetectionObject>> entry : this.detectionObjects.entrySet()) {
+			final TabItem item = new TabItem(this.graphInformationTabFolder, SWT.V_SCROLL);
+			final Flaws smell = entry.getKey();
 			item.setText(smell.toString());
-			tabItems.put(smell, item);
+			this.tabItems.put(smell, item);
 
-			GridLayout gridLayout = new GridLayout();
+			final GridLayout gridLayout = new GridLayout();
 			gridLayout.verticalSpacing = 2;
 
-			ExpandBar detectionsBar = new ExpandBar(graphInformationTabFolder, SWT.V_SCROLL);
-			detectionsBar.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+			final ExpandBar detectionsBar = new ExpandBar(this.graphInformationTabFolder, SWT.V_SCROLL);
+			detectionsBar.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 			detectionsBar.setLayout(gridLayout);
 
 			int detectionNumber = 0;
-			for (DetectionObject detectionObject : entry.getValue()) {
+			for (final DetectionObject detectionObject : entry.getValue()) {
 
-				ExpandItem detectionIDItem = new ExpandItem(detectionsBar, SWT.NONE);
+				final ExpandItem detectionIDItem = new ExpandItem(detectionsBar, SWT.NONE);
 				detectionIDItem.setText("Detection ID: " + detectionNumber);
 
-				RowLayout detectionCompositeRowLayout = new RowLayout();
+				final RowLayout detectionCompositeRowLayout = new RowLayout();
 				detectionCompositeRowLayout.type = SWT.VERTICAL;
 				detectionCompositeRowLayout.pack = true;
 
-				Composite detectionComposite = new Composite(detectionsBar, SWT.NONE);
+				final Composite detectionComposite = new Composite(detectionsBar, SWT.NONE);
 				detectionComposite
-						.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+				.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				detectionComposite.setLayout(detectionCompositeRowLayout);
 
 				// Detections
-				Label detectionLabel = new Label(detectionComposite, SWT.NONE);
+				final Label detectionLabel = new Label(detectionComposite, SWT.NONE);
 				detectionLabel.setText("Detected in:");
-				FontDescriptor boldDescriptor = FontDescriptor.createFrom(detectionLabel.getFont()).setStyle(SWT.BOLD);
-				Font boldFont = boldDescriptor.createFont(detectionLabel.getDisplay());
+				final FontDescriptor boldDescriptor = FontDescriptor.createFrom(detectionLabel.getFont()).setStyle(SWT.BOLD);
+				final Font boldFont = boldDescriptor.createFont(detectionLabel.getDisplay());
 				detectionLabel.setFont(boldFont);
 
-				Composite detectionsComposite = new Composite(detectionComposite, SWT.NONE);
+				final Composite detectionsComposite = new Composite(detectionComposite, SWT.NONE);
 				detectionsComposite
-						.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+				.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				detectionsComposite.setLayout(new FillLayout(SWT.VERTICAL));
 
-				for (Entry<TAbstractType, String> detectionEntry : detectionObject.getDetections().entrySet()) {
+				for (final Entry<TAbstractType, String> detectionEntry : detectionObject.getDetections().entrySet()) {
 					String value;
 					if (!detectionEntry.getValue().equals("-1")) {
 						value = "Value: " + detectionEntry.getValue();
 					} else {
 						value = "Value: none";
 					}
-					Link link = new Link(detectionsComposite, SWT.NONE);
+					final Link link = new Link(detectionsComposite, SWT.NONE);
 					link.setText("<A>" + detectionEntry.getKey().getFullyQualifiedName() + "</A>" + "\n" + value);
 					link.addListener(SWT.Selection, new DetectionLinkListener());
-					link.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+					link.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				}
 				// Thresholds
-				Label thresholdLabel = new Label(detectionComposite, SWT.NONE);
+				final Label thresholdLabel = new Label(detectionComposite, SWT.NONE);
 				thresholdLabel.setText("Thresholds:");
-				FontDescriptor thresholdBoldDescriptor = FontDescriptor.createFrom(thresholdLabel.getFont())
+				final FontDescriptor thresholdBoldDescriptor = FontDescriptor.createFrom(thresholdLabel.getFont())
 						.setStyle(SWT.BOLD);
-				Font thresholdBoldFont = thresholdBoldDescriptor.createFont(thresholdLabel.getDisplay());
+				final Font thresholdBoldFont = thresholdBoldDescriptor.createFont(thresholdLabel.getDisplay());
 				thresholdLabel.setFont(thresholdBoldFont);
 
-				Composite thresholdsComposite = new Composite(detectionComposite, SWT.NONE);
+				final Composite thresholdsComposite = new Composite(detectionComposite, SWT.NONE);
 				thresholdsComposite
-						.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+				.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				thresholdsComposite.setLayout(new FillLayout(SWT.VERTICAL));
 
-				for (Entry<String, Number> thresholdEntry : detectionObject.getThresholds().entrySet()) {
-					String value = "";
+				for (final Entry<String, Number> thresholdEntry : detectionObject.getThresholds().entrySet()) {
+					StringBuilder value = new StringBuilder(thresholdEntry.getValue().toString());
 					if (!thresholdEntry.getValue().equals(-1)) {
-						value = value + "\n Value: " + thresholdEntry.getValue();
+						value = value.append("\n Value: ").append(thresholdEntry.getValue());
 					}
-					Label label = new Label(thresholdsComposite, SWT.NONE);
-					label.setText(thresholdEntry.getValue() + " " + value);
-					label.setBackground(graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+					final Label label = new Label(thresholdsComposite, SWT.NONE);
+					label.setText(value.toString());
+					label.setBackground(this.graphInformationLabelComposite.getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				}
 
 				detectionIDItem.setControl(detectionComposite);
 				detectionIDItem.setHeight(detectionComposite.computeSize(SWT.DEFAULT, SWT.DEFAULT).y);
 
 				detectionNumber++;
-				graphInformationLabelComposite.layout();
+				this.graphInformationLabelComposite.layout();
 			}
 			item.setControl(detectionsBar);
 		}
 
-		graphInformationLabelComposite.layout();
+		this.graphInformationLabelComposite.layout();
 
 	}
 
@@ -223,13 +223,13 @@ public abstract class InformationViewContentProvider {
 					refreshGraphInformationTabFolder();
 				}
 
-				List<GraphNode> selectionList = ((Graph) event.getSource()).getSelection();
+				final List<GraphNode> selectionList = ((Graph) event.getSource()).getSelection();
 				if (selectionList.size() == 1) {
-					GraphNode node = selectionList.get(0);
-					String text = node.getText();
+					final GraphNode node = selectionList.get(0);
+					final String text = node.getText();
 					if (!(text.equals("AND") || text.equals("OR") || text.equals("CALCULATE"))) {
-						Flaws flaw = Flaws.valueOf(text);
-						graphInformationTabFolder.setSelection(tabItems.get(flaw));
+						final Flaws flaw = Flaws.valueOf(text);
+						InformationViewContentProvider.this.graphInformationTabFolder.setSelection(InformationViewContentProvider.this.tabItems.get(flaw));
 					}
 				}
 
@@ -239,36 +239,35 @@ public abstract class InformationViewContentProvider {
 	}
 
 	public Browser getInformationLabel() {
-		if (informationBrowser == null) {
+		if (this.informationBrowser == null) {
 			setUpInformationViewContent();
 		}
-		return informationBrowser;
+		return this.informationBrowser;
 	}
 
 	public Graph getGraph() {
-		if (graph == null) {
+		if (this.graph == null) {
 			setUpInformationViewContent();
 		}
-		return graph;
+		return this.graph;
 	}
 
 	public TabFolder getGraphInformationTabFolder() {
-		if (graphInformationTabFolder == null) {
+		if (this.graphInformationTabFolder == null) {
 			setUpInformationViewContent();
 		}
-		return graphInformationTabFolder;
+		return this.graphInformationTabFolder;
 	}
 
 	/**
 	 * Create a new edge
-	 * 
-	 * @param composite       The composite containing the edge
-	 * @param graph           The graph containing the edge
-	 * @param src             The source node
-	 * @param trg             The target node
-	 * @param label           The label on the node
-	 * @param backgroundColor The background color of the edge
-	 * @param foregroundColor The foreground color of the edge
+	 *
+	 * @param composite The composite containing the edge
+	 * @param graph     The graph containing the edge
+	 * @param src       The source node
+	 * @param trg       The target node
+	 * @param label     The label on the node
+	 * @param color     The color of the edge
 	 * @return The new edge
 	 */
 	GraphConnection createEdge(Composite composite, Graph graph, GraphNode src, GraphNode trg, String label,
@@ -282,7 +281,7 @@ public abstract class InformationViewContentProvider {
 
 	/**
 	 * Create a new node
-	 * 
+	 *
 	 * @param composite       The composite containing the node
 	 * @param graph           The graph containing the node
 	 * @param label           The label on the node
@@ -291,7 +290,7 @@ public abstract class InformationViewContentProvider {
 	 * @return The new node
 	 */
 	GraphNode createNode(Composite composite, Graph graph, Object label, int backgroundColor, int foregroundColor) {
-		GraphNode node = new GraphNode(graph, ZestStyles.NODES_FISHEYE, label.toString());
+		final GraphNode node = new GraphNode(graph, ZestStyles.NODES_FISHEYE, label.toString());
 		node.setBackgroundColor(composite.getDisplay().getSystemColor(backgroundColor));
 		node.setForegroundColor(composite.getDisplay().getSystemColor(foregroundColor));
 		return node;

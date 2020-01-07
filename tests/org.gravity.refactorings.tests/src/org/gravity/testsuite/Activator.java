@@ -1,36 +1,17 @@
 package org.gravity.testsuite;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
+import org.eclipse.core.runtime.Plugin;
 
-public class Activator implements BundleActivator {
-
-	private static BundleContext context;
-
-	static BundleContext getContext() {
-		return context;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.
-	 * BundleContext)
+/**
+ * The Activator of the test plugin
+ * @author speldszus
+ *
+ */
+public class Activator extends Plugin {
+	
+	/**
+	 * The ID of this plugin
 	 */
-	@Override
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	@Override
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
-	}
-
+	public static final String PLUGIN_ID = "org.gravity.refactorings.tests";
+	
 }

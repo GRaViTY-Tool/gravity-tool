@@ -1,10 +1,10 @@
 package org.gravity.hulk.ui.visualization.detection;
 
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.gravity.hulk.antipatterngraph.HAnnotation;
 import org.gravity.hulk.antipatterngraph.HAntiPatternGraph;
@@ -20,11 +20,11 @@ import org.gravity.hulk.ui.visualization.util.ThresholdCalculator;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 
-public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
+public class SwissArmyKnifePreprocessor implements DetectionPreprocessor {
 
 	@Override
 	public Map<Flaws, List<DetectionObject>> preprocessDetections(HAntiPatternGraph apg) {
-		Map<Flaws, List<DetectionObject>> detectionObjects = new EnumMap<Flaws, List<DetectionObject>>(Flaws.class);
+		final Map<Flaws, List<DetectionObject>> detectionObjects = new EnumMap<>(Flaws.class);
 		detectionObjects.put(Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN, new LinkedList<DetectionObject>());
 		detectionObjects.put(Flaws.H_LARGE_CLASS_SMELL, new LinkedList<DetectionObject>());
 		detectionObjects.put(Flaws.H_MUCH_OVERLOADING_SMELL, new LinkedList<DetectionObject>());
@@ -33,23 +33,23 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 		detectionObjects.put(Flaws.H_NUMBER_OF_MEMBERS_METRIC, new LinkedList<DetectionObject>());
 		detectionObjects.put(Flaws.H_AVERAGE_OVERLOADING_METRIC, new LinkedList<DetectionObject>());
 		if (apg != null) {
-			for (HAnnotation a : apg.getHAnnotations()) {
+			for (final HAnnotation a : apg.getHAnnotations()) {
 				if (a instanceof HSwissArmyKnifeAntiPattern) {
-					HSwissArmyKnifeAntiPattern swissArmyKife = (HSwissArmyKnifeAntiPattern) a;
-					
-					HLargeClassSmell largeClass = swissArmyKife.getHLargeClassSmell();
-					HMuchOverloadingCodeSmell muchOverloadingSmell = swissArmyKife.getHMuchOverloadingCodeSmell();
-					HIncommingInvocationMetric numberOfIncommingInvocationsMetric = swissArmyKife
+					final HSwissArmyKnifeAntiPattern swissArmyKife = (HSwissArmyKnifeAntiPattern) a;
+
+					final HLargeClassSmell largeClass = swissArmyKife.getHLargeClassSmell();
+					final HMuchOverloadingCodeSmell muchOverloadingSmell = swissArmyKife.getHMuchOverloadingCodeSmell();
+					final HIncommingInvocationMetric numberOfIncommingInvocationsMetric = swissArmyKife
 							.getHIncommingInvocationCustomMetric();
 
-					Map<TAbstractType, String> detections = new HashMap<>();
-					Map<String, Number> thresholds = new HashMap<>();
+					final Map<TAbstractType, String> detections = new ConcurrentHashMap<>();
+					final Map<String, Number> thresholds = new ConcurrentHashMap<>();
 
 					HNumberOfMembersMetric numberOfMembersMetric = null;
 					if (largeClass != null) {
 						numberOfMembersMetric = largeClass.getHNumberOfMembers();
 					}
-					
+
 					HAverageOverloadingInClassMetric averageOverloadingInClassMetric = null;
 					if (muchOverloadingSmell != null) {
 						averageOverloadingInClassMetric = muchOverloadingSmell.getHAverageOverloadingInClassMetric();
@@ -60,19 +60,19 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 					thresholds.put(Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC + ":" + HRelativeValueConstants.HIGH,
 							(ThresholdCalculator.getThresholdValue(numberOfIncommingInvocationsMetric,
 									HRelativeValueConstants.HIGH, true)));
-					DetectionObject swissArmyKnifeDetectionObject = new DetectionObject(detections, thresholds, "",Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN);
+					final DetectionObject swissArmyKnifeDetectionObject = new DetectionObject(detections, thresholds, "",Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN);
 					detectionObjects.get(Flaws.H_SWISS_ARMY_KNIFE_ANTIPATTERN)
-							.add(swissArmyKnifeDetectionObject);
+					.add(swissArmyKnifeDetectionObject);
 					detections.clear();
 					thresholds.clear();
-					
+
 					// LargeClass
 					if (largeClass != null) {
 						detections.put(((TClass) largeClass.getTAnnotated()), "-1");
 						thresholds.put(Flaws.H_LARGE_CLASS_SMELL + ":" + HRelativeValueConstants.HIGH, (ThresholdCalculator
 								.getThresholdValue(numberOfMembersMetric, HRelativeValueConstants.HIGH, true)));
 					}
-					DetectionObject largeClassDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_LARGE_CLASS_SMELL);
+					final DetectionObject largeClassDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_LARGE_CLASS_SMELL);
 					detectionObjects.get(Flaws.H_LARGE_CLASS_SMELL).add(largeClassDetectionObject);
 					detections.clear();
 					thresholds.clear();
@@ -84,9 +84,9 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 								(ThresholdCalculator.getThresholdValue(averageOverloadingInClassMetric,
 										HRelativeValueConstants.HIGH, true)));
 					}
-					DetectionObject muchOverloadigSmellDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_MUCH_OVERLOADING_SMELL);
+					final DetectionObject muchOverloadigSmellDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_MUCH_OVERLOADING_SMELL);
 					detectionObjects.get(Flaws.H_MUCH_OVERLOADING_SMELL)
-							.add(muchOverloadigSmellDetectionObject);
+					.add(muchOverloadigSmellDetectionObject);
 					detections.clear();
 					thresholds.clear();
 
@@ -97,9 +97,9 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 										+ numberOfIncommingInvocationsMetric.getValue());
 						thresholds.put("none", -1);
 					}
-					DetectionObject numberOfIncommingInvocationsMetricDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
+					final DetectionObject numberOfIncommingInvocationsMetricDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC);
 					detectionObjects.get(Flaws.H_NUMBER_OF_INCOMMING_INVOCATIONS_METRIC)
-							.add(numberOfIncommingInvocationsMetricDetectionObject);
+					.add(numberOfIncommingInvocationsMetricDetectionObject);
 					detections.clear();
 					thresholds.clear();
 
@@ -110,9 +110,9 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 										+ numberOfMembersMetric.getValue());
 						thresholds.put("none", -1);
 					}
-					DetectionObject numberOfMembersMetricDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_NUMBER_OF_MEMBERS_METRIC);
+					final DetectionObject numberOfMembersMetricDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_NUMBER_OF_MEMBERS_METRIC);
 					detectionObjects.get(Flaws.H_NUMBER_OF_MEMBERS_METRIC)
-							.add(numberOfMembersMetricDetectionObject);
+					.add(numberOfMembersMetricDetectionObject);
 					detections.clear();
 					thresholds.clear();
 
@@ -123,9 +123,9 @@ public class SwissArmyKnifePreprocessor extends DetectionPreprocessor {
 										+ averageOverloadingInClassMetric.getValue());
 						thresholds.put("none", -1);
 					}
-					DetectionObject averageOverloadingDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_AVERAGE_OVERLOADING_METRIC);
+					final DetectionObject averageOverloadingDetectionObject = new DetectionObject(detections,thresholds,"",Flaws.H_AVERAGE_OVERLOADING_METRIC);
 					detectionObjects.get(Flaws.H_AVERAGE_OVERLOADING_METRIC)
-							.add(averageOverloadingDetectionObject);
+					.add(averageOverloadingDetectionObject);
 					detections.clear();
 					thresholds.clear();
 

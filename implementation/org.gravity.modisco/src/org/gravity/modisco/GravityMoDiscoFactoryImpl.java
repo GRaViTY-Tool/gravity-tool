@@ -1,16 +1,16 @@
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.Annotation;
-import org.eclipse.gmt.modisco.java.AnonymousClassDeclaration;
-import org.eclipse.gmt.modisco.java.ClassDeclaration;
-import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.Model;
-import org.eclipse.gmt.modisco.java.emf.impl.JavaFactoryImpl;
-import org.gravity.modisco.bugfixes.MAnnotationImpl_bugfix;
+import org.eclipse.modisco.java.Annotation;
+import org.eclipse.modisco.java.AnonymousClassDeclaration;
+import org.eclipse.modisco.java.ClassDeclaration;
+import org.eclipse.modisco.java.MethodInvocation;
+import org.eclipse.modisco.java.Model;
+import org.eclipse.modisco.java.emf.impl.JavaFactoryImpl;
+import org.gravity.modisco.bugfixes.MAnnotation;
 
 /**
  * A factory overwrite for providing GRaViTY MoDisco elements
- * 
+ *
  * @author speldszus
  *
  */
@@ -24,7 +24,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public Annotation createAnnotation() {
-		return new MAnnotationImpl_bugfix();
+		return new MAnnotation();
 	}
 
 	@Override
@@ -39,10 +39,7 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
 	public MConstructorDefinition createConstructorDeclaration() {
-		MConstructorDefinition decl = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
-		MParameterList mParameterList = ModiscoFactory.eINSTANCE.createMParameterList();
-		decl.setMParameterList(mParameterList);
-		return decl;
+		return ModiscoFactory.eINSTANCE.createMConstructorDefinition();
 	}
 
 	@Override
@@ -58,5 +55,35 @@ public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 	@Override
 	public MethodInvocation createMethodInvocation() {
 		return ModiscoFactory.eINSTANCE.createMMethodInvocation();
+	}
+
+	@Override
+	public MSingleVariableAccess createSingleVariableAccess() {
+		return ModiscoFactory.eINSTANCE.createMSingleVariableAccess();
+	}
+
+	@Override
+	public MConstructorInvocation createConstructorInvocation() {
+		return ModiscoFactory.eINSTANCE.createMConstructorInvocation();
+	}
+
+	@Override
+	public MSingleVariableDeclaration createSingleVariableDeclaration() {
+		return ModiscoFactory.eINSTANCE.createMSingleVariableDeclaration();
+	}
+
+	@Override
+	public MClassInstanceCreation createClassInstanceCreation() {
+		return ModiscoFactory.eINSTANCE.createMClassInstanceCreation();
+	}
+
+	@Override
+	public MSuperMethodInvocation createSuperMethodInvocation() {
+		return ModiscoFactory.eINSTANCE.createMSuperMethodInvocation();
+	}
+
+	@Override
+	public MSuperConstructorInvocation createSuperConstructorInvocation() {
+		return ModiscoFactory.eINSTANCE.createMSuperConstructorInvocation();
 	}
 }

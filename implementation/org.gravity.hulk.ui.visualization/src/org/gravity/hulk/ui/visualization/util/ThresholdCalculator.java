@@ -9,11 +9,11 @@ import org.gravity.hulk.antipatterngraph.HMetric;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 
 /**
- * 
+ *
  * A class for calculating thresholds
  *
  */
-public class ThresholdCalculator {
+public final class ThresholdCalculator {
 
 	private ThresholdCalculator() {
 		// This class shouldn't be instantiated
@@ -24,9 +24,8 @@ public class ThresholdCalculator {
 	 * returns before.last() or lowestPossibleValue if before is null or empty. If
 	 * isLowThreshold is false, the method returns after.first() or -1 if after is
 	 * null or empty.
-	 * 
-	 * @param                     isLowThreshold: true = low threshold, false = high
-	 *                            threshold
+	 *
+	 * @param isLowThreshold      true = low threshold, false = high threshold
 	 * @param before              needed for the low threshold
 	 * @param after               needed for the high threshold
 	 * @param lowestPossibleValue default return-value
@@ -36,17 +35,15 @@ public class ThresholdCalculator {
 			SortedSet<Double> after, double lowestPossibleValue) {
 
 		if (isLowThreshold) {
-			if (before == null || before.isEmpty())
+			if (before == null || before.isEmpty()) {
 				return lowestPossibleValue;
-			else {
+			} else {
 				return before.last();
 			}
-		}
-		else {
+		} else {
 			if (after == null || after.isEmpty()) {
 				return -1;
-			}
-			else {
+			} else {
 				return after.first();
 			}
 		}
@@ -57,7 +54,7 @@ public class ThresholdCalculator {
 	 * Gets the low/high threshold value that a metric at least/at most needs to
 	 * have in comparison to other metrics of the same type to achieve the relative
 	 * amount of the relativeValue parameter.
-	 * 
+	 *
 	 * @param metric         Metric for its type the threshold has to be calculated.
 	 * @param relativeValue  Value for which the threshold has to be calculated so
 	 *                       that metric.getRelativeAmount()==relativeValue is true.
@@ -69,38 +66,34 @@ public class ThresholdCalculator {
 	public static double getThresholdValue(HMetric metric, HRelativeValueConstants relativeValue,
 			boolean isLowThreshold) {
 
-		SortedSet<Double> veryLow = new TreeSet<>();
+		final SortedSet<Double> veryLow = new TreeSet<>();
 		SortedSet<Double> low = new TreeSet<>();
 		SortedSet<Double> medium = new TreeSet<>();
 		SortedSet<Double> high = new TreeSet<>();
-		SortedSet<Double> veryHigh = new TreeSet<>();
+		final SortedSet<Double> veryHigh = new TreeSet<>();
 
-		EList<HAnnotation> annotations = metric.getApg().getHAnnotations();
-		SortedSet<Double> keys = new TreeSet<>();
-		for (HAnnotation a : annotations) {
+		final EList<HAnnotation> annotations = metric.getApg().getHAnnotations();
+		final SortedSet<Double> keys = new TreeSet<>();
+		for (final HAnnotation a : annotations) {
 			if (metric.getClass().equals(a.getClass())) {
-				double key = ((HMetric) a).getValue();
+				final double key = ((HMetric) a).getValue();
 				keys.add(key);
 			}
 		}
 
-		for (Double i : keys) {
-			double index = keys.headSet(i).size();
-			double q = (index + 1) / keys.size();
+		for (final Double i : keys) {
+			final double index = keys.headSet(i).size();
+			final double q = (index + 1) / keys.size();
 
 			if (q < 0.2) {
 				veryLow.add(i);
-			}
-			else if (q < 0.4) {
+			} else if (q < 0.4) {
 				low.add(i);
-			}
-			else if (q < 0.6) {
+			} else if (q < 0.6) {
 				medium.add(i);
-			}
-			else if (q < 0.8) {
+			} else if (q < 0.8) {
 				high.add(i);
-			}
-			else {
+			} else {
 				veryHigh.add(i);
 			}
 		}

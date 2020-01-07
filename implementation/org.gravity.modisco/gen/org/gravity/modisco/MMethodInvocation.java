@@ -2,8 +2,8 @@
  */
 package org.gravity.modisco;
 
-import org.eclipse.gmt.modisco.java.MethodInvocation;
-import org.eclipse.gmt.modisco.java.Type;
+import org.eclipse.modisco.java.MethodInvocation;
+import org.eclipse.modisco.java.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,14 +21,10 @@ import org.eclipse.gmt.modisco.java.Type;
  * @model
  * @generated
  */
-public interface MMethodInvocation extends MethodInvocation {
+public interface MMethodInvocation extends MethodInvocation, MAbstractFlowElement, MAbstractMethodInvocation {
 	/**
 	 * Returns the value of the '<em><b>MStatic Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MStatic Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MStatic Type</em>' reference.
 	 * @see #setMStaticType(Type)

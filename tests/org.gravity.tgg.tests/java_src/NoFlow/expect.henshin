@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_3quFMNrWEemV79FVUcY6PA">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_4_kYQNrWEemV79FVUcY6PA" name="expect">
+    <lhs xmi:id="_5AygQNrWEemV79FVUcY6PA" name="Lhs">
+      <nodes xmi:id="_7MCP0NrWEemV79FVUcY6PA" outgoing="__HDT4NrWEemV79FVUcY6PA __3q4gNrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_D0SfENrXEemV79FVUcY6PA" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_8veYgNrWEemV79FVUcY6PA" incoming="__HDT4NrWEemV79FVUcY6PA _CCETgNrXEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_9WacsNrWEemV79FVUcY6PA" incoming="__3q4gNrWEemV79FVUcY6PA" outgoing="_CCETgNrXEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <edges xmi:id="__HDT4NrWEemV79FVUcY6PA" source="_7MCP0NrWEemV79FVUcY6PA" target="_8veYgNrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="__3q4gNrWEemV79FVUcY6PA" source="_7MCP0NrWEemV79FVUcY6PA" target="_9WacsNrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_CCETgNrXEemV79FVUcY6PA" source="_9WacsNrWEemV79FVUcY6PA" target="_8veYgNrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <formula xsi:type="henshin:Not" xmi:id="_KqvZgNrXEemV79FVUcY6PA">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_KqvZgdrXEemV79FVUcY6PA">
+          <conclusion xmi:id="_KqvZgtrXEemV79FVUcY6PA">
+            <nodes xmi:id="_KqxOsNrXEemV79FVUcY6PA" outgoing="_KqzD4NrXEemV79FVUcY6PA _Kqzq8NrXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+              <attributes xmi:id="_KqxOsdrXEemV79FVUcY6PA" value="&quot;A&quot;">
+                <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+              </attributes>
+            </nodes>
+            <nodes xmi:id="_Kqx1wdrXEemV79FVUcY6PA" incoming="_KqzD4NrXEemV79FVUcY6PA _Kqzq8drXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+            </nodes>
+            <nodes xmi:id="_KqzD4drXEemV79FVUcY6PA" incoming="_Kqzq8NrXEemV79FVUcY6PA" outgoing="_Kqzq8drXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+            </nodes>
+            <nodes xmi:id="_Jv7-INrXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TFlow"/>
+            </nodes>
+            <edges xmi:id="_KqzD4NrXEemV79FVUcY6PA" source="_KqxOsNrXEemV79FVUcY6PA" target="_Kqx1wdrXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+            </edges>
+            <edges xmi:id="_Kqzq8NrXEemV79FVUcY6PA" source="_KqxOsNrXEemV79FVUcY6PA" target="_KqzD4drXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+            </edges>
+            <edges xmi:id="_Kqzq8drXEemV79FVUcY6PA" source="_KqzD4drXEemV79FVUcY6PA" target="_Kqx1wdrXEemV79FVUcY6PA">
+              <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+            </edges>
+          </conclusion>
+          <mappings xmi:id="_Kqx1wNrXEemV79FVUcY6PA" origin="_7MCP0NrWEemV79FVUcY6PA" image="_KqxOsNrXEemV79FVUcY6PA"/>
+          <mappings xmi:id="_Kqyc0NrXEemV79FVUcY6PA" origin="_8veYgNrWEemV79FVUcY6PA" image="_Kqx1wdrXEemV79FVUcY6PA"/>
+          <mappings xmi:id="_KqzD4trXEemV79FVUcY6PA" origin="_9WacsNrWEemV79FVUcY6PA" image="_KqzD4drXEemV79FVUcY6PA"/>
+        </child>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_5AygQdrWEemV79FVUcY6PA" name="Rhs">
+      <nodes xmi:id="_7MCP0drWEemV79FVUcY6PA" outgoing="__HEiANrWEemV79FVUcY6PA __3rfkNrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_D0TGINrXEemV79FVUcY6PA" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_8veYgdrWEemV79FVUcY6PA" incoming="__HEiANrWEemV79FVUcY6PA _CCE6kNrXEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_9WacsdrWEemV79FVUcY6PA" incoming="__3rfkNrWEemV79FVUcY6PA" outgoing="_CCE6kNrXEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <edges xmi:id="__HEiANrWEemV79FVUcY6PA" source="_7MCP0drWEemV79FVUcY6PA" target="_8veYgdrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="__3rfkNrWEemV79FVUcY6PA" source="_7MCP0drWEemV79FVUcY6PA" target="_9WacsdrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_CCE6kNrXEemV79FVUcY6PA" source="_9WacsdrWEemV79FVUcY6PA" target="_8veYgdrWEemV79FVUcY6PA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_7MFTINrWEemV79FVUcY6PA" origin="_7MCP0NrWEemV79FVUcY6PA" image="_7MCP0drWEemV79FVUcY6PA"/>
+    <mappings xmi:id="_8ve_kNrWEemV79FVUcY6PA" origin="_8veYgNrWEemV79FVUcY6PA" image="_8veYgdrWEemV79FVUcY6PA"/>
+    <mappings xmi:id="_9WacstrWEemV79FVUcY6PA" origin="_9WacsNrWEemV79FVUcY6PA" image="_9WacsdrWEemV79FVUcY6PA"/>
+  </units>
+</henshin:Module>

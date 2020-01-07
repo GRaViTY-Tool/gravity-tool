@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_4X1foNSQEem0l_y0QYlrDw">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_4598UNSQEem0l_y0QYlrDw" name="expect">
+    <lhs xmi:id="_46SFYNSQEem0l_y0QYlrDw" name="Lhs">
+      <nodes xmi:id="_7igE0NSQEem0l_y0QYlrDw" outgoing="_Jky64NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_842MsNSQEem0l_y0QYlrDw" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_79eJkNSQEem0l_y0QYlrDw" outgoing="_XKPc4NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_-ByxwNSQEem0l_y0QYlrDw" value="&quot;B&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_DgGNgNSREem0l_y0QYlrDw" outgoing="_KISCcNSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TField"/>
+        <attributes xmi:id="_Fw4kYNSREem0l_y0QYlrDw" value="&quot;i&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HTrM0NSREem0l_y0QYlrDw" incoming="_Jky64NSREem0l_y0QYlrDw _bAt_MNSREem0l_y0QYlrDw _OX3LkNUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
+      </nodes>
+      <nodes xmi:id="_HxLBINSREem0l_y0QYlrDw" incoming="_KISCcNSREem0l_y0QYlrDw" outgoing="_OX3LkNUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldSignature"/>
+      </nodes>
+      <nodes xmi:id="_MzPz4NSREem0l_y0QYlrDw" outgoing="_Xizt4NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
+        <attributes xmi:id="_NLhJ8NSREem0l_y0QYlrDw" value="&quot;m&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_P0TKENSREem0l_y0QYlrDw" incoming="_XKPc4NSREem0l_y0QYlrDw _OzJZYNUxEemY7dAl-dQRog" outgoing="_al-j8NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_QdreQNSREem0l_y0QYlrDw" incoming="_Xizt4NSREem0l_y0QYlrDw" outgoing="_OzJZYNUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <nodes xmi:id="_ZSOdENSREem0l_y0QYlrDw" incoming="_al-j8NSREem0l_y0QYlrDw" outgoing="_bAt_MNSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TRead"/>
+      </nodes>
+      <edges xmi:id="_Jky64NSREem0l_y0QYlrDw" source="_7igE0NSQEem0l_y0QYlrDw" target="_HTrM0NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_KISCcNSREem0l_y0QYlrDw" source="_DgGNgNSREem0l_y0QYlrDw" target="_HxLBINSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TField/signatures"/>
+      </edges>
+      <edges xmi:id="_XKPc4NSREem0l_y0QYlrDw" source="_79eJkNSQEem0l_y0QYlrDw" target="_P0TKENSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_Xizt4NSREem0l_y0QYlrDw" source="_MzPz4NSREem0l_y0QYlrDw" target="_QdreQNSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod/signatures"/>
+      </edges>
+      <edges xmi:id="_al-j8NSREem0l_y0QYlrDw" source="_P0TKENSREem0l_y0QYlrDw" target="_ZSOdENSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+      </edges>
+      <edges xmi:id="_bAt_MNSREem0l_y0QYlrDw" source="_ZSOdENSREem0l_y0QYlrDw" target="_HTrM0NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+      </edges>
+      <edges xmi:id="_OX3LkNUxEemY7dAl-dQRog" source="_HxLBINSREem0l_y0QYlrDw" target="_HTrM0NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_OzJZYNUxEemY7dAl-dQRog" source="_QdreQNSREem0l_y0QYlrDw" target="_P0TKENSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_46SFYdSQEem0l_y0QYlrDw" name="Rhs">
+      <nodes xmi:id="_7igr4NSQEem0l_y0QYlrDw" outgoing="_Jkzh8NSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_842zwNSQEem0l_y0QYlrDw" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_79ewoNSQEem0l_y0QYlrDw" outgoing="_XKPc4dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_-BzY0NSQEem0l_y0QYlrDw" value="&quot;B&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_DgG0kNSREem0l_y0QYlrDw" outgoing="_KISCcdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TField"/>
+        <attributes xmi:id="_Fw5LcNSREem0l_y0QYlrDw" value="&quot;i&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_HTrM0dSREem0l_y0QYlrDw" incoming="_Jkzh8NSREem0l_y0QYlrDw _bAt_MdSREem0l_y0QYlrDw _OX3LkdUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
+      </nodes>
+      <nodes xmi:id="_HxLBIdSREem0l_y0QYlrDw" incoming="_KISCcdSREem0l_y0QYlrDw" outgoing="_OX3LkdUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TFieldSignature"/>
+      </nodes>
+      <nodes xmi:id="_MzPz4dSREem0l_y0QYlrDw" outgoing="_Xizt4dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
+        <attributes xmi:id="_NLhxANSREem0l_y0QYlrDw" value="&quot;m&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_P0TKEdSREem0l_y0QYlrDw" incoming="_XKPc4dSREem0l_y0QYlrDw _OzJZYdUxEemY7dAl-dQRog" outgoing="_al-j8dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_QdsFUNSREem0l_y0QYlrDw" incoming="_Xizt4dSREem0l_y0QYlrDw" outgoing="_OzJZYdUxEemY7dAl-dQRog">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <nodes xmi:id="_ZSOdEdSREem0l_y0QYlrDw" incoming="_al-j8dSREem0l_y0QYlrDw" outgoing="_bAt_MdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TRead"/>
+      </nodes>
+      <edges xmi:id="_Jkzh8NSREem0l_y0QYlrDw" source="_7igr4NSQEem0l_y0QYlrDw" target="_HTrM0dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_KISCcdSREem0l_y0QYlrDw" source="_DgG0kNSREem0l_y0QYlrDw" target="_HxLBIdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TField/signatures"/>
+      </edges>
+      <edges xmi:id="_XKPc4dSREem0l_y0QYlrDw" source="_79ewoNSQEem0l_y0QYlrDw" target="_P0TKEdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_Xizt4dSREem0l_y0QYlrDw" source="_MzPz4dSREem0l_y0QYlrDw" target="_QdsFUNSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod/signatures"/>
+      </edges>
+      <edges xmi:id="_al-j8dSREem0l_y0QYlrDw" source="_P0TKEdSREem0l_y0QYlrDw" target="_ZSOdEdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMember/tAccessing"/>
+      </edges>
+      <edges xmi:id="_bAt_MdSREem0l_y0QYlrDw" source="_ZSOdEdSREem0l_y0QYlrDw" target="_HTrM0dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAccess/tTarget"/>
+      </edges>
+      <edges xmi:id="_OX3LkdUxEemY7dAl-dQRog" source="_HxLBIdSREem0l_y0QYlrDw" target="_HTrM0dSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_OzJZYdUxEemY7dAl-dQRog" source="_QdsFUNSREem0l_y0QYlrDw" target="_P0TKEdSREem0l_y0QYlrDw">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_7igr4dSQEem0l_y0QYlrDw" origin="_7igE0NSQEem0l_y0QYlrDw" image="_7igr4NSQEem0l_y0QYlrDw"/>
+    <mappings xmi:id="_79fXsNSQEem0l_y0QYlrDw" origin="_79eJkNSQEem0l_y0QYlrDw" image="_79ewoNSQEem0l_y0QYlrDw"/>
+    <mappings xmi:id="_DgG0kdSREem0l_y0QYlrDw" origin="_DgGNgNSREem0l_y0QYlrDw" image="_DgG0kNSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_HTrM0tSREem0l_y0QYlrDw" origin="_HTrM0NSREem0l_y0QYlrDw" image="_HTrM0dSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_HxLoMNSREem0l_y0QYlrDw" origin="_HxLBINSREem0l_y0QYlrDw" image="_HxLBIdSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_MzPz4tSREem0l_y0QYlrDw" origin="_MzPz4NSREem0l_y0QYlrDw" image="_MzPz4dSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_P0TKEtSREem0l_y0QYlrDw" origin="_P0TKENSREem0l_y0QYlrDw" image="_P0TKEdSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_QdsFUdSREem0l_y0QYlrDw" origin="_QdreQNSREem0l_y0QYlrDw" image="_QdsFUNSREem0l_y0QYlrDw"/>
+    <mappings xmi:id="_ZSPEINSREem0l_y0QYlrDw" origin="_ZSOdENSREem0l_y0QYlrDw" image="_ZSOdEdSREem0l_y0QYlrDw"/>
+  </units>
+</henshin:Module>

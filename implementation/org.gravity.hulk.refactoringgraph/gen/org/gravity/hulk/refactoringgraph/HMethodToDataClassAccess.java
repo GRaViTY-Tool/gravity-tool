@@ -20,12 +20,12 @@ import org.gravity.typegraph.basic.TMember;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess#getHDataClassSmell <em>HData Class Smell</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess#getHDataClass <em>HData Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HMethodToDataClassAccess#getTMethodDefinition <em>TMethod Definition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.RefactoringgraphPackage#getHMethodToDataClassAccess()
  * @model

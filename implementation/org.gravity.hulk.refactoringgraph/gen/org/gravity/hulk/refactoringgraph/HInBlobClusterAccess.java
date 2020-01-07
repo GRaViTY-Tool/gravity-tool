@@ -15,10 +15,10 @@ import org.gravity.hulk.antipatterngraph.values.HRelativeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HInBlobClusterAccess#getHCluster <em>HCluster</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.RefactoringgraphPackage#getHInBlobClusterAccess()
  * @model

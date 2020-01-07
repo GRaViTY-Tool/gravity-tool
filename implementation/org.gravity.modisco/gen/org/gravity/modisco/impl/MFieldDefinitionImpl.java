@@ -17,17 +17,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gmt.modisco.java.AbstractVariablesContainer;
-import org.eclipse.gmt.modisco.java.FieldDeclaration;
-import org.eclipse.gmt.modisco.java.TypeAccess;
-import org.eclipse.gmt.modisco.java.VariableDeclarationFragment;
+import org.eclipse.modisco.java.AbstractVariablesContainer;
+import org.eclipse.modisco.java.FieldDeclaration;
+import org.eclipse.modisco.java.TypeAccess;
+import org.eclipse.modisco.java.VariableDeclarationFragment;
 
-import org.eclipse.gmt.modisco.java.emf.JavaPackage;
+import org.eclipse.modisco.java.emf.JavaPackage;
 
 import org.gravity.modisco.MFieldDefinition;
-import org.gravity.modisco.MFieldName;
-import org.gravity.modisco.MFieldSignature;
-import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.ModiscoPackage;
 
 /**
@@ -40,9 +37,6 @@ import org.gravity.modisco.ModiscoPackage;
  * <ul>
  *   <li>{@link org.gravity.modisco.impl.MFieldDefinitionImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.gravity.modisco.impl.MFieldDefinitionImpl#getFragments <em>Fragments</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MFieldDefinitionImpl#getMFieldSignature <em>MField Signature</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MFieldDefinitionImpl#getMFieldName <em>MField Name</em>}</li>
- *   <li>{@link org.gravity.modisco.impl.MFieldDefinitionImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,36 +61,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 	 * @ordered
 	 */
 	protected EList<VariableDeclarationFragment> fragments;
-
-	/**
-	 * The cached value of the '{@link #getMFieldSignature() <em>MField Signature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMFieldSignature()
-	 * @generated
-	 * @ordered
-	 */
-	protected MFieldSignature mFieldSignature;
-
-	/**
-	 * The cached value of the '{@link #getMFieldName() <em>MField Name</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMFieldName()
-	 * @generated
-	 * @ordered
-	 */
-	protected MFieldName mFieldName;
-
-	/**
-	 * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModel()
-	 * @generated
-	 * @ordered
-	 */
-	protected MGravityModel model;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,204 +141,12 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MFieldSignature getMFieldSignature() {
-		if (mFieldSignature != null && mFieldSignature.eIsProxy()) {
-			InternalEObject oldMFieldSignature = (InternalEObject)mFieldSignature;
-			mFieldSignature = (MFieldSignature)eResolveProxy(oldMFieldSignature);
-			if (mFieldSignature != oldMFieldSignature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE, oldMFieldSignature, mFieldSignature));
-			}
-		}
-		return mFieldSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFieldSignature basicGetMFieldSignature() {
-		return mFieldSignature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMFieldSignature(MFieldSignature newMFieldSignature, NotificationChain msgs) {
-		MFieldSignature oldMFieldSignature = mFieldSignature;
-		mFieldSignature = newMFieldSignature;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE, oldMFieldSignature, newMFieldSignature);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMFieldSignature(MFieldSignature newMFieldSignature) {
-		if (newMFieldSignature != mFieldSignature) {
-			NotificationChain msgs = null;
-			if (mFieldSignature != null)
-				msgs = ((InternalEObject)mFieldSignature).eInverseRemove(this, ModiscoPackage.MFIELD_SIGNATURE__MFIELD_DEFINITIONS, MFieldSignature.class, msgs);
-			if (newMFieldSignature != null)
-				msgs = ((InternalEObject)newMFieldSignature).eInverseAdd(this, ModiscoPackage.MFIELD_SIGNATURE__MFIELD_DEFINITIONS, MFieldSignature.class, msgs);
-			msgs = basicSetMFieldSignature(newMFieldSignature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE, newMFieldSignature, newMFieldSignature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFieldName getMFieldName() {
-		if (mFieldName != null && mFieldName.eIsProxy()) {
-			InternalEObject oldMFieldName = (InternalEObject)mFieldName;
-			mFieldName = (MFieldName)eResolveProxy(oldMFieldName);
-			if (mFieldName != oldMFieldName) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME, oldMFieldName, mFieldName));
-			}
-		}
-		return mFieldName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MFieldName basicGetMFieldName() {
-		return mFieldName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMFieldName(MFieldName newMFieldName, NotificationChain msgs) {
-		MFieldName oldMFieldName = mFieldName;
-		mFieldName = newMFieldName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME, oldMFieldName, newMFieldName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMFieldName(MFieldName newMFieldName) {
-		if (newMFieldName != mFieldName) {
-			NotificationChain msgs = null;
-			if (mFieldName != null)
-				msgs = ((InternalEObject)mFieldName).eInverseRemove(this, ModiscoPackage.MFIELD_NAME__MFIELD_DEFINITIONS, MFieldName.class, msgs);
-			if (newMFieldName != null)
-				msgs = ((InternalEObject)newMFieldName).eInverseAdd(this, ModiscoPackage.MFIELD_NAME__MFIELD_DEFINITIONS, MFieldName.class, msgs);
-			msgs = basicSetMFieldName(newMFieldName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME, newMFieldName, newMFieldName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MGravityModel getModel() {
-		if (model != null && model.eIsProxy()) {
-			InternalEObject oldModel = (InternalEObject)model;
-			model = (MGravityModel)eResolveProxy(oldModel);
-			if (model != oldModel) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModiscoPackage.MFIELD_DEFINITION__MODEL, oldModel, model));
-			}
-		}
-		return model;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MGravityModel basicGetModel() {
-		return model;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetModel(MGravityModel newModel, NotificationChain msgs) {
-		MGravityModel oldModel = model;
-		model = newModel;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MODEL, oldModel, newModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModel(MGravityModel newModel) {
-		if (newModel != model) {
-			NotificationChain msgs = null;
-			if (model != null)
-				msgs = ((InternalEObject)model).eInverseRemove(this, ModiscoPackage.MGRAVITY_MODEL__MFIELD_DEFINITIONS, MGravityModel.class, msgs);
-			if (newModel != null)
-				msgs = ((InternalEObject)newModel).eInverseAdd(this, ModiscoPackage.MGRAVITY_MODEL__MFIELD_DEFINITIONS, MGravityModel.class, msgs);
-			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModiscoPackage.MFIELD_DEFINITION__MODEL, newModel, newModel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFragments()).basicAdd(otherEnd, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				if (mFieldSignature != null)
-					msgs = ((InternalEObject)mFieldSignature).eInverseRemove(this, ModiscoPackage.MFIELD_SIGNATURE__MFIELD_DEFINITIONS, MFieldSignature.class, msgs);
-				return basicSetMFieldSignature((MFieldSignature)otherEnd, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				if (mFieldName != null)
-					msgs = ((InternalEObject)mFieldName).eInverseRemove(this, ModiscoPackage.MFIELD_NAME__MFIELD_DEFINITIONS, MFieldName.class, msgs);
-				return basicSetMFieldName((MFieldName)otherEnd, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				if (model != null)
-					msgs = ((InternalEObject)model).eInverseRemove(this, ModiscoPackage.MGRAVITY_MODEL__MFIELD_DEFINITIONS, MGravityModel.class, msgs);
-				return basicSetModel((MGravityModel)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -391,12 +163,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 				return basicSetType(null, msgs);
 			case ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS:
 				return ((InternalEList<?>)getFragments()).basicRemove(otherEnd, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				return basicSetMFieldSignature(null, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				return basicSetMFieldName(null, msgs);
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				return basicSetModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -413,15 +179,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 				return getType();
 			case ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS:
 				return getFragments();
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				if (resolve) return getMFieldSignature();
-				return basicGetMFieldSignature();
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				if (resolve) return getMFieldName();
-				return basicGetMFieldName();
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				if (resolve) return getModel();
-				return basicGetModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -442,15 +199,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 				getFragments().clear();
 				getFragments().addAll((Collection<? extends VariableDeclarationFragment>)newValue);
 				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				setMFieldSignature((MFieldSignature)newValue);
-				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				setMFieldName((MFieldName)newValue);
-				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				setModel((MGravityModel)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -469,15 +217,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 			case ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS:
 				getFragments().clear();
 				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				setMFieldSignature((MFieldSignature)null);
-				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				setMFieldName((MFieldName)null);
-				return;
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				setModel((MGravityModel)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -494,12 +233,6 @@ public class MFieldDefinitionImpl extends MDefinitionImpl implements MFieldDefin
 				return type != null;
 			case ModiscoPackage.MFIELD_DEFINITION__FRAGMENTS:
 				return fragments != null && !fragments.isEmpty();
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_SIGNATURE:
-				return mFieldSignature != null;
-			case ModiscoPackage.MFIELD_DEFINITION__MFIELD_NAME:
-				return mFieldName != null;
-			case ModiscoPackage.MFIELD_DEFINITION__MODEL:
-				return model != null;
 		}
 		return super.eIsSet(featureID);
 	}

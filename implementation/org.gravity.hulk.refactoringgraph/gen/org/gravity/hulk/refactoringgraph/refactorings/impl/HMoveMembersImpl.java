@@ -30,12 +30,12 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMembersImpl#getHMoveMembers <em>HMove Members</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMembersImpl#getTargetClass <em>Target Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMembersImpl#getSourceClass <em>Source Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -94,6 +94,7 @@ public class HMoveMembersImpl extends HRefactoringImpl implements HMoveMembers {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HMoveMember> getHMoveMembers() {
 		if (hMoveMembers == null) {
 			hMoveMembers = new EObjectResolvingEList<HMoveMember>(HMoveMember.class, this,
@@ -107,6 +108,7 @@ public class HMoveMembersImpl extends HRefactoringImpl implements HMoveMembers {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getTargetClass() {
 		if (targetClass != null && targetClass.eIsProxy()) {
 			InternalEObject oldTargetClass = (InternalEObject) targetClass;
@@ -134,6 +136,7 @@ public class HMoveMembersImpl extends HRefactoringImpl implements HMoveMembers {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetClass(TClass newTargetClass) {
 		TClass oldTargetClass = targetClass;
 		targetClass = newTargetClass;
@@ -147,6 +150,7 @@ public class HMoveMembersImpl extends HRefactoringImpl implements HMoveMembers {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getSourceClass() {
 		if (sourceClass != null && sourceClass.eIsProxy()) {
 			InternalEObject oldSourceClass = (InternalEObject) sourceClass;
@@ -174,6 +178,7 @@ public class HMoveMembersImpl extends HRefactoringImpl implements HMoveMembers {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceClass(TClass newSourceClass) {
 		TClass oldSourceClass = sourceClass;
 		sourceClass = newSourceClass;

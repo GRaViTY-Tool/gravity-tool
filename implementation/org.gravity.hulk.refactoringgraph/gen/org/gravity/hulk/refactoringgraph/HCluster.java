@@ -17,10 +17,10 @@ import org.gravity.typegraph.basic.TMember;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.HCluster#getTMembers <em>TMembers</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.RefactoringgraphPackage#getHCluster()
  * @model

@@ -7,17 +7,23 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.gravity.security.annotations.AnnotationsPackage;
+
 import org.gravity.security.annotations.access.AccessFactory;
 import org.gravity.security.annotations.access.AccessPackage;
 import org.gravity.security.annotations.access.TApi;
+
+import org.gravity.security.annotations.actions.ActionsPackage;
+
+import org.gravity.security.annotations.actions.impl.ActionsPackageImpl;
+
+import org.gravity.security.annotations.impl.AnnotationsPackageImpl;
 
 import org.gravity.security.annotations.requirements.RequirementsPackage;
 
 import org.gravity.security.annotations.requirements.impl.RequirementsPackageImpl;
 
 import org.gravity.typegraph.basic.BasicPackage;
-
-import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,18 +93,30 @@ public class AccessPackageImpl extends EPackageImpl implements AccessPackage {
 		BasicPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AnnotationsPackage.eNS_URI);
+		AnnotationsPackageImpl theAnnotationsPackage = (AnnotationsPackageImpl) (registeredPackage instanceof AnnotationsPackageImpl
+				? registeredPackage
+				: AnnotationsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RequirementsPackage.eNS_URI);
 		RequirementsPackageImpl theRequirementsPackage = (RequirementsPackageImpl) (registeredPackage instanceof RequirementsPackageImpl
 				? registeredPackage
 				: RequirementsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ActionsPackage.eNS_URI);
+		ActionsPackageImpl theActionsPackage = (ActionsPackageImpl) (registeredPackage instanceof ActionsPackageImpl
+				? registeredPackage
+				: ActionsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAccessPackage.createPackageContents();
+		theAnnotationsPackage.createPackageContents();
 		theRequirementsPackage.createPackageContents();
+		theActionsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAccessPackage.initializePackageContents();
+		theAnnotationsPackage.initializePackageContents();
 		theRequirementsPackage.initializePackageContents();
+		theActionsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAccessPackage.freeze();
@@ -113,6 +131,7 @@ public class AccessPackageImpl extends EPackageImpl implements AccessPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTApi() {
 		return tApiEClass;
 	}
@@ -122,6 +141,7 @@ public class AccessPackageImpl extends EPackageImpl implements AccessPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AccessFactory getAccessFactory() {
 		return (AccessFactory) getEFactoryInstance();
 	}
@@ -174,21 +194,18 @@ public class AccessPackageImpl extends EPackageImpl implements AccessPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		AnnotationsPackage theAnnotationsPackage = (AnnotationsPackage) EPackage.Registry.INSTANCE
-				.getEPackage(AnnotationsPackage.eNS_URI);
+		org.gravity.typegraph.basic.annotations.AnnotationsPackage theAnnotationsPackage_1 = (org.gravity.typegraph.basic.annotations.AnnotationsPackage) EPackage.Registry.INSTANCE
+				.getEPackage(org.gravity.typegraph.basic.annotations.AnnotationsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		tApiEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotation());
+		tApiEClass.getESuperTypes().add(theAnnotationsPackage_1.getTAnnotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tApiEClass, TApi.class, "TApi", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //AccessPackageImpl

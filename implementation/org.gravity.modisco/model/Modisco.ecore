@@ -1,146 +1,135 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="http://www.gravity-tool.org/modisco" nsPrefix="org.gravity.modisco">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="basePackage" value="org.gravity"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodDefinition" abstract="true"
-      eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration">
+      eSuperTypes="#//MDefinition ../../org.eclipse.modisco.java/model/java.ecore#//AbstractMethodDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mInnerTypes" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+        eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mConstructorDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAccess" abstract="true" eSuperTypes="#//MAbstractFlowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinition" eSuperTypes="#//MAbstractMethodDefinition ../../org.eclipse.modisco.java/model/java.ecore#//ConstructorDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="MDefinition" abstract="true" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration #//MAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocationStaticTypes"
+        upperBound="-1" eType="#//MethodInvocationStaticType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodInvocations" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
+        eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractFieldAccess" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+        eType="#//MSingleVariableAccess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSignature" eType="#//MSignature"
+        eOpposite="#//MSignature/mDefinitions"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mMethodSignatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodName" lowerBound="1"
-        eType="#//MMethodName" eOpposite="#//MMethodName/mMethodSignatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
-        eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodSignature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mParameterList" eType="#//MParameterList"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MParameterList">
+  <eClassifiers xsi:type="ecore:EClass" name="MParameterList" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFirstEntry" eType="#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mEntrys" upperBound="-1"
         eType="#//MEntry" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MName" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mSignatures" upperBound="-1"
-        eType="#//MSignature"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mName" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodName" eSuperTypes="#//MName"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignature" eSuperTypes="#//MSignature #//MParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodName" eSuperTypes="#//MName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mMethodNames"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
-        eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/mMethodName"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignatures" upperBound="-1"
-        eType="#//MMethodSignature" eOpposite="#//MMethodSignature/mMethodName"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MFieldName" eSuperTypes="#//MName">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mFieldNames"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldSignatures" upperBound="-1"
-        eType="#//MFieldSignature" eOpposite="#//MFieldSignature/mFieldName"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldDefinitions" upperBound="-1"
-        eType="#//MFieldDefinition" eOpposite="#//MFieldDefinition/mFieldName"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MFieldDefinition" eSuperTypes="#//MDefinition http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldSignature" eType="#//MFieldSignature"
-        eOpposite="#//MFieldSignature/mFieldDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldName" lowerBound="1"
-        eType="#//MFieldName" eOpposite="#//MFieldName/mFieldDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mFieldDefinitions"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodDefinition" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration #//MAbstractMethodDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodName" lowerBound="1"
-        eType="#//MMethodName" eOpposite="#//MMethodName/mMethodDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignature" eType="#//MMethodSignature"
-        eOpposite="#//MMethodSignature/mMethodDefinitions"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mMethodDefinitions"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodDefinition" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//MethodDeclaration #//MAbstractMethodDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="syntheticMethodDefinitions"
         upperBound="-1" eType="#//MSyntheticMethodDefinition" eOpposite="#//MSyntheticMethodDefinition/originalMethodDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MName" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSignatures" upperBound="-1"
+        eType="#//MSignature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mDefinitions" ordered="false"
+        upperBound="-1" eType="#//MDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldName" eSuperTypes="#//MName"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldSignature" eSuperTypes="#//MSignature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldDefinition" eSuperTypes="#//MDefinition ../../org.eclipse.modisco.java/model/java.ecore#//FieldDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSignature" abstract="true" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mDefinitions" upperBound="-1"
-        eType="#//MDefinition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementedBy" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+        eType="#//MDefinition" eOpposite="#//MDefinition/mSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MEntry">
+  <eClassifiers xsi:type="ecore:EClass" name="MEntry" eSuperTypes="#//MAbstractFlowElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mNext" eType="#//MEntry"
         eOpposite="#//MEntry/mPrevious"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mPrevious" eType="#//MEntry"
         eOpposite="#//MEntry/mNext"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="singleVariableDeclaration"
-        lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//MSingleVariableDeclaration" eOpposite="#//MSingleVariableDeclaration/mEntry"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MGravityModel" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodDefinitions" upperBound="-1"
-        eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/model"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MGravityModel" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldDefinitions" upperBound="-1"
-        eType="#//MFieldDefinition" eOpposite="#//MFieldDefinition/model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mConstructorDefinitions"
-        upperBound="-1" eType="#//MConstructorDefinition" eOpposite="#//MConstructorDefinition/model"/>
+        eType="#//MFieldDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="anonymousClassDeclarations"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodNames" upperBound="-1"
-        eType="#//MMethodName" containment="true" eOpposite="#//MMethodName/model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mNames" upperBound="-1"
-        eType="#//MName"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mMethodSignatures" upperBound="-1"
-        eType="#//MMethodSignature" containment="true" eOpposite="#//MMethodSignature/model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldSignatures" upperBound="-1"
-        eType="#//MFieldSignature" containment="true" eOpposite="#//MFieldSignature/model"/>
+        eType="#//MMethodName" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldNames" upperBound="-1"
-        eType="#//MFieldName" containment="true" eOpposite="#//MFieldName/model"/>
+        eType="#//MFieldName" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mAbstractMethodDefinitions"
         upperBound="-1" eType="#//MAbstractMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeParameters" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeParameter"/>
+        eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//TypeParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mExtensions" upperBound="-1"
         eType="#//MExtension" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MFieldSignature" eSuperTypes="#//MSignature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldName" lowerBound="1"
-        eType="#//MFieldName" eOpposite="#//MFieldName/mFieldSignatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//MGravityModel"
-        eOpposite="#//MGravityModel/mFieldSignatures"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mFieldDefinitions" upperBound="-1"
-        eType="#//MFieldDefinition" eOpposite="#//MFieldDefinition/mFieldSignature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationStaticType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodInvoc" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AbstractMethodInvocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAnnotation" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mRelevant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MSyntheticMethodDefinition" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="MSyntheticMethodDefinition" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//BodyDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
         lowerBound="1" eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/syntheticMethodDefinitions"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MClass" eSuperTypes="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="MClass" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//ClassDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+        eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MExtension" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MFlow" eSuperTypes="#//MAbstractFlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSource" lowerBound="1"
+        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/outgoingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTarget" lowerBound="1"
+        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/incomingFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
+        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/ownedFlows"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractFlowElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
+        eType="#//MFlow" containment="true" eOpposite="#//MFlow/flowOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
+        eType="#//MFlow" eOpposite="#//MFlow/flowTarget"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
+        eType="#//MFlow" eOpposite="#//MFlow/flowSource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//SingleVariableAccess #//MAccess">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessKind" eType="#//AccessKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodInvocation" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//MethodInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mStaticType" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorInvocation" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//ConstructorInvocation #//MAbstractFlowElement #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableDeclaration" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//SingleVariableDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mEntry" lowerBound="1"
+        eType="#//MEntry" eOpposite="#//MEntry/parameters"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAbstractMethodInvocation" abstract="true"
+      eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//AbstractMethodInvocation #//MAccess"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSuperMethodInvocation" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//SuperMethodInvocation #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MClassInstanceCreation" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//ClassInstanceCreation #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MSuperConstructorInvocation" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//SuperConstructorInvocation #//MAbstractMethodInvocation"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessKind">
+    <eLiterals name="READ"/>
+    <eLiterals name="WRITE" value="1"/>
+    <eLiterals name="READWRITE" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>

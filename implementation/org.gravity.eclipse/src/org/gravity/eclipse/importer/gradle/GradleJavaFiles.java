@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * This class can be used to insert a print java files task into a gradle
  * project and to read the results
- * 
+ *
  * @author speldszus
  *
  */
@@ -26,7 +26,7 @@ public class GradleJavaFiles {
 	/**
 	 * Manipulates the build.gradle file for getting all java files and initializes
 	 * an opject for getting them
-	 * 
+	 *
 	 * @param path The path to the build.gradle file
 	 * @throws IOException if an I/O error occurs manipulating the file
 	 */
@@ -37,36 +37,36 @@ public class GradleJavaFiles {
 	}
 
 	public Set<Path> getJavaFiles() throws IOException, GradleImportException {
-		boolean success = GradleBuild.build(path.getParent().toFile(), BUILD_TARGET);
+		final boolean success = GradleBuild.build(this.path.getParent().toFile(), BUILD_TARGET);
 		if(!success) {
 			throw new GradleImportException("Couldn't get Java files");
 		}
-		final Set<Path> collect = Files.readAllLines(output).parallelStream().map(s -> Paths.get(s))
+		final Set<Path> collect = Files.readAllLines(this.output).parallelStream().map(Paths::get)
 				.collect(Collectors.toSet());
-		Files.move(original, path, StandardCopyOption.REPLACE_EXISTING);
+		Files.move(this.original, this.path, StandardCopyOption.REPLACE_EXISTING);
 		return collect;
 	}
 
-	
+
 
 	/**
 	 * Adds a task to save all java sourcefiles into temp file
-	 * 
+	 *
 	 * @param build The path to the build.gradle file
 	 * @throws IOException if an I/O error occurs manipulating the file
 	 * @return path to a backup of the original file
 	 */
 	private Path manipuateBuildFile(Path build) throws IOException {
-		Path original = Files.copy(build, Files.createTempFile("backupBuildGardle", ""),
+		final Path backupLocation = Files.copy(build, Files.createTempFile("backupBuildGardle", ""),
 				StandardCopyOption.REPLACE_EXISTING);
-		String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + output + "\")\n"
+		final String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output + "\")\n"
 				+ "  outputs.file  outputFile\n" + "  doLast {\n" + "    subprojects { project ->\n"
 				+ "      project.plugins.withType(JavaPlugin) {\n"
 				+ "        project.sourceSets.main.allJava.collect { sourceFile ->\n"
 				+ "          outputFile << sourceFile.path + '\\n'\n" + "        }\n" + "      }\n" + "    }\n"
 				+ "  }\n" + "}\n";
 		Files.write(build, taskCode.getBytes(), StandardOpenOption.APPEND);
-		return original;
+		return backupLocation;
 	}
 
 }

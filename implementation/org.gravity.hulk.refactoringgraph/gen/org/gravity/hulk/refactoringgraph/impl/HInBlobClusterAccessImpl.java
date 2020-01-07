@@ -2,8 +2,6 @@
  */
 package org.gravity.hulk.refactoringgraph.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -36,10 +34,10 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.impl.HInBlobClusterAccessImpl#getHCluster <em>HCluster</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -78,6 +76,7 @@ public class HInBlobClusterAccessImpl extends HMetricImpl implements HInBlobClus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HCluster getHCluster() {
 		if (hCluster != null && hCluster.eIsProxy()) {
 			InternalEObject oldHCluster = (InternalEObject) hCluster;
@@ -105,6 +104,7 @@ public class HInBlobClusterAccessImpl extends HMetricImpl implements HInBlobClus
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHCluster(HCluster newHCluster) {
 		HCluster oldHCluster = hCluster;
 		hCluster = newHCluster;
@@ -116,7 +116,7 @@ public class HInBlobClusterAccessImpl extends HMetricImpl implements HInBlobClus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
@@ -216,19 +216,6 @@ public class HInBlobClusterAccessImpl extends HMetricImpl implements HInBlobClus
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case RefactoringgraphPackage.HIN_BLOB_CLUSTER_ACCESS___GET_RELATIVE_AMOUNT:
-			return getRelativeAmount();
-		}
-		return super.eInvoke(operationID, arguments);
-	}
 	// <-- [user code injected with eMoflon]
 
 	@Override

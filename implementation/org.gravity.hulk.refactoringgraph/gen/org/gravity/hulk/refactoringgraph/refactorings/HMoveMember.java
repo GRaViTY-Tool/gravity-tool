@@ -19,6 +19,7 @@ import org.gravity.typegraph.basic.TSignature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMember#getSourceClass <em>Source Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMember#getTargetClass <em>Target Class</em>}</li>
@@ -26,7 +27,6 @@ import org.gravity.typegraph.basic.TSignature;
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMember#getIba <em>Iba</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.HMoveMember#getTSignature <em>TSignature</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.gravity.hulk.refactoringgraph.refactorings.RefactoringsPackage#getHMoveMember()
  * @model abstract="true"

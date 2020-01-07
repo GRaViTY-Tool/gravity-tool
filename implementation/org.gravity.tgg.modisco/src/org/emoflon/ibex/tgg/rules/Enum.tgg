@@ -6,31 +6,37 @@
 #with org.gravity.tgg.modisco
 
 #source {
-++ mType : EnumDeclaration {
-}
+	++mType:EnumDeclaration
 }
 
 #target {
-tPackage : TPackage {
-	 -typeGraph -> pg
-	++  -classes -> tType
-	++  -ownedTypes -> tType
-}
-++ tType : TClass {
-}
-pg : TypeGraph {
-	++  -classes -> tType
-	++  -ownedTypes -> tType
-}
+	tPackage:TPackage {
+		-typeGraph -> pg
+		++  -classes -> tType
+		++  -ownedTypes -> tType
+	}
+
+	++tType:TClass {
+		++-tAnnotation -> tAnnotation
+	}
+
+	++tAnnotation:TEnum
+
+	pg:TypeGraph {
+		++  -classes -> tType
+		++  -ownedTypes -> tType
+	}
 }
 
 #correspondence {
-++ mTypeToTType : TypeToTAbstractType {
-	#src->mType
-	#trg->tType
-}
+	++ mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
 }
 
 #attributeConditions {
-	addPrefix("%ENUM%", mType.name, tType.tName)
+	eq_string(mType.name, tType.tName)
 }
+
+

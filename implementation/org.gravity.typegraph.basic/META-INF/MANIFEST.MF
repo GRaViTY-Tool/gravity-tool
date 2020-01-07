@@ -4,9 +4,6 @@ Export-Package: org.gravity.typegraph.basic,
  org.gravity.typegraph.basic.annotations,
  org.gravity.typegraph.basic.annotations.impl,
  org.gravity.typegraph.basic.annotations.util,
- org.gravity.typegraph.basic.containers,
- org.gravity.typegraph.basic.containers.impl,
- org.gravity.typegraph.basic.containers.util,
  org.gravity.typegraph.basic.impl,
  org.gravity.typegraph.basic.util
 Bundle-Name: %pluginName

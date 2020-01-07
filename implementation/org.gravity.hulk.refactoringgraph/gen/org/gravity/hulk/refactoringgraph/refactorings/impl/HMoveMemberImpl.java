@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.TreeItem;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMemberImpl#getSourceClass <em>Source Class</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMemberImpl#getTargetClass <em>Target Class</em>}</li>
@@ -40,7 +41,6 @@ import org.eclipse.swt.widgets.TreeItem;
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMemberImpl#getIba <em>Iba</em>}</li>
  *   <li>{@link org.gravity.hulk.refactoringgraph.refactorings.impl.HMoveMemberImpl#getTSignature <em>TSignature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -119,6 +119,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getSourceClass() {
 		if (sourceClass != null && sourceClass.eIsProxy()) {
 			InternalEObject oldSourceClass = (InternalEObject) sourceClass;
@@ -146,6 +147,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSourceClass(TClass newSourceClass) {
 		TClass oldSourceClass = sourceClass;
 		sourceClass = newSourceClass;
@@ -159,6 +161,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TClass getTargetClass() {
 		if (targetClass != null && targetClass.eIsProxy()) {
 			InternalEObject oldTargetClass = (InternalEObject) targetClass;
@@ -186,6 +189,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTargetClass(TClass newTargetClass) {
 		TClass oldTargetClass = targetClass;
 		targetClass = newTargetClass;
@@ -199,6 +203,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HMethodToDataClassAccess getM2dc() {
 		if (m2dc != null && m2dc.eIsProxy()) {
 			InternalEObject oldM2dc = (InternalEObject) m2dc;
@@ -226,6 +231,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setM2dc(HMethodToDataClassAccess newM2dc) {
 		HMethodToDataClassAccess oldM2dc = m2dc;
 		m2dc = newM2dc;
@@ -239,6 +245,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HInBlobAccess getIba() {
 		if (iba != null && iba.eIsProxy()) {
 			InternalEObject oldIba = (InternalEObject) iba;
@@ -266,6 +273,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIba(HInBlobAccess newIba) {
 		HInBlobAccess oldIba = iba;
 		iba = newIba;
@@ -278,6 +286,7 @@ public abstract class HMoveMemberImpl extends HRefactoringImpl implements HMoveM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TSignature> getTSignature() {
 		if (tSignature == null) {
 			tSignature = new EObjectResolvingEList<TSignature>(TSignature.class, this,

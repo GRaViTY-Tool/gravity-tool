@@ -2,10 +2,6 @@
  */
 package org.gravity.typegraph.basic;
 
-import org.eclipse.emf.ecore.EObject;
-// <-- [user defined imports]
-// [user defined imports] -->
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>TAccess</b></em>'.
@@ -21,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.gravity.typegraph.basic.BasicPackage#getTAccess()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface TAccess extends EObject {
+public interface TAccess extends TAbstractFlowElement {
 	/**
 	 * Returns the value of the '<em><b>TTarget</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMember#getAccessedBy <em>Accessed By</em>}'.

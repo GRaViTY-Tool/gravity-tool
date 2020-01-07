@@ -1,22 +1,16 @@
 package org.gravity.tgg.modisco.uml.tests;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
+import org.eclipse.core.runtime.Plugin;
 
-public class Activator implements BundleActivator {
-
-	private static BundleContext context;
-
-	static BundleContext getContext() {
-		return context;
-	}
-
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
-	}
-
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
-	}
-
+/**
+ * The activator of this test plugin
+ * 
+ * @author speldszus
+ *
+ */
+public class Activator extends Plugin {
+	/**
+	 * The ID of this plugin
+	 */
+	public static final String PLUGIN_ID = "org.gravity.tgg.modisco.uml.tests";
 }

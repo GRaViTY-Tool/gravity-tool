@@ -20,17 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.gravity.modisco.ModiscoPackage#getMParameterList()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface MParameterList extends EObject {
 	/**
 	 * Returns the value of the '<em><b>MFirst Entry</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MFirst Entry</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MFirst Entry</em>' reference.
 	 * @see #setMFirstEntry(MEntry)
@@ -54,10 +50,6 @@ public interface MParameterList extends EObject {
 	 * Returns the value of the '<em><b>MEntrys</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gravity.modisco.MEntry}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>MEntrys</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>MEntrys</em>' containment reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMParameterList_MEntrys()

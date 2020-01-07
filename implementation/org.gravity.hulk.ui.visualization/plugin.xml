@@ -226,7 +226,7 @@
                id="org.gravity.hulk.ui.visualization.HGodClassAntiPatternMarker">
          </markerTypeReference>
          <markerTypeReference
-               id="org.gravity.hulk.ui.visualization.HInvocationRelationSmellMarker">
+               id="org.gravity.hulk.ui.visualization.HInvocationRelationMetricMarker">
          </markerTypeReference>
          <markerTypeReference
                id="org.gravity.hulk.ui.visualization.HLargeClassLowCohesionSmellMarker">
@@ -331,7 +331,7 @@
             id="org.gravity.hulk.ui.visualization.problemFilter6"
             name="InvocationRelationSmell markers">
          <selectedType
-               markerId="org.gravity.hulk.ui.visualization.HInvocationRelationSmellMarker">
+               markerId="org.gravity.hulk.ui.visualization.HInvocationRelationMetricMarker">
          </selectedType>
       </problemFilter>
       <problemFilter
@@ -419,7 +419,7 @@
          </selectedType>
       </problemFilter>
       <markerField
-            class="org.gravity.hulk.ui.visualization.markerFields.ClassNameField"
+            class="org.gravity.hulk.ui.visualization.markerfields.ClassNameField"
             id="org.gravity.hulk.ui.visualization.markerFields.ClassNameField"
             name="Class">
       </markerField>
