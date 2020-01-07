@@ -5,6 +5,7 @@ package org.gravity.hulk.resolve.antipattern.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map.Entry;
 // <-- [user defined imports]
 import java.util.Set;
 import java.util.SortedSet;
@@ -161,7 +162,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 				}
 			}
 		}
-		if (coupling.size() == 0) {
+		if (coupling.isEmpty()) {
 			// if (!lowCohesion || tMembers.size() <= 2) {
 			// return false;
 			// }
@@ -182,14 +183,15 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 		tContainer.addAll(tMembers);
 
 		final Set<HMoveMembers> possibleMoves = new HashSet<>();
-		for (final TClass tDataClass : coupling.keySet()) {
+		for (final Entry<TClass, Integer> entry : coupling.entrySet()) {
+			final TClass tDataClass = entry.getKey();
 			final HMoveMembers hMoveMembers = createMove(tContainer, tClass, tDataClass, hParent);
 			if (hMoveMembers != null) {
 				for (final HMoveMember hMove : hMoveMembers.getHMoveMembers()) {
 					final TMember member = (TMember) hMove.getTAnnotated();
 
 				}
-				hMoveMembers.setValue(internalCoupling - coupling.get(tDataClass));
+				hMoveMembers.setValue(internalCoupling - (double) entry.getValue());
 				possibleMoves.add(hMoveMembers);
 			}
 		}

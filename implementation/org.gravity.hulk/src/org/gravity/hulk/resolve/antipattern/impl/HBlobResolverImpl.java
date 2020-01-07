@@ -47,7 +47,6 @@ import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TSignature;
-import org.gravity.typegraph.basic.TypeGraph;
 import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.basic.annotations.TAnnotationType;
@@ -249,101 +248,84 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	public boolean detect(final HAntiPatternGraph apg) {
 		final HAntiPatternGraph newApg = init(apg);
 		if (newApg == null) {
-			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[apg] = " + apg + ".");
+			throw new IllegalStateException("Couldn't initialize APG.");
 		}
 		// ForEach
-		for (final Object[] result3_black : HBlobResolverImpl.pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(newApg,
-				this)) {
-			final HBlobAntiPattern blob = (HBlobAntiPattern) result3_black[1];
-			final TClass tClass = (TClass) result3_black[3];
-			final Object[] result3_green = HBlobResolverImpl.pattern_HBlobResolver_0_3_ActivityNode1_greenBBBFB(newApg,
-					blob, this, tClass);
-			HBlobResolveAnnotation annotation = (HBlobResolveAnnotation) result3_green[3];
+		for (final HBlobAntiPattern blob : pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(newApg)) {
+			final TClass tClass = (TClass) blob.getTAnnotated();
+			final HBlobResolveAnnotation annotation = getResolveBlobAnnotation(newApg, blob, tClass);
 
 			//
-			if (HBlobResolverImpl.pattern_HBlobResolver_0_4_ActivityNode10_expressionFBB(this, tClass)) {
-				// ForEach
-				for (final Object[] result5_black : HBlobResolverImpl
-						.pattern_HBlobResolver_0_5_ActivityNode11_blackBF(tClass)) {
-					final TMember tDefinition = (TMember) result5_black[1];
-					//
-					if (HBlobResolverImpl.pattern_HBlobResolver_0_6_ActivityNode12_expressionFBB(this, tDefinition)) {
-						//
-						final HInBlobAccess iba = HBlobResolverImpl.searchInBlobAccess(tDefinition);
-						if (iba != null) {
-
-							final HRelativeValue ibaRelative = iba.getRelativeAmount();
-							if (ibaRelative == null) {
-								throw new RuntimeException(
-										"Pattern matching failed." + " Variables: " + "[iba] = " + iba + ".");
-							}
-							//
-							if (!ibaRelative.getValue().equals(HRelativeValueConstants.VERY_LOW)
-									&& !ibaRelative.getValue().equals(HRelativeValueConstants.LOW)) {
-								continue;
-
-							}
-							// ForEach
-							for (final Object[] result12_black : HBlobResolverImpl
-									.pattern_HBlobResolver_0_12_ActivityNode16_blackBF(tDefinition)) {
-								final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) result12_black[1];
-								//
-								final Object[] result13_bindingAndBlack = HBlobResolverImpl
-										.pattern_HBlobResolver_0_13_ActivityNode17_bindingAndBlackFB(m2dc);
-								if (result13_bindingAndBlack != null) {
-									// nothing HRelativeValue m2dcRelative = (HRelativeValue)
-									// result13_bindingAndBlack[0];
-
-									final TClass tTargetClass = m2dc.getHDataClass();
-									if (tTargetClass == null) {
-										throw new RuntimeException("Pattern matching failed." + " Variables: "
-												+ "[m2dc] = " + m2dc + ", " + "[tDefinition] = " + tDefinition + ".");
-									}
-									final EList<TMember> tContainer = new BasicEList<>();
-									tContainer.add(tDefinition);
-
-									//
-									final HMoveMembers hMoves = createMove(tContainer, tClass, tTargetClass,
-											annotation);
-									if (hMoves != null) {
-										// nothing HMoveMembers hMoves = (HMoveMembers) result15_bindingAndBlack[0];
-										continue;
-									}
-
-								}
-
-								final Object[] result17_green = HBlobResolverImpl
-										.pattern_HBlobResolver_0_17_ActivityNode26_greenFBBBB(tDefinition, annotation,
-												apg, iba);
-								HExtractClass extract = (HExtractClass) result17_green[0];
-
-								//
-								if (!isRefactoringPossible(extract)) {
-									EcoreUtil.delete(extract);
-									extract = null;
-								}
-
-							}
-
-						}
-
-					}
-
-				}
-				//
-				if (!annotation.getHMoves().isEmpty()) {
-					EcoreUtil.delete(annotation);
-					annotation = null;
-				}
-
+			if (allowedToTouch(tClass)) {
+				resolve(apg, tClass, annotation);
 			} else {
 				EcoreUtil.delete(annotation);
-				annotation = null;
 			}
 
 		}
 		return true;
+	}
+
+	/**
+	 * Resolves the blob in the class
+	 *
+	 * @param apg
+	 * @param tClass
+	 * @param annotation
+	 */
+	private void resolve(final HAntiPatternGraph apg, final TClass tClass, final HBlobResolveAnnotation annotation) {
+		for (final TMember tDefinition : tClass.getDefines()) {
+			if (allowedToTouch(tDefinition)) {
+				//
+				final HInBlobAccess iba = HBlobResolverImpl.searchInBlobAccess(tDefinition);
+				if (iba != null) {
+
+					final HRelativeValue ibaRelative = iba.getRelativeAmount();
+					if (!ibaRelative.getValue().equals(HRelativeValueConstants.VERY_LOW)
+							&& !ibaRelative.getValue().equals(HRelativeValueConstants.LOW)) {
+						continue;
+
+					}
+					// ForEach
+					for (final TAnnotation tmpM2dc : tDefinition.getTAnnotation()) {
+						if (tmpM2dc instanceof HMethodToDataClassAccess) {
+							final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tmpM2dc;
+							//
+							final HRelativeValue m2dcRelative = m2dc.getRelativeAmount();
+							if (m2dcRelative != null
+									&& m2dcRelative.getValue().equals(HRelativeValueConstants.VERY_HIGH)) {
+
+								final TClass tTargetClass = m2dc.getHDataClass();
+								final EList<TMember> tContainer = new BasicEList<>();
+								tContainer.add(tDefinition);
+
+								//
+								final HMoveMembers hMoves = createMove(tContainer, tClass, tTargetClass, annotation);
+								if (hMoves != null) {
+									continue;
+								}
+
+							}
+
+							final HExtractClass extract = createExtractClassAnnotation(tDefinition, annotation, apg,
+									iba);
+
+							//
+							if (!isRefactoringPossible(extract)) {
+								EcoreUtil.delete(extract);
+							}
+
+						}
+					}
+				}
+
+			}
+
+		}
+		if (annotation.getHMoves().isEmpty()) {
+			// We found no solution
+			EcoreUtil.delete(annotation);
+		}
 	}
 
 	/**
@@ -358,7 +340,6 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			final HMoveMethod r = (HMoveMethod) refactoring;
 			final TClass tTargetClass = r.getTargetClass();
 			final TClass tSourceClass = r.getSourceClass();
-			final TypeGraph pg = tTargetClass.getPg();
 
 			for (final TSignature s : r.getTSignature()) {
 				if (s.getSignatureString().startsWith("get") || s.getSignatureString().startsWith("set")) {
@@ -430,8 +411,8 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 			}
 		}
 		final RefactoringsFactory refactoringFactory = RefactoringsFactory.eINSTANCE;
-		if (allMoves.size() > 0) {
-			HMoveMembers hMoves = hMoves = refactoringFactory.createHMoveMembers();
+		if (!allMoves.isEmpty()) {
+			final HMoveMembers hMoves = refactoringFactory.createHMoveMembers();
 			hMoves.getHMoveMembers().addAll(allMoves);
 			hMoves.setSourceClass(source);
 			hMoves.setTargetClass(target);
@@ -489,7 +470,8 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+			final NotificationChain msgs) {
 		switch (featureID) {
 		case AntipatternPackage.HBLOB_RESOLVER__COPY_APG:
 			return basicSetCopy_apg(null, msgs);
@@ -603,54 +585,31 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public static final Iterable<Object[]> pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(final HAntiPatternGraph newApg,
-			final HBlobResolver _this) {
-		final LinkedList<Object[]> _result = new LinkedList<>();
+	public final Iterable<HBlobAntiPattern> pattern_HBlobResolver_0_3_ActivityNode1_blackBFBF(
+			final HAntiPatternGraph newApg) {
+		final LinkedList<HBlobAntiPattern> result = new LinkedList<>();
 		for (final HAnnotation tmpBlob : newApg.getHAnnotations()) {
 			if (tmpBlob instanceof HBlobAntiPattern) {
 				final HBlobAntiPattern blob = (HBlobAntiPattern) tmpBlob;
 				final TAnnotatable tmpTClass = blob.getTAnnotated();
 				if (tmpTClass instanceof TClass) {
-					final TClass tClass = (TClass) tmpTClass;
-					_result.add(new Object[] { newApg, blob, _this, tClass });
+					result.add(blob);
 				}
 
 			}
 		}
-		return _result;
+		return result;
 	}
 
-	public static final Object[] pattern_HBlobResolver_0_3_ActivityNode1_greenBBBFB(final HAntiPatternGraph newApg,
-			final HBlobAntiPattern blob, final HBlobResolver _this, final TClass tClass) {
+	public final HBlobResolveAnnotation getResolveBlobAnnotation(final HAntiPatternGraph newApg,
+			final HBlobAntiPattern blob, final TClass tClass) {
 		final HBlobResolveAnnotation annotation = RefactoringgraphFactory.eINSTANCE.createHBlobResolveAnnotation();
 		blob.getPartOf().add(annotation);
-		_this.getHAnnotation().add(annotation);
+		this.getHAnnotation().add(annotation);
 		newApg.getHAnnotations().add(annotation);
 		annotation.setHBlobAntiPattern(blob);
 		annotation.setTAnnotated(tClass);
-		return new Object[] { newApg, blob, _this, annotation, tClass };
-	}
-
-	public static final boolean pattern_HBlobResolver_0_4_ActivityNode10_expressionFBB(final HBlobResolver _this,
-			final TClass tClass) {
-		final boolean _localVariable_0 = _this.allowedToTouch(tClass);
-		final boolean _result = _localVariable_0;
-		return _result;
-	}
-
-	public static final Iterable<Object[]> pattern_HBlobResolver_0_5_ActivityNode11_blackBF(final TClass tClass) {
-		final LinkedList<Object[]> _result = new LinkedList<>();
-		for (final TMember tDefinition : tClass.getDefines()) {
-			_result.add(new Object[] { tClass, tDefinition });
-		}
-		return _result;
-	}
-
-	public static final boolean pattern_HBlobResolver_0_6_ActivityNode12_expressionFBB(final HBlobResolver _this,
-			final TMember tDefinition) {
-		final boolean _localVariable_0 = _this.allowedToTouch(tDefinition);
-		final boolean _result = _localVariable_0;
-		return _result;
+		return annotation;
 	}
 
 	public static final HInBlobAccess searchInBlobAccess(final TMember tDefinition) {
@@ -662,30 +621,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_HBlobResolver_0_12_ActivityNode16_blackBF(final TMember tDefinition) {
-		final LinkedList<Object[]> _result = new LinkedList<>();
-		for (final TAnnotation tmpM2dc : tDefinition.getTAnnotation()) {
-			if (tmpM2dc instanceof HMethodToDataClassAccess) {
-				final HMethodToDataClassAccess m2dc = (HMethodToDataClassAccess) tmpM2dc;
-				_result.add(new Object[] { tDefinition, m2dc });
-			}
-		}
-		return _result;
-	}
-
-	public static final Object[] pattern_HBlobResolver_0_13_ActivityNode17_bindingAndBlackFB(
-			final HMethodToDataClassAccess m2dc) {
-		final HRelativeValue m2dcRelative = m2dc.getRelativeAmount();
-		if (m2dcRelative != null) {
-			if (m2dcRelative.getValue().equals(HRelativeValueConstants.VERY_HIGH)) {
-
-				return new Object[] { m2dcRelative, m2dc };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_HBlobResolver_0_17_ActivityNode26_greenFBBBB(final TMember tDefinition,
+	private final HExtractClass createExtractClassAnnotation(final TMember tDefinition,
 			final HBlobResolveAnnotation annotation, final HAntiPatternGraph apg, final HInBlobAccess iba) {
 		final HExtractClass extract = RefactoringsFactory.eINSTANCE.createHExtractClass();
 		extract.getTMembers().add(tDefinition);
@@ -695,7 +631,7 @@ public class HBlobResolverImpl extends HAntiPatternDetectorImpl implements HBlob
 		extract.getPartOf().add(iba);
 		annotation.getHRefactorings().add(extract);
 		iba.getPartOf().add(extract);
-		return new Object[] { extract, tDefinition, annotation, apg, iba };
+		return extract;
 	}
 
 	// <-- [user code injected with eMoflon]
