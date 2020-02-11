@@ -4,13 +4,9 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Consumer;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.gravity.refactorings.Changes;
 import org.gravity.refactorings.Refactoring;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.configuration.RefactoringConfiguration;
@@ -62,7 +58,7 @@ public class RefactoringTool {
 	 * of the program model can be created for testing refactoring result before
 	 * applying them to the real program model.
 	 *
-	 * @param pg The program model which should be refactored
+	 * @param pg   The program model which should be refactored
 	 * @param copy If a copy should be created
 	 */
 	public RefactoringTool(final TypeGraph pg, final boolean copy) {
@@ -82,15 +78,10 @@ public class RefactoringTool {
 	 * @param pg The program model on which the refactorings should be executed
 	 * @return The changes of the refactoring execution
 	 */
-	public Changes executePlannedRefactorings(final TypeGraph pg) {
-		final Changes changeContainer = new Changes();
-		final Consumer<EObject> changes = SynchronizationHelper -> {
-			final RefactoringTool tool = new RefactoringTool(pg, false);
-			tool.applyBookkeeping(this.bookkeeping);
-			changeContainer.addChangedClassfiles(tool.getChanges());
-		};
-		changeContainer.setChanges(changes);
-		return changeContainer;
+	public Set<String> executePlannedRefactorings(final TypeGraph pg) {
+		final RefactoringTool tool = new RefactoringTool(pg, false);
+		tool.applyBookkeeping(this.bookkeeping);
+		return tool.getChanges();
 	}
 
 	/**
@@ -117,17 +108,14 @@ public class RefactoringTool {
 		} else {
 			throw new RefactoringFailedException("Unknown Refactoring Kind");
 		}
-		final boolean pumIsApplicable = refactoring.isApplicable(configuration);
-		if (pumIsApplicable) {
+		final boolean isApplicable = refactoring.isApplicable(configuration);
+		if (isApplicable) {
 			this.bookkeeping.add(configuration);
-			for (final TClass tClass : refactoring.perform(configuration)) { //TODO: Make use of the cloned pm
-				final String classNameString = tClass.getFullyQualifiedName() + ".java";
-				if (!this.changes.contains(classNameString)) {
-					this.changes.add(classNameString);
-				}
+			for (final TClass tClass : refactoring.perform(configuration)) { // TODO: Make use of the cloned pm
+				this.changes.add(tClass.getFullyQualifiedName() + ".java");
 			}
 		}
-		return pumIsApplicable;
+		return isApplicable;
 	}
 
 	/**
