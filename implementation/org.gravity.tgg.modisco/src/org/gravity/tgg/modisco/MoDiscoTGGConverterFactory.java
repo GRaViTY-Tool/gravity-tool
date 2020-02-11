@@ -25,7 +25,7 @@ public class MoDiscoTGGConverterFactory implements IPGConverterFactory {
 
 	@Override
 	public IPGConverter createConverter(final IProject project) {
-		final IJavaProject javaProject = JavaProjectUtil.convertToJavaProject(project);
+		final IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
 		try {
 			final MoDiscoTGGConverter converter = new MoDiscoTGGConverter(javaProject);
 			MoDiscoTGGActivator.getDefault().addConverter(converter);

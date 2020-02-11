@@ -146,7 +146,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.error(e.getMessage(), e);
 			return false;
 		}
-		this.sync.getSourceResource().getContents().add(targetModel);
+		this.sync.getResourceHandler().getSourceResource().getContents().add(targetModel);
 
 		final boolean infoEnabled = LOGGER.isInfoEnabled();
 		long start = 0;
@@ -165,9 +165,9 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			LOGGER.log(Level.INFO, "eMoflon TGG fwd trafo - done " + (System.currentTimeMillis() - start) + "ms");
 		}
 
-		boolean success = this.sync.getTargetResource() != null;
+		boolean success = this.sync.getResourceHandler().getTargetResource() != null;
 		if (success) {
-			final List<EObject> contents = this.sync.getTargetResource().getContents();
+			final List<EObject> contents = this.sync.getResourceHandler().getTargetResource().getContents();
 			success = !contents.isEmpty() && contents.get(0) instanceof TypeGraph;
 		}
 		if (success) {
@@ -270,7 +270,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		if (this.debug) {
 			save(monitor);
 		}
-		final Resource trg = this.sync.getTargetResource();
+		final Resource trg = this.sync.getResourceHandler().getTargetResource();
 		return trg != null && !trg.getContents().isEmpty();
 	}
 
@@ -303,7 +303,7 @@ public class MoDiscoTGGConverter implements IPGConverter {
 
 		}
 
-		final EObject src = this.sync.getSourceResource().getContents().get(0);
+		final EObject src = this.sync.getResourceHandler().getSourceResource().getContents().get(0);
 		for (final IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil
 				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_MODISCO_BWD)) {
 			processor.process((MGravityModel) src, progressMonitor);
@@ -340,26 +340,26 @@ public class MoDiscoTGGConverter implements IPGConverter {
 		if (!savePG(folder.getFile("sync_pm.xmi"), progressMonitor)) { //$NON-NLS-1$
 			return false;
 		}
-		if (!saveModel(this.sync.getSourceResource(), folder.getFile("sync__modisco.xmi"), //$NON-NLS-1$
+		if (!saveModel(this.sync.getResourceHandler().getSourceResource(), folder.getFile("sync__modisco.xmi"), //$NON-NLS-1$
 				progressMonitor)) {
 			return false;
 		}
-		if (!saveModel(this.sync.getCorrResource(), folder.getFile("sync_correspondence_model.xmi"), //$NON-NLS-1$
+		if (!saveModel(this.sync.getResourceHandler().getCorrResource(), folder.getFile("sync_correspondence_model.xmi"), //$NON-NLS-1$
 				progressMonitor)) {
 			return false;
 		}
-		return saveModel(this.sync.getProtocolResource(), folder.getFile("sync__protocol.xmi"), //$NON-NLS-1$
+		return saveModel(this.sync.getResourceHandler().getProtocolResource(), folder.getFile("sync__protocol.xmi"), //$NON-NLS-1$
 				progressMonitor);
 	}
 
 	@Override
 	public boolean savePG(final IFile file, final IProgressMonitor monitor) {
-		return saveModel(this.sync.getTargetResource(), file, monitor);
+		return saveModel(this.sync.getResourceHandler().getTargetResource(), file, monitor);
 	}
 
 	@Override
 	public TypeGraph getPG() {
-		final Resource resource = this.sync.getTargetResource();
+		final Resource resource = this.sync.getResourceHandler().getTargetResource();
 		if (resource != null && !resource.getContents().isEmpty()) {
 			return (TypeGraph) resource.getContents().get(0);
 		}

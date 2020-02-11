@@ -290,14 +290,15 @@ public class TransformationTest {
 			 final NullProgressMonitor monitor = new NullProgressMonitor();
 			 Model model;
 			 try {
-				 if (ADD_UMLSEC) {
-					 model = Transformation.projectToModel(this.project, ADD_UMLSEC, monitor);
+				 Transformation transformation = new Transformation(this.project, null);
+				if (ADD_UMLSEC) {
+					 model = transformation.projectToModel(ADD_UMLSEC, monitor);
 				 } else {
 					 final MGravityModel preprocessedModel = getModiscoModel();
-					 model = Transformation.modiscoToModel(preprocessedModel, this.project, monitor);
+					 model = transformation.modiscoToModel(preprocessedModel, monitor);
 				 }
 				 assertNotNull(model);
-			 } catch (TransformationFailedException | IOException e) {
+			 } catch (TransformationFailedException | IOException | CoreException e) {
 				 LOGGER.log(Level.ERROR, e.getMessage(), e);
 				 throw new AssertionError(e.getMessage(), e);
 			 }

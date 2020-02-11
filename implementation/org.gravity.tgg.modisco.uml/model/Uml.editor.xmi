@@ -470,10 +470,46 @@
       </values>
     </attrConditions>
   </rules>
-  <rules name="FieldDec2Property4Class" supertypes="//@rules.12" schema="//@schema">
+  <rules name="Manifestation4CompilationUnit2Artifact" schema="//@schema">
+    <sourcePatterns name="compilationUnit">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+      <linkVariablePatterns target="//@rules.6/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit/types"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="type">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <linkVariablePatterns target="//@rules.6/@sourcePatterns.0">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <targetPatterns name="artifact">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Artifact"/>
+      <linkVariablePatterns target="//@rules.6/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Artifact/manifestation"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="manifestation">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Manifestation"/>
+      <linkVariablePatterns target="//@rules.6/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Manifestation/utilizedElement"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="classifier">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+    </targetPatterns>
+    <correspondencePatterns name="c2a" type="//@schema/@correspondenceTypes.9" source="//@rules.6/@sourcePatterns.0" target="//@rules.6/@targetPatterns.0"/>
+    <correspondencePatterns name="t2c" type="//@schema/@correspondenceTypes.1" source="//@rules.6/@sourcePatterns.1" target="//@rules.6/@targetPatterns.2"/>
+  </rules>
+  <rules name="FieldDec2Property4Class" supertypes="//@rules.13" schema="//@schema">
     <targetPatterns name="uOwnerType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.6/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.7/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier/ownedAttribute"/>
       </linkVariablePatterns>
@@ -483,11 +519,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
     </targetPatterns>
   </rules>
-  <rules name="FieldDec2Property4Class_WithModifier" supertypes="//@rules.6 //@rules.35" schema="//@schema"/>
-  <rules name="FieldDec2Property4Enum" supertypes="//@rules.12" schema="//@schema">
+  <rules name="FieldDec2Property4Class_WithModifier" supertypes="//@rules.7 //@rules.36" schema="//@schema"/>
+  <rules name="FieldDec2Property4Enum" supertypes="//@rules.13" schema="//@schema">
     <targetPatterns name="uOwnerType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
-      <linkVariablePatterns target="//@rules.8/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.9/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType/ownedAttribute"/>
       </linkVariablePatterns>
@@ -497,11 +533,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
     </targetPatterns>
   </rules>
-  <rules name="FieldDec2Property4Enum_WithModifier" supertypes="//@rules.8 //@rules.35" schema="//@schema"/>
-  <rules name="FieldDec2Property4Interface" supertypes="//@rules.12" schema="//@schema">
+  <rules name="FieldDec2Property4Enum_WithModifier" supertypes="//@rules.9 //@rules.36" schema="//@schema"/>
+  <rules name="FieldDec2Property4Interface" supertypes="//@rules.13" schema="//@schema">
     <targetPatterns name="uOwnerType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.10/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.11/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/ownedAttribute"/>
       </linkVariablePatterns>
@@ -511,11 +547,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
     </targetPatterns>
   </rules>
-  <rules name="FieldDec2Property4Interface_WithModifier" supertypes="//@rules.10 //@rules.35" schema="//@schema"/>
+  <rules name="FieldDec2Property4Interface_WithModifier" supertypes="//@rules.11 //@rules.36" schema="//@schema"/>
   <rules name="FieldDec2Property4_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="jOwnerType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.12/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.13/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
@@ -523,7 +559,7 @@
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
-      <linkVariablePatterns target="//@rules.12/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.13/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractVariablesContainer/fragments"/>
       </linkVariablePatterns>
@@ -539,18 +575,18 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
     </targetPatterns>
-    <correspondencePatterns name="jo2uo" type="//@schema/@correspondenceTypes.3" source="//@rules.12/@sourcePatterns.0" target="//@rules.12/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.12/@sourcePatterns.1" target="//@rules.12/@targetPatterns.1">
+    <correspondencePatterns name="jo2uo" type="//@schema/@correspondenceTypes.3" source="//@rules.13/@sourcePatterns.0" target="//@rules.13/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.13/@sourcePatterns.1" target="//@rules.13/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.12/@sourcePatterns.1" target="//@rules.12/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.13/@sourcePatterns.1" target="//@rules.13/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@sourcePatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.12/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.13/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
@@ -558,7 +594,7 @@
   <rules name="FieldDeclarationTypeAccessType2PropertyType" abstractRule="true" schema="//@schema">
     <sourcePatterns name="fieldDeclaration">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration"/>
-      <linkVariablePatterns target="//@rules.13/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.14/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractVariablesContainer/type"/>
       </linkVariablePatterns>
@@ -566,7 +602,7 @@
     <sourcePatterns name="typeAccess">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.13/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.14/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
       </linkVariablePatterns>
@@ -576,7 +612,7 @@
     </sourcePatterns>
     <targetPatterns name="property">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
-      <linkVariablePatterns target="//@rules.13/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.14/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//TypedElement/type"/>
       </linkVariablePatterns>
@@ -584,19 +620,19 @@
     <targetPatterns name="uType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     </targetPatterns>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.13/@sourcePatterns.0" target="//@rules.13/@targetPatterns.0"/>
-    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.12" source="//@rules.13/@sourcePatterns.1" target="//@rules.13/@targetPatterns.0">
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.14/@sourcePatterns.0" target="//@rules.14/@targetPatterns.0"/>
+    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.12" source="//@rules.14/@sourcePatterns.1" target="//@rules.14/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="jt2ut" type="//@schema/@correspondenceTypes.3" source="//@rules.13/@sourcePatterns.2" target="//@rules.13/@targetPatterns.1"/>
+    <correspondencePatterns name="jt2ut" type="//@schema/@correspondenceTypes.3" source="//@rules.14/@sourcePatterns.2" target="//@rules.14/@targetPatterns.1"/>
   </rules>
-  <rules name="ConstructorDec2Operation4Class" supertypes="//@rules.20" schema="//@schema">
+  <rules name="ConstructorDec2Operation4Class" supertypes="//@rules.21" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.14/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.15/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/ownedOperation"/>
       </linkVariablePatterns>
@@ -605,16 +641,16 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.14/@sourcePatterns.0" target="//@rules.14/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.15/@sourcePatterns.0" target="//@rules.15/@targetPatterns.0"/>
   </rules>
-  <rules name="ConstructorDec2Operation4ClassWithModifier" supertypes="//@rules.14 //@rules.35" schema="//@schema"/>
-  <rules name="ConstructorDec2Operation4Enum" supertypes="//@rules.20" schema="//@schema">
+  <rules name="ConstructorDec2Operation4ClassWithModifier" supertypes="//@rules.15 //@rules.36" schema="//@schema"/>
+  <rules name="ConstructorDec2Operation4Enum" supertypes="//@rules.21" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
-      <linkVariablePatterns target="//@rules.16/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.17/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType/ownedOperation"/>
       </linkVariablePatterns>
@@ -623,16 +659,16 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.16/@sourcePatterns.0" target="//@rules.16/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.17/@sourcePatterns.0" target="//@rules.17/@targetPatterns.0"/>
   </rules>
-  <rules name="ConstructorDec2Operation4EnumWithModifier" supertypes="//@rules.16 //@rules.35" schema="//@schema"/>
-  <rules name="ConstructorDec2Operation4Interface" supertypes="//@rules.20" schema="//@schema">
+  <rules name="ConstructorDec2Operation4EnumWithModifier" supertypes="//@rules.17 //@rules.36" schema="//@schema"/>
+  <rules name="ConstructorDec2Operation4Interface" supertypes="//@rules.21" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.18/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.19/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/ownedOperation"/>
       </linkVariablePatterns>
@@ -641,13 +677,13 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.18/@sourcePatterns.0" target="//@rules.18/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.19/@sourcePatterns.0" target="//@rules.19/@targetPatterns.0"/>
   </rules>
-  <rules name="ConstructorDec2Operation4InterfaceWithModifier" supertypes="//@rules.18 //@rules.35" schema="//@schema"/>
+  <rules name="ConstructorDec2Operation4InterfaceWithModifier" supertypes="//@rules.19 //@rules.36" schema="//@schema"/>
   <rules name="ConstructorDec2Operation_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.20/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.21/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
@@ -655,45 +691,6 @@
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MConstructorDefinition"/>
-    </sourcePatterns>
-    <targetPatterns name="feature">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
-    </targetPatterns>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.20/@sourcePatterns.1" target="//@rules.20/@targetPatterns.0">
-      <op value="++"/>
-    </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.20/@sourcePatterns.1" target="//@rules.20/@targetPatterns.0">
-      <op value="++"/>
-    </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.20/@sourcePatterns.1">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.20/@targetPatterns.0">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.20/@sourcePatterns.0">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.20/@sourcePatterns.1">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-  </rules>
-  <rules name="MethodDec2OperationAnonymous" schema="//@schema">
-    <sourcePatterns name="classDec">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
-      <linkVariablePatterns target="//@rules.21/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration/bodyDeclarations"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="bodyDeclaration">
-      <op value="++"/>
-      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     </sourcePatterns>
     <targetPatterns name="feature">
       <op value="++"/>
@@ -713,20 +710,59 @@
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
+    <attrConditions name="//@schema/@attributeCondDefs.5">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.21/@sourcePatterns.0">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.21/@sourcePatterns.1">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+    </attrConditions>
   </rules>
-  <rules name="ConstructorDec2OperationAnonymous" supertypes="//@rules.21" schema="//@schema">
+  <rules name="MethodDec2OperationAnonymous" schema="//@schema">
+    <sourcePatterns name="classDec">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
+      <linkVariablePatterns target="//@rules.22/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration/bodyDeclarations"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="bodyDeclaration">
+      <op value="++"/>
+      <type href="http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
+    </sourcePatterns>
+    <targetPatterns name="feature">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
+    </targetPatterns>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.22/@sourcePatterns.1" target="//@rules.22/@targetPatterns.0">
+      <op value="++"/>
+    </correspondencePatterns>
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.22/@sourcePatterns.1" target="//@rules.22/@targetPatterns.0">
+      <op value="++"/>
+    </correspondencePatterns>
+    <attrConditions name="//@schema/@attributeCondDefs.5">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.22/@sourcePatterns.1">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.22/@targetPatterns.0">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+    </attrConditions>
+  </rules>
+  <rules name="ConstructorDec2OperationAnonymous" supertypes="//@rules.22" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
     </sourcePatterns>
   </rules>
-  <rules name="MethodDec2Operation4Class" supertypes="//@rules.29" schema="//@schema">
+  <rules name="MethodDec2Operation4Class" supertypes="//@rules.30" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.23/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.24/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/ownedOperation"/>
       </linkVariablePatterns>
@@ -735,16 +771,16 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.23/@sourcePatterns.0" target="//@rules.23/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.24/@sourcePatterns.0" target="//@rules.24/@targetPatterns.0"/>
   </rules>
-  <rules name="MethodDec2Operation4ClassWithModifier" supertypes="//@rules.23 //@rules.35" schema="//@schema"/>
-  <rules name="MethodDec2Operation4Enum" supertypes="//@rules.29" schema="//@schema">
+  <rules name="MethodDec2Operation4ClassWithModifier" supertypes="//@rules.24 //@rules.36" schema="//@schema"/>
+  <rules name="MethodDec2Operation4Enum" supertypes="//@rules.30" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
-      <linkVariablePatterns target="//@rules.25/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.26/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType/ownedOperation"/>
       </linkVariablePatterns>
@@ -753,16 +789,16 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.25/@sourcePatterns.0" target="//@rules.25/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.26/@sourcePatterns.0" target="//@rules.26/@targetPatterns.0"/>
   </rules>
-  <rules name="MethodDec2Operation4EnumWithModifier" supertypes="//@rules.25 //@rules.35" schema="//@schema"/>
-  <rules name="MethodDec2Operation4Interface" supertypes="//@rules.29" schema="//@schema">
+  <rules name="MethodDec2Operation4EnumWithModifier" supertypes="//@rules.26 //@rules.36" schema="//@schema"/>
+  <rules name="MethodDec2Operation4Interface" supertypes="//@rules.30" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.27/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.28/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/ownedOperation"/>
       </linkVariablePatterns>
@@ -771,13 +807,13 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.27/@sourcePatterns.0" target="//@rules.27/@targetPatterns.0"/>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.28/@sourcePatterns.0" target="//@rules.28/@targetPatterns.0"/>
   </rules>
-  <rules name="MethodDec2Operation4InterfaceWithModifier" supertypes="//@rules.27 //@rules.35" schema="//@schema"/>
+  <rules name="MethodDec2Operation4InterfaceWithModifier" supertypes="//@rules.28 //@rules.36" schema="//@schema"/>
   <rules name="MethodDec2Operation_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.29/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.30/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
@@ -790,17 +826,17 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
     </targetPatterns>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.29/@sourcePatterns.1" target="//@rules.29/@targetPatterns.0">
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.30/@sourcePatterns.1" target="//@rules.30/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.29/@sourcePatterns.1" target="//@rules.29/@targetPatterns.0">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.30/@sourcePatterns.1" target="//@rules.30/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.29/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.30/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.29/@targetPatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.30/@targetPatterns.0">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
@@ -808,7 +844,7 @@
   <rules name="TypeAccess2ReturnParam" schema="//@schema">
     <sourcePatterns name="method">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
-      <linkVariablePatterns target="//@rules.30/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.31/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration/returnType"/>
       </linkVariablePatterns>
@@ -819,7 +855,7 @@
     </sourcePatterns>
     <targetPatterns name="operation">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
-      <linkVariablePatterns target="//@rules.30/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.31/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioralFeature/ownedParameter"/>
       </linkVariablePatterns>
@@ -828,12 +864,12 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
     </targetPatterns>
-    <correspondencePatterns name="m2o" type="//@schema/@correspondenceTypes.3" source="//@rules.30/@sourcePatterns.0" target="//@rules.30/@targetPatterns.0"/>
-    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.13" source="//@rules.30/@sourcePatterns.1" target="//@rules.30/@targetPatterns.1">
+    <correspondencePatterns name="m2o" type="//@schema/@correspondenceTypes.3" source="//@rules.31/@sourcePatterns.0" target="//@rules.31/@targetPatterns.0"/>
+    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.13" source="//@rules.31/@sourcePatterns.1" target="//@rules.31/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.0">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.30/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.31/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter/direction"/>
       </values>
     </attrConditions>
@@ -841,7 +877,7 @@
   <rules name="TypeAccessType2ParameterType_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="typeAccess">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.31/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.32/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
       </linkVariablePatterns>
@@ -851,7 +887,7 @@
     </sourcePatterns>
     <targetPatterns name="param">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
-      <linkVariablePatterns target="//@rules.31/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.32/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//TypedElement/type"/>
       </linkVariablePatterns>
@@ -859,19 +895,19 @@
     <targetPatterns name="uType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     </targetPatterns>
-    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.13" source="//@rules.31/@sourcePatterns.0" target="//@rules.31/@targetPatterns.0"/>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.31/@sourcePatterns.1" target="//@rules.31/@targetPatterns.1"/>
+    <correspondencePatterns name="ta2p" type="//@schema/@correspondenceTypes.13" source="//@rules.32/@sourcePatterns.0" target="//@rules.32/@targetPatterns.0"/>
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.32/@sourcePatterns.1" target="//@rules.32/@targetPatterns.1"/>
   </rules>
-  <rules name="TypeAccessType2ParameterType_Parameter" supertypes="//@rules.31" schema="//@schema">
+  <rules name="TypeAccessType2ParameterType_Parameter" supertypes="//@rules.32" schema="//@schema">
     <sourcePatterns name="method">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration"/>
-      <linkVariablePatterns target="//@rules.32/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.33/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/parameters"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="variableDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
-      <linkVariablePatterns target="//@rules.32/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.33/@sourcePatterns.2">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration/type"/>
       </linkVariablePatterns>
     </sourcePatterns>
@@ -879,10 +915,10 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     </sourcePatterns>
   </rules>
-  <rules name="TypeAccessType2ParameterType_Return" supertypes="//@rules.31" schema="//@schema">
+  <rules name="TypeAccessType2ParameterType_Return" supertypes="//@rules.32" schema="//@schema">
     <sourcePatterns name="method">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
-      <linkVariablePatterns target="//@rules.33/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.34/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration/returnType"/>
       </linkVariablePatterns>
     </sourcePatterns>
@@ -893,13 +929,13 @@
   <rules name="VariableDec2Parameter" schema="//@schema">
     <sourcePatterns name="owner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.34/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.35/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="method">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration"/>
-      <linkVariablePatterns target="//@rules.34/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.35/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/parameters"/>
       </linkVariablePatterns>
@@ -907,7 +943,7 @@
     <sourcePatterns name="variableDec">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
-      <linkVariablePatterns target="//@rules.34/@sourcePatterns.3">
+      <linkVariablePatterns target="//@rules.35/@sourcePatterns.3">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration/type"/>
       </linkVariablePatterns>
@@ -918,7 +954,7 @@
     </sourcePatterns>
     <targetPatterns name="operation">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Operation"/>
-      <linkVariablePatterns target="//@rules.34/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.35/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioralFeature/ownedParameter"/>
       </linkVariablePatterns>
@@ -927,31 +963,31 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
     </targetPatterns>
-    <correspondencePatterns name="md2o" type="//@schema/@correspondenceTypes.3" source="//@rules.34/@sourcePatterns.1" target="//@rules.34/@targetPatterns.0"/>
-    <correspondencePatterns name="n2n" type="//@schema/@correspondenceTypes.3" source="//@rules.34/@sourcePatterns.2" target="//@rules.34/@targetPatterns.1">
+    <correspondencePatterns name="md2o" type="//@schema/@correspondenceTypes.3" source="//@rules.35/@sourcePatterns.1" target="//@rules.35/@targetPatterns.0"/>
+    <correspondencePatterns name="n2n" type="//@schema/@correspondenceTypes.3" source="//@rules.35/@sourcePatterns.2" target="//@rules.35/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="vd2p" type="//@schema/@correspondenceTypes.6" source="//@rules.34/@sourcePatterns.2" target="//@rules.34/@targetPatterns.1">
+    <correspondencePatterns name="vd2p" type="//@schema/@correspondenceTypes.6" source="//@rules.35/@sourcePatterns.2" target="//@rules.35/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="ty2p" type="//@schema/@correspondenceTypes.13" source="//@rules.34/@sourcePatterns.3" target="//@rules.34/@targetPatterns.1">
+    <correspondencePatterns name="ty2p" type="//@schema/@correspondenceTypes.13" source="//@rules.35/@sourcePatterns.3" target="//@rules.35/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.34/@sourcePatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.34/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
     <attrConditions name="//@schema/@attributeCondDefs.1">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.34/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter/direction"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="Modifier2Feature_Abstract" abstractRule="true" supertypes="//@rules.36" schema="//@schema">
+  <rules name="Modifier2Feature_Abstract" abstractRule="true" supertypes="//@rules.37" schema="//@schema">
     <sourcePatterns name="modifier">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
@@ -961,10 +997,10 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature"/>
     </targetPatterns>
     <attrConditions name="//@schema/@attributeCondDefs.6">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@sourcePatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.36/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/static"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.35/@targetPatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.36/@targetPatterns.0">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//Feature/isStatic"/>
       </values>
     </attrConditions>
@@ -973,7 +1009,7 @@
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
-      <linkVariablePatterns target="//@rules.36/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.37/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/modifier"/>
       </linkVariablePatterns>
@@ -986,17 +1022,17 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
     </targetPatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.36/@sourcePatterns.0" target="//@rules.36/@targetPatterns.0">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="m2f" type="//@schema/@correspondenceTypes.2" source="//@rules.36/@sourcePatterns.1" target="//@rules.36/@targetPatterns.0">
+    <correspondencePatterns name="m2f" type="//@schema/@correspondenceTypes.2" source="//@rules.37/@sourcePatterns.1" target="//@rules.37/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.2">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.36/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.37/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/visibility"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.36/@targetPatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.37/@targetPatterns.0">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/visibility"/>
       </values>
     </attrConditions>
@@ -1013,15 +1049,15 @@
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;root model&quot;"/>
       </attributeAssignments>
-      <linkVariablePatterns target="//@rules.37/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.38/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.37/@targetPatterns.2">
+      <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
+      <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1029,7 +1065,7 @@
     <targetPatterns name="umlModel">
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
-      <linkVariablePatterns target="//@rules.37/@targetPatterns.4">
+      <linkVariablePatterns target="//@rules.38/@targetPatterns.4">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1058,23 +1094,23 @@
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;Common Java datatypes&quot;"/>
       </attributeAssignments>
     </targetPatterns>
-    <correspondencePatterns name="jm2um" type="//@schema/@correspondenceTypes.5" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.1">
+    <correspondencePatterns name="jm2um" type="//@schema/@correspondenceTypes.5" source="//@rules.38/@sourcePatterns.0" target="//@rules.38/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="jm2um2" type="//@schema/@correspondenceTypes.5" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.2">
+    <correspondencePatterns name="jm2um2" type="//@schema/@correspondenceTypes.5" source="//@rules.38/@sourcePatterns.0" target="//@rules.38/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="jm2um3" type="//@schema/@correspondenceTypes.5" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.3">
+    <correspondencePatterns name="jm2um3" type="//@schema/@correspondenceTypes.5" source="//@rules.38/@sourcePatterns.0" target="//@rules.38/@targetPatterns.3">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="jm2commonTypes" type="//@schema/@correspondenceTypes.5" source="//@rules.37/@sourcePatterns.0" target="//@rules.37/@targetPatterns.4">
+    <correspondencePatterns name="jm2commonTypes" type="//@schema/@correspondenceTypes.5" source="//@rules.38/@sourcePatterns.0" target="//@rules.38/@targetPatterns.4">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.37/@sourcePatterns.0">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.38/@sourcePatterns.0">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.37/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.38/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
@@ -1082,7 +1118,7 @@
   <rules name="JavaPackageToUMLPackage_underModel" schema="//@schema">
     <sourcePatterns name="jm">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
-      <linkVariablePatterns target="//@rules.38/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.39/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/ownedElements"/>
       </linkVariablePatterns>
@@ -1093,42 +1129,6 @@
     </sourcePatterns>
     <targetPatterns name="um">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
-      <linkVariablePatterns target="//@rules.38/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="up">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-    </targetPatterns>
-    <correspondencePatterns name="jm2um" type="//@schema/@correspondenceTypes.5" source="//@rules.38/@sourcePatterns.0" target="//@rules.38/@targetPatterns.0"/>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.38/@sourcePatterns.1" target="//@rules.38/@targetPatterns.1">
-      <op value="++"/>
-    </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.38/@targetPatterns.1">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.38/@sourcePatterns.1">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-  </rules>
-  <rules name="JavaPackageToUMLPackage_underPackage" schema="//@schema">
-    <sourcePatterns name="jParent">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.39/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedPackages"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="jp">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-    </sourcePatterns>
-    <targetPatterns name="uParent">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       <linkVariablePatterns target="//@rules.39/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
@@ -1138,7 +1138,7 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
     </targetPatterns>
-    <correspondencePatterns name="p2p" type="//@schema/@correspondenceTypes.4" source="//@rules.39/@sourcePatterns.0" target="//@rules.39/@targetPatterns.0"/>
+    <correspondencePatterns name="jm2um" type="//@schema/@correspondenceTypes.5" source="//@rules.39/@sourcePatterns.0" target="//@rules.39/@targetPatterns.0"/>
     <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.39/@sourcePatterns.1" target="//@rules.39/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
@@ -1151,10 +1151,46 @@
       </values>
     </attrConditions>
   </rules>
+  <rules name="JavaPackageToUMLPackage_underPackage" schema="//@schema">
+    <sourcePatterns name="jParent">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+      <linkVariablePatterns target="//@rules.40/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedPackages"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="jp">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+    </sourcePatterns>
+    <targetPatterns name="uParent">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      <linkVariablePatterns target="//@rules.40/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="up">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+    </targetPatterns>
+    <correspondencePatterns name="p2p" type="//@schema/@correspondenceTypes.4" source="//@rules.40/@sourcePatterns.0" target="//@rules.40/@targetPatterns.0"/>
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.40/@sourcePatterns.1" target="//@rules.40/@targetPatterns.1">
+      <op value="++"/>
+    </correspondencePatterns>
+    <attrConditions name="//@schema/@attributeCondDefs.5">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@targetPatterns.1">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@sourcePatterns.1">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+    </attrConditions>
+  </rules>
   <rules name="AnnotationTypeDeclaration2Interface" schema="//@schema">
     <sourcePatterns name="jPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.40/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.41/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
@@ -1165,7 +1201,7 @@
     </sourcePatterns>
     <targetPatterns name="uPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.40/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.41/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1174,28 +1210,28 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.40/@sourcePatterns.0" target="//@rules.40/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.40/@sourcePatterns.1" target="//@rules.40/@targetPatterns.1">
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.41/@sourcePatterns.0" target="//@rules.41/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.41/@sourcePatterns.1" target="//@rules.41/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.40/@sourcePatterns.1" target="//@rules.40/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.41/@sourcePatterns.1" target="//@rules.41/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.41/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.41/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
     <attrConditions name="//@schema/@attributeCondDefs.4">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.40/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.41/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="AnnotationTypeDeclaration2Interface_WithModifier" supertypes="//@rules.40 //@rules.36" schema="//@schema"/>
+  <rules name="AnnotationTypeDeclaration2Interface_WithModifier" supertypes="//@rules.41 //@rules.37" schema="//@schema"/>
   <rules name="ArrayType2NonArrayType" schema="//@schema">
     <sourcePatterns name="jType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
@@ -1203,7 +1239,7 @@
     <sourcePatterns name="arrayType">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayType"/>
-      <linkVariablePatterns target="//@rules.42/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.43/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayType/elementType"/>
       </linkVariablePatterns>
@@ -1211,7 +1247,7 @@
     <sourcePatterns name="typeAccess">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.42/@sourcePatterns.0">
+      <linkVariablePatterns target="//@rules.43/@sourcePatterns.0">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
       </linkVariablePatterns>
@@ -1219,15 +1255,15 @@
     <targetPatterns name="uType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Type"/>
     </targetPatterns>
-    <correspondencePatterns name="ne2ne1" type="//@schema/@correspondenceTypes.3" source="//@rules.42/@sourcePatterns.0" target="//@rules.42/@targetPatterns.0"/>
-    <correspondencePatterns name="ne2ne2" type="//@schema/@correspondenceTypes.3" source="//@rules.42/@sourcePatterns.1" target="//@rules.42/@targetPatterns.0">
+    <correspondencePatterns name="ne2ne1" type="//@schema/@correspondenceTypes.3" source="//@rules.43/@sourcePatterns.0" target="//@rules.43/@targetPatterns.0"/>
+    <correspondencePatterns name="ne2ne2" type="//@schema/@correspondenceTypes.3" source="//@rules.43/@sourcePatterns.1" target="//@rules.43/@targetPatterns.0">
       <op value="++"/>
     </correspondencePatterns>
   </rules>
   <rules name="ClassDec2Class_InPackage" schema="//@schema">
     <sourcePatterns name="jPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.43/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.44/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
@@ -1238,7 +1274,7 @@
     </sourcePatterns>
     <targetPatterns name="umlPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.43/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.44/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1247,32 +1283,32 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.43/@sourcePatterns.0" target="//@rules.43/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.43/@sourcePatterns.1" target="//@rules.43/@targetPatterns.1">
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.44/@sourcePatterns.0" target="//@rules.44/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.44/@sourcePatterns.1" target="//@rules.44/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.43/@sourcePatterns.1" target="//@rules.43/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.44/@sourcePatterns.1" target="//@rules.44/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.43/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.44/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.43/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.44/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
     <attrConditions name="//@schema/@attributeCondDefs.4">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.43/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.44/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="ClassDecWithModifier2Class_InPackage" supertypes="//@rules.43 //@rules.36" schema="//@schema"/>
+  <rules name="ClassDecWithModifier2Class_InPackage" supertypes="//@rules.44 //@rules.37" schema="//@schema"/>
   <rules name="EnumDec2Enum" schema="//@schema">
     <sourcePatterns name="jPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.45/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.46/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
@@ -1283,7 +1319,7 @@
     </sourcePatterns>
     <targetPatterns name="umlPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.45/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.46/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1292,27 +1328,27 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.45/@sourcePatterns.0" target="//@rules.45/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.45/@sourcePatterns.1" target="//@rules.45/@targetPatterns.1">
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.46/@sourcePatterns.0" target="//@rules.46/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.46/@sourcePatterns.1" target="//@rules.46/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.45/@sourcePatterns.1" target="//@rules.45/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.46/@sourcePatterns.1" target="//@rules.46/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.45/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.46/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.45/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.46/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="EnumDecWithModifier2Enum" supertypes="//@rules.45 //@rules.36" schema="//@schema"/>
+  <rules name="EnumDecWithModifier2Enum" supertypes="//@rules.46 //@rules.37" schema="//@schema"/>
   <rules name="InterfaceDec2Interface" schema="//@schema">
     <sourcePatterns name="jPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.47/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.48/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
@@ -1323,7 +1359,7 @@
     </sourcePatterns>
     <targetPatterns name="umlPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.47/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.48/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1332,32 +1368,32 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.47/@sourcePatterns.0" target="//@rules.47/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.47/@sourcePatterns.1" target="//@rules.47/@targetPatterns.1">
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.48/@sourcePatterns.0" target="//@rules.48/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.48/@sourcePatterns.1" target="//@rules.48/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.47/@sourcePatterns.1" target="//@rules.47/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.48/@sourcePatterns.1" target="//@rules.48/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.47/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.48/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.47/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.48/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
     <attrConditions name="//@schema/@attributeCondDefs.4">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.47/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.48/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="InterfaceDecWithModifier2Interface" supertypes="//@rules.47 //@rules.36" schema="//@schema"/>
+  <rules name="InterfaceDecWithModifier2Interface" supertypes="//@rules.48 //@rules.37" schema="//@schema"/>
   <rules name="OrphanedClassDec2OrphanedClass" schema="//@schema">
     <sourcePatterns name="jPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
-      <linkVariablePatterns target="//@rules.49/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.50/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/orphanTypes"/>
       </linkVariablePatterns>
@@ -1368,7 +1404,7 @@
     </sourcePatterns>
     <targetPatterns name="umlPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
-      <linkVariablePatterns target="//@rules.49/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.50/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1377,18 +1413,18 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.5" source="//@rules.49/@sourcePatterns.0" target="//@rules.49/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.49/@sourcePatterns.1" target="//@rules.49/@targetPatterns.1">
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.5" source="//@rules.50/@sourcePatterns.0" target="//@rules.50/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.50/@sourcePatterns.1" target="//@rules.50/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="md2o" type="//@schema/@correspondenceTypes.3" source="//@rules.49/@sourcePatterns.1" target="//@rules.49/@targetPatterns.1">
+    <correspondencePatterns name="md2o" type="//@schema/@correspondenceTypes.3" source="//@rules.50/@sourcePatterns.1" target="//@rules.50/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.49/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.50/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.49/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.50/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
@@ -1396,7 +1432,7 @@
   <rules name="PrimitiveType2PrimitiveType" abstractRule="true" schema="//@schema">
     <sourcePatterns name="jm">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
-      <linkVariablePatterns target="//@rules.50/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.51/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/orphanTypes"/>
       </linkVariablePatterns>
@@ -1411,7 +1447,7 @@
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;Common Java datatypes&quot;"/>
       </attributeConstraints>
-      <linkVariablePatterns target="//@rules.50/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.51/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1420,68 +1456,68 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
     </targetPatterns>
-    <correspondencePatterns name="jm2up" type="//@schema/@correspondenceTypes.5" source="//@rules.50/@sourcePatterns.0" target="//@rules.50/@targetPatterns.0"/>
-    <correspondencePatterns name="jpt2upt2" type="//@schema/@correspondenceTypes.3" source="//@rules.50/@sourcePatterns.1" target="//@rules.50/@targetPatterns.1">
+    <correspondencePatterns name="jm2up" type="//@schema/@correspondenceTypes.5" source="//@rules.51/@sourcePatterns.0" target="//@rules.51/@targetPatterns.0"/>
+    <correspondencePatterns name="jpt2upt2" type="//@schema/@correspondenceTypes.3" source="//@rules.51/@sourcePatterns.1" target="//@rules.51/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.50/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.51/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.50/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.51/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="PrimitiveTypeBoolean" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeBoolean" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeBoolean"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeByte" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeByte" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeByte"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeChar" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeChar" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeChar"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeDouble" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeDouble" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeDouble"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeShort" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeShort" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeShort"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeFloat" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeFloat" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeFloat"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeInt" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeInt" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeInt"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeLong" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeLong" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeLong"/>
     </sourcePatterns>
   </rules>
-  <rules name="PrimitiveTypeVoid" supertypes="//@rules.50" schema="//@schema">
+  <rules name="PrimitiveTypeVoid" supertypes="//@rules.51" schema="//@schema">
     <sourcePatterns name="jpt">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveTypeVoid"/>
@@ -1490,52 +1526,9 @@
   <rules name="TypeAccess2Generalization" schema="//@schema">
     <sourcePatterns name="classDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
-      <linkVariablePatterns target="//@rules.60/@sourcePatterns.1">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration/superClass"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="typeAcc">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.60/@sourcePatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="superClassDec">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
-    </sourcePatterns>
-    <targetPatterns name="umlClassifier">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-      <linkVariablePatterns target="//@rules.60/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/generalization"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="generalization">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization"/>
-      <linkVariablePatterns target="//@rules.60/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization/general"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="superClass">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-    </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.60/@sourcePatterns.0" target="//@rules.60/@targetPatterns.0"/>
-    <correspondencePatterns name="ta2g" type="//@schema/@correspondenceTypes.7" source="//@rules.60/@sourcePatterns.1" target="//@rules.60/@targetPatterns.1">
-      <op value="++"/>
-    </correspondencePatterns>
-    <correspondencePatterns name="cd2c2" type="//@schema/@correspondenceTypes.3" source="//@rules.60/@sourcePatterns.2" target="//@rules.60/@targetPatterns.2"/>
-  </rules>
-  <rules name="TypeAccess2InterfaceGeneralization" schema="//@schema">
-    <sourcePatterns name="classDec">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
       <linkVariablePatterns target="//@rules.61/@sourcePatterns.1">
         <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/superInterfaces"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration/superClass"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="typeAcc">
@@ -1546,21 +1539,17 @@
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
       </linkVariablePatterns>
     </sourcePatterns>
-    <sourcePatterns name="superInterfaceDec">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
+    <sourcePatterns name="superClassDec">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     </sourcePatterns>
-    <targetPatterns name="childInterface">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+    <targetPatterns name="umlClassifier">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
       <linkVariablePatterns target="//@rules.61/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/generalization"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.61/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/general"/>
-      </linkVariablePatterns>
     </targetPatterns>
-    <targetPatterns name="interfaceGeneralization">
+    <targetPatterns name="generalization">
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization"/>
       <linkVariablePatterns target="//@rules.61/@targetPatterns.2">
@@ -1568,8 +1557,8 @@
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization/general"/>
       </linkVariablePatterns>
     </targetPatterns>
-    <targetPatterns name="superInterface">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+    <targetPatterns name="superClass">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
     <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.61/@sourcePatterns.0" target="//@rules.61/@targetPatterns.0"/>
     <correspondencePatterns name="ta2g" type="//@schema/@correspondenceTypes.7" source="//@rules.61/@sourcePatterns.1" target="//@rules.61/@targetPatterns.1">
@@ -1577,9 +1566,9 @@
     </correspondencePatterns>
     <correspondencePatterns name="cd2c2" type="//@schema/@correspondenceTypes.3" source="//@rules.61/@sourcePatterns.2" target="//@rules.61/@targetPatterns.2"/>
   </rules>
-  <rules name="TypeAccess2InterfaceRealization" schema="//@schema">
+  <rules name="TypeAccess2InterfaceGeneralization" schema="//@schema">
     <sourcePatterns name="classDec">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
       <linkVariablePatterns target="//@rules.62/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/superInterfaces"/>
@@ -1596,9 +1585,56 @@
     <sourcePatterns name="superInterfaceDec">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
     </sourcePatterns>
+    <targetPatterns name="childInterface">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+      <linkVariablePatterns target="//@rules.62/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/generalization"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.62/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier/general"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="interfaceGeneralization">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization"/>
+      <linkVariablePatterns target="//@rules.62/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization/general"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="superInterface">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+    </targetPatterns>
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.62/@sourcePatterns.0" target="//@rules.62/@targetPatterns.0"/>
+    <correspondencePatterns name="ta2g" type="//@schema/@correspondenceTypes.7" source="//@rules.62/@sourcePatterns.1" target="//@rules.62/@targetPatterns.1">
+      <op value="++"/>
+    </correspondencePatterns>
+    <correspondencePatterns name="cd2c2" type="//@schema/@correspondenceTypes.3" source="//@rules.62/@sourcePatterns.2" target="//@rules.62/@targetPatterns.2"/>
+  </rules>
+  <rules name="TypeAccess2InterfaceRealization" schema="//@schema">
+    <sourcePatterns name="classDec">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+      <linkVariablePatterns target="//@rules.63/@sourcePatterns.1">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/superInterfaces"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="typeAcc">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+      <linkVariablePatterns target="//@rules.63/@sourcePatterns.2">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="superInterfaceDec">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
+    </sourcePatterns>
     <targetPatterns name="umlClass">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
-      <linkVariablePatterns target="//@rules.62/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.63/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier/interfaceRealization"/>
       </linkVariablePatterns>
@@ -1606,7 +1642,7 @@
     <targetPatterns name="interfaceRealization">
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//InterfaceRealization"/>
-      <linkVariablePatterns target="//@rules.62/@targetPatterns.2">
+      <linkVariablePatterns target="//@rules.63/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//InterfaceRealization/contract"/>
       </linkVariablePatterns>
@@ -1614,22 +1650,22 @@
     <targetPatterns name="superInterface">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
-    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.62/@sourcePatterns.0" target="//@rules.62/@targetPatterns.0"/>
-    <correspondencePatterns name="ta2g" type="//@schema/@correspondenceTypes.8" source="//@rules.62/@sourcePatterns.1" target="//@rules.62/@targetPatterns.1">
+    <correspondencePatterns name="cd2c" type="//@schema/@correspondenceTypes.3" source="//@rules.63/@sourcePatterns.0" target="//@rules.63/@targetPatterns.0"/>
+    <correspondencePatterns name="ta2g" type="//@schema/@correspondenceTypes.8" source="//@rules.63/@sourcePatterns.1" target="//@rules.63/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="cd2c2" type="//@schema/@correspondenceTypes.3" source="//@rules.62/@sourcePatterns.2" target="//@rules.62/@targetPatterns.2"/>
+    <correspondencePatterns name="cd2c2" type="//@schema/@correspondenceTypes.3" source="//@rules.63/@sourcePatterns.2" target="//@rules.63/@targetPatterns.2"/>
   </rules>
   <rules name="TypeDependency2UsageDependency" schema="//@schema">
     <sourcePatterns name="mPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.63/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.64/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mSrcType">
       <type href="http://www.gravity-tool.org/modisco#//MClass"/>
-      <linkVariablePatterns target="//@rules.63/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.64/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MClass/dependencies"/>
       </linkVariablePatterns>
@@ -1639,10 +1675,10 @@
     </sourcePatterns>
     <targetPatterns name="uPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.63/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.64/@targetPatterns.1">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedElement"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.63/@targetPatterns.2">
+      <linkVariablePatterns target="//@rules.64/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
@@ -1653,11 +1689,11 @@
     <targetPatterns name="uUsage">
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Usage"/>
-      <linkVariablePatterns target="//@rules.63/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.64/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Dependency/client"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.63/@targetPatterns.3">
+      <linkVariablePatterns target="//@rules.64/@targetPatterns.3">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Dependency/supplier"/>
       </linkVariablePatterns>
@@ -1665,9 +1701,9 @@
     <targetPatterns name="uTrgType">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </targetPatterns>
-    <correspondencePatterns name="p2p" type="//@schema/@correspondenceTypes.4" source="//@rules.63/@sourcePatterns.0" target="//@rules.63/@targetPatterns.0"/>
-    <correspondencePatterns name="src2Src" type="//@schema/@correspondenceTypes.3" source="//@rules.63/@sourcePatterns.1" target="//@rules.63/@targetPatterns.1"/>
-    <correspondencePatterns name="trg2Trg" type="//@schema/@correspondenceTypes.3" source="//@rules.63/@sourcePatterns.2" target="//@rules.63/@targetPatterns.3"/>
+    <correspondencePatterns name="p2p" type="//@schema/@correspondenceTypes.4" source="//@rules.64/@sourcePatterns.0" target="//@rules.64/@targetPatterns.0"/>
+    <correspondencePatterns name="src2Src" type="//@schema/@correspondenceTypes.3" source="//@rules.64/@sourcePatterns.1" target="//@rules.64/@targetPatterns.1"/>
+    <correspondencePatterns name="trg2Trg" type="//@schema/@correspondenceTypes.3" source="//@rules.64/@sourcePatterns.2" target="//@rules.64/@targetPatterns.3"/>
   </rules>
   <rules name="AnonymousClass_WithModifier" abstractRule="true" schema="//@schema">
     <sourcePatterns name="jContainer">
@@ -1676,14 +1712,14 @@
     <sourcePatterns name="mAnon">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MAnonymous"/>
-      <linkVariablePatterns target="//@rules.64/@sourcePatterns.0">
+      <linkVariablePatterns target="//@rules.65/@sourcePatterns.0">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MAnonymous/mSourroundingType"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <targetPatterns name="uContainer">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.64/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.65/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
@@ -1696,12 +1732,12 @@
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;Anonymous&quot;"/>
       </attributeAssignments>
     </targetPatterns>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.64/@sourcePatterns.0" target="//@rules.64/@targetPatterns.0"/>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.1" source="//@rules.64/@sourcePatterns.1" target="//@rules.64/@targetPatterns.1">
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.65/@sourcePatterns.0" target="//@rules.65/@targetPatterns.0"/>
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.1" source="//@rules.65/@sourcePatterns.1" target="//@rules.65/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
   </rules>
-  <rules name="InnerClassDeclaration2InnerClass_Abstract" abstractRule="true" supertypes="//@rules.72" schema="//@schema">
+  <rules name="InnerClassDeclaration2InnerClass_Abstract" abstractRule="true" supertypes="//@rules.73" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MClass"/>
@@ -1711,11 +1747,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerClassDeclaration2InnerClass_InClass" supertypes="//@rules.65 //@rules.73" schema="//@schema"/>
-  <rules name="InnerClassDeclaration2InnerClass_InClass_WithModifier" supertypes="//@rules.66 //@rules.36" schema="//@schema"/>
-  <rules name="InnerClassDeclaration2InnerClass_InInterface" supertypes="//@rules.65 //@rules.74" schema="//@schema"/>
-  <rules name="InnerClassDeclaration2InnerClass_InInterface_WithModifier" supertypes="//@rules.68 //@rules.36" schema="//@schema"/>
-  <rules name="InnerClassDeclaration2InnerClass_InMethod" supertypes="//@rules.75" schema="//@schema">
+  <rules name="InnerClassDeclaration2InnerClass_InClass" supertypes="//@rules.66 //@rules.74" schema="//@schema"/>
+  <rules name="InnerClassDeclaration2InnerClass_InClass_WithModifier" supertypes="//@rules.67 //@rules.37" schema="//@schema"/>
+  <rules name="InnerClassDeclaration2InnerClass_InInterface" supertypes="//@rules.66 //@rules.75" schema="//@schema"/>
+  <rules name="InnerClassDeclaration2InnerClass_InInterface_WithModifier" supertypes="//@rules.69 //@rules.37" schema="//@schema"/>
+  <rules name="InnerClassDeclaration2InnerClass_InMethod" supertypes="//@rules.76" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MClass"/>
@@ -1725,7 +1761,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerClassDeclaration2InnerClass_InMethod_withModifier" supertypes="//@rules.75 //@rules.36" schema="//@schema">
+  <rules name="InnerClassDeclaration2InnerClass_InMethod_withModifier" supertypes="//@rules.76 //@rules.37" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/modisco#//MClass"/>
@@ -1738,7 +1774,7 @@
   <rules name="InnerDeclaration2InnerClassifier_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="jContainer">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.72/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.73/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
@@ -1754,29 +1790,29 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </targetPatterns>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.72/@sourcePatterns.0" target="//@rules.72/@targetPatterns.0"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.72/@sourcePatterns.1" target="//@rules.72/@targetPatterns.1">
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.73/@sourcePatterns.0" target="//@rules.73/@targetPatterns.0"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.73/@sourcePatterns.1" target="//@rules.73/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.72/@sourcePatterns.1" target="//@rules.72/@targetPatterns.1">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.73/@sourcePatterns.1" target="//@rules.73/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.72/@sourcePatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.73/@sourcePatterns.1">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.72/@targetPatterns.1">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.73/@targetPatterns.1">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="InnerDeclaration2InnerClassifier_InClass_Abstract" abstractRule="true" supertypes="//@rules.72" schema="//@schema">
+  <rules name="InnerDeclaration2InnerClassifier_InClass_Abstract" abstractRule="true" supertypes="//@rules.73" schema="//@schema">
     <sourcePatterns name="jContainer">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="uContainer">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.73/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.74/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
@@ -1786,13 +1822,13 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerDeclaration2InnerClassifier_InInterface_Abstract" abstractRule="true" supertypes="//@rules.72" schema="//@schema">
+  <rules name="InnerDeclaration2InnerClassifier_InInterface_Abstract" abstractRule="true" supertypes="//@rules.73" schema="//@schema">
     <sourcePatterns name="jContainer">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="uContainer">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.74/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.75/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/nestedClassifier"/>
       </linkVariablePatterns>
@@ -1805,13 +1841,13 @@
   <rules name="InnerDeclaration2InnerClassifier_InMethod_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="jContainer">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.75/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.76/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="method">
       <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition"/>
-      <linkVariablePatterns target="//@rules.75/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.76/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodDefinition/mInnerTypes"/>
       </linkVariablePatterns>
@@ -1825,10 +1861,10 @@
     </targetPatterns>
     <targetPatterns name="uContainer">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.75/@targetPatterns.0">
+      <linkVariablePatterns target="//@rules.76/@targetPatterns.0">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/ownedOperation"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.75/@targetPatterns.2">
+      <linkVariablePatterns target="//@rules.76/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
@@ -1837,24 +1873,24 @@
       <op value="++"/>
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </targetPatterns>
-    <correspondencePatterns name="me2op" type="//@schema/@correspondenceTypes.3" source="//@rules.75/@sourcePatterns.1" target="//@rules.75/@targetPatterns.0"/>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.75/@sourcePatterns.0" target="//@rules.75/@targetPatterns.1"/>
-    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.75/@sourcePatterns.2" target="//@rules.75/@targetPatterns.2">
+    <correspondencePatterns name="me2op" type="//@schema/@correspondenceTypes.3" source="//@rules.76/@sourcePatterns.1" target="//@rules.76/@targetPatterns.0"/>
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.76/@sourcePatterns.0" target="//@rules.76/@targetPatterns.1"/>
+    <correspondencePatterns name="b2e" type="//@schema/@correspondenceTypes.1" source="//@rules.76/@sourcePatterns.2" target="//@rules.76/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
-    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.75/@sourcePatterns.2" target="//@rules.75/@targetPatterns.2">
+    <correspondencePatterns name="bd2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.76/@sourcePatterns.2" target="//@rules.76/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.75/@sourcePatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.76/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
       </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.75/@targetPatterns.2">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.76/@targetPatterns.2">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
   </rules>
-  <rules name="InnerEnumDeclaration2InnerEnum_InMethod" supertypes="//@rules.75" schema="//@schema">
+  <rules name="InnerEnumDeclaration2InnerEnum_InMethod" supertypes="//@rules.76" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//EnumDeclaration"/>
@@ -1864,7 +1900,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerEnumDeclaration2InnerEnumeration_Abstract" abstractRule="true" supertypes="//@rules.72" schema="//@schema">
+  <rules name="InnerEnumDeclaration2InnerEnumeration_Abstract" abstractRule="true" supertypes="//@rules.73" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//EnumDeclaration"/>
@@ -1874,11 +1910,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerEnumDeclaration2InnerEnumeration_InClass" supertypes="//@rules.77 //@rules.73" schema="//@schema"/>
-  <rules name="InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier" supertypes="//@rules.78 //@rules.36" schema="//@schema"/>
-  <rules name="InnerEnumDeclaration2InnerEnumeration_InInterface" supertypes="//@rules.77 //@rules.74" schema="//@schema"/>
-  <rules name="InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier" supertypes="//@rules.80 //@rules.36" schema="//@schema"/>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_Abstract" abstractRule="true" supertypes="//@rules.72" schema="//@schema">
+  <rules name="InnerEnumDeclaration2InnerEnumeration_InClass" supertypes="//@rules.78 //@rules.74" schema="//@schema"/>
+  <rules name="InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier" supertypes="//@rules.79 //@rules.37" schema="//@schema"/>
+  <rules name="InnerEnumDeclaration2InnerEnumeration_InInterface" supertypes="//@rules.78 //@rules.75" schema="//@schema"/>
+  <rules name="InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier" supertypes="//@rules.81 //@rules.37" schema="//@schema"/>
+  <rules name="InnerInterfaceDeclaration2InnerInterface_Abstract" abstractRule="true" supertypes="//@rules.73" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
@@ -1888,11 +1924,11 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
   </rules>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_InClass" supertypes="//@rules.82 //@rules.73" schema="//@schema"/>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier" supertypes="//@rules.83 //@rules.36" schema="//@schema"/>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_InInterface" supertypes="//@rules.82 //@rules.74" schema="//@schema"/>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier" supertypes="//@rules.85 //@rules.36" schema="//@schema"/>
-  <rules name="InnerInterfaceDeclaration2InnerInterface_InMethod" supertypes="//@rules.75" schema="//@schema">
+  <rules name="InnerInterfaceDeclaration2InnerInterface_InClass" supertypes="//@rules.83 //@rules.74" schema="//@schema"/>
+  <rules name="InnerInterfaceDeclaration2InnerInterface_InClass_WithModifier" supertypes="//@rules.84 //@rules.37" schema="//@schema"/>
+  <rules name="InnerInterfaceDeclaration2InnerInterface_InInterface" supertypes="//@rules.83 //@rules.75" schema="//@schema"/>
+  <rules name="InnerInterfaceDeclaration2InnerInterface_InInterface_WithModifier" supertypes="//@rules.86 //@rules.37" schema="//@schema"/>
+  <rules name="InnerInterfaceDeclaration2InnerInterface_InMethod" supertypes="//@rules.76" schema="//@schema">
     <sourcePatterns name="bodyDeclaration">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
@@ -1905,7 +1941,7 @@
   <rules name="IgnoreOrphanTypesEdge" schema="//@schema">
     <sourcePatterns name="model">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
-      <linkVariablePatterns target="//@rules.88/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.89/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/orphanTypes"/>
       </linkVariablePatterns>
@@ -1914,7 +1950,7 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType"/>
     </sourcePatterns>
   </rules>
-  <rules name="ParameterizedType2Class" supertypes="//@rules.92" schema="//@schema">
+  <rules name="ParameterizedType2Class" supertypes="//@rules.93" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -1926,7 +1962,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
   </rules>
-  <rules name="ParameterizedType2Class_InnerTypeInClass" supertypes="//@rules.93" schema="//@schema">
+  <rules name="ParameterizedType2Class_InnerTypeInClass" supertypes="//@rules.94" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -1938,7 +1974,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
     </targetPatterns>
   </rules>
-  <rules name="ParameterizedType2Class_InnerTypeInInterface" supertypes="//@rules.94" schema="//@schema">
+  <rules name="ParameterizedType2Class_InnerTypeInInterface" supertypes="//@rules.95" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -1956,85 +1992,14 @@
     </sourcePatterns>
     <sourcePatterns name="nonParamPackage">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.92/@sourcePatterns.0">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="parameterizedType">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType"/>
-      <linkVariablePatterns target="//@rules.92/@sourcePatterns.3">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType/type"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="typeTypeAccess">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
-      <linkVariablePatterns target="//@rules.92/@sourcePatterns.0">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <targetPatterns name="umlPackage">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.92/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.92/@targetPatterns.1">
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="nonParamElement">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-    </targetPatterns>
-    <targetPatterns name="parameterizedClassifier">
-      <op value="++"/>
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-    </targetPatterns>
-    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.92/@sourcePatterns.1" target="//@rules.92/@targetPatterns.0"/>
-    <correspondencePatterns name="ne2neNonParam" type="//@schema/@correspondenceTypes.3" source="//@rules.92/@sourcePatterns.0" target="//@rules.92/@targetPatterns.1"/>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.92/@sourcePatterns.2" target="//@rules.92/@targetPatterns.2">
-      <op value="++"/>
-    </correspondencePatterns>
-    <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.92/@sourcePatterns.2">
-        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.92/@targetPatterns.2">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.92/@targetPatterns.2">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.92/@targetPatterns.1">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-  </rules>
-  <rules name="ParameterizedType2Classifier_InnerTypeInClass_Abstract" abstractRule="true" schema="//@schema">
-    <sourcePatterns name="nonParamType">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-    </sourcePatterns>
-    <sourcePatterns name="nonParamPackage">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
-      <linkVariablePatterns target="//@rules.93/@sourcePatterns.2">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
-      </linkVariablePatterns>
-    </sourcePatterns>
-    <sourcePatterns name="jContainer">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeDeclaration"/>
       <linkVariablePatterns target="//@rules.93/@sourcePatterns.0">
-        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="parameterizedType">
       <op value="++"/>
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType"/>
-      <linkVariablePatterns target="//@rules.93/@sourcePatterns.4">
+      <linkVariablePatterns target="//@rules.93/@sourcePatterns.3">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType/type"/>
       </linkVariablePatterns>
@@ -2049,18 +2014,12 @@
     </sourcePatterns>
     <targetPatterns name="umlPackage">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      <linkVariablePatterns target="//@rules.93/@targetPatterns.3">
+      <linkVariablePatterns target="//@rules.93/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.93/@targetPatterns.1">
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
-      </linkVariablePatterns>
-    </targetPatterns>
-    <targetPatterns name="uContainer">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.93/@targetPatterns.2">
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="nonParamElement">
@@ -2071,29 +2030,28 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
     </targetPatterns>
     <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.93/@sourcePatterns.1" target="//@rules.93/@targetPatterns.0"/>
-    <correspondencePatterns name="ne2neNonParam" type="//@schema/@correspondenceTypes.3" source="//@rules.93/@sourcePatterns.0" target="//@rules.93/@targetPatterns.2"/>
-    <correspondencePatterns name="c2c" type="//@schema/@correspondenceTypes.3" source="//@rules.93/@sourcePatterns.2" target="//@rules.93/@targetPatterns.1"/>
-    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.93/@sourcePatterns.3" target="//@rules.93/@targetPatterns.3">
+    <correspondencePatterns name="ne2neNonParam" type="//@schema/@correspondenceTypes.3" source="//@rules.93/@sourcePatterns.0" target="//@rules.93/@targetPatterns.1"/>
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.93/@sourcePatterns.2" target="//@rules.93/@targetPatterns.2">
       <op value="++"/>
     </correspondencePatterns>
     <attrConditions name="//@schema/@attributeCondDefs.5">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@sourcePatterns.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@sourcePatterns.2">
         <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
-      </values>
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@targetPatterns.3">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
-      </values>
-    </attrConditions>
-    <attrConditions name="//@schema/@attributeCondDefs.3">
-      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@targetPatterns.3">
-        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
       <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@targetPatterns.2">
         <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
       </values>
     </attrConditions>
+    <attrConditions name="//@schema/@attributeCondDefs.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@targetPatterns.2">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.93/@targetPatterns.1">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+    </attrConditions>
   </rules>
-  <rules name="ParameterizedType2Classifier_InnerTypeInInterface_Abstract" abstractRule="true" schema="//@schema">
+  <rules name="ParameterizedType2Classifier_InnerTypeInClass_Abstract" abstractRule="true" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -2104,7 +2062,7 @@
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="jContainer">
-      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeDeclaration"/>
       <linkVariablePatterns target="//@rules.94/@sourcePatterns.0">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
@@ -2136,9 +2094,9 @@
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="uContainer">
-      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       <linkVariablePatterns target="//@rules.94/@targetPatterns.2">
-        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/nestedClassifier"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="nonParamElement">
@@ -2171,7 +2129,85 @@
       </values>
     </attrConditions>
   </rules>
-  <rules name="ParameterizedType2Interface" supertypes="//@rules.92" schema="//@schema">
+  <rules name="ParameterizedType2Classifier_InnerTypeInInterface_Abstract" abstractRule="true" schema="//@schema">
+    <sourcePatterns name="nonParamType">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+    </sourcePatterns>
+    <sourcePatterns name="nonParamPackage">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+      <linkVariablePatterns target="//@rules.95/@sourcePatterns.2">
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="jContainer">
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+      <linkVariablePatterns target="//@rules.95/@sourcePatterns.0">
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="parameterizedType">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType"/>
+      <linkVariablePatterns target="//@rules.95/@sourcePatterns.4">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ParameterizedType/type"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <sourcePatterns name="typeTypeAccess">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+      <linkVariablePatterns target="//@rules.95/@sourcePatterns.0">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+      </linkVariablePatterns>
+    </sourcePatterns>
+    <targetPatterns name="umlPackage">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      <linkVariablePatterns target="//@rules.95/@targetPatterns.3">
+        <op value="++"/>
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.95/@targetPatterns.1">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Package/packagedElement"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="uContainer">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
+      <linkVariablePatterns target="//@rules.95/@targetPatterns.2">
+        <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/nestedClassifier"/>
+      </linkVariablePatterns>
+    </targetPatterns>
+    <targetPatterns name="nonParamElement">
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+    </targetPatterns>
+    <targetPatterns name="parameterizedClassifier">
+      <op value="++"/>
+      <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+    </targetPatterns>
+    <correspondencePatterns name="jp2up" type="//@schema/@correspondenceTypes.4" source="//@rules.95/@sourcePatterns.1" target="//@rules.95/@targetPatterns.0"/>
+    <correspondencePatterns name="ne2neNonParam" type="//@schema/@correspondenceTypes.3" source="//@rules.95/@sourcePatterns.0" target="//@rules.95/@targetPatterns.2"/>
+    <correspondencePatterns name="c2c" type="//@schema/@correspondenceTypes.3" source="//@rules.95/@sourcePatterns.2" target="//@rules.95/@targetPatterns.1"/>
+    <correspondencePatterns name="ne2ne" type="//@schema/@correspondenceTypes.3" source="//@rules.95/@sourcePatterns.3" target="//@rules.95/@targetPatterns.3">
+      <op value="++"/>
+    </correspondencePatterns>
+    <attrConditions name="//@schema/@attributeCondDefs.5">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.95/@sourcePatterns.3">
+        <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.95/@targetPatterns.3">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+    </attrConditions>
+    <attrConditions name="//@schema/@attributeCondDefs.3">
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.95/@targetPatterns.3">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+      <values xsi:type="tgg:AttributeExpression" objectVar="//@rules.95/@targetPatterns.2">
+        <attribute href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+      </values>
+    </attrConditions>
+  </rules>
+  <rules name="ParameterizedType2Interface" supertypes="//@rules.93" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -2183,7 +2219,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
   </rules>
-  <rules name="ParameterizedType2Interface_InnerTypeInClass" supertypes="//@rules.93" schema="//@schema">
+  <rules name="ParameterizedType2Interface_InnerTypeInClass" supertypes="//@rules.94" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -2195,7 +2231,7 @@
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
     </targetPatterns>
   </rules>
-  <rules name="ParameterizedType2Interface_InnerTypeInInterface" supertypes="//@rules.94" schema="//@schema">
+  <rules name="ParameterizedType2Interface_InnerTypeInInterface" supertypes="//@rules.95" schema="//@schema">
     <sourcePatterns name="nonParamType">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
     </sourcePatterns>
@@ -2226,15 +2262,15 @@
         <valueExp xsi:type="tgg:LiteralExpression" value="&quot;T&quot;"/>
       </attributeAssignments>
     </targetPatterns>
-    <correspondencePatterns name="interface2interface" type="//@schema/@correspondenceTypes.3" source="//@rules.98/@sourcePatterns.0" target="//@rules.98/@targetPatterns.0"/>
-    <correspondencePatterns name="param2param" type="//@schema/@correspondenceTypes.3" source="//@rules.98/@sourcePatterns.1" target="//@rules.98/@targetPatterns.1">
+    <correspondencePatterns name="interface2interface" type="//@schema/@correspondenceTypes.3" source="//@rules.99/@sourcePatterns.0" target="//@rules.99/@targetPatterns.0"/>
+    <correspondencePatterns name="param2param" type="//@schema/@correspondenceTypes.3" source="//@rules.99/@sourcePatterns.1" target="//@rules.99/@targetPatterns.1">
       <op value="++"/>
     </correspondencePatterns>
   </rules>
-  <rules name="TypeParameter2Object_InClass" supertypes="//@rules.98" schema="//@schema">
+  <rules name="TypeParameter2Object_InClass" supertypes="//@rules.99" schema="//@schema">
     <sourcePatterns name="mowner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
-      <linkVariablePatterns target="//@rules.99/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.100/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeDeclaration/typeParameters"/>
       </linkVariablePatterns>
@@ -2245,7 +2281,7 @@
     </sourcePatterns>
     <targetPatterns name="uowner">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.99/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.100/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
@@ -2259,10 +2295,10 @@
       </attributeAssignments>
     </targetPatterns>
   </rules>
-  <rules name="TypeParameter2Object_InInterface" supertypes="//@rules.98" schema="//@schema">
+  <rules name="TypeParameter2Object_InInterface" supertypes="//@rules.99" schema="//@schema">
     <sourcePatterns name="mowner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
-      <linkVariablePatterns target="//@rules.100/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.101/@sourcePatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeDeclaration/typeParameters"/>
       </linkVariablePatterns>
@@ -2273,7 +2309,7 @@
     </sourcePatterns>
     <targetPatterns name="uowner">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.100/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.101/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/nestedClassifier"/>
       </linkVariablePatterns>
@@ -2287,16 +2323,16 @@
       </attributeAssignments>
     </targetPatterns>
   </rules>
-  <rules name="TypeParameter2Object_InMethod_Abstract" abstractRule="true" supertypes="//@rules.98" schema="//@schema">
+  <rules name="TypeParameter2Object_InMethod_Abstract" abstractRule="true" supertypes="//@rules.99" schema="//@schema">
     <sourcePatterns name="mowner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
-      <linkVariablePatterns target="//@rules.101/@sourcePatterns.1">
+      <linkVariablePatterns target="//@rules.102/@sourcePatterns.1">
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration/bodyDeclarations"/>
       </linkVariablePatterns>
     </sourcePatterns>
     <sourcePatterns name="mmethod">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration"/>
-      <linkVariablePatterns target="//@rules.101/@sourcePatterns.2">
+      <linkVariablePatterns target="//@rules.102/@sourcePatterns.2">
         <op value="++"/>
         <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/typeParameters"/>
       </linkVariablePatterns>
@@ -2306,13 +2342,13 @@
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeParameter"/>
     </sourcePatterns>
   </rules>
-  <rules name="TypeParameter2Object_InMethod_InClass" supertypes="//@rules.101" schema="//@schema">
+  <rules name="TypeParameter2Object_InMethod_InClass" supertypes="//@rules.102" schema="//@schema">
     <sourcePatterns name="mowner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="uowner">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-      <linkVariablePatterns target="//@rules.102/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.103/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Class/nestedClassifier"/>
       </linkVariablePatterns>
@@ -2326,13 +2362,13 @@
       </attributeAssignments>
     </targetPatterns>
   </rules>
-  <rules name="TypeParameter2Object_InMethod_InInterface" supertypes="//@rules.101" schema="//@schema">
+  <rules name="TypeParameter2Object_InMethod_InInterface" supertypes="//@rules.102" schema="//@schema">
     <sourcePatterns name="mowner">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
     </sourcePatterns>
     <targetPatterns name="uowner">
       <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface"/>
-      <linkVariablePatterns target="//@rules.103/@targetPatterns.1">
+      <linkVariablePatterns target="//@rules.104/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.eclipse.org/uml2/5.0.0/UML#//Interface/nestedClassifier"/>
       </linkVariablePatterns>

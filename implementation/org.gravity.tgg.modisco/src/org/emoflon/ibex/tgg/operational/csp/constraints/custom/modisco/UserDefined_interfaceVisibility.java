@@ -15,8 +15,9 @@ public class UserDefined_interfaceVisibility extends RuntimeTGGAttributeConstrai
     */
 	@Override
 	public void solve() {
-		if (variables.size() != 2)
-			throw new RuntimeException("The CSP -INTERFACEVISIBILITY- needs exactly 2 variables");
+		if (variables.size() != 2) {
+			throw new IllegalArgumentException("The CSP -INTERFACEVISIBILITY- needs exactly 2 variables");
+		}
 
 		RuntimeTGGAttributeConstraintVariable mVisibilityVar = variables.get(0);
 		RuntimeTGGAttributeConstraintVariable tVisibilityVar = variables.get(1);

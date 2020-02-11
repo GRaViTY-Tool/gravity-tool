@@ -17,7 +17,7 @@ public class UserDefined_defaultVisibility extends RuntimeTGGAttributeConstraint
 	public void solve() {
 
 		if (variables.size() != 2) {
-			throw new RuntimeException("The CSP " + getClass().getName() + " needs exactly two variables");
+			throw new IllegalArgumentException("The CSP " + getClass().getName() + " needs exactly two variables");
 		}
 
 		RuntimeTGGAttributeConstraintVariable a = variables.get(0);

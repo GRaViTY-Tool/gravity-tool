@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.uml2.uml.Model;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.ui.ModelCreatorJob;
+import org.gravity.tgg.uml.GravityUmlActivator;
 import org.gravity.tgg.uml.Transformation;
 
 /**
@@ -35,15 +37,15 @@ final class UmlCreatorJob extends ModelCreatorJob {
 
 	@Override
 	public boolean process(IJavaProject iJavaProject, IProgressMonitor monitor) {
-		IProject iProject = iJavaProject.getProject();
 		Model model;
 		try {
-			model = Transformation.projectToModel(iJavaProject, addUmlSec, monitor);
-		} catch (TransformationFailedException | IOException e) {
+			Transformation transformation = GravityUmlActivator.getTransformationFactory().getTransformation(iJavaProject.getProject());
+			model = transformation.projectToModel(addUmlSec, monitor);
+		} catch (TransformationFailedException | IOException | CoreException e) {
 			UmlParseHandler.LOGGER.log(Level.ERROR, e);
 			return false;
 		}
-		return save(iProject, model, monitor);
+		return model != null;
 	}
 
 }

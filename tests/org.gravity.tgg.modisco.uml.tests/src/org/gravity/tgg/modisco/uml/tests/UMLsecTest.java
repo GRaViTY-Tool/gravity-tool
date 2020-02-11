@@ -66,7 +66,7 @@ public class UMLsecTest {
 		final IJavaProject iJjavaProject = JavaProjectUtil.copyJavaProject(jp,
 				"SecureDependency" + System.currentTimeMillis());
 
-		final Model model = Transformation.projectToModel(iJjavaProject, true, new NullProgressMonitor());
+		final Model model = new Transformation(iJjavaProject, null).projectToModel(true, new NullProgressMonitor());
 
 		assertNotNull(model);
 		final IFolder folder = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
@@ -96,7 +96,7 @@ public class UMLsecTest {
 
 		iJjavaProject.getProject().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 
-		Transformation.umlToProject(iJjavaProject, new NullProgressMonitor());
+		new Transformation(iJjavaProject, null).umlToProject(new NullProgressMonitor());
 	}
 
 }
