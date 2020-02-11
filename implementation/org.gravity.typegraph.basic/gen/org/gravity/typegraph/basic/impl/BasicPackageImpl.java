@@ -1342,6 +1342,56 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTypeGraph__GetFieldSignature__String() {
+		return typeGraphEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTypeGraph__GetMethodSignature__String() {
+		return typeGraphEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTypeGraph__GetDefinition__String() {
+		return typeGraphEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTypeGraph__GetFieldDefinition__String() {
+		return typeGraphEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTypeGraph__GetMethodDefinition__String() {
+		return typeGraphEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTInterface() {
 		return tInterfaceEClass;
 	}
@@ -2000,6 +2050,11 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_METHOD__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_FIELD__STRING);
 		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_SIGNATURE__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_DEFINITION__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_FIELD_DEFINITION__STRING);
+		createEOperation(typeGraphEClass, TYPE_GRAPH___GET_METHOD_DEFINITION__STRING);
 
 		tInterfaceEClass = createEClass(TINTERFACE);
 		createEReference(tInterfaceEClass, TINTERFACE__IMPLEMENTED_BY);
@@ -2305,6 +2360,21 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		addEParameter(op, ecorePackage.getEString(), "fullyQualifiedName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getTypeGraph__GetSignature__String(), this.getTSignature(), "getSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetFieldSignature__String(), this.getTSignature(), "getFieldSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetMethodSignature__String(), this.getTFieldSignature(), "getMethodSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetDefinition__String(), this.getTMember(), "getDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetFieldDefinition__String(), this.getTFieldDefinition(), "getFieldDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getTypeGraph__GetMethodDefinition__String(), this.getTMethodDefinition(), "getMethodDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(tInterfaceEClass, TInterface.class, "TInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

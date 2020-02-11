@@ -182,6 +182,21 @@
     <eOperations name="getSignature" eType="#//TSignature">
       <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getFieldSignature" eType="#//TFieldSignature">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getMethodSignature" eType="#//TMethodSignature">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getDefinition" eType="#//TMember">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getFieldDefinition" eType="#//TFieldDefinition">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getMethodDefinition" eType="#//TMethodDefinition">
+      <eParameters name="signature" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" ordered="false"
         upperBound="-1" eType="#//TPackage" containment="true" eOpposite="#//TPackage/pg"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" ordered="false"

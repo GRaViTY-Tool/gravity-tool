@@ -2415,13 +2415,58 @@ public interface BasicPackage extends EPackage {
 	int TYPE_GRAPH___GET_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 8;
 
 	/**
+	 * The operation id for the '<em>Get Field Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Get Method Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Get Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Get Field Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_FIELD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Get Method Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GRAPH___GET_METHOD_DEFINITION__STRING = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 13;
+
+	/**
 	 * The number of operations of the '<em>Type Graph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 9;
+	int TYPE_GRAPH_OPERATION_COUNT = AnnotationsPackage.TANNOTATABLE_OPERATION_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>TAnnotation</b></em>' containment reference list.
@@ -5001,6 +5046,56 @@ public interface BasicPackage extends EPackage {
 	EOperation getTypeGraph__GetSignature__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getFieldSignature(java.lang.String) <em>Get Field Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getFieldSignature(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetFieldSignature__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getMethodSignature(java.lang.String) <em>Get Method Signature</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method Signature</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getMethodSignature(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetMethodSignature__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getDefinition(java.lang.String) <em>Get Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getDefinition(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetDefinition__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getFieldDefinition(java.lang.String) <em>Get Field Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Field Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getFieldDefinition(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetFieldDefinition__String();
+
+	/**
+	 * Returns the meta object for the '{@link org.gravity.typegraph.basic.TypeGraph#getMethodDefinition(java.lang.String) <em>Get Method Definition</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Method Definition</em>' operation.
+	 * @see org.gravity.typegraph.basic.TypeGraph#getMethodDefinition(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTypeGraph__GetMethodDefinition__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.gravity.typegraph.basic.TInterface <em>TInterface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6406,6 +6501,46 @@ public interface BasicPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TYPE_GRAPH___GET_SIGNATURE__STRING = eINSTANCE.getTypeGraph__GetSignature__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_FIELD_SIGNATURE__STRING = eINSTANCE.getTypeGraph__GetFieldSignature__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Method Signature</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_METHOD_SIGNATURE__STRING = eINSTANCE.getTypeGraph__GetMethodSignature__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_DEFINITION__STRING = eINSTANCE.getTypeGraph__GetDefinition__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Field Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_FIELD_DEFINITION__STRING = eINSTANCE.getTypeGraph__GetFieldDefinition__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Method Definition</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TYPE_GRAPH___GET_METHOD_DEFINITION__STRING = eINSTANCE.getTypeGraph__GetMethodDefinition__String();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.typegraph.basic.impl.TInterfaceImpl <em>TInterface</em>}' class.

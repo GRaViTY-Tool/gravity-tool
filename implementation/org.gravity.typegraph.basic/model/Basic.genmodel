@@ -163,6 +163,21 @@
       <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getSignature">
         <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getSignature/signature"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getFieldSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getFieldSignature/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getMethodSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getMethodSignature/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getDefinition/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getFieldDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getFieldDefinition/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TypeGraph/getMethodDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TypeGraph/getMethodDefinition/signature"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TInterface">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TInterface/implementedBy"/>

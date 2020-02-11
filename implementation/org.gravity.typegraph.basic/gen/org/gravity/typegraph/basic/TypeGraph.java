@@ -235,6 +235,46 @@ public interface TypeGraph extends TAnnotatable {
 	 */
 	TSignature getSignature(String signature);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TFieldSignature getFieldSignature(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TMethodSignature getMethodSignature(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TMember getDefinition(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TFieldDefinition getFieldDefinition(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model signatureOrdered="false"
+	 * @generated
+	 */
+	TMethodDefinition getMethodDefinition(String signature);
+
 	public TAbstractType getType(String fullyQualifiedName);
 
 	// [user code injected with eMoflon] -->

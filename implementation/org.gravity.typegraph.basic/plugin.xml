@@ -4,9 +4,6 @@
     <package class="org.gravity.typegraph.basic.BasicPackage" genModel="model/Basic.genmodel" uri="http://www.gravity-tool.org/typegraph/basic"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="org.gravity.typegraph.basic.containers.ContainersPackage" genModel="model/Basic.genmodel" uri="http://www.gravity-tool.org/typegraph/basic#//containers"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.typegraph.basic.annotations.AnnotationsPackage" genModel="model/Basic.genmodel" uri="http://www.gravity-tool.org/typegraph/basic#//annotations"/>
   </extension>
 </plugin>
