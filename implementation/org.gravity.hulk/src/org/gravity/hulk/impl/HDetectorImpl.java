@@ -313,7 +313,7 @@ public abstract class HDetectorImpl extends NodeImpl implements HDetector {
 			}
 		}
 		int size = keys.size();
-		if (keys.size() == 0) {
+		if (keys.isEmpty()) {
 			return Double.valueOf(HulkDetector.getDefaultThresholds().get(clazz.getName()));
 		}
 

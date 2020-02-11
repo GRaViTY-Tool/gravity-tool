@@ -166,7 +166,7 @@ public class HIGATCalculatorImpl extends HMetricCalculatorImpl implements HIGATC
 						onlySubClasses &= ((TInterface) tAccessingType).getParentInterfaces().contains(tType);
 					}
 				}
-				if (otherPackages.size() == 0) {
+				if (otherPackages.isEmpty()) {
 					tMinVis = TVisibility.TPACKAGE;
 				} else {
 					if (onlySubClasses) {

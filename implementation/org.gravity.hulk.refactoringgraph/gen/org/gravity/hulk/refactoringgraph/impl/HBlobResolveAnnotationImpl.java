@@ -261,7 +261,7 @@ public class HBlobResolveAnnotationImpl extends HAnnotationImpl implements HBlob
 		antipattern.setText("anti-pattern");
 		hBlobAntiPattern.createItemContents(new TreeItem(antipattern, style), style);
 
-		if (hRefactorings == null || hRefactorings.size() == 0) {
+		if (hRefactorings == null || hRefactorings.isEmpty()) {
 			item.setText("Unable to resolve the The Blob [Anti-Pattern].");
 		} else {
 			item.setText("Solved The Blob [Anti-Pattern] by refactoring.");
