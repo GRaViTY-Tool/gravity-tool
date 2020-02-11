@@ -62,7 +62,7 @@ public class HulkApiTest {
 		javaProject = EclipseProjectUtil
 				.importProjects(new File(location, "gravity-evaluation-data"), new NullProgressMonitor())
 				.parallelStream().filter(project -> "SecureMailApp".equals(project.getName()))
-				.map(project -> JavaProjectUtil.convertToJavaProject(project)).findAny().orElse(null);
+				.map(project -> JavaProjectUtil.getJavaProject(project)).findAny().orElse(null);
 	}
 
 	/**

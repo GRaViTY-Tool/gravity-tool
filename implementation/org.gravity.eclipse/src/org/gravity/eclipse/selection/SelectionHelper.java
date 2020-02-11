@@ -32,7 +32,7 @@ public final class SelectionHelper {
 				projects.add((IJavaProject) entry);
 			} else if (entry instanceof IProject) {
 				final IProject project = (IProject) entry;
-				final IJavaProject java = JavaProjectUtil.convertToJavaProject(project);
+				final IJavaProject java = JavaProjectUtil.getJavaProject(project);
 				if(java == null) {
 					throw new IllegalStateException("Project " + project.getName() + " has no Java nature");
 				}

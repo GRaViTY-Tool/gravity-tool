@@ -87,7 +87,7 @@ public final class JavaProjectUtil {
 	 */
 	public static IJavaProject copyJavaProject(IJavaProject project, String nameOfCopy) {
 		final IProject tmp = EclipseProjectUtil.copyProject(project.getProject(), nameOfCopy);
-		return convertToJavaProject(tmp);
+		return getJavaProject(tmp);
 	}
 
 	/**
@@ -97,7 +97,7 @@ public final class JavaProjectUtil {
 	 * @param project The eclipse project
 	 * @return a java project or null if the conversion failed
 	 */
-	public static IJavaProject convertToJavaProject(IProject project) {
+	public static IJavaProject getJavaProject(IProject project) {
 		try {
 			if (project.hasNature(JavaCore.NATURE_ID)) {
 				return JavaCore.create(project);
@@ -124,7 +124,24 @@ public final class JavaProjectUtil {
 		// Create new project with given name
 		final IProject project = EclipseProjectUtil.createProject(name, monitor);
 
+		return convertToJavaProject(sourceFolderNames, project, monitor);
+	}
+
+	/**
+	 * Converts the project into a Java project
+	 *
+	 * @param project           The project to be converted
+	 * @param sourceFolderNames The names of the source folders
+	 * @param monitor           A progress monitor
+	 * @return The java project
+	 * @throws CoreException If the conversion fails
+	 */
+	public static IJavaProject convertToJavaProject(Set<String> sourceFolderNames, final IProject project,
+			IProgressMonitor monitor) throws CoreException {
 		// Add Java-Nature
+		if (project.hasNature(JavaCore.NATURE_ID)) {
+			return JavaCore.create(project);
+		}
 		EclipseProjectUtil.addNature(project, JavaCore.NATURE_ID, monitor);
 
 		final IJavaProject javaProject = JavaCore.create(project);

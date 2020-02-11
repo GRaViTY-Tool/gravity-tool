@@ -41,7 +41,7 @@ public class DetectionLinkListener implements Listener {
 		}
 		if (selectedObject instanceof IAdaptable) {
 			final IResource res = ((IAdaptable) selectedObject).getAdapter(IResource.class);
-			project = JavaProjectUtil.convertToJavaProject(res.getProject());
+			project = JavaProjectUtil.getJavaProject(res.getProject());
 		}
 		if(project == null) {
 			LOGGER.error("Cound't determin current active project");

@@ -91,7 +91,7 @@ public class OpenAntipatternXmiHandler extends AbstractHandler {
 
 		InformationViewContentProvider.setAPG(apg);
 		
-		IJavaProject javaProject = JavaProjectUtil.convertToJavaProject(project);
+		IJavaProject javaProject = JavaProjectUtil.getJavaProject(project);
 		if(javaProject == null) {
 			LOGGER.error("Not a Java project: "+project.getName());
 			return;
