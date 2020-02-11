@@ -54,6 +54,17 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 		} catch (final ProcessingException e) {
 			return false;
 		}
+		if(!replacements.isEmpty()) {
+			replace(model, replacements);
+		}
+		return true;
+	}
+
+	/**
+	 * @param model
+	 * @param replacements
+	 */
+	private void replace(final MGravityModel model, Map<ClassDeclaration, InterfaceDeclaration> replacements) {
 		for (final Entry<EObject, Collection<Setting>> entry : EcoreUtil.UsageCrossReferencer
 				.findAll(replacements.keySet(), model.eResource().getResourceSet()).entrySet()) {
 			final EObject key = entry.getKey();
@@ -69,7 +80,6 @@ public class SuperInterfacePreprocessing extends AbstractTypedModiscoProcessor<A
 
 		}
 		replacements.clear();
-		return true;
 	}
 
 	private Map<ClassDeclaration, InterfaceDeclaration> calculateReplacements(final Set<TypeAccess> brokenTypeAccesses) throws ProcessingException {
