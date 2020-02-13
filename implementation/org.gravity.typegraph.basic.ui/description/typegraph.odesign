@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="typegraph" version="12.0.0.2017041100">
+  <ownedViewpoints name="gravity">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="programModel" label="Program Model" initialisation="true" domainClass="basic::TypeGraph">
+      <metamodel href="http://www.gravity-tool.org/typegraph/basic#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="tMethod" label="Method" domainClass="basic::TMethod">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:tName" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="tMethodSignature" label="Method Signature" domainClass="basic::TMethodSignature">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Method Signature" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="tMethodDefinition" label="Method Definition" domainClass="basic::TMethodDefinition">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Method Definiton" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="tCall" label="Call" domainClass="basic::TCall">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Call" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="tFlow" label="Flow" domainClass="basic::TFlow">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Flow" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="tParameter" label="Parameter" domainClass="basic::TParameter">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Parameter" labelPosition="node" resizeKind="NSEW" width="10" height="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="tMethodSignatures" label="signatures" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethod']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature']" targetFinderExpression="feature:signatures">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tDefinition" label="definitions" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetFinderExpression="feature:definitions">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tParameters" label="parameters" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tParameter']" targetFinderExpression="feature:parameters">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tAccess" label="access" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetFinderExpression="feature:tAccessing">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tOutFlow" label="outFlow" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tFlow'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tParameter']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tFlow'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tParameter']" targetFinderExpression="feature:outgoingFlows">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tOwnedFlow" label="Owned Flow" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tFlow'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodSignature'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall'] //@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tParameter']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tFlow']" targetFinderExpression="feature:ownedFlows">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="tAccessTarget" label="target" sourceMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tCall']" targetMapping="//@ownedViewpoints[name='gravity']/@ownedRepresentations[name='programModel']/@defaultLayer/@nodeMappings[name='tMethodDefinition']" targetFinderExpression="feature:tTarget">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
