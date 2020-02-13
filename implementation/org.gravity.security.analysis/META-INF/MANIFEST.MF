@@ -7,6 +7,7 @@ Bundle-Activator: org.gravity.security.analysis.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
  org.eclipse.jdt.core,
  org.gravity.eclipse,
  org.gravity.typegraph.basic,
