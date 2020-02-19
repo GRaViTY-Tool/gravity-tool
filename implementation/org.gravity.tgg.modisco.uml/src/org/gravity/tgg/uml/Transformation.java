@@ -52,7 +52,7 @@ public final class Transformation extends SYNC {
 	final IFolder outputFolder;
 
 	public Transformation(IJavaProject project, Resource target) throws IOException, CoreException {
-		super(new GravityUml().createIbexOptions().setResourceHandler(new GravityUmlresourceHandler(project)));
+		super(new GravityUml().createIbexOptions().resourceHandler(new GravityUmlresourceHandler(project)));
 		final IProject iproject = project.getProject();
 		this.project = project;
 		outputFolder = ((GravityUmlresourceHandler) getResourceHandler()).getOutputFolder();
@@ -67,11 +67,11 @@ public final class Transformation extends SYNC {
 	public static class  GravityUml {
 	public IbexOptions createIbexOptions() {
 		final IbexOptions options = new IbexOptions();
-		options.projectName("Uml");
-		options.projectPath("org.gravity.tgg.modisco.uml");
-		options.debug(GravityActivator.getDefault().isVerbose());
-		options.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
-		options.setBlackInterpreter(new DemoclesTGGEngine());
+		options.project.name("Uml");
+		options.project.path("org.gravity.tgg.modisco.uml");
+		options.debug.ibexDebug(GravityActivator.getDefault().isVerbose());
+		options.csp.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
+		options.blackInterpreter(new DemoclesTGGEngine());
 		return options;
 	}
 

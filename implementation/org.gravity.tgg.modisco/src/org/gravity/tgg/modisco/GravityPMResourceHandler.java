@@ -53,7 +53,7 @@ final class GravityPMResourceHandler extends TGGResourceHandler {
 		registerPackage(BasicPackage.eINSTANCE);
 		final EPackage tggPackage = loadMetaModelPackage();
 		registerPackage(tggPackage);
-		this.options.setCorrMetamodel(tggPackage);
+		this.options.tgg.corrMetamodel(tggPackage);
 		EcoreUtil.resolveAll(this.rs);
 	}
 

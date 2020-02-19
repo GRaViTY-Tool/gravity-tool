@@ -1775,10 +1775,10 @@
     <nodes name="pg" domainType="TRG" incomingEdges="//@rules.30/@edges.15 //@rules.30/@edges.16" outgoingEdges="//@rules.30/@edges.9 //@rules.30/@edges.10 //@rules.30/@edges.11 //@rules.30/@edges.12">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
     </nodes>
-    <nodes name="tClass" domainType="TRG" incomingEdges="//@rules.30/@edges.1 //@rules.30/@edges.10 //@rules.30/@edges.11 //@rules.30/@edges.17" outgoingEdges="//@rules.30/@edges.13 //@rules.30/@edges.15" incomingCorrsTarget="//@rules.30/@nodes.5">
+    <nodes name="tClass" domainType="TRG" incomingEdges="//@rules.30/@edges.1 //@rules.30/@edges.9 //@rules.30/@edges.10 //@rules.30/@edges.17" outgoingEdges="//@rules.30/@edges.13 //@rules.30/@edges.15" incomingCorrsTarget="//@rules.30/@nodes.5">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </nodes>
-    <nodes name="tNestedType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.30/@edges.3 //@rules.30/@edges.5 //@rules.30/@edges.7 //@rules.30/@edges.9 //@rules.30/@edges.12 //@rules.30/@edges.13" outgoingEdges="//@rules.30/@edges.16 //@rules.30/@edges.17" incomingCorrsTarget="//@rules.30/@nodes.6 //@rules.30/@nodes.7 //@rules.30/@nodes.8">
+    <nodes name="tNestedType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.30/@edges.3 //@rules.30/@edges.5 //@rules.30/@edges.7 //@rules.30/@edges.11 //@rules.30/@edges.12 //@rules.30/@edges.13" outgoingEdges="//@rules.30/@edges.16 //@rules.30/@edges.17" incomingCorrsTarget="//@rules.30/@nodes.6 //@rules.30/@nodes.7 //@rules.30/@nodes.8">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="eAnonymousClassDeclarationToTClass" domainType="CORR" outgoingEdges="//@rules.30/@edges.0 //@rules.30/@edges.1" source="//@rules.30/@nodes.0" target="//@rules.30/@nodes.3">
@@ -1820,9 +1820,6 @@
     <edges name="mNestedType__anonymousClassDeclarationOwner__eAnonymousClassDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.30/@nodes.1" trgNode="//@rules.30/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/anonymousClassDeclarationOwner"/>
     </edges>
-    <edges name="pg__classes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.30/@nodes.2" trgNode="//@rules.30/@nodes.4">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-    </edges>
     <edges name="pg__classes__tClass_eMoflonEdge" domainType="TRG" srcNode="//@rules.30/@nodes.2" trgNode="//@rules.30/@nodes.3">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
@@ -1831,6 +1828,9 @@
     </edges>
     <edges name="pg__ownedTypes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.30/@nodes.2" trgNode="//@rules.30/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+    </edges>
+    <edges name="pg__classes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.30/@nodes.2" trgNode="//@rules.30/@nodes.4">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
     <edges name="tClass__innerTypes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.30/@nodes.3" trgNode="//@rules.30/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>
@@ -2546,10 +2546,10 @@
     <nodes name="tAnnotation" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.38/@edges.12" outgoingEdges="//@rules.38/@edges.17">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TEnum"/>
     </nodes>
-    <nodes name="tClass" domainType="TRG" incomingEdges="//@rules.38/@edges.1 //@rules.38/@edges.8 //@rules.38/@edges.9 //@rules.38/@edges.16" outgoingEdges="//@rules.38/@edges.11 //@rules.38/@edges.14" incomingCorrsTarget="//@rules.38/@nodes.6">
+    <nodes name="tClass" domainType="TRG" incomingEdges="//@rules.38/@edges.1 //@rules.38/@edges.7 //@rules.38/@edges.8 //@rules.38/@edges.16" outgoingEdges="//@rules.38/@edges.11 //@rules.38/@edges.14" incomingCorrsTarget="//@rules.38/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </nodes>
-    <nodes name="tNestedType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.38/@edges.3 //@rules.38/@edges.5 //@rules.38/@edges.7 //@rules.38/@edges.10 //@rules.38/@edges.11 //@rules.38/@edges.17" outgoingEdges="//@rules.38/@edges.12 //@rules.38/@edges.15 //@rules.38/@edges.16" incomingCorrsTarget="//@rules.38/@nodes.7 //@rules.38/@nodes.8">
+    <nodes name="tNestedType" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.38/@edges.3 //@rules.38/@edges.5 //@rules.38/@edges.9 //@rules.38/@edges.10 //@rules.38/@edges.11 //@rules.38/@edges.17" outgoingEdges="//@rules.38/@edges.12 //@rules.38/@edges.15 //@rules.38/@edges.16" incomingCorrsTarget="//@rules.38/@nodes.7 //@rules.38/@nodes.8">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </nodes>
     <nodes xsi:type="language:TGGRuleCorr" name="eAnonymousClassDeclarationToTClass" domainType="CORR" outgoingEdges="//@rules.38/@edges.0 //@rules.38/@edges.1" source="//@rules.38/@nodes.0" target="//@rules.38/@nodes.4">
@@ -2582,9 +2582,6 @@
     <edges name="mNestedType__anonymousClassDeclarationOwner__eAnonymousClassDeclaration_eMoflonEdge" bindingType="CREATE" srcNode="//@rules.38/@nodes.1" trgNode="//@rules.38/@nodes.0">
       <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/anonymousClassDeclarationOwner"/>
     </edges>
-    <edges name="pg__classes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.5">
-      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-    </edges>
     <edges name="pg__classes__tClass_eMoflonEdge" domainType="TRG" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.4">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
@@ -2593,6 +2590,9 @@
     </edges>
     <edges name="pg__ownedTypes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.5">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+    </edges>
+    <edges name="pg__classes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.2" trgNode="//@rules.38/@nodes.5">
+      <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
     </edges>
     <edges name="tClass__innerTypes__tNestedType_eMoflonEdge" domainType="TRG" bindingType="CREATE" srcNode="//@rules.38/@nodes.4" trgNode="//@rules.38/@nodes.5">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/innerTypes"/>
@@ -5639,12 +5639,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.79/@edges.3 //@rules.79/@edges.5 //@rules.79/@edges.7 //@rules.79/@edges.8" outgoingEdges="//@rules.79/@edges.9" incomingCorrsTarget="//@rules.79/@nodes.5 //@rules.79/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;boolean&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.79/@edges.1 //@rules.79/@edges.9" outgoingEdges="//@rules.79/@edges.7 //@rules.79/@edges.8" incomingCorrsTarget="//@rules.79/@nodes.4">
@@ -5701,12 +5701,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.80/@edges.3 //@rules.80/@edges.5 //@rules.80/@edges.7 //@rules.80/@edges.8" outgoingEdges="//@rules.80/@edges.9" incomingCorrsTarget="//@rules.80/@nodes.5 //@rules.80/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;byte&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.80/@edges.1 //@rules.80/@edges.9" outgoingEdges="//@rules.80/@edges.7 //@rules.80/@edges.8" incomingCorrsTarget="//@rules.80/@nodes.4">
@@ -5763,12 +5763,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.81/@edges.3 //@rules.81/@edges.5 //@rules.81/@edges.7 //@rules.81/@edges.8" outgoingEdges="//@rules.81/@edges.9" incomingCorrsTarget="//@rules.81/@nodes.5 //@rules.81/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;char&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.81/@edges.1 //@rules.81/@edges.9" outgoingEdges="//@rules.81/@edges.7 //@rules.81/@edges.8" incomingCorrsTarget="//@rules.81/@nodes.4">
@@ -5825,12 +5825,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.82/@edges.3 //@rules.82/@edges.5 //@rules.82/@edges.7 //@rules.82/@edges.8" outgoingEdges="//@rules.82/@edges.9" incomingCorrsTarget="//@rules.82/@nodes.5 //@rules.82/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;double&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.82/@edges.1 //@rules.82/@edges.9" outgoingEdges="//@rules.82/@edges.7 //@rules.82/@edges.8" incomingCorrsTarget="//@rules.82/@nodes.4">
@@ -5887,12 +5887,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.83/@edges.3 //@rules.83/@edges.5 //@rules.83/@edges.7 //@rules.83/@edges.8" outgoingEdges="//@rules.83/@edges.9" incomingCorrsTarget="//@rules.83/@nodes.5 //@rules.83/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;float&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.83/@edges.1 //@rules.83/@edges.9" outgoingEdges="//@rules.83/@edges.7 //@rules.83/@edges.8" incomingCorrsTarget="//@rules.83/@nodes.4">
@@ -6135,12 +6135,12 @@
     <nodes name="tPrimitiveClass" domainType="TRG" bindingType="CREATE" incomingEdges="//@rules.87/@edges.3 //@rules.87/@edges.5 //@rules.87/@edges.7 //@rules.87/@edges.8" outgoingEdges="//@rules.87/@edges.9" incomingCorrsTarget="//@rules.87/@nodes.5 //@rules.87/@nodes.6">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attrExpr>
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
-        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
-      </attrExpr>
-      <attrExpr>
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
         <valueExpr xsi:type="language:TGGLiteralExpression" value="&quot;void&quot;"/>
+      </attrExpr>
+      <attrExpr>
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
+        <valueExpr xsi:type="language:TGGLiteralExpression" value="true"/>
       </attrExpr>
     </nodes>
     <nodes name="typeGraph" domainType="TRG" incomingEdges="//@rules.87/@edges.1 //@rules.87/@edges.9" outgoingEdges="//@rules.87/@edges.7 //@rules.87/@edges.8" incomingCorrsTarget="//@rules.87/@nodes.4">
@@ -6396,7 +6396,7 @@
   </rules>
   <rules name="SuperConstructorInvocation">
     <nodes name="invocation" bindingType="CREATE" incomingEdges="//@rules.92/@edges.0 //@rules.92/@edges.2 //@rules.92/@edges.9 //@rules.92/@edges.12" outgoingEdges="//@rules.92/@edges.8" incomingCorrsSource="//@rules.92/@nodes.6 //@rules.92/@nodes.7">
-      <type href="http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
+      <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SuperConstructorInvocation"/>
     </nodes>
     <nodes name="mMember" incomingEdges="//@rules.92/@edges.4" outgoingEdges="//@rules.92/@edges.9" incomingCorrsSource="//@rules.92/@nodes.8">
       <type href="http://www.gravity-tool.org/modisco#//MDefinition"/>

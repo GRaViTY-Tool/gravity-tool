@@ -23,7 +23,7 @@ public class TGGApp extends SYNC {
 	 * @throws IOException If one of the models cannot be loaded
 	 */
 	public TGGApp(final IProject project) throws IOException {
-		super(new RegistrationHelper().createIbexOptions().setResourceHandler(new GravityPMResourceHandler(project)));
+		super(new RegistrationHelper().createIbexOptions().resourceHandler(new GravityPMResourceHandler(project)));
 	}
 
 	public static class RegistrationHelper implements IRegistrationHelper {
@@ -36,11 +36,11 @@ public class TGGApp extends SYNC {
 		@Override
 		public IbexOptions createIbexOptions() {
 			final IbexOptions options = new IbexOptions();
-			options.projectName("Modisco"); //$NON-NLS-1$
-			options.projectPath(MoDiscoTGGActivator.PLUGIN_ID);
-			options.debug(GravityActivator.getDefault().isVerbose());
-			options.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
-			options.setBlackInterpreter(new DemoclesTGGEngine());
+			options.project.name("Modisco"); //$NON-NLS-1$
+			options.project.path(MoDiscoTGGActivator.PLUGIN_ID);
+			options.debug.ibexDebug(GravityActivator.getDefault().isVerbose());
+			options.csp.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
+			options.blackInterpreter(new DemoclesTGGEngine());
 			options.registrationHelper(this);
 			return options;
 		}

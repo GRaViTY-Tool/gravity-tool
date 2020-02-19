@@ -93,7 +93,7 @@ public final class GravityUmlresourceHandler extends TGGResourceHandler {
 					new XMIResourceFactoryImpl());
 			try {
 				EMFDemoclesPatternMetamodelPlugin.setWorkspaceRootDirectory(rs,
-						new File(options.workspacePath()).getCanonicalPath());
+						new File(options.project.workspacePath()).getCanonicalPath());
 			} catch (IOException e) {
 				LOGGER.error(e.getLocalizedMessage(), e);
 			}
@@ -129,7 +129,7 @@ public final class GravityUmlresourceHandler extends TGGResourceHandler {
 		this.rs.getResources().remove(ModiscoPackage.eINSTANCE.eResource());
 		final EPackage tggPackage = loadMetaModelPackage(UML_ECORE);
 		registerPackage(tggPackage);
-		this.options.setCorrMetamodel(tggPackage);
+		this.options.tgg.corrMetamodel(tggPackage);
 	}
 
 	private void registerPackage(final EPackage ePackage) {
