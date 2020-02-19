@@ -18,7 +18,7 @@ import org.gravity.refactorings.configuration.impl.ExtractClassConfiguration;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
@@ -81,7 +81,7 @@ public class ExtractClass implements Refactoring {
 	private boolean checkMember(TMember tMember) {
 		if (tMember instanceof TMethodDefinition) {
 			final TMethodDefinition mDef = (TMethodDefinition) tMember;
-			if (mDef instanceof TConstructorDefinition) {
+			if (TConstructor.isConstructor(mDef)) {
 				return false;
 			}
 			if (mDef.getOverriding() != null || !mDef.getOverriddenBy().isEmpty()) {

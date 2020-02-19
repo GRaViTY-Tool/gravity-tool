@@ -15,4 +15,8 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
  * @generated
  */
 public interface TConstructor extends TAnnotation {
+	
+	public static boolean isConstructor(TMember method) {
+		return !method.getTAnnotation(BasicPackage.eINSTANCE.getTConstructor()).isEmpty();
+	}
 } // TConstructor

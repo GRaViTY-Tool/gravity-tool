@@ -18,7 +18,7 @@ import org.gravity.hulk.detection.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TInterface;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
@@ -145,7 +145,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 		final TModifier tModifier = tMember.getTModifier();
 		final TAbstractType tType = tMember.getDefinedBy();
 		if (tModifier == null) {
-			if (tMember instanceof TConstructorDefinition) {
+			if (tMember instanceof TMethodDefinition && TConstructor.isConstructor((TMethodDefinition) tMember)) {
 				if (LOGGER.isInfoEnabled()) {
 					LOGGER.info("Skipped constructor \"" + tMember.getSignatureString()
 					+ "\" it is probably a default constructor and has no modifer.");

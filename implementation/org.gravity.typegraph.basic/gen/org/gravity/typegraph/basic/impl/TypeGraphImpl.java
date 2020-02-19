@@ -709,7 +709,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			type = getOwnedTypes().parallelStream().filter(element -> element.getTName().equals(typeName)).findAny()
 					.orElse(null);
 		}
-		final int openBraceIndex = signature.indexOf('(');
+		final int openBraceIndex = signature.lastIndexOf('(');
 		if (openBraceIndex < 0) {
 			return getField(signature.substring(0, colonIndex)).getSignatures().parallelStream()
 					.filter(element -> type.equals(element.getType())).findAny().orElse(null);
@@ -720,7 +720,10 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 			name = name.substring(dotIndex + 1);
 		}
 		final TMethod method = getMethod(name);
-		final int closeBraceIndex = signature.indexOf(')');
+		if(method == null) {
+			return null;
+		}
+		final int closeBraceIndex = signature.lastIndexOf(')');
 		final String paramString = signature.substring(openBraceIndex + 1, closeBraceIndex).trim();
 		final String[] params;
 		if (paramString.length() > 0) {
@@ -813,7 +816,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	 */
 	@Override
 	public TMethodDefinition getMethodDefinition(String signature) {
-		int index = signature.lastIndexOf('.', signature.indexOf('('));
+		int index = signature.lastIndexOf('.', signature.lastIndexOf('('));
 		TMethodSignature methodSig = getMethodSignature(signature.substring(index + 1));
 		TAbstractType type = getType(signature.substring(0, index));
 		return type.getDefines().parallelStream().filter(member -> member.getSignature().equals(methodSig)).map(member -> (TMethodDefinition) member).findAny()

@@ -9,7 +9,7 @@ import org.gravity.goblin.preconditions.ChangeVisibilityPreConditions;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TModifier;
 import org.gravity.typegraph.basic.TVisibility;
@@ -49,7 +49,7 @@ public class VisibilityRepairer extends AbstractTransformationSolutionRepairer {
 		for (TMethodDefinition tDef : tClass.getDeclaredTMethodDefinitions()) {
 			List<TAnnotation> metrics = tDef.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());
 			if (metrics.size() != 1) {
-				if (tDef instanceof TConstructorDefinition) {
+				if (TConstructor.isConstructor(tDef)) {
 					LOGGER.warn("Unexpected amount of metrics for \"" + tClass.getFullyQualifiedName()
 							+ "->" + tDef.getSignatureString() + "\".");
 				} else {

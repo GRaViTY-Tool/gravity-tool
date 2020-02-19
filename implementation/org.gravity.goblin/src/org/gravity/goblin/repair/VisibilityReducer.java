@@ -8,7 +8,7 @@ import org.gravity.goblin.EGraphUtil;
 import org.gravity.hulk.antipatterngraph.metrics.HIGAMMetric;
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TFieldDefinition;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -25,7 +25,7 @@ public class VisibilityReducer implements ITransformationRepairer {
 		for (TClass tClass : pg.getClasses()) {
 			if (tClass.isDeclared())
 				for (TMember tMember : tClass.getDefines()) {
-					if (!(tMember instanceof TConstructorDefinition) && !(tMember instanceof TFieldDefinition)) {
+					if (!TConstructor.isConstructor(tMember) && !(tMember instanceof TFieldDefinition)) {
 						EList<TAnnotation> annotations = tMember.getTAnnotation(MetricsPackage.eINSTANCE.getHIGAMMetric());	
 						if(annotations.size() != 1) {
 							throw new IllegalStateException("Unexpected amount of IGAM metrics on \""+tClass.getFullyQualifiedName()+"->"+tMember.getSignatureString()+"\".");

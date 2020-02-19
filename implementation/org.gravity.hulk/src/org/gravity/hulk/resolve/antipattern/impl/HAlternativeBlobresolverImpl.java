@@ -27,8 +27,9 @@ import org.gravity.hulk.refactoringgraph.refactorings.HMoveMembers;
 import org.gravity.hulk.resolve.antipattern.AntipatternPackage;
 import org.gravity.hulk.resolve.antipattern.HAlternativeBlobresolver;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TConstructorDefinition;
+import org.gravity.typegraph.basic.TConstructor;
 import org.gravity.typegraph.basic.TMember;
+import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 
 /**
@@ -125,7 +126,7 @@ public class HAlternativeBlobresolverImpl extends HBlobResolverImpl implements H
 			if (!allowedToTouch(member)) {
 				return false;
 			}
-			if (member instanceof TConstructorDefinition) {
+			if (member instanceof TMethodDefinition && TConstructor.isConstructor((TMethodDefinition) member)) {
 				return false;
 			}
 		}

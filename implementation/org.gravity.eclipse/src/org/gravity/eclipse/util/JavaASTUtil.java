@@ -293,7 +293,7 @@ public final class JavaASTUtil {
 			if (p instanceof SingleVariableDeclaration) {
 				final SingleVariableDeclaration var = (SingleVariableDeclaration) p;
 				final Type vt = var.getType();
-				if (vt.toString().equals(tParam.getType().getTName())) {
+				if (vt.toString().replace("[]", "").equals(tParam.getType().getTName())) {
 					tParam = tParam.getNext();
 				} else {
 					return false;

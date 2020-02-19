@@ -46,10 +46,10 @@
         <setEntry value="org.gravity.tgg.modisco.ui"/>
         <setEntry value="org.gravity.tgg.modisco.uml.tests"/>
         <setEntry value="org.gravity.typegraph.delta.tests"/>
-        <setEntry value="org.xtext.example.mydsl"/>
-        <setEntry value="org.xtext.example.mydsl.ide"/>
-        <setEntry value="org.xtext.example.mydsl.ui"/>
-        <setEntry value="org.xtext.example.mydsl.ui.tests"/>
+        <setEntry value="org.xtext.example.secdfd"/>
+        <setEntry value="org.xtext.example.secdfd.ide"/>
+        <setEntry value="org.xtext.example.secdfd.ui"/>
+        <setEntry value="org.xtext.example.secdfd.ui.tests"/>
     </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <stringAttribute key="location" value="${workspace_loc:org.gravity.tgg.tests/java_src}"/>

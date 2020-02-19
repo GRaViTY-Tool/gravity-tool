@@ -5,6 +5,7 @@
   <units xsi:type="henshin:Rule" xmi:id="_XeAE0G2jEem0WdBjFndsOw" name="blob">
     <lhs xmi:id="_XeInsG2jEem0WdBjFndsOw" name="Lhs">
       <nodes xmi:id="_hUqA4G2jEem0WdBjFndsOw" incoming="_mqakoG2jEem0WdBjFndsOw">
+        <annotations xmi:id="_VPNA8FIvEeqPqObP8mhQ2w" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HDataClassAccessor"/>
       </nodes>
       <nodes xmi:id="_iwMKwG2jEem0WdBjFndsOw" outgoing="_mVRbEG2jEem0WdBjFndsOw _mqakoG2jEem0WdBjFndsOw">

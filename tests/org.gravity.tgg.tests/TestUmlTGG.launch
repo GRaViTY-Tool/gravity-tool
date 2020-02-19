@@ -645,10 +645,10 @@
         <setEntry value="org.gravity.typegraph.basic@default:default"/>
         <setEntry value="org.gravity.typegraph.delta.tests@default:default"/>
         <setEntry value="org.gravity.uml.papyrus@default:default"/>
-        <setEntry value="org.xtext.example.mydsl.ide@default:default"/>
-        <setEntry value="org.xtext.example.mydsl.ui.tests@default:default"/>
-        <setEntry value="org.xtext.example.mydsl.ui@default:default"/>
-        <setEntry value="org.xtext.example.mydsl@default:default"/>
+        <setEntry value="org.xtext.example.secdfd.ide@default:default"/>
+        <setEntry value="org.xtext.example.secdfd.ui.tests@default:default"/>
+        <setEntry value="org.xtext.example.secdfd.ui@default:default"/>
+        <setEntry value="org.xtext.example.secdfd@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>
     <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>
