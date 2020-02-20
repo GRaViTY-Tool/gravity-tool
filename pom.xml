@@ -140,7 +140,7 @@
     <repository>
       <id>eMoflon IBEX</id>
       <layout>p2</layout>
-      <url>https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/</url>
+      <url>https://emoflon.org/emoflon-ibex-updatesite/beta/updatesite/</url>
     </repository>
     <repository>
       <id>Henshin</id>
