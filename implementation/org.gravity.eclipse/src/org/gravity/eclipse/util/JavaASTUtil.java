@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -29,6 +33,7 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
+import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
@@ -228,19 +233,30 @@ public final class JavaASTUtil {
 	 * @return The found signature or null
 	 */
 	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pg) {
-		TMethod tMethod = null;
-		for (final TMethod m : pg.getMethods()) {
-			if (m.getTName().equals(method.getName().toString())) {
-				tMethod = m;
-				break;
-			}
-		}
-
-		if (tMethod == null) {
+		String methodName = method.getName().toString();
+		Optional<TMethod> methodOptional = pg.getMethods().parallelStream().filter(m -> methodName.equals(m.getTName())).findAny();
+		if (!methodOptional.isPresent()) {
 			return null;
 		}
-
+		TMethod tMethod = methodOptional.get();
+		
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
+			TAbstractType tReturnType = signature.getReturnType();
+			Type eReturnType = method.getReturnType2();
+			String name = eReturnType.toString().replace("[]", "");
+			if(eReturnType instanceof SimpleType) {
+				ASTNode root = eReturnType.getRoot();
+				if(root instanceof CompilationUnit) {
+					name = ((CompilationUnit) root).getPackage().getName().getFullyQualifiedName() + '.'+name;
+				}
+				else {
+					LOGGER.error("Unknown root: "+root);
+				}
+			}
+			if(!tReturnType.getFullyQualifiedName().equals(name)) {
+				continue;
+			}
+			
 			if (method.parameters().size() != signature.getParameters().size()) {
 				continue;
 			}
