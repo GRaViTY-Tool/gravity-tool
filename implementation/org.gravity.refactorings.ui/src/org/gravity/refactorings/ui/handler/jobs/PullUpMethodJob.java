@@ -19,6 +19,7 @@ import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.refactorings.impl.PullUpMethod;
 import org.gravity.refactorings.ui.Messages;
 import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TParameter;
@@ -60,9 +61,12 @@ public final class PullUpMethodJob extends WorkspaceJob {
 		}
 		final TypeGraph pg = converter.getPG();
 
-		final TClass tChild = JavaASTUtil.getTClass(this.childType, pg);
+		final TAbstractType tChild = JavaASTUtil.getType(this.childType, pg);
 		if (tChild != null) {
-			final TClass tParent = tChild.getParentClass();
+			if(!(tChild instanceof TClass)) {
+				asyncPrintError(this.shell, Messages.refactoringNotPossible, Messages.pullUpMethodNotPossible);
+			}
+			final TClass tParent = ((TClass) tChild).getParentClass();
 			final TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(this.method, pg);
 
 			final PullUpMethod refactoring = new PullUpMethod();

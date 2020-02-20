@@ -22,6 +22,7 @@ import org.gravity.eclipse.util.JavaASTUtil;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.impl.MoveMethod;
 import org.gravity.refactorings.ui.Messages;
+import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -64,7 +65,7 @@ public final class MOMJob extends WorkspaceJob {
 		final TypeGraph pg = converter.getPG();
 
 		// Gets class for child type; rpl with source class
-		final TClass sourceClass = JavaASTUtil.getTClass(this.sourceType, pg);
+		final TAbstractType sourceClass = JavaASTUtil.getType(this.sourceType, pg);
 		if (sourceClass != null) {
 			final TClass targetClass = pg.getClass(this.targetClassName);
 			if (targetClass == null) {
@@ -74,13 +75,15 @@ public final class MOMJob extends WorkspaceJob {
 			final TMethodSignature tSignature = JavaASTUtil.getTMethodSignature(this.method, pg);
 			final MoveMethod momRefactoring = new MoveMethod();
 
-			if (momRefactoring.isApplicable(tSignature, targetClass, sourceClass)) { // Already changed to new
+			if (sourceClass instanceof TClass
+					&& momRefactoring.isApplicable(tSignature, targetClass, (TClass) sourceClass)) { // Already changed
+																										// to new
 				// isApplicable
 				Display.getDefault().asyncExec(() -> {
 
 					converter.syncProjectBwd(synchronizationHelper -> {
 						try {
-							momRefactoring.perform(tSignature, targetClass, sourceClass);
+							momRefactoring.perform(tSignature, targetClass, (TClass) sourceClass);
 						} catch (final RefactoringFailedException e) {
 							LOGGER.error(e.getMessage(), e);
 						}

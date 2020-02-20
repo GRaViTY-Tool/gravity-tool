@@ -12,6 +12,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import javax.lang.model.type.ArrayType;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -30,9 +32,14 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.core.dom.ASTNode;
+import org.eclipse.jdt.core.dom.AnnotatableType;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.Name;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
+import org.eclipse.jdt.core.dom.ParameterizedType;
+import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Type;
@@ -159,49 +166,89 @@ public final class JavaASTUtil {
 	}
 
 	/**
-	 * Searches for the TClass corresponding to a type declaration
+	 * Searches for the pm type corresponding to a type declaration
 	 *
 	 * @param type The type declaration
-	 * @param pg   The program model in which should be searched
-	 * @return the tClass
+	 * @param pm   The program model in which should be searched
+	 * @return the type from the pm
 	 */
-	public static TClass getTClass(TypeDeclaration type, TypeGraph pg) {
-		TClass tChild = null;
+	public static TAbstractType getType(TypeDeclaration type, TypeGraph pm) {
+		SimpleName name = type.getName();
+		String fullyQualifiedName = name.getFullyQualifiedName();
+		if (name.isQualifiedName()) {
+			return pm.getType(fullyQualifiedName);
+		}
 
-		final ASTNode tmpASTNode2 = type.getParent();
-		if (tmpASTNode2 instanceof CompilationUnit) {
-			final CompilationUnit childcu = (CompilationUnit) tmpASTNode2;
+		final ASTNode parent = type.getParent();
+		if (parent instanceof CompilationUnit) {
+			final CompilationUnit childcu = (CompilationUnit) parent;
 
-			final PackageDeclaration childPackage = childcu.getPackage();
-
-			final String[] names = childPackage.getName().getFullyQualifiedName().split("\\."); //$NON-NLS-1$
-			EList<TPackage> packages = pg.getPackages();
-			TPackage next = null;
-			for (final String name : names) {
-				for (final TPackage p : packages) {
-					if (p.getTName().equals(name)) {
-						next = p;
-						break;
-					}
-				}
-				if (next == null) {
-					break;
-				} else {
-					packages = next.getSubpackage();
-				}
-			}
-			if (next == null) {
+			TPackage tPackage = pm.getPackage(childcu.getPackage().getName().getFullyQualifiedName());
+			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
+			return tPackage.getOwnedTypes().parallelStream().filter(tType -> fullyQualifiedName.equals(tType.getTName()))
+					.findAny().orElse(null);
+		}
+		return null;
+	}
 
-			for (final TClass c : next.getClasses()) {
-				if (c.getTName().equals(type.getName().toString())) {
-					tChild = c;
-					break;
+	/**
+	 * Searches for the pm type corresponding to a type
+	 *
+	 * @param type A type
+	 * @param pm   The program model in which should be searched
+	 * @return the type from the pm
+	 */
+	public static TAbstractType getType(Type type, TypeGraph pm) {
+		Name typeName = getName(type);
+		String fullyQualifiedName = typeName.getFullyQualifiedName();
+		if (typeName.isQualifiedName()) {
+			return pm.getType(fullyQualifiedName);
+		}
+		ASTNode root = type.getRoot();
+		if (root instanceof CompilationUnit) {
+			CompilationUnit cu = (CompilationUnit) root;
+			for (Object entry : cu.imports()) {
+				ImportDeclaration imp = (ImportDeclaration) entry;
+				String importedPackage = imp.getName().getFullyQualifiedName();
+
+				if (imp.isOnDemand()) {
+					TAbstractType tAbstractType = pm.getType(importedPackage + '.' + typeName);
+					if (tAbstractType != null) {
+						return tAbstractType;
+					}
+				} else {
+					String name = importedPackage.substring(importedPackage.lastIndexOf('.') + 1);
+					if (name.equals(fullyQualifiedName)) {
+						return pm.getType(importedPackage);
+					}
 				}
 			}
+			LOGGER.error("Couldn't find SimpleType: " + fullyQualifiedName);
+		} else {
+			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
 		}
-		return tChild;
+		return null;
+	}
+
+	/**
+	 * Gets the name object for the given type
+	 * 
+	 * @param type A type
+	 * @return The name object
+	 */
+	private static Name getName(Type type) {
+		if (type instanceof SimpleType) {
+			return ((SimpleType) type).getName();
+		} else if (type instanceof ArrayType) {
+			((ArrayType) type).getComponentType();
+
+		} else if (type instanceof ParameterizedType) {
+			return getName(((ParameterizedType) type).getType());
+		}
+		LOGGER.error("Type is not covered: " + type);
+		return null;
 	}
 
 	/**
@@ -213,7 +260,7 @@ public final class JavaASTUtil {
 	 * @return The found definition or null
 	 */
 	public static TMethodDefinition getTMethodDefinition(MethodDeclaration method, TypeGraph pm) {
-		final TClass type = getTClass((TypeDeclaration) method.getParent(), pm);
+		final TAbstractType type = getType((TypeDeclaration) method.getParent(), pm);
 		if (type == null) {
 			return null;
 		}
@@ -229,34 +276,24 @@ public final class JavaASTUtil {
 	 * declarations signature
 	 *
 	 * @param method The method declaration
-	 * @param pg     The program model
+	 * @param pm     The program model
 	 * @return The found signature or null
 	 */
-	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pg) {
+	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pm) {
 		String methodName = method.getName().toString();
-		Optional<TMethod> methodOptional = pg.getMethods().parallelStream().filter(m -> methodName.equals(m.getTName())).findAny();
+		Optional<TMethod> methodOptional = pm.getMethods().parallelStream().filter(m -> methodName.equals(m.getTName()))
+				.findAny();
 		if (!methodOptional.isPresent()) {
 			return null;
 		}
 		TMethod tMethod = methodOptional.get();
-		
+
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
-			TAbstractType tReturnType = signature.getReturnType();
-			Type eReturnType = method.getReturnType2();
-			String name = eReturnType.toString().replace("[]", "");
-			if(eReturnType instanceof SimpleType) {
-				ASTNode root = eReturnType.getRoot();
-				if(root instanceof CompilationUnit) {
-					name = ((CompilationUnit) root).getPackage().getName().getFullyQualifiedName() + '.'+name;
-				}
-				else {
-					LOGGER.error("Unknown root: "+root);
-				}
-			}
-			if(!tReturnType.getFullyQualifiedName().equals(name)) {
+			TAbstractType tExpectedReturnType = getType(method.getReturnType2(), pm);
+			if (!signature.getReturnType().equals(tExpectedReturnType)) {
 				continue;
 			}
-			
+
 			if (method.parameters().size() != signature.getParameters().size()) {
 				continue;
 			}
