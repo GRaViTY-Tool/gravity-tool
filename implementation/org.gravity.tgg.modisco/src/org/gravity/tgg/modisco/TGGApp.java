@@ -1,8 +1,7 @@
 package org.gravity.tgg.modisco;
 
 import java.io.IOException;
-import java.util.Set;
-
+import org.apache.log4j.Level;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.emoflon.ibex.tgg.compiler.defaults.IRegistrationHelper;
@@ -24,13 +23,19 @@ public class TGGApp extends SYNC {
 	 */
 	public TGGApp(final IProject project) throws IOException {
 		super(new RegistrationHelper().createIbexOptions().resourceHandler(new GravityPMResourceHandler(project)));
+		if(GravityActivator.getDefault().isVerbose()) {
+			logger.setLevel(Level.ALL);
+		}
+		else {
+			logger.setLevel(Level.ERROR);
+		}
 	}
 
 	public static class RegistrationHelper implements IRegistrationHelper {
 		
 		@Override
 		public void registerMetamodels(ResourceSet rs, IbexExecutable executable) throws IOException {
-			
+			// Metamodels will be loaded from the according extension point
 		}
 
 		@Override
