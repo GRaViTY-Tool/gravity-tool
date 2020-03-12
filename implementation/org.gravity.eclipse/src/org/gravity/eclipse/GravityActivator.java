@@ -2,6 +2,8 @@ package org.gravity.eclipse;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -53,7 +55,7 @@ public class GravityActivator extends Plugin {
 	private final HashMap<String, EObject> targets;
 
 	/** All converted projects with project name as key */
-	private final Map<String, IProject> project;
+	private final ConcurrentMap<String, IProject> project;
 
 	/** The verbose state (not only for this plugin). */
 	private boolean verbose;
@@ -78,7 +80,7 @@ public class GravityActivator extends Plugin {
 	public GravityActivator() {
 		this.sources = new HashMap<>();
 		this.targets = new HashMap<>();
-		this.project = new HashMap<>();
+		this.project = new ConcurrentHashMap<>();
 		this.converters = new HashMap<>();
 	}
 
@@ -299,7 +301,7 @@ public class GravityActivator extends Plugin {
 	 * @param tName The name of the project
 	 * @return the according eclipse project
 	 */
-	public IProject getProject(String tName) {
+	synchronized public IProject getProject(String tName) {
 		return this.project.get(tName);
 	}
 
