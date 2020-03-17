@@ -2,6 +2,7 @@ package org.gravity.tgg.modisco;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,7 +45,8 @@ public class MoDiscoTGGActivator extends Plugin {
 		final IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
 				.getConfigurationElementsFor("org.gravity.modisco.patcher"); //$NON-NLS-1$
 		if (configurationElements.length > 0) {
-			setSelectedPatcher((GravityMoDiscoModelPatcher) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
+			setSelectedPatcher(
+					(GravityMoDiscoModelPatcher) configurationElements[0].createExecutableExtension("class")); //$NON-NLS-1$
 		}
 	}
 
@@ -57,7 +59,7 @@ public class MoDiscoTGGActivator extends Plugin {
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		final IProgressMonitor monitor = new NullProgressMonitor();
-		for(final MoDiscoTGGConverter converter : this.converters) {
+		for (final MoDiscoTGGConverter converter : this.converters) {
 			converter.save(monitor);
 			converter.discard();
 		}
@@ -82,16 +84,19 @@ public class MoDiscoTGGActivator extends Plugin {
 		return this.patcher;
 	}
 
-
 	/**
 	 * Returns a stream for the given Entry
 	 *
-	 * @param entry The location of the entry within this plugin
+	 * @param location The location of the entry within this plugin
 	 * @return The stream
 	 * @throws IOException If the entry doesn't exist inside this plugin
 	 */
-	public static InputStream getEntryAsStream(String entry) throws IOException {
-		return plugin.getBundle().getEntry(entry).openStream();
+	public static InputStream getEntryAsStream(String location) throws IOException {
+		URL entry = plugin.getBundle().getEntry(location);
+		if (entry == null) {
+			throw new IOException("File not found within plugin \"" + PLUGIN_ID + "\": " + location);
+		}
+		return entry.openStream();
 	}
 
 	public void addConverter(MoDiscoTGGConverter converter) {
