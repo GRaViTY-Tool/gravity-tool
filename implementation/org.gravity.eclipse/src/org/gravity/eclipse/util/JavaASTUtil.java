@@ -187,8 +187,8 @@ public final class JavaASTUtil {
 			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
-			return tPackage.getOwnedTypes().parallelStream().filter(tType -> fullyQualifiedName.equals(tType.getTName()))
-					.findAny().orElse(null);
+			return tPackage.getOwnedTypes().parallelStream()
+					.filter(tType -> fullyQualifiedName.equals(tType.getTName())).findAny().orElse(null);
 		}
 		return null;
 	}
@@ -225,6 +225,15 @@ public final class JavaASTUtil {
 					}
 				}
 			}
+			TPackage cuPackage = pm.getPackage(cu.getPackage().getName().getFullyQualifiedName());
+			if (cuPackage != null) {
+				Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
+						.filter(pmType -> pmType.getTName().equals(typeName.getFullyQualifiedName())).findAny();
+				if (result.isPresent()) {
+					return result.get();
+				}
+			}
+
 			LOGGER.error("Couldn't find SimpleType: " + fullyQualifiedName);
 		} else {
 			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
