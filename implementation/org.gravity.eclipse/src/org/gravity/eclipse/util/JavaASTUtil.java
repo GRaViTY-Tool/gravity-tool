@@ -4,22 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
-
-import javax.lang.model.type.ArrayType;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
@@ -32,20 +26,19 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.core.dom.ASTNode;
-import org.eclipse.jdt.core.dom.AnnotatableType;
+import org.eclipse.jdt.core.dom.ArrayType;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.Name;
-import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.ParameterizedType;
+import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.gravity.typegraph.basic.TAbstractType;
-import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
@@ -201,9 +194,11 @@ public final class JavaASTUtil {
 	 * @return the type from the pm
 	 */
 	public static TAbstractType getType(Type type, TypeGraph pm) {
-		Name typeName = getName(type);
-		String fullyQualifiedName = typeName.getFullyQualifiedName();
-		if (typeName.isQualifiedName()) {
+		if(type.isPrimitiveType()) {
+			return pm.getType(type.toString());
+		}
+		String fullyQualifiedName = getName(type);;
+		if (fullyQualifiedName.indexOf('.') > 0) {
 			return pm.getType(fullyQualifiedName);
 		}
 		ASTNode root = type.getRoot();
@@ -214,7 +209,7 @@ public final class JavaASTUtil {
 				String importedPackage = imp.getName().getFullyQualifiedName();
 
 				if (imp.isOnDemand()) {
-					TAbstractType tAbstractType = pm.getType(importedPackage + '.' + typeName);
+					TAbstractType tAbstractType = pm.getType(importedPackage + '.' + fullyQualifiedName);
 					if (tAbstractType != null) {
 						return tAbstractType;
 					}
@@ -228,7 +223,7 @@ public final class JavaASTUtil {
 			TPackage cuPackage = pm.getPackage(cu.getPackage().getName().getFullyQualifiedName());
 			if (cuPackage != null) {
 				Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
-						.filter(pmType -> pmType.getTName().equals(typeName.getFullyQualifiedName())).findAny();
+						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
 				if (result.isPresent()) {
 					return result.get();
 				}
@@ -238,7 +233,7 @@ public final class JavaASTUtil {
 		} else {
 			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
 		}
-		return null;
+		return pm.getType(fullyQualifiedName);
 	}
 
 	/**
@@ -247,14 +242,17 @@ public final class JavaASTUtil {
 	 * @param type A type
 	 * @return The name object
 	 */
-	private static Name getName(Type type) {
-		if (type instanceof SimpleType) {
-			return ((SimpleType) type).getName();
-		} else if (type instanceof ArrayType) {
-			((ArrayType) type).getComponentType();
+	private static String getName(Type type) {
+		if (type.isSimpleType()) {
+			return ((SimpleType) type).getName().getFullyQualifiedName();
+		} else if (type.isArrayType()) {
+			return getName(((ArrayType) type).getElementType());
 
-		} else if (type instanceof ParameterizedType) {
+		} else if (type.isParameterizedType()) {
 			return getName(((ParameterizedType) type).getType());
+		}
+		else if (type.isPrimitiveType()) {
+			return ((PrimitiveType) type).toString();
 		}
 		LOGGER.error("Type is not covered: " + type);
 		return null;

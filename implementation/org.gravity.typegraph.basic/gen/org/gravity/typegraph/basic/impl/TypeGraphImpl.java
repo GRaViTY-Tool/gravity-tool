@@ -662,6 +662,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 					return tType;
 				}
 			}
+			return null;
 		}
 		return getOwnedTypes().parallelStream()
 				.filter(type -> type.getPackage() == null && type.getTName().equals(name)).findAny().orElse(null);
