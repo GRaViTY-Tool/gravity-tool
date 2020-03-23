@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -45,30 +46,57 @@ public class PomParser {
 	 * @param results   A mapping between libs and their locations
 	 * @param newLibs   The set of newly discovered libs
 	 */
-	public static void parsePomFile(File pom, File cacheFile, Map<String, Path> results,
-			Set<String> newLibs) {
+	public static void parsePomFile(File pom, File cacheFile, Map<String, Path> results, Set<String> newLibs) {
 		try {
-			final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-			final Document document = factory.newDocumentBuilder().parse(pom);
+			final DocumentBuilder factory = createDocumentBuilder();
+			final Document document = factory.parse(pom);
 			document.getDocumentElement().normalize();
-			final NodeList deps = document.getElementsByTagName("dependency");
-			for (int i = 0; i < deps.getLength(); i++) {
-				final Set<String> libs = new HashSet<>();
-				final String dependency = getDependency(deps.item(i));
-				libs.add(dependency);
-				final Map<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
-				if (subResults.isEmpty()) {
-					if (!results.containsKey(dependency)) {
-						newLibs.add(dependency);
-					}
-				} else {
-					results.putAll(subResults);
-				}
-			}
+			newLibs.addAll(getDependencies(document, cacheFile, results));
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			LOGGER.warn(e);
 		}
+	}
+
+	/**
+	 * Creates a new document builder for parsing pom files
+	 * 
+	 * @return the builder
+	 * @throws ParserConfigurationException
+	 */
+	public static DocumentBuilder createDocumentBuilder() throws ParserConfigurationException {
+		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+		return factory.newDocumentBuilder();
+	}
+
+	/**
+	 * Discovers new libs from the given pom file
+	 * 
+	 * @param pom       The pom file
+	 * @param cacheFile A cache of already discovered libs
+	 * @param results   A mapping between libs and their locations
+	 * @return The by now undiscovered libs
+	 * @throws IOException
+	 * @throws IllegalAccessError
+	 */
+	static Set<String> getDependencies(final Document pom, File cacheFile, Map<String, Path> results)
+			throws IOException, IllegalAccessError {
+		Set<String> newLibs = new HashSet<>();
+		final NodeList deps = pom.getElementsByTagName("dependency");
+		for (int i = 0; i < deps.getLength(); i++) {
+			final Set<String> libs = new HashSet<>();
+			final String dependency = getDependency(deps.item(i));
+			libs.add(dependency);
+			final Map<String, Path> subResults = PomParser.searchInCache(libs, cacheFile);
+			if (subResults.isEmpty()) {
+				if (!results.containsKey(dependency)) {
+					newLibs.add(dependency);
+				}
+			} else {
+				results.putAll(subResults);
+			}
+		}
+		return newLibs;
 	}
 
 	/**
@@ -136,7 +164,7 @@ public class PomParser {
 	/**
 	 * Searches a lib in the cache
 	 *
-	 * @param lib A string representing the lib
+	 * @param lib   A string representing the lib
 	 * @param cache The cache in which the lib should be searched
 	 * @return The lib
 	 */
@@ -164,9 +192,9 @@ public class PomParser {
 	/**
 	 * Searches for the best fitting file based on the name and version
 	 *
-	 * @param name The name of the lib
+	 * @param name    The name of the lib
 	 * @param version The desired version
-	 * @param files The available files
+	 * @param files   The available files
 	 * @return The selected file
 	 */
 	private static Path getBestFit(String name, String version, List<Path> files) {
@@ -217,9 +245,9 @@ public class PomParser {
 		/**
 		 * Creates a new final instance
 		 *
-		 * @param name The name of the lib
+		 * @param name    The name of the lib
 		 * @param version The version of the lib
-		 * @param file The file containing the lib
+		 * @param file    The file containing the lib
 		 */
 		Library(String name, String version, File file) {
 			this.name = name;

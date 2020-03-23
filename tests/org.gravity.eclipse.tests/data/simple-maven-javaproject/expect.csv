@@ -1,0 +1,6 @@
+class,org.gravity.ParentClass
+class,org.gravity.EmptyClass
+class,org.gravity.module.ModuleClass
+jar,log4j-core-2.13.1.jar
+jar,log4j-api-2.13.1.jar
+

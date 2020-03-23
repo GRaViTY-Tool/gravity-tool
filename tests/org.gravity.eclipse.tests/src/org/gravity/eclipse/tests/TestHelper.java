@@ -30,7 +30,9 @@ public final class TestHelper {
 	}
 
 	/**
-	 * Prepares the projects for a parameterized test
+	 * Prepares the projects for a parameterized test:
+	 * 
+	 * Object[]{name:java.lang.String, project:org.eclipse.jdt.core.IJavaProject}
 	 *
 	 * @param importProjects The projects the test should be executed on
 	 * @return The collection containing the prepared test data

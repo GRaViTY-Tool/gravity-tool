@@ -303,7 +303,18 @@ public final class JavaProjectUtil {
 	 * @return A stream containing the classpath entries
 	 */
 	public static Stream<IClasspathEntry> getClasspathEntries(List<IFile> binaries) {
-		return binaries.parallelStream()
+		return getClasspathEntries(binaries.parallelStream());
+
+	}
+
+	/**
+	 * Creates class path entries for the given binary files
+	 *
+	 * @param binaries The files
+	 * @return A stream containing the classpath entries
+	 */
+	public static Stream<IClasspathEntry> getClasspathEntries(final Stream<IFile> binaries) {
+		return binaries
 				.map(b -> new ClasspathEntry(IPackageFragmentRoot.K_BINARY, IClasspathEntry.CPE_LIBRARY,
 						b.getFullPath(), ClasspathEntry.INCLUDE_ALL, // inclusion patterns
 						ClasspathEntry.EXCLUDE_NONE, // exclusion patterns
@@ -311,6 +322,5 @@ public final class JavaProjectUtil {
 						false, // exported
 						ClasspathEntry.NO_ACCESS_RULES, false, // no access rules to combine
 						ClasspathEntry.NO_EXTRA_ATTRIBUTES));
-
 	}
 }

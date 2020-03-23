@@ -3,10 +3,8 @@
  */
 package org.gravity.eclipse.importer.gradle;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -16,6 +14,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.gravity.eclipse.io.FileUtils;
+import org.gravity.eclipse.os.Execute;
 import org.gravity.eclipse.os.OperationSystem;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 
@@ -26,7 +25,7 @@ import org.gravity.eclipse.os.UnsupportedOperationSystemException;
  * @author speldszus
  *
  */
-class GradleBuild {
+public class GradleBuild {
 
 	private static final Logger LOGGER = Logger.getLogger(GradleBuild.class);
 
@@ -74,8 +73,8 @@ class GradleBuild {
 	 * @throws InterruptedException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	boolean buildGradleProject(final File gradleRootFolder, final Iterable<Path> buildDotGradleFiles, final boolean androidApp)
-			throws IOException, InterruptedException, UnsupportedOperationSystemException {
+	boolean buildGradleProject(final File gradleRootFolder, final Iterable<Path> buildDotGradleFiles,
+			final boolean androidApp) throws IOException, InterruptedException, UnsupportedOperationSystemException {
 		File gradlew = new File(gradleRootFolder, "gradlew");
 		if (!gradlew.exists()) {
 			if (this.gradleBin == null) {
@@ -96,7 +95,7 @@ class GradleBuild {
 		}
 
 		Process process = createBuildProcess(gradleRootFolder, "assemble");
-		final StringBuilder message = collectMessages(process);
+		final StringBuilder message = Execute.collectMessages(process);
 		process.waitFor();
 		process.destroy();
 
@@ -109,7 +108,7 @@ class GradleBuild {
 			}
 			if (fix) {
 				process = createBuildProcess(gradleRootFolder, "assemble");
-				collectMessages(process);
+				Execute.collectMessages(process);
 				process.waitFor();
 
 				success = process.exitValue() == 0;
@@ -128,42 +127,21 @@ class GradleBuild {
 	 * @throws IOException
 	 * @throws UnsupportedOperationSystemException
 	 */
-	private static Process createBuildProcess(final File path, final String buildTarget)
+	public static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
 		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			process = Runtime.getRuntime().exec(new String[] {"cmd /c gradlew " , buildTarget}, null, path);
+			process = Runtime.getRuntime().exec(new String[] { "cmd /c gradlew ", buildTarget }, null, path);
 			break;
 		case LINUX:
-			process = Runtime.getRuntime().exec(new String[] {"./gradlew " , buildTarget}, null, path);
+			process = Runtime.getRuntime().exec(new String[] { "./gradlew ", buildTarget }, null, path);
 			break;
 		default:
 			LOGGER.warn("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 		return process;
-	}
-
-	/**
-	 * @param location The location of the gradle project
-	 * @param target   The build target
-	 * @throws IOException
-	 * @throws UnsupportedOperationSystemException
-	 * @throws InterruptedException
-	 * @return true, iff the project has been build successfully
-	 */
-	public static boolean build(final File location, final String target) {
-		try {
-			final Process process = createBuildProcess(location, target);
-			GradleBuild.collectMessages(process);
-			process.waitFor();
-			return process.exitValue() == 0;
-		} catch (InterruptedException | IOException | UnsupportedOperationSystemException e) {
-			LOGGER.log(Level.ERROR, e.getLocalizedMessage(), e);
-			Thread.currentThread().interrupt();
-		}
-		return false;
 	}
 
 	/**
@@ -194,31 +172,21 @@ class GradleBuild {
 	}
 
 	/**
-	 * Collects content of error and output stream in a single string builder
-	 *
-	 * @param process the process to monitor
-	 * @return the string builder
+	 * @param location The location of the gradle project
+	 * @param target   The build target
 	 * @throws IOException
+	 * @throws UnsupportedOperationSystemException
+	 * @throws InterruptedException
+	 * @return true, iff the project has been build successfully
 	 */
-	static StringBuilder collectMessages(final Process process) throws IOException {
-		final StringBuilder message = new StringBuilder();
-		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
-			String line;
-			while ((line = stream.readLine()) != null) {
-				message.append(line);
-				message.append('\n');
-				LOGGER.log(Level.INFO, "GRADLE: " + line);
-			}
+	static boolean build(final File location, final String target) {
+		Process process;
+		try {
+			process = createBuildProcess(location, target);
+		} catch (IOException | UnsupportedOperationSystemException e) {
+			LOGGER.error(e.getLocalizedMessage(), e);
+			return false;
 		}
-		try (BufferedReader stream = new BufferedReader(new InputStreamReader(process.getErrorStream()))) {
-			String line;
-			while ((line = stream.readLine()) != null) {
-				message.append(line);
-				message.append('\n');
-				LOGGER.warn("GRADLE: " + line);
-			}
-		}
-		return message;
+		return Execute.execute(process);
 	}
-
 }

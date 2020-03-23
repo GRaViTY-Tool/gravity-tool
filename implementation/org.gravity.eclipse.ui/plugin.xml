@@ -41,8 +41,8 @@
                </command>
             </menu>
             <command
-                  commandId="org.gravity.eclipse.ui.import.gradle"
-                  label="Import Gradle Project"
+                  commandId="org.gravity.eclipse.ui.import.project"
+                  label="Import Java Project"
                   style="push">
             </command>
          </menu>
@@ -99,11 +99,11 @@
          </defaultHandler>
       </command>
       <command
-            defaultHandler="org.gravity.eclipse.ui.handler.GradleImportHandler"
-            id="org.gravity.eclipse.ui.import.gradle"
-            name="Gradle Import">
+            defaultHandler="org.gravity.eclipse.ui.handler.ProjectImportHandler"
+            id="org.gravity.eclipse.ui.import.project"
+            name="Project Import">
          <defaultHandler
-               class="org.gravity.eclipse.ui.handler.GradleImportHandler">
+               class="org.gravity.eclipse.ui.handler.ProjectImportHandler">
             <parameter
                   name="org.gravity.eclipse.ui.parameter1"
                   value="org.gravity.eclipse.ui.parameter1">
