@@ -34,7 +34,7 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 	}
 
 	private static void createMissingOverrideEdges(TypeGraph pg) {
-		for (final TClass tClass : pg.getDeclaredTClasses()) {
+		for (final TClass tClass : pg.getClasses()) {
 			final Map<String, TMethodDefinition> signatures = new HashMap<>();
 			for (final TMethodDefinition tMethodDefinition : tClass.getDeclaredTMethodDefinitions()) {
 				if (tMethodDefinition.getOverriding() == null) {
