@@ -419,13 +419,11 @@ public class TParameterImpl extends TAnnotatableImpl implements TParameter {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean isArray() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return getUpperBound() != 1;
 	}
 
 	/**
