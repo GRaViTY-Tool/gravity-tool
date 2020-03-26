@@ -175,33 +175,7 @@ public class HGetterSetterSmellImpl extends HCodeSmellImpl implements HGetterSet
 
 	@Override
 	public TreeItem createItemContents(TreeItem item, int style) {
-
-		TMethodDefinition definition = (TMethodDefinition) getTAnnotated();
-		TMethodSignature signature = definition.getSignature();
-		TMethod method = signature.getMethod();
-
-		StringBuilder builder = new StringBuilder(method.getTName());
-		builder.append('(');
-		List<TParameter> paramlist_entries = signature.getParameters();
-		if (paramlist_entries != null && paramlist_entries.size() > 0) {
-			for (TParameter p : paramlist_entries) {
-				TAbstractType tClass = p.getType();
-				if (tClass != null) {
-					builder.append(tClass.getTName());
-					builder.append(", ");
-				}
-			}
-			builder.replace(builder.length() - 2, builder.length(), "):");
-		} else {
-			builder.append("):");
-		}
-		TAbstractType return_type = definition.getReturnType();
-		if (return_type != null) {
-			builder.append(return_type.getTName());
-		} else {
-			builder.append("void");
-		}
-		item.setText(builder.toString());
+		item.setText(((TMethodDefinition) getTAnnotated()).getSignatureString());
 		return item;
 	}
 

@@ -99,16 +99,8 @@ public final class PullUpMethodJob extends WorkspaceJob {
 	static String getPUMMessage(final TClass tParent, final TMethodSignature tSignature) {
 		StringBuilder builder = new StringBuilder(200).append(
 				"All access dependencies have been checked successfully,\nplease check if all implementations of the method\n\n\t")
-				.append(tSignature.getMethod().getTName()).append('(');
-		TParameter param = tSignature.getFirstParameter();
-		while (param != null) {
-			builder.append(param.getType().getTName());
-			param = param.getNext();
-			if (param != null) {
-				builder.append(", ");
-			}
-		}
-		builder = builder.append(")\n\n").append("in the classes\n\n");
+				.append(tSignature.getSignatureString());
+		builder = builder.append("\n\n").append("in the classes\n\n");
 		for (final TClass c : tParent.getChildClasses()) {
 			builder = builder.append('\t').append(c.getFullyQualifiedName()).append('\n');
 		}

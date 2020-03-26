@@ -794,6 +794,24 @@ public interface AnnotationsPackage extends EPackage {
 	int TANNOTATION_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE = BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE;
 
 	/**
+	 * The operation id for the '<em>Get TField Signature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_TYPE___GET_TFIELD_SIGNATURE__STRING = BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get TField Definition</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TANNOTATION_TYPE___GET_TFIELD_DEFINITION__STRING = BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING;
+
+	/**
 	 * The operation id for the '<em>Is Sub Type Of</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

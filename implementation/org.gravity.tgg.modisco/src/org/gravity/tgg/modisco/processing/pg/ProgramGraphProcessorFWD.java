@@ -103,11 +103,15 @@ public class ProgramGraphProcessorFWD implements IProgramGraphProcessor {
 		tMethodDefinition.getSignature().getDefinitions().add(tObjectMethodDefinition);
 		tObjectMethodDefinition.setDefinedBy(tType);
 		tObjectMethodDefinition.setReturnType(tMethodDefinition.getReturnType());
+		tObjectMethodDefinition.setLowerBound(tMethodDefinition.getLowerBound());
+		tObjectMethodDefinition.setUpperBound(tMethodDefinition.getUpperBound());
 		final TModifier tObjectModifier = BasicFactory.eINSTANCE.createTModifier();
 		tObjectMethodDefinition.setTModifier(tObjectModifier);
 		final TModifier tModifier = tMethodDefinition.getTModifier();
-		tObjectModifier.setTVisibility(tModifier.getTVisibility());
-		tObjectModifier.setIsStatic(tModifier.isIsStatic());
+		if (tModifier != null) {
+			tObjectModifier.setTVisibility(tModifier.getTVisibility());
+			tObjectModifier.setIsStatic(tModifier.isIsStatic());
+		}
 		return tObjectMethodDefinition;
 	}
 

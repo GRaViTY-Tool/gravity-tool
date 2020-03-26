@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule FieldSignature
+#abstract #rule FieldSignatureAbstract
 #with org.gravity.tgg.modisco
 
 #source {
@@ -9,7 +9,11 @@
 		++-mSignatures -> mSignature
 	}
 
-	++mSignature:MFieldSignature
+	++mSignature:MFieldSignature{
+		++  -type -> mType
+	}
+
+	mType:Type
 }
 
 #target {
@@ -17,7 +21,11 @@
 		++-signatures->tSignature
 	}
 
-	++tSignature:TFieldSignature
+	++tSignature:TFieldSignature {
+		++  -type -> tType
+	}
+	
+	tType:TAbstractType
 }
 
 #correspondence {
@@ -37,4 +45,40 @@
 	}
 }
 
+#rule FieldSignature #extends FieldSignatureAbstract
+#with org.gravity.tgg.modisco
 
+#correspondence {
+	mTypeToTType : TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#rule FieldSignatureArrayType #extends FieldSignatureAbstract
+#with org.gravity.tgg.modisco
+
+#source {
+	mType : ArrayType {
+		-elementType->mTypeAccess
+	}
+	
+	mTypeAccess : TypeAccess {
+		-type->mArrayType
+	}
+	
+	mArrayType : Type
+}
+
+#target {
+	++ tSignature : TFieldSignature {
+		upperBound := -1
+	} 
+}
+
+#correspondence {	
+	mTypeToTType : TypeToTAbstractType {
+		#src->mArrayType
+		#trg->tType
+	}
+}

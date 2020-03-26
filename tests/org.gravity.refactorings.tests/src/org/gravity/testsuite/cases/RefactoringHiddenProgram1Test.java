@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.BasicEList;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.application.RefactoringTool;
@@ -95,8 +94,7 @@ public class RefactoringHiddenProgram1Test extends AbstractRefactoringTestCase {
 		TypeGraph pm = getProgramModel();
 
 		TClass parent = pm.getClass("hidden.program.one.ParentClass");
-		TMethod name = pm.getMethod("method");
-		TMethodSignature signature = name.getSignature(null, new BasicEList<>());
+		TMethodSignature signature = pm.getMethodSignature("method():void");
 		
 		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(signature, parent);
 		RefactoringTool tool = new RefactoringTool(pm, false);

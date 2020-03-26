@@ -79,7 +79,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 				}
 			}
 		}
-		if (methods.size() > 0) {
+		if (!methods.isEmpty()) {
 			createMetric(apg, pg, getAverage(methods, 0, methods.size()), requiredTVisibility);
 		}
 
@@ -118,7 +118,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 				}
 			}
 		}
-		if (methods.size() > 0 && methods.size() > start) {
+		if (!methods.isEmpty() && methods.size() > start) {
 			createMetric(apg, tPackage, getAverage(methods, start, methods.size()), requiredTVisibility);
 		}
 		return requiredTVisibility;
@@ -135,7 +135,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 				}
 			}
 		}
-		if (methods.size() > 0 && methods.size() > start) {
+		if (!methods.isEmpty() && methods.size() > start) {
 			createMetric(apg, tType, getAverage(methods, start, methods.size()), requiredTVisibility);
 		}
 		return requiredTVisibility;
@@ -145,10 +145,10 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 		final TModifier tModifier = tMember.getTModifier();
 		final TAbstractType tType = tMember.getDefinedBy();
 		if (tModifier == null) {
-			if (tMember instanceof TMethodDefinition && TConstructor.isConstructor((TMethodDefinition) tMember)) {
+			if (tMember instanceof TMethodDefinition && TConstructor.isConstructor(tMember)) {
 				if (LOGGER.isInfoEnabled()) {
 					LOGGER.info("Skipped constructor \"" + tMember.getSignatureString()
-					+ "\" it is probably a default constructor and has no modifer.");
+							+ "\" it is probably a default constructor and has no modifer.");
 				}
 			} else if (tType.getTName().startsWith("%ENUM%")) {
 				if (LOGGER.isInfoEnabled()) {
@@ -179,7 +179,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 					tMinVis = inh2.ordinal() > tMinVis ? inh2.ordinal() : tMinVis;
 				}
 			}
-			final double igam = tCurVis.getValue() == tMinVis ? 0 : 1;// ((double) (tCurVis.getValue() - tMinVis)) / 3;
+			final double igam = tCurVis.getValue() == tMinVis ? 0 : 1;
 
 			final TVisibility minVis = TVisibility.get(tMinVis);
 			createMetric(apg, tMember, igam, minVis);
@@ -199,9 +199,10 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 				final TModifier tModifier = tMethod.getTModifier();
 				if (tModifier.isIsStatic() && tModifier.getTVisibility() == TVisibility.TPUBLIC) {
 					final EList<TParameter> tParams = tSignature.getParameters();
-					if (tParams.isEmpty()) {
+					if (tParams.size() == 1) {
 						final TParameter tParam = tParams.get(0);
-						if ("java.lang.String".equals(tParam.getType().getFullyQualifiedName())) {
+						if ("java.lang.String".equals(tParam.getType().getFullyQualifiedName())
+								&& tParam.isArray()) {
 							return true;
 						}
 					}
@@ -236,7 +237,7 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 
 	// <-- [user code injected with eMoflon]
 
-	private static final Logger LOGGER = Logger.getLogger(HIGAMCalculator.class);
+	private static final Logger LOGGER = Logger.getLogger(HIGAMCalculatorImpl.class);
 
 	private TVisibility acc1acc2(TAccess tAccess) {
 		final TAbstractType tType = tAccess.getTTarget().getDefinedBy();
@@ -272,8 +273,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 		if (tStaticType == null || tStaticType.getTName().equals("Void")) {
 			LOGGER.error(
 					"No static type for access from \"" + tAccess.getTSource().getDefinedBy().getFullyQualifiedName()
-					+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
-					+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
+							+ "->" + tAccess.getTSource().getSignatureString() + "\" to \""
+							+ tTarget.getFullyQualifiedName() + "->" + tMember.getSignatureString() + "\".");
 			return TVisibility.TPUBLIC;
 		}
 		return access(tStaticType, tTarget);
@@ -295,8 +296,8 @@ public class HIGAMCalculatorImpl extends HMetricCalculatorImpl implements HIGAMC
 			if (tOverriddenMod != null) {
 				return tOverriddenMod.getTVisibility();
 			} else {
-				LOGGER.error( "TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName()
-						+ "->" + tOverriddenDef.getSignatureString() + "\" is null.");
+				LOGGER.error("TVisibility of \"" + tOverriddenDef.getDefinedBy().getFullyQualifiedName() + "->"
+						+ tOverriddenDef.getSignatureString() + "\" is null.");
 				return TVisibility.TPUBLIC;
 			}
 

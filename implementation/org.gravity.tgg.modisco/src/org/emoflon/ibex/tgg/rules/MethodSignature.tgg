@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule MethodSignature
+#abstract #rule MethodSignature
 #with org.gravity.tgg.modisco
 
 #source {
@@ -9,15 +9,23 @@
 		++  -mSignatures -> mSignature
 	}
 
-	++mSignature:MMethodSignature
+	++mSignature:MMethodSignature{
+		++  -returnType -> mType
+	}
+
+	mType:Type
 }
 
 #target {
+
+	tName:TMethod {
+		++-signatures->tSignature
+	}
 	++tSignature:TMethodSignature {
-		++  -method -> tName
+		++  -returnType -> tType
 	}
 
-	tName:TMethod
+	tType:TAbstractType
 }
 
 #correspondence {
@@ -37,4 +45,49 @@
 	}
 }
 
+#rule MethodSignatureSingleReturn #extends MethodSignature
+#with org.gravity.tgg.modisco
+
+
+#target {
+	++tSignature :TMethodSignature {
+		lowerBound:=0
+		upperBound:=1
+	}
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#rule MethodSignatureArrayReturn #extends MethodSignature
+#with org.gravity.tgg.modisco
+
+#source {
+	mType : ArrayType {
+		-elementType->mTypeAccess
+	}
+	
+	mTypeAccess:TypeAccess {
+		-type->mTypeOfArray
+	}
+	mTypeOfArray:Type
+}
+
+#target {
+	++tSignature :TMethodSignature {
+		lowerBound:=0
+		upperBound:=-1
+	}
+}
+
+#correspondence {
+	mTypeToTType :TypeToTAbstractType {
+		#src->mTypeOfArray
+		#trg->tType
+	}
+}
 

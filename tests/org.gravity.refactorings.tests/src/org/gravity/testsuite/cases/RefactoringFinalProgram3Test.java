@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.BasicEList;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.application.RefactoringTool;
@@ -36,7 +35,7 @@ public class RefactoringFinalProgram3Test extends AbstractRefactoringTestCase {
 		TClass child2 = pm.getClass("hidden.program.three.ChildClass2");
 		TClass parent = pm.getClass("java.lang.SecurityManager");
 		
-		TMethodSignature m = pm.getMethod("method").getSignature(null, new BasicEList<>());
+		TMethodSignature m = pm.getMethodSignature("method():void");
 		
 		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(m, parent);
 		RefactoringTool tool = new RefactoringTool(pm, false);

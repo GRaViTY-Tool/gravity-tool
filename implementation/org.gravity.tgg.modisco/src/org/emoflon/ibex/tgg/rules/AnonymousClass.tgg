@@ -9,6 +9,10 @@
 		++-mSourroundingType->mType
 	}
 	mType : AbstractTypeDeclaration
+	
+	mPackage : Package {
+		-ownedElements->mType
+	} 
 }
 
 #target {
@@ -40,6 +44,10 @@
 	mTypeToTType : TypeToTAbstractType {
 		#src->mType
 		#trg->tType
+	}
+	mPackageToTPackage : PackageToTPackage {
+		#src->mPackage
+		#trg->tPackage
 	}
 }
 

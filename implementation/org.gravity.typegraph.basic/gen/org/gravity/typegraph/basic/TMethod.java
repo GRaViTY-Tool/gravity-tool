@@ -67,14 +67,6 @@ public interface TMethod extends TName {
 	 * @generated
 	 */
 	void setPg(TypeGraph value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model parameterTypesMany="true"
-	 * @generated
-	 */
-	TMethodSignature getSignature(TAbstractType returnType, EList<TAbstractType> parameterTypes);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

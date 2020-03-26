@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TMethodSignature extends TSignature {
+public interface TMethodSignature extends TSignature, TAbstractMultiplicity {
 	/**
 	 * Returns the value of the '<em><b>Method</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.gravity.typegraph.basic.TMethod#getSignatures <em>Signatures</em>}'.
@@ -135,14 +135,6 @@ public interface TMethodSignature extends TSignature {
 	 * @generated
 	 */
 	String toString();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model parameterTypesMany="true"
-	 * @generated
-	 */
-	boolean isThisSignature(TAbstractType returnType, EList<TAbstractType> parameterTypes);
 
 	/**
 	 * <!-- begin-user-doc -->

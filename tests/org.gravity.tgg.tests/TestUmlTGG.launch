@@ -580,10 +580,10 @@
         <setEntry value="de.unikoblenz.emoflon.tgg.mutationtest.tests@default:default"/>
         <setEntry value="de.unikoblenz.emoflon.tgg.mutationtest.ui@default:default"/>
         <setEntry value="de.unikoblenz.emoflon.tgg.mutationtest@default:default"/>
-        <setEntry value="eDFDFlowTracking1.edit@default:default"/>
-        <setEntry value="eDFDFlowTracking1.editor@default:default"/>
-        <setEntry value="eDFDFlowTracking1.tests@default:default"/>
-        <setEntry value="eDFDFlowTracking1@default:default"/>
+        <setEntry value="org.secdfd.model.edit@default:default"/>
+        <setEntry value="org.secdfd.model.editor@default:default"/>
+        <setEntry value="org.secdfd.model.tests@default:default"/>
+        <setEntry value="org.secdfd.model@default:default"/>
         <setEntry value="metric.correlation.analysis.dependencies@default:default"/>
         <setEntry value="metric.correlation.analysis@default:default"/>
         <setEntry value="org.eclipse.emf.henshin.adapters.xtext@default:default"/>

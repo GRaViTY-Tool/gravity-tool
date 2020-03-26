@@ -9,7 +9,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.BasicEList;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.application.RefactoringTool;
@@ -51,7 +50,7 @@ public class RefactoringHiddenProgram3Test extends AbstractRefactoringTestCase {
 			assertEquals(parent, child1.getParentClass());
 			assertEquals(parent, child2.getParentClass());
 			
-			TMethodSignature m = pm.getMethod("method").getSignature(null, new BasicEList<>());
+			TMethodSignature m = pm.getMethodSignature("method():void");
 			
 			assertTrue(child1.getSignature().contains(m));
 			assertNotNull(m.getTDefinition(child1));

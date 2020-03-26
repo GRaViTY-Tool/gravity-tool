@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_mNISkNVoEemhBNF7RBO6rA">
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_nKKikNVoEemhBNF7RBO6rA" name="expect">
+    <lhs xmi:id="_nMA8sNVoEemhBNF7RBO6rA" name="Lhs">
+      <nodes xmi:id="_pp5UYNVoEemhBNF7RBO6rA" incoming="_5VktsG50Eeqj_LkwUcB67w _CykzoG51Eeqj_LkwUcB67w _i5R04G52Eeqj_LkwUcB67w _jiABwG52Eeqj_LkwUcB67w" outgoing="_M08s8G50Eeqj_LkwUcB67w _NGMN8G50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_u8BVUNVoEemhBNF7RBO6rA" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FAOzcG50Eeqj_LkwUcB67w" outgoing="_MBQmMG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
+        <attributes xmi:id="_GyGZsG50Eeqj_LkwUcB67w" value="&quot;newInstance&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FjG3AG50Eeqj_LkwUcB67w" incoming="_MkM7MG50Eeqj_LkwUcB67w _NGMN8G50Eeqj_LkwUcB67w _h-2pcG51Eeqj_LkwUcB67w" outgoing="_jiABwG52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_GGmloG50Eeqj_LkwUcB67w" incoming="_MBQmMG50Eeqj_LkwUcB67w _M08s8G50Eeqj_LkwUcB67w _bjTs4G52Eeqj_LkwUcB67w _vkhYcG52Eeqj_LkwUcB67w" outgoing="_MkM7MG50Eeqj_LkwUcB67w _5VktsG50Eeqj_LkwUcB67w _HAFV4G51Eeqj_LkwUcB67w _bZYxUG51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <nodes xmi:id="_vHDEMG50Eeqj_LkwUcB67w" incoming="_XX2OgG51Eeqj_LkwUcB67w" outgoing="_CykzoG51Eeqj_LkwUcB67w _QxuPEG51Eeqj_LkwUcB67w _vkhYcG52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_vy9H8G50Eeqj_LkwUcB67w" value="&quot;B&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_vOB18G50Eeqj_LkwUcB67w" incoming="_Xw9coG52Eeqj_LkwUcB67w" outgoing="_XX2OgG51Eeqj_LkwUcB67w _anZ6wG51Eeqj_LkwUcB67w _bjTs4G52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_wnlp4G50Eeqj_LkwUcB67w" value="&quot;C&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_DX6VUG51Eeqj_LkwUcB67w" incoming="_HAFV4G51Eeqj_LkwUcB67w _QxuPEG51Eeqj_LkwUcB67w _hH1h4G51Eeqj_LkwUcB67w" outgoing="_h-2pcG51Eeqj_LkwUcB67w _i5R04G52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_Yfw40G51Eeqj_LkwUcB67w" incoming="_anZ6wG51Eeqj_LkwUcB67w _bZYxUG51Eeqj_LkwUcB67w" outgoing="_hH1h4G51Eeqj_LkwUcB67w _Xw9coG52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <edges xmi:id="_MBQmMG50Eeqj_LkwUcB67w" source="_FAOzcG50Eeqj_LkwUcB67w" target="_GGmloG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod/signatures"/>
+      </edges>
+      <edges xmi:id="_MkM7MG50Eeqj_LkwUcB67w" source="_GGmloG50Eeqj_LkwUcB67w" target="_FjG3AG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_M08s8G50Eeqj_LkwUcB67w" source="_pp5UYNVoEemhBNF7RBO6rA" target="_GGmloG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_NGMN8G50Eeqj_LkwUcB67w" source="_pp5UYNVoEemhBNF7RBO6rA" target="_FjG3AG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_5VktsG50Eeqj_LkwUcB67w" source="_GGmloG50Eeqj_LkwUcB67w" target="_pp5UYNVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/returnType"/>
+      </edges>
+      <edges xmi:id="_CykzoG51Eeqj_LkwUcB67w" source="_vHDEMG50Eeqj_LkwUcB67w" target="_pp5UYNVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_HAFV4G51Eeqj_LkwUcB67w" source="_GGmloG50Eeqj_LkwUcB67w" target="_DX6VUG51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_QxuPEG51Eeqj_LkwUcB67w" source="_vHDEMG50Eeqj_LkwUcB67w" target="_DX6VUG51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_XX2OgG51Eeqj_LkwUcB67w" source="_vOB18G50Eeqj_LkwUcB67w" target="_vHDEMG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_anZ6wG51Eeqj_LkwUcB67w" source="_vOB18G50Eeqj_LkwUcB67w" target="_Yfw40G51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_bZYxUG51Eeqj_LkwUcB67w" source="_GGmloG50Eeqj_LkwUcB67w" target="_Yfw40G51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_hH1h4G51Eeqj_LkwUcB67w" source="_Yfw40G51Eeqj_LkwUcB67w" target="_DX6VUG51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/overriding"/>
+      </edges>
+      <edges xmi:id="_h-2pcG51Eeqj_LkwUcB67w" source="_DX6VUG51Eeqj_LkwUcB67w" target="_FjG3AG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/overriding"/>
+      </edges>
+      <edges xmi:id="_Xw9coG52Eeqj_LkwUcB67w" source="_Yfw40G51Eeqj_LkwUcB67w" target="_vOB18G50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_bjTs4G52Eeqj_LkwUcB67w" source="_vOB18G50Eeqj_LkwUcB67w" target="_GGmloG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_i5R04G52Eeqj_LkwUcB67w" source="_DX6VUG51Eeqj_LkwUcB67w" target="_pp5UYNVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_jiABwG52Eeqj_LkwUcB67w" source="_FjG3AG50Eeqj_LkwUcB67w" target="_pp5UYNVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_vkhYcG52Eeqj_LkwUcB67w" source="_vHDEMG50Eeqj_LkwUcB67w" target="_GGmloG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_nMA8sdVoEemhBNF7RBO6rA" name="Rhs">
+      <nodes xmi:id="_pqACENVoEemhBNF7RBO6rA" incoming="_5VktsW50Eeqj_LkwUcB67w _CykzoW51Eeqj_LkwUcB67w _i5R04W52Eeqj_LkwUcB67w _jiABwW52Eeqj_LkwUcB67w" outgoing="_M09UAG50Eeqj_LkwUcB67w _NGM1AG50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_u8B8YNVoEemhBNF7RBO6rA" value="&quot;A&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FAOzcW50Eeqj_LkwUcB67w" outgoing="_MBQmMW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod"/>
+        <attributes xmi:id="_GyGZsW50Eeqj_LkwUcB67w" value="&quot;newInstance&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TName/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_FjG3AW50Eeqj_LkwUcB67w" incoming="_MkM7MW50Eeqj_LkwUcB67w _NGM1AG50Eeqj_LkwUcB67w _h-3QgG51Eeqj_LkwUcB67w" outgoing="_jiABwW52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_GGmloW50Eeqj_LkwUcB67w" incoming="_MBQmMW50Eeqj_LkwUcB67w _M09UAG50Eeqj_LkwUcB67w _bjTs4W52Eeqj_LkwUcB67w _vkh_gG52Eeqj_LkwUcB67w" outgoing="_MkM7MW50Eeqj_LkwUcB67w _5VktsW50Eeqj_LkwUcB67w _HAFV4W51Eeqj_LkwUcB67w _bZYxUW51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature"/>
+      </nodes>
+      <nodes xmi:id="_vHDEMW50Eeqj_LkwUcB67w" incoming="_XX21kG51Eeqj_LkwUcB67w" outgoing="_CykzoW51Eeqj_LkwUcB67w _QxuPEW51Eeqj_LkwUcB67w _vkh_gG52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_vy9H8W50Eeqj_LkwUcB67w" value="&quot;B&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_vOB18W50Eeqj_LkwUcB67w" incoming="_Xw_R0G52Eeqj_LkwUcB67w" outgoing="_XX21kG51Eeqj_LkwUcB67w _anZ6wW51Eeqj_LkwUcB67w _bjTs4W52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+        <attributes xmi:id="_wnmQ8G50Eeqj_LkwUcB67w" value="&quot;C&quot;">
+          <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_DX6VUW51Eeqj_LkwUcB67w" incoming="_HAFV4W51Eeqj_LkwUcB67w _QxuPEW51Eeqj_LkwUcB67w _hH1h4W51Eeqj_LkwUcB67w" outgoing="_h-3QgG51Eeqj_LkwUcB67w _i5R04W52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <nodes xmi:id="_Yfw40W51Eeqj_LkwUcB67w" incoming="_anZ6wW51Eeqj_LkwUcB67w _bZYxUW51Eeqj_LkwUcB67w" outgoing="_hH1h4W51Eeqj_LkwUcB67w _Xw_R0G52Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition"/>
+      </nodes>
+      <edges xmi:id="_MBQmMW50Eeqj_LkwUcB67w" source="_FAOzcW50Eeqj_LkwUcB67w" target="_GGmloW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethod/signatures"/>
+      </edges>
+      <edges xmi:id="_MkM7MW50Eeqj_LkwUcB67w" source="_GGmloW50Eeqj_LkwUcB67w" target="_FjG3AW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_M09UAG50Eeqj_LkwUcB67w" source="_pqACENVoEemhBNF7RBO6rA" target="_GGmloW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_NGM1AG50Eeqj_LkwUcB67w" source="_pqACENVoEemhBNF7RBO6rA" target="_FjG3AW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_5VktsW50Eeqj_LkwUcB67w" source="_GGmloW50Eeqj_LkwUcB67w" target="_pqACENVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodSignature/returnType"/>
+      </edges>
+      <edges xmi:id="_CykzoW51Eeqj_LkwUcB67w" source="_vHDEMW50Eeqj_LkwUcB67w" target="_pqACENVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_HAFV4W51Eeqj_LkwUcB67w" source="_GGmloW50Eeqj_LkwUcB67w" target="_DX6VUW51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_QxuPEW51Eeqj_LkwUcB67w" source="_vHDEMW50Eeqj_LkwUcB67w" target="_DX6VUW51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_XX21kG51Eeqj_LkwUcB67w" source="_vOB18W50Eeqj_LkwUcB67w" target="_vHDEMW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass/parentClass"/>
+      </edges>
+      <edges xmi:id="_anZ6wW51Eeqj_LkwUcB67w" source="_vOB18W50Eeqj_LkwUcB67w" target="_Yfw40W51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/defines"/>
+      </edges>
+      <edges xmi:id="_bZYxUW51Eeqj_LkwUcB67w" source="_GGmloW50Eeqj_LkwUcB67w" target="_Yfw40W51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TSignature/definitions"/>
+      </edges>
+      <edges xmi:id="_hH1h4W51Eeqj_LkwUcB67w" source="_Yfw40W51Eeqj_LkwUcB67w" target="_DX6VUW51Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/overriding"/>
+      </edges>
+      <edges xmi:id="_h-3QgG51Eeqj_LkwUcB67w" source="_DX6VUW51Eeqj_LkwUcB67w" target="_FjG3AW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/overriding"/>
+      </edges>
+      <edges xmi:id="_Xw_R0G52Eeqj_LkwUcB67w" source="_Yfw40W51Eeqj_LkwUcB67w" target="_vOB18W50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_bjTs4W52Eeqj_LkwUcB67w" source="_vOB18W50Eeqj_LkwUcB67w" target="_GGmloW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+      <edges xmi:id="_i5R04W52Eeqj_LkwUcB67w" source="_DX6VUW51Eeqj_LkwUcB67w" target="_pqACENVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_jiABwW52Eeqj_LkwUcB67w" source="_FjG3AW50Eeqj_LkwUcB67w" target="_pqACENVoEemhBNF7RBO6rA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TMethodDefinition/returnType"/>
+      </edges>
+      <edges xmi:id="_vkh_gG52Eeqj_LkwUcB67w" source="_vHDEMW50Eeqj_LkwUcB67w" target="_GGmloW50Eeqj_LkwUcB67w">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/signature"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_pqBQMNVoEemhBNF7RBO6rA" origin="_pp5UYNVoEemhBNF7RBO6rA" image="_pqACENVoEemhBNF7RBO6rA"/>
+    <mappings xmi:id="_FAOzcm50Eeqj_LkwUcB67w" origin="_FAOzcG50Eeqj_LkwUcB67w" image="_FAOzcW50Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_FjG3Am50Eeqj_LkwUcB67w" origin="_FjG3AG50Eeqj_LkwUcB67w" image="_FjG3AW50Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_GGmlom50Eeqj_LkwUcB67w" origin="_GGmloG50Eeqj_LkwUcB67w" image="_GGmloW50Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_vHDEMm50Eeqj_LkwUcB67w" origin="_vHDEMG50Eeqj_LkwUcB67w" image="_vHDEMW50Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_vOB18m50Eeqj_LkwUcB67w" origin="_vOB18G50Eeqj_LkwUcB67w" image="_vOB18W50Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_DX6VUm51Eeqj_LkwUcB67w" origin="_DX6VUG51Eeqj_LkwUcB67w" image="_DX6VUW51Eeqj_LkwUcB67w"/>
+    <mappings xmi:id="_Yfw40m51Eeqj_LkwUcB67w" origin="_Yfw40G51Eeqj_LkwUcB67w" image="_Yfw40W51Eeqj_LkwUcB67w"/>
+  </units>
+</henshin:Module>

@@ -5,18 +5,16 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mAnonymous : MAnonymous {
+	mAnonymous : AnonymousClassDeclaration {
 		++-classInstanceCreation->mCreation
 	}
-	++ mCreation : ClassInstanceCreation {
+	++ mCreation : MClassInstanceCreation {
 		++-type->mType
 	}
 	++ mType : TypeAccess {
 		++-type->mParent
 	}
-	mParent : AbstractTypeDeclaration {
-		
-	}
+	mParent : Type
 }
 
 #target {
@@ -37,11 +35,12 @@
 	}
 }
 
-#attributeConditions {
-}
-
 #rule AnonymousClassTypeInterface #extends AnonymousClassType
 #with org.gravity.tgg.modisco
+
+#source {
+	mParent : InterfaceDeclaration
+}
 
 #target {
 	tClass : TClass {
@@ -54,6 +53,10 @@
 
 #rule AnonymousClassTypeClass #extends AnonymousClassType
 #with org.gravity.tgg.modisco
+
+#source {
+	mParent : ClassDeclaration
+}
 
 #target {
 	tClass : TClass {

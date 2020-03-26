@@ -194,10 +194,10 @@ public final class JavaASTUtil {
 	 * @return the type from the pm
 	 */
 	public static TAbstractType getType(Type type, TypeGraph pm) {
-		if(type.isPrimitiveType()) {
+		if (type.isPrimitiveType()) {
 			return pm.getType(type.toString());
 		}
-		String fullyQualifiedName = getName(type);;
+		String fullyQualifiedName = getName(type);
 		if (fullyQualifiedName.indexOf('.') > 0) {
 			return pm.getType(fullyQualifiedName);
 		}
@@ -250,8 +250,7 @@ public final class JavaASTUtil {
 
 		} else if (type.isParameterizedType()) {
 			return getName(((ParameterizedType) type).getType());
-		}
-		else if (type.isPrimitiveType()) {
+		} else if (type.isPrimitiveType()) {
 			return ((PrimitiveType) type).toString();
 		}
 		LOGGER.error("Type is not covered: " + type);
@@ -288,22 +287,24 @@ public final class JavaASTUtil {
 	 */
 	public static TMethodSignature getTMethodSignature(MethodDeclaration method, TypeGraph pm) {
 		String methodName = method.getName().toString();
-		Optional<TMethod> methodOptional = pm.getMethods().parallelStream().filter(m -> methodName.equals(m.getTName()))
-				.findAny();
-		if (!methodOptional.isPresent()) {
+		TMethod tMethod = pm.getMethod(methodName);
+		if (tMethod == null) {
 			return null;
 		}
-		TMethod tMethod = methodOptional.get();
 
 		for (final TMethodSignature signature : tMethod.getSignatures()) {
-			TAbstractType tExpectedReturnType = getType(method.getReturnType2(), pm);
-			if (!signature.getReturnType().equals(tExpectedReturnType)) {
+			Type returnType = method.getReturnType2();
+			TAbstractType tExpectedReturnType = getType(returnType, pm);
+			if (
+			// Return type have to be the same type
+			!signature.getReturnType().equals(tExpectedReturnType)
+					// Both have to be either arrays or not arrays
+					|| signature.isArray() != returnType.isArrayType()
+					// The parameter lists have to have the same size
+					|| method.parameters().size() != signature.getParameters().size()) {
 				continue;
 			}
 
-			if (method.parameters().size() != signature.getParameters().size()) {
-				continue;
-			}
 			final boolean success = hasSameSignature(method, signature);
 			if (success) {
 				return signature;
@@ -353,7 +354,9 @@ public final class JavaASTUtil {
 			if (p instanceof SingleVariableDeclaration) {
 				final SingleVariableDeclaration var = (SingleVariableDeclaration) p;
 				final Type vt = var.getType();
-				if (vt.toString().replace("[]", "").equals(tParam.getType().getTName())) {
+				final String name = getName(vt);
+				if (tParam.getType().getFullyQualifiedName().endsWith(name)
+						&& vt.isArrayType() == tParam.isArray()) {
 					tParam = tParam.getNext();
 				} else {
 					return false;

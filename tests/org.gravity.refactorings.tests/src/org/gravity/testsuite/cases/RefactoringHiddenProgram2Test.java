@@ -9,7 +9,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.BasicEList;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.application.RefactoringTool;
@@ -65,7 +64,7 @@ public class RefactoringHiddenProgram2Test extends AbstractRefactoringTestCase {
 		TypeGraph pm = getProgramModel();
 
 		TClass parent = pm.getClass("hidden.program.two.ParentClass");
-		TMethodSignature m = pm.getMethod("method").getSignature(null, new BasicEList<>());
+		TMethodSignature m  = pm.getMethodSignature("method():void");
 
 		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(m, parent);
 		RefactoringTool tool = new RefactoringTool(pm, false);
@@ -73,8 +72,8 @@ public class RefactoringHiddenProgram2Test extends AbstractRefactoringTestCase {
 			boolean applicible = tool.applyRefactoring(pum);
 			assertTrue(applicible);
 
-			TMethodSignature second = pm.getMethod("second").getSignature(null, new BasicEList<>());
-			TMethodSignature third = pm.getMethod("third").getSignature(pm.getClass("java.lang.String"), new BasicEList<>());
+			TMethodSignature second = pm.getMethodSignature("second():void");
+			TMethodSignature third = pm.getMethodSignature("third():java.lang.String");
 
 			// Check child 1
 			TClass child1 = pm.getClass("hidden.program.one.ChildClass1");
@@ -123,7 +122,7 @@ public class RefactoringHiddenProgram2Test extends AbstractRefactoringTestCase {
 		TypeGraph pm = getProgramModel();
 
 		TClass parent = pm.getClass("hidden.program.two.ParentClass");
-		TMethodSignature second = pm.getMethod("second").getSignature(null, new BasicEList<>());
+		TMethodSignature second = pm.getMethodSignature("second():void");
 
 		PullUpMethodConfiguration pum = new PullUpMethodConfiguration(second, parent);
 		RefactoringTool tool = new RefactoringTool(pm, false);
@@ -131,8 +130,8 @@ public class RefactoringHiddenProgram2Test extends AbstractRefactoringTestCase {
 			boolean applicible = tool.applyRefactoring(pum);
 			assertFalse(applicible);
 
-			TMethodSignature m = pm.getMethod("method").getSignature(null, new BasicEList<>());
-			TMethodSignature third = pm.getMethod("third").getSignature(pm.getClass("java.lang.String"), new BasicEList<>());
+			TMethodSignature m = pm.getMethodSignature("method():void");
+			TMethodSignature third = pm.getMethodSignature("third():java.lang.String");
 
 			// Check child 1
 			TClass child1 = pm.getClass("hidden.program.one.ChildClass1");

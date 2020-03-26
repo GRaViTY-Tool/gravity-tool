@@ -178,6 +178,10 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 				return createTEnumAdapter();
 			}
 			@Override
+			public Adapter caseTAbstractMultiplicity(TAbstractMultiplicity object) {
+				return createTAbstractMultiplicityAdapter();
+			}
+			@Override
 			public Adapter caseTAnnotatable(TAnnotatable object) {
 				return createTAnnotatableAdapter();
 			}
@@ -579,6 +583,20 @@ public class BasicAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTEnumAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.typegraph.basic.TAbstractMultiplicity <em>TAbstract Multiplicity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.typegraph.basic.TAbstractMultiplicity
+	 * @generated
+	 */
+	public Adapter createTAbstractMultiplicityAdapter() {
 		return null;
 	}
 

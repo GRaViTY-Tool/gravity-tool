@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFieldDefinition;
+import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
@@ -40,15 +42,24 @@ import org.gravity.typegraph.basic.annotations.impl.TAnnotatableImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPg <em>Pg</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getSignature <em>Signature</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getDefines <em>Defines</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#isTLib <em>TLib</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getTName <em>TName</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getTModifier <em>TModifier</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getInnerTypes <em>Inner Types</em>}</li>
- *   <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getOuterType <em>Outer Type</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPg
+ * <em>Pg</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getPackage
+ * <em>Package</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getSignature
+ * <em>Signature</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getDefines
+ * <em>Defines</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#isTLib
+ * <em>TLib</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getTName
+ * <em>TName</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getTModifier
+ * <em>TModifier</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getInnerTypes
+ * <em>Inner Types</em>}</li>
+ * <li>{@link org.gravity.typegraph.basic.impl.TAbstractTypeImpl#getOuterType
+ * <em>Outer Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +68,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getPackage()
 	 * @generated
 	 * @ordered
@@ -64,8 +76,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected TPackage package_;
 
 	/**
-	 * The cached value of the '{@link #getSignature() <em>Signature</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getSignature() <em>Signature</em>}'
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getSignature()
 	 * @generated
 	 * @ordered
@@ -73,8 +86,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected EList<TSignature> signature;
 
 	/**
-	 * The cached value of the '{@link #getDefines() <em>Defines</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getDefines() <em>Defines</em>}' reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDefines()
 	 * @generated
 	 * @ordered
@@ -122,8 +136,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected String tName = TNAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTModifier() <em>TModifier</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTModifier() <em>TModifier</em>}'
+	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTModifier()
 	 * @generated
 	 * @ordered
@@ -131,8 +146,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected TModifier tModifier;
 
 	/**
-	 * The cached value of the '{@link #getInnerTypes() <em>Inner Types</em>}' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getInnerTypes() <em>Inner Types</em>}'
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getInnerTypes()
 	 * @generated
 	 * @ordered
@@ -140,8 +156,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	protected EList<TAbstractType> innerTypes;
 
 	/**
-	 * The cached value of the '{@link #getOuterType() <em>Outer Type</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getOuterType() <em>Outer Type</em>}'
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getOuterType()
 	 * @generated
 	 * @ordered
@@ -150,6 +167,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TAbstractTypeImpl() {
@@ -158,6 +176,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,56 +186,64 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public TypeGraph getPg() {
-		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG) return null;
-		return (TypeGraph)eInternalContainer();
+		if (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG)
+			return null;
+		return (TypeGraph) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetPg(TypeGraph newPg, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPg, BasicPackage.TABSTRACT_TYPE__PG, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newPg, BasicPackage.TABSTRACT_TYPE__PG, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setPg(TypeGraph newPg) {
-		if (newPg != eInternalContainer() || (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG && newPg != null)) {
+		if (newPg != eInternalContainer()
+				|| (eContainerFeatureID() != BasicPackage.TABSTRACT_TYPE__PG && newPg != null)) {
 			if (EcoreUtil.isAncestor(this, newPg))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPg != null)
-				msgs = ((InternalEObject)newPg).eInverseAdd(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class, msgs);
+				msgs = ((InternalEObject) newPg).eInverseAdd(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES,
+						TypeGraph.class, msgs);
 			msgs = basicSetPg(newPg, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PG, newPg, newPg));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public TPackage getPackage() {
 		if (package_ != null && package_.eIsProxy()) {
-			InternalEObject oldPackage = (InternalEObject)package_;
-			package_ = (TPackage)eResolveProxy(oldPackage);
+			InternalEObject oldPackage = (InternalEObject) package_;
+			package_ = (TPackage) eResolveProxy(oldPackage);
 			if (package_ != oldPackage) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, package_));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__PACKAGE,
+							oldPackage, package_));
 			}
 		}
 		return package_;
@@ -224,6 +251,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TPackage basicGetPackage() {
@@ -232,20 +260,26 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetPackage(TPackage newPackage, NotificationChain msgs) {
 		TPackage oldPackage = package_;
 		package_ = newPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, newPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasicPackage.TABSTRACT_TYPE__PACKAGE, oldPackage, newPackage);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -253,42 +287,50 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		if (newPackage != package_) {
 			NotificationChain msgs = null;
 			if (package_ != null)
-				msgs = ((InternalEObject)package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
+				msgs = ((InternalEObject) package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES,
+						TPackage.class, msgs);
 			if (newPackage != null)
-				msgs = ((InternalEObject)newPackage).eInverseAdd(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
+				msgs = ((InternalEObject) newPackage).eInverseAdd(this, BasicPackage.TPACKAGE__OWNED_TYPES,
+						TPackage.class, msgs);
 			msgs = basicSetPackage(newPackage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, newPackage, newPackage));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__PACKAGE, newPackage,
+					newPackage));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<TSignature> getSignature() {
 		if (signature == null) {
-			signature = new EObjectResolvingEList<TSignature>(TSignature.class, this, BasicPackage.TABSTRACT_TYPE__SIGNATURE);
+			signature = new EObjectResolvingEList<TSignature>(TSignature.class, this,
+					BasicPackage.TABSTRACT_TYPE__SIGNATURE);
 		}
 		return signature;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<TMember> getDefines() {
 		if (defines == null) {
-			defines = new EObjectWithInverseResolvingEList<TMember>(TMember.class, this, BasicPackage.TABSTRACT_TYPE__DEFINES, BasicPackage.TMEMBER__DEFINED_BY);
+			defines = new EObjectWithInverseResolvingEList<TMember>(TMember.class, this,
+					BasicPackage.TABSTRACT_TYPE__DEFINES, BasicPackage.TMEMBER__DEFINED_BY);
 		}
 		return defines;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,6 +340,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -310,6 +353,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -319,6 +363,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,6 +376,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -340,20 +386,26 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetTModifier(TModifier newTModifier, NotificationChain msgs) {
 		TModifier oldTModifier = tModifier;
 		tModifier = newTModifier;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, oldTModifier, newTModifier);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasicPackage.TABSTRACT_TYPE__TMODIFIER, oldTModifier, newTModifier);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -361,40 +413,47 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		if (newTModifier != tModifier) {
 			NotificationChain msgs = null;
 			if (tModifier != null)
-				msgs = ((InternalEObject)tModifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
+				msgs = ((InternalEObject) tModifier).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
 			if (newTModifier != null)
-				msgs = ((InternalEObject)newTModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
+				msgs = ((InternalEObject) newTModifier).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BasicPackage.TABSTRACT_TYPE__TMODIFIER, null, msgs);
 			msgs = basicSetTModifier(newTModifier, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, newTModifier, newTModifier));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__TMODIFIER, newTModifier,
+					newTModifier));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<TAbstractType> getInnerTypes() {
 		if (innerTypes == null) {
-			innerTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE);
+			innerTypes = new EObjectWithInverseResolvingEList<TAbstractType>(TAbstractType.class, this,
+					BasicPackage.TABSTRACT_TYPE__INNER_TYPES, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE);
 		}
 		return innerTypes;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public TAbstractType getOuterType() {
 		if (outerType != null && outerType.eIsProxy()) {
-			InternalEObject oldOuterType = (InternalEObject)outerType;
-			outerType = (TAbstractType)eResolveProxy(oldOuterType);
+			InternalEObject oldOuterType = (InternalEObject) outerType;
+			outerType = (TAbstractType) eResolveProxy(oldOuterType);
 			if (outerType != oldOuterType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, outerType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE,
+							oldOuterType, outerType));
 			}
 		}
 		return outerType;
@@ -402,6 +461,7 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TAbstractType basicGetOuterType() {
@@ -410,20 +470,26 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOuterType(TAbstractType newOuterType, NotificationChain msgs) {
 		TAbstractType oldOuterType = outerType;
 		outerType = newOuterType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, newOuterType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, oldOuterType, newOuterType);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -431,14 +497,17 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		if (newOuterType != outerType) {
 			NotificationChain msgs = null;
 			if (outerType != null)
-				msgs = ((InternalEObject)outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
+				msgs = ((InternalEObject) outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES,
+						TAbstractType.class, msgs);
 			if (newOuterType != null)
-				msgs = ((InternalEObject)newOuterType).eInverseAdd(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
+				msgs = ((InternalEObject) newOuterType).eInverseAdd(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES,
+						TAbstractType.class, msgs);
 			msgs = basicSetOuterType(newOuterType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, newOuterType, newOuterType));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.TABSTRACT_TYPE__OUTER_TYPE, newOuterType,
+					newOuterType));
 	}
 
 	/**
@@ -519,12 +588,12 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		final String voidString = ":void";
 		for (final TSignature sig : getSignature()) {
 			if (sig instanceof TMethodSignature) {
-				String sigString = sig.getSignatureString().replaceAll(" ", "");
+				String sigString = sig.getSignatureString().replace(" ", "");
 
 				if (sigString.endsWith(voidString)) {
 					sigString = sigString.substring(0, sigString.length() - voidString.length());
 				}
-				String methodSigString = signature.replaceAll(" ", "");
+				String methodSigString = signature.replace(" ", "");
 				if (methodSigString.endsWith(voidString)) {
 					methodSigString = methodSigString.substring(0, methodSigString.length() - voidString.length());
 				}
@@ -547,12 +616,12 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		final String voidString = ":void";
 		for (final TMember def : getDefines()) {
 			if (def instanceof TMethodDefinition) {
-				String sigString = def.getSignatureString().replaceAll(" ", "");
+				String sigString = def.getSignatureString().replace(" ", "");
 
 				if (sigString.endsWith(voidString)) {
 					sigString = sigString.substring(0, sigString.length() - voidString.length());
 				}
-				String methodSigString = signature.replaceAll(" ", "");
+				String methodSigString = signature.replace(" ", "");
 				if (methodSigString.endsWith(voidString)) {
 					methodSigString = methodSigString.substring(0, methodSigString.length() - voidString.length());
 				}
@@ -598,9 +667,9 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 	@Override
 	public TMember getTDefinition(String signatureString) {
 		final String voidString = ":void";
-		String searchedSignatureString = signatureString.replaceAll(" ", "");
+		String searchedSignatureString = signatureString.replace(" ", "");
 		for (final TMember def : getDefines()) {
-			String nextSignatureString = def.getSignatureString().replaceAll(" ", "");
+			String nextSignatureString = def.getSignatureString().replace(" ", "");
 			if (searchedSignatureString.equals(nextSignatureString)) {
 				return def;
 			}
@@ -634,256 +703,275 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPg((TypeGraph)otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				if (package_ != null)
-					msgs = ((InternalEObject)package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES, TPackage.class, msgs);
-				return basicSetPackage((TPackage)otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDefines()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInnerTypes()).basicAdd(otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				if (outerType != null)
-					msgs = ((InternalEObject)outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES, TAbstractType.class, msgs);
-				return basicSetOuterType((TAbstractType)otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetPg((TypeGraph) otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			if (package_ != null)
+				msgs = ((InternalEObject) package_).eInverseRemove(this, BasicPackage.TPACKAGE__OWNED_TYPES,
+						TPackage.class, msgs);
+			return basicSetPackage((TPackage) otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDefines()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInnerTypes()).basicAdd(otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			if (outerType != null)
+				msgs = ((InternalEObject) outerType).eInverseRemove(this, BasicPackage.TABSTRACT_TYPE__INNER_TYPES,
+						TAbstractType.class, msgs);
+			return basicSetOuterType((TAbstractType) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				return basicSetPg(null, msgs);
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				return basicSetPackage(null, msgs);
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-				return basicSetTModifier(null, msgs);
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				return ((InternalEList<?>)getInnerTypes()).basicRemove(otherEnd, msgs);
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				return basicSetOuterType(null, msgs);
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			return basicSetPg(null, msgs);
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			return basicSetPackage(null, msgs);
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			return ((InternalEList<?>) getDefines()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+			return basicSetTModifier(null, msgs);
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			return ((InternalEList<?>) getInnerTypes()).basicRemove(otherEnd, msgs);
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			return basicSetOuterType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class, msgs);
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			return eInternalContainer().eInverseRemove(this, BasicPackage.TYPE_GRAPH__OWNED_TYPES, TypeGraph.class,
+					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				return getPg();
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				if (resolve) return getPackage();
-				return basicGetPackage();
-			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-				return getSignature();
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				return getDefines();
-			case BasicPackage.TABSTRACT_TYPE__TLIB:
-				return isTLib();
-			case BasicPackage.TABSTRACT_TYPE__TNAME:
-				return getTName();
-			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-				return getTModifier();
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				return getInnerTypes();
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				if (resolve) return getOuterType();
-				return basicGetOuterType();
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			return getPg();
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			if (resolve)
+				return getPackage();
+			return basicGetPackage();
+		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+			return getSignature();
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			return getDefines();
+		case BasicPackage.TABSTRACT_TYPE__TLIB:
+			return isTLib();
+		case BasicPackage.TABSTRACT_TYPE__TNAME:
+			return getTName();
+		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+			return getTModifier();
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			return getInnerTypes();
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			if (resolve)
+				return getOuterType();
+			return basicGetOuterType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				setPg((TypeGraph)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				setPackage((TPackage)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-				getSignature().clear();
-				getSignature().addAll((Collection<? extends TSignature>)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				getDefines().clear();
-				getDefines().addAll((Collection<? extends TMember>)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TLIB:
-				setTLib((Boolean)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TNAME:
-				setTName((String)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-				setTModifier((TModifier)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				getInnerTypes().clear();
-				getInnerTypes().addAll((Collection<? extends TAbstractType>)newValue);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				setOuterType((TAbstractType)newValue);
-				return;
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			setPg((TypeGraph) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			setPackage((TPackage) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+			getSignature().clear();
+			getSignature().addAll((Collection<? extends TSignature>) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			getDefines().clear();
+			getDefines().addAll((Collection<? extends TMember>) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TLIB:
+			setTLib((Boolean) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TNAME:
+			setTName((String) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+			setTModifier((TModifier) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			getInnerTypes().clear();
+			getInnerTypes().addAll((Collection<? extends TAbstractType>) newValue);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			setOuterType((TAbstractType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				setPg((TypeGraph)null);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				setPackage((TPackage)null);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-				getSignature().clear();
-				return;
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				getDefines().clear();
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TLIB:
-				setTLib(TLIB_EDEFAULT);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TNAME:
-				setTName(TNAME_EDEFAULT);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-				setTModifier((TModifier)null);
-				return;
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				getInnerTypes().clear();
-				return;
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				setOuterType((TAbstractType)null);
-				return;
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			setPg((TypeGraph) null);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			setPackage((TPackage) null);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+			getSignature().clear();
+			return;
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			getDefines().clear();
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TLIB:
+			setTLib(TLIB_EDEFAULT);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TNAME:
+			setTName(TNAME_EDEFAULT);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+			setTModifier((TModifier) null);
+			return;
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			getInnerTypes().clear();
+			return;
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			setOuterType((TAbstractType) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasicPackage.TABSTRACT_TYPE__PG:
-				return getPg() != null;
-			case BasicPackage.TABSTRACT_TYPE__PACKAGE:
-				return package_ != null;
-			case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
-				return signature != null && !signature.isEmpty();
-			case BasicPackage.TABSTRACT_TYPE__DEFINES:
-				return defines != null && !defines.isEmpty();
-			case BasicPackage.TABSTRACT_TYPE__TLIB:
-				return tLib != TLIB_EDEFAULT;
-			case BasicPackage.TABSTRACT_TYPE__TNAME:
-				return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
-			case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
-				return tModifier != null;
-			case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
-				return innerTypes != null && !innerTypes.isEmpty();
-			case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
-				return outerType != null;
+		case BasicPackage.TABSTRACT_TYPE__PG:
+			return getPg() != null;
+		case BasicPackage.TABSTRACT_TYPE__PACKAGE:
+			return package_ != null;
+		case BasicPackage.TABSTRACT_TYPE__SIGNATURE:
+			return signature != null && !signature.isEmpty();
+		case BasicPackage.TABSTRACT_TYPE__DEFINES:
+			return defines != null && !defines.isEmpty();
+		case BasicPackage.TABSTRACT_TYPE__TLIB:
+			return tLib != TLIB_EDEFAULT;
+		case BasicPackage.TABSTRACT_TYPE__TNAME:
+			return TNAME_EDEFAULT == null ? tName != null : !TNAME_EDEFAULT.equals(tName);
+		case BasicPackage.TABSTRACT_TYPE__TMODIFIER:
+			return tModifier != null;
+		case BasicPackage.TABSTRACT_TYPE__INNER_TYPES:
+			return innerTypes != null && !innerTypes.isEmpty();
+		case BasicPackage.TABSTRACT_TYPE__OUTER_TYPE:
+			return outerType != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BasicPackage.TABSTRACT_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE:
-				return isSuperTypeOf((TAbstractType)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___IS_SUB_TYPE_OF__TABSTRACTTYPE:
-				return isSubTypeOf((TAbstractType)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___IS_DECLARED:
-				return isDeclared();
-			case BasicPackage.TABSTRACT_TYPE___GET_FULLY_QUALIFIED_NAME:
-				return getFullyQualifiedName();
-			case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_SIGNATURE__STRING:
-				return getTMethodSignature((String)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING:
-				return getTMethodDefinition((String)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___GET_BASE_PACKAGE:
-				return getBasePackage();
-			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE:
-				return getTDefinition((TSignature)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING:
-				return getTDefinition((String)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER:
-				return hasTMember((TMember)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
-				return hasCommonSuperType((TAbstractType)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST:
-				fillSameType((EList<TAbstractType>)arguments.get(0));
-				return null;
-			case BasicPackage.TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE:
-				return isInnerType((TAbstractType)arguments.get(0));
-			case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
-				return getRealPackage((TAbstractType)arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___IS_SUPER_TYPE_OF__TABSTRACTTYPE:
+			return isSuperTypeOf((TAbstractType) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___IS_SUB_TYPE_OF__TABSTRACTTYPE:
+			return isSubTypeOf((TAbstractType) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___IS_DECLARED:
+			return isDeclared();
+		case BasicPackage.TABSTRACT_TYPE___GET_FULLY_QUALIFIED_NAME:
+			return getFullyQualifiedName();
+		case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_SIGNATURE__STRING:
+			return getTMethodSignature((String) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_TMETHOD_DEFINITION__STRING:
+			return getTMethodDefinition((String) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_BASE_PACKAGE:
+			return getBasePackage();
+		case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__TSIGNATURE:
+			return getTDefinition((TSignature) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_TDEFINITION__STRING:
+			return getTDefinition((String) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___HAS_TMEMBER__TMEMBER:
+			return hasTMember((TMember) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___HAS_COMMON_SUPER_TYPE__TABSTRACTTYPE:
+			return hasCommonSuperType((TAbstractType) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST:
+			fillSameType((EList<TAbstractType>) arguments.get(0));
+			return null;
+		case BasicPackage.TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE:
+			return isInnerType((TAbstractType) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE:
+			return getRealPackage((TAbstractType) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING:
+			return getTFieldSignature((String) arguments.get(0));
+		case BasicPackage.TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING:
+			return getTFieldDefinition((String) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tLib: ");
@@ -947,6 +1035,54 @@ public abstract class TAbstractTypeImpl extends TAnnotatableImpl implements TAbs
 		} else {
 			return type.getPackage();
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public TFieldSignature getTFieldSignature(String signature) {
+		int colon = signature.indexOf(':');
+		int open = signature.indexOf('[');
+		boolean array = open > 0;
+		final String name = signature.substring(0, colon).trim();
+		final String type;
+		if (array) {
+			type = signature.substring(colon + 1, open).trim();
+		} else {
+			type = signature.substring(colon + 1).trim();
+		}
+		return getSignature().parallelStream().filter(TFieldSignature.class::isInstance)
+				.map(TFieldSignature.class::cast).filter(field -> field.isArray() == array)
+				.filter(field -> field.getField().getTName().equals(name))
+				.filter(field -> field.getType().getFullyQualifiedName().endsWith(type)).findAny().orElse(null);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	@Override
+	public TFieldDefinition getTFieldDefinition(String signature) {
+		int colon = signature.indexOf(':');
+		int open = signature.indexOf('[');
+		boolean array = open > 0;
+		final String name = signature.substring(0, colon).trim();
+		final String type;
+		if (array) {
+			type = signature.substring(colon + 1, open).trim();
+		} else {
+			type = signature.substring(colon + 1).trim();
+		}
+		return getDefines().parallelStream().filter(TFieldDefinition.class::isInstance)
+				.map(TFieldDefinition.class::cast).filter(definition -> {
+					TFieldSignature field = definition.getSignature();
+					return field.isArray() == array && field.getField().getTName().equals(name)
+							&& field.getType().getFullyQualifiedName().endsWith(type);
+				}).findAny().orElse(null);
 	}
 
 	// [user code injected with eMoflon] -->

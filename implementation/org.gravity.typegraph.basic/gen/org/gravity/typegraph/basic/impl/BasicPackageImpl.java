@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.BasicPackage;
 import org.gravity.typegraph.basic.TAbstractFlowElement;
+import org.gravity.typegraph.basic.TAbstractMultiplicity;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TAccess;
 import org.gravity.typegraph.basic.TCall;
@@ -241,6 +242,13 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	private EClass tEnumEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tAbstractMultiplicityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -752,16 +760,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTMethod__GetSignature__TAbstractType_EList() {
-		return tMethodEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTMethodDefinition() {
 		return tMethodDefinitionEClass;
 	}
@@ -932,18 +930,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getTMethodSignature__IsThisSignature__TAbstractType_EList() {
-		return tMethodSignatureEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EOperation getTMethodSignature__GetMethodDefinitions() {
-		return tMethodSignatureEClass.getEOperations().get(4);
+		return tMethodSignatureEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -1702,6 +1690,26 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getTAbstractType__GetTFieldSignature__String() {
+		return tAbstractTypeEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTAbstractType__GetTFieldDefinition__String() {
+		return tAbstractTypeEClass.getEOperations().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTRead() {
 		return tReadEClass;
 	}
@@ -1902,6 +1910,46 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getTAbstractMultiplicity() {
+		return tAbstractMultiplicityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTAbstractMultiplicity_LowerBound() {
+		return (EAttribute)tAbstractMultiplicityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTAbstractMultiplicity_UpperBound() {
+		return (EAttribute)tAbstractMultiplicityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTAbstractMultiplicity__IsArray() {
+		return tAbstractMultiplicityEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getTVisibility() {
 		return tVisibilityEEnum;
 	}
@@ -1985,7 +2033,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tMethodEClass = createEClass(TMETHOD);
 		createEReference(tMethodEClass, TMETHOD__SIGNATURES);
 		createEReference(tMethodEClass, TMETHOD__PG);
-		createEOperation(tMethodEClass, TMETHOD___GET_SIGNATURE__TABSTRACTTYPE_ELIST);
 
 		tMethodDefinitionEClass = createEClass(TMETHOD_DEFINITION);
 		createEReference(tMethodDefinitionEClass, TMETHOD_DEFINITION__OVERRIDING);
@@ -2005,7 +2052,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_SIGNATURE_STRING);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_TDEFINITION__TABSTRACTTYPE);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___TO_STRING);
-		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___IS_THIS_SIGNATURE__TABSTRACTTYPE_ELIST);
 		createEOperation(tMethodSignatureEClass, TMETHOD_SIGNATURE___GET_METHOD_DEFINITIONS);
 
 		tPackageEClass = createEClass(TPACKAGE);
@@ -2088,6 +2134,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___FILL_SAME_TYPE__ELIST);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___IS_INNER_TYPE__TABSTRACTTYPE);
 		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_REAL_PACKAGE__TABSTRACTTYPE);
+		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TFIELD_SIGNATURE__STRING);
+		createEOperation(tAbstractTypeEClass, TABSTRACT_TYPE___GET_TFIELD_DEFINITION__STRING);
 
 		tReadEClass = createEClass(TREAD);
 
@@ -2119,6 +2167,11 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tConstructorEClass = createEClass(TCONSTRUCTOR);
 
 		tEnumEClass = createEClass(TENUM);
+
+		tAbstractMultiplicityEClass = createEClass(TABSTRACT_MULTIPLICITY);
+		createEAttribute(tAbstractMultiplicityEClass, TABSTRACT_MULTIPLICITY__LOWER_BOUND);
+		createEAttribute(tAbstractMultiplicityEClass, TABSTRACT_MULTIPLICITY__UPPER_BOUND);
+		createEOperation(tAbstractMultiplicityEClass, TABSTRACT_MULTIPLICITY___IS_ARRAY);
 
 		// Create enums
 		tVisibilityEEnum = createEEnum(TVISIBILITY);
@@ -2163,15 +2216,19 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		tFieldEClass.getESuperTypes().add(this.getTName());
 		tFieldDefinitionEClass.getESuperTypes().add(this.getTMember());
 		tFieldSignatureEClass.getESuperTypes().add(this.getTSignature());
+		tFieldSignatureEClass.getESuperTypes().add(this.getTAbstractMultiplicity());
 		tCallEClass.getESuperTypes().add(this.getTAccess());
 		tMemberEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tMemberEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		tMethodEClass.getESuperTypes().add(this.getTName());
 		tMethodDefinitionEClass.getESuperTypes().add(this.getTMember());
+		tMethodDefinitionEClass.getESuperTypes().add(this.getTAbstractMultiplicity());
 		tMethodSignatureEClass.getESuperTypes().add(this.getTSignature());
+		tMethodSignatureEClass.getESuperTypes().add(this.getTAbstractMultiplicity());
 		tPackageEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tParameterEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tParameterEClass.getESuperTypes().add(this.getTAbstractFlowElement());
+		tParameterEClass.getESuperTypes().add(this.getTAbstractMultiplicity());
 		tSignatureEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
 		tSignatureEClass.getESuperTypes().add(this.getTAbstractFlowElement());
 		typeGraphEClass.getESuperTypes().add(theAnnotationsPackage.getTAnnotatable());
@@ -2261,10 +2318,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEReference(getTMethod_Signatures(), this.getTMethodSignature(), this.getTMethodSignature_Method(), "signatures", null, 0, -1, TMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTMethod_Pg(), this.getTypeGraph(), this.getTypeGraph_Methods(), "pg", null, 1, 1, TMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getTMethod__GetSignature__TAbstractType_EList(), this.getTMethodSignature(), "getSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "returnType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "parameterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(tMethodDefinitionEClass, TMethodDefinition.class, "TMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTMethodDefinition_Overriding(), this.getTMethodDefinition(), this.getTMethodDefinition_OverriddenBy(), "overriding", null, 0, 1, TMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTMethodDefinition_OverriddenBy(), this.getTMethodDefinition(), this.getTMethodDefinition_Overriding(), "overriddenBy", null, 0, -1, TMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2289,10 +2342,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		addEParameter(op, this.getTAbstractType(), "defining", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getTMethodSignature__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getTMethodSignature__IsThisSignature__TAbstractType_EList(), ecorePackage.getEBoolean(), "isThisSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "returnType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTAbstractType(), "parameterTypes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getTMethodSignature__GetMethodDefinitions(), this.getTMethodDefinition(), "getMethodDefinitions", 0, -1, IS_UNIQUE, IS_ORDERED);
 
@@ -2362,10 +2411,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		op = initEOperation(getTypeGraph__GetSignature__String(), this.getTSignature(), "getSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getTypeGraph__GetFieldSignature__String(), this.getTSignature(), "getFieldSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTypeGraph__GetFieldSignature__String(), this.getTFieldSignature(), "getFieldSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getTypeGraph__GetMethodSignature__String(), this.getTFieldSignature(), "getMethodSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getTypeGraph__GetMethodSignature__String(), this.getTMethodSignature(), "getMethodSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getTypeGraph__GetDefinition__String(), this.getTMember(), "getDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2441,6 +2490,12 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		op = initEOperation(getTAbstractType__GetRealPackage__TAbstractType(), this.getTPackage(), "getRealPackage", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getTAbstractType(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getTAbstractType__GetTFieldSignature__String(), this.getTFieldSignature(), "getTFieldSignature", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTAbstractType__GetTFieldDefinition__String(), this.getTFieldDefinition(), "getTFieldDefinition", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "signature", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(tReadEClass, TRead.class, "TRead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(tWriteEClass, TWrite.class, "TWrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2472,6 +2527,12 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage {
 		initEClass(tConstructorEClass, TConstructor.class, "TConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(tEnumEClass, TEnum.class, "TEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tAbstractMultiplicityEClass, TAbstractMultiplicity.class, "TAbstractMultiplicity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTAbstractMultiplicity_LowerBound(), ecorePackage.getEInt(), "lowerBound", "0", 0, 1, TAbstractMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTAbstractMultiplicity_UpperBound(), ecorePackage.getEInt(), "upperBound", "1", 0, 1, TAbstractMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getTAbstractMultiplicity__IsArray(), ecorePackage.getEBoolean(), "isArray", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(tVisibilityEEnum, TVisibility.class, "TVisibility");

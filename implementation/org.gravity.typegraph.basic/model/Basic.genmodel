@@ -74,10 +74,6 @@
     <genClasses ecoreClass="Basic.ecore#//TMethod">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/signatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Basic.ecore#//TMethod/pg"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMethod/getSignature">
-        <genParameters ecoreParameter="Basic.ecore#//TMethod/getSignature/returnType"/>
-        <genParameters ecoreParameter="Basic.ecore#//TMethod/getSignature/parameterTypes"/>
-      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TMethodDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Basic.ecore#//TMethodDefinition/overriding"/>
@@ -99,10 +95,6 @@
         <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/getTDefinition/defining"/>
       </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/toString"/>
-      <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/isThisSignature">
-        <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/returnType"/>
-        <genParameters ecoreParameter="Basic.ecore#//TMethodSignature/isThisSignature/parameterTypes"/>
-      </genOperations>
       <genOperations ecoreOperation="Basic.ecore#//TMethodSignature/getMethodDefinitions"/>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TPackage">
@@ -239,6 +231,12 @@
       <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getRealPackage">
         <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getRealPackage/type"/>
       </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getTFieldSignature">
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getTFieldSignature/signature"/>
+      </genOperations>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractType/getTFieldDefinition">
+        <genParameters ecoreParameter="Basic.ecore#//TAbstractType/getTFieldDefinition/signature"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="Basic.ecore#//TRead"/>
     <genClasses ecoreClass="Basic.ecore#//TWrite"/>
@@ -265,6 +263,11 @@
     <genClasses ecoreClass="Basic.ecore#//TReadWrite"/>
     <genClasses ecoreClass="Basic.ecore#//TConstructor"/>
     <genClasses ecoreClass="Basic.ecore#//TEnum"/>
+    <genClasses image="false" ecoreClass="Basic.ecore#//TAbstractMultiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractMultiplicity/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//TAbstractMultiplicity/upperBound"/>
+      <genOperations ecoreOperation="Basic.ecore#//TAbstractMultiplicity/isArray"/>
+    </genClasses>
     <nestedGenPackages prefix="Annotations" disposableProviderFactory="true" ecorePackage="Basic.ecore#//annotations">
       <genClasses ecoreClass="Basic.ecore#//annotations/TAnnotationValue">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Basic.ecore#//annotations/TAnnotationValue/tKey"/>

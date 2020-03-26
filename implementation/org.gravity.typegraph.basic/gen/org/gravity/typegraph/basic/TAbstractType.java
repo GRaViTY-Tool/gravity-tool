@@ -357,6 +357,22 @@ public interface TAbstractType extends TAnnotatable {
 	 * @generated
 	 */
 	TPackage getRealPackage(TAbstractType type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TFieldSignature getTFieldSignature(String signature);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	TFieldDefinition getTFieldDefinition(String signature);
 	// <-- [user code injected with eMoflon]
 
 

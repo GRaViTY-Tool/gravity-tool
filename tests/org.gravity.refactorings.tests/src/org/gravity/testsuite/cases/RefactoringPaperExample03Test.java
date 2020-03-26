@@ -5,14 +5,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.BasicEList;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.refactorings.RefactoringFailedException;
 import org.gravity.refactorings.application.RefactoringTool;
 import org.gravity.refactorings.configuration.impl.PullUpMethodConfiguration;
 import org.gravity.testsuite.AbstractRefactoringTestCase;
 import org.gravity.typegraph.basic.TClass;
-import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
 import org.gravity.typegraph.basic.TMethodSignature;
 import org.gravity.typegraph.basic.TypeGraph;
@@ -39,8 +37,7 @@ public class RefactoringPaperExample03Test extends AbstractRefactoringTestCase {
 		TClass child1 = pm.getClass("example03.ChildClass1");
 		TClass child2 = pm.getClass("example03.ChildClass2");
 		TClass child3 = pm.getClass("example03.ChildClass3");
-		TMethod methodName = pm.getMethod("method");
-		TMethodSignature signature = methodName.getSignature(null, new BasicEList<>());
+		TMethodSignature signature = pm.getMethodSignature("method():void");
 		TMethodDefinition definition1 = signature.getTDefinition(child1);
 		TMethodDefinition definition2 = signature.getTDefinition(child2);
 
