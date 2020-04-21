@@ -9,7 +9,6 @@
     name="rules"
     description="">
   <imports href="http://www.gravity-tool.org/typegraph/basic#//annotations"/>
-  <imports href="http://www.gravity-tool.org/typegraph/basic#//containers"/>
   <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
   <units xsi:type="henshin:Rule"
       xmi:id="_er3dEOlEEeajyLi0pWzMmQ"
