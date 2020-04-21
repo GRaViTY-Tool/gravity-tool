@@ -68,7 +68,7 @@ public interface TAnnotation extends EObject {
 	 * @see #setType(TAnnotationType)
 	 * @see org.gravity.typegraph.basic.annotations.AnnotationsPackage#getTAnnotation_Type()
 	 * @see org.gravity.typegraph.basic.annotations.TAnnotationType#getAnnotations
-	 * @model opposite="annotations" required="true"
+	 * @model opposite="annotations"
 	 * @generated
 	 */
 	TAnnotationType getType();

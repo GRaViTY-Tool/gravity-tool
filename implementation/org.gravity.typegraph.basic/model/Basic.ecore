@@ -348,8 +348,8 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tAnnotated" lowerBound="1"
           eType="#//annotations/TAnnotatable" eOpposite="#//annotations/TAnnotatable/tAnnotation"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="#//annotations/TAnnotationType" eOpposite="#//annotations/TAnnotationType/annotations"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//annotations/TAnnotationType"
+          eOpposite="#//annotations/TAnnotationType/annotations"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="tValues" upperBound="-1"
           eType="#//annotations/TAnnotationValue" containment="true" eKeys="#//annotations/TAnnotationValue/tKey"/>
     </eClassifiers>

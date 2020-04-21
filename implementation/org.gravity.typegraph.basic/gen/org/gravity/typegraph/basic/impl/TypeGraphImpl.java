@@ -610,7 +610,7 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	@Override
 	public TAbstractType getType(String fullyQualifiedName) {
 		final int index = fullyQualifiedName.lastIndexOf('.');
-		String defaultPackage = "default";
+		String defaultPackage = "(default package)";
 		if (index > 0) {
 			defaultPackage = fullyQualifiedName.substring(0, index);
 		}
@@ -622,7 +622,9 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 					return tType;
 				}
 			}
-			return null;
+			if(index > 0) {
+				return null;
+			}
 		}
 		return getOwnedTypes().parallelStream()
 				.filter(type -> type.getPackage() == null && type.getTName().equals(name)).findAny().orElse(null);
