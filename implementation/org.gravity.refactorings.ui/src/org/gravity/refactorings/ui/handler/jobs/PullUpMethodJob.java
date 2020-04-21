@@ -22,7 +22,6 @@ import org.gravity.refactorings.ui.dialogs.RefactoringDialog;
 import org.gravity.typegraph.basic.TAbstractType;
 import org.gravity.typegraph.basic.TClass;
 import org.gravity.typegraph.basic.TMethodSignature;
-import org.gravity.typegraph.basic.TParameter;
 import org.gravity.typegraph.basic.TypeGraph;
 
 /**

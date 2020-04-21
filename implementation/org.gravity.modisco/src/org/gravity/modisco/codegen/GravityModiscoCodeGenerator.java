@@ -12,8 +12,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
@@ -32,7 +30,6 @@ import org.eclipse.modisco.java.AnnotationTypeMemberDeclaration;
 import org.eclipse.modisco.java.ArrayInitializer;
 import org.eclipse.modisco.java.ArrayType;
 import org.eclipse.modisco.java.Block;
-import org.eclipse.modisco.java.BlockComment;
 import org.eclipse.modisco.java.CompilationUnit;
 import org.eclipse.modisco.java.ClassDeclaration;
 import org.eclipse.modisco.java.Comment;

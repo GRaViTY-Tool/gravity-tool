@@ -114,7 +114,7 @@ public final class MoDiscoUtil {
 	 * @param model  The model of the program
 	 * @return the most generic return type
 	 */
-	public static Type getMostGenericReturnType(final MAbstractMethodDefinition method, final MGravityModel model) {
+	public static Type getMostGenericReturnType(final MAbstractMethodDefinition method) {
 		final AbstractTypeDeclaration abstractTypeDeclaration = method.getAbstractTypeDeclaration();
 		if (method instanceof MConstructorDefinition) {
 			if (abstractTypeDeclaration != null) {

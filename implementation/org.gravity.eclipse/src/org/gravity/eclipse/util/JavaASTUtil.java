@@ -31,7 +31,6 @@ import org.eclipse.jdt.core.dom.ArrayType;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jdt.core.dom.Name;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.ParameterizedType;
 import org.eclipse.jdt.core.dom.PrimitiveType;
@@ -205,7 +204,7 @@ public final class JavaASTUtil {
 			return pm.getType(type.toString());
 		}
 		String fullyQualifiedName = getName(type);
-		if (fullyQualifiedName.indexOf('.') > 0) {
+		if (fullyQualifiedName.indexOf('.') >= 0) {
 			return pm.getType(fullyQualifiedName);
 		}
 		ASTNode root = type.getRoot();

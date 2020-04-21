@@ -32,7 +32,6 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
-import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * This class provides frequently used functionalities when working with eclipse
@@ -277,7 +276,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static List<IProject> importProjects(File rootFolder, IProgressMonitor monitor) throws CoreException {
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(file -> file.isDirectory()).parallel().map(projectFolder -> {
+		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(File::isDirectory).parallel().map(projectFolder -> {
 			try {
 				return importProject(projectFolder, monitor);
 			} catch (final CoreException e) {
