@@ -17,6 +17,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -31,6 +32,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.core.ClasspathEntry;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
+import org.gravity.typegraph.basic.TypeGraph;
 
 /**
  * This class provides frequently used functionalities when working with eclipse
@@ -138,8 +140,7 @@ public final class EclipseProjectUtil {
 	 * @param project The project
 	 * @param monitor A progress monitor
 	 * @return The gravity folder
-	 * @throws IOException If the gravity folder doesn't exists and cannot be
-	 *                     created
+	 * @throws IOException If the gravity folder doesn't exists and cannot be created
 	 */
 	public static IFolder getGravityFolder(IProject project, IProgressMonitor monitor) throws IOException {
 		final IFolder gravityFolder = project.getFolder(GravityActivator.GRAVITY_FOLDER_NAME);
@@ -151,6 +152,19 @@ public final class EclipseProjectUtil {
 			}
 		}
 		return gravityFolder;
+	}
+
+	/**
+	 * Returns the default location for the program model of a project
+	 * 
+	 * @param project A project for which the program model location should be returned
+	 * @param monitor A progress monitor
+	 * @return The default location where the program model is stored by gravity
+	 * @throws IOException If the gravity folder doesn't exists and cannot be created
+	 */
+	public static IFile getProgramModelFile(IProject project, IProgressMonitor monitor) throws IOException {
+		return EclipseProjectUtil.getGravityFolder(project, monitor)
+				.getFile(project.getName() + ".xmi");  // $NON-NLS-1$
 	}
 
 	/**
@@ -263,7 +277,7 @@ public final class EclipseProjectUtil {
 	 */
 	public static List<IProject> importProjects(File rootFolder, IProgressMonitor monitor) throws CoreException {
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		final List<IProject> projects = Stream.of(rootFolder.listFiles()).parallel().map(projectFolder -> {
+		final List<IProject> projects = Stream.of(rootFolder.listFiles()).filter(file -> file.isDirectory()).parallel().map(projectFolder -> {
 			try {
 				return importProject(projectFolder, monitor);
 			} catch (final CoreException e) {
@@ -293,9 +307,18 @@ public final class EclipseProjectUtil {
 		if (!dotProject.exists()) {
 			return null;
 		}
-		final IProjectDescription description = ResourcesPlugin.getWorkspace()
-				.loadProjectDescription(new Path(dotProject.toString()));
-		final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(description.getName());
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		java.nio.file.Path workspaceLocation = workspace.getRoot().getLocation().toFile().toPath();
+		Path path;
+		if(dotProject.getAbsoluteFile().toPath().startsWith(workspaceLocation)) {
+			path = new Path(dotProject.getPath());
+		}
+		else {
+			path = new Path(dotProject.getAbsolutePath());
+		}
+		final IProjectDescription description = workspace
+				.loadProjectDescription(path);
+		final IProject project = workspace.getRoot().getProject(description.getName());
 		if (!project.exists()) {
 			project.create(description, monitor);
 		}

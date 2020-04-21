@@ -15,6 +15,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.ILocalVariable;
@@ -31,6 +32,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.Name;
+import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.ParameterizedType;
 import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.SimpleName;
@@ -39,6 +41,7 @@ import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.gravity.typegraph.basic.TAbstractType;
+import org.gravity.typegraph.basic.TFieldSignature;
 import org.gravity.typegraph.basic.TMember;
 import org.gravity.typegraph.basic.TMethod;
 import org.gravity.typegraph.basic.TMethodDefinition;
@@ -176,7 +179,11 @@ public final class JavaASTUtil {
 		if (parent instanceof CompilationUnit) {
 			final CompilationUnit childcu = (CompilationUnit) parent;
 
-			TPackage tPackage = pm.getPackage(childcu.getPackage().getName().getFullyQualifiedName());
+			PackageDeclaration expectedPackage = childcu.getPackage();
+			if (expectedPackage == null) {
+				return pm.getType(fullyQualifiedName);
+			}
+			TPackage tPackage = pm.getPackage(expectedPackage.getName().getFullyQualifiedName());
 			if (tPackage == null) {
 				throw new IllegalStateException("The program model doesn't contain the expected package structure");
 			}
@@ -220,16 +227,28 @@ public final class JavaASTUtil {
 					}
 				}
 			}
-			TPackage cuPackage = pm.getPackage(cu.getPackage().getName().getFullyQualifiedName());
-			if (cuPackage != null) {
-				Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
-						.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
-				if (result.isPresent()) {
-					return result.get();
+			PackageDeclaration cuPackageDecl = cu.getPackage();
+			if (cuPackageDecl != null) {
+				TPackage cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
+				if (cuPackage != null) {
+					Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
+							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
+					if (result.isPresent()) {
+						return result.get();
+					}
 				}
 			}
-
-			LOGGER.error("Couldn't find SimpleType: " + fullyQualifiedName);
+			for(String packageName : new String[] {"java.lang", "java.util"}) {
+				TPackage cuPackage = pm.getPackage(packageName);
+				if (cuPackage != null) {
+					Optional<TAbstractType> result = cuPackage.getOwnedTypes().parallelStream()
+							.filter(pmType -> pmType.getTName().equals(fullyQualifiedName)).findAny();
+					if (result.isPresent()) {
+						return result.get();
+					}
+				}
+			}
+			return pm.getType(fullyQualifiedName);
 		} else {
 			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
 		}
@@ -355,8 +374,7 @@ public final class JavaASTUtil {
 				final SingleVariableDeclaration var = (SingleVariableDeclaration) p;
 				final Type vt = var.getType();
 				final String name = getName(vt);
-				if (tParam.getType().getFullyQualifiedName().endsWith(name)
-						&& vt.isArrayType() == tParam.isArray()) {
+				if (tParam.getType().getFullyQualifiedName().endsWith(name) && vt.isArrayType() == tParam.isArray()) {
 					tParam = tParam.getNext();
 				} else {
 					return false;
@@ -402,6 +420,12 @@ public final class JavaASTUtil {
 			}
 		}
 		return false;
+	}
+
+	public static IField getIField(TFieldSignature signature, IType type) throws JavaModelException {
+		IField iField = type.getField(signature.getField().getTName());
+		iField.getTypeSignature();
+		return iField;
 	}
 
 }
