@@ -82,7 +82,11 @@ public class GradleBuild {
 			gradlew = this.gradleBin;
 		}
 
-		FileUtils.changeToOSEncoding(gradlew);
+		try {
+			FileUtils.changeToOSEncoding(gradlew);
+		} catch (IOException e) {
+			LOGGER.warn("could not change gradlew to os specific line delimiters");
+		}
 		if (!gradlew.setExecutable(true)) {
 			return false;
 		}
