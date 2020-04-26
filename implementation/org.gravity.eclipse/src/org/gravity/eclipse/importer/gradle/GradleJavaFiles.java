@@ -59,7 +59,7 @@ public class GradleJavaFiles {
 	private Path manipuateBuildFile(Path build) throws IOException {
 		final Path backupLocation = Files.copy(build, Files.createTempFile("backupBuildGardle", ""),
 				StandardCopyOption.REPLACE_EXISTING);
-		final String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output + "\")\n"
+		final String taskCode = "\n" + "task " + BUILD_TARGET + " {\n" + "  def outputFile = file(\"" + this.output.toString().replace("\\", "/") + "\")\n"
 				+ "  outputs.file  outputFile\n" + "  doLast {\n" + "    subprojects { project ->\n"
 				+ "      project.plugins.withType(JavaPlugin) {\n"
 				+ "        project.sourceSets.main.allJava.collect { sourceFile ->\n"
