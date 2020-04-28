@@ -234,12 +234,12 @@ public class GradleImport extends ProjectImport {
 	private HashMap<String, Set<Path>> getSourceFolderMapping(final Set<Path> javaSourceFiles) {
 		final HashMap<String, Set<Path>> sourceFolders = new HashMap<>();
 		for (final Path sourceFile : javaSourceFiles) {
-			final Path path = getRootDir().toPath();
+			final Path path = getRootDir().getAbsoluteFile().toPath();
 			String relativize;
 			try {
 				relativize = path.relativize(sourceFile).toString();
 			} catch (final IllegalArgumentException e) {
-				relativize = sourceFile.toString().replaceFirst(new File("").getAbsolutePath(), "");
+				relativize = sourceFile.toString().replace(new File("").getAbsolutePath(), "");
 				final char charAt0 = relativize.charAt(0);
 				if (charAt0 == '/' || charAt0 == '\\') {
 					relativize = relativize.substring(1);
