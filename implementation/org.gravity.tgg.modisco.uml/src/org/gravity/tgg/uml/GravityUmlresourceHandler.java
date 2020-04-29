@@ -128,7 +128,7 @@ public final class GravityUmlresourceHandler extends TGGResourceHandler {
 				ModiscoPackage.eINSTANCE);
 		this.rs.getResources().remove(ModiscoPackage.eINSTANCE.eResource());
 		final EPackage tggPackage = loadMetaModelPackage(UML_ECORE);
-		registerPackage(tggPackage);
+//		registerPackage(tggPackage);
 		this.options.tgg.corrMetamodel(tggPackage);
 	}
 
