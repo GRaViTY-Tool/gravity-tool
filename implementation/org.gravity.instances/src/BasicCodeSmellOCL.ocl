@@ -1,0 +1,68 @@
+import ecore : 'http://www.eclipse.org/emf/2002/Ecore#/'
+import basic : 'http://www.gravity-tool.org/typegraph/basic#/'
+/*import basic : 'platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore'*/
+
+
+package basic
+
+context TClass
+inv Tst : false
+
+/* Method: Find Classes with amount of fields and methods*/
+context TClass
+/*VERY LOW */
+inv LargeClass0: self.getAllTMembers()->size() < 2
+/*LOW */
+inv LargeClass1: self.getAllTMembers()->size() < 5
+/*MEDIUM*/
+inv LargeClass2: self.getAllTMembers()->size() < 10
+/*HIGH*/
+inv LargeClass3: self.getAllTMembers()->size() < 15
+/*VERY HIGH*/
+inv LargeClass4: self.getAllTMembers()->size() >= 15
+
+/* Method: IntenseFieldUsage*/
+/*context TClass*/
+/*VERY LOW */
+inv IFU0: self.getAllTMembers().tAccessing->size() < 2 and self.getAllTMembers().accessedBy->size() < 2
+/*LOW */
+inv IFU1: self.getAllTMembers().tAccessing->size() < 5 and self.getAllTMembers().accessedBy->size() < 5
+/*MEDIUM*/
+inv IFU2: self.getAllTMembers().tAccessing->size() < 10 and self.getAllTMembers().accessedBy->size() < 10
+/*HIGH*/
+inv IFU3: self.getAllTMembers().tAccessing->size() < 15 and self.getAllTMembers().accessedBy->size() < 15
+/*VERY HIGH*/
+inv IFU4: self.getAllTMembers().tAccessing->size() >= 15 and self.getAllTMembers().accessedBy->size() >= 15
+
+/* Method: Average Parameters*/
+/*context TClass*/
+inv AvgParam: self.signature->size() >= 0
+
+/* Method: Depth of Inheritance*/
+/*context TClass*/
+/*VERY LOW */
+inv DIT0: self.parentClass->closure(childClasses)->size() = 0
+/*LOW */
+inv DIT1: self.parentClass->closure(childClasses)->size() < 2
+/*MEDIUM*/
+inv DIT2: self.parentClass->closure(childClasses)->size() < 3
+/*HIGH*/
+inv DIT3: self.parentClass->closure(childClasses)->size() < 4
+/*VERY HIGH*/
+inv DIT4: self.parentClass->closure(childClasses)->size() >= 4
+
+/* Method: ChildClasses
+context TClass
+/*VERY LOW */
+inv CC0: self.getAllChildren()->size() = 0 or self.childClasses->size() = 0
+/*LOW */
+inv CC1: self.getAllChildren()->size() = 1 or self.childClasses->size() = 1
+/*MEDIUM*/
+inv CC2: self.getAllChildren()->size() = 2 or self.childClasses->size() = 2
+/*HIGH*/
+inv CC3: self.getAllChildren()->size() = 3 or self.childClasses->size() = 3
+/*VERY HIGH*/
+inv CC4: self.getAllChildren()->size() >= 4 or self.childClasses->size() >= 4
+
+
+endpackage
