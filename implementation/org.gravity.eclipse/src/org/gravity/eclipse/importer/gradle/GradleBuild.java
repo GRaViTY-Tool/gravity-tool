@@ -82,7 +82,11 @@ public class GradleBuild {
 			gradlew = this.gradleBin;
 		}
 
-		FileUtils.changeToOSEncoding(gradlew);
+		try {
+			FileUtils.changeToOSEncoding(gradlew);
+		} catch (IOException e) {
+			LOGGER.warn("could not change gradlew to os specific line delimiters");
+		}
 		if (!gradlew.setExecutable(true)) {
 			return false;
 		}
@@ -131,7 +135,7 @@ public class GradleBuild {
 		Process process = null;
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			process = Runtime.getRuntime().exec(new String[] { "gradlew ", buildTarget }, null, path);
+			process = Runtime.getRuntime().exec(new String[] { "cmd", " /c \" gradlew " + buildTarget}, null, path);
 			break;
 		case LINUX:
 			process = Runtime.getRuntime().exec(new String[] { "./gradlew ", buildTarget }, null, path);

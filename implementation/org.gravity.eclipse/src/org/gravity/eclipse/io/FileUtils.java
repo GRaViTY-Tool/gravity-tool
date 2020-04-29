@@ -51,7 +51,7 @@ public final class FileUtils {
 			// move the file to a temporary file
 			Files.move(file.toPath(), tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			// print all lines to the original location using system encoding
-			copy(file, tempFile);
+			copy(tempFile, file);
 		} catch (final IOException e) {
 			LOGGER.log(Level.ERROR, "Replacing line endings of file failed: " + e.getMessage(), e);
 			// Try to recover file
