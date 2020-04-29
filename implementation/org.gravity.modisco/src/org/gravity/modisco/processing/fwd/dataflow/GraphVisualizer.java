@@ -30,7 +30,6 @@ import org.gravity.modisco.MGravityModel;
 
 import guru.nidi.graphviz.attribute.Color;
 import guru.nidi.graphviz.attribute.Label;
-import guru.nidi.graphviz.attribute.RankDir;
 import guru.nidi.graphviz.attribute.Style;
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
@@ -88,8 +87,7 @@ public final class GraphVisualizer {
 				memberName = ((FieldDeclaration) memberDef).getFragments().get(0).getName();
 				className = getName(defContainer);
 			}
-			final MutableGraph graph = mutGraph("graph" + i).setDirected(true).graphAttrs().add(RankDir.TOP_TO_BOTTOM)
-					.graphAttrs().add("dpi", 72);
+			final MutableGraph graph = mutGraph("graph" + i).setDirected(true).graphAttrs().add("dpi", 72);
 			final HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
 			final Collection<FlowNode> alreadySeenNodes = handler.getAllFlowNodes();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<language:TGG xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:language="platform:/plugin/org.emoflon.ibex.tgg.core.language/model/Language.ecore" name="org.gravity.tgg.modisco.uml">
+<language:TGG xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:language="platform:/plugin/org.emoflon.ibex.tgg.language/model/Language.ecore" name="org.gravity.tgg.modisco.uml">
   <src href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#/"/>
   <src href="http://www.gravity-tool.org/modisco#/"/>
   <trg href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>

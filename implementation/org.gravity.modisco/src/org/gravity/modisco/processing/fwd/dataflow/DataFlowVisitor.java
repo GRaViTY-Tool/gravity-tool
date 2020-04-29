@@ -531,6 +531,11 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final ParenthesizedExpression parenthesizedExpression) {
+		final FlowNode member = this.handler.getFlowNodeOrCreate(parenthesizedExpression);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		addFlowToContainer(parenthesizedExpression, member);
 		return handle(parenthesizedExpression.getExpression());
 	}
 

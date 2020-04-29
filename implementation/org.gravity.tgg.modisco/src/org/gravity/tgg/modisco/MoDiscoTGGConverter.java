@@ -112,16 +112,6 @@ public class MoDiscoTGGConverter implements IPGConverter {
 			return false;
 		}
 
-		try {
-			final IFile file = EclipseProjectUtil.getGravityFolder(this.iJavaProject.getProject(), progressMonitor)
-					.getFile("modisco" + System.currentTimeMillis() + ".xmi");
-			saveModel(this.preprocessedModiscoModel.eResource(), file, progressMonitor);
-		} catch (final IOException e) {
-			if (LOGGER.isEnabledFor(Level.WARN)) {
-				LOGGER.warn(e);
-			}
-		}
-
 		final boolean success = convertModel(this.preprocessedModiscoModel, progressMonitor);
 
 		if (infoEnabled) {

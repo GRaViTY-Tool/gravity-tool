@@ -52,7 +52,7 @@ final class GravityPMResourceHandler extends TGGResourceHandler {
 		registerPackage(ModiscoPackage.eINSTANCE);
 		registerPackage(BasicPackage.eINSTANCE);
 		final EPackage tggPackage = loadMetaModelPackage();
-		registerPackage(tggPackage);
+//		registerPackage(tggPackage);
 		this.options.tgg.corrMetamodel(tggPackage);
 		EcoreUtil.resolveAll(this.rs);
 	}

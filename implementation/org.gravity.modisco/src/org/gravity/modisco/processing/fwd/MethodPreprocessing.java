@@ -103,7 +103,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 */
 	private boolean createMethodSignature(final MGravityModel model, final MMethodName name,
 			final MAbstractMethodDefinition definition) {
-		final Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(definition, model);
+		final Type mSigReturnType = MoDiscoUtil.getMostGenericReturnType(definition);
 		if (mSigReturnType == null) {
 			LOGGER.error("Couldn't find most geric return type for method definition:" + definition + ".");
 			return false;

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.gravity.tgg.modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/org.gravity.tgg.modisco.ecore"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modisco" nsURI="platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore"
     nsPrefix="org.gravity.tgg.modisco">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteralToTBoolNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BooleanLiteral"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//annotations/TBoolNode"/>
@@ -142,7 +143,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.gravity-tool.org/typegraph/basic#//TFieldDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberKey__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberKey__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -157,7 +158,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotation__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -172,7 +173,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueAnnotationArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
@@ -189,7 +190,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnnotationToTAnnotation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBoolean__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -204,7 +205,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//BooleanLiteralToTBoolNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueBooleanArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
@@ -221,7 +222,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//BooleanLiteralToTBoolNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClass__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
@@ -244,7 +245,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassLiteralToClassNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueClassArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
@@ -269,7 +270,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassLiteralToClassNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumber__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -284,7 +285,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//NumberLiteralToTNumberNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueNumberArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
@@ -301,7 +302,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//NumberLiteralToTNumberNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueString__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mValue" lowerBound="1"
@@ -316,7 +317,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//StringLiteralToTTextNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationMemberValueStringArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationValue"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationMemberValuePair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mArray" lowerBound="1"
@@ -333,7 +334,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//StringLiteralToTTextNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationOnBodyDeclaration__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__Annotation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__astNode"
@@ -347,7 +348,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__aSTNodeToTAnnotable"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotationType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mType" lowerBound="1"
@@ -365,7 +366,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeAccess__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeAccess__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__AnnotationType"
@@ -381,7 +382,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__AnnotationTypeToTAnnotationType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mNestedType"
@@ -399,7 +400,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeNested__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeNested__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterType"
@@ -421,7 +422,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAnonymous"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAnonymous"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
@@ -445,7 +446,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassTypeClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassTypeClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnonymous"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mCreation"
@@ -464,7 +465,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassTypeInterface__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mAnonymous"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mCreation"
@@ -483,13 +484,13 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrayInitializerIgnoreExpressionsEdge__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__array" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayInitializer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrayTypeToClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayTypeToClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eArrayType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ArrayType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
@@ -507,7 +508,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eTypeToTArrayClass"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="Class__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mType" lowerBound="1"
@@ -527,7 +528,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassExtendsClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassExtendsClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eExtendedClass"
@@ -543,7 +544,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eExtendedClassToTExtendedClass"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassImplementsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassImplementsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eSuperInterface"
@@ -559,7 +560,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mNestedType"
@@ -579,7 +580,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassInnerAnonClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInnerAnonClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -603,7 +604,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerTypeToTInnerAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassInnerClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInnerClassMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterClass"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -627,7 +628,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__tInnerTypeToTInnerAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassInstanceCreation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInstanceCreation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MClassInstanceCreation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -649,7 +650,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MConstructorDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -669,7 +670,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTMethodSignature"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstructorInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -691,7 +692,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="Enum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mType" lowerBound="1"
@@ -711,7 +712,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mNestedType"
@@ -731,7 +732,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessRead__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessRead__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
@@ -761,7 +762,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessReadWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessReadWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
@@ -791,7 +792,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessWrite__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mAccess" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSingleVariableAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mField" lowerBound="1"
@@ -821,7 +822,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDefinition__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -839,7 +840,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSignatureToTFieldSignature"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mFieldName"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__model" lowerBound="1"
@@ -853,7 +854,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__modelToTypeGraph"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldSignature__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldSignature__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFieldName"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mSignature"
@@ -875,7 +876,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FieldSignatureArrayType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="FieldSignatureArrayType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mArrayType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFieldName"
@@ -901,7 +902,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="Flow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mFlow" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mOwner" lowerBound="1"
@@ -915,7 +916,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mOwnerToTOwner"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IncomingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFlow" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSource"
@@ -929,7 +930,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mSourceToTSource"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="Interface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mType" lowerBound="1"
@@ -949,7 +950,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceExtendsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceExtendsInterface__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eInterfaceDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eSuperInterface"
@@ -965,7 +966,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eSuperInterfaceToTSuperInterface"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceInAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eAnonymousClassDeclaration"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mNestedType"
@@ -985,7 +986,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mbodyToTAnnotatable"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceMember__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mInterface"
@@ -1005,7 +1006,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToAnonymous__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1025,7 +1026,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//AnonymousClassDeclarationToTClass"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1046,7 +1047,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MemberInAnnotationVisibility__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__Annotation"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnnotationTypeDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -1066,7 +1067,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MemberInClassVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MemberInClassVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -1086,7 +1087,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MemberInEnumVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MemberInEnumVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//EnumDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
@@ -1107,7 +1108,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDefinitionReturnArray__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mArrayTypeAccess"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
@@ -1138,7 +1139,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodDefinitionReturnSingle__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1164,7 +1165,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -1186,7 +1187,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationRecursive__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationRecursive__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -1203,7 +1204,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationStaticType__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mStaticType"
@@ -1217,7 +1218,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mStaticTypeTotStaticType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodName__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MGravityModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mName" lowerBound="1"
@@ -1231,7 +1232,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__modelToPg"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodOverriding__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodOverriding__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMethod"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mOverriding"
@@ -1245,7 +1246,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mOverridingToTOverriding"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterArrayType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterArrayType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mEntry" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1271,7 +1272,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLink__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLink__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mEntry" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mPrevEntry"
@@ -1285,7 +1286,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mmethodSignatureToTMethodSignature"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MEntryToTParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLinkFirst__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLinkFirst__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mEntry" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mParameterList"
@@ -1299,7 +1300,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mmethodSignatureToTMethodSignature"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSignatureToTSignature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterSingleType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="MethodParameterSingleType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mEntry" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MEntry"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mSignature"
@@ -1322,7 +1323,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodSignatureArrayReturn__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mName" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mSignature"
@@ -1349,7 +1350,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodSignatureSingleReturn__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mName" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MMethodName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mSignature"
@@ -1371,7 +1372,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelToPg__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelToPg__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mModel" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MGravityModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__TRG__tPG" lowerBound="1"
@@ -1379,7 +1380,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mModelToTPG"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NestedClassInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="NestedClassInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterType"
@@ -1403,7 +1404,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mNestedClassDeclarationToTNestedClass"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ClassDeclarationToTClass"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NestedEnum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="NestedEnum__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//EnumDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterType"
@@ -1427,7 +1428,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mBodyToTAnnotation"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ASTNodeToTAnnotatable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NestedInterfaceInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="NestedInterfaceInType__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eNestedType"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//InterfaceDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eOuterType"
@@ -1451,7 +1452,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mInterfaceDeclarationtoTInterface"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//InterfaceDeclarationToTInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OutgoingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingFlow__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mFlow" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFlow"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mTarget"
@@ -1465,7 +1466,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTargetToTTarget"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MAbstractFlowElementToTAbstractFlowElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mPackage"
@@ -1479,7 +1480,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mPackageToTPackage"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterizedTypeToClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterizedTypeToClass__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__eParameterizedType"
@@ -1499,7 +1500,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eTypeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsBoolean__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsBoolean__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1515,7 +1516,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsByte__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsByte__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1531,7 +1532,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsChar__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsChar__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1547,7 +1548,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsDouble__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsDouble__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1563,7 +1564,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsFloat__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsFloat__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1579,7 +1580,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsInt__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsInt__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1595,7 +1596,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsLong__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsLong__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1611,7 +1612,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsShort__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsShort__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1627,7 +1628,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypesIsVoid__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypesIsVoid__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__ePrimitiveType"
@@ -1643,7 +1644,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__typeToTAbstractType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubPackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="SubPackageToPGPackage__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mPackage"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mParentPackage"
@@ -1660,7 +1661,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//PackageToTPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperConstructorInvocation__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MAbstractMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -1682,7 +1683,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SuperMethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="SuperMethodInvocation__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__invocation"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MSuperMethodInvocation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -1704,7 +1705,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMethodToTMethod"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SyntethicMethod__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="SyntethicMethod__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mClass" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDef" lowerBound="1"
@@ -1726,7 +1727,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mSyntToTSynt"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MSyntethicMethodToTSyntethicMethod"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextAnnotations__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="TextAnnotations__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mComment"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//LineComment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mMember"
@@ -1740,7 +1741,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mMemberToTMember"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//MDefinitionToTMember"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeParameter__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="TypeParameter__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MGravityModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__typeParameter"
@@ -1754,7 +1755,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__eModelToPg"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypesOrphaned__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="TypesOrphaned__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mModel" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mType" lowerBound="1"
@@ -1770,7 +1771,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypesVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="TypesVisibility__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__mModifier"
         lowerBound="1" eType="ecore:EClass http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mType" lowerBound="1"
@@ -1784,7 +1785,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__CORR__mTypeToTType"
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//TypeToTAbstractType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration__Marker" eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__eModel" lowerBound="1"
         eType="ecore:EClass http://www.gravity-tool.org/modisco#//MGravityModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__unresolvedType"
@@ -1799,7 +1800,7 @@
         lowerBound="1" eType="ecore:EClass platform:/resource/org.gravity.tgg.modisco/model/Modisco.ecore#//ModelToTypeGraph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationFragment__Marker"
-      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.core.runtime/model/Runtime.ecore#//TGGRuleApplication">
+      eSuperTypes="platform:/plugin/org.emoflon.ibex.tgg.runtime/model/Runtime.ecore#//TGGRuleApplication">
     <eStructuralFeatures xsi:type="ecore:EReference" name="CONTEXT__SRC__mDefinition"
         lowerBound="1" eType="ecore:EClass http://www.gravity-tool.org/modisco#//MFieldDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="CREATE__SRC__varDeclFragment"

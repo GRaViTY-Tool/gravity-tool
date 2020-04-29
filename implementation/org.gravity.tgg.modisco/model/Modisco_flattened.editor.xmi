@@ -974,11 +974,11 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.17/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.17/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
@@ -1065,14 +1065,14 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
+      <linkVariablePatterns target="//@rules.19/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.19/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.19/@targetPatterns.1">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.19/@targetPatterns.2">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
@@ -1163,14 +1163,14 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
         <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
+        <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.20/@targetPatterns.3">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.20/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/tAnnotationTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.16" source="//@rules.20/@sourcePatterns.0" target="//@rules.20/@targetPatterns.1">
@@ -1485,25 +1485,25 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
+      <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.0">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.27/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -1615,10 +1615,6 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
-      <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.30/@targetPatterns.1">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -1628,6 +1624,10 @@
       <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.30/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tClass">
@@ -2081,11 +2081,11 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tAnnotation">
@@ -2099,11 +2099,11 @@
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.37/@targetPatterns.3">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -2152,10 +2152,6 @@
     </sourcePatterns>
     <targetPatterns name="pg">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
-      <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.38/@targetPatterns.2">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
@@ -2165,6 +2161,10 @@
       <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.38/@targetPatterns.3">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tAnnotation">
@@ -2840,25 +2840,25 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tPackage">
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
+      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
+      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.0">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.51/@targetPatterns.2">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tType">
@@ -4180,10 +4180,6 @@
     <targetPatterns name="tNestedPackage">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
-      <linkVariablePatterns target="//@rules.78/@targetPatterns.5">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.78/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
@@ -4191,6 +4187,10 @@
       <linkVariablePatterns target="//@rules.78/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/classes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.78/@targetPatterns.5">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tNestedType">
@@ -4227,12 +4227,12 @@
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.78/@targetPatterns.4">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.78/@targetPatterns.2">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/classes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.78/@targetPatterns.4">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
     </targetPatterns>
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.16" source="//@rules.78/@sourcePatterns.0" target="//@rules.78/@targetPatterns.2">
@@ -4283,10 +4283,6 @@
     <targetPatterns name="tNestedPackage">
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage"/>
-      <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
-        <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
-      </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.79/@targetPatterns.4">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/typeGraph"/>
@@ -4294,6 +4290,10 @@
       <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
         <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TPackage/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <targetPatterns name="tNestedType">
@@ -4324,14 +4324,14 @@
       <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph"/>
       <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
         <op value="++"/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
-      </linkVariablePatterns>
-      <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
-        <op value="++"/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
       </linkVariablePatterns>
       <linkVariablePatterns target="//@rules.79/@targetPatterns.3">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/ownedTypes"/>
+      </linkVariablePatterns>
+      <linkVariablePatterns target="//@rules.79/@targetPatterns.1">
+        <op value="++"/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TypeGraph/interfaces"/>
       </linkVariablePatterns>
     </targetPatterns>
     <correspondencePatterns name="eNestedTypeToTNestedType" type="//@schema/@correspondenceTypes.16" source="//@rules.79/@sourcePatterns.0" target="//@rules.79/@targetPatterns.1">
@@ -4678,12 +4678,12 @@
       <op value="++"/>
       <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       <attributeAssignments op=":=">
-        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
-        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;byte&quot;"/>
-      </attributeAssignments>
-      <attributeAssignments op=":=">
         <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tLib"/>
         <valueExp xsi:type="tgg:LiteralExpression" value="true"/>
+      </attributeAssignments>
+      <attributeAssignments op=":=">
+        <attribute href="http://www.gravity-tool.org/typegraph/basic#//TAbstractType/tName"/>
+        <valueExp xsi:type="tgg:LiteralExpression" value="&quot;byte&quot;"/>
       </attributeAssignments>
     </targetPatterns>
     <targetPatterns name="typeGraph">
