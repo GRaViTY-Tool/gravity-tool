@@ -18,4 +18,4 @@ jobs:
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}} --file pom.xml
+      run: mvn clean verify -e sonar:sonar -Pcoverage -Dsonar.projectKey=gravity -Dsonar.login=${{secrets.SONAR_LOGIN}} -Dtycho.disableP2Mirrors=true --file pom.xml
