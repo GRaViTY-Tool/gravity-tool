@@ -89,8 +89,8 @@ public final class FileUtils {
 		if (!target.exists() && !target.createNewFile()) {
 			throw new IOException("Cannot create file: " + target);
 		}
-		try (PrintWriter stream = new PrintWriter(Files.newBufferedWriter(source.toPath(), StandardOpenOption.APPEND));
-				Stream<String> lines = Files.lines(target.toPath());) {
+		try (PrintWriter stream = new PrintWriter(Files.newBufferedWriter(target.toPath(), StandardOpenOption.APPEND));
+				Stream<String> lines = Files.lines(source.toPath());) {
 			lines.forEach(stream::println);
 		}
 	}

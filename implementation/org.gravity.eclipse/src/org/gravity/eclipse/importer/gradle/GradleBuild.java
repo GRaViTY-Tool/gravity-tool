@@ -7,11 +7,22 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.launching.IVMInstall;
+import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
+import org.eclipse.jdt.launching.environments.IExecutionEnvironmentsManager;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.Execute;
 import org.gravity.eclipse.os.OperationSystem;
@@ -132,19 +143,55 @@ public class GradleBuild {
 	 */
 	public static Process createBuildProcess(final File path, final String buildTarget)
 			throws IOException, UnsupportedOperationSystemException {
-		Process process = null;
+		String gradleVersion = Files.readAllLines(new File(path, "gradle/wrapper/gradle-wrapper.properties").toPath())
+				.parallelStream().filter(line -> line.startsWith("distributionUrl=")).map(line -> {
+					String version = line.substring(0, line.lastIndexOf('-'));
+					return version.substring(version.lastIndexOf('-') + 1);
+				}).findAny().orElse("5.0");
+
+		String java = null;
+		String[] env = null;
+		if (gradleVersion.compareTo("5.0") < 0) {
+			IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
+			Optional<IExecutionEnvironment> optional = Stream.of(manager.getExecutionEnvironments())
+					.filter(e -> e.getId().indexOf(JavaCore.VERSION_1_8) != -1).findAny();
+			if (optional.isPresent()) {
+				IExecutionEnvironment ienv = optional.get();
+				IVMInstall vm = ienv.getDefaultVM();
+				if (vm == null) {
+					IVMInstall[] comp = ienv.getCompatibleVMs();
+					if (comp.length > 0) {
+						vm = comp[0];
+					}
+				}
+				if (vm != null) {
+					File location = vm.getInstallLocation();
+					java = "-Dorg.gradle.java.home="+location.toString();
+					HashMap<String, String> envMap = new HashMap(System.getenv());
+					envMap.put("JAVA_HOME", location.toString());
+					env = envMap.entrySet().parallelStream().map(e -> e.getKey()+'='+e.getValue()).collect(Collectors.toList()).toArray(new String[0]);
+				}
+			}
+		}
+
+		List<String> args = new LinkedList<>();
 		switch (OperationSystem.os) {
 		case WINDOWS:
-			process = Runtime.getRuntime().exec(new String[] { "cmd", " /c \" gradlew " + buildTarget}, null, path);
+			args.add("cmd");
+			args.add(" /c \" gradlew");
 			break;
 		case LINUX:
-			process = Runtime.getRuntime().exec(new String[] { "./gradlew ", buildTarget }, null, path);
+			args.add("./gradlew");
 			break;
 		default:
 			LOGGER.warn("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
-		return process;
+		if(java != null) {
+			args.add(java);
+		}
+		args.add(buildTarget);
+		return Runtime.getRuntime().exec(args.toArray(new String[0]), env, path);
 	}
 
 	/**
