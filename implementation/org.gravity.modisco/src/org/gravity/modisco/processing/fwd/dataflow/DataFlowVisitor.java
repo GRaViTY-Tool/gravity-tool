@@ -65,6 +65,7 @@ import org.eclipse.modisco.java.TypeDeclarationStatement;
 import org.eclipse.modisco.java.TypeLiteral;
 import org.eclipse.modisco.java.UnresolvedItemAccess;
 import org.eclipse.modisco.java.UnresolvedLabeledStatement;
+import org.eclipse.modisco.java.UnresolvedMethodDeclaration;
 import org.eclipse.modisco.java.VariableDeclaration;
 import org.eclipse.modisco.java.VariableDeclarationExpression;
 import org.eclipse.modisco.java.VariableDeclarationFragment;
@@ -630,7 +631,9 @@ public class DataFlowVisitor {
 	 */
 	private void handleArguments(final AbstractMethodInvocation methodInvocation, final FlowNode member) {
 		final AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
-		this.handler.getFlowNodeOrCreate(calledMethod); // Creating just a FlowNode for the called method; no
+		if (calledMethod != null) {
+			this.handler.getFlowNodeOrCreate(calledMethod); // Creating just a FlowNode for the called method; no
+		}
 		// handling needed
 		if (methodInvocation instanceof MethodInvocation) {
 			handle(((MethodInvocation) methodInvocation).getExpression());
@@ -985,8 +988,16 @@ public class DataFlowVisitor {
 		if (!arguments.isEmpty()) {
 			for (final Expression argument : arguments) {
 				final FlowNode argumentNode = handle(argument);
-				final FlowNode paramNode = handle(calledMethod.getParameters().get(arguments.indexOf(argument)));
-				argumentNode.addOutRef(paramNode);
+				EList<SingleVariableDeclaration> parameters = calledMethod.getParameters();
+				if (parameters.size() == arguments.size()) {
+					final FlowNode paramNode = handle(parameters.get(arguments.indexOf(argument)));
+					argumentNode.addOutRef(paramNode);
+				}
+				else {
+					if(!(calledMethod instanceof UnresolvedMethodDeclaration)) {
+						throw new IllegalStateException("The amount of parameters is not equal to the amount of arguments");
+					}
+				}
 			}
 			this.handler.addMemberRef(member);
 		}
