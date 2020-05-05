@@ -154,6 +154,10 @@ public class PomParser {
 					}
 				}
 			}
+			else {
+				LOGGER.warn("Couldn't find lib file for \""+lib
+						+ "\" tried: "+description.getFile());
+			}
 		}
 		if (!newLibs.isEmpty()) {
 			libs.addAll(newLibs);
