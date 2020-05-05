@@ -30,7 +30,6 @@ import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
-import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;

@@ -2,12 +2,10 @@ package org.gravity.tgg.modisco;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.modisco.java.emf.JavaPackage;
@@ -15,6 +13,9 @@ import org.emoflon.ibex.tgg.operational.strategies.modules.TGGResourceHandler;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.modisco.ModiscoPackage;
 import org.gravity.typegraph.basic.BasicPackage;
+
+import language.TGG;
+import runtime.RuntimePackage;
 
 final class GravityPMResourceHandler extends TGGResourceHandler {
 
@@ -48,44 +49,17 @@ final class GravityPMResourceHandler extends TGGResourceHandler {
 
 	@Override
 	protected void registerUserMetamodels() throws IOException {
-		registerPackage(JavaPackage.eINSTANCE);
-		registerPackage(ModiscoPackage.eINSTANCE);
-		registerPackage(BasicPackage.eINSTANCE);
-		final EPackage tggPackage = loadMetaModelPackage();
-//		registerPackage(tggPackage);
-		this.options.tgg.corrMetamodel(tggPackage);
+		assert rs.getPackageRegistry().containsKey(RuntimePackage.eINSTANCE.getNsURI());
+		assert rs.getPackageRegistry().containsKey(JavaPackage.eINSTANCE.getNsURI());
+		assert rs.getPackageRegistry().containsKey(ModiscoPackage.eINSTANCE.getNsURI());
+		assert rs.getPackageRegistry().containsKey(BasicPackage.eINSTANCE.getNsURI());
+		this.options.tgg.corrMetamodel(((TGG)loadTGGResource().getContents().get(0)).getCorr());
 		EcoreUtil.resolveAll(this.rs);
-	}
-
-	/**
-	 * Registers the package at the resource set
-	 *
-	 * @param ePackage The package
-	 */
-	private void registerPackage(final EPackage ePackage) {
-		this.rs.getPackageRegistry().put(ePackage.getNsURI(), ePackage);
-		this.rs.getResources().remove(ePackage.eResource());
-	}
-
-	/**
-	 * Load the meta model package
-	 *
-	 * @return The EPackage of the meta model
-	 * @throws IOException If the file cannot be reador the URI hasn't a valid
-	 *                     format
-	 */
-	private EPackage loadMetaModelPackage() throws IOException {
-		try (InputStream stream = MoDiscoTGGActivator.getEntryAsStream(MODISCO_ECORE_LOCATION)) {
-			final Resource resource = loadResource(MODISCO_ECORE_URI, stream);
-			return (EPackage) resource.getContents().get(0);
-		}
 	}
 
 	@Override
 	public Resource loadResource(final String uri) throws IOException {
-		try (InputStream stream = new URL(uri).openConnection().getInputStream()) {
-			return loadResource(uri, stream);
-		}
+		return rs.getResource(URI.createURI(uri), true);
 	}
 
 	/**
