@@ -1,6 +1,7 @@
 package org.gravity.modisco.processing.fwd.dataflow;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
@@ -118,38 +119,30 @@ public class DataFlowVisitor {
 		} else if (expression instanceof MethodInvocation) {
 			final MethodInvocation methodInvocation = (MethodInvocation) expression;
 			return handle(methodInvocation);
-
 		} else if (expression instanceof ConstructorInvocation) {
 			final ConstructorInvocation constructorInvocation = (ConstructorInvocation) expression;
 			return handle(constructorInvocation);
-
 		} else if (expression instanceof StringLiteral) {
 			final StringLiteral stringLiteral = (StringLiteral) expression;
 			return handle(stringLiteral);
-
 		} else if (expression instanceof NullLiteral) {
 			final NullLiteral nullLiteral = (NullLiteral) expression;
 			return handle(nullLiteral);
-
 		} else if (expression instanceof ArrayCreation) {
 			final ArrayCreation arrayCreation = (ArrayCreation) expression;
 			return handle(arrayCreation);
-
 		} else if (expression instanceof ArrayInitializer) {
 			final ArrayInitializer arrayInitializer = (ArrayInitializer) expression;
 			return handle(arrayInitializer);
 		} else if (expression instanceof NumberLiteral) {
 			final NumberLiteral numberLiteral = (NumberLiteral) expression;
 			return handle(numberLiteral);
-
 		} else if (expression instanceof SingleVariableAccess) {
 			final SingleVariableAccess singleVariableAccess = (SingleVariableAccess) expression;
 			return handle(singleVariableAccess);
-
 		} else if (expression instanceof TypeAccess) {
 			final TypeAccess typeAccess = (TypeAccess) expression;
 			return handle(typeAccess);
-
 		} else if (expression instanceof InfixExpression) {
 			final InfixExpression infixExpression = (InfixExpression) expression;
 			return handle(infixExpression);
@@ -171,7 +164,6 @@ public class DataFlowVisitor {
 		} else if (expression instanceof ThisExpression) {
 			final ThisExpression thisExpression = (ThisExpression) expression;
 			return handle(thisExpression);
-
 		} else if (expression instanceof CastExpression) {
 			final CastExpression castExpression = (CastExpression) expression;
 			return handle(castExpression);
@@ -199,14 +191,12 @@ public class DataFlowVisitor {
 		} else if (expression instanceof PostfixExpression) {
 			final PostfixExpression postfixExpression = (PostfixExpression) expression;
 			return handle(postfixExpression);
-
 		} else if (expression instanceof SuperFieldAccess) {
 			final SuperFieldAccess superFieldAccess = (SuperFieldAccess) expression;
 			return handle(superFieldAccess);
 		} else if (expression instanceof UnresolvedItemAccess) {
 			final UnresolvedItemAccess itemAccess = (UnresolvedItemAccess) expression;
 			return handle(itemAccess);
-
 		}
 		if (LOGGER.isInfoEnabled()) {
 			LOGGER.info("ERROR: Unknown Expression: " + expression);
@@ -357,9 +347,8 @@ public class DataFlowVisitor {
 		} else if (container instanceof Statement) {
 			handle((Statement) container).addInRef(member);
 		} else {
-			this.handler.getFlowNodeOrCreate(container).addInRef(member); // No handling; should be fine
-			// though,
-			// as container is handled first anyway
+			// No handling; should be fine though, as container is handled first anyway
+			this.handler.getFlowNodeOrCreate(container).addInRef(member);
 		}
 	}
 
@@ -387,47 +376,10 @@ public class DataFlowVisitor {
 				}
 				final EObject variableContainer = variable.eContainer();
 				if (assignmentSide.equals(assignment.getLeftHandSide().eContainingFeature())) {
-					switch (assignment.getOperator()) {
-					case ASSIGN:
-						member.addOutRef(varDeclNode);
-						singleVariableAccess.setAccessKind(AccessKind.WRITE);
-						if (variableContainer instanceof FieldDeclaration) {
-							this.handler.addMemberRef(member);
-						}
-						this.handler.propagateBackWriteAccess(seenContainers, member);
-						break;
-					case BIT_AND_ASSIGN:
-					case BIT_OR_ASSIGN:
-					case BIT_XOR_ASSIGN:
-					case DIVIDE_ASSIGN:
-					case LEFT_SHIFT_ASSIGN:
-					case MINUS_ASSIGN:
-					case PLUS_ASSIGN:
-					case REMAINDER_ASSIGN:
-					case RIGHT_SHIFT_SIGNED_ASSIGN:
-					case RIGHT_SHIFT_UNSIGNED_ASSIGN:
-					case TIMES_ASSIGN:
-						member.addInRef(varDeclNode);
-						member.addOutRef(varDeclNode);
-						singleVariableAccess.setAccessKind(AccessKind.READWRITE);
-						this.handler.propagateBackReadAccess(seenContainers, member);
-						this.handler.propagateBackWriteAccess(seenContainers, member);
-						if (variableContainer instanceof FieldDeclaration) {
-							this.handler.addMemberRef(member);
-						}
-						break;
-					default:
-						LOGGER.info("Unknown operator used in assignment");
-						break;
-					}
+					lhsAssignment(singleVariableAccess, member, varDeclNode, seenContainers, assignment,
+							variableContainer);
 				} else if (assignmentSide.equals(assignment.getRightHandSide().eContainingFeature())) {
-					member.addInRef(varDeclNode);
-					singleVariableAccess.setAccessKind(AccessKind.READ);
-					if (variableContainer instanceof FieldDeclaration
-							|| variableContainer instanceof AbstractMethodDeclaration) {
-						this.handler.addMemberRef(member);
-					}
-					this.handler.propagateBackReadAccess(seenContainers, member);
+					rhsAssignment(singleVariableAccess, member, varDeclNode, seenContainers, variableContainer);
 				} else {
 					LOGGER.info("Unknown assignment side");
 				}
@@ -437,6 +389,70 @@ public class DataFlowVisitor {
 			seenContainers.add(currentContainer);
 		}
 		return false;
+	}
+
+	/**
+	 * @param singleVariableAccess
+	 * @param member
+	 * @param varDeclNode
+	 * @param seenContainers
+	 * @param variableContainer
+	 */
+	private void rhsAssignment(final MSingleVariableAccess singleVariableAccess, final FlowNode member,
+			final FlowNode varDeclNode, final LinkedList<EObject> seenContainers, final EObject variableContainer) {
+		member.addInRef(varDeclNode);
+		singleVariableAccess.setAccessKind(AccessKind.READ);
+		if (variableContainer instanceof FieldDeclaration
+				|| variableContainer instanceof AbstractMethodDeclaration) {
+			this.handler.addMemberRef(member);
+		}
+		this.handler.propagateBackReadAccess(seenContainers, member);
+	}
+
+	/**
+	 * @param singleVariableAccess
+	 * @param member
+	 * @param varDeclNode
+	 * @param seenContainers
+	 * @param assignment
+	 * @param variableContainer
+	 */
+	private void lhsAssignment(final MSingleVariableAccess singleVariableAccess, final FlowNode member,
+			final FlowNode varDeclNode, final LinkedList<EObject> seenContainers, final Assignment assignment,
+			final EObject variableContainer) {
+		switch (assignment.getOperator()) {
+		case ASSIGN:
+			member.addOutRef(varDeclNode);
+			singleVariableAccess.setAccessKind(AccessKind.WRITE);
+			if (variableContainer instanceof FieldDeclaration) {
+				this.handler.addMemberRef(member);
+			}
+			this.handler.propagateBackWriteAccess(seenContainers, member);
+			break;
+		case BIT_AND_ASSIGN:
+		case BIT_OR_ASSIGN:
+		case BIT_XOR_ASSIGN:
+		case DIVIDE_ASSIGN:
+		case LEFT_SHIFT_ASSIGN:
+		case MINUS_ASSIGN:
+		case PLUS_ASSIGN:
+		case REMAINDER_ASSIGN:
+		case RIGHT_SHIFT_SIGNED_ASSIGN:
+		case RIGHT_SHIFT_UNSIGNED_ASSIGN:
+		case TIMES_ASSIGN:
+			member.addInRef(varDeclNode);
+			member.addOutRef(varDeclNode);
+			singleVariableAccess.setAccessKind(AccessKind.READWRITE);
+			this.handler.propagateBackReadAccess(seenContainers, member);
+			this.handler.propagateBackWriteAccess(seenContainers, member);
+			if (variableContainer instanceof FieldDeclaration) {
+				this.handler.addMemberRef(member);
+			}
+			break;
+		default:
+			LOGGER.info("Unknown operator used in assignment");
+			break;
+		}
 	}
 
 	private FlowNode handle(final TypeAccess typeAccess) {
@@ -632,9 +648,9 @@ public class DataFlowVisitor {
 	private void handleArguments(final AbstractMethodInvocation methodInvocation, final FlowNode member) {
 		final AbstractMethodDeclaration calledMethod = methodInvocation.getMethod();
 		if (calledMethod != null) {
-			this.handler.getFlowNodeOrCreate(calledMethod); // Creating just a FlowNode for the called method; no
+			// Creating just a FlowNode for the called method; no handling needed
+			this.handler.getFlowNodeOrCreate(calledMethod);
 		}
-		// handling needed
 		if (methodInvocation instanceof MethodInvocation) {
 			handle(((MethodInvocation) methodInvocation).getExpression());
 		}
@@ -642,22 +658,38 @@ public class DataFlowVisitor {
 		if (!arguments.isEmpty()) {
 			for (final Expression argument : arguments) {
 				final FlowNode argumentNode = handle(argument);
-				final EList<SingleVariableDeclaration> parameters = calledMethod.getParameters();
-				final int indexOf = arguments.indexOf(argument);
-				if (indexOf < parameters.size()) {
-					final FlowNode paramNode = handle(parameters.get(indexOf));
-					argumentNode.addOutRef(paramNode);
-				} else if (parameters.isEmpty()) {
-					if (LOGGER.isInfoEnabled()) {
-						LOGGER.info("Parameter list is empty, but argument list of called method is not in method "
-								+ calledMethod.getClass().getSimpleName());
-					}
-				} else {
-					final FlowNode paramNode = handle(parameters.get(parameters.size() - 1));
-					argumentNode.addOutRef(paramNode);
-				}
+				addFlowToParameter(calledMethod, arguments, argumentNode);
 			}
 			this.handler.addMemberRef(member);
+		}
+	}
+
+	/**
+	 * Adds a flow between a argument of a method call and the according parameter
+	 * 
+	 * @param calledMethod The method that is called
+	 * @param arguments    The arguments of the call
+	 * @param argumentNode The argument node for which a flow should be added
+	 */
+	private void addFlowToParameter(final AbstractMethodDeclaration calledMethod, final EList<Expression> arguments,
+			final FlowNode argumentNode) {
+		if (calledMethod == null) {
+			return;
+		}
+		final List<SingleVariableDeclaration> parameters = calledMethod.getParameters();
+		final int indexOf = arguments.indexOf(argumentNode.getModelElement());
+		if (indexOf < parameters.size()) {
+			final FlowNode paramNode = handle(parameters.get(indexOf));
+			argumentNode.addOutRef(paramNode);
+		} else if (parameters.isEmpty()) {
+			if (LOGGER.isInfoEnabled()) {
+				String message = "Parameter list is empty, but argument list of called method is not in method"
+						+ calledMethod.getClass().getSimpleName();
+				LOGGER.info(message);
+			}
+		} else {
+			final FlowNode paramNode = handle(parameters.get(parameters.size() - 1));
+			argumentNode.addOutRef(paramNode);
 		}
 	}
 
@@ -691,100 +723,77 @@ public class DataFlowVisitor {
 		if (statement instanceof AssertStatement) {
 			final AssertStatement assertStatement = (AssertStatement) statement;
 			return handle(assertStatement);
-
 		} else if (statement instanceof Block) {
 			final Block block = (Block) statement;
 			return handle(block);
-
 		} else if (statement instanceof BreakStatement) {
 			final BreakStatement breakStatement = (BreakStatement) statement;
 			return handle(breakStatement);
-
 		} else if (statement instanceof CatchClause) {
 			final CatchClause catchClause = (CatchClause) statement;
 			return handle(catchClause);
-
 		} else if (statement instanceof ConstructorInvocation) {
 			final ConstructorInvocation constructorInvocation = (ConstructorInvocation) statement;
 			return handle(constructorInvocation);
-
 		} else if (statement instanceof ContinueStatement) {
 			final ContinueStatement continueStatement = (ContinueStatement) statement;
 			return handle(continueStatement);
-
 		} else if (statement instanceof DoStatement) {
 			final DoStatement doStatement = (DoStatement) statement;
 			return handle(doStatement);
-
 		} else if (statement instanceof EmptyStatement) {
 			return null;
 		} else if (statement instanceof EnhancedForStatement) {
 			final EnhancedForStatement enhancedForStetement = (EnhancedForStatement) statement;
 			return handle(enhancedForStetement);
-
 		} else if (statement instanceof ExpressionStatement) {
 			final ExpressionStatement expressionStatement = (ExpressionStatement) statement;
 			return handle(expressionStatement);
-
 		} else if (statement instanceof ForStatement) {
 			final ForStatement forStatement = (ForStatement) statement;
 			return handle(forStatement);
-
 		} else if (statement instanceof IfStatement) {
 			final IfStatement ifStatement = (IfStatement) statement;
 			return handle(ifStatement);
-
 		} else if (statement instanceof LabeledStatement) {
 			final LabeledStatement labeledStatement = (LabeledStatement) statement;
 			return handle(labeledStatement);
-
 		} else if (statement instanceof ReturnStatement) {
 			final ReturnStatement returnStatement = (ReturnStatement) statement;
 			return handle(returnStatement);
-
 		} else if (statement instanceof SuperConstructorInvocation) {
 			final SuperConstructorInvocation superConstructorInvocation = (SuperConstructorInvocation) statement;
 			return handle(superConstructorInvocation);
-
 		} else if (statement instanceof SwitchCase) {
 			final SwitchCase switchCase = (SwitchCase) statement;
 			return handle(switchCase);
-
 		} else if (statement instanceof SwitchStatement) {
 			final SwitchStatement switchStatement = (SwitchStatement) statement;
 			return handle(switchStatement);
-
 		} else if (statement instanceof SynchronizedStatement) {
 			final SynchronizedStatement synchronizedStatement = (SynchronizedStatement) statement;
 			return handle(synchronizedStatement);
-
 		} else if (statement instanceof ThrowStatement) {
 			final ThrowStatement throwStatement = (ThrowStatement) statement;
 			return handle(throwStatement);
-
 		} else if (statement instanceof TryStatement) {
 			final TryStatement tryStatement = (TryStatement) statement;
 			return handle(tryStatement);
-
 		} else if (statement instanceof TypeDeclarationStatement) {
 			final TypeDeclarationStatement typeDeclarationStatement = (TypeDeclarationStatement) statement;
 			return handle(typeDeclarationStatement);
-
 		} else if (statement instanceof UnresolvedLabeledStatement) {
 			final UnresolvedLabeledStatement unresolvedLabeledStatement = (UnresolvedLabeledStatement) statement;
 			return handle(unresolvedLabeledStatement);
-
 		} else if (statement instanceof VariableDeclarationStatement) {
 			final VariableDeclarationStatement variableDeclarationStatement = (VariableDeclarationStatement) statement;
 			return handle(variableDeclarationStatement);
-
 		} else if (statement instanceof WhileStatement) {
 			final WhileStatement whileStatement = (WhileStatement) statement;
 			return handle(whileStatement);
-
-		} else {
-			return null;
 		}
+		LOGGER.warn("Unhandled statement: " + statement);
+		return null;
 	}
 
 	private FlowNode handle(final WhileStatement whileStatement) {
@@ -992,10 +1001,10 @@ public class DataFlowVisitor {
 				if (parameters.size() == arguments.size()) {
 					final FlowNode paramNode = handle(parameters.get(arguments.indexOf(argument)));
 					argumentNode.addOutRef(paramNode);
-				}
-				else {
-					if(!(calledMethod instanceof UnresolvedMethodDeclaration)) {
-						throw new IllegalStateException("The amount of parameters is not equal to the amount of arguments");
+				} else {
+					if (!(calledMethod instanceof UnresolvedMethodDeclaration)) {
+						throw new IllegalStateException(
+								"The amount of parameters is not equal to the amount of arguments");
 					}
 				}
 			}
