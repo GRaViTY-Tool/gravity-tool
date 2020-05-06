@@ -59,6 +59,7 @@
     <module>tests/org.gravity.refactorings.tests</module>
     <module>tests/org.gravity.tgg.tests</module>
     <module>tests/org.gravity.tgg.modisco.uml.tests</module>
+    <module>tests/org.gravity.typegraph.basic.tests</module>
     <module>org.gravity.coverage</module>
   </modules>
 
