@@ -19,7 +19,7 @@ jobs:
     - name: Generate settings.xml
       uses: whelk-io/maven-settings-xml-action@v6
       with:
-        servers: '[{"id": "MoMOT", "username": "", "password": "", "configuration": {"httpConfiguration": {"all": {"connectionTimeout": "120000", "readTimeout": "120000"}}}}]'
+        servers: '[{"id": "MoMOT", "username": "", "password": "", "configuration": {"httpConfiguration": {"all": {"connectionTimeout": "120000", "readTimeout": "1200000"}}}}]'
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
