@@ -8,17 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Clone repository with submodules
+      uses: actions/checkout@v1
       with:
         submodules: true # 'recursive' 'true' or 'false'
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
         java-version: 13
-    - name: maven-setings-action
+    - name: Generate settings.xml
       uses: whelk-io/maven-settings-xml-action@v6
       with:
-        servers: '[{"id": "MoMOT", "password": "", "configuration": {"httpConfiguration": {"all": {"connectionTimeout": "120000", "readTimeout": "120000"}}}}]'
+        servers: '[{"id": "MoMOT", "username": "", "password": "", "configuration": {"httpConfiguration": {"all": {"connectionTimeout": "120000", "readTimeout": "120000"}}}}]'
     - name: Build with Maven
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
