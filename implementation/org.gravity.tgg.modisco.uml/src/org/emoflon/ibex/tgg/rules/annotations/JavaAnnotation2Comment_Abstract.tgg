@@ -40,5 +40,5 @@
 }
 
 #attributeConditions {
-	eq_string(comment.body, type.name)
+	eq(comment.body, type.name)
 }

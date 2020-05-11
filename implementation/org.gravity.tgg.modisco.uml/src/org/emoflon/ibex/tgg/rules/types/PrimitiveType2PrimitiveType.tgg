@@ -32,7 +32,7 @@
 }
 
 #attributeConditions {
-	eq_string(jpt.name, umpt.name)
+	eq(jpt.name, umpt.name)
 }
 
 

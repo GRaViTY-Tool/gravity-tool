@@ -28,7 +28,7 @@
 }
 
 #attributeConditions {
-	eq_string(bodyDeclaration.name, feature.name)
+	eq(bodyDeclaration.name, feature.name)
 }
 
 #rule ConstructorDec2OperationAnonymous #extends MethodDec2OperationAnonymous #with org.gravity.tgg.modisco.uml

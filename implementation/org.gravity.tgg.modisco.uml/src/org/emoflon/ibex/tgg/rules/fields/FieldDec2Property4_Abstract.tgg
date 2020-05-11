@@ -46,5 +46,5 @@
 }
 
 #attributeConditions {
-	eq_string(vdf.name,feature.name)
+	eq(vdf.name,feature.name)
 }

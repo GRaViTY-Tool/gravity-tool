@@ -64,6 +64,6 @@
 }
 
 #attributeConditions {
-	eq_string(parameterizedType.name, parameterizedClassifier.name)
+	eq(parameterizedType.name, parameterizedClassifier.name)
 	parameterizedNameFitsNonParameterizedName(parameterizedClassifier.name, nonParamElement.name)
 }

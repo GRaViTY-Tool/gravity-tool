@@ -15,5 +15,5 @@
 }
 
 #attributeConditions {
-	eq_boolean(modifier.static, feature.isStatic)
+	eq(modifier.static, feature.isStatic)
 }

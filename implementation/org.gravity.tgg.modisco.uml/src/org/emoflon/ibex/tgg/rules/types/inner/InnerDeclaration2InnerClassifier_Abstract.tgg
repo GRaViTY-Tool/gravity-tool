@@ -35,5 +35,5 @@
 }
 
 #attributeConditions {
-	eq_string(bodyDeclaration.name, feature.name)
+	eq(bodyDeclaration.name, feature.name)
 }

@@ -12,19 +12,17 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.jdt.core,
  org.gravity.modisco;visibility:=reexport,
- org.emoflon.ibex.tgg.ui.debug.adapter;visibility:=reexport,
- org.emoflon.ibex.tgg.ui.debug;visibility:=reexport,
  org.eclipse.modisco.java.generation,
- org.emoflon.ibex.tgg.runtime,
- org.emoflon.ibex.tgg.language;bundle-version="1.0.0",
- org.emoflon.ibex.tgg.runtime.democles
+ org.moflon.core.utilities,
+ SDMLanguage,
+ org.moflon.tgg.language,
+ org.moflon.tgg.runtime,
+ MocaTree
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.gravity.tgg.modisco
-Export-Package: org.gravity.tgg.modisco,
- org.gravity.tgg.modisco.processing.pg
-Bundle-Activator: org.gravity.tgg.modisco.MoDiscoTGGActivator
+Export-Package: org.gravity.tgg.modisco.processing.pg
 Bundle-ClassPath: .

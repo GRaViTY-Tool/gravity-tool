@@ -1,7 +1,7 @@
 #library AttrCondDefLibrary {
 
 	// Semantics:  a:EString == b:EString
-	eq_string(a: EString, b: EString) {
+	eq(a: EString, b: EString) {
 		#sync: [B B], [B F], [F B]
 		#gen:  [B B], [B F], [F B], [F F]
 	}
@@ -37,7 +37,7 @@
 	}
 				
 	// Semantics:  a:EBoolean == b:EBoolean
-	eq_boolean(a: EBoolean, b: EBoolean) {
+	eq(a: EBoolean, b: EBoolean) {
 		#sync: [B B], [B F], [F B]
 		#gen:  [B B], [B F], [F B], [F F]
 	}

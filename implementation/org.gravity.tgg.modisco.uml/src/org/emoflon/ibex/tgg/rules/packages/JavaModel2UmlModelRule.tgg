@@ -53,5 +53,5 @@
 }
 
 #attributeConditions {
-	eq_string(javaModel.name, umlModel.name)
+	eq(javaModel.name, umlModel.name)
 }

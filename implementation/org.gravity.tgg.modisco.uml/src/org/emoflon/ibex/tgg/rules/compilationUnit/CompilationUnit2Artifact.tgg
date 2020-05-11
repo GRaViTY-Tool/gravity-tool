@@ -32,8 +32,8 @@
 }
 
 #attributeConditions {
-	eq_string(compilationUnit.name, artifact.name)
-	eq_string(compilationUnit.originalFilePath, artifact.fileName)
+	eq(compilationUnit.name, artifact.name)
+	eq(compilationUnit.originalFilePath, artifact.fileName)
 }
 
 

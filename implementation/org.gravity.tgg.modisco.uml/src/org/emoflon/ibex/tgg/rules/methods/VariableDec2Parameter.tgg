@@ -50,6 +50,6 @@
 }
 
 #attributeConditions {
-	eq_string(variableDec.name, param.name)
+	eq(variableDec.name, param.name)
 	isInParameter(param.direction)
 }

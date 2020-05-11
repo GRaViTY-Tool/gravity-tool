@@ -1,0 +1,26 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule ModelToPg
+#with org.gravity.tgg.modisco
+
+#source {
+	++mModel:MGravityModel
+}
+
+#target {
+	++tPG:TypeGraph
+}
+
+#correspondence {
+	++ mModelToTPG :ModelToTypeGraph {
+		#src->mModel
+		#trg->tPG
+	}
+}
+
+#attributeConditions {
+	eq(mModel.name, tPG.tName)
+}
+
+

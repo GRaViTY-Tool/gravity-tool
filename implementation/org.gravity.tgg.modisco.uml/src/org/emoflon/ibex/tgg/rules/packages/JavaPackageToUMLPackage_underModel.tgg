@@ -33,5 +33,5 @@
 }
 
 #attributeConditions {
-	eq_string(up.name,jp.name)
+	eq(up.name,jp.name)
 }

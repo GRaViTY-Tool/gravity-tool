@@ -1,0 +1,44 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule TypesOrphaned
+#with org.gravity.tgg.modisco
+
+#source {
+	mModel:Model {
+		++  -orphanTypes -> mType
+	}
+
+	++mType: MClass
+}
+
+#target {
+	pg:TypeGraph {
+		++  -ownedTypes -> tType
+	}
+
+	++tType:TClass
+}
+
+#correspondence {
+	mModelToTypeGraph :ModelToTypeGraph {
+		#src->mModel
+		#trg->pg
+	}
+
+	++ mBodyToTAnnotation :ASTNodeToTAnnotatable {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+}
+
+#attributeConditions {
+	eq(mType.proxy, tType.tLib)
+}
+
+

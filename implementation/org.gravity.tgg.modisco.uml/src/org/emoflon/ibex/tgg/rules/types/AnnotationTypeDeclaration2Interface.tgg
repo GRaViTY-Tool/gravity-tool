@@ -35,7 +35,7 @@
 }
 
 #attributeConditions {
-	eq_string(bodyDeclaration.name, feature.name)
+	eq(bodyDeclaration.name, feature.name)
 	nonParameterizedName(feature.name)
 	//TODO make sure the uml Interface really is an Annotation(impossible?)...
 }

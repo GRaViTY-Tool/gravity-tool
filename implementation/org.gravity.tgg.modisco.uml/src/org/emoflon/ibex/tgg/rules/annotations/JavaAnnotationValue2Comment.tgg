@@ -38,5 +38,5 @@
 }
 
 #attributeConditions {
-	eq_string(value.name, tag.body)
+	eq(value.name, tag.body)
 }

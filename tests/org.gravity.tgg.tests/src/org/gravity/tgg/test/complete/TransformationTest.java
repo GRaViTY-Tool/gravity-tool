@@ -66,9 +66,6 @@ import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
 import com.googlecode.junittoolbox.ParallelParameterized;
 
-import language.LanguagePackage;
-import runtime.RuntimePackage;
-
 /**
  * An abstract test template collecting test java projects and allows to test
  * transformations on them.

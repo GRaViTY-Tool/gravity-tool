@@ -1,0 +1,162 @@
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	mMember:MDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+	}
+
+	++mAccess:MSingleVariableAccess {
+		++  -variable -> varDeclFrag
+	}
+
+	varDeclFrag:VariableDeclarationFragment {
+		-variablesContainer -> mField
+	}
+
+	mField:MFieldDefinition {
+		-abstractTypeDeclaration -> mType
+	}
+
+	mType:AbstractTypeDeclaration
+}
+
+#target {
+	tMember:TMember {
+		++  -tAccessing -> tAccess
+	}
+
+	++tAccess:TAccess {
+		++-tTarget -> tField
+	}
+
+	tField:TFieldDefinition {
+		-definedBy -> tType
+	}
+
+	tType:basic.TAbstractType
+}
+
+#correspondence {
+	mMemberToTMember :MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mMethodToTMethod :MDefinitionToTMember {
+		#src->mField
+		#trg->tField
+	}
+
+	mTypeToTType :TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mAccessToTAccess :MSingleVariableAccessToTAccess {
+		#src->mAccess
+		#trg->tAccess
+	}
+	
+	++ mFlowOwnerToTFlowOwner:MAbstractFlowElementToTAbstractFlowElement {
+		#src->mAccess
+		#trg->tAccess
+	}
+}
+
+#abstract #rule FieldAccessRecursive
+#with org.gravity.tgg.modisco
+
+#source {
+	mMember:MFieldDefinition {
+		++  -mAbstractFieldAccess -> mAccess
+		-abstractTypeDeclaration -> mType
+	}
+
+	++mAccess:MSingleVariableAccess {
+		++  -variable -> varDeclFrag
+	}
+
+	varDeclFrag:VariableDeclarationFragment {
+		-variablesContainer -> mMember
+	}
+	
+	mType:AbstractTypeDeclaration
+}
+
+#target {
+	tMember:TFieldDefinition {
+		++  -tAccessing -> tAccess
+		-definedBy -> tType
+	}
+
+	++tAccess:TAccess {
+		++-tTarget -> tMember
+	}
+
+	tType:basic.TAbstractType
+}
+
+#correspondence {
+	mMemberToTMember :org.gravity.tgg.modisco.MDefinitionToTMember {
+		#src->mMember
+		#trg->tMember
+	}
+
+	mTypeToTType :org.gravity.tgg.modisco.TypeToTAbstractType {
+		#src->mType
+		#trg->tType
+	}
+
+	++ mAccessToTAccess :org.gravity.tgg.modisco.MSingleVariableAccessToTAccess {
+		#src->mAccess
+		#trg->tAccess
+	}
+	
+	++ mFlowOwnerToTFlowOwner:org.gravity.tgg.modisco.MAbstractFlowElementToTAbstractFlowElement {
+		#src->mAccess
+		#trg->tAccess
+	}
+}
+
+#rule FieldAccessRead #extends FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READ
+	}
+}
+
+#target { 
+	++tAccess:TRead
+}
+
+#rule FieldAccessWrite #extends FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::WRITE
+	}
+}
+
+#target { 
+	++tAccess:TWrite
+}
+
+#rule FieldAccessReadWrite #extends FieldAccess
+#with org.gravity.tgg.modisco
+
+#source {
+	++mAccess:MSingleVariableAccess {
+		accessKind := enum::AccessKind::READWRITE
+	}
+}
+
+#target { 
+	++tAccess:TReadWrite
+}
