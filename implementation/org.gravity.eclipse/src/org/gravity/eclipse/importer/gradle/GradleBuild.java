@@ -10,7 +10,6 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,7 +24,6 @@ import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironmentsManager;
 import org.gravity.eclipse.io.FileUtils;
 import org.gravity.eclipse.os.Execute;
-import org.gravity.eclipse.os.OperationSystem;
 import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 
 /**
@@ -37,7 +35,7 @@ import org.gravity.eclipse.os.UnsupportedOperationSystemException;
  */
 public class GradleBuild {
 
-	private static final Logger LOGGER = Logger.getLogger(GradleBuild.class);
+	public static final Logger LOGGER = Logger.getLogger(GradleBuild.class);
 
 	private static final Pattern GOOGLE_SERVICES_PATTERN = Pattern
 			.compile("apply\\s+plugin:\\s+'com.google.gms.google-services'");
@@ -150,7 +148,7 @@ public class GradleBuild {
 				}).findAny().orElse("5.0");
 
 		String java = null;
-		String[] env = null;
+		List<String> env = null;
 		if (gradleVersion.compareTo("5.0") < 0) {
 			IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
 			Optional<IExecutionEnvironment> optional = Stream.of(manager.getExecutionEnvironments())
@@ -167,31 +165,23 @@ public class GradleBuild {
 				if (vm != null) {
 					File location = vm.getInstallLocation();
 					java = "-Dorg.gradle.java.home="+location.toString();
-					HashMap<String, String> envMap = new HashMap(System.getenv());
+					HashMap<String, String> envMap = new HashMap<>(System.getenv());
 					envMap.put("JAVA_HOME", location.toString());
-					env = envMap.entrySet().parallelStream().map(e -> e.getKey()+'='+e.getValue()).collect(Collectors.toList()).toArray(new String[0]);
+					env = envMap.entrySet().parallelStream().map(e -> e.getKey()+'='+e.getValue()).collect(Collectors.toList());
 				}
 			}
 		}
 
+		String binary = "gradlew";
+
+		
 		List<String> args = new LinkedList<>();
-		switch (OperationSystem.os) {
-		case WINDOWS:
-			args.add("cmd");
-			args.add(" /c \" gradlew");
-			break;
-		case LINUX:
-			args.add("./gradlew");
-			break;
-		default:
-			LOGGER.warn("Unsupported OS");
-			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
-		}
 		if(java != null) {
 			args.add(java);
 		}
 		args.add(buildTarget);
-		return Runtime.getRuntime().exec(args.toArray(new String[0]), env, path);
+		
+		return Execute.run(path, binary, args, env);
 	}
 
 	/**

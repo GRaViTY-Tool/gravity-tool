@@ -4,11 +4,15 @@
 package org.gravity.eclipse.os;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.gravity.eclipse.importer.gradle.GradleBuild;
 
 /**
  * Functionalities to execute commands
@@ -71,6 +75,38 @@ public class Execute {
 			}
 		}
 		return message;
+	}
+
+
+	/**
+	 * Executes an executable binary
+	 * 
+	 * @param location The location in which the binary is located
+	 * @param binary The executable binary
+	 * @param args The arguments that should be passed to the call
+	 * @param env The environment that should be used
+	 * @return The process
+	 * @throws UnsupportedOperationSystemException
+	 * @throws IOException
+	 */
+	public static Process run(final File location, String binary, List<String> args, List<String> env)
+			throws UnsupportedOperationSystemException, IOException {
+		List<String> cmdList = new LinkedList<>();
+		switch (OperationSystem.os) {
+		case WINDOWS:
+			cmdList.add("cmd");
+			cmdList.add("/c");
+			cmdList.add(binary);
+			break;
+		case LINUX:
+			cmdList.add(0, "./"+binary);
+			break;
+		default:
+			GradleBuild.LOGGER.warn("Unsupported OS");
+			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
+		}
+		cmdList.addAll(args);
+		return Runtime.getRuntime().exec(cmdList.toArray(new String[0]), env.toArray(new String[0]), location);
 	}
 	
 
