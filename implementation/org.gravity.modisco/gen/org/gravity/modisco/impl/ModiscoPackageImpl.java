@@ -17,7 +17,6 @@ import org.gravity.modisco.MAbstractFlowElement;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MAbstractMethodInvocation;
 import org.gravity.modisco.MAccess;
-import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MClass;
 import org.gravity.modisco.MClassInstanceCreation;
 import org.gravity.modisco.MConstructorDefinition;
@@ -171,13 +170,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * @generated
 	 */
 	private EClass mSyntheticMethodDefinitionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mAnonymousEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -753,24 +745,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMAnonymous() {
-		return mAnonymousEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMAnonymous_MSourroundingType() {
-		return (EReference)mAnonymousEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMClass() {
 		return mClassEClass;
 	}
@@ -1064,9 +1038,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mSyntheticMethodDefinitionEClass = createEClass(MSYNTHETIC_METHOD_DEFINITION);
 		createEReference(mSyntheticMethodDefinitionEClass, MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION);
 
-		mAnonymousEClass = createEClass(MANONYMOUS);
-		createEReference(mAnonymousEClass, MANONYMOUS__MSOURROUNDING_TYPE);
-
 		mClassEClass = createEClass(MCLASS);
 		createEReference(mClassEClass, MCLASS__DEPENDENCIES);
 
@@ -1156,7 +1127,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mEntryEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mGravityModelEClass.getESuperTypes().add(theJavaPackage.getModel());
 		mSyntheticMethodDefinitionEClass.getESuperTypes().add(theJavaPackage.getBodyDeclaration());
-		mAnonymousEClass.getESuperTypes().add(theJavaPackage.getAnonymousClassDeclaration());
 		mClassEClass.getESuperTypes().add(theJavaPackage.getClassDeclaration());
 		mFlowEClass.getESuperTypes().add(this.getMAbstractFlowElement());
 		mSingleVariableAccessEClass.getESuperTypes().add(theJavaPackage.getSingleVariableAccess());
@@ -1240,9 +1210,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 		initEClass(mSyntheticMethodDefinitionEClass, MSyntheticMethodDefinition.class, "MSyntheticMethodDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMSyntheticMethodDefinition_OriginalMethodDefinition(), this.getMMethodDefinition(), this.getMMethodDefinition_SyntheticMethodDefinitions(), "originalMethodDefinition", null, 1, 1, MSyntheticMethodDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mAnonymousEClass, MAnonymous.class, "MAnonymous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMAnonymous_MSourroundingType(), theJavaPackage.getAbstractTypeDeclaration(), null, "mSourroundingType", null, 0, 1, MAnonymous.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mClassEClass, MClass.class, "MClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMClass_Dependencies(), theJavaPackage.getType(), null, "dependencies", null, 0, -1, MClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

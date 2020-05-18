@@ -5,10 +5,19 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++ mAnonymous : MAnonymous {
-		++-mSourroundingType->mType
+	++ mAnonymous : AnonymousClassDeclaration
+	mCreation : ClassInstanceCreation {
+		++-anonymousClassDeclaration->mAnonymous
+	
 	}
-	mType : AbstractTypeDeclaration
+	
+	mMebmber : MDefinition {
+		-mMethodInvocations->mCreation
+	}
+	
+	mType : AbstractTypeDeclaration {
+		-bodyDeclarations->mMebmber
+	}
 	
 	mPackage : Package {
 		-ownedElements->mType
