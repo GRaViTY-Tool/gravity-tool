@@ -474,7 +474,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractFlowElement()
 	 * @generated
 	 */
-	int MABSTRACT_FLOW_ELEMENT = 21;
+	int MABSTRACT_FLOW_ELEMENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -2031,79 +2031,6 @@ public interface ModiscoPackage extends EPackage {
 	int MSYNTHETIC_METHOD_DEFINITION_FEATURE_COUNT = JavaPackage.BODY_DECLARATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.gravity.modisco.impl.MAnonymousImpl <em>MAnonymous</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gravity.modisco.impl.MAnonymousImpl
-	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymous()
-	 * @generated
-	 */
-	int MANONYMOUS = 17;
-
-	/**
-	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__COMMENTS = JavaPackage.ANONYMOUS_CLASS_DECLARATION__COMMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Original Compilation Unit</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__ORIGINAL_COMPILATION_UNIT = JavaPackage.ANONYMOUS_CLASS_DECLARATION__ORIGINAL_COMPILATION_UNIT;
-
-	/**
-	 * The feature id for the '<em><b>Original Class File</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__ORIGINAL_CLASS_FILE = JavaPackage.ANONYMOUS_CLASS_DECLARATION__ORIGINAL_CLASS_FILE;
-
-	/**
-	 * The feature id for the '<em><b>Body Declarations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__BODY_DECLARATIONS = JavaPackage.ANONYMOUS_CLASS_DECLARATION__BODY_DECLARATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Class Instance Creation</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__CLASS_INSTANCE_CREATION = JavaPackage.ANONYMOUS_CLASS_DECLARATION__CLASS_INSTANCE_CREATION;
-
-	/**
-	 * The feature id for the '<em><b>MSourrounding Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS__MSOURROUNDING_TYPE = JavaPackage.ANONYMOUS_CLASS_DECLARATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>MAnonymous</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANONYMOUS_FEATURE_COUNT = JavaPackage.ANONYMOUS_CLASS_DECLARATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.gravity.modisco.impl.MClassImpl <em>MClass</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2111,7 +2038,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClass()
 	 * @generated
 	 */
-	int MCLASS = 18;
+	int MCLASS = 17;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2301,7 +2228,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMExtension()
 	 * @generated
 	 */
-	int MEXTENSION = 19;
+	int MEXTENSION = 18;
 
 	/**
 	 * The number of structural features of the '<em>MExtension</em>' class.
@@ -2320,7 +2247,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMFlow()
 	 * @generated
 	 */
-	int MFLOW = 20;
+	int MFLOW = 19;
 
 	/**
 	 * The feature id for the '<em><b>Owned Flows</b></em>' containment reference list.
@@ -2393,7 +2320,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableAccess()
 	 * @generated
 	 */
-	int MSINGLE_VARIABLE_ACCESS = 22;
+	int MSINGLE_VARIABLE_ACCESS = 21;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2493,7 +2420,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMMethodInvocation()
 	 * @generated
 	 */
-	int MMETHOD_INVOCATION = 23;
+	int MMETHOD_INVOCATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2611,7 +2538,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMConstructorInvocation()
 	 * @generated
 	 */
-	int MCONSTRUCTOR_INVOCATION = 24;
+	int MCONSTRUCTOR_INVOCATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2711,7 +2638,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSingleVariableDeclaration()
 	 * @generated
 	 */
-	int MSINGLE_VARIABLE_DECLARATION = 25;
+	int MSINGLE_VARIABLE_DECLARATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2883,7 +2810,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAbstractMethodInvocation()
 	 * @generated
 	 */
-	int MABSTRACT_METHOD_INVOCATION = 26;
+	int MABSTRACT_METHOD_INVOCATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -2983,7 +2910,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperMethodInvocation()
 	 * @generated
 	 */
-	int MSUPER_METHOD_INVOCATION = 27;
+	int MSUPER_METHOD_INVOCATION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3092,7 +3019,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMClassInstanceCreation()
 	 * @generated
 	 */
-	int MCLASS_INSTANCE_CREATION = 28;
+	int MCLASS_INSTANCE_CREATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3219,7 +3146,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMSuperConstructorInvocation()
 	 * @generated
 	 */
-	int MSUPER_CONSTRUCTOR_INVOCATION = 29;
+	int MSUPER_CONSTRUCTOR_INVOCATION = 28;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference list.
@@ -3328,7 +3255,7 @@ public interface ModiscoPackage extends EPackage {
 	 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getAccessKind()
 	 * @generated
 	 */
-	int ACCESS_KIND = 30;
+	int ACCESS_KIND = 29;
 
 
 	/**
@@ -3819,27 +3746,6 @@ public interface ModiscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMSyntheticMethodDefinition_OriginalMethodDefinition();
-
-	/**
-	 * Returns the meta object for class '{@link org.gravity.modisco.MAnonymous <em>MAnonymous</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>MAnonymous</em>'.
-	 * @see org.gravity.modisco.MAnonymous
-	 * @generated
-	 */
-	EClass getMAnonymous();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.gravity.modisco.MAnonymous#getMSourroundingType <em>MSourrounding Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>MSourrounding Type</em>'.
-	 * @see org.gravity.modisco.MAnonymous#getMSourroundingType()
-	 * @see #getMAnonymous()
-	 * @generated
-	 */
-	EReference getMAnonymous_MSourroundingType();
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.modisco.MClass <em>MClass</em>}'.
@@ -4505,24 +4411,6 @@ public interface ModiscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MSYNTHETIC_METHOD_DEFINITION__ORIGINAL_METHOD_DEFINITION = eINSTANCE.getMSyntheticMethodDefinition_OriginalMethodDefinition();
-
-		/**
-		 * The meta object literal for the '{@link org.gravity.modisco.impl.MAnonymousImpl <em>MAnonymous</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gravity.modisco.impl.MAnonymousImpl
-		 * @see org.gravity.modisco.impl.ModiscoPackageImpl#getMAnonymous()
-		 * @generated
-		 */
-		EClass MANONYMOUS = eINSTANCE.getMAnonymous();
-
-		/**
-		 * The meta object literal for the '<em><b>MSourrounding Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MANONYMOUS__MSOURROUNDING_TYPE = eINSTANCE.getMAnonymous_MSourroundingType();
 
 		/**
 		 * The meta object literal for the '{@link org.gravity.modisco.impl.MClassImpl <em>MClass</em>}' class.

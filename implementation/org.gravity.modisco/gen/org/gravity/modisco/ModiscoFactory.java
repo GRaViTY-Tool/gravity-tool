@@ -121,15 +121,6 @@ public interface ModiscoFactory extends EFactory {
 	MSyntheticMethodDefinition createMSyntheticMethodDefinition();
 
 	/**
-	 * Returns a new object of class '<em>MAnonymous</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MAnonymous</em>'.
-	 * @generated
-	 */
-	MAnonymous createMAnonymous();
-
-	/**
 	 * Returns a new object of class '<em>MClass</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

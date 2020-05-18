@@ -6,9 +6,9 @@
 
 #source {
 	mAnonymous : AnonymousClassDeclaration {
-		++-classInstanceCreation->mCreation
+		-classInstanceCreation->mCreation
 	}
-	++ mCreation : MClassInstanceCreation {
+	mCreation : ClassInstanceCreation {
 		++-type->mType
 	}
 	++ mType : TypeAccess {

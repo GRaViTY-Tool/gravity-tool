@@ -87,9 +87,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="originalMethodDefinition"
         lowerBound="1" eType="#//MMethodDefinition" eOpposite="#//MMethodDefinition/syntheticMethodDefinitions"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAnonymous" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//AnonymousClassDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mSourroundingType" eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//AbstractTypeDeclaration"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MClass" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//ClassDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="ecore:EClass ../../org.eclipse.modisco.java/model/java.ecore#//Type"/>

@@ -6,7 +6,7 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	++invocation:ConstructorInvocation
+	++invocation:MConstructorInvocation
 }
 
 #target {

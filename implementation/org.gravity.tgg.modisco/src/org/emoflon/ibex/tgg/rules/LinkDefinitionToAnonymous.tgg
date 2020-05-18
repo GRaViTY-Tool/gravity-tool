@@ -5,7 +5,7 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	mType:MAnonymous {
+	mType:AnonymousClassDeclaration {
 		++  -bodyDeclarations -> mDefinition
 	}
 
