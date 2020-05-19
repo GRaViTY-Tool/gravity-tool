@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+}
+
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+}

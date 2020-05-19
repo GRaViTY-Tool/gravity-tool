@@ -154,7 +154,8 @@ public class GradleImport extends ProjectImport {
 			if (this.androidApp) {
 				linkApkFolderToProject(project, monitor);
 			}
-			return addRequiredLibsToProject(project, monitor);
+			addRequiredLibsToProject(project, monitor).getProject().refreshLocal(IResource.DEPTH_INFINITE, monitor);
+			return project;
 		} catch (IOException | CoreException e) {
 			try {
 				if (project != null) {

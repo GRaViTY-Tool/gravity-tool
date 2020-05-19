@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.gravity.eclipse.importer.gradle.GradleBuild;
 
 /**
  * Functionalities to execute commands
@@ -99,14 +98,14 @@ public class Execute {
 			cmdList.add(binary);
 			break;
 		case LINUX:
-			cmdList.add(0, "./"+binary);
+			cmdList.add(binary);
 			break;
 		default:
-			GradleBuild.LOGGER.warn("Unsupported OS");
+			LOGGER.warn("Unsupported OS");
 			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
 		}
 		cmdList.addAll(args);
-		return Runtime.getRuntime().exec(cmdList.toArray(new String[0]), env.toArray(new String[0]), location);
+		return Runtime.getRuntime().exec(cmdList.toArray(new String[0]), env == null ? null : env.toArray(new String[0]), location);
 	}
 	
 

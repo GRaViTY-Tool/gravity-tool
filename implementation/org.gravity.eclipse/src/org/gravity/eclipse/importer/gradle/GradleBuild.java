@@ -172,7 +172,7 @@ public class GradleBuild {
 			}
 		}
 
-		String binary = "gradlew";
+		String binary = "./gradlew";
 
 		
 		List<String> args = new LinkedList<>();

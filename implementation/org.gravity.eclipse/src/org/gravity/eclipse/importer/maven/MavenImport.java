@@ -137,7 +137,7 @@ public class MavenImport extends ProjectImport {
 		try {
 			List<String> args = Arrays.asList("clean", "compile");
 			File rootDir = getRootDir();
-			Process process = Execute.run(rootDir, "mvn", args, Collections.emptyList());
+			Process process = Execute.run(rootDir, "mvn", args, null);
 			if (!Execute.execute(process) && !ignoreBuildErrors()) {
 				throw new ImportException("Couldn't build the maven project");
 			}
