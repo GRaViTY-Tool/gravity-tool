@@ -1,0 +1,21 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule ParameterizedType2Interface_InnerTypeInInterface #extends ParameterizedType2Classifier_InnerTypeInInterface_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	nonParamType:AbstractTypeDeclaration
+}
+
+#target {
+	nonParamElement:Interface
+	++parameterizedClassifier:Interface
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

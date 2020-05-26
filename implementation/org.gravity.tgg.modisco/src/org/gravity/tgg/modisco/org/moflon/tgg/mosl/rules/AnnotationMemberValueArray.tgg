@@ -5,7 +5,15 @@
 #with org.gravity.tgg.modisco
 
 #source {
-	AnnotationValue:AnnotationMemberValuePair {
+	mOwner : BodyDeclaration {
+		-annotations->annotation
+	}
+	
+	annotation : Annotation {
+		 -values-> mAnnotationValue
+	}
+	
+	mAnnotationValue:AnnotationMemberValuePair {
 		++ -value -> mArray
 	}
 
@@ -22,7 +30,7 @@
 
 #correspondence {
 	AnnotationMemberValuePairToTAnnotationValue :AnnotationMemberValuePairToTAnnotationValue {
-		#src->AnnotationValue
+		#src->mAnnotationValue
 		#trg->tAnnotationValue
 	}
 }
@@ -30,40 +38,43 @@
 #rule AnnotationMemberValueAnnotationArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
 
 #source {
-	++ mValue: Annotation
+	++mValue:Annotation
 }
 
 #target {
-	tAnnotationValue : TAnnotationValue {
-		++ -tValue-> tValue
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
 	}
-	++ tValue : TAnnotation 
+
+	++tValue:TAnnotation
 }
 
 #correspondence {
-	++ mTypeToTType : org.gravity.tgg.modisco.AnnotationToTAnnotation {
-		#src-> mValue
-		#trg-> tValue
+	++ mTypeToTType :org.gravity.tgg.modisco.AnnotationToTAnnotation {
+		#src->mValue
+		#trg->tValue
 	}
 }
+
 
 #using AttrCondDefLibrary.*
 
 #rule AnnotationMemberValueBooleanArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
 
 #source {
-	++ mValue : BooleanLiteral
+	++mValue:BooleanLiteral
 }
 
 #target {
-	tAnnotationValue : TAnnotationValue {
-		++ -tValue-> tValue
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
 	}
-	++ tValue : TBoolNode
+
+	++tValue:TBoolNode
 }
 
 #correspondence {
-	++ mValueToTValue : org.gravity.tgg.modisco.BooleanLiteralToTBoolNode {
+	++ mValueToTValue :org.gravity.tgg.modisco.BooleanLiteralToTBoolNode {
 		#src->mValue
 		#trg->tValue
 	}
@@ -76,65 +87,69 @@
 #rule AnnotationMemberValueClassArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
 
 #source {
-	++ mValue : TypeLiteral {
-		++ -type-> mAccess
+	++mValue:TypeLiteral {
+		++ -type -> mAccess
 	}
-	
-	++ mAccess : TypeAccess {
-		++ -type-> mType
+
+	++mAccess:TypeAccess {
+		++ -type -> mType
 	}
-	
-	mType : Type
+
+	mType:Type
 }
 
 #target {
-	tAnnotationValue : TAnnotationValue {
-		++ -tValue-> tValue
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
 	}
-	++ tValue : TClassNode {
-		++ -tClass-> tType
+
+	++tValue:TClassNode {
+		++ -tClass -> tType
 	}
-	
-	tType :TAbstractType
+
+	tType:TAbstractType
 }
 
 #correspondence {
-	++ mValueToTValue : org.gravity.tgg.modisco.ClassLiteralToClassNode {
+	++ mValueToTValue :org.gravity.tgg.modisco.ClassLiteralToClassNode {
 		#src->mValue
 		#trg->tValue
 	}
-	
-	mTypeToTType : org.gravity.tgg.modisco.TypeToTAbstractType {
+
+	mTypeToTType :org.gravity.tgg.modisco.TypeToTAbstractType {
 		#src->mType
 		#trg->tType
 	}
 }
+
 
 #using AttrCondDefLibrary.*
 
 #rule AnnotationMemberValueNumberArray #extends AnnotationMemberValueArray #with org.gravity.tgg.modisco
 
 #source {
-	++ mValue : NumberLiteral
+	++mValue:NumberLiteral
 }
 
 #target {
-	tAnnotationValue : TAnnotationValue {
-		++ -tValue-> tValue
+	tAnnotationValue:TAnnotationValue {
+		++ -tValue -> tValue
 	}
-	++ tValue : TNumberNode 
+
+	++tValue:TNumberNode
 }
 
 #correspondence {
-	++ mTypeToTType : org.gravity.tgg.modisco.NumberLiteralToTNumberNode {
-		#src-> mValue
-		#trg-> tValue
+	++ mTypeToTType :org.gravity.tgg.modisco.NumberLiteralToTNumberNode {
+		#src->mValue
+		#trg->tValue
 	}
 }
 
 #attributeConditions {
 	eq(mValue.tokenValue, tValue.tNumber)
 }
+
 
 #using AttrCondDefLibrary.*
 
@@ -162,3 +177,5 @@
 #attributeConditions {
 	eq(mValue.escapedValue, tValue.tText)
 }
+
+

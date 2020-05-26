@@ -18,11 +18,6 @@ import org.gravity.modisco.bugfixes.MAnnotation;
 public class GravityMoDiscoFactoryImpl extends JavaFactoryImpl {
 
 	@Override
-	public AnonymousClassDeclaration createAnonymousClassDeclaration() {
-		return ModiscoFactory.eINSTANCE.createMAnonymous();
-	}
-
-	@Override
 	public Annotation createAnnotation() {
 		return new MAnnotation();
 	}

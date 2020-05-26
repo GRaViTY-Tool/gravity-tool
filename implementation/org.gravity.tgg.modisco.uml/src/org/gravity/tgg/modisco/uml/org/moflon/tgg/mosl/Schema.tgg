@@ -1,0 +1,120 @@
+// Add imports here
+#import "http://www.gravity-tool.org/modisco"
+//#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
+#import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
+#import "http://www.eclipse.org/uml2/5.0.0/UML"
+#import "http://www.eclipse.org/uml2/5.0.0/Types"
+
+#schema org.gravity.tgg.modisco.uml
+
+#source {
+	java
+	modisco
+}
+
+#target {
+	uml
+}
+
+#correspondence {
+	Expression2Comment {
+		#src->Expression
+		#trg->Comment
+	}
+
+	ASTNode2Element {
+		#src->ASTNode
+		#trg->Element
+	}
+
+	Modifier2NamedElement {
+		#src->Modifier
+		#trg->NamedElement
+	}
+
+	NamedElement2NamedElement {
+		#src->NamedElement
+		#trg->NamedElement
+	}
+
+	JavaPackage2UmlPackage {
+		#src->java.Package
+		#trg->uml.Package
+	}
+
+	JavaModel2UMLPackage {
+		#src->java.Model
+		#trg->uml.Package
+	}
+
+	VariableDec2Parameter {
+		#src->VariableDeclaration
+		#trg->Parameter
+	}
+
+	TypeAccess2Generalization {
+		#src->TypeAccess
+		#trg->Generalization
+	}
+
+	TypeAccess2InterfaceRealization{
+		#src->TypeAccess
+		#trg->InterfaceRealization
+	}
+
+	CompilationUnit2Artifact{
+		#src->CompilationUnit
+		#trg->Artifact
+	}
+
+	ParameterizedType2RedefinableTemplateSignature {
+		#src->ParameterizedType
+		#trg->RedefinableTemplateSignature
+	}
+
+	TypeAccess2TemplateBinding {
+		#src->TypeAccess
+		#trg->TemplateBinding
+	}
+
+	TypeAccess2Property {
+		#src->TypeAccess
+		#trg->Property
+	}
+
+	TypeAccess2Parameter {
+		#src->TypeAccess
+		#trg->Parameter
+	}
+}
+
+#attributeConditions {
+	#userDefined 
+	isReturn(0:ParameterDirectionKind){
+		#sync: F, B
+		#gen: F, B}
+
+	#userDefined 
+	isInParameter(0:ParameterDirectionKind){
+		#sync: F, B
+		#gen: F, B}
+
+	#userDefined 
+	jVisibility2umlVisibility(0:java.VisibilityKind, 1:uml.VisibilityKind){
+		#sync: FF, BB, BF, FB
+		#gen:  FF, BB, BF, FB}
+
+		// parameterized, unparameterized
+	#userDefined 
+	parameterizedNameFitsNonParameterizedName(0:EString, 1:EString) {
+		#sync: BB
+		#gen: BB}
+
+	#userDefined 
+	nonParameterizedName(0:EString) {
+		#sync: F, B
+		#gen: F, B
+	}
+}
+
+

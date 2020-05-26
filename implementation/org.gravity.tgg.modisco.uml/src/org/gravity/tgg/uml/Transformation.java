@@ -2,15 +2,21 @@ package org.gravity.tgg.uml;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -20,20 +26,22 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
-import org.emoflon.ibex.tgg.operational.csp.constraints.factories.uml.UserDefinedRuntimeTGGAttrConstraintFactory;
-import org.emoflon.ibex.tgg.operational.defaults.IbexOptions;
-import org.emoflon.ibex.tgg.operational.strategies.sync.SYNC;
-import org.emoflon.ibex.tgg.runtime.democles.DemoclesTGGEngine;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.exceptions.ProcessingException;
 import org.gravity.eclipse.exceptions.TransformationFailedException;
+import org.gravity.eclipse.io.ModelSaver;
+import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
+import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
+import org.moflon.tgg.language.analysis.StaticAnalysis;
 
 /**
  * This class provides the API for transforming Java projects into UML models
@@ -42,39 +50,88 @@ import org.gravity.security.annotations.AnnotationsActivator;
  * @author speldszus
  *
  */
-public final class Transformation extends SYNC {
+public final class Transformation extends SynchronizationHelper {
 
 	static final Logger LOGGER = Logger.getLogger(Transformation.class);
 
+	/**
+	 * The name of the protocol file
+	 */
+	public static final String PROTOCOL_XMI = "protocol.xmi";
+
+	/**
+	 * The name of the modisco model file
+	 */
+	public static final String SRC_XMI = "modisco.xmi";
+
+	/**
+	 * The name of the correspondence model file
+	 */
+	public static final String CORR_XMI = "corr.xmi";
+
+	/**
+	 * The name of the output folder
+	 */
+	static final String UML = "uml";
 
 	private final IJavaProject project;
 	final IFolder outputFolder;
 
-	public Transformation(IJavaProject project, Resource target) throws IOException, CoreException {
-		super(new GravityUml().createIbexOptions().resourceHandler(new GravityUmlresourceHandler(project)));
-		final IProject iproject = project.getProject();
-		this.project = project;
-		outputFolder = ((GravityUmlresourceHandler) getResourceHandler()).getOutputFolder();
+	private Resource tggRulesResource;
+
+	public Transformation(IJavaProject javaProject, Resource target) throws IOException, CoreException {
+		this.project = javaProject;
+		this.outputFolder = EclipseProjectUtil.getGravityFolder(javaProject.getProject(), new NullProgressMonitor())
+				.getFolder(UML);
 		if (!outputFolder.exists()) {
 			outputFolder.create(true, true, new NullProgressMonitor());
 		}
-		if(target != null) {
-			this.getResourceHandler().getTargetResource().getContents().addAll(target.getContents());
+		if (target != null) {
+			this.getTrg().eResource().getContents().addAll(target.getContents());
 		}
 	}
 
-	public static class  GravityUml {
-	public IbexOptions createIbexOptions() {
-		final IbexOptions options = new IbexOptions();
-		options.project.name("Uml");
-		options.project.path("org.gravity.tgg.modisco.uml");
-		options.debug.ibexDebug(GravityActivator.getDefault().isVerbose());
-		options.csp.userDefinedConstraints(new UserDefinedRuntimeTGGAttrConstraintFactory());
-		options.blackInterpreter(new DemoclesTGGEngine());
-		return options;
+	/**
+	 * Initializes the class
+	 * 
+	 * @param set The resource set which should be used
+	 * @throws IOException
+	 * @throws MalformedURLException
+	 */
+	private void init(ResourceSet set) throws IOException, MalformedURLException {
+		this.set = set;
+		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
+				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+
+		String corrURI = "platform:/plugin/org.gravity.tgg.modisco/model/Uml.ecore";//$NON-NLS-1$
+		this.corrPackageResource = this.set.createResource(URI.createURI(corrURI));
+		try (InputStream corrPackage = new URL(corrURI).openConnection().getInputStream()) {
+			this.corrPackageResource.load(corrPackage, Collections.EMPTY_MAP);
+		}
+
+		this.configurator = new org.moflon.tgg.algorithm.configuration.Configurator() {
+		};
+		clearChanges();
+
+		String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.sma.xmi"; //$NON-NLS-1$
+		try (InputStream tggRulesStream = new URL(smaXmiURI).openConnection().getInputStream()) {
+			this.tggRulesResource = this.set.createResource(URI.createURI(smaXmiURI));
+			this.tggRulesResource.load(tggRulesStream, Collections.EMPTY_MAP);
+		}
+
+		setRules((StaticAnalysis) this.tggRulesResource.getContents().get(0));
 	}
 
+	/**
+	 * Sets the eMoflon changes to empty consumers
+	 */
+	private void clearChanges() {
+		this.changeSrc = (root -> {
+		});
+		this.changeTrg = (root -> {
+		});
 	}
+	
 	/**
 	 * Translates the given java project into an UML model
 	 *
@@ -121,19 +178,19 @@ public final class Transformation extends SYNC {
 			throws TransformationFailedException, IOException {
 		final SubMonitor subMonitor = SubMonitor.convert(monitor);
 
-		getResourceHandler().getSourceResource().getContents().add(mGravityModel);
+		setSrc(mGravityModel);
 
 		final boolean debugging = GravityActivator.getDefault().isDebugging();
 		if (debugging) {
-			getResourceHandler().getSourceResource().save(Collections.emptyMap());
+			getSrc().eResource().save(Collections.emptyMap());
 		}
 
 		subMonitor.setTaskName("Transform MoDisco Model to UML Model");
-		forward();
+		integrateForward();
 
 		subMonitor.setTaskName("Postprocess UML Model");
 		subMonitor.setWorkRemaining(15);
-		final Model model = (Model) getResourceHandler().getTargetResource().getContents().get(0);
+		final Model model = (Model) getTrg();
 		if (model == null) {
 			throw new TransformationFailedException("Reverseengineering of a UML model failed.");
 		}
@@ -144,7 +201,7 @@ public final class Transformation extends SYNC {
 			throw new TransformationFailedException(e);
 		}
 
-		((GravityUmlresourceHandler) getResourceHandler()).save(outputFolder, subMonitor);
+		save(outputFolder, subMonitor);
 		return model;
 	}
 
@@ -156,13 +213,14 @@ public final class Transformation extends SYNC {
 	 * @throws IOException                   If writing files failed
 	 */
 	public void umlToProject(final IProgressMonitor monitor) throws TransformationFailedException, IOException {
-		final IFile corrFile = getResourceHandler().getCorrFile();
+		final IFile corrFile = outputFolder.getFile(CORR_XMI);
 		if (!corrFile.exists()) {
 			return;
 		}
 
-		final File oldTrgResource = getResourceHandler().getTrgFile().getLocation().toFile();
-		final Resource r = getResourceHandler().getResourceSet().createResource(URI.createFileURI(oldTrgResource.getAbsolutePath()));
+		final File oldTrgResource = getTrgFile().getLocation().toFile();
+		final Resource r = getResourceSet()
+				.createResource(URI.createFileURI(oldTrgResource.getAbsolutePath()));
 		try {
 			r.load(Collections.emptyMap());
 		} catch (final IOException e) {
@@ -170,7 +228,7 @@ public final class Transformation extends SYNC {
 		}
 
 		final EObject oldModel = r.getContents().get(0);
-		final EObject newModel = getResourceHandler().getTargetResource().getContents().get(0);
+		final EObject newModel = getTrg();
 
 		try (OutputStream outputStreamOld = Files
 				.newOutputStream(outputFolder.getFile("old.xmi").getLocation().toFile().toPath());
@@ -188,19 +246,34 @@ public final class Transformation extends SYNC {
 			throw new TransformationFailedException(e);
 		}
 
-		backward();
+		integrateBackward();
 
-		getResourceHandler().save(outputFolder, monitor);
+		save(outputFolder, monitor);
 
-		GravityModiscoCodeGenerator.generateCode(project, (MGravityModel) getResourceHandler().getSourceResource().getContents().get(0), monitor);
+		GravityModiscoCodeGenerator.generateCode(project, (MGravityModel) getSrc(), monitor);
+	}
+
+	public IFile getTrgFile() {
+		return outputFolder.getFile(project.getProject().getName() + "." + UML);
+	}
+
+	private boolean save(IFolder folder, IProgressMonitor monitor) {
+		monitor.setTaskName("Save UML Model");
+		IFile umlFile = folder.getProject().getFile(folder.getProject().getName() + ".uml");
+		if(!ModelSaver.saveModel(getTrg(), umlFile, monitor)) {
+			return false;
+		}
+		if(!ModelSaver.saveModel(getSrc(), folder.getFile(SRC_XMI), monitor)) {
+			return false;
+		}
+		if(!ModelSaver.saveModel(getCorr(), folder.getFile(CORR_XMI), monitor)) {
+			return false;
+		}
+		saveSynchronizationProtocol(folder.getFile("sync__protocol.xmi").getLocation().toString()); //$NON-NLS-1$
+		return true;
 	}
 
 	public IJavaProject getProject() {
 		return this.project;
-	}
-
-	@Override
-	public GravityUmlresourceHandler getResourceHandler() {
-		return (GravityUmlresourceHandler) super.getResourceHandler();
 	}
 }

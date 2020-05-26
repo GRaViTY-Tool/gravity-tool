@@ -1,0 +1,53 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule AbstractMethodDec2OperationAnonymous #with org.gravity.tgg.modisco.uml
+
+#source {
+	mAnon:AnonymousClassDeclaration {
+		++ -bodyDeclarations -> bodyDeclaration
+	}
+
+	++bodyDeclaration:MAbstractMethodDefinition
+}
+
+#target {
+	uAnon:Class {
+		++ -ownedOperation -> feature
+	}
+	
+	++feature:Operation
+}
+
+#correspondence {
+	ba2na:ASTNode2Element {
+		#src->mAnon
+		#trg->uAnon
+	}
+	
+	++ b2e :ASTNode2Element {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+
+	++ bd2ne :NamedElement2NamedElement {
+		#src->bodyDeclaration
+		#trg->feature
+	}
+}
+
+#attributeConditions {
+	eq(bodyDeclaration.name, feature.name)
+}
+
+#rule MethodDec2OperationAnonymous #extends AbstractMethodDec2OperationAnonymous #with org.gravity.tgg.modisco.uml
+
+#source {
+	++bodyDeclaration:MMethodDefinition
+}
+
+#rule ConstructorDec2OperationAnonymous #extends AbstractMethodDec2OperationAnonymous #with org.gravity.tgg.modisco.uml
+
+#source {
+	++bodyDeclaration:MConstructorDefinition
+}

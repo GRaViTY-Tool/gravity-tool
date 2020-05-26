@@ -1,7 +1,6 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: org.gravity.tgg.modisco
 Bundle-SymbolicName: org.gravity.tgg.modisco;singleton:=true
-Bundle-Name: %pluginName
-Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
@@ -15,14 +14,21 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.modisco.java.generation,
  org.moflon.core.utilities,
  SDMLanguage,
- org.moflon.tgg.language,
- org.moflon.tgg.runtime,
+ org.moflon.tgg.language;visibility:=reexport,
+ org.moflon.tgg.runtime;visibility:=reexport,
  MocaTree
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
+Export-Package: org.gravity.tgg.modisco.processing.pg,
+ org.gravity.tgg.modisco.Rules.util,
+ org.gravity.tgg.modisco,
+ org.gravity.tgg.modisco.util,
+ org.gravity.tgg.modisco.Rules,
+ org.gravity.tgg.modisco.impl,
+ org.gravity.tgg.modisco.Rules.impl
+Bundle-Name: %pluginName
+Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
-Automatic-Module-Name: org.gravity.tgg.modisco
-Export-Package: org.gravity.tgg.modisco.processing.pg
 Bundle-ClassPath: .

@@ -1,0 +1,23 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule FieldDec2Property4Interface #extends FieldDec2Property4_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+}
+
+#target {
+	uOwnerType : Interface{
+		++-ownedAttribute->feature
+	}
+	
+	++feature:Property
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

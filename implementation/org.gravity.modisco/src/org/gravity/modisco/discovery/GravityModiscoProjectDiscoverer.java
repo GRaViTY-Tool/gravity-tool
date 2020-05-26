@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.modisco.java.Model;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
@@ -61,13 +62,24 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 	/**
 	 * The MoDisco Discoverer of this class
 	 */
-	private final DiscoverJavaModelFromJavaProject discoverer;
+	private final MyDiscoverJavaModelFromJavaProject discoverer;
+	
+	class MyDiscoverJavaModelFromJavaProject extends DiscoverJavaModelFromJavaProject {
+
+		public ResourceSet getRS() {
+			return getResourceSet();
+		}
+
+		public ElementsToAnalyze getElemetstoAnalyze() {
+			return getElementsToAnalyze();
+		}
+	}
 
 	/**
 	 * The default constructor
 	 */
 	public GravityModiscoProjectDiscoverer() {
-		this.discoverer = new DiscoverJavaModelFromJavaProject();
+		this.discoverer = new MyDiscoverJavaModelFromJavaProject();
 	}
 
 	/**
@@ -322,5 +334,9 @@ public class GravityModiscoProjectDiscoverer implements IDiscoverer<IJavaProject
 		} catch (IOException | CoreException e) {
 			throw new DiscoveryException(e);
 		}
+	}
+
+	public ResourceSet getResourceSet() {
+		return this.discoverer.getRS();
 	}
 }

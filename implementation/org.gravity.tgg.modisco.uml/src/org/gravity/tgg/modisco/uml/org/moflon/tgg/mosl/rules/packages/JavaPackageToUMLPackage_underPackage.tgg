@@ -1,0 +1,37 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule JavaPackageToUMLPackage_underPackage #with org.gravity.tgg.modisco.uml
+
+#source { 
+	jParent : Package{
+		++-ownedPackages->jp
+	}
+	++ jp : Package
+}
+
+#target {
+	
+	uParent : Package{
+		++ -packagedElement->up
+	}
+	
+	++ up : Package
+}
+
+#correspondence {
+	
+	p2p : JavaPackage2UmlPackage{
+		#src->jParent
+		#trg->uParent
+	}
+	
+	++ jp2up : JavaPackage2UmlPackage{
+		#src->jp
+		#trg->up
+	}
+}
+
+#attributeConditions {
+	eq(up.name,jp.name)
+}

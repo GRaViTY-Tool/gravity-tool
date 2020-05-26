@@ -1,0 +1,23 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule JavaAnnotation2Comment4BodyDeclaration #extends JavaAnnotation2Comment_Abstract #with org.gravity.tgg.modisco.uml
+
+#source {
+	body:BodyDeclaration {
+		++ -annotations -> annotation
+	}
+
+	++annotation:Annotation
+}
+
+#target {
+	element:Element
+}
+
+#correspondence {
+	b2e :ASTNode2Element {
+		#src->body
+		#trg->element
+	}
+}

@@ -1,0 +1,42 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule JavaAnnotationValue2Comment #with org.gravity.tgg.modisco.uml
+
+#source {
+	annotation:Annotation {
+		++ -values -> value
+	}
+
+	++value:AnnotationMemberValuePair {
+		++ -value -> array
+	}
+
+	++array:ArrayInitializer
+}
+
+#target {
+	comment:Comment {
+		++-ownedComment -> tag
+	}
+
+	++tag:Comment {
+		++-annotatedElement -> comment
+	}
+}
+
+#correspondence {
+	a2c :ASTNode2Element {
+		#src->annotation
+		#trg->comment
+	}
+
+	++ c2c :ASTNode2Element {
+		#src->value
+		#trg->tag
+	}
+}
+
+#attributeConditions {
+	eq(value.name, tag.body)
+}

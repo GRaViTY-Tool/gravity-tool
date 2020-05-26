@@ -1,0 +1,20 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule InnerEnumDeclaration2InnerEnumeration_InClass #extends InnerEnumDeclaration2InnerEnumeration_Abstract, InnerDeclaration2InnerClassifier_InClass_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	
+}
+
+#target {
+	
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

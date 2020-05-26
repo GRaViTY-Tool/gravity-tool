@@ -2,35 +2,23 @@
 <?eclipse version="3.0"?><plugin>
   <extension point="org.eclipse.ui.commands">
     <command defaultHandler="org.gravity.tgg.uml.ui.UmlParseHandler" id="org.gravity.uml.command.trafo" name="Generate UML Model"/>
-    <command
-          defaultHandler="org.gravity.tgg.uml.ui.UmlCodeGenHandler"
-          id="org.gravity.uml.command.trafo.bwd"
-          name="Generate Code">
-    </command>
+    <command defaultHandler="org.gravity.tgg.uml.ui.UmlCodeGenHandler" id="org.gravity.uml.command.trafo.bwd" name="Generate Code"/>
   </extension>
   <extension point="org.eclipse.ui.menus">
     <menuContribution allPopups="false" locationURI="popup:org.gravity.mainmenu">
-      <menu
-            id="org.gravity.mainmenu.uml"
-            label="uml">
-         <command
-               commandId="org.gravity.uml.command.trafo.bwd"
-               label="Generate Code"
-               style="push">
-         </command>
-         <command
-               commandId="org.gravity.uml.command.trafo"
-               label="Generate UML Model"
-               style="push">
-         </command>
+      <menu id="org.gravity.mainmenu.uml" label="uml">
+        <command commandId="org.gravity.uml.command.trafo.bwd" label="Generate Code" style="push"/>
+        <command commandId="org.gravity.uml.command.trafo" label="Generate UML Model" style="push"/>
       </menu>
     </menuContribution>
   </extension>
-  <extension
-        point="org.eclipse.emf.ecore.dynamic_package">
-     <resource
-           location="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore"
-           uri="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore">
-     </resource>
+  <extension point="org.eclipse.emf.ecore.dynamic_package">
+    <resource location="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore" uri="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.modisco.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.tgg.modisco.uml.Rules.RulesPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore#//Rules"/>
   </extension>
 </plugin>

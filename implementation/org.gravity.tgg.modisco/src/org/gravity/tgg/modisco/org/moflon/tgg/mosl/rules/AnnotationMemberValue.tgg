@@ -4,7 +4,15 @@
 #abstract #rule AnnotationMemberValue #with org.gravity.tgg.modisco
 
 #source {
-	AnnotationValue:AnnotationMemberValuePair {
+	mOwner : BodyDeclaration {
+		-annotations->annotation
+	}
+	
+	annotation : Annotation {
+		 -values-> mAnnotationValue
+	}
+	
+	mAnnotationValue:AnnotationMemberValuePair {
 		++ -value -> mValue
 	}
 
@@ -17,7 +25,7 @@
 
 #correspondence {
 	AnnotationMemberValuePairToTAnnotationValue :AnnotationMemberValuePairToTAnnotationValue {
-		#src->AnnotationValue
+		#src->mAnnotationValue
 		#trg->tAnnotationValue
 	}
 }

@@ -1,0 +1,25 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule TypeAccessType2ParameterType_Parameter #extends TypeAccessType2ParameterType_Abstract #with org.gravity.tgg.modisco.uml
+
+#source { 
+	method : AbstractMethodDeclaration {
+		-parameters->variableDec
+	}
+	variableDec : SingleVariableDeclaration{
+		-type->typeAccess
+	}
+	
+	typeAccess:TypeAccess
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+	
+}

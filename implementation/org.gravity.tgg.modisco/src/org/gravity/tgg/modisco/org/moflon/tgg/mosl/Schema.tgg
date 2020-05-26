@@ -9,8 +9,8 @@
 #schema org.gravity.tgg.modisco
 
 #source {
-	org.gravity.modisco.modisco
 	java.java
+	org.gravity.modisco.modisco
  }
 
 #target {

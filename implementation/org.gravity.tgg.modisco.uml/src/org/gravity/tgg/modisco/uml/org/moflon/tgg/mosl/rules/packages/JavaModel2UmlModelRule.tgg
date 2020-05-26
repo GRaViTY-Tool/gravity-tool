@@ -1,0 +1,57 @@
+#using org.gravity.tgg.modisco.uml.*
+#using AttrCondDefLibrary.*
+
+#rule JavaModel2UmlModelRule #with org.gravity.tgg.modisco.uml
+
+#source { 
+	++ javaModel : MGravityModel 
+}
+
+#target {
+	++ rootModel : Model {
+		name:="root model"
+		++ -packagedElement->umlModel
+		++ -packagedElement->externalModel
+		++ -packagedElement->sourceRefModel
+	}
+	++ umlModel : Model {
+		++ -packagedElement->commonTypes
+	}
+	++ externalModel : Model {
+		name:="externals"
+	}
+	++ sourceRefModel : Model {
+		name:="source references"
+	}
+	++ commonTypes : Package {
+		name := "Common Java datatypes"
+	}
+	
+}
+
+#correspondence {
+	++ jm2um : JavaModel2UMLPackage {
+		#src->javaModel
+		#trg->umlModel
+	}
+	
+	++ jm2um2 : JavaModel2UMLPackage {
+		#src->javaModel
+		#trg->externalModel
+	}
+	
+	++ jm2um3 : JavaModel2UMLPackage {
+		#src->javaModel
+		#trg->sourceRefModel
+	}
+	
+	++ jm2commonTypes : JavaModel2UMLPackage {
+		#src->javaModel
+		#trg->commonTypes
+	}
+
+}
+
+#attributeConditions {
+	eq(javaModel.name, umlModel.name)
+}

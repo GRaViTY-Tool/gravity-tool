@@ -4,13 +4,21 @@
 #rule AnnotationMemberKey #with org.gravity.tgg.modisco
 
 #source {
-	Annotation : Annotation {
+	mOwner : BodyDeclaration {
+		-annotations->annotation
+	}
+	
+	annotation : Annotation {
 		++ -values-> mValue
 	}
 	++ mValue : AnnotationMemberValuePair
 }
 
 #target {
+	tOwner : TAnnotatable {
+		-tAnnotation->tAnnotation
+	}
+	
 	tAnnotation : TAnnotation {
 		++ - tValues -> tAnnotationValue
 	}
@@ -18,11 +26,16 @@
 }
 
 #correspondence {
-	AnnotationToTAnnotation : AnnotationToTAnnotation {
-		#src->Annotation
+	ownerToWoner : ASTNodeToTAnnotatable {
+		#src->mOwner
+		#trg->tOwner
+	}
+	
+	annotationToTAnnotation : AnnotationToTAnnotation {
+		#src->annotation
 		#trg->tAnnotation
 	}
-	++ AnnotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
+	++ annotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {
 		#src->mValue
 		#trg->tAnnotationValue
 	}

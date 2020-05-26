@@ -1,19 +1,19 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule AnnotationTypeAccess
+#abstract #rule AbstractAnnotationTypeAccess
 #with org.gravity.tgg.modisco
 
 #source {
-	Annotation:Annotation {
+	mAnnotation:Annotation {
 		++  -type -> mAccess
 	}
 
 	++mAccess:TypeAccess {
-		++ -type -> AnnotationType
+		++ -type -> mAnnotationType
 	}
 
-	AnnotationType:AnnotationTypeDeclaration
+	mAnnotationType:AnnotationTypeDeclaration
 }
 
 #target {
@@ -26,12 +26,42 @@
 
 #correspondence {
 	AnnotationTypeToTAnnotationType :TypeToTAbstractType {
-		#src->AnnotationType
+		#src->mAnnotationType
 		#trg->tAnnotationType
 	}
 
 	AnnotationToTAnnotation :AnnotationToTAnnotation {
-		#src->Annotation
+		#src->mAnnotation
 		#trg->tAnnotation
 	}
+}
+
+#rule AnnotationTypeAccessOnBodyDecl #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco
+
+#source {
+	mOwner : BodyDeclaration {
+		-annotations->mAnnotation
+	}
+	
+	mAnnotation : Annotation
+}
+
+#rule AnnotationTypeAccessOnAnnotation #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco
+
+#source {
+	mOwner : AnnotationMemberValuePair {
+		-value->mAnnotation
+	}
+	
+	mAnnotation : Annotation
+}
+
+#rule AnnotationTypeAccessOnSelf #extends AbstractAnnotationTypeAccess #with org.gravity.tgg.modisco
+
+#source {
+		mAnnotationType:AnnotationTypeDeclaration {
+		-annotations->mAnnotation
+	}
+	
+	mAnnotation : Annotation
 }

@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Level;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
@@ -17,11 +16,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -29,11 +25,8 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.gravity.eclipse.exceptions.TransformationFailedException;
-import org.gravity.eclipse.ui.ModelCreatorJob;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
@@ -75,7 +68,7 @@ final class UmlCodeGenJob  extends Job {
 			javaProject = JavaProjectUtil.convertToJavaProject(Collections.singleton("src"), project, monitor);
 			TransformationFactory transformationFactory = GravityUmlActivator.getTransformationFactory();
 			Transformation transformation = transformationFactory.getTransformation(javaProject.getProject());
-			Resource targetResource = transformation.getResourceHandler().getTargetResource();
+			Resource targetResource = transformation.getTrg().eResource();
 			targetResource.load(Collections.emptyMap());
 			Set<EObject> roots = targetResource.getContents().parallelStream().filter(eObject -> (eObject instanceof Model) && "root model".equals(((Model) eObject).getName())).collect(Collectors.toSet());
 			if(roots.size() != 1) {
@@ -83,12 +76,12 @@ final class UmlCodeGenJob  extends Job {
 			}
 			Model root = (Model) roots.iterator().next();
 			addTypesToDefaultPackage(project, root);
-			transformation.backward();
-			MGravityModel modisco = (MGravityModel) transformation.getResourceHandler().getSourceResource().getContents().get(0);
+			transformation.integrateBackward();
+			MGravityModel modisco = (MGravityModel) transformation.getSrc();
 			
 			GravityModiscoCodeGenerator.generateCode(javaProject, modisco, monitor);
 			
-			transformation.forward();
+			transformation.integrateForward();
 			
 			try(FileOutputStream outputStream = new FileOutputStream(umlFile.getLocation().toFile())){
 				targetResource.save(outputStream ,Collections.emptyMap());
