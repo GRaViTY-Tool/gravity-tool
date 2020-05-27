@@ -112,7 +112,13 @@ public class DataFlowVisitor {
 	private FlowNode handle(final Expression expression) {
 		if (expression instanceof ArrayLengthAccess) {
 			final ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
-			return handle(arrayLengthAccess.getArray());
+			final FlowNode member = this.handler.getFlowNodeOrCreate(arrayLengthAccess);
+			if (member.alreadySeen()) {
+				return member;
+			}
+			addFlowToContainer(arrayLengthAccess, member);
+			handle(arrayLengthAccess.getArray());
+			return member;
 		} else if (expression instanceof FieldAccess) {
 			final FieldAccess fieldAccess = (FieldAccess) expression;
 			return handle(fieldAccess);
@@ -214,7 +220,13 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final PostfixExpression postfixExpression) {
-		return handle(postfixExpression.getOperand());
+		final FlowNode member = this.handler.getFlowNodeOrCreate(postfixExpression);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		handle(postfixExpression.getOperand());
+		addFlowToContainer(postfixExpression, member);
+		return member;
 	}
 
 	private FlowNode handle(final VariableDeclarationExpression variableDeclarationExpression) {
@@ -518,7 +530,13 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final PrefixExpression prefixExpression) {
-		return handle(prefixExpression.getOperand());
+		final FlowNode member = this.handler.getFlowNodeOrCreate(prefixExpression);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		handle(prefixExpression.getOperand());
+		addFlowToContainer(prefixExpression, member);
+		return member;
 	}
 
 	private FlowNode handle(final SuperMethodInvocation superMethodInvocation) {
@@ -544,7 +562,13 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final CastExpression castExpression) {
-		return handle(castExpression.getExpression());
+		final FlowNode member = this.handler.getFlowNodeOrCreate(castExpression);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		handle(castExpression.getExpression());
+		addFlowToContainer(castExpression, member);
+		return member;
 	}
 
 	private FlowNode handle(final ParenthesizedExpression parenthesizedExpression) {
@@ -553,7 +577,8 @@ public class DataFlowVisitor {
 			return member;
 		}
 		addFlowToContainer(parenthesizedExpression, member);
-		return handle(parenthesizedExpression.getExpression());
+		handle(parenthesizedExpression.getExpression());
+		return member;
 	}
 
 	private FlowNode handle(final BooleanLiteral booleanLiteral) {
@@ -598,8 +623,15 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		handle(arrayAccess.getArray());
-		handle(arrayAccess.getIndex());
+		FlowNode arrayNode = handle(arrayAccess.getArray());
+		if(arrayNode != null) {
+			member.addInRef(arrayNode);
+		}
+		
+		FlowNode indexNode = handle(arrayAccess.getIndex());
+		if(indexNode != null) {
+			member.addInRef(indexNode);
+		}
 		addFlowToContainer(arrayAccess, member);
 		return member;
 	}
@@ -716,6 +748,7 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
+		addFlowToContainer(itemAccess, member);
 		return member;
 	}
 
@@ -867,7 +900,10 @@ public class DataFlowVisitor {
 			return member;
 		}
 		for (final Statement statement : switchStatement.getStatements()) {
-			handle(statement);
+			FlowNode statementNode = handle(statement);
+			if(statementNode != null) {
+				member.addInRef(statementNode);
+			}
 		}
 		member.addInRef(handle(switchStatement.getExpression()));
 		return member;
@@ -953,7 +989,10 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		handle(expressionStatement.getExpression());
+		FlowNode expressionNode = handle(expressionStatement.getExpression());
+		if(expressionNode!=null) {
+			member.addInRef(expressionNode);
+		}
 		return member;
 	}
 
@@ -1059,7 +1098,10 @@ public class DataFlowVisitor {
 			return member;
 		}
 		for (final Statement statement : block.getStatements()) {
-			handle(statement);
+			FlowNode statementNode = handle(statement);
+			if(statementNode != null) {
+				member.addInRef(statementNode);
+			}
 		}
 		return member;
 	}
