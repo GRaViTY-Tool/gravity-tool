@@ -32,3 +32,4 @@ Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-Localization: plugin
 Bundle-ClassPath: .
+Bundle-Activator: org.gravity.tgg.modisco.MoDiscoTGGActivator

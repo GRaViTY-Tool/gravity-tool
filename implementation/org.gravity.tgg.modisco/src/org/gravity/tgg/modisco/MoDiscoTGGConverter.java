@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.function.Consumer;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -75,9 +74,9 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 	public MoDiscoTGGConverter(final IJavaProject project) throws IOException {
 		this.discoverer = new GravityModiscoProjectDiscoverer();
 		this.iJavaProject = project;
-		GravityActivator.getDefault().addProject(project.getProject());
 //		BasicConfigurator.configure();
 		init(this.discoverer.getResourceSet());
+		GravityActivator.getDefault().addProject(project.getProject());
 	}
 
 	/**
@@ -92,16 +91,16 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
-		String corrURI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore";//$NON-NLS-1$
-		this.corrPackageResource = this.set.createResource(URI.createURI(corrURI));
-		try (InputStream corrPackage = new URL(corrURI).openConnection().getInputStream()) {
-			this.corrPackageResource.load(corrPackage, Collections.EMPTY_MAP);
-		}
+		setCorrPackage(ModiscoPackage.eINSTANCE);
 
 		this.configurator = new org.moflon.tgg.algorithm.configuration.Configurator() {
 		};
 		clearChanges();
 
+		loadRulesFromProject();
+	}
+
+	private void loadRulesFromProject() throws IOException, MalformedURLException {
 		String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.sma.xmi"; //$NON-NLS-1$
 		try (InputStream tggRulesStream = new URL(smaXmiURI).openConnection().getInputStream()) {
 			this.tggRulesResource = this.set.createResource(URI.createURI(smaXmiURI));
