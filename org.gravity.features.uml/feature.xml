@@ -20,11 +20,16 @@
    </license>
 
    <url>
+      <update label="GRaViTY Updatesite" url="https://gravity-tool.org/updatesite"/>
       <discovery label="eMoflon" url="https://emoflon.org/emoflon-ibex-democles-updatesite/snapshot/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/modeling/gmt/modisco/updates/release/"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
       <discovery label="CARiSMA" url="http://carisma.umlsec.de/beta-updatesite"/>
    </url>
+
+   <includes
+         id="org.gravity.license.epl"
+         version="0.0.0"/>
 
    <requires>
       <import feature="feature.carisma.core" version="1.4.7.201807301029"/>

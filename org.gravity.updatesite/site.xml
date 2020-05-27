@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="GRaViTY Update Site">
+   <description name="GRaViTY Update Site" url="http://www.gravity-tool.org/updatesite">
       Graph based analysis and refactorings of Java programs.
    </description>
    <feature url="features/org.gravity.features.modisco_1.0.0.qualifier.jar" id="org.gravity.features.modisco" version="1.0.0.qualifier">
@@ -24,6 +24,7 @@
    <feature url="features/org.gravity.features.uml_1.0.0.qualifier.jar" id="org.gravity.features.uml" version="1.0.0.qualifier">
       <category name="org.gravity.uml"/>
    </feature>
+   <!--<feature url="features/org.gravity.license.epl_1.0.0.jar" id="org.gravity.license.epl" version="1.0.0"/>-->
    <category-def name="org.gravity.basics" label="Parsing">
       <description>
          Basic tools for parsing a Java program into the PG representation
