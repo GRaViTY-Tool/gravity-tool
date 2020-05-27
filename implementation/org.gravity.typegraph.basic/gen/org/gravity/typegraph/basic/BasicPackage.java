@@ -25,6 +25,7 @@ import org.gravity.typegraph.basic.annotations.AnnotationsPackage;
  * <!-- end-user-doc -->
  * @see org.gravity.typegraph.basic.BasicFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='org.gravity.typegraph'"
  * @generated
  */
 public interface BasicPackage extends EPackage {
