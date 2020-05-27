@@ -68,7 +68,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 			case ModiscoPackage.MGRAVITY_MODEL: return createMGravityModel();
 			case ModiscoPackage.METHOD_INVOCATION_STATIC_TYPE: return createMethodInvocationStaticType();
 			case ModiscoPackage.MSYNTHETIC_METHOD_DEFINITION: return createMSyntheticMethodDefinition();
-			case ModiscoPackage.MANONYMOUS: return createMAnonymous();
 			case ModiscoPackage.MCLASS: return createMClass();
 			case ModiscoPackage.MFLOW: return createMFlow();
 			case ModiscoPackage.MSINGLE_VARIABLE_ACCESS: return createMSingleVariableAccess();
@@ -221,16 +220,6 @@ public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
 	public MSyntheticMethodDefinition createMSyntheticMethodDefinition() {
 		MSyntheticMethodDefinitionImpl mSyntheticMethodDefinition = new MSyntheticMethodDefinitionImpl();
 		return mSyntheticMethodDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MAnonymous createMAnonymous() {
-		MAnonymousImpl mAnonymous = new MAnonymousImpl();
-		return mAnonymous;
 	}
 
 	/**

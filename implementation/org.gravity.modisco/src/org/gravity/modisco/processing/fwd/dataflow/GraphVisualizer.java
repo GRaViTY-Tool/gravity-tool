@@ -25,7 +25,6 @@ import org.eclipse.modisco.java.NamedElement;
 import org.gravity.eclipse.GravityActivator;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MAbstractMethodDefinition;
-import org.gravity.modisco.MAnonymous;
 import org.gravity.modisco.MGravityModel;
 
 import guru.nidi.graphviz.attribute.Color;
@@ -77,7 +76,7 @@ public final class GraphVisualizer {
 			if (memberDef instanceof MAbstractMethodDefinition) {
 				memberName = ((NamedElement) memberDef).getName();
 				memberType = "Method";
-				if (defContainer instanceof MAnonymous) {
+				if (defContainer instanceof AnonymousClassDeclaration) {
 					className = "Anonymous-class";
 				} else {
 					className = ((NamedElement) defContainer).getName();
