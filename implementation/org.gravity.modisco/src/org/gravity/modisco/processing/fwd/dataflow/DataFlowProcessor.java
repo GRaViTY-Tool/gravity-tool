@@ -3,6 +3,7 @@ package org.gravity.modisco.processing.fwd.dataflow;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -69,7 +70,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	private MGravityModel model;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MDefinition> elements, final IProgressMonitor monitor) {
+	public boolean process(final MGravityModel model, final Collection<MDefinition> elements,
+			final IProgressMonitor monitor) {
 		this.model = model;
 		final SubMonitor sub = SubMonitor.convert(monitor, Messages.infoCreateElementForFlow, elements.size());
 
@@ -101,14 +103,19 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	/**
 	 * Creates the flows
 	 *
-	 * @param node    The node for which flows should be created
-	 * @param handler The handler used to discover the node
+	 * @param node
+	 *            The node for which flows should be created
+	 * @param handler
+	 *            The handler used to discover the node
 	 * @return true, if creating the flows was successful
 	 */
 	private boolean setFlows(final FlowNode node, final MemberHandler handler) {
 		final MAbstractFlowElement access = (MAbstractFlowElement) node.getModelElement();
 		MFlow accessOut = null;
 		final Set<FlowNode> outRef = buildOutRef(node);
+		if(outRef.isEmpty()) {
+			return true;
+		}
 		for (final FlowNode inNode : buildInRef(handler, node)) {
 			if (inNode == node) {
 				continue;
@@ -158,8 +165,9 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 				accessOut.setFlowOwner(access);
 			}
 			final EObject outElement = outNode.getModelElement();
+			MDefinition member = handler.getMemberDef();
 			if (outElement instanceof ReturnStatement) {
-				accessOut.setFlowTarget(handler.getMemberDef());
+				accessOut.setFlowTarget(member);
 			} else if (outElement instanceof VariableDeclarationFragment) {
 				final AbstractVariablesContainer variablesContainer = ((VariableDeclarationFragment) outElement)
 						.getVariablesContainer();
@@ -188,7 +196,8 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			} else if (outElement instanceof IfStatement || outElement instanceof WhileStatement
 					|| outElement instanceof ForStatement || outElement instanceof EnhancedForStatement
 					|| outElement instanceof DoStatement || outElement instanceof SwitchStatement) {
-				accessOut.setFlowTarget(handler.getMemberDef());
+				accessOut.setFlowTarget(member);
+				accessOut.setFlowOwner(member);
 			} else if (outElement instanceof MSingleVariableAccess) {
 				// Omitting accesses of parameters, when the target is another access
 				final MSingleVariableAccess mSVA = (MSingleVariableAccess) outElement;
@@ -199,7 +208,7 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 						&& accessOut.getFlowSource() instanceof MEntry) {
 					accessOut.setFlowOwner(mSVA);
 					accessOut.setFlowTarget(mSVA);
-				} else { // Basically flows into field accesses without MEntry as sourceb
+				} else { // Basically flows into field accesses without MEntry as source
 					accessOut.setFlowTarget((MAbstractFlowElement) outElement);
 				}
 			} else {
@@ -317,8 +326,10 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * Removes the given node (including its flows) from reducedDFG and inserts
 	 * direct flows from his inNodes to his outNodes.
 	 *
-	 * @param flowNode The node's key in reducedDFG.
-	 * @param handler  The alreadySeen on which the reduction should be performed.
+	 * @param flowNode
+	 *            The node's key in reducedDFG.
+	 * @param handler
+	 *            The alreadySeen on which the reduction should be performed.
 	 */
 	private void reduceNodeInDFG(final FlowNode flowNode, final MemberHandler handler) {
 		final Set<FlowNode> inRef = flowNode.getInRef();
@@ -346,31 +357,30 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 	 * representation of data flow is then used to derive the data flow of each
 	 * field/method.
 	 *
-	 * @param model The model, whose statements are processed.
+	 * @param model
+	 *            The model, whose statements are processed.
 	 * @return A list of the statement handlers resulting from the pre-processing.
 	 */
 	private List<MemberHandler> preProcessStatements() {
-		final Stream<MemberHandler> methodProcessors = this.model.getMAbstractMethodDefinitions().parallelStream()
-				.map(methodDef -> {
-					final MemberHandler methodProcessor = new MemberHandler(methodDef);
-					methodProcessor.getFlowNodeOrCreate(methodDef);
-					for (final SingleVariableDeclaration param : methodDef.getParameters()) {
-						methodProcessor.getFlowNodeOrCreate(param);
-					}
-					new DataFlowVisitor(methodProcessor).handle();
-					return methodProcessor;
-				});
-		final Stream<MemberHandler> fieldProcessors = this.model.getMFieldDefinitions().parallelStream()
-				.flatMap(fieldDef -> fieldDef.getFragments().parallelStream()).map(fragment -> {
-					final MemberHandler fieldProcessor = new MemberHandler(fragment);
-					new DataFlowVisitor(fieldProcessor).handle();
-					fieldProcessor.getFlowNodeOrCreate(fragment.getVariablesContainer());
-					return fieldProcessor;
+		final List<MemberHandler> handlers = new LinkedList<>();
+		for (MAbstractMethodDefinition methodDef : this.model.getMAbstractMethodDefinitions()) {
+			final MemberHandler methodProcessor = new MemberHandler(methodDef);
+			methodProcessor.getFlowNodeOrCreate(methodDef);
+			for (final SingleVariableDeclaration param : methodDef.getParameters()) {
+				methodProcessor.getFlowNodeOrCreate(param);
+			}
+			new DataFlowVisitor(methodProcessor).handle();
+			handlers.add(methodProcessor);
+		}
+		for (MFieldDefinition fieldDef : this.model.getMFieldDefinitions()) {
+			for (VariableDeclarationFragment fragment : fieldDef.getFragments()) {
+				final MemberHandler fieldProcessor = new MemberHandler(fragment);
+				new DataFlowVisitor(fieldProcessor).handle();
+				fieldProcessor.getFlowNodeOrCreate(fragment.getVariablesContainer());
+				handlers.add(fieldProcessor);
+			}
+		}
 
-				});
-
-		final List<MemberHandler> handlers = Stream.concat(fieldProcessors, methodProcessors)
-				.collect(Collectors.toList());
 		if (GravityActivator.getDefault().isVerbose()) {
 			GraphVisualizer.drawGraphs(this.model, handlers, "graphs"); //$NON-NLS-1$
 		}
