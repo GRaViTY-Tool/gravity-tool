@@ -12,9 +12,6 @@ public class IsReturn extends TGGConstraintImpl {
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	public void solve(Variable v0) {
-		if (variables.size() != 1)
-			throw new RuntimeException("The CSP -ISRETURN- needs exactly 1 variables");
-
 		String bindingStates = getBindingStates(v0);
 
 		switch (bindingStates) {

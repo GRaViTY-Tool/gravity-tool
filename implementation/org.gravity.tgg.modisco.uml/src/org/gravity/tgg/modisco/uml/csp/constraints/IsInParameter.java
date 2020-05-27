@@ -12,9 +12,6 @@ public class IsInParameter extends TGGConstraintImpl {
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	public void solve(Variable v0) {
-		if (variables.size() != 1)
-			throw new RuntimeException("The CSP -ISINPARAMETER- needs exactly 1 variables");
-
 		String bindingStates = getBindingStates(v0);
 
 		switch (bindingStates) {

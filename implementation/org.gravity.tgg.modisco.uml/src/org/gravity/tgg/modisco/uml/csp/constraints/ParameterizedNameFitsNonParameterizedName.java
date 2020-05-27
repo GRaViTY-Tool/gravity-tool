@@ -11,10 +11,6 @@ public class ParameterizedNameFitsNonParameterizedName extends TGGConstraintImpl
 	 * @see TGGLanguage.csp.impl.ConstraintImpl#solve()
 	 */
 	public void solve(Variable v0, Variable v1) {
-		if (this.variables.size() != 2) {
-			throw new RuntimeException("The CSP -PARAMETERIZEDNAMEFITSNONPARAMETERIZEDNAME- needs exactly 2 variables");
-		}
-
 		final String bindingStates = getBindingStates(v0, v1);
 
 		if ("BB".equals(bindingStates)) {
