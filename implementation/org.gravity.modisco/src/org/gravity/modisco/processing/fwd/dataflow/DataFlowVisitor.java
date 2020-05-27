@@ -110,9 +110,14 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final Expression expression) {
+		final FlowNode member = this.handler.getFlowNode(expression);
+		if (member != null && member.alreadySeen()) {
+			return member;
+		}
+
 		if (expression instanceof ArrayLengthAccess) {
 			final ArrayLengthAccess arrayLengthAccess = (ArrayLengthAccess) expression;
-			return handle(arrayLengthAccess.getArray());
+			return handle(arrayLengthAccess);
 		} else if (expression instanceof FieldAccess) {
 			final FieldAccess fieldAccess = (FieldAccess) expression;
 			return handle(fieldAccess);
@@ -202,6 +207,19 @@ public class DataFlowVisitor {
 			LOGGER.info("ERROR: Unknown Expression: " + expression);
 		}
 		return null;
+	}
+
+	/**
+	 * @param arrayLengthAccess
+	 * @return
+	 */
+	private FlowNode handle(final ArrayLengthAccess arrayLengthAccess) {
+		final FlowNode member = this.handler.getFlowNodeOrCreate(arrayLengthAccess);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		member.addInRef(handle(arrayLengthAccess.getArray()));
+		return member;
 	}
 
 	private FlowNode handle(final SuperFieldAccess superFieldAccess) {
@@ -402,8 +420,7 @@ public class DataFlowVisitor {
 			final FlowNode varDeclNode, final LinkedList<EObject> seenContainers, final EObject variableContainer) {
 		member.addInRef(varDeclNode);
 		singleVariableAccess.setAccessKind(AccessKind.READ);
-		if (variableContainer instanceof FieldDeclaration
-				|| variableContainer instanceof AbstractMethodDeclaration) {
+		if (variableContainer instanceof FieldDeclaration || variableContainer instanceof AbstractMethodDeclaration) {
 			this.handler.addMemberRef(member);
 		}
 		this.handler.propagateBackReadAccess(seenContainers, member);
@@ -518,7 +535,12 @@ public class DataFlowVisitor {
 	}
 
 	private FlowNode handle(final PrefixExpression prefixExpression) {
-		return handle(prefixExpression.getOperand());
+		final FlowNode member = this.handler.getFlowNodeOrCreate(prefixExpression);
+		if (member.alreadySeen()) {
+			return member;
+		}
+		member.addInRef(handle(prefixExpression.getOperand()));
+		return member;
 	}
 
 	private FlowNode handle(final SuperMethodInvocation superMethodInvocation) {
@@ -552,8 +574,9 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
+		handle(parenthesizedExpression.getExpression());
 		addFlowToContainer(parenthesizedExpression, member);
-		return handle(parenthesizedExpression.getExpression());
+		return member;
 	}
 
 	private FlowNode handle(final BooleanLiteral booleanLiteral) {
@@ -652,7 +675,10 @@ public class DataFlowVisitor {
 			this.handler.getFlowNodeOrCreate(calledMethod);
 		}
 		if (methodInvocation instanceof MethodInvocation) {
-			handle(((MethodInvocation) methodInvocation).getExpression());
+			Expression expression = ((MethodInvocation) methodInvocation).getExpression();
+			if (expression != null) {
+				handle(expression);
+			}
 		}
 		final EList<Expression> arguments = methodInvocation.getArguments();
 		if (!arguments.isEmpty()) {
@@ -879,10 +905,13 @@ public class DataFlowVisitor {
 			return member;
 		}
 		final Expression expression = switchCase.getExpression();
-		final FlowNode expressionNode = handle(expression);
-		if (expressionNode != null) {
-			member.addInRef(expressionNode);
+		if(expression != null) {
+			final FlowNode expressionNode = handle(expression);
+			if (expressionNode != null) {
+				member.addInRef(expressionNode);
+			}
 		}
+		
 		return member;
 	}
 
@@ -891,7 +920,10 @@ public class DataFlowVisitor {
 		if (member.alreadySeen()) {
 			return member;
 		}
-		handle(superConstructorInvocation.getExpression());
+		Expression expression = superConstructorInvocation.getExpression();
+		if (expression != null) {
+			handle(expression);
+		}
 		for (final Expression argument : superConstructorInvocation.getArguments()) {
 			handle(argument);
 		}
