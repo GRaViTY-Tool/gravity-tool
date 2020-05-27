@@ -11,20 +11,18 @@
 		++ -parameters->variableDec
 	}
 	
-	++ variableDec : SingleVariableDeclaration{
+	++ variableDec : MSingleVariableDeclaration{
 		++ -type->typeAccess
 	}
 	
-	++ typeAccess : TypeAccess{
-	}
+	++ typeAccess : TypeAccess
 }
 
 #target {
 	operation : Operation {
 		++ -ownedParameter->param
 	}
-	++ param : Parameter{
-	}
+	++ param : Parameter
 }
 
 #correspondence {	
