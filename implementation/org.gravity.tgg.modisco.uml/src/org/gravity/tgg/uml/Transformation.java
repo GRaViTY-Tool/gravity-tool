@@ -11,12 +11,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -26,8 +23,7 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.modisco.infra.discovery.core.exception.DiscoveryException;
 import org.eclipse.uml2.uml.Model;
@@ -40,6 +36,7 @@ import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.codegen.GravityModiscoCodeGenerator;
 import org.gravity.modisco.discovery.GravityModiscoProjectDiscoverer;
 import org.gravity.security.annotations.AnnotationsActivator;
+import org.gravity.tgg.modisco.uml.UmlPackage;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import org.moflon.tgg.language.analysis.StaticAnalysis;
 
@@ -87,33 +84,23 @@ public final class Transformation extends SynchronizationHelper {
 			outputFolder.create(true, true, new NullProgressMonitor());
 		}
 		if (target != null) {
+			this.set = target.getResourceSet();
 			this.getTrg().eResource().getContents().addAll(target.getContents());
 		}
-	}
-
-	/**
-	 * Initializes the class
-	 * 
-	 * @param set The resource set which should be used
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 */
-	private void init(ResourceSet set) throws IOException, MalformedURLException {
-		this.set = set;
-		this.set.getResourceFactoryRegistry().getExtensionToFactoryMap()
-				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-
-		String corrURI = "platform:/plugin/org.gravity.tgg.modisco/model/Uml.ecore";//$NON-NLS-1$
-		this.corrPackageResource = this.set.createResource(URI.createURI(corrURI));
-		try (InputStream corrPackage = new URL(corrURI).openConnection().getInputStream()) {
-			this.corrPackageResource.load(corrPackage, Collections.EMPTY_MAP);
+		else {
+			this.set = new ResourceSetImpl();
 		}
+		setCorrPackage(UmlPackage.eINSTANCE);
 
 		this.configurator = new org.moflon.tgg.algorithm.configuration.Configurator() {
 		};
 		clearChanges();
 
-		String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco/model/Modisco.sma.xmi"; //$NON-NLS-1$
+		loadRulesFromProject();
+	}
+
+	private void loadRulesFromProject() throws IOException, MalformedURLException {
+		String smaXmiURI = "platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.sma.xmi"; //$NON-NLS-1$
 		try (InputStream tggRulesStream = new URL(smaXmiURI).openConnection().getInputStream()) {
 			this.tggRulesResource = this.set.createResource(URI.createURI(smaXmiURI));
 			this.tggRulesResource.load(tggRulesStream, Collections.EMPTY_MAP);
@@ -177,7 +164,14 @@ public final class Transformation extends SynchronizationHelper {
 	public Model modiscoToModel(final MGravityModel mGravityModel, final IProgressMonitor monitor)
 			throws TransformationFailedException, IOException {
 		final SubMonitor subMonitor = SubMonitor.convert(monitor);
-
+		Resource eResource = mGravityModel.eResource();
+		if(eResource == null ) {
+			getResourceSet().createResource(URI.createURI(mGravityModel.getName()+".xmi")).getContents().add(mGravityModel);
+		}
+		else if(!eResource.getResourceSet().equals(getResourceSet())) {
+			getResourceSet().getResources().add(eResource);
+		}
+		
 		setSrc(mGravityModel);
 
 		final boolean debugging = GravityActivator.getDefault().isDebugging();

@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.gravity.eclipse.ui.GravityUiActivator;
 import org.gravity.eclipse.ui.handler.AbstractTransformationHandler;
 
