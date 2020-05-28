@@ -1,8 +1,7 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule Flow
-#with org.gravity.tgg.modisco
+#rule Flow #with org.gravity.tgg.modisco
 
 #source {
 	++mFlow:MFlow

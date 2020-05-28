@@ -1,10 +1,13 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#rule MethodInvocationStaticType #with org.gravity.tgg.modisco
+#abstract #rule MethodInvocationStaticType_abstract #with org.gravity.tgg.modisco
 
 #source {
+	method : MAbstractMethodDefinition
+	
 	invocation:MMethodInvocation {
+		-method->method
 		++ -mStaticType -> mStaticType
 	}
 
@@ -24,9 +27,52 @@
 		#src->invocation
 		#trg->tAccess
 	}
+}
 
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationStaticType #extends MethodInvocationStaticType_abstract #with org.gravity.tgg.modisco
+
+#source {
+	mStaticType:Type
+}
+
+#target {
+	tStaticType:TAbstractType
+}
+
+#correspondence {
 	mStaticTypeTotStaticType :TypeToTAbstractType {
 		#src->mStaticType
+		#trg->tStaticType
+	}
+}
+
+#using org.gravity.tgg.modisco.*
+#using AttrCondDefLibrary.*
+
+#rule MethodInvocationStaticTypeArray #extends MethodInvocationStaticType_abstract #with org.gravity.tgg.modisco
+
+#source {
+	mStaticType:ArrayType {
+		-elementType -> typeAccess
+	}
+
+	typeAccess:TypeAccess {
+		-type -> arrayType
+	}
+
+	arrayType:Type
+}
+
+#target {
+	tStaticType:TAbstractType
+}
+
+#correspondence {
+	mStaticTypeTotStaticType :TypeToTAbstractType {
+		#src->arrayType
 		#trg->tStaticType
 	}
 }
