@@ -7,7 +7,8 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.modisco.java.discoverer,
  org.gravity.eclipse,
  org.eclipse.jdt.core,
- org.eclipse.modisco.java.generation
+ org.eclipse.modisco.java.generation,
+ org.apache.xmlgraphics
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
