@@ -42,6 +42,7 @@ import org.gravity.eclipse.importer.ImportException;
 import org.gravity.eclipse.importer.ProjectImport;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.eclipse.os.Execute;
+import org.gravity.eclipse.os.UnsupportedOperationSystemException;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.eclipse.util.JavaProjectUtil;
 import org.w3c.dom.Document;
@@ -134,18 +135,19 @@ public class MavenImport extends ProjectImport {
 	 */
 	private void build() throws ImportException {
 		try {
-			Process process = Runtime.getRuntime().exec(new String[] { "mvn", "clean", "compile" }, new String[0],
-					getRootDir());
+			List<String> args = Arrays.asList("clean", "compile");
+			File rootDir = getRootDir();
+			Process process = Execute.run(rootDir, "mvn", args, Collections.emptyList());
 			if (!Execute.execute(process) && !ignoreBuildErrors()) {
 				throw new ImportException("Couldn't build the maven project");
 			}
-		} catch (IOException e) {
+		} catch (UnsupportedOperationSystemException | IOException e) {
 			if (ignoreBuildErrors()) {
 				LOGGER.warn(e.getLocalizedMessage(), e);
 			} else {
 				throw new ImportException(e);
 			}
-		}
+		} 
 	}
 
 	/**
