@@ -189,6 +189,14 @@ public final class JavaASTUtil {
 			return tPackage.getOwnedTypes().parallelStream()
 					.filter(tType -> fullyQualifiedName.equals(tType.getTName())).findAny().orElse(null);
 		}
+		else if (parent instanceof TypeDeclaration) {
+			TAbstractType tParent = getType((TypeDeclaration)parent, pm);
+			for(TAbstractType inner : tParent.getInnerTypes()) {
+				if(inner.getTName().equals(name.getFullyQualifiedName())) {
+					return inner;
+				}
+			}
+		}
 		return null;
 	}
 
@@ -210,6 +218,8 @@ public final class JavaASTUtil {
 		ASTNode root = type.getRoot();
 		if (root instanceof CompilationUnit) {
 			CompilationUnit cu = (CompilationUnit) root;
+			
+			// Search in imports
 			for (Object entry : cu.imports()) {
 				ImportDeclaration imp = (ImportDeclaration) entry;
 				String importedPackage = imp.getName().getFullyQualifiedName();
@@ -226,6 +236,8 @@ public final class JavaASTUtil {
 					}
 				}
 			}
+			
+			// Search in same package as cu
 			PackageDeclaration cuPackageDecl = cu.getPackage();
 			if (cuPackageDecl != null) {
 				TPackage cuPackage = pm.getPackage(cuPackageDecl.getName().getFullyQualifiedName());
@@ -237,6 +249,8 @@ public final class JavaASTUtil {
 					}
 				}
 			}
+			
+			// Search for java default types
 			for(String packageName : new String[] {"java.lang", "java.util"}) {
 				TPackage cuPackage = pm.getPackage(packageName);
 				if (cuPackage != null) {
@@ -247,7 +261,16 @@ public final class JavaASTUtil {
 					}
 				}
 			}
-			return pm.getType(fullyQualifiedName);
+			
+			for(Object outer : cu.types()) {
+				if (outer instanceof TypeDeclaration) {
+					for(TypeDeclaration inner : ((TypeDeclaration) outer).getTypes()) {
+						if(inner.getName().getFullyQualifiedName().equals(fullyQualifiedName)) {
+							return pm.getType(cuPackageDecl.getName().getFullyQualifiedName()+'.'+((TypeDeclaration) outer).getName().getFullyQualifiedName() +'$'+fullyQualifiedName);
+						}
+					}
+				}
+			}
 		} else {
 			LOGGER.error("Root of a SimpleType \"" + fullyQualifiedName + "\"is not a CompilationUnit but: " + root);
 		}
