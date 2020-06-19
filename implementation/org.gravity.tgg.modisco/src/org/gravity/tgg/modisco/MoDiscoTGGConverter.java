@@ -307,7 +307,7 @@ public class MoDiscoTGGConverter extends SynchronizationHelper implements IPGCon
 		final EObject src = getSrc();
 		for (final IMoDiscoProcessor processor : GravityMoDiscoProcessorUtil
 				.getSortedProcessors(MoDiscoTGGActivator.PROCESS_MODISCO_BWD)) {
-			processor.process((MGravityModel) src, progressMonitor);
+			processor.process((MGravityModel) src, null, progressMonitor);
 		}
 
 		try {
