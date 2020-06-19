@@ -8,7 +8,6 @@
 	++ mAnonymous : AnonymousClassDeclaration
 	mCreation : ClassInstanceCreation {
 		++-anonymousClassDeclaration->mAnonymous
-	
 	}
 	
 	mMebmber : MDefinition {

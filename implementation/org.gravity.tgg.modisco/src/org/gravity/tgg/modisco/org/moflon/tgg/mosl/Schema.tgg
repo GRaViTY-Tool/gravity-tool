@@ -59,7 +59,7 @@
 	}
 
 	MDefinitionToTMember {
-		#src->MDefinition
+		#src->BodyDeclaration
 		#trg->TMember
 	}
 
