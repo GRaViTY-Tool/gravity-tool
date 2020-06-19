@@ -3,7 +3,6 @@ package org.gravity.modisco.processing.fwd.dataflow;
 import static guru.nidi.graphviz.model.Factory.mutGraph;
 import static guru.nidi.graphviz.model.Factory.mutNode;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,9 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
 import org.eclipse.modisco.java.Assignment;
@@ -22,16 +20,14 @@ import org.eclipse.modisco.java.ClassInstanceCreation;
 import org.eclipse.modisco.java.FieldDeclaration;
 import org.eclipse.modisco.java.MethodInvocation;
 import org.eclipse.modisco.java.NamedElement;
-import org.gravity.eclipse.GravityActivator;
-import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.modisco.MAbstractMethodDefinition;
 import org.gravity.modisco.MGravityModel;
 
 import guru.nidi.graphviz.attribute.Color;
 import guru.nidi.graphviz.attribute.Label;
 import guru.nidi.graphviz.attribute.Style;
-import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.engine.Rasterizer;
 import guru.nidi.graphviz.model.MutableGraph;
 import guru.nidi.graphviz.model.MutableNode;
 
@@ -57,15 +53,17 @@ public final class GraphVisualizer {
 	 * list. The graphs are exported as PNG image files to a folder with the given
 	 * folder name (inside the project folder).
 	 *
-	 * @param model      The model of which graphs should be drawn
-	 * @param handlers   The list of StatementHandlerDataFlow instances, for which a
-	 *                   graph is supposed to be drawn.
+	 * @param model
+	 *            The model of which graphs should be drawn
+	 * @param handlers
+	 *            The list of StatementHandlerDataFlow instances, for which a graph
+	 *            is supposed to be drawn.
 	 *
-	 * @param folderName The name, that should be given to the output folder. If a
-	 *                   folder with that name already exists, it is used.
+	 * @param output
+	 *            The folder that should be used as the output folder. If a folder
+	 *            with that name already exists, it is used.
 	 */
-	public static void drawGraphs(MGravityModel model, List<MemberHandler> handlers, String folderName) {
-		final File folder = getOutputLocation(model, folderName);
+	public static void drawGraphs(MGravityModel model, List<MemberHandler> handlers, IFolder output) {
 		for (int i = 0; i < handlers.size(); i++) {
 			final MemberHandler handler = handlers.get(i);
 			final EObject memberDef = handler.getMemberDef();
@@ -86,7 +84,7 @@ public final class GraphVisualizer {
 				memberName = ((FieldDeclaration) memberDef).getFragments().get(0).getName();
 				className = getName(defContainer);
 			}
-			final MutableGraph graph = mutGraph("graph" + i).setDirected(true).graphAttrs().add("dpi", 72);
+			final MutableGraph graph = mutGraph("graph" + i).setDirected(true);
 			final HashMap<FlowNode, MutableNode> graphNodes = new HashMap<>();
 			// Creating a graph node for each FlowNode
 			final Collection<FlowNode> alreadySeenNodes = handler.getAllFlowNodes();
@@ -101,9 +99,10 @@ public final class GraphVisualizer {
 			// Set flow edges
 			drawFlowEdges(graphNodes, alreadySeenNodes);
 			try {
-				final File location = new File(folder,
-						"Class-" + className + "-" + memberType + "-" + memberName + ".png");
-				Graphviz.fromGraph(graph).width(5000).render(Format.PNG).toFile(location);
+				final IFile location = output
+						.getFile("Class-" + className + "-" + memberType + "-" + memberName + ".png");
+				Graphviz.fromGraph(graph).width(4000).rasterize(Rasterizer.SALAMANDER)
+						.toFile(location.getLocation().toFile());
 			} catch (final IOException e) {
 				LOGGER.error(e.getMessage(), e);
 			}
@@ -113,7 +112,8 @@ public final class GraphVisualizer {
 	/**
 	 * A getter for the name of the object
 	 *
-	 * @param eObject An object
+	 * @param eObject
+	 *            An object
 	 * @return The name of the object
 	 */
 	private static String getName(final EObject eObject) {
@@ -124,45 +124,18 @@ public final class GraphVisualizer {
 	}
 
 	/**
-	 * Creates an output folder with the given name for the model
-	 *
-	 * @param model      The model
-	 * @param folderName The name of the output folder
-	 * @return The ouput folder
-	 */
-	private static File getOutputLocation(MGravityModel model, String folderName) {
-		final String projectName = model.getName();
-		final IProject project = GravityActivator.getDefault().getProject(projectName);
-		File folder;
-		if (project != null) {
-			try {
-				final IFolder ifolder = EclipseProjectUtil.getGravityFolder(project, new NullProgressMonitor());
-				folder = ifolder.getFolder(folderName).getLocation().toFile();
-			} catch (final IOException e) {
-				LOGGER.error(e.getMessage(), e);
-				folder = new File(new File(folderName), projectName);
-			}
-		} else {
-			folder = new File(new File(folderName), projectName);
-		}
-		if (!folder.exists()) {
-			folder.mkdirs();
-		}
-		return folder;
-	}
-
-	/**
 	 * Draws the flow edges between the graph nodes
 	 *
-	 * @param graphNodes       The nodes of the graph
+	 * @param graphNodes
+	 *            The nodes of the graph
 	 * @param alreadySeenNodes
 	 */
 	private static void drawFlowEdges(final Map<FlowNode, MutableNode> graphNodes,
 			final Collection<FlowNode> alreadySeenNodes) {
-		for (final FlowNode node : alreadySeenNodes) {
-			final MutableNode graphNode = graphNodes.get(node);
-			for (final FlowNode out : node.getOutRef()) {
-				final MutableNode outNode = graphNodes.get(out);
+		for (final FlowNode srcNode : alreadySeenNodes) {
+			final MutableNode graphNode = graphNodes.get(srcNode);
+			for (FlowNode trgNode : srcNode.getOutRef()) {
+				final MutableNode outNode = graphNodes.get(trgNode);
 				if (outNode != null) {
 					graphNode.addLink(graphNode.linkTo(outNode).with(Style.DASHED, Label.of("flows to"), Color.BLUE));
 				}
@@ -175,7 +148,8 @@ public final class GraphVisualizer {
 	 * for all graph nodes
 	 *
 	 * @param handler
-	 * @param graphNodes The nodes of the graph
+	 * @param graphNodes
+	 *            The nodes of the graph
 	 */
 	private static void drawContainmentEdges(MemberHandler handler, Map<FlowNode, MutableNode> graphNodes) {
 		for (final FlowNode node : new ArrayList<>(handler.getAllFlowNodes())) {
@@ -212,7 +186,8 @@ public final class GraphVisualizer {
 	 * exists, the existing one is returned (by the mutNode constructor), so
 	 * duplicates are prevented.
 	 *
-	 * @param node The FlowNode, for which a dot graph node is requested.
+	 * @param node
+	 *            The FlowNode, for which a dot graph node is requested.
 	 * @return The requested dot graph node, which corresponds to the given
 	 *         FlowNode.
 	 */

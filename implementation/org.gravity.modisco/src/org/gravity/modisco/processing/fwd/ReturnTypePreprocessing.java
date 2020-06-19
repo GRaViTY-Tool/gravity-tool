@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.AbstractMethodInvocation;
@@ -57,7 +58,7 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	private static final Logger LOGGER = Logger.getLogger(ReturnTypePreprocessing.class);
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MMethodDefinition> elements,
+	public boolean process(final MGravityModel model, final Collection<MMethodDefinition> elements, IFolder debug,
 			final IProgressMonitor monitor) {
 		return elements.parallelStream().filter(method -> {
 			final TypeAccess returnType = method.getReturnType();
@@ -69,8 +70,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * Retrieves the return type of the given method. Iff the return type is null it
 	 * is set to java.lang.Object!
 	 *
-	 * @param method The method for which the return type should be retrieved
-	 * @param model  the model of the program
+	 * @param method
+	 *            The method for which the return type should be retrieved
+	 * @param model
+	 *            the model of the program
 	 * @return The return type of the method
 	 */
 	private static boolean fixReturnType(final MMethodDefinition method, final MGravityModel model) {
@@ -104,8 +107,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * Logs a possible optimization of a return type guess if logging is enabled
 	 *
-	 * @param invocation An invocation
-	 * @param target     The target of the invocation
+	 * @param invocation
+	 *            An invocation
+	 * @param target
+	 *            The target of the invocation
 	 */
 	private static void logInfoOptimizeGuess(final AbstractMethodInvocation invocation,
 			final MMethodDefinition target) {
@@ -125,8 +130,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * try to guess the return type of the called method.
 	 *
-	 * @param pg         The model containing the invocation
-	 * @param invocation The method invocation
+	 * @param pg
+	 *            The model containing the invocation
+	 * @param invocation
+	 *            The method invocation
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel pg, final AbstractMethodInvocation invocation) {
@@ -159,8 +166,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 * Guess the return type of a method invocation based on an other invocation
 	 * containing the invocation
 	 *
-	 * @param invocation The invocation whose return type should be guessed
-	 * @param container  The invocation containing the other one
+	 * @param invocation
+	 *            The invocation whose return type should be guessed
+	 * @param container
+	 *            The invocation containing the other one
 	 * @return The guessed return type
 	 */
 	private static Type getReturnType(final AbstractMethodInvocation invocation,
@@ -186,9 +195,12 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * try to guess the return type of the called method.
 	 *
-	 * @param pg         The model containing the invocation
-	 * @param invocation The method invocation
-	 * @param statement  The statement containing the invocation
+	 * @param pg
+	 *            The model containing the invocation
+	 * @param invocation
+	 *            The method invocation
+	 * @param statement
+	 *            The statement containing the invocation
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel pg, final AbstractMethodInvocation invocation,
@@ -222,9 +234,12 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * try to guess the return type of the called method.
 	 *
-	 * @param pg         The model containing the invocation
-	 * @param invocation The method invocation
-	 * @param expression The expression containing the invocation
+	 * @param pg
+	 *            The model containing the invocation
+	 * @param invocation
+	 *            The method invocation
+	 * @param expression
+	 *            The expression containing the invocation
 	 * @return The return type of the method
 	 */
 	private static Type guessReturnTypeOfCall(final MGravityModel pg, final AbstractMethodInvocation invocation,
@@ -266,8 +281,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * Get the variable of the assignment
 	 *
-	 * @param assignment The assign statement
-	 * @param pg         The model containing the assignment
+	 * @param assignment
+	 *            The assign statement
+	 * @param pg
+	 *            The model containing the assignment
 	 * @return The variable
 	 */
 	private static Type getAssignmentType(final MGravityModel pg, final Assignment assignment) {
@@ -286,8 +303,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * Gets the type or a possible type of the variable
 	 *
-	 * @param pg       The program model containing the variable
-	 * @param variable The variable
+	 * @param pg
+	 *            The program model containing the variable
+	 * @param variable
+	 *            The variable
 	 * @return The type of the variable
 	 */
 	private static Type getType(final MGravityModel pg, final VariableDeclaration variable) {
@@ -306,8 +325,10 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	/**
 	 * Guesses the type of the accessed array
 	 *
-	 * @param pg          The program model containing the array
-	 * @param arrayAccess The access to the array
+	 * @param pg
+	 *            The program model containing the array
+	 * @param arrayAccess
+	 *            The access to the array
 	 * @return The type of the array
 	 */
 	private static Type getArrayType(final MGravityModel pg, final ArrayAccess arrayAccess) {
@@ -326,7 +347,8 @@ public class ReturnTypePreprocessing extends AbstractTypedModiscoProcessor<MMeth
 	 *
 	 * Search the method or field containing the statement
 	 *
-	 * @param statement The statement
+	 * @param statement
+	 *            The statement
 	 * @return The definition containing the statement
 	 */
 	private static MDefinition getContainingMethod(final EObject statement) {

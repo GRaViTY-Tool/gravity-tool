@@ -5,6 +5,7 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.Collection;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
@@ -22,7 +23,7 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
 public class TypeDeclarationStatementPreprocessor extends AbstractTypedModiscoProcessor<TypeDeclarationStatement> {
 
 	@Override
-	public boolean process(MGravityModel model, Collection<TypeDeclarationStatement> elements, IProgressMonitor monitor) {
+	public boolean process(MGravityModel model, Collection<TypeDeclarationStatement> elements, IFolder debug, IProgressMonitor monitor) {
 		elements.forEach(this::preprocessTypeDeclarationStatement);
 		return true;
 	}

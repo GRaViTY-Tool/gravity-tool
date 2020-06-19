@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +60,7 @@ public class AccessPreprocessing extends AbstractTypedModiscoProcessor<MAccess> 
 	private Map<EObject, MDefinition> cache;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MAccess> elements,
+	public boolean process(final MGravityModel model, final Collection<MAccess> elements, IFolder debug,
 			final IProgressMonitor monitor) {
 		this.fieldAccesses = new HashMap<>();
 		this.methodAccesses = new HashMap<>();

@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.modisco.java.SingleVariableDeclaration;
@@ -37,7 +38,7 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 
 	@Override
 	public boolean process(final MGravityModel model, final Collection<MAbstractMethodDefinition> elements,
-			final IProgressMonitor monitor) {
+			IFolder debug, final IProgressMonitor monitor) {
 		// Make all definitions directly accessible from the model
 		model.getMAbstractMethodDefinitions().addAll(elements);
 
@@ -52,7 +53,8 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	/**
 	 * Creates a new method name elements for the method definitions in the model
 	 *
-	 * @param definition The method definition
+	 * @param definition
+	 *            The method definition
 	 * @return
 	 */
 	private Collection<MMethodName> createMethodNames(final Collection<MAbstractMethodDefinition> definitions) {
@@ -79,8 +81,10 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	/**
 	 * Creates the method signature for the given method name
 	 *
-	 * @param name  A method name
-	 * @param model The model containing the name and according definitions
+	 * @param name
+	 *            A method name
+	 * @param model
+	 *            The model containing the name and according definitions
 	 * @return true, iff the signatures have been created successfully
 	 */
 	private boolean createMethodSignatures(final MMethodName name, final MGravityModel model) {
@@ -96,9 +100,12 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * Creates a new method signature element between the method name and definition
 	 * if there isn't already one in the model
 	 *
-	 * @param model      The modisco model
-	 * @param name       The method name
-	 * @param definition The method definition
+	 * @param model
+	 *            The modisco model
+	 * @param name
+	 *            The method name
+	 * @param definition
+	 *            The method definition
 	 * @return true, if the creation was successful
 	 */
 	private boolean createMethodSignature(final MGravityModel model, final MMethodName name,
@@ -132,9 +139,12 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	 * Searches if there is already a signature for the name corresponding to the
 	 * given definition
 	 *
-	 * @param name       The name object of the method
-	 * @param definition The method definition
-	 * @param returnType The most generic return type
+	 * @param name
+	 *            The name object of the method
+	 * @param definition
+	 *            The method definition
+	 * @param returnType
+	 *            The most generic return type
 	 * @return The signature or null
 	 */
 	private MMethodSignature getExistingSignature(final MMethodName name, final MAbstractMethodDefinition definition,
@@ -151,8 +161,10 @@ public class MethodPreprocessing extends AbstractTypedModiscoProcessor<MAbstract
 	/**
 	 * Checks if the parameter list of the method definition and signature are equal
 	 *
-	 * @param definition The method definition
-	 * @param signature  The method signature
+	 * @param definition
+	 *            The method definition
+	 * @param signature
+	 *            The method signature
 	 * @return true, if the parameter lists are equal
 	 */
 	private static boolean isParamListEqual(final MAbstractMethodDefinition definition,

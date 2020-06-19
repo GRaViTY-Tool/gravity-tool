@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.modisco.java.AbstractMethodDeclaration;
@@ -68,7 +69,7 @@ public class StaticTypePreprocessing extends AbstractTypedModiscoProcessor<MAbst
 	private MGravityModel model;
 
 	@Override
-	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements,
+	public boolean process(MGravityModel model, Collection<MAbstractMethodDefinition> elements, IFolder debug,
 			IProgressMonitor monitor) {
 		this.model = model;
 		final List<MAbstractMethodDefinition> failed = elements.parallelStream()

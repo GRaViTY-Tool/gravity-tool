@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.modisco.java.AnonymousClassDeclaration;
@@ -42,7 +43,7 @@ public class FieldPreprocessing extends AbstractTypedModiscoProcessor<MFieldDefi
 	private Map<String, MFieldName> names;
 
 	@Override
-	public boolean process(final MGravityModel model, final Collection<MFieldDefinition> elements,
+	public boolean process(final MGravityModel model, final Collection<MFieldDefinition> elements, IFolder debug,
 			final IProgressMonitor monitor) {
 		this.names = new ConcurrentHashMap<>();
 		Collection<MFieldDefinition> allDefinitions;

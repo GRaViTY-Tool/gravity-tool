@@ -8,9 +8,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/commons-exec-1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/slf4j-api-1.7.7.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/svgSalamander-1.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/graphviz-java-0.15.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/graphviz-java-0.16.2.jar" sourcepath="lib/graphviz-java-0.16.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/svgSalamander-1.1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/graal-sdk-20.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/icu4j-67.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/js-20.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/nashorn-promise-0.1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/truffle-api-20.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/viz.js-for-graphviz-java-2.1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/regex-20.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

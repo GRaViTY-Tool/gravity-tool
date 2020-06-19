@@ -3,6 +3,7 @@ package org.gravity.modisco.processing;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -22,20 +23,22 @@ public abstract class AbstractTypedModiscoProcessor<T extends EObject> implement
 	 * 
 	 * @param model The model containing the elements
 	 * @param elements The elements
+	 * @param debug	A location where debug files can be stored
 	 * @param monitor A progress monitor
 	 * @return true, iff all elements have been processed successfully
 	 */
-	public abstract boolean process(MGravityModel model, Collection<T> elements, IProgressMonitor monitor);
+	public abstract boolean process(MGravityModel model, Collection<T> elements, IFolder debug, IProgressMonitor monitor);
 
 	/**
 	 * This method should be only used if there is no other possibility as it
 	 * iterates over all elements contained in the model to find those of type T.
 	 * 
 	 * @param model The model which should be processed
+	 * @param debug	A location where debug files can be stored
 	 * @param monitor A progress monitor
 	 */
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
+	public boolean process(MGravityModel model, IFolder debug, IProgressMonitor monitor) {
 		Class<T> supportedType = getSupportedType();
 		TreeIterator<EObject> iterator = model.eAllContents();
 		LinkedList<T> elements = new LinkedList<>();
@@ -45,7 +48,7 @@ public abstract class AbstractTypedModiscoProcessor<T extends EObject> implement
 				elements.add((supportedType.cast(next)));
 			} 
 		}
-		return process(model, elements, monitor);
+		return process(model, elements,debug,  monitor);
 	}
 	
 	/**

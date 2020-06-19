@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.Modifier;
@@ -26,7 +27,7 @@ public class VisibilityRepairPreprocessor extends AbstractTypedModiscoProcessor<
 	private static final Logger LOGGER = Logger.getLogger(VisibilityRepairPreprocessor.class);
 
 	@Override
-	public boolean process(MGravityModel model, Collection<Modifier> elements, IProgressMonitor monitor) {
+	public boolean process(MGravityModel model, Collection<Modifier> elements, IFolder debug, IProgressMonitor monitor) {
 		for (final Modifier modifier : elements) {
 			if (!checkAndrepairModifierVisibility(modifier)) {
 				return false;

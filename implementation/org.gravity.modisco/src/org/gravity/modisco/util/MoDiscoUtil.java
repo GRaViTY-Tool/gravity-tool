@@ -53,6 +53,17 @@ public final class MoDiscoUtil {
 		// This class shouldn't be instantiated
 	}
 
+	public static ClassDeclaration getSuperClass(ClassDeclaration mClass) {
+		final TypeAccess superAccess = mClass.getSuperClass();
+		if (superAccess != null) {
+			final Type superType = superAccess.getType();
+			if (superType instanceof ClassDeclaration) {
+				return (ClassDeclaration) superType;
+			}
+		}
+		return null;
+	}
+
 	/**
 	 * Checks if supertype is a super type of type
 	 *

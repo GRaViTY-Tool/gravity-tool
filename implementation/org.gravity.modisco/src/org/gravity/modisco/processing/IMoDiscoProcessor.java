@@ -1,5 +1,6 @@
 package org.gravity.modisco.processing;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.gravity.modisco.MGravityModel;
 
@@ -17,8 +18,9 @@ public interface IMoDiscoProcessor {
 	 * point the processor is registered
 	 * 
 	 * @param model   The MoDiscio model
+	 * @param debug	A location where debug files can be stored
 	 * @param monitor A progress monitor
 	 * @return true, if the processing has been successful
 	 */
-	public boolean process(MGravityModel model, IProgressMonitor monitor);
+	public boolean process(MGravityModel model, IFolder debug, IProgressMonitor monitor);
 }

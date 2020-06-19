@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.Deque;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.Annotation;
@@ -19,7 +20,7 @@ import org.gravity.modisco.processing.IMoDiscoProcessor;
 public class MoDiscoProcessorBwd implements IMoDiscoProcessor {
 
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
+	public boolean process(MGravityModel model, IFolder debug, IProgressMonitor monitor) {
 		Deque<Package> packages = new LinkedList<>();
 		packages.addAll(model.getOwnedElements());
 

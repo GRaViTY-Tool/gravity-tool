@@ -38,16 +38,29 @@ public class MemberHandler {
 	 */
 	private final MDefinition memberDef;
 
+	/**
+	 * The flow node of the definition corresponding with this handler
+	 */
+	private FlowNode memberDefNode;
+
 	public MemberHandler(final MDefinition correspondingMember) {
 		this.memberDef = correspondingMember;
+		this.memberDefNode = new FlowNode(memberDef);
+		this.alreadySeen.put(memberDef, memberDefNode);
 	}
 
 	public MemberHandler(final VariableDeclarationFragment correspondingMember) {
 		this.memberDef = (MDefinition) correspondingMember.getVariablesContainer();
+		this.memberDefNode = new FlowNode(memberDef);
+		this.alreadySeen.put(memberDef, memberDefNode);
 	}
 
 	public MDefinition getMemberDef() {
 		return this.memberDef;
+	}
+
+	public FlowNode getMemberDefNode() {
+		return this.memberDefNode;
 	}
 
 	public Set<FlowNode> getMemberRef() {

@@ -2,20 +2,19 @@ package org.gravity.modisco.processing.fwd;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.modisco.java.AbstractTypeDeclaration;
 import org.eclipse.modisco.java.BodyDeclaration;
 import org.eclipse.modisco.java.ClassDeclaration;
-import org.eclipse.modisco.java.Package;
-import org.eclipse.modisco.java.Type;
-import org.eclipse.modisco.java.TypeAccess;
 import org.eclipse.modisco.java.VisibilityKind;
 import org.gravity.modisco.MGravityModel;
 import org.gravity.modisco.MMethodDefinition;
 import org.gravity.modisco.MSyntheticMethodDefinition;
 import org.gravity.modisco.ModiscoFactory;
 import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
+import org.gravity.modisco.util.MoDiscoUtil;
 
 /**
  * This processor adds synthetic methods to the model
@@ -25,55 +24,16 @@ import org.gravity.modisco.processing.AbstractTypedModiscoProcessor;
  * @author speldszus
  *
  */
-public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<MMethodDefinition> {
+public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<ClassDeclaration> {
 
 	@Override
-	public boolean process(MGravityModel model, Collection<MMethodDefinition> elements, IProgressMonitor monitor) {
-		elements.forEach(SyntethicMethodsPreprocessor::addSyntethicMembers);
+	public boolean process(MGravityModel model, Collection<ClassDeclaration> classes, IFolder debug,
+			IProgressMonitor monitor) {
+		List<ClassDeclaration> seen = new ArrayList<>(classes.size());
+		for (ClassDeclaration mClass : classes) {
+			addSyntethicMethods(mClass, seen);
+		}
 		return true;
-	}
-
-	private static void addSyntethicMembers(MMethodDefinition mDef) {
-		final AbstractTypeDeclaration abstractTypeDeclaration = mDef.getAbstractTypeDeclaration();
-		if (abstractTypeDeclaration instanceof ClassDeclaration) {
-			final ClassDeclaration mClass = (ClassDeclaration) abstractTypeDeclaration;
-
-			final TypeAccess superClassAccess = mClass.getSuperClass();
-			if (superClassAccess != null) {
-				final Type superClassType = superClassAccess.getType();
-				if (superClassType instanceof ClassDeclaration) {
-					final ClassDeclaration superClass = (ClassDeclaration) superClassType;
-					if (!superClass.eIsProxy()) {
-						boolean needsSynt = true;
-						for (final BodyDeclaration body : superClass.getBodyDeclarations()) {
-							if (body instanceof MMethodDefinition) {
-
-								final MMethodDefinition superMDef = (MMethodDefinition) body;
-								if (superMDef.getMSignature() == mDef.getMSignature()) {
-									needsSynt = false;
-								}
-							}
-						}
-
-						if (needsSynt) {
-							// TODO Implement this preprocessing
-						}
-
-					}
-				}
-			}
-		}
-	}
-
-	private ClassDeclaration getSuperClass(ClassDeclaration mClass) {
-		final TypeAccess superAccess = mClass.getSuperClass();
-		if (superAccess != null) {
-			final Type superType = superAccess.getType();
-			if (superType instanceof ClassDeclaration) {
-				return (ClassDeclaration) superType;
-			}
-		}
-		return null;
 	}
 
 	private boolean definesWithEqualSignatureMethod(ClassDeclaration mClass, MMethodDefinition methodDef) {
@@ -116,72 +76,21 @@ public class SyntethicMethodsPreprocessor extends AbstractTypedModiscoProcessor<
 		}
 	}
 
-	private void addSyntethicMethods(ClassDeclaration mClass, ArrayList<ClassDeclaration> remainingClasses) {
-		final ClassDeclaration superClass = getSuperClass(mClass);
+	private void addSyntethicMethods(ClassDeclaration mClass, List<ClassDeclaration> seen) {
+		final ClassDeclaration superClass = MoDiscoUtil.getSuperClass(mClass);
 		if (superClass != null && !superClass.isProxy()) {
-			if (remainingClasses.contains(superClass)) {
+			if (!seen.contains(superClass)) {
 				// has no syntethic methods added till now
-				remainingClasses.remove(superClass);
-				addSyntethicMethods(superClass, remainingClasses);
+				seen.add(superClass);
+				addSyntethicMethods(superClass, seen);
 			}
 
 			addSyntethicMethodsForClass(mClass, superClass);
 		}
-
-		if (!remainingClasses.isEmpty()) {
-			final ClassDeclaration nextMClass = remainingClasses.remove(0);
-			addSyntethicMethods(nextMClass, remainingClasses);
-		}
-	}
-
-	private ArrayList<Package> getAllPackages(ArrayList<Package> packages) {
-		final ArrayList<Package> newPackages = new ArrayList<>();
-		for (final Package mPackage : packages) {
-			for (final Package ownedPackage : mPackage.getOwnedPackages()) {
-				if (!packages.contains(ownedPackage)) {
-					newPackages.add(ownedPackage);
-				}
-			}
-		}
-		if (!newPackages.isEmpty()) {
-			newPackages.addAll(getAllPackages(newPackages));
-			return newPackages;
-		}
-		return newPackages;
-	}
-
-	private ArrayList<ClassDeclaration> getAllClasses(MGravityModel model) {
-		final ArrayList<ClassDeclaration> classes = new ArrayList<>();
-		final ArrayList<Package> packages = new ArrayList<>();
-		packages.addAll(model.getOwnedElements());
-		packages.addAll(getAllPackages(packages));
-		for (final Package mPackage : packages) {
-			for (final AbstractTypeDeclaration element : mPackage.getOwnedElements()) {
-				if (element instanceof ClassDeclaration) {
-					final ClassDeclaration mClass = (ClassDeclaration) element;
-					if (!mClass.isProxy()) {
-						classes.add(mClass);
-					}
-				}
-			}
-		}
-		return classes;
 	}
 
 	@Override
-	public boolean process(MGravityModel model, IProgressMonitor monitor) {
-		final ArrayList<ClassDeclaration> classes = getAllClasses(model);
-		if (!classes.isEmpty()) {
-			final ClassDeclaration mClass = classes.get(0);
-			classes.remove(mClass);
-			addSyntethicMethods(mClass, classes);
-		}
-		return true;
+	public Class<ClassDeclaration> getSupportedType() {
+		return ClassDeclaration.class;
 	}
-
-	@Override
-	public Class<MMethodDefinition> getSupportedType() {
-		return MMethodDefinition.class;
-	}
-
 }
