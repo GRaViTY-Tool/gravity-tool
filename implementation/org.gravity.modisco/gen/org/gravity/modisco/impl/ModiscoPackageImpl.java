@@ -290,7 +290,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link ModiscoPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -304,8 +304,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		if (isInited) return (ModiscoPackage)EPackage.Registry.INSTANCE.getEPackage(ModiscoPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredModiscoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		ModiscoPackageImpl theModiscoPackage = registeredModiscoPackage instanceof ModiscoPackageImpl ? (ModiscoPackageImpl)registeredModiscoPackage : new ModiscoPackageImpl();
+		ModiscoPackageImpl theModiscoPackage = (ModiscoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ModiscoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ModiscoPackageImpl());
 
 		isInited = true;
 
@@ -321,6 +320,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Mark meta-data to indicate it can't be changed
 		theModiscoPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ModiscoPackage.eNS_URI, theModiscoPackage);
 		return theModiscoPackage;
@@ -781,26 +781,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMFlow_FlowSource() {
-		return (EReference)mFlowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMFlow_FlowTarget() {
-		return (EReference)mFlowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getMFlow_FlowOwner() {
-		return (EReference)mFlowEClass.getEStructuralFeatures().get(2);
+		return (EReference)mFlowEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1044,8 +1026,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		mExtensionEClass = createEClass(MEXTENSION);
 
 		mFlowEClass = createEClass(MFLOW);
-		createEReference(mFlowEClass, MFLOW__FLOW_SOURCE);
-		createEReference(mFlowEClass, MFLOW__FLOW_TARGET);
 		createEReference(mFlowEClass, MFLOW__FLOW_OWNER);
 
 		mAbstractFlowElementEClass = createEClass(MABSTRACT_FLOW_ELEMENT);
@@ -1217,14 +1197,12 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		initEClass(mExtensionEClass, MExtension.class, "MExtension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(mFlowEClass, MFlow.class, "MFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMFlow_FlowSource(), this.getMAbstractFlowElement(), this.getMAbstractFlowElement_OutgoingFlows(), "flowSource", null, 1, 1, MFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMFlow_FlowTarget(), this.getMAbstractFlowElement(), this.getMAbstractFlowElement_IncomingFlows(), "flowTarget", null, 1, 1, MFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMFlow_FlowOwner(), this.getMAbstractFlowElement(), this.getMAbstractFlowElement_OwnedFlows(), "flowOwner", null, 1, 1, MFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mAbstractFlowElementEClass, MAbstractFlowElement.class, "MAbstractFlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMAbstractFlowElement_OwnedFlows(), this.getMFlow(), this.getMFlow_FlowOwner(), "ownedFlows", null, 0, -1, MAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAbstractFlowElement_IncomingFlows(), this.getMFlow(), this.getMFlow_FlowTarget(), "incomingFlows", null, 0, -1, MAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMAbstractFlowElement_OutgoingFlows(), this.getMFlow(), this.getMFlow_FlowSource(), "outgoingFlows", null, 0, -1, MAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAbstractFlowElement_IncomingFlows(), this.getMAbstractFlowElement(), this.getMAbstractFlowElement_OutgoingFlows(), "incomingFlows", null, 0, -1, MAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMAbstractFlowElement_OutgoingFlows(), this.getMAbstractFlowElement(), this.getMAbstractFlowElement_IncomingFlows(), "outgoingFlows", null, 0, -1, MAbstractFlowElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mSingleVariableAccessEClass, MSingleVariableAccess.class, "MSingleVariableAccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMSingleVariableAccess_AccessKind(), this.getAccessKind(), "accessKind", null, 0, 1, MSingleVariableAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

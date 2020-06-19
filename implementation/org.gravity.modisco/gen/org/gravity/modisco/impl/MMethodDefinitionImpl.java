@@ -75,7 +75,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MFlow> incomingFlows;
+	protected EList<MAbstractFlowElement> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -85,7 +85,7 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MFlow> outgoingFlows;
+	protected EList<MAbstractFlowElement> outgoingFlows;
 
 	/**
 	 * The cached value of the '{@link #getInvocationStaticTypes() <em>Invocation Static Types</em>}' reference list.
@@ -183,9 +183,9 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MFlow> getIncomingFlows() {
+	public EList<MAbstractFlowElement> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
+			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
 		}
 		return incomingFlows;
 	}
@@ -195,9 +195,9 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MFlow> getOutgoingFlows() {
+	public EList<MAbstractFlowElement> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
+			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
 		}
 		return outgoingFlows;
 	}
@@ -415,11 +415,11 @@ public class MMethodDefinitionImpl extends MethodDeclarationImpl implements MMet
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
+				getIncomingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
 				return;
 			case ModiscoPackage.MMETHOD_DEFINITION__INVOCATION_STATIC_TYPES:
 				getInvocationStaticTypes().clear();

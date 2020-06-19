@@ -41,30 +41,30 @@ public interface MAbstractFlowElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Flows</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.modisco.MFlow}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MFlow#getFlowTarget <em>Flow Target</em>}'.
+	 * The list contents are of type {@link org.gravity.modisco.MAbstractFlowElement}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MAbstractFlowElement#getOutgoingFlows <em>Outgoing Flows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Flows</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMAbstractFlowElement_IncomingFlows()
-	 * @see org.gravity.modisco.MFlow#getFlowTarget
-	 * @model opposite="flowTarget"
+	 * @see org.gravity.modisco.MAbstractFlowElement#getOutgoingFlows
+	 * @model opposite="outgoingFlows"
 	 * @generated
 	 */
-	EList<MFlow> getIncomingFlows();
+	EList<MAbstractFlowElement> getIncomingFlows();
 
 	/**
 	 * Returns the value of the '<em><b>Outgoing Flows</b></em>' reference list.
-	 * The list contents are of type {@link org.gravity.modisco.MFlow}.
-	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MFlow#getFlowSource <em>Flow Source</em>}'.
+	 * The list contents are of type {@link org.gravity.modisco.MAbstractFlowElement}.
+	 * It is bidirectional and its opposite is '{@link org.gravity.modisco.MAbstractFlowElement#getIncomingFlows <em>Incoming Flows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Flows</em>' reference list.
 	 * @see org.gravity.modisco.ModiscoPackage#getMAbstractFlowElement_OutgoingFlows()
-	 * @see org.gravity.modisco.MFlow#getFlowSource
-	 * @model opposite="flowSource"
+	 * @see org.gravity.modisco.MAbstractFlowElement#getIncomingFlows
+	 * @model opposite="incomingFlows"
 	 * @generated
 	 */
-	EList<MFlow> getOutgoingFlows();
+	EList<MAbstractFlowElement> getOutgoingFlows();
 
 } // MAbstractFlowElement

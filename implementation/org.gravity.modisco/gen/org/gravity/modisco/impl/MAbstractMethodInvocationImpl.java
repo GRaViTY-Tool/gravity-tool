@@ -57,7 +57,7 @@ public abstract class MAbstractMethodInvocationImpl extends AbstractMethodInvoca
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MFlow> incomingFlows;
+	protected EList<MAbstractFlowElement> incomingFlows;
 
 	/**
 	 * The cached value of the '{@link #getOutgoingFlows() <em>Outgoing Flows</em>}' reference list.
@@ -67,7 +67,7 @@ public abstract class MAbstractMethodInvocationImpl extends AbstractMethodInvoca
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MFlow> outgoingFlows;
+	protected EList<MAbstractFlowElement> outgoingFlows;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,9 +105,9 @@ public abstract class MAbstractMethodInvocationImpl extends AbstractMethodInvoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MFlow> getIncomingFlows() {
+	public EList<MAbstractFlowElement> getIncomingFlows() {
 		if (incomingFlows == null) {
-			incomingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_METHOD_INVOCATION__INCOMING_FLOWS, ModiscoPackage.MFLOW__FLOW_TARGET);
+			incomingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MABSTRACT_METHOD_INVOCATION__INCOMING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__OUTGOING_FLOWS);
 		}
 		return incomingFlows;
 	}
@@ -117,9 +117,9 @@ public abstract class MAbstractMethodInvocationImpl extends AbstractMethodInvoca
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MFlow> getOutgoingFlows() {
+	public EList<MAbstractFlowElement> getOutgoingFlows() {
 		if (outgoingFlows == null) {
-			outgoingFlows = new EObjectWithInverseResolvingEList<MFlow>(MFlow.class, this, ModiscoPackage.MABSTRACT_METHOD_INVOCATION__OUTGOING_FLOWS, ModiscoPackage.MFLOW__FLOW_SOURCE);
+			outgoingFlows = new EObjectWithInverseResolvingEList.ManyInverse<MAbstractFlowElement>(MAbstractFlowElement.class, this, ModiscoPackage.MABSTRACT_METHOD_INVOCATION__OUTGOING_FLOWS, ModiscoPackage.MABSTRACT_FLOW_ELEMENT__INCOMING_FLOWS);
 		}
 		return outgoingFlows;
 	}
@@ -194,11 +194,11 @@ public abstract class MAbstractMethodInvocationImpl extends AbstractMethodInvoca
 				return;
 			case ModiscoPackage.MABSTRACT_METHOD_INVOCATION__INCOMING_FLOWS:
 				getIncomingFlows().clear();
-				getIncomingFlows().addAll((Collection<? extends MFlow>)newValue);
+				getIncomingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
 				return;
 			case ModiscoPackage.MABSTRACT_METHOD_INVOCATION__OUTGOING_FLOWS:
 				getOutgoingFlows().clear();
-				getOutgoingFlows().addAll((Collection<? extends MFlow>)newValue);
+				getOutgoingFlows().addAll((Collection<? extends MAbstractFlowElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

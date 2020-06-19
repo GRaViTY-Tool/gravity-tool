@@ -4,7 +4,7 @@
     modelName="Modisco" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     runtimeVersion="2.5" usedGenPackages="../../org.eclipse.modisco.java/model/java.genmodel#//java"
-    importOrganizing="true" eclipsePlatformVersion="2019-03">
+    importOrganizing="true">
   <foreignModel>Modisco.ecore</foreignModel>
   <genPackages prefix="Modisco" basePackage="org.gravity" disposableProviderFactory="true"
       ecorePackage="Modisco.ecore#/">

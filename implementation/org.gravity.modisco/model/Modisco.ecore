@@ -93,10 +93,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MExtension" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="MFlow" eSuperTypes="#//MAbstractFlowElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowSource" lowerBound="1"
-        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/outgoingFlows"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flowTarget" lowerBound="1"
-        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/incomingFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="flowOwner" lowerBound="1"
         eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/ownedFlows"/>
   </eClassifiers>
@@ -104,9 +100,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedFlows" upperBound="-1"
         eType="#//MFlow" containment="true" eOpposite="#//MFlow/flowOwner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingFlows" upperBound="-1"
-        eType="#//MFlow" eOpposite="#//MFlow/flowTarget"/>
+        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/outgoingFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingFlows" upperBound="-1"
-        eType="#//MFlow" eOpposite="#//MFlow/flowSource"/>
+        eType="#//MAbstractFlowElement" eOpposite="#//MAbstractFlowElement/incomingFlows"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MSingleVariableAccess" eSuperTypes="../../org.eclipse.modisco.java/model/java.ecore#//SingleVariableAccess #//MAccess">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessKind" eType="#//AccessKind"/>
