@@ -16,9 +16,11 @@ Export-Package: org.gravity.security.annotations,
 Bundle-Name: Security Annotations
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
  org.gravity.typegraph.basic,
- org.gravity.tgg.modisco,
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.gravity.eclipse,
+ org.gravity.tgg.modisco
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.gravity.security.annotations.AnnotationsActivator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
