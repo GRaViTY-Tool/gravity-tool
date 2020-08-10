@@ -104,50 +104,50 @@ public class HulkHenshin{
 	
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.defines -> size() = " + oclLimit;
+		final String ocl = "context TClass inv: self.defines -> size() = " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
+		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
 	
 	public static boolean ocl_IFU(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
+		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass",ocl, eObject);
+		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
 	
 	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.signature->size() <= " + oclLimit;
+		final String ocl = "context TClass inv: self.signature->size() <= " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
+		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
 	
 	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.parentClass->closure(childClasses)->size() <= " + oclLimit;
+		final String ocl = "context TClass inv: self.parentClass->closure(childClasses)->size() <= " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
+		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
 	
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.childClasses->size() <= " + oclLimit;
+		final String ocl = "context TClass inv: self.childClasses->size() <= " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
+		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
