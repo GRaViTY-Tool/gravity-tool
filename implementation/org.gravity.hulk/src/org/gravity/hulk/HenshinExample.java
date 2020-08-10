@@ -60,18 +60,18 @@ import org.gravity.typegraph.basic.TypeGraph;
 import carisma.check.variability.VerificationEngine;
 import org.eclipse.uml2.uml.Model;
 
-public class HulkHenshin{
+public class HenshinExample{
 
 	/**
 	 * The logger of this class
 	 */
-	private static final Logger LOGGER = Logger.getLogger(HulkHenshin.class);
+	private static final Logger LOGGER = Logger.getLogger(HenshinExample.class);
 
 	private static final String THRESHOLD = "threshold";
 	private HashMap<EClass, Rule> creates;
 	private HashSet<Rule> executed;
 	
-	public HulkHenshin() {
+	public HenshinExample() {
 
 	}
 
@@ -85,14 +85,15 @@ public class HulkHenshin{
 		resourceSetExample.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSetExample.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		
+		// XMI Model Path
 		final String model = "instances/pm.xmi";
 		final Resource currentModel = resourceSetExample.getResource(URI.createURI(model), true);
 
 		final Engine engine = new EngineImpl();
 		final EGraphImpl graph = new EGraphImpl(currentModel);
-		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
+		engine.getScriptEngine().put("HulkHenshin", new HenshinExample());
 		
-		final HulkHenshin hulk = new HulkHenshin();
+		final HenshinExample hulk = new HenshinExample();
 		hulk.loadRules(resourceSet, new File("rules"));
 		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
 		
@@ -104,54 +105,27 @@ public class HulkHenshin{
 	
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
 		
+		// Nach der ersten überprüfung in EvaluationAdapter.choice wird für das erste Tupel immer false angegeben. 
+		// Egal ob 1 oder 7 Elemente aus defines entnommen wurden (was übrigens richtig ist), es wird immer false zurückgegeben.
 		final String ocl = "self.defines -> size() = " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
 		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
+		System.out.println("----------------------------Return value: " + test + " ----------------------------");
 		return test;
 	}
 	
-	public static boolean ocl_IFU(double oclLimit, EObject eObject) {
+public static boolean ocl_IFU(double oclLimit, EObject eObject) {
 		
-		final String ocl = "self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass",ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
-	}
-	
-	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
-		
-		final String ocl = "self.signature->size() <= " + oclLimit;
+	// t.accessedBy ist nicht der Fehler. Es ist egal, wie t referenziert wird. Sie führt immer zur NullPointerException, nachdem das Tupel aus collect gesammelt wurde!
+		final String ocl = "self.defines->collect(t : TMember | t.accessedBy)->size() <= " + oclLimit;
 		
 		VerificationEngine veri = new VerificationEngine(eObject, null);
 		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
+		System.out.println("----------------------------Return value: " + test + " ----------------------------");
 		return test;
 	}
-	
-	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
-		
-		final String ocl = "self.parentClass->closure(childClasses)->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
-	}
-	
-	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
-		
-		final String ocl = "self.childClasses->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule("TClass", ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
-	}
-	
+
 	private Rule getRule(EClass type) {
 		return this.creates.get(type);
 	}

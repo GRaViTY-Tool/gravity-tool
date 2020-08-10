@@ -44,10 +44,14 @@ Require-Bundle: org.eclipse.emf.ecore.xmi,
  org.eclipse.core.resources,
  org.eclipse.emf.henshin.interpreter,
  org.gravity.typegraph.basic;visibility:=reexport,
- org.gravity.security.annotations
+ org.gravity.security.annotations,
+ org.eclipse.ocl.ecore;bundle-version="3.15.0",
+ carisma.check.variability,
+ org.eclipse.uml2.uml
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.gravity.hulk.HulkActivator
 Bundle-Vendor: TU Darmstadt
 Automatic-Module-Name: org.gravity.hulk
+Import-Package: de.ovgu.featureide.fm.core.base

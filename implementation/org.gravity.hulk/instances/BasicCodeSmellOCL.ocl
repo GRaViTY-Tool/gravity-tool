@@ -1,0 +1,27 @@
+import ecore : 'http://www.eclipse.org/emf/2002/Ecore#/'
+/*import basic : 'http://www.gravity-tool.org/typegraph/Basic#/'*/
+
+/* works if called locally: */
+import basic : 'platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore/'
+
+package basic
+
+context TClass
+
+/* Method: Find Classes with amount of fields and methods*/
+inv Member: self.defines->size() <= 2
+
+/* Method: IntenseFieldUsage*/
+inv IFU0: self.defines->collect(t : TMember | t.accessedBy)->size() <= 2
+
+/* Method: Average Parameters*/
+inv AvgParam: self.signature->size() <= 2
+
+/* Method: Depth of Inheritance*/
+inv DIT0: self.parentClass->closure(childClasses)->size() <= 1
+
+/* Method: ChildClasses*/
+inv CC0: self.childClasses->size() <= 2
+
+
+endpackage
