@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><plugin>
-  <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
-    <processor priority="1" processor="org.gravity.typegraph.spl.ProgramGraphProcessor"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Spl -->
       <package
             uri="http://www.gravity-tool.org/typegraph/spl"
             class="org.gravity.typegraph.spl.SplPackage"
             genModel="model/Spl.genmodel"/>
    </extension>
+
 </plugin>
