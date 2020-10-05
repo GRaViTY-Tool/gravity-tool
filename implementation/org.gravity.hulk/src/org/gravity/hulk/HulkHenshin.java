@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -27,7 +28,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 import org.apache.log4j.Logger;
-import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -36,12 +37,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.henshin.interpreter.Engine;
 import org.eclipse.emf.henshin.interpreter.Match;
 import org.eclipse.emf.henshin.interpreter.impl.EGraphImpl;
-import org.eclipse.emf.henshin.interpreter.impl.EngineImpl;
 import org.eclipse.emf.henshin.interpreter.impl.RuleApplicationImpl;
 import org.eclipse.emf.henshin.model.Action.Type;
 import org.eclipse.emf.henshin.model.AttributeCondition;
@@ -50,17 +49,21 @@ import org.eclipse.emf.henshin.model.Node;
 import org.eclipse.emf.henshin.model.Parameter;
 import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
+import org.eclipse.emf.henshin.variability.multi.MultiVarEGraph;
+import org.eclipse.emf.henshin.variability.multi.MultiVarEngine;
 import org.gravity.eclipse.io.ExtensionFileVisitor;
 import org.gravity.hulk.antipatterngraph.AntipatterngraphPackage;
 import org.gravity.hulk.antipatterngraph.antipattern.AntipatternPackage;
 import org.gravity.hulk.antipatterngraph.values.HRelativeValueConstants;
 import org.gravity.security.annotations.AnnotationsPackage;
 import org.gravity.typegraph.basic.BasicPackage;
-import org.gravity.typegraph.basic.TypeGraph;
-import carisma.check.variability.VerificationEngine;
-import org.eclipse.uml2.uml.Model;
+import org.gravity.typegraph.basic.annotations.TAnnotatable;
+import org.gravity.typegraph.basic.annotations.TAnnotation;
+import org.gravity.typegraph.spl.SplPackage;
 
-public class HulkHenshin{
+import carisma.check.variability.VerificationEngine;
+
+public class HulkHenshin {
 
 	/**
 	 * The logger of this class
@@ -70,69 +73,92 @@ public class HulkHenshin{
 	private static final String THRESHOLD = "threshold";
 	private HashMap<EClass, Rule> creates;
 	private HashSet<Rule> executed;
-	
+
 	public HulkHenshin() {
 
 	}
 
 	public static void main(String[] args) throws IOException {
-		final HenshinResourceSet resourceSet = new HenshinResourceSet();
-		resourceSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
+		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
+		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(AntipatternPackage.eNS_URI, AntipatternPackage.eINSTANCE);
+		resourceHenshinSet.getPackageRegistry().put(SplPackage.eNS_URI, SplPackage.eINSTANCE);
+
+		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(AntipatternPackage.eNS_URI, AntipatternPackage.eINSTANCE);
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		
+		final String model = "instances/TestSPL.xmi";
+		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
+		
+		//TreeIterator
+		TreeIterator<EObject> tree = currentModel.getAllContents();
 
-		ResourceSet resourceSetExample = new ResourceSetImpl();
-		resourceSetExample.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
-		resourceSetExample.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		
-		final String model = "instances/pm.xmi";
-		final Resource currentModel = resourceSetExample.getResource(URI.createURI(model), true);
-
-		final Engine engine = new EngineImpl();
-		final EGraphImpl graph = new EGraphImpl(currentModel);
-		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
-		
-		final HulkHenshin hulk = new HulkHenshin();
-		hulk.loadRules(resourceSet, new File("rules"));
-		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-		
-		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
-			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
-		}
-		LOGGER.info("done");
+		while(tree.hasNext()) {
+			EList<TAnnotation> pc;
+			Map<EObject, String> pcs;
+			EObject e = (EObject) tree.next();
+			if(e instanceof TAnnotatable) {
+				pc = ((TAnnotatable) e).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
+				if(pc==null){
+					for (Map.Entry<EObject, String> entry : pcs.entrySet()) {
+					    pcs.put(entry.getKey(), (String) entry.getValue());
+					 }
+				}else {
+					throw new Exception("More than one TPresenceCondition");
+				}
+			}
 	}
-	
+
+	final String featureModel = "instances/model.txt";
+
+	final MultiVarEGraph graph = new MultiVarEGraph(currentModel.getContents(), pcs, featureModel);
+
+	final MultiVarEngine engine = new MultiVarEngine();engine.getScriptEngine().put("HulkHenshin",new HulkHenshin());
+	final HulkHenshin hulk = new HulkHenshin();hulk.loadRules(resourceSet,new File("rules"));hulk.execute(engine,graph,hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
+
+	try(
+	OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi"))))
+	{
+		graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
+	}LOGGER.info("done");
+	}
+
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
 		
-		final String ocl = "context TClass inv: self.defines -> size() = " + oclLimit;
+		final String ocl = "context TClass inv: self.defines -> size() >= " + oclLimit;
 		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
+		VerificationEngine veri = new VerificationEngine(eObject, featureModel);
 		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
 		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
+		return true;
 	}
-	
+
 	public static boolean ocl_IFU(double oclLimit, EObject eObject) {
 		
-		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
+//		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
+//		
+//		VerificationEngine veri = new VerificationEngine(eObject, null);
+//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
+//		System.out.println("----------------------------" + test + "----------------------------");
+		return true;
 	}
-	
+
 	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
 		
-		final String ocl = "context TClass inv: self.signature->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
+//		final String ocl = "context TClass inv: self.signature->size() <= " + oclLimit;
+//		
+//		VerificationEngine veri = new VerificationEngine(eObject, null);
+//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
+//		System.out.println("----------------------------" + test + "----------------------------");
+		return true;
 	}
-	
+
 	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
+		
+		//IOCLHelper helper = HelperUtil.createOCLHelper();
+		//helper.define("getChilds(c : TClass) : Set(TClass) = r.childs->collect(t|getChilds(t))->asSet()->union(r.childs) ");
 		
 		final String ocl = "context TClass inv: self.parentClass->closure(childClasses)->size() <= " + oclLimit;
 		
@@ -141,22 +167,22 @@ public class HulkHenshin{
 		System.out.println("----------------------------" + test + "----------------------------");
 		return test;
 	}
-	
+
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
 		
-		final String ocl = "context TClass inv: self.childClasses->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
+//		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
+//		
+//		VerificationEngine veri = new VerificationEngine(eObject, null);
+//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
+//		System.out.println("----------------------------" + test + "----------------------------");
+		return true;
 	}
-	
+
 	private Rule getRule(EClass type) {
 		return this.creates.get(type);
 	}
 
-	private void executeAllRules(HenshinResourceSet set, Engine engine, EGraphImpl graph, File folder)
+	private void executeAllRules(HenshinResourceSet set, MultiVarEngine engine, EGraphImpl graph, File folder)
 			throws IOException {
 		final Set<Rule> rules = loadRules(set, folder);
 		for (final Rule rule : rules) {
@@ -197,7 +223,7 @@ public class HulkHenshin{
 		return rules;
 	}
 
-	private void execute(Engine engine, EGraphImpl graph, Rule rule) {
+	private void execute(MultiVarEngine engine, EGraphImpl graph, Rule rule) {
 		final Set<EClass> requires = getRequires(rule);
 		if (!requires.isEmpty()) {
 			System.out.println("Execure requirements of rule: " + rule.getName());
@@ -226,7 +252,7 @@ public class HulkHenshin{
 			if (threshold != null) {
 				match.setParameterValue(threshold, thresholdValue);
 			}
-			if (!engine.findMatches	(rule, graph, match).iterator().hasNext()) {
+			if (!engine.findMatches(rule, graph, match).iterator().hasNext()) {
 				continue;
 			}
 			final boolean success = new RuleApplicationImpl(engine, graph, rule, match).execute(null);
