@@ -7,5 +7,7 @@
             class="org.gravity.typegraph.spl.SplPackage"
             genModel="model/Spl.genmodel"/>
    </extension>
-
+   <extension point="org.gravity.tgg.modisco.ProcessingPgFwd">
+      <processor priority="10" processor="org.gravity.typegraph.spl.ProgramGraphProcessor"/>
+   </extension>
 </plugin>
