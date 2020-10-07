@@ -5,7 +5,7 @@
     <details key="documentation" value="TODO: Add documentation for spl. Hint: You may copy this element in the Ecore editor to add documentation to EClasses, EOperations, ..."/>
     <details key="basePackage" value="org.gravity.typegraph"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="TPresenceCondition" eSuperTypes="../../org.gravity.typegraph.basic/model/Basic.ecore#//annotations/TAnnotation">
+  <eClassifiers xsi:type="ecore:EClass" name="TPresenceCondition" eSuperTypes="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
