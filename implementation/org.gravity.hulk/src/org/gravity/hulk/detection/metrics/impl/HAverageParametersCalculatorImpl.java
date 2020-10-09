@@ -81,7 +81,7 @@ implements HAverageParametersCalculator {
 			}
 		}
 		if (amount == 0) {
-			if (sum == 0) {
+			if (sum != 0) {
 				throw new IllegalStateException();
 			}
 			return 0;
