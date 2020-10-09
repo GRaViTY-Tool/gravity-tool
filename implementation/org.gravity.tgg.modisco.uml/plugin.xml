@@ -12,8 +12,13 @@
       </menu>
     </menuContribution>
   </extension>
-  <extension point="org.eclipse.emf.ecore.dynamic_package">
-    <resource location="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore" uri="platform:/resource/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <!-- @generated Uml -->
+    <parser class="org.gravity.tgg.modisco.uml.Rules.util.RulesResourceFactoryImpl" type="rules"/>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+    <!-- @generated Uml -->
+    <parser class="org.gravity.tgg.modisco.uml.util.UmlResourceFactoryImpl" type="uml"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package class="org.gravity.tgg.modisco.uml.UmlPackage" genModel="model/Uml.genmodel" uri="platform:/plugin/org.gravity.tgg.modisco.uml/model/Uml.ecore"/>

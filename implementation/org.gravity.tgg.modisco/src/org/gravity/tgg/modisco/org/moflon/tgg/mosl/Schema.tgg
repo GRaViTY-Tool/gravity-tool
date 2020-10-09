@@ -1,20 +1,20 @@
 // Add imports here
 //#import "platform:/plugin/org.eclipse.modisco.java/model/java.ecore"
-//#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
-//#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
+#import "platform:/resource/org.gravity.modisco/model/Modisco.ecore"
+#import "platform:/resource/org.gravity.typegraph.basic/model/Basic.ecore"
 #import "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
-#import "http://www.gravity-tool.org/modisco"
-#import "http://www.gravity-tool.org/typegraph/basic"
+//#import "http://www.gravity-tool.org/modisco"
+//#import "http://www.gravity-tool.org/typegraph/basic"
 
 #schema org.gravity.tgg.modisco
 
 #source {
-	java.java
-	org.gravity.modisco.modisco
+	java
+	modisco
  }
 
 #target {
-	org.gravity.typegraph.basic.basic
+	basic
 }
 
 #correspondence {

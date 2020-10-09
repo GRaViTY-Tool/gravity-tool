@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.jdt.core,
  org.moflon.tgg.language;visibility:=reexport,
  org.moflon.tgg.runtime;visibility:=reexport,
  SDMLanguage,
- MocaTree
+ MocaTree,
+ org.eclipse.uml2.uml
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

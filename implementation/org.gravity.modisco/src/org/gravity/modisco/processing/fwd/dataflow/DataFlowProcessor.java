@@ -120,7 +120,12 @@ public class DataFlowProcessor extends AbstractTypedModiscoProcessor<MDefinition
 			if (inElement instanceof SingleVariableDeclaration) {
 				// The source is a parameter
 				
-				flowSources.add(((MSingleVariableDeclaration) inElement).getMEntry());
+				MEntry mEntry = ((MSingleVariableDeclaration) inElement).getMEntry();
+				if(mEntry == null) {
+					//TODO: Check why it is null, Var in enhanced for is ok
+					continue;
+				}
+				flowSources.add(mEntry);
 				if (outRef.isEmpty()) {
 					// Handling parameter flows, which end in an access (e. g. if access is in an
 					// assignment to a local)

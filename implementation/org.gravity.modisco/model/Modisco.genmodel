@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.modisco/gen" modelPluginID="org.gravity.modisco"
     modelName="Modisco" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    runtimeVersion="2.5" usedGenPackages="../../org.eclipse.modisco.java/model/java.genmodel#//java"
+    runtimeVersion="2.5" usedGenPackages="platform:/plugin/org.eclipse.modisco.java/model/java.genmodel#//java"
     importOrganizing="true">
   <foreignModel>Modisco.ecore</foreignModel>
   <genPackages prefix="Modisco" basePackage="org.gravity" disposableProviderFactory="true"
@@ -77,8 +77,6 @@
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MExtension"/>
     <genClasses ecoreClass="Modisco.ecore#//MFlow">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MFlow/flowSource"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Modisco.ecore#//MFlow/flowTarget"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Modisco.ecore#//MFlow/flowOwner"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Modisco.ecore#//MAbstractFlowElement">

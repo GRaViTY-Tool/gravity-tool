@@ -24,7 +24,6 @@ import org.eclipse.modisco.java.emf.JavaPackage;
  * <!-- end-user-doc -->
  * @see org.gravity.modisco.ModiscoFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='org.gravity'"
  * @generated
  */
 public interface ModiscoPackage extends EPackage {

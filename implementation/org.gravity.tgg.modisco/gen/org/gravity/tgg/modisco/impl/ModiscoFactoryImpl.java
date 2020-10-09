@@ -1,0 +1,540 @@
+/**
+ */
+package org.gravity.tgg.modisco.impl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import org.gravity.tgg.modisco.*;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class ModiscoFactoryImpl extends EFactoryImpl implements ModiscoFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static ModiscoFactory init() {
+		try {
+			ModiscoFactory theModiscoFactory = (ModiscoFactory) EPackage.Registry.INSTANCE
+					.getEFactory(ModiscoPackage.eNS_URI);
+			if (theModiscoFactory != null) {
+				return theModiscoFactory;
+			}
+		} catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new ModiscoFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModiscoFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+		case ModiscoPackage.PRIMITIVE_TYPE_TO_TCLASS:
+			return createPrimitiveTypeToTClass();
+		case ModiscoPackage.MSINGLE_VARIABLE_ACCESS_TO_TACCESS:
+			return createMSingleVariableAccessToTAccess();
+		case ModiscoPackage.AST_NODE_TO_TANNOTATABLE:
+			return createASTNodeToTAnnotatable();
+		case ModiscoPackage.MODEL_TO_TYPE_GRAPH:
+			return createModelToTypeGraph();
+		case ModiscoPackage.UNRESOLVED_TYPE_DECLARATION_TO_TCLASS:
+			return createUnresolvedTypeDeclarationToTClass();
+		case ModiscoPackage.MMETHOD_NAME_TO_TMETHOD:
+			return createMMethodNameToTMethod();
+		case ModiscoPackage.ANNOTATION_MEMBER_VALUE_PAIR_TO_TANNOTATION_VALUE:
+			return createAnnotationMemberValuePairToTAnnotationValue();
+		case ModiscoPackage.INTERFACE_DECLARATION_TO_TINTERFACE:
+			return createInterfaceDeclarationToTInterface();
+		case ModiscoPackage.NUMBER_LITERAL_TO_TNUMBER_NODE:
+			return createNumberLiteralToTNumberNode();
+		case ModiscoPackage.MFIELD_NAME_TO_TFIELD:
+			return createMFieldNameToTField();
+		case ModiscoPackage.STRING_LITERAL_TO_TTEXT_NODE:
+			return createStringLiteralToTTextNode();
+		case ModiscoPackage.ABSTRACT_METHOD_INVOCATION_TO_TACCESS:
+			return createAbstractMethodInvocationToTAccess();
+		case ModiscoPackage.TYPE_TO_TABSTRACT_TYPE:
+			return createTypeToTAbstractType();
+		case ModiscoPackage.BOOLEAN_LITERAL_TO_TBOOL_NODE:
+			return createBooleanLiteralToTBoolNode();
+		case ModiscoPackage.STATIC_TYPE_TO_ACCESS_STATIC_TYPE:
+			return createStaticTypeToAccessStaticType();
+		case ModiscoPackage.MABSTRACT_FLOW_ELEMENT_TO_TABSTRACT_FLOW_ELEMENT:
+			return createMAbstractFlowElementToTAbstractFlowElement();
+		case ModiscoPackage.MODIFIER_TO_TCLASS_ENTITY:
+			return createModifierToTClassEntity();
+		case ModiscoPackage.CLASS_LITERAL_TO_CLASS_NODE:
+			return createClassLiteralToClassNode();
+		case ModiscoPackage.CLASS_DECLARATION_TO_TCLASS:
+			return createClassDeclarationToTClass();
+		case ModiscoPackage.VARIABLE_DECLARATION_FRAGMENT_TO_TFIELD_DEFINITION:
+			return createVariableDeclarationFragmentToTFieldDefinition();
+		case ModiscoPackage.MENTRY_TO_TPARAMETER:
+			return createMEntryToTParameter();
+		case ModiscoPackage.MSIGNATURE_TO_TSIGNATURE:
+			return createMSignatureToTSignature();
+		case ModiscoPackage.MODIFIER_TO_ABSTRACT_TYPE:
+			return createModifierToAbstractType();
+		case ModiscoPackage.MFLOW_TO_TFLOW:
+			return createMFlowToTFlow();
+		case ModiscoPackage.MSYNTETHIC_METHOD_TO_TSYNTETHIC_METHOD:
+			return createMSyntethicMethodToTSyntethicMethod();
+		case ModiscoPackage.FIELD_ACCESS_TO_TACCESS:
+			return createFieldAccessToTAccess();
+		case ModiscoPackage.MMODIFIER_TO_TMODIFIER:
+			return createMModifierToTModifier();
+		case ModiscoPackage.MDEFINITION_TO_TMEMBER:
+			return createMDefinitionToTMember();
+		case ModiscoPackage.MODIFIER_TO_TMETHOD_ENTITY:
+			return createModifierToTMethodEntity();
+		case ModiscoPackage.ANNOTATION_TO_TANNOTATION:
+			return createAnnotationToTAnnotation();
+		case ModiscoPackage.ANONYMOUS_CLASS_DECLARATION_TO_TCLASS:
+			return createAnonymousClassDeclarationToTClass();
+		case ModiscoPackage.LINE_COMMENT_TO_TTEXT_ANNOTATION:
+			return createLineCommentToTTextAnnotation();
+		case ModiscoPackage.MODIFIER_TO_TFIELD_ENTITY:
+			return createModifierToTFieldEntity();
+		case ModiscoPackage.PACKAGE_TO_TPACKAGE:
+			return createPackageToTPackage();
+		case ModiscoPackage.TYPE_PARAMETER_TO_TCLASS:
+			return createTypeParameterToTClass();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PrimitiveTypeToTClass createPrimitiveTypeToTClass() {
+		PrimitiveTypeToTClassImpl primitiveTypeToTClass = new PrimitiveTypeToTClassImpl();
+		return primitiveTypeToTClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MSingleVariableAccessToTAccess createMSingleVariableAccessToTAccess() {
+		MSingleVariableAccessToTAccessImpl mSingleVariableAccessToTAccess = new MSingleVariableAccessToTAccessImpl();
+		return mSingleVariableAccessToTAccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ASTNodeToTAnnotatable createASTNodeToTAnnotatable() {
+		ASTNodeToTAnnotatableImpl astNodeToTAnnotatable = new ASTNodeToTAnnotatableImpl();
+		return astNodeToTAnnotatable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModelToTypeGraph createModelToTypeGraph() {
+		ModelToTypeGraphImpl modelToTypeGraph = new ModelToTypeGraphImpl();
+		return modelToTypeGraph;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UnresolvedTypeDeclarationToTClass createUnresolvedTypeDeclarationToTClass() {
+		UnresolvedTypeDeclarationToTClassImpl unresolvedTypeDeclarationToTClass = new UnresolvedTypeDeclarationToTClassImpl();
+		return unresolvedTypeDeclarationToTClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MMethodNameToTMethod createMMethodNameToTMethod() {
+		MMethodNameToTMethodImpl mMethodNameToTMethod = new MMethodNameToTMethodImpl();
+		return mMethodNameToTMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnnotationMemberValuePairToTAnnotationValue createAnnotationMemberValuePairToTAnnotationValue() {
+		AnnotationMemberValuePairToTAnnotationValueImpl annotationMemberValuePairToTAnnotationValue = new AnnotationMemberValuePairToTAnnotationValueImpl();
+		return annotationMemberValuePairToTAnnotationValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public InterfaceDeclarationToTInterface createInterfaceDeclarationToTInterface() {
+		InterfaceDeclarationToTInterfaceImpl interfaceDeclarationToTInterface = new InterfaceDeclarationToTInterfaceImpl();
+		return interfaceDeclarationToTInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NumberLiteralToTNumberNode createNumberLiteralToTNumberNode() {
+		NumberLiteralToTNumberNodeImpl numberLiteralToTNumberNode = new NumberLiteralToTNumberNodeImpl();
+		return numberLiteralToTNumberNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MFieldNameToTField createMFieldNameToTField() {
+		MFieldNameToTFieldImpl mFieldNameToTField = new MFieldNameToTFieldImpl();
+		return mFieldNameToTField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StringLiteralToTTextNode createStringLiteralToTTextNode() {
+		StringLiteralToTTextNodeImpl stringLiteralToTTextNode = new StringLiteralToTTextNodeImpl();
+		return stringLiteralToTTextNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AbstractMethodInvocationToTAccess createAbstractMethodInvocationToTAccess() {
+		AbstractMethodInvocationToTAccessImpl abstractMethodInvocationToTAccess = new AbstractMethodInvocationToTAccessImpl();
+		return abstractMethodInvocationToTAccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeToTAbstractType createTypeToTAbstractType() {
+		TypeToTAbstractTypeImpl typeToTAbstractType = new TypeToTAbstractTypeImpl();
+		return typeToTAbstractType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BooleanLiteralToTBoolNode createBooleanLiteralToTBoolNode() {
+		BooleanLiteralToTBoolNodeImpl booleanLiteralToTBoolNode = new BooleanLiteralToTBoolNodeImpl();
+		return booleanLiteralToTBoolNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StaticTypeToAccessStaticType createStaticTypeToAccessStaticType() {
+		StaticTypeToAccessStaticTypeImpl staticTypeToAccessStaticType = new StaticTypeToAccessStaticTypeImpl();
+		return staticTypeToAccessStaticType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MAbstractFlowElementToTAbstractFlowElement createMAbstractFlowElementToTAbstractFlowElement() {
+		MAbstractFlowElementToTAbstractFlowElementImpl mAbstractFlowElementToTAbstractFlowElement = new MAbstractFlowElementToTAbstractFlowElementImpl();
+		return mAbstractFlowElementToTAbstractFlowElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModifierToTClassEntity createModifierToTClassEntity() {
+		ModifierToTClassEntityImpl modifierToTClassEntity = new ModifierToTClassEntityImpl();
+		return modifierToTClassEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ClassLiteralToClassNode createClassLiteralToClassNode() {
+		ClassLiteralToClassNodeImpl classLiteralToClassNode = new ClassLiteralToClassNodeImpl();
+		return classLiteralToClassNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ClassDeclarationToTClass createClassDeclarationToTClass() {
+		ClassDeclarationToTClassImpl classDeclarationToTClass = new ClassDeclarationToTClassImpl();
+		return classDeclarationToTClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariableDeclarationFragmentToTFieldDefinition createVariableDeclarationFragmentToTFieldDefinition() {
+		VariableDeclarationFragmentToTFieldDefinitionImpl variableDeclarationFragmentToTFieldDefinition = new VariableDeclarationFragmentToTFieldDefinitionImpl();
+		return variableDeclarationFragmentToTFieldDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MEntryToTParameter createMEntryToTParameter() {
+		MEntryToTParameterImpl mEntryToTParameter = new MEntryToTParameterImpl();
+		return mEntryToTParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MSignatureToTSignature createMSignatureToTSignature() {
+		MSignatureToTSignatureImpl mSignatureToTSignature = new MSignatureToTSignatureImpl();
+		return mSignatureToTSignature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModifierToAbstractType createModifierToAbstractType() {
+		ModifierToAbstractTypeImpl modifierToAbstractType = new ModifierToAbstractTypeImpl();
+		return modifierToAbstractType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MFlowToTFlow createMFlowToTFlow() {
+		MFlowToTFlowImpl mFlowToTFlow = new MFlowToTFlowImpl();
+		return mFlowToTFlow;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MSyntethicMethodToTSyntethicMethod createMSyntethicMethodToTSyntethicMethod() {
+		MSyntethicMethodToTSyntethicMethodImpl mSyntethicMethodToTSyntethicMethod = new MSyntethicMethodToTSyntethicMethodImpl();
+		return mSyntethicMethodToTSyntethicMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FieldAccessToTAccess createFieldAccessToTAccess() {
+		FieldAccessToTAccessImpl fieldAccessToTAccess = new FieldAccessToTAccessImpl();
+		return fieldAccessToTAccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MModifierToTModifier createMModifierToTModifier() {
+		MModifierToTModifierImpl mModifierToTModifier = new MModifierToTModifierImpl();
+		return mModifierToTModifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MDefinitionToTMember createMDefinitionToTMember() {
+		MDefinitionToTMemberImpl mDefinitionToTMember = new MDefinitionToTMemberImpl();
+		return mDefinitionToTMember;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModifierToTMethodEntity createModifierToTMethodEntity() {
+		ModifierToTMethodEntityImpl modifierToTMethodEntity = new ModifierToTMethodEntityImpl();
+		return modifierToTMethodEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnnotationToTAnnotation createAnnotationToTAnnotation() {
+		AnnotationToTAnnotationImpl annotationToTAnnotation = new AnnotationToTAnnotationImpl();
+		return annotationToTAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AnonymousClassDeclarationToTClass createAnonymousClassDeclarationToTClass() {
+		AnonymousClassDeclarationToTClassImpl anonymousClassDeclarationToTClass = new AnonymousClassDeclarationToTClassImpl();
+		return anonymousClassDeclarationToTClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LineCommentToTTextAnnotation createLineCommentToTTextAnnotation() {
+		LineCommentToTTextAnnotationImpl lineCommentToTTextAnnotation = new LineCommentToTTextAnnotationImpl();
+		return lineCommentToTTextAnnotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModifierToTFieldEntity createModifierToTFieldEntity() {
+		ModifierToTFieldEntityImpl modifierToTFieldEntity = new ModifierToTFieldEntityImpl();
+		return modifierToTFieldEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PackageToTPackage createPackageToTPackage() {
+		PackageToTPackageImpl packageToTPackage = new PackageToTPackageImpl();
+		return packageToTPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeParameterToTClass createTypeParameterToTClass() {
+		TypeParameterToTClassImpl typeParameterToTClass = new TypeParameterToTClassImpl();
+		return typeParameterToTClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ModiscoPackage getModiscoPackage() {
+		return (ModiscoPackage) getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static ModiscoPackage getPackage() {
+		return ModiscoPackage.eINSTANCE;
+	}
+
+} //ModiscoFactoryImpl

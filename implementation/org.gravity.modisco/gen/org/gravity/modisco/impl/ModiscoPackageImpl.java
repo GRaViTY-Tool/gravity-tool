@@ -290,7 +290,7 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ModiscoPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -304,7 +304,8 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		if (isInited) return (ModiscoPackage)EPackage.Registry.INSTANCE.getEPackage(ModiscoPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ModiscoPackageImpl theModiscoPackage = (ModiscoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ModiscoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ModiscoPackageImpl());
+		Object registeredModiscoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ModiscoPackageImpl theModiscoPackage = registeredModiscoPackage instanceof ModiscoPackageImpl ? (ModiscoPackageImpl)registeredModiscoPackage : new ModiscoPackageImpl();
 
 		isInited = true;
 
@@ -320,7 +321,6 @@ public class ModiscoPackageImpl extends EPackageImpl implements ModiscoPackage {
 		// Mark meta-data to indicate it can't be changed
 		theModiscoPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ModiscoPackage.eNS_URI, theModiscoPackage);
 		return theModiscoPackage;

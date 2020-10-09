@@ -5,10 +5,10 @@
 
 #source {
 	mOwner : BodyDeclaration {
-		-annotations->annotation
+		-annotations->mAnnotation
 	}
 	
-	annotation : Annotation {
+	mAnnotation : Annotation {
 		++ -values-> mValue
 	}
 	++ mValue : AnnotationMemberValuePair
@@ -32,7 +32,7 @@
 	}
 	
 	annotationToTAnnotation : AnnotationToTAnnotation {
-		#src->annotation
+		#src->mAnnotation
 		#trg->tAnnotation
 	}
 	++ annotationMemberValuePairToTAnnotationValue : AnnotationMemberValuePairToTAnnotationValue {

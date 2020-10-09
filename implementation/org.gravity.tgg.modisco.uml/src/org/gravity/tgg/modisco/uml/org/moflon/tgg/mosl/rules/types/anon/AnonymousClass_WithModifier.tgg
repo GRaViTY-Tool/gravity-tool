@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.uml.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule AnonymousClass_WithModifier #with org.gravity.tgg.modisco.uml
+#rule AnonymousClass_WithModifier #with org.gravity.tgg.modisco.uml
 
 #source { 
 	jContainer:AbstractTypeDeclaration {

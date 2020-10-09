@@ -1,7 +1,7 @@
 #using org.gravity.tgg.modisco.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule NestedTypesinAnonymous
+#abstract #rule NestedTypesInAnonymous
 #with org.gravity.tgg.modisco
 
 #source {

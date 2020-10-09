@@ -2,28 +2,26 @@
 #using AttrCondDefLibrary.*
 
 #rule InterfaceInAnonymous
-#extends NestedTypesinAnonymous
+#extends NestedTypesInAnonymous
 #with org.gravity.tgg.modisco
 
 #source {
-++ mNestedType : InterfaceDeclaration {
-}
+	++mNestedType:InterfaceDeclaration
 }
 
 #target {
-++ tNestedType : TInterface {
-}
-pg : TypeGraph {
-	++  -interfaces -> tNestedType
-}
+	++tNestedType:TInterface
+
+	pg:TypeGraph {
+		++  -interfaces -> tNestedType
+	}
 }
 
 #correspondence {
-++ mInterfaceDeclarationtoTInterface : InterfaceDeclarationToTInterface {
-	#src->mNestedType
-	#trg->tNestedType
-}
+	++ mInterfaceDeclarationtoTInterface :InterfaceDeclarationToTInterface {
+		#src->mNestedType
+		#trg->tNestedType
+	}
 }
 
-#attributeConditions {
-}
+

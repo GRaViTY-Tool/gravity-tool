@@ -2,24 +2,17 @@
 #using AttrCondDefLibrary.*
 
 #rule AnnotationTypeInAnonymous
-#extends NestedTypesinAnonymous
+#extends NestedTypesInAnonymous
 #with org.gravity.tgg.modisco
 
 #source {
-++ mNestedType : AnnotationTypeDeclaration {
-}
+	++mNestedType:AnnotationTypeDeclaration
 }
 
 #target {
-++ tNestedType : TAnnotationType {
-}
-pg : TypeGraph {
-	++  -ownedTypes -> tNestedType
-}
-}
+	++tNestedType:TAnnotationType
 
-#correspondence {
-}
-
-#attributeConditions {
+	pg:TypeGraph {
+		++  -ownedTypes -> tNestedType
+	}
 }
