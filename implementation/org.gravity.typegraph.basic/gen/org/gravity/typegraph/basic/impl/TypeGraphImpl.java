@@ -886,8 +886,14 @@ public class TypeGraphImpl extends TAnnotatableImpl implements TypeGraph {
 	@Override
 	public TMethodDefinition getMethodDefinition(String signature) {
 		int index = signature.lastIndexOf('.', signature.lastIndexOf('('));
+		if(index < 0) {
+			return null;
+		}
 		TMethodSignature methodSig = getMethodSignature(signature.substring(index + 1));
 		TAbstractType type = getType(signature.substring(0, index));
+		if(type == null) {
+			return null;
+		}
 		return type.getDefines().parallelStream().filter(member -> member.getSignature().equals(methodSig))
 				.map(member -> (TMethodDefinition) member).findAny().orElse(null);
 	}
