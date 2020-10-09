@@ -21,8 +21,8 @@
 
    <url>
       <update label="GRaViTY Updatesite" url="https://gravity-tool.org/updatesite"/>
-      <discovery label="eMoflon" url="https://emoflon.org/emoflon-ibex-democles-updatesite/snapshot/updatesite/"/>
-      <discovery label="MoDisco" url="http://download.eclipse.org/modeling/gmt/modisco/updates/release/"/>
+      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
+      <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
       <discovery label="CARiSMA" url="http://carisma.umlsec.de/beta-updatesite"/>
    </url>
@@ -45,11 +45,7 @@
       <import plugin="org.gravity.security.annotations"/>
       <import plugin="org.gravity.eclipse.ui"/>
       <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.emoflon.ibex.tgg.runtime.democles"/>
-      <import plugin="org.emoflon.ibex.tgg.ui.debug.adapter"/>
-      <import plugin="org.emoflon.ibex.tgg.ui.debug"/>
-      <import plugin="org.emoflon.ibex.tgg.runtime"/>
-      <import plugin="org.emoflon.ibex.tgg.language"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
    </requires>
 
    <plugin

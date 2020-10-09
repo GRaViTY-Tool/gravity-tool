@@ -22,7 +22,7 @@ Darmstadt.
    </license>
 
    <url>
-      <discovery label="eMoflon" url="https://emoflon.org/emoflon-ibex-updatesite/snapshot/updatesite/"/>
+      <discovery label="eMoflon" url="https://gravity-tool.org/emoflon-tie/updatesite/"/>
       <discovery label="MoDisco" url="http://download.eclipse.org/releases/latest"/>
       <discovery label="EMF" url="http://download.eclipse.org/modeling/emf/updates/releases/"/>
    </url>
@@ -41,11 +41,7 @@ Darmstadt.
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.eclipse.modisco.java.generation"/>
       <import plugin="org.gravity.typegraph.basic"/>
-      <import plugin="org.emoflon.ibex.tgg.runtime.democles"/>
-      <import plugin="org.emoflon.ibex.tgg.ui.debug.adapter"/>
-      <import plugin="org.emoflon.ibex.tgg.ui.debug"/>
-      <import plugin="org.emoflon.ibex.tgg.runtime"/>
-      <import plugin="org.emoflon.ibex.tgg.language"/>
+      <import feature="org.moflon.tgg.mosl.feature" version="3.0.1.202010091338"/>
    </requires>
 
    <plugin
