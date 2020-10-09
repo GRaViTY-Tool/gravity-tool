@@ -98,11 +98,16 @@ public class Execute {
 			cmdList.add(binary);
 			break;
 		case LINUX:
-			cmdList.add(binary);
+			if(new File(location, binary).exists()) {
+				cmdList.add("./"+binary);
+			}
+			else {
+				cmdList.add(binary);
+			}
 			break;
 		default:
 			LOGGER.warn("Unsupported OS");
-			throw new UnsupportedOperationSystemException("Cannot execute gradlew");
+			throw new UnsupportedOperationSystemException("Cannot execute " +binary);
 		}
 		cmdList.addAll(args);
 		return Runtime.getRuntime().exec(cmdList.toArray(new String[0]), env == null ? null : env.toArray(new String[0]), location);
