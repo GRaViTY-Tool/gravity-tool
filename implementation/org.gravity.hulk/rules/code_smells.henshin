@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_JSV_ILnyEeqH54JYG0FALQ">
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells"/>
+  <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_XMlFYLnyEeqH54JYG0FALQ" name="CodeSmell LargeClass">
+    <parameters xmi:id="_1VFrYMUGEeq5es8tHTnAuA" name="context" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+    </parameters>
+    <lhs xmi:id="_XMlFZbnyEeqH54JYG0FALQ" name="Lhs">
+      <nodes xmi:id="_0jtuQMUFEeq5es8tHTnAuA" name="context">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_XMlFZrnyEeqH54JYG0FALQ" name="Rhs">
+      <nodes xmi:id="_XimjQLnzEeqH54JYG0FALQ" outgoing="_9uKroMUFEeq5es8tHTnAuA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
+      </nodes>
+      <nodes xmi:id="_5CgNwMUFEeq5es8tHTnAuA" incoming="_9uKroMUFEeq5es8tHTnAuA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <edges xmi:id="_9uKroMUFEeq5es8tHTnAuA" source="_XimjQLnzEeqH54JYG0FALQ" target="_5CgNwMUFEeq5es8tHTnAuA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_JRCZQMUDEeq5es8tHTnAuA" name="x" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_LargeClass(1.0, context);"/>
+    <mappings xmi:id="_5CgNwcUFEeq5es8tHTnAuA" origin="_0jtuQMUFEeq5es8tHTnAuA" image="_5CgNwMUFEeq5es8tHTnAuA"/>
+    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_a7FXcLnyEeqH54JYG0FALQ" name="CodeSmell AVG_PARAM">
+    <parameters xmi:id="_OVtMwMqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
+    <lhs xmi:id="_a7FXdbnyEeqH54JYG0FALQ" name="Lhs">
+      <nodes xmi:id="_vVEIULnyEeqH54JYG0FALQ" name="context">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_a7FXdrnyEeqH54JYG0FALQ" name="Rhs">
+      <nodes xmi:id="_vVEIUbnyEeqH54JYG0FALQ" incoming="_F9eDILn0EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_E1tw4Ln0EeqH54JYG0FALQ" outgoing="_F9eDILn0EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
+      </nodes>
+      <edges xmi:id="_F9eDILn0EeqH54JYG0FALQ" source="_E1tw4Ln0EeqH54JYG0FALQ" target="_vVEIUbnyEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_vVEIUrnyEeqH54JYG0FALQ" origin="_vVEIULnyEeqH54JYG0FALQ" image="_vVEIUbnyEeqH54JYG0FALQ"/>
+    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_jOAP4LnyEeqH54JYG0FALQ" name="CodeSmell IntenseFieldUsage">
+    <parameters xmi:id="_QzNJ8MqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
+    <lhs xmi:id="_jOAP5bnyEeqH54JYG0FALQ" name="Lhs">
+      <nodes xmi:id="_vabJcLnyEeqH54JYG0FALQ" name="context">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_jOAP5rnyEeqH54JYG0FALQ" name="Rhs">
+      <nodes xmi:id="_vabJcbnyEeqH54JYG0FALQ" incoming="_2OuSULnzEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_dlM-4LnzEeqH54JYG0FALQ" outgoing="_2OuSULnzEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
+      </nodes>
+      <edges xmi:id="_2OuSULnzEeqH54JYG0FALQ" source="_dlM-4LnzEeqH54JYG0FALQ" target="_vabJcbnyEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_TZlvoMp_EeqNjfN_TEYq-g" name="y" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_IFU(1.0, context);"/>
+    <mappings xmi:id="_vabJcrnyEeqH54JYG0FALQ" origin="_vabJcLnyEeqH54JYG0FALQ" image="_vabJcbnyEeqH54JYG0FALQ"/>
+    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_IZ5M0Ln1EeqH54JYG0FALQ" name="Anti-Pattern Spaghetti Code">
+    <parameters xmi:id="_SOpNMMqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
+    <parameters xmi:id="_ciNuwMqEEeqNjfN_TEYq-g" name="context_two" kind="VAR"/>
+    <lhs xmi:id="_IaC90Ln1EeqH54JYG0FALQ" name="Lhs">
+      <nodes xmi:id="_MqKIILn1EeqH54JYG0FALQ" outgoing="_VKj1MLxhEeqMM_fdp3EiTA _VbaUoLxhEeqMM_fdp3EiTA _VpBS0LxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_1UhB8Ln1EeqH54JYG0FALQ" incoming="_VKj1MLxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
+      </nodes>
+      <nodes xmi:id="_2ICwoLn1EeqH54JYG0FALQ" incoming="_VpBS0LxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
+      </nodes>
+      <nodes xmi:id="_3qbwcLn1EeqH54JYG0FALQ" incoming="_VbaUoLxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
+      </nodes>
+      <edges xmi:id="_VKj1MLxhEeqMM_fdp3EiTA" source="_MqKIILn1EeqH54JYG0FALQ" target="_1UhB8Ln1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_VbaUoLxhEeqMM_fdp3EiTA" source="_MqKIILn1EeqH54JYG0FALQ" target="_3qbwcLn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_VpBS0LxhEeqMM_fdp3EiTA" source="_MqKIILn1EeqH54JYG0FALQ" target="_2ICwoLn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_IaC90bn1EeqH54JYG0FALQ" name="Rhs">
+      <nodes xmi:id="_MqKIIbn1EeqH54JYG0FALQ" incoming="_ajt48Ln1EeqH54JYG0FALQ" outgoing="_VKj1MbxhEeqMM_fdp3EiTA _VbaUobxhEeqMM_fdp3EiTA _VpB54LxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_WcgzALn1EeqH54JYG0FALQ" outgoing="_ajt48Ln1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern/HSpaghettiCodeAntiPattern"/>
+      </nodes>
+      <nodes xmi:id="_1UhB8bn1EeqH54JYG0FALQ" incoming="_VKj1MbxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
+      </nodes>
+      <nodes xmi:id="_2ICwobn1EeqH54JYG0FALQ" incoming="_VpB54LxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
+      </nodes>
+      <nodes xmi:id="_3qbwcbn1EeqH54JYG0FALQ" incoming="_VbaUobxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
+      </nodes>
+      <edges xmi:id="_ajt48Ln1EeqH54JYG0FALQ" source="_WcgzALn1EeqH54JYG0FALQ" target="_MqKIIbn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
+      <edges xmi:id="_VKj1MbxhEeqMM_fdp3EiTA" source="_MqKIIbn1EeqH54JYG0FALQ" target="_1UhB8bn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_VbaUobxhEeqMM_fdp3EiTA" source="_MqKIIbn1EeqH54JYG0FALQ" target="_3qbwcbn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+      <edges xmi:id="_VpB54LxhEeqMM_fdp3EiTA" source="_MqKIIbn1EeqH54JYG0FALQ" target="_2ICwobn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_MqKIIrn1EeqH54JYG0FALQ" origin="_MqKIILn1EeqH54JYG0FALQ" image="_MqKIIbn1EeqH54JYG0FALQ"/>
+    <mappings xmi:id="_1UhB8rn1EeqH54JYG0FALQ" origin="_1UhB8Ln1EeqH54JYG0FALQ" image="_1UhB8bn1EeqH54JYG0FALQ"/>
+    <mappings xmi:id="_2ICworn1EeqH54JYG0FALQ" origin="_2ICwoLn1EeqH54JYG0FALQ" image="_2ICwobn1EeqH54JYG0FALQ"/>
+    <mappings xmi:id="_3qbwcrn1EeqH54JYG0FALQ" origin="_3qbwcLn1EeqH54JYG0FALQ" image="_3qbwcbn1EeqH54JYG0FALQ"/>
+    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
+  </units>
+</henshin:Module>

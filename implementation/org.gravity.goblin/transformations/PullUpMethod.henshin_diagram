@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_VezdQLKjEeiHxtaJPOhGLA" type="Henshin" name="PullUpMethod.henshin_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_VezdQLKjEeiHxtaJPOhGLA" type="Henshin" name="PullUpMethod.henshin_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_jjqCoLKkEeiHxtaJPOhGLA" type="2001" fontName="Ubuntu" italic="true" lineColor="0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mVYjYLKkEeiHxtaJPOhGLA" source="defaultAction">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mVYjYbKkEeiHxtaJPOhGLA" key="value" value="forbid#1"/>
@@ -189,10 +189,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_iNsf0LKlEeiHxtaJPOhGLA" type="4001" source="_tigRYLKkEeiHxtaJPOhGLA" target="_yWioILKkEeiHxtaJPOhGLA">
     <children xmi:type="notation:DecorationNode" xmi:id="_iNtG4LKlEeiHxtaJPOhGLA" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_iNtG4bKlEeiHxtaJPOhGLA" x="34" y="-14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_iNtG4bKlEeiHxtaJPOhGLA" x="-22" y="37"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_iNtG4rKlEeiHxtaJPOhGLA" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_iNtG47KlEeiHxtaJPOhGLA" x="33" y="13"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_iNtG47KlEeiHxtaJPOhGLA" x="-38" y="35"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_iNsf0bKlEeiHxtaJPOhGLA" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="PullUpMethod.henshin#_iNrRsLKlEeiHxtaJPOhGLA"/>
@@ -202,7 +202,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_mcjF4LKlEeiHxtaJPOhGLA" type="4001" source="_tigRYLKkEeiHxtaJPOhGLA" target="_xc64gLKkEeiHxtaJPOhGLA">
     <children xmi:type="notation:DecorationNode" xmi:id="_mcjs8LKlEeiHxtaJPOhGLA" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_mcjs8bKlEeiHxtaJPOhGLA" x="36" y="14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mcjs8bKlEeiHxtaJPOhGLA" x="33" y="-29"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_mcjs8rKlEeiHxtaJPOhGLA" type="6002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_mcjs87KlEeiHxtaJPOhGLA" x="42" y="-13"/>
@@ -275,10 +275,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_RYr-QLdKEeiE6OEABRuRCw" type="4001" source="_oZV_MLKkEeiHxtaJPOhGLA" target="_AffMgLdKEeiE6OEABRuRCw">
     <children xmi:type="notation:DecorationNode" xmi:id="_RYtMYLdKEeiE6OEABRuRCw" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RYtMYbdKEeiE6OEABRuRCw" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RYtMYbdKEeiE6OEABRuRCw" x="110" y="24"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_RYtMYrdKEeiE6OEABRuRCw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_RYtMY7dKEeiE6OEABRuRCw" x="-43"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RYtMY7dKEeiE6OEABRuRCw" x="94" y="32"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_RYr-QbdKEeiE6OEABRuRCw" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="PullUpMethod.henshin#_RYl3oLdKEeiE6OEABRuRCw"/>
@@ -286,10 +286,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_dR6PALdKEeiE6OEABRuRCw" type="4001" source="_nIWRYLKkEeiHxtaJPOhGLA" target="_bED3YLdKEeiE6OEABRuRCw">
     <children xmi:type="notation:DecorationNode" xmi:id="_dR6PA7dKEeiE6OEABRuRCw" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dR6PBLdKEeiE6OEABRuRCw" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dR6PBLdKEeiE6OEABRuRCw" x="109" y="-31"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_dR6PBbdKEeiE6OEABRuRCw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_dR62ELdKEeiE6OEABRuRCw" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_dR62ELdKEeiE6OEABRuRCw" x="121" y="-37"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_dR6PAbdKEeiE6OEABRuRCw" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="PullUpMethod.henshin#_dRyTMLdKEeiE6OEABRuRCw"/>
@@ -309,10 +309,10 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4AVlwEzBEemYW_KBiJlMkw" type="4001" source="_4AQGMEzBEemYW_KBiJlMkw" target="_bED3YLdKEeiE6OEABRuRCw">
     <children xmi:type="notation:DecorationNode" xmi:id="_4AVlw0zBEemYW_KBiJlMkw" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AWM0EzBEemYW_KBiJlMkw" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AWM0EzBEemYW_KBiJlMkw" x="7" y="14"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_4AWM0UzBEemYW_KBiJlMkw" type="6002">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AWM0kzBEemYW_KBiJlMkw" y="60"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AWM0kzBEemYW_KBiJlMkw" x="-3" y="-13"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_4AVlwUzBEemYW_KBiJlMkw" fontName="Ubuntu"/>
     <element xmi:type="henshin:Edge" href="PullUpMethod.henshin#_c_JEALdKEeiE6OEABRuRCw"/>

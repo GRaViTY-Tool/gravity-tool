@@ -31,7 +31,9 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
     </rhs>
+    <attributeConditions xmi:id="__vtZsMUSEeqjD54ogw6VIw" conditionText="Java.type('org.gravity.hulk.HulkHenshin')"/>
     <mappings xmi:id="_NQh_sm2tEem0WdBjFndsOw" origin="_NQh_sG2tEem0WdBjFndsOw" image="_NQh_sW2tEem0WdBjFndsOw"/>
     <javaImports>org.gravity.hulk.detection.Lcom5</javaImports>
+    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
 </henshin:Module>
