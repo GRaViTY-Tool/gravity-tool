@@ -103,6 +103,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="hLocalAccessRelationMetric"
           eType="#//metrics/HLocalAccessRelationMetric"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HNoInheritanceCodeSmell" eSuperTypes="#//HCodeSmell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hChildClassesMetric"
+          eType="#//metrics/HNumberOfChildMetric"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="metrics" nsURI="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"
       nsPrefix="metrics">
