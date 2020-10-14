@@ -12,10 +12,12 @@ package org.gravity.hulk;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -62,6 +64,11 @@ import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.spl.SplPackage;
 
 import carisma.check.variability.VerificationEngine;
+import de.ovgu.featureide.fm.core.base.FeatureUtils;
+import de.ovgu.featureide.fm.core.base.IFeatureModel;
+import de.ovgu.featureide.fm.core.base.impl.DefaultFeatureModelFactory;
+import de.ovgu.featureide.fm.core.base.impl.Feature;
+import de.ovgu.featureide.fm.core.base.impl.FeatureModel;
 
 public class HulkHenshin {
 
@@ -78,7 +85,7 @@ public class HulkHenshin {
 
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		final HenshinResourceSet resourceHenshinSet = new HenshinResourceSet();
 		resourceHenshinSet.getPackageRegistry().put(AnnotationsPackage.eNS_URI, AnnotationsPackage.eINSTANCE);
 		resourceHenshinSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
@@ -88,93 +95,114 @@ public class HulkHenshin {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(BasicPackage.eNS_URI, BasicPackage.eINSTANCE);
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		
-		final String model = "instances/TestSPL.xmi";
-		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
-		
-		//TreeIterator
-		TreeIterator<EObject> tree = currentModel.getAllContents();
 
-		while(tree.hasNext()) {
-			EList<TAnnotation> pc;
-			Map<EObject, String> pcs;
-			EObject e = (EObject) tree.next();
-			if(e instanceof TAnnotatable) {
-				pc = ((TAnnotatable) e).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
-				if(pc==null){
+		final String model = "instances/Test.xmi";
+		final Resource currentModel = resourceSet.getResource(URI.createURI(model), true);
+
+		TreeIterator<EObject> tree = currentModel.getAllContents();
+		Map<EObject, String> pcs = new HashMap<>();
+		EList<TAnnotation> pcString;
+		while (tree.hasNext()) {
+			EObject eObject = (EObject) tree.next();
+			if (eObject instanceof TAnnotatable) {
+				pcString = ((TAnnotatable) eObject).getTAnnotation(SplPackage.eINSTANCE.getTPresenceCondition());
+				if (pcString.size() <= 1) {
 					for (Map.Entry<EObject, String> entry : pcs.entrySet()) {
-					    pcs.put(entry.getKey(), (String) entry.getValue());
-					 }
-				}else {
-					throw new Exception("More than one TPresenceCondition");
+						pcs.put(entry.getKey(), (String) entry.getValue());
+						System.out.println("Added Presence Condition:" + pcs);
+					}
+				} else {
+					pcString = null;
 				}
 			}
+		}
+
+		// Feature Model
+		Path featureModelPath = Paths
+				.get("C:\\Users\\gerwi\\git\\gravity-tool\\implementation\\org.gravity.hulk\\instances\\model.txt");
+		String featureModel = Files.readString(featureModelPath, StandardCharsets.UTF_8);
+
+
+
+		final MultiVarEGraph graph = new MultiVarEGraph(currentModel.getContents(), pcs, featureModel);
+
+		final MultiVarEngine engine = new MultiVarEngine();
+		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
+		final HulkHenshin hulk = new HulkHenshin();
+		hulk.loadRules(resourceHenshinSet, new File("rules"));
+		hulk.execute(engine, graph, hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
+
+		try (OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi")))) {
+			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
+		}
+		LOGGER.info("done");
 	}
+	
+	public static void addFeatureModel(IFeatureModel fm){
+	
 
-	final String featureModel = "instances/model.txt";
-
-	final MultiVarEGraph graph = new MultiVarEGraph(currentModel.getContents(), pcs, featureModel);
-
-	final MultiVarEngine engine = new MultiVarEngine();engine.getScriptEngine().put("HulkHenshin",new HulkHenshin());
-	final HulkHenshin hulk = new HulkHenshin();hulk.loadRules(resourceSet,new File("rules"));hulk.execute(engine,graph,hulk.getRule(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern()));
-
-	try(
-	OutputStream outputStream = Files.newOutputStream(Paths.get(model.replace(".xmi", ".trg.xmi"))))
-	{
-		graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
-	}LOGGER.info("done");
 	}
 
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
+
+		DefaultFeatureModelFactory fmFactory = DefaultFeatureModelFactory.getInstance();
+		FeatureModel fm = fmFactory.create();
+		Feature root = fmFactory.createFeature(fm, "Root");
+		FeatureUtils.setAbstract(root, true);
+		FeatureUtils.setRoot(fm, root);
+		FeatureUtils.addFeature(fm, root);
+		System.out.println(new Date().toString() + " - FM created");
 		
 		final String ocl = "context TClass inv: self.defines -> size() >= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, featureModel);
-		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return true;
+		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
 	public static boolean ocl_IFU(double oclLimit, EObject eObject) {
-		
-//		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() <= " + oclLimit;
-//		
-//		VerificationEngine veri = new VerificationEngine(eObject, null);
-//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-//		System.out.println("----------------------------" + test + "----------------------------");
-		return true;
+
+		DefaultFeatureModelFactory fmFactory = DefaultFeatureModelFactory.getInstance();
+		FeatureModel fm = fmFactory.create();
+		Feature root = fmFactory.createFeature(fm, "Root");
+		FeatureUtils.setAbstract(root, true);
+		FeatureUtils.setRoot(fm, root);
+		FeatureUtils.addFeature(fm, root);
+		final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() <= "
+				+ oclLimit;
+		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
 	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
-		
-//		final String ocl = "context TClass inv: self.signature->size() <= " + oclLimit;
-//		
-//		VerificationEngine veri = new VerificationEngine(eObject, null);
-//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-//		System.out.println("----------------------------" + test + "----------------------------");
-		return true;
-	}
 
-	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
-		
-		//IOCLHelper helper = HelperUtil.createOCLHelper();
-		//helper.define("getChilds(c : TClass) : Set(TClass) = r.childs->collect(t|getChilds(t))->asSet()->union(r.childs) ");
-		
-		final String ocl = "context TClass inv: self.parentClass->closure(childClasses)->size() <= " + oclLimit;
-		
-		VerificationEngine veri = new VerificationEngine(eObject, null);
-		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-		System.out.println("----------------------------" + test + "----------------------------");
-		return test;
+		DefaultFeatureModelFactory fmFactory = DefaultFeatureModelFactory.getInstance();
+		FeatureModel fm = fmFactory.create();
+		Feature root = fmFactory.createFeature(fm, "Root");
+		FeatureUtils.setAbstract(root, true);
+		FeatureUtils.setRoot(fm, root);
+		FeatureUtils.addFeature(fm, root);
+		final String ocl = "context TClass inv: self.signature->size() <= " + oclLimit;
+		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
-		
-//		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
-//		
-//		VerificationEngine veri = new VerificationEngine(eObject, null);
-//		boolean test = veri.validateOCLWellFormednessRule(ocl, eObject);
-//		System.out.println("----------------------------" + test + "----------------------------");
+
+		DefaultFeatureModelFactory fmFactory = DefaultFeatureModelFactory.getInstance();
+		FeatureModel fm = fmFactory.create();
+		Feature root = fmFactory.createFeature(fm, "Root");
+		FeatureUtils.setAbstract(root, true);
+		FeatureUtils.setRoot(fm, root);
+		FeatureUtils.addFeature(fm, root);
+		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
+		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+	}
+
+	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
+
+		// IOCLHelper helper = HelperUtil.createOCLHelper();
+		// helper.define("getChilds(c : TClass) : Set(TClass) =
+		// r.childs->collect(t|getChilds(t))->asSet()->union(r.childs) ");
+
+		//final String ocl = "context TClass inv: self.parentClass->closure(childClasses)->size() <= " + oclLimit;
+		// return new VerificationEngine(eObject).validateOCLWellFormednessRule(ocl,
+		// eObject);
 		return true;
 	}
 
@@ -182,6 +210,7 @@ public class HulkHenshin {
 		return this.creates.get(type);
 	}
 
+	@SuppressWarnings("unused")
 	private void executeAllRules(HenshinResourceSet set, MultiVarEngine engine, EGraphImpl graph, File folder)
 			throws IOException {
 		final Set<Rule> rules = loadRules(set, folder);
@@ -190,7 +219,6 @@ public class HulkHenshin {
 				execute(engine, graph, rule);
 			}
 		}
-
 	}
 
 	/**
