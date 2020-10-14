@@ -1,227 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_JSV_ILnyEeqH54JYG0FALQ">
-  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern"/>
   <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells"/>
   <imports href="http://www.gravity-tool.org/typegraph/basic#/"/>
+  <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#//metrics"/>
   <imports href="http://www.gravity-tool.org/typegraph/antipatterngraph#/"/>
-  <imports href="../../../org.gravity.typegraph.spl/model/Spl.ecore#/"/>
-  <units xsi:type="henshin:Rule" xmi:id="_XMlFYLnyEeqH54JYG0FALQ" name="LargeClass">
-    <annotations xmi:id="_jU6_YuCCEeq30uykNorS-A" key="featureModel" value=""/>
-    <annotations xmi:id="_jU6_Y-CCEeq30uykNorS-A" key="injectiveMatchingPresenceCondition" value=""/>
-    <annotations xmi:id="_jU6_ZOCCEeq30uykNorS-A" key="features" value=""/>
+  <units xsi:type="henshin:Rule" xmi:id="_XMlFYLnyEeqH54JYG0FALQ" name="CodeSmell LargeClass">
     <parameters xmi:id="_1VFrYMUGEeq5es8tHTnAuA" name="context" kind="VAR">
       <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
     </parameters>
     <lhs xmi:id="_XMlFZbnyEeqH54JYG0FALQ" name="Lhs">
       <nodes xmi:id="_0jtuQMUFEeq5es8tHTnAuA" name="context">
-        <annotations xmi:id="_jU6YUOCCEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
     </lhs>
     <rhs xmi:id="_XMlFZrnyEeqH54JYG0FALQ" name="Rhs">
-      <nodes xmi:id="_XimjQLnzEeqH54JYG0FALQ" incoming="_ceFHkOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_jU6YUeCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_XimjQLnzEeqH54JYG0FALQ" outgoing="_9uKroMUFEeq5es8tHTnAuA">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
       </nodes>
-      <nodes xmi:id="_5CgNwMUFEeq5es8tHTnAuA" outgoing="_ceFHkOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_jU6_YOCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_5CgNwMUFEeq5es8tHTnAuA" incoming="_9uKroMUFEeq5es8tHTnAuA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <edges xmi:id="_ceFHkOB7Eeq30uykNorS-A" source="_5CgNwMUFEeq5es8tHTnAuA" target="_XimjQLnzEeqH54JYG0FALQ">
-        <annotations xmi:id="_jU6_YeCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      <edges xmi:id="_9uKroMUFEeq5es8tHTnAuA" source="_XimjQLnzEeqH54JYG0FALQ" target="_5CgNwMUFEeq5es8tHTnAuA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
     <attributeConditions xmi:id="_JRCZQMUDEeq5es8tHTnAuA" name="x" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_LargeClass(1.0, context);"/>
     <mappings xmi:id="_5CgNwcUFEeq5es8tHTnAuA" origin="_0jtuQMUFEeq5es8tHTnAuA" image="_5CgNwMUFEeq5es8tHTnAuA"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_a7FXcLnyEeqH54JYG0FALQ" name="AvgParameters">
-    <annotations xmi:id="_TSeaA-CDEeq30uykNorS-A" key="featureModel" value=""/>
-    <annotations xmi:id="_TSeaBOCDEeq30uykNorS-A" key="injectiveMatchingPresenceCondition" value=""/>
-    <annotations xmi:id="_TSeaBeCDEeq30uykNorS-A" key="features" value=""/>
-    <parameters xmi:id="_OVtMwMqEEeqNjfN_TEYq-g" name="context" kind="VAR">
-      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-    </parameters>
+  <units xsi:type="henshin:Rule" xmi:id="_a7FXcLnyEeqH54JYG0FALQ" name="CodeSmell ManyParameters">
+    <annotations xmi:id="_t2WzUA4gEeuZ8Z_u1qzqSg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_OVtMwMqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
     <lhs xmi:id="_a7FXdbnyEeqH54JYG0FALQ" name="Lhs">
       <nodes xmi:id="_vVEIULnyEeqH54JYG0FALQ" name="context">
-        <annotations xmi:id="_TSaIkOCDEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
     </lhs>
     <rhs xmi:id="_a7FXdrnyEeqH54JYG0FALQ" name="Rhs">
-      <nodes xmi:id="_vVEIUbnyEeqH54JYG0FALQ" outgoing="_b5DH4OB7Eeq30uykNorS-A">
-        <annotations xmi:id="_TSeaAOCDEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_vVEIUbnyEeqH54JYG0FALQ" incoming="_F9eDILn0EeqH54JYG0FALQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <nodes xmi:id="_E1tw4Ln0EeqH54JYG0FALQ" incoming="_b5DH4OB7Eeq30uykNorS-A">
-        <annotations xmi:id="_TSeaAeCDEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_E1tw4Ln0EeqH54JYG0FALQ" outgoing="_F9eDILn0EeqH54JYG0FALQ">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
       </nodes>
-      <edges xmi:id="_b5DH4OB7Eeq30uykNorS-A" source="_vVEIUbnyEeqH54JYG0FALQ" target="_E1tw4Ln0EeqH54JYG0FALQ">
-        <annotations xmi:id="_TSeaAuCDEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      <edges xmi:id="_F9eDILn0EeqH54JYG0FALQ" source="_E1tw4Ln0EeqH54JYG0FALQ" target="_vVEIUbnyEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_cVf6sMp_EeqNjfN_TEYq-g" name="z" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(1.0, context);"/>
+    <attributeConditions xmi:id="_ulXY8A4hEeuZ8Z_u1qzqSg" name="z" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(1.0, context);"/>
     <mappings xmi:id="_vVEIUrnyEeqH54JYG0FALQ" origin="_vVEIULnyEeqH54JYG0FALQ" image="_vVEIUbnyEeqH54JYG0FALQ"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_jOAP4LnyEeqH54JYG0FALQ" name="IntenseFieldUsage">
-    <annotations xmi:id="_TX00FOCDEeq30uykNorS-A" key="featureModel" value=""/>
-    <annotations xmi:id="_TX00FeCDEeq30uykNorS-A" key="injectiveMatchingPresenceCondition" value=""/>
-    <annotations xmi:id="_TX00FuCDEeq30uykNorS-A" key="features" value=""/>
-    <parameters xmi:id="_QzNJ8MqEEeqNjfN_TEYq-g" name="context" kind="VAR">
-      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-    </parameters>
+  <units xsi:type="henshin:Rule" xmi:id="_jOAP4LnyEeqH54JYG0FALQ" name="CodeSmell IntenseFieldUsage">
+    <parameters xmi:id="_QzNJ8MqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
     <lhs xmi:id="_jOAP5bnyEeqH54JYG0FALQ" name="Lhs">
       <nodes xmi:id="_vabJcLnyEeqH54JYG0FALQ" name="context">
-        <annotations xmi:id="_TX00EOCDEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
     </lhs>
     <rhs xmi:id="_jOAP5rnyEeqH54JYG0FALQ" name="Rhs">
-      <nodes xmi:id="_vabJcbnyEeqH54JYG0FALQ" outgoing="_cMF_sOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_TX00EeCDEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_vabJcbnyEeqH54JYG0FALQ" incoming="_2OuSULnzEeqH54JYG0FALQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <nodes xmi:id="_dlM-4LnzEeqH54JYG0FALQ" incoming="_cMF_sOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_TX00EuCDEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_dlM-4LnzEeqH54JYG0FALQ" outgoing="_2OuSULnzEeqH54JYG0FALQ">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
       </nodes>
-      <edges xmi:id="_cMF_sOB7Eeq30uykNorS-A" source="_vabJcbnyEeqH54JYG0FALQ" target="_dlM-4LnzEeqH54JYG0FALQ">
-        <annotations xmi:id="_TX00E-CDEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
+      <edges xmi:id="_2OuSULnzEeqH54JYG0FALQ" source="_dlM-4LnzEeqH54JYG0FALQ" target="_vabJcbnyEeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
     <attributeConditions xmi:id="_TZlvoMp_EeqNjfN_TEYq-g" name="y" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_IFU(1.0, context);"/>
     <mappings xmi:id="_vabJcrnyEeqH54JYG0FALQ" origin="_vabJcLnyEeqH54JYG0FALQ" image="_vabJcbnyEeqH54JYG0FALQ"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_IZ5M0Ln1EeqH54JYG0FALQ" name="SpaghettiCode">
-    <annotations xmi:id="_Mw7OAOCCEeq30uykNorS-A" key="featureModel" value="ManyParameters OR IFU"/>
-    <annotations xmi:id="_Mw7OAeCCEeq30uykNorS-A" key="injectiveMatchingPresenceCondition" value=""/>
-    <annotations xmi:id="_Mw7OAuCCEeq30uykNorS-A" key="features" value="ManyParameters, IFU"/>
-    <annotations xmi:id="_4iTrIAJYEeuY4vb_ixywvw" key="featureConstraint" value=""/>
-    <parameters xmi:id="_SOpNMMqEEeqNjfN_TEYq-g" name="context" kind="VAR">
-      <type xsi:type="ecore:EClass" href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-    </parameters>
+  <units xsi:type="henshin:Rule" xmi:id="_IZ5M0Ln1EeqH54JYG0FALQ" name="Anti-Pattern Spaghetti Code">
+    <annotations xmi:id="_ug_rwA4gEeuZ8Z_u1qzqSg" key="featureConstraint" value=""/>
+    <parameters xmi:id="_SOpNMMqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
+    <parameters xmi:id="_ciNuwMqEEeqNjfN_TEYq-g" name="context_two" kind="VAR"/>
     <lhs xmi:id="_IaC90Ln1EeqH54JYG0FALQ" name="Lhs">
-      <nodes xmi:id="_MqKIILn1EeqH54JYG0FALQ" name="context" outgoing="_VbaUoLxhEeqMM_fdp3EiTA _VpBS0LxhEeqMM_fdp3EiTA">
-        <annotations xmi:id="_MwyEEOCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_MqKIILn1EeqH54JYG0FALQ" outgoing="_VbaUoLxhEeqMM_fdp3EiTA _VpBS0LxhEeqMM_fdp3EiTA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
+      <nodes xmi:id="_1UhB8Ln1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
+      </nodes>
       <nodes xmi:id="_2ICwoLn1EeqH54JYG0FALQ" incoming="_VpBS0LxhEeqMM_fdp3EiTA">
-        <annotations xmi:id="_Mw1HYeCCEeq30uykNorS-A" key="presenceCondition" value="ManyParameters"/>
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
-        <attributes xmi:id="_-En8MOCCEeq30uykNorS-A" value="false">
-          <annotations xmi:id="_Mh0lkOCDEeq30uykNorS-A" key="presenceCondition" value=""/>
-          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/changed"/>
-        </attributes>
       </nodes>
       <nodes xmi:id="_3qbwcLn1EeqH54JYG0FALQ" incoming="_VbaUoLxhEeqMM_fdp3EiTA">
-        <annotations xmi:id="_Mw1ucOCCEeq30uykNorS-A" key="presenceCondition" value="IFU"/>
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
       </nodes>
       <edges xmi:id="_VbaUoLxhEeqMM_fdp3EiTA" source="_MqKIILn1EeqH54JYG0FALQ" target="_3qbwcLn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw5_4eCCEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_VpBS0LxhEeqMM_fdp3EiTA" source="_MqKIILn1EeqH54JYG0FALQ" target="_2ICwoLn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m8OCCEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
-      <formula xsi:type="henshin:Not" xmi:id="_kUzvEOCCEeq30uykNorS-A">
-        <child xsi:type="henshin:NestedCondition" xmi:id="_kUzvEeCCEeq30uykNorS-A">
-          <annotations xmi:id="_3zR58OCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-          <conclusion xmi:id="_kUzvEuCCEeq30uykNorS-A">
-            <nodes xmi:id="_kU0WIOCCEeq30uykNorS-A" name="context" outgoing="_kU09M-CCEeq30uykNorS-A _kU09N-CCEeq30uykNorS-A _VKj1MLxhEeqMM_fdp3EiTA">
-              <annotations xmi:id="_kU0WIeCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <formula xsi:type="henshin:Not" xmi:id="_H26VsA4iEeuZ8Z_u1qzqSg">
+        <child xsi:type="henshin:NestedCondition" xmi:id="_H26VsQ4iEeuZ8Z_u1qzqSg">
+          <conclusion xmi:id="_H26Vsg4iEeuZ8Z_u1qzqSg">
+            <nodes xmi:id="_H26Vsw4iEeuZ8Z_u1qzqSg" outgoing="_VKj1MLxhEeqMM_fdp3EiTA">
               <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
             </nodes>
-            <nodes xmi:id="_1UhB8Ln1EeqH54JYG0FALQ" incoming="_VKj1MLxhEeqMM_fdp3EiTA">
-              <annotations xmi:id="_Mw1HYOCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+            <nodes xmi:id="_H26VtQ4iEeuZ8Z_u1qzqSg" incoming="_VKj1MLxhEeqMM_fdp3EiTA">
               <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
-              <attributes xmi:id="_LnmGkAGAEeuMyYCL3bEvww" value="false">
-                <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/changed"/>
-              </attributes>
             </nodes>
-            <nodes xmi:id="_kU09MOCCEeq30uykNorS-A" incoming="_kU09M-CCEeq30uykNorS-A">
-              <annotations xmi:id="_kU09MeCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
-            </nodes>
-            <nodes xmi:id="_kU09NOCCEeq30uykNorS-A" incoming="_kU09N-CCEeq30uykNorS-A">
-              <annotations xmi:id="_kU09NeCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
-              <attributes xmi:id="_-EojQeCCEeq30uykNorS-A" value="false">
-                <annotations xmi:id="_Mh3B0OCDEeq30uykNorS-A" key="presenceCondition" value=""/>
-                <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/changed"/>
-              </attributes>
-            </nodes>
-            <edges xmi:id="_kU09M-CCEeq30uykNorS-A" source="_kU0WIOCCEeq30uykNorS-A" target="_kU09MOCCEeq30uykNorS-A">
-              <annotations xmi:id="_3zR58eCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-            </edges>
-            <edges xmi:id="_kU09N-CCEeq30uykNorS-A" source="_kU0WIOCCEeq30uykNorS-A" target="_kU09NOCCEeq30uykNorS-A">
-              <annotations xmi:id="_3zR58uCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-              <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-            </edges>
-            <edges xmi:id="_VKj1MLxhEeqMM_fdp3EiTA" source="_kU0WIOCCEeq30uykNorS-A" target="_1UhB8Ln1EeqH54JYG0FALQ">
-              <annotations xmi:id="_Mw5_4OCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+            <edges xmi:id="_VKj1MLxhEeqMM_fdp3EiTA" source="_H26Vsw4iEeuZ8Z_u1qzqSg" target="_H26VtQ4iEeuZ8Z_u1qzqSg">
               <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
             </edges>
           </conclusion>
-          <mappings xmi:id="_kU0WIuCCEeq30uykNorS-A" origin="_MqKIILn1EeqH54JYG0FALQ" image="_kU0WIOCCEeq30uykNorS-A"/>
-          <mappings xmi:id="_kU09MuCCEeq30uykNorS-A" origin="_3qbwcLn1EeqH54JYG0FALQ" image="_kU09MOCCEeq30uykNorS-A"/>
-          <mappings xmi:id="_kU09NuCCEeq30uykNorS-A" origin="_2ICwoLn1EeqH54JYG0FALQ" image="_kU09NOCCEeq30uykNorS-A"/>
+          <mappings xmi:id="_H26VtA4iEeuZ8Z_u1qzqSg" origin="_MqKIILn1EeqH54JYG0FALQ" image="_H26Vsw4iEeuZ8Z_u1qzqSg"/>
+          <mappings xmi:id="_H26Vtg4iEeuZ8Z_u1qzqSg" origin="_1UhB8Ln1EeqH54JYG0FALQ" image="_H26VtQ4iEeuZ8Z_u1qzqSg"/>
         </child>
       </formula>
     </lhs>
     <rhs xmi:id="_IaC90bn1EeqH54JYG0FALQ" name="Rhs">
-      <nodes xmi:id="_MqKIIbn1EeqH54JYG0FALQ" outgoing="_VbaUobxhEeqMM_fdp3EiTA _VpB54LxhEeqMM_fdp3EiTA _heGE0OB7Eeq30uykNorS-A">
-        <annotations xmi:id="_Mw6m8eCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_MqKIIbn1EeqH54JYG0FALQ" incoming="_ajt48Ln1EeqH54JYG0FALQ" outgoing="_VbaUobxhEeqMM_fdp3EiTA _VpB54LxhEeqMM_fdp3EiTA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <nodes xmi:id="_WcgzALn1EeqH54JYG0FALQ" incoming="_heGE0OB7Eeq30uykNorS-A _rZn50OB7Eeq30uykNorS-A _r8YBkOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_Mw6m8uCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_WcgzALn1EeqH54JYG0FALQ" outgoing="_ajt48Ln1EeqH54JYG0FALQ">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//antipattern/HSpaghettiCodeAntiPattern"/>
       </nodes>
-      <nodes xmi:id="_2ICwobn1EeqH54JYG0FALQ" incoming="_VpB54LxhEeqMM_fdp3EiTA" outgoing="_rZn50OB7Eeq30uykNorS-A">
-        <annotations xmi:id="_Mw6m9OCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
-        <attributes xmi:id="_-EojQOCCEeq30uykNorS-A" value="false">
-          <annotations xmi:id="_Mh3B0eCDEeq30uykNorS-A" key="presenceCondition" value=""/>
-          <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/changed"/>
-        </attributes>
+      <nodes xmi:id="_1UhB8bn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HLargeClassSmell"/>
       </nodes>
-      <nodes xmi:id="_3qbwcbn1EeqH54JYG0FALQ" incoming="_VbaUobxhEeqMM_fdp3EiTA" outgoing="_r8YBkOB7Eeq30uykNorS-A">
-        <annotations xmi:id="_Mw6m9eCCEeq30uykNorS-A" key="presenceCondition" value=""/>
+      <nodes xmi:id="_2ICwobn1EeqH54JYG0FALQ" incoming="_VpB54LxhEeqMM_fdp3EiTA">
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HManyParametersCodeSmell"/>
+      </nodes>
+      <nodes xmi:id="_3qbwcbn1EeqH54JYG0FALQ" incoming="_VbaUobxhEeqMM_fdp3EiTA">
         <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
       </nodes>
+      <edges xmi:id="_ajt48Ln1EeqH54JYG0FALQ" source="_WcgzALn1EeqH54JYG0FALQ" target="_MqKIIbn1EeqH54JYG0FALQ">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
       <edges xmi:id="_VbaUobxhEeqMM_fdp3EiTA" source="_MqKIIbn1EeqH54JYG0FALQ" target="_3qbwcbn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m9-CCEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
       <edges xmi:id="_VpB54LxhEeqMM_fdp3EiTA" source="_MqKIIbn1EeqH54JYG0FALQ" target="_2ICwobn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m-OCCEeq30uykNorS-A" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-      </edges>
-      <edges xmi:id="_heGE0OB7Eeq30uykNorS-A" source="_MqKIIbn1EeqH54JYG0FALQ" target="_WcgzALn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m-eCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
-      </edges>
-      <edges xmi:id="_rZn50OB7Eeq30uykNorS-A" source="_2ICwobn1EeqH54JYG0FALQ" target="_WcgzALn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m-uCCEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
-      </edges>
-      <edges xmi:id="_r8YBkOB7Eeq30uykNorS-A" source="_3qbwcbn1EeqH54JYG0FALQ" target="_WcgzALn1EeqH54JYG0FALQ">
-        <annotations xmi:id="_Mw6m--CCEeq30uykNorS-A" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//HAnnotation/partOf"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_Rbt4QMqAEeqNjfN_TEYq-g" name="a" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_DIT(1.0, context);"/>
-    <attributeConditions xmi:id="_SBPAIMqAEeqNjfN_TEYq-g" name="b" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(1.0, context);"/>
+    <attributeConditions xmi:id="_ewKlYA4iEeuZ8Z_u1qzqSg" name="w" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(1.0, context);"/>
     <mappings xmi:id="_MqKIIrn1EeqH54JYG0FALQ" origin="_MqKIILn1EeqH54JYG0FALQ" image="_MqKIIbn1EeqH54JYG0FALQ"/>
+    <mappings xmi:id="_1UhB8rn1EeqH54JYG0FALQ" origin="_1UhB8Ln1EeqH54JYG0FALQ" image="_1UhB8bn1EeqH54JYG0FALQ"/>
     <mappings xmi:id="_2ICworn1EeqH54JYG0FALQ" origin="_2ICwoLn1EeqH54JYG0FALQ" image="_2ICwobn1EeqH54JYG0FALQ"/>
     <mappings xmi:id="_3qbwcrn1EeqH54JYG0FALQ" origin="_3qbwcLn1EeqH54JYG0FALQ" image="_3qbwcbn1EeqH54JYG0FALQ"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
