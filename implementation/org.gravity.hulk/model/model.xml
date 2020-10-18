@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Test">
+			<alt abstract="true" mandatory="true" name="Class">
+				<feature name="SecondClass"/>
+				<and name="FirstClass">
+					<and name="Calculator">
+						<feature name="Number"/>
+						<feature name="Alphabet"/>
+					</and>
+				</and>
+				<feature name="ThirdClass"/>
+				<feature name="FourthClass"/>
+				<feature name="FifthClass"/>
+			</alt>
+		</and>
+	</struct>
+</featureModel>
