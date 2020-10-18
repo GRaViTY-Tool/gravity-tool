@@ -217,6 +217,19 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case CodesmellsPackage.HNO_INHERITANCE_CODE_SMELL: {
+			HNoInheritanceCodeSmell hNoInheritanceCodeSmell = (HNoInheritanceCodeSmell) theEObject;
+			T result = caseHNoInheritanceCodeSmell(hNoInheritanceCodeSmell);
+			if (result == null)
+				result = caseHCodeSmell(hNoInheritanceCodeSmell);
+			if (result == null)
+				result = caseHAnnotation(hNoInheritanceCodeSmell);
+			if (result == null)
+				result = caseTAnnotation(hNoInheritanceCodeSmell);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -384,6 +397,21 @@ public class CodesmellsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHIntenseFieldUsageCodeSmell(HIntenseFieldUsageCodeSmell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>HNo Inheritance Code Smell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>HNo Inheritance Code Smell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHNoInheritanceCodeSmell(HNoInheritanceCodeSmell object) {
 		return null;
 	}
 

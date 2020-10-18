@@ -121,6 +121,15 @@ public interface CodesmellsFactory extends EFactory {
 	HIntenseFieldUsageCodeSmell createHIntenseFieldUsageCodeSmell();
 
 	/**
+	 * Returns a new object of class '<em>HNo Inheritance Code Smell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>HNo Inheritance Code Smell</em>'.
+	 * @generated
+	 */
+	HNoInheritanceCodeSmell createHNoInheritanceCodeSmell();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

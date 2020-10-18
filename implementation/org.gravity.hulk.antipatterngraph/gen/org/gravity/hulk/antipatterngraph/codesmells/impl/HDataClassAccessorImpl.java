@@ -34,10 +34,8 @@ import org.gravity.typegraph.basic.TClass;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getValue
- * <em>Value</em>}</li>
- * <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getHDataClassSmells
- * <em>HData Class Smells</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HDataClassAccessorImpl#getHDataClassSmells <em>HData Class Smells</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,9 +62,8 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	protected double value = VALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getHDataClassSmells() <em>HData Class
-	 * Smells</em>}' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getHDataClassSmells() <em>HData Class Smells</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getHDataClassSmells()
 	 * @generated
 	 * @ordered
@@ -75,7 +72,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected HDataClassAccessorImpl() {
@@ -84,7 +80,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,7 +89,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -104,7 +98,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,7 +111,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,41 +131,40 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 	public HRelativeValue getRelativeAmount() {
 		// [user code injected with eMoflon]
 
-				EList<HAnnotation> annotations = getApg().getHAnnotations();
+		EList<HAnnotation> annotations = getApg().getHAnnotations();
 
-				SortedSet<Double> keys = new TreeSet<>();
+		SortedSet<Double> keys = new TreeSet<>();
 
-				for (HAnnotation a : annotations) {
-					if (this.getClass().equals(a.getClass())) {
-						double key = ((HMetric) a).getValue();
-						keys.add(key);
-					}
-				}
+		for (HAnnotation a : annotations) {
+			if (this.getClass().equals(a.getClass())) {
+				double key = ((HMetric) a).getValue();
+				keys.add(key);
+			}
+		}
 
-				double index = keys.headSet(this.getValue()).size();
+		double index = keys.headSet(this.getValue()).size();
 
-				if (index == -1) {
-					throw new RuntimeException();
-				}
+		if (index == -1) {
+			throw new RuntimeException();
+		}
 
-				HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
+		HRelativeValue value = ValuesFactory.eINSTANCE.createHRelativeValue();
 
-				double q = (index + 1) / keys.size();
+		double q = (index + 1) / keys.size();
 
+		if (q < 0.2) {
+			value.setValue(HRelativeValueConstants.VERY_LOW);
+		} else if (q < 0.4) {
+			value.setValue(HRelativeValueConstants.LOW);
+		} else if (q < 0.6) {
+			value.setValue(HRelativeValueConstants.MEDIUM);
+		} else if (q < 0.8) {
+			value.setValue(HRelativeValueConstants.HIGH);
+		} else {
+			value.setValue(HRelativeValueConstants.VERY_HIGH);
+		}
 
-				if (q < 0.2) {
-					value.setValue(HRelativeValueConstants.VERY_LOW);
-				} else if (q < 0.4) {
-					value.setValue(HRelativeValueConstants.LOW);
-				} else if (q < 0.6) {
-					value.setValue(HRelativeValueConstants.MEDIUM);
-				} else if (q < 0.8) {
-					value.setValue(HRelativeValueConstants.HIGH);
-				} else {
-					value.setValue(HRelativeValueConstants.VERY_HIGH);
-				}
-
-				return value;
+		return value;
 	}
 
 	/**
@@ -190,7 +181,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +196,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -226,7 +215,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -244,7 +232,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -260,7 +247,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -278,7 +264,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,7 +281,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -316,7 +300,6 @@ public class HDataClassAccessorImpl extends HCodeSmellImpl implements HDataClass
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override

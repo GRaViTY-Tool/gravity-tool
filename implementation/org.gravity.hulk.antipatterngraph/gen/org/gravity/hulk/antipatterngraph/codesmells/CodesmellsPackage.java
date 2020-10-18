@@ -140,6 +140,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HCONTROLLER_CLASS_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HCONTROLLER_CLASS_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HController Class Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,6 +384,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HDATA_CLASS_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HData Class Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,6 +608,150 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HEMPTY_CLASS_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEMPTY_CLASS_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HEmpty Class Smell</em>' class.
@@ -411,6 +843,150 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HGETTER_SETTER_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HGETTER_SETTER_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HGetter Setter Smell</em>' class.
@@ -513,6 +1089,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HLARGE_CLASS_LOW_COHESION_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_LOW_COHESION_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HLarge Class Low Cohesion Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,6 +1324,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HLARGE_CLASS_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLARGE_CLASS_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HLarge Class Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,6 +1557,150 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HLOW_COHESION_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HLOW_COHESION_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HLow Cohesion Smell</em>' class.
@@ -793,6 +1801,150 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HDATA_CLASS_ACCESSOR_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDATA_CLASS_ACCESSOR___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Relative Amount</em>' operation.
@@ -905,6 +2057,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HMUCH_OVERLOADING_CODE_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMUCH_OVERLOADING_CODE_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HMuch Overloading Code Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -994,6 +2290,150 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HMANY_PARAMETERS_CODE_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HMANY_PARAMETERS_CODE_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
 
 	/**
 	 * The number of operations of the '<em>HMany Parameters Code Smell</em>' class.
@@ -1088,6 +2528,150 @@ public interface CodesmellsPackage extends EPackage {
 	int HINTENSE_FIELD_USAGE_CODE_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HINTENSE_FIELD_USAGE_CODE_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
 	 * The number of operations of the '<em>HIntense Field Usage Code Smell</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1095,6 +2679,241 @@ public interface CodesmellsPackage extends EPackage {
 	 * @ordered
 	 */
 	int HINTENSE_FIELD_USAGE_CODE_SMELL_OPERATION_COUNT = AntipatterngraphPackage.HCODE_SMELL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HNoInheritanceCodeSmellImpl <em>HNo Inheritance Code Smell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gravity.hulk.antipatterngraph.codesmells.impl.HNoInheritanceCodeSmellImpl
+	 * @see org.gravity.hulk.antipatterngraph.codesmells.impl.CodesmellsPackageImpl#getHNoInheritanceCodeSmell()
+	 * @generated
+	 */
+	int HNO_INHERITANCE_CODE_SMELL = 11;
+
+	/**
+	 * The feature id for the '<em><b>TAnnotated</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__TANNOTATED = AntipatterngraphPackage.HCODE_SMELL__TANNOTATED;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__TYPE = AntipatterngraphPackage.HCODE_SMELL__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>TValues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__TVALUES = AntipatterngraphPackage.HCODE_SMELL__TVALUES;
+
+	/**
+	 * The feature id for the '<em><b>Apg</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__APG = AntipatterngraphPackage.HCODE_SMELL__APG;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__PART_OF = AntipatterngraphPackage.HCODE_SMELL__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Changed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__CHANGED = AntipatterngraphPackage.HCODE_SMELL__CHANGED;
+
+	/**
+	 * The feature id for the '<em><b>HChild Classes Metric</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL__HCHILD_CLASSES_METRIC = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>HNo Inheritance Code Smell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL_FEATURE_COUNT = AntipatterngraphPackage.HCODE_SMELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECLASS = AntipatterngraphPackage.HCODE_SMELL___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EIS_PROXY = AntipatterngraphPackage.HCODE_SMELL___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ERESOURCE = AntipatterngraphPackage.HCODE_SMELL___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECONTAINER = AntipatterngraphPackage.HCODE_SMELL___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECONTAINING_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECONTAINMENT_FEATURE = AntipatterngraphPackage.HCODE_SMELL___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECONTENTS = AntipatterngraphPackage.HCODE_SMELL___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EALL_CONTENTS = AntipatterngraphPackage.HCODE_SMELL___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ECROSS_REFERENCES = AntipatterngraphPackage.HCODE_SMELL___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EGET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN = AntipatterngraphPackage.HCODE_SMELL___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT = AntipatterngraphPackage.HCODE_SMELL___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EIS_SET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EUNSET__ESTRUCTURALFEATURE = AntipatterngraphPackage.HCODE_SMELL___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___EINVOKE__EOPERATION_ELIST = AntipatterngraphPackage.HCODE_SMELL___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL___GET_VALUE__STRING = AntipatterngraphPackage.HCODE_SMELL___GET_VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>HNo Inheritance Code Smell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HNO_INHERITANCE_CODE_SMELL_OPERATION_COUNT = AntipatterngraphPackage.HCODE_SMELL_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.gravity.hulk.antipatterngraph.codesmells.HControllerClassSmell <em>HController Class Smell</em>}'.
@@ -1339,6 +3158,27 @@ public interface CodesmellsPackage extends EPackage {
 	EReference getHIntenseFieldUsageCodeSmell_HLocalAccessRelationMetric();
 
 	/**
+	 * Returns the meta object for class '{@link org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell <em>HNo Inheritance Code Smell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>HNo Inheritance Code Smell</em>'.
+	 * @see org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell
+	 * @generated
+	 */
+	EClass getHNoInheritanceCodeSmell();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell#getHChildClassesMetric <em>HChild Classes Metric</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>HChild Classes Metric</em>'.
+	 * @see org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell#getHChildClassesMetric()
+	 * @see #getHNoInheritanceCodeSmell()
+	 * @generated
+	 */
+	EReference getHNoInheritanceCodeSmell_HChildClassesMetric();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1572,6 +3412,25 @@ public interface CodesmellsPackage extends EPackage {
 		 */
 		EReference HINTENSE_FIELD_USAGE_CODE_SMELL__HLOCAL_ACCESS_RELATION_METRIC = eINSTANCE
 				.getHIntenseFieldUsageCodeSmell_HLocalAccessRelationMetric();
+
+		/**
+		 * The meta object literal for the '{@link org.gravity.hulk.antipatterngraph.codesmells.impl.HNoInheritanceCodeSmellImpl <em>HNo Inheritance Code Smell</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gravity.hulk.antipatterngraph.codesmells.impl.HNoInheritanceCodeSmellImpl
+		 * @see org.gravity.hulk.antipatterngraph.codesmells.impl.CodesmellsPackageImpl#getHNoInheritanceCodeSmell()
+		 * @generated
+		 */
+		EClass HNO_INHERITANCE_CODE_SMELL = eINSTANCE.getHNoInheritanceCodeSmell();
+
+		/**
+		 * The meta object literal for the '<em><b>HChild Classes Metric</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HNO_INHERITANCE_CODE_SMELL__HCHILD_CLASSES_METRIC = eINSTANCE
+				.getHNoInheritanceCodeSmell_HChildClassesMetric();
 
 	}
 

@@ -105,6 +105,10 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HIntenseFieldUsageCodeSmell/hLocalAccessRelationMetric"/>
       </genClasses>
+      <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HNoInheritanceCodeSmell">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//codesmells/HNoInheritanceCodeSmell/hChildClassesMetric"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Metrics" disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics">
       <genClasses ecoreClass="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore#//metrics/HNACCMetric">

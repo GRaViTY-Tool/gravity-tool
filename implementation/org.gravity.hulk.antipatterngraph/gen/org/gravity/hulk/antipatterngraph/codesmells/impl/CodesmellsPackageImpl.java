@@ -28,6 +28,7 @@ import org.gravity.hulk.antipatterngraph.codesmells.HLowCohesionSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HManyParametersCodeSmell;
 import org.gravity.hulk.antipatterngraph.codesmells.HMuchOverloadingCodeSmell;
 
+import org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell;
 import org.gravity.hulk.antipatterngraph.impl.AntipatterngraphPackageImpl;
 
 import org.gravity.hulk.antipatterngraph.metrics.MetricsPackage;
@@ -123,6 +124,13 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 * @generated
 	 */
 	private EClass hIntenseFieldUsageCodeSmellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hNoInheritanceCodeSmellEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -453,6 +461,26 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 	 * @generated
 	 */
 	@Override
+	public EClass getHNoInheritanceCodeSmell() {
+		return hNoInheritanceCodeSmellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getHNoInheritanceCodeSmell_HChildClassesMetric() {
+		return (EReference) hNoInheritanceCodeSmellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public CodesmellsFactory getCodesmellsFactory() {
 		return (CodesmellsFactory) getEFactoryInstance();
 	}
@@ -512,6 +540,9 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		hIntenseFieldUsageCodeSmellEClass = createEClass(HINTENSE_FIELD_USAGE_CODE_SMELL);
 		createEReference(hIntenseFieldUsageCodeSmellEClass,
 				HINTENSE_FIELD_USAGE_CODE_SMELL__HLOCAL_ACCESS_RELATION_METRIC);
+
+		hNoInheritanceCodeSmellEClass = createEClass(HNO_INHERITANCE_CODE_SMELL);
+		createEReference(hNoInheritanceCodeSmellEClass, HNO_INHERITANCE_CODE_SMELL__HCHILD_CLASSES_METRIC);
 	}
 
 	/**
@@ -562,6 +593,7 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 		hMuchOverloadingCodeSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hManyParametersCodeSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 		hIntenseFieldUsageCodeSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
+		hNoInheritanceCodeSmellEClass.getESuperTypes().add(theAntipatterngraphPackage.getHCodeSmell());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(hControllerClassSmellEClass, HControllerClassSmell.class, "HControllerClassSmell", !IS_ABSTRACT,
@@ -635,6 +667,12 @@ public class CodesmellsPackageImpl extends EPackageImpl implements CodesmellsPac
 				theMetricsPackage.getHLocalAccessRelationMetric(), null, "hLocalAccessRelationMetric", null, 0, 1,
 				HIntenseFieldUsageCodeSmell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hNoInheritanceCodeSmellEClass, HNoInheritanceCodeSmell.class, "HNoInheritanceCodeSmell",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHNoInheritanceCodeSmell_HChildClassesMetric(), theMetricsPackage.getHNumberOfChildMetric(),
+				null, "hChildClassesMetric", null, 0, 1, HNoInheritanceCodeSmell.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //CodesmellsPackageImpl

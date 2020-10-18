@@ -128,6 +128,11 @@ public class CodesmellsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseHNoInheritanceCodeSmell(HNoInheritanceCodeSmell object) {
+			return createHNoInheritanceCodeSmellAdapter();
+		}
+
+		@Override
 		public Adapter caseTAnnotation(TAnnotation object) {
 			return createTAnnotationAdapter();
 		}
@@ -317,6 +322,20 @@ public class CodesmellsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHIntenseFieldUsageCodeSmellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell <em>HNo Inheritance Code Smell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gravity.hulk.antipatterngraph.codesmells.HNoInheritanceCodeSmell
+	 * @generated
+	 */
+	public Adapter createHNoInheritanceCodeSmellAdapter() {
 		return null;
 	}
 

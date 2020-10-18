@@ -78,6 +78,8 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 			return createHManyParametersCodeSmell();
 		case CodesmellsPackage.HINTENSE_FIELD_USAGE_CODE_SMELL:
 			return createHIntenseFieldUsageCodeSmell();
+		case CodesmellsPackage.HNO_INHERITANCE_CODE_SMELL:
+			return createHNoInheritanceCodeSmell();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -202,6 +204,17 @@ public class CodesmellsFactoryImpl extends EFactoryImpl implements CodesmellsFac
 	public HIntenseFieldUsageCodeSmell createHIntenseFieldUsageCodeSmell() {
 		HIntenseFieldUsageCodeSmellImpl hIntenseFieldUsageCodeSmell = new HIntenseFieldUsageCodeSmellImpl();
 		return hIntenseFieldUsageCodeSmell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public HNoInheritanceCodeSmell createHNoInheritanceCodeSmell() {
+		HNoInheritanceCodeSmellImpl hNoInheritanceCodeSmell = new HNoInheritanceCodeSmellImpl();
+		return hNoInheritanceCodeSmell;
 	}
 
 	/**
