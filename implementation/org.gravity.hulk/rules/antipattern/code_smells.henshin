@@ -159,16 +159,9 @@
       </nodes>
     </lhs>
     <rhs xmi:id="_yeKq9Q4rEeuZ8Z_u1qzqSg" name="Rhs">
-      <nodes xmi:id="_IRNm4Q40EeuOkKV8ROVVlA" incoming="_iI8UcBFWEeuMifT1kfXTpg">
+      <nodes xmi:id="_IRNm4Q40EeuOkKV8ROVVlA">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
-      <nodes xmi:id="_hFc3IBFWEeuMifT1kfXTpg" outgoing="_iI8UcBFWEeuMifT1kfXTpg">
-        <annotations xmi:id="_hF7_UBFWEeuMifT1kfXTpg" key="presenceCondition" value=""/>
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
-      </nodes>
-      <edges xmi:id="_iI8UcBFWEeuMifT1kfXTpg" source="_hFc3IBFWEeuMifT1kfXTpg" target="_IRNm4Q40EeuOkKV8ROVVlA">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
-      </edges>
     </rhs>
     <attributeConditions xmi:id="_DjyOcA40EeuOkKV8ROVVlA" name="yy" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_MethodAccess(1.0, context);"/>
     <mappings xmi:id="_IRON8A40EeuOkKV8ROVVlA" origin="_IRNm4A40EeuOkKV8ROVVlA" image="_IRNm4Q40EeuOkKV8ROVVlA"/>
