@@ -16,10 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
@@ -66,13 +64,19 @@ import org.gravity.typegraph.spl.TPresenceCondition;
 
 import carisma.check.variability.VerificationEngine;
 import de.ovgu.featureide.fm.core.analysis.cnf.formula.FeatureModelFormula;
-import de.ovgu.featureide.fm.core.base.FeatureUtils;
-import de.ovgu.featureide.fm.core.base.IFeatureModel;
-import de.ovgu.featureide.fm.core.base.impl.DefaultFeatureModelFactory;
-import de.ovgu.featureide.fm.core.base.impl.Feature;
-import de.ovgu.featureide.fm.core.base.impl.FeatureModel;
 import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
 import de.ovgu.featureide.fm.core.io.manager.FeatureModelManager;
+import de.ovgu.featureide.fm.core.io.cnf.CNFFormat;
+
+
+
+import org.prop4j.NodeWriter;
+
+import de.ovgu.featureide.fm.core.PluginID;
+import de.ovgu.featureide.fm.core.analysis.cnf.CNFCreator;
+import de.ovgu.featureide.fm.core.analysis.cnf.Nodes;
+import de.ovgu.featureide.fm.core.base.IFeatureModel;
+import de.ovgu.featureide.fm.core.io.AFeatureModelFormat;
 
 public class HulkHenshin {
 
@@ -129,11 +133,11 @@ public class HulkHenshin {
 		if (fm != null) {
 			FeatureModelFormula formula = new FeatureModelFormula(fm);
 			// Configuration configuration = new Configuration(formula);
-			fmCNFString = formula.getCNF().toString();
+			fmCNFString = writeCNF(fm);
 		}
-		System.out.println(fmCNFString);
+
 		final MultiVarEGraph graph = new MultiVarEGraph(currentModel.getContents(), pcs, fmCNFString);
-		
+
 		final MultiVarEngine engine = new MultiVarEngine();
 		engine.getScriptEngine().put("HulkHenshin", new HulkHenshin());
 		final HulkHenshin hulk = new HulkHenshin();
@@ -146,6 +150,17 @@ public class HulkHenshin {
 		LOGGER.info("done");
 	}
 
+	public static String writeCNF(IFeatureModel featureModel) {
+		final org.prop4j.Node nodes = Nodes.convert(CNFCreator.createNodes(featureModel));
+		final StringBuilder cnf = new StringBuilder();
+		//Textual Symbols:
+		cnf.append(nodes.toString(NodeWriter.textualSymbols));
+
+		//Short Symbols
+		//cnf.append(nodes.toString(NodeWriter.shortSymbols));
+		return cnf.toString();
+	}
+	
 	public static IFeatureModel addFeatureModel() {
 		// Feature Model
 		Path featureModelPath = Paths
@@ -244,7 +259,7 @@ public class HulkHenshin {
 		for (final Rule rule : rules) {
 			for (final EClass create : getCreates(rule)) {
 				if (this.creates.put(create, rule) != null) {
-					
+
 				}
 			}
 		}
