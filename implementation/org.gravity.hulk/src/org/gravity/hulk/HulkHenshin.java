@@ -168,18 +168,19 @@ public class HulkHenshin {
 			List<TAnnotation> pcEObjectList;
 
 			if (eObject instanceof TAnnotatable) {
-				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern());
-				
-				//System.out.println(pcEObjectList);
+				pcEObjectList = ((TAnnotatable) eObject)
+						.getTAnnotation(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern());
+
+				// System.out.println(pcEObjectList);
 				pcEObjectList.removeAll(Collections.singleton(""));
-				
+
 				List<Map<EObject, EObject>> result = pcEObjectList.stream().distinct().map(pcEObject -> {
-							EObject annotatedObject = pcEObject.getTAnnotated();
-							Map<EObject, EObject> tempMap = new HashMap<>();
-							tempMap.put(pcEObject, annotatedObject);
-							
-							return tempMap;
-						}).collect(Collectors.toList());
+					EObject annotatedObject = pcEObject.getTAnnotated();
+					Map<EObject, EObject> tempMap = new HashMap<>();
+					tempMap.put(pcEObject, annotatedObject);
+
+					return tempMap;
+				}).collect(Collectors.toList());
 				System.out.println(result);
 			}
 		}
@@ -198,33 +199,32 @@ public class HulkHenshin {
 	public static boolean ocl_LargeClass(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines -> size() >= " + oclLimit;
+		final String ocl = "context TClass inv: self.defines->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-		// return false;
 	}
 
 	public static boolean ocl_FieldAccess(double oclLimit, EObject eObject) {
 
-		 IFeatureModel fm = addFeatureModel();
-		 final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() >=" + oclLimit;
-		 return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl,
-		 eObject);
+		IFeatureModel fm = addFeatureModel();
+		final String ocl = "context TClass inv: self.defines->select(t:TFieldDefinition | t.accessedBy->size <> 0)->size() >="
+				+ oclLimit;
+		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
 	}
 
 	public static boolean ocl_MethodAccess(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.accessedBy->size <> 0)->size() >= " + oclLimit;
+		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.accessedBy->size <> 0)->size() >= "
+				+ oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-		// return false;
 	}
 
 	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.signature->size() <> 0)->size() >= " + oclLimit;
+		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.signature->size() <> 0)->size() >= "
+				+ oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-		// return false;
 	}
 
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
@@ -232,7 +232,6 @@ public class HulkHenshin {
 		IFeatureModel fm = addFeatureModel();
 		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
-		// return false;
 	}
 
 	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
