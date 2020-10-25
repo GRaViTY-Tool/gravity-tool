@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.SortedSet;
@@ -61,22 +62,14 @@ import org.gravity.typegraph.basic.annotations.TAnnotatable;
 import org.gravity.typegraph.basic.annotations.TAnnotation;
 import org.gravity.typegraph.spl.SplPackage;
 import org.gravity.typegraph.spl.TPresenceCondition;
-
-import carisma.check.variability.VerificationEngine;
-import de.ovgu.featureide.fm.core.analysis.cnf.formula.FeatureModelFormula;
-import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
-import de.ovgu.featureide.fm.core.io.manager.FeatureModelManager;
-import de.ovgu.featureide.fm.core.io.cnf.CNFFormat;
-
-
-
 import org.prop4j.NodeWriter;
 
-import de.ovgu.featureide.fm.core.PluginID;
+import carisma.check.variability.VerificationEngine;
 import de.ovgu.featureide.fm.core.analysis.cnf.CNFCreator;
 import de.ovgu.featureide.fm.core.analysis.cnf.Nodes;
 import de.ovgu.featureide.fm.core.base.IFeatureModel;
-import de.ovgu.featureide.fm.core.io.AFeatureModelFormat;
+import de.ovgu.featureide.fm.core.init.FMCoreLibrary;
+import de.ovgu.featureide.fm.core.io.manager.FeatureModelManager;
 
 public class HulkHenshin {
 
@@ -127,11 +120,10 @@ public class HulkHenshin {
 				});
 			}
 		}
-
 		IFeatureModel fm = addFeatureModel();
 		String fmCNFString = "";
 		if (fm != null) {
-			FeatureModelFormula formula = new FeatureModelFormula(fm);
+			// FeatureModelFormula formula = new FeatureModelFormula(fm);
 			// Configuration configuration = new Configuration(formula);
 			fmCNFString = writeCNF(fm);
 		}
@@ -148,19 +140,51 @@ public class HulkHenshin {
 			graph.getRoots().get(0).eResource().save(outputStream, Collections.emptyMap());
 		}
 		LOGGER.info("done");
+
+		// Log Anti-Patterns and Code Smells
+		final String targetModel = "instances/Test.trg.xmi";
+		final Resource currentTargetModel = resourceSet.getResource(URI.createURI(targetModel), true);
+
+		logAntiPattern(currentTargetModel);
 	}
 
 	public static String writeCNF(IFeatureModel featureModel) {
 		final org.prop4j.Node nodes = Nodes.convert(CNFCreator.createNodes(featureModel));
 		final StringBuilder cnf = new StringBuilder();
-		//Textual Symbols:
+		// Textual Symbols:
 		cnf.append(nodes.toString(NodeWriter.textualSymbols));
 
-		//Short Symbols
-		//cnf.append(nodes.toString(NodeWriter.shortSymbols));
+		// Short Symbols
+		// cnf.append(nodes.toString(NodeWriter.shortSymbols));
 		return cnf.toString();
 	}
-	
+
+	public static void logAntiPattern(Resource resource) {
+
+		TreeIterator<EObject> tree = resource.getAllContents();
+
+		while (tree.hasNext()) {
+			EObject eObject = (EObject) tree.next();
+			List<TAnnotation> pcEObjectList;
+
+			if (eObject instanceof TAnnotatable) {
+				pcEObjectList = ((TAnnotatable) eObject).getTAnnotation(AntipatternPackage.eINSTANCE.getHSpaghettiCodeAntiPattern());
+				
+				//System.out.println(pcEObjectList);
+				pcEObjectList.removeAll(Collections.singleton(""));
+				
+				List<Map<EObject, EObject>> result = pcEObjectList.stream().distinct().map(pcEObject -> {
+							EObject annotatedObject = pcEObject.getTAnnotated();
+							Map<EObject, EObject> tempMap = new HashMap<>();
+							tempMap.put(pcEObject, annotatedObject);
+							
+							return tempMap;
+						}).collect(Collectors.toList());
+				System.out.println(result);
+			}
+		}
+	}
+
 	public static IFeatureModel addFeatureModel() {
 		// Feature Model
 		Path featureModelPath = Paths
@@ -176,30 +200,31 @@ public class HulkHenshin {
 		IFeatureModel fm = addFeatureModel();
 		final String ocl = "context TClass inv: self.defines -> size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+		// return false;
 	}
 
 	public static boolean ocl_FieldAccess(double oclLimit, EObject eObject) {
 
-		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TFieldDefinition | t.accessedBy->size <> 0)->size() <= "
-				+ oclLimit;
-		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+		 IFeatureModel fm = addFeatureModel();
+		 final String ocl = "context TClass inv: self.defines->select(t | t.accessedBy->size <> 0)->size() >=" + oclLimit;
+		 return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl,
+		 eObject);
 	}
 
 	public static boolean ocl_MethodAccess(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.accessedBy->size <> 0)->size() <= "
-				+ oclLimit;
+		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.accessedBy->size <> 0)->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+		// return false;
 	}
 
 	public static boolean ocl_AvgParam(double oclLimit, EObject eObject) {
 
 		IFeatureModel fm = addFeatureModel();
-		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.signature->size() <> 0)->size() <= "
-				+ oclLimit;
+		final String ocl = "context TClass inv: self.defines->select(t:TMethodDefinition | t.signature->size() <> 0)->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+		// return false;
 	}
 
 	public static boolean ocl_ChildClasses(double oclLimit, EObject eObject) {
@@ -207,6 +232,7 @@ public class HulkHenshin {
 		IFeatureModel fm = addFeatureModel();
 		final String ocl = "context TClass inv: self.childClasses->size() >= " + oclLimit;
 		return new VerificationEngine(eObject, fm).validateOCLWellFormednessRule(ocl, eObject);
+		// return false;
 	}
 
 	public static boolean ocl_DIT(double oclLimit, EObject eObject) {
@@ -219,7 +245,7 @@ public class HulkHenshin {
 		// self.parentClass->closure(childClasses)->size() <= " + oclLimit;
 		// return new VerificationEngine(eObject).validateOCLWellFormednessRule(ocl,
 		// eObject);
-		return true;
+		return false;
 	}
 
 	private Rule getRule(EClass type) {
@@ -269,7 +295,7 @@ public class HulkHenshin {
 	private void execute(MultiVarEngine engine, EGraphImpl graph, Rule rule) {
 		final Set<EClass> requires = getRequires(rule);
 		if (!requires.isEmpty()) {
-			System.out.println("Execure requirements of rule: " + rule.getName());
+			System.out.println("Execute requirements of rule: " + rule.getName());
 			System.out.println(requires.parallelStream().map(ENamedElement::getName).collect(Collectors.joining(", ")));
 		}
 		for (final EClass requirement : requires) {
