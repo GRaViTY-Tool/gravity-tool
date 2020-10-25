@@ -46,33 +46,8 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_ulXY8A4hEeuZ8Z_u1qzqSg" name="z" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(1.0, context);"/>
+    <attributeConditions xmi:id="_ulXY8A4hEeuZ8Z_u1qzqSg" name="z" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_AvgParam(10.0, context);"/>
     <mappings xmi:id="_vVEIUrnyEeqH54JYG0FALQ" origin="_vVEIULnyEeqH54JYG0FALQ" image="_vVEIUbnyEeqH54JYG0FALQ"/>
-    <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
-  </units>
-  <units xsi:type="henshin:Rule" xmi:id="_jOAP4LnyEeqH54JYG0FALQ" name="CodeSmell IntenseFieldUsage FieldAccess">
-    <annotations xmi:id="_XShQYA7YEeuOkKV8ROVVlA" key="features" value="y | yy"/>
-    <annotations xmi:id="_XWH-AA7YEeuOkKV8ROVVlA" key="featureConstraint" value=""/>
-    <parameters xmi:id="_QzNJ8MqEEeqNjfN_TEYq-g" name="context" kind="VAR"/>
-    <lhs xmi:id="_jOAP5bnyEeqH54JYG0FALQ" name="Lhs">
-      <nodes xmi:id="_vabJcLnyEeqH54JYG0FALQ" name="context">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-      </nodes>
-    </lhs>
-    <rhs xmi:id="_jOAP5rnyEeqH54JYG0FALQ" name="Rhs">
-      <nodes xmi:id="_vabJcbnyEeqH54JYG0FALQ" incoming="_2OuSULnzEeqH54JYG0FALQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
-      </nodes>
-      <nodes xmi:id="_dlM-4LnzEeqH54JYG0FALQ" outgoing="_2OuSULnzEeqH54JYG0FALQ">
-        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
-      </nodes>
-      <edges xmi:id="_2OuSULnzEeqH54JYG0FALQ" source="_dlM-4LnzEeqH54JYG0FALQ" target="_vabJcbnyEeqH54JYG0FALQ">
-        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
-      </edges>
-    </rhs>
-    <attributeConditions xmi:id="_TZlvoMp_EeqNjfN_TEYq-g" name="y" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_FieldAccess(1.0, context);"/>
-    <attributeConditions xmi:id="_5Y4HIA7XEeuOkKV8ROVVlA" name="yy" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_MethodAccess(1.0, context);"/>
-    <mappings xmi:id="_vabJcrnyEeqH54JYG0FALQ" origin="_vabJcLnyEeqH54JYG0FALQ" image="_vabJcbnyEeqH54JYG0FALQ"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_IZ5M0Ln1EeqH54JYG0FALQ" name="Anti-Pattern Spaghetti Code">
@@ -142,28 +117,66 @@
         <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotatable/tAnnotation"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_ewKlYA4iEeuZ8Z_u1qzqSg" name="w" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(1.0, context);"/>
+    <attributeConditions xmi:id="_ewKlYA4iEeuZ8Z_u1qzqSg" name="w" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(10.0, context);"/>
     <mappings xmi:id="_MqKIIrn1EeqH54JYG0FALQ" origin="_MqKIILn1EeqH54JYG0FALQ" image="_MqKIIbn1EeqH54JYG0FALQ"/>
     <mappings xmi:id="_1UhB8rn1EeqH54JYG0FALQ" origin="_1UhB8Ln1EeqH54JYG0FALQ" image="_1UhB8bn1EeqH54JYG0FALQ"/>
     <mappings xmi:id="_2ICworn1EeqH54JYG0FALQ" origin="_2ICwoLn1EeqH54JYG0FALQ" image="_2ICwobn1EeqH54JYG0FALQ"/>
     <mappings xmi:id="_3qbwcrn1EeqH54JYG0FALQ" origin="_3qbwcLn1EeqH54JYG0FALQ" image="_3qbwcbn1EeqH54JYG0FALQ"/>
     <javaImports>org.gravity.hulk.HulkHenshin</javaImports>
   </units>
-  <units xsi:type="henshin:Rule" xmi:id="_ydgjoA4rEeuZ8Z_u1qzqSg" name="CodeSmell IntenseFieldUsage MethodAccess">
-    <annotations xmi:id="_yfp4sA4rEeuZ8Z_u1qzqSg" key="featureConstraint" value=""/>
-    <annotations xmi:id="_kN-PoA7XEeuOkKV8ROVVlA" key="features" value="yyy"/>
-    <lhs xmi:id="_yeKq9A4rEeuZ8Z_u1qzqSg" name="Lhs">
-      <nodes xmi:id="_IRNm4A40EeuOkKV8ROVVlA" name="context">
-        <annotations xmi:id="_IRWJwA40EeuOkKV8ROVVlA" key="presenceCondition" value=""/>
+  <units xsi:type="henshin:Rule" xmi:id="_1L0T4BVFEeuBdLt-Q9AHQQ" name="Code Smell NoInheritance">
+    <annotations xmi:id="_1NPQMBVFEeuBdLt-Q9AHQQ" key="featureConstraint" value=""/>
+    <lhs xmi:id="_1MMHUhVFEeuBdLt-Q9AHQQ" name="Lhs">
+      <nodes xmi:id="_6nstwBVFEeuBdLt-Q9AHQQ" name="context">
+        <annotations xmi:id="_6n2ewBVFEeuBdLt-Q9AHQQ" key="presenceCondition" value=""/>
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
     </lhs>
-    <rhs xmi:id="_yeKq9Q4rEeuZ8Z_u1qzqSg" name="Rhs">
-      <nodes xmi:id="_IRNm4Q40EeuOkKV8ROVVlA">
+    <rhs xmi:id="_1MMHUxVFEeuBdLt-Q9AHQQ" name="Rhs">
+      <nodes xmi:id="_6nstwRVFEeuBdLt-Q9AHQQ">
         <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
       </nodes>
     </rhs>
-    <attributeConditions xmi:id="_DjyOcA40EeuOkKV8ROVVlA" name="yy" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_MethodAccess(1.0, context);"/>
-    <mappings xmi:id="_IRON8A40EeuOkKV8ROVVlA" origin="_IRNm4A40EeuOkKV8ROVVlA" image="_IRNm4Q40EeuOkKV8ROVVlA"/>
+    <attributeConditions xmi:id="_oDgScBVIEeuBdLt-Q9AHQQ" name="ww" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_ChildClasses(1.0, context);"/>
+    <mappings xmi:id="_6nstwhVFEeuBdLt-Q9AHQQ" origin="_6nstwBVFEeuBdLt-Q9AHQQ" image="_6nstwRVFEeuBdLt-Q9AHQQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_A4mQ0BVWEeuI4PwNyz5ZWA" name="CodeSmell IntenseFieldUsage">
+    <annotations xmi:id="_A6WkUBVWEeuI4PwNyz5ZWA" key="featureConstraint" value=""/>
+    <lhs xmi:id="_A5CVsBVWEeuI4PwNyz5ZWA" name="Lhs">
+      <nodes xmi:id="_TxuS8BVWEeuI4PwNyz5ZWA" name="context">
+        <annotations xmi:id="_Tx4D8BVWEeuI4PwNyz5ZWA" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_A5CVsRVWEeuI4PwNyz5ZWA" name="Rhs">
+      <nodes xmi:id="_TxuS8RVWEeuI4PwNyz5ZWA" incoming="_WFmaEBVWEeuI4PwNyz5ZWA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+      <nodes xmi:id="_VtCJEBVWEeuI4PwNyz5ZWA" outgoing="_WFmaEBVWEeuI4PwNyz5ZWA">
+        <annotations xmi:id="_VtCJExVWEeuI4PwNyz5ZWA" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/antipatterngraph#//codesmells/HIntenseFieldUsageCodeSmell"/>
+      </nodes>
+      <edges xmi:id="_WFmaEBVWEeuI4PwNyz5ZWA" source="_VtCJEBVWEeuI4PwNyz5ZWA" target="_TxuS8RVWEeuI4PwNyz5ZWA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//annotations/TAnnotation/tAnnotated"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_RQSQ8BVWEeuI4PwNyz5ZWA" name="IFU" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_FieldAccess(20.0, context);"/>
+    <mappings xmi:id="_TxuS8hVWEeuI4PwNyz5ZWA" origin="_TxuS8BVWEeuI4PwNyz5ZWA" image="_TxuS8RVWEeuI4PwNyz5ZWA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_YXHJsBVWEeuI4PwNyz5ZWA" name="CodeSmell IntenseFieldUsage MethodAccess">
+    <annotations xmi:id="_YY3dMBVWEeuI4PwNyz5ZWA" key="featureConstraint" value=""/>
+    <lhs xmi:id="_YXngBBVWEeuI4PwNyz5ZWA" name="Lhs">
+      <nodes xmi:id="_Zc-lkBVWEeuI4PwNyz5ZWA" name="context">
+        <annotations xmi:id="_Zc-llRVWEeuI4PwNyz5ZWA" key="presenceCondition" value=""/>
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_YXngBRVWEeuI4PwNyz5ZWA" name="Rhs">
+      <nodes xmi:id="_Zc-lkRVWEeuI4PwNyz5ZWA">
+        <type href="http://www.gravity-tool.org/typegraph/basic#//TClass"/>
+      </nodes>
+    </rhs>
+    <attributeConditions xmi:id="_a1i7ABVWEeuI4PwNyz5ZWA" name="IFUtwo" conditionText="Java.type('org.gravity.hulk.HulkHenshin').ocl_MethodAccess(10.0, context);"/>
+    <mappings xmi:id="_Zc-lkhVWEeuI4PwNyz5ZWA" origin="_Zc-lkBVWEeuI4PwNyz5ZWA" image="_Zc-lkRVWEeuI4PwNyz5ZWA"/>
   </units>
 </henshin:Module>
