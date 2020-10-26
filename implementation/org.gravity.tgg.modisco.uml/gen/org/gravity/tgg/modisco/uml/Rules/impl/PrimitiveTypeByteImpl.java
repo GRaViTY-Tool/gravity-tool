@@ -672,7 +672,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_145(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_31(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeByteImpl
 				.pattern_PrimitiveTypeByte_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -729,7 +729,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_150(EMoflonEdge _edge_orphanTypes) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_31(EMoflonEdge _edge_orphanTypes) {
 
 		Object[] result1_bindingAndBlack = PrimitiveTypeByteImpl
 				.pattern_PrimitiveTypeByte_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1199,10 +1199,10 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 			return null;
 		case RulesPackage.PRIMITIVE_TYPE_BYTE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_145__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
-		case RulesPackage.PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_150__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_150((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
+		case RulesPackage.PRIMITIVE_TYPE_BYTE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_31__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_31((EMoflonEdge) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BYTE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.PRIMITIVE_TYPE_BYTE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2175,7 +2175,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeByte_20_2_testcorematchandDECs_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_612921 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_644492 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2183,7 +2183,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeByte_20_2_testcorematchandDECs_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_317093 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_953943 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2568,7 +2568,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeByte_28_1_matchtggpattern_black_nac_0B(PrimitiveType umpt) {
-		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_881255 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_umpt_nestedClassifier_868624 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}
@@ -2576,7 +2576,7 @@ public class PrimitiveTypeByteImpl extends AbstractRuleImpl implements Primitive
 	}
 
 	public static final Object[] pattern_PrimitiveTypeByte_28_1_matchtggpattern_black_nac_1B(PrimitiveType umpt) {
-		for (Interface __DEC_umpt_nestedClassifier_487034 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_umpt_nestedClassifier_117488 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umpt, Interface.class, "nestedClassifier")) {
 			return new Object[] { umpt };
 		}

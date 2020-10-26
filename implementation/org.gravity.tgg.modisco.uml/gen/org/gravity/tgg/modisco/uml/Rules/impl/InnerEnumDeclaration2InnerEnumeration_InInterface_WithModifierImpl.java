@@ -195,40 +195,40 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_1_performtransformation_greenFFFFBBBB(
 						modifier, bodyDeclaration, uContainer, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		Enumeration feature = (Enumeration) result1_green[1];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[1];
+		Enumeration feature = (Enumeration) result1_green[2];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
 
 		Object[] result2_black = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, bd2ne, feature, b2e, modifier, bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ", "
+					+ "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, bd2ne, feature, b2e, modifier, bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+						ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", "
 					+ "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
 					+ ", " + "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer);
+						ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer);
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[15];
@@ -241,7 +241,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		// 
 		InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_5_registerobjects_expressionBBBBBBBBBBB(
-						this, ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+						this, ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer,
 						ne2ne);
 		return InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_6_expressionFB(ruleresult);
@@ -441,12 +441,12 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature,
 			EObject b2e, EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer,
 			EObject ne2ne) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
@@ -554,44 +554,44 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		NamedElement2NamedElement ne2ne = (NamedElement2NamedElement) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
-				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_1_performtransformation_greenFBFFFFBB(
+				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_1_performtransformation_greenFFBFFFBB(
 						feature, jContainer, csp);
 		Modifier2NamedElement m2f = (Modifier2NamedElement) result1_green[0];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[1];
 		ASTNode2Element b2e = (ASTNode2Element) result1_green[3];
 		Modifier modifier = (Modifier) result1_green[4];
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[5];
 
 		Object[] result2_black = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, bd2ne, feature, b2e, modifier, bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[m2f] = " + m2f + ", "
-					+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ", "
+					+ "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[modifier] = " + modifier + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(
-						m2f, feature, bd2ne, b2e, modifier, bodyDeclaration);
+						m2f, bd2ne, feature, b2e, modifier, bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
+						ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer, ne2ne);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[m2f] = " + m2f + ", " + "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ ", " + "[m2f] = " + m2f + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", "
 					+ "[b2e] = " + b2e + ", " + "[modifier] = " + modifier + ", " + "[bodyDeclaration] = "
 					+ bodyDeclaration + ", " + "[uContainer] = " + uContainer + ", " + "[jContainer] = " + jContainer
 					+ ", " + "[ne2ne] = " + ne2ne + ".");
 		}
 		InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-						ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer);
+						ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer);
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bodyDeclaration__modifier____modifier = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge m2f__feature____target = (EMoflonEdge) result3_green[12];
 		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge uContainer__feature____nestedClassifier = (EMoflonEdge) result3_green[15];
@@ -604,7 +604,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		// 
 		InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_5_registerobjects_expressionBBBBBBBBBBB(
-						this, ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+						this, ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer,
 						ne2ne);
 		return InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_6_expressionFB(ruleresult);
@@ -794,12 +794,12 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature,
 			EObject b2e, EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer,
 			EObject ne2ne) {
 		ruleresult.registerObject("m2f", m2f);
-		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("bd2ne", bd2ne);
+		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
 		ruleresult.registerObject("modifier", modifier);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
@@ -824,7 +824,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_164(EMoflonEdge _edge_nestedClassifier) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_42(EMoflonEdge _edge_nestedClassifier) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_20_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -887,7 +887,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_169(EMoflonEdge _edge_modifier) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_43(EMoflonEdge _edge_modifier) {
 
 		Object[] result1_bindingAndBlack = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
 				.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_21_1_preparereturnvalue_bindingAndBlackFFBF(
@@ -961,13 +961,13 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1025,13 +1025,13 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
-		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
-		var_modifier_visibility.setType("java.VisibilityKind");
-
 		Variable var_feature_visibility = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_visibility.setValue(__helper.getValue("feature", "visibility"));
 		var_feature_visibility.setType("uml.VisibilityKind");
+
+		Variable var_modifier_visibility = CSPFactoryHelper.eINSTANCE.createVariable("modifier", true, csp);
+		var_modifier_visibility.setValue(__helper.getValue("modifier", "visibility"));
+		var_modifier_visibility.setType("java.VisibilityKind");
 
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
@@ -1137,10 +1137,10 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 							+ "[ccMatch] = " + ccMatch + ".");
 				}
 				InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
-						.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_24_6_createcorrespondence_greenFBFFBBB(
+						.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_24_6_createcorrespondence_greenFFBFBBB(
 								feature, modifier, bodyDeclaration, ccMatch);
 				//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[1];
 				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
 
 				Object[] result7_black = InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl
@@ -1312,8 +1312,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 							.pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_29_6_perform_greenFFFFFFBBBB(
 									uContainer, jContainer, ruleResult, csp);
 					//nothing Modifier2NamedElement m2f = (Modifier2NamedElement) result6_green[0];
-					//nothing Enumeration feature = (Enumeration) result6_green[1];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[1];
+					//nothing Enumeration feature = (Enumeration) result6_green[2];
 					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
 					//nothing Modifier modifier = (Modifier) result6_green[4];
 					//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[5];
@@ -1450,10 +1450,10 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 			return null;
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_164__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_164((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_169__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_169((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_BWD_EMOFLON_EDGE_42__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_42((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___IS_APPROPRIATE_FWD_EMOFLON_EDGE_43__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_43((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INNER_ENUM_DECLARATION2_INNER_ENUMERATION_IN_INTERFACE_WITH_MODIFIER___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1682,65 +1682,65 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_1_performtransformation_greenFFFFBBBB(
 			Modifier modifier, EnumDeclaration bodyDeclaration, Interface uContainer, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Object _localVariable_0 = csp.getValue("feature", "visibility");
 		Object _localVariable_1 = csp.getValue("feature", "name");
 		m2f.setSource(modifier);
-		m2f.setTarget(feature);
-		uContainer.getNestedClassifiers().add(feature);
 		bd2ne.setSource(bodyDeclaration);
+		m2f.setTarget(feature);
 		bd2ne.setTarget(feature);
+		uContainer.getNestedClassifiers().add(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		VisibilityKind feature_visibility_prime = (VisibilityKind) _localVariable_0;
 		String feature_name_prime = (String) _localVariable_1;
 		feature.setVisibility(feature_visibility_prime);
 		feature.setName(feature_name_prime);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, csp };
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, csp };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_2_collecttranslatedelements_blackBBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
+			Modifier2NamedElement m2f, NamedElement2NamedElement bd2ne, Enumeration feature, ASTNode2Element b2e,
 			Modifier modifier, EnumDeclaration bodyDeclaration) {
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_2_collecttranslatedelements_greenFBBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
+			Modifier2NamedElement m2f, NamedElement2NamedElement bd2ne, Enumeration feature, ASTNode2Element b2e,
 			Modifier modifier, EnumDeclaration bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getTranslatedElements().add(modifier);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		return new Object[] { ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
+			PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(uContainer)) {
 				if (!m2f.equals(ne2ne)) {
-					if (!feature.equals(m2f)) {
-						if (!feature.equals(modifier)) {
-							if (!feature.equals(uContainer)) {
-								if (!feature.equals(jContainer)) {
-									if (!feature.equals(ne2ne)) {
-										if (!bd2ne.equals(m2f)) {
-											if (!bd2ne.equals(feature)) {
-												if (!bd2ne.equals(modifier)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(uContainer)) {
-															if (!bd2ne.equals(jContainer)) {
-																if (!bd2ne.equals(ne2ne)) {
+					if (!bd2ne.equals(m2f)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(modifier)) {
+								if (!bd2ne.equals(bodyDeclaration)) {
+									if (!bd2ne.equals(uContainer)) {
+										if (!bd2ne.equals(jContainer)) {
+											if (!bd2ne.equals(ne2ne)) {
+												if (!feature.equals(m2f)) {
+													if (!feature.equals(modifier)) {
+														if (!feature.equals(uContainer)) {
+															if (!feature.equals(jContainer)) {
+																if (!feature.equals(ne2ne)) {
 																	if (!b2e.equals(m2f)) {
-																		if (!b2e.equals(feature)) {
-																			if (!b2e.equals(bd2ne)) {
+																		if (!b2e.equals(bd2ne)) {
+																			if (!b2e.equals(feature)) {
 																				if (!b2e.equals(modifier)) {
 																					if (!b2e.equals(bodyDeclaration)) {
 																						if (!b2e.equals(uContainer)) {
@@ -1777,8 +1777,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 																																						return new Object[] {
 																																								ruleresult,
 																																								m2f,
-																																								feature,
 																																								bd2ne,
+																																								feature,
 																																								b2e,
 																																								modifier,
 																																								bodyDeclaration,
@@ -1825,12 +1825,12 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
+			PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer) {
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -1841,9 +1841,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
@@ -1854,15 +1854,15 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
@@ -1886,9 +1886,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
@@ -1898,19 +1898,19 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
-				bd2ne__bodyDeclaration____source, m2f__feature____target, bodyDeclaration__modifier____modifier,
-				modifier__bodyDeclaration____bodyDeclaration, bd2ne__feature____target, b2e__bodyDeclaration____source,
-				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__jContainer____abstractTypeDeclaration, m2f__modifier____source,
-				b2e__feature____target };
+		return new Object[] { ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+				bd2ne__bodyDeclaration____source, bodyDeclaration__modifier____modifier,
+				modifier__bodyDeclaration____bodyDeclaration, m2f__feature____target, bd2ne__feature____target,
+				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier,
+				jContainer__bodyDeclaration____bodyDeclarations, bodyDeclaration__jContainer____abstractTypeDeclaration,
+				m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_1_5_registerobjects_expressionBBBBBBBBBBB(
 			InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier _this, PerformRuleResult ruleresult,
-			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier, EObject bodyDeclaration,
+			EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier, EObject bodyDeclaration,
 			EObject uContainer, EObject jContainer, EObject ne2ne) {
-		_this.registerObjects_FWD(ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer,
+		_this.registerObjects_FWD(ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer,
 				jContainer, ne2ne);
 
 	}
@@ -2301,7 +2301,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		return null;
 	}
 
-	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_1_performtransformation_greenFBFFFFBB(
+	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_1_performtransformation_greenFFBFFFBB(
 			Enumeration feature, AbstractTypeDeclaration jContainer, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
@@ -2322,49 +2322,49 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		String bodyDeclaration_name_prime = (String) _localVariable_1;
 		modifier.setVisibility(modifier_visibility_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, jContainer, csp };
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, jContainer, csp };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_2_collecttranslatedelements_blackBBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
+			Modifier2NamedElement m2f, NamedElement2NamedElement bd2ne, Enumeration feature, ASTNode2Element b2e,
 			Modifier modifier, EnumDeclaration bodyDeclaration) {
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_2_collecttranslatedelements_greenFBBBBBB(
-			Modifier2NamedElement m2f, Enumeration feature, NamedElement2NamedElement bd2ne, ASTNode2Element b2e,
+			Modifier2NamedElement m2f, NamedElement2NamedElement bd2ne, Enumeration feature, ASTNode2Element b2e,
 			Modifier modifier, EnumDeclaration bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedLinkElements().add(m2f);
-		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
 		ruleresult.getCreatedElements().add(modifier);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration };
+		return new Object[] { ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_3_bookkeepingforedges_blackBBBBBBBBBB(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
+			PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne) {
 		if (!m2f.equals(modifier)) {
 			if (!m2f.equals(uContainer)) {
 				if (!m2f.equals(ne2ne)) {
-					if (!feature.equals(m2f)) {
-						if (!feature.equals(modifier)) {
-							if (!feature.equals(uContainer)) {
-								if (!feature.equals(jContainer)) {
-									if (!feature.equals(ne2ne)) {
-										if (!bd2ne.equals(m2f)) {
-											if (!bd2ne.equals(feature)) {
-												if (!bd2ne.equals(modifier)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(uContainer)) {
-															if (!bd2ne.equals(jContainer)) {
-																if (!bd2ne.equals(ne2ne)) {
+					if (!bd2ne.equals(m2f)) {
+						if (!bd2ne.equals(feature)) {
+							if (!bd2ne.equals(modifier)) {
+								if (!bd2ne.equals(bodyDeclaration)) {
+									if (!bd2ne.equals(uContainer)) {
+										if (!bd2ne.equals(jContainer)) {
+											if (!bd2ne.equals(ne2ne)) {
+												if (!feature.equals(m2f)) {
+													if (!feature.equals(modifier)) {
+														if (!feature.equals(uContainer)) {
+															if (!feature.equals(jContainer)) {
+																if (!feature.equals(ne2ne)) {
 																	if (!b2e.equals(m2f)) {
-																		if (!b2e.equals(feature)) {
-																			if (!b2e.equals(bd2ne)) {
+																		if (!b2e.equals(bd2ne)) {
+																			if (!b2e.equals(feature)) {
 																				if (!b2e.equals(modifier)) {
 																					if (!b2e.equals(bodyDeclaration)) {
 																						if (!b2e.equals(uContainer)) {
@@ -2401,8 +2401,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 																																						return new Object[] {
 																																								ruleresult,
 																																								m2f,
-																																								feature,
 																																								bd2ne,
+																																								feature,
 																																								b2e,
 																																								modifier,
 																																								bodyDeclaration,
@@ -2449,12 +2449,12 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_3_bookkeepingforedges_greenBBBBBBBBBFFFFFFFFFFF(
-			PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier,
+			PerformRuleResult ruleresult, EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier,
 			EObject bodyDeclaration, EObject uContainer, EObject jContainer) {
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__modifier____modifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge modifier__bodyDeclaration____bodyDeclaration = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge m2f__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uContainer__feature____nestedClassifier = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2465,9 +2465,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		String m2f__feature____target_name_prime = "target";
 		String bodyDeclaration__modifier____modifier_name_prime = "modifier";
 		String modifier__bodyDeclaration____bodyDeclaration_name_prime = "bodyDeclaration";
+		String m2f__feature____target_name_prime = "target";
 		String bd2ne__feature____target_name_prime = "target";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String uContainer__feature____nestedClassifier_name_prime = "nestedClassifier";
@@ -2478,15 +2478,15 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
-		m2f__feature____target.setSrc(m2f);
-		m2f__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bodyDeclaration__modifier____modifier.setSrc(bodyDeclaration);
 		bodyDeclaration__modifier____modifier.setTrg(modifier);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__modifier____modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setSrc(modifier);
 		modifier__bodyDeclaration____bodyDeclaration.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(modifier__bodyDeclaration____bodyDeclaration);
+		m2f__feature____target.setSrc(m2f);
+		m2f__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(m2f__feature____target);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
@@ -2510,9 +2510,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bodyDeclaration__modifier____modifier.setName(bodyDeclaration__modifier____modifier_name_prime);
 		modifier__bodyDeclaration____bodyDeclaration.setName(modifier__bodyDeclaration____bodyDeclaration_name_prime);
+		m2f__feature____target.setName(m2f__feature____target_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uContainer__feature____nestedClassifier.setName(uContainer__feature____nestedClassifier_name_prime);
@@ -2522,19 +2522,19 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 				.setName(bodyDeclaration__jContainer____abstractTypeDeclaration_name_prime);
 		m2f__modifier____source.setName(m2f__modifier____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer,
-				bd2ne__bodyDeclaration____source, m2f__feature____target, bodyDeclaration__modifier____modifier,
-				modifier__bodyDeclaration____bodyDeclaration, bd2ne__feature____target, b2e__bodyDeclaration____source,
-				uContainer__feature____nestedClassifier, jContainer__bodyDeclaration____bodyDeclarations,
-				bodyDeclaration__jContainer____abstractTypeDeclaration, m2f__modifier____source,
-				b2e__feature____target };
+		return new Object[] { ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer,
+				bd2ne__bodyDeclaration____source, bodyDeclaration__modifier____modifier,
+				modifier__bodyDeclaration____bodyDeclaration, m2f__feature____target, bd2ne__feature____target,
+				b2e__bodyDeclaration____source, uContainer__feature____nestedClassifier,
+				jContainer__bodyDeclaration____bodyDeclarations, bodyDeclaration__jContainer____abstractTypeDeclaration,
+				m2f__modifier____source, b2e__feature____target };
 	}
 
 	public static final void pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_11_5_registerobjects_expressionBBBBBBBBBBB(
 			InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier _this, PerformRuleResult ruleresult,
-			EObject m2f, EObject feature, EObject bd2ne, EObject b2e, EObject modifier, EObject bodyDeclaration,
+			EObject m2f, EObject bd2ne, EObject feature, EObject b2e, EObject modifier, EObject bodyDeclaration,
 			EObject uContainer, EObject jContainer, EObject ne2ne) {
-		_this.registerObjects_BWD(ruleresult, m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer,
+		_this.registerObjects_BWD(ruleresult, m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer,
 				jContainer, ne2ne);
 
 	}
@@ -2792,7 +2792,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_20_2_testcorematchandDECs_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_516798 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_515869 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -2801,7 +2801,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_20_2_testcorematchandDECs_black_nac_1B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_169630 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_702742 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2936,9 +2936,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_423913 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_238731 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_423913 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_238731 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2947,8 +2947,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_525235 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_525235 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_517604 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_517604 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2957,7 +2957,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_21_2_testcorematchandDECs_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_605751 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_574819 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3202,7 +3202,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		return null;
 	}
 
-	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_24_6_createcorrespondence_greenFBFFBBB(
+	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_24_6_createcorrespondence_greenFFBFBBB(
 			Enumeration feature, Modifier modifier, EnumDeclaration bodyDeclaration, CCMatch ccMatch) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
@@ -3216,7 +3216,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, ccMatch };
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_24_7_addtoreturnedresult_blackBB(
@@ -3242,9 +3242,9 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_393482 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_829951 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_393482 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_829951 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3253,8 +3253,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_27_1_matchtggpattern_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_276679 = bodyDeclaration.getPackage();
-		if (__DEC_bodyDeclaration_ownedElements_276679 != null) {
+		org.eclipse.modisco.java.Package __DEC_bodyDeclaration_ownedElements_414485 = bodyDeclaration.getPackage();
+		if (__DEC_bodyDeclaration_ownedElements_414485 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3263,7 +3263,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_27_1_matchtggpattern_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_277642 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_338412 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -3303,7 +3303,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_28_1_matchtggpattern_black_nac_0B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_213353 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Package __DEC_feature_packagedElement_590540 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Package.class, "packagedElement")) {
 			return new Object[] { feature };
 		}
@@ -3312,7 +3312,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_28_1_matchtggpattern_black_nac_1B(
 			Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_277152 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_863528 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -3472,8 +3472,8 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 	public static final Object[] pattern_InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifier_29_6_perform_greenFFFFFFBBBB(
 			Interface uContainer, AbstractTypeDeclaration jContainer, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Modifier2NamedElement m2f = UmlFactory.eINSTANCE.createModifier2NamedElement();
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		Modifier modifier = JavaFactory.eINSTANCE.createModifier();
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
@@ -3484,11 +3484,11 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_4 = ruleResult.getIncrementedPerformCount();
 		ruleResult.getCorrObjects().add(m2f);
+		ruleResult.getCorrObjects().add(bd2ne);
 		m2f.setTarget(feature);
+		bd2ne.setTarget(feature);
 		uContainer.getNestedClassifiers().add(feature);
 		ruleResult.getTargetObjects().add(feature);
-		bd2ne.setTarget(feature);
-		ruleResult.getCorrObjects().add(bd2ne);
 		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
 		m2f.setSource(modifier);
@@ -3509,7 +3509,7 @@ public class InnerEnumDeclaration2InnerEnumeration_InInterface_WithModifierImpl 
 		modifier.setVisibility(modifier_visibility_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { m2f, feature, bd2ne, b2e, modifier, bodyDeclaration, uContainer, jContainer, ruleResult,
+		return new Object[] { m2f, bd2ne, feature, b2e, modifier, bodyDeclaration, uContainer, jContainer, ruleResult,
 				csp };
 	}
 

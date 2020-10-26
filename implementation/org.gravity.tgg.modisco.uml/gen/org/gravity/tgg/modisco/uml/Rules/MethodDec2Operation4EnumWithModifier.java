@@ -48,7 +48,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -73,7 +73,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -82,7 +82,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MMethodDefinition bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, MMethodDefinition bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration classDec);
 
 	/**
@@ -99,9 +99,8 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MMethodDefinition bodyDeclaration, Enumeration umlClass, NamedElement2NamedElement cd2c,
-			AbstractTypeDeclaration classDec);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MMethodDefinition bodyDeclaration,
+			Modifier modifier, Enumeration umlClass, NamedElement2NamedElement cd2c, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,8 +116,8 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +198,8 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject umlClass, EObject cd2c, EObject classDec);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject umlClass, EObject cd2c, EObject classDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,7 +215,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_91(EMoflonEdge _edge_ownedOperation);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_64(EMoflonEdge _edge_ownedOperation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,7 +223,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_95(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_65(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,7 +255,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Operation feature, Modifier modifier, MMethodDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Operation feature, MMethodDefinition bodyDeclaration, Modifier modifier,
 			Enumeration umlClass, AbstractTypeDeclaration classDec, Match sourceMatch, Match targetMatch);
 
 	/**
@@ -273,7 +272,7 @@ public interface MethodDec2Operation4EnumWithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MMethodDefinition bodyDeclaration, AbstractTypeDeclaration classDec);
+	boolean checkDEC_FWD(MMethodDefinition bodyDeclaration, Modifier modifier, AbstractTypeDeclaration classDec);
 
 	/**
 	 * <!-- begin-user-doc -->

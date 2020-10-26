@@ -219,8 +219,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__vdf____fragments = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge vdf__bodyDeclaration____variablesContainer = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[16];
 
@@ -544,8 +544,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		//nothing EMoflonEdge bodyDeclaration__jOwnerType____abstractTypeDeclaration = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__vdf____fragments = (EMoflonEdge) result3_green[11];
 		//nothing EMoflonEdge vdf__bodyDeclaration____variablesContainer = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[14];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[14];
 		//nothing EMoflonEdge uOwnerType__feature____ownedAttribute = (EMoflonEdge) result3_green[15];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[16];
 
@@ -753,7 +753,7 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_94(EMoflonEdge _edge_ownedAttribute) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_65(EMoflonEdge _edge_ownedAttribute) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4ClassImpl
 				.pattern_FieldDec2Property4Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -811,7 +811,7 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_98(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_66(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = FieldDec2Property4ClassImpl
 				.pattern_FieldDec2Property4Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -880,13 +880,13 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
 		var_vdf_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -927,13 +927,13 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_vdf_name = CSPFactoryHelper.eINSTANCE.createVariable("vdf", true, csp);
 		var_vdf_name.setValue(__helper.getValue("vdf", "name"));
 		var_vdf_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1295,10 +1295,10 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 			return null;
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_94__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_94((EMoflonEdge) arguments.get(0));
-		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_98__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_98((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_65__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_65((EMoflonEdge) arguments.get(0));
+		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_66__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_66((EMoflonEdge) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FIELD_DEC2_PROPERTY4_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1638,8 +1638,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 				.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__vdf____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge vdf__bodyDeclaration____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldDec2Property4Class";
@@ -1648,8 +1648,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		String bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String bodyDeclaration__vdf____fragments_name_prime = "fragments";
 		String vdf__bodyDeclaration____variablesContainer_name_prime = "variablesContainer";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
 		String b2e__feature____target_name_prime = "target";
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
@@ -1667,12 +1667,12 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		vdf__bodyDeclaration____variablesContainer.setSrc(vdf);
 		vdf__bodyDeclaration____variablesContainer.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(vdf__bodyDeclaration____variablesContainer);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		uOwnerType__feature____ownedAttribute.setSrc(uOwnerType);
 		uOwnerType__feature____ownedAttribute.setTrg(feature);
 		ruleresult.getCreatedEdges().add(uOwnerType__feature____ownedAttribute);
@@ -1687,14 +1687,14 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
 		bodyDeclaration__vdf____fragments.setName(bodyDeclaration__vdf____fragments_name_prime);
 		vdf__bodyDeclaration____variablesContainer.setName(vdf__bodyDeclaration____variablesContainer_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, b2e, bd2ne, bodyDeclaration, uOwnerType, vdf, jOwnerType,
 				bd2ne__bodyDeclaration____source, jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____abstractTypeDeclaration, bodyDeclaration__vdf____fragments,
-				vdf__bodyDeclaration____variablesContainer, b2e__bodyDeclaration____source, bd2ne__feature____target,
+				vdf__bodyDeclaration____variablesContainer, bd2ne__feature____target, b2e__bodyDeclaration____source,
 				uOwnerType__feature____ownedAttribute, b2e__feature____target };
 	}
 
@@ -2205,8 +2205,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 				.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__vdf____fragments = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge vdf__bodyDeclaration____variablesContainer = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uOwnerType__feature____ownedAttribute = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "FieldDec2Property4Class";
@@ -2215,8 +2215,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		String bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime = "abstractTypeDeclaration";
 		String bodyDeclaration__vdf____fragments_name_prime = "fragments";
 		String vdf__bodyDeclaration____variablesContainer_name_prime = "variablesContainer";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String uOwnerType__feature____ownedAttribute_name_prime = "ownedAttribute";
 		String b2e__feature____target_name_prime = "target";
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
@@ -2234,12 +2234,12 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 		vdf__bodyDeclaration____variablesContainer.setSrc(vdf);
 		vdf__bodyDeclaration____variablesContainer.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(vdf__bodyDeclaration____variablesContainer);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		uOwnerType__feature____ownedAttribute.setSrc(uOwnerType);
 		uOwnerType__feature____ownedAttribute.setTrg(feature);
 		ruleresult.getTranslatedEdges().add(uOwnerType__feature____ownedAttribute);
@@ -2254,14 +2254,14 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 				.setName(bodyDeclaration__jOwnerType____abstractTypeDeclaration_name_prime);
 		bodyDeclaration__vdf____fragments.setName(bodyDeclaration__vdf____fragments_name_prime);
 		vdf__bodyDeclaration____variablesContainer.setName(vdf__bodyDeclaration____variablesContainer_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		uOwnerType__feature____ownedAttribute.setName(uOwnerType__feature____ownedAttribute_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
 		return new Object[] { ruleresult, feature, b2e, bd2ne, bodyDeclaration, uOwnerType, vdf, jOwnerType,
 				bd2ne__bodyDeclaration____source, jOwnerType__bodyDeclaration____bodyDeclarations,
 				bodyDeclaration__jOwnerType____abstractTypeDeclaration, bodyDeclaration__vdf____fragments,
-				vdf__bodyDeclaration____variablesContainer, b2e__bodyDeclaration____source, bd2ne__feature____target,
+				vdf__bodyDeclaration____variablesContainer, bd2ne__feature____target, b2e__bodyDeclaration____source,
 				uOwnerType__feature____ownedAttribute, b2e__feature____target };
 	}
 
@@ -2523,8 +2523,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_0B(
 			Property feature) {
-		DataType __DEC_feature_ownedAttribute_661221 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_661221 != null) {
+		DataType __DEC_feature_ownedAttribute_932086 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_932086 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2533,8 +2533,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_20_2_testcorematchandDECs_black_nac_1B(
 			Property feature) {
-		Interface __DEC_feature_ownedAttribute_739424 = feature.getInterface();
-		if (__DEC_feature_ownedAttribute_739424 != null) {
+		Interface __DEC_feature_ownedAttribute_509391 = feature.getInterface();
+		if (__DEC_feature_ownedAttribute_509391 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2664,8 +2664,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_0B(
 			MFieldDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_844559 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_844559 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_120335 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_120335 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2674,8 +2674,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_1BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_88833 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_88833)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_500431 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_500431)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2684,9 +2684,9 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_21_2_testcorematchandDECs_black_nac_2B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_186127 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_248104 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_186127 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_248104 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2952,8 +2952,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_0B(
 			MFieldDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_853251 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_853251 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_859175 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_859175 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2962,8 +2962,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_1BB(
 			MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf) {
-		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_1092 : bodyDeclaration.getFragments()) {
-			if (!vdf.equals(__DEC_bodyDeclaration_fragments_1092)) {
+		for (VariableDeclarationFragment __DEC_bodyDeclaration_fragments_583982 : bodyDeclaration.getFragments()) {
+			if (!vdf.equals(__DEC_bodyDeclaration_fragments_583982)) {
 				return new Object[] { bodyDeclaration, vdf };
 			}
 		}
@@ -2972,9 +2972,9 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 
 	public static final Object[] pattern_FieldDec2Property4Class_27_1_matchtggpattern_black_nac_2B(
 			MFieldDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_402242 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_635054 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_402242 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_635054 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -3010,8 +3010,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_0B(Property feature) {
-		DataType __DEC_feature_ownedAttribute_240904 = feature.getDatatype();
-		if (__DEC_feature_ownedAttribute_240904 != null) {
+		DataType __DEC_feature_ownedAttribute_168695 = feature.getDatatype();
+		if (__DEC_feature_ownedAttribute_168695 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3019,8 +3019,8 @@ public class FieldDec2Property4ClassImpl extends AbstractRuleImpl implements Fie
 	}
 
 	public static final Object[] pattern_FieldDec2Property4Class_28_1_matchtggpattern_black_nac_1B(Property feature) {
-		Interface __DEC_feature_ownedAttribute_427527 = feature.getInterface();
-		if (__DEC_feature_ownedAttribute_427527 != null) {
+		Interface __DEC_feature_ownedAttribute_599396 = feature.getInterface();
+		if (__DEC_feature_ownedAttribute_599396 != null) {
 			return new Object[] { feature };
 		}
 

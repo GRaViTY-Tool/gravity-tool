@@ -100,54 +100,54 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
+	public boolean isAppropriate_FWD(Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
 
 		Object[] result1_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_0_1_initialbindings_blackBBBB(this, match, jPackage, bodyDeclaration);
+				.pattern_InterfaceDec2Interface_0_1_initialbindings_blackBBBB(this, match, bodyDeclaration, jPackage);
 		if (result1_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
+					+ jPackage + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, jPackage,
-						bodyDeclaration);
+				.pattern_InterfaceDec2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(this, match, bodyDeclaration,
+						jPackage);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[match] = " + match + ", " + "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = "
-					+ bodyDeclaration + ".");
+					+ "[match] = " + match + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = "
+					+ jPackage + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_0_4_collectelementstobetranslated_blackBBB(match, jPackage,
-							bodyDeclaration);
+					.pattern_InterfaceDec2Interface_0_4_collectelementstobetranslated_blackBBB(match, bodyDeclaration,
+							jPackage);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
 			}
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_4_collectelementstobetranslated_greenBBBFF(
-					match, jPackage, bodyDeclaration);
+					match, bodyDeclaration, jPackage);
 			//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result4_green[3];
 			//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result4_green[4];
 
 			Object[] result5_black = InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_0_5_collectcontextelements_blackBBB(match, jPackage,
-							bodyDeclaration);
+					.pattern_InterfaceDec2Interface_0_5_collectcontextelements_blackBBB(match, bodyDeclaration,
+							jPackage);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[jPackage] = " + jPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+						+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ".");
 			}
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_5_collectcontextelements_greenBB(match,
 					jPackage);
 
 			// 
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_6_registerobjectstomatch_expressionBBBB(this,
-					match, jPackage, bodyDeclaration);
+					match, bodyDeclaration, jPackage);
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_7_expressionF();
 		} else {
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_0_8_expressionF();
@@ -169,53 +169,53 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
-		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[2];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[3];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_bindingAndBlack[0];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[1];
+		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_1_performtransformation_greenFFBFBB(umlPackage, bodyDeclaration, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		Interface feature = (Interface) result1_green[1];
+				.pattern_InterfaceDec2Interface_1_1_performtransformation_greenBFBFFB(bodyDeclaration, umlPackage, csp);
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
 		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[3];
+		Interface feature = (Interface) result1_green[4];
 
 		Object[] result2_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBBB(b2e, feature, bd2ne,
-						bodyDeclaration);
+				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e, bd2ne,
+						feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[feature] = " + feature
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBBB(b2e, feature, bd2ne,
-						bodyDeclaration);
+				.pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e, bd2ne,
+						feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e, jPackage,
-						feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+				.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bodyDeclaration, b2e,
+						jp2up, umlPackage, bd2ne, jPackage, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[jPackage] = " + jPackage + ", " + "[feature] = " + feature
-					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[bd2ne] = " + bd2ne + ", " + "[jp2up] = " + jp2up
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[jp2up] = "
+					+ jp2up + ", " + "[umlPackage] = " + umlPackage + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ".");
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-				ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
+				ruleresult, bodyDeclaration, b2e, umlPackage, bd2ne, jPackage, feature);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+				ruleresult, bodyDeclaration, b2e, jp2up, umlPackage, bd2ne, jPackage, feature);
 		return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_1_6_expressionFB(ruleresult);
 	}
 
@@ -244,33 +244,33 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_binding[0];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_binding[1];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_binding[0];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_binding[1];
 		for (Object[] result2_black : InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_2_2_corematch_blackBFFBB(jPackage, bodyDeclaration, match)) {
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
+				.pattern_InterfaceDec2Interface_2_2_corematch_blackBFFBB(bodyDeclaration, jPackage, match)) {
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[1];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_2_3_findcontext_blackBBBB(jPackage, umlPackage, jp2up,
-							bodyDeclaration)) {
+					.pattern_InterfaceDec2Interface_2_3_findcontext_blackBBBB(bodyDeclaration, jp2up, umlPackage,
+							jPackage)) {
 				Object[] result3_green = InterfaceDec2InterfaceImpl
-						.pattern_InterfaceDec2Interface_2_3_findcontext_greenBBBBFFFFF(jPackage, umlPackage, jp2up,
-								bodyDeclaration);
+						.pattern_InterfaceDec2Interface_2_3_findcontext_greenBBBBFFFFF(bodyDeclaration, jp2up,
+								umlPackage, jPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[7];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[8];
+				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jPackage, umlPackage, jp2up, bodyDeclaration);
+								bodyDeclaration, jp2up, umlPackage, jPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
-							+ "[umlPackage] = " + umlPackage + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[jp2up] = " + jp2up + ", " + "[umlPackage] = " + umlPackage
+							+ ", " + "[jPackage] = " + jPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -300,10 +300,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
-		match.registerObject("jPackage", jPackage);
+	public void registerObjectsToMatch_FWD(Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
 		match.registerObject("bodyDeclaration", bodyDeclaration);
+		match.registerObject("jPackage", jPackage);
 
 	}
 
@@ -312,8 +312,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {// Create CSP
+	public CSP isAppropriate_solveCsp_FWD(Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -342,9 +342,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
-			org.eclipse.uml2.uml.Package umlPackage, JavaPackage2UmlPackage jp2up,
-			InterfaceDeclaration bodyDeclaration) {// Create CSP
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -374,10 +374,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		nonParameterizedName.solve(var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jPackage", jPackage);
-		isApplicableMatch.registerObject("umlPackage", umlPackage);
-		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
+		isApplicableMatch.registerObject("jp2up", jp2up);
+		isApplicableMatch.registerObject("umlPackage", umlPackage);
+		isApplicableMatch.registerObject("jPackage", jPackage);
 		return csp;
 	}
 
@@ -395,15 +395,15 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject jp2up,
+			EObject umlPackage, EObject bd2ne, EObject jPackage, EObject feature) {
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("jPackage", jPackage);
-		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -422,50 +422,50 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAppropriate_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
+	public boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
 
 		Object[] result1_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_10_1_initialbindings_blackBBBB(this, match, feature, umlPackage);
+				.pattern_InterfaceDec2Interface_10_1_initialbindings_blackBBBB(this, match, umlPackage, feature);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ".");
+							+ ", " + "[umlPackage] = " + umlPackage + ", " + "[feature] = " + feature + ".");
 		}
 
 		Object[] result2_bindingAndBlack = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, feature, umlPackage);
+				.pattern_InterfaceDec2Interface_10_2_SolveCSP_bindingAndBlackFBBBB(this, match, umlPackage, feature);
 		if (result2_bindingAndBlack == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[this] = " + this + ", " + "[match] = " + match
-							+ ", " + "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ".");
+							+ ", " + "[umlPackage] = " + umlPackage + ", " + "[feature] = " + feature + ".");
 		}
 		CSP csp = (CSP) result2_bindingAndBlack[0];
 		// 
 		if (InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_3_CheckCSP_expressionFBB(this, csp)) {
 
 			Object[] result4_black = InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_10_4_collectelementstobetranslated_blackBBB(match, feature,
-							umlPackage);
+					.pattern_InterfaceDec2Interface_10_4_collectelementstobetranslated_blackBBB(match, umlPackage,
+							feature);
 			if (result4_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ".");
+						+ "[umlPackage] = " + umlPackage + ", " + "[feature] = " + feature + ".");
 			}
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_4_collectelementstobetranslated_greenBBBF(
-					match, feature, umlPackage);
+					match, umlPackage, feature);
 			//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result4_green[3];
 
 			Object[] result5_black = InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_10_5_collectcontextelements_blackBBB(match, feature, umlPackage);
+					.pattern_InterfaceDec2Interface_10_5_collectcontextelements_blackBBB(match, umlPackage, feature);
 			if (result5_black == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[match] = " + match + ", "
-						+ "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ".");
+						+ "[umlPackage] = " + umlPackage + ", " + "[feature] = " + feature + ".");
 			}
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_5_collectcontextelements_greenBB(match,
 					umlPackage);
 
 			// 
 			InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_6_registerobjectstomatch_expressionBBBB(this,
-					match, feature, umlPackage);
+					match, umlPackage, feature);
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_7_expressionF();
 		} else {
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_10_8_expressionF();
@@ -487,53 +487,53 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
-		Interface feature = (Interface) result1_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[2];
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[3];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[2];
+		Interface feature = (Interface) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_1_performtransformation_greenFBBFFB(jPackage, feature, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[0];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[3];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[4];
+				.pattern_InterfaceDec2Interface_11_1_performtransformation_greenFFFBBB(jPackage, feature, csp);
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
 
 		Object[] result2_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBBB(b2e, feature, bd2ne,
-						bodyDeclaration);
+				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e, bd2ne,
+						feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[b2e] = " + b2e + ", " + "[feature] = " + feature
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bodyDeclaration] = " + bodyDeclaration + ", "
+							+ "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBBB(b2e, feature, bd2ne,
-						bodyDeclaration);
+				.pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e, bd2ne,
+						feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, b2e, jPackage,
-						feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+				.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bodyDeclaration, b2e,
+						jp2up, umlPackage, bd2ne, jPackage, feature);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[b2e] = " + b2e + ", " + "[jPackage] = " + jPackage + ", " + "[feature] = " + feature
-					+ ", " + "[umlPackage] = " + umlPackage + ", " + "[bd2ne] = " + bd2ne + ", " + "[jp2up] = " + jp2up
-					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[jp2up] = "
+					+ jp2up + ", " + "[umlPackage] = " + umlPackage + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ".");
 		}
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-				ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, bodyDeclaration);
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[9];
-		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
+				ruleresult, bodyDeclaration, b2e, umlPackage, bd2ne, jPackage, feature);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[10];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
 		InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBBBBBB(this,
-				ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+				ruleresult, bodyDeclaration, b2e, jp2up, umlPackage, bd2ne, jPackage, feature);
 		return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_11_6_expressionFB(ruleresult);
 	}
 
@@ -562,31 +562,31 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			throw new RuntimeException(
 					"Binding in node core match failed." + " Variables: " + "[match] = " + match + ".");
 		}
-		Interface feature = (Interface) result2_binding[0];
-		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_binding[1];
+		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_binding[0];
+		Interface feature = (Interface) result2_binding[1];
 		for (Object[] result2_black : InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_12_2_corematch_blackFBBFB(feature, umlPackage, match)) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[0];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[3];
+				.pattern_InterfaceDec2Interface_12_2_corematch_blackFBFBB(umlPackage, feature, match)) {
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[2];
 			// ForEach 
 			for (Object[] result3_black : InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_12_3_findcontext_blackBBBB(jPackage, feature, umlPackage, jp2up)) {
+					.pattern_InterfaceDec2Interface_12_3_findcontext_blackBBBB(jp2up, umlPackage, jPackage, feature)) {
 				Object[] result3_green = InterfaceDec2InterfaceImpl
-						.pattern_InterfaceDec2Interface_12_3_findcontext_greenBBBBFFFF(jPackage, feature, umlPackage,
-								jp2up);
+						.pattern_InterfaceDec2Interface_12_3_findcontext_greenBBBBFFFF(jp2up, umlPackage, jPackage,
+								feature);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-								jPackage, feature, umlPackage, jp2up);
+								jp2up, umlPackage, jPackage, feature);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
-							+ "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ", " + "[jp2up] = "
-							+ jp2up + ".");
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
+							+ "[umlPackage] = " + umlPackage + ", " + "[jPackage] = " + jPackage + ", " + "[feature] = "
+							+ feature + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
 				// 
@@ -616,9 +616,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjectsToMatch_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		match.registerObject("feature", feature);
+	public void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
 		match.registerObject("umlPackage", umlPackage);
+		match.registerObject("feature", feature);
 
 	}
 
@@ -627,7 +627,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isAppropriate_solveCsp_BWD(Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {// Create CSP
+	public CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -664,8 +664,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
-			Interface feature, org.eclipse.uml2.uml.Package umlPackage, JavaPackage2UmlPackage jp2up) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage, Interface feature) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -690,10 +690,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
+		isApplicableMatch.registerObject("jp2up", jp2up);
+		isApplicableMatch.registerObject("umlPackage", umlPackage);
 		isApplicableMatch.registerObject("jPackage", jPackage);
 		isApplicableMatch.registerObject("feature", feature);
-		isApplicableMatch.registerObject("umlPackage", umlPackage);
-		isApplicableMatch.registerObject("jp2up", jp2up);
 		return csp;
 	}
 
@@ -711,15 +711,15 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject jp2up,
+			EObject umlPackage, EObject bd2ne, EObject jPackage, EObject feature) {
+		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("jPackage", jPackage);
-		ruleresult.registerObject("feature", feature);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("umlPackage", umlPackage);
 		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("jp2up", jp2up);
-		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("feature", feature);
 
 	}
 
@@ -738,7 +738,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_90(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_52(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -755,8 +755,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		// ForEach 
 		for (Object[] result2_black : InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_blackFFB(_edge_packagedElement)) {
-			Interface feature = (Interface) result2_black[0];
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[1];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[0];
+			Interface feature = (Interface) result2_black[1];
 			Object[] result2_green = InterfaceDec2InterfaceImpl
 					.pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -764,7 +764,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			// 
 			if (InterfaceDec2InterfaceImpl
 					.pattern_InterfaceDec2Interface_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, feature, umlPackage)) {
+							match, umlPackage, feature)) {
 				// 
 				if (InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_20_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -796,7 +796,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_94(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_53(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -813,8 +813,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		// ForEach 
 		for (Object[] result2_black : InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_blackFFB(_edge_ownedElements)) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[0];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_black[1];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_black[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
 			Object[] result2_green = InterfaceDec2InterfaceImpl
 					.pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_greenFB(__eClass);
 			Match match = (Match) result2_green[0];
@@ -822,7 +822,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			// 
 			if (InterfaceDec2InterfaceImpl
 					.pattern_InterfaceDec2Interface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(this,
-							match, jPackage, bodyDeclaration)) {
+							match, bodyDeclaration, jPackage)) {
 				// 
 				if (InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_21_4_Ensurethatthecorrecttypesofelementsarematched_expressionFBB(
@@ -864,13 +864,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -920,13 +920,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
-		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
-		var_bodyDeclaration_name.setType("String");
-
 		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
 		var_feature_name.setValue(__helper.getValue("feature", "name"));
 		var_feature_name.setType("String");
+
+		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
+		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
+		var_bodyDeclaration_name.setType("String");
 
 		NonParameterizedName nonParameterizedName0 = new NonParameterizedName();
 		csp.getConstraints().add(nonParameterizedName0);
@@ -979,18 +979,18 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[sourceMatch] = " + sourceMatch
 					+ ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[0];
-		Interface feature = (Interface) result2_bindingAndBlack[1];
-		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[2];
-		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_bindingAndBlack[3];
+		InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result2_bindingAndBlack[0];
+		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_bindingAndBlack[2];
+		Interface feature = (Interface) result2_bindingAndBlack[3];
 
 		Object[] result3_bindingAndBlack = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, jPackage, feature,
-						umlPackage, bodyDeclaration, sourceMatch, targetMatch);
+				.pattern_InterfaceDec2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(this, bodyDeclaration, umlPackage,
+						jPackage, feature, sourceMatch, targetMatch);
 		if (result3_bindingAndBlack == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ", " + "[umlPackage] = "
-					+ umlPackage + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[sourceMatch] = "
+					+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[umlPackage] = " + umlPackage + ", "
+					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ", " + "[sourceMatch] = "
 					+ sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
 		CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -998,25 +998,25 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		if (InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
 			for (Object[] result5_black : InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_24_5_matchcorrcontext_blackBBFBB(jPackage, umlPackage, sourceMatch,
+					.pattern_InterfaceDec2Interface_24_5_matchcorrcontext_blackFBBBB(umlPackage, jPackage, sourceMatch,
 							targetMatch)) {
-				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[2];
+				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[0];
 				Object[] result5_green = InterfaceDec2InterfaceImpl
 						.pattern_InterfaceDec2Interface_24_5_matchcorrcontext_greenBBBF(jp2up, sourceMatch,
 								targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
 
 				Object[] result6_black = InterfaceDec2InterfaceImpl
-						.pattern_InterfaceDec2Interface_24_6_createcorrespondence_blackBBBBB(jPackage, feature,
-								umlPackage, bodyDeclaration, ccMatch);
+						.pattern_InterfaceDec2Interface_24_6_createcorrespondence_blackBBBBB(bodyDeclaration,
+								umlPackage, jPackage, feature, ccMatch);
 				if (result6_black == null) {
-					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = " + jPackage
-							+ ", " + "[feature] = " + feature + ", " + "[umlPackage] = " + umlPackage + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ccMatch] = " + ccMatch + ".");
+					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[umlPackage] = " + umlPackage + ", " + "[jPackage] = "
+							+ jPackage + ", " + "[feature] = " + feature + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBFBB(feature,
-						bodyDeclaration, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
+				InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenBFFBB(
+						bodyDeclaration, feature, ccMatch);
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
 
 				Object[] result7_black = InterfaceDec2InterfaceImpl
@@ -1040,9 +1040,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(org.eclipse.modisco.java.Package jPackage, Interface feature,
-			org.eclipse.uml2.uml.Package umlPackage, InterfaceDeclaration bodyDeclaration, Match sourceMatch,
-			Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 
 		// Create literals
@@ -1087,9 +1086,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {// 
+	public boolean checkDEC_FWD(InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {// 
 		Object[] result1_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_27_1_matchtggpattern_blackBB(jPackage, bodyDeclaration);
+				.pattern_InterfaceDec2Interface_27_1_matchtggpattern_blackBB(bodyDeclaration, jPackage);
 		if (result1_black != null) {
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_27_2_expressionF();
 		} else {
@@ -1103,9 +1102,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Interface feature, org.eclipse.uml2.uml.Package umlPackage) {// 
+	public boolean checkDEC_BWD(org.eclipse.uml2.uml.Package umlPackage, Interface feature) {// 
 		Object[] result1_black = InterfaceDec2InterfaceImpl
-				.pattern_InterfaceDec2Interface_28_1_matchtggpattern_blackBB(feature, umlPackage);
+				.pattern_InterfaceDec2Interface_28_1_matchtggpattern_blackBB(umlPackage, feature);
 		if (result1_black != null) {
 			return InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_28_2_expressionF();
 		} else {
@@ -1135,17 +1134,17 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		for (Object[] result2_black : InterfaceDec2InterfaceImpl
 				.pattern_InterfaceDec2Interface_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList jp2upList = (RuleEntryList) result2_black[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[3];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[1];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[2];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[3];
 
 			Object[] result3_bindingAndBlack = InterfaceDec2InterfaceImpl
-					.pattern_InterfaceDec2Interface_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
-							jPackage, umlPackage, jp2up, ruleResult);
+					.pattern_InterfaceDec2Interface_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jp2up,
+							umlPackage, jPackage, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
-						+ "[umlPackage] = " + umlPackage + ", " + "[jp2up] = " + jp2up + ", " + "[ruleResult] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
+						+ "[umlPackage] = " + umlPackage + ", " + "[jPackage] = " + jPackage + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
@@ -1153,23 +1152,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			if (InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
 				Object[] result5_black = InterfaceDec2InterfaceImpl
-						.pattern_InterfaceDec2Interface_29_5_checknacs_blackBBB(jPackage, umlPackage, jp2up);
+						.pattern_InterfaceDec2Interface_29_5_checknacs_blackBBB(jp2up, umlPackage, jPackage);
 				if (result5_black != null) {
 
 					Object[] result6_black = InterfaceDec2InterfaceImpl
-							.pattern_InterfaceDec2Interface_29_6_perform_blackBBBB(jPackage, umlPackage, jp2up,
+							.pattern_InterfaceDec2Interface_29_6_perform_blackBBBB(jp2up, umlPackage, jPackage,
 									ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = "
-								+ jPackage + ", " + "[umlPackage] = " + umlPackage + ", " + "[jp2up] = " + jp2up + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jp2up] = " + jp2up
+								+ ", " + "[umlPackage] = " + umlPackage + ", " + "[jPackage] = " + jPackage + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_29_6_perform_greenFBFBFFBB(jPackage,
-							umlPackage, ruleResult, csp);
-					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[0];
-					//nothing Interface feature = (Interface) result6_green[2];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[4];
-					//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[5];
+					InterfaceDec2InterfaceImpl.pattern_InterfaceDec2Interface_29_6_perform_greenFFBFBFBB(umlPackage,
+							jPackage, ruleResult, csp);
+					//nothing InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result6_green[0];
+					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[3];
+					//nothing Interface feature = (Interface) result6_green[5];
 
 				} else {
 				}
@@ -1186,9 +1185,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage,
+			ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1216,9 +1215,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jPackage", jPackage);
-		isApplicableMatch.registerObject("umlPackage", umlPackage);
 		isApplicableMatch.registerObject("jp2up", jp2up);
+		isApplicableMatch.registerObject("umlPackage", umlPackage);
+		isApplicableMatch.registerObject("jPackage", jPackage);
 		return csp;
 	}
 
@@ -1239,27 +1238,27 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_PACKAGE_INTERFACEDECLARATION:
-			return isAppropriate_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD__MATCH_INTERFACEDECLARATION_PACKAGE:
+			return isAppropriate_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_FWD__ISAPPLICABLEMATCH:
 			return perform_FWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_FWD__MATCH:
 			return isApplicable_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_PACKAGE_INTERFACEDECLARATION:
-			registerObjectsToMatch_FWD((Match) arguments.get(0), (org.eclipse.modisco.java.Package) arguments.get(1),
-					(InterfaceDeclaration) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_FWD__MATCH_INTERFACEDECLARATION_PACKAGE:
+			registerObjectsToMatch_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_PACKAGE_INTERFACEDECLARATION:
-			return isAppropriate_solveCsp_FWD((Match) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (InterfaceDeclaration) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_FWD__MATCH_INTERFACEDECLARATION_PACKAGE:
+			return isAppropriate_solveCsp_FWD((Match) arguments.get(0), (InterfaceDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_INTERFACEDECLARATION:
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_INTERFACEDECLARATION_JAVAPACKAGE2UMLPACKAGE_PACKAGE_PACKAGE:
 			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
-					(InterfaceDeclaration) arguments.get(4));
+					(InterfaceDeclaration) arguments.get(1), (JavaPackage2UmlPackage) arguments.get(2),
+					(org.eclipse.uml2.uml.Package) arguments.get(3),
+					(org.eclipse.modisco.java.Package) arguments.get(4));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_FWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1269,26 +1268,26 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			return null;
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_FWD__MATCH:
 			return checkTypes_FWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD__MATCH_INTERFACE_PACKAGE:
-			return isAppropriate_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD__MATCH_PACKAGE_INTERFACE:
+			return isAppropriate_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(Interface) arguments.get(2));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___PERFORM_BWD__ISAPPLICABLEMATCH:
 			return perform_BWD((IsApplicableMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_BWD__MATCH:
 			return isApplicable_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_INTERFACE_PACKAGE:
-			registerObjectsToMatch_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_TO_MATCH_BWD__MATCH_PACKAGE_INTERFACE:
+			registerObjectsToMatch_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(Interface) arguments.get(2));
 			return null;
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_INTERFACE_PACKAGE:
-			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (Interface) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_SOLVE_CSP_BWD__MATCH_PACKAGE_INTERFACE:
+			return isAppropriate_solveCsp_BWD((Match) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1),
+					(Interface) arguments.get(2));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_INTERFACE_PACKAGE_JAVAPACKAGE2UMLPACKAGE:
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_PACKAGE_INTERFACE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1), (Interface) arguments.get(2),
-					(org.eclipse.uml2.uml.Package) arguments.get(3), (JavaPackage2UmlPackage) arguments.get(4));
+					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3), (Interface) arguments.get(4));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___REGISTER_OBJECTS_BWD__PERFORMRULERESULT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT_EOBJECT:
@@ -1298,34 +1297,34 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			return null;
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_90__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_90((EMoflonEdge) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_94__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_94((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_52__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_52((EMoflonEdge) arguments.get(0));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_53__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_53((EMoflonEdge) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__PACKAGE_INTERFACE_PACKAGE_INTERFACEDECLARATION_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((org.eclipse.modisco.java.Package) arguments.get(0),
-					(Interface) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
-					(InterfaceDeclaration) arguments.get(3), (Match) arguments.get(4), (Match) arguments.get(5));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_SOLVE_CSP_CC__INTERFACEDECLARATION_PACKAGE_PACKAGE_INTERFACE_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((InterfaceDeclaration) arguments.get(0),
+					(org.eclipse.uml2.uml.Package) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (Interface) arguments.get(3),
+					(Match) arguments.get(4), (Match) arguments.get(5));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_FWD__PACKAGE_INTERFACEDECLARATION:
-			return checkDEC_FWD((org.eclipse.modisco.java.Package) arguments.get(0),
-					(InterfaceDeclaration) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_BWD__INTERFACE_PACKAGE:
-			return checkDEC_BWD((Interface) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_FWD__INTERFACEDECLARATION_PACKAGE:
+			return checkDEC_FWD((InterfaceDeclaration) arguments.get(0),
+					(org.eclipse.modisco.java.Package) arguments.get(1));
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___CHECK_DEC_BWD__PACKAGE_INTERFACE:
+			return checkDEC_BWD((org.eclipse.uml2.uml.Package) arguments.get(0), (Interface) arguments.get(1));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAPACKAGE2UMLPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (JavaPackage2UmlPackage) arguments.get(1));
-		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_PACKAGE_JAVAPACKAGE2UMLPACKAGE_MODELGENERATORRULERESULT:
+		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_PACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(org.eclipse.modisco.java.Package) arguments.get(1),
-					(org.eclipse.uml2.uml.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
-					(ModelgeneratorRuleResult) arguments.get(4));
+					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.uml2.uml.Package) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.INTERFACE_DEC2_INTERFACE___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
 		}
@@ -1333,17 +1332,17 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_1_initialbindings_blackBBBB(
-			InterfaceDec2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { _this, match, jPackage, bodyDeclaration };
+			InterfaceDec2Interface _this, Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
+		return new Object[] { _this, match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_2_SolveCSP_bindingFBBBB(InterfaceDec2Interface _this,
-			Match match, org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, jPackage, bodyDeclaration);
+			Match match, InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_FWD(match, bodyDeclaration, jPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
+			return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
 		}
 		return null;
 	}
@@ -1353,10 +1352,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_2_SolveCSP_bindingAndBlackFBBBB(
-			InterfaceDec2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
+			InterfaceDec2Interface _this, Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
 		Object[] result_pattern_InterfaceDec2Interface_0_2_SolveCSP_binding = pattern_InterfaceDec2Interface_0_2_SolveCSP_bindingFBBBB(
-				_this, match, jPackage, bodyDeclaration);
+				_this, match, bodyDeclaration, jPackage);
 		if (result_pattern_InterfaceDec2Interface_0_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_0_2_SolveCSP_binding[0];
 
@@ -1364,7 +1363,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_0_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, jPackage, bodyDeclaration };
+				return new Object[] { csp, _this, match, bodyDeclaration, jPackage };
 			}
 		}
 		return null;
@@ -1378,12 +1377,12 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_4_collectelementstobetranslated_blackBBB(Match match,
-			org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { match, jPackage, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+		return new Object[] { match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_4_collectelementstobetranslated_greenBBBFF(
-			Match match, org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {
+			Match match, InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(bodyDeclaration);
@@ -1397,13 +1396,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		match.getToBeTranslatedEdges().add(bodyDeclaration__jPackage____package);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		return new Object[] { match, jPackage, bodyDeclaration, jPackage__bodyDeclaration____ownedElements,
+		return new Object[] { match, bodyDeclaration, jPackage, jPackage__bodyDeclaration____ownedElements,
 				bodyDeclaration__jPackage____package };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_5_collectcontextelements_blackBBB(Match match,
-			org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { match, jPackage, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
+		return new Object[] { match, bodyDeclaration, jPackage };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_0_5_collectcontextelements_greenBB(Match match,
@@ -1413,9 +1412,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final void pattern_InterfaceDec2Interface_0_6_registerobjectstomatch_expressionBBBB(
-			InterfaceDec2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
-		_this.registerObjectsToMatch_FWD(match, jPackage, bodyDeclaration);
+			InterfaceDec2Interface _this, Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
+		_this.registerObjectsToMatch_FWD(match, bodyDeclaration, jPackage);
 
 	}
 
@@ -1431,23 +1430,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("umlPackage");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
-		EObject _localVariable_3 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpUmlPackage = _localVariable_1;
-		EObject tmpJp2up = _localVariable_2;
-		EObject tmpBodyDeclaration = _localVariable_3;
-		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-			if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-					if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-						InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
-						return new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_2 = isApplicableMatch.getObject("umlPackage");
+		EObject _localVariable_3 = isApplicableMatch.getObject("jPackage");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpJp2up = _localVariable_1;
+		EObject tmpUmlPackage = _localVariable_2;
+		EObject tmpJPackage = _localVariable_3;
+		if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+				if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
+					org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
+					if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+						org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+						return new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage, isApplicableMatch };
 					}
 				}
 			}
@@ -1456,13 +1455,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_blackBBBBFBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDeclaration bodyDeclaration, InterfaceDec2Interface _this,
+			InterfaceDeclaration bodyDeclaration, JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, InterfaceDec2Interface _this,
 			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1473,87 +1472,85 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		Object[] result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding = pattern_InterfaceDec2Interface_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding != null) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[0];
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[1];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[2];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[3];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[0];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[1];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[2];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_InterfaceDec2Interface_1_1_performtransformation_black = pattern_InterfaceDec2Interface_1_1_performtransformation_blackBBBBFBB(
-					jPackage, umlPackage, jp2up, bodyDeclaration, _this, isApplicableMatch);
+					bodyDeclaration, jp2up, umlPackage, jPackage, _this, isApplicableMatch);
 			if (result_pattern_InterfaceDec2Interface_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceDec2Interface_1_1_performtransformation_black[4];
 
-				return new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_greenFFBFBB(
-			org.eclipse.uml2.uml.Package umlPackage, InterfaceDeclaration bodyDeclaration, CSP csp) {
+	public static final Object[] pattern_InterfaceDec2Interface_1_1_performtransformation_greenBFBFFB(
+			InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage, CSP csp) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Interface feature = UMLFactory.eINSTANCE.createInterface();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		b2e.setSource(bodyDeclaration);
-		b2e.setTarget(feature);
+		bd2ne.setSource(bodyDeclaration);
 		umlPackage.getPackagedElements().add(feature);
 		bd2ne.setTarget(feature);
-		bd2ne.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { b2e, feature, umlPackage, bd2ne, bodyDeclaration, csp };
+		return new Object[] { bodyDeclaration, b2e, umlPackage, bd2ne, feature, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, Interface feature, NamedElement2NamedElement bd2ne,
-			InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { b2e, feature, bd2ne, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Interface feature) {
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, Interface feature, NamedElement2NamedElement bd2ne,
-			InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Interface feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedElements().add(feature);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bd2ne, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getCreatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature, EObject umlPackage,
-			EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
-		if (!b2e.equals(jPackage)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(umlPackage)) {
-					if (!b2e.equals(bd2ne)) {
-						if (!b2e.equals(jp2up)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!jPackage.equals(umlPackage)) {
-									if (!jPackage.equals(jp2up)) {
-										if (!feature.equals(jPackage)) {
-											if (!feature.equals(umlPackage)) {
-												if (!feature.equals(jp2up)) {
-													if (!bd2ne.equals(jPackage)) {
-														if (!bd2ne.equals(feature)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject jp2up, EObject umlPackage,
+			EObject bd2ne, EObject jPackage, EObject feature) {
+		if (!bodyDeclaration.equals(jp2up)) {
+			if (!bodyDeclaration.equals(umlPackage)) {
+				if (!bodyDeclaration.equals(jPackage)) {
+					if (!bodyDeclaration.equals(feature)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(jp2up)) {
+								if (!b2e.equals(umlPackage)) {
+									if (!b2e.equals(bd2ne)) {
+										if (!b2e.equals(jPackage)) {
+											if (!b2e.equals(feature)) {
+												if (!jp2up.equals(umlPackage)) {
+													if (!bd2ne.equals(bodyDeclaration)) {
+														if (!bd2ne.equals(jp2up)) {
 															if (!bd2ne.equals(umlPackage)) {
-																if (!bd2ne.equals(jp2up)) {
-																	if (!bd2ne.equals(bodyDeclaration)) {
-																		if (!jp2up.equals(umlPackage)) {
-																			if (!bodyDeclaration.equals(jPackage)) {
-																				if (!bodyDeclaration.equals(feature)) {
-																					if (!bodyDeclaration
-																							.equals(umlPackage)) {
-																						if (!bodyDeclaration
-																								.equals(jp2up)) {
+																if (!bd2ne.equals(jPackage)) {
+																	if (!bd2ne.equals(feature)) {
+																		if (!jPackage.equals(jp2up)) {
+																			if (!jPackage.equals(umlPackage)) {
+																				if (!feature.equals(jp2up)) {
+																					if (!feature.equals(umlPackage)) {
+																						if (!feature.equals(jPackage)) {
 																							return new Object[] {
-																									ruleresult, b2e,
-																									jPackage, feature,
+																									ruleresult,
+																									bodyDeclaration,
+																									b2e, jp2up,
 																									umlPackage, bd2ne,
-																									jp2up,
-																									bodyDeclaration };
+																									jPackage, feature };
 																						}
 																					}
 																				}
@@ -1579,35 +1576,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature, EObject umlPackage,
-			EObject bd2ne, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject umlPackage, EObject bd2ne,
+			EObject jPackage, EObject feature) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__feature____target_name_prime = "target";
-		String bd2ne__feature____target_name_prime = "target";
-		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
-		String bodyDeclaration__jPackage____package_name_prime = "package";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
-		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
-		ruleresult.getTranslatedEdges().add(jPackage__bodyDeclaration____ownedElements);
-		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
-		bodyDeclaration__jPackage____package.setTrg(jPackage);
-		ruleresult.getTranslatedEdges().add(bodyDeclaration__jPackage____package);
+		String bd2ne__feature____target_name_prime = "target";
+		String b2e__feature____target_name_prime = "target";
+		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
+		String bodyDeclaration__jPackage____package_name_prime = "package";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -1617,24 +1602,36 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
+		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
+		ruleresult.getTranslatedEdges().add(jPackage__bodyDeclaration____ownedElements);
+		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
+		bodyDeclaration__jPackage____package.setTrg(jPackage);
+		ruleresult.getTranslatedEdges().add(bodyDeclaration__jPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
-		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, bodyDeclaration,
-				b2e__feature____target, bd2ne__feature____target, jPackage__bodyDeclaration____ownedElements,
-				bodyDeclaration__jPackage____package, b2e__bodyDeclaration____source,
-				umlPackage__feature____packagedElement, bd2ne__bodyDeclaration____source };
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
+		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, umlPackage, bd2ne, jPackage, feature,
+				b2e__bodyDeclaration____source, umlPackage__feature____packagedElement,
+				bd2ne__bodyDeclaration____source, bd2ne__feature____target, b2e__feature____target,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_1_5_registerobjects_expressionBBBBBBBBB(
-			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
-		_this.registerObjects_FWD(ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e,
+			EObject jp2up, EObject umlPackage, EObject bd2ne, EObject jPackage, EObject feature) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, b2e, jp2up, umlPackage, bd2ne, jPackage, feature);
 
 	}
 
@@ -1696,28 +1693,28 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_2_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("jPackage");
-		EObject _localVariable_1 = match.getObject("bodyDeclaration");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-			if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-				InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
-				return new Object[] { jPackage, bodyDeclaration, match };
+		EObject _localVariable_0 = match.getObject("bodyDeclaration");
+		EObject _localVariable_1 = match.getObject("jPackage");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpJPackage = _localVariable_1;
+		if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+				return new Object[] { bodyDeclaration, jPackage, match };
 			}
 		}
 		return null;
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_2_2_corematch_blackBFFBB(
-			org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration, Match match) {
+			InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jPackage,
 				JavaPackage2UmlPackage.class, "source")) {
 			org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
 			if (umlPackage != null) {
-				_result.add(new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration, match });
+				_result.add(new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage, match });
 			}
 
 		}
@@ -1725,13 +1722,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_2_3_findcontext_blackBBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
-			if (umlPackage.equals(jp2up.getTarget())) {
-				if (jPackage.equals(jp2up.getSource())) {
-					_result.add(new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration });
+		if (umlPackage.equals(jp2up.getTarget())) {
+			if (jPackage.equals(jp2up.getSource())) {
+				if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
+					_result.add(new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage });
 				}
 			}
 		}
@@ -1739,51 +1736,51 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_2_3_findcontext_greenBBBBFFFFF(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
-		String bodyDeclaration__jPackage____package_name_prime = "package";
+		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
-		isApplicableMatch.getAllContextElements().add(jPackage);
-		isApplicableMatch.getAllContextElements().add(umlPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up);
+		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
+		String bodyDeclaration__jPackage____package_name_prime = "package";
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
-		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
-		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
-		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____ownedElements);
-		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
-		bodyDeclaration__jPackage____package.setTrg(jPackage);
-		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jPackage____package);
+		isApplicableMatch.getAllContextElements().add(jp2up);
+		isApplicableMatch.getAllContextElements().add(umlPackage);
+		isApplicableMatch.getAllContextElements().add(jPackage);
 		jp2up__umlPackage____target.setSrc(jp2up);
 		jp2up__umlPackage____target.setTrg(umlPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
-		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
-		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
+		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
+		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
+		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____ownedElements);
+		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
+		bodyDeclaration__jPackage____package.setTrg(jPackage);
+		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jPackage____package);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
-		return new Object[] { jPackage, umlPackage, jp2up, bodyDeclaration, isApplicableMatch,
-				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
-				jp2up__umlPackage____target, jp2up__jPackage____source };
+		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
+		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
+		return new Object[] { bodyDeclaration, jp2up, umlPackage, jPackage, isApplicableMatch,
+				jp2up__umlPackage____target, jp2up__jPackage____source, jPackage__bodyDeclaration____ownedElements,
+				bodyDeclaration__jPackage____package };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_2_4_solveCSP_bindingFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDeclaration bodyDeclaration) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jPackage, umlPackage, jp2up,
-				bodyDeclaration);
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, jp2up, umlPackage,
+				jPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jPackage, umlPackage, jp2up, bodyDeclaration };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jp2up, umlPackage, jPackage };
 		}
 		return null;
 	}
@@ -1793,11 +1790,11 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_2_4_solveCSP_bindingAndBlackFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, InterfaceDeclaration bodyDeclaration,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage) {
 		Object[] result_pattern_InterfaceDec2Interface_2_4_solveCSP_binding = pattern_InterfaceDec2Interface_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jPackage, umlPackage, jp2up, bodyDeclaration);
+				_this, isApplicableMatch, bodyDeclaration, jp2up, umlPackage, jPackage);
 		if (result_pattern_InterfaceDec2Interface_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_2_4_solveCSP_binding[0];
 
@@ -1805,7 +1802,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jPackage, umlPackage, jp2up, bodyDeclaration };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jp2up, umlPackage, jPackage };
 			}
 		}
 		return null;
@@ -1840,16 +1837,16 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_1_initialbindings_blackBBBB(
-			InterfaceDec2Interface _this, Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		return new Object[] { _this, match, feature, umlPackage };
+			InterfaceDec2Interface _this, Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		return new Object[] { _this, match, umlPackage, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_2_SolveCSP_bindingFBBBB(InterfaceDec2Interface _this,
-			Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, feature, umlPackage);
+			Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		CSP _localVariable_0 = _this.isAppropriate_solveCsp_BWD(match, umlPackage, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, match, feature, umlPackage };
+			return new Object[] { csp, _this, match, umlPackage, feature };
 		}
 		return null;
 	}
@@ -1859,9 +1856,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_2_SolveCSP_bindingAndBlackFBBBB(
-			InterfaceDec2Interface _this, Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
+			InterfaceDec2Interface _this, Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
 		Object[] result_pattern_InterfaceDec2Interface_10_2_SolveCSP_binding = pattern_InterfaceDec2Interface_10_2_SolveCSP_bindingFBBBB(
-				_this, match, feature, umlPackage);
+				_this, match, umlPackage, feature);
 		if (result_pattern_InterfaceDec2Interface_10_2_SolveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_10_2_SolveCSP_binding[0];
 
@@ -1869,7 +1866,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_10_2_SolveCSP_black != null) {
 
-				return new Object[] { csp, _this, match, feature, umlPackage };
+				return new Object[] { csp, _this, match, umlPackage, feature };
 			}
 		}
 		return null;
@@ -1883,12 +1880,12 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_4_collectelementstobetranslated_blackBBB(Match match,
-			Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		return new Object[] { match, feature, umlPackage };
+			org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		return new Object[] { match, umlPackage, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_4_collectelementstobetranslated_greenBBBF(
-			Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
+			Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
 		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		match.getToBeTranslatedNodes().add(feature);
 		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
@@ -1896,12 +1893,12 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		umlPackage__feature____packagedElement.setTrg(feature);
 		match.getToBeTranslatedEdges().add(umlPackage__feature____packagedElement);
 		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
-		return new Object[] { match, feature, umlPackage, umlPackage__feature____packagedElement };
+		return new Object[] { match, umlPackage, feature, umlPackage__feature____packagedElement };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_5_collectcontextelements_blackBBB(Match match,
-			Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		return new Object[] { match, feature, umlPackage };
+			org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		return new Object[] { match, umlPackage, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_10_5_collectcontextelements_greenBB(Match match,
@@ -1911,8 +1908,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final void pattern_InterfaceDec2Interface_10_6_registerobjectstomatch_expressionBBBB(
-			InterfaceDec2Interface _this, Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		_this.registerObjectsToMatch_BWD(match, feature, umlPackage);
+			InterfaceDec2Interface _this, Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		_this.registerObjectsToMatch_BWD(match, umlPackage, feature);
 
 	}
 
@@ -1928,23 +1925,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
-		EObject _localVariable_1 = isApplicableMatch.getObject("feature");
-		EObject _localVariable_2 = isApplicableMatch.getObject("umlPackage");
-		EObject _localVariable_3 = isApplicableMatch.getObject("jp2up");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpUmlPackage = _localVariable_2;
-		EObject tmpJp2up = _localVariable_3;
-		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-			if (tmpFeature instanceof Interface) {
-				Interface feature = (Interface) tmpFeature;
-				if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-					if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-						JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-						return new Object[] { jPackage, feature, umlPackage, jp2up, isApplicableMatch };
+		EObject _localVariable_0 = isApplicableMatch.getObject("jp2up");
+		EObject _localVariable_1 = isApplicableMatch.getObject("umlPackage");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_3 = isApplicableMatch.getObject("feature");
+		EObject tmpJp2up = _localVariable_0;
+		EObject tmpUmlPackage = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
+			if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
+				if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+					if (tmpFeature instanceof Interface) {
+						Interface feature = (Interface) tmpFeature;
+						return new Object[] { jp2up, umlPackage, jPackage, feature, isApplicableMatch };
 					}
 				}
 			}
@@ -1953,12 +1950,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_blackBBBBFBB(
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch) {
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, InterfaceDec2Interface _this,
+			IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jPackage, feature, umlPackage, jp2up, csp, _this, isApplicableMatch };
+				return new Object[] { jp2up, umlPackage, jPackage, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1969,87 +1967,85 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		Object[] result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding = pattern_InterfaceDec2Interface_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding != null) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[0];
-			Interface feature = (Interface) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[1];
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[2];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[3];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[0];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[2];
+			Interface feature = (Interface) result_pattern_InterfaceDec2Interface_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_InterfaceDec2Interface_11_1_performtransformation_black = pattern_InterfaceDec2Interface_11_1_performtransformation_blackBBBBFBB(
-					jPackage, feature, umlPackage, jp2up, _this, isApplicableMatch);
+					jp2up, umlPackage, jPackage, feature, _this, isApplicableMatch);
 			if (result_pattern_InterfaceDec2Interface_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_InterfaceDec2Interface_11_1_performtransformation_black[4];
 
-				return new Object[] { jPackage, feature, umlPackage, jp2up, csp, _this, isApplicableMatch };
+				return new Object[] { jp2up, umlPackage, jPackage, feature, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_greenFBBFFB(
+	public static final Object[] pattern_InterfaceDec2Interface_11_1_performtransformation_greenFFFBBB(
 			org.eclipse.modisco.java.Package jPackage, Interface feature, CSP csp) {
+		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setTarget(feature);
-		bd2ne.setTarget(feature);
 		jPackage.getOwnedElements().add(bodyDeclaration);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		bd2ne.setSource(bodyDeclaration);
+		bd2ne.setTarget(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { b2e, jPackage, feature, bd2ne, bodyDeclaration, csp };
+		return new Object[] { bodyDeclaration, b2e, bd2ne, jPackage, feature, csp };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_blackBBBB(
-			ASTNode2Element b2e, Interface feature, NamedElement2NamedElement bd2ne,
-			InterfaceDeclaration bodyDeclaration) {
-		return new Object[] { b2e, feature, bd2ne, bodyDeclaration };
+			InterfaceDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Interface feature) {
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_2_collecttranslatedelements_greenFBBBB(
-			ASTNode2Element b2e, Interface feature, NamedElement2NamedElement bd2ne,
-			InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Interface feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getTranslatedElements().add(feature);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, b2e, feature, bd2ne, bodyDeclaration };
+		ruleresult.getCreatedLinkElements().add(b2e);
+		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getTranslatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature, EObject umlPackage,
-			EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
-		if (!b2e.equals(jPackage)) {
-			if (!b2e.equals(feature)) {
-				if (!b2e.equals(umlPackage)) {
-					if (!b2e.equals(bd2ne)) {
-						if (!b2e.equals(jp2up)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!jPackage.equals(umlPackage)) {
-									if (!jPackage.equals(jp2up)) {
-										if (!feature.equals(jPackage)) {
-											if (!feature.equals(umlPackage)) {
-												if (!feature.equals(jp2up)) {
-													if (!bd2ne.equals(jPackage)) {
-														if (!bd2ne.equals(feature)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject jp2up, EObject umlPackage,
+			EObject bd2ne, EObject jPackage, EObject feature) {
+		if (!bodyDeclaration.equals(jp2up)) {
+			if (!bodyDeclaration.equals(umlPackage)) {
+				if (!bodyDeclaration.equals(jPackage)) {
+					if (!bodyDeclaration.equals(feature)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(jp2up)) {
+								if (!b2e.equals(umlPackage)) {
+									if (!b2e.equals(bd2ne)) {
+										if (!b2e.equals(jPackage)) {
+											if (!b2e.equals(feature)) {
+												if (!jp2up.equals(umlPackage)) {
+													if (!bd2ne.equals(bodyDeclaration)) {
+														if (!bd2ne.equals(jp2up)) {
 															if (!bd2ne.equals(umlPackage)) {
-																if (!bd2ne.equals(jp2up)) {
-																	if (!bd2ne.equals(bodyDeclaration)) {
-																		if (!jp2up.equals(umlPackage)) {
-																			if (!bodyDeclaration.equals(jPackage)) {
-																				if (!bodyDeclaration.equals(feature)) {
-																					if (!bodyDeclaration
-																							.equals(umlPackage)) {
-																						if (!bodyDeclaration
-																								.equals(jp2up)) {
+																if (!bd2ne.equals(jPackage)) {
+																	if (!bd2ne.equals(feature)) {
+																		if (!jPackage.equals(jp2up)) {
+																			if (!jPackage.equals(umlPackage)) {
+																				if (!feature.equals(jp2up)) {
+																					if (!feature.equals(umlPackage)) {
+																						if (!feature.equals(jPackage)) {
 																							return new Object[] {
-																									ruleresult, b2e,
-																									jPackage, feature,
+																									ruleresult,
+																									bodyDeclaration,
+																									b2e, jp2up,
 																									umlPackage, bd2ne,
-																									jp2up,
-																									bodyDeclaration };
+																									jPackage, feature };
 																						}
 																					}
 																				}
@@ -2075,35 +2071,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature, EObject umlPackage,
-			EObject bd2ne, EObject bodyDeclaration) {
-		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject umlPackage, EObject bd2ne,
+			EObject jPackage, EObject feature) {
 		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "InterfaceDec2Interface";
-		String b2e__feature____target_name_prime = "target";
-		String bd2ne__feature____target_name_prime = "target";
-		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
-		String bodyDeclaration__jPackage____package_name_prime = "package";
 		String b2e__bodyDeclaration____source_name_prime = "source";
 		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
-		b2e__feature____target.setSrc(b2e);
-		b2e__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(b2e__feature____target);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
-		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(jPackage__bodyDeclaration____ownedElements);
-		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
-		bodyDeclaration__jPackage____package.setTrg(jPackage);
-		ruleresult.getCreatedEdges().add(bodyDeclaration__jPackage____package);
+		String bd2ne__feature____target_name_prime = "target";
+		String b2e__feature____target_name_prime = "target";
+		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
+		String bodyDeclaration__jPackage____package_name_prime = "package";
 		b2e__bodyDeclaration____source.setSrc(b2e);
 		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
@@ -2113,24 +2097,36 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__feature____target.setSrc(b2e);
+		b2e__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
+		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(jPackage__bodyDeclaration____ownedElements);
+		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
+		bodyDeclaration__jPackage____package.setTrg(jPackage);
+		ruleresult.getCreatedEdges().add(bodyDeclaration__jPackage____package);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
-		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
 		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
-		return new Object[] { ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, bodyDeclaration,
-				b2e__feature____target, bd2ne__feature____target, jPackage__bodyDeclaration____ownedElements,
-				bodyDeclaration__jPackage____package, b2e__bodyDeclaration____source,
-				umlPackage__feature____packagedElement, bd2ne__bodyDeclaration____source };
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__feature____target.setName(b2e__feature____target_name_prime);
+		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
+		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, umlPackage, bd2ne, jPackage, feature,
+				b2e__bodyDeclaration____source, umlPackage__feature____packagedElement,
+				bd2ne__bodyDeclaration____source, bd2ne__feature____target, b2e__feature____target,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package };
 	}
 
 	public static final void pattern_InterfaceDec2Interface_11_5_registerobjects_expressionBBBBBBBBB(
-			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject b2e, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject jp2up, EObject bodyDeclaration) {
-		_this.registerObjects_BWD(ruleresult, b2e, jPackage, feature, umlPackage, bd2ne, jp2up, bodyDeclaration);
+			InterfaceDec2Interface _this, PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e,
+			EObject jp2up, EObject umlPackage, EObject bd2ne, EObject jPackage, EObject feature) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, b2e, jp2up, umlPackage, bd2ne, jPackage, feature);
 
 	}
 
@@ -2192,28 +2188,28 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_12_2_corematch_bindingFFB(Match match) {
-		EObject _localVariable_0 = match.getObject("feature");
-		EObject _localVariable_1 = match.getObject("umlPackage");
-		EObject tmpFeature = _localVariable_0;
-		EObject tmpUmlPackage = _localVariable_1;
-		if (tmpFeature instanceof Interface) {
-			Interface feature = (Interface) tmpFeature;
-			if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-				return new Object[] { feature, umlPackage, match };
+		EObject _localVariable_0 = match.getObject("umlPackage");
+		EObject _localVariable_1 = match.getObject("feature");
+		EObject tmpUmlPackage = _localVariable_0;
+		EObject tmpFeature = _localVariable_1;
+		if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
+			if (tmpFeature instanceof Interface) {
+				Interface feature = (Interface) tmpFeature;
+				return new Object[] { umlPackage, feature, match };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_12_2_corematch_blackFBBFB(Interface feature,
-			org.eclipse.uml2.uml.Package umlPackage, Match match) {
+	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_12_2_corematch_blackFBFBB(
+			org.eclipse.uml2.uml.Package umlPackage, Interface feature, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(umlPackage, JavaPackage2UmlPackage.class, "target")) {
 			org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
 			if (jPackage != null) {
-				_result.add(new Object[] { jPackage, feature, umlPackage, jp2up, match });
+				_result.add(new Object[] { jp2up, umlPackage, jPackage, feature, match });
 			}
 
 		}
@@ -2221,13 +2217,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_12_3_findcontext_blackBBBB(
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up) {
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (umlPackage.equals(jp2up.getTarget())) {
-			if (jPackage.equals(jp2up.getSource())) {
-				if (umlPackage.getPackagedElements().contains(feature)) {
-					_result.add(new Object[] { jPackage, feature, umlPackage, jp2up });
+		if (umlPackage.getPackagedElements().contains(feature)) {
+			if (umlPackage.equals(jp2up.getTarget())) {
+				if (jPackage.equals(jp2up.getSource())) {
+					_result.add(new Object[] { jp2up, umlPackage, jPackage, feature });
 				}
 			}
 		}
@@ -2235,43 +2231,42 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_12_3_findcontext_greenBBBBFFFF(
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up) {
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
+		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
 		String jp2up__umlPackage____target_name_prime = "target";
 		String jp2up__jPackage____source_name_prime = "source";
-		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		isApplicableMatch.getAllContextElements().add(jp2up);
+		isApplicableMatch.getAllContextElements().add(umlPackage);
 		isApplicableMatch.getAllContextElements().add(jPackage);
 		isApplicableMatch.getAllContextElements().add(feature);
-		isApplicableMatch.getAllContextElements().add(umlPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up);
+		umlPackage__feature____packagedElement.setSrc(umlPackage);
+		umlPackage__feature____packagedElement.setTrg(feature);
+		isApplicableMatch.getAllContextElements().add(umlPackage__feature____packagedElement);
 		jp2up__umlPackage____target.setSrc(jp2up);
 		jp2up__umlPackage____target.setTrg(umlPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
 		jp2up__jPackage____source.setSrc(jp2up);
 		jp2up__jPackage____source.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
-		umlPackage__feature____packagedElement.setSrc(umlPackage);
-		umlPackage__feature____packagedElement.setTrg(feature);
-		isApplicableMatch.getAllContextElements().add(umlPackage__feature____packagedElement);
+		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
-		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
-		return new Object[] { jPackage, feature, umlPackage, jp2up, isApplicableMatch, jp2up__umlPackage____target,
-				jp2up__jPackage____source, umlPackage__feature____packagedElement };
+		return new Object[] { jp2up, umlPackage, jPackage, feature, isApplicableMatch,
+				umlPackage__feature____packagedElement, jp2up__umlPackage____target, jp2up__jPackage____source };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_12_4_solveCSP_bindingFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jPackage, feature, umlPackage, jp2up);
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage, Interface feature) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jp2up, umlPackage, jPackage, feature);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jPackage, feature, umlPackage, jp2up };
+			return new Object[] { csp, _this, isApplicableMatch, jp2up, umlPackage, jPackage, feature };
 		}
 		return null;
 	}
@@ -2281,11 +2276,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_12_4_solveCSP_bindingAndBlackFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up) {
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage, Interface feature) {
 		Object[] result_pattern_InterfaceDec2Interface_12_4_solveCSP_binding = pattern_InterfaceDec2Interface_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jPackage, feature, umlPackage, jp2up);
+				_this, isApplicableMatch, jp2up, umlPackage, jPackage, feature);
 		if (result_pattern_InterfaceDec2Interface_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_12_4_solveCSP_binding[0];
 
@@ -2293,7 +2287,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jPackage, feature, umlPackage, jp2up };
+				return new Object[] { csp, _this, isApplicableMatch, jp2up, umlPackage, jPackage, feature };
 			}
 		}
 		return null;
@@ -2383,7 +2377,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_black_nac_0B(
 			Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_261628 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_409244 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2392,9 +2386,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_black_nac_1B(
 			Interface feature) {
-		for (Interface __DEC_feature_nestedClassifier_35148 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_850683 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_35148)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_850683)) {
 				return new Object[] { feature };
 			}
 		}
@@ -2413,7 +2407,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 				if (umlPackage.getPackagedElements().contains(feature)) {
 					if (pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_black_nac_0B(feature) == null) {
 						if (pattern_InterfaceDec2Interface_20_2_testcorematchandDECs_black_nac_1B(feature) == null) {
-							_result.add(new Object[] { feature, umlPackage, _edge_packagedElement });
+							_result.add(new Object[] { umlPackage, feature, _edge_packagedElement });
 						}
 					}
 				}
@@ -2434,8 +2428,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final boolean pattern_InterfaceDec2Interface_20_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			InterfaceDec2Interface _this, Match match, Interface feature, org.eclipse.uml2.uml.Package umlPackage) {
-		boolean _localVariable_0 = _this.isAppropriate_BWD(match, feature, umlPackage);
+			InterfaceDec2Interface _this, Match match, org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
+		boolean _localVariable_0 = _this.isAppropriate_BWD(match, umlPackage, feature);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2524,8 +2518,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_788201 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_788201 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_895123 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_895123 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2534,10 +2528,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_1B(
 			InterfaceDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_942609 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_640255 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_942609 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_942609)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_640255 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_640255)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2547,9 +2541,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_2B(
 			InterfaceDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_213473 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_176917 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_213473 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_176917 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2558,7 +2552,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_3B(
 			InterfaceDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_880553 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_913140 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2583,7 +2577,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 									bodyDeclaration) == null) {
 								if (pattern_InterfaceDec2Interface_21_2_testcorematchandDECs_black_nac_3B(
 										bodyDeclaration) == null) {
-									_result.add(new Object[] { jPackage, bodyDeclaration, _edge_ownedElements });
+									_result.add(new Object[] { bodyDeclaration, jPackage, _edge_ownedElements });
 								}
 							}
 						}
@@ -2606,9 +2600,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final boolean pattern_InterfaceDec2Interface_21_3_bookkeepingwithgenericisAppropriatemethod_expressionFBBBB(
-			InterfaceDec2Interface _this, Match match, org.eclipse.modisco.java.Package jPackage,
-			InterfaceDeclaration bodyDeclaration) {
-		boolean _localVariable_0 = _this.isAppropriate_FWD(match, jPackage, bodyDeclaration);
+			InterfaceDec2Interface _this, Match match, InterfaceDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage) {
+		boolean _localVariable_0 = _this.isAppropriate_FWD(match, bodyDeclaration, jPackage);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
@@ -2652,23 +2646,23 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_bindingFFFFBB(Match sourceMatch,
 			Match targetMatch) {
-		EObject _localVariable_0 = sourceMatch.getObject("jPackage");
-		EObject _localVariable_1 = targetMatch.getObject("feature");
-		EObject _localVariable_2 = targetMatch.getObject("umlPackage");
-		EObject _localVariable_3 = sourceMatch.getObject("bodyDeclaration");
-		EObject tmpJPackage = _localVariable_0;
-		EObject tmpFeature = _localVariable_1;
-		EObject tmpUmlPackage = _localVariable_2;
-		EObject tmpBodyDeclaration = _localVariable_3;
-		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
-			if (tmpFeature instanceof Interface) {
-				Interface feature = (Interface) tmpFeature;
-				if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
-					org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-					if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
-						InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
-						return new Object[] { jPackage, feature, umlPackage, bodyDeclaration, sourceMatch,
+		EObject _localVariable_0 = sourceMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = targetMatch.getObject("umlPackage");
+		EObject _localVariable_2 = sourceMatch.getObject("jPackage");
+		EObject _localVariable_3 = targetMatch.getObject("feature");
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpUmlPackage = _localVariable_1;
+		EObject tmpJPackage = _localVariable_2;
+		EObject tmpFeature = _localVariable_3;
+		if (tmpBodyDeclaration instanceof InterfaceDeclaration) {
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) tmpBodyDeclaration;
+			if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
+				if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+					org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+					if (tmpFeature instanceof Interface) {
+						Interface feature = (Interface) tmpFeature;
+						return new Object[] { bodyDeclaration, umlPackage, jPackage, feature, sourceMatch,
 								targetMatch };
 					}
 				}
@@ -2678,10 +2672,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			InterfaceDeclaration bodyDeclaration, Match sourceMatch, Match targetMatch) {
+			InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, Match sourceMatch, Match targetMatch) {
 		if (!sourceMatch.equals(targetMatch)) {
-			return new Object[] { jPackage, feature, umlPackage, bodyDeclaration, sourceMatch, targetMatch };
+			return new Object[] { bodyDeclaration, umlPackage, jPackage, feature, sourceMatch, targetMatch };
 		}
 		return null;
 	}
@@ -2691,30 +2685,29 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		Object[] result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding = pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_bindingFFFFBB(
 				sourceMatch, targetMatch);
 		if (result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding != null) {
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[0];
-			Interface feature = (Interface) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[1];
-			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[2];
-			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[3];
+			InterfaceDeclaration bodyDeclaration = (InterfaceDeclaration) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[0];
+			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[2];
+			Interface feature = (Interface) result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_binding[3];
 
 			Object[] result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_black = pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_blackBBBBBB(
-					jPackage, feature, umlPackage, bodyDeclaration, sourceMatch, targetMatch);
+					bodyDeclaration, umlPackage, jPackage, feature, sourceMatch, targetMatch);
 			if (result_pattern_InterfaceDec2Interface_24_2_matchsrctrgcontext_black != null) {
 
-				return new Object[] { jPackage, feature, umlPackage, bodyDeclaration, sourceMatch, targetMatch };
+				return new Object[] { bodyDeclaration, umlPackage, jPackage, feature, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_3_solvecsp_bindingFBBBBBBB(
-			InterfaceDec2Interface _this, org.eclipse.modisco.java.Package jPackage, Interface feature,
-			org.eclipse.uml2.uml.Package umlPackage, InterfaceDeclaration bodyDeclaration, Match sourceMatch,
-			Match targetMatch) {
-		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(jPackage, feature, umlPackage, bodyDeclaration,
+			InterfaceDec2Interface _this, InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_4 = _this.isApplicable_solveCsp_CC(bodyDeclaration, umlPackage, jPackage, feature,
 				sourceMatch, targetMatch);
 		CSP csp = _localVariable_4;
 		if (csp != null) {
-			return new Object[] { csp, _this, jPackage, feature, umlPackage, bodyDeclaration, sourceMatch,
+			return new Object[] { csp, _this, bodyDeclaration, umlPackage, jPackage, feature, sourceMatch,
 					targetMatch };
 		}
 		return null;
@@ -2725,11 +2718,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_3_solvecsp_bindingAndBlackFBBBBBBB(
-			InterfaceDec2Interface _this, org.eclipse.modisco.java.Package jPackage, Interface feature,
-			org.eclipse.uml2.uml.Package umlPackage, InterfaceDeclaration bodyDeclaration, Match sourceMatch,
-			Match targetMatch) {
+			InterfaceDec2Interface _this, InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, Match sourceMatch, Match targetMatch) {
 		Object[] result_pattern_InterfaceDec2Interface_24_3_solvecsp_binding = pattern_InterfaceDec2Interface_24_3_solvecsp_bindingFBBBBBBB(
-				_this, jPackage, feature, umlPackage, bodyDeclaration, sourceMatch, targetMatch);
+				_this, bodyDeclaration, umlPackage, jPackage, feature, sourceMatch, targetMatch);
 		if (result_pattern_InterfaceDec2Interface_24_3_solvecsp_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_24_3_solvecsp_binding[0];
 
@@ -2737,7 +2729,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_24_3_solvecsp_black != null) {
 
-				return new Object[] { csp, _this, jPackage, feature, umlPackage, bodyDeclaration, sourceMatch,
+				return new Object[] { csp, _this, bodyDeclaration, umlPackage, jPackage, feature, sourceMatch,
 						targetMatch };
 			}
 		}
@@ -2750,15 +2742,15 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_24_5_matchcorrcontext_blackBBFBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage, Match sourceMatch,
+	public static final Iterable<Object[]> pattern_InterfaceDec2Interface_24_5_matchcorrcontext_blackFBBBB(
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
 			for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(umlPackage, JavaPackage2UmlPackage.class, "target")) {
 				if (jPackage.equals(jp2up.getSource())) {
-					_result.add(new Object[] { jPackage, umlPackage, jp2up, sourceMatch, targetMatch });
+					_result.add(new Object[] { jp2up, umlPackage, jPackage, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2777,22 +2769,22 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_blackBBBBB(
-			org.eclipse.modisco.java.Package jPackage, Interface feature, org.eclipse.uml2.uml.Package umlPackage,
-			InterfaceDeclaration bodyDeclaration, CCMatch ccMatch) {
-		return new Object[] { jPackage, feature, umlPackage, bodyDeclaration, ccMatch };
+			InterfaceDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage,
+			org.eclipse.modisco.java.Package jPackage, Interface feature, CCMatch ccMatch) {
+		return new Object[] { bodyDeclaration, umlPackage, jPackage, feature, ccMatch };
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenFBFBB(Interface feature,
-			InterfaceDeclaration bodyDeclaration, CCMatch ccMatch) {
+	public static final Object[] pattern_InterfaceDec2Interface_24_6_createcorrespondence_greenBFFBB(
+			InterfaceDeclaration bodyDeclaration, Interface feature, CCMatch ccMatch) {
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		b2e.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		bd2ne.setTarget(feature);
 		bd2ne.setSource(bodyDeclaration);
+		bd2ne.setTarget(feature);
 		ccMatch.getCreateCorr().add(bd2ne);
-		return new Object[] { b2e, feature, bd2ne, bodyDeclaration, ccMatch };
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature, ccMatch };
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_24_7_addtoreturnedresult_blackBB(
@@ -2818,8 +2810,8 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(
 			InterfaceDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_717910 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_717910 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_735691 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_735691 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2828,10 +2820,10 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_1B(
 			InterfaceDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_298150 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_636213 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_298150 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_298150)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_636213 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_636213)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2841,9 +2833,9 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_2B(
 			InterfaceDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_609028 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_562220 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_609028 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_562220 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2852,7 +2844,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_3B(
 			InterfaceDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_754546 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_279480 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2860,13 +2852,13 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_27_1_matchtggpattern_blackBB(
-			org.eclipse.modisco.java.Package jPackage, InterfaceDeclaration bodyDeclaration) {
+			InterfaceDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage) {
 		if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
 			if (pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_0B(bodyDeclaration) == null) {
 				if (pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_1B(bodyDeclaration) == null) {
 					if (pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_2B(bodyDeclaration) == null) {
 						if (pattern_InterfaceDec2Interface_27_1_matchtggpattern_black_nac_3B(bodyDeclaration) == null) {
-							return new Object[] { jPackage, bodyDeclaration };
+							return new Object[] { bodyDeclaration, jPackage };
 						}
 					}
 				}
@@ -2886,7 +2878,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_28_1_matchtggpattern_black_nac_0B(Interface feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_76382 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_390622 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2894,21 +2886,21 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_28_1_matchtggpattern_black_nac_1B(Interface feature) {
-		for (Interface __DEC_feature_nestedClassifier_175585 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_794963 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
-			if (!feature.equals(__DEC_feature_nestedClassifier_175585)) {
+			if (!feature.equals(__DEC_feature_nestedClassifier_794963)) {
 				return new Object[] { feature };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_28_1_matchtggpattern_blackBB(Interface feature,
-			org.eclipse.uml2.uml.Package umlPackage) {
+	public static final Object[] pattern_InterfaceDec2Interface_28_1_matchtggpattern_blackBB(
+			org.eclipse.uml2.uml.Package umlPackage, Interface feature) {
 		if (umlPackage.getPackagedElements().contains(feature)) {
 			if (pattern_InterfaceDec2Interface_28_1_matchtggpattern_black_nac_0B(feature) == null) {
 				if (pattern_InterfaceDec2Interface_28_1_matchtggpattern_black_nac_1B(feature) == null) {
-					return new Object[] { feature, umlPackage };
+					return new Object[] { umlPackage, feature };
 				}
 			}
 		}
@@ -2938,14 +2930,6 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
-		if (ruleResult.getSourceObjects().contains(jPackage)) {
-			return new Object[] { ruleResult, jPackage };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
 		if (ruleResult.getCorrObjects().contains(jp2up)) {
 			return new Object[] { ruleResult, jp2up };
@@ -2953,10 +2937,18 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return null;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_2BB(
+	public static final Object[] pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, org.eclipse.uml2.uml.Package umlPackage) {
 		if (ruleResult.getTargetObjects().contains(umlPackage)) {
 			return new Object[] { ruleResult, umlPackage };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
+		if (ruleResult.getSourceObjects().contains(jPackage)) {
+			return new Object[] { ruleResult, jPackage };
 		}
 		return null;
 	}
@@ -2968,17 +2960,17 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 			for (EObject tmpJp2up : jp2upList.getEntryObjects()) {
 				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
 					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-					org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
-					if (jPackage != null) {
-						org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
-						if (umlPackage != null) {
-							if (pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+					org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
+					if (umlPackage != null) {
+						org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
+						if (jPackage != null) {
+							if (pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									jp2up) == null) {
-								if (pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_0BB(ruleResult,
-										jPackage) == null) {
+								if (pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+										umlPackage) == null) {
 									if (pattern_InterfaceDec2Interface_29_2_isapplicablecore_black_nac_2BB(ruleResult,
-											umlPackage) == null) {
-										_result.add(new Object[] { jp2upList, jPackage, jp2up, umlPackage,
+											jPackage) == null) {
+										_result.add(new Object[] { jp2upList, jp2up, umlPackage, jPackage,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2994,14 +2986,14 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_29_3_solveCSP_bindingFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jPackage, umlPackage, jp2up,
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage,
+			ModelgeneratorRuleResult ruleResult) {
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jp2up, umlPackage, jPackage,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jPackage, umlPackage, jp2up, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jp2up, umlPackage, jPackage, ruleResult };
 		}
 		return null;
 	}
@@ -3011,11 +3003,11 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 	}
 
 	public static final Object[] pattern_InterfaceDec2Interface_29_3_solveCSP_bindingAndBlackFBBBBBB(
-			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
+			InterfaceDec2Interface _this, IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage,
+			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_InterfaceDec2Interface_29_3_solveCSP_binding = pattern_InterfaceDec2Interface_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jPackage, umlPackage, jp2up, ruleResult);
+				_this, isApplicableMatch, jp2up, umlPackage, jPackage, ruleResult);
 		if (result_pattern_InterfaceDec2Interface_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_InterfaceDec2Interface_29_3_solveCSP_binding[0];
 
@@ -3023,7 +3015,7 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 					csp);
 			if (result_pattern_InterfaceDec2Interface_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jPackage, umlPackage, jp2up, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jp2up, umlPackage, jPackage, ruleResult };
 			}
 		}
 		return null;
@@ -3036,47 +3028,46 @@ public class InterfaceDec2InterfaceImpl extends AbstractRuleImpl implements Inte
 		return _result;
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_29_5_checknacs_blackBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up) {
-		return new Object[] { jPackage, umlPackage, jp2up };
+	public static final Object[] pattern_InterfaceDec2Interface_29_5_checknacs_blackBBB(JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage) {
+		return new Object[] { jp2up, umlPackage, jPackage };
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_29_6_perform_blackBBBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			JavaPackage2UmlPackage jp2up, ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { jPackage, umlPackage, jp2up, ruleResult };
+	public static final Object[] pattern_InterfaceDec2Interface_29_6_perform_blackBBBB(JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage,
+			ModelgeneratorRuleResult ruleResult) {
+		return new Object[] { jp2up, umlPackage, jPackage, ruleResult };
 	}
 
-	public static final Object[] pattern_InterfaceDec2Interface_29_6_perform_greenFBFBFFBB(
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
+	public static final Object[] pattern_InterfaceDec2Interface_29_6_perform_greenFFBFBFBB(
+			org.eclipse.uml2.uml.Package umlPackage, org.eclipse.modisco.java.Package jPackage,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		Interface feature = UMLFactory.eINSTANCE.createInterface();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		InterfaceDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createInterfaceDeclaration();
-		Object _localVariable_0 = csp.getValue("feature", "name");
-		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Interface feature = UMLFactory.eINSTANCE.createInterface();
+		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
+		Object _localVariable_1 = csp.getValue("feature", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getCorrObjects().add(b2e);
-		b2e.setTarget(feature);
-		umlPackage.getPackagedElements().add(feature);
-		ruleResult.getTargetObjects().add(feature);
-		bd2ne.setTarget(feature);
-		ruleResult.getCorrObjects().add(bd2ne);
 		jPackage.getOwnedElements().add(bodyDeclaration);
-		b2e.setSource(bodyDeclaration);
-		bd2ne.setSource(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
-		String feature_name_prime = (String) _localVariable_0;
-		String bodyDeclaration_name_prime = (String) _localVariable_1;
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
+		bd2ne.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(bd2ne);
+		umlPackage.getPackagedElements().add(feature);
+		bd2ne.setTarget(feature);
+		b2e.setTarget(feature);
+		ruleResult.getTargetObjects().add(feature);
+		String bodyDeclaration_name_prime = (String) _localVariable_0;
+		String feature_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_2);
-		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
+		feature.setName(feature_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { b2e, jPackage, feature, umlPackage, bd2ne, bodyDeclaration, ruleResult, csp };
+		return new Object[] { bodyDeclaration, b2e, umlPackage, bd2ne, jPackage, feature, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_InterfaceDec2Interface_29_7_expressionFB(

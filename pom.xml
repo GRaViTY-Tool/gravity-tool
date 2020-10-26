@@ -49,7 +49,7 @@
     <module>implementation/org.gravity.refactorings.ui</module>
     <module>implementation/org.gravity.security.analysis</module>
     <module>implementation/org.gravity.security.annotations</module>
-    <module>implementation/org.gravity.tgg.modisco</module>
+    <module>implementation/org.gravity.tgg.modisco.pm</module>
     <module>implementation/org.gravity.tgg.modisco.ui</module>
     <module>implementation/org.gravity.tgg.modisco.uml</module>
     <module>implementation/org.gravity.typegraph.basic</module>

@@ -48,7 +48,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -73,7 +73,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -82,7 +82,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, MFieldDefinition bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, MFieldDefinition bodyDeclaration, Modifier modifier,
 			VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType);
 
 	/**
@@ -99,8 +99,8 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			MFieldDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uOwnerType, VariableDeclarationFragment vdf,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, MFieldDefinition bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class uOwnerType, VariableDeclarationFragment vdf,
 			AbstractTypeDeclaration jOwnerType, NamedElement2NamedElement jo2uo);
 
 	/**
@@ -117,8 +117,8 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uOwnerType, EObject vdf, EObject jOwnerType,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject uOwnerType, EObject vdf, EObject jOwnerType,
 			EObject jo2uo);
 
 	/**
@@ -200,8 +200,8 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uOwnerType, EObject vdf, EObject jOwnerType,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject b2e, EObject bd2ne,
+			EObject bodyDeclaration, EObject modifier, EObject uOwnerType, EObject vdf, EObject jOwnerType,
 			EObject jo2uo);
 
 	/**
@@ -218,7 +218,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_148(EMoflonEdge _edge_ownedAttribute);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_53(EMoflonEdge _edge_ownedAttribute);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,7 +226,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_153(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_54(EMoflonEdge _edge_bodyDeclarations);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Property feature, Modifier modifier, MFieldDefinition bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Property feature, MFieldDefinition bodyDeclaration, Modifier modifier,
 			org.eclipse.uml2.uml.Class uOwnerType, VariableDeclarationFragment vdf, AbstractTypeDeclaration jOwnerType,
 			Match sourceMatch, Match targetMatch);
 
@@ -276,7 +276,7 @@ public interface FieldDec2Property4Class_WithModifier extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, MFieldDefinition bodyDeclaration, VariableDeclarationFragment vdf,
+	boolean checkDEC_FWD(MFieldDefinition bodyDeclaration, Modifier modifier, VariableDeclarationFragment vdf,
 			AbstractTypeDeclaration jOwnerType);
 
 	/**

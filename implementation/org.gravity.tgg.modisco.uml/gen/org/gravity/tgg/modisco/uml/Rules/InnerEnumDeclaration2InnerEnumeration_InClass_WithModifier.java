@@ -46,7 +46,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	boolean isAppropriate_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -71,7 +71,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	void registerObjectsToMatch_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -80,7 +80,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, Modifier modifier, EnumDeclaration bodyDeclaration,
+	CSP isAppropriate_solveCsp_FWD(Match match, EnumDeclaration bodyDeclaration, Modifier modifier,
 			AbstractTypeDeclaration jContainer);
 
 	/**
@@ -97,8 +97,8 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, Modifier modifier,
-			EnumDeclaration bodyDeclaration, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			Modifier modifier, org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer,
 			NamedElement2NamedElement ne2ne);
 
 	/**
@@ -116,7 +116,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @generated
 	 */
 	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @generated
 	 */
 	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject feature, EObject bd2ne, EObject b2e,
-			EObject modifier, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject ne2ne);
+			EObject bodyDeclaration, EObject modifier, EObject uContainer, EObject jContainer, EObject ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_113(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_79(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,7 +222,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_119(EMoflonEdge _edge_modifier);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_80(EMoflonEdge _edge_modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,7 +254,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(Enumeration feature, Modifier modifier, EnumDeclaration bodyDeclaration,
+	CSP isApplicable_solveCsp_CC(Enumeration feature, EnumDeclaration bodyDeclaration, Modifier modifier,
 			org.eclipse.uml2.uml.Class uContainer, AbstractTypeDeclaration jContainer, Match sourceMatch,
 			Match targetMatch);
 
@@ -272,7 +272,7 @@ public interface InnerEnumDeclaration2InnerEnumeration_InClass_WithModifier exte
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(Modifier modifier, EnumDeclaration bodyDeclaration, AbstractTypeDeclaration jContainer);
+	boolean checkDEC_FWD(EnumDeclaration bodyDeclaration, Modifier modifier, AbstractTypeDeclaration jContainer);
 
 	/**
 	 * <!-- begin-user-doc -->

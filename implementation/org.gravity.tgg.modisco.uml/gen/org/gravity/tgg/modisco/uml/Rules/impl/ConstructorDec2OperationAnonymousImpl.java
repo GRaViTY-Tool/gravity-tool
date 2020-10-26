@@ -183,49 +183,49 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 		Object[] result1_green = ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_1_1_performtransformation_greenFFFBBB(bodyDeclaration, uAnon,
 						csp);
-		Operation feature = (Operation) result1_green[0];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[0];
+		Operation feature = (Operation) result1_green[1];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 
 		Object[] result2_black = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_blackBBBB(feature, b2e, bd2ne,
+				.pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_blackBBBB(bd2ne, feature, b2e,
 						bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", " + "[b2e] = " + b2e
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature
+							+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_greenFBBBB(feature, b2e, bd2ne,
+				.pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_greenFBBBB(bd2ne, feature, b2e,
 						bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, feature,
-						b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+				.pattern_ConstructorDec2OperationAnonymous_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bd2ne,
+						feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[mAnon] = " + mAnon + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ba2na] = "
 					+ ba2na + ", " + "[uAnon] = " + uAnon + ".");
 		}
 		ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult,
-						feature, b2e, bd2ne, mAnon, bodyDeclaration, uAnon);
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge uAnon__feature____ownedOperation = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge feature__uAnon____class = (EMoflonEdge) result3_green[9];
+						bd2ne, feature, b2e, mAnon, bodyDeclaration, uAnon);
+		//nothing EMoflonEdge uAnon__feature____ownedOperation = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge feature__uAnon____class = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mAnon__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__mAnon____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
 		ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						feature, b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+						bd2ne, feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 		return ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_1_6_expressionFB(ruleresult);
 	}
@@ -404,11 +404,11 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e,
 			EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("mAnon", mAnon);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("ba2na", ba2na);
@@ -506,50 +506,50 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 		org.eclipse.uml2.uml.Class uAnon = (org.eclipse.uml2.uml.Class) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_11_1_performtransformation_greenBFFBFB(feature, mAnon, csp);
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+				.pattern_ConstructorDec2OperationAnonymous_11_1_performtransformation_greenFBFBFB(feature, mAnon, csp);
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[0];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[2];
 		MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result1_green[4];
 
 		Object[] result2_black = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_blackBBBB(feature, b2e, bd2ne,
+				.pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_blackBBBB(bd2ne, feature, b2e,
 						bodyDeclaration);
 		if (result2_black == null) {
 			throw new RuntimeException(
-					"Pattern matching failed." + " Variables: " + "[feature] = " + feature + ", " + "[b2e] = " + b2e
-							+ ", " + "[bd2ne] = " + bd2ne + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
+					"Pattern matching failed." + " Variables: " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature
+							+ ", " + "[b2e] = " + b2e + ", " + "[bodyDeclaration] = " + bodyDeclaration + ".");
 		}
 		Object[] result2_green = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_greenFBBBB(feature, b2e,
-						bd2ne, bodyDeclaration);
+				.pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_greenFBBBB(bd2ne, feature,
+						b2e, bodyDeclaration);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = ConstructorDec2OperationAnonymousImpl
-				.pattern_ConstructorDec2OperationAnonymous_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, feature,
-						b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+				.pattern_ConstructorDec2OperationAnonymous_11_3_bookkeepingforedges_blackBBBBBBBB(ruleresult, bd2ne,
+						feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", "
+					+ ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ", " + "[b2e] = " + b2e + ", "
 					+ "[mAnon] = " + mAnon + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[ba2na] = "
 					+ ba2na + ", " + "[uAnon] = " + uAnon + ".");
 		}
 		ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(ruleresult,
-						feature, b2e, bd2ne, mAnon, bodyDeclaration, uAnon);
-		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
-		//nothing EMoflonEdge uAnon__feature____ownedOperation = (EMoflonEdge) result3_green[8];
-		//nothing EMoflonEdge feature__uAnon____class = (EMoflonEdge) result3_green[9];
+						bd2ne, feature, b2e, mAnon, bodyDeclaration, uAnon);
+		//nothing EMoflonEdge uAnon__feature____ownedOperation = (EMoflonEdge) result3_green[7];
+		//nothing EMoflonEdge feature__uAnon____class = (EMoflonEdge) result3_green[8];
+		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge mAnon__bodyDeclaration____bodyDeclarations = (EMoflonEdge) result3_green[10];
 		//nothing EMoflonEdge bodyDeclaration__mAnon____anonymousClassDeclarationOwner = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[13];
 		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[14];
 
 		// 
 		// 
 		ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
-						feature, b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+						bd2ne, feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 		return ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_11_6_expressionFB(ruleresult);
 	}
@@ -724,11 +724,11 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne,
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e,
 			EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("b2e", b2e);
-		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("mAnon", mAnon);
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
 		ruleresult.registerObject("ba2na", ba2na);
@@ -751,7 +751,7 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_162(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_81(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -811,7 +811,7 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_167(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_82(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = ConstructorDec2OperationAnonymousImpl
 				.pattern_ConstructorDec2OperationAnonymous_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -881,13 +881,13 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -928,13 +928,13 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 		CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);
 
-		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
-		var_feature_name.setValue(__helper.getValue("feature", "name"));
-		var_feature_name.setType("String");
-
 		Variable var_bodyDeclaration_name = CSPFactoryHelper.eINSTANCE.createVariable("bodyDeclaration", true, csp);
 		var_bodyDeclaration_name.setValue(__helper.getValue("bodyDeclaration", "name"));
 		var_bodyDeclaration_name.setType("String");
+
+		Variable var_feature_name = CSPFactoryHelper.eINSTANCE.createVariable("feature", true, csp);
+		var_feature_name.setValue(__helper.getValue("feature", "name"));
+		var_feature_name.setType("String");
 
 		Eq eq0 = new Eq();
 		csp.getConstraints().add(eq0);
@@ -1020,10 +1020,10 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 							+ "[uAnon] = " + uAnon + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				ConstructorDec2OperationAnonymousImpl
-						.pattern_ConstructorDec2OperationAnonymous_24_6_createcorrespondence_greenBFFBB(feature,
+						.pattern_ConstructorDec2OperationAnonymous_24_6_createcorrespondence_greenFBFBB(feature,
 								bodyDeclaration, ccMatch);
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
-				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[0];
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 
 				Object[] result7_black = ConstructorDec2OperationAnonymousImpl
 						.pattern_ConstructorDec2OperationAnonymous_24_7_addtoreturnedresult_blackBB(result, ccMatch);
@@ -1173,9 +1173,9 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 					ConstructorDec2OperationAnonymousImpl
 							.pattern_ConstructorDec2OperationAnonymous_29_6_perform_greenFFFBFBBB(mAnon, uAnon,
 									ruleResult, csp);
-					//nothing Operation feature = (Operation) result6_green[0];
-					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[0];
+					//nothing Operation feature = (Operation) result6_green[1];
+					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[2];
 					//nothing MConstructorDefinition bodyDeclaration = (MConstructorDefinition) result6_green[4];
 
 				} else {
@@ -1300,10 +1300,10 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 			return null;
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_162__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_162((EMoflonEdge) arguments.get(0));
-		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_167__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_167((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_81__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_81((EMoflonEdge) arguments.get(0));
+		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_82__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_82((EMoflonEdge) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.CONSTRUCTOR_DEC2_OPERATION_ANONYMOUS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1495,65 +1495,65 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_1_1_performtransformation_greenFFFBBB(
 			MConstructorDefinition bodyDeclaration, org.eclipse.uml2.uml.Class uAnon, CSP csp) {
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		Object _localVariable_0 = csp.getValue("feature", "name");
+		bd2ne.setSource(bodyDeclaration);
 		uAnon.getOwnedOperations().add(feature);
+		bd2ne.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
-		bd2ne.setSource(bodyDeclaration);
-		bd2ne.setTarget(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { feature, b2e, bd2ne, bodyDeclaration, uAnon, csp };
+		return new Object[] { bd2ne, feature, b2e, bodyDeclaration, uAnon, csp };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_blackBBBB(
-			Operation feature, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			NamedElement2NamedElement bd2ne, Operation feature, ASTNode2Element b2e,
 			MConstructorDefinition bodyDeclaration) {
-		return new Object[] { feature, b2e, bd2ne, bodyDeclaration };
+		return new Object[] { bd2ne, feature, b2e, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_1_2_collecttranslatedelements_greenFBBBB(
-			Operation feature, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			NamedElement2NamedElement bd2ne, Operation feature, ASTNode2Element b2e,
 			MConstructorDefinition bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, feature, b2e, bd2ne, bodyDeclaration };
+		return new Object[] { ruleresult, bd2ne, feature, b2e, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
+			PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
 			EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
-		if (!feature.equals(mAnon)) {
-			if (!feature.equals(uAnon)) {
-				if (!b2e.equals(feature)) {
-					if (!b2e.equals(bd2ne)) {
-						if (!b2e.equals(mAnon)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(ba2na)) {
-									if (!b2e.equals(uAnon)) {
-										if (!bd2ne.equals(feature)) {
-											if (!bd2ne.equals(mAnon)) {
-												if (!bd2ne.equals(bodyDeclaration)) {
-													if (!bd2ne.equals(uAnon)) {
+		if (!bd2ne.equals(feature)) {
+			if (!bd2ne.equals(mAnon)) {
+				if (!bd2ne.equals(bodyDeclaration)) {
+					if (!bd2ne.equals(uAnon)) {
+						if (!feature.equals(mAnon)) {
+							if (!feature.equals(uAnon)) {
+								if (!b2e.equals(bd2ne)) {
+									if (!b2e.equals(feature)) {
+										if (!b2e.equals(mAnon)) {
+											if (!b2e.equals(bodyDeclaration)) {
+												if (!b2e.equals(ba2na)) {
+													if (!b2e.equals(uAnon)) {
 														if (!mAnon.equals(uAnon)) {
 															if (!bodyDeclaration.equals(feature)) {
 																if (!bodyDeclaration.equals(mAnon)) {
 																	if (!bodyDeclaration.equals(uAnon)) {
-																		if (!ba2na.equals(feature)) {
-																			if (!ba2na.equals(bd2ne)) {
+																		if (!ba2na.equals(bd2ne)) {
+																			if (!ba2na.equals(feature)) {
 																				if (!ba2na.equals(mAnon)) {
 																					if (!ba2na
 																							.equals(bodyDeclaration)) {
 																						if (!ba2na.equals(uAnon)) {
 																							return new Object[] {
-																									ruleresult, feature,
-																									b2e, bd2ne, mAnon,
+																									ruleresult, bd2ne,
+																									feature, b2e, mAnon,
 																									bodyDeclaration,
 																									ba2na, uAnon };
 																						}
@@ -1581,70 +1581,70 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
+			PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
 			EObject bodyDeclaration, EObject uAnon) {
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uAnon__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uAnon____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__mAnon____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorDec2OperationAnonymous";
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String uAnon__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__uAnon____class_name_prime = "class";
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String mAnon__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__mAnon____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
 		uAnon__feature____ownedOperation.setSrc(uAnon);
 		uAnon__feature____ownedOperation.setTrg(feature);
 		ruleresult.getCreatedEdges().add(uAnon__feature____ownedOperation);
 		feature__uAnon____class.setSrc(feature);
 		feature__uAnon____class.setTrg(uAnon);
 		ruleresult.getCreatedEdges().add(feature__uAnon____class);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
 		mAnon__bodyDeclaration____bodyDeclarations.setSrc(mAnon);
 		mAnon__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getTranslatedEdges().add(mAnon__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner.setTrg(mAnon);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__mAnon____anonymousClassDeclarationOwner);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		uAnon__feature____ownedOperation.setName(uAnon__feature____ownedOperation_name_prime);
 		feature__uAnon____class.setName(feature__uAnon____class_name_prime);
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		mAnon__bodyDeclaration____bodyDeclarations.setName(mAnon__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__mAnon____anonymousClassDeclarationOwner_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, b2e, bd2ne, mAnon, bodyDeclaration, uAnon,
-				bd2ne__bodyDeclaration____source, uAnon__feature____ownedOperation, feature__uAnon____class,
+		return new Object[] { ruleresult, bd2ne, feature, b2e, mAnon, bodyDeclaration, uAnon,
+				uAnon__feature____ownedOperation, feature__uAnon____class, bd2ne__bodyDeclaration____source,
 				mAnon__bodyDeclaration____bodyDeclarations, bodyDeclaration__mAnon____anonymousClassDeclarationOwner,
-				b2e__bodyDeclaration____source, bd2ne__feature____target, b2e__feature____target };
+				bd2ne__feature____target, b2e__bodyDeclaration____source, b2e__feature____target };
 	}
 
 	public static final void pattern_ConstructorDec2OperationAnonymous_1_5_registerobjects_expressionBBBBBBBBB(
-			ConstructorDec2OperationAnonymous _this, PerformRuleResult ruleresult, EObject feature, EObject b2e,
-			EObject bd2ne, EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
-		_this.registerObjects_FWD(ruleresult, feature, b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+			ConstructorDec2OperationAnonymous _this, PerformRuleResult ruleresult, EObject bd2ne, EObject feature,
+			EObject b2e, EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
+		_this.registerObjects_FWD(ruleresult, bd2ne, feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 
 	}
 
@@ -2003,67 +2003,67 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 		return null;
 	}
 
-	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_1_performtransformation_greenBFFBFB(
+	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_1_performtransformation_greenFBFBFB(
 			Operation feature, AnonymousClassDeclaration mAnon, CSP csp) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		MConstructorDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
-		b2e.setTarget(feature);
 		bd2ne.setTarget(feature);
+		b2e.setTarget(feature);
 		bd2ne.setSource(bodyDeclaration);
 		mAnon.getBodyDeclarations().add(bodyDeclaration);
 		b2e.setSource(bodyDeclaration);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { feature, b2e, bd2ne, mAnon, bodyDeclaration, csp };
+		return new Object[] { bd2ne, feature, b2e, mAnon, bodyDeclaration, csp };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_blackBBBB(
-			Operation feature, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			NamedElement2NamedElement bd2ne, Operation feature, ASTNode2Element b2e,
 			MConstructorDefinition bodyDeclaration) {
-		return new Object[] { feature, b2e, bd2ne, bodyDeclaration };
+		return new Object[] { bd2ne, feature, b2e, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_2_collecttranslatedelements_greenFBBBB(
-			Operation feature, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			NamedElement2NamedElement bd2ne, Operation feature, ASTNode2Element b2e,
 			MConstructorDefinition bodyDeclaration) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
+		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getTranslatedElements().add(feature);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		return new Object[] { ruleresult, feature, b2e, bd2ne, bodyDeclaration };
+		return new Object[] { ruleresult, bd2ne, feature, b2e, bodyDeclaration };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
+			PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
 			EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
-		if (!feature.equals(mAnon)) {
-			if (!feature.equals(uAnon)) {
-				if (!b2e.equals(feature)) {
-					if (!b2e.equals(bd2ne)) {
-						if (!b2e.equals(mAnon)) {
-							if (!b2e.equals(bodyDeclaration)) {
-								if (!b2e.equals(ba2na)) {
-									if (!b2e.equals(uAnon)) {
-										if (!bd2ne.equals(feature)) {
-											if (!bd2ne.equals(mAnon)) {
-												if (!bd2ne.equals(bodyDeclaration)) {
-													if (!bd2ne.equals(uAnon)) {
+		if (!bd2ne.equals(feature)) {
+			if (!bd2ne.equals(mAnon)) {
+				if (!bd2ne.equals(bodyDeclaration)) {
+					if (!bd2ne.equals(uAnon)) {
+						if (!feature.equals(mAnon)) {
+							if (!feature.equals(uAnon)) {
+								if (!b2e.equals(bd2ne)) {
+									if (!b2e.equals(feature)) {
+										if (!b2e.equals(mAnon)) {
+											if (!b2e.equals(bodyDeclaration)) {
+												if (!b2e.equals(ba2na)) {
+													if (!b2e.equals(uAnon)) {
 														if (!mAnon.equals(uAnon)) {
 															if (!bodyDeclaration.equals(feature)) {
 																if (!bodyDeclaration.equals(mAnon)) {
 																	if (!bodyDeclaration.equals(uAnon)) {
-																		if (!ba2na.equals(feature)) {
-																			if (!ba2na.equals(bd2ne)) {
+																		if (!ba2na.equals(bd2ne)) {
+																			if (!ba2na.equals(feature)) {
 																				if (!ba2na.equals(mAnon)) {
 																					if (!ba2na
 																							.equals(bodyDeclaration)) {
 																						if (!ba2na.equals(uAnon)) {
 																							return new Object[] {
-																									ruleresult, feature,
-																									b2e, bd2ne, mAnon,
+																									ruleresult, bd2ne,
+																									feature, b2e, mAnon,
 																									bodyDeclaration,
 																									ba2na, uAnon };
 																						}
@@ -2091,70 +2091,70 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFFF(
-			PerformRuleResult ruleresult, EObject feature, EObject b2e, EObject bd2ne, EObject mAnon,
+			PerformRuleResult ruleresult, EObject bd2ne, EObject feature, EObject b2e, EObject mAnon,
 			EObject bodyDeclaration, EObject uAnon) {
-		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge uAnon__feature____ownedOperation = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge feature__uAnon____class = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge mAnon__bodyDeclaration____bodyDeclarations = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__mAnon____anonymousClassDeclarationOwner = RuntimeFactory.eINSTANCE
 				.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "ConstructorDec2OperationAnonymous";
-		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String uAnon__feature____ownedOperation_name_prime = "ownedOperation";
 		String feature__uAnon____class_name_prime = "class";
+		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String mAnon__bodyDeclaration____bodyDeclarations_name_prime = "bodyDeclarations";
 		String bodyDeclaration__mAnon____anonymousClassDeclarationOwner_name_prime = "anonymousClassDeclarationOwner";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__feature____target_name_prime = "target";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
-		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
 		uAnon__feature____ownedOperation.setSrc(uAnon);
 		uAnon__feature____ownedOperation.setTrg(feature);
 		ruleresult.getTranslatedEdges().add(uAnon__feature____ownedOperation);
 		feature__uAnon____class.setSrc(feature);
 		feature__uAnon____class.setTrg(uAnon);
 		ruleresult.getTranslatedEdges().add(feature__uAnon____class);
+		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
+		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
 		mAnon__bodyDeclaration____bodyDeclarations.setSrc(mAnon);
 		mAnon__bodyDeclaration____bodyDeclarations.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(mAnon__bodyDeclaration____bodyDeclarations);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner.setSrc(bodyDeclaration);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner.setTrg(mAnon);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__mAnon____anonymousClassDeclarationOwner);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__feature____target.setSrc(bd2ne);
 		bd2ne__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		uAnon__feature____ownedOperation.setName(uAnon__feature____ownedOperation_name_prime);
 		feature__uAnon____class.setName(feature__uAnon____class_name_prime);
+		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		mAnon__bodyDeclaration____bodyDeclarations.setName(mAnon__bodyDeclaration____bodyDeclarations_name_prime);
 		bodyDeclaration__mAnon____anonymousClassDeclarationOwner
 				.setName(bodyDeclaration__mAnon____anonymousClassDeclarationOwner_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, feature, b2e, bd2ne, mAnon, bodyDeclaration, uAnon,
-				bd2ne__bodyDeclaration____source, uAnon__feature____ownedOperation, feature__uAnon____class,
+		return new Object[] { ruleresult, bd2ne, feature, b2e, mAnon, bodyDeclaration, uAnon,
+				uAnon__feature____ownedOperation, feature__uAnon____class, bd2ne__bodyDeclaration____source,
 				mAnon__bodyDeclaration____bodyDeclarations, bodyDeclaration__mAnon____anonymousClassDeclarationOwner,
-				b2e__bodyDeclaration____source, bd2ne__feature____target, b2e__feature____target };
+				bd2ne__feature____target, b2e__bodyDeclaration____source, b2e__feature____target };
 	}
 
 	public static final void pattern_ConstructorDec2OperationAnonymous_11_5_registerobjects_expressionBBBBBBBBB(
-			ConstructorDec2OperationAnonymous _this, PerformRuleResult ruleresult, EObject feature, EObject b2e,
-			EObject bd2ne, EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
-		_this.registerObjects_BWD(ruleresult, feature, b2e, bd2ne, mAnon, bodyDeclaration, ba2na, uAnon);
+			ConstructorDec2OperationAnonymous _this, PerformRuleResult ruleresult, EObject bd2ne, EObject feature,
+			EObject b2e, EObject mAnon, EObject bodyDeclaration, EObject ba2na, EObject uAnon) {
+		_this.registerObjects_BWD(ruleresult, bd2ne, feature, b2e, mAnon, bodyDeclaration, ba2na, uAnon);
 
 	}
 
@@ -2412,8 +2412,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_110460 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_110460 != null) {
+		DataType __DEC_feature_ownedOperation_447982 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_447982 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2422,8 +2422,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_283948 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_283948 != null) {
+		Interface __DEC_feature_ownedOperation_384224 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_384224 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2557,8 +2557,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_21_2_testcorematchandDECs_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_7208 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_7208 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_389361 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_389361 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2567,9 +2567,9 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_21_2_testcorematchandDECs_black_nac_1B(
 			MConstructorDefinition bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_777741 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_283309 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_777741 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_283309 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2786,17 +2786,17 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 		return new Object[] { feature, mAnon, bodyDeclaration, uAnon, ccMatch };
 	}
 
-	public static final Object[] pattern_ConstructorDec2OperationAnonymous_24_6_createcorrespondence_greenBFFBB(
+	public static final Object[] pattern_ConstructorDec2OperationAnonymous_24_6_createcorrespondence_greenFBFBB(
 			Operation feature, MConstructorDefinition bodyDeclaration, CCMatch ccMatch) {
-		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
-		b2e.setSource(bodyDeclaration);
-		b2e.setTarget(feature);
-		ccMatch.getCreateCorr().add(b2e);
+		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
 		bd2ne.setSource(bodyDeclaration);
 		bd2ne.setTarget(feature);
 		ccMatch.getCreateCorr().add(bd2ne);
-		return new Object[] { feature, b2e, bd2ne, bodyDeclaration, ccMatch };
+		b2e.setSource(bodyDeclaration);
+		b2e.setTarget(feature);
+		ccMatch.getCreateCorr().add(b2e);
+		return new Object[] { bd2ne, feature, b2e, bodyDeclaration, ccMatch };
 	}
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_24_7_addtoreturnedresult_blackBB(
@@ -2822,8 +2822,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_27_1_matchtggpattern_black_nac_0B(
 			MConstructorDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_48013 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_48013 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_433053 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_433053 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2832,9 +2832,9 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_27_1_matchtggpattern_black_nac_1B(
 			MConstructorDefinition bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_156839 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_920314 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_156839 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_920314 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2866,8 +2866,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_505203 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_505203 != null) {
+		DataType __DEC_feature_ownedOperation_119646 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_119646 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2876,8 +2876,8 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_465326 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_465326 != null) {
+		Interface __DEC_feature_ownedOperation_367359 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_367359 != null) {
 			return new Object[] { feature };
 		}
 
@@ -3033,20 +3033,20 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 	public static final Object[] pattern_ConstructorDec2OperationAnonymous_29_6_perform_greenFFFBFBBB(
 			AnonymousClassDeclaration mAnon, org.eclipse.uml2.uml.Class uAnon, ModelgeneratorRuleResult ruleResult,
 			CSP csp) {
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		Operation feature = UMLFactory.eINSTANCE.createOperation();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		MConstructorDefinition bodyDeclaration = ModiscoFactory.eINSTANCE.createMConstructorDefinition();
 		Object _localVariable_0 = csp.getValue("feature", "name");
 		Object _localVariable_1 = csp.getValue("bodyDeclaration", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
+		ruleResult.getCorrObjects().add(bd2ne);
 		uAnon.getOwnedOperations().add(feature);
+		bd2ne.setTarget(feature);
 		ruleResult.getTargetObjects().add(feature);
 		b2e.setTarget(feature);
 		ruleResult.getCorrObjects().add(b2e);
-		bd2ne.setTarget(feature);
-		ruleResult.getCorrObjects().add(bd2ne);
 		bd2ne.setSource(bodyDeclaration);
 		mAnon.getBodyDeclarations().add(bodyDeclaration);
 		b2e.setSource(bodyDeclaration);
@@ -3058,7 +3058,7 @@ public class ConstructorDec2OperationAnonymousImpl extends AbstractRuleImpl
 		feature.setName(feature_name_prime);
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { feature, b2e, bd2ne, mAnon, bodyDeclaration, uAnon, ruleResult, csp };
+		return new Object[] { bd2ne, feature, b2e, mAnon, bodyDeclaration, uAnon, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_ConstructorDec2OperationAnonymous_29_7_expressionFB(

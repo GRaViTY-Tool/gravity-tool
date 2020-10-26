@@ -728,7 +728,7 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_140(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_61(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4EnumImpl
 				.pattern_MethodDec2Operation4Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -786,7 +786,7 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_145(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_62(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4EnumImpl
 				.pattern_MethodDec2Operation4Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1264,10 +1264,10 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_140__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_140((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_145__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_145((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_61__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_61((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_62__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_62((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2370,8 +2370,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_19049 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_19049 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_333695 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_333695 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2380,8 +2380,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_535753 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_535753 != null) {
+		Interface __DEC_feature_ownedOperation_884919 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_884919 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2511,8 +2511,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_782458 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_782458 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_722336 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_722336 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2521,9 +2521,9 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_21_2_testcorematchandDECs_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_853209 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_439250 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_853209 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_439250 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2772,8 +2772,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_941008 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_941008 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_164806 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_164806 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2782,9 +2782,9 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_27_1_matchtggpattern_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_890063 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_752756 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_890063 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_752756 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2814,8 +2814,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 	}
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_28_1_matchtggpattern_black_nac_0B(Operation feature) {
-		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_817425 = feature.getClass_();
-		if (__DEC_feature_ownedOperation_817425 != null) {
+		org.eclipse.uml2.uml.Class __DEC_feature_ownedOperation_272029 = feature.getClass_();
+		if (__DEC_feature_ownedOperation_272029 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2823,8 +2823,8 @@ public class MethodDec2Operation4EnumImpl extends AbstractRuleImpl implements Me
 	}
 
 	public static final Object[] pattern_MethodDec2Operation4Enum_28_1_matchtggpattern_black_nac_1B(Operation feature) {
-		Interface __DEC_feature_ownedOperation_861921 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_861921 != null) {
+		Interface __DEC_feature_ownedOperation_94262 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_94262 != null) {
 			return new Object[] { feature };
 		}
 

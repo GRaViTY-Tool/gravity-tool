@@ -44,8 +44,8 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			MClass bodyDeclaration);
+	boolean isAppropriate_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration,
+			Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			MClass bodyDeclaration);
+	void registerObjectsToMatch_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration,
+			Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,8 +78,8 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage, Modifier modifier,
-			MClass bodyDeclaration);
+	CSP isAppropriate_solveCsp_FWD(Match match, org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration,
+			Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Package umlPackage,
-			org.eclipse.modisco.java.Package jPackage, Modifier modifier, MClass bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration, Modifier modifier,
 			JavaPackage2UmlPackage jp2up);
 
 	/**
@@ -113,8 +113,8 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
-			EObject bd2ne, EObject b2e, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
+			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,8 +198,8 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject feature,
-			EObject bd2ne, EObject b2e, EObject jPackage, EObject modifier, EObject bodyDeclaration, EObject jp2up);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject m2f, EObject umlPackage, EObject b2e, EObject bd2ne,
+			EObject feature, EObject jPackage, EObject bodyDeclaration, EObject modifier, EObject jp2up);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,7 +215,7 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_150(EMoflonEdge _edge_packagedElement);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_74(EMoflonEdge _edge_packagedElement);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_155(EMoflonEdge _edge_ownedElements);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_75(EMoflonEdge _edge_ownedElements);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,7 +256,7 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @generated
 	 */
 	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Package umlPackage, org.eclipse.uml2.uml.Class feature,
-			org.eclipse.modisco.java.Package jPackage, Modifier modifier, MClass bodyDeclaration, Match sourceMatch,
+			org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration, Modifier modifier, Match sourceMatch,
 			Match targetMatch);
 
 	/**
@@ -273,7 +273,7 @@ public interface ClassDecWithModifier2Class_InPackage extends EObject, AbstractR
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, Modifier modifier, MClass bodyDeclaration);
+	boolean checkDEC_FWD(org.eclipse.modisco.java.Package jPackage, MClass bodyDeclaration, Modifier modifier);
 
 	/**
 	 * <!-- begin-user-doc -->

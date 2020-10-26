@@ -165,50 +165,50 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[0];
-		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_bindingAndBlack[1];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[2];
+		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_bindingAndBlack[0];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[2];
 		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
 		Object[] result1_green = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_1_1_performtransformation_greenBFBFFB(bodyDeclaration, umlPackage, csp);
-		Enumeration feature = (Enumeration) result1_green[1];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[3];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[4];
+				.pattern_EnumDec2Enum_1_1_performtransformation_greenBFFFBB(bodyDeclaration, umlPackage, csp);
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
+		Enumeration feature = (Enumeration) result1_green[3];
 
 		Object[] result2_black = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBBB(bodyDeclaration, feature, bd2ne, b2e);
+				.pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e, bd2ne, feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ".");
+							+ "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, feature, bd2ne, b2e);
+				.pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e, bd2ne, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_1_3_bookkeepingforedges_blackBBBBBBBB(ruleresult,
-				jp2up, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+				bodyDeclaration, b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ", " + "[umlPackage] = "
-					+ umlPackage + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = "
+					+ bd2ne + ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ", " + "[feature] = "
+					+ feature + ", " + "[umlPackage] = " + umlPackage + ".");
 		}
 		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, bodyDeclaration,
-				jPackage, feature, umlPackage, bd2ne, b2e);
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
+				b2e, bd2ne, jPackage, feature, umlPackage);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, jp2up,
-				bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, bodyDeclaration,
+				b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 		return EnumDec2EnumImpl.pattern_EnumDec2Enum_1_6_expressionFB(ruleresult);
 	}
 
@@ -237,28 +237,28 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		}
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result2_binding[0];
 		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_binding[1];
-		for (Object[] result2_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_2_2_corematch_blackFBBFB(bodyDeclaration,
+		for (Object[] result2_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_2_2_corematch_blackBBFFB(bodyDeclaration,
 				jPackage, match)) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[0];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
 			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[3];
 			// ForEach 
-			for (Object[] result3_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_2_3_findcontext_blackBBBB(jp2up,
-					bodyDeclaration, jPackage, umlPackage)) {
-				Object[] result3_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_2_3_findcontext_greenBBBBFFFFF(jp2up,
-						bodyDeclaration, jPackage, umlPackage);
+			for (Object[] result3_black : EnumDec2EnumImpl
+					.pattern_EnumDec2Enum_2_3_findcontext_blackBBBB(bodyDeclaration, jPackage, jp2up, umlPackage)) {
+				Object[] result3_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_2_3_findcontext_greenBBBBFFFFF(
+						bodyDeclaration, jPackage, jp2up, umlPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
-				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[5];
-				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[6];
-				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[7];
+				//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[5];
+				//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[6];
+				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[7];
 				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[8];
 
 				Object[] result4_bindingAndBlack = EnumDec2EnumImpl
-						.pattern_EnumDec2Enum_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jp2up,
-								bodyDeclaration, jPackage, umlPackage);
+						.pattern_EnumDec2Enum_2_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch,
+								bodyDeclaration, jPackage, jp2up, umlPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[bodyDeclaration] = " + bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[bodyDeclaration] = "
+							+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ", "
 							+ "[umlPackage] = " + umlPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -330,8 +330,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage,
+	public CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
 			org.eclipse.uml2.uml.Package umlPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
@@ -358,9 +358,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("bodyDeclaration", bodyDeclaration);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("umlPackage", umlPackage);
 		return csp;
 	}
@@ -379,15 +379,15 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration,
-			EObject jPackage, EObject feature, EObject umlPackage, EObject bd2ne, EObject b2e) {
-		ruleresult.registerObject("jp2up", jp2up);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne,
+			EObject jPackage, EObject jp2up, EObject feature, EObject umlPackage) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("umlPackage", umlPackage);
-		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -468,50 +468,50 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
 					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
 		}
-		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[0];
-		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[1];
+		org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result1_bindingAndBlack[0];
+		JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result1_bindingAndBlack[1];
 		Enumeration feature = (Enumeration) result1_bindingAndBlack[2];
 		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result1_bindingAndBlack[3];
 		CSP csp = (CSP) result1_bindingAndBlack[4];
-		Object[] result1_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_1_performtransformation_greenFBBFFB(jPackage,
+		Object[] result1_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_1_performtransformation_greenFFFBBB(jPackage,
 				feature, csp);
 		EnumDeclaration bodyDeclaration = (EnumDeclaration) result1_green[0];
-		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[3];
-		ASTNode2Element b2e = (ASTNode2Element) result1_green[4];
+		ASTNode2Element b2e = (ASTNode2Element) result1_green[1];
+		NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result1_green[2];
 
 		Object[] result2_black = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBBB(bodyDeclaration, feature, bd2ne, b2e);
+				.pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBBB(bodyDeclaration, b2e, bd2ne, feature);
 		if (result2_black == null) {
 			throw new RuntimeException(
 					"Pattern matching failed." + " Variables: " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-							+ "[feature] = " + feature + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ".");
+							+ "[b2e] = " + b2e + ", " + "[bd2ne] = " + bd2ne + ", " + "[feature] = " + feature + ".");
 		}
 		Object[] result2_green = EnumDec2EnumImpl
-				.pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, feature, bd2ne, b2e);
+				.pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBBB(bodyDeclaration, b2e, bd2ne, feature);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		Object[] result3_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_11_3_bookkeepingforedges_blackBBBBBBBB(
-				ruleresult, jp2up, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+				ruleresult, bodyDeclaration, b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching failed." + " Variables: " + "[ruleresult] = " + ruleresult
-					+ ", " + "[jp2up] = " + jp2up + ", " + "[bodyDeclaration] = " + bodyDeclaration + ", "
-					+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ", " + "[umlPackage] = "
-					+ umlPackage + ", " + "[bd2ne] = " + bd2ne + ", " + "[b2e] = " + b2e + ".");
+					+ ", " + "[bodyDeclaration] = " + bodyDeclaration + ", " + "[b2e] = " + b2e + ", " + "[bd2ne] = "
+					+ bd2ne + ", " + "[jPackage] = " + jPackage + ", " + "[jp2up] = " + jp2up + ", " + "[feature] = "
+					+ feature + ", " + "[umlPackage] = " + umlPackage + ".");
 		}
 		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(ruleresult, bodyDeclaration,
-				jPackage, feature, umlPackage, bd2ne, b2e);
-		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[7];
+				b2e, bd2ne, jPackage, feature, umlPackage);
+		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[7];
 		//nothing EMoflonEdge bd2ne__bodyDeclaration____source = (EMoflonEdge) result3_green[8];
 		//nothing EMoflonEdge jPackage__bodyDeclaration____ownedElements = (EMoflonEdge) result3_green[9];
 		//nothing EMoflonEdge bodyDeclaration__jPackage____package = (EMoflonEdge) result3_green[10];
-		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[11];
-		//nothing EMoflonEdge b2e__bodyDeclaration____source = (EMoflonEdge) result3_green[12];
-		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[13];
+		//nothing EMoflonEdge b2e__feature____target = (EMoflonEdge) result3_green[11];
+		//nothing EMoflonEdge bd2ne__feature____target = (EMoflonEdge) result3_green[12];
+		//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[13];
 
 		// 
 		// 
-		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult, jp2up,
-				bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+		EnumDec2EnumImpl.pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBBBBBB(this, ruleresult,
+				bodyDeclaration, b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 		return EnumDec2EnumImpl.pattern_EnumDec2Enum_11_6_expressionFB(ruleresult);
 	}
 
@@ -543,25 +543,25 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_binding[1];
 		for (Object[] result2_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_12_2_corematch_blackFFBBB(feature,
 				umlPackage, match)) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[0];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[1];
 			// ForEach 
-			for (Object[] result3_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_12_3_findcontext_blackBBBB(jp2up,
-					jPackage, feature, umlPackage)) {
-				Object[] result3_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_12_3_findcontext_greenBBBBFFFF(jp2up,
-						jPackage, feature, umlPackage);
+			for (Object[] result3_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_12_3_findcontext_blackBBBB(jPackage,
+					jp2up, feature, umlPackage)) {
+				Object[] result3_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_12_3_findcontext_greenBBBBFFFF(jPackage,
+						jp2up, feature, umlPackage);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[4];
 				//nothing EMoflonEdge jp2up__jPackage____source = (EMoflonEdge) result3_green[5];
 				//nothing EMoflonEdge umlPackage__feature____packagedElement = (EMoflonEdge) result3_green[6];
 				//nothing EMoflonEdge jp2up__umlPackage____target = (EMoflonEdge) result3_green[7];
 
 				Object[] result4_bindingAndBlack = EnumDec2EnumImpl
-						.pattern_EnumDec2Enum_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jp2up,
-								jPackage, feature, umlPackage);
+						.pattern_EnumDec2Enum_12_4_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jPackage,
+								jp2up, feature, umlPackage);
 				if (result4_bindingAndBlack == null) {
 					throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-							+ "[jPackage] = " + jPackage + ", " + "[feature] = " + feature + ", " + "[umlPackage] = "
+							+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
+							+ "[jp2up] = " + jp2up + ", " + "[feature] = " + feature + ", " + "[umlPackage] = "
 							+ umlPackage + ".");
 				}
 				CSP csp = (CSP) result4_bindingAndBlack[0];
@@ -631,8 +631,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {// Create CSP
+	public CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -657,8 +657,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("feature", feature);
 		isApplicableMatch.registerObject("umlPackage", umlPackage);
 		return csp;
@@ -678,15 +678,15 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration,
-			EObject jPackage, EObject feature, EObject umlPackage, EObject bd2ne, EObject b2e) {
-		ruleresult.registerObject("jp2up", jp2up);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne,
+			EObject jPackage, EObject jp2up, EObject feature, EObject umlPackage) {
 		ruleresult.registerObject("bodyDeclaration", bodyDeclaration);
+		ruleresult.registerObject("b2e", b2e);
+		ruleresult.registerObject("bd2ne", bd2ne);
 		ruleresult.registerObject("jPackage", jPackage);
+		ruleresult.registerObject("jp2up", jp2up);
 		ruleresult.registerObject("feature", feature);
 		ruleresult.registerObject("umlPackage", umlPackage);
-		ruleresult.registerObject("bd2ne", bd2ne);
-		ruleresult.registerObject("b2e", b2e);
 
 	}
 
@@ -705,7 +705,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_108(EMoflonEdge _edge_packagedElement) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_76(EMoflonEdge _edge_packagedElement) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -759,7 +759,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_114(EMoflonEdge _edge_ownedElements) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_77(EMoflonEdge _edge_ownedElements) {
 
 		Object[] result1_bindingAndBlack = EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -939,9 +939,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		// 
 		if (EnumDec2EnumImpl.pattern_EnumDec2Enum_24_4_checkCSP_expressionFB(csp)) {
 			// ForEach 
-			for (Object[] result5_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_24_5_matchcorrcontext_blackFBBBB(
+			for (Object[] result5_black : EnumDec2EnumImpl.pattern_EnumDec2Enum_24_5_matchcorrcontext_blackBFBBB(
 					jPackage, umlPackage, sourceMatch, targetMatch)) {
-				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[0];
+				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result5_black[1];
 				Object[] result5_green = EnumDec2EnumImpl.pattern_EnumDec2Enum_24_5_matchcorrcontext_greenBBBF(jp2up,
 						sourceMatch, targetMatch);
 				CCMatch ccMatch = (CCMatch) result5_green[3];
@@ -953,10 +953,10 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 							+ bodyDeclaration + ", " + "[jPackage] = " + jPackage + ", " + "[feature] = " + feature
 							+ ", " + "[umlPackage] = " + umlPackage + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				EnumDec2EnumImpl.pattern_EnumDec2Enum_24_6_createcorrespondence_greenBBFFB(bodyDeclaration, feature,
+				EnumDec2EnumImpl.pattern_EnumDec2Enum_24_6_createcorrespondence_greenBFFBB(bodyDeclaration, feature,
 						ccMatch);
+				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
 				//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
-				//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[3];
 
 				Object[] result7_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_24_7_addtoreturnedresult_blackBB(result,
 						ccMatch);
@@ -1067,40 +1067,40 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		for (Object[] result2_black : EnumDec2EnumImpl
 				.pattern_EnumDec2Enum_29_2_isapplicablecore_blackFFFFBB(ruleEntryContainer, ruleResult)) {
 			//nothing RuleEntryList jp2upList = (RuleEntryList) result2_black[0];
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[1];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[2];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result2_black[1];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result2_black[2];
 			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result2_black[3];
 
 			Object[] result3_bindingAndBlack = EnumDec2EnumImpl
-					.pattern_EnumDec2Enum_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jp2up, jPackage,
+					.pattern_EnumDec2Enum_29_3_solveCSP_bindingAndBlackFBBBBBB(this, isApplicableMatch, jPackage, jp2up,
 							umlPackage, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching failed." + " Variables: " + "[this] = " + this + ", "
-						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jp2up] = " + jp2up + ", "
-						+ "[jPackage] = " + jPackage + ", " + "[umlPackage] = " + umlPackage + ", " + "[ruleResult] = "
+						+ "[isApplicableMatch] = " + isApplicableMatch + ", " + "[jPackage] = " + jPackage + ", "
+						+ "[jp2up] = " + jp2up + ", " + "[umlPackage] = " + umlPackage + ", " + "[ruleResult] = "
 						+ ruleResult + ".");
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// 
 			if (EnumDec2EnumImpl.pattern_EnumDec2Enum_29_4_checkCSP_expressionFBB(this, csp)) {
 				// 
-				Object[] result5_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_29_5_checknacs_blackBBB(jp2up, jPackage,
+				Object[] result5_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_29_5_checknacs_blackBBB(jPackage, jp2up,
 						umlPackage);
 				if (result5_black != null) {
 
-					Object[] result6_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_29_6_perform_blackBBBB(jp2up,
-							jPackage, umlPackage, ruleResult);
+					Object[] result6_black = EnumDec2EnumImpl.pattern_EnumDec2Enum_29_6_perform_blackBBBB(jPackage,
+							jp2up, umlPackage, ruleResult);
 					if (result6_black == null) {
-						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jp2up] = " + jp2up
-								+ ", " + "[jPackage] = " + jPackage + ", " + "[umlPackage] = " + umlPackage + ", "
+						throw new RuntimeException("Pattern matching failed." + " Variables: " + "[jPackage] = "
+								+ jPackage + ", " + "[jp2up] = " + jp2up + ", " + "[umlPackage] = " + umlPackage + ", "
 								+ "[ruleResult] = " + ruleResult + ".");
 					}
-					EnumDec2EnumImpl.pattern_EnumDec2Enum_29_6_perform_greenFBFBFFBB(jPackage, umlPackage, ruleResult,
+					EnumDec2EnumImpl.pattern_EnumDec2Enum_29_6_perform_greenFFFBFBBB(jPackage, umlPackage, ruleResult,
 							csp);
 					//nothing EnumDeclaration bodyDeclaration = (EnumDeclaration) result6_green[0];
-					//nothing Enumeration feature = (Enumeration) result6_green[2];
-					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[4];
-					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[5];
+					//nothing ASTNode2Element b2e = (ASTNode2Element) result6_green[1];
+					//nothing NamedElement2NamedElement bd2ne = (NamedElement2NamedElement) result6_green[2];
+					//nothing Enumeration feature = (Enumeration) result6_green[4];
 
 				} else {
 				}
@@ -1117,9 +1117,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
-			ModelgeneratorRuleResult ruleResult) {// Create CSP
+	public CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage, ModelgeneratorRuleResult ruleResult) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
 		isApplicableMatch.getAttributeInfo().add(csp);
 
@@ -1143,8 +1143,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		eq.solve(var_bodyDeclaration_name, var_feature_name);
 
 		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("jPackage", jPackage);
+		isApplicableMatch.registerObject("jp2up", jp2up);
 		isApplicableMatch.registerObject("umlPackage", umlPackage);
 		return csp;
 	}
@@ -1182,10 +1182,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 					(org.eclipse.modisco.java.Package) arguments.get(2));
 		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_FWD__CSP:
 			return isAppropriate_checkCsp_FWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_ENUMDECLARATION_PACKAGE_PACKAGE:
-			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (EnumDeclaration) arguments.get(2),
-					(org.eclipse.modisco.java.Package) arguments.get(3),
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_FWD__ISAPPLICABLEMATCH_ENUMDECLARATION_PACKAGE_JAVAPACKAGE2UMLPACKAGE_PACKAGE:
+			return isApplicable_solveCsp_FWD((IsApplicableMatch) arguments.get(0), (EnumDeclaration) arguments.get(1),
+					(org.eclipse.modisco.java.Package) arguments.get(2), (JavaPackage2UmlPackage) arguments.get(3),
 					(org.eclipse.uml2.uml.Package) arguments.get(4));
 		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_FWD__CSP:
 			return isApplicable_checkCsp_FWD((CSP) arguments.get(0));
@@ -1212,9 +1211,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 					(org.eclipse.uml2.uml.Package) arguments.get(2));
 		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_CHECK_CSP_BWD__CSP:
 			return isAppropriate_checkCsp_BWD((CSP) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_ENUMERATION_PACKAGE:
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_JAVAPACKAGE2UMLPACKAGE_ENUMERATION_PACKAGE:
 			return isApplicable_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.modisco.java.Package) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (JavaPackage2UmlPackage) arguments.get(2),
 					(Enumeration) arguments.get(3), (org.eclipse.uml2.uml.Package) arguments.get(4));
 		case RulesPackage.ENUM_DEC2_ENUM___IS_APPLICABLE_CHECK_CSP_BWD__CSP:
 			return isApplicable_checkCsp_BWD((CSP) arguments.get(0));
@@ -1225,10 +1224,10 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			return null;
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_108__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_108((EMoflonEdge) arguments.get(0));
-		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_114__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_BWD_EMOFLON_EDGE_76__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_76((EMoflonEdge) arguments.get(0));
+		case RulesPackage.ENUM_DEC2_ENUM___IS_APPROPRIATE_FWD_EMOFLON_EDGE_77__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_77((EMoflonEdge) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.ENUM_DEC2_ENUM___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -1249,9 +1248,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			return checkDEC_BWD((Enumeration) arguments.get(0), (org.eclipse.uml2.uml.Package) arguments.get(1));
 		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL__RULEENTRYCONTAINER_JAVAPACKAGE2UMLPACKAGE:
 			return generateModel((RuleEntryContainer) arguments.get(0), (JavaPackage2UmlPackage) arguments.get(1));
-		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_JAVAPACKAGE2UMLPACKAGE_PACKAGE_PACKAGE_MODELGENERATORRULERESULT:
+		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_SOLVE_CSP_BWD__ISAPPLICABLEMATCH_PACKAGE_JAVAPACKAGE2UMLPACKAGE_PACKAGE_MODELGENERATORRULERESULT:
 			return generateModel_solveCsp_BWD((IsApplicableMatch) arguments.get(0),
-					(JavaPackage2UmlPackage) arguments.get(1), (org.eclipse.modisco.java.Package) arguments.get(2),
+					(org.eclipse.modisco.java.Package) arguments.get(1), (JavaPackage2UmlPackage) arguments.get(2),
 					(org.eclipse.uml2.uml.Package) arguments.get(3), (ModelgeneratorRuleResult) arguments.get(4));
 		case RulesPackage.ENUM_DEC2_ENUM___GENERATE_MODEL_CHECK_CSP_BWD__CSP:
 			return generateModel_checkCsp_BWD((CSP) arguments.get(0));
@@ -1353,23 +1352,23 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jp2up");
-		EObject _localVariable_1 = isApplicableMatch.getObject("bodyDeclaration");
-		EObject _localVariable_2 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_0 = isApplicableMatch.getObject("bodyDeclaration");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_2 = isApplicableMatch.getObject("jp2up");
 		EObject _localVariable_3 = isApplicableMatch.getObject("umlPackage");
-		EObject tmpJp2up = _localVariable_0;
-		EObject tmpBodyDeclaration = _localVariable_1;
-		EObject tmpJPackage = _localVariable_2;
+		EObject tmpBodyDeclaration = _localVariable_0;
+		EObject tmpJPackage = _localVariable_1;
+		EObject tmpJp2up = _localVariable_2;
 		EObject tmpUmlPackage = _localVariable_3;
-		if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-			if (tmpBodyDeclaration instanceof EnumDeclaration) {
-				EnumDeclaration bodyDeclaration = (EnumDeclaration) tmpBodyDeclaration;
-				if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-					org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+		if (tmpBodyDeclaration instanceof EnumDeclaration) {
+			EnumDeclaration bodyDeclaration = (EnumDeclaration) tmpBodyDeclaration;
+			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+				if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+					JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
 					if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
 						org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-						return new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage, isApplicableMatch };
+						return new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage, isApplicableMatch };
 					}
 				}
 			}
@@ -1378,12 +1377,12 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_blackBBBBFBB(
-			JavaPackage2UmlPackage jp2up, EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage,
+			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
 			org.eclipse.uml2.uml.Package umlPackage, EnumDec2Enum _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1394,85 +1393,87 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		Object[] result_pattern_EnumDec2Enum_1_1_performtransformation_binding = pattern_EnumDec2Enum_1_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_EnumDec2Enum_1_1_performtransformation_binding != null) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[0];
-			EnumDeclaration bodyDeclaration = (EnumDeclaration) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[1];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[2];
+			EnumDeclaration bodyDeclaration = (EnumDeclaration) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[0];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[1];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[2];
 			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_EnumDec2Enum_1_1_performtransformation_binding[3];
 
 			Object[] result_pattern_EnumDec2Enum_1_1_performtransformation_black = pattern_EnumDec2Enum_1_1_performtransformation_blackBBBBFBB(
-					jp2up, bodyDeclaration, jPackage, umlPackage, _this, isApplicableMatch);
+					bodyDeclaration, jPackage, jp2up, umlPackage, _this, isApplicableMatch);
 			if (result_pattern_EnumDec2Enum_1_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_EnumDec2Enum_1_1_performtransformation_black[4];
 
-				return new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage, csp, _this, isApplicableMatch };
+				return new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_greenBFBFFB(
+	public static final Object[] pattern_EnumDec2Enum_1_1_performtransformation_greenBFFFBB(
 			EnumDeclaration bodyDeclaration, org.eclipse.uml2.uml.Package umlPackage, CSP csp) {
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		Object _localVariable_0 = csp.getValue("feature", "name");
-		umlPackage.getPackagedElements().add(feature);
-		bd2ne.setSource(bodyDeclaration);
-		bd2ne.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
+		bd2ne.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		bd2ne.setTarget(feature);
+		umlPackage.getPackagedElements().add(feature);
 		String feature_name_prime = (String) _localVariable_0;
 		feature.setName(feature_name_prime);
-		return new Object[] { bodyDeclaration, feature, umlPackage, bd2ne, b2e, csp };
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature, umlPackage, csp };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_blackBBBB(
-			EnumDeclaration bodyDeclaration, Enumeration feature, NamedElement2NamedElement bd2ne,
-			ASTNode2Element b2e) {
-		return new Object[] { bodyDeclaration, feature, bd2ne, b2e };
+			EnumDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Enumeration feature) {
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_2_collecttranslatedelements_greenFBBBB(
-			EnumDeclaration bodyDeclaration, Enumeration feature, NamedElement2NamedElement bd2ne,
-			ASTNode2Element b2e) {
+			EnumDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Enumeration feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getTranslatedElements().add(bodyDeclaration);
-		ruleresult.getCreatedElements().add(feature);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		return new Object[] { ruleresult, bodyDeclaration, feature, bd2ne, b2e };
+		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getCreatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		if (!jp2up.equals(umlPackage)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject jp2up, EObject feature, EObject umlPackage) {
+		if (!bodyDeclaration.equals(jPackage)) {
 			if (!bodyDeclaration.equals(jp2up)) {
-				if (!bodyDeclaration.equals(jPackage)) {
-					if (!bodyDeclaration.equals(feature)) {
-						if (!bodyDeclaration.equals(umlPackage)) {
-							if (!jPackage.equals(jp2up)) {
-								if (!jPackage.equals(umlPackage)) {
-									if (!feature.equals(jp2up)) {
-										if (!feature.equals(jPackage)) {
-											if (!feature.equals(umlPackage)) {
-												if (!bd2ne.equals(jp2up)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(jPackage)) {
+				if (!bodyDeclaration.equals(feature)) {
+					if (!bodyDeclaration.equals(umlPackage)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(bd2ne)) {
+								if (!b2e.equals(jPackage)) {
+									if (!b2e.equals(jp2up)) {
+										if (!b2e.equals(feature)) {
+											if (!b2e.equals(umlPackage)) {
+												if (!bd2ne.equals(bodyDeclaration)) {
+													if (!bd2ne.equals(jPackage)) {
+														if (!bd2ne.equals(jp2up)) {
 															if (!bd2ne.equals(feature)) {
 																if (!bd2ne.equals(umlPackage)) {
-																	if (!b2e.equals(jp2up)) {
-																		if (!b2e.equals(bodyDeclaration)) {
-																			if (!b2e.equals(jPackage)) {
-																				if (!b2e.equals(feature)) {
-																					if (!b2e.equals(umlPackage)) {
-																						if (!b2e.equals(bd2ne)) {
+																	if (!jPackage.equals(jp2up)) {
+																		if (!jPackage.equals(umlPackage)) {
+																			if (!jp2up.equals(umlPackage)) {
+																				if (!feature.equals(jPackage)) {
+																					if (!feature.equals(jp2up)) {
+																						if (!feature
+																								.equals(umlPackage)) {
 																							return new Object[] {
-																									ruleresult, jp2up,
+																									ruleresult,
 																									bodyDeclaration,
-																									jPackage, feature,
-																									umlPackage, bd2ne,
-																									b2e };
+																									b2e, bd2ne,
+																									jPackage, jp2up,
+																									feature,
+																									umlPackage };
 																						}
 																					}
 																				}
@@ -1498,26 +1499,26 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_1_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject feature, EObject umlPackage) {
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDec2Enum";
-		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
-		String bd2ne__feature____target_name_prime = "target";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		umlPackage__feature____packagedElement.setSrc(umlPackage);
-		umlPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getCreatedEdges().add(umlPackage__feature____packagedElement);
+		String bd2ne__feature____target_name_prime = "target";
+		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
@@ -1527,33 +1528,33 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		ruleresult.getTranslatedEdges().add(bodyDeclaration__jPackage____package);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		umlPackage__feature____packagedElement.setSrc(umlPackage);
+		umlPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getCreatedEdges().add(umlPackage__feature____packagedElement);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e,
-				umlPackage__feature____packagedElement, bd2ne__bodyDeclaration____source,
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, jPackage, feature, umlPackage,
+				b2e__bodyDeclaration____source, bd2ne__bodyDeclaration____source,
 				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
-				bd2ne__feature____target, b2e__bodyDeclaration____source, b2e__feature____target };
+				b2e__feature____target, bd2ne__feature____target, umlPackage__feature____packagedElement };
 	}
 
 	public static final void pattern_EnumDec2Enum_1_5_registerobjects_expressionBBBBBBBBB(EnumDec2Enum _this,
-			PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		_this.registerObjects_FWD(ruleresult, jp2up, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject jp2up, EObject feature, EObject umlPackage) {
+		_this.registerObjects_FWD(ruleresult, bodyDeclaration, b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 
 	}
 
@@ -1625,79 +1626,80 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumDec2Enum_2_2_corematch_blackFBBFB(
+	public static final Iterable<Object[]> pattern_EnumDec2Enum_2_2_corematch_blackBBFFB(
 			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, Match match) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil.getOppositeReferenceTyped(jPackage,
 				JavaPackage2UmlPackage.class, "source")) {
 			org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
 			if (umlPackage != null) {
-				_result.add(new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage, match });
+				_result.add(new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumDec2Enum_2_3_findcontext_blackBBBB(JavaPackage2UmlPackage jp2up,
-			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage,
+	public static final Iterable<Object[]> pattern_EnumDec2Enum_2_3_findcontext_blackBBBB(
+			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
 			org.eclipse.uml2.uml.Package umlPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
-		if (jPackage.equals(jp2up.getSource())) {
-			if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
+		if (jPackage.getOwnedElements().contains(bodyDeclaration)) {
+			if (jPackage.equals(jp2up.getSource())) {
 				if (umlPackage.equals(jp2up.getTarget())) {
-					_result.add(new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage });
+					_result.add(new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_2_3_findcontext_greenBBBBFFFFF(JavaPackage2UmlPackage jp2up,
-			EnumDeclaration bodyDeclaration, org.eclipse.modisco.java.Package jPackage,
+	public static final Object[] pattern_EnumDec2Enum_2_3_findcontext_greenBBBBFFFFF(EnumDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
 			org.eclipse.uml2.uml.Package umlPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
-		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jp2up__umlPackage____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		String jp2up__jPackage____source_name_prime = "source";
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
+		String jp2up__jPackage____source_name_prime = "source";
 		String jp2up__umlPackage____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jp2up);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up);
 		isApplicableMatch.getAllContextElements().add(umlPackage);
-		jp2up__jPackage____source.setSrc(jp2up);
-		jp2up__jPackage____source.setTrg(jPackage);
-		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
 		jPackage__bodyDeclaration____ownedElements.setSrc(jPackage);
 		jPackage__bodyDeclaration____ownedElements.setTrg(bodyDeclaration);
 		isApplicableMatch.getAllContextElements().add(jPackage__bodyDeclaration____ownedElements);
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		isApplicableMatch.getAllContextElements().add(bodyDeclaration__jPackage____package);
+		jp2up__jPackage____source.setSrc(jp2up);
+		jp2up__jPackage____source.setTrg(jPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up__jPackage____source);
 		jp2up__umlPackage____target.setSrc(jp2up);
 		jp2up__umlPackage____target.setTrg(umlPackage);
 		isApplicableMatch.getAllContextElements().add(jp2up__umlPackage____target);
-		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
+		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
-		return new Object[] { jp2up, bodyDeclaration, jPackage, umlPackage, isApplicableMatch,
-				jp2up__jPackage____source, jPackage__bodyDeclaration____ownedElements,
-				bodyDeclaration__jPackage____package, jp2up__umlPackage____target };
+		return new Object[] { bodyDeclaration, jPackage, jp2up, umlPackage, isApplicableMatch,
+				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
+				jp2up__jPackage____source, jp2up__umlPackage____target };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_2_4_solveCSP_bindingFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up, EnumDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, jp2up, bodyDeclaration, jPackage,
+			IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_FWD(isApplicableMatch, bodyDeclaration, jPackage, jp2up,
 				umlPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, bodyDeclaration, jPackage, umlPackage };
+			return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jPackage, jp2up, umlPackage };
 		}
 		return null;
 	}
@@ -1707,17 +1709,18 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_2_4_solveCSP_bindingAndBlackFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up, EnumDeclaration bodyDeclaration,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage) {
+			IsApplicableMatch isApplicableMatch, EnumDeclaration bodyDeclaration,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up,
+			org.eclipse.uml2.uml.Package umlPackage) {
 		Object[] result_pattern_EnumDec2Enum_2_4_solveCSP_binding = pattern_EnumDec2Enum_2_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, bodyDeclaration, jPackage, umlPackage);
+				_this, isApplicableMatch, bodyDeclaration, jPackage, jp2up, umlPackage);
 		if (result_pattern_EnumDec2Enum_2_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumDec2Enum_2_4_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumDec2Enum_2_4_solveCSP_black = pattern_EnumDec2Enum_2_4_solveCSP_blackB(csp);
 			if (result_pattern_EnumDec2Enum_2_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, bodyDeclaration, jPackage, umlPackage };
+				return new Object[] { csp, _this, isApplicableMatch, bodyDeclaration, jPackage, jp2up, umlPackage };
 			}
 		}
 		return null;
@@ -1837,23 +1840,23 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_bindingFFFFB(
 			IsApplicableMatch isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("jp2up");
-		EObject _localVariable_1 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_0 = isApplicableMatch.getObject("jPackage");
+		EObject _localVariable_1 = isApplicableMatch.getObject("jp2up");
 		EObject _localVariable_2 = isApplicableMatch.getObject("feature");
 		EObject _localVariable_3 = isApplicableMatch.getObject("umlPackage");
-		EObject tmpJp2up = _localVariable_0;
-		EObject tmpJPackage = _localVariable_1;
+		EObject tmpJPackage = _localVariable_0;
+		EObject tmpJp2up = _localVariable_1;
 		EObject tmpFeature = _localVariable_2;
 		EObject tmpUmlPackage = _localVariable_3;
-		if (tmpJp2up instanceof JavaPackage2UmlPackage) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
-			if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
-				org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+		if (tmpJPackage instanceof org.eclipse.modisco.java.Package) {
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) tmpJPackage;
+			if (tmpJp2up instanceof JavaPackage2UmlPackage) {
+				JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) tmpJp2up;
 				if (tmpFeature instanceof Enumeration) {
 					Enumeration feature = (Enumeration) tmpFeature;
 					if (tmpUmlPackage instanceof org.eclipse.uml2.uml.Package) {
 						org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) tmpUmlPackage;
-						return new Object[] { jp2up, jPackage, feature, umlPackage, isApplicableMatch };
+						return new Object[] { jPackage, jp2up, feature, umlPackage, isApplicableMatch };
 					}
 				}
 			}
@@ -1862,12 +1865,12 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_blackBBBBFBB(
-			JavaPackage2UmlPackage jp2up, org.eclipse.modisco.java.Package jPackage, Enumeration feature,
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up, Enumeration feature,
 			org.eclipse.uml2.uml.Package umlPackage, EnumDec2Enum _this, IsApplicableMatch isApplicableMatch) {
 		for (EObject tmpCsp : isApplicableMatch.getAttributeInfo()) {
 			if (tmpCsp instanceof CSP) {
 				CSP csp = (CSP) tmpCsp;
-				return new Object[] { jp2up, jPackage, feature, umlPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, jp2up, feature, umlPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
@@ -1878,85 +1881,87 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		Object[] result_pattern_EnumDec2Enum_11_1_performtransformation_binding = pattern_EnumDec2Enum_11_1_performtransformation_bindingFFFFB(
 				isApplicableMatch);
 		if (result_pattern_EnumDec2Enum_11_1_performtransformation_binding != null) {
-			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[0];
-			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[1];
+			org.eclipse.modisco.java.Package jPackage = (org.eclipse.modisco.java.Package) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[0];
+			JavaPackage2UmlPackage jp2up = (JavaPackage2UmlPackage) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[1];
 			Enumeration feature = (Enumeration) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[2];
 			org.eclipse.uml2.uml.Package umlPackage = (org.eclipse.uml2.uml.Package) result_pattern_EnumDec2Enum_11_1_performtransformation_binding[3];
 
 			Object[] result_pattern_EnumDec2Enum_11_1_performtransformation_black = pattern_EnumDec2Enum_11_1_performtransformation_blackBBBBFBB(
-					jp2up, jPackage, feature, umlPackage, _this, isApplicableMatch);
+					jPackage, jp2up, feature, umlPackage, _this, isApplicableMatch);
 			if (result_pattern_EnumDec2Enum_11_1_performtransformation_black != null) {
 				CSP csp = (CSP) result_pattern_EnumDec2Enum_11_1_performtransformation_black[4];
 
-				return new Object[] { jp2up, jPackage, feature, umlPackage, csp, _this, isApplicableMatch };
+				return new Object[] { jPackage, jp2up, feature, umlPackage, csp, _this, isApplicableMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_greenFBBFFB(
+	public static final Object[] pattern_EnumDec2Enum_11_1_performtransformation_greenFFFBBB(
 			org.eclipse.modisco.java.Package jPackage, Enumeration feature, CSP csp) {
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
 		jPackage.getOwnedElements().add(bodyDeclaration);
-		bd2ne.setSource(bodyDeclaration);
-		bd2ne.setTarget(feature);
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
+		bd2ne.setSource(bodyDeclaration);
+		bd2ne.setTarget(feature);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
-		return new Object[] { bodyDeclaration, jPackage, feature, bd2ne, b2e, csp };
+		return new Object[] { bodyDeclaration, b2e, bd2ne, jPackage, feature, csp };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_blackBBBB(
-			EnumDeclaration bodyDeclaration, Enumeration feature, NamedElement2NamedElement bd2ne,
-			ASTNode2Element b2e) {
-		return new Object[] { bodyDeclaration, feature, bd2ne, b2e };
+			EnumDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Enumeration feature) {
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_2_collecttranslatedelements_greenFBBBB(
-			EnumDeclaration bodyDeclaration, Enumeration feature, NamedElement2NamedElement bd2ne,
-			ASTNode2Element b2e) {
+			EnumDeclaration bodyDeclaration, ASTNode2Element b2e, NamedElement2NamedElement bd2ne,
+			Enumeration feature) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
 		ruleresult.getCreatedElements().add(bodyDeclaration);
-		ruleresult.getTranslatedElements().add(feature);
-		ruleresult.getCreatedLinkElements().add(bd2ne);
 		ruleresult.getCreatedLinkElements().add(b2e);
-		return new Object[] { ruleresult, bodyDeclaration, feature, bd2ne, b2e };
+		ruleresult.getCreatedLinkElements().add(bd2ne);
+		ruleresult.getTranslatedElements().add(feature);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, feature };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_3_bookkeepingforedges_blackBBBBBBBB(
-			PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		if (!jp2up.equals(umlPackage)) {
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject jp2up, EObject feature, EObject umlPackage) {
+		if (!bodyDeclaration.equals(jPackage)) {
 			if (!bodyDeclaration.equals(jp2up)) {
-				if (!bodyDeclaration.equals(jPackage)) {
-					if (!bodyDeclaration.equals(feature)) {
-						if (!bodyDeclaration.equals(umlPackage)) {
-							if (!jPackage.equals(jp2up)) {
-								if (!jPackage.equals(umlPackage)) {
-									if (!feature.equals(jp2up)) {
-										if (!feature.equals(jPackage)) {
-											if (!feature.equals(umlPackage)) {
-												if (!bd2ne.equals(jp2up)) {
-													if (!bd2ne.equals(bodyDeclaration)) {
-														if (!bd2ne.equals(jPackage)) {
+				if (!bodyDeclaration.equals(feature)) {
+					if (!bodyDeclaration.equals(umlPackage)) {
+						if (!b2e.equals(bodyDeclaration)) {
+							if (!b2e.equals(bd2ne)) {
+								if (!b2e.equals(jPackage)) {
+									if (!b2e.equals(jp2up)) {
+										if (!b2e.equals(feature)) {
+											if (!b2e.equals(umlPackage)) {
+												if (!bd2ne.equals(bodyDeclaration)) {
+													if (!bd2ne.equals(jPackage)) {
+														if (!bd2ne.equals(jp2up)) {
 															if (!bd2ne.equals(feature)) {
 																if (!bd2ne.equals(umlPackage)) {
-																	if (!b2e.equals(jp2up)) {
-																		if (!b2e.equals(bodyDeclaration)) {
-																			if (!b2e.equals(jPackage)) {
-																				if (!b2e.equals(feature)) {
-																					if (!b2e.equals(umlPackage)) {
-																						if (!b2e.equals(bd2ne)) {
+																	if (!jPackage.equals(jp2up)) {
+																		if (!jPackage.equals(umlPackage)) {
+																			if (!jp2up.equals(umlPackage)) {
+																				if (!feature.equals(jPackage)) {
+																					if (!feature.equals(jp2up)) {
+																						if (!feature
+																								.equals(umlPackage)) {
 																							return new Object[] {
-																									ruleresult, jp2up,
+																									ruleresult,
 																									bodyDeclaration,
-																									jPackage, feature,
-																									umlPackage, bd2ne,
-																									b2e };
+																									b2e, bd2ne,
+																									jPackage, jp2up,
+																									feature,
+																									umlPackage };
 																						}
 																					}
 																				}
@@ -1982,26 +1987,26 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_11_3_bookkeepingforedges_greenBBBBBBBFFFFFFF(
-			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject feature, EObject umlPackage) {
+		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bd2ne__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge jPackage__bodyDeclaration____ownedElements = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge bodyDeclaration__jPackage____package = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge b2e__bodyDeclaration____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge b2e__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge bd2ne__feature____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "EnumDec2Enum";
-		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		String b2e__bodyDeclaration____source_name_prime = "source";
 		String bd2ne__bodyDeclaration____source_name_prime = "source";
 		String jPackage__bodyDeclaration____ownedElements_name_prime = "ownedElements";
 		String bodyDeclaration__jPackage____package_name_prime = "package";
-		String bd2ne__feature____target_name_prime = "target";
-		String b2e__bodyDeclaration____source_name_prime = "source";
 		String b2e__feature____target_name_prime = "target";
-		umlPackage__feature____packagedElement.setSrc(umlPackage);
-		umlPackage__feature____packagedElement.setTrg(feature);
-		ruleresult.getTranslatedEdges().add(umlPackage__feature____packagedElement);
+		String bd2ne__feature____target_name_prime = "target";
+		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
+		b2e__bodyDeclaration____source.setSrc(b2e);
+		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
+		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		bd2ne__bodyDeclaration____source.setSrc(bd2ne);
 		bd2ne__bodyDeclaration____source.setTrg(bodyDeclaration);
 		ruleresult.getCreatedEdges().add(bd2ne__bodyDeclaration____source);
@@ -2011,33 +2016,33 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		bodyDeclaration__jPackage____package.setSrc(bodyDeclaration);
 		bodyDeclaration__jPackage____package.setTrg(jPackage);
 		ruleresult.getCreatedEdges().add(bodyDeclaration__jPackage____package);
-		bd2ne__feature____target.setSrc(bd2ne);
-		bd2ne__feature____target.setTrg(feature);
-		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
-		b2e__bodyDeclaration____source.setSrc(b2e);
-		b2e__bodyDeclaration____source.setTrg(bodyDeclaration);
-		ruleresult.getCreatedEdges().add(b2e__bodyDeclaration____source);
 		b2e__feature____target.setSrc(b2e);
 		b2e__feature____target.setTrg(feature);
 		ruleresult.getCreatedEdges().add(b2e__feature____target);
+		bd2ne__feature____target.setSrc(bd2ne);
+		bd2ne__feature____target.setTrg(feature);
+		ruleresult.getCreatedEdges().add(bd2ne__feature____target);
+		umlPackage__feature____packagedElement.setSrc(umlPackage);
+		umlPackage__feature____packagedElement.setTrg(feature);
+		ruleresult.getTranslatedEdges().add(umlPackage__feature____packagedElement);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		bd2ne__bodyDeclaration____source.setName(bd2ne__bodyDeclaration____source_name_prime);
 		jPackage__bodyDeclaration____ownedElements.setName(jPackage__bodyDeclaration____ownedElements_name_prime);
 		bodyDeclaration__jPackage____package.setName(bodyDeclaration__jPackage____package_name_prime);
-		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
-		b2e__bodyDeclaration____source.setName(b2e__bodyDeclaration____source_name_prime);
 		b2e__feature____target.setName(b2e__feature____target_name_prime);
-		return new Object[] { ruleresult, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e,
-				umlPackage__feature____packagedElement, bd2ne__bodyDeclaration____source,
+		bd2ne__feature____target.setName(bd2ne__feature____target_name_prime);
+		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
+		return new Object[] { ruleresult, bodyDeclaration, b2e, bd2ne, jPackage, feature, umlPackage,
+				b2e__bodyDeclaration____source, bd2ne__bodyDeclaration____source,
 				jPackage__bodyDeclaration____ownedElements, bodyDeclaration__jPackage____package,
-				bd2ne__feature____target, b2e__bodyDeclaration____source, b2e__feature____target };
+				b2e__feature____target, bd2ne__feature____target, umlPackage__feature____packagedElement };
 	}
 
 	public static final void pattern_EnumDec2Enum_11_5_registerobjects_expressionBBBBBBBBB(EnumDec2Enum _this,
-			PerformRuleResult ruleresult, EObject jp2up, EObject bodyDeclaration, EObject jPackage, EObject feature,
-			EObject umlPackage, EObject bd2ne, EObject b2e) {
-		_this.registerObjects_BWD(ruleresult, jp2up, bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e);
+			PerformRuleResult ruleresult, EObject bodyDeclaration, EObject b2e, EObject bd2ne, EObject jPackage,
+			EObject jp2up, EObject feature, EObject umlPackage) {
+		_this.registerObjects_BWD(ruleresult, bodyDeclaration, b2e, bd2ne, jPackage, jp2up, feature, umlPackage);
 
 	}
 
@@ -2116,28 +2121,30 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 				.getOppositeReferenceTyped(umlPackage, JavaPackage2UmlPackage.class, "target")) {
 			org.eclipse.modisco.java.Package jPackage = jp2up.getSource();
 			if (jPackage != null) {
-				_result.add(new Object[] { jp2up, jPackage, feature, umlPackage, match });
+				_result.add(new Object[] { jPackage, jp2up, feature, umlPackage, match });
 			}
 
 		}
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumDec2Enum_12_3_findcontext_blackBBBB(JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
+	public static final Iterable<Object[]> pattern_EnumDec2Enum_12_3_findcontext_blackBBBB(
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up, Enumeration feature,
+			org.eclipse.uml2.uml.Package umlPackage) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (jPackage.equals(jp2up.getSource())) {
 			if (umlPackage.getPackagedElements().contains(feature)) {
 				if (umlPackage.equals(jp2up.getTarget())) {
-					_result.add(new Object[] { jp2up, jPackage, feature, umlPackage });
+					_result.add(new Object[] { jPackage, jp2up, feature, umlPackage });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_12_3_findcontext_greenBBBBFFFF(JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
+	public static final Object[] pattern_EnumDec2Enum_12_3_findcontext_greenBBBBFFFF(
+			org.eclipse.modisco.java.Package jPackage, JavaPackage2UmlPackage jp2up, Enumeration feature,
+			org.eclipse.uml2.uml.Package umlPackage) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge jp2up__jPackage____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge umlPackage__feature____packagedElement = RuntimeFactory.eINSTANCE.createEMoflonEdge();
@@ -2145,8 +2152,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		String jp2up__jPackage____source_name_prime = "source";
 		String umlPackage__feature____packagedElement_name_prime = "packagedElement";
 		String jp2up__umlPackage____target_name_prime = "target";
-		isApplicableMatch.getAllContextElements().add(jp2up);
 		isApplicableMatch.getAllContextElements().add(jPackage);
+		isApplicableMatch.getAllContextElements().add(jp2up);
 		isApplicableMatch.getAllContextElements().add(feature);
 		isApplicableMatch.getAllContextElements().add(umlPackage);
 		jp2up__jPackage____source.setSrc(jp2up);
@@ -2161,17 +2168,17 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		jp2up__jPackage____source.setName(jp2up__jPackage____source_name_prime);
 		umlPackage__feature____packagedElement.setName(umlPackage__feature____packagedElement_name_prime);
 		jp2up__umlPackage____target.setName(jp2up__umlPackage____target_name_prime);
-		return new Object[] { jp2up, jPackage, feature, umlPackage, isApplicableMatch, jp2up__jPackage____source,
+		return new Object[] { jPackage, jp2up, feature, umlPackage, isApplicableMatch, jp2up__jPackage____source,
 				umlPackage__feature____packagedElement, jp2up__umlPackage____target };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_12_4_solveCSP_bindingFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jp2up, jPackage, feature, umlPackage);
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
+		CSP _localVariable_0 = _this.isApplicable_solveCsp_BWD(isApplicableMatch, jPackage, jp2up, feature, umlPackage);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, jPackage, feature, umlPackage };
+			return new Object[] { csp, _this, isApplicableMatch, jPackage, jp2up, feature, umlPackage };
 		}
 		return null;
 	}
@@ -2181,17 +2188,17 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_12_4_solveCSP_bindingAndBlackFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, Enumeration feature, org.eclipse.uml2.uml.Package umlPackage) {
 		Object[] result_pattern_EnumDec2Enum_12_4_solveCSP_binding = pattern_EnumDec2Enum_12_4_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, jPackage, feature, umlPackage);
+				_this, isApplicableMatch, jPackage, jp2up, feature, umlPackage);
 		if (result_pattern_EnumDec2Enum_12_4_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumDec2Enum_12_4_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumDec2Enum_12_4_solveCSP_black = pattern_EnumDec2Enum_12_4_solveCSP_blackB(csp);
 			if (result_pattern_EnumDec2Enum_12_4_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, jPackage, feature, umlPackage };
+				return new Object[] { csp, _this, isApplicableMatch, jPackage, jp2up, feature, umlPackage };
 			}
 		}
 		return null;
@@ -2277,7 +2284,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_20_2_testcorematchandDECs_black_nac_0B(Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_585060 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_497009 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2285,7 +2292,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_20_2_testcorematchandDECs_black_nac_1B(Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_413488 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_302854 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2413,8 +2420,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_535428 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_535428 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_911247 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_911247 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2423,10 +2430,10 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_366916 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_684143 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_366916 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_366916)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_684143 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_684143)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2436,9 +2443,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_19372 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_755130 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_19372 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_755130 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2447,7 +2454,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_21_2_testcorematchandDECs_black_nac_3B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_621846 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_329726 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2633,7 +2640,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return _result;
 	}
 
-	public static final Iterable<Object[]> pattern_EnumDec2Enum_24_5_matchcorrcontext_blackFBBBB(
+	public static final Iterable<Object[]> pattern_EnumDec2Enum_24_5_matchcorrcontext_blackBFBBB(
 			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage, Match sourceMatch,
 			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
@@ -2641,7 +2648,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 			for (JavaPackage2UmlPackage jp2up : org.moflon.core.utilities.eMoflonEMFUtil
 					.getOppositeReferenceTyped(jPackage, JavaPackage2UmlPackage.class, "source")) {
 				if (umlPackage.equals(jp2up.getTarget())) {
-					_result.add(new Object[] { jp2up, jPackage, umlPackage, sourceMatch, targetMatch });
+					_result.add(new Object[] { jPackage, jp2up, umlPackage, sourceMatch, targetMatch });
 				}
 			}
 		}
@@ -2665,17 +2672,17 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return new Object[] { bodyDeclaration, jPackage, feature, umlPackage, ccMatch };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_24_6_createcorrespondence_greenBBFFB(
+	public static final Object[] pattern_EnumDec2Enum_24_6_createcorrespondence_greenBFFBB(
 			EnumDeclaration bodyDeclaration, Enumeration feature, CCMatch ccMatch) {
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
-		bd2ne.setSource(bodyDeclaration);
-		bd2ne.setTarget(feature);
-		ccMatch.getCreateCorr().add(bd2ne);
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		b2e.setSource(bodyDeclaration);
 		b2e.setTarget(feature);
 		ccMatch.getCreateCorr().add(b2e);
-		return new Object[] { bodyDeclaration, feature, bd2ne, b2e, ccMatch };
+		bd2ne.setSource(bodyDeclaration);
+		bd2ne.setTarget(feature);
+		ccMatch.getCreateCorr().add(bd2ne);
+		return new Object[] { bodyDeclaration, b2e, bd2ne, feature, ccMatch };
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_24_7_addtoreturnedresult_blackBB(IsApplicableRuleResult result,
@@ -2700,8 +2707,8 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_0B(
 			EnumDeclaration bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_350174 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_350174 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_547047 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_547047 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2710,10 +2717,10 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_1B(
 			EnumDeclaration bodyDeclaration) {
-		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_86992 = bodyDeclaration
+		AbstractTypeDeclaration __DEC_bodyDeclaration_bodyDeclarations_604883 = bodyDeclaration
 				.getAbstractTypeDeclaration();
-		if (__DEC_bodyDeclaration_bodyDeclarations_86992 != null) {
-			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_86992)) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_604883 != null) {
+			if (!bodyDeclaration.equals(__DEC_bodyDeclaration_bodyDeclarations_604883)) {
 				return new Object[] { bodyDeclaration };
 			}
 		}
@@ -2723,9 +2730,9 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_2B(
 			EnumDeclaration bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_714963 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_241377 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_714963 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_241377 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2734,7 +2741,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 
 	public static final Object[] pattern_EnumDec2Enum_27_1_matchtggpattern_black_nac_3B(
 			EnumDeclaration bodyDeclaration) {
-		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_873837 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (MAbstractMethodDefinition __DEC_bodyDeclaration_mInnerTypes_589642 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(bodyDeclaration, MAbstractMethodDefinition.class, "mInnerTypes")) {
 			return new Object[] { bodyDeclaration };
 		}
@@ -2768,7 +2775,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_28_1_matchtggpattern_black_nac_0B(Enumeration feature) {
-		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_978045 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (org.eclipse.uml2.uml.Class __DEC_feature_nestedClassifier_466815 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, org.eclipse.uml2.uml.Class.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2776,7 +2783,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_28_1_matchtggpattern_black_nac_1B(Enumeration feature) {
-		for (Interface __DEC_feature_nestedClassifier_563601 : org.moflon.core.utilities.eMoflonEMFUtil
+		for (Interface __DEC_feature_nestedClassifier_672566 : org.moflon.core.utilities.eMoflonEMFUtil
 				.getOppositeReferenceTyped(feature, Interface.class, "nestedClassifier")) {
 			return new Object[] { feature };
 		}
@@ -2818,17 +2825,17 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_0BB(
-			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
-		if (ruleResult.getCorrObjects().contains(jp2up)) {
-			return new Object[] { ruleResult, jp2up };
+			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
+		if (ruleResult.getSourceObjects().contains(jPackage)) {
+			return new Object[] { ruleResult, jPackage };
 		}
 		return null;
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, org.eclipse.modisco.java.Package jPackage) {
-		if (ruleResult.getSourceObjects().contains(jPackage)) {
-			return new Object[] { ruleResult, jPackage };
+			ModelgeneratorRuleResult ruleResult, JavaPackage2UmlPackage jp2up) {
+		if (ruleResult.getCorrObjects().contains(jp2up)) {
+			return new Object[] { ruleResult, jp2up };
 		}
 		return null;
 	}
@@ -2852,12 +2859,12 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 					if (jPackage != null) {
 						org.eclipse.uml2.uml.Package umlPackage = jp2up.getTarget();
 						if (umlPackage != null) {
-							if (pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_0BB(ruleResult, jp2up) == null) {
-								if (pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+							if (pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_1BB(ruleResult, jp2up) == null) {
+								if (pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 										jPackage) == null) {
 									if (pattern_EnumDec2Enum_29_2_isapplicablecore_black_nac_2BB(ruleResult,
 											umlPackage) == null) {
-										_result.add(new Object[] { jp2upList, jp2up, jPackage, umlPackage,
+										_result.add(new Object[] { jp2upList, jPackage, jp2up, umlPackage,
 												ruleEntryContainer, ruleResult });
 									}
 								}
@@ -2873,14 +2880,14 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_29_3_solveCSP_bindingFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
 			ModelgeneratorRuleResult ruleResult) {
-		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jp2up, jPackage, umlPackage,
+		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, jPackage, jp2up, umlPackage,
 				ruleResult);
 		CSP csp = _localVariable_0;
 		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, jp2up, jPackage, umlPackage, ruleResult };
+			return new Object[] { csp, _this, isApplicableMatch, jPackage, jp2up, umlPackage, ruleResult };
 		}
 		return null;
 	}
@@ -2890,18 +2897,18 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 	}
 
 	public static final Object[] pattern_EnumDec2Enum_29_3_solveCSP_bindingAndBlackFBBBBBB(EnumDec2Enum _this,
-			IsApplicableMatch isApplicableMatch, JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
+			IsApplicableMatch isApplicableMatch, org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
 			ModelgeneratorRuleResult ruleResult) {
 		Object[] result_pattern_EnumDec2Enum_29_3_solveCSP_binding = pattern_EnumDec2Enum_29_3_solveCSP_bindingFBBBBBB(
-				_this, isApplicableMatch, jp2up, jPackage, umlPackage, ruleResult);
+				_this, isApplicableMatch, jPackage, jp2up, umlPackage, ruleResult);
 		if (result_pattern_EnumDec2Enum_29_3_solveCSP_binding != null) {
 			CSP csp = (CSP) result_pattern_EnumDec2Enum_29_3_solveCSP_binding[0];
 
 			Object[] result_pattern_EnumDec2Enum_29_3_solveCSP_black = pattern_EnumDec2Enum_29_3_solveCSP_blackB(csp);
 			if (result_pattern_EnumDec2Enum_29_3_solveCSP_black != null) {
 
-				return new Object[] { csp, _this, isApplicableMatch, jp2up, jPackage, umlPackage, ruleResult };
+				return new Object[] { csp, _this, isApplicableMatch, jPackage, jp2up, umlPackage, ruleResult };
 			}
 		}
 		return null;
@@ -2913,38 +2920,38 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		return _result;
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_29_5_checknacs_blackBBB(JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage) {
-		return new Object[] { jp2up, jPackage, umlPackage };
+	public static final Object[] pattern_EnumDec2Enum_29_5_checknacs_blackBBB(org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage) {
+		return new Object[] { jPackage, jp2up, umlPackage };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_29_6_perform_blackBBBB(JavaPackage2UmlPackage jp2up,
-			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
+	public static final Object[] pattern_EnumDec2Enum_29_6_perform_blackBBBB(org.eclipse.modisco.java.Package jPackage,
+			JavaPackage2UmlPackage jp2up, org.eclipse.uml2.uml.Package umlPackage,
 			ModelgeneratorRuleResult ruleResult) {
-		return new Object[] { jp2up, jPackage, umlPackage, ruleResult };
+		return new Object[] { jPackage, jp2up, umlPackage, ruleResult };
 	}
 
-	public static final Object[] pattern_EnumDec2Enum_29_6_perform_greenFBFBFFBB(
+	public static final Object[] pattern_EnumDec2Enum_29_6_perform_greenFFFBFBBB(
 			org.eclipse.modisco.java.Package jPackage, org.eclipse.uml2.uml.Package umlPackage,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		EnumDeclaration bodyDeclaration = JavaFactory.eINSTANCE.createEnumDeclaration();
-		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
-		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
 		ASTNode2Element b2e = UmlFactory.eINSTANCE.createASTNode2Element();
+		NamedElement2NamedElement bd2ne = UmlFactory.eINSTANCE.createNamedElement2NamedElement();
+		Enumeration feature = UMLFactory.eINSTANCE.createEnumeration();
 		Object _localVariable_0 = csp.getValue("bodyDeclaration", "name");
 		Object _localVariable_1 = csp.getValue("feature", "name");
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_2 = ruleResult.getIncrementedPerformCount();
 		jPackage.getOwnedElements().add(bodyDeclaration);
 		ruleResult.getSourceObjects().add(bodyDeclaration);
+		b2e.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(b2e);
+		bd2ne.setSource(bodyDeclaration);
+		ruleResult.getCorrObjects().add(bd2ne);
+		b2e.setTarget(feature);
+		bd2ne.setTarget(feature);
 		umlPackage.getPackagedElements().add(feature);
 		ruleResult.getTargetObjects().add(feature);
-		bd2ne.setSource(bodyDeclaration);
-		bd2ne.setTarget(feature);
-		ruleResult.getCorrObjects().add(bd2ne);
-		b2e.setSource(bodyDeclaration);
-		b2e.setTarget(feature);
-		ruleResult.getCorrObjects().add(b2e);
 		String bodyDeclaration_name_prime = (String) _localVariable_0;
 		String feature_name_prime = (String) _localVariable_1;
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
@@ -2952,7 +2959,7 @@ public class EnumDec2EnumImpl extends AbstractRuleImpl implements EnumDec2Enum {
 		bodyDeclaration.setName(bodyDeclaration_name_prime);
 		feature.setName(feature_name_prime);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { bodyDeclaration, jPackage, feature, umlPackage, bd2ne, b2e, ruleResult, csp };
+		return new Object[] { bodyDeclaration, b2e, bd2ne, jPackage, feature, umlPackage, ruleResult, csp };
 	}
 
 	public static final ModelgeneratorRuleResult pattern_EnumDec2Enum_29_7_expressionFB(

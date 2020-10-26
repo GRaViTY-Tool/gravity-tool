@@ -46,8 +46,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
-			MDefinition mMember, MClassInstanceCreation mConstructor);
+	boolean isAppropriate_FWD(Match match, MDefinition mMember, AbstractTypeDeclaration jContainer,
+			MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
-			MDefinition mMember, MClassInstanceCreation mConstructor);
+	void registerObjectsToMatch_FWD(Match match, MDefinition mMember, AbstractTypeDeclaration jContainer,
+			MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,8 +80,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
-			MDefinition mMember, MClassInstanceCreation mConstructor);
+	CSP isAppropriate_solveCsp_FWD(Match match, MDefinition mMember, AbstractTypeDeclaration jContainer,
+			MClassInstanceCreation mConstructor, AnonymousClassDeclaration mAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,9 +97,9 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AnonymousClassDeclaration mAnon,
-			AbstractTypeDeclaration jContainer, MDefinition mMember, NamedElement2NamedElement ne2ne,
-			MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uContainer);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			MDefinition mMember, AbstractTypeDeclaration jContainer, MClassInstanceCreation mConstructor,
+			AnonymousClassDeclaration mAnon, NamedElement2NamedElement ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne,
-			EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject uContainer, EObject mMember, EObject jContainer,
+			EObject mConstructor, EObject uAnon, EObject mAnon, EObject ne2ne, EObject bd2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class uAnon, org.eclipse.uml2.uml.Class uContainer);
+	boolean isAppropriate_BWD(Match match, org.eclipse.uml2.uml.Class uContainer, org.eclipse.uml2.uml.Class uAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,8 +156,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class uAnon,
-			org.eclipse.uml2.uml.Class uContainer);
+	void registerObjectsToMatch_BWD(Match match, org.eclipse.uml2.uml.Class uContainer,
+			org.eclipse.uml2.uml.Class uAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,8 +165,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class uAnon,
-			org.eclipse.uml2.uml.Class uContainer);
+	CSP isAppropriate_solveCsp_BWD(Match match, org.eclipse.uml2.uml.Class uContainer,
+			org.eclipse.uml2.uml.Class uAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,9 +182,9 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
-			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, NamedElement2NamedElement ne2ne,
-			org.eclipse.uml2.uml.Class uContainer);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			MDefinition mMember, AbstractTypeDeclaration jContainer, org.eclipse.uml2.uml.Class uAnon,
+			NamedElement2NamedElement ne2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,8 +200,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject mAnon, EObject jContainer, EObject bd2ne,
-			EObject uAnon, EObject mMember, EObject ne2ne, EObject mConstructor, EObject uContainer);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject uContainer, EObject mMember, EObject jContainer,
+			EObject mConstructor, EObject uAnon, EObject mAnon, EObject ne2ne, EObject bd2ne);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,7 +217,7 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_117(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_15(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,7 +225,7 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_123(EMoflonEdge _edge_mMethodInvocations);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_14(EMoflonEdge _edge_anonymousClassDeclaration);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,9 +257,9 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer,
-			org.eclipse.uml2.uml.Class uAnon, MDefinition mMember, MClassInstanceCreation mConstructor,
-			org.eclipse.uml2.uml.Class uContainer, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(org.eclipse.uml2.uml.Class uContainer, MDefinition mMember,
+			AbstractTypeDeclaration jContainer, MClassInstanceCreation mConstructor, org.eclipse.uml2.uml.Class uAnon,
+			AnonymousClassDeclaration mAnon, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,8 +275,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AnonymousClassDeclaration mAnon, AbstractTypeDeclaration jContainer, MDefinition mMember,
-			MClassInstanceCreation mConstructor);
+	boolean checkDEC_FWD(MDefinition mMember, AbstractTypeDeclaration jContainer, MClassInstanceCreation mConstructor,
+			AnonymousClassDeclaration mAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,7 +284,7 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class uAnon, org.eclipse.uml2.uml.Class uContainer);
+	boolean checkDEC_BWD(org.eclipse.uml2.uml.Class uContainer, org.eclipse.uml2.uml.Class uAnon);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,8 +301,8 @@ public interface AnonymousClass_WithModifier extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractTypeDeclaration jContainer,
-			MDefinition mMember, NamedElement2NamedElement ne2ne, org.eclipse.uml2.uml.Class uContainer,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, org.eclipse.uml2.uml.Class uContainer,
+			MDefinition mMember, AbstractTypeDeclaration jContainer, NamedElement2NamedElement ne2ne,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

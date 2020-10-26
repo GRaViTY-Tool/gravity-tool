@@ -118,7 +118,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InMethod extends EObje
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e,
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject b2e, EObject bd2ne,
 			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject operation,
 			EObject ne2ne);
 
@@ -205,7 +205,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InMethod extends EObje
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject bd2ne, EObject method, EObject b2e,
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject feature, EObject method, EObject b2e, EObject bd2ne,
 			EObject me2op, EObject bodyDeclaration, EObject uContainer, EObject jContainer, EObject operation,
 			EObject ne2ne);
 
@@ -223,7 +223,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InMethod extends EObje
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_121(EMoflonEdge _edge_nestedClassifier);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_38(EMoflonEdge _edge_nestedClassifier);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InMethod extends EObje
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_126(EMoflonEdge _edge_mInnerTypes);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_38(EMoflonEdge _edge_mInnerTypes);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,7 +299,7 @@ public interface InnerInterfaceDeclaration2InnerInterface_InMethod extends EObje
 	 * @generated
 	 */
 	ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
-			NamedElement2NamedElement ne2neParameter);
+			NamedElement2NamedElement me2opParameter);
 
 	/**
 	 * <!-- begin-user-doc -->

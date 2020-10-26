@@ -49,8 +49,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean isAppropriate_FWD(Match match, AbstractMethodDeclaration method, TypeAccess typeAccess,
-			MSingleVariableDeclaration variableDec, AbstractTypeDeclaration owner);
+	boolean isAppropriate_FWD(Match match, TypeAccess typeAccess, AbstractTypeDeclaration owner,
+			AbstractMethodDeclaration method, MSingleVariableDeclaration variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,8 +74,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjectsToMatch_FWD(Match match, AbstractMethodDeclaration method, TypeAccess typeAccess,
-			MSingleVariableDeclaration variableDec, AbstractTypeDeclaration owner);
+	void registerObjectsToMatch_FWD(Match match, TypeAccess typeAccess, AbstractTypeDeclaration owner,
+			AbstractMethodDeclaration method, MSingleVariableDeclaration variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,8 +83,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isAppropriate_solveCsp_FWD(Match match, AbstractMethodDeclaration method, TypeAccess typeAccess,
-			MSingleVariableDeclaration variableDec, AbstractTypeDeclaration owner);
+	CSP isAppropriate_solveCsp_FWD(Match match, TypeAccess typeAccess, AbstractTypeDeclaration owner,
+			AbstractMethodDeclaration method, MSingleVariableDeclaration variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,9 +100,9 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			TypeAccess typeAccess, Operation operation, MSingleVariableDeclaration variableDec,
-			NamedElement2NamedElement md2o, AbstractTypeDeclaration owner);
+	CSP isApplicable_solveCsp_FWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement md2o,
+			TypeAccess typeAccess, Operation operation, AbstractTypeDeclaration owner, AbstractMethodDeclaration method,
+			MSingleVariableDeclaration variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +118,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject vd2p, EObject method, EObject typeAccess,
-			EObject n2n, EObject param, EObject ty2p, EObject operation, EObject variableDec, EObject md2o,
-			EObject owner);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject md2o, EObject typeAccess, EObject param, EObject n2n,
+			EObject operation, EObject ty2p, EObject owner, EObject method, EObject vd2p, EObject variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,8 +183,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			Parameter param, Operation operation, NamedElement2NamedElement md2o, AbstractTypeDeclaration owner);
+	CSP isApplicable_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement md2o, Parameter param,
+			Operation operation, AbstractTypeDeclaration owner, AbstractMethodDeclaration method);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,9 +200,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject vd2p, EObject method, EObject typeAccess,
-			EObject n2n, EObject param, EObject ty2p, EObject operation, EObject variableDec, EObject md2o,
-			EObject owner);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject md2o, EObject typeAccess, EObject param, EObject n2n,
+			EObject operation, EObject ty2p, EObject owner, EObject method, EObject vd2p, EObject variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,7 +217,7 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_157(EMoflonEdge _edge_ownedParameter);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_ownedParameter);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +225,7 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_162(EMoflonEdge _edge_type);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_parameters);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,8 +257,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(AbstractMethodDeclaration method, TypeAccess typeAccess, Parameter param,
-			Operation operation, MSingleVariableDeclaration variableDec, AbstractTypeDeclaration owner,
+	CSP isApplicable_solveCsp_CC(TypeAccess typeAccess, Parameter param, Operation operation,
+			AbstractTypeDeclaration owner, AbstractMethodDeclaration method, MSingleVariableDeclaration variableDec,
 			Match sourceMatch, Match targetMatch);
 
 	/**
@@ -277,8 +275,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	boolean checkDEC_FWD(AbstractMethodDeclaration method, TypeAccess typeAccess,
-			MSingleVariableDeclaration variableDec, AbstractTypeDeclaration owner);
+	boolean checkDEC_FWD(TypeAccess typeAccess, AbstractTypeDeclaration owner, AbstractMethodDeclaration method,
+			MSingleVariableDeclaration variableDec);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,8 +301,8 @@ public interface VariableDec2Parameter extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, AbstractMethodDeclaration method,
-			Operation operation, NamedElement2NamedElement md2o, AbstractTypeDeclaration owner,
+	CSP generateModel_solveCsp_BWD(IsApplicableMatch isApplicableMatch, NamedElement2NamedElement md2o,
+			Operation operation, AbstractTypeDeclaration owner, AbstractMethodDeclaration method,
 			ModelgeneratorRuleResult ruleResult);
 
 	/**

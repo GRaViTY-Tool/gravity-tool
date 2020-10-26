@@ -732,7 +732,7 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_114(EMoflonEdge _edge_ownedOperation) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_1(EMoflonEdge _edge_ownedOperation) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4ClassImpl
 				.pattern_MethodDec2Operation4Class_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -790,7 +790,7 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_120(EMoflonEdge _edge_bodyDeclarations) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_1(EMoflonEdge _edge_bodyDeclarations) {
 
 		Object[] result1_bindingAndBlack = MethodDec2Operation4ClassImpl
 				.pattern_MethodDec2Operation4Class_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -1270,10 +1270,10 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 			return null;
 		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_114__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_114((EMoflonEdge) arguments.get(0));
-		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_120__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_120((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___IS_APPROPRIATE_BWD_EMOFLON_EDGE_1__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_1((EMoflonEdge) arguments.get(0));
+		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___IS_APPROPRIATE_FWD_EMOFLON_EDGE_1__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_1((EMoflonEdge) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.METHOD_DEC2_OPERATION4_CLASS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
@@ -2377,8 +2377,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_20_2_testcorematchandDECs_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_377557 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_377557 != null) {
+		DataType __DEC_feature_ownedOperation_406387 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_406387 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2387,8 +2387,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_20_2_testcorematchandDECs_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_752551 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_752551 != null) {
+		Interface __DEC_feature_ownedOperation_978564 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_978564 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2519,8 +2519,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_21_2_testcorematchandDECs_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_515895 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_515895 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_679178 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_679178 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2529,9 +2529,9 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_21_2_testcorematchandDECs_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_674879 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_893225 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_674879 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_893225 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2785,8 +2785,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_27_1_matchtggpattern_black_nac_0B(
 			MMethodDefinition bodyDeclaration) {
-		Modifier __DEC_bodyDeclaration_modifier_796206 = bodyDeclaration.getModifier();
-		if (__DEC_bodyDeclaration_modifier_796206 != null) {
+		Modifier __DEC_bodyDeclaration_modifier_714594 = bodyDeclaration.getModifier();
+		if (__DEC_bodyDeclaration_modifier_714594 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2795,9 +2795,9 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_27_1_matchtggpattern_black_nac_1B(
 			MMethodDefinition bodyDeclaration) {
-		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_12994 = bodyDeclaration
+		AnonymousClassDeclaration __DEC_bodyDeclaration_bodyDeclarations_764840 = bodyDeclaration
 				.getAnonymousClassDeclarationOwner();
-		if (__DEC_bodyDeclaration_bodyDeclarations_12994 != null) {
+		if (__DEC_bodyDeclaration_bodyDeclarations_764840 != null) {
 			return new Object[] { bodyDeclaration };
 		}
 
@@ -2828,8 +2828,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_28_1_matchtggpattern_black_nac_0B(
 			Operation feature) {
-		DataType __DEC_feature_ownedOperation_353012 = feature.getDatatype();
-		if (__DEC_feature_ownedOperation_353012 != null) {
+		DataType __DEC_feature_ownedOperation_714709 = feature.getDatatype();
+		if (__DEC_feature_ownedOperation_714709 != null) {
 			return new Object[] { feature };
 		}
 
@@ -2838,8 +2838,8 @@ public class MethodDec2Operation4ClassImpl extends AbstractRuleImpl implements M
 
 	public static final Object[] pattern_MethodDec2Operation4Class_28_1_matchtggpattern_black_nac_1B(
 			Operation feature) {
-		Interface __DEC_feature_ownedOperation_603889 = feature.getInterface();
-		if (__DEC_feature_ownedOperation_603889 != null) {
+		Interface __DEC_feature_ownedOperation_849284 = feature.getInterface();
+		if (__DEC_feature_ownedOperation_849284 != null) {
 			return new Object[] { feature };
 		}
 
